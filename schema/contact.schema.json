@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDS Commercial Contact",
+  "type": "object",
+  "required": ["id","company_id","name","role","decision_influence","relationship","channels","evidence","last_interaction_at","do_not_contact"],
+  "properties": {
+    "id": {"type":"string"},
+    "company_id": {"type":["string","null"]},
+    "name": {"type":"string"},
+    "role": {"type":["string","null"]},
+    "organization": {"type":["string","null"]},
+    "decision_influence": {"enum":["UNKNOWN","LOW","MEDIUM","HIGH","FINAL"]},
+    "relationship": {"enum":["UNKNOWN","COLD","WARM","ACTIVE","STRATEGIC"]},
+    "channels": {
+      "type":"object",
+      "properties": {
+        "emails":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+        "phones":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+        "public_profiles":{"type":"array","items":{"type":"string"},"uniqueItems":true}
+      }
+    },
+    "preferred_public_channel":{"type":["string","null"]},
+    "evidence":{"type":"array","items":{"type":"object"}},
+    "last_interaction_at":{"type":["string","null"]},
+    "do_not_contact":{"type":"boolean"},
+    "notes":{"type":"array","items":{"type":"string"}}
+  }
+}

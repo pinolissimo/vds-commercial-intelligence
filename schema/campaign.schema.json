@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDS Commercial Campaign",
+  "type": "object",
+  "required": ["id", "name", "status", "segments", "language", "goal", "created_at", "positioning", "sequence", "metrics"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "status": {"enum": ["DRAFT", "ACTIVE", "PAUSED", "COMPLETED"]},
+    "segments": {"type": "array", "items": {"type": "string"}},
+    "countries": {"type": "array", "items": {"type": "string"}},
+    "language": {"type": "array", "items": {"type": "string"}},
+    "goal": {"type": "string"},
+    "created_at": {"type": "string"},
+    "positioning": {"type": "string"},
+    "sequence": {"type": "array", "items": {"type": "object"}},
+    "metrics": {
+      "type": "object",
+      "required": ["sent", "replies", "positive_replies", "meetings", "proposals", "won", "revenue_won"],
+      "properties": {
+        "sent": {"type": "integer", "minimum": 0},
+        "replies": {"type": "integer", "minimum": 0},
+        "positive_replies": {"type": "integer", "minimum": 0},
+        "meetings": {"type": "integer", "minimum": 0},
+        "proposals": {"type": "integer", "minimum": 0},
+        "won": {"type": "integer", "minimum": 0},
+        "revenue_won": {"type": "number", "minimum": 0}
+      }
+    },
+    "last_updated_at": {"type": "string"}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDS Commercial Opportunity — CRM v3 compatible",
+  "type": "object",
+  "required": ["schema_version", "id", "company_id", "title", "type", "campaign_id", "status", "detected_at", "last_verified_at", "freshness", "economics", "next_action"],
+  "properties": {
+    "schema_version": {"enum":["1.0","2.0"]},
+    "id": {"type":"string"},
+    "company_id": {"type":["string","null"]},
+    "title": {"type":"string"},
+    "type": {"enum":["ACTIVE_JOB","STRUCTURAL_PARTNERSHIP","EU_PROJECT","OUTSOURCING","WHITE_LABEL","LOCAL_NO_WEBSITE","COLD_PROSPECT","OTHER"]},
+    "campaign_id": {"type":["string","null"]},
+    "status": {"type":"string"},
+    "detected_at": {"type":"string"},
+    "last_verified_at": {"type":"string"},
+    "source_urls": {"type":"array","items":{"type":"string"}},
+    "freshness": {"type":"object","required":["score","source_status"],"properties":{"score":{"type":"integer","minimum":0,"maximum":100},"published_at":{"type":["string","null"]},"expires_at":{"type":["string","null"]},"source_status":{"enum":["CURRENT","EVERGREEN","STALE","EXPIRED","TO_VERIFY"]}}},
+    "lead_health": {"type":"object","properties":{"score":{"type":"integer","minimum":0,"maximum":100},"class":{"enum":["CRITICAL","HOT","WARM","COOL","DORMANT"]},"calculated_at":{"type":"string"},"components":{"type":"object"},"penalties":{"type":"array","items":{"type":"string"}}}},
+    "probability": {"type":"object","properties":{"operational_prior_pct":{"type":["number","null"],"minimum":0,"maximum":100},"prior_status":{"enum":["UNCALIBRATED","CALIBRATING","CALIBRATED"]},"calibrated_probability_pct":{"type":["number","null"],"minimum":0,"maximum":100},"calibration_sample_size":{"type":"integer","minimum":0},"confidence":{"enum":["NONE","LOW","MEDIUM","HIGH"]}}},
+    "economics": {"type":"object","required":["currency","estimated_value_low","estimated_value_high","probability_pct","weighted_value","recurring_potential","estimate_confidence"],"properties":{"currency":{"const":"EUR"},"estimated_value_low":{"type":["number","null"]},"estimated_value_high":{"type":["number","null"]},"probability_pct":{"type":["number","null"]},"weighted_value":{"type":["number","null"]},"recurring_potential":{"enum":["UNKNOWN","LOW","MEDIUM","HIGH"]},"estimate_confidence":{"enum":["NONE","LOW","MEDIUM","HIGH"]}}},
+    "attribution": {"type":"object","properties":{"source_type":{"type":["string","null"]},"source_name":{"type":["string","null"]},"campaign_id":{"type":["string","null"]},"message_variant":{"type":["string","null"]},"language":{"type":["string","null"]},"positioning":{"type":["string","null"]},"territory":{"type":["string","null"]}}},
+    "sla": {"type":"object","properties":{"class":{"enum":["POSITIVE_REPLY","REFERRAL","PROPOSAL_REQUEST","REVIEW_REQUIRED","FOLLOW_UP","BOUNCE","NORMAL"]},"due_at":{"type":["string","null"]},"breached":{"type":"boolean"},"checked_at":{"type":"string"}}},
+    "next_action": {"type":"object","required":["action","due_at","owner"],"properties":{"action":{"type":"string"},"reason":{"type":"string"},"due_at":{"type":["string","null"]},"owner":{"enum":["AUTOMATION","USER","NONE"]},"priority":{"enum":["CRITICAL","HIGH","NORMAL","LOW","NONE"]},"expected_commercial_impact":{"enum":["VERY_HIGH","HIGH","MEDIUM","LOW","NONE"]},"confidence":{"enum":["HIGH","MEDIUM","LOW"]}}},
+    "outcome": {"type":"object","properties":{"closed_at":{"type":["string","null"]},"result":{"enum":["OPEN","WON","LOST"]},"reason_code":{"type":["string","null"]},"learning_note":{"type":["string","null"]},"evidence":{"type":["string","null"]}}},
+    "notes": {"type":"array","items":{"type":"string"}}
+  }
+}

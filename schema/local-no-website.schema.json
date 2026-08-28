@@ -1,0 +1,26 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"VDS Local Business Without Website Prospect",
+  "type":"object",
+  "required":["id","business","country","location","category","identity_verified","website_status","website_gap_score","contact","evidence","personalized_angle","status","first_contact_state","timeline","last_verified_at"],
+  "properties":{
+    "id":{"type":"string"},
+    "business":{"type":"string"},
+    "country":{"enum":["Italy","Spain"]},
+    "location":{"type":"object"},
+    "category":{"type":"string"},
+    "identity_verified":{"type":"boolean"},
+    "website_status":{"enum":["NO_DEDICATED_WEBSITE_VERIFIED","BROKEN_OR_NONFUNCTIONAL","AMBIGUOUS_REVERIFY","HAS_WEBSITE_REJECT"]},
+    "online_presence":{"type":"object","properties":{"google_maps_or_directory":{"type":["string","null"]},"facebook":{"type":["string","null"]},"instagram":{"type":["string","null"]},"booking_or_marketplace":{"type":["string","null"]}}},
+    "website_gap_score":{"type":"object","required":["score","components"],"properties":{"score":{"type":"integer","minimum":0,"maximum":100},"components":{"type":"object","properties":{"website_absence":{"type":"integer","minimum":0,"maximum":25},"business_quality":{"type":"integer","minimum":0,"maximum":20},"commercial_upside":{"type":"integer","minimum":0,"maximum":20},"competitor_gap":{"type":"integer","minimum":0,"maximum":15},"contactability":{"type":"integer","minimum":0,"maximum":10},"personalization_strength":{"type":"integer","minimum":0,"maximum":10}}}}},
+    "contact":{"type":"object","properties":{"emails":{"type":"array","items":{"type":"string"}},"phones":{"type":"array","items":{"type":"string"}},"public_contact_pages":{"type":"array","items":{"type":"string"}}}},
+    "evidence":{"type":"array","items":{"type":"object"}},
+    "personalized_angle":{"type":"string"},
+    "quality_rejection_reason":{"type":["string","null"]},
+    "status":{"enum":["RESEARCH","QUALIFIED","DRAFT_APPROVAL_REQUIRED","READY_TO_CONTACT","CONTACTED","REPLIED","LOST","WON"]},
+    "first_contact_state":{"enum":["NEVER_SENT","SENT","SUPPRESSED"]},
+    "suppression_checked":{"type":"boolean"},
+    "timeline":{"type":"array","items":{"type":"object"}},
+    "last_verified_at":{"type":"string"}
+  }
+}

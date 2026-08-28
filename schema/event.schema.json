@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDS Commercial Event",
+  "type": "object",
+  "required": ["event_id", "timestamp", "type", "channel", "previous_status", "new_status", "outcome"],
+  "properties": {
+    "event_id": {"type": "string"},
+    "timestamp": {"type": "string"},
+    "type": {"enum": ["DISCOVERED", "QUALIFIED", "CONTACT_PREPARED", "EMAIL_SENT", "REPLY_RECEIVED", "NEGATIVE_AUTO_REPLY_SENT", "FOLLOW_UP_DUE", "FOLLOW_UP_SENT", "MEETING_SCHEDULED", "MEETING_HELD", "PROPOSAL_SENT", "OPPORTUNITY_WON", "OPPORTUNITY_LOST", "STATUS_CHANGED", "SOURCE_REVERIFIED", "NOTE"]},
+    "channel": {"enum": ["web", "email", "form", "phone", "meeting", "github", "other"]},
+    "actor": {"type": ["string", "null"]},
+    "from": {"type": ["string", "null"]},
+    "to": {"type": ["string", "null"]},
+    "subject": {"type": ["string", "null"]},
+    "previous_status": {"type": ["string", "null"]},
+    "new_status": {"type": ["string", "null"]},
+    "outcome": {"type": "string"},
+    "evidence": {"type": ["string", "null"]},
+    "log_ref": {"type": ["string", "null"]},
+    "next_action": {"type": ["string", "null"]},
+    "due_at": {"type": ["string", "null"]}
+  }
+}
