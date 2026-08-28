@@ -1,0 +1,21 @@
+{
+  "view":"Lead Health",
+  "updated_at":"2026-08-28T13:35:00+02:00",
+  "model":"../config/lead-health-model.json",
+  "migration_status":"PROGRESSIVE",
+  "critical":[
+    {
+      "opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB",
+      "provisional_score":92,
+      "class":"CRITICAL",
+      "score_status":"RULE_BASED_CURRENT_EVIDENCE",
+      "reason":"Positive referral, warm relationship signal, named decision-relevant contacts, current same-day actionability.",
+      "next_best_action":"HANDLE_REFERRAL"
+    }
+  ],
+  "hot":[],
+  "warm":[],
+  "cool":[],
+  "dormant":[],
+  "note":"Only opportunities with enough normalized v3 inputs are included here. Existing v2 records will be backfilled progressively; omission is not equivalent to low health."
+}

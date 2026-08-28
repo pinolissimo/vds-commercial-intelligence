@@ -1,0 +1,23 @@
+{
+  "view":"Commercial action queue",
+  "updated_at":"2026-08-28T17:06:00+02:00",
+  "priority_order":["SLA_BREACH","QA_RECONCILIATION","POSITIVE_REPLY_USER_ACTION_REQUIRED","REVIEW_REQUIRED","PROPOSAL_OR_MEETING","READY_TO_CONTACT_HIGH_IMPACT","FOLLOW_UP_DUE","RESEARCH","NURTURE_FUTURE"],
+  "sla_breaches":[{"priority":"CRITICAL","opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","class":"REFERRAL","owner":"USER","due_at":"2026-08-28T17:00:00+02:00","action":"HANDLE_REFERRAL","automation_send_forbidden":true}],
+  "qa_reconciliation":[{"priority":"CRITICAL","action":"RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION","owner":"AUTOMATION","due_at":"2026-08-28T17:30:00+02:00","evidence":"../governance/suppression-emergency-2026-08-28.json","finding":"11 new first-contact-style send events after last CRM snapshot: 9 unique new recipients pending canonicalization and 2 duplicate first-contact violations."}],
+  "positive_reply_user_action_required":[{"priority":"CRITICAL","opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","campaign":"EU-PROJECT-WEB","received_at":"2026-08-28T12:21:12+02:00","signal":"Direct referral to two Communication & Dissemination leads.","action":"HANDLE_REFERRAL","owner":"USER","due_at":"2026-08-28T17:00:00+02:00","sla_breached":true,"reply_log":"../replies/2026-08-28-beyond-barriers-referral.json","automation_send_forbidden":true}],
+  "review_required":[{"priority":"HIGH","entity":"BATMAN / unresolved entity","email":"nobody@knows.us","sent_uid":114,"action":"VERIFY_ENTITY_AND_CONTACT_QUALITY_BEFORE_ANY_FURTHER_ACTION","reason":"No current canonical CRM evidence establishes the recipient as a verified business contact."}],
+  "ready_to_contact_high_impact":[
+    {"rank":1,"opportunity_id":"OPP-IT-NEXIBO-COLLAB","score":97,"owner":"AUTOMATION","action":"SEND_PERSONALIZED_COLLABORATION_IF_QG_PASS","route":"collab@nexibo.agency","status":"READY_TO_CONTACT"},
+    {"rank":2,"opportunity_id":"OPP-IT-WEBGENOVA-OUTSOURCING","score":97,"owner":"AUTOMATION","action":"RESOLVE_OFFICIAL_APPLICATION_CHANNEL","route":"official site route / protected email","status":"READY_TO_CONTACT"},
+    {"rank":3,"opportunity_id":"OPP-IT-MINIMAL-FULLSTACK","score":94,"owner":"USER","action":"SUBMIT_OFFICIAL_APPLICATION_FORM","status":"READY_TO_CONTACT_MANUAL_ROUTE"},
+    {"rank":4,"opportunity_id":"OPP-ES-INTROVISUAL-WEB-COLLAB","score":94,"owner":"USER","action":"SUBMIT_OFFICIAL_COLLABORATION_FORM","status":"READY_TO_CONTACT_MANUAL_ROUTE"},
+    {"rank":5,"opportunity_id":"OPP-ES-INGENIOVIRTUAL-COLLAB","score":93,"owner":"USER","action":"SUBMIT_FREELANCE_COLLABORATOR_FORM","status":"READY_TO_CONTACT_MANUAL_ROUTE"},
+    {"rank":6,"opportunity_id":"OPP-ES-ELKOKO-WORDPRESS","score":91,"owner":"USER","action":"USE_OFFICIAL_COLLABORATOR_ROUTE","status":"READY_TO_CONTACT_MANUAL_ROUTE"},
+    {"rank":7,"opportunity_id":"OPP-IT-CREACITY-WEBMASTER","score":90,"owner":"USER","action":"SUBMIT_WEBMASTER_FORM","status":"READY_TO_CONTACT_MANUAL_ROUTE"},
+    {"rank":8,"opportunity_id":"OPP-ES-ZONSAI-TALENT","score":90,"owner":"AUTOMATION","action":"CLARIFY_EXTERNAL_FREELANCE_MODEL_AND_PREPARE_DRAFT","status":"DRAFT_REVIEW_REQUIRED"},
+    {"rank":9,"opportunity_id":"OPP-IT-PERFECTLIE-FREELANCE","score":89,"owner":"AUTOMATION","action":"VERIFY_EXACT_FREELANCE_APPLICATION_ROUTE","status":"CHANNEL_REVERIFY"}
+  ],
+  "scheduled_follow_ups_count":23,
+  "scheduled_follow_ups_source":"previous canonical queue preserved; QA did not alter follow-up dates except no additional follow-up is created for post-snapshot recipients until canonicalization",
+  "nurture_future":[]
+}
