@@ -1,6 +1,6 @@
 {
   "view":"Lead Health",
-  "updated_at":"2026-08-28T13:35:00+02:00",
+  "updated_at":"2026-08-28T20:58:00+02:00",
   "model":"../config/lead-health-model.json",
   "migration_status":"PROGRESSIVE",
   "critical":[
@@ -9,13 +9,17 @@
       "provisional_score":92,
       "class":"CRITICAL",
       "score_status":"RULE_BASED_CURRENT_EVIDENCE",
-      "reason":"Positive referral, warm relationship signal, named decision-relevant contacts, current same-day actionability.",
-      "next_best_action":"HANDLE_REFERRAL"
+      "components":{"commercial_intent_status":25,"freshness":20,"vds_fit":17,"relationship_strength":15,"decision_maker_quality":8,"sla_actionability":10},
+      "penalties":{"CURRENT_SCOPE_ALREADY_ASSIGNED_MINUS_3":3},
+      "reproduction":"25+20+17+15+8+10-3=92",
+      "reason":"Positive referral, warm relationship signal, named decision-relevant contacts, current urgent actionability; current website scope already assigned applies a documented 3-point penalty.",
+      "next_best_action":"HANDLE_REFERRAL",
+      "sla_breached":true
     }
   ],
   "hot":[],
   "warm":[],
   "cool":[],
   "dormant":[],
-  "note":"Only opportunities with enough normalized v3 inputs are included here. Existing v2 records will be backfilled progressively; omission is not equivalent to low health."
+  "note":"Only opportunities with enough normalized v3 inputs are included here. Existing v2 records will be backfilled progressively; omission is not equivalent to low health. Applied penalties must exist in the model."
 }
