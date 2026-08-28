@@ -5,7 +5,7 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **Standard:** VDS7 · precisione > volume · evidenza > inferenza · zero doppio first-contact
 
-**Ultimo aggiornamento:** 28 agosto 2026 · 21:53 Europe/Madrid  
+**Ultimo aggiornamento:** 28 agosto 2026 · 21:59 Europe/Madrid  
 **CRM:** v3 Revenue Operating System · dedicated repository  
 **Migrazione:** **IN PROGRESS — core + decision views + campaigns/reports migrated; canonical records progressing**  
 **Ricerca:** **SECOND DEEP PASS ACTIVE + FUNDED EU EARLY-PROJECT SCAN**  
@@ -23,12 +23,14 @@
 |---:|---|---|---|
 | **1** | **HANDLE_REFERRAL — BEYOND BARRIERS** | USER | **CRITICAL · SLA BREACHED** |
 | **2** | **RECONCILE_MAILBOX / SUPPRESSION** | AUTOMATION | **CRITICAL QA · BREACHED** |
-| **3** | **Studiart — Piacenza** | AUTOMATION | **NEW · SCORE 98 · HIGH FIT** |
-| **4** | **Vaivén Estudio — Galicia** | AUTOMATION | **NEW · SCORE 97 · HIGH FIT** |
-| 5 | Nexìbo | AUTOMATION | HIGH FIT |
-| 6 | WebGenova outsourcing route | AUTOMATION | HIGH FIT |
-| 7 | Second deep territorial pass | AUTOMATION | ACTIVE |
-| 8 | Verify WP/task/contact chain for early-funded EU watchlist | AUTOMATION | ACTIVE |
+| **3** | **Studiart — Piacenza** | AUTOMATION | **SCORE 98 · HIGH FIT** |
+| **4** | **Vaivén Estudio — Galicia** | AUTOMATION | **SCORE 97 · HIGH FIT** |
+| **5** | **Dream Big Design — Milano** | AUTOMATION | **NEW · SCORE 96 · P.IVA NETWORK** |
+| **6** | **Daniele Debernardis — Basilicata** | AUTOMATION | **NEW · SCORE 96 · STRUCTURED COLLAB** |
+| 7 | Nexìbo | AUTOMATION | HIGH FIT |
+| 8 | WebGenova outsourcing route | AUTOMATION | HIGH FIT |
+| 9 | Second deep territorial pass | AUTOMATION | ACTIVE |
+| 10 | Verify WP/task/contact chain for early-funded EU watchlist | AUTOMATION | ACTIVE |
 
 [Next Best Actions →](views/next-best-actions.json) · [Action Queue →](views/action-queue.json) · [Deep Research Queue →](views/deep-research-queue.json)
 
@@ -38,13 +40,15 @@
 
 Dopo il secondo deep pass:
 
-- Italia: **10/20 regioni** con almeno un lead qualificato; **16 account** con regione verificata.
+- Italia: **11/20 regioni** con almeno un lead qualificato; **18 account** con regione verificata.
 - Spagna: **9/19 territori** con almeno un lead qualificato; **12 account** con territorio verificato.
-- **Emilia-Romagna:** nuovo lead qualificato **Studiart (Piacenza)**.
-- **Galicia:** nuovo lead qualificato **Vaivén Estudio (Lugo)**.
-- Restano **20 territori** a zero e in ricerca approfondita.
+- **Emilia-Romagna:** Studiart (Piacenza).
+- **Galicia:** Vaivén Estudio (Lugo).
+- **Basilicata:** nuovo lead qualificato **Daniele Debernardis (Senise, PZ)** — collaborazione strutturata esplicita con web designer/sviluppatori.
+- **Lombardia:** nuovo lead qualificato **Dream Big Design (Milano)** — network esplicito di freelance P.IVA per web design/programmazione/app.
+- Restano **19 territori** a zero e in ricerca approfondita.
 
-[Regional Coverage →](views/regional-coverage.json) · [Second Deep Pass →](research/2026-08-28-second-deep-pass.json)
+[Regional Coverage →](views/regional-coverage.json) · [Scanner Log 21:59 →](research/2026-08-28-opportunity-scanner-2159.json)
 
 ## 🔎 Metodo di ricerca potenziato
 
@@ -65,7 +69,7 @@ Nuovo scan dedicato ai progetti europei con finanziamento già verificato e fase
 
 Prime priorità di verifica: **REMEDIES 5.0 (€16,75M)**, **ORIGINS (€4,99M)**, **ELEVATE (€4,41M)**, **LUMINA (€4,81M)**, **TWINE (€3,00M)**, **SYNERGIA (€5,77M)**, **BioValueAI (€5,38M)** e **Knowledge2Impact (€1,93M)**.
 
-Questi importi sono budget/costi di progetto verificati da CORDIS, **non budget web disponibili**. Nessun progetto viene contattato finché il bisogno digitale e il responsabile reale non sono verificati.
+Questi importi sono budget/costi di progetto verificati da CORDIS, **non budget web disponibili**. Nell'ultimo pass ORIGINS, REMEDIES 5.0 ed ELEVATE sono stati ricontrollati, ma nessuno è stato promosso: manca ancora una catena verificata `WP/task digitale → beneficiario responsabile → contatto`.
 
 [Early-funded EU Watchlist →](eu-projects/early-funded-watchlist-2026-08-28.json)
 
@@ -73,9 +77,10 @@ Questi importi sono budget/costi di progetto verificati da CORDIS, **non budget 
 
 | Metrica | Valore |
 |---|---:|
-| Partner qualificati canonici Italia/Spagna | **30** |
-| Opportunity canoniche complessive | **36** |
+| Partner qualificati canonici Italia/Spagna | **32** |
+| Opportunity canoniche complessive | **38** |
 | Opportunity con first contact canonico verificato | **24** |
+| Opportunity qualificate non ancora contattate | **14** |
 | First-contact-style send events reali oggi in Sent | **36** |
 | Organizzazioni/destinatari unici first-contacted oggi | **34** |
 | Destinatari post-snapshot ancora da canonicalizzare | **10** |
@@ -106,6 +111,7 @@ Qualsiasi nuovo primo contatto deve superare QG-01..QG-12 e controllare **primar
 - Due violazioni storiche restano preservate come evidenza: **Persuadis** e **Marmellata Lab**.
 - **10** destinatari unici post-snapshot sono bloccati da emergency suppression finché non vengono canonicalizzati.
 - `BATMAN / nobody@knows.us` resta `REVIEW_REQUIRED`.
+- Il nuovo scanner ha qualificato due opportunità ma **non ha inviato né sottoposto nulla**.
 
 [Primary Suppression →](governance/suppression-registry.json) · [Emergency Suppression →](governance/suppression-emergency-2026-08-28.json) · [Quality Gates →](governance/OUTREACH_QUALITY_GATES.md)
 
@@ -131,18 +137,6 @@ La separazione definitiva verso `pinolissimo/vds-commercial-intelligence` è att
 La migrazione dei record canonici company/opportunity è ancora **IN_PROGRESS**; non viene dichiarata parity finché i record storici mancanti non sono stati trasferiti e verificati.
 
 [MIGRATION STATUS →](MIGRATION_STATUS.json)
-
-## 🧪 QA 20:58
-
-Audit: [2026-08-28-2058.md](audits/2026-08-28-2058.md)
-
-Correzioni deterministiche applicate:
-
-- schema opportunity esteso correttamente a CRM v3;
-- Sent UID 115 aggiunto alla emergency suppression;
-- regional coverage riallineata a Studiart e Vaivén;
-- master, funnel, economics, action queue e Next Best Actions riallineati;
-- nessuna email inviata o risposta commerciale modificata durante QA.
 
 ## Principio operativo
 
