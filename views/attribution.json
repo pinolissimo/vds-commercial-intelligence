@@ -1,14 +1,15 @@
 {
   "view":"Commercial attribution",
-  "updated_at":"2026-08-28T13:45:00+02:00",
+  "updated_at":"2026-08-28T20:58:00+02:00",
   "status":"EARLY_SAMPLE",
   "campaigns":[
     {"id":"AGENCY-OUTSOURCING-IT","segment":"Italy agencies","sent":10,"reply_threads":0,"positive_signals":0,"meetings":0,"proposals":0,"wins":0},
     {"id":"AGENCY-OUTSOURCING-ES","segment":"Spain agencies","sent":8,"reply_threads":0,"positive_signals":0,"meetings":0,"proposals":0,"wins":0},
     {"id":"EU-PROJECT-WEB","segment":"EU projects","sent":6,"reply_threads":1,"positive_signals":1,"meetings":0,"proposals":0,"wins":0}
   ],
-  "totals":{"sent":24,"reply_threads":1,"positive_signals":1,"meetings":0,"proposals":0,"wins":0},
-  "current_finding":"EU-PROJECT-WEB is still the only segment with a qualified positive signal. Italy/Spain regional wave 03 was sent only minutes before this snapshot, so zero replies there are not yet informative.",
+  "totals":{"canonically_attributed_sent":24,"reply_threads":1,"positive_signals":1,"meetings":0,"proposals":0,"wins":0},
+  "excluded_pending_reconciliation":{"first_contact_style_send_events_since_13_45":12,"unique_new_recipients":10,"duplicate_events":2,"latest_reconciled_sent_uid":115,"reason":"Do not assign campaign/source performance until canonical company/opportunity qualification and attribution are complete."},
+  "current_finding":"EU-PROJECT-WEB is the only canonically attributed segment with a qualified positive signal. Current sample size is insufficient for strategy conclusions.",
   "required_dimensions":["source","country","region","segment","language","message_variant","positioning","contact_role","time_to_reply","time_to_meeting","time_to_proposal","time_to_win"],
-  "rule":"Do not infer message or segment superiority from the current sample size or same-day latency."
+  "rule":"Do not infer message or segment superiority from the current sample size or same-day latency. Uncanonicalized sends are excluded from campaign denominators."
 }
