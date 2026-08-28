@@ -1,0 +1,16 @@
+{
+  "version":"1.0",
+  "updated_at":"2026-08-28T13:35:00+02:00",
+  "status":"UNCALIBRATED",
+  "purpose":"Operational ranking priors only until enough observed outcomes exist.",
+  "minimum_samples":{"per_stage_for_initial_calibration":30,"per_segment_for_segment_calibration":20,"wins_for_reliable_win_model":10},
+  "operational_priors_pct":{"READY_TO_CONTACT":2,"CONTACTED":4,"POSITIVE_REPLY_USER_ACTION_REQUIRED":20,"MEETING":40,"PROPOSAL":60},
+  "rules":[
+    "Operational priors MUST NOT be presented as empirically calibrated probabilities.",
+    "Weighted pipeline MUST remain null unless both monetary value and calibrated_probability_pct have defensible evidence.",
+    "Recompute empirical stage conversion from closed outcomes only.",
+    "Keep segment-level models separate when sample size permits: Italy agencies, Spain agencies, EU projects, local-no-website.",
+    "Never raise probability merely because a lead has a high subjective Revenue Priority score."
+  ],
+  "calibrated_models":[]
+}

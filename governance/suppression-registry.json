@@ -1,0 +1,41 @@
+{
+  "schema_version":"1.0",
+  "updated_at":"2026-08-28T13:45:00+02:00",
+  "purpose":"Global pre-send suppression and first-contact deduplication registry",
+  "rules":[
+    "Check company_id/project_id, normalized domain and every recipient email before any first contact.",
+    "FIRST_CONTACT_ALREADY_SENT blocks a second first-contact even if a different email address is found.",
+    "DO_NOT_CONTACT, UNSUBSCRIBED and MANUAL_SUPPRESSION block all proactive outreach.",
+    "HARD_BOUNCE blocks the failed address but permits a verified replacement contact after review.",
+    "EXISTING_CLIENT prevents acquisition-style first-contact messaging.",
+    "Also check historical Sent/outreach logs because this registry is intentionally additive and does not erase older pre-CRM history."
+  ],
+  "entries":[
+    {"entity_id":"ES-CAT-BCN-PERSUADIS","entity":"Persuadis","domain":"persuadis.com","emails":["info@persuadis.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:10:46+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"ES-CAT-BCN-MARKA-DIGITAL","entity":"Marka Digital","domain":"markadigital.es","emails":["hola@markadigital.es"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:10:56+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"ES-CAT-LLE-MARKETIZADOS","entity":"Marketizados","domain":"marketizados.com","emails":["hola@marketizados.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:11:06+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"IT-LOM-MI-MARMELLATA-LAB","entity":"Marmellata Lab","domain":"marmellatalab.com","emails":["hello@marmellatalab.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:11:18+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"IT-VEN-PD-PLAY-THINK-CREATIVE","entity":"Play / Think Creative","domain":"playthinkcreative.it","emails":["marketing@playthinkcreative.it"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:11:29+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"IT-VEN-RO-TURBOBIT","entity":"TurboBit IT Solutions","domain":"turbobit.it","emails":["hr@turbobit.it","partners@turbobit.it"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:11:39+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"ES-CAT-BCN-TALENTID","entity":"Talent·id","domain":"talentid.es","emails":["hello@talentid.es"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:11:46+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"IT-LAZ-RM-GRAPHALIA","entity":"Graphalia","domain":"graphalia.com","emails":["info@graphalia.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:11:56+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"IT-PIE-TO-AMALTHEA","entity":"Amalthea Digital & Branding","domain":"amalthea.it","emails":["info@amalthea.it"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:12:05+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
+    {"entity_id":"IT-REMOTE-BROOVERA","entity":"Broovera","domain":"broovera.com","emails":["jobs@broovera.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:16:41+02:00","evidence":"../outreach/2026-08-28-partners-round-02.json"},
+    {"entity_id":"IT-LAZ-RM-SECRETKEY","entity":"Secret Key","domain":"secretkey.it","emails":["info@secretkey.it"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:16:52+02:00","evidence":"../outreach/2026-08-28-partners-round-02.json"},
+    {"entity_id":"IT-VEN-TV-APICEWEB","entity":"Apiceweb","domain":"apiceweb.it","emails":["info@apiceweb.it"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:17:02+02:00","evidence":"../outreach/2026-08-28-partners-round-02.json"},
+    {"entity_id":"ES-REMOTE-BOCAU","entity":"Bocau","domain":"bocau.es","emails":["bocau@bocau.es"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:17:11+02:00","evidence":"../outreach/2026-08-28-partners-round-02.json"},
+    {"entity_id":"ES-NAV-TUD-IAIBLUE","entity":"IAIblue","domain":"iaiblue.com","emails":["aitech@iaiblue.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T13:27:00+02:00","evidence":"../outreach/2026-08-28-partners-round-03.json"},
+    {"entity_id":"IT-PIE-TO-CRISANDCRIS","entity":"Crisandcris.net","domain":"crisandcris.net","emails":["recruiting@crisandcris.net"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T13:27:10+02:00","evidence":"../outreach/2026-08-28-partners-round-03.json"},
+    {"entity_id":"ES-CV-VLC-ANDREOLI","entity":"Andreoli Estudio","domain":"andreo.li","emails":["hello@andreo.li"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T13:27:19+02:00","evidence":"../outreach/2026-08-28-partners-round-03.json"},
+    {"entity_id":"IT-FVG-TS-MEDIAIMMAGINE","entity":"MEDIAIMMAGINE s.r.l.","domain":"mediaimmagine.it","emails":["frontoffice@mediaimmagine.it"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T13:27:29+02:00","evidence":"../outreach/2026-08-28-partners-round-03.json"},
+    {"entity_id":"ES-CAN-CBR-ZARPA","entity":"Zarpa","domain":"zarpa.net","emails":["info@zarpa.net"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T13:27:37+02:00","evidence":"../outreach/2026-08-28-partners-round-03.json"},
+    {"entity_id":"PROJECT-EU-EXCELY","entity":"EXCELY","domain":"umfcd.ro","emails":["brandusa.bitel@umfcd.ro"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:36:31+02:00","evidence":"Sent UID 78"},
+    {"entity_id":"PROJECT-EU-SENSORAMA","entity":"SENSORAMA","domain":"cs.uni-bremen.de","emails":["zach@cs.uni-bremen.de"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:36:37+02:00","evidence":"Sent UID 79"},
+    {"entity_id":"PROJECT-EU-REGENSOILL","entity":"REGENSOILL","domain":"us.edu.pl","emails":["agnieszka.a.nowak@us.edu.pl"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:36:44+02:00","evidence":"Sent UID 80"},
+    {"entity_id":"PROJECT-EU-SOILBIOMASS","entity":"SOILBIOMASS+","domain":"reading.ac.uk","emails":["jorge.camposgonzalez@reading.ac.uk"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:36:49+02:00","evidence":"Sent UID 81"},
+    {"entity_id":"PROJECT-EU-FIBRIX","entity":"FIBRIX","domain":"xamk.fi","emails":["kati.jordan@xamk.fi"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:36:55+02:00","evidence":"Sent UID 82"},
+    {"entity_id":"PROJECT-EU-BEYOND-BARRIERS","entity":"BEYOND BARRIERS","domain":"uio.no","emails":["rdbernab@uio.no","r.de.l.c.bernabe@medisin.uio.no"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:37:01+02:00","evidence":"Sent UID 83"}
+  ],
+  "coverage":{"current_campaign_first_contacts_backfilled":24,"historical_pre_crm_sent_history_check_required":true},
+  "bootstrap_note":"Current 2026-08-28 acquisition campaign is fully backfilled. Older pre-CRM commercial outreach remains protected by mandatory Sent/history checks until separately normalized."
+}

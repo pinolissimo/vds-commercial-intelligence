@@ -1,0 +1,15 @@
+{
+  "version":"1.0",
+  "timezone":"Europe/Madrid",
+  "updated_at":"2026-08-28T13:35:00+02:00",
+  "classes":{
+    "POSITIVE_REPLY":{"target":"same_business_day","owner":"USER","automation_reply_allowed":false,"severity_if_breached":"CRITICAL"},
+    "REFERRAL":{"target":"same_business_day","owner":"USER","automation_reply_allowed":false,"severity_if_breached":"CRITICAL"},
+    "PROPOSAL_REQUEST":{"target":"same_business_day","owner":"USER","automation_reply_allowed":false,"severity_if_breached":"CRITICAL"},
+    "REVIEW_REQUIRED":{"target":"same_business_day","owner":"USER","automation_reply_allowed":false,"severity_if_breached":"HIGH"},
+    "FIRST_FOLLOW_UP":{"target_business_days_after_first_contact":3,"owner":"AUTOMATION_OR_USER_BY_CONTEXT","severity_if_breached":"HIGH"},
+    "SECOND_FINAL_FOLLOW_UP":{"target_business_days_after_first_follow_up":7,"owner":"AUTOMATION_OR_USER_BY_CONTEXT","severity_if_breached":"NORMAL"},
+    "BOUNCE":{"target":"replacement_contact_before_resend","owner":"AUTOMATION_RESEARCH","severity_if_breached":"NORMAL"}
+  },
+  "rules":["SLA breaches appear before normal research in Next Best Action.","A reply always cancels pending no-response follow-ups.","No automated response to positive or ambiguous messages."]
+}

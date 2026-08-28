@@ -1,0 +1,16 @@
+{
+  "version":"1.0",
+  "updated_at":"2026-08-28T13:35:00+02:00",
+  "score_range":[0,100],
+  "components":{
+    "commercial_intent_status":{"max":25,"rules":{"POSITIVE_REPLY_USER_ACTION_REQUIRED":25,"MEETING":25,"PROPOSAL":25,"CONTACTED_ACTIVE_JOB":18,"CONTACTED_REFERRAL":22,"CONTACTED_STRUCTURAL_PARTNER":14,"READY_TO_CONTACT":10,"NURTURE":7,"LOST":0}},
+    "freshness":{"max":20,"mapping":{"CURRENT":20,"EVERGREEN":14,"TO_VERIFY":8,"STALE":4,"EXPIRED":0}},
+    "vds_fit":{"max":20,"formula":"round(vds_fit_score * 0.20)"},
+    "relationship_strength":{"max":15,"mapping":{"STRATEGIC":15,"ACTIVE":13,"WARM":10,"COLD":4,"NONE":0}},
+    "decision_maker_quality":{"max":10,"mapping":{"FINAL":10,"HIGH":8,"MEDIUM":5,"LOW":2,"UNKNOWN":0}},
+    "sla_actionability":{"max":10,"rules":{"OPEN_SAME_DAY_USER_ACTION":10,"ACTION_DUE_TODAY":8,"ACTION_DUE_SOON":5,"WAITING_VALID":3,"NONE":0}}
+  },
+  "penalties":{"SOURCE_EXPIRED":20,"HARD_BOUNCE_NO_REPLACEMENT":15,"TWO_FOLLOWUPS_NO_REPLY":18,"OPPORTUNITY_CLOSED":30,"STALE_OVER_30_DAYS":10,"NON_DECISIONAL_CONTACT_WITH_BETTER_CONTACT_AVAILABLE":5},
+  "classes":{"CRITICAL":{"min":85,"max":100},"HOT":{"min":70,"max":84},"WARM":{"min":50,"max":69},"COOL":{"min":30,"max":49},"DORMANT":{"min":0,"max":29}},
+  "principle":"Lead Health is dynamic and must be recalculated after material events; it never replaces evidence or status."
+}
