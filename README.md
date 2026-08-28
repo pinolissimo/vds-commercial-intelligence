@@ -5,11 +5,11 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **Standard:** VDS7 · precisione > volume · evidenza > inferenza · zero doppio first-contact
 
-**Ultimo aggiornamento:** 28 agosto 2026 · 21:59 Europe/Madrid  
+**Ultimo aggiornamento:** 28 agosto 2026 · 23:02 Europe/Madrid  
 **CRM:** v3 Revenue Operating System · dedicated repository  
 **Migrazione:** **IN PROGRESS — core + decision views + campaigns/reports migrated; canonical records progressing**  
 **Ricerca:** **SECOND DEEP PASS ACTIVE + FUNDED EU EARLY-PROJECT SCAN**  
-**QA:** **FAIL_CORRECTED — audit 20:58; containment e viste riallineate**
+**QA:** **FAIL_CORRECTED — containment attivo; dedup riconciliato nel nuovo scanner pass**
 
 ## 🎯 GOAL TODAY
 
@@ -23,53 +23,46 @@
 |---:|---|---|---|
 | **1** | **HANDLE_REFERRAL — BEYOND BARRIERS** | USER | **CRITICAL · SLA BREACHED** |
 | **2** | **RECONCILE_MAILBOX / SUPPRESSION** | AUTOMATION | **CRITICAL QA · BREACHED** |
-| **3** | **Studiart — Piacenza** | AUTOMATION | **SCORE 98 · HIGH FIT** |
-| **4** | **Vaivén Estudio — Galicia** | AUTOMATION | **SCORE 97 · HIGH FIT** |
-| **5** | **Dream Big Design — Milano** | AUTOMATION | **NEW · SCORE 96 · P.IVA NETWORK** |
-| **6** | **Daniele Debernardis — Basilicata** | AUTOMATION | **NEW · SCORE 96 · STRUCTURED COLLAB** |
-| 7 | Nexìbo | AUTOMATION | HIGH FIT |
-| 8 | WebGenova outsourcing route | AUTOMATION | HIGH FIT |
-| 9 | Second deep territorial pass | AUTOMATION | ACTIVE |
-| 10 | Verify WP/task/contact chain for early-funded EU watchlist | AUTOMATION | ACTIVE |
+| **3** | **ReMedia Italia — Roma/Remoto** | AUTOMATION | **NEW · SCORE 99 · VERY HIGH FIT** |
+| **4** | **Studiart — Piacenza** | AUTOMATION | **SCORE 98 · HIGH FIT** |
+| **5** | **Vaivén Estudio — Galicia** | AUTOMATION | **SCORE 97 · HIGH FIT** |
+| **6** | **Dream Big Design — Milano** | AUTOMATION | **SCORE 96 · P.IVA NETWORK** |
+| **7** | **Daniele Debernardis — Basilicata** | AUTOMATION | **SCORE 96 · STRUCTURED COLLAB** |
+| 8 | Nexìbo | AUTOMATION | HIGH FIT |
+| 9 | WebGenova outsourcing route | AUTOMATION | HIGH FIT |
+| 10 | Deep territorial pass + EU WP/task verification | AUTOMATION | ACTIVE |
 
-[Next Best Actions →](views/next-best-actions.json) · [Action Queue →](views/action-queue.json) · [Deep Research Queue →](views/deep-research-queue.json)
+[Next Best Actions →](views/next-best-actions.json) · [Deep Research Queue →](views/deep-research-queue.json)
+
+## 🆕 Nuovo lead qualificato — ReMedia Italia
+
+**ReMedia Italia SRL (Roma / remoto)** entra nel CRM come opportunità **READY_FOR_DAILY_OUTREACH_REVIEW**.
+
+La pagina careers ufficiale è particolarmente forte per VDS: ricerca immediata di **UI/UX Designer freelance P.IVA, Sviluppatore Web Full Stack, Back-End e Front-End**, con collaborazione da remoto, possibilità di continuità e crescita del volume di lavoro. Lo stack richiesto include HTML/CSS/JavaScript, WordPress, PHP/Laravel, MySQL, ACF e in più punti **GSAP/Figma**, con clienti nel settore scientifico, ricerca e aerospazio. Questo crea una sovrapposizione rara tra competenze tecniche VDS e esperienza su siti/progetti europei.
+
+[Opportunity →](opportunities/OPP-IT-REMEDIA-WEB-FREELANCE.json)
 
 ## 🗺️ Copertura territoriale
 
-**Broad pass completato su tutti i territori:** Italia **20/20 regioni**, Spagna **19/19 territori** (17 comunidades + Ceuta + Melilla).
+**Broad pass completato su tutti i territori:** Italia **20/20 regioni**, Spagna **19/19 territori**.
 
-Dopo il secondo deep pass:
-
-- Italia: **11/20 regioni** con almeno un lead qualificato; **18 account** con regione verificata.
+- Italia: **11/20 regioni** con almeno un lead qualificato; **19 account** con regione verificata.
 - Spagna: **9/19 territori** con almeno un lead qualificato; **12 account** con territorio verificato.
-- **Emilia-Romagna:** Studiart (Piacenza).
-- **Galicia:** Vaivén Estudio (Lugo).
-- **Basilicata:** nuovo lead qualificato **Daniele Debernardis (Senise, PZ)** — collaborazione strutturata esplicita con web designer/sviluppatori.
-- **Lombardia:** nuovo lead qualificato **Dream Big Design (Milano)** — network esplicito di freelance P.IVA per web design/programmazione/app.
 - Restano **19 territori** a zero e in ricerca approfondita.
+- Lazio sale a **3 lead qualificati** grazie a ReMedia Italia.
 
-[Regional Coverage →](views/regional-coverage.json) · [Scanner Log 21:59 →](research/2026-08-28-opportunity-scanner-2159.json)
-
-## 🔎 Metodo di ricerca potenziato
-
-Il secondo pass è strutturato su provincia/città e famiglie di query multiple: annunci freelance/contract, pagine ufficiali careers/collaboration, outsourcing/white-label/overflow, WordPress/frontend/UX/UI/web-app, communication/dissemination e pipeline locale separata senza sito.
-
-**Più volume di ricerca, non più spam.** Un'organizzazione entra nella pipeline solo con un motivo concreto e verificabile.
+[Regional Coverage →](views/regional-coverage.json) · [Scanner Log 23:02 →](research/2026-08-28-opportunity-scanner-2302.json)
 
 ## 🇪🇺 Early-funded EU watchlist
-
-Nuovo scan dedicato ai progetti europei con finanziamento già verificato e fase iniziale di esecuzione.
 
 | Metrica | Stato |
 |---|---:|
 | Progetti nella watchlist | **8** |
 | Costo totale verificato aggregato | **€47.540.155,46** |
-| Progetti già promossi a opportunity contattabile | **0** |
+| Progetti promossi a opportunity contattabile | **0** |
 | Regola | WP/task digitale + beneficiario responsabile + contact chain obbligatori |
 
-Prime priorità di verifica: **REMEDIES 5.0 (€16,75M)**, **ORIGINS (€4,99M)**, **ELEVATE (€4,41M)**, **LUMINA (€4,81M)**, **TWINE (€3,00M)**, **SYNERGIA (€5,77M)**, **BioValueAI (€5,38M)** e **Knowledge2Impact (€1,93M)**.
-
-Questi importi sono budget/costi di progetto verificati da CORDIS, **non budget web disponibili**. Nell'ultimo pass ORIGINS, REMEDIES 5.0 ed ELEVATE sono stati ricontrollati, ma nessuno è stato promosso: manca ancora una catena verificata `WP/task digitale → beneficiario responsabile → contatto`.
+ORIGINS, REMEDIES 5.0 ed ELEVATE sono stati nuovamente approfonditi. **ORIGINS** ha ora contatti partner pubblici aggiuntivi identificati presso VUB, ma nessuno dei tre viene promosso: manca ancora una catena verificata `WP/task digitale → beneficiario responsabile → contatto/procurement`.
 
 [Early-funded EU Watchlist →](eu-projects/early-funded-watchlist-2026-08-28.json)
 
@@ -77,21 +70,25 @@ Questi importi sono budget/costi di progetto verificati da CORDIS, **non budget 
 
 | Metrica | Valore |
 |---|---:|
-| Partner qualificati canonici Italia/Spagna | **32** |
-| Opportunity canoniche complessive | **38** |
+| Partner qualificati canonici Italia/Spagna | **33** |
+| Opportunity canoniche complessive | **39** |
 | Opportunity con first contact canonico verificato | **24** |
-| Opportunity qualificate non ancora contattate | **14** |
+| Opportunity qualificate non ancora contattate | **15** |
 | First-contact-style send events reali oggi in Sent | **36** |
 | Organizzazioni/destinatari unici first-contacted oggi | **34** |
-| Destinatari post-snapshot ancora da canonicalizzare | **10** |
-| Duplicate first-contact violations rilevate | **2** |
 | Positive reply / referral qualificato | **1** |
 | Meeting | **0** |
 | Proposte | **0** |
 | Contratti vinti | **0** |
 | Revenue vinta | **€0** |
 
-**Ultima evidenza Sent riconciliata:** UID **115**, `office@bscwebdesign.com`, 28 agosto 2026 19:05 Europe/Madrid. Il destinatario è in emergency suppression fino a canonicalizzazione completa.
+## 🛡️ Dedup / qualità
+
+Il nuovo pass ha riscoperto anche **Crisandcris** e **Apiceweb**, entrambe con opportunità freelance reali e ancora visibili. Il controllo sul CRM attivo ha però mostrato che erano **già CONTACTED**. Le registrazioni duplicate temporaneamente create durante la ricerca sono state rimosse e **nessuna nuova azione di first-contact è stata mantenuta**.
+
+Questo pass quindi aggiunge **1 solo lead netto reale: ReMedia Italia**, invece di gonfiare artificialmente il database con 3 nomi.
+
+Qualsiasi nuovo primo contatto resta soggetto a QG-01..QG-12, primary suppression, emergency suppression e verifica dello storico Sent.
 
 ## 🔴 BEYOND BARRIERS
 
@@ -102,41 +99,19 @@ Referral positivo verso due figure Communication & Dissemination.
 - SLA: **BREACHED**
 - Automazione risposta: **FORBIDDEN**
 
-[Opportunity →](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json) · [Referral log →](replies/2026-08-28-beyond-barriers-referral.json)
-
-## 🛡️ Anti-duplicate / Quality Gates
-
-Qualsiasi nuovo primo contatto deve superare QG-01..QG-12 e controllare **primary suppression + emergency suppression + historical Sent/outreach**.
-
-- Due violazioni storiche restano preservate come evidenza: **Persuadis** e **Marmellata Lab**.
-- **10** destinatari unici post-snapshot sono bloccati da emergency suppression finché non vengono canonicalizzati.
-- `BATMAN / nobody@knows.us` resta `REVIEW_REQUIRED`.
-- Il nuovo scanner ha qualificato due opportunità ma **non ha inviato né sottoposto nulla**.
-
-[Primary Suppression →](governance/suppression-registry.json) · [Emergency Suppression →](governance/suppression-emergency-2026-08-28.json) · [Quality Gates →](governance/OUTREACH_QUALITY_GATES.md)
+[Opportunity →](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json)
 
 ## 🧠 Decision Engine v3
 
 [Lead Health →](views/lead-health.json) · [Commercial SLA →](views/commercial-sla.json) · [Economics →](views/pipeline-economics.json) · [Funnel →](views/funnel.json)
 
-- Lead Health BEYOND BARRIERS: **92 / CRITICAL**, ricostruibile dal modello.
 - Probability model: **UNCALIBRATED**.
 - Weighted pipeline: **null**.
 - Nessun valore economico inventato.
 
 ## 🏪 Local businesses senza sito
 
-Pipeline separata e quality-gated. Attualmente **0** prospect hanno superato la verifica multi-source completa; nessun cold outreach locale viene auto-inviato senza contesto appropriato.
-
-[Local No-Website Index →](local-no-website/master-index.json)
-
-## 🚚 Migrazione repository
-
-La separazione definitiva verso `pinolissimo/vds-commercial-intelligence` è attiva. `pinolissimo/eu-funding-observatory` main non contiene il CRM commerciale. La branch temporanea `commercial-intelligence` dell'Observatory resta solo come sorgente di migrazione/storico fino a parity completa.
-
-La migrazione dei record canonici company/opportunity è ancora **IN_PROGRESS**; non viene dichiarata parity finché i record storici mancanti non sono stati trasferiti e verificati.
-
-[MIGRATION STATUS →](MIGRATION_STATUS.json)
+Pipeline separata e quality-gated. Attualmente **0** prospect hanno superato la verifica multi-source completa.
 
 ## Principio operativo
 
