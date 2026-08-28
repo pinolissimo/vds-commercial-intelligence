@@ -5,10 +5,10 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **Standard:** VDS7 · precisione > volume · evidenza > inferenza · zero doppio first-contact
 
-**Ultimo aggiornamento:** 28 agosto 2026 · 20:58 Europe/Madrid  
+**Ultimo aggiornamento:** 28 agosto 2026 · 21:53 Europe/Madrid  
 **CRM:** v3 Revenue Operating System · dedicated repository  
 **Migrazione:** **IN PROGRESS — core + decision views + campaigns/reports migrated; canonical records progressing**  
-**Ricerca:** **SECOND DEEP PASS ACTIVE**  
+**Ricerca:** **SECOND DEEP PASS ACTIVE + FUNDED EU EARLY-PROJECT SCAN**  
 **QA:** **FAIL_CORRECTED — audit 20:58; containment e viste riallineate**
 
 ## 🎯 GOAL TODAY
@@ -28,6 +28,7 @@
 | 5 | Nexìbo | AUTOMATION | HIGH FIT |
 | 6 | WebGenova outsourcing route | AUTOMATION | HIGH FIT |
 | 7 | Second deep territorial pass | AUTOMATION | ACTIVE |
+| 8 | Verify WP/task/contact chain for early-funded EU watchlist | AUTOMATION | ACTIVE |
 
 [Next Best Actions →](views/next-best-actions.json) · [Action Queue →](views/action-queue.json) · [Deep Research Queue →](views/deep-research-queue.json)
 
@@ -50,6 +51,23 @@ Dopo il secondo deep pass:
 Il secondo pass è strutturato su provincia/città e famiglie di query multiple: annunci freelance/contract, pagine ufficiali careers/collaboration, outsourcing/white-label/overflow, WordPress/frontend/UX/UI/web-app, communication/dissemination e pipeline locale separata senza sito.
 
 **Più volume di ricerca, non più spam.** Un'organizzazione entra nella pipeline solo con un motivo concreto e verificabile.
+
+## 🇪🇺 Early-funded EU watchlist
+
+Nuovo scan dedicato ai progetti europei con finanziamento già verificato e fase iniziale di esecuzione.
+
+| Metrica | Stato |
+|---|---:|
+| Progetti nella watchlist | **8** |
+| Costo totale verificato aggregato | **€47.540.155,46** |
+| Progetti già promossi a opportunity contattabile | **0** |
+| Regola | WP/task digitale + beneficiario responsabile + contact chain obbligatori |
+
+Prime priorità di verifica: **REMEDIES 5.0 (€16,75M)**, **ORIGINS (€4,99M)**, **ELEVATE (€4,41M)**, **LUMINA (€4,81M)**, **TWINE (€3,00M)**, **SYNERGIA (€5,77M)**, **BioValueAI (€5,38M)** e **Knowledge2Impact (€1,93M)**.
+
+Questi importi sono budget/costi di progetto verificati da CORDIS, **non budget web disponibili**. Nessun progetto viene contattato finché il bisogno digitale e il responsabile reale non sono verificati.
+
+[Early-funded EU Watchlist →](eu-projects/early-funded-watchlist-2026-08-28.json)
 
 ## 📬 Stato CRM verificato
 
