@@ -4,11 +4,11 @@
   "type": "object",
   "required": ["schema_version", "id", "company_id", "title", "type", "campaign_id", "status", "detected_at", "last_verified_at", "freshness", "economics", "next_action"],
   "properties": {
-    "schema_version": {"enum":["1.0","2.0"]},
+    "schema_version": {"enum":["1.0","2.0","3.0"]},
     "id": {"type":"string"},
     "company_id": {"type":["string","null"]},
     "title": {"type":"string"},
-    "type": {"enum":["ACTIVE_JOB","STRUCTURAL_PARTNERSHIP","EU_PROJECT","OUTSOURCING","WHITE_LABEL","LOCAL_NO_WEBSITE","COLD_PROSPECT","OTHER"]},
+    "type": {"enum":["ACTIVE_JOB","ACTIVE_JOB_OR_STRUCTURAL_COLLABORATION","ACTIVE_FREELANCE_COLLABORATION","STRUCTURAL_PARTNERSHIP","EU_PROJECT","OUTSOURCING","WHITE_LABEL","LOCAL_NO_WEBSITE","COLD_PROSPECT","OTHER"]},
     "campaign_id": {"type":["string","null"]},
     "status": {"type":"string"},
     "detected_at": {"type":"string"},
