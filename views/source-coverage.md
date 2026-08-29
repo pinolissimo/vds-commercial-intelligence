@@ -31,11 +31,13 @@
 
 ## Latest material territory × source hit
 
+- **2026-08-29 · Cantabria × AGENCY/OUTSOURCING + OFFICIAL_COMPANY:** Cantabria Web Design promoted after the official legal page explicitly offered subcontracting to competing companies, the official site verified active WordPress/web/ecommerce/maintenance operations and public routes, and LinkedIn independently corroborated owner identity/location/services. Source Confidence Score **94 / STRONG_MULTI_SOURCE**. This is one commercial need lineage, not three discoveries.
+- Source-yield delta for the 17:00 pass: `AGENCY_OUTSOURCING: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged. Search-router hits are not counted as final evidence.
 - **2026-08-29 · Andalucía × PROCUREMENT:** Autoridad Portuaria de Sevilla expediente `CONT26053` promoted to qualified after official PLACSP verification plus independent specialist/open-data corroboration. Current deadline: **2026-09-14 10:00**; base tender **€45,500 excl. VAT**, estimated value **€105,500**, initial **24-month** scope. Source Confidence Score **96 / STRONG_MULTI_SOURCE**.
-- Source-yield delta for this pass: `PROCUREMENT: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged.
+- Source-yield delta for that pass: `PROCUREMENT: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged.
 - **2026-08-29 · Canarias × PROCUREMENT:** Los Realejos expediente `2026/9564` promoted to qualified after institutional PLACSP verification plus independent specialist corroboration. Current deadline: **2026-09-10 23:59**; published base budget **€73,333.33 excl. VAT**, estimated contract value **€148,000**, 2-year scope.
 - **2026-08-29 · Castilla y León × PROCUREMENT:** ProBurgos expediente `C16.2026` promoted to qualified after institutional PLACSP verification plus independent tender-index corroboration. Current deadline: **2026-09-04 15:00**. Evidence lineage is kept distinct; mirrors are not double-counted as separate need events.
-- Do not immediately repeat freshly scanned procurement queries for Andalucía, Canarias or Castilla y León without a new signal or freshness change; rotate to under-covered source families/territories.
+- Do not immediately repeat freshly scanned procurement queries for Andalucía, Canarias or Castilla y León without a new signal or freshness change; rotate to under-covered source families/territories. Aragón's historical procurement result was checked and rejected as already resolved.
 
 ## Quality rules
 
