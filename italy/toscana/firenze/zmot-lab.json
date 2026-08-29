@@ -14,12 +14,15 @@
   "source_intelligence":{"class":"PRIMARY_OFFICIAL_LIVE_VERIFIED","primary_identity":"VERIFIED_T1_PRIMARY","need_freshness":"VERIFIED_CURRENT_OFFICIAL_PAGE","contact_route":"VERIFIED_OFFICIAL_EMAIL","conflict_status":"NONE"},
   "freshness":{"first_seen_at":"2026-08-29","last_verified_at":"2026-08-29","opportunity_published_at":null,"expires_at":null,"freshness_score":100,"source_status":"CURRENT_OFFICIAL"},
   "economics":{"currency":"EUR","estimated_value_low":null,"estimated_value_high":null,"probability_pct":null,"weighted_value":null,"recurring_potential":"HIGH","estimate_confidence":"NONE"},
-  "opportunities":["OPP-IT-ZMOTLAB-SENIOR-PIVA"],
+  "opportunities":[],
   "campaign_ids":["AGENCY-OUTSOURCING-IT"],
-  "status":"READY_FOR_DAILY_OUTREACH_REVIEW",
+  "status":"REVIEW_REQUIRED",
   "outreach":[],
-  "timeline":[{"event_id":"LEAD-IT-TOS-FI-ZMOTLAB-EV001","timestamp":"2026-08-29T19:15:00+02:00","type":"QUALIFIED","channel":"web","actor":"COMMERCIAL_CORE","previous_status":"RESEARCH","new_status":"READY_FOR_DAILY_OUTREACH_REVIEW","outcome":"Qualified by deterministic live Commercial Core benchmark; repository, suppression, Gmail Sent and official VDS Sent duplicate gates clear. No outreach performed.","evidence":"https://zmotlab.it/lavora-con-noi/sviluppatore-senior/"}],
-  "next_action":{"action":"DAILY_OUTREACH_REVIEW","reason":"Current official external P.IVA collaboration with direct WordPress/WooCommerce fit and verified application route.","due_at":null,"owner":"DAILY_PARTNER_HUNT","priority":"HIGH","expected_commercial_impact":"HIGH","confidence":"HIGH"},
-  "notes":["No outreach performed by Commercial Core.","Global duplicate gate clear immediately before CRM creation: no canonical CRM identity, primary/emergency suppression entry, Gmail Sent match or official Hostinger VDS Sent match.","No guessed email; team@zmotlab.it is published on the official page."],
+  "timeline":[
+    {"event_id":"LEAD-IT-TOS-FI-ZMOTLAB-EV001","timestamp":"2026-08-29T19:15:00+02:00","type":"QUALIFIED","channel":"web","actor":"COMMERCIAL_CORE","previous_status":"RESEARCH","new_status":"READY_FOR_DAILY_OUTREACH_REVIEW","outcome":"Qualified by deterministic live Commercial Core benchmark; repository, suppression, Gmail Sent and official VDS Sent duplicate gates clear. No outreach performed.","evidence":"https://zmotlab.it/lavora-con-noi/sviluppatore-senior/"},
+    {"event_id":"LEAD-IT-TOS-FI-ZMOTLAB-EV002","timestamp":"2026-08-29T20:03:49+02:00","type":"QA_CORRECTION","channel":"github","actor":"VDS7_QA","previous_status":"READY_FOR_DAILY_OUTREACH_REVIEW","new_status":"REVIEW_REQUIRED","outcome":"Preventive transition gate failed: record referenced OPP-IT-ZMOTLAB-SENIOR-PIVA but no canonical opportunity record exists on main. Outreach blocked until canonical opportunity/reference parity is created and re-audited.","evidence":"QA delta audit 2026-08-29 20:03 Europe/Madrid"}
+  ],
+  "next_action":{"action":"CREATE_AND_VALIDATE_CANONICAL_OPPORTUNITY","reason":"Lead evidence is strong but the referenced canonical opportunity was absent from main; READY/FIRST_CONTACT is blocked until reference consistency is restored.","due_at":null,"owner":"COMMERCIAL_CORE","priority":"CRITICAL","expected_commercial_impact":"HIGH","confidence":"HIGH"},
+  "notes":["No outreach performed by Commercial Core.","Global duplicate gate was reported clear immediately before CRM creation.","No guessed email; team@zmotlab.it is published on the official page.","QA 20:03: orphan opportunity reference removed from active references; historical event preserved append-only; status blocked as REVIEW_REQUIRED."],
   "last_verified_at":"2026-08-29"
 }
