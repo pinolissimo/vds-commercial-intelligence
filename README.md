@@ -4,9 +4,9 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 15:00 Europe/Madrid  
+**Data snapshot:** 29 agosto 2026 · 16:00 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** `LOS REALEJOS 2026/9564 QUALIFIED · RESEARCH-ONLY PASS`  
+**Research:** `AUTORIDAD PORTUARIA DE SEVILLA CONT26053 QUALIFIED · RESEARCH-ONLY PASS`  
 **QA:** `FAIL_CORRECTED · containment active for older reconciliation`
 
 ---
@@ -15,9 +15,9 @@
 
 | Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|
-| **54** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
+| **55** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **27** · **pipeline activation: 50.0%**.
+**Qualified not contacted:** **28** · **pipeline activation: 49.1%**.
 
 > Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
@@ -29,6 +29,11 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 ---
 
 ## 🆕 Ricerca qualificata — 29 agosto
+
+### Autoridad Portuaria de Sevilla — Andalucía
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH/BID PERFORMED.** L'expediente **CONT26053** riguarda manutenzione, supporto tecnico ed evoluzione della pagina web corporativa del Puerto de Sevilla e del Portal de Transparencia. Pubblicato il **14 luglio 2026**, resta aperto fino al **14 settembre 2026 alle 10:00**; durata iniziale **24 mesi**, base di gara **€45.500 + IVA**, valore stimato **€105.500**. Lo scope include manutenzione correttiva, adattiva, perfettiva ed evolutiva, accessibilità e supporto: fit VDS molto elevato. Il gate multi-source è superato con **PLACSP istituzionale + corroborazione indipendente**, SCS **96 / STRONG_MULTI_SOURCE**, route elettronica ufficiale e duplicate/Sent check pulito. Prima di qualsiasi offerta vanno verificati PCAP/PPT, solvibilità, referenze/personale richiesti e formalità di partecipazione.
+
+[Opportunity →](opportunities/OPP-ES-APS-SEVILLA-WEB-MAINTENANCE-TENDER-2026.json)
 
 ### Ayuntamiento de Los Realejos — Canarias
 **QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH/BID PERFORMED.** L'expediente pubblico **2026/9564** richiede sviluppo, hosting e manutenzione del portale web municipale. Pubblicato il **26 agosto 2026**, resta aperto fino al **10 settembre 2026 alle 23:59**; durata pubblicata **2 anni**, budget base **€73.333,33 + IVA** e valore stimato **€148.000**. La qualificazione supera il gate multi-source con **PLACSP istituzionale + corroborazione specialistica indipendente**, route elettronica ufficiale e duplicate/Sent check pulito. Prima di qualsiasi futura offerta va verificata l'effettiva solvibilità VDS rispetto a PCAP/PPT.
@@ -70,9 +75,9 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 | Stage | Volume | Stato |
 |---|---:|---|
-| Opportunity canoniche | **54** | 100% |
-| First contact verificati | **27** | **50.0%** |
-| Qualificate non contattate | **27** | **50.0%** |
+| Opportunity canoniche | **55** | 100% |
+| First contact verificati | **27** | **49.1%** |
+| Qualificate non contattate | **28** | **50.9%** |
 | Reply thread | **1** | existing |
 | Positive reply / referral | **1** | USER ACTION REQUIRED |
 | Meeting | **0** | — |
@@ -86,7 +91,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 | Workstream | Pipeline | Stato |
 |---|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs / Procurement** | **48 active opportunities** | **Los Realejos + ProBurgos qualified public procurement; other qualified routes remain gated** |
+| 🤝 **Collaborations / Jobs / Procurement** | **49 active opportunities** | **Sevilla + Los Realejos + ProBurgos qualified public procurement; other qualified routes remain gated** |
 
 ---
 
@@ -96,9 +101,10 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
 3. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT solvency + lot fit before **04/09/2026 15:00**; no bid action by scanner.
 4. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT solvency + technical/operational fit before **10/09/2026 23:59**; no bid action by scanner.
-5. 🔥 **Grownnectia** — verify exact current P.IVA application route before any send.
-6. 🔥 **Visioni — Palermo** — verify official recipient route and global dedup.
-7. 🔥 **Mucui / Mindrift / Mobyleshop / Aderen / Robert Half Contracting** — continue gated review through verified routes.
+5. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT solvency, technical references/personnel and submission requirements before **14/09/2026 10:00**; no bid action by scanner.
+6. 🔥 **Grownnectia** — verify exact current P.IVA application route before any send.
+7. 🔥 **Visioni — Palermo** — verify official recipient route and global dedup.
+8. 🔥 **Mucui / Mindrift / Mobyleshop / Aderen / Robert Half Contracting** — continue gated review through verified routes.
 
 Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
@@ -107,9 +113,9 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🗺️ Coverage commerciale
 
 - 🇮🇹 Italia: **15/20** territori qualified, **24** verified accounts.
-- 🇪🇸 Spagna: **13/19** territori qualified, **19** verified territorial accounts + remote/geography-to-verify pool.
-- **11 territori** remain zero-result / under deep research.
-- **Canarias** entra nel qualified track tramite Los Realejos; il procurement conferma rendimento elevato come source-family ma non va ripetuto subito con query fresche immutate.
+- 🇪🇸 Spagna: **14/19** territori qualified, **20** verified territorial accounts + remote/geography-to-verify pool.
+- **10 territori** remain zero-result / under deep research.
+- **Andalucía** entra nel qualified track tramite Autoridad Portuaria de Sevilla; il procurement continua a mostrare rendimento elevato, ma le query appena eseguite non vanno ripetute senza nuovo segnale.
 
 ---
 
@@ -123,9 +129,10 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🛡️ Safety / QA
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
+- Autoridad Portuaria de Sevilla CONT26053 duplicate/Sent check: **CLEAR** at qualification time; route is official public procurement, but bid eligibility still requires PCAP/PPT review.
 - Los Realejos duplicate/Sent check: **CLEAR** at qualification time; route is official public procurement, but bid eligibility still requires PCAP/PPT review.
 - ProBurgos duplicate/Sent check: **CLEAR** at qualification time; route is official public procurement, but bid eligibility still requires PCAP/PPT review.
-- **No Los Realejos or ProBurgos outreach, application, bid or form submission was performed by the research scanner.**
+- **No Sevilla, Los Realejos or ProBurgos outreach, application, bid or form submission was performed by the research scanner.**
 - Mediaimmagine remains **CONTACTED** after the duplicate-path correction from the 13:58 QA pass.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
 - Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
