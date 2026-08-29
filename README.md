@@ -4,9 +4,9 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 22:03 Europe/Madrid  
+**Data snapshot:** 29 agosto 2026 · 23:00 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** `DIPUTACIÓ DE BARCELONA WEB PROCUREMENT QUALIFIED · CATALUNYA · RESEARCH-ONLY PASS`  
+**Research:** `EVO SISTEMI STRUCTURAL COLLABORATION QUALIFIED · UMBRIA · RESEARCH-ONLY PASS`  
 **QA:** `PASS WITH RESIDUAL · older reconciliation still open`
 
 ---
@@ -15,9 +15,9 @@
 
 | Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|
-| **65** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
+| **66** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **38** · **pipeline activation: 41.5%**.
+**Qualified not contacted:** **39** · **pipeline activation: 40.9%**.
 
 > Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
@@ -29,6 +29,11 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 ---
 
 ## 🆕 Ricerca qualificata — 29 agosto
+
+### Evo Sistemi — Corciano / Perugia, Umbria
+**QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** La pagina ufficiale corrente `Lavora con noi` invita esplicitamente collaboratori su web design/development, UX, cybersecurity, AI, automazioni, analytics e performance web. Il sito ufficiale conferma WordPress/WooCommerce, custom web, security, CRM/API, AI e manutenzione e dichiara l'uso di collaboratori selezionati sui progetti più ampi. Identità del founder Simone Cirone, geografia Perugia e profilo servizi sono corroborati indipendentemente da LinkedIn. Gate multi-source **SCS 94 / STRONG_MULTI_SOURCE**, **Revenue Priority 98**. Repository, suppression primaria/emergenza e Gmail Sent puliti; nessuna email inventata e nessun form/call/WhatsApp eseguito.
+
+[Opportunity →](opportunities/OPP-IT-EVOSISTEMI-DIGITAL-COLLAB.json)
 
 ### Diputació de Barcelona — Catalunya
 **QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID/OUTREACH PERFORMED.** Expediente **2025/0041420** per analisi, adattamento grafico e maquetació del sito della Direcció de Serveis de Formació. Pubblicato **27 agosto 2026**, deadline **8 ottobre 2026 14:00**, valore stimato/base **€20.000 + IVA**, durata **5 mesi**, CPV 72413000 + 79822500. Gate multi-source **SCS 95 / STRONG_MULTI_SOURCE**: pubblicazione ufficiale della Plataforma de Serveis de Contractació Pública de Catalunya + corroborazione indipendente specialistica. Repository e Gmail Sent puliti; prima di qualsiasi partecipazione devono essere verificati PCAP/PPT, solvibilità, referenze/personale, registri e formalità elettroniche.
@@ -110,9 +115,9 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 | Stage | Volume | Stato |
 |---|---:|---|
-| Opportunity canoniche | **65** | 100% |
-| First contact verificati | **27** | **41.5%** |
-| Qualificate non contattate | **38** | **58.5%** |
+| Opportunity canoniche | **66** | 100% |
+| First contact verificati | **27** | **40.9%** |
+| Qualificate non contattate | **39** | **59.1%** |
 | Reply thread | **1** | existing |
 | Positive reply / referral | **1** | USER ACTION REQUIRED |
 | Meeting | **0** | — |
@@ -126,7 +131,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 | Workstream | Pipeline | Stato |
 |---|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs / Procurement** | **59 active/canonical opportunities** | includes latest Commercial Core promotions + Diputació de Barcelona 2025/0041420; all unsent routes remain gated |
+| 🤝 **Collaborations / Jobs / Procurement** | **60 active/canonical opportunities** | includes Evo Sistemi HOT+ plus latest procurement/Commercial Core promotions; all unsent routes remain gated |
 
 ---
 
@@ -136,12 +141,12 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
 3. 🔥 **ABAQUA SE/2026/11** — verify PCAP/PPT and tender eligibility before **03/09/2026 19:00**.
 4. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT before **04/09/2026 15:00**.
-5. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT before **10/09/2026 23:59**.
-6. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT before **14/09/2026 10:00**.
-7. 🔥 **Diputació de Barcelona 2025/0041420** — verify PCAP/PPT, solvency and electronic-submission eligibility before **08/10/2026 14:00**.
-8. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
-9. 🔥 **CyberOptik** — verify cross-border/contract eligibility before the official route.
-10. 🔥 **Digityze / Mobyleshop / Aderen** — review verified official/application routes.
+5. 🔥 **Evo Sistemi** — HOT+ structural collaboration; daily outreach review through verified official route only.
+6. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT before **10/09/2026 23:59**.
+7. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT before **14/09/2026 10:00**.
+8. 🔥 **Diputació de Barcelona 2025/0041420** — verify PCAP/PPT, solvency and electronic-submission eligibility before **08/10/2026 14:00**.
+9. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
+10. 🔥 **CyberOptik / Digityze / Mobyleshop / Aderen** — review verified official/application routes and eligibility.
 
 Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
@@ -149,10 +154,10 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
 ## 🗺️ Coverage commerciale
 
-- 🇮🇹 Italia: **15/20** territori con almeno un account qualificato, **29** account con regione verificata + 1 remote/geography-to-verify.
+- 🇮🇹 Italia: **16/20** territori con almeno un account qualificato, **30** account con regione verificata + 1 remote/geography-to-verify.
 - 🇪🇸 Spagna: **15/19** territori con almeno un account qualificato, **24** account con territorio verificato + 2 remote/geography-to-verify.
 - Zero-result territories with incomplete source-family coverage remain **UNDER_SEARCHED**, not low-opportunity.
-- Latest exploration also covered Castilla-La Mancha, Extremadura, Ceuta and Melilla without forcing weak/stale results into the CRM.
+- Latest exploration: País Vasco agency/outsourcing ecosystems scanned without forcing seller-side/weak evidence; next priority rotates to Molise, Trentino-Alto Adige/Südtirol and Valle d'Aosta.
 
 ---
 
@@ -166,8 +171,8 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🛡️ Safety / QA
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
-- Diputació de Barcelona duplicate gate: **CLEAR** su repository canonico e Gmail Sent; route solo ufficiale di procurement, nessuna email inventata.
-- **No Diputació de Barcelona outreach, application, form or bid submission was performed by the research scanner.**
+- Evo Sistemi duplicate gate: **CLEAR** su repository canonico, suppression primaria/emergenza e Gmail Sent; route e contatti solo ufficiali, nessuna email inventata.
+- **No Evo Sistemi outreach, application, form, WhatsApp or call action was performed by the research scanner.**
 - SANDETEL `EXPT26-00017`: **REVIEW_REQUIRED / NOT PROMOTED** per conflitto fra fonti correnti su deadline/valore.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
 - Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
