@@ -10,12 +10,12 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 |---|---|---|---:|---:|---:|---:|---|---|
 | Abruzzo | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Basilicata | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
-| Calabria | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Calabria | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | continue only on new collaboration signal |
 | Campania | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Emilia-Romagna | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
-| Friuli-Venezia Giulia | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Friuli-Venezia Giulia | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | daily outreach review for canonical Mediaimmagine opportunity; continue round-robin discovery |
 | Lazio | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
-| Liguria | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Liguria | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | continue only on explicit external-capacity signal |
 | Lombardia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Marche | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Molise | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
