@@ -4,8 +4,8 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 01:58 Europe/Madrid  
-**Research:** `RECURSIVE SECOND DEEP PASS + FUNDED EU EARLY-PROJECT SCAN`  
+**Data snapshot:** 29 agosto 2026 · 03:05 Europe/Madrid  
+**Research:** `RESOURCE-OPTIMIZED RECURSIVE PASS · EU WATCHLIST DEEPENING`  
 **Scanner outreach:** **0 — research/qualification only**
 
 ---
@@ -55,7 +55,13 @@ Segnale più forte: **BEYOND BARRIERS → referral positivo a due figure Communi
 | 🤝 **Collaborations / Jobs** | **38 active freelance / outsourcing opportunities** | **18 canonical partner accounts** | **20 qualified not contacted** | **0** | 🟢 **Alta capacità di attivazione** |
 
 ### 🇪🇺 Early-funded EU watch
-Progetti in riesame con partenza **1 settembre 2026**: **NAVI**, **SENSORAMA**, **HUBS4BUILD**. Nessuna promozione automatica a contattabile finché non è verificata la catena:
+Watchlist canonica ora sincronizzata su **11 progetti finanziati/early-stage**. Focus immediato sui progetti con partenza **1 settembre 2026**.
+
+- **SENSORAMA (101297303):** finanziamento e coordinatore **Universität Bremen** verificati; CORDIS dichiara esplicitamente **8 WP, incluso dissemination**. Stato: `MONITOR_FOR_TRIGGER` perché mancano ancora owner del WP, contatto responsabile e un deliverable/procurement web-digitale esplicito.
+- **NAVI (101298581):** finanziamento, start e coordinatore **IDENER R&D AIE** verificati; resta da ricostruire `communication/dissemination WP → owner → project-site/procurement path`.
+- **HUBS4BUILD (101291180):** finanziamento/start e coordinatore **University of Thessaly** verificati; Circularity Hubs + Replicators Network rendono il bisogno digitale plausibile ma ancora non sufficiente per una promozione commerciale.
+
+Nessun progetto viene promosso a contattabile finché non è verificata la catena:
 
 `digital WP/task → beneficiary owner → contact/procurement path`
 
@@ -80,12 +86,9 @@ Progetti in riesame con partenza **1 settembre 2026**: **NAVI**, **SENSORAMA**, 
 
 ## 🆕 Lead ad alto potenziale — ultimo pass
 
-| Lead | Segnale | Stato |
-|---|---|---|
-| **Grownnectia Srl — Roma** | P.IVA continuativa; hosting/domains/DNS/mail, WordPress via codice, WooCommerce, software | **READY_FOR_DAILY_OUTREACH_REVIEW · 99** |
-| **DNA Agency SRLS — Napoli** | Web Developer & WordPress Specialist Freelance/P.IVA; collaborazione stabile e duratura | **READY_FOR_DAILY_OUTREACH_REVIEW · 97** |
+Nessun nuovo lead collaboration è stato promosso nel pass 03:05: i risultati aggiuntivi non hanno superato i gate `verified organization identity + current buyer demand + VDS fit`.
 
-[Grownnectia →](opportunities/OPP-IT-GROWNNECTIA-WP-INFRA-FREELANCE.json) · [DNA Agency →](opportunities/OPP-IT-DNAAGENCY-WP-FREELANCE.json)
+L'avanzamento materiale del pass è sul workstream EU: **SENSORAMA** passa da semplice funded candidate a progetto con **dissemination WP verificato**, ma resta correttamente non contattabile finché non viene identificata la responsabilità operativa e una necessità web/digital esplicita.
 
 ---
 
