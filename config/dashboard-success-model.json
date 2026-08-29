@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "status": "OPERATIONAL_UNCALIBRATED",
+  "purpose": "Provide GitHub dashboard indicators without presenting uncalibrated priors as empirical forecasts.",
+  "success_index": {
+    "type": "OPERATING_INDEX_NOT_PROBABILITY",
+    "scale": "0-100",
+    "components": {
+      "qualified_pipeline_supply": {
+        "weight": 25,
+        "formula": "min(qualified_not_contacted / 20, 1) * 25"
+      },
+      "outreach_activation": {
+        "weight": 20,
+        "formula": "contacted / total_canonical_opportunities * 20"
+      },
+      "positive_commercial_signal": {
+        "weight": 20,
+        "formula": "min(positive_replies / 1, 1) * 20"
+      },
+      "funnel_depth": {
+        "weight": 20,
+        "stage_points": {
+          "NO_REPLY": 0,
+          "POSITIVE_REPLY": 10,
+          "MEETING": 15,
+          "PROPOSAL": 18,
+          "WON": 20
+        },
+        "formula": "points for highest verified downstream stage"
+      },
+      "qa_integrity": {
+        "weight": 15,
+        "rules": {
+          "CLEAN": 15,
+          "CORRECTED_WITH_NO_OPEN_CRITICAL_RECONCILIATION": 10,
+          "OPEN_CRITICAL_RECONCILIATION_OR_HISTORICAL_DUPLICATE_RISK_UNDER_HARD_BLOCK": 5,
+          "ACTIVE_UNBLOCKED_DUPLICATE_RISK": 0
+        }
+      }
+    }
+  },
+  "new_client_probability_proxy": {
+    "type": "UNCALIBRATED_OPERATIONAL_PIPELINE_PROXY",
+    "source_priors": "probability-calibration.json",
+    "formula": "1 - product(1 - stage_operational_prior) over mutually exclusive active opportunity stages",
+    "assumptions": [
+      "Uses operational priors only, not empirical calibrated probabilities.",
+      "Uses an independence approximation across active opportunities.",
+      "Must be labelled UNCALIBRATED and LOW confidence until minimum samples are met.",
+      "Must never be used for weighted revenue pipeline unless calibrated probability and monetary value both exist."
+    ],
+    "display_rule": "Show as percentage with an explicit UNCALIBRATED / LOW CONFIDENCE warning."
+  }
+}
