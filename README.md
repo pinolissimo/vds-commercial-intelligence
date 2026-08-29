@@ -4,9 +4,9 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 12:01 Europe/Madrid  
+**Data snapshot:** 29 agosto 2026 · 14:03 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** `MUCUI QUALIFIED · RESEARCH-ONLY PASS`  
+**Research:** `PROBURGOS C16.2026 QUALIFIED · RESEARCH-ONLY PASS`  
 **QA:** `FAIL_CORRECTED · containment active for older reconciliation`
 
 ---
@@ -15,9 +15,9 @@
 
 | Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|
-| **51** | **26** | **1 referral positivo** | **0** | **0** | **€0** |
+| **53** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **25** · **pipeline activation: 51.0%**.
+**Qualified not contacted:** **26** · **pipeline activation: 50.9%**.
 
 > Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
@@ -29,6 +29,11 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 ---
 
 ## 🆕 Ricerca qualificata — 29 agosto
+
+### ProBurgos / Fórum Evolución — Burgos, Castilla y León
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH/BID PERFORMED.** L'expediente pubblico **C16.2026** richiede progettazione, sviluppo, implantazione, hosting, manutenzione, supporto ed evoluzione di due portali web. Pubblicato il **5 agosto 2026**, resta aperto fino al **4 settembre 2026 alle 15:00**; durata pubblicata **29 mesi**, valore stimato **€60.779,90**. La qualificazione ha superato il gate multi-source con **PLACSP istituzionale + corroborazione indipendente**, route elettronica ufficiale e duplicate/Sent check pulito. Prima di qualsiasi futura offerta va verificata l'effettiva solvibilità VDS rispetto a PCAP/PPT.
+
+[Opportunity →](opportunities/OPP-ES-PROBURGOS-WEB-PORTALS-TENDER-2026.json)
 
 ### Mucui Estudio — Remote / international
 **QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Un progetto Workana pubblicato il 18 luglio e tuttora aperto cerca esplicitamente una **rete di collaboratori affidabili per una collaborazione ricorrente** sulla produzione di siti **WordPress / Elementor Pro**, non un incarico una tantum. Una seconda ricerca Mucui contemporanea per collaboratori **Branding + UI Web** rafforza il segnale di capacità esterna strutturale. Il sito ufficiale verifica identità, dominio e attività in branding, programmazione e sviluppo web. Global duplicate gate pulito su repository, suppression primaria/emergenza e Gmail Sent.
@@ -60,9 +65,9 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 | Stage | Volume | Stato |
 |---|---:|---|
-| Opportunity canoniche | **51** | 100% |
-| First contact verificati | **26** | **51.0%** |
-| Qualificate non contattate | **25** | **49.0%** |
+| Opportunity canoniche | **53** | 100% |
+| First contact verificati | **27** | **50.9%** |
+| Qualificate non contattate | **26** | **49.1%** |
 | Reply thread | **1** | existing |
 | Positive reply / referral | **1** | USER ACTION REQUIRED |
 | Meeting | **0** | — |
@@ -76,7 +81,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 | Workstream | Pipeline | Stato |
 |---|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs** | **45 active opportunities** | **Mucui newly qualified; Mindrift qualified earlier; 2 verified first contacts today** |
+| 🤝 **Collaborations / Jobs / Procurement** | **47 active opportunities** | **ProBurgos newly qualified; public procurement deadline 04/09; other qualified routes remain gated** |
 
 ---
 
@@ -84,10 +89,10 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 1. 🔴 **HANDLE_REFERRAL — BEYOND BARRIERS** — USER ACTION REQUIRED / SLA breached.
 2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
-3. 🔥 **Grownnectia** — verify exact current P.IVA application route before any send.
-4. 🔥 **Visioni — Palermo** — verify official recipient route and global dedup.
-5. 🔥 **Mucui Estudio** — review the open recurring WordPress/Elementor Workana route; rerun global dedup before any future application/contact.
-6. 🔥 **Mindrift / Mobyleshop / Aderen / Robert Half Contracting** — continue gated review through their verified routes.
+3. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT solvency + lot fit before **04/09/2026 15:00**; no bid action by scanner.
+4. 🔥 **Grownnectia** — verify exact current P.IVA application route before any send.
+5. 🔥 **Visioni — Palermo** — verify official recipient route and global dedup.
+6. 🔥 **Mucui / Mindrift / Mobyleshop / Aderen / Robert Half Contracting** — continue gated review through verified routes.
 
 Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
@@ -96,32 +101,31 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🗺️ Coverage commerciale
 
 - 🇮🇹 Italia: **15/20** territori qualified, **24** verified accounts.
-- 🇪🇸 Spagna: **11/19** territori qualified, **17** verified territorial accounts + remote/geography-to-verify pool.
-- **13 territori** remain zero-result / under deep research.
-- Mucui is classified **Remote / international** and is deliberately excluded from Italy/Spain regional coverage until authoritative geography evidence exists.
+- 🇪🇸 Spagna: **12/19** territori qualified, **18** verified territorial accounts + remote/geography-to-verify pool.
+- **12 territori** remain zero-result / under deep research.
+- **Castilla y León** entra nel qualified track tramite ProBurgos; il procurement diventa una source-family ad alto rendimento da mantenere nel loop senza ripetere subito query fresche immutate.
 
 ---
 
 ## 📈 Success indicators
 
 - **Success Index:** **70%** — operating index, **not a probability**.
-- **New-client operational proxy:** **83% — UNCALIBRATED / LOW CONFIDENCE**; non utilizzabile per weighted revenue.
+- **New-client operational proxy:** **84% — UNCALIBRATED / LOW CONFIDENCE**; non utilizzabile per weighted revenue.
 
 ---
 
 ## 🛡️ Safety / QA
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
-- Mucui duplicate check: **CLEAR** across canonical repository identity search, primary/emergency suppression and Gmail Sent at qualification time.
-- **No Mucui outreach, application or form submission was performed by the research scanner.**
-- Mindrift remains qualified and unsent.
-- Odda and ReMedia remain reconciled as CONTACTED.
+- ProBurgos duplicate/Sent check: **CLEAR** at qualification time; route is official public procurement, but bid eligibility still requires PCAP/PPT review.
+- **No ProBurgos outreach, application, bid or form submission was performed by the research scanner.**
+- Mediaimmagine remains **CONTACTED** after the duplicate-path correction from the 13:58 QA pass.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
 - Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
 - Older unresolved QA: **10 recipients pending canonicalization**; `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
 - Positive/potentially positive replies: **auto-response forbidden**.
 
-[Audit 09:00 →](audits/2026-08-29-0900.md)
+[Audit 13:58 →](audits/2026-08-29-1358.md)
 
 ---
 
