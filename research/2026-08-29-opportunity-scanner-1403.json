@@ -1,0 +1,33 @@
+{
+  "run_at":"2026-08-29T14:03:00+02:00",
+  "mode":"RESEARCH_QUALIFICATION_ONLY",
+  "workstream":"COLLABORATIONS",
+  "resource_strategy":"territory_source_gap_first; batch discovery; escalate only on qualification-changing evidence",
+  "territory_source_passes":[
+    {
+      "territory":"Andalucía",
+      "families":["SPECIALIST_JOBS","AGENCY_OUTSOURCING","PROCUREMENT"],
+      "result":"NO_NEW_QUALIFIED_COLLABORATION",
+      "notes":"Freelance/service-provider pages were not promoted because they proved seller capability rather than buyer demand. Procurement scan yielded mostly expired/evaluation-stage contracts; no noise added."
+    },
+    {
+      "territory":"Castilla y León",
+      "families":["PROCUREMENT"],
+      "result":"QUALIFIED_NEW",
+      "opportunity_id":"OPP-ES-PROBURGOS-WEB-PORTALS-TENDER-2026",
+      "source_lineages":[
+        {"group":"ES_PLACSP","tier":"T1_INSTITUTIONAL","roles":["IDENTITY","NEED","FRESHNESS","CONTACT_ROUTE"]},
+        {"group":"ALICITAR","tier":"T2_SPECIALIST","roles":["DISCOVERY","CORROBORATION","FRESHNESS"]},
+        {"group":"LICITACIONES_IO","tier":"T2_SPECIALIST","roles":["CORROBORATION","FRESHNESS"]}
+      ],
+      "scs":95,
+      "scs_class":"STRONG_MULTI_SOURCE",
+      "deadline":"2026-09-04T15:00:00+02:00",
+      "duplicate_gate":{"canonical_repository":"CLEAR","gmail_sent":"CLEAR","suppression_or_campaign_conflict":"NO_MATCH_FOUND_IN_GLOBAL_REPOSITORY_IDENTITY_SEARCH","result":"NO_EXISTING_FIRST_CONTACT_EVIDENCE"},
+      "safety":"NO_EMAIL_NO_FORM_NO_BID_NO_OUTREACH"
+    }
+  ],
+  "yield_delta":{"PROCUREMENT":{"discoveries":1,"qualified":1,"contacted":0,"replies":0,"positive_replies":0,"meetings":0,"proposals":0,"wins":0}},
+  "material_changes":["new qualified procurement opportunity","Castilla y León qualified territorial coverage","source coverage/yield delta","dashboard/funnel counts refreshed"],
+  "stop_reason":"Next immediate searches had lower marginal information gain than preserving freshness budget for the next territory/source-family rotation."
+}
