@@ -80,6 +80,16 @@ Promote a lead to contactable status only when there is:
 - otherwise prepare for review/approval;
 - positive/potentially positive replies are never answered automatically: set `POSITIVE_REPLY_USER_ACTION_REQUIRED`.
 
+## Dashboard synchronization
+`README.md` is the human-facing Revenue Command Center. Whenever a material funnel, reply, outreach, QA, meeting, proposal, win/loss or coverage change occurs:
+1. refresh the canonical CRM/views first;
+2. recompute `views/success-indicators.json` using `config/dashboard-success-model.json` and `config/probability-calibration.json`;
+3. update the native GitHub `README.md` metrics, funnel, workstream summary, Next Best Actions and QA panel;
+4. keep `Success Index` explicitly identified as an operating index, not probability;
+5. keep the new-client percentage explicitly `UNCALIBRATED / LOW CONFIDENCE` until empirical calibration thresholds are met;
+6. never use uncalibrated probability for weighted revenue pipeline;
+7. surface any duplicate-FIRST_CONTACT risk prominently and block send until resolved.
+
 ## Daily operating order
 1. Handle positive replies/referrals.
 2. Check overdue HOT follow-ups.
@@ -89,7 +99,7 @@ Promote a lead to contactable status only when there is:
 6. Deduplicate/suppression/Sent-history check.
 7. Prepare or execute permitted outreach.
 8. Update canonical opportunity/company/contact/campaign data only when materially changed.
-9. Refresh README/dashboard views when materially changed.
+9. Refresh success indicators and README/dashboard views when materially changed.
 10. Run QA/report layer.
 
 ## Reporting
