@@ -18,16 +18,16 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 | Liguria | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | continue only on explicit external-capacity signal |
 | Lombardia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Marche | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | rotate to a new source family; broad pass produced no qualifying buyer-side signal |
-| Molise | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Molise | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-30 | official-company/agency scan found seller-side capability but no explicit current external-capacity demand; rotate source family |
 | Piemonte | QUALIFIED_TRACK | ACTIVE | 3 | 3 | 2 | 0 | 2026-08-29 | Digityze ready for daily outreach review; continue source-family rotation without repeating fresh searches |
 | Puglia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Sardegna | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | NEXT-MED web scope verified already awarded in-house; rotate away from this stale procurement signal |
 | Sicilia | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Toscana | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
-| Trentino-Alto Adige/Südtirol | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Trentino-Alto Adige/Südtirol | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-30 | marketplace/official-company scan produced anonymous or seller-side signals; continue with fresh agency/procurement evidence |
 | Umbria | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | Evo Sistemi HOT+ ready for daily outreach review; continue source-family rotation |
-| Valle d'Aosta/Vallée d'Aoste | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
-| Veneto | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Valle d'Aosta/Vallée d'Aoste | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-30 | Netbe partner/careers and local agencies checked; no verified current buyer-side VDS-capacity need; rotate source family |
+| Veneto | QUALIFIED_TRACK | ACTIVE | — | — | — | — | 2026-08-30 | Dato Digitale qualified from current official web/WordPress role + collaboration-network signal; verify contract/P.IVA model before action |
 
 ## Target per regione
 Freelance/P.IVA/contract; outsourcing/white-label; agenzie e software house con capacità esterna; web/frontend/WordPress; IT/infrastruttura quando coerente; collaborazione ricorrente. I progetti UE localizzati in Italia restano nel workstream `EU_PROJECTS` e possono essere conteggiati territorialmente solo come vista derivata.
