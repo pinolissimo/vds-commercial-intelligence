@@ -12,7 +12,7 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 | Aragón | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Principado de Asturias | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Illes Balears | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
-| Canarias | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Canarias | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | review Los Realejos 2026/9564 tender eligibility before 2026-09-10; continue source-family rotation |
 | Cantabria | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Castilla-La Mancha | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Castilla y León | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | review ProBurgos C16.2026 tender eligibility before 2026-09-04; continue source-family rotation |
