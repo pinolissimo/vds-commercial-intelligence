@@ -4,8 +4,8 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 05:00 Europe/Madrid  
-**Research:** `RESOURCE-OPTIMIZED RECURSIVE PASS · MURCIA QUALIFICATION + EU GAP CHECK`  
+**Data snapshot:** 29 agosto 2026 · 05:30 Europe/Madrid  
+**Research:** `RESOURCE-OPTIMIZED RECURSIVE PASS · ADEREN QUALIFICATION + EU GAP CHECK`  
 **Scanner outreach:** **0 — research/qualification only**
 
 ---
@@ -14,14 +14,14 @@
 
 | 🎯 Success Index | 📈 Probabilità operativa ≥1 nuovo cliente* | 🧲 Opportunity | ✉️ First contact canonici |
 |---:|---:|---:|---:|
-| **71%** | **80%** | **46** | **24** |
-| `███████░░░` | `████████░░` | **22** qualificate non contattate | **52%** pipeline attivata |
+| **71%** | **80.3%** | **47** | **24** |
+| `███████░░░` | `████████░░` | **23** qualificate non contattate | **51.1%** pipeline attivata |
 
 | 🔥 Positive signal | 🤝 Meeting | 📄 Proposal | 💶 Revenue won |
 |---:|---:|---:|---:|
 | **1 referral positivo** | **0** | **0** | **€0** |
 
-> * **79.9% = operational pipeline proxy, UNCALIBRATED, confidence LOW.** Non è una previsione statistica empirica. Usa esclusivamente i priors operativi già definiti nel CRM e viene mostrata per orientare il lavoro, non per valorizzare economicamente la pipeline. [Indicatori →](views/success-indicators.json) · [Modello →](config/dashboard-success-model.json)
+> * **80.3% = operational pipeline proxy, UNCALIBRATED, confidence LOW.** Non è una previsione statistica empirica e non viene usata per valorizzare economicamente la pipeline.
 
 ### 🎯 GOAL TODAY
 
@@ -32,18 +32,16 @@ Segnale più forte: **BEYOND BARRIERS → referral positivo a due figure Communi
 
 ## 🔻 Funnel commerciale
 
-| Stage | Volume | Conversione / stato | Visuale |
-|---|---:|---:|---|
-| Opportunity canoniche | **46** | 100% | `██████████` |
-| First contact verificati | **24** | **52.2%** delle opportunity | `█████░░░░░` |
-| Qualificate non contattate | **22** | **47.8%** della pipeline | `█████░░░░░` |
-| Reply thread | **1** | **4.17%** dei contattati | `█░░░░░░░░░` |
-| Positive reply / referral | **1** | **4.17%** dei contattati | `█░░░░░░░░░` |
-| Meeting | **0** | 0% | `░░░░░░░░░░` |
-| Proposal | **0** | 0% | `░░░░░░░░░░` |
-| Won | **0** | 0% | `░░░░░░░░░░` |
-
-**Conversion bottleneck attuale:** trasformare **positive referral + lead HOT/HOT+** in conversazioni reali e meeting.
+| Stage | Volume | Conversione / stato |
+|---|---:|---:|
+| Opportunity canoniche | **47** | 100% |
+| First contact verificati | **24** | **51.1%** delle opportunity |
+| Qualificate non contattate | **23** | **48.9%** della pipeline |
+| Reply thread | **1** | **4.17%** dei contattati |
+| Positive reply / referral | **1** | **4.17%** dei contattati |
+| Meeting | **0** | 0% |
+| Proposal | **0** | 0% |
+| Won | **0** | 0% |
 
 ---
 
@@ -51,18 +49,13 @@ Segnale più forte: **BEYOND BARRIERS → referral positivo a due figure Communi
 
 | Workstream | Pipeline | Contacted | Ready / research | Positive signal | Stato |
 |---|---:|---:|---:|---:|---|
-| 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** | **6** | early-funded watchlist attiva | **1** | 🔥 **Referral da gestire** |
-| 🤝 **Collaborations / Jobs** | **40 active freelance / outsourcing opportunities** | **18 canonical partner accounts** | **21 ready/manual + 1 contact pending reconciliation** | **0** | 🟢 **Alta capacità di attivazione** |
+| 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** | **6** | early-funded watchlist attiva | **1** | 🔥 Referral da gestire |
+| 🤝 **Collaborations / Jobs** | **41 active freelance / outsourcing opportunities** | **18 canonical partner accounts** | **22 ready/manual + 1 contact pending reconciliation** | **0** | 🟢 Alta capacità di attivazione |
 
 ### 🇪🇺 Early-funded EU watch
-Watchlist canonica su **11 progetti finanziati/early-stage**. Focus immediato sui progetti con partenza **1 settembre 2026**, ma sempre dietro hard gate globale.
+Watchlist canonica: **11 progetti finanziati/early-stage**. Priorità: **NAVI, HUBS4BUILD, REMEDIES 5.0**. Il pass corrente non ha trovato una nuova catena completa `WP/task digitale → beneficiario responsabile → contact/procurement path`, quindi nessuno è stato promosso.
 
-- **SENSORAMA (101297303):** funding e dissemination WP sono verificati, ma il controllo canonico ha rilevato **`FIRST_CONTACT_ALREADY_SENT` — Sent UID 79**. È quindi **bloccato da qualsiasi nuovo first contact**. Può essere monitorato solo per reply/intelligence.
-- **NAVI (101298581):** finanziamento, start e coordinatore **IDENER R&D AIE** verificati; resta da ricostruire `communication/dissemination WP → owner → project-site/procurement path`.
-- **HUBS4BUILD (101291180):** finanziamento/start e coordinatore **University of Thessaly** verificati; Circularity Hubs + Replicators Network rendono il bisogno digitale plausibile ma ancora non sufficiente per una promozione commerciale.
-- **REMEDIES 5.0 (101295884):** resta una priorità di deep research per chiudere la catena communication/web task → beneficiary → contact/procurement.
-
-Il pass 05:00 ha riesaminato solo l'evidenza mancante sui tre target UE prioritari. **Nessuno è stato promosso:** non è emersa una nuova catena verificata WP/task digitale → beneficiario responsabile → contact/procurement path.
+**SENSORAMA** resta bloccato da qualsiasi nuovo first contact: `FIRST_CONTACT_ALREADY_SENT`, Sent UID 79.
 
 [EU Watchlist →](eu-projects/early-funded-watchlist-2026-08-28.json)
 
@@ -72,108 +65,69 @@ Il pass 05:00 ha riesaminato solo l'evidenza mancante sui tre target UE priorita
 
 | # | Azione | Motivo | Priorità |
 |---:|---|---|---|
-| **1** | **HANDLE_REFERRAL — BEYOND BARRIERS** | positive referral già ricevuto | 🔴 **CRITICAL · SLA BREACHED** |
-| **2** | **RECONCILE_MAILBOX / SUPPRESSION** | chiudere criticità QA prima di nuovi invii | 🔴 **CRITICAL QA** |
-| **3** | **Grownnectia — Roma** | P.IVA continuativa · WordPress + infra + software | 🔥 **Score 99** |
-| **4** | **ReMedia Italia — Roma/Remoto** | very high fit | 🔥 **Score 99** |
-| **5** | **Visioni — Palermo** | active P.IVA freelance | 🔥 **Score 99** |
+| **1** | **HANDLE_REFERRAL — BEYOND BARRIERS** | positive referral già ricevuto | 🔴 **CRITICAL** |
+| **2** | **RECONCILE_MAILBOX / SUPPRESSION** | criticità QA aperta | 🔴 **CRITICAL QA** |
+| **3** | **Grownnectia — Roma** | P.IVA continuativa · WordPress + infra + software | 🔥 **99** |
+| **4** | **ReMedia Italia — Roma/Remoto** | very high fit | 🔥 **99** |
+| **5** | **Visioni — Palermo** | active P.IVA freelance | 🔥 **99** |
 
-**Next tier:** **Mobyleshop — Murcia · Score 98** · Ibérica Studio · DNA Agency · Studiart · Hays España · Vaivén Estudio.  
-[Full Next Best Actions →](views/next-best-actions.json)
+**Next tier:** Mobyleshop — Murcia **98** · **Aderen — Madrid 98** · Ibérica Studio 97 · DNA Agency 97 · Hays España 97.
 
 ---
 
 ## 🆕 Lead ad alto potenziale — ultimo pass
 
-**Mobyleshop — Murcia** entra come `READY_FOR_DAILY_OUTREACH_REVIEW`, Revenue Priority **98**. La pagina careers ufficiale mantiene una ricerca per **Administrador Web WPO Freelance** con forte sovrapposizione VDS: WordPress, HTML/CSS/JavaScript/PHP, MySQL, sicurezza e performance, temi/plugin, Elementor, SEO/SEM, UI/usability e Git. Il sito ufficiale verifica inoltre l'identità aziendale e la presenza operativa a Murcia.
+### **Aderen — Madrid** · Revenue Priority **98**
 
-Il controllo globale non ha trovato evidenza di first contact precedente per `Mobyleshop / mobyleshop.com` nel repository canonico, suppression primaria, suppression emergenziale o Gmail Sent. **Nessuna email è stata inviata**: il record alimenta soltanto il Partner Hunt.
+Nuova opportunity `READY_FOR_DAILY_OUTREACH_REVIEW`. La vacancy pubblica cerca un **WordPress Senior Developer**, **Freelance Full Time**, con progetto **Largo Plazo** per cliente del settore bancario/finanziario. Il sito ufficiale Aderen conferma un modello di business basato su externalizzazione di professionisti e una rete internazionale di **1000+ esperti**; la pagina Aderen People descrive esplicitamente una community di **freelance e micropymes** integrata nei progetti dei clienti.
 
-[Opportunity →](opportunities/OPP-ES-MOBYLESHOP-WPO-FREELANCE.json) · [Company →](spain/region-de-murcia/murcia/mobyleshop.json)
+Global duplicate gate: **nessun match Aderen** nel repository canonico o nella suppression primaria; ricerca Gmail Sent per `Aderen / aderen.es / Wordpress Senior developer` = **0 messaggi**. **Nessuna email o form è stato inviato.**
+
+[Opportunity →](opportunities/OPP-ES-ADEREN-WORDPRESS-SENIOR-FREELANCE.json) · [Company →](spain/madrid/aderen-wordpress-senior-freelance.json)
 
 ---
 
 ## 🗺️ Coverage commerciale
 
-| Area | Territori qualificati | Copertura | Account verificati | Visuale |
-|---|---:|---:|---:|---|
-| 🇮🇹 Italia | **13 / 20** | **65%** | **22** | `███████░░░` |
-| 🇪🇸 Spagna | **11 / 19** | **57.9%** | **16** | `██████░░░░` |
+| Area | Territori qualificati | Copertura | Account verificati |
+|---|---:|---:|---:|
+| 🇮🇹 Italia | **13 / 20** | **65%** | **22** |
+| 🇪🇸 Spagna | **11 / 19** | **57.9%** | **17** |
 
-**15 territori** restano a zero e sono ancora oggetto di deep search. **Región de Murcia** passa a `PARTIAL_QUALIFIED` grazie a Mobyleshop.  
+**15 territori** restano a zero. Madrid sale a **2 account qualificati** grazie ad Aderen; il numero di territori qualificati non cambia.
+
 [Regional Coverage →](views/regional-coverage.json)
 
 ---
 
 ## 🛡️ Safety / QA — ZERO DUPLICATE FIRST CONTACT
 
-| Controllo | Stato |
-|---|---|
-| Duplicate FIRST_CONTACT tolerance | **0 — HARD RULE** |
-| Global duplicate hard gate | 🟢 **ACTIVE** |
-| Check prima dell'invio | company/project + all opportunities + timeline + campaigns + suppression + Sent history |
-| Sent verification | 🟢 **MANDATORY** |
-| Historical duplicate violations preserved | **2** — Persuadis + Marmellata Lab |
-| SENSORAMA duplicate-risk reconciliation | 🟢 **CORRECTED — FIRST_CONTACT_ALREADY_SENT, blocked** |
-| Mobyleshop duplicate gate | 🟢 **NO PRIOR FIRST_CONTACT EVIDENCE FOUND** |
-| Nuovo invio quando identità/storia è ambigua | 🔴 **BLOCKED → REVIEW_REQUIRED** |
-| Positive / ambiguous reply auto-response | 🔴 **FORBIDDEN** |
-| Probability invention tolerance | **0** |
+- Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
+- Check obbligatorio: company/project identity + tutte le opportunity + timeline + campaigns + suppression + Gmail Sent.
+- **Aderen:** no prior first-contact evidence found.
+- **SENSORAMA:** prior first contact verified; new first-contact path blocked.
+- Scanner: **research + qualification only, outreach forbidden**.
+- Positive/potentially positive replies: **auto-response forbidden**.
 
-> Le **2 violazioni sono storiche e conservate come evidenza di audit**. Il pass corrente non ha eseguito outreach e ha applicato il global duplicate gate prima della promozione di Mobyleshop.
-
-### QA aperto
-🔴 **RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION** — criticità ancora da riconciliare.  
-🟢 Lo scanner non può inviare outreach.  
-🟢 Solo `VDS Partner Hunt` può iniziare un FIRST_CONTACT e solo dopo il global duplicate gate.  
-[Automation Governance →](project/AUTOMATIONS.md) · [QA Standard →](QA_AUDIT_STANDARD.md)
+QA aperto: **RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION**.
 
 ---
 
 ## 🔴 User Action Required — BEYOND BARRIERS
 
-**Lead Health: 92 / 100 · CRITICAL**  
-**State:** `POSITIVE_REPLY_USER_ACTION_REQUIRED`  
-**Signal:** referral positivo verso due figure Communication & Dissemination.  
-**Automation response:** **FORBIDDEN**.
-
-[Opportunity →](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json) · [Lead Health →](views/lead-health.json)
+**State:** `POSITIVE_REPLY_USER_ACTION_REQUIRED` · referral positivo verso due figure Communication & Dissemination.  
+[Opportunity →](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json)
 
 ---
 
 ## 📊 Success & Probability Model
 
-### Success Index — **71%**
-Indice operativo, **non una probabilità**. Misura quanto il sistema è vicino a produrre conversione in base a pipeline, attivazione, segnali positivi, profondità del funnel e integrità QA.
+**Success Index: 71%** — indice operativo, non probabilità.  
+**Operational proxy ≥1 nuovo cliente: 80.3%***
 
-| Componente | Punti |
-|---|---:|
-| Qualified pipeline supply | **25 / 25** |
-| Outreach activation | **10.67 / 20** |
-| Positive commercial signal | **20 / 20** |
-| Funnel depth | **10 / 20** |
-| QA integrity | **5 / 15** |
-| **Totale** | **70.67 → 71%** |
+`1 - (1-0.02)^23 × (1-0.04)^23 × (1-0.20)^1 = 80.3%`
 
-### Probabilità operativa ≥1 nuovo cliente — **79.9%***
-
-Formula corrente:
-
-`1 - (1-0.02)^22 × (1-0.04)^23 × (1-0.20)^1 = 79.9%`
-
-Priors CRM usati:
-
-| Stage | Operational prior |
-|---|---:|
-| READY_TO_CONTACT | **2%** |
-| CONTACTED | **4%** |
-| POSITIVE_REPLY_USER_ACTION_REQUIRED | **20%** |
-| MEETING | **40%** |
-| PROPOSAL | **60%** |
-
-⚠️ **UNCALIBRATED · LOW CONFIDENCE.** L'approssimazione assume indipendenza tra opportunity e i tassi osservati sono ancora statisticamente insufficienti. La percentuale diventerà una vera `calibrated_probability_pct` solo quando il CRM avrà campioni/outcome sufficienti. Il `weighted_pipeline_value` resta correttamente **null**.
-
-[Probability Calibration →](config/probability-calibration.json) · [Success Model →](config/dashboard-success-model.json)
+⚠️ **UNCALIBRATED · LOW CONFIDENCE.** `weighted_pipeline_value` resta `null`.
 
 ---
 
@@ -186,12 +140,6 @@ Priors CRM usati:
 | **VDS Reply Watch** | hourly | reply/bounce/referral reconciliation | 🔴 **NO** |
 | **VDS QA + 3 Daily Reports** | ~09:00 · 14:00 · 20:00 | QA + report | 🔴 **NO** |
 
-Legacy EU-specific overlapping automations restano disattivate per evitare pipeline concorrenti e duplicazioni.
-
-[Project Workspace →](project/README.md) · [Chat Map →](project/CHAT_MAP.md) · [Automation Governance →](project/AUTOMATIONS.md)
-
 ---
-
-## Principio operativo
 
 > **Ricerca ampia. Qualificazione severa. Outreach mirato. Zero doppio first-contact. Conversione > attività. Revenue > vanity metrics.**
