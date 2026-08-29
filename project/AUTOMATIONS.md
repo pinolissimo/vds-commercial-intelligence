@@ -16,7 +16,16 @@ Allowed:
 - verify freshness/identity/need/contact route;
 - deduplicate;
 - score/classify;
-- update CRM/research/dashboard when materially changed.
+- update CRM/research/dashboard when materially changed;
+- maintain continuous territorial coverage of all 20 Italian regions and all 17 Spanish autonomous communities plus Ceuta and Melilla;
+- update `italy/README.md`, `spain/README.md` and `views/territorial-coverage.md` as derived views only, using reconciled canonical CRM evidence.
+
+Territorial rotation rule:
+- prioritize the highest-value under-covered or oldest territory;
+- process fresh recurring-collaboration signals before low-value long-tail discovery;
+- continue round-robin while marginal information value remains high;
+- do not repeat a recent zero-result territory without a new signal or freshness reason;
+- regional views may summarize discovered, qualified, contacted-with-Sent-evidence, Reply+, last scan and next action, but must never become duplicate canonical CRM storage.
 
 Forbidden:
 - outreach email;
