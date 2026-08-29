@@ -4,9 +4,9 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 19:00 Europe/Madrid  
+**Data snapshot:** 29 agosto 2026 · 22:03 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** `ABAQUA IT SUPPORT PROCUREMENT QUALIFIED · ILLES BALEARS · RESEARCH-ONLY PASS`  
+**Research:** `DIPUTACIÓ DE BARCELONA WEB PROCUREMENT QUALIFIED · CATALUNYA · RESEARCH-ONLY PASS`  
 **QA:** `FAIL_CORRECTED · containment active for older reconciliation`
 
 ---
@@ -15,9 +15,9 @@
 
 | Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|
-| **61** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
+| **62** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **34** · **pipeline activation: 44.3%**.
+**Qualified not contacted:** **35** · **pipeline activation: 43.5%**.
 
 > Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
@@ -30,6 +30,11 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 ## 🆕 Ricerca qualificata — 29 agosto
 
+### Diputació de Barcelona — Catalunya
+**QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID/OUTREACH PERFORMED.** Expediente **2025/0041420** per analisi, adattamento grafico e maquetació del sito della Direcció de Serveis de Formació. Pubblicato **27 agosto 2026**, deadline **8 ottobre 2026 14:00**, valore stimato/base **€20.000 + IVA**, durata **5 mesi**, CPV 72413000 + 79822500. Gate multi-source **SCS 95 / STRONG_MULTI_SOURCE**: pubblicazione ufficiale della Plataforma de Serveis de Contractació Pública de Catalunya + corroborazione indipendente specialistica. Repository e Gmail Sent puliti; prima di qualsiasi partecipazione devono essere verificati PCAP/PPT, solvibilità, referenze/personale, registri e formalità elettroniche.
+
+[Opportunity →](opportunities/OPP-ES-DIBA-WEB-FORMACIO-TENDER-2026.json)
+
 ### ABAQUA — Illes Balears
 **QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID/OUTREACH PERFORMED.** Expediente **SE/2026/11** per supporto e manutenzione delle apparecchiature e dei sistemi informatici dell'Agencia Balear del Agua y de la Calidad Ambiental. Evidenza corrente multi-source: valore stimato **€135.000**, durata riportata **3 anni**, deadline **3 settembre 2026 19:00**. Fit VDS forte sul versante IT/infrastruttura; prima di qualsiasi partecipazione devono essere verificati PCAP/PPT, solvibilità, personale/copertura on-site, garanzie e formalità. Gate multi-source **SCS 92 / STRONG_MULTI_SOURCE**; repository e Gmail Sent puliti, nessun indirizzo dedotto o inventato.
 
@@ -41,7 +46,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 [Opportunity →](opportunities/OPP-IT-DIGITYZE-PARTNER-NETWORK.json)
 
 ### Aplum Studio — Reus / Catalunya
-**QUALIFIED · HOT+ · NO OUTREACH PERFORMED.** Il Commercial Core delle 17:55 ha promosso una collaborazione freelance di durata annuale con stack WordPress/Elementor/HTML/CSS/manutenzione/responsive e forte sovrapposizione con VDS, dopo verifica identità primaria e duplicate gate pulito.
+**QUALIFIED · HOT+ · NO OUTREACH PERFORMED.** Collaborazione freelance di durata annuale con stack WordPress/Elementor/HTML/CSS/manutenzione/responsive e forte sovrapposizione con VDS, dopo verifica identità primaria e duplicate gate pulito.
 
 [Opportunity →](opportunities/OPP-ES-APLUM-WORDPRESS-FREELANCE-2026.json)
 
@@ -105,9 +110,9 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 | Stage | Volume | Stato |
 |---|---:|---|
-| Opportunity canoniche | **61** | 100% |
-| First contact verificati | **27** | **44.3%** |
-| Qualificate non contattate | **34** | **55.7%** |
+| Opportunity canoniche | **62** | 100% |
+| First contact verificati | **27** | **43.5%** |
+| Qualificate non contattate | **35** | **56.5%** |
 | Reply thread | **1** | existing |
 | Positive reply / referral | **1** | USER ACTION REQUIRED |
 | Meeting | **0** | — |
@@ -121,7 +126,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 | Workstream | Pipeline | Stato |
 |---|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs / Procurement** | **55 active/canonical opportunities** | ABAQUA added in Illes Balears; tender and other routes remain gated |
+| 🤝 **Collaborations / Jobs / Procurement** | **56 active/canonical opportunities** | Diputació de Barcelona 2025/0041420 added; tender and other routes remain gated |
 
 ---
 
@@ -131,12 +136,12 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
 3. 🔥 **ABAQUA SE/2026/11** — verify PCAP/PPT and tender eligibility before **03/09/2026 19:00**.
 4. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT before **04/09/2026 15:00**.
-5. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
-6. 🔥 **CyberOptik** — verify cross-border/contract eligibility before the official route.
-7. 🔥 **Mobyleshop / Aderen** — review official application routes.
-8. 🔥 **Digityze** — review verified Team/Network business route; scanner performed no contact.
-9. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT before **10/09/2026 23:59**.
-10. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT before **14/09/2026 10:00**.
+5. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT before **10/09/2026 23:59**.
+6. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT before **14/09/2026 10:00**.
+7. 🔥 **Diputació de Barcelona 2025/0041420** — verify PCAP/PPT, solvency and electronic-submission eligibility before **08/10/2026 14:00**.
+8. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
+9. 🔥 **CyberOptik** — verify cross-border/contract eligibility before the official route.
+10. 🔥 **Digityze / Mobyleshop / Aderen** — review verified official/application routes.
 
 Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
@@ -145,9 +150,9 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🗺️ Coverage commerciale
 
 - 🇮🇹 Italia: **15/20** territori con almeno un account qualificato, **26** account con regione verificata + 1 remote/geography-to-verify.
-- 🇪🇸 Spagna: **15/19** territori con almeno un account qualificato, **23** account con territorio verificato + 2 remote/geography-to-verify.
-- **9 territori** remain zero-result / under deep research: pochi risultati con coverage incompleta restano **UNDER_SEARCHED**, non low-opportunity.
-- **Illes Balears** entra nel qualified track grazie ad ABAQUA; il prossimo ciclo deve ruotare verso famiglie/territori ancora sotto-testati senza ripetere questa ricerca finché non cambia la freshness.
+- 🇪🇸 Spagna: **15/19** territori con almeno un account qualificato; Catalunya gains one additional qualified procurement while remaining an already-covered territory.
+- Zero-result territories with incomplete source-family coverage remain **UNDER_SEARCHED**, not low-opportunity.
+- Latest exploration also covered Castilla-La Mancha, Extremadura, Ceuta and Melilla without forcing weak/stale results into the CRM.
 
 ---
 
@@ -161,8 +166,8 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🛡️ Safety / QA
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
-- ABAQUA duplicate gate: **CLEAR** su repository canonico e Gmail Sent; nessun email/contact path inventato, solo route ufficiale di procurement.
-- **No ABAQUA outreach, application, form or bid submission was performed by the research scanner.**
+- Diputació de Barcelona duplicate gate: **CLEAR** su repository canonico e Gmail Sent; route solo ufficiale di procurement, nessuna email inventata.
+- **No Diputació de Barcelona outreach, application, form or bid submission was performed by the research scanner.**
 - SANDETEL `EXPT26-00017`: **REVIEW_REQUIRED / NOT PROMOTED** per conflitto fra fonti correnti su deadline/valore.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
 - Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
