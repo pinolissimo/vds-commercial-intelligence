@@ -5,6 +5,8 @@ The scheduled automations are permanent services of the VDS commercial system. D
 
 All automations use `pinolissimo/vds-commercial-intelligence` branch `main` as the commercial single source of truth.
 
+**Explicit user action overrides are persistent operational policy.** If a canonical opportunity is set to `WAITING_FOR_INBOUND`, `DO_NOT_FOLLOW_UP`, or an equivalent user-decided passive state, no automation may recreate an SLA, follow-up, solicitation or `POSITIVE_REPLY_USER_ACTION_REQUIRED` state from the historical message alone. The passive override remains in force until a genuinely new inbound event occurs or the user explicitly changes the decision.
+
 ## Active commercial automations
 
 ### VDS Opportunity Scanner
@@ -54,6 +56,8 @@ Hard invariant: **one organization = no duplicate FIRST_CONTACT**, even when a d
 
 If an organization has already received a first contact, any later action is a follow-up, referral path, routed-contact continuation or new explicitly approved campaign action — never a silent second first-contact.
 
+A canonical `WAITING_FOR_INBOUND` / passive user override is **not eligible** for Partner Hunt solicitation or follow-up.
+
 ### VDS Reply Watch
 Cadence: hourly condition watch.
 Role: reconcile replies/bounces/referrals and update CRM state.
@@ -61,9 +65,15 @@ Role: reconcile replies/bounces/referrals and update CRM state.
 Forbidden:
 - new first contact.
 
-Positive/potentially positive/referral/pricing/proposal/call/next-step replies: never auto-reply; set `POSITIVE_REPLY_USER_ACTION_REQUIRED` or the specific review/action state.
+Positive/potentially positive/referral/pricing/proposal/call/next-step replies: never auto-reply; set `POSITIVE_REPLY_USER_ACTION_REQUIRED` or the specific review/action state **unless an explicit current user override already placed that thread/opportunity in a passive `WAITING_FOR_INBOUND` state**.
 
-Any reply cancels pending no-response follow-up.
+For a passive override:
+- historical messages do not recreate an action;
+- no SLA is generated;
+- no reminder or follow-up is generated;
+- only a genuinely new inbound message may reopen the thread for user review.
+
+Any new reply cancels pending no-response follow-up.
 
 ### VDS QA + 3 Daily Reports
 Cadence: daily at approximately 09:00, 14:00 and 20:00 Europe/Madrid.
@@ -77,6 +87,7 @@ Mandatory checks include:
 - state-transition validity;
 - source freshness;
 - dashboard/master/view reconciliation;
+- explicit user override preservation;
 - repository separation;
 - no invented facts/economics/probabilities.
 
@@ -103,6 +114,7 @@ This prevents:
 | Follow-up | NO | YES, gated | cancel/update | audit-only |
 | Auto-reply negative | NO | policy-controlled | policy-controlled | NO |
 | Positive reply response | **NO** | **NO AUTO** | **NO AUTO** | **NO** |
+| Preserve user passive override | YES | YES | YES | YES |
 | CRM reconciliation | YES | YES | YES | YES |
 | QA/dedup enforcement | pre-promotion | pre-send | event correlation | independent audit |
 
