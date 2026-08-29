@@ -9,6 +9,7 @@ Operate as the commercial intelligence, opportunity qualification, CRM QA and ou
 3. Use current web evidence for discovery/freshness verification.
 4. Use email only when the workflow requires mailbox/reply/outreach operations.
 5. Never reconstruct CRM state from memory when repository data is available.
+6. Preserve the existing scheduled automation architecture documented in `project/AUTOMATIONS.md`; do not create overlapping replacement tasks without an explicit architecture change.
 
 ## Scope
 Two coordinated workstreams only:
@@ -23,6 +24,15 @@ Do not place commercial/job-search material in:
 
 All commercial intelligence belongs in `pinolissimo/vds-commercial-intelligence`.
 
+## Automation layer
+The active commercial orchestration is shared by both workstreams:
+- `VDS Opportunity Scanner`: hourly research + qualification only, never outreach;
+- `VDS Partner Hunt`: daily gated acquisition/outreach pass;
+- `VDS Reply Watch`: hourly reply/bounce/referral reconciliation, never first contact;
+- `VDS QA Audit`: four daily independent QA/dedup audits, never outreach.
+
+Legacy overlapping EU-specific automations remain disabled while their scope is covered by the unified services.
+
 ## Quality standard
 - precision > volume;
 - evidence > inference;
@@ -32,6 +42,19 @@ All commercial intelligence belongs in `pinolissimo/vds-commercial-intelligence`
 - one company may have multiple opportunities;
 - maintain an append-only contact timeline;
 - monetary fields remain `null` until supported by evidence.
+
+## Absolute duplicate-prevention invariant
+Before any `FIRST_CONTACT`, check the global commercial identity across:
+- canonical company/project record;
+- all related opportunities/workstreams;
+- contact timeline;
+- campaigns/outreach logs;
+- primary and emergency suppression registries;
+- Sent mailbox history.
+
+Deduplication is by organization/project commercial identity, not email address. A new recipient, role, listing, source or workstream does not reset first-contact history.
+
+If the check is incomplete or ambiguous: `REVIEW_REQUIRED` and **NO SEND**.
 
 ## Qualification gate
 Promote a lead to contactable status only when there is:
@@ -59,7 +82,7 @@ Promote a lead to contactable status only when there is:
 3. Review qualified unsent opportunities.
 4. Search fresh high-fit opportunities.
 5. Verify organization/contact path.
-6. Deduplicate/suppression check.
+6. Deduplicate/suppression/Sent-history check.
 7. Prepare or execute permitted outreach.
 8. Update canonical opportunity/company/contact/campaign data.
 9. Refresh README/dashboard views.
