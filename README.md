@@ -4,8 +4,8 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 05:30 Europe/Madrid  
-**Research:** `RESOURCE-OPTIMIZED RECURSIVE PASS · ADEREN QUALIFICATION + EU GAP CHECK`  
+**Data snapshot:** 29 agosto 2026 · 07:00 Europe/Madrid  
+**Research:** `RESOURCE-OPTIMIZED RECURSIVE PASS · ODDA QUALIFICATION + EU GAP CHECK`  
 **Scanner outreach:** **0 — research/qualification only**
 
 ---
@@ -14,14 +14,14 @@
 
 | 🎯 Success Index | 📈 Probabilità operativa ≥1 nuovo cliente* | 🧲 Opportunity | ✉️ First contact canonici |
 |---:|---:|---:|---:|
-| **71%** | **80.3%** | **47** | **24** |
-| `███████░░░` | `████████░░` | **23** qualificate non contattate | **51.1%** pipeline attivata |
+| **70%** | **80.7%** | **48** | **24** |
+| `███████░░░` | `████████░░` | **24** qualificate non contattate | **50.0%** pipeline attivata |
 
 | 🔥 Positive signal | 🤝 Meeting | 📄 Proposal | 💶 Revenue won |
 |---:|---:|---:|---:|
 | **1 referral positivo** | **0** | **0** | **€0** |
 
-> * **80.3% = operational pipeline proxy, UNCALIBRATED, confidence LOW.** Non è una previsione statistica empirica e non viene usata per valorizzare economicamente la pipeline.
+> * **80.7% = operational pipeline proxy, UNCALIBRATED, confidence LOW.** Non è una previsione statistica empirica e non viene usata per valorizzare economicamente la pipeline.
 
 ### 🎯 GOAL TODAY
 
@@ -34,9 +34,9 @@ Segnale più forte: **BEYOND BARRIERS → referral positivo a due figure Communi
 
 | Stage | Volume | Conversione / stato |
 |---|---:|---:|
-| Opportunity canoniche | **47** | 100% |
-| First contact verificati | **24** | **51.1%** delle opportunity |
-| Qualificate non contattate | **23** | **48.9%** della pipeline |
+| Opportunity canoniche | **48** | 100% |
+| First contact verificati | **24** | **50.0%** delle opportunity |
+| Qualificate non contattate | **24** | **50.0%** della pipeline |
 | Reply thread | **1** | **4.17%** dei contattati |
 | Positive reply / referral | **1** | **4.17%** dei contattati |
 | Meeting | **0** | 0% |
@@ -50,10 +50,10 @@ Segnale più forte: **BEYOND BARRIERS → referral positivo a due figure Communi
 | Workstream | Pipeline | Contacted | Ready / research | Positive signal | Stato |
 |---|---:|---:|---:|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** | **6** | early-funded watchlist attiva | **1** | 🔥 Referral da gestire |
-| 🤝 **Collaborations / Jobs** | **41 active freelance / outsourcing opportunities** | **18 canonical partner accounts** | **22 ready/manual + 1 contact pending reconciliation** | **0** | 🟢 Alta capacità di attivazione |
+| 🤝 **Collaborations / Jobs** | **42 active freelance / outsourcing opportunities** | **18 canonical partner accounts** | **23 ready/manual + 1 contact pending reconciliation** | **0** | 🟢 Alta capacità di attivazione |
 
 ### 🇪🇺 Early-funded EU watch
-Watchlist canonica: **11 progetti finanziati/early-stage**. Priorità: **NAVI, HUBS4BUILD, REMEDIES 5.0**. Il pass corrente non ha trovato una nuova catena completa `WP/task digitale → beneficiario responsabile → contact/procurement path`, quindi nessuno è stato promosso.
+Watchlist canonica: **11 progetti finanziati/early-stage**. Priorità: **NAVI, HUBS4BUILD, REMEDIES 5.0**. Il pass corrente ha riconfermato finanziamento e avvio imminente ma non ha trovato una nuova catena completa `WP/task digitale → beneficiario responsabile → contact/procurement path`, quindi nessuno è stato promosso.
 
 **SENSORAMA** resta bloccato da qualsiasi nuovo first contact: `FIRST_CONTACT_ALREADY_SENT`, Sent UID 79.
 
@@ -67,23 +67,23 @@ Watchlist canonica: **11 progetti finanziati/early-stage**. Priorità: **NAVI, H
 |---:|---|---|---|
 | **1** | **HANDLE_REFERRAL — BEYOND BARRIERS** | positive referral già ricevuto | 🔴 **CRITICAL** |
 | **2** | **RECONCILE_MAILBOX / SUPPRESSION** | criticità QA aperta | 🔴 **CRITICAL QA** |
-| **3** | **Grownnectia — Roma** | P.IVA continuativa · WordPress + infra + software | 🔥 **99** |
-| **4** | **ReMedia Italia — Roma/Remoto** | very high fit | 🔥 **99** |
-| **5** | **Visioni — Palermo** | active P.IVA freelance | 🔥 **99** |
+| **3** | **Odda — Abruzzo / full remote** | weekly IT jobs · stable freelance hub · As-a-Service capacity | 🔥 **99** |
+| **4** | **Grownnectia — Roma** | P.IVA continuativa · WordPress + infra + software | 🔥 **99** |
+| **5** | **ReMedia Italia — Roma/Remoto** | very high fit | 🔥 **99** |
 
-**Next tier:** Mobyleshop — Murcia **98** · **Aderen — Madrid 98** · Ibérica Studio 97 · DNA Agency 97 · Hays España 97.
+**Next tier:** Visioni — Palermo **99** · Mobyleshop — Murcia **98** · Aderen — Madrid **98** · Ibérica Studio 97 · DNA Agency 97 · Hays España 97.
 
 ---
 
 ## 🆕 Lead ad alto potenziale — ultimo pass
 
-### **Aderen — Madrid** · Revenue Priority **98**
+### **Odda / ADDO SRL — Abruzzo / full remote** · Revenue Priority **99**
 
-Nuova opportunity `READY_FOR_DAILY_OUTREACH_REVIEW`. La vacancy pubblica cerca un **WordPress Senior Developer**, **Freelance Full Time**, con progetto **Largo Plazo** per cliente del settore bancario/finanziario. Il sito ufficiale Aderen conferma un modello di business basato su externalizzazione di professionisti e una rete internazionale di **1000+ esperti**; la pagina Aderen People descrive esplicitamente una community di **freelance e micropymes** integrata nei progetti dei clienti.
+Nuova opportunity `READY_FOR_DAILY_OUTREACH_REVIEW`. Il sito ufficiale Odda invita talenti IT a collaborare su progetti internazionali, dichiara **job settimanali**, una community di **400+ talenti** e un modello **As a Service** con cui le aziende possono coprire picchi di lavoro o costruire team. Un comunicato ufficiale aggiunge che oltre **300 freelance collaborano stabilmente** con l'Hub, che nel 2025 sono state gestite **1.800+ richieste di competenze** e che per il 2026 l'azienda puntava a un aumento della domanda del **60%**.
 
-Global duplicate gate: **nessun match Aderen** nel repository canonico o nella suppression primaria; ricerca Gmail Sent per `Aderen / aderen.es / Wordpress Senior developer` = **0 messaggi**. **Nessuna email o form è stato inviato.**
+Global duplicate gate: **nessun match Odda** nel repository canonico, suppression primaria o emergency suppression; ricerca Gmail Sent per `Odda / oddastudio.com` = **0 messaggi**. Il canale talent pubblico verificato è `hr@oddastudio.com`. **Nessuna email o form è stato inviato.**
 
-[Opportunity →](opportunities/OPP-ES-ADEREN-WORDPRESS-SENIOR-FREELANCE.json) · [Company →](spain/madrid/aderen-wordpress-senior-freelance.json)
+[Opportunity →](opportunities/OPP-IT-ODDA-TALENT-HUB-FREELANCE.json) · [Company →](italy/abruzzo/pescara/odda.json)
 
 ---
 
@@ -91,10 +91,10 @@ Global duplicate gate: **nessun match Aderen** nel repository canonico o nella s
 
 | Area | Territori qualificati | Copertura | Account verificati |
 |---|---:|---:|---:|
-| 🇮🇹 Italia | **13 / 20** | **65%** | **22** |
+| 🇮🇹 Italia | **14 / 20** | **70%** | **23** |
 | 🇪🇸 Spagna | **11 / 19** | **57.9%** | **17** |
 
-**15 territori** restano a zero. Madrid sale a **2 account qualificati** grazie ad Aderen; il numero di territori qualificati non cambia.
+**14 territori** restano a zero. **Abruzzo passa a PARTIAL_QUALIFIED** grazie a Odda.
 
 [Regional Coverage →](views/regional-coverage.json)
 
@@ -104,7 +104,7 @@ Global duplicate gate: **nessun match Aderen** nel repository canonico o nella s
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
 - Check obbligatorio: company/project identity + tutte le opportunity + timeline + campaigns + suppression + Gmail Sent.
-- **Aderen:** no prior first-contact evidence found.
+- **Odda:** no prior first-contact evidence found in repository, both suppression registries or Gmail Sent.
 - **SENSORAMA:** prior first contact verified; new first-contact path blocked.
 - Scanner: **research + qualification only, outreach forbidden**.
 - Positive/potentially positive replies: **auto-response forbidden**.
@@ -122,10 +122,10 @@ QA aperto: **RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION**.
 
 ## 📊 Success & Probability Model
 
-**Success Index: 71%** — indice operativo, non probabilità.  
-**Operational proxy ≥1 nuovo cliente: 80.3%***
+**Success Index: 70%** — indice operativo, non probabilità.  
+**Operational proxy ≥1 nuovo cliente: 80.7%***
 
-`1 - (1-0.02)^23 × (1-0.04)^23 × (1-0.20)^1 = 80.3%`
+`1 - (1-0.02)^24 × (1-0.04)^23 × (1-0.20)^1 = 80.7%`
 
 ⚠️ **UNCALIBRATED · LOW CONFIDENCE.** `weighted_pipeline_value` resta `null`.
 
