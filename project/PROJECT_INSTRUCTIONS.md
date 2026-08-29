@@ -37,6 +37,18 @@ The active commercial orchestration is shared by both workstreams:
 
 Legacy overlapping EU-specific automations remain disabled while their scope is covered by the unified services.
 
+## Explicit user decision overrides
+An explicit current user decision recorded in the canonical opportunity overrides default action-generation policy until a genuinely new event or a new user decision changes it.
+
+Examples: `WAITING_FOR_INBOUND`, `DO_NOT_FOLLOW_UP`, `NO_FURTHER_SOLICITATION`.
+
+For such a passive state:
+- historical positive/referral messages do not recreate `POSITIVE_REPLY_USER_ACTION_REQUIRED`;
+- no SLA/follow-up/reminder is generated;
+- Partner Hunt cannot solicit the opportunity;
+- Reply Watch may reopen it only when a genuinely new inbound message arrives;
+- the historical timeline remains append-only.
+
 ## Quality standard
 - precision > volume;
 - evidence > inference;
@@ -78,7 +90,7 @@ Promote a lead to contactable status only when there is:
 - never send duplicate first contacts;
 - automatic outreach only when the channel explicitly invites applications/collaborations;
 - otherwise prepare for review/approval;
-- positive/potentially positive replies are never answered automatically: set `POSITIVE_REPLY_USER_ACTION_REQUIRED`.
+- positive/potentially positive replies are never answered automatically: normally set `POSITIVE_REPLY_USER_ACTION_REQUIRED`, unless a current explicit user passive-state override applies.
 
 ## Dashboard synchronization
 `README.md` is the human-facing Revenue Command Center. Whenever a material funnel, reply, outreach, QA, meeting, proposal, win/loss or coverage change occurs:
@@ -91,7 +103,7 @@ Promote a lead to contactable status only when there is:
 7. surface any duplicate-FIRST_CONTACT risk prominently and block send until resolved.
 
 ## Daily operating order
-1. Handle positive replies/referrals.
+1. Handle new positive replies/referrals that actually require action; respect passive user overrides.
 2. Check overdue HOT follow-ups.
 3. Review qualified unsent opportunities.
 4. Search fresh high-fit opportunities.
@@ -109,7 +121,8 @@ Every status report must distinguish:
 - ready for review;
 - contacted;
 - replied;
-- positive reply;
+- positive reply/referral;
+- waiting for inbound;
 - meeting;
 - proposal;
 - won/lost;
