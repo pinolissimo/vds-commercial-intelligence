@@ -31,9 +31,11 @@
 
 ## Latest material territory × source hit
 
-- **2026-08-29 · Castilla y León × PROCUREMENT:** ProBurgos expediente `C16.2026` promoted to qualified after institutional PLACSP verification plus independent tender-index corroboration. Current deadline: **2026-09-04 15:00**. Evidence lineage is kept distinct; mirrors are not double-counted as separate need events.
+- **2026-08-29 · Canarias × PROCUREMENT:** Los Realejos expediente `2026/9564` promoted to qualified after institutional PLACSP verification plus independent specialist corroboration. Current deadline: **2026-09-10 23:59**; published base budget **€73,333.33 excl. VAT**, estimated contract value **€148,000**, 2-year scope.
 - Source-yield delta for this pass: `PROCUREMENT: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged.
-- Next Castilla y León family: continue non-procurement rotation only when marginal value justifies it; do not immediately repeat the same tender query.
+- **2026-08-29 · Castilla y León × PROCUREMENT:** ProBurgos expediente `C16.2026` promoted to qualified after institutional PLACSP verification plus independent tender-index corroboration. Current deadline: **2026-09-04 15:00**. Evidence lineage is kept distinct; mirrors are not double-counted as separate need events.
+- Source-yield delta for that pass: `PROCUREMENT: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged.
+- Next Canarias family: continue non-procurement rotation only when marginal value justifies it; do not immediately repeat the same tender query.
 
 ## Quality rules
 
