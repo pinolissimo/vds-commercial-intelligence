@@ -25,7 +25,7 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 | Sicilia | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Toscana | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Trentino-Alto Adige/Südtirol | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
-| Umbria | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | Battistelli P.IVA collaboration held TO_VERIFY because verifiable vacancy dates resolve to May 2026; revisit only on fresh/reopened need |
+| Umbria | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | Evo Sistemi HOT+ ready for daily outreach review; continue source-family rotation |
 | Valle d'Aosta/Vallée d'Aoste | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Veneto | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 
