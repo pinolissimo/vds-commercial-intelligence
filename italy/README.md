@@ -19,7 +19,7 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 | Lombardia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Marche | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | rotate to a new source family; broad pass produced no qualifying buyer-side signal |
 | Molise | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
-| Piemonte | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | daily outreach review for canonical Digityze partner-network opportunity; continue source-family rotation |
+| Piemonte | QUALIFIED_TRACK | ACTIVE | 3 | 3 | 2 | 0 | 2026-08-29 | Digityze ready for daily outreach review; continue source-family rotation without repeating fresh searches |
 | Puglia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Sardegna | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Sicilia | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
