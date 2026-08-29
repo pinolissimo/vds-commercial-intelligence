@@ -1,12 +1,12 @@
 {
   "schema_version":"1.0",
   "created_at":"2026-08-28T17:05:00+02:00",
-  "updated_at":"2026-08-28T20:58:00+02:00",
-  "reason":"QA detected new commercial sends after the 13:45 suppression backfill. These recipients/domains must be blocked from any additional FIRST_CONTACT until canonical CRM reconciliation is complete.",
+  "updated_at":"2026-08-29T08:59:00+02:00",
+  "reason":"QA containment registry for first-contact deduplication events not yet fully merged into the primary registry. All entries block any additional FIRST_CONTACT by canonical organization/project identity.",
   "rules":[
     "Treat every entry as FIRST_CONTACT_ALREADY_SENT for deduplication purposes.",
-    "Do not infer qualification or canonical company identity from this emergency file.",
-    "Merge into the primary suppression registry only after canonical CRM reconciliation.",
+    "Do not infer qualification or canonical company identity from pending entries.",
+    "Canonicalized new sends may remain here as hard blocks until safely merged into the primary suppression registry.",
     "Historical duplicate events remain audit evidence and must not be erased."
   ],
   "new_first_contact_blocks":[
@@ -19,11 +19,13 @@
     {"label":"The North Studio","domain":"thenorthstudio.com","emails":["hello@thenorthstudio.com"],"sent_uid":111,"sent_at":"2026-08-28T16:33:21+02:00","state":"FIRST_CONTACT_ALREADY_SENT_PENDING_CANONICALIZATION"},
     {"label":"Giuseppe Castagna","domain":"giuseppecastagna.it","emails":["info@giuseppecastagna.it"],"sent_uid":112,"sent_at":"2026-08-28T16:35:28+02:00","state":"FIRST_CONTACT_ALREADY_SENT_PENDING_CANONICALIZATION"},
     {"label":"BATMAN / unresolved entity","domain":"knows.us","emails":["nobody@knows.us"],"sent_uid":114,"sent_at":"2026-08-28T16:35:48+02:00","state":"FIRST_CONTACT_ALREADY_SENT_PENDING_CANONICALIZATION","quality_status":"REVIEW_REQUIRED","reason":"recipient address/entity relationship is not established by current CRM evidence"},
-    {"label":"BSC Web Design / unresolved canonical entity","domain":"bscwebdesign.com","emails":["office@bscwebdesign.com"],"sent_uid":115,"sent_at":"2026-08-28T19:05:24+02:00","state":"FIRST_CONTACT_ALREADY_SENT_PENDING_CANONICALIZATION","quality_status":"PENDING_CANONICALIZATION","subject":"VIENNA — WordPress Web Designer & Developer | Remote Contractor","reason":"Sent evidence exists but no canonical CRM company/opportunity/contact record was found at audit time."}
+    {"label":"BSC Web Design / unresolved canonical entity","domain":"bscwebdesign.com","emails":["office@bscwebdesign.com"],"sent_uid":115,"sent_at":"2026-08-28T19:05:24+02:00","state":"FIRST_CONTACT_ALREADY_SENT_PENDING_CANONICALIZATION","quality_status":"PENDING_CANONICALIZATION","subject":"VIENNA — WordPress Web Designer & Developer | Remote Contractor","reason":"Sent evidence exists but no canonical CRM company/opportunity/contact record was found at audit time."},
+    {"label":"Odda Talent Hub","entity_id":"LEAD-IT-ABR-PE-ODDA","domain":"oddastudio.com","emails":["hr@oddastudio.com"],"gmail_message_id":"1a04c219c8ac3419","sent_at":"2026-08-29T08:07:46+02:00","state":"FIRST_CONTACT_ALREADY_SENT_CANONICAL","quality_status":"CANONICAL_VERIFIED"},
+    {"label":"ReMedia Italia","entity_id":"LEAD-IT-LAZ-RM-REMEDIA","domain":"remediagroup.it","emails":["rleonzi@remediagroup.it"],"gmail_message_id":"1a04c221e744d0b0","sent_at":"2026-08-29T08:08:19+02:00","state":"FIRST_CONTACT_ALREADY_SENT_CANONICAL","quality_status":"CANONICAL_VERIFIED"}
   ],
   "duplicate_first_contact_violations":[
     {"entity":"Persuadis","email":"info@persuadis.com","original_sent_uid":84,"duplicate_sent_uid":113,"duplicate_sent_at":"2026-08-28T16:35:37+02:00","violation":"QG-03/QG-11 duplicate first contact"},
     {"entity":"Marmellata Lab","email":"hello@marmellatalab.com","original_sent_uid":87,"duplicate_sent_uid":110,"duplicate_sent_at":"2026-08-28T16:33:11+02:00","violation":"QG-03/QG-11 duplicate first contact"}
   ],
-  "mailbox_reconciliation":{"first_contact_style_send_events_since_13_45":12,"unique_recipients_pending_canonicalization":10,"duplicate_first_contact_violations":2,"non_commercial_self_report_uid":108,"latest_reconciled_sent_uid":115}
+  "mailbox_reconciliation":{"historical_first_contact_style_send_events_2026_08_28":36,"unique_recipients_pending_canonicalization":10,"historical_duplicate_first_contact_violations":2,"verified_new_canonical_first_contacts_2026_08_29":2,"current_day_duplicate_first_contact_violations":0,"latest_verified_gmail_message_ids":["1a04c219c8ac3419","1a04c221e744d0b0"]}
 }
