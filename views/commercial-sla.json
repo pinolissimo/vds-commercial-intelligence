@@ -1,20 +1,10 @@
 {
   "view":"Commercial SLA",
-  "updated_at":"2026-08-28T17:05:00+02:00",
-  "open_critical":[
-    {
-      "opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB",
-      "class":"REFERRAL",
-      "owner":"USER",
-      "due_at":"2026-08-28T17:00:00+02:00",
-      "breached":true,
-      "breached_at":"2026-08-28T17:00:00+02:00",
-      "severity":"CRITICAL",
-      "required_action":"Personal review and controlled response/next step; no automatic reply."
-    }
-  ],
+  "updated_at":"2026-08-29T22:52:00+02:00",
+  "open_critical":[],
   "open_high":[],
   "scheduled_follow_up_policy":{"first_business_days":3,"second_business_days_after_first":7},
   "rules_source":"../config/commercial-sla.json",
-  "qa_note":"17:00 audit converted the referral from open same-day SLA to CRITICAL BREACH because the recorded due time passed without a logged user action."
+  "waiting_for_inbound":[{"opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","class":"REFERRAL","owner":"NONE","due_at":null,"breached":false,"required_action":"None. Wait for an inbound message from the introduced Communication & Dissemination contacts; no follow-up or solicitation."}],
+  "qa_note":"The historical 2026-08-28 referral SLA breach remains preserved in the opportunity timeline. On 2026-08-29 the user explicitly decided that the introduction itself is sufficient; the current operational state is WAITING_FOR_INBOUND and there is no outstanding SLA action."
 }
