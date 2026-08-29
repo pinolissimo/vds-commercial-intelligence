@@ -8,7 +8,7 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 
 | Comunidad / Ciudad autónoma | Coverage | Scansione | Trovate | Qualificate | Contattate | Reply+ | Ultimo scan | Next action |
 |---|---|---|---:|---:|---:|---:|---|---|
-| Andalucía | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Andalucía | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | review Autoridad Portuaria de Sevilla CONT26053 eligibility before 2026-09-14 10:00; continue source-family rotation |
 | Aragón | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Principado de Asturias | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Illes Balears | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
