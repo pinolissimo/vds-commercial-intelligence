@@ -4,9 +4,9 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 18:02 Europe/Madrid  
+**Data snapshot:** 29 agosto 2026 · 19:00 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** `DIGITYZE PARTNER NETWORK QUALIFIED · PIEMONTE · RESEARCH-ONLY PASS`  
+**Research:** `ABAQUA IT SUPPORT PROCUREMENT QUALIFIED · ILLES BALEARS · RESEARCH-ONLY PASS`  
 **QA:** `FAIL_CORRECTED · containment active for older reconciliation`
 
 ---
@@ -15,9 +15,9 @@
 
 | Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|
-| **60** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
+| **61** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **33** · **pipeline activation: 45.0%**.
+**Qualified not contacted:** **34** · **pipeline activation: 44.3%**.
 
 > Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
@@ -29,6 +29,11 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 ---
 
 ## 🆕 Ricerca qualificata — 29 agosto
+
+### ABAQUA — Illes Balears
+**QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID/OUTREACH PERFORMED.** Expediente **SE/2026/11** per supporto e manutenzione delle apparecchiature e dei sistemi informatici dell'Agencia Balear del Agua y de la Calidad Ambiental. Evidenza corrente multi-source: valore stimato **€135.000**, durata riportata **3 anni**, deadline **3 settembre 2026 19:00**. Fit VDS forte sul versante IT/infrastruttura; prima di qualsiasi partecipazione devono essere verificati PCAP/PPT, solvibilità, personale/copertura on-site, garanzie e formalità. Gate multi-source **SCS 92 / STRONG_MULTI_SOURCE**; repository e Gmail Sent puliti, nessun indirizzo dedotto o inventato.
+
+[Opportunity →](opportunities/OPP-ES-ABAQUA-IT-SUPPORT-TENDER-2026.json)
 
 ### Digityze — Cuneo, Piemonte
 **QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Il sito ufficiale corrente invita esplicitamente a entrare nel **Team / Network Digityze** e conferma attività in web design, WordPress/WooCommerce, sviluppo web/custom plugin e manutenzione. Le route business e i contatti dei co-founder sono pubblicati ufficialmente. Un dominio professionale indipendente del co-founder Andrea Bodino corrobora identità Cuneo e attività web/design senza essere contato come secondo evento di bisogno. Gate multi-source superato con **SCS 89 / STRONG_MULTI_SOURCE**. Repository, suppression primaria, emergency suppression e Gmail Sent risultano puliti per l'identità Digityze; nessuna email è stata dedotta e nessun contatto è stato eseguito.
@@ -100,9 +105,9 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 | Stage | Volume | Stato |
 |---|---:|---|
-| Opportunity canoniche | **60** | 100% |
-| First contact verificati | **27** | **45.0%** |
-| Qualificate non contattate | **33** | **55.0%** |
+| Opportunity canoniche | **61** | 100% |
+| First contact verificati | **27** | **44.3%** |
+| Qualificate non contattate | **34** | **55.7%** |
 | Reply thread | **1** | existing |
 | Positive reply / referral | **1** | USER ACTION REQUIRED |
 | Meeting | **0** | — |
@@ -116,7 +121,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 | Workstream | Pipeline | Stato |
 |---|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs / Procurement** | **54 active/canonical opportunities** | Digityze + Aplum + CyberOptik + Walkstone newly reconciled; tender and other routes remain gated |
+| 🤝 **Collaborations / Jobs / Procurement** | **55 active/canonical opportunities** | ABAQUA added in Illes Balears; tender and other routes remain gated |
 
 ---
 
@@ -124,12 +129,12 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 1. 🔴 **HANDLE_REFERRAL — BEYOND BARRIERS** — USER ACTION REQUIRED / SLA breached.
 2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
-3. 🔥 **Aplum Studio** — review the explicit application route before **29/08 20:00**.
-4. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
-5. 🔥 **CyberOptik** — verify cross-border/contract eligibility before the official route.
-6. 🔥 **Mobyleshop / Aderen** — review official application routes.
-7. 🔥 **Digityze** — review verified Team/Network business route; scanner performed no contact.
-8. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT before **04/09/2026 15:00**.
+3. 🔥 **ABAQUA SE/2026/11** — verify PCAP/PPT and tender eligibility before **03/09/2026 19:00**.
+4. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT before **04/09/2026 15:00**.
+5. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
+6. 🔥 **CyberOptik** — verify cross-border/contract eligibility before the official route.
+7. 🔥 **Mobyleshop / Aderen** — review official application routes.
+8. 🔥 **Digityze** — review verified Team/Network business route; scanner performed no contact.
 9. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT before **10/09/2026 23:59**.
 10. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT before **14/09/2026 10:00**.
 
@@ -140,9 +145,9 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🗺️ Coverage commerciale
 
 - 🇮🇹 Italia: **15/20** territori con almeno un account qualificato, **26** account con regione verificata + 1 remote/geography-to-verify.
-- 🇪🇸 Spagna: **14/19** territori con almeno un account qualificato, **22** account con territorio verificato + 2 remote/geography-to-verify.
-- **10 territori** remain zero-result / under deep research: pochi risultati con coverage incompleta restano **UNDER_SEARCHED**, non low-opportunity.
-- Piemonte era già un territorio qualificato nel CRM canonico; Digityze porta il totale regionale a **3 account qualificati** e migliora la copertura della famiglia agency/outsourcing.
+- 🇪🇸 Spagna: **15/19** territori con almeno un account qualificato, **23** account con territorio verificato + 2 remote/geography-to-verify.
+- **9 territori** remain zero-result / under deep research: pochi risultati con coverage incompleta restano **UNDER_SEARCHED**, non low-opportunity.
+- **Illes Balears** entra nel qualified track grazie ad ABAQUA; il prossimo ciclo deve ruotare verso famiglie/territori ancora sotto-testati senza ripetere questa ricerca finché non cambia la freshness.
 
 ---
 
@@ -156,13 +161,13 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 🛡️ Safety / QA
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
-- Digityze duplicate gate: **CLEAR** su repository canonico, suppression primaria, emergency suppression e Gmail Sent; contatti memorizzati solo se pubblicati ufficialmente.
-- **No Digityze outreach, application or form submission was performed by the research scanner.**
+- ABAQUA duplicate gate: **CLEAR** su repository canonico e Gmail Sent; nessun email/contact path inventato, solo route ufficiale di procurement.
+- **No ABAQUA outreach, application, form or bid submission was performed by the research scanner.**
+- SANDETEL `EXPT26-00017`: **REVIEW_REQUIRED / NOT PROMOTED** per conflitto fra fonti correnti su deadline/valore.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
 - Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
 - Older unresolved QA: **10 recipients pending canonicalization**; `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
 - Positive/potentially positive replies: **auto-response forbidden**.
-- Reconciliation note: dashboard/funnel was advanced from the stale 17:00 snapshot to the current canonical state, preserving the 17:55 Commercial Core additions before adding Digityze.
 
 [Audit 13:58 →](audits/2026-08-29-1358.md)
 
