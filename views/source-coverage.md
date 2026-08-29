@@ -29,6 +29,12 @@
 | Local business directories | local discovery | LOW | gap filling |
 | Search routers | route discovery only | LOW | never final evidence |
 
+## Latest material territory × source hit
+
+- **2026-08-29 · Castilla y León × PROCUREMENT:** ProBurgos expediente `C16.2026` promoted to qualified after institutional PLACSP verification plus independent tender-index corroboration. Current deadline: **2026-09-04 15:00**. Evidence lineage is kept distinct; mirrors are not double-counted as separate need events.
+- Source-yield delta for this pass: `PROCUREMENT: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged.
+- Next Castilla y León family: continue non-procurement rotation only when marginal value justifies it; do not immediately repeat the same tender query.
+
 ## Quality rules
 
 A territory is not `LOW_OPPORTUNITY` merely because few leads were found. If source-family coverage is incomplete it remains `UNDER_SEARCHED`.
