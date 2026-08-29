@@ -4,9 +4,10 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 08:09 Europe/Madrid  
+**Data snapshot:** 29 agosto 2026 · 08:59 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** resource-optimized recursive pass active
+**Research:** resource-optimized recursive pass active  
+**QA:** `FAIL_CORRECTED · 09:00 reconciliation complete for current-day sends`
 
 ---
 
@@ -30,12 +31,12 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 ## 🆕 Outreach verificato — 29 agosto
 
 ### Odda — Talent Hub IT · Abruzzo / full remote
-**FIRST_CONTACT SENT + VERIFIED** a `hr@oddastudio.com`, canale Talent ufficiale. Evidenza corrente: 400+ talenti, nuovi job settimanali, full remote, rete freelance stabile e modello As-a-Service per picchi di lavoro. Pre-send gate: nessun precedente Odda in Gmail Sent e nessun blocco emergency suppression. Gmail message id `1a04c219c8ac3419`.
+**FIRST_CONTACT SENT + VERIFIED** a `hr@oddastudio.com`, canale Talent ufficiale. Gmail message id `1a04c219c8ac3419`.
 
 [Opportunity →](opportunities/OPP-IT-ODDA-TALENT-HUB-FREELANCE.json)
 
 ### ReMedia Italia — Roma / remoto
-**FIRST_CONTACT SENT + VERIFIED** a `rleonzi@remediagroup.it`, route di candidatura ufficiale. Posizione corrente: **Sviluppatore Web Front-End freelance P.IVA**, inserimento immediato, remoto e possibilità di continuità; WordPress + HTML/CSS/JavaScript + Figma, con GSAP preferenziale. Forte aderenza anche per esperienza VDS su progetti UE/scientifici. Pre-send gate: nessun precedente ReMedia/remediagroup.it in Gmail Sent. Gmail message id `1a04c221e744d0b0`.
+**FIRST_CONTACT SENT + VERIFIED** a `rleonzi@remediagroup.it`, route di candidatura ufficiale. Gmail message id `1a04c221e744d0b0`.
 
 [Opportunity →](opportunities/OPP-IT-REMEDIA-WEB-FREELANCE.json)
 
@@ -68,12 +69,12 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 ## ⚡ Next Best Actions
 
 1. 🔴 **HANDLE_REFERRAL — BEYOND BARRIERS** — USER ACTION REQUIRED / SLA breached.
-2. 🔴 **RECONCILE_MAILBOX / SUPPRESSION** — critical QA containment.
+2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
 3. 🔥 **Grownnectia** — verify exact current P.IVA application route before any send.
-4. 🔥 **Visioni — Palermo** — current P.IVA freelance web-designer signal; verify official recipient route and global dedup.
+4. 🔥 **Visioni — Palermo** — verify official recipient route and global dedup.
 5. 🔥 **Mobyleshop / Aderen / Robert Half Contracting** — continue gated review.
 
-Odda and ReMedia move from READY to **CONTACTED**; follow-up only per policy if no reply.
+Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
 ---
 
@@ -88,10 +89,13 @@ Odda and ReMedia move from READY to **CONTACTED**; follow-up only per policy if 
 ## 🛡️ Safety / QA
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
-- Every send requires organization identity + all opportunities/workstreams + timeline + campaigns + primary/emergency suppression + Gmail Sent.
-- Odda and ReMedia passed the available global gate and were verified in Sent immediately after transmission.
+- Odda and ReMedia are now reconciled across opportunity, campaign, master, funnel, active view, snapshot and suppression containment.
+- Current-day duplicate FIRST_CONTACT violations: **0**.
+- Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
+- Older unresolved QA: **10 recipients pending canonicalization**; `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
 - Positive/potentially positive replies: **auto-response forbidden**.
-- Open QA: **RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION**.
+
+[Audit 09:00 →](audits/2026-08-29-0900.md)
 
 ---
 
