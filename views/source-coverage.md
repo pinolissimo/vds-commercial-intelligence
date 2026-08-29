@@ -31,6 +31,8 @@
 
 ## Latest material territory × source hit
 
+- **2026-08-29 · Illes Balears × PROCUREMENT:** ABAQUA expediente `SE/2026/11` promoted after current public-procurement evidence verified an open 3-year IT support/maintenance requirement, estimated value **€135,000**, deadline **2026-09-03 19:00**, and official electronic tender route. Independent procurement lineages corroborate scope/value/freshness. Source Confidence Score **92 / STRONG_MULTI_SOURCE**. Mirrored official-platform-derived records are treated as one lineage.
+- Source-yield delta for the 19:00 pass: `PROCUREMENT: discoveries +2 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged. A current low-value La Rioja signal was not promoted, while SANDETEL remained `REVIEW_REQUIRED` because evidence lineages conflict on current deadline/value.
 - **2026-08-29 · Piemonte × AGENCY/OUTSOURCING + OFFICIAL_COMPANY:** Digityze promoted after its current official site explicitly invited people to join the Team/Network, verified active web/WordPress/WooCommerce/custom-plugin/maintenance delivery and public routes, while an independent co-founder professional domain corroborated Cuneo identity and web-design activity. Source Confidence Score **89 / STRONG_MULTI_SOURCE**. Multiple Digityze official URLs are one primary information lineage, not separate discoveries.
 - Source-yield delta for the 18:02 pass: `AGENCY_OUTSOURCING: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged. Search-router-only hits were rejected from final evidence.
 - **2026-08-29 · Cantabria × AGENCY/OUTSOURCING + OFFICIAL_COMPANY:** Cantabria Web Design promoted after the official legal page explicitly offered subcontracting to competing companies, the official site verified active WordPress/web/ecommerce/maintenance operations and public routes, and LinkedIn independently corroborated owner identity/location/services. Source Confidence Score **94 / STRONG_MULTI_SOURCE**. This is one commercial need lineage, not three discoveries.
@@ -39,7 +41,7 @@
 - Source-yield delta for that pass: `PROCUREMENT: discoveries +1 → qualified +1`; contacted/replies/meetings/proposals/wins unchanged.
 - **2026-08-29 · Canarias × PROCUREMENT:** Los Realejos expediente `2026/9564` promoted to qualified after institutional PLACSP verification plus independent specialist corroboration. Current deadline: **2026-09-10 23:59**; published base budget **€73,333.33 excl. VAT**, estimated contract value **€148,000**, 2-year scope.
 - **2026-08-29 · Castilla y León × PROCUREMENT:** ProBurgos expediente `C16.2026` promoted to qualified after institutional PLACSP verification plus independent tender-index corroboration. Current deadline: **2026-09-04 15:00**. Evidence lineage is kept distinct; mirrors are not double-counted as separate need events.
-- Do not immediately repeat freshly scanned procurement queries for Andalucía, Canarias or Castilla y León without a new signal or freshness change; rotate to under-covered source families/territories. Aragón's historical procurement result was checked and rejected as already resolved.
+- Do not immediately repeat freshly scanned procurement queries for Illes Balears, Andalucía, Canarias or Castilla y León without a new signal or freshness change. SANDETEL requires primary conflict resolution before promotion; Aragón's historical procurement result was checked and rejected as already resolved.
 
 ## Quality rules
 
