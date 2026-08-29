@@ -1,21 +1,22 @@
 {
   "view":"Commercial action queue",
-  "updated_at":"2026-08-29T08:59:00+02:00",
-  "priority_order":["SLA_BREACH","QA_RECONCILIATION","POSITIVE_REPLY_USER_ACTION_REQUIRED","REVIEW_REQUIRED","PROPOSAL_OR_MEETING","READY_TO_CONTACT_HIGH_IMPACT","FOLLOW_UP_DUE","RESEARCH","NURTURE_FUTURE"],
-  "sla_breaches":[{"priority":"CRITICAL","opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","class":"REFERRAL","owner":"USER","due_at":"2026-08-28T17:00:00+02:00","action":"HANDLE_REFERRAL","automation_send_forbidden":true}],
-  "qa_reconciliation":[{"priority":"CRITICAL","action":"RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION","owner":"AUTOMATION","due_at":"2026-08-28T17:30:00+02:00","status":"BREACHED_PENDING_RECONCILIATION","evidence":"../governance/suppression-emergency-2026-08-28.json","finding":"Ten older unique recipients remain pending canonicalization; two historical duplicate-first-contact violations remain preserved. Odda/ReMedia current-day sends are now reconciled and suppressed."}],
-  "positive_reply_user_action_required":[{"priority":"CRITICAL","opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","campaign":"EU-PROJECT-WEB","received_at":"2026-08-28T12:21:12+02:00","signal":"Direct referral to two Communication & Dissemination leads.","action":"HANDLE_REFERRAL","owner":"USER","due_at":"2026-08-28T17:00:00+02:00","sla_breached":true,"reply_log":"../replies/2026-08-28-beyond-barriers-referral.json","automation_send_forbidden":true}],
+  "updated_at":"2026-08-29T22:52:00+02:00",
+  "priority_order":["QA_RECONCILIATION","REVIEW_REQUIRED","READY_TO_CONTACT_HIGH_IMPACT","FOLLOW_UP_DUE","RESEARCH","NURTURE_FUTURE","WAITING_FOR_INBOUND"],
+  "sla_breaches":[],
+  "qa_reconciliation":[{"priority":"CRITICAL","action":"RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION","owner":"AUTOMATION","due_at":"2026-08-28T17:30:00+02:00","status":"BREACHED_PENDING_RECONCILIATION","evidence":"../governance/suppression-emergency-2026-08-28.json","finding":"Ten older unique recipients remain pending canonicalization; two historical duplicate-first-contact violations remain preserved. Odda/ReMedia current-day sends are reconciled and suppressed."}],
+  "positive_reply_user_action_required":[],
   "review_required":[{"priority":"HIGH","entity":"BATMAN / unresolved entity","email":"nobody@knows.us","sent_uid":114,"action":"VERIFY_ENTITY_AND_CONTACT_QUALITY_BEFORE_ANY_FURTHER_ACTION","reason":"No current canonical CRM evidence establishes the recipient as a verified business contact."}],
   "ready_to_contact_high_impact":[
-    {"rank":1,"opportunity_id":"OPP-IT-GROWNNECTIA-WP-INFRA-FREELANCE","score":99,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
-    {"rank":2,"opportunity_id":"OPP-IT-VISIONI-WEB-FREELANCE","score":99,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
-    {"rank":3,"opportunity_id":"OPP-ES-MOBYLESHOP-WPO-FREELANCE","score":98,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
-    {"rank":4,"opportunity_id":"OPP-ES-ADEREN-WORDPRESS-SENIOR-FREELANCE","score":98,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
-    {"rank":5,"opportunity_id":"OPP-IT-ROBERT-HALF-CONTRACTING-FREELANCE","score":98,"owner":"DAILY_PARTNER_HUNT","action":"REVERIFY_BARI_ROLE_AND_REVIEW_OFFICIAL_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
-    {"rank":6,"opportunity_id":"OPP-IT-STUDIART-WEB-FREELANCE","score":98,"owner":"AUTOMATION","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_TO_CONTACT"},
-    {"rank":7,"opportunity_id":"OPP-IT-NEXIBO-COLLAB","score":97,"owner":"AUTOMATION","action":"SEND_PERSONALIZED_COLLABORATION_IF_QG_PASS","status":"READY_TO_CONTACT"},
-    {"rank":8,"opportunity_id":"OPP-IT-WEBGENOVA-OUTSOURCING","score":97,"owner":"AUTOMATION","action":"RESOLVE_OFFICIAL_APPLICATION_CHANNEL","status":"READY_TO_CONTACT"},
-    {"rank":9,"opportunity_id":"OPP-ES-VAIVEN-WEB-FREELANCE","score":97,"owner":"AUTOMATION","action":"REVIEW_COLLABORATION_ROUTE","status":"READY_TO_CONTACT"}
+    {"rank":1,"opportunity_id":"OPP-ES-APLUM-WORDPRESS-FREELANCE-2026","score":100,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
+    {"rank":2,"opportunity_id":"OPP-IT-GROWNNECTIA-WP-INFRA-FREELANCE","score":99,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
+    {"rank":3,"opportunity_id":"OPP-IT-VISIONI-WEB-FREELANCE","score":99,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
+    {"rank":4,"opportunity_id":"OPP-ES-MOBYLESHOP-WPO-FREELANCE","score":98,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
+    {"rank":5,"opportunity_id":"OPP-ES-ADEREN-WORDPRESS-SENIOR-FREELANCE","score":98,"owner":"DAILY_PARTNER_HUNT","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
+    {"rank":6,"opportunity_id":"OPP-IT-ROBERT-HALF-CONTRACTING-FREELANCE","score":98,"owner":"DAILY_PARTNER_HUNT","action":"REVERIFY_BARI_ROLE_AND_REVIEW_OFFICIAL_ROUTE","status":"READY_FOR_DAILY_OUTREACH_REVIEW"},
+    {"rank":7,"opportunity_id":"OPP-IT-STUDIART-WEB-FREELANCE","score":98,"owner":"AUTOMATION","action":"REVIEW_OFFICIAL_APPLICATION_ROUTE","status":"READY_TO_CONTACT"},
+    {"rank":8,"opportunity_id":"OPP-IT-NEXIBO-COLLAB","score":97,"owner":"AUTOMATION","action":"SEND_PERSONALIZED_COLLABORATION_IF_QG_PASS","status":"READY_TO_CONTACT"},
+    {"rank":9,"opportunity_id":"OPP-IT-WEBGENOVA-OUTSOURCING","score":97,"owner":"AUTOMATION","action":"RESOLVE_OFFICIAL_APPLICATION_CHANNEL","status":"READY_TO_CONTACT"},
+    {"rank":10,"opportunity_id":"OPP-ES-VAIVEN-WEB-FREELANCE","score":97,"owner":"AUTOMATION","action":"REVIEW_COLLABORATION_ROUTE","status":"READY_TO_CONTACT"}
   ],
   "follow_up_waiting":[
     {"opportunity_id":"OPP-IT-ODDA-TALENT-HUB-FREELANCE","due_at":"2026-09-03","status":"CONTACTED_NO_REPLY_YET"},
@@ -23,5 +24,6 @@
   ],
   "scheduled_follow_ups_count":25,
   "scheduled_follow_ups_source":"23 previously scheduled canonical follow-ups plus Odda and ReMedia after verified 2026-08-29 first contacts; reply check required before any follow-up.",
-  "nurture_future":[]
+  "nurture_future":[],
+  "waiting_for_inbound":[{"opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","status":"WAITING_FOR_INBOUND","action":"NONE_UNTIL_INBOUND","automation_send_forbidden":true,"reason":"User explicitly considers the warm introduction sufficient. Do not follow up or solicit; respond only if the introduced contacts initiate communication."}]
 }
