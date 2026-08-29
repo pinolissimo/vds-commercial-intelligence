@@ -15,7 +15,7 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 | Canarias | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Cantabria | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Castilla-La Mancha | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
-| Castilla y León | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Castilla y León | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | review ProBurgos C16.2026 tender eligibility before 2026-09-04; continue source-family rotation |
 | Catalunya | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Comunitat Valenciana | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
 | Extremadura | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
