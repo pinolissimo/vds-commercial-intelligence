@@ -56,9 +56,9 @@ Positive/potentially positive/referral/pricing/proposal/call/next-step replies: 
 
 Any reply cancels pending no-response follow-up.
 
-### VDS QA Audit
-Cadence: daily at approximately 09:00, 13:00, 17:00 and 21:00.
-Role: independent VDS7 quality gate.
+### VDS QA + 3 Daily Reports
+Cadence: daily at approximately 09:00, 14:00 and 20:00 Europe/Madrid.
+Role: independent VDS7 quality gate + complete commercial report.
 
 Mandatory checks include:
 - company/opportunity/contact/campaign deduplication;
@@ -86,7 +86,7 @@ This prevents:
 
 ## Single-writer responsibility matrix
 
-| Action | Scanner | Partner Hunt | Reply Watch | QA Audit |
+| Action | Scanner | Partner Hunt | Reply Watch | QA + Reports |
 |---|---:|---:|---:|---:|
 | Discover leads | YES | YES | NO | NO |
 | Qualify/verify | YES | YES | event-only | audit-only |
