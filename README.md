@@ -2,192 +2,126 @@
 
 > **Single source of truth:** `pinolissimo/vds-commercial-intelligence` · `main`  
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
-> **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
+> **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Data snapshot:** 29 agosto 2026 · 23:00 Europe/Madrid  
-**Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** `EVO SISTEMI STRUCTURAL COLLABORATION QUALIFIED · UMBRIA · RESEARCH-ONLY PASS`  
-**QA:** `PASS WITH RESIDUAL · older reconciliation still open`
+**Snapshot:** 29 agosto 2026 · 23:05 Europe/Madrid  
+**Operating mode:** **CONVERSION FIRST · DELTA-FIRST RESEARCH**  
+**QA:** `PASS WITH RESIDUAL` — historical mailbox reconciliation remains open.
 
 ---
 
 ## 🎛️ Executive Dashboard
 
-| Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
-|---:|---:|---:|---:|---:|---:|
-| **66** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
+| Opportunity | Verified first contacts | Qualified not contacted | Positive referral | Meeting | Proposal | Revenue won |
+|---:|---:|---:|---:|---:|---:|---:|
+| **66** | **27** | **39** | **1** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **39** · **pipeline activation: 40.9%**.
+**Partner accounts:** 60 · **ready/manual-route accounts:** 38 · **pipeline activation:** 40.9%.
 
-> Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
-
-### 🎯 GOAL TODAY
-
-**≥ 1 nuovo cliente / incarico retribuito** — 🟡 **PARTIAL PROGRESS**.  
-Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **BEYOND BARRIERS → referral positivo a due figure Communication & Dissemination**.
+The pipeline now has sufficient qualified supply. The operational bottleneck is conversion from `QUALIFIED` to conversation, meeting and proposal—not raw lead volume.
 
 ---
 
-## 🆕 Ricerca qualificata — 29 agosto
+## 🟡 BEYOND BARRIERS — WAITING FOR INBOUND
 
-### Evo Sistemi — Corciano / Perugia, Umbria
-**QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** La pagina ufficiale corrente `Lavora con noi` invita esplicitamente collaboratori su web design/development, UX, cybersecurity, AI, automazioni, analytics e performance web. Il sito ufficiale conferma WordPress/WooCommerce, custom web, security, CRM/API, AI e manutenzione e dichiara l'uso di collaboratori selezionati sui progetti più ampi. Identità del founder Simone Cirone, geografia Perugia e profilo servizi sono corroborati indipendentemente da LinkedIn. Gate multi-source **SCS 94 / STRONG_MULTI_SOURCE**, **Revenue Priority 98**. Repository, suppression primaria/emergenza e Gmail Sent puliti; nessuna email inventata e nessun form/call/WhatsApp eseguito.
+The warm referral already introduced VDS to the relevant Communication & Dissemination people. The user explicitly considers the introduction sufficient.
 
-[Opportunity →](opportunities/OPP-IT-EVOSISTEMI-DIGITAL-COLLAB.json)
+**Current state:** `WAITING_FOR_INBOUND`  
+**Current action:** none  
+**SLA:** no outstanding action  
+**Automation:** no follow-up or additional solicitation; Reply Watch may only surface a new inbound message.
 
-### Diputació de Barcelona — Catalunya
-**QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID/OUTREACH PERFORMED.** Expediente **2025/0041420** per analisi, adattamento grafico e maquetació del sito della Direcció de Serveis de Formació. Pubblicato **27 agosto 2026**, deadline **8 ottobre 2026 14:00**, valore stimato/base **€20.000 + IVA**, durata **5 mesi**, CPV 72413000 + 79822500. Gate multi-source **SCS 95 / STRONG_MULTI_SOURCE**: pubblicazione ufficiale della Plataforma de Serveis de Contractació Pública de Catalunya + corroborazione indipendente specialistica. Repository e Gmail Sent puliti; prima di qualsiasi partecipazione devono essere verificati PCAP/PPT, solvibilità, referenze/personale, registri e formalità elettroniche.
+Historical referral and SLA events remain preserved in the append-only timeline.
 
-[Opportunity →](opportunities/OPP-ES-DIBA-WEB-FORMACIO-TENDER-2026.json)
-
-### ABAQUA — Illes Balears
-**QUALIFIED · HOT+ · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID/OUTREACH PERFORMED.** Expediente **SE/2026/11** per supporto e manutenzione delle apparecchiature e dei sistemi informatici dell'Agencia Balear del Agua y de la Calidad Ambiental. Evidenza corrente multi-source: valore stimato **€135.000**, durata riportata **3 anni**, deadline **3 settembre 2026 19:00**. Fit VDS forte sul versante IT/infrastruttura; prima di qualsiasi partecipazione devono essere verificati PCAP/PPT, solvibilità, personale/copertura on-site, garanzie e formalità. Gate multi-source **SCS 92 / STRONG_MULTI_SOURCE**; repository e Gmail Sent puliti, nessun indirizzo dedotto o inventato.
-
-[Opportunity →](opportunities/OPP-ES-ABAQUA-IT-SUPPORT-TENDER-2026.json)
-
-### Digityze — Cuneo, Piemonte
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Il sito ufficiale corrente invita esplicitamente a entrare nel **Team / Network Digityze** e conferma attività in web design, WordPress/WooCommerce, sviluppo web/custom plugin e manutenzione. Le route business e i contatti dei co-founder sono pubblicati ufficialmente. Un dominio professionale indipendente del co-founder Andrea Bodino corrobora identità Cuneo e attività web/design senza essere contato come secondo evento di bisogno. Gate multi-source superato con **SCS 89 / STRONG_MULTI_SOURCE**. Repository, suppression primaria, emergency suppression e Gmail Sent risultano puliti per l'identità Digityze; nessuna email è stata dedotta e nessun contatto è stato eseguito.
-
-[Opportunity →](opportunities/OPP-IT-DIGITYZE-PARTNER-NETWORK.json)
-
-### Aplum Studio — Reus / Catalunya
-**QUALIFIED · HOT+ · NO OUTREACH PERFORMED.** Collaborazione freelance di durata annuale con stack WordPress/Elementor/HTML/CSS/manutenzione/responsive e forte sovrapposizione con VDS, dopo verifica identità primaria e duplicate gate pulito.
-
-[Opportunity →](opportunities/OPP-ES-APLUM-WORDPRESS-FREELANCE-2026.json)
-
-### CyberOptik — Remote
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Canale ufficiale WordPress/Elementor/front-end con responsive QA e page-speed; resta da verificare l'eleggibilità cross-border/contract prima dell'application route.
-
-[Opportunity →](opportunities/OPP-REMOTE-CYBEROPTIK-FRONTEND-WORDPRESS.json)
-
-### Walkstone — Lombardia
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Ruolo ufficiale WordPress/WooCommerce/front-end con forte fit tecnico/visuale; prima di qualsiasi contatto va verificata l'effettiva compatibilità freelance/external collaboration.
-
-[Opportunity →](opportunities/OPP-IT-WALKSTONE-FRONTEND-WEB.json)
-
-### Cantabria Web Design — Cantabria
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Il sito ufficiale pubblica un segnale white-label diretto di subcontracting per aziende concorrenti, con attività WordPress/web/e-commerce/manutenzione e route pubblica. Gate multi-source **SCS 94 / STRONG_MULTI_SOURCE** e duplicate/Sent check pulito.
-
-[Opportunity →](opportunities/OPP-ES-CANTABRIA-WEB-DESIGN-WHITE-LABEL.json)
-
-### Autoridad Portuaria de Sevilla — Andalucía
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID PERFORMED.** Expediente **CONT26053** per manutenzione, supporto ed evoluzione web; deadline **14 settembre 2026 10:00**, durata iniziale **24 mesi**, base **€45.500 + IVA**, valore stimato **€105.500**. Prima di qualsiasi bid: PCAP/PPT, solvibilità, referenze/personale e formalità.
-
-[Opportunity →](opportunities/OPP-ES-APS-SEVILLA-WEB-MAINTENANCE-TENDER-2026.json)
-
-### Ayuntamiento de Los Realejos — Canarias
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID PERFORMED.** Expediente **2026/9564** per sviluppo, hosting e manutenzione del portale municipale; deadline **10 settembre 2026 23:59**, durata **2 anni**, base **€73.333,33 + IVA**, valore stimato **€148.000**. Eligibility da verificare su PCAP/PPT.
-
-[Opportunity →](opportunities/OPP-ES-LOS-REALEJOS-WEB-PORTAL-TENDER-2026.json)
-
-### ProBurgos / Fórum Evolución — Castilla y León
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID PERFORMED.** Expediente **C16.2026** per due portali web, hosting, manutenzione, supporto ed evoluzione; deadline **4 settembre 2026 15:00**, durata **29 mesi**, valore stimato **€60.779,90**. Eligibility da verificare su PCAP/PPT.
-
-[Opportunity →](opportunities/OPP-ES-PROBURGOS-WEB-PORTALS-TENDER-2026.json)
-
-### Mucui Estudio — Remote / international
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Collaborazione ricorrente WordPress/Elementor con rete di collaboratori, corroborata da una seconda ricerca UI/branding e dal sito ufficiale.
-
-[Opportunity →](opportunities/OPP-REMOTE-MUCUI-WP-COLLAB.json)
-
-### Mindrift — Remote / Spain
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Canale freelance web/digital experience design con route ufficiale e corroborazione Spain-specific.
-
-[Opportunity →](opportunities/OPP-ES-MINDRIFT-WEB-DESIGN-FREELANCE.json)
+[Opportunity](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json) · [Policy audit](audits/2026-08-29-2252-beyond-inbound-policy.md)
 
 ---
 
-## 🆕 Outreach verificato — 29 agosto
+## ⚡ Conversion Queue
 
-### Odda — Talent Hub IT · Abruzzo / full remote
-**FIRST_CONTACT SENT + VERIFIED** a `hr@oddastudio.com`, canale Talent ufficiale. Gmail message id `1a04c219c8ac3419`.
+The current decision queue is maintained in [`views/next-best-actions.json`](views/next-best-actions.json). The highest immediate direct-collaboration candidates are now:
 
-[Opportunity →](opportunities/OPP-IT-ODDA-TALENT-HUB-FREELANCE.json)
+1. **Aplum Studio** — annual freelance WordPress/Elementor/front-end collaboration.
+2. **Global Service Impresa** — current remote freelance developer/creative collaboration.
+3. **Grownnectia** — P.IVA WordPress/WooCommerce + infrastructure overlap.
+4. **Visioni** — current P.IVA web-designer signal.
+5. **Onebit** — structural agency-overflow model using freelance P.IVA web developers.
+6. **Zmot Lab** — external P.IVA WordPress/WooCommerce collaboration.
+7. **Evo Sistemi** — current structural digital collaboration signal.
+8. **Mucui** — recurring WordPress/Elementor collaborator network.
+9. **CyberOptik** — WordPress/Elementor/front-end, with contract eligibility still to verify.
+10. **Mobyleshop** — current WPO freelance route.
 
-### ReMedia Italia — Roma / remoto
-**FIRST_CONTACT SENT + VERIFIED** a `rleonzi@remediagroup.it`, route di candidatura ufficiale. Gmail message id `1a04c221e744d0b0`.
-
-[Opportunity →](opportunities/OPP-IT-REMEDIA-WEB-FREELANCE.json)
-
----
-
-## 🔻 Funnel commerciale
-
-| Stage | Volume | Stato |
-|---|---:|---|
-| Opportunity canoniche | **66** | 100% |
-| First contact verificati | **27** | **40.9%** |
-| Qualificate non contattate | **39** | **59.1%** |
-| Reply thread | **1** | existing |
-| Positive reply / referral | **1** | USER ACTION REQUIRED |
-| Meeting | **0** | — |
-| Proposal | **0** | — |
-| Won | **0** | — |
+Every opportunity remains subject to the canonical identity, suppression and Sent-history gates defined in the CRM before its state can advance.
 
 ---
 
-## 🇪🇺 EU Projects vs 🤝 Collaborations
+## ⏱️ Deadline Queue
 
-| Workstream | Pipeline | Stato |
-|---|---:|---|
-| 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs / Procurement** | **60 active/canonical opportunities** | includes Evo Sistemi HOT+ plus latest procurement/Commercial Core promotions; all unsent routes remain gated |
+| Deadline | Opportunity | Required review |
+|---|---|---|
+| 03/09 19:00 | ABAQUA `SE/2026/11` | eligibility / solvency / technical coverage |
+| 04/09 15:00 | ProBurgos `C16.2026` | PCAP/PPT / lot fit |
+| 10/09 23:59 | Los Realejos `2026/9564` | eligibility / technical fit |
+| 14/09 10:00 | Puerto de Sevilla `CONT26053` | solvency / personnel / references |
+| 08/10 14:00 | Diputació de Barcelona `2025/0041420` | PCAP/PPT / solvency / submission eligibility |
 
----
-
-## ⚡ Next Best Actions
-
-1. 🔴 **HANDLE_REFERRAL — BEYOND BARRIERS** — USER ACTION REQUIRED / SLA breached.
-2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
-3. 🔥 **ABAQUA SE/2026/11** — verify PCAP/PPT and tender eligibility before **03/09/2026 19:00**.
-4. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT before **04/09/2026 15:00**.
-5. 🔥 **Evo Sistemi** — HOT+ structural collaboration; daily outreach review through verified official route only.
-6. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT before **10/09/2026 23:59**.
-7. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT before **14/09/2026 10:00**.
-8. 🔥 **Diputació de Barcelona 2025/0041420** — verify PCAP/PPT, solvency and electronic-submission eligibility before **08/10/2026 14:00**.
-9. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
-10. 🔥 **CyberOptik / Digityze / Mobyleshop / Aderen** — review verified official/application routes and eligibility.
-
-Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
+The research layer has not submitted any bid for these opportunities.
 
 ---
 
-## 🗺️ Coverage commerciale
+## 🔻 Funnel
 
-- 🇮🇹 Italia: **16/20** territori con almeno un account qualificato, **30** account con regione verificata + 1 remote/geography-to-verify.
-- 🇪🇸 Spagna: **15/19** territori con almeno un account qualificato, **24** account con territorio verificato + 2 remote/geography-to-verify.
-- Zero-result territories with incomplete source-family coverage remain **UNDER_SEARCHED**, not low-opportunity.
-- Latest exploration: País Vasco agency/outsourcing ecosystems scanned without forcing seller-side/weak evidence; next priority rotates to Molise, Trentino-Alto Adige/Südtirol and Valle d'Aosta.
+| Stage | Volume |
+|---|---:|
+| Canonical opportunities | **66** |
+| Verified first contacts | **27** |
+| Qualified not contacted | **39** |
+| Reply threads | **1** |
+| Positive referrals | **1** — passive inbound wait |
+| Meetings | **0** |
+| Proposals | **0** |
+| Won | **0** |
+
+The **Success Index = 69%** is an operating index, not a probability. The new-client proxy remains **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
 ---
 
-## 📈 Success indicators
+## 🗺️ Coverage
 
-- **Success Index:** **69%** — operating index, **not a probability**.
-- **New-client operational proxy:** **87% — UNCALIBRATED / LOW CONFIDENCE**; non utilizzabile per weighted revenue.
+- **Italy:** 16/20 territories with at least one qualified account; 30 accounts with verified region + 1 remote/geography-to-verify.
+- **Spain:** 15/19 territories with at least one qualified account; 24 accounts with verified territory + 2 remote/geography-to-verify.
+- Incomplete zero-result territories remain `UNDER_SEARCHED`; they are not treated as low-opportunity markets.
+
+---
+
+## 🧠 Commercial Core integration
+
+VDS Commercial Core now provides the evidence/qualification engine upstream of this CRM. The certified Core baseline has a controlled live 7-source qualification benchmark with **7/7 QUALIFIED, 0 review, 0 unsafe, 0 errors, 0 model calls and 0 API cost**.
+
+Core qualification does not replace the CRM contactability gate. The CRM remains authoritative for organization-level duplicate prevention, suppression, Sent verification and downstream conversion state.
 
 ---
 
 ## 🛡️ Safety / QA
 
-- Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
-- Evo Sistemi duplicate gate: **CLEAR** su repository canonico, suppression primaria/emergenza e Gmail Sent; route e contatti solo ufficiali, nessuna email inventata.
-- **No Evo Sistemi outreach, application, form, WhatsApp or call action was performed by the research scanner.**
-- SANDETEL `EXPT26-00017`: **REVIEW_REQUIRED / NOT PROMOTED** per conflitto fra fonti correnti su deadline/valore.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
-- Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
-- Older unresolved QA: **10 recipients pending canonicalization**; `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
-- Positive/potentially positive replies: **auto-response forbidden**.
-
-[Latest Commercial Core audit →](audits/2026-08-29-2035-commercial-core-promotion.md)
-
----
-
-## 🔴 User Action Required — BEYOND BARRIERS
-
-`POSITIVE_REPLY_USER_ACTION_REQUIRED` · referral positivo verso due figure Communication & Dissemination.  
-[Opportunity →](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json)
+- Historical duplicate events remain preserved: Persuadis and Marmellata Lab.
+- Ten older recipients remain pending canonicalization and therefore remain a hard overlap-risk constraint.
+- `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
+- Odda and ReMedia remain verified first-contact events; follow-up is governed by the existing reply/follow-up policy.
+- BEYOND BARRIERS is explicitly excluded from action/SLA queues until new inbound communication occurs.
+- No guessed emails, unsupported budgets or invented probabilities may be used to advance a commercial gate.
 
 ---
 
-> **Ricerca ampia. Qualificazione severa. Outreach mirato. Zero doppio first-contact. Conversione > attività. Revenue > vanity metrics.**
+## Canonical operational views
+
+- [Master index](master-index.json)
+- [Next Best Actions](views/next-best-actions.json)
+- [Action Queue](views/action-queue.json)
+- [Commercial SLA](views/commercial-sla.json)
+- [Success Indicators](views/success-indicators.json)
+- [Active Opportunities](views/active-freelance-opportunities.json)
+
+> **Conversion > activity. Evidence > inference. Revenue > vanity metrics.**
