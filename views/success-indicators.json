@@ -1,29 +1,29 @@
 {
   "view": "Dashboard Success Indicators",
-  "updated_at": "2026-08-29T01:58:00+02:00",
+  "updated_at": "2026-08-29T04:01:00+02:00",
   "model": "../config/dashboard-success-model.json",
   "status": "OPERATIONAL_UNCALIBRATED",
   "success_index": {
     "value_pct": 71,
-    "raw_value": 70.91,
+    "raw_value": 70.67,
     "type": "OPERATING_INDEX_NOT_PROBABILITY",
     "components": {
-      "qualified_pipeline_supply": {"points": 25.0, "evidence": "20 qualified not contacted / target 20"},
-      "outreach_activation": {"points": 10.91, "evidence": "24 contacted / 44 canonical opportunities"},
+      "qualified_pipeline_supply": {"points": 25.0, "evidence": "21 qualified not contacted / target 20"},
+      "outreach_activation": {"points": 10.67, "evidence": "24 contacted / 45 canonical opportunities"},
       "positive_commercial_signal": {"points": 20.0, "evidence": "1 positive referral"},
       "funnel_depth": {"points": 10.0, "evidence": "highest verified stage = positive reply/referral"},
-      "qa_integrity": {"points": 5.0, "evidence": "critical reconciliation remains open; 2 historical duplicate FIRST_CONTACT violations preserved as evidence; hard duplicate block now active"}
+      "qa_integrity": {"points": 5.0, "evidence": "critical reconciliation remains open; 2 historical duplicate FIRST_CONTACT violations preserved as evidence; SENSORAMA duplicate-risk inconsistency corrected and hard block confirmed"}
     }
   },
   "new_client_probability_proxy": {
-    "value_pct": 79.1,
-    "display_pct": 79,
+    "value_pct": 79.5,
+    "display_pct": 80,
     "label": "Operational probability proxy for >=1 new client from current active canonical pipeline",
     "calibrated": false,
     "confidence": "LOW",
-    "method": "1 - (1-0.02)^20 * (1-0.04)^23 * (1-0.20)^1",
+    "method": "1 - (1-0.02)^21 * (1-0.04)^23 * (1-0.20)^1",
     "inputs": {
-      "ready_or_qualified_not_contacted": 20,
+      "ready_or_qualified_not_contacted": 21,
       "contacted_without_positive_reply": 23,
       "positive_reply_or_referral": 1,
       "meeting": 0,
