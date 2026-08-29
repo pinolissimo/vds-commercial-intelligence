@@ -4,8 +4,8 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 07:00 Europe/Madrid  
-**Research:** `RESOURCE-OPTIMIZED RECURSIVE PASS · ODDA QUALIFICATION + EU GAP CHECK`  
+**Data snapshot:** 29 agosto 2026 · 08:03 Europe/Madrid  
+**Research:** `RESOURCE-OPTIMIZED RECURSIVE PASS · ROBERT HALF/PUGLIA QUALIFICATION + EU/IDENTITY GATES`  
 **Scanner outreach:** **0 — research/qualification only**
 
 ---
@@ -14,14 +14,14 @@
 
 | 🎯 Success Index | 📈 Probabilità operativa ≥1 nuovo cliente* | 🧲 Opportunity | ✉️ First contact canonici |
 |---:|---:|---:|---:|
-| **70%** | **80.7%** | **48** | **24** |
-| `███████░░░` | `████████░░` | **24** qualificate non contattate | **50.0%** pipeline attivata |
+| **70%** | **81.1%** | **49** | **24** |
+| `███████░░░` | `████████░░` | **25** qualificate non contattate | **49.0%** pipeline attivata |
 
 | 🔥 Positive signal | 🤝 Meeting | 📄 Proposal | 💶 Revenue won |
 |---:|---:|---:|---:|
 | **1 referral positivo** | **0** | **0** | **€0** |
 
-> * **80.7% = operational pipeline proxy, UNCALIBRATED, confidence LOW.** Non è una previsione statistica empirica e non viene usata per valorizzare economicamente la pipeline.
+> * **81.1% = operational pipeline proxy, UNCALIBRATED, confidence LOW.** Non è una previsione statistica empirica e non viene usata per valorizzare economicamente la pipeline.
 
 ### 🎯 GOAL TODAY
 
@@ -34,9 +34,9 @@ Segnale più forte: **BEYOND BARRIERS → referral positivo a due figure Communi
 
 | Stage | Volume | Conversione / stato |
 |---|---:|---:|
-| Opportunity canoniche | **48** | 100% |
-| First contact verificati | **24** | **50.0%** delle opportunity |
-| Qualificate non contattate | **24** | **50.0%** della pipeline |
+| Opportunity canoniche | **49** | 100% |
+| First contact verificati | **24** | **49.0%** delle opportunity |
+| Qualificate non contattate | **25** | **51.0%** della pipeline |
 | Reply thread | **1** | **4.17%** dei contattati |
 | Positive reply / referral | **1** | **4.17%** dei contattati |
 | Meeting | **0** | 0% |
@@ -50,10 +50,10 @@ Segnale più forte: **BEYOND BARRIERS → referral positivo a due figure Communi
 | Workstream | Pipeline | Contacted | Ready / research | Positive signal | Stato |
 |---|---:|---:|---:|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** | **6** | early-funded watchlist attiva | **1** | 🔥 Referral da gestire |
-| 🤝 **Collaborations / Jobs** | **42 active freelance / outsourcing opportunities** | **18 canonical partner accounts** | **23 ready/manual + 1 contact pending reconciliation** | **0** | 🟢 Alta capacità di attivazione |
+| 🤝 **Collaborations / Jobs** | **43 active freelance / outsourcing opportunities** | **18 canonical partner accounts** | **24 ready/manual + 1 contact pending reconciliation** | **0** | 🟢 Alta capacità di attivazione |
 
 ### 🇪🇺 Early-funded EU watch
-Watchlist canonica: **11 progetti finanziati/early-stage**. Priorità: **NAVI, HUBS4BUILD, REMEDIES 5.0**. Il pass corrente ha riconfermato finanziamento e avvio imminente ma non ha trovato una nuova catena completa `WP/task digitale → beneficiario responsabile → contact/procurement path`, quindi nessuno è stato promosso.
+Watchlist canonica: **11 progetti finanziati/early-stage**. Priorità: **NAVI, HUBS4BUILD, REMEDIES 5.0**. Il pass corrente ha identificato **LEMON GRASS COMMUNICATIONS SL** come beneficiario finanziato di NAVI e possibile indizio communication-side, ma non è ancora verificata la catena completa `WP/task digitale → beneficiario responsabile → contact/procurement path`; nessun progetto UE è stato promosso.
 
 **SENSORAMA** resta bloccato da qualsiasi nuovo first contact: `FIRST_CONTACT_ALREADY_SENT`, Sent UID 79.
 
@@ -71,19 +71,21 @@ Watchlist canonica: **11 progetti finanziati/early-stage**. Priorità: **NAVI, H
 | **4** | **Grownnectia — Roma** | P.IVA continuativa · WordPress + infra + software | 🔥 **99** |
 | **5** | **ReMedia Italia — Roma/Remoto** | very high fit | 🔥 **99** |
 
-**Next tier:** Visioni — Palermo **99** · Mobyleshop — Murcia **98** · Aderen — Madrid **98** · Ibérica Studio 97 · DNA Agency 97 · Hays España 97.
+**Next tier:** Visioni — Palermo **99** · Mobyleshop — Murcia **98** · Aderen — Madrid **98** · **Robert Half Contracting — Bari/Puglia 98** · Ibérica Studio 97 · DNA Agency 97 · Hays España 97.
 
 ---
 
 ## 🆕 Lead ad alto potenziale — ultimo pass
 
-### **Odda / ADDO SRL — Abruzzo / full remote** · Revenue Priority **99**
+### **Robert Half / Robert Half Contracting — Puglia/Bari opportunity track** · Revenue Priority **98**
 
-Nuova opportunity `READY_FOR_DAILY_OUTREACH_REVIEW`. Il sito ufficiale Odda invita talenti IT a collaborare su progetti internazionali, dichiara **job settimanali**, una community di **400+ talenti** e un modello **As a Service** con cui le aziende possono coprire picchi di lavoro o costruire team. Un comunicato ufficiale aggiunge che oltre **300 freelance collaborano stabilmente** con l'Hub, che nel 2025 sono state gestite **1.800+ richieste di competenze** e che per il 2026 l'azienda puntava a un aumento della domanda del **60%**.
+Nuova opportunity `READY_FOR_DAILY_OUTREACH_REVIEW`. Le pagine ufficiali correnti di Robert Half Italia confermano che **Robert Half Contracting seleziona profili freelance**, lavora con consulenti su progetti IT/Engineering e può gestire progetti di trasformazione digitale in **total outsourcing**. Un annuncio 2026 per Bari cercava inoltre un **Frontend Developer — Freelance**, con JavaScript, HTML/CSS, responsive UI, REST API e Git, su progetto dichiarato fino a dicembre 2026.
 
-Global duplicate gate: **nessun match Odda** nel repository canonico, suppression primaria o emergency suppression; ricerca Gmail Sent per `Odda / oddastudio.com` = **0 messaggi**. Il canale talent pubblico verificato è `hr@oddastudio.com`. **Nessuna email o form è stato inviato.**
+Il listing Bari è usato come **segnale territoriale 2026**, non come prova che la vacancy sia ancora aperta oggi: prima di qualunque candidatura dovrà essere riverificato. La qualificazione commerciale si basa soprattutto sul **modello strutturale freelance/contracting corrente** verificato sul sito ufficiale.
 
-[Opportunity →](opportunities/OPP-IT-ODDA-TALENT-HUB-FREELANCE.json) · [Company →](italy/abruzzo/pescara/odda.json)
+Global duplicate gate: **nessun match Robert Half / roberthalf.it** nel repository canonico, suppression primaria o emergency suppression; Gmail Sent per `Robert Half` e `roberthalf.it` = **0 messaggi**. Nessuna email è stata inferita o memorizzata da testo redatto. **Nessuna email, candidatura o form è stato inviato.**
+
+[Opportunity →](opportunities/OPP-IT-ROBERT-HALF-CONTRACTING-FREELANCE.json) · [Company →](italy/puglia/bari/robert-half-contracting.json)
 
 ---
 
@@ -91,10 +93,10 @@ Global duplicate gate: **nessun match Odda** nel repository canonico, suppressio
 
 | Area | Territori qualificati | Copertura | Account verificati |
 |---|---:|---:|---:|
-| 🇮🇹 Italia | **14 / 20** | **70%** | **23** |
+| 🇮🇹 Italia | **15 / 20** | **75%** | **24** |
 | 🇪🇸 Spagna | **11 / 19** | **57.9%** | **17** |
 
-**14 territori** restano a zero. **Abruzzo passa a PARTIAL_QUALIFIED** grazie a Odda.
+**13 territori** restano a zero. **Puglia passa a PARTIAL_QUALIFIED** attraverso un'opportunità freelance verificata con sede di lavoro Bari; non viene attribuita a Robert Half una sede aziendale barese non verificata.
 
 [Regional Coverage →](views/regional-coverage.json)
 
@@ -104,7 +106,7 @@ Global duplicate gate: **nessun match Odda** nel repository canonico, suppressio
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
 - Check obbligatorio: company/project identity + tutte le opportunity + timeline + campaigns + suppression + Gmail Sent.
-- **Odda:** no prior first-contact evidence found in repository, both suppression registries or Gmail Sent.
+- **Robert Half:** no prior first-contact evidence found in repository, both suppression registries or Gmail Sent.
 - **SENSORAMA:** prior first contact verified; new first-contact path blocked.
 - Scanner: **research + qualification only, outreach forbidden**.
 - Positive/potentially positive replies: **auto-response forbidden**.
@@ -123,9 +125,9 @@ QA aperto: **RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION**.
 ## 📊 Success & Probability Model
 
 **Success Index: 70%** — indice operativo, non probabilità.  
-**Operational proxy ≥1 nuovo cliente: 80.7%***
+**Operational proxy ≥1 nuovo cliente: 81.1%***
 
-`1 - (1-0.02)^24 × (1-0.04)^23 × (1-0.20)^1 = 80.7%`
+`1 - (1-0.02)^25 × (1-0.04)^23 × (1-0.20)^1 = 81.1%`
 
 ⚠️ **UNCALIBRATED · LOW CONFIDENCE.** `weighted_pipeline_value` resta `null`.
 
