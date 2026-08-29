@@ -7,7 +7,7 @@
 **Data snapshot:** 29 agosto 2026 · 22:03 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
 **Research:** `DIPUTACIÓ DE BARCELONA WEB PROCUREMENT QUALIFIED · CATALUNYA · RESEARCH-ONLY PASS`  
-**QA:** `FAIL_CORRECTED · containment active for older reconciliation`
+**QA:** `PASS WITH RESIDUAL · older reconciliation still open`
 
 ---
 
@@ -15,9 +15,9 @@
 
 | Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|
-| **62** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
+| **65** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **35** · **pipeline activation: 43.5%**.
+**Qualified not contacted:** **38** · **pipeline activation: 41.5%**.
 
 > Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
@@ -110,9 +110,9 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 | Stage | Volume | Stato |
 |---|---:|---|
-| Opportunity canoniche | **62** | 100% |
-| First contact verificati | **27** | **43.5%** |
-| Qualificate non contattate | **35** | **56.5%** |
+| Opportunity canoniche | **65** | 100% |
+| First contact verificati | **27** | **41.5%** |
+| Qualificate non contattate | **38** | **58.5%** |
 | Reply thread | **1** | existing |
 | Positive reply / referral | **1** | USER ACTION REQUIRED |
 | Meeting | **0** | — |
@@ -126,7 +126,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 | Workstream | Pipeline | Stato |
 |---|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs / Procurement** | **56 active/canonical opportunities** | Diputació de Barcelona 2025/0041420 added; tender and other routes remain gated |
+| 🤝 **Collaborations / Jobs / Procurement** | **59 active/canonical opportunities** | includes latest Commercial Core promotions + Diputació de Barcelona 2025/0041420; all unsent routes remain gated |
 
 ---
 
@@ -149,8 +149,8 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
 ## 🗺️ Coverage commerciale
 
-- 🇮🇹 Italia: **15/20** territori con almeno un account qualificato, **26** account con regione verificata + 1 remote/geography-to-verify.
-- 🇪🇸 Spagna: **15/19** territori con almeno un account qualificato; Catalunya gains one additional qualified procurement while remaining an already-covered territory.
+- 🇮🇹 Italia: **15/20** territori con almeno un account qualificato, **29** account con regione verificata + 1 remote/geography-to-verify.
+- 🇪🇸 Spagna: **15/19** territori con almeno un account qualificato, **24** account con territorio verificato + 2 remote/geography-to-verify.
 - Zero-result territories with incomplete source-family coverage remain **UNDER_SEARCHED**, not low-opportunity.
 - Latest exploration also covered Castilla-La Mancha, Extremadura, Ceuta and Melilla without forcing weak/stale results into the CRM.
 
@@ -159,7 +159,7 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 ## 📈 Success indicators
 
 - **Success Index:** **69%** — operating index, **not a probability**.
-- **New-client operational proxy:** **86% — UNCALIBRATED / LOW CONFIDENCE**; non utilizzabile per weighted revenue.
+- **New-client operational proxy:** **87% — UNCALIBRATED / LOW CONFIDENCE**; non utilizzabile per weighted revenue.
 
 ---
 
@@ -174,7 +174,7 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 - Older unresolved QA: **10 recipients pending canonicalization**; `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
 - Positive/potentially positive replies: **auto-response forbidden**.
 
-[Audit 13:58 →](audits/2026-08-29-1358.md)
+[Latest Commercial Core audit →](audits/2026-08-29-2035-commercial-core-promotion.md)
 
 ---
 
