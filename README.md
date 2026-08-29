@@ -4,9 +4,9 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · **duplicate FIRST_CONTACT tolerance = 0**
 
-**Data snapshot:** 29 agosto 2026 · 17:00 Europe/Madrid  
+**Data snapshot:** 29 agosto 2026 · 18:02 Europe/Madrid  
 **Daily Partner Hunt:** `2 NEW VERIFIED FIRST_CONTACTS · ODDA + REMEDIA`  
-**Research:** `CANTABRIA WEB DESIGN WHITE-LABEL COLLAB QUALIFIED · RESEARCH-ONLY PASS`  
+**Research:** `DIGITYZE PARTNER NETWORK QUALIFIED · PIEMONTE · RESEARCH-ONLY PASS`  
 **QA:** `FAIL_CORRECTED · containment active for older reconciliation`
 
 ---
@@ -15,9 +15,9 @@
 
 | Opportunity | First contact verificati | Positive signal | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|
-| **56** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
+| **60** | **27** | **1 referral positivo** | **0** | **0** | **€0** |
 
-**Qualified not contacted:** **29** · **pipeline activation: 48.2%**.
+**Qualified not contacted:** **33** · **pipeline activation: 45.0%**.
 
 > Success/probability views remain governed by `views/success-indicators.json`; any operational probability is **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
 
@@ -30,33 +30,53 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 ## 🆕 Ricerca qualificata — 29 agosto
 
+### Digityze — Cuneo, Piemonte
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Il sito ufficiale corrente invita esplicitamente a entrare nel **Team / Network Digityze** e conferma attività in web design, WordPress/WooCommerce, sviluppo web/custom plugin e manutenzione. Le route business e i contatti dei co-founder sono pubblicati ufficialmente. Un dominio professionale indipendente del co-founder Andrea Bodino corrobora identità Cuneo e attività web/design senza essere contato come secondo evento di bisogno. Gate multi-source superato con **SCS 89 / STRONG_MULTI_SOURCE**. Repository, suppression primaria, emergency suppression e Gmail Sent risultano puliti per l'identità Digityze; nessuna email è stata dedotta e nessun contatto è stato eseguito.
+
+[Opportunity →](opportunities/OPP-IT-DIGITYZE-PARTNER-NETWORK.json)
+
+### Aplum Studio — Reus / Catalunya
+**QUALIFIED · HOT+ · NO OUTREACH PERFORMED.** Il Commercial Core delle 17:55 ha promosso una collaborazione freelance di durata annuale con stack WordPress/Elementor/HTML/CSS/manutenzione/responsive e forte sovrapposizione con VDS, dopo verifica identità primaria e duplicate gate pulito.
+
+[Opportunity →](opportunities/OPP-ES-APLUM-WORDPRESS-FREELANCE-2026.json)
+
+### CyberOptik — Remote
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Canale ufficiale WordPress/Elementor/front-end con responsive QA e page-speed; resta da verificare l'eleggibilità cross-border/contract prima dell'application route.
+
+[Opportunity →](opportunities/OPP-REMOTE-CYBEROPTIK-FRONTEND-WORDPRESS.json)
+
+### Walkstone — Lombardia
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Ruolo ufficiale WordPress/WooCommerce/front-end con forte fit tecnico/visuale; prima di qualsiasi contatto va verificata l'effettiva compatibilità freelance/external collaboration.
+
+[Opportunity →](opportunities/OPP-IT-WALKSTONE-FRONTEND-WEB.json)
+
 ### Cantabria Web Design — Cantabria
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Il sito ufficiale pubblica un segnale white-label diretto: la pagina legale offre esplicitamente **subcontracting per aziende concorrenti**, mentre il sito operativo conferma WordPress/Joomla, HTML/CSS, e-commerce, manutenzione, SEO, un team professionale e decine di progetti in corso. Il canale `rrhh@cantabriawebdesign.es` è pubblicato sul sito ufficiale; identità e localizzazione del titolare a Renedo de Piélagos sono corroborate anche da LinkedIn. Gate multi-source superato con **SCS 94 / STRONG_MULTI_SOURCE** e global duplicate check pulito su repository, suppression primaria/emergenza e Gmail Sent. Nessuna email è stata inviata e nessun indirizzo è stato dedotto.
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Il sito ufficiale pubblica un segnale white-label diretto di subcontracting per aziende concorrenti, con attività WordPress/web/e-commerce/manutenzione e route pubblica. Gate multi-source **SCS 94 / STRONG_MULTI_SOURCE** e duplicate/Sent check pulito.
 
 [Opportunity →](opportunities/OPP-ES-CANTABRIA-WEB-DESIGN-WHITE-LABEL.json)
 
 ### Autoridad Portuaria de Sevilla — Andalucía
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH/BID PERFORMED.** L'expediente **CONT26053** riguarda manutenzione, supporto tecnico ed evoluzione della pagina web corporativa del Puerto de Sevilla e del Portal de Transparencia. Pubblicato il **14 luglio 2026**, resta aperto fino al **14 settembre 2026 alle 10:00**; durata iniziale **24 mesi**, base di gara **€45.500 + IVA**, valore stimato **€105.500**. Lo scope include manutenzione correttiva, adattiva, perfettiva ed evolutiva, accessibilità e supporto: fit VDS molto elevato. Il gate multi-source è superato con **PLACSP istituzionale + corroborazione indipendente**, SCS **96 / STRONG_MULTI_SOURCE**, route elettronica ufficiale e duplicate/Sent check pulito. Prima di qualsiasi offerta vanno verificati PCAP/PPT, solvibilità, referenze/personale richiesti e formalità di partecipazione.
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID PERFORMED.** Expediente **CONT26053** per manutenzione, supporto ed evoluzione web; deadline **14 settembre 2026 10:00**, durata iniziale **24 mesi**, base **€45.500 + IVA**, valore stimato **€105.500**. Prima di qualsiasi bid: PCAP/PPT, solvibilità, referenze/personale e formalità.
 
 [Opportunity →](opportunities/OPP-ES-APS-SEVILLA-WEB-MAINTENANCE-TENDER-2026.json)
 
 ### Ayuntamiento de Los Realejos — Canarias
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH/BID PERFORMED.** L'expediente pubblico **2026/9564** richiede sviluppo, hosting e manutenzione del portale web municipale. Pubblicato il **26 agosto 2026**, resta aperto fino al **10 settembre 2026 alle 23:59**; durata pubblicata **2 anni**, budget base **€73.333,33 + IVA** e valore stimato **€148.000**. La qualificazione supera il gate multi-source con **PLACSP istituzionale + corroborazione specialistica indipendente**, route elettronica ufficiale e duplicate/Sent check pulito. Prima di qualsiasi futura offerta va verificata l'effettiva solvibilità VDS rispetto a PCAP/PPT.
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID PERFORMED.** Expediente **2026/9564** per sviluppo, hosting e manutenzione del portale municipale; deadline **10 settembre 2026 23:59**, durata **2 anni**, base **€73.333,33 + IVA**, valore stimato **€148.000**. Eligibility da verificare su PCAP/PPT.
 
 [Opportunity →](opportunities/OPP-ES-LOS-REALEJOS-WEB-PORTAL-TENDER-2026.json)
 
-### ProBurgos / Fórum Evolución — Burgos, Castilla y León
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH/BID PERFORMED.** L'expediente pubblico **C16.2026** richiede progettazione, sviluppo, implantazione, hosting, manutenzione, supporto ed evoluzione di due portali web. Pubblicato il **5 agosto 2026**, resta aperto fino al **4 settembre 2026 alle 15:00**; durata pubblicata **29 mesi**, valore stimato **€60.779,90**. La qualificazione ha superato il gate multi-source con **PLACSP istituzionale + corroborazione indipendente**, route elettronica ufficiale e duplicate/Sent check pulito. Prima di qualsiasi futura offerta va verificata l'effettiva solvibilità VDS rispetto a PCAP/PPT.
+### ProBurgos / Fórum Evolución — Castilla y León
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO BID PERFORMED.** Expediente **C16.2026** per due portali web, hosting, manutenzione, supporto ed evoluzione; deadline **4 settembre 2026 15:00**, durata **29 mesi**, valore stimato **€60.779,90**. Eligibility da verificare su PCAP/PPT.
 
 [Opportunity →](opportunities/OPP-ES-PROBURGOS-WEB-PORTALS-TENDER-2026.json)
 
 ### Mucui Estudio — Remote / international
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Un progetto Workana pubblicato il 18 luglio e tuttora aperto cerca esplicitamente una **rete di collaboratori affidabili per una collaborazione ricorrente** sulla produzione di siti **WordPress / Elementor Pro**, non un incarico una tantum. Una seconda ricerca Mucui contemporanea per collaboratori **Branding + UI Web** rafforza il segnale di capacità esterna strutturale. Il sito ufficiale verifica identità, dominio e attività in branding, programmazione e sviluppo web. Global duplicate gate pulito su repository, suppression primaria/emergenza e Gmail Sent.
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Collaborazione ricorrente WordPress/Elementor con rete di collaboratori, corroborata da una seconda ricerca UI/branding e dal sito ufficiale.
 
 [Opportunity →](opportunities/OPP-REMOTE-MUCUI-WP-COLLAB.json)
 
 ### Mindrift — Remote / Spain
-**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Il canale ufficiale Mindrift mostra `Freelance Web Designer / Freelance Digital Experience Designer` come **Open**, con progetti design fino a **USD 50/h**. Una vacancy Spain-specific pubblicata il 22 agosto conferma modello contractor, portfolio obbligatorio, fino a USD 40/h equivalente e circa 10–20 ore/settimana nelle fasi attive. Global duplicate gate pulito su CRM, suppression primaria/emergenza e Gmail Sent.
+**QUALIFIED · READY_FOR_DAILY_OUTREACH_REVIEW · NO OUTREACH PERFORMED.** Canale freelance web/digital experience design con route ufficiale e corroborazione Spain-specific.
 
 [Opportunity →](opportunities/OPP-ES-MINDRIFT-WEB-DESIGN-FREELANCE.json)
 
@@ -80,9 +100,9 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 | Stage | Volume | Stato |
 |---|---:|---|
-| Opportunity canoniche | **56** | 100% |
-| First contact verificati | **27** | **48.2%** |
-| Qualificate non contattate | **29** | **51.8%** |
+| Opportunity canoniche | **60** | 100% |
+| First contact verificati | **27** | **45.0%** |
+| Qualificate non contattate | **33** | **55.0%** |
 | Reply thread | **1** | existing |
 | Positive reply / referral | **1** | USER ACTION REQUIRED |
 | Meeting | **0** | — |
@@ -96,7 +116,7 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 | Workstream | Pipeline | Stato |
 |---|---:|---|
 | 🇪🇺 **EU Projects** | **6 canonical commercial opportunities** + **11 early-funded watchlist** | 1 positive referral; NAVI/HUBS4BUILD/REMEDIES 5.0/ORIGINS deep verification |
-| 🤝 **Collaborations / Jobs / Procurement** | **50 active opportunities** | **Cantabria Web Design white-label + Sevilla + Los Realejos + ProBurgos qualified; other routes remain gated** |
+| 🤝 **Collaborations / Jobs / Procurement** | **54 active/canonical opportunities** | Digityze + Aplum + CyberOptik + Walkstone newly reconciled; tender and other routes remain gated |
 
 ---
 
@@ -104,13 +124,14 @@ Nessun meeting, proposal o win ancora confermato. Il segnale più forte resta **
 
 1. 🔴 **HANDLE_REFERRAL — BEYOND BARRIERS** — USER ACTION REQUIRED / SLA breached.
 2. 🔴 **RECONCILE_POST_1345 OUTREACH** — 10 older recipients still pending canonicalization.
-3. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT solvency + lot fit before **04/09/2026 15:00**; no bid action by scanner.
-4. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT solvency + technical/operational fit before **10/09/2026 23:59**; no bid action by scanner.
-5. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT solvency, technical references/personnel and submission requirements before **14/09/2026 10:00**; no bid action by scanner.
-6. 🔥 **Cantabria Web Design** — review the verified official subcontracting/employment route under Partner Hunt gates; scanner performed no contact.
-7. 🔥 **Grownnectia** — verify exact current P.IVA application route before any send.
-8. 🔥 **Visioni — Palermo** — verify official recipient route and global dedup.
-9. 🔥 **Mucui / Mindrift / Mobyleshop / Aderen / Robert Half Contracting** — continue gated review through verified routes.
+3. 🔥 **Aplum Studio** — review the explicit application route before **29/08 20:00**.
+4. 🔥 **Grownnectia / Visioni / Mucui** — highest-fit current collaboration routes under Partner Hunt gates.
+5. 🔥 **CyberOptik** — verify cross-border/contract eligibility before the official route.
+6. 🔥 **Mobyleshop / Aderen** — review official application routes.
+7. 🔥 **Digityze** — review verified Team/Network business route; scanner performed no contact.
+8. 🔥 **ProBurgos C16.2026** — verify PCAP/PPT before **04/09/2026 15:00**.
+9. 🔥 **Los Realejos 2026/9564** — verify PCAP/PPT before **10/09/2026 23:59**.
+10. 🔥 **Autoridad Portuaria de Sevilla CONT26053** — verify PCAP/PPT before **14/09/2026 10:00**.
 
 Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
@@ -118,33 +139,30 @@ Odda and ReMedia are **CONTACTED**; follow-up only per policy if no reply.
 
 ## 🗺️ Coverage commerciale
 
-- 🇮🇹 Italia: **15/20** territori qualified, **24** verified accounts.
-- 🇪🇸 Spagna: **14/19** territori qualified, **21** verified territorial accounts + remote/geography-to-verify pool.
-- **10 territori** remain zero-result / under deep research.
-- **Cantabria Web Design** adds a new verified qualified account in Cantabria; Aragón's historical procurement hit was rejected as already resolved, preventing stale-noise promotion.
+- 🇮🇹 Italia: **15/20** territori con almeno un account qualificato, **26** account con regione verificata + 1 remote/geography-to-verify.
+- 🇪🇸 Spagna: **14/19** territori con almeno un account qualificato, **22** account con territorio verificato + 2 remote/geography-to-verify.
+- **10 territori** remain zero-result / under deep research: pochi risultati con coverage incompleta restano **UNDER_SEARCHED**, non low-opportunity.
+- Piemonte era già un territorio qualificato nel CRM canonico; Digityze porta il totale regionale a **3 account qualificati** e migliora la copertura della famiglia agency/outsourcing.
 
 ---
 
 ## 📈 Success indicators
 
-- **Success Index:** **70%** — operating index, **not a probability**.
-- **New-client operational proxy:** **85% — UNCALIBRATED / LOW CONFIDENCE**; non utilizzabile per weighted revenue.
+- **Success Index:** **69%** — operating index, **not a probability**.
+- **New-client operational proxy:** **86% — UNCALIBRATED / LOW CONFIDENCE**; non utilizzabile per weighted revenue.
 
 ---
 
 ## 🛡️ Safety / QA
 
 - Duplicate FIRST_CONTACT tolerance: **0 — HARD RULE**.
-- Cantabria Web Design duplicate/Sent check: **CLEAR** at qualification time across canonical repository identity search, primary suppression, emergency suppression and Gmail Sent.
-- Autoridad Portuaria de Sevilla CONT26053 duplicate/Sent check: **CLEAR** at qualification time; route is official public procurement, but bid eligibility still requires PCAP/PPT review.
-- Los Realejos duplicate/Sent check: **CLEAR** at qualification time; route is official public procurement, but bid eligibility still requires PCAP/PPT review.
-- ProBurgos duplicate/Sent check: **CLEAR** at qualification time; route is official public procurement, but bid eligibility still requires PCAP/PPT review.
-- **No Cantabria Web Design, Sevilla, Los Realejos or ProBurgos outreach, application, bid or form submission was performed by the research scanner.**
-- Mediaimmagine remains **CONTACTED** after the duplicate-path correction from the 13:58 QA pass.
+- Digityze duplicate gate: **CLEAR** su repository canonico, suppression primaria, emergency suppression e Gmail Sent; contatti memorizzati solo se pubblicati ufficialmente.
+- **No Digityze outreach, application or form submission was performed by the research scanner.**
 - Current-day duplicate FIRST_CONTACT violations: **0**.
 - Historical duplicate violations preserved: **Persuadis, Marmellata Lab**.
 - Older unresolved QA: **10 recipients pending canonicalization**; `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
 - Positive/potentially positive replies: **auto-response forbidden**.
+- Reconciliation note: dashboard/funnel was advanced from the stale 17:00 snapshot to the current canonical state, preserving the 17:55 Commercial Core additions before adding Digityze.
 
 [Audit 13:58 →](audits/2026-08-29-1358.md)
 
