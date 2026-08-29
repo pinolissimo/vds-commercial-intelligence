@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-08-29T12:55:00+02:00",
+  "principles": {
+    "count_independent_lineages_not_urls": true,
+    "search_engines_are_discovery_only": true,
+    "prefer_primary_for_identity_and_contact": true,
+    "cross_source_gate_before_qualified": true,
+    "source_confidence_is_operating_index_not_probability": true
+  },
+  "tiers": {
+    "T1_PRIMARY": 1.0,
+    "T1_INSTITUTIONAL": 0.95,
+    "T2_SPECIALIST": 0.8,
+    "T3_AGGREGATOR": 0.6,
+    "T4_SIGNAL": 0.5
+  },
+  "families": [
+    {"id":"OFFICIAL_COMPANY","role":["IDENTITY","NEED","CONTACT_ROUTE","FRESHNESS"],"priority":"VERY_HIGH"},
+    {"id":"SPECIALIST_JOBS","role":["DISCOVERY","NEED","FRESHNESS"],"priority":"HIGH"},
+    {"id":"FREELANCE_MARKETPLACES","role":["DISCOVERY","NEED","CONTACT_ROUTE"],"priority":"HIGH"},
+    {"id":"PROFESSIONAL_NETWORKS","role":["DISCOVERY","CORROBORATION","BUYER_PATH"],"priority":"HIGH"},
+    {"id":"AGENCY_OUTSOURCING","role":["DISCOVERY","NEED","CONTACT_ROUTE"],"priority":"VERY_HIGH"},
+    {"id":"PROCUREMENT","role":["DISCOVERY","NEED","CONTACT_ROUTE"],"priority":"VERY_HIGH"},
+    {"id":"EU_PROJECT_REGISTRIES","role":["IDENTITY","NEED","FRESHNESS"],"priority":"VERY_HIGH"},
+    {"id":"PROGRAMME_PORTALS","role":["DISCOVERY","IDENTITY","FRESHNESS"],"priority":"HIGH"},
+    {"id":"CHAMBERS_CLUSTERS","role":["DISCOVERY","IDENTITY","CORROBORATION"],"priority":"MEDIUM"},
+    {"id":"INCUBATORS_ACCELERATORS","role":["DISCOVERY","CORROBORATION"],"priority":"MEDIUM"},
+    {"id":"UNIVERSITY_RESEARCH","role":["BUYER_PATH","IDENTITY","CONTACT_ROUTE"],"priority":"HIGH"},
+    {"id":"NEWS_SOCIAL","role":["DISCOVERY","FRESHNESS","CORROBORATION"],"priority":"MEDIUM"},
+    {"id":"LOCAL_BUSINESS_DIRECTORIES","role":["DISCOVERY","IDENTITY"],"priority":"LOW"},
+    {"id":"SEARCH_ROUTER","role":["DISCOVERY"],"priority":"LOW"}
+  ],
+  "seed_sources": [
+    {"id":"CORDIS","name":"CORDIS — European Commission","url":"https://cordis.europa.eu/projects","countries":["EU"],"family":"EU_PROJECT_REGISTRIES","tier":"T1_INSTITUTIONAL","independence_group":"EU_CORDIS","verified_on":"2026-08-29"},
+    {"id":"EU_FUNDING_TENDERS","name":"EU Funding & Tenders Portal","url":"https://ec.europa.eu/info/funding-tenders/opportunities/portal/","countries":["EU"],"family":"EU_PROJECT_REGISTRIES","tier":"T1_INSTITUTIONAL","independence_group":"EU_FTP","verified_on":"2026-08-29"},
+    {"id":"TED","name":"Tenders Electronic Daily","url":"https://ted.europa.eu/","countries":["EU","IT","ES"],"family":"PROCUREMENT","tier":"T1_INSTITUTIONAL","independence_group":"EU_TED","verified_on":"2026-08-29"},
+    {"id":"ACQUISTI_IN_RETE","name":"Acquisti in Rete PA / MEPA","url":"https://www.acquistinretepa.it/","countries":["IT"],"family":"PROCUREMENT","tier":"T1_INSTITUTIONAL","independence_group":"IT_MEPA","verified_on":"2026-08-29"},
+    {"id":"PLACSP","name":"Plataforma de Contratación del Sector Público","url":"https://contrataciondelestado.es/","countries":["ES"],"family":"PROCUREMENT","tier":"T1_INSTITUTIONAL","independence_group":"ES_PLACSP","verified_on":"2026-08-29"},
+    {"id":"LINKEDIN","name":"LinkedIn","url":"https://www.linkedin.com/jobs/","countries":["IT","ES","REMOTE"],"family":"PROFESSIONAL_NETWORKS","tier":"T2_SPECIALIST","independence_group":"LINKEDIN"},
+    {"id":"INFOJOBS_ES","name":"InfoJobs España","url":"https://www.infojobs.net/","countries":["ES"],"family":"SPECIALIST_JOBS","tier":"T2_SPECIALIST","independence_group":"INFOJOBS"},
+    {"id":"TECNOEMPLEO","name":"Tecnoempleo","url":"https://www.tecnoempleo.com/","countries":["ES"],"family":"SPECIALIST_JOBS","tier":"T2_SPECIALIST","independence_group":"TECNOEMPLEO"},
+    {"id":"WORKANA","name":"Workana","url":"https://www.workana.com/","countries":["IT","ES","REMOTE"],"family":"FREELANCE_MARKETPLACES","tier":"T2_SPECIALIST","independence_group":"WORKANA"},
+    {"id":"MALT","name":"Malt","url":"https://www.malt.com/","countries":["IT","ES","REMOTE"],"family":"FREELANCE_MARKETPLACES","tier":"T2_SPECIALIST","independence_group":"MALT"},
+    {"id":"INDEED","name":"Indeed","url":"https://www.indeed.com/","countries":["IT","ES"],"family":"SPECIALIST_JOBS","tier":"T3_AGGREGATOR","independence_group":"INDEED"},
+    {"id":"GOOGLE_ROUTER","name":"Google Search","url":"https://www.google.com/","countries":["IT","ES","EU"],"family":"SEARCH_ROUTER","tier":"T4_SIGNAL","independence_group":"SEARCH_ENGINE"}
+  ],
+  "yield_fields": ["discoveries","qualified","contacted","replies","positive_replies","meetings","proposals","wins","last_useful_hit","estimated_search_cost"],
+  "territory_matrix_fields": ["eligible_families","recently_scanned_families","coverage_pct","qualified_by_family","contacted_by_family","positive_replies_by_family","last_scan","next_family"]
+}
