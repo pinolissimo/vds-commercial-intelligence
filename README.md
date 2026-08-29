@@ -4,7 +4,7 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 29 agosto 2026 · 23:05 Europe/Madrid  
+**Snapshot:** 30 agosto 2026 · 00:00 Europe/Madrid  
 **Operating mode:** **CONVERSION FIRST · DELTA-FIRST RESEARCH**  
 **QA:** `PASS WITH RESIDUAL` — historical mailbox reconciliation remains open.
 
@@ -14,9 +14,9 @@
 
 | Opportunity | Verified first contacts | Qualified not contacted | Positive referral | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|---:|
-| **66** | **27** | **39** | **1** | **0** | **0** | **€0** |
+| **67** | **27** | **40** | **1** | **0** | **0** | **€0** |
 
-**Partner accounts:** 60 · **ready/manual-route accounts:** 38 · **pipeline activation:** 40.9%.
+**Partner accounts:** 61 · **ready/manual-route accounts:** 39 · **pipeline activation:** 40.3%.
 
 The pipeline now has sufficient qualified supply. The operational bottleneck is conversion from `QUALIFIED` to conversation, meeting and proposal—not raw lead volume.
 
@@ -50,7 +50,7 @@ The current decision queue is maintained in [`views/next-best-actions.json`](vie
 7. **Evo Sistemi** — current structural digital collaboration signal.
 8. **Mucui** — recurring WordPress/Elementor collaborator network.
 9. **CyberOptik** — WordPress/Elementor/front-end, with contract eligibility still to verify.
-10. **Mobyleshop** — current WPO freelance route.
+10. **Dato Digitale** — current Web Developer + WordPress programmer/network signal; contract/P.IVA model must be verified before action.
 
 Every opportunity remains subject to the canonical identity, suppression and Sent-history gates defined in the CRM before its state can advance.
 
@@ -74,22 +74,22 @@ The research layer has not submitted any bid for these opportunities.
 
 | Stage | Volume |
 |---|---:|
-| Canonical opportunities | **66** |
+| Canonical opportunities | **67** |
 | Verified first contacts | **27** |
-| Qualified not contacted | **39** |
+| Qualified not contacted | **40** |
 | Reply threads | **1** |
 | Positive referrals | **1** — passive inbound wait |
 | Meetings | **0** |
 | Proposals | **0** |
 | Won | **0** |
 
-The **Success Index = 69%** is an operating index, not a probability. The new-client proxy remains **UNCALIBRATED / LOW CONFIDENCE** and is not used for weighted revenue.
+The **Success Index = 69%** is an operating index, not a probability. The new-client proxy is **88%**, remains **UNCALIBRATED / LOW CONFIDENCE**, and is not used for weighted revenue.
 
 ---
 
 ## 🗺️ Coverage
 
-- **Italy:** 16/20 territories with at least one qualified account; 30 accounts with verified region + 1 remote/geography-to-verify.
+- **Italy:** 16/20 territories with at least one qualified account; 31 accounts with verified region + 1 remote/geography-to-verify.
 - **Spain:** 15/19 territories with at least one qualified account; 24 accounts with verified territory + 2 remote/geography-to-verify.
 - Incomplete zero-result territories remain `UNDER_SEARCHED`; they are not treated as low-opportunity markets.
 
@@ -111,6 +111,7 @@ Core qualification does not replace the CRM contactability gate. The CRM remains
 - `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
 - Odda and ReMedia remain verified first-contact events; follow-up is governed by the existing reply/follow-up policy.
 - BEYOND BARRIERS is explicitly excluded from action/SLA queues until new inbound communication occurs.
+- Dato Digitale is qualified for review only; the employment/freelance contract model is not represented as verified and must be checked before any action.
 - No guessed emails, unsupported budgets or invented probabilities may be used to advance a commercial gate.
 
 ---
