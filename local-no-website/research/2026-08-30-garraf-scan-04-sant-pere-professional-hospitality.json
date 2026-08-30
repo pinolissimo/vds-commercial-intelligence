@@ -1,0 +1,41 @@
+{
+  "run_at":"2026-08-30T16:59:45+02:00",
+  "workstream":"LOCAL_SME_999",
+  "frontier":{"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sant Pere de Ribes"},
+  "mode":"BATCH_DISCOVERY_PLUS_TARGETED_DEEP_REVIEW",
+  "raw_discovery_added":19,
+  "category_focus":["Professional services","Construction and renovation","Real estate","Hospitality deep website check"],
+  "source_families_used":["MAP_LOCAL","SEARCH_ROUTER","LOCAL_BUSINESS_DIRECTORIES","REVIEW_AGGREGATORS","REGISTRY_CORROBORATION","SOCIAL_DISCOVERY","MUNICIPAL_DIRECTORY"],
+  "first_pass":{
+    "website_present_rejected":[
+      {"business":"Assessoria Sant Pere de Ribes SL","evidence":"asspe.es active"},
+      {"business":"Legalis Advocats","evidence":"legalisadvocats.com active"},
+      {"business":"Reformesxpress Ribes S.L","evidence":"reformesexpress.com active"},
+      {"business":"Construccions i Reformes Carmona","evidence":"construccionsireformescarmona.com active"}
+    ],
+    "reputation_risk":[
+      {"business":"La Rambleta","reason":"Strong aggregate demand but recent cross-platform complaints include service problems and a serious Aug-2026 labor-management allegation; pattern requires caution and no promotion."}
+    ],
+    "raw_unreviewed":["Antoni Domènech i Albiach / arquitecte","Anibal Trejo Visuals","Fincas Parés Ribes","SP Assessoria","LA CLAU arquitectes","INABAS Internacional Abogados Asociados","Fotoprix Sant Pere de Ribes","Reformas Integrales","FINQUES RIBESROIG IMMOBILIÀRIA","Assessoria Montse Apellaniz Martin","Antoni Fabregas advocat","YoVeoFoto","Open Inmo Barcelona","Assessoria Farreras SL","Alfio Torrisi Architect"]
+  },
+  "deep_review":[
+    {
+      "business":"La Xixonenca",
+      "result":"RESEARCH",
+      "identity":"VERIFIED",
+      "current_activity":"VERIFIED",
+      "website_gap":"VERIFIED_MULTI_SIGNAL_NO_OWNED_DOMAIN_SURFACED",
+      "reputation":"VERIFIED_STRONG_VOLUME_MIXED_BUT_STABLE",
+      "social":"VERIFIED_INSTAGRAM_HANDLE_la_xixonenca_stpr",
+      "contactability":"TO_VERIFY_EMAIL_CURRENTNESS",
+      "evidence":[
+        "RestaurantGuru current listing: Plaça Marcer 14, Instagram @la_xixonenca_stpr, current hours",
+        "Independent restaurant/cafe directories report roughly 4.3/5 with >500 reviews",
+        "Exact-name/domain search surfaced directories and social presence but no dedicated owned site",
+        "Sant Pere de Ribes municipal hospitality directory lists guillemgarcia@hotmail.com, but source is historical and therefore not treated as current verified email"
+      ]
+    }
+  ],
+  "policy":{"outreach_performed":false,"forms_submitted":false,"applications_submitted":false,"duplicate_first_contact_created":false},
+  "next":"Resolve La Xixonenca current public business email/ownership; continue unresolved Sant Pere holds in parallel, then move contiguous frontier to Canyelles while leaving Sant Pere UNDER_SEARCHED for later category rotation."
+}
