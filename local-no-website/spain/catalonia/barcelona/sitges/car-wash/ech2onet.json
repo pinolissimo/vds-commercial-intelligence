@@ -54,9 +54,13 @@
   ],
   "personalized_angle": "Convert strong Google reputation into an owned destination with services, before/after gallery, map, quick-contact CTA and local SEO instead of depending on third-party directories.",
   "quality_rejection_reason": null,
-  "status": "READY_FOR_CONTACT_REVIEW",
+  "qa_hold_reason": "VDS7 audit 2026-08-30 13:00: organization-level suppression/global identity reconciliation is incomplete. Hostinger Sent search confirms zero messages to ech2onet@gmail.com, but recipient-level absence alone is not sufficient to satisfy the global identity gate.",
+  "status": "RESEARCH",
   "first_contact_state": "NEVER_SENT",
   "suppression_checked": false,
-  "timeline": [{"at":"2026-08-30T12:49:00+02:00","event":"DISCOVERED_AND_INITIAL_VERIFIED","actor":"VDS Opportunity Scanner"}],
+  "timeline": [
+    {"at":"2026-08-30T12:49:00+02:00","event":"DISCOVERED_AND_INITIAL_VERIFIED","actor":"VDS Opportunity Scanner"},
+    {"at":"2026-08-30T13:00:00+02:00","event":"QA_TRANSITION_GATE_CORRECTION","actor":"VDS7 QA","previous_status":"READY_FOR_CONTACT_REVIEW","new_status":"RESEARCH","reason":"QUALIFIED/READY local state requires completed global dedup/suppression/Sent-history gate; suppression_checked was false. Recipient-level Sent search returned zero, but organization-level reconciliation is still required."}
+  ],
   "last_verified_at": "2026-08-30T12:49:00+02:00"
 }
