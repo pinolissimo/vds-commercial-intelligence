@@ -4,8 +4,8 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 30 agosto 2026 · 12:05 Europe/Madrid  
-**Operating mode:** **CONVERSION FIRST · TWO-TRACK PIPELINE**  
+**Snapshot:** 30 agosto 2026 · 12:50 Europe/Madrid  
+**Operating mode:** **CONVERSION FIRST · TWO-TRACK PIPELINE · MONDAY EXECUTION READY**  
 **QA:** `PASS WITH RESIDUAL` — historical mailbox reconciliation remains open.
 
 ---
@@ -18,23 +18,51 @@
 
 **Partner accounts:** 63 · **pipeline activation:** 40.6%.
 
-The 41 qualified-unsent opportunities are operationally separated so public procurement no longer competes with normal commercial outreach.
+The qualified-unsent pool is operationally split so regulated procurement never competes with normal acquisition.
 
 | Qualified-unsent segment | Count | Operational meaning |
 |---|---:|---|
-| 🎯 **Direct Commercial — actionable** | **24** | 7 verified direct-email routes + 17 explicit application/form/platform routes |
-| 🟠 **Direct Commercial — HOLD** | **3** | strong fit, but contract/cross-border/contactability gate still open |
-| 🏛️ **Public Procurement — manual** | **5** | user-managed GO/NO-GO, tender documents and formal submission |
-| ⚪ **Residual qualified review** | **9** | not in a definitive conversion batch until route/history/reconciliation is clean |
-| **Total** | **41** | canonical qualified not contacted |
+| 🎯 **Direct Commercial — commercially actionable** | **24** | 7 verified email routes + 17 application/form/platform routes |
+| ✅ **Direct Commercial — route execution ready** | **23/24** | exact route currently usable after final dedup/freshness gate |
+| ⛔ **Direct Commercial — route blocked** | **1** | DNA Agency: exact current application route still unresolved |
+| 🟠 **Additional Direct Commercial — HOLD** | **3** | Dato Digitale, Walkstone, CyberOptik: contract/cross-border gate open |
+| 🏛️ **Public Procurement — manual** | **5** | user-managed GO/NO-GO + tender documents + formal submission |
+| ⚪ **Residual qualified review** | **9** | outside definitive conversion batch pending reconciliation/history/route cleanup |
 
 ---
 
-## 🎯 Direct Commercial Pipeline
+## 🚀 Monday Conversion Plan
 
-**24 actionable opportunities** are separated from tenders and can be worked as one-to-one acquisition opportunities. They are now route-classified:
+The Monday execution pack is now prepared at opportunity level.
 
-### ✉️ Verified direct-email pool — 7
+### Tier 1 — strongest buyer intent / fit
+**Aplum Studio → Grownnectia → Virtual Marketing Spain → Mucui → Mobyleshop → Onebit → Zmot Lab**
+
+- **Aplum:** listing reverified 30 Aug; freelance 1 year + possible continuity; WordPress/Elementor/HTML/CSS/PHP with GSAP/Figma/UX-UI as explicit pluses.
+- **Grownnectia:** P.IVA, continuous infrastructure + WordPress/WooCommerce; monthly infrastructure retainer plus continuing client-task work; listing currently valid through 28 Sep 2026.
+- **Virtual Marketing Spain:** previous route warning resolved. Milanuncios has a misleading slug/title but the fetched listing body is the verified freelancer-network advert: WordPress/Elementor/WooCommerce + AI/no-code, continuous opportunity flow, possible stable long-term collaboration.
+
+### Tier 2 — strong recurring/agency collaboration
+**Global Service Impresa → Aderen → Vaivén Estudio → Digityze → Dream Big Design → Studiart**
+
+- **Vaivén:** route resolved from the actual public post — LinkedIn private message or work examples; remote freelance WordPress/Elementor + custom elements.
+- **Digityze:** route resolved — official “Il nostro Network ti aspetta” CTA; named founders/public business channels are fallback, not a reason to bypass the Network flow.
+
+### Tier 3 — valid but extra constraints
+**Hays España → Mindrift → Robert Half Contracting**
+
+- **Robert Half Bari:** current freelance frontend listing reverified. Valid through Dec 2026, but full-time hybrid Bari (2 days/week) + Vue/React expectations reduce VDS fit versus the WordPress-first opportunities.
+
+### Blocked
+**DNA Agency** — strong commercial signal, but no first contact/application until the exact current route is re-established.
+
+➡️ [Monday Direct Outreach Pack](reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md)  
+➡️ [Monday Application Copy Pack](reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md)  
+➡️ [Exact Contact Route Matrix](views/direct-contact-route-matrix.json)
+
+---
+
+## ✉️ Direct Email Pool — 7
 
 1. **Visioni** — `info@visioni.info`
 2. **Cantabria Web Design** — `info@cantabriawebdesign.es`
@@ -44,31 +72,31 @@ The 41 qualified-unsent opportunities are operationally separated so public proc
 6. **Summum Marketing** — `talento@summummarketing.es`
 7. **Daniele Debernardis** — `info@danieledebernardis.it`
 
-These are candidates for individualized email preparation, subject to a **fresh pre-send global dedup/Sent/suppression check**.
+Seven individualized Gmail drafts exist as **content-review references only**. Actual VDS commercial first-contact email should preferably originate from the official VDS mailbox `info@visualdesignstudio.es` when the execution tool supports it.
 
-### 🧭 Dedicated application / form / platform pool — 17
+**Latest Gmail exact-recipient Sent check:** zero previous Sent matches for these seven recipients on 30 Aug. This does not replace canonical + primary/emergency suppression + official Hostinger Sent verification immediately before send.
+
+### First-contact gate
+
+`freshness → exact buyer/route → organization-level dedup → primary + emergency suppression → Gmail + Hostinger Sent → opportunity-specific personalization → send/apply → evidence → CRM update`
+
+No guessed emails. A different person/listing/email/channel never resets first-contact history.
+
+---
+
+## 🧭 Application / Form / Platform Pool — 17
 
 **Aplum Studio, Virtual Marketing Spain, Grownnectia, Mucui Estudio, Global Service Impresa, Mobyleshop, Aderen, Onebit, Zmot Lab, DNA Agency, Hays España, Vaivén Estudio, Mindrift, Robert Half Contracting, Digityze, Dream Big Design, Studiart.**
 
-These remain commercially strong. They are not downgraded: the buyer publishes a specific application/form/platform route that should take precedence over a generic email.
+These are not lower-quality leads merely because they require a platform/form. Their explicit buyer route must be respected. **16 are currently execution-ready at route level; DNA Agency is blocked for route re-verification.**
 
-**HOLD before first contact:** Dato Digitale, Walkstone and CyberOptik.
-
-➡️ [Full human report — Direct Commercial Opportunities](reports/DIRECT-CONTACT-OPPORTUNITIES.md)  
-➡️ [Exact contact-route matrix](views/direct-contact-route-matrix.json)  
-➡️ [Machine view — Direct Commercial Pipeline](views/direct-commercial-pipeline.json)
-
-### Direct-commercial first-contact gate
-
-`freshness → correct buyer/route → organization-level dedup → primary + emergency suppression → Gmail/Hostinger Sent history → opportunity-specific personalization → send/apply`
-
-No guessed emails. A different person/listing/email never resets first-contact history.
+All tailored form/DM/application copy is already prepared in the Monday Application Copy Pack.
 
 ---
 
 ## 🏛️ Public Procurement — USER ACTION REQUIRED
 
-Public administrations, municipalities, institutional bodies and regulated procurement are a **separate manual funnel**. These opportunities must never be treated as ordinary leads or automated first-contact email targets.
+Public administrations, municipalities, institutional bodies and regulated procurement remain a **separate manual funnel**. Partner Hunt must never email, bid or submit them automatically.
 
 | Deadline | Buyer / expediente | Need | User review |
 |---|---|---|---|
@@ -78,31 +106,18 @@ Public administrations, municipalities, institutional bodies and regulated procu
 | **14/09 10:00** | **Autoridad Portuaria de Sevilla · CONT26053** | website/transparency portal maintenance, support, evolution, accessibility | solvency + personnel + references + SLA/accessibility |
 | **08/10 14:00** | **Diputació de Barcelona · 2025/0041420** | training-services website analysis, visual adaptation, architecture/UI/prototyping | PCAP/PPT + solvency + technical references + submission eligibility |
 
-For this track, `QUALIFIED` means **commercially worth evaluating**, not permission to email, bid or submit automatically.
-
-➡️ [Human report — Manual Public Procurement](reports/MANUAL-PROCUREMENT-OPPORTUNITIES.md)  
-➡️ [Machine view — Public Procurement Pipeline](views/public-procurement-pipeline.json)
+➡️ [Manual Public Procurement Report](reports/MANUAL-PROCUREMENT-OPPORTUNITIES.md)  
+➡️ [Public Procurement Pipeline](views/public-procurement-pipeline.json)
 
 ---
 
 ## 🟡 BEYOND BARRIERS — WAITING FOR INBOUND
 
-The warm referral already introduced VDS to the relevant Communication & Dissemination people. The user explicitly considers the introduction sufficient.
+The warm referral already introduced VDS to the relevant Communication & Dissemination people. The current explicit user decision remains sufficient.
 
-**Current state:** `WAITING_FOR_INBOUND`  
-**Current action:** none  
-**SLA:** no outstanding action  
-**Automation:** no follow-up or additional solicitation; Reply Watch may only surface a new inbound message.
+**State:** `WAITING_FOR_INBOUND` · **Action:** none · **Automation:** no follow-up/solicitation; only genuinely new inbound may reopen review.
 
 [Opportunity](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json) · [Policy audit](audits/2026-08-29-2252-beyond-inbound-policy.md)
-
----
-
-## ✅ Latest research qualification
-
-**Virtual Marketing Spain — Elche/Alicante:** `READY_FOR_DAILY_OUTREACH_REVIEW`, fresh external-freelancer expansion signal covering **WordPress, Elementor, WooCommerce, web design, branding and AI/no-code automation**, with **continuous opportunity flow and possible stable long-term collaboration**. **SCS 94 / STRONG_MULTI_SOURCE · Revenue Priority 99**.
-
-Global duplicate checks were clean at qualification time across canonical repository search, Gmail Sent and official Hostinger `INBOX.Sent`. No outreach was performed by the research layer.
 
 ---
 
@@ -114,6 +129,7 @@ Global duplicate checks were clean at qualification time across canonical reposi
 | Verified first contacts | **28** |
 | Qualified not contacted | **41** |
 | Direct commercial actionable | **24** |
+| Route execution ready | **23** |
 | Direct-email routes | **7** |
 | Application/form/platform routes | **17** |
 | Public procurement manual | **5** |
@@ -131,7 +147,7 @@ The **Success Index = 68%** is an operating index, not a probability. The new-cl
 
 - **Italy:** 17/20 territories with at least one qualified account; 32 accounts with verified region + 1 remote/geography-to-verify.
 - **Spain:** 16/19 territories with at least one qualified account; 25 accounts with verified territory + 2 remote/geography-to-verify.
-- Incomplete zero-result territories remain `UNDER_SEARCHED`; they are not treated as low-opportunity markets.
+- Incomplete zero-result territories remain `UNDER_SEARCHED`, not low-opportunity markets.
 
 ---
 
@@ -139,12 +155,14 @@ The **Success Index = 68%** is an operating index, not a probability. The new-cl
 
 - Current-day verified FIRST_CONTACT: **1**.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
+- Existing Partner Hunt hard daily cap: **5 FIRST_CONTACT actions total/day**, changeable only by explicit user decision.
 - Historical duplicate events remain preserved: Persuadis and Marmellata Lab.
 - Ten older recipients remain pending canonicalization and are a hard overlap-risk constraint.
 - `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
-- Public procurement is explicitly excluded from automated Partner Hunt first-contact outreach.
-- BEYOND BARRIERS remains excluded from action/SLA queues until genuinely new inbound communication occurs.
-- No guessed emails, unsupported budgets or invented probabilities may advance a commercial gate.
+- DNA Agency first contact remains blocked until route resolution.
+- Public procurement is excluded from automated Partner Hunt outreach.
+- BEYOND BARRIERS remains excluded from action/SLA queues until genuinely new inbound.
+- No guessed emails, unsupported budgets, invented probabilities, rates, availability or experience claims may advance a commercial gate.
 
 ---
 
