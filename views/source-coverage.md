@@ -2,7 +2,7 @@
 
 > Derived operational view. Canonical commercial state remains in company/project/opportunity/contact/campaign records. Full evidence lineage remains in canonical records and `research/` logs.
 
-**Updated:** 2026-08-30 09:05 Europe/Madrid
+**Updated:** 2026-08-30 11:00 Europe/Madrid
 
 ## Source Intelligence status
 
@@ -29,21 +29,21 @@
 | News/social | early signals + freshness | MEDIUM |
 | Local directories / search routers | route discovery only | LOW |
 
-## Latest material source → conversion event
+## Latest material source → qualification event
 
-### 2026-08-30 09:03 — Trentino-Alto Adige/Südtirol
+### 2026-08-30 11:00 — Comunitat Valenciana
 
-**Pump Communication** moved from `QUALIFIED` to `CONTACTED`.
+**Virtual Marketing Spain** promoted to `READY_FOR_DAILY_OUTREACH_REVIEW`.
 
 Source chain:
 
-1. `PUMP_OFFICIAL` — official site verifies active Trento communication agency identity and current website/e-commerce delivery.
-2. `PUMP_LINKEDIN` — independent professional-network corroboration of company identity/location and company-originated freelance hiring signal.
-3. `ADZUNA_LISTING` — specialist listing preserves the explicit Web Designer & Developer freelance need, WordPress + Figma/UI-UX, **continuative collaboration**, **constant project flow** and published route.
+1. `MILANUNCIOS_CURRENT_FREELANCE_LISTING` — fresh external-freelancer expansion signal explicitly requesting web design with WordPress, Elementor and WooCommerce plus adjacent digital/AI skills; states project-based freelance work, continuous opportunity flow, possible stable long-term collaboration and 100% remote delivery.
+2. `VMS_OFFICIAL_PRIMARY` — official agency site verifies active Virtual Marketing Spain identity, Elche/Alicante geography, web development, WordPress-related delivery, SEO, advertising and AI automation; official contact route published.
+3. `WORKANA_BUYER_HISTORY` — independent marketplace lineage verifies founder Enrique Hernández naming Virtual Marketing Spain, current 2026 freelancer purchasing activity and historical WordPress freelancer demand.
 
-**SCS 93 / STRONG_MULTI_SOURCE.** Mirrors are treated as one need lineage, not independent corroboration.
+**SCS 94 / STRONG_MULTI_SOURCE.** Search-engine results were used only as discovery routers; mirrors are not counted as independent evidence.
 
-Conversion result: `qualified +1` from the 08:00 research pass → `contacted +1` at 09:03. FIRST_CONTACT was sent to the published `info@pumpcommunication.com` route only after canonical identity, primary/emergency suppression, Gmail Sent and official Hostinger Sent checks. Sent verification: **Hostinger UID 116**. Replies/positive replies/meetings/proposals/wins remain unchanged.
+Global repository identity, Gmail Sent and official Hostinger `INBOX.Sent` duplicate checks were clear. No outreach, form, marketplace proposal, WhatsApp or call was performed.
 
 ## Other current high-value source signals
 
