@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-30T22:00:00+02:00",
+  "updated_at":"2026-08-30T23:00:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,10 +8,10 @@
   "tax_policy":"config/tax-policy.json",
   "scan_frontier":"coverage/scan-frontier.json",
   "email_folder":"INBOX.LOCAL-SME-999",
-  "screened_raw":115,
-  "canonical_prospect_records":23,
-  "under_research":18,
-  "screened_rejected_has_website":35,
+  "screened_raw":123,
+  "canonical_prospect_records":24,
+  "under_research":19,
+  "screened_rejected_has_website":36,
   "screened_rejected_poor_reputation":1,
   "screened_reputation_risk":4,
   "qualified":5,
@@ -30,7 +30,7 @@
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Cubelles","canonical_records":1,"ready_to_contact":1,"under_research":0},
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sant Pere de Ribes","canonical_records":4,"ready_to_contact":0,"under_research":4},
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Canyelles","canonical_records":5,"ready_to_contact":0,"under_research":5},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","canonical_records":5,"ready_to_contact":0,"under_research":5}
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","canonical_records":6,"ready_to_contact":0,"under_research":6}
   ],
   "activity_index":[
     {"activity_type":"Laundry","canonical_records":2,"ready_to_contact":0},
@@ -44,11 +44,12 @@
     {"activity_type":"Hospitality","canonical_records":3,"ready_to_contact":0},
     {"activity_type":"Professional services","canonical_records":1,"ready_to_contact":0},
     {"activity_type":"Construction and renovation","canonical_records":1,"ready_to_contact":0},
-    {"activity_type":"Automotive","canonical_records":2,"ready_to_contact":0}
+    {"activity_type":"Automotive","canonical_records":2,"ready_to_contact":0},
+    {"activity_type":"Health allied services","canonical_records":1,"ready_to_contact":0}
   ],
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Olivella pet/allied-health sampling was expanded through map/search, municipal and sector-directory families with low local yield. Eight additional businesses/facilities were screened. Formas Perruqueria Unisex entered canonical deep review with municipal identity/contact evidence, an independent 4.5/5 reputation signal and no functional owned domain surfaced; reputation depth/social ownership remain unresolved. Feel Chill Experience, Piscinas Olivella and Clelia Gálvez were eliminated due to owned-site evidence; public/low-fit/weak-traction results were not promoted."},
+  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Olivella second-source expansion added eight new screened identities/signals. Sana Tu Mente entered canonical deep review with public phone/email/Facebook, 5.0/5 from 5+ reviews and an independent no-website signal; its sanatumente.es email domain remains an unresolved website-ownership/status ambiguity. M & M Nail's gained stronger identity/service corroboration but still lacks review-depth evidence. Be Garraf was rejected for an owned site; Transportes y Excavaciones Urubarna was filtered because registry evidence shows its registered domicile moved to Olerdola in 2023; several low-traction/low-fit candidates remain raw only."},
   "status":"ACTIVE_SEARCH_AND_FILTERING",
-  "next_action":"Continue Olivella ACTIVE_SCAN with a second-source retry for pet/allied-health gaps, deep-review Formas Perruqueria Unisex and resolve retained high-potential candidates (Welifevan, EL MOS, Nino y Antonio, Centro de Estética y Peluquería, La Brasa de Mas Mestre, M & M Nail's, Rehabilitaciones Lorenzo Romero) before geographic advancement."
+  "next_action":"Continue Olivella ACTIVE_SCAN: resolve sanatumente.es functional/domain ownership status, deepen Sana Tu Mente reputation/social checks, resolve M & M Nail's review depth, and continue retained high-potential deep reviews before geographic advancement."
 }
