@@ -1,6 +1,6 @@
 # Local SME 999 — Qualified Index
 
-Updated: 2026-08-30 15:59 Europe/Madrid
+Updated: 2026-08-30 16:59 Europe/Madrid
 
 ## READY TO CONTACT — Monday cohort
 
@@ -25,15 +25,20 @@ All five retain their canonical current state; final live recheck remains mandat
 | Sant Pere de Ribes / Les Roquetes | Tattoo & piercing | Badtime Tattoo Ink | RESEARCH | Strong reported 5.0/48 reputation and no dedicated owned domain surfaced; public business email and deeper social ownership still TO_VERIFY |
 | Sant Pere de Ribes | Pet services | Peluquería Canina Nessa | RESEARCH | 5.0/28 current map reputation plus specialist directory reports web unavailable; no dedicated domain surfaced, but public business email/social ownership remain TO_VERIFY |
 | Sant Pere de Ribes | Laundry | Emil Ross | RESEARCH | Active multi-source identity, 4.9/16 current map reputation and no owned site surfaced; public email and stronger reputation depth remain TO_VERIFY |
+| Sant Pere de Ribes | Hospitality | La Xixonenca | RESEARCH | High-volume current reputation (~4.3/542 reported), active Instagram and no owned domain surfaced; municipal email evidence is historical and must be reverified before contactability can be claimed |
 
 ## Current discovery observations
 
-The active spiral frontier remains **Sant Pere de Ribes / Les Roquetes**, but coverage materially expanded. A new 19-business batch added pet services, laundry, cleaning, allied health and hospitality. Three clear website-present businesses were rejected immediately (Mascotes Ribes, Jardi-Can Ribes, Garraf Clean); Speed Queen was excluded as franchise-covered; Sylmar Excellence Services was rejected from qualification because current listing data conflicts with registry evidence that the SL is extinguished. Two new canonical deep-review records were created for Peluquería Canina Nessa and Emil Ross.
+Sant Pere de Ribes professional-services and hospitality coverage expanded with **19 additional raw discoveries**. Exact-site checks rejected Assessoria Sant Pere de Ribes SL, Legalis Advocats, Reformesxpress Ribes and Construccions i Reformes Carmona because functional dedicated websites are active. La Rambleta remains a `REPUTATION_RISK` discovery because strong overall demand is offset by recent service complaints and a serious August-2026 labor-management allegation that requires caution rather than promotion.
 
-Health-service candidates Centre de Recuperació Funcional Ribes and Paula Martínez remain research holds because third-party website actions exist and the owned-site target still needs resolution. FisiOsteopatia Ribes remains raw/first-pass only because review depth is too small for promotion.
+La Xixonenca was added to canonical deep review: current independent sources support an active Plaça Marcer location, Instagram `@la_xixonenca_stpr`, heavy review volume and no dedicated owned domain surfaced in exact-name/domain searches. A historical Sant Pere de Ribes municipal hospitality directory exposes `guillemgarcia@hotmail.com`, but it is not treated as a current verified business email.
 
 Machine-readable frontier: `local-no-website/coverage/scan-frontier.json`.
-Latest detailed batch: `local-no-website/research/2026-08-30-garraf-scan-03-sant-pere-de-ribes.json`.
+Latest detailed batch: `local-no-website/research/2026-08-30-garraf-scan-04-sant-pere-professional-hospitality.json`.
+
+## Frontier
+
+Sant Pere de Ribes is now `UNDER_SEARCHED`, not closed: all unresolved deep-review holds and raw professional candidates remain explicitly queued. The active contiguous spiral frontier advances to **Canyelles**, where the next cycle begins a new multi-category raw-discovery batch. Olivella remains the following Garraf node.
 
 ## Tax marketing
 
@@ -41,4 +46,4 @@ Spain: official Agencia Tributaria policy loaded. Only conditional wording from 
 
 ## Next action
 
-Finish Sant Pere de Ribes professional-services coverage and deep website checks for the strongest hospitality candidates. Resolve Nessa, Emil Ross and Badtime public contact/social evidence plus health-service website ambiguities. After sufficient sampling, progress contiguously to Canyelles while retaining all unresolved holds. Do not mark Sant Pere de Ribes LOW_YIELD.
+Begin Canyelles across hair/beauty, hospitality, construction, professional services, pet, automotive and allied-health categories while retaining Sant Pere unresolved holds for targeted verification. Resolve La Xixonenca current public business email/ownership before any potential promotion. Do not mark Sant Pere de Ribes LOW_YIELD.
