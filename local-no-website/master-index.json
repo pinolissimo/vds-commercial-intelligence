@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-30T18:02:00+02:00",
+  "updated_at":"2026-08-30T18:57:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,12 +8,12 @@
   "tax_policy":"config/tax-policy.json",
   "scan_frontier":"coverage/scan-frontier.json",
   "email_folder":"INBOX.LOCAL-SME-999",
-  "screened_raw":81,
-  "canonical_prospect_records":15,
-  "under_research":10,
-  "screened_rejected_has_website":23,
+  "screened_raw":95,
+  "canonical_prospect_records":19,
+  "under_research":14,
+  "screened_rejected_has_website":26,
   "screened_rejected_poor_reputation":1,
-  "screened_reputation_risk":3,
+  "screened_reputation_risk":4,
   "qualified":5,
   "ready_for_contact_review":0,
   "ready_to_contact":5,
@@ -29,7 +29,8 @@
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Vilanova i la Geltrú","canonical_records":5,"ready_to_contact":4,"under_research":1},
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Cubelles","canonical_records":1,"ready_to_contact":1,"under_research":0},
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sant Pere de Ribes","canonical_records":4,"ready_to_contact":0,"under_research":4},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Canyelles","canonical_records":2,"ready_to_contact":0,"under_research":2}
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Canyelles","canonical_records":5,"ready_to_contact":0,"under_research":5},
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","canonical_records":1,"ready_to_contact":0,"under_research":1}
   ],
   "activity_index":[
     {"activity_type":"Laundry","canonical_records":2,"ready_to_contact":0},
@@ -37,14 +38,16 @@
     {"activity_type":"Physiotherapy","canonical_records":1,"ready_to_contact":0},
     {"activity_type":"Massage and wellness","canonical_records":1,"ready_to_contact":1},
     {"activity_type":"Tattoo and piercing","canonical_records":3,"ready_to_contact":1},
-    {"activity_type":"Beauty and wellness","canonical_records":2,"ready_to_contact":2},
+    {"activity_type":"Beauty and wellness","canonical_records":3,"ready_to_contact":2},
     {"activity_type":"Hair salon","canonical_records":2,"ready_to_contact":1},
-    {"activity_type":"Pet services","canonical_records":1,"ready_to_contact":0},
-    {"activity_type":"Hospitality","canonical_records":2,"ready_to_contact":0}
+    {"activity_type":"Pet services","canonical_records":2,"ready_to_contact":0},
+    {"activity_type":"Hospitality","canonical_records":2,"ready_to_contact":0},
+    {"activity_type":"Professional services","canonical_records":1,"ready_to_contact":0},
+    {"activity_type":"Construction and renovation","canonical_records":1,"ready_to_contact":0}
   ],
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Canyelles first active batch added 12 raw discoveries. Nova 12 and El Garrot entered canonical deep review after independent identity/reputation/no-domain signals; Ivori Hair Studio, Queen Pizza, Cal Manelet and Restaurant La Pedrera were rejected immediately because functional dedicated websites were found."},
+  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Canyelles category coverage expanded across pet, professional services, construction and automotive; Peluts Canyelles, Advocada Elisabeth Serrano Salamanca and Integrales Gallan entered deep review. Finques Canyelles, R2t and Oswen were eliminated for functional websites; Autotec was retained only as reputation risk. Contiguous spiral advanced into Olivella, where Centro de Estética y Peluquería became the first canonical deep-review prospect."},
   "status":"ACTIVE_SEARCH_AND_FILTERING",
-  "next_action":"Continue Canyelles ACTIVE_SCAN across pet services, construction/renovation, professional services, automotive and allied health; resolve Nova 12 email ownership/currentness and El Garrot public business email/contactability before any promotion. Retain six hospitality/local-service raw candidates for exact-site first pass before advancing to Olivella."
+  "next_action":"Continue Olivella ACTIVE_SCAN across hospitality, pet services, construction/renovation, professional services, automotive and allied health; deep-review Centro de Estética y Peluquería contactability and social ownership. Revisit retained Canyelles gaps including Peluts public email/social, Elisabeth public email, Integrales Gallan reputation/contact route, Nova 12 email ownership and El Garrot contactability."
 }
