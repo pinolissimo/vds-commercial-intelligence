@@ -1,0 +1,26 @@
+{
+  "run_at":"2026-08-31T01:00:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella"},
+  "mode":"BATCH_DISCOVERY_PLUS_TARGETED_DEEP_REVIEW",
+  "new_unique_raw":3,
+  "new_canonical_deep_review":1,
+  "first_pass_rejected_or_held":2,
+  "qualified_promotions":0,
+  "candidates":[
+    {"business":"Rostisseria l'Asador","result":"DEEP_REVIEW_RESEARCH","reason":"Current 4.8/66 local reputation, municipal and Diputació corroboration, independent restaurant directory 4.8/58, no current dedicated owned domain found; only a legacy Blogspot presence. Public email/social ownership still unresolved."},
+    {"business":"Casa Colina","result":"REPUTATION_CONFLICT_HOLD","reason":"No owned website is reported by one directory and Tripadvisor shows 5.0/5 from 5 reviews, but other current/near-current directory signals conflict materially on rating and review count. Identity/activity classification also varies between lodging and construction. Do not promote until conflict is resolved."},
+    {"business":"Estanc Olivella","result":"FIRST_PASS_LOW_PRIORITY_RETAIL","reason":"Current municipal identity and 4.8/23 map reputation are credible, but regulated tobacco-retail economics and limited website need make it lower commercial priority than retained hospitality/service candidates. Keep RAW only; no promotion."}
+  ],
+  "additional_existing_or_rejected_checks":[
+    {"business":"Pintor BCN - Olivella","result":"REJECTED_HAS_WEBSITE","reason":"Exact-name/phone search resolves to functional pintorbcn.com; same phone corroborated by multiple directories."},
+    {"business":"Locos Por El Clima","result":"REJECTED_HAS_WEBSITE","reason":"Functional owned site locosporelclima.com with current 2026 service content and public business email."},
+    {"business":"Fontanero y Desatascos","result":"REJECTED_HAS_WEBSITE","reason":"Directory exposes functional business domain fontaneroentuzonacat.com."},
+    {"business":"Reformas Ds Joan Batalla","result":"FIRST_PASS_LOW_TRACTION","reason":"Current directories expose phone and location but zero review traction; not worth deep review ahead of stronger retained queue."},
+    {"business":"Alex Turiel López","result":"FIRST_PASS_LOW_TRACTION_IDENTITY_AMBIGUITY","reason":"Cleaning-service directory has zero reviews and another directory associates the phone/name with an unrelated drain-service domain; identity and owned-presence ambiguity make it poor deep-review priority."}
+  ],
+  "source_families_used":["local/map listing","municipal business/tourism directory","Diputació municipal activity census","specialist restaurant/food directories","general local directories","exact-name web search","owned-site verification"],
+  "collaborations_scan":"Fresh WordPress/agency search performed; strongest Workana hits overlap previously known open recurring opportunities, so no new canonical collaboration record was added this cycle.",
+  "eu_projects_scan":"Fresh CORDIS Barcelona/start-date search performed; results overlapped existing SMART and previously reviewed Barcelona research-project patterns; no new EU record was promoted without Communication/Dissemination buyer-path evidence.",
+  "notes":"Search engines were used as discovery routers only. This cycle added new discovery/review work and a new canonical deep-review prospect. No outreach, application, form submission, auto-reply or FIRST_CONTACT action was performed."
+}
