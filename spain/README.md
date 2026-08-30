@@ -17,13 +17,13 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 | Castilla-La Mancha | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | procurement + specialist-jobs pass produced no current qualifying buyer-side web signal; rotate family before re-search |
 | Castilla y León | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | review ProBurgos C16.2026 tender eligibility before 2026-09-04; continue source-family rotation |
 | Catalunya | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | review Diputació de Barcelona 2025/0041420 PCAP/PPT eligibility before 2026-10-08 14:00; continue source-family rotation |
-| Comunitat Valenciana | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | Japonal freelance WordPress migration signal appears stale/conflicting; revisit only on fresh current listing |
+| Comunitat Valenciana | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-30 | Virtual Marketing Spain HOT+ recurring freelance network; review listing/application route before any action |
 | Extremadura | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | procurement + specialist-jobs pass produced no current qualifying buyer-side signal; rotate to agency/outsourcing or cluster sources |
 | Galicia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Comunidad de Madrid | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Región de Murcia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Comunidad Foral de Navarra | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | broad pass produced no new qualified buyer-side signal; rotate source family on next pass |
-| País Vasco / Euskadi | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| País Vasco / Euskadi | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | agency/outsourcing pass produced no explicit buyer-side external-capacity signal; rotate source family |
 | La Rioja | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | current low-value procurement signal reviewed but not promoted; rotate to higher-value source families |
 | Ceuta | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | procurement + specialist-jobs scan yielded no qualifying web buyer signal; source coverage still incomplete |
 | Melilla | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | procurement + specialist-jobs scan yielded no qualifying web buyer signal; source coverage still incomplete |
