@@ -4,7 +4,7 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 30 agosto 2026 · 00:00 Europe/Madrid  
+**Snapshot:** 30 agosto 2026 · 08:00 Europe/Madrid  
 **Operating mode:** **CONVERSION FIRST · DELTA-FIRST RESEARCH**  
 **QA:** `PASS WITH RESIDUAL` — historical mailbox reconciliation remains open.
 
@@ -14,11 +14,11 @@
 
 | Opportunity | Verified first contacts | Qualified not contacted | Positive referral | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|---:|
-| **67** | **27** | **40** | **1** | **0** | **0** | **€0** |
+| **68** | **27** | **41** | **1** | **0** | **0** | **€0** |
 
-**Partner accounts:** 61 · **ready/manual-route accounts:** 39 · **pipeline activation:** 40.3%.
+**Partner accounts:** 62 · **ready/manual-route accounts:** 40 · **pipeline activation:** 39.7%.
 
-The pipeline now has sufficient qualified supply. The operational bottleneck is conversion from `QUALIFIED` to conversation, meeting and proposal—not raw lead volume.
+The pipeline has sufficient qualified supply. The operational bottleneck is conversion from `QUALIFIED` to conversation, meeting and proposal—not raw lead volume.
 
 ---
 
@@ -39,20 +39,20 @@ Historical referral and SLA events remain preserved in the append-only timeline.
 
 ## ⚡ Conversion Queue
 
-The current decision queue is maintained in [`views/next-best-actions.json`](views/next-best-actions.json). The highest immediate direct-collaboration candidates are now:
+The current decision queue is maintained in [`views/next-best-actions.json`](views/next-best-actions.json). Highest-value direct-collaboration candidates include:
 
 1. **Aplum Studio** — annual freelance WordPress/Elementor/front-end collaboration.
-2. **Global Service Impresa** — current remote freelance developer/creative collaboration.
-3. **Grownnectia** — P.IVA WordPress/WooCommerce + infrastructure overlap.
-4. **Visioni** — current P.IVA web-designer signal.
-5. **Onebit** — structural agency-overflow model using freelance P.IVA web developers.
-6. **Zmot Lab** — external P.IVA WordPress/WooCommerce collaboration.
-7. **Evo Sistemi** — current structural digital collaboration signal.
-8. **Mucui** — recurring WordPress/Elementor collaborator network.
-9. **CyberOptik** — WordPress/Elementor/front-end, with contract eligibility still to verify.
+2. **Pump Communication** — freelance Web Designer & Developer for agency clients; explicit continuative collaboration and constant project flow.
+3. **Global Service Impresa** — current remote freelance developer/creative collaboration.
+4. **Grownnectia** — P.IVA WordPress/WooCommerce + infrastructure overlap.
+5. **Visioni** — current P.IVA web-designer signal.
+6. **Onebit** — structural agency-overflow model using freelance P.IVA web developers.
+7. **Zmot Lab** — external P.IVA WordPress/WooCommerce collaboration.
+8. **Evo Sistemi** — current structural digital collaboration signal.
+9. **Mucui** — recurring WordPress/Elementor collaborator network.
 10. **Dato Digitale** — current Web Developer + WordPress programmer/network signal; contract/P.IVA model must be verified before action.
 
-Every opportunity remains subject to the canonical identity, suppression and Sent-history gates defined in the CRM before its state can advance.
+Every opportunity remains subject to canonical identity, suppression and Sent-history gates before its state can advance.
 
 ---
 
@@ -74,32 +74,32 @@ The research layer has not submitted any bid for these opportunities.
 
 | Stage | Volume |
 |---|---:|
-| Canonical opportunities | **67** |
+| Canonical opportunities | **68** |
 | Verified first contacts | **27** |
-| Qualified not contacted | **40** |
+| Qualified not contacted | **41** |
 | Reply threads | **1** |
 | Positive referrals | **1** — passive inbound wait |
 | Meetings | **0** |
 | Proposals | **0** |
 | Won | **0** |
 
-The **Success Index = 69%** is an operating index, not a probability. The new-client proxy is **88%**, remains **UNCALIBRATED / LOW CONFIDENCE**, and is not used for weighted revenue.
+The **Success Index = 69%** is an operating index, not a probability. The new-client proxy remains **88%**, **UNCALIBRATED / LOW CONFIDENCE**, and is not used for weighted revenue.
 
 ---
 
 ## 🗺️ Coverage
 
-- **Italy:** 16/20 territories with at least one qualified account; 31 accounts with verified region + 1 remote/geography-to-verify.
+- **Italy:** 17/20 territories with at least one qualified account; 32 accounts with verified region + 1 remote/geography-to-verify.
 - **Spain:** 15/19 territories with at least one qualified account; 24 accounts with verified territory + 2 remote/geography-to-verify.
 - Incomplete zero-result territories remain `UNDER_SEARCHED`; they are not treated as low-opportunity markets.
 
 ---
 
-## 🧠 Commercial Core integration
+## 🧠 Latest material research delta
 
-VDS Commercial Core now provides the evidence/qualification engine upstream of this CRM. The certified Core baseline has a controlled live 7-source qualification benchmark with **7/7 QUALIFIED, 0 review, 0 unsafe, 0 errors, 0 model calls and 0 API cost**.
+**Pump Communication — Trento:** explicit freelance Web Designer & Developer vacancy for client projects, WordPress + Figma/UI-UX, with **continuative collaboration** and a **constant flow of projects**. Official site verifies the active Trento agency and web-design/e-commerce activity; LinkedIn independently corroborates company identity/location and the freelance hiring signal; specialist listing preserves the detailed need and published route. **SCS 93 / STRONG_MULTI_SOURCE · Revenue Priority 99.** Repository identity search and Gmail Sent are clear; no outreach occurred.
 
-Core qualification does not replace the CRM contactability gate. The CRM remains authoritative for organization-level duplicate prevention, suppression, Sent verification and downstream conversion state.
+A parallel Sicilia procurement/agency pass found active generic IT procurement volume but no fresh attributable buyer-side web opportunity strong enough for promotion in this cycle.
 
 ---
 
@@ -110,8 +110,8 @@ Core qualification does not replace the CRM contactability gate. The CRM remains
 - Ten older recipients remain pending canonicalization and therefore remain a hard overlap-risk constraint.
 - `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
 - Odda and ReMedia remain verified first-contact events; follow-up is governed by the existing reply/follow-up policy.
-- BEYOND BARRIERS is explicitly excluded from action/SLA queues until new inbound communication occurs.
-- Dato Digitale is qualified for review only; the employment/freelance contract model is not represented as verified and must be checked before any action.
+- BEYOND BARRIERS remains explicitly excluded from action/SLA queues until new inbound communication occurs.
+- Pump Communication was qualified by the scanner only; no email/form/LinkedIn/call action was performed.
 - No guessed emails, unsupported budgets or invented probabilities may be used to advance a commercial gate.
 
 ---
