@@ -4,7 +4,7 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 30 agosto 2026 · 11:50 Europe/Madrid  
+**Snapshot:** 30 agosto 2026 · 12:05 Europe/Madrid  
 **Operating mode:** **CONVERSION FIRST · TWO-TRACK PIPELINE**  
 **QA:** `PASS WITH RESIDUAL` — historical mailbox reconciliation remains open.
 
@@ -18,11 +18,11 @@
 
 **Partner accounts:** 63 · **pipeline activation:** 40.6%.
 
-The 41 qualified-unsent opportunities are now operationally separated so public procurement no longer competes with normal commercial outreach.
+The 41 qualified-unsent opportunities are operationally separated so public procurement no longer competes with normal commercial outreach.
 
 | Qualified-unsent segment | Count | Operational meaning |
 |---|---:|---|
-| 🎯 **Direct Commercial — actionable** | **24** | personalized commercial email/application/collaboration route |
+| 🎯 **Direct Commercial — actionable** | **24** | 7 verified direct-email routes + 17 explicit application/form/platform routes |
 | 🟠 **Direct Commercial — HOLD** | **3** | strong fit, but contract/cross-border/contactability gate still open |
 | 🏛️ **Public Procurement — manual** | **5** | user-managed GO/NO-GO, tender documents and formal submission |
 | ⚪ **Residual qualified review** | **9** | not in a definitive conversion batch until route/history/reconciliation is clean |
@@ -32,26 +32,30 @@ The 41 qualified-unsent opportunities are now operationally separated so public 
 
 ## 🎯 Direct Commercial Pipeline
 
-**24 actionable opportunities** are separated from tenders and can be worked as one-to-one acquisition opportunities. “Direct commercial” does **not** mean bulk email: the correct verified route must be used, and an explicit application form/platform takes precedence over a generic mailbox.
+**24 actionable opportunities** are separated from tenders and can be worked as one-to-one acquisition opportunities. They are now route-classified:
 
-**Top conversion group:**
+### ✉️ Verified direct-email pool — 7
 
-1. **Aplum Studio** — one-year freelance web collaboration; WordPress/Elementor/front-end/UX.
-2. **Virtual Marketing Spain** — external freelance network; continuous project flow and possible stable collaboration.
-3. **Grownnectia** — continuous P.IVA WordPress/WooCommerce + hosting/DNS/mail + small software work.
-4. **Visioni** — fresh P.IVA web-designer/developer need; HTML/CSS/JS, WordPress/CMS, PHP/MySQL/AJAX/JSON.
-5. **Mucui Estudio** — recurring WordPress/Elementor production collaborator network.
-6. **Global Service Impresa** — remote freelance WordPress/JS/e-commerce/custom software collaboration.
-7. **Mobyleshop** — freelance WordPress/WPO, PHP/JS/MySQL, security/performance/Git/usability/SEO.
-8. **Aderen** — Senior WordPress Developer, Freelance Full Time, long-term project.
-9. **Cantabria Web Design** — explicit white-label/subcontracting capacity, including work for competing companies.
-10. **Evo Sistemi** — web development + WordPress + cybersecurity + AI/automation collaboration.
+1. **Visioni** — `info@visioni.info`
+2. **Cantabria Web Design** — `info@cantabriawebdesign.es`
+3. **Evo Sistemi** — `info@evosistemi.com`
+4. **Ibérica Studio** — `trabajo@ibericastudio.com`
+5. **Nexibo** — `collab@nexibo.agency`
+6. **Summum Marketing** — `talento@summummarketing.es`
+7. **Daniele Debernardis** — `info@danieledebernardis.it`
 
-The full prioritized group also includes **Onebit, Zmot Lab, Ibérica Studio, DNA Agency, Hays España, Vaivén Estudio, Nexibo, Mindrift, Robert Half Contracting, Digityze, Dream Big Design, Summum Marketing, Daniele Debernardis and Studiart**.
+These are candidates for individualized email preparation, subject to a **fresh pre-send global dedup/Sent/suppression check**.
 
-**HOLD before first contact:** Dato Digitale, Walkstone and CyberOptik. Their commercial fit remains good, but the missing contract/cross-border gate must be closed before outreach.
+### 🧭 Dedicated application / form / platform pool — 17
 
-➡️ [Human report — Direct Contact Opportunities](reports/DIRECT-CONTACT-OPPORTUNITIES.md)  
+**Aplum Studio, Virtual Marketing Spain, Grownnectia, Mucui Estudio, Global Service Impresa, Mobyleshop, Aderen, Onebit, Zmot Lab, DNA Agency, Hays España, Vaivén Estudio, Mindrift, Robert Half Contracting, Digityze, Dream Big Design, Studiart.**
+
+These remain commercially strong. They are not downgraded: the buyer publishes a specific application/form/platform route that should take precedence over a generic email.
+
+**HOLD before first contact:** Dato Digitale, Walkstone and CyberOptik.
+
+➡️ [Full human report — Direct Commercial Opportunities](reports/DIRECT-CONTACT-OPPORTUNITIES.md)  
+➡️ [Exact contact-route matrix](views/direct-contact-route-matrix.json)  
 ➡️ [Machine view — Direct Commercial Pipeline](views/direct-commercial-pipeline.json)
 
 ### Direct-commercial first-contact gate
@@ -110,6 +114,8 @@ Global duplicate checks were clean at qualification time across canonical reposi
 | Verified first contacts | **28** |
 | Qualified not contacted | **41** |
 | Direct commercial actionable | **24** |
+| Direct-email routes | **7** |
+| Application/form/platform routes | **17** |
 | Public procurement manual | **5** |
 | Reply threads | **1** |
 | Positive referrals | **1** — passive inbound wait |
@@ -146,6 +152,7 @@ The **Success Index = 68%** is an operating index, not a probability. The new-cl
 
 - [Master index](master-index.json)
 - [Direct Commercial Pipeline](views/direct-commercial-pipeline.json)
+- [Direct Contact Route Matrix](views/direct-contact-route-matrix.json)
 - [Public Procurement Pipeline](views/public-procurement-pipeline.json)
 - [Next Best Actions](views/next-best-actions.json)
 - [Action Queue](views/action-queue.json)
