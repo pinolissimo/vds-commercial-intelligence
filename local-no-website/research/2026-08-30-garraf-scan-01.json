@@ -1,0 +1,29 @@
+{
+  "scan_id":"LOCAL-SME-SCAN-2026-08-30-GARRAF-01",
+  "started_at":"2026-08-30T13:05:00+02:00",
+  "updated_at":"2026-08-30T13:35:00+02:00",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipalities":["Sitges","Vilanova i la Geltrú"]},
+  "objective":"Test high-throughput discovery followed by severe website-gap, reputation, social/public-presence, contactability and dedup qualification.",
+  "screened_businesses":[
+    {"business":"Quirogris","municipality":"Vilanova i la Geltrú","activity":"Massage and wellness","result":"READY_TO_CONTACT","reason":"Excellent reputation, active service profile, public email, no owned site found, dedup clean."},
+    {"business":"Mythic Tattoo Studio","municipality":"Vilanova i la Geltrú","activity":"Tattoo and piercing","result":"READY_TO_CONTACT","reason":"Large strong review base, active social presence, public email, no owned site found, dedup clean."},
+    {"business":"Adara Rituals de Bellesa","municipality":"Vilanova i la Geltrú","activity":"Beauty and wellness","result":"READY_TO_CONTACT","reason":"Active Treatwell/Facebook presence, excellent reviews, public email, no owned site found, dedup clean."},
+    {"business":"Ech2Onet","municipality":"Sitges","activity":"Car wash","result":"RESEARCH_HOLD","reason":"Strong current reputation and website gap, but a historical municipal disciplinary record surfaced and requires context before outreach."},
+    {"business":"La Lavandería Sitges","municipality":"Sitges","activity":"Laundry","result":"RESEARCH_HOLD","reason":"Strong local reputation and no website surfaced, but no verified public email yet."},
+    {"business":"Equilibri, Centre de Fisioteràpia","municipality":"Sitges","activity":"Physiotherapy","result":"RESEARCH_HOLD","reason":"Good reputation and historical obsolete site signal; current public email/social evidence still incomplete."},
+    {"business":"Madhaus Tattoo","municipality":"Vilanova i la Geltrú","activity":"Tattoo and piercing","result":"RESEARCH_HOLD","reason":"Strong contact/reputation signal but one directory exposes an unresolved website link; must resolve before qualifying."},
+    {"business":"Ngira Tattoo - Piercing","municipality":"Vilanova i la Geltrú","activity":"Tattoo and piercing","result":"REJECTED_HAS_WEBSITE","reason":"Functional current owned website found."},
+    {"business":"Vilanova Tattoo Gallery","municipality":"Vilanova i la Geltrú","activity":"Tattoo and piercing","result":"REJECTED_HAS_WEBSITE","reason":"Dedicated website surfaced in business directory."},
+    {"business":"TOTCLAR Limpiezas","municipality":"Vilanova i la Geltrú","activity":"Cleaning","result":"REJECTED_HAS_WEBSITE","reason":"Functional owned websites found."},
+    {"business":"Green Wash Vilanova","municipality":"Vilanova i la Geltrú","activity":"Car wash","result":"REJECTED_HAS_WEBSITE","reason":"Functional owned website found."},
+    {"business":"Limpiezas Ruth Sitges","municipality":"Sitges","activity":"Cleaning","result":"REJECTED_HAS_WEBSITE","reason":"Functional owned website found."},
+    {"business":"Animalis Sitges","municipality":"Sitges","activity":"Pet services","result":"REJECTED_HAS_WEBSITE","reason":"Functional owned website found."},
+    {"business":"Calma Beauty Sitges","municipality":"Sitges","activity":"Beauty","result":"REJECTED_HAS_WEBSITE","reason":"Functional owned booking/business website found."},
+    {"business":"Lavanderia Vilanova","municipality":"Vilanova i la Geltrú","activity":"Laundry","result":"REJECTED_POOR_REPUTATION","reason":"Low review score pattern; not an attractive client-quality target."},
+    {"business":"aFISIOna't","municipality":"Vilanova i la Geltrú","activity":"Therapy/wellness","result":"REPUTATION_RISK","reason":"Review score is materially weaker than current quality threshold; keep out of first outreach cohort."}
+  ],
+  "metrics":{"screened":16,"ready_to_contact":3,"research_hold":4,"rejected_has_website":6,"rejected_poor_reputation":1,"reputation_risk":1,"other":1},
+  "quality_yield":{"ready_to_contact_rate":0.1875,"note":"Early pilot yield; not a calibrated conversion probability."},
+  "dedup_checks":{"hostinger_sent":"PASS for ready cohort exact recipients","gmail_sent":"PASS for ready cohort exact recipients","suppression_registry":"PASS for ready cohort","canonical_repo_identity":"PASS in current exact-name/email checks"},
+  "next_scan":"Continue Vilanova categories and expand Garraf municipality/category matrix while preserving deep-review gate."
+}
