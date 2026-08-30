@@ -56,9 +56,13 @@
   ],
   "personalized_angle": "A clinic benefits from trust, services, practitioner presentation, map/contact and local-search visibility. The historical-domain gap makes the proposal especially concrete: restore an owned professional destination rather than rely on directories.",
   "quality_rejection_reason": null,
-  "status": "READY_FOR_CONTACT_REVIEW",
+  "qa_hold_reason": "VDS7 audit 2026-08-30 13:00: global organization-level dedup/suppression/Sent-history reconciliation is incomplete; reported Facebook presence is not yet directly verified and directory lineage requires caution before qualification.",
+  "status": "RESEARCH",
   "first_contact_state": "NEVER_SENT",
   "suppression_checked": false,
-  "timeline": [{"at":"2026-08-30T12:49:00+02:00","event":"DISCOVERED_AND_INITIAL_VERIFIED","actor":"VDS Opportunity Scanner"}],
+  "timeline": [
+    {"at":"2026-08-30T12:49:00+02:00","event":"DISCOVERED_AND_INITIAL_VERIFIED","actor":"VDS Opportunity Scanner"},
+    {"at":"2026-08-30T13:00:00+02:00","event":"QA_TRANSITION_GATE_CORRECTION","actor":"VDS7 QA","previous_status":"READY_FOR_CONTACT_REVIEW","new_status":"RESEARCH","reason":"QUALIFIED/READY local state requires completed global dedup/suppression/Sent-history gate; suppression_checked was false. Social/direct-site evidence remains incomplete."}
+  ],
   "last_verified_at": "2026-08-30T12:49:00+02:00"
 }
