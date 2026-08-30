@@ -1,33 +1,38 @@
 # Local SME 999 — Qualified Index
 
-Updated: 2026-08-30 13:00 Europe/Madrid
+Updated: 2026-08-30 13:42 Europe/Madrid
 
-## Qualified
+## READY TO CONTACT — Monday cohort
 
-No Local SME prospect currently passes the complete VDS7 `QUALIFIED` gate.
-
-## QA-held deep-review cohort
-
-| Country | Region | Province | Municipality | Activity | Business | Website gap | Score | Current state | QA hold |
+| Country | Region | Province | Municipality | Activity | Business | Reputation | Score | Email | State |
 |---|---|---|---|---|---|---|---:|---|---|
-| Spain | Catalonia | Barcelona | Sitges | Laundry | La Lavandería Sitges | No dedicated website found in current evidence | 86 | RESEARCH | Global organization-level suppression/Sent reconciliation incomplete; social/public-presence depth incomplete |
-| Spain | Catalonia | Barcelona | Sitges | Car wash | Ech2Onet | No dedicated website verified from local result + Visit Sitges | 85 | RESEARCH | Recipient-level Hostinger Sent search is clean, but global commercial-identity reconciliation still incomplete |
-| Spain | Catalonia | Barcelona | Sitges | Physiotherapy | Equilibri, Centre de Fisioteràpia | Historical site reported obsolete/nonfunctional | 83 | RESEARCH | Global dedup incomplete; reported Facebook/direct-presence evidence not yet verified and directory lineage requires caution |
+| Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Massage & wellness | Quirogris | 5.0 / 98 reported Google reviews; active Fresha profile | 91 | quirogris@gmail.com | READY_TO_CONTACT |
+| Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Tattoo & piercing | Mythic Tattoo Studio | 4.8 / 313; strong social presence | 93 | mythictattooestudio.16@gmail.com | READY_TO_CONTACT |
+| Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Beauty & wellness | Adara Rituals de Bellesa | 5.0 / 24 current Treatwell opinions | 88 | adararituals@gmail.com | READY_TO_CONTACT |
 
-## Counts
+All three passed current exact-recipient Hostinger Sent, personal Gmail Sent, suppression-registry and canonical identity checks. Final live recheck remains mandatory immediately before Monday send.
 
-Raw discovered: **3** · deeply reviewed: **3** · rejected: **0** · qualified: **0** · ready for contact review: **0** · ready to contact: **0** · contacted: **0** · replies: **0** · wins: **0**.
+Prepared campaign: `local-no-website/outreach/2026-08-31-prepared-cohort.json`.
 
-## Geography / activity
+## QA-held research cohort
 
-Spain → Catalonia → Barcelona → Garraf → Sitges: 3 raw/deep-review records.
+| Municipality | Activity | Business | Current state | Hold reason |
+|---|---|---|---|---|
+| Sitges | Car wash | Ech2Onet | RESEARCH | Strong current reputation/site gap, but historical municipal compliance/disciplinary evidence surfaced and requires context before outreach |
+| Sitges | Laundry | La Lavandería Sitges | RESEARCH | No verified public business email yet |
+| Sitges | Physiotherapy | Equilibri, Centre de Fisioteràpia | RESEARCH | Current email/social evidence incomplete |
+| Vilanova i la Geltrú | Tattoo & piercing | Madhaus Tattoo | RESEARCH | One directory exposes an unresolved website action; website absence not yet certifiable |
 
-Laundry: 1 · Car wash: 1 · Physiotherapy: 1.
+## First efficiency scan
+
+Garraf pilot scan: **16 businesses screened** → **3 READY_TO_CONTACT** → **4 held for research** → **7 rejected because a working/dedicated website surfaced** → **1 rejected for poor reputation** → **1 reputation-risk hold**.
+
+Early ready-to-contact yield: **18.75%**. This is an operational pilot yield, not a conversion probability.
 
 ## Tax marketing
 
-Spain: official Agencia Tributaria policy loaded. Only conditional wording is permitted; no guaranteed percentage, fixed saving or universal deductibility claim.
+Spain: official Agencia Tributaria policy loaded. Only conditional wording from `local-no-website/config/tax-policy.json` is permitted; no guaranteed percentage, fixed saving or universal deductibility claim.
 
-## Next gate
+## Next action
 
-Complete organization-level suppression + historical Sent reconciliation for all identities; complete remaining social/public-presence and source-lineage checks; then re-promote only records that independently pass the full VDS7 qualification gate.
+Continue discovery today to enlarge the Monday cohort. At every Monday office-hour execution, rerun identity/freshness/suppression/Gmail Sent/Hostinger Sent gates immediately before each individual first-contact email. Exactly one proactive FIRST_CONTACT is permitted per local business identity.
