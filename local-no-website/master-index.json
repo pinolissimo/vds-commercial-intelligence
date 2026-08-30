@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-30T16:59:45+02:00",
+  "updated_at":"2026-08-30T18:02:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,10 +8,10 @@
   "tax_policy":"config/tax-policy.json",
   "scan_frontier":"coverage/scan-frontier.json",
   "email_folder":"INBOX.LOCAL-SME-999",
-  "screened_raw":69,
-  "canonical_prospect_records":13,
-  "under_research":8,
-  "screened_rejected_has_website":19,
+  "screened_raw":81,
+  "canonical_prospect_records":15,
+  "under_research":10,
+  "screened_rejected_has_website":23,
   "screened_rejected_poor_reputation":1,
   "screened_reputation_risk":3,
   "qualified":5,
@@ -28,7 +28,8 @@
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sitges","canonical_records":3,"ready_to_contact":0,"under_research":3},
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Vilanova i la Geltrú","canonical_records":5,"ready_to_contact":4,"under_research":1},
     {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Cubelles","canonical_records":1,"ready_to_contact":1,"under_research":0},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sant Pere de Ribes","canonical_records":4,"ready_to_contact":0,"under_research":4}
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sant Pere de Ribes","canonical_records":4,"ready_to_contact":0,"under_research":4},
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Canyelles","canonical_records":2,"ready_to_contact":0,"under_research":2}
   ],
   "activity_index":[
     {"activity_type":"Laundry","canonical_records":2,"ready_to_contact":0},
@@ -37,13 +38,13 @@
     {"activity_type":"Massage and wellness","canonical_records":1,"ready_to_contact":1},
     {"activity_type":"Tattoo and piercing","canonical_records":3,"ready_to_contact":1},
     {"activity_type":"Beauty and wellness","canonical_records":2,"ready_to_contact":2},
-    {"activity_type":"Hair salon","canonical_records":1,"ready_to_contact":1},
+    {"activity_type":"Hair salon","canonical_records":2,"ready_to_contact":1},
     {"activity_type":"Pet services","canonical_records":1,"ready_to_contact":0},
-    {"activity_type":"Hospitality","canonical_records":1,"ready_to_contact":0}
+    {"activity_type":"Hospitality","canonical_records":2,"ready_to_contact":0}
   ],
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Sant Pere de Ribes professional-services and hospitality coverage expanded by 19 raw discoveries. Four website-present candidates were rejected; La Rambleta moved to reputation-risk screening; La Xixonenca added to canonical deep review with strong demand/social evidence and no owned domain surfaced, pending current email verification."},
+  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Canyelles first active batch added 12 raw discoveries. Nova 12 and El Garrot entered canonical deep review after independent identity/reputation/no-domain signals; Ivori Hair Studio, Queen Pizza, Cal Manelet and Restaurant La Pedrera were rejected immediately because functional dedicated websites were found."},
   "status":"ACTIVE_SEARCH_AND_FILTERING",
-  "next_action":"Resolve La Xixonenca current public business email/ownership and retained Nessa/Emil Ross/Badtime holds; keep Sant Pere UNDER_SEARCHED for future rotation but advance the active contiguous frontier to Canyelles for the next new-batch cycle."
+  "next_action":"Continue Canyelles ACTIVE_SCAN across pet services, construction/renovation, professional services, automotive and allied health; resolve Nova 12 email ownership/currentness and El Garrot public business email/contactability before any promotion. Retain six hospitality/local-service raw candidates for exact-site first pass before advancing to Olivella."
 }
