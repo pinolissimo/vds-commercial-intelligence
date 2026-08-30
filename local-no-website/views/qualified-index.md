@@ -1,6 +1,6 @@
 # Local SME 999 — Qualified Index
 
-Updated: 2026-08-30 14:04 Europe/Madrid
+Updated: 2026-08-30 14:58 Europe/Madrid
 
 ## READY TO CONTACT — Monday cohort
 
@@ -12,9 +12,7 @@ Updated: 2026-08-30 14:04 Europe/Madrid
 | Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Beauty & wellness | Estètica Integral Vng | 5.0 / 125 verified Treatwell reviews; recent Aug-2026 reviews | 91 | esteticaintegralvng@gmail.com | READY_TO_CONTACT |
 | Spain | Catalonia | Barcelona | Cubelles | Hair salon | Brush Estilistes Cubelles | 4.7 / 128 Google reviews reported; independent listing also strong | 88 | loreabella2014@gmail.com | READY_TO_CONTACT |
 
-All five have current canonical/dedup evidence appropriate to their present state. The two newly promoted records passed exact-name/email repository checks plus exact-recipient official Hostinger Sent and personal Gmail Sent checks. Final live recheck remains mandatory immediately before any future send.
-
-Prepared campaign file currently contains the original three-prospect cohort; newly qualified prospects remain canonical READY_TO_CONTACT and must be picked up dynamically by Partner Hunt after fresh pre-send gates.
+All five retain their canonical current state; final live recheck remains mandatory immediately before any future send. No outreach occurs in the Opportunity Scanner.
 
 ## QA-held research cohort
 
@@ -24,10 +22,14 @@ Prepared campaign file currently contains the original three-prospect cohort; ne
 | Sitges | Laundry | La Lavandería Sitges | RESEARCH | No verified public business email yet |
 | Sitges | Physiotherapy | Equilibri, Centre de Fisioteràpia | RESEARCH | Current email/social evidence incomplete |
 | Vilanova i la Geltrú | Tattoo & piercing | Madhaus Tattoo | RESEARCH | One directory exposes an unresolved website action; website absence not yet certifiable |
+| Sant Pere de Ribes / Les Roquetes | Tattoo & piercing | Badtime Tattoo Ink | RESEARCH | Strong reported 5.0/48 reputation and no dedicated owned domain surfaced; public business email and deeper social ownership still TO_VERIFY |
 
 ## Current discovery observations
 
-This pass expanded discovery into Vilanova hair/beauty and Cubelles. Several superficially attractive candidates were not promoted because a functional site or an ambiguous website path surfaced. Examples: Up To You has a dedicated current site; Cano Barber's Shop has an active Booksy web presence and therefore is not currently treated as a clean no-site target; Xiss Hair Salon has a third-party website attribution that requires resolution before any promotion.
+The current spiral frontier has advanced into **Sant Pere de Ribes / Les Roquetes**. Eight additional businesses were screened across hair, beauty, tattoo, massage/wellness and automotive. Five were eliminated because a dedicated website surfaced (Pi-lab, M&G Cuerpo y Mente, depilestètic, Forma i Estil, Luar Studio); Autotaller JMR 2000 was held as REPUTATION_RISK because multiple complaint patterns conflict with its strong aggregate rating; Sandra Alvarez remains a non-canonical research hold until the status of its historical/third-party `negocio.site` website action is resolved.
+
+Machine-readable frontier: `local-no-website/coverage/scan-frontier.json`.
+Detailed batch: `local-no-website/research/2026-08-30-garraf-scan-02-sant-pere-de-ribes.json`.
 
 ## Tax marketing
 
@@ -35,4 +37,4 @@ Spain: official Agencia Tributaria policy loaded. Only conditional wording from 
 
 ## Next action
 
-Continue Garraf expansion across Vilanova, Cubelles, Sant Pere de Ribes and Sitges categories. Keep raw discovery broad, but require full website-gap/reputation/contact/dedup gates before READY_TO_CONTACT.
+Continue Sant Pere de Ribes/Les Roquetes with pet services, laundry, cleaning, professional services, allied health and hospitality. Resolve Badtime contact/social evidence and Sandra Alvarez website ambiguity. Do not mark the municipality LOW_YIELD: source/category sampling remains incomplete. After sufficient coverage, progress contiguously to Canyelles and Olivella while retaining unresolved holds.
