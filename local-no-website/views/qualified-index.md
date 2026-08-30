@@ -1,6 +1,6 @@
 # Local SME 999 — Qualified Index
 
-Updated: 2026-08-30 13:42 Europe/Madrid
+Updated: 2026-08-30 14:04 Europe/Madrid
 
 ## READY TO CONTACT — Monday cohort
 
@@ -9,10 +9,12 @@ Updated: 2026-08-30 13:42 Europe/Madrid
 | Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Massage & wellness | Quirogris | 5.0 / 98 reported Google reviews; active Fresha profile | 91 | quirogris@gmail.com | READY_TO_CONTACT |
 | Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Tattoo & piercing | Mythic Tattoo Studio | 4.8 / 313; strong social presence | 93 | mythictattooestudio.16@gmail.com | READY_TO_CONTACT |
 | Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Beauty & wellness | Adara Rituals de Bellesa | 5.0 / 24 current Treatwell opinions | 88 | adararituals@gmail.com | READY_TO_CONTACT |
+| Spain | Catalonia | Barcelona | Vilanova i la Geltrú | Beauty & wellness | Estètica Integral Vng | 5.0 / 125 verified Treatwell reviews; recent Aug-2026 reviews | 91 | esteticaintegralvng@gmail.com | READY_TO_CONTACT |
+| Spain | Catalonia | Barcelona | Cubelles | Hair salon | Brush Estilistes Cubelles | 4.7 / 128 Google reviews reported; independent listing also strong | 88 | loreabella2014@gmail.com | READY_TO_CONTACT |
 
-All three passed current exact-recipient Hostinger Sent, personal Gmail Sent, suppression-registry and canonical identity checks. Final live recheck remains mandatory immediately before Monday send.
+All five have current canonical/dedup evidence appropriate to their present state. The two newly promoted records passed exact-name/email repository checks plus exact-recipient official Hostinger Sent and personal Gmail Sent checks. Final live recheck remains mandatory immediately before any future send.
 
-Prepared campaign: `local-no-website/outreach/2026-08-31-prepared-cohort.json`.
+Prepared campaign file currently contains the original three-prospect cohort; newly qualified prospects remain canonical READY_TO_CONTACT and must be picked up dynamically by Partner Hunt after fresh pre-send gates.
 
 ## QA-held research cohort
 
@@ -23,11 +25,9 @@ Prepared campaign: `local-no-website/outreach/2026-08-31-prepared-cohort.json`.
 | Sitges | Physiotherapy | Equilibri, Centre de Fisioteràpia | RESEARCH | Current email/social evidence incomplete |
 | Vilanova i la Geltrú | Tattoo & piercing | Madhaus Tattoo | RESEARCH | One directory exposes an unresolved website action; website absence not yet certifiable |
 
-## First efficiency scan
+## Current discovery observations
 
-Garraf pilot scan: **16 businesses screened** → **3 READY_TO_CONTACT** → **4 held for research** → **7 rejected because a working/dedicated website surfaced** → **1 rejected for poor reputation** → **1 reputation-risk hold**.
-
-Early ready-to-contact yield: **18.75%**. This is an operational pilot yield, not a conversion probability.
+This pass expanded discovery into Vilanova hair/beauty and Cubelles. Several superficially attractive candidates were not promoted because a functional site or an ambiguous website path surfaced. Examples: Up To You has a dedicated current site; Cano Barber's Shop has an active Booksy web presence and therefore is not currently treated as a clean no-site target; Xiss Hair Salon has a third-party website attribution that requires resolution before any promotion.
 
 ## Tax marketing
 
@@ -35,4 +35,4 @@ Spain: official Agencia Tributaria policy loaded. Only conditional wording from 
 
 ## Next action
 
-Continue discovery today to enlarge the Monday cohort. At every Monday office-hour execution, rerun identity/freshness/suppression/Gmail Sent/Hostinger Sent gates immediately before each individual first-contact email. Exactly one proactive FIRST_CONTACT is permitted per local business identity.
+Continue Garraf expansion across Vilanova, Cubelles, Sant Pere de Ribes and Sitges categories. Keep raw discovery broad, but require full website-gap/reputation/contact/dedup gates before READY_TO_CONTACT.
