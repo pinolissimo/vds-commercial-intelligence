@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-30T22:39:00+02:00",
+  "purpose": "Dedicated compact direct-email research queue for Monday final gating. This is not proof of send and does not authorize bypassing route, freshness, suppression, dedup or Sent-history checks.",
+  "counts": {
+    "prepared_direct_email": 17,
+    "new_hot_plus_email_review": 1,
+    "reverify_reserve": 2,
+    "route_review": 1,
+    "potential_email_pool_before_final_gate": 21
+  },
+  "prepared": [
+    {"rank":1,"organization":"MarkeThink","email":"info@correo.cat","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT_PLUS","territory":"Spain / Catalunya / Barcelona"},
+    {"rank":2,"organization":"Maia Management srl","email":"info@maiamanagement.it","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT_PLUS","territory":"Italy / Piemonte / Torino","caveat":"Odoo/Python fit disclosure required"},
+    {"rank":3,"organization":"Visioni","email":"info@visioni.info","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Italy"},
+    {"rank":4,"organization":"Cantabria Web Design","email":"info@cantabriawebdesign.es","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Spain / Cantabria"},
+    {"rank":5,"organization":"Evo Sistemi","email":"info@evosistemi.com","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Italy / Umbria"},
+    {"rank":6,"organization":"Ibérica Studio","email":"trabajo@ibericastudio.com","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Spain"},
+    {"rank":7,"organization":"Nexibo","email":"collab@nexibo.agency","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Italy"},
+    {"rank":8,"organization":"Summum Marketing","email":"talento@summummarketing.es","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Spain"},
+    {"rank":9,"organization":"Daniele Debernardis","email":"info@danieledebernardis.it","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Italy / South"},
+    {"rank":10,"organization":"Diwar Marketing","email":"adrian@diwarmarketing.com","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT_PLUS","territory":"Spain"},
+    {"rank":11,"organization":"SO Design Online","email":"support@sodesign.online","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT_PLUS","territory":"Remote"},
+    {"rank":12,"organization":"Kamon Srl","email":"candidati@kamonweb.it","state":"FRESHNESS_RECHECK_REQUIRED","priority":"HOT","territory":"Italy / Piemonte / Torino"},
+    {"rank":13,"organization":"Polish Bioinformatics Society (PTBI)","email":"zarzad@ptbi.org.pl","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT_PLUS","territory":"Poland / EU"},
+    {"rank":14,"organization":"HARP / HCCA","email":"pratiksha.jadhav@harp-india.com","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT_PLUS","territory":"India / remote"},
+    {"rank":15,"organization":"Rudz Tech","email":"rudra@rudztech.com","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"India / remote"},
+    {"rank":16,"organization":"CareTalyst","email":"info@caretalyst.com","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Remote","caveat":"Do not invent numeric rate"},
+    {"rank":17,"organization":"Zivadox","email":"zivadox@gmail.com","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT","territory":"Remote"}
+  ],
+  "new_this_pass": [
+    {"rank":18,"organization":"Elia Digital & AI Solutions","email":"info@elia-digital.de","state":"HOT_PLUS_EMAIL_REVIEW","priority":"HOT_PLUS","territory":"Germany / remote","evidence":"https://de.linkedin.com/company/elia-digital-ai-solutions","caveat":"Application asks for mandatory price estimates; no invented pricing. Final execution requires approved truthful price basis."}
+  ],
+  "reverify_reserve": [
+    {"organization":"RYF Agencia SEO","email":"fernando@agenciaryf.com","state":"HOT_REVERIFY","territory":"Chile / remote","reason":"strong fit and direct published route, but role signal is approximately five months old"},
+    {"organization":"Spinora WebTech","email":"spinorawebtech@gmail.com","state":"HOT_REVERIFY","territory":"India / remote","reason":"strong fit and direct published route, but role signal is approximately six months old"}
+  ],
+  "route_review": [
+    {"organization":"Antonio De Lorenzi","email":"info@antoniodelorenzi.it","state":"QUALIFIED_ROUTE_REVIEW","territory":"Italy","reason":"current freelance network/Web Designer-Developer signal; verify that general published email is intended application route before EMAIL_READY"}
+  ],
+  "removed_this_pass": [
+    {"organization":"Better Call Geeks","state":"CLOSED_REJECT"},
+    {"organization":"Duemix Agency","state":"CLOSED_REJECT"},
+    {"organization":"Wenamax","state":"STALE_GEO_REJECT"}
+  ],
+  "source_files": [
+    "reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
+    "reports/MONDAY-EMAIL-EXPANSION-PACK-2026-08-31.md",
+    "research/2026-08-30-fast-revenue-pass-2239.json"
+  ],
+  "final_gate": "freshness -> exact identity -> authoritative route/recipient -> geographic eligibility -> freelance compatibility -> VDS fit -> org-level dedup -> suppression -> Gmail/Hostinger Sent -> sender identity -> QA"
+}
