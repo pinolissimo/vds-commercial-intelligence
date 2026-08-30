@@ -1,123 +1,91 @@
 # Monday Direct Outreach Pack — 31 Aug 2026
 
-**Status:** PREPARED — NO FIRST CONTACT SENT  
-**Purpose:** execution pack for the 24 actionable direct-commercial opportunities. Public procurement is excluded.
+**Status:** FINAL PREP — NO FIRST CONTACT SENT  
+**Purpose:** execution pack for direct-commercial opportunities only. Public procurement remains excluded.
 
-## A. Direct email — 7 Gmail drafts prepared
+## Executive decision
 
-| Priority | Organization | Recipient | Positioning |
-|---|---|---|---|
-| 1 | Visioni | info@visioni.info | Explicit P.IVA web designer/developer role; WP + frontend + PHP/MySQL; tourism web-marketing fit |
-| 2 | Cantabria Web Design | info@cantabriawebdesign.es | Explicit subcontracting/white-label; agency overflow; WordPress/e-commerce/performance |
-| 3 | Evo Sistemi | info@evosistemi.com | Web development + UX + AI/automation + IT/security overlap |
-| 4 | Ibérica Studio | trabajo@ibericastudio.com | Official freelancer/autónomo/agency collaboration route; web/frontend/UX-UI |
-| 5 | Nexibo | collab@nexibo.agency | Official external-collaborator mailbox; web/UX and agency production support |
-| 6 | Summum Marketing | talento@summummarketing.es | Custom development/integrations/overflow complementing internal WordPress core |
-| 7 | Daniele Debernardis | info@danieledebernardis.it | Structured web/IT collaborator network; remote Italy support |
+- **7 direct-email drafts** are prepared in Gmail for review/reference only.
+- **17 application/form/platform opportunities** have opportunity-specific execution copy in [`MONDAY-APPLICATION-COPY-PACK-2026-08-31.md`](MONDAY-APPLICATION-COPY-PACK-2026-08-31.md).
+- **23/24 direct-commercial opportunities are execution-ready at route level.**
+- **DNA Agency** remains blocked pending exact current route re-verification.
+- **3 additional strong-fit opportunities remain HOLD** for contract/cross-border eligibility: Dato Digitale, Walkstone, CyberOptik.
+- Final organization-level dedup + suppression + Gmail/Hostinger Sent + freshness verification remains mandatory immediately before each real first contact.
 
-Each draft is individually written in the recipient's practical language and references the verified collaboration model. Final execution still requires immediate pre-send organization-level dedup + suppression + Gmail/Hostinger Sent + freshness gate.
+## A. Direct email — 7 drafts prepared
 
-## B. Application / form / platform — 17 execution briefs
+| Priority | Organization | Recipient | Positioning | Gate |
+|---|---|---|---|---|
+| 1 | Visioni | info@visioni.info | P.IVA web designer/developer; WordPress + frontend + PHP/MySQL | READY AFTER FINAL PRESEND |
+| 2 | Cantabria Web Design | info@cantabriawebdesign.es | explicit subcontracting/white-label; agency overflow | READY AFTER FINAL PRESEND |
+| 3 | Evo Sistemi | info@evosistemi.com | web + UX + AI/automation + IT/security overlap | READY AFTER FINAL PRESEND |
+| 4 | Ibérica Studio | trabajo@ibericastudio.com | explicit freelancer/autónomo/agency collaboration | READY AFTER FINAL PRESEND |
+| 5 | Nexibo | collab@nexibo.agency | official external-collaborator mailbox; web/UX | READY AFTER FINAL PRESEND |
+| 6 | Summum Marketing | talento@summummarketing.es | custom development/integrations/overflow complement | READY AFTER FINAL PRESEND |
+| 7 | Daniele Debernardis | info@danieledebernardis.it | structured web/IT collaborator network | READY AFTER FINAL PRESEND |
 
-### 1. Aplum Studio — LinkedIn application
-**Freshness rechecked 30 Aug:** active LinkedIn listing; freelance collaboration for **one year**, possible continuity. Requires WordPress, Elementor, HTML5/CSS3, template/PHP, maintenance, responsive. GSAP, Figma and UX/UI are explicit pluses — unusually strong VDS match.
-**Submit:** CV + portfolio.  
-**Pitch:** visual sensitivity + implementation precision + WordPress/frontend + GSAP/Figma/UX; mention ability to execute supplied designs faithfully.  
-**Route:** https://es.linkedin.com/jobs/view/dise%C3%B1o-y-desarrollo-web-at-aplum-studio-4460805443
+**Gmail Sent check 30 Aug:** no previous Sent match for the seven exact recipients. This does not replace the Hostinger/canonical/suppression gate immediately before real send.
 
-### 2. Virtual Marketing Spain — listing route needs correction before submission
-**Official company freshness rechecked:** active Elche agency delivering premium web, WordPress, AI automation, SEO and advertising.  
-**QA BLOCK:** the currently stored Milanuncios route in the CRM resolves to an unrelated/incorrect listing context and must NOT be used. Re-discover the exact freelancer-expansion listing/application instruction before action. Official `info@virtualmarketingspain.com` remains fallback only after route reconciliation.  
-**Pitch when cleared:** WordPress/WooCommerce + custom frontend + AI/automation + agency overflow.
+### Expert sender policy
+The seven Gmail drafts are content-review artifacts. **Actual VDS commercial first contact should preferably originate from the official VDS mailbox `info@visualdesignstudio.es` when the execution tool supports it**, not from the personal Gmail account. The message content must remain one-to-one and opportunity-specific.
 
-### 3. Grownnectia — job-platform / official careers
-**Freshness rechecked:** current P.IVA role manages hosting, domains, DNS, mail + WordPress by code + WooCommerce; fixed monthly infrastructure retainer plus continuous client project tasks; collaboration described as continuative.  
-**Submit:** updated CV, portfolio/project links, short list of projects where both infrastructure and development were managed.  
-**Pitch:** VDS web development plus long IT-support/infrastructure background; WordPress custom code, hosting/DNS/mail, WooCommerce, API/integration competence.  
-**Routes:** https://bebee.com/it/jobs/sistemista-e-sviluppatore-wordpress-infrastruttura-grownnectia-piva-ibrido-grownnectia-srl-roma-lazi--t7xk-780729090 and https://grownnectia.com/lavora-con-noi/
+## B. Application / form / platform — expert route review
 
-### 4. Mucui Estudio Creativo — Workana
-**Submit:** Workana proposal via current project.  
-**Pitch:** reliable recurring WordPress/Elementor production partner, visual quality, responsive, ability to integrate into studio workflow.  
-**Route:** https://www.workana.com/pt/job/desarrollador-wordpress-y-elementor-para-colaboracion-continua-en-proyectos
+### Tier 1 — strongest conversion fit
+1. **Aplum Studio — READY.** Fresh LinkedIn listing reverified 30 Aug: freelance one year, possible continuity; WordPress/Elementor/HTML/CSS/PHP; GSAP, Figma and UX/UI explicit pluses. Apply with CV + portfolio.
+2. **Grownnectia — READY.** P.IVA role reverified: infrastructure + WordPress/WooCommerce; fixed monthly retainer plus continuous client tasks; listing valid through 28 Sep 2026. Apply with CV + portfolio + technical project bullets.
+3. **Virtual Marketing Spain — READY / QA DEFECT RESOLVED.** The Milanuncios URL has a misleading slug/title, but the fetched listing body is verified as the Virtual Marketing Spain freelancer-network advert: WordPress/Elementor/WooCommerce + AI/no-code, continuous opportunities, possible stable collaboration.
+4. **Mucui Estudio — READY.** Workana recurring WordPress/Elementor buyer path.
+5. **Mobyleshop — READY.** Official WPO/WordPress freelance careers flow.
+6. **Onebit — READY.** Official form/WhatsApp for P.IVA agency overflow.
+7. **Zmot Lab — READY.** Official external-P.IVA senior developer form.
 
-### 5. Global Service Impresa — official form
-**Submit:** official careers form.  
-**Pitch:** P.IVA remote developer/creative; WordPress + JS + e-commerce + custom software + visual execution.  
-**Route:** https://www.globalserviceimpresa.it/lavora-con-noi/
+### Tier 2 — strong agency/recurring fit
+8. **Global Service Impresa — READY.** Official form; freelance developer/creative, possible continuity.
+9. **Aderen — READY.** Aderen People application route; long-term freelance WordPress signal.
+10. **Vaivén Estudio — READY / ROUTE RESOLVED.** Actual public post asks for a remote freelance WordPress/Elementor programmer and explicitly says to write privately or send work examples. Use LinkedIn private message + 2–3 relevant portfolio examples.
+11. **Digityze — READY / ROUTE RESOLVED.** Official page states “Il nostro Network ti aspetta”; use official Network CTA/contact flow. Named founders and business emails are public fallback only.
+12. **Dream Big Design — READY.** Official P.IVA freelancer-network CTA.
+13. **Studiart — READY.** Official role-specific CV form.
 
-### 6. Mobyleshop — official careers
-**Submit:** Administrador Web WPO Freelance flow.  
-**Pitch:** WordPress/PHP/JS/MySQL, performance/WPO, security, maintenance, usability and technical autonomy.  
-**Route:** https://mobyleshop.com/trabajar-con-nosotros/
+### Tier 3 — viable with extra constraints
+14. **Hays España — READY AFTER CURRENT LISTING REFRESH.** Use recruiter/listing route; never infer end client.
+15. **Mindrift — READY.** Platform apply; remote/project-based.
+16. **Robert Half Contracting — READY WITH FIT CAVEAT.** Fresh Bari Frontend Developer Freelance listing reverified: project through Dec 2026, full-time, hybrid 2 days/week; Vue/React expected. Commercially valid, but hybrid Bari and framework requirements reduce fit versus WordPress-first leads.
 
-### 7. Aderen — Aderen People
-**Submit:** official Inscribirse Ahora workflow after reopening the current Laravel/WordPress freelance listing.  
-**Pitch:** senior WordPress/frontend, autonomous remote delivery, integrations/custom work; do not infer end-client identity.  
-**Route:** https://aderen.es/es/aderen-people/
+### Blocked
+17. **DNA Agency — ROUTE REVIEW REQUIRED.** Strong P.IVA WordPress partner signal remains, but exact current application path was not safely re-resolved. No guessed email, no submission.
 
-### 8. Onebit — official form / WhatsApp
-**Submit:** official freelance P.IVA collaboration flow.  
-**Pitch:** overflow capacity for WordPress/PHP/HTML/CSS/JS projects; agency-friendly delivery and white-label discipline.  
-**Route:** https://www.onebit.it/web-agency-a-torino-lavora-con-noi/
+## C. Application copy
 
-### 9. Zmot Lab — official senior developer form
-**Submit:** official role form + CV.  
-**Pitch:** external P.IVA senior web capacity; WordPress/WooCommerce, frontend custom, performance and reliable autonomous delivery.  
-**Route:** https://zmotlab.it/lavora-con-noi/sviluppatore-senior/
+All tailored application/DM/form texts are ready here:
 
-### 10. DNA Agency — vacancy route must be reopened
-**Submit only after:** exact current vacancy/application path is reverified.  
-**Pitch:** stable WordPress technical partner, P.IVA, custom frontend and agency overflow.  
-**Route base:** https://dna-agency.it/
+➡️ [`reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md`](MONDAY-APPLICATION-COPY-PACK-2026-08-31.md)
 
-### 11. Hays España — intermediary application
-**Submit:** current Hays recruiter/listing route; never infer or bypass the end client.  
-**Pitch:** WordPress + frontend/full-stack versatility; availability for part-time long-term freelance engagement.  
-**Route base:** https://www.hays.es/web/hays-es-technology
+The copy avoids invented rates, availability, years of experience, end-client identities and unsupported claims.
 
-### 12. Vaivén Estudio — route review before action
-**Submit only after:** reopen exact current collaboration/contact instruction.  
-**Pitch:** WordPress/Elementor freelance production + visual fidelity + responsive/performance.  
-**Route base:** https://vaivenestudio.es/
+## D. Monday operating model
 
-### 13. Mindrift — platform apply
-**Submit:** CV → assessment → identity/onboarding workflow.  
-**Pitch:** web/digital experience design, UX/UI and frontend implementation; English-language application.  
-**Route:** https://mindrift.ai/apply
+### 09:00 Partner Hunt pass
+1. Read canonical CRM + this pack + route matrix.
+2. Re-run organization-level canonical/suppression/Sent dedup.
+3. Recheck freshness/route for the exact candidate being actioned.
+4. Use the **official VDS sender** for email first contacts where available.
+5. Respect the existing hard daily first-contact cap and do not bypass explicit form/platform routes.
+6. Verify every actual send/submission with evidence before CRM state advances.
 
-### 14. Robert Half Contracting — portal/recruiter
-**Submit only after:** refresh the Bari/front-end vacancy and verify it is still live/compatible.  
-**Pitch:** freelance contracting, frontend/web + IT background; use recruiter/portal rather than cold contact.  
-**Route:** https://www.roberthalf.it/opportunita/
-
-### 15. Digityze — direct business route review
-**Submit only after:** exact published collaboration recipient/contact flow is reopened.  
-**Pitch:** WordPress/WooCommerce/custom development, maintenance and overflow partner.  
-**Route:** https://www.digityze.it/contatti/
-
-### 16. Dream Big Design — official contact CTA
-**Submit:** official Contattami route from team page.  
-**Pitch:** P.IVA web design/development capacity; WordPress/custom frontend/apps; reliable network collaborator.  
-**Route:** https://dreambigdesign.it/team-dream-big/
-
-### 17. Studiart — official application form
-**Submit:** role-specific CV upload form for Web Designer/Web Developer.  
-**Pitch:** combined design + development, WordPress/custom frontend, responsive and end-to-end project ownership.  
-**Route:** https://www.studiart.it/entra-a-far-parte-della-nostra-agenzia-di-comunicazione-piacenza/
+### Public procurement
+Never enters this run. User-managed report: [`MANUAL-PROCUREMENT-OPPORTUNITIES.md`](MANUAL-PROCUREMENT-OPPORTUNITIES.md).
 
 ## QA findings
 
-1. **No external first contact was sent while preparing this pack.**
-2. Direct email drafts are saved, not sent.
-3. Aplum and Grownnectia freshness were independently rechecked on 30 Aug 2026 and remain unusually strong conversion candidates.
-4. **Virtual Marketing Spain route defect found:** the CRM's stored Milanuncios URL is not safe for application and is blocked pending exact-route rediscovery. This is a material QA correction.
-5. Dedicated application routes continue to take precedence over generic business email.
-6. Public tenders remain in `reports/MANUAL-PROCUREMENT-OPPORTUNITIES.md` and are excluded from this pack.
+- No external first contact was sent during preparation.
+- Seven email drafts are saved, not sent.
+- Gmail exact-recipient Sent check for the seven direct emails returned zero matches on 30 Aug.
+- Virtual Marketing Spain route is now **unblocked**: misleading Milanuncios slug, correct verified listing body.
+- Vaivén route is now **resolved** to private message/work examples from the actual public post.
+- Robert Half Bari role is currently live but downgraded in execution priority because of hybrid location + Vue/React requirements.
+- Digityze official Network CTA and named public business contacts were reverified.
+- DNA Agency remains the only one of the 24 direct-commercial group blocked by unresolved route.
 
-## Execution order
-
-**Tier 1:** Aplum → Grownnectia → Visioni → Cantabria Web Design → Evo Sistemi → Ibérica Studio → Mucui → Mobyleshop.  
-**Tier 2:** Nexibo → Summum → Zmot Lab → Onebit → Global Service Impresa → Aderen → DNA Agency.  
-**Tier 3:** Hays → Mindrift → Digityze → Dream Big → Studiart → Vaivén → Daniele Debernardis → Robert Half.  
-**Blocked until route repaired:** Virtual Marketing Spain.
+> Conversion principle: strongest verified buyer intent first; respect buyer channel; one organization = one first-contact history.
