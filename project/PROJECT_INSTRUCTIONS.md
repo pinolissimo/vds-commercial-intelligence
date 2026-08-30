@@ -33,11 +33,16 @@ All commercial intelligence belongs only in `pinolissimo/vds-commercial-intellig
 - Tax policy lives under `local-no-website/config/tax-policy.json`.
 - Offer configuration lives under `local-no-website/config/offer-999.json`.
 - Official mailbox folder for this workstream: `INBOX.LOCAL-SME-999` on `info@visualdesignstudio.es`.
-- A public phone/email/social profile does not by itself bypass legal/contact-context review. Where proactive contact is not clearly safe/appropriate, use `READY_FOR_CONTACT_REVIEW` or `DRAFT_APPROVAL_REQUIRED`.
+- The user explicitly authorizes automated first-contact email for a LOCAL_SME_999 prospect only after the record reaches `READY_TO_CONTACT` and every mandatory identity, website-gap, reputation, route, tax-claim, suppression, global-dedup and Sent-history gate passes.
+- Exactly ONE proactive FIRST_CONTACT email is permitted per commercial business identity. A different recipient/email/social profile/location listing never creates a second first-contact path.
+- LOCAL_SME_999 has no automatic no-response cold follow-up by default. After the single first contact, further proactive solicitation requires a new explicit policy decision or a genuine inbound reply/next step.
+- Every local-SME first-contact email must be professionally personalized to the business, its activity, location, reputation/digital profile and verified website gap. No generic bulk template or BCC campaign.
+- Every sent email must be verified in official Hostinger Sent, appended to the prospect timeline/outreach log, added to global suppression/first-contact memory, reflected in indexes/dashboard, and associated with the dedicated local-SME mailbox folder/workstream.
+- The user must be informed of every actual local-SME FIRST_CONTACT, meaningful reply, bounce, proposal/call/next-step event via `allocca.pino@gmail.com` with prospect identity, location/category, evidence, action taken and CRM/dashboard reference.
 
 ## Automation layer
 - `VDS Opportunity Scanner`: hourly 24/7 research + qualification across all workstreams, never outreach.
-- `VDS Partner Hunt`: gated acquisition/outreach during working days only.
+- `VDS Partner Hunt`: gated acquisition/outreach during working days only, including authorized LOCAL_SME_999 first contacts after all gates pass.
 - `VDS Reply Watch`: reply/bounce/referral reconciliation, never first contact.
 - `VDS QA + Daily Reports`: QA + complete report + delivery to the user's personal Gmail.
 
