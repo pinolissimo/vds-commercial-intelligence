@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-30T14:58:00+02:00",
+  "updated_at": "2026-08-30T15:59:00+02:00",
   "origin": "Sitges",
   "expansion_mode": "CONTIGUOUS_SPIRAL_TOP_DOWN",
   "allowed_states": ["NOT_SCANNED", "UNDER_SEARCHED", "ACTIVE_SCAN", "COVERED_RECENTLY", "LOW_YIELD_VERIFIED"],
@@ -11,25 +11,19 @@
     "municipality": "Sant Pere de Ribes",
     "state": "ACTIVE_SCAN",
     "clusters": ["Ribes", "Les Roquetes"],
-    "categories_sampled": ["Hair salon", "Beauty and wellness", "Tattoo and piercing", "Massage and wellness", "Automotive"],
-    "next_categories": ["Pet services", "Laundry", "Cleaning", "Professional services", "Health allied services", "Restaurants and hospitality"],
-    "source_families_sampled": ["SEARCH_ROUTER", "LOCAL_BUSINESS_DIRECTORIES", "BOOKING_MARKETPLACES", "NEWS_SOCIAL"],
-    "unresolved_gaps": ["social-profile ownership checks for promising no-site prospects", "public business email discovery", "additional local/institutional source coverage"]
+    "categories_sampled": ["Hair salon", "Beauty and wellness", "Tattoo and piercing", "Massage and wellness", "Automotive", "Pet services", "Laundry", "Cleaning", "Health allied services", "Restaurants and hospitality"],
+    "next_categories": ["Professional services", "Restaurants and hospitality deep website check"],
+    "source_families_sampled": ["SEARCH_ROUTER", "LOCAL_BUSINESS_DIRECTORIES", "BOOKING_MARKETPLACES", "NEWS_SOCIAL", "MAP_LOCAL", "SECTOR_DIRECTORIES", "REGISTRY_CORROBORATION", "REVIEW_AGGREGATORS"],
+    "unresolved_gaps": ["public business email/social ownership for Peluquería Canina Nessa", "public business email/social ownership for Emil Ross", "Badtime Tattoo Ink public email/social ownership", "website action resolution for Centre de Recuperació Funcional Ribes and Paula Martínez Fisioterapia", "Sandra Alvarez historical negocio.site status", "professional-services category coverage"]
   },
   "garraf_municipalities": [
     {"municipality":"Sitges","state":"UNDER_SEARCHED","note":"Initial categories covered; three research holds remain."},
     {"municipality":"Vilanova i la Geltrú","state":"UNDER_SEARCHED","note":"Highest current qualified yield; continue category rotation."},
     {"municipality":"Cubelles","state":"UNDER_SEARCHED","note":"Initial beauty/hair discovery started; more categories pending."},
-    {"municipality":"Sant Pere de Ribes","state":"ACTIVE_SCAN","note":"Current frontier; first multi-category batch completed."},
+    {"municipality":"Sant Pere de Ribes","state":"ACTIVE_SCAN","note":"Ten category groups sampled across multiple source families; finish professional services and hospitality website-gap pass before moving frontier."},
     {"municipality":"Canyelles","state":"NOT_SCANNED","note":"Next contiguous expansion after sufficient Sant Pere de Ribes sampling."},
     {"municipality":"Olivella","state":"NOT_SCANNED","note":"Next Garraf municipality after Canyelles/frontier completion."}
   ],
   "next_geographic_sequence": ["Sant Pere de Ribes", "Canyelles", "Olivella", "adjacent Barcelona-province municipalities/comarques"],
-  "rules": {
-    "never_mark_low_yield_before_source_and_category_sampling": true,
-    "never_skip_partial_municipality": true,
-    "rotate_categories": true,
-    "change_search_strategy_on_future_loops": true,
-    "raw_discovery_uncapped": true
-  }
+  "rules": {"never_mark_low_yield_before_source_and_category_sampling":true,"never_skip_partial_municipality":true,"rotate_categories":true,"change_search_strategy_on_future_loops":true,"raw_discovery_uncapped":true}
 }
