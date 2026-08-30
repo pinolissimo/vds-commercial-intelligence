@@ -22,9 +22,9 @@ Ogni run del `VDS Opportunity Scanner` aggiorna questa vista solo per cambiament
 | Piemonte | QUALIFIED_TRACK | ACTIVE | 3 | 3 | 2 | 0 | 2026-08-29 | Digityze ready for daily outreach review; continue source-family rotation without repeating fresh searches |
 | Puglia | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
 | Sardegna | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-29 | NEXT-MED web scope verified already awarded in-house; rotate away from this stale procurement signal |
-| Sicilia | TO_SCAN | PRIORITY | — | — | — | — | — | regional discovery pass |
+| Sicilia | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-30 | procurement and agency scan produced no fresh attributable buyer-side web signal; rotate source family |
 | Toscana | EXISTING_TRACK | ACTIVE | — | — | — | — | — | reconcile from canonical CRM |
-| Trentino-Alto Adige/Südtirol | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-30 | marketplace/official-company scan produced anonymous or seller-side signals; continue with fresh agency/procurement evidence |
+| Trentino-Alto Adige/Südtirol | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-30 | Pump Communication HOT+ ready for daily outreach review; explicit continuative freelance WordPress/UI-UX collaboration |
 | Umbria | QUALIFIED_TRACK | ACTIVE | 1 | 1 | 0 | 0 | 2026-08-29 | Evo Sistemi HOT+ ready for daily outreach review; continue source-family rotation |
 | Valle d'Aosta/Vallée d'Aoste | TO_SCAN | PRIORITY | — | — | — | — | 2026-08-30 | Netbe partner/careers and local agencies checked; no verified current buyer-side VDS-capacity need; rotate source family |
 | Veneto | QUALIFIED_TRACK | ACTIVE | — | — | — | — | 2026-08-30 | Dato Digitale qualified from current official web/WordPress role + collaboration-network signal; verify contract/P.IVA model before action |
