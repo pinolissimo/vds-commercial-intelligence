@@ -31,7 +31,7 @@ All commercial intelligence belongs in `pinolissimo/vds-commercial-intelligence`
 ## Automation layer
 The active commercial orchestration is shared by both workstreams:
 - `VDS Opportunity Scanner`: hourly research + qualification only, never outreach;
-- `VDS Partner Hunt`: daily gated acquisition/outreach pass;
+- `VDS Partner Hunt`: gated acquisition/outreach pass during working days only;
 - `VDS Reply Watch`: hourly reply/bounce/referral reconciliation, never first contact, immediate event alerts;
 - `VDS QA + 3 Daily Reports`: approximately 09:00, 14:00 and 20:00 Europe/Madrid, QA + complete report + email/notification delivery.
 
@@ -91,6 +91,19 @@ Promote a lead to contactable status only when there is:
 - automatic outreach only when the channel explicitly invites applications/collaborations;
 - otherwise prepare for review/approval;
 - positive/potentially positive replies are never answered automatically: normally set `POSITIVE_REPLY_USER_ACTION_REQUIRED`, unless a current explicit user passive-state override applies.
+
+### Official sender — hard rule
+- **All commercial email outreach must originate exclusively from `info@visualdesignstudio.es`.**
+- The personal Gmail account must never be used to send a commercial first contact, follow-up, application email or partnership solicitation.
+- Gmail drafts may exist only as review/reference copies and must be clearly marked `REFERENCE ONLY — DO NOT SEND FROM GMAIL`.
+- Before any email send, verify that the active mailbox is exactly `info@visualdesignstudio.es`; otherwise block the action.
+- After sending, verify the message in the official Hostinger Sent folder before marking `SENT` in CRM.
+
+### Working-hours sending policy — hard rule
+- Commercial first contacts and follow-ups may be sent **only Monday through Friday** in the recipient-relevant normal office window; default operational timezone is `Europe/Madrid` unless the recipient's local timezone materially differs.
+- No commercial outreach email may be sent on Saturday, Sunday or outside normal business hours.
+- Prefer spaced, one-to-one sends across the workday rather than a simultaneous batch. Do not simulate personal behavior deceptively; simply use normal professional office-hour timing and individualized messages.
+- Forms/platform applications that constitute a first commercial contact follow the same Monday–Friday office-hours rule where timing is under our control.
 
 ## Dashboard synchronization
 `README.md` is the human-facing Revenue Command Center. Whenever a material funnel, reply, outreach, QA, meeting, proposal, win/loss or coverage change occurs:
