@@ -1,25 +1,33 @@
 # Local SME 999 — Qualified Index
 
-Updated: 2026-08-30 12:51 Europe/Madrid
+Updated: 2026-08-30 13:00 Europe/Madrid
 
-| Country | Region | Province | Municipality | Activity | Business | Website gap | Score | Status |
-|---|---|---|---|---|---|---|---:|---|
-| Spain | Catalonia | Barcelona | Sitges | Laundry | La Lavandería Sitges | No dedicated website verified | 86 | READY_FOR_CONTACT_REVIEW |
-| Spain | Catalonia | Barcelona | Sitges | Car wash | Ech2Onet | No dedicated website verified | 85 | READY_FOR_CONTACT_REVIEW |
-| Spain | Catalonia | Barcelona | Sitges | Physiotherapy | Equilibri, Centre de Fisioteràpia | Historical site no longer current | 83 | READY_FOR_CONTACT_REVIEW |
+## Qualified
 
-## Fast indexes
+No Local SME prospect currently passes the complete VDS7 `QUALIFIED` gate.
 
-**By geography:** Spain → Catalonia → Barcelona → Garraf → Sitges: 3
+## QA-held deep-review cohort
 
-**By activity:** Laundry: 1 · Car wash: 1 · Physiotherapy: 1
+| Country | Region | Province | Municipality | Activity | Business | Website gap | Score | Current state | QA hold |
+|---|---|---|---|---|---|---|---:|---|---|
+| Spain | Catalonia | Barcelona | Sitges | Laundry | La Lavandería Sitges | No dedicated website found in current evidence | 86 | RESEARCH | Global organization-level suppression/Sent reconciliation incomplete; social/public-presence depth incomplete |
+| Spain | Catalonia | Barcelona | Sitges | Car wash | Ech2Onet | No dedicated website verified from local result + Visit Sitges | 85 | RESEARCH | Recipient-level Hostinger Sent search is clean, but global commercial-identity reconciliation still incomplete |
+| Spain | Catalonia | Barcelona | Sitges | Physiotherapy | Equilibri, Centre de Fisioteràpia | Historical site reported obsolete/nonfunctional | 83 | RESEARCH | Global dedup incomplete; reported Facebook/direct-presence evidence not yet verified and directory lineage requires caution |
 
-**By state:** Ready for contact review: 3 · Ready to contact: 0 · Contacted: 0
+## Counts
+
+Raw discovered: **3** · deeply reviewed: **3** · rejected: **0** · qualified: **0** · ready for contact review: **0** · ready to contact: **0** · contacted: **0** · replies: **0** · wins: **0**.
+
+## Geography / activity
+
+Spain → Catalonia → Barcelona → Garraf → Sitges: 3 raw/deep-review records.
+
+Laundry: 1 · Car wash: 1 · Physiotherapy: 1.
 
 ## Tax marketing
 
-Spain: official-source policy loaded. Only conditional wording is permitted; no guaranteed percentage or fixed tax saving.
+Spain: official Agencia Tributaria policy loaded. Only conditional wording is permitted; no guaranteed percentage, fixed saving or universal deductibility claim.
 
 ## Next gate
 
-Complete organization-level suppression and Sent-history reconciliation, verify best lawful/public contact route, personalize the €999 offer, then promote only clean records to READY_TO_CONTACT.
+Complete organization-level suppression + historical Sent reconciliation for all identities; complete remaining social/public-presence and source-lineage checks; then re-promote only records that independently pass the full VDS7 qualification gate.
