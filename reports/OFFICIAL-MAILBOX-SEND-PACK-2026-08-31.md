@@ -6,11 +6,59 @@
 **Execution window:** Monday–Friday, normal office hours, spaced one-to-one sends.  
 **Required before every send:** freshness → exact route/recipient → global org-level dedup → primary + emergency suppression → Gmail Sent → Hostinger Sent → sender mailbox identity check → send → Hostinger Sent verification → CRM update.
 
-> These copies are the canonical email bodies for the current direct-email batch. If current evidence materially changes, revise the copy before sending. No invented recipient name, rate, availability, budget or project detail may be added.
+> Canonical direct-email batch. Current Hostinger Sent history was checked on 2026-08-30 before adding the two new HOT+ candidates. None of the nine target addresses below appears in current Sent history. This does NOT replace the mandatory final gate immediately before transmission.
+
+## 1. MarkeThink — HOT+ — READY COPY
+
+**To:** `info@correo.cat`  
+**Subject:** `Candidatura Senior WordPress Developer — Barcelona / freelance`
+
+Hola Enrique,
+
+he visto vuestra búsqueda de un Senior WordPress Developer y me interesa especialmente porque combina desarrollo WordPress/Elementor con mantenimiento, resolución de incidencias, migraciones y optimización WPO, áreas que forman parte habitual de mi trabajo.
+
+Soy Giuseppe Allocca, desarrollador web freelance y fundador de Visual Design Studio, con base en el área de Barcelona. Trabajo con WordPress, Elementor, HTML/CSS/JavaScript, PHP, WooCommerce, responsive y optimización de rendimiento. Mi experiencia técnica IT también me permite desenvolverme con autonomía en hosting, dominios, DNS, correo, migraciones y troubleshooting de producción.
+
+Portfolio: https://www.visualdesignstudio.es/
+
+Me interesa especialmente la posibilidad de una colaboración estable y compatible con actividad freelance. Si mi perfil encaja con el proceso que tenéis abierto, estaré encantado de ampliar información y comentar dedicación y condiciones.
+
+Un saludo,
+Giuseppe Allocca  
+Visual Design Studio  
+https://www.visualdesignstudio.es/
+
+**QA:** published application email; strong WordPress/Elementor/WPO/migration fit; no PrestaShop claim; no invented availability or salary expectation.  
+**Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## 1. Visioni — READY COPY
+## 2. Maia Management — HOT+ — READY COPY WITH FIT DISCLOSURE
+
+**To:** `info@maiamanagement.it`  
+**Subject:** `Senior Developer freelance P.IVA — WordPress / WooCommerce / integrazioni`
+
+Buongiorno,
+
+ho visto la vostra ricerca di un Senior Developer freelance con Partita IVA per una collaborazione continuativa, remota e non esclusiva. Mi interessa soprattutto il modello di rapporto da partner esterno e la componente WordPress/WooCommerce, integrazioni e autonomia tecnica.
+
+Sono Giuseppe Allocca, web developer freelance e fondatore di Visual Design Studio. Lavoro con WordPress/WooCommerce, JavaScript, HTML/CSS, PHP, API e integrazioni, oltre a hosting, DNS, posta, migrazioni e troubleshooting grazie a un lungo background tecnico IT. Sono abituato a seguire progetti in autonomia e a collaborare con team e clienti anche da remoto.
+
+Portfolio: https://www.visualdesignstudio.es/
+
+Segnalo con trasparenza che il mio profilo è più forte sull'ecosistema WordPress/web, frontend, integrazioni e infrastruttura che su Odoo/Python specialistico. Se questa combinazione può essere utile nel vostro team, sarei lieto di confrontarmi sulle attività dove il mio profilo può dare valore immediato.
+
+Un saluto,
+Giuseppe Allocca  
+Visual Design Studio  
+https://www.visualdesignstudio.es/
+
+**QA:** high-value opportunity but material Odoo/Python caveat disclosed; no claim of Odoo expertise; no invented availability or compensation.  
+**Status:** `SEND_READY_AFTER_FINAL_GATE`.
+
+---
+
+## 3. Visioni — READY COPY
 
 **To:** `info@visioni.info`  
 **Subject:** `Rif. web developer Visioni — collaborazione freelance`
@@ -32,12 +80,11 @@ Giuseppe Allocca
 Visual Design Studio  
 https://www.visualdesignstudio.es/
 
-**QA:** concise, role-specific, no unsupported economics, low-friction CTA.  
 **Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## 2. Cantabria Web Design — READY COPY
+## 4. Cantabria Web Design — READY COPY
 
 **To:** `info@cantabriawebdesign.es`  
 **Subject:** `Colaboración white-label / desarrollo web para proyectos de agencia`
@@ -59,12 +106,11 @@ Giuseppe Allocca
 Visual Design Studio  
 https://www.visualdesignstudio.es/
 
-**QA:** white-label positioning is explicit; avoids competing-for-client framing.  
 **Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## 3. Evo Sistemi — READY COPY
+## 5. Evo Sistemi — READY COPY
 
 **To:** `info@evosistemi.com`  
 **Subject:** `Collaborazione web development / AI / digital delivery`
@@ -86,12 +132,11 @@ Giuseppe Allocca
 Visual Design Studio  
 https://www.visualdesignstudio.es/
 
-**QA:** removed unnecessary product/architecture self-promotion; stronger buyer-centric positioning.  
 **Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## 4. Ibérica Studio — READY COPY
+## 6. Ibérica Studio — READY COPY
 
 **To:** `trabajo@ibericastudio.com`  
 **Subject:** `Colaboración freelance — desarrollo web / frontend / UX-UI`
@@ -113,12 +158,11 @@ Giuseppe Allocca
 Visual Design Studio  
 https://www.visualdesignstudio.es/
 
-**QA:** directly answers their published collaborator model; no generic agency pitch.  
 **Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## 5. Nexibo — READY COPY
+## 7. Nexibo — READY COPY
 
 **To:** `collab@nexibo.agency`  
 **Subject:** `Collaborazione freelance web / UX — portfolio Visual Design Studio`
@@ -138,12 +182,11 @@ Giuseppe Allocca
 Visual Design Studio  
 https://www.visualdesignstudio.es/
 
-**QA:** aligns with explicit collaborator mailbox and request for best work; CTA invites targeted portfolio follow-up.  
 **Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## 6. Summum Marketing — READY COPY
+## 8. Summum Marketing — READY COPY
 
 **To:** `talento@summummarketing.es`  
 **Subject:** `Colaboración técnica — desarrollo custom, integraciones y overflow`
@@ -163,12 +206,11 @@ Giuseppe Allocca
 Visual Design Studio  
 https://www.visualdesignstudio.es/
 
-**QA:** complementary positioning; avoids implying their internal WordPress team is insufficient.  
 **Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## 7. Daniele Debernardis — READY COPY
+## 9. Daniele Debernardis — READY COPY
 
 **To:** `info@danieledebernardis.it`  
 **Subject:** `Collaborazione freelance web development / WordPress`
@@ -190,15 +232,16 @@ Giuseppe Allocca
 Visual Design Studio  
 https://www.visualdesignstudio.es/
 
-**QA:** simplified geography claim; direct professional tone for person-to-person outreach.  
 **Status:** `SEND_READY_AFTER_FINAL_GATE`.
 
 ---
 
-## Execution policy for Monday
+## Execution policy for Monday 31 Aug 2026
 
-The sender must be exactly `info@visualdesignstudio.es`. The personal Gmail copies are not execution artifacts. Partner Hunt is responsible for the final identity/freshness/dedup/suppression/Sent gate immediately before each action.
+**Prepared direct-email batch: 9 messages.** None is pre-marked SENT.
 
-Current scheduling policy: Monday–Friday at approximately 09:15, 11:15, 14:15 and 16:15 Europe/Madrid, with **maximum one new FIRST_CONTACT action per run** and no simultaneous burst. Recipient-local office hours override the default where materially different.
+The sender must be exactly `info@visualdesignstudio.es`. Partner Hunt must re-run the complete gate immediately before each action: freshness, exact route, suppression, org-level dedup, Gmail Sent, Hostinger Sent, recipient verification and copy QA.
 
-**Do not pre-mark any item SENT.** Only an official Hostinger Sent-folder record after actual transmission can advance the CRM state.
+Do not turn form/LinkedIn/Workana opportunities into email merely to increase this batch. Use their authoritative route separately.
+
+When explicitly authorized for Monday execution, prefer staggered one-to-one transmission beginning around 09:00 Europe/Madrid rather than a simultaneous burst. Only an official Hostinger Sent-folder record after actual transmission may advance CRM state to CONTACTED.
