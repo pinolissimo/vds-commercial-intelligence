@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-30T12:51:00+02:00",
+  "updated_at":"2026-08-30T13:00:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,24 +8,29 @@
   "tax_policy":"config/tax-policy.json",
   "email_folder":"INBOX.LOCAL-SME-999",
   "raw_discovered":3,
-  "qualified":3,
-  "ready_for_contact_review":3,
+  "deeply_reviewed":3,
+  "under_research":3,
+  "rejected":0,
+  "qualified":0,
+  "ready_for_contact_review":0,
   "ready_to_contact":0,
   "contacted":0,
+  "replies":0,
   "positive_replies":0,
   "meetings":0,
   "proposals":0,
   "won":0,
   "website_gap_model":{"max_score":100,"components":["website_absence","business_quality","commercial_upside","competitor_gap","contactability","personalization_strength"]},
   "territorial_index":[
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sitges","prospects":3}
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sitges","raw_prospects":3,"qualified":0,"under_research":3}
   ],
   "activity_index":[
-    {"activity_type":"Laundry","prospects":1},
-    {"activity_type":"Car wash","prospects":1},
-    {"activity_type":"Physiotherapy","prospects":1}
+    {"activity_type":"Laundry","raw_prospects":1,"qualified":0},
+    {"activity_type":"Car wash","raw_prospects":1,"qualified":0},
+    {"activity_type":"Physiotherapy","raw_prospects":1,"qualified":0}
   ],
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
+  "qa_state":{"status":"HOLD_BEFORE_QUALIFICATION","reason":"VDS7 audit found all three newly created prospects had suppression_checked=false while already promoted to READY_FOR_CONTACT_REVIEW. They were deterministically returned to RESEARCH; no outreach had occurred.","audit":"../audits/2026-08-30-1300.md"},
   "status":"ACTIVE_SEARCH_AND_FILTERING",
-  "next_action":"Complete contact-channel and suppression/Sent checks for first Sitges cohort, then prepare Monday review/outreach candidates."
+  "next_action":"Complete organization-level global dedup/suppression/Sent-history checks plus remaining social/public-presence verification, then re-promote only records that pass the full QUALIFIED gate."
 }
