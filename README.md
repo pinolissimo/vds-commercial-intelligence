@@ -4,7 +4,7 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 30 agosto 2026 · 09:05 Europe/Madrid  
+**Snapshot:** 30 agosto 2026 · 11:00 Europe/Madrid  
 **Operating mode:** **CONVERSION FIRST · DELTA-FIRST RESEARCH**  
 **QA:** `PASS WITH RESIDUAL` — historical mailbox reconciliation remains open.
 
@@ -14,9 +14,9 @@
 
 | Opportunity | Verified first contacts | Qualified not contacted | Positive referral | Meeting | Proposal | Revenue won |
 |---:|---:|---:|---:|---:|---:|---:|
-| **68** | **28** | **40** | **1** | **0** | **0** | **€0** |
+| **69** | **28** | **41** | **1** | **0** | **0** | **€0** |
 
-**Partner accounts:** 62 · **ready/manual-route accounts:** 39 · **pipeline activation:** 41.2%.
+**Partner accounts:** 63 · **ready/manual-route accounts:** 40 · **pipeline activation:** 40.6%.
 
 The pipeline has sufficient qualified supply. The operational bottleneck is conversion from `QUALIFIED` to conversation, meeting and proposal—not raw lead volume.
 
@@ -37,13 +37,11 @@ Historical referral and SLA events remain preserved in the append-only timeline.
 
 ---
 
-## ✅ Latest conversion event
+## ✅ Latest research qualification
 
-**Pump Communication — Trento:** personalized `FIRST_CONTACT` sent **30/08/2026 09:03 Europe/Madrid** to the published route `info@pumpcommunication.com`. Sent verification: **Hostinger `INBOX.Sent` UID 116**. The opportunity is now `CONTACTED`; next action is wait for reply, then apply the normal follow-up gate no earlier than **02/09/2026** if no reply arrives.
+**Virtual Marketing Spain — Elche/Alicante:** new `READY_FOR_DAILY_OUTREACH_REVIEW` opportunity qualified from a fresh external-freelancer expansion signal. The agency is seeking profiles including **WordPress, Elementor, WooCommerce, web design, branding and AI/no-code automation**, with **project-based freelance work, continuous opportunity flow and possible stable long-term collaboration**. Official company evidence verifies active agency identity and web/AI delivery; independent Workana buyer history corroborates real freelancer purchasing behavior. **SCS 94 / STRONG_MULTI_SOURCE · Revenue Priority 99**.
 
-Why it was selected: explicit freelance Web Designer & Developer need for agency client projects, WordPress + Figma/UI-UX, **continuative collaboration** and **constant project flow**; official identity plus independent source corroboration; **SCS 93 / STRONG_MULTI_SOURCE · Revenue Priority 99**.
-
-**Daily FIRST_CONTACT usage:** **1 / 5** verified sends today. No duplicate violation detected.
+Global duplicate checks were clean across canonical repository search, Gmail Sent and official Hostinger `INBOX.Sent`. No outreach, form, marketplace proposal, WhatsApp or call was performed.
 
 ---
 
@@ -52,14 +50,15 @@ Why it was selected: explicit freelance Web Designer & Developer need for agency
 The current decision queue is maintained in [`views/next-best-actions.json`](views/next-best-actions.json). Highest-value unsent direct-collaboration candidates include:
 
 1. **Aplum Studio** — annual freelance WordPress/Elementor/front-end collaboration; explicit application route review required.
-2. **Global Service Impresa** — current remote freelance developer/creative collaboration; official application form.
-3. **Grownnectia** — P.IVA WordPress/WooCommerce + infrastructure overlap.
-4. **Visioni** — current P.IVA web-designer signal.
-5. **Onebit** — structural agency-overflow model using freelance P.IVA web developers.
-6. **Zmot Lab** — external P.IVA WordPress/WooCommerce collaboration; explicit application-route review remains required.
-7. **Evo Sistemi** — current structural digital collaboration signal.
-8. **Mucui** — recurring WordPress/Elementor collaborator network.
-9. **Dato Digitale** — current Web Developer + WordPress programmer/network signal; contract/P.IVA model must be verified before action.
+2. **Virtual Marketing Spain** — fresh recurring freelance network expansion; WordPress/Elementor/WooCommerce + AI/no-code overlap; listing/application route review required.
+3. **Global Service Impresa** — current remote freelance developer/creative collaboration; official application form.
+4. **Grownnectia** — P.IVA WordPress/WooCommerce + infrastructure overlap.
+5. **Visioni** — current P.IVA web-designer signal.
+6. **Onebit** — structural agency-overflow model using freelance P.IVA web developers.
+7. **Zmot Lab** — external P.IVA WordPress/WooCommerce collaboration; explicit application-route review remains required.
+8. **Evo Sistemi** — current structural digital collaboration signal.
+9. **Mucui** — recurring WordPress/Elementor collaborator network.
+10. **Dato Digitale** — current Web Developer + WordPress programmer/network signal; contract/P.IVA model must be verified before action.
 
 Every opportunity remains subject to canonical identity, suppression and Sent-history gates before its state can advance.
 
@@ -83,9 +82,9 @@ The research layer has not submitted any bid for these opportunities.
 
 | Stage | Volume |
 |---|---:|
-| Canonical opportunities | **68** |
+| Canonical opportunities | **69** |
 | Verified first contacts | **28** |
-| Qualified not contacted | **40** |
+| Qualified not contacted | **41** |
 | Reply threads | **1** |
 | Positive referrals | **1** — passive inbound wait |
 | Meetings | **0** |
@@ -98,8 +97,8 @@ The **Success Index = 68%** is an operating index, not a probability. The new-cl
 
 ## 🗺️ Coverage
 
-- **Italy:** 17/20 territories with at least one qualified account; 32 accounts with verified region + 1 remote/geography-to-verify. Trentino-Alto Adige/Südtirol now includes one Sent-verified contacted HOT+ account: Pump Communication.
-- **Spain:** 15/19 territories with at least one qualified account; 24 accounts with verified territory + 2 remote/geography-to-verify.
+- **Italy:** 17/20 territories with at least one qualified account; 32 accounts with verified region + 1 remote/geography-to-verify.
+- **Spain:** 16/19 territories with at least one qualified account; 25 accounts with verified territory + 2 remote/geography-to-verify. Comunitat Valenciana now has a qualified recurring-freelance buyer-side signal via Virtual Marketing Spain.
 - Incomplete zero-result territories remain `UNDER_SEARCHED`; they are not treated as low-opportunity markets.
 
 ---
@@ -108,7 +107,6 @@ The **Success Index = 68%** is an operating index, not a probability. The new-cl
 
 - Current-day verified FIRST_CONTACT: **1**; remaining cap: **4**.
 - Current-day duplicate FIRST_CONTACT violations: **0**.
-- Pre-run `today=2` counters were corrected after direct Gmail and official Hostinger Sent checks found no 30-Aug commercial sends before Pump; Pump is the first verified send of the day.
 - Historical duplicate events remain preserved: Persuadis and Marmellata Lab.
 - Ten older recipients remain pending canonicalization and therefore remain a hard overlap-risk constraint.
 - `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
