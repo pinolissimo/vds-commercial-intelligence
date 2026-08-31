@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.13",
-  "updated_at": "2026-08-31T22:39:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after the 22:36 systematic territory, sector, freshness, route and global dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
+  "schema_version": "1.14",
+  "updated_at": "2026-08-31T23:42:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 23:35 systematic territory, sector, freshness, route and global dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
-    "VERIFIED_FORM_PLATFORM": 22,
+    "VERIFIED_FORM_PLATFORM": 23,
     "REVIEW_REQUIRED": 35,
     "SUPPRESSED": 48,
     "HOLD": 8,
@@ -12,16 +12,16 @@
   },
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
-    "VERIFIED_FORM_PLATFORM": "22 verified form/platform opportunities remain actionable; Sapres remains compact-queue rank #1.",
-    "REVIEW_REQUIRED": "35 review-required opportunities now include Bosun: current official freelance WordPress role with ongoing multi-project demand and a verified official form, held because Spain/EU-contractor eligibility and material custom-theme/plugin fit are not yet established.",
+    "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities are actionable; Ajax Creative was added as a current official worldwide-remote freelance web-design opportunity. Sapres remains compact-queue rank #1.",
+    "REVIEW_REQUIRED": "35 review-required opportunities remain; no review item was promoted without resolving its blocking gate.",
     "SUPPRESSED": "48 acquisition identities remain suppressed.",
     "HOLD": "8 holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
-    "verified_form_platform_new": 0,
-    "review_required_new": 1,
+    "verified_form_platform_new": 1,
+    "review_required_new": 0,
     "hold_new": 0,
     "suppression_new": 0,
     "suppression_total": 48,
@@ -29,28 +29,30 @@
   },
   "material_verification_changes": [
     {
-      "organization": "Bosun",
-      "domain": "bosun.com",
-      "opportunity_id": "OPP-WW-BOSUN-FREELANCE-WORDPRESS-DEVELOPER-2026",
-      "state": "REVIEW_REQUIRED_GEO_TIMEZONE_FIT",
-      "priority": "HIGH",
-      "current_demand": "Official current careers page seeks a freelance WordPress Developer for multiple ongoing web projects, approximately 30 hours/week, remote, with Eastern Time business-hour availability important.",
-      "need": "WordPress, responsive/accessibility implementation, HTML/CSS/JavaScript/PHP, custom themes/plugins, Figma/design implementation, REST/API work and agency collaboration.",
-      "route": "Official Bosun careers application form; no generic email substitution.",
-      "eligibility": "Remote is explicit, but the retrieved official page does not explicitly confirm Spain/EU-contractor eligibility; Eastern Time availability is material.",
-      "fit_gate": "Strong overlap on WordPress/frontend/responsive/Figma/WCAG, but custom theme/plugin/PHP depth must be proven truthfully before promotion.",
-      "dedup": "CLEAR: no repository/suppression identity, Gmail Sent match or official Hostinger Sent match.",
-      "action": "Recorded as REVIEW_REQUIRED_GEO_TIMEZONE_FIT; not promoted to actionable."
+      "organization": "Ajax Creative",
+      "domain": "ajaxcreative.com",
+      "opportunity_id": "OPP-WW-AJAX-CREATIVE-FREELANCE-WEB-DESIGNER-2026",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT",
+      "current_demand": "Official live vacancy seeks a Remote - Freelance Web Designer on a per-project/on-call basis.",
+      "need": "Web layouts/pages/features, Figma or equivalent design tooling, wireframes/prototypes, responsive desktop/mobile/tablet design and UX/UI collaboration.",
+      "route": "Official Freelancer Application on the Ajax Creative vacancy page; generic footer email is not substituted.",
+      "eligibility": "Official vacancy explicitly states Work-from-Anywhere / any location, establishing practical eligibility for a Spain/EU-based freelancer.",
+      "fit_gate": "HIGH truthful overlap with VDS web design, Figma, UX/UI, responsive design and portfolio-backed web work; no unsupported software-depth claims required.",
+      "dedup": "CLEAR: no canonical repository/suppression identity, Gmail Sent match or official Hostinger Sent match for Ajax Creative/ajaxcreative.com.",
+      "action": "Promoted to VERIFIED_FORM_PLATFORM / HOT and added to the compact queue for Partner Hunt final gate only."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"Fresh anonymous Upwork WordPress/Elementor buyers","reason":"Multiple August 31 worldwide postings are live, but exact commercial buyer identity is not established; identity hard gate blocks promotion."},
-    {"organization":"WPRobo","reason":"Official remote WordPress role is current, but it is full-time and materially requires custom themes/plugins from scratch; not promoted into the freelance-compatible VDS pool."},
-    {"organization":"CodeQuadrat","reason":"Excellent Remote Europe freelance WordPress demand remains live on the official site, but the authoritative APPLY VIA EMAIL recipient is still not exposed in retrievable evidence; route remains unresolved."}
+    {"organization":"FULLSESSION","reason":"Remote freelance WordPress listing is no longer accepting applications; closed freshness gate."},
+    {"organization":"VM.PL","reason":"Official freelance WordPress part-time role is remote and commercially relevant, but independent freshness evidence conflicts and Polish is required; no promotion."},
+    {"organization":"Solluton","reason":"Official worldwide remote contract roles are live, but WordPress role materially requires custom themes/plugins/PHP depth and Web Designer role requires 3+ years professional web-design experience; truthful-fit gate blocks promotion."},
+    {"organization":"Fresh anonymous freelance-marketplace buyers","reason":"Current demand exists but exact commercial buyer identity is not established; identity hard gate blocks promotion."}
   ],
   "queue_reverification": {
-    "Sapres Technologies GmbH": "No new contradictory route/freshness signal found in this cycle; remains prior VERIFIED_FORM_PLATFORM.",
-    "SO Design Online": "No new contradictory route/freshness signal found in this cycle; remains sole VERIFIED_DIRECT_EMAIL."
+    "Sapres Technologies GmbH": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
+    "Ajax Creative": "New VERIFIED_FORM_PLATFORM / HOT opportunity; official Freelancer Application route and worldwide remote eligibility verified; global dedup clear.",
+    "SO Design Online": "No contradictory route/freshness signal found; remains sole VERIFIED_DIRECT_EMAIL."
   },
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
@@ -64,7 +66,7 @@
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../opportunities/OPP-WW-BOSUN-FREELANCE-WORDPRESS-DEVELOPER-2026.json",
-    "../research/2026-08-31-fast-revenue-pass-2236.json"
+    "../opportunities/OPP-WW-AJAX-CREATIVE-FREELANCE-WEB-DESIGNER-2026.json",
+    "../research/2026-08-31-fast-revenue-pass-2335.json"
   ]
 }
