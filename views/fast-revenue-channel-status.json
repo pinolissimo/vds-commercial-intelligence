@@ -1,68 +1,69 @@
 {
-  "schema_version": "1.2",
-  "updated_at": "2026-08-31T10:41:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after reconciliation with completed Monday execution and the 10:39 discovery cycle. Counts distinguish currently uncontacted/actionable routes from research, suppression and hold states.",
+  "schema_version": "1.3",
+  "updated_at": "2026-08-31T11:44:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 11:42 discovery cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 0,
-    "VERIFIED_FORM_PLATFORM": 17,
-    "REVIEW_REQUIRED": 24,
+    "VERIFIED_FORM_PLATFORM": 18,
+    "REVIEW_REQUIRED": 27,
     "SUPPRESSED": 46,
     "HOLD": 7,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
-    "VERIFIED_DIRECT_EMAIL": "Zero currently uncontacted direct-email candidates remain ready after Monday execution. MarkeThink is closed by negative reply; Boneluv and Cantabria Web Design were sent; Maia Management and Summum Marketing remain blocked by unresolved fit/current-demand gates. No candidate was backfilled merely to preserve volume.",
-    "VERIFIED_FORM_PLATFORM": "Sixteen pre-existing route-ready form/platform/application opportunities plus newly verified Wordune Figma Designer / WordPress conversion collaboration. Application-only routes must not be converted to cold email.",
-    "REVIEW_REQUIRED": "Existing review queue plus newly retained Solluton WordPress Developer contract role, where current demand and worldwide remote contract status are clear but VDS evidence for custom theme/plugin development from scratch is not strong enough for promotion.",
-    "SUPPRESSED": "Forty-six acquisition identities normalized by the current canonical README/suppression state after Monday execution, including all already-contacted identities and hard-bounce protected organizations.",
-    "HOLD": "Existing holds plus Alta Ignite WordPress Developer: current EU-eligible remote demand is verified, but the role is explicitly full-time employment rather than freelance/contract, so it is not actionable under FAST_REVENUE contractor rules.",
-    "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "The 37-candidate discovery snapshot remains historical research context only and must never be interpreted as sendable."
+    "VERIFIED_DIRECT_EMAIL": "No new direct-email candidate passed every current-demand, eligibility, route and dedup gate. The legacy 37-candidate discovery snapshot is historical only.",
+    "VERIFIED_FORM_PLATFORM": "Previous 17 route-ready form/platform opportunities plus DataSystem / miwebmadrid.es: current freelance Elementor Pro role, 100% remote and open from anywhere worldwide via the official careers form.",
+    "REVIEW_REQUIRED": "Previous 24 plus Expansionet (cross-border/remote eligibility unresolved), Mobyleshop (geo/freshness conflict despite explicit freelance WPO route) and Morphuse Digital (strong subcontractor network but official careers page says no open roles now).",
+    "SUPPRESSED": "46 canonical acquisition identities remain normalized after Monday execution; no suppression was bypassed.",
+    "HOLD": "7 existing holds; no new hold this cycle.",
+    "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
     "verified_form_platform_new": 1,
-    "review_required_new": 1,
-    "hold_new": 1,
-    "suppression_reconciled_to_canonical": 46,
+    "review_required_new": 3,
+    "hold_new": 0,
+    "suppression_total": 46,
     "actionable_pool_inflation": 0
   },
   "new_verified_form_platform": [
     {
-      "organization": "Wordune",
-      "route_type": "OFFICIAL_APPLICATION_TICKET",
-      "route": "https://wordune.com/hiring/",
-      "territory": "Remote / Europe eligible",
+      "organization": "DataSystem / miwebmadrid.es",
+      "opportunity_id": "OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
+      "route_type": "OFFICIAL_APPLICATION_FORM",
+      "route": "https://nuevo.miwebmadrid.es/trabaja-con-nosotros/",
+      "territory": "Spain / Madrid + worldwide remote",
       "priority": "HOT_PLUS",
-      "evidence": "https://wordune.com/hiring/",
-      "freshness": "Official hiring page crawled in August 2026 states Status: Open to recruit, 3 seats, 1-year period, Europe & South America eligible.",
-      "economics": "$40/hour for EU applicants; $20/hour for South America, published by the official source.",
-      "need": "Significant current demand increase for Figma-to-WordPress conversion; remote collaboration; WordPress theme understanding required; CV submitted through the official ticket route.",
-      "vds_fit": "Strong web-design/WordPress conversion overlap; no unsupported claim of custom plugin engineering is required for this design-oriented role.",
-      "dedup": "Canonical GitHub search clear; Gmail Sent search clear; Hostinger INBOX.Sent current 100-message reconciliation contains no Wordune identity or route."
+      "freshness": "Official careers page current on 2026-08-31 explicitly says it is currently looking for collaborators.",
+      "need": "Diseñador/a Web con Elementor Pro; WordPress, UX/UI, CSS/HTML; freelance/remote; 100% remote from anywhere in the world.",
+      "dedup": "Canonical repository clear before record creation; Gmail external commercial Sent clear (only a self-sent VDS planning email matched a broad term); Hostinger INBOX.Sent exact identity search clear; suppression clear."
     }
   ],
   "new_review_required": [
     {
-      "organization": "Solluton",
-      "route_type": "OFFICIAL_APPLICATION_WHATSAPP",
-      "route": "https://www.solluton.com/careers/wordpress-developer-part-time",
-      "territory": "Remote worldwide",
-      "state": "REVIEW_REQUIRED_FIT",
-      "evidence": "https://www.solluton.com/careers/wordpress-developer-part-time",
-      "freshness": "Official careers page current on 2026-08-31.",
-      "need": "Part-time contract, 20-25h/week, project-based ongoing WordPress/WooCommerce work, performance, security, API integrations, Elementor/WPBakery familiarity.",
-      "reason_not_promoted": "Core requirements explicitly include custom themes/plugins from scratch, hooks/filters/actions, REST/AJAX and Git. Current canonical VDS evidence does not establish the full required depth strongly enough to promote without review."
-    }
-  ],
-  "new_hold": [
+      "organization": "Expansionet",
+      "opportunity_id": "OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
+      "state": "REVIEW_REQUIRED_GEO",
+      "route_type": "OFFICIAL_APPLICATION_FORM",
+      "route": "https://expansionet.it/lavora-con-noi/",
+      "territory": "Italy / Lazio / Roma",
+      "reason_not_promoted": "Current official freelance Web Development demand and route are clear, but remote/cross-border contractor eligibility is not established."
+    },
     {
-      "organization": "Alta Ignite / Lanex Group LLC",
-      "route_type": "OFFICIAL_FORM",
-      "territory": "Remote Europe / EU-friendly timezones",
-      "state": "HOLD_EMPLOYMENT_MODEL",
-      "evidence": "https://altaignite.com/mx/careers",
-      "need": "Current WordPress Developer role for custom sites, maintenance, performance and ACF.",
-      "reason_not_promoted": "Official role is full-time; contractor/freelance compatibility is not established."
+      "organization": "Mobyleshop",
+      "opportunity_id": "OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026",
+      "state": "REVIEW_REQUIRED_GEO_FRESHNESS",
+      "route_type": "OFFICIAL_EMAIL_AND_FORM",
+      "territory": "Spain / Murcia",
+      "reason_not_promoted": "Official page lists Administrador Web WPO Freelance and an explicit CV email, but does not prove remote eligibility; a secondary current listing says presencial Murcia and shows a passed 8 Aug 2026 deadline."
+    },
+    {
+      "organization": "Morphuse Digital",
+      "opportunity_id": "OPP-EU-MORPHUSE-WORDPRESS-SUBCONTRACTOR-2026",
+      "state": "REVIEW_REQUIRED_CURRENT_DEMAND",
+      "route_type": "OFFICIAL_COLLABORATION_FORM",
+      "territory": "United Kingdom / Poland",
+      "reason_not_promoted": "Official Work With Us page welcomes freelance/white-label/subcontractor WordPress capacity, but the official careers page simultaneously states no open roles right now. Structural collaboration is not treated as fresh paid demand."
     }
   ],
   "no_outreach_by_fast_revenue_hunt": true,
@@ -70,9 +71,14 @@
   "source_files": [
     "../README.md",
     "../OPERATING_RULES.md",
+    "../config/source-registry.json",
     "../governance/suppression-registry.json",
     "fast-revenue-email-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-08-31-fast-revenue-pass-1039.json"
+    "../opportunities/OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026.json",
+    "../opportunities/OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026.json",
+    "../opportunities/OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026.json",
+    "../opportunities/OPP-EU-MORPHUSE-WORDPRESS-SUBCONTRACTOR-2026.json",
+    "../research/2026-08-31-fast-revenue-pass-1142.json"
   ]
 }
