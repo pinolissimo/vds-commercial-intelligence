@@ -1,0 +1,109 @@
+{
+  "run_id": "FAST_REVENUE_2026-08-31_2137",
+  "started_at": "2026-08-31T21:37:25+02:00",
+  "completed_at": "2026-08-31T21:45:00+02:00",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only",
+  "pre_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-territory-frontier.json"
+  ],
+  "search_strategy": {
+    "mode": "delta-first systematic breadth",
+    "territory_focus": [
+      "Spain active/under-searched regions",
+      "Italy active regions",
+      "remote Europe/worldwide"
+    ],
+    "source_families_sampled": [
+      "SEARCH_ROUTER_DISCOVERY_ONLY",
+      "SPECIALIST_JOBS",
+      "FREELANCE_MARKETPLACES",
+      "PROFESSIONAL_NETWORKS",
+      "OFFICIAL_COMPANY",
+      "AGENCY_OUTSOURCING"
+    ],
+    "sector_rotation": [
+      "web/digital agencies",
+      "WordPress/Elementor delivery",
+      "WooCommerce",
+      "WPO/Core Web Vitals",
+      "education/training",
+      "NGO/digital supplier signals",
+      "remote contractor work"
+    ]
+  },
+  "material_candidates": [
+    {
+      "organization": "Hollyminds Studios",
+      "opportunity_id": "OPP-WW-HOLLYMINDS-WORDPRESS-ELEMENTOR-50P-2026",
+      "result": "REVIEW_REQUIRED_GEO_REMOTE_ELIGIBILITY",
+      "why_material": "Very fresh named-buyer fixed-price project, exact organization identity, explicit Freelancer bid route, strong VDS fit, published budget and clean global dedup.",
+      "blocking_gate": "Retrieved live listing evidence does not explicitly state worldwide/EU-contractor eligibility.",
+      "budget": "INR 12,500-37,500",
+      "freshness": "Open; six days remaining; independent mirror approximately 10h old in this cycle.",
+      "dedup": {
+        "repository": "CLEAR",
+        "suppression": "CLEAR",
+        "gmail_sent": "0 matches",
+        "hostinger_sent": "0 matches"
+      },
+      "evidence_urls": [
+        "https://www.freelancer.com/projects/web-design/Business-WordPress-Site",
+        "https://www.linkedin.com/company/hollyminds",
+        "https://hollyminds.com/"
+      ]
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {
+      "signal": "Project Rescue emergency-preparedness learning-platform redesign",
+      "source": "Upwork",
+      "freshness": "about 5 hours",
+      "route": "Worldwide platform application",
+      "reason": "Multiple unrelated organizations use the Project Rescue identity and the brief could not be reconciled confidently to one exact commercial entity; exact-identity gate failed."
+    },
+    {
+      "signal": "Multiple fresh worldwide Upwork WordPress/Elementor recurring or contract-to-hire listings",
+      "reason": "Buyer organization identity hidden/anonymous; exact-organization gate failed despite strong technical fit and worldwide eligibility."
+    },
+    {
+      "signal": "Spain/Europe white-label WordPress service pages",
+      "reason": "Supplier-side capacity offered to agencies, not evidence that the organization is currently buying external capacity."
+    },
+    {
+      "signal": "Koda North remote-Europe WordPress role",
+      "reason": "Current demand/Europe eligibility surfaced, but core custom theme/plugin engineering requirements materially exceed the safely evidenced VDS fit for promotion in this pass."
+    }
+  ],
+  "count_delta": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 0,
+    "REVIEW_REQUIRED": 1,
+    "SUPPRESSED": 0,
+    "HOLD": 0
+  },
+  "post_counts": {
+    "VERIFIED_DIRECT_EMAIL": 1,
+    "VERIFIED_FORM_PLATFORM": 22,
+    "REVIEW_REQUIRED": 34,
+    "SUPPRESSED": 48,
+    "HOLD": 8
+  },
+  "frontier_changes": [
+    "Remote Europe/worldwide remains COVERED_RECENTLY and now records FREELANCE_MARKETPLACES as a recently sampled family.",
+    "Next remote family prioritizes named-buyer marketplace projects, NGO digital suppliers and agency outsourcing rather than repeating anonymous generic job-board results.",
+    "Education/training + NGOs/EU dissemination remains ACTIVE_SCAN; fresh Project Rescue signal rejected on identity quality rather than counted.",
+    "No Spain/Italy territory was falsely marked LOW_YIELD_VERIFIED."
+  ],
+  "quality_result": "PASS: no actionable-pool inflation; exact identity, route and dedup established for Hollyminds, but promotion withheld because geography/remote eligibility remains insufficiently explicit."
+}
