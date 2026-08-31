@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.1",
-  "updated_at": "2026-08-31T13:45:00+02:00",
-  "purpose": "Compact evidence-first FAST_REVENUE execution shortlist. This view intentionally contains the highest-priority newly verified additions from the latest cycle rather than duplicating every canonical actionable opportunity. Full channel totals live in fast-revenue-channel-status.json. Execution belongs exclusively to Partner Hunt after final freshness, route, suppression and Sent-history gates.",
+  "schema_version": "1.2",
+  "updated_at": "2026-08-31T14:49:00+02:00",
+  "purpose": "Compact evidence-first FAST_REVENUE execution shortlist. This view contains the highest-priority newly verified additions from the latest cycle. Full channel totals live in fast-revenue-channel-status.json. Execution belongs exclusively to Partner Hunt after immediate freshness, route, suppression and Sent-history gates.",
   "rules": [
     "No outreach or submission from this view alone.",
     "Use the explicit buyer/application route before generic email.",
@@ -11,46 +11,36 @@
   ],
   "channel_snapshot": {
     "VERIFIED_DIRECT_EMAIL": 0,
-    "VERIFIED_FORM_PLATFORM": 20,
-    "REVIEW_REQUIRED": 28,
+    "VERIFIED_FORM_PLATFORM": 21,
+    "REVIEW_REQUIRED": 29,
     "SUPPRESSED": 47,
     "HOLD": 7
   },
   "queue_scope": "LATEST_CYCLE_PRIORITY_ADDITIONS",
-  "queue_total": 2,
+  "queue_total": 1,
   "queue": [
     {
       "rank": 1,
-      "opportunity_id": "OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
-      "organization": "Mindrift",
-      "territory": "Spain / remote",
+      "opportunity_id": "OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026",
+      "organization": "Digital Rocket",
+      "legal_identity": "ROASROCKET MARKETING LLP",
+      "territory": "Remote worldwide",
       "priority": "HOT_PLUS",
       "route_type": "VERIFIED_FORM_PLATFORM",
-      "route_url": "https://mindrift.ai/apply",
-      "why_now": "Fresh contractor demand posted 2026-08-29, official project remains Open, Spain eligibility is explicit, fully remote, strong web/UX/UI fit and specific project compensation is published up to USD 40/hour equivalent.",
-      "tailored_angle": "Lead with professional web design, responsive digital interfaces, Figma, UX/UI judgment, visual consistency and portfolio evidence; do not reframe it as a WordPress role.",
-      "dedup_state": "CLEAR",
-      "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
-    },
-    {
-      "rank": 2,
-      "opportunity_id": "OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
-      "organization": "IOCOS di G.C.",
-      "territory": "Calabria / Reggio Calabria + fully remote project network",
-      "priority": "HOT",
-      "route_type": "VERIFIED_FORM_PLATFORM",
-      "route_url": "https://iocos.it/opportunita-di-lavoro/",
-      "why_now": "Official active freelancer-network intake for completely remote client projects with direct overlap in WordPress, WooCommerce, Elementor/Gutenberg, frontend, performance, integrations and UX/UI. Freelancer declares hourly rate and can accept/reject each compensated brief.",
-      "tailored_angle": "Position VDS as an external web-production partner covering WordPress/Elementor/WooCommerce, responsive frontend, performance, UX/UI and technical troubleshooting; do not overclaim custom plugin/theme depth.",
-      "dedup_state": "CLEAR",
+      "route_url": "https://digitalrocketads.com/jobs/wordpress-web-developer/",
+      "why_now": "Official live Contractor vacancy explicitly states Remote, worldwide. Direct overlap in WordPress builds, Core Web Vitals, maintenance, PHP/HTML/CSS/JS, CRO-aware landing pages and paid trial work on live client accounts.",
+      "tailored_angle": "Lead with WordPress production, responsive frontend, performance/Core Web Vitals, maintenance and conversion-focused web work. Do not overclaim deep custom plugin/theme engineering or GTM/data-layer depth unless supported by portfolio evidence.",
+      "economics": "Applicant quotes own rate; trial/probation is paid.",
+      "dedup_state": "CLEAR: canonical suppression, repository history, Gmail Sent and Hostinger Sent checks passed.",
       "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
     }
   ],
   "material_review": [
-    {"organization":"Alpacode","state":"REVIEW_REQUIRED_GEO","reason":"Excellent autonomous-work/outsourcing model, but official page explicitly restricts remote work to Italy; cross-border eligibility is not established."}
+    {
+      "organization": "Altos",
+      "state": "REVIEW_REQUIRED_TIMEZONE_ELIGIBILITY",
+      "reason": "Excellent explicit contractor/freelance web-design demand and official HR email, but the vacancy prefers Eastern Standard Time candidates; CET/Spain contractor acceptance is not explicit enough for promotion."
+    }
   ],
-  "hard_blocks_reverified": [
-    {"organization":"Apiceweb","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"Canonical suppression plus Hostinger INBOX.Sent UID 95 prove prior first contact on 2026-08-28."}
-  ],
-  "execution_note": "Partner Hunt should process these additions only after immediate pre-action freshness and dedup recheck. Existing actionable opportunities remain in their canonical opportunity records and channel status; they are not discarded by this compact latest-additions view."
+  "execution_note": "Partner Hunt should process Digital Rocket only after immediate pre-action freshness and dedup recheck. Existing actionable opportunities remain in canonical records and are not discarded by this compact latest-additions view."
 }
