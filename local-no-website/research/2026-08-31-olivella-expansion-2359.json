@@ -1,0 +1,24 @@
+{
+  "run_at":"2026-08-31T23:59:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "mode":"RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","state":"ACTIVE_SCAN"},
+  "source_families_used":["LOCAL_BUSINESS_DIRECTORIES","COMPANY_REGISTRY_AGGREGATORS","SPECIALIST_MARKETPLACES","SEARCH_ROUTER"],
+  "new_unique_screened":6,
+  "screened_total_after":272,
+  "new_identities":[
+    {"business":"Ramirez y asociados","state":"REJECTED_HAS_WEBSITE","evidence":["Cylex/EncuentreAbierto current Olivella identity at Carrer Trencapinyes 32 with phone 678142737","LegalRank attributes ramirezyasociados.es to the same Olivella practice"],"reason":"Functional dedicated website exists; fails LOCAL_SME_999 website-absence gate."},
+    {"business":"ALQUIMIA PROJECTS S.L.","state":"REJECTED_HAS_WEBSITE","evidence":["Pappers: active legal entity at Via Lactea 26, Olivella","Airbnb commercial-host disclosure explicitly states Utopia-Villas.com is property of Alquimia Projects S.L., VAT B64721426"],"reason":"Owned dedicated website is explicitly tied to the legal entity."},
+    {"business":"COOL & HOT THERMAL BAG S.L.","state":"REJECTED_INACTIVE_EXTINGUISHED","evidence":["Empresia records extinction on 2025-11-13","Cinco Dias directory still shows legacy Olivella address but no website"],"reason":"Extinguished legal entity; fails current-activity/commercial-quality gate."},
+    {"business":"ALPHA ESTRUC S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","evidence":["StarOfService currently surfaces Alpha-Estruc S.L. as an Olivella renovation/tiling professional with 34 platform signals","Iberinform municipality directory lists Alpha Estruc in Olivella"],"to_verify":["exact legal identity and address","current independent reputation","owned website/domain","public business route"]},
+    {"business":"CONDUCTOS CARTIZ S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","evidence":["eInforma current sector directory lists Conductos Cartiz S.L. in Olivella under plumbing/HVAC","Empresite identifies activity as plumbing and air-conditioning installation at Calle Bessons 2, 08818 Olivella"],"to_verify":["current operating footprint","independent reputation","owned website/domain","public contact route"]},
+    {"business":"CRESTA SPAIN S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY","evidence":["InfoNIF shows Olivella domicile at Andromeda 18, no phone/email/web and latest accounts presented 2024","Cinco Dias corroborates Olivella identity and real-estate activity with no web field"],"to_verify":["customer-facing current activity","commercial fit for 999 offer","owned website/domain","reputation/contactability"],"note":"Registry activity alone is insufficient; likely holding/investment profile until proven otherwise."}
+  ],
+  "additional_deep_review":[
+    {"business":"CONSTRUCCIONS CAN SURIA 2000 SCCL","state":"RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL","change":"Iberinform refreshed 2026 record confirms active cooperative, Olivella domicile, real-estate activity and null website field; still lacks independent current reputation and public business route."},
+    {"business":"2931 STUDIO ARQUITECTURA S.L.","state":"IDENTITY_LOCATION_RECONCILIATION_REQUIRED","change":"Iberinform/InfoNIF expose an Olivella address while Páginas Amarillas currently presents the business in Barcelona and states a website exists. Do not count as website-gap qualified until current operating location and owned URL are reconciled."}
+  ],
+  "not_counted_as_new":["Welifevan","La Brasa de Mas Mestre","Centro de Estética y Peluquería","Arquitectura Integral del Garraf S.L."],
+  "quality_notes":["Search-engine results used only as discovery routers.","Directory website fields are not accepted as proof of website absence.","Legal entities without present-day customer-facing evidence remain RAW.","No email, application, form, DM, auto-reply or FIRST_CONTACT was executed."],
+  "next_queue":["ALPHA ESTRUC exact identity/domain/reputation","CONDUCTOS CARTIZ current activity/domain/contact route","2931 STUDIO current location and owned URL reconciliation","CRESTA SPAIN customer-facing fit","WELIFEVAN owned-domain/social/reputation","CONSTRUCCIONS CAN SURIA 2000 independent reputation/contact route","continue older Iberinform/eInforma Olivella rows"]
+}
