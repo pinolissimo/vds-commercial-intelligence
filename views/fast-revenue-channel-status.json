@@ -1,71 +1,78 @@
 {
-  "schema_version": "1.1",
-  "updated_at": "2026-08-31T09:46:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after reconciliation with the 2026-08-31 Partner Hunt morning wave. Counts distinguish currently uncontacted/actionable routes from research and suppression states.",
+  "schema_version": "1.2",
+  "updated_at": "2026-08-31T10:41:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after reconciliation with completed Monday execution and the 10:39 discovery cycle. Counts distinguish currently uncontacted/actionable routes from research, suppression and hold states.",
   "counts": {
-    "VERIFIED_DIRECT_EMAIL": 5,
-    "VERIFIED_FORM_PLATFORM": 16,
-    "REVIEW_REQUIRED": 23,
-    "SUPPRESSED": 29,
-    "HOLD": 6,
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 17,
+    "REVIEW_REQUIRED": 24,
+    "SUPPRESSED": 46,
+    "HOLD": 7,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
-    "VERIFIED_DIRECT_EMAIL": "Currently uncontacted direct-email opportunities ready for Partner Hunt final pre-send gate: MarkeThink, Maia Management, Cantabria Web Design, Summum Marketing and newly verified Boneluv. Nexibo is HOLD because its official route requires a CV attachment. Visioni, Evo Sistemi, Ibérica Studio and Daniele Debernardis were contacted by Partner Hunt at 09:03 and are no longer ready candidates.",
-    "VERIFIED_FORM_PLATFORM": "Sixteen route-ready form/platform/application opportunities from the Monday application pack; no conversion to cold email is permitted.",
-    "REVIEW_REQUIRED": "Twenty existing direct-email research-review cases plus SafetyNet Europe, Lemon.io and Intervolutions fit/technical-depth review. This is not an actionable count.",
-    "SUPPRESSED": "Twenty-nine organization-level first-contact identities normalized in governance/suppression-registry.json, including the four Partner Hunt morning-wave identities; Ibérica Studio remains organization-suppressed despite address-level hard bounce.",
-    "HOLD": "Existing direct-commercial holds plus structural/low-economics cases and Nexibo route-compliance hold. HOLD is excluded from actionable totals.",
-    "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "The 37-candidate research queue is a pre-final-gate discovery pool and must not be interpreted as currently sendable. Its contacted identities are protected by suppression/Sent reconciliation."
+    "VERIFIED_DIRECT_EMAIL": "Zero currently uncontacted direct-email candidates remain ready after Monday execution. MarkeThink is closed by negative reply; Boneluv and Cantabria Web Design were sent; Maia Management and Summum Marketing remain blocked by unresolved fit/current-demand gates. No candidate was backfilled merely to preserve volume.",
+    "VERIFIED_FORM_PLATFORM": "Sixteen pre-existing route-ready form/platform/application opportunities plus newly verified Wordune Figma Designer / WordPress conversion collaboration. Application-only routes must not be converted to cold email.",
+    "REVIEW_REQUIRED": "Existing review queue plus newly retained Solluton WordPress Developer contract role, where current demand and worldwide remote contract status are clear but VDS evidence for custom theme/plugin development from scratch is not strong enough for promotion.",
+    "SUPPRESSED": "Forty-six acquisition identities normalized by the current canonical README/suppression state after Monday execution, including all already-contacted identities and hard-bounce protected organizations.",
+    "HOLD": "Existing holds plus Alta Ignite WordPress Developer: current EU-eligible remote demand is verified, but the role is explicitly full-time employment rather than freelance/contract, so it is not actionable under FAST_REVENUE contractor rules.",
+    "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "The 37-candidate discovery snapshot remains historical research context only and must never be interpreted as sendable."
   },
   "cycle_delta": {
-    "verified_direct_email_new": 1,
-    "verified_form_platform_new": 0,
+    "verified_direct_email_new": 0,
+    "verified_form_platform_new": 1,
     "review_required_new": 1,
-    "suppression_normalizations_new": 3,
+    "hold_new": 1,
+    "suppression_reconciled_to_canonical": 46,
     "actionable_pool_inflation": 0
   },
-  "new_verified_direct_email": [
+  "new_verified_form_platform": [
     {
-      "organization": "Boneluv",
-      "opportunity_id": "OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
-      "route": "hola@boneluv.com",
-      "territory": "Spain / Andalucía / Sevilla + remote",
+      "organization": "Wordune",
+      "route_type": "OFFICIAL_APPLICATION_TICKET",
+      "route": "https://wordune.com/hiring/",
+      "territory": "Remote / Europe eligible",
       "priority": "HOT_PLUS",
-      "evidence": "https://boneluv.com/trabaja-con-nosotros/",
-      "need": "Current freelancer network explicitly seeks Web Designer and WordPress Developer; WordPress/Elementor Pro/Gutenberg/PHP/CSS/JS/WooCommerce; autonomous/company invoicing; at least 1-2 projects/month; first scoped project can become ongoing collaboration.",
-      "dedup": "Canonical search clear; Gmail Sent exact identity/recipient clear; Hostinger INBOX.Sent exact recipient and identity searches clear on 2026-08-31.",
-      "route_rule": "Official careers page explicitly instructs email to hola@boneluv.com with subject 'Colaboración' + specialty."
+      "evidence": "https://wordune.com/hiring/",
+      "freshness": "Official hiring page crawled in August 2026 states Status: Open to recruit, 3 seats, 1-year period, Europe & South America eligible.",
+      "economics": "$40/hour for EU applicants; $20/hour for South America, published by the official source.",
+      "need": "Significant current demand increase for Figma-to-WordPress conversion; remote collaboration; WordPress theme understanding required; CV submitted through the official ticket route.",
+      "vds_fit": "Strong web-design/WordPress conversion overlap; no unsupported claim of custom plugin engineering is required for this design-oriented role.",
+      "dedup": "Canonical GitHub search clear; Gmail Sent search clear; Hostinger INBOX.Sent current 100-message reconciliation contains no Wordune identity or route."
     }
   ],
   "new_review_required": [
     {
-      "organization": "Intervolutions / Tombatossals Softworks LLC",
-      "route_type": "OFFICIAL_FORM_PLATFORM",
-      "route": "https://intervolutions.com/careers/",
-      "territory": "Spain / Comunitat Valenciana / Castellón + remote",
+      "organization": "Solluton",
+      "route_type": "OFFICIAL_APPLICATION_WHATSAPP",
+      "route": "https://www.solluton.com/careers/wordpress-developer-part-time",
+      "territory": "Remote worldwide",
       "state": "REVIEW_REQUIRED_FIT",
-      "evidence": "https://intervolutions.com/careers/frontend-developer-freelance/",
-      "freshness": "Official careers page states all published roles accept applications today and identifies active freelance openings.",
-      "need": "Remote freelance frontend for workload peaks, €250-350/day, Figma-to-code, animation/microinteractions, APIs/CMS including WordPress, paid short test, long-term collaboration if fit.",
-      "reason_not_promoted": "Frontend role explicitly expects React or Astro in addition to strong HTML/CSS/JavaScript. Canonical VDS materials do not establish that requirement strongly enough to promote without qualification. A separate freelance web-design/maquetación role is also open but needs role-detail verification before promotion."
+      "evidence": "https://www.solluton.com/careers/wordpress-developer-part-time",
+      "freshness": "Official careers page current on 2026-08-31.",
+      "need": "Part-time contract, 20-25h/week, project-based ongoing WordPress/WooCommerce work, performance, security, API integrations, Elementor/WPBakery familiarity.",
+      "reason_not_promoted": "Core requirements explicitly include custom themes/plugins from scratch, hooks/filters/actions, REST/AJAX and Git. Current canonical VDS evidence does not establish the full required depth strongly enough to promote without review."
     }
   ],
-  "morning_reconciliation": {
-    "contacted_by_partner_hunt": ["Visioni", "Evo Sistemi", "Ibérica Studio", "Daniele Debernardis"],
-    "ibérica_studio": "HARD_BOUNCE at recipient address; organization-level first-contact remains permanently suppressed.",
-    "nexibo": "HOLD_ROUTE_COMPLIANCE — official route requests CV/best work and no verified CV attachment was present in the execution wave."
-  },
+  "new_hold": [
+    {
+      "organization": "Alta Ignite / Lanex Group LLC",
+      "route_type": "OFFICIAL_FORM",
+      "territory": "Remote Europe / EU-friendly timezones",
+      "state": "HOLD_EMPLOYMENT_MODEL",
+      "evidence": "https://altaignite.com/mx/careers",
+      "need": "Current WordPress Developer role for custom sites, maintenance, performance and ACF.",
+      "reason_not_promoted": "Official role is full-time; contractor/freelance compatibility is not established."
+    }
+  ],
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
   "source_files": [
-    "../opportunities/OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026.json",
-    "../reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
-    "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
-    "../outreach/2026-08-31-partner-hunt-morning-wave-01.json",
+    "../README.md",
+    "../OPERATING_RULES.md",
     "../governance/suppression-registry.json",
     "fast-revenue-email-queue.json",
-    "fast-revenue-territory-frontier.json"
+    "fast-revenue-territory-frontier.json",
+    "../research/2026-08-31-fast-revenue-pass-1039.json"
   ]
 }
