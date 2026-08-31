@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T10:39:54+02:00",
+  "mode": "DISCOVERY_ONLY_NO_OUTREACH",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "canonical_prechecks": ["README.md","OPERATING_RULES.md","governance/suppression-registry.json","views/fast-revenue-channel-status.json","views/fast-revenue-territory-frontier.json"],
+  "sent_dedup_checks": {"gmail_sent":"checked for Alta Ignite, Solluton, Wordune; no matches","hostinger_sent":"current INBOX.Sent page of 100 messages reconciled; no Alta Ignite, Solluton or Wordune identity/route match"},
+  "material_results": [
+    {
+      "organization": "Wordune",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT_PLUS",
+      "territory": "Remote Europe",
+      "evidence_url": "https://wordune.com/hiring/",
+      "route": "official CV/application ticket linked from hiring page",
+      "freshness": "official page currently says Open to recruit",
+      "buyer_need": "significant increase in Figma-to-WordPress conversion demand; 3 designers sought for a 1-year period",
+      "eligibility": "Europe & South America; fully remote; no fixed hours",
+      "economics": "$40/hour for EU applicants",
+      "fit": "web design + WordPress theme-aware Figma conversion",
+      "dedup": "clear in canonical search, Gmail Sent and Hostinger Sent"
+    },
+    {
+      "organization": "Solluton",
+      "state": "REVIEW_REQUIRED_FIT",
+      "priority": "HIGH_REVIEW",
+      "territory": "Remote worldwide",
+      "evidence_url": "https://www.solluton.com/careers/wordpress-developer-part-time",
+      "route": "official Apply Now route",
+      "freshness": "official page current 2026-08-31",
+      "buyer_need": "part-time contract 20-25h/week, project-based ongoing WordPress/WooCommerce work",
+      "fit_gap": "custom themes/plugins from scratch, WP hooks, REST/AJAX and Git are explicit core requirements"
+    },
+    {
+      "organization": "Alta Ignite / Lanex Group LLC",
+      "state": "HOLD_EMPLOYMENT_MODEL",
+      "territory": "Remote Europe",
+      "evidence_url": "https://altaignite.com/mx/careers",
+      "route": "official application form",
+      "freshness": "current open WordPress Developer role",
+      "buyer_need": "custom WordPress builds, maintenance, security/performance and ACF",
+      "hold_reason": "explicit full-time role; freelance/contract compatibility not established"
+    }
+  ],
+  "rejected_or_nonpromoted": [
+    {"organization":"Alliance4Europe","reason":"official vacancy explicitly closed"},
+    {"organization":"De La Fabrica","reason":"internship period/deadline stale for current paying-work objective"},
+    {"organization":"RGN Marketing","reason":"remote role permits full-time/part-time/minijob but no freelance/contract compatibility established"},
+    {"organization":"SiteCare via SkillVault","reason":"contract is fresh and strong technically but eligibility limited to LatAm, South Africa and Eastern Europe; Spain-based EU contractor not clearly eligible"},
+    {"organization":"SEE / Seferi Engineering Enterprises","reason":"project-based contractor role is remote but January signal is materially older; retained for possible recheck rather than HOT promotion"}
+  ],
+  "breadth_sampling": {
+    "spain": ["Comunitat Valenciana","Asturias/Cantabria","Murcia","Aragón"],
+    "italy": ["Emilia-Romagna","Lazio","Liguria","Campania"],
+    "remote": ["Europe","worldwide EU-eligible"],
+    "source_families": ["official careers","specialist jobs","freelance/contract search","agency hiring","WordPress niche sources"]
+  },
+  "channel_delta": {"VERIFIED_DIRECT_EMAIL":0,"VERIFIED_FORM_PLATFORM":1,"REVIEW_REQUIRED":1,"SUPPRESSED":0,"HOLD":1},
+  "outreach_performed": false
+}
