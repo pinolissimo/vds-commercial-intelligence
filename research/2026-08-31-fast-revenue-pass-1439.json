@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "run_id": "FAST_REVENUE_2026-08-31_1439",
+  "verified_at": "2026-08-31T14:51:00+02:00",
+  "objective": "Expand genuinely current paying-work opportunities without count inflation; prioritize explicit application routes, systematic territory/sector rotation and identity-level dedup.",
+  "canonical_source": {"repository":"pinolissimo/vds-commercial-intelligence","branch":"main"},
+  "read_before_research": [
+    "README.md",
+    "OPERATING_RULES.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "outreach/2026-08-31-partner-hunt-morning-wave-01.json",
+    "outreach/2026-08-31-partner-hunt-morning-wave-02.json",
+    "research/2026-08-31-fast-revenue-pass-1336.json"
+  ],
+  "source_protocol_applied": {
+    "search_engines": "discovery only",
+    "promotion_evidence": "official company/application source required",
+    "identity_contact_preference": "primary source",
+    "cross_source_gate": true,
+    "channel_rule": "explicit application form/platform outranks generic email",
+    "dedup_rule": "repository + suppression + Gmail Sent + Hostinger Sent before promotion"
+  },
+  "source_families_sampled": [
+    "OFFICIAL_COMPANY",
+    "AGENCY_OUTSOURCING",
+    "SPECIALIST_JOBS",
+    "PROFESSIONAL_NETWORKS",
+    "SEARCH_ROUTER_DISCOVERY_ONLY"
+  ],
+  "territory_focus": [
+    "Spain Asturias/Cantabria",
+    "Spain Aragón",
+    "Spain Castilla y León",
+    "Italy Veneto",
+    "Italy Toscana",
+    "Italy Liguria",
+    "Italy Campania",
+    "Italy Puglia",
+    "Italy Sicilia",
+    "Remote Europe/worldwide"
+  ],
+  "sector_focus": [
+    "web/digital agencies",
+    "performance/lead-generation agencies",
+    "WordPress/frontend",
+    "Core Web Vitals/maintenance",
+    "tourism/hospitality digital suppliers",
+    "remote contractor platforms"
+  ],
+  "promotions": [
+    {
+      "organization": "Digital Rocket",
+      "legal_identity": "ROASROCKET MARKETING LLP",
+      "opportunity_id": "OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT_PLUS",
+      "freshness": "Official careers vacancy live and accepting applications on 2026-08-31.",
+      "need": "WordPress builds/landing pages, Core Web Vitals, tracking/CRO implementation, maintenance, PHP + HTML/CSS/JS.",
+      "eligibility": "Official role states Remote, worldwide; Contractor; fluent English required.",
+      "economics": "Applicant quotes own rate; trial/probation explicitly paid work on live client accounts.",
+      "route": "Official vacancy/application form.",
+      "dedup": "Suppression clear; repository clear; Gmail Sent clear; Hostinger INBOX.Sent clear.",
+      "evidence": ["https://digitalrocketads.com/jobs/wordpress-web-developer/"]
+    }
+  ],
+  "review_required_new": [
+    {
+      "organization": "Altos",
+      "domain": "altosagency.com",
+      "state": "REVIEW_REQUIRED_TIMEZONE_ELIGIBILITY",
+      "why_material": "Official contract/freelance remote Web Designer role, project-based with potential ongoing collaboration, direct application email, strong Figma/UX/responsive/accessibility/performance fit and WordPress preferred.",
+      "route": "HR@altosagency.com",
+      "blocking_gate": "Official vacancy prefers candidates on Eastern Standard Time; acceptance of a Spain/CET-based contractor is not explicit enough for the geographic eligibility hard gate.",
+      "dedup": "Suppression/repository clear; Gmail Sent to HR@altosagency.com clear; Hostinger INBOX.Sent to hr@altosagency.com clear.",
+      "evidence": ["https://altosagency.com/careers/web-designer"]
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"organization":"BSC Webdesign","reason":"Excellent remote worldwide contractor role but already first-contacted; identity remains suppressed."},
+    {"organization":"S. Med","reason":"Current remote freelance WordPress role requires German language/client communication; truthful VDS fit gate not met."},
+    {"organization":"K9 Sports Nation","reason":"Listing is explicitly no longer accepting applications."},
+    {"organization":"Galaxy Sunset Designs","reason":"Listing is explicitly no longer accepting applications."},
+    {"organization":"Alliance4Europe","reason":"Official vacancy is closed."},
+    {"organization":"Lucasweb","reason":"Current official site shows partners/external consultants but does not establish a fresh explicit need for external WordPress capacity."},
+    {"organization":"NexaPro Technologies","reason":"Fresh LinkedIn freelance-network signal exists, but authoritative geography/eligibility and official-domain route evidence are insufficient for promotion."},
+    {"category":"anonymous marketplace projects","reason":"Exact buyer identity cannot be reconciled against global commercial history."}
+  ],
+  "dedup_external_checks": {
+    "gmail": [
+      {"query":"in:sent (Digital Rocket OR digitalrocketads.com)","result":"0 exact external matches"},
+      {"query":"in:sent to:HR@altosagency.com","result":"0 matches"}
+    ],
+    "hostinger": [
+      {"folder":"INBOX.Sent","query":"text=Digital Rocket","result":"0 matches"},
+      {"folder":"INBOX.Sent","query":"to=hr@altosagency.com","result":"0 matches"}
+    ]
+  },
+  "counts_after_cycle": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 21,
+    "REVIEW_REQUIRED": 29,
+    "SUPPRESSED": 47,
+    "HOLD": 7
+  },
+  "frontier_changes": [
+    "Asturias/Cantabria moved UNDER_SEARCHED -> ACTIVE_SCAN after specialist/search-router sampling; more official-company/outsourcing depth required.",
+    "Aragón moved UNDER_SEARCHED -> ACTIVE_SCAN after initial current-demand sampling.",
+    "Castilla y León moved UNDER_SEARCHED -> ACTIVE_SCAN after initial current-demand sampling.",
+    "Liguria moved UNDER_SEARCHED -> ACTIVE_SCAN after initial sampling; not marked low-yield.",
+    "Remote Europe/worldwide moved ACTIVE_SCAN -> COVERED_RECENTLY after Digital Rocket HOT_PLUS hit, with additional source families still queued."
+  ],
+  "source_gaps": [
+    "Some network/marketplace listings expose demand without exact buyer identity or authoritative cross-border eligibility and therefore remain unpromoted.",
+    "Some strong worldwide remote roles prefer a specific timezone without explicitly confirming CET eligibility; these remain REVIEW_REQUIRED rather than being counted actionable."
+  ],
+  "next_resume": [
+    "Balearic Islands: OFFICIAL_COMPANY -> AGENCY_OUTSOURCING -> TOURISM_HOSPITALITY",
+    "Canary Islands: AGENCY_OUTSOURCING -> SPECIALIST_JOBS -> TOURISM_HOSPITALITY",
+    "Asturias/Cantabria: OFFICIAL_COMPANY -> AGENCY_OUTSOURCING -> PROFESSIONAL_NETWORKS",
+    "Aragón and Castilla y León: OFFICIAL_COMPANY -> AGENCY_OUTSOURCING -> FREELANCE_MARKETPLACES",
+    "Italy remaining regions/provinces: begin official-company/outsourcing systematic pass",
+    "IT/MSP/hosting and healthcare/professional-services remain under-searched",
+    "Remote worldwide: NICHE_WORDPRESS_JOBS -> NGO_DIGITAL_SUPPLIERS -> FREELANCE_MARKETPLACES"
+  ],
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
