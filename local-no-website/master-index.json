@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-31T09:16:00+02:00",
+  "updated_at":"2026-08-31T09:29:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -10,13 +10,14 @@
   "email_folder":"INBOX.LOCAL-SME-999",
   "screened_raw":169,
   "canonical_prospect_records":30,
-  "under_research":24,
+  "under_research":0,
+  "canonical_finalized_rejected":22,
   "screened_rejected_has_website":59,
   "screened_rejected_poor_reputation":1,
   "screened_reputation_risk":6,
-  "qualified":6,
+  "qualified":8,
   "ready_for_contact_review":0,
-  "ready_to_contact":6,
+  "ready_to_contact":8,
   "contacted":0,
   "replies":0,
   "positive_replies":0,
@@ -25,21 +26,21 @@
   "won":0,
   "website_gap_model":{"max_score":100,"components":["website_absence","business_quality","commercial_upside","competitor_gap","contactability","personalization_strength"]},
   "territorial_index":[
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sitges","canonical_records":3,"ready_to_contact":0,"under_research":3},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Vilanova i la Geltrú","canonical_records":5,"ready_to_contact":5,"under_research":0},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Cubelles","canonical_records":1,"ready_to_contact":1,"under_research":0},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sant Pere de Ribes","canonical_records":4,"ready_to_contact":0,"under_research":4},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Canyelles","canonical_records":5,"ready_to_contact":0,"under_research":5},
-    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","canonical_records":12,"ready_to_contact":0,"under_research":12}
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sitges","canonical_records":3,"ready_to_contact":1,"under_research":0,"finalized_rejected":2},
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Vilanova i la Geltrú","canonical_records":5,"ready_to_contact":5,"under_research":0,"finalized_rejected":0},
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Cubelles","canonical_records":1,"ready_to_contact":1,"under_research":0,"finalized_rejected":0},
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Sant Pere de Ribes","canonical_records":4,"ready_to_contact":0,"under_research":0,"finalized_rejected":4},
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Canyelles","canonical_records":5,"ready_to_contact":1,"under_research":0,"finalized_rejected":4},
+    {"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","canonical_records":12,"ready_to_contact":0,"under_research":0,"finalized_rejected":12}
   ],
   "activity_index":[
     {"activity_type":"Laundry","canonical_records":2,"ready_to_contact":0},
-    {"activity_type":"Car wash","canonical_records":1,"ready_to_contact":0},
+    {"activity_type":"Car wash","canonical_records":1,"ready_to_contact":1},
     {"activity_type":"Physiotherapy","canonical_records":1,"ready_to_contact":0},
     {"activity_type":"Massage and wellness","canonical_records":1,"ready_to_contact":1},
     {"activity_type":"Tattoo and piercing","canonical_records":3,"ready_to_contact":2},
     {"activity_type":"Beauty and wellness","canonical_records":4,"ready_to_contact":2},
-    {"activity_type":"Hair salon","canonical_records":3,"ready_to_contact":1},
+    {"activity_type":"Hair salon","canonical_records":3,"ready_to_contact":2},
     {"activity_type":"Pet services","canonical_records":3,"ready_to_contact":0},
     {"activity_type":"Hospitality","canonical_records":6,"ready_to_contact":0},
     {"activity_type":"Professional services","canonical_records":1,"ready_to_contact":0},
@@ -49,8 +50,9 @@
     {"activity_type":"Woodworking and carpentry","canonical_records":1,"ready_to_contact":0}
   ],
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
+  "latest_finalization_report":"research/2026-08-31-deep-review-finalization-0927.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":6,"final_live_gate_required_before_send":true,"latest_material_change":"Madhaus Tattoo website ambiguity resolved: current municipal/independent evidence supports identity, 5.0 reputation with about 49-50 reviews, public email and no functional owned site surfaced; suppression and exact-recipient Sent checks are clean. Madhaus promoted READY_TO_CONTACT. Olivella discovery also screened Jardineria Pinofels S.L.; active owned Shopify site confirms rejection from LOCAL_SME_999."},
+  "qa_state":{"status":"DEEP_REVIEW_BACKLOG_FINALIZED","ready_count":8,"final_live_gate_required_before_send":true,"latest_material_change":"All 25 previously under-research canonical Local SME records were finalized. Ech2Onet, Madhaus Tattoo and Nova 12 passed final quality/contact/dedup gates and were promoted READY_TO_CONTACT. The other 22 were closed REJECTED for documented contactability, reputation/evidence or domain-ambiguity failures. Concurrent reservoir discovery raised RAW to 169 and website-present screening rejects to 59. No outreach occurred."},
   "status":"ACTIVE_SEARCH_AND_FILTERING",
-  "next_action":"Continue Olivella ACTIVE_SCAN. Prioritize EL MOS, Centro de Estética y Peluquería, Rostisseria l'Asador, Al Son, Nino y Antonio, Sana Tu Mente, Welifevan, Orts Fuster, M & M Nail's and ECCECANIS. Keep adding new changed-source discovery while closing high-value unresolved gates."
+  "next_action":"Resume broad LOCAL_SME_999 discovery from Olivella ACTIVE_SCAN. Do not reopen the finalized 22 unless materially new public evidence appears. Maintain the final live dedup/domain/reputation gate immediately before any future contact action."
 }
