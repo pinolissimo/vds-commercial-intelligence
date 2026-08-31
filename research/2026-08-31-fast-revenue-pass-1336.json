@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "run_id": "FAST_REVENUE_2026-08-31_1336",
+  "verified_at": "2026-08-31T13:44:00+02:00",
+  "objective": "Expand genuinely current paying-work opportunities without inflating counts; prioritize explicit routes, systematic geography/sector rotation and identity-level dedup.",
+  "canonical_source": {"repository":"pinolissimo/vds-commercial-intelligence","branch":"main"},
+  "read_before_research": [
+    "OPERATING_RULES.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "opportunities/OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026.json"
+  ],
+  "source_families_sampled": ["OFFICIAL_COMPANY","AGENCY_OUTSOURCING","SPECIALIST_JOBS","PROFESSIONAL_NETWORKS","SEARCH_ROUTER_DISCOVERY_ONLY"],
+  "territory_focus": [
+    "Spain nationwide remote",
+    "Comunitat Valenciana continuation",
+    "País Vasco/Galicia discovery continuation",
+    "Italy Veneto recheck",
+    "Italy Lombardia/Monza",
+    "Italy Calabria/Reggio Calabria",
+    "Remote Europe/worldwide"
+  ],
+  "sector_focus": ["web/digital agencies","branding/design","WordPress/frontend","outsourcing networks","remote contractor platforms","IT/hosting discovery"],
+  "promotions": [
+    {
+      "organization": "Mindrift",
+      "opportunity_id": "OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT_PLUS",
+      "freshness": "Specific contractor listing posted 2026-08-29; official Mindrift design project is Open on 2026-08-31.",
+      "need": "Freelance web/digital experience design; responsive digital interfaces and professional design judgment.",
+      "eligibility": "Spain location requirement; fully remote contractor/project model.",
+      "economics": "Specific listing up to USD 40/hour equivalent; official Mindrift design-project page separately advertises design projects up to USD 50/hour.",
+      "route": "Official Mindrift application/project route.",
+      "dedup": "Suppression clear; Hostinger Sent clear; Gmail external first-contact/application clear.",
+      "evidence": ["https://mindrift.ai/apply","https://mindrift.ai/project/design","https://himalayas.app/companies/mindrift/jobs/freelance-web-designer-469402217"]
+    },
+    {
+      "organization": "IOCOS di G.C.",
+      "opportunity_id": "OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT",
+      "freshness": "Official freelancer application page active and accepting submissions on 2026-08-31.",
+      "need": "Completely remote freelancer network for client web projects: WordPress, WooCommerce, Elementor/Gutenberg, frontend, performance, APIs, Figma and UX/UI.",
+      "eligibility": "All work explicitly remote; no local-residency restriction is published on the opportunity page; IOCOS states it supports companies in Italy and internationally.",
+      "economics": "Freelancer supplies hourly rate; matching brief includes task, timing and compensation before acceptance.",
+      "route": "Official application form; generic info@iocos.it is not used because the form is the explicit application channel.",
+      "dedup": "Suppression clear; Gmail Sent clear; Hostinger Sent clear.",
+      "evidence": ["https://iocos.it/opportunita-di-lavoro/"]
+    }
+  ],
+  "review_required_new": [
+    {
+      "organization": "Alpacode",
+      "state": "REVIEW_REQUIRED_GEO",
+      "why_material": "Exceptionally explicit current autonomous-work model: always-open WordPress/UI-UX tracks, project work, subcontracting and full outsourcing, written compensation and framework agreements.",
+      "blocking_gate": "Official page explicitly limits remote work to anywhere in Italy. Cross-border eligibility is therefore not established.",
+      "dedup": "Suppression clear; Gmail Sent clear; Hostinger Sent clear.",
+      "evidence": ["https://alpacode.it/lavora-con-noi/"]
+    }
+  ],
+  "suppression_rechecks": [
+    {
+      "organization": "Apiceweb",
+      "result": "SUPPRESSED_ALREADY_CONTACTED",
+      "evidence": "Canonical suppression registry already contains FIRST_CONTACT_ALREADY_SENT; Hostinger INBOX.Sent UID 95 dated 2026-08-28 confirms prior first contact to info@apiceweb.it.",
+      "action": "No new application or contact."
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"category":"anonymous marketplace projects","reason":"Exact buyer identity cannot be reconciled against global commercial history."},
+    {"category":"Italy-local-only collaborations","reason":"Not promoted when cross-border/remote eligibility is explicitly restricted to Italy and no eligible route is established."},
+    {"category":"senior WordPress network roles with mandatory deep custom plugin/theme stacks","reason":"Held for fit review where canonical VDS evidence does not justify every mandatory requirement."}
+  ],
+  "counts_after_cycle": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 20,
+    "REVIEW_REQUIRED": 28,
+    "SUPPRESSED": 47,
+    "HOLD": 7
+  },
+  "frontier_changes": [
+    "Spain nationwide remote added as COVERED_RECENTLY after Mindrift HOT_PLUS hit.",
+    "Calabria/Reggio Calabria added as ACTIVE_SCAN after IOCOS HOT hit; more source-family rotation still required before COVERED_RECENTLY/LOW_YIELD decisions.",
+    "Veneto retained ACTIVE_SCAN; Apiceweb re-encountered but suppressed.",
+    "Lombardia remains COVERED_RECENTLY; Alpacode retained review due Italy-only geography.",
+    "Remote Europe/worldwide remains ACTIVE_SCAN."
+  ],
+  "next_resume": [
+    "Comunitat Valenciana: AGENCY_OUTSOURCING -> FREELANCE_MARKETPLACES -> PROFESSIONAL_NETWORKS",
+    "País Vasco and Galicia: AGENCY_OUTSOURCING -> SPECIALIST_JOBS -> FREELANCE_MARKETPLACES",
+    "Asturias/Cantabria and Aragón: OFFICIAL_COMPANY -> AGENCY_OUTSOURCING -> SPECIALIST_JOBS",
+    "Veneto/Toscana/Liguria: official-company and outsourcing sampling",
+    "Calabria: specialist jobs, marketplaces and professional networks",
+    "IT/MSP/hosting, tourism/hospitality and healthcare sectors remain under-searched"
+  ],
+  "source_gaps": ["Some marketplace and network listings remain anonymous or platform-gated; these were not promoted when exact buyer identity or route could not be established."],
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
