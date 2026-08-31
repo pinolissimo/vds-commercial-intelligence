@@ -1,26 +1,26 @@
 {
-  "schema_version": "1.4",
-  "updated_at": "2026-08-31T13:43:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after the 13:36 discovery, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
+  "schema_version": "1.5",
+  "updated_at": "2026-08-31T14:48:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 14:39 discovery, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 0,
-    "VERIFIED_FORM_PLATFORM": 20,
-    "REVIEW_REQUIRED": 28,
+    "VERIFIED_FORM_PLATFORM": 21,
+    "REVIEW_REQUIRED": 29,
     "SUPPRESSED": 47,
     "HOLD": 7,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
-    "VERIFIED_DIRECT_EMAIL": "No new direct-email candidate passed every gate. Explicit official forms outrank generic business emails for both new promotions.",
-    "VERIFIED_FORM_PLATFORM": "Two new actionable form/platform opportunities promoted this cycle: Mindrift Freelance Web Designer (HOT_PLUS) and IOCOS freelance web network (HOT).",
-    "REVIEW_REQUIRED": "One material new review item added: Alpacode is an unusually strong autonomous WordPress/UI-UX outsourcing route but explicitly restricts remote work to Italy; cross-border eligibility for Spain-based VDS is therefore not established.",
-    "SUPPRESSED": "47 canonical acquisition identities remain suppressed. Apiceweb was re-encountered and correctly rejected because both the suppression registry and Hostinger Sent UID 95 prove prior first contact.",
+    "VERIFIED_DIRECT_EMAIL": "No new direct-email candidate passed every geography/eligibility gate this cycle. Altos exposes an explicit HR email but remains review because Eastern Time is preferred and EU/CET acceptance is not explicit.",
+    "VERIFIED_FORM_PLATFORM": "One new actionable form opportunity promoted: Digital Rocket / ROASROCKET MARKETING LLP WordPress Web Developer (HOT_PLUS), official Contractor role, Remote worldwide.",
+    "REVIEW_REQUIRED": "One material review item added: Altos Web Designer is explicit contract/freelance, remote and direct-email, but preferred Eastern Standard Time creates an eligibility/working-hours ambiguity for Spain-based VDS.",
+    "SUPPRESSED": "47 canonical acquisition identities remain suppressed; no new suppression was required this cycle.",
     "HOLD": "7 existing holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
-    "verified_form_platform_new": 2,
+    "verified_form_platform_new": 1,
     "review_required_new": 1,
     "hold_new": 0,
     "suppression_new": 0,
@@ -29,37 +29,26 @@
   },
   "material_verification_changes": [
     {
-      "organization": "Mindrift",
-      "opportunity_id": "OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
+      "organization": "Digital Rocket",
+      "legal_identity": "ROASROCKET MARKETING LLP",
+      "opportunity_id": "OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026",
       "state": "VERIFIED_FORM_PLATFORM",
       "priority": "HOT_PLUS",
-      "current_demand": "Fresh Spain contractor listing posted 2026-08-29 plus official Mindrift design project currently marked Open for Freelance Web Designer / Digital Experience Designer.",
-      "route": "Official Mindrift Apply/project route; no generic email substitution.",
-      "economics": "Specific Spain listing states up to USD 40/hour equivalent; official design platform advertises design-project ceilings up to USD 50/hour, kept separate from the specific listing.",
-      "dedup": "Canonical suppression clear; Hostinger Sent clear; Gmail external-first-contact check clear. Gmail keyword hits were internal VDS reporting only, not an application to Mindrift."
+      "current_demand": "Official live WordPress Web Developer vacancy: Web Development / Remote / Contractor; role page states Remote, worldwide.",
+      "need": "WordPress builds and landing pages, Core Web Vitals, caching/image/plugin audits, tracking/CRO implementation, maintenance, PHP + HTML/CSS/JS.",
+      "route": "Official vacancy application form; no generic email substitution.",
+      "economics": "Applicant quotes own rate; probation/trial is explicitly paid work on live client accounts.",
+      "dedup": "Canonical suppression clear; repository history clear; Gmail Sent clear for Digital Rocket/digitalrocketads.com; Hostinger INBOX.Sent clear for Digital Rocket."
     },
     {
-      "organization": "IOCOS di G.C.",
-      "opportunity_id": "OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
-      "state": "VERIFIED_FORM_PLATFORM",
-      "priority": "HOT",
-      "current_demand": "Official page actively builds a completely remote freelancer network for client projects across WordPress, WooCommerce, Elementor/Gutenberg, frontend, performance, integrations and UX/UI.",
-      "route": "Official freelancer application form outranks the generic info@iocos.it business address.",
-      "economics": "Applicant supplies an hourly rate; IOCOS provides task, timing and compensation in the project brief before acceptance.",
-      "dedup": "Canonical suppression clear; Gmail Sent clear; Hostinger INBOX.Sent clear."
-    },
-    {
-      "organization": "Alpacode",
-      "state": "REVIEW_REQUIRED_GEO",
-      "current_demand": "Official Q3 2026 page keeps WordPress/Astro/React development and UI/UX collaborations always open, including project assignments, subcontracting and full outsourcing with written compensation.",
-      "route": "Official application form.",
-      "dedup": "Canonical suppression clear; Gmail Sent clear; Hostinger Sent clear.",
-      "reason_not_promoted": "Official eligibility explicitly says remote from anywhere in Italy. Cross-border eligibility is not established, so the opportunity is not counted actionable."
-    },
-    {
-      "organization": "Apiceweb",
-      "state": "SUPPRESSED_ALREADY_CONTACTED",
-      "dedup": "Reverified hard block: governance registry already contains FIRST_CONTACT_ALREADY_SENT and Hostinger INBOX.Sent UID 95 dated 2026-08-28 confirms the same commercial identity was contacted."
+      "organization": "Altos",
+      "domain": "altosagency.com",
+      "state": "REVIEW_REQUIRED_TIMEZONE_ELIGIBILITY",
+      "current_demand": "Official live Web Designer vacancy: Contractor, Contract/Freelance, remote, project-based with potential ongoing collaboration.",
+      "route": "Explicit official application email HR@altosagency.com.",
+      "fit": "Strong web design/Figma/UX/responsive/accessibility/performance/SEO overlap; WordPress is preferred rather than mandatory.",
+      "dedup": "Canonical/repository clear; Gmail Sent to HR@altosagency.com clear; Hostinger INBOX.Sent to hr@altosagency.com clear.",
+      "reason_not_promoted": "Official page says preferred candidates on Eastern Standard Time. Remote is explicit, but acceptance of CET/Spain-based contractors is not explicit enough for promotion under the geographic eligibility hard gate."
     }
   ],
   "no_outreach_by_fast_revenue_hunt": true,
@@ -70,8 +59,7 @@
     "../governance/suppression-registry.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../opportunities/OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026.json",
-    "../opportunities/OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026.json",
-    "../research/2026-08-31-fast-revenue-pass-1336.json"
+    "../opportunities/OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026.json",
+    "../research/2026-08-31-fast-revenue-pass-1439.json"
   ]
 }
