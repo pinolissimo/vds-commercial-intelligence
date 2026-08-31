@@ -1,15 +1,15 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-08-31T01:40:00+02:00",
+  "updated_at": "2026-08-31T02:40:00+02:00",
   "purpose": "Dedicated compact direct-email research queue for Monday final gating. This is not proof of send and does not authorize bypassing route, freshness, suppression, dedup or Sent-history checks.",
   "counts": {
     "prepared_direct_email": 17,
     "hot_plus_price_gate": 2,
     "hot_route_or_eligibility_review": 6,
-    "reverify_reserve": 4,
+    "reverify_reserve": 5,
     "route_review": 1,
     "fit_review": 1,
-    "potential_email_pool_before_final_gate": 31
+    "potential_email_pool_before_final_gate": 32
   },
   "prepared": [
     {"rank":1,"organization":"MarkeThink","email":"info@correo.cat","state":"SEND_READY_AFTER_FINAL_GATE","priority":"HOT_PLUS","territory":"Spain / Catalunya / Barcelona"},
@@ -46,7 +46,8 @@
     {"rank":24,"organization":"RYF Agencia SEO","email":"fernando@agenciaryf.com","state":"HOT_REVERIFY","territory":"Chile / remote","reason":"strong fit and direct published route, but role signal is approximately five months old"},
     {"rank":25,"organization":"Spinora WebTech","email":"spinorawebtech@gmail.com","state":"HOT_REVERIFY","territory":"India / remote","reason":"strong fit and direct published route, but role signal is approximately six months old"},
     {"rank":29,"organization":"Magenta | Agenzia Pubblicitaria","email":"info@magentaweb.it","state":"HOT_REVERIFY","priority":"HOT","territory":"Italy / Calabria / Cosenza; Malta","evidence":"https://www.linkedin.com/company/agenziamagenta","identity_evidence":"https://www.magentaweb.it/","sent_history":"Hostinger exact recipient search clear on 2026-08-31","reason":"Very strong VDS fit: agency sought a freelance Webmaster for WordPress/e-commerce/landing pages, hosting/domains, performance/security and ongoing maintenance with continuous collaboration. However the buyer-demand post is about seven months old; current acceptance must be revalidated before EMAIL_READY."},
-    {"rank":30,"organization":"Veintemillas","email":"jobs@veintemillas.com","state":"GENERAL_FREELANCE_ROUTE_REVIEW","priority":"HIGH","territory":"Spain / Catalunya / Barcelona / Castelldefels","evidence":"https://www.veintemillas.com/contacto/","freshness":"official contact/careers page crawled today and explicitly invites freelance collaborators to send portfolio/CV","sent_history":"Hostinger exact recipient search clear on 2026-08-31","reason":"Current official freelance-collaborator route at a Barcelona-area creative/marketing agency, with direct jobs email and strong agency-partnership potential. The page is not role-specific to WordPress/web development, so keep below HOT until VDS web-delivery demand is confirmed."}
+    {"rank":30,"organization":"Veintemillas","email":"jobs@veintemillas.com","state":"GENERAL_FREELANCE_ROUTE_REVIEW","priority":"HIGH","territory":"Spain / Catalunya / Barcelona / Castelldefels","evidence":"https://www.veintemillas.com/contacto/","freshness":"official contact/careers page crawled today and explicitly invites freelance collaborators to send portfolio/CV","sent_history":"Hostinger exact recipient search clear on 2026-08-31","reason":"Current official freelance-collaborator route at a Barcelona-area creative/marketing agency, with direct jobs email and strong agency-partnership potential. The page is not role-specific to WordPress/web development, so keep below HOT until VDS web-delivery demand is confirmed."},
+    {"rank":32,"organization":"Lokesh Kapoor / LK","email":"hello@lokeshkapoor.com","state":"HOT_REVERIFY","priority":"HOT","territory":"India / Uttar Pradesh / Kanpur / remote","evidence":"https://www.linkedin.com/posts/lokeshkapoor_wordpress-elementor-hiring-activity-7459886853857517568-4Fm_","identity_evidence":"https://lokeshkapoor.com/","freshness":"WordPress + Elementor hiring signal ~2 months old; official site active and current in 2026","sent_history":"Hostinger exact recipient search clear on 2026-08-31","reason":"Explicit published resume/portfolio email route, WordPress+Elementor, UI/UX, responsive/SEO and performance fit, with freelance signal in the hiring post. Keep in reverify reserve because current acceptance and engagement structure are not recent enough for SEND_READY without final confirmation."}
   ],
   "route_review": [
     {"rank":26,"organization":"Antonio De Lorenzi","email":"info@antoniodelorenzi.it","state":"QUALIFIED_ROUTE_REVIEW","territory":"Italy","reason":"current freelance network/Web Designer-Developer signal; verify that general published email is intended application route before EMAIL_READY"}
@@ -56,7 +57,9 @@
   ],
   "application_only_new_signals": [
     {"organization":"WokPress","state":"PLATFORM_DISCOVERY","territory":"Spain / nationwide","evidence":"https://wokpress.com/","freshness":"platform currently exposes WordPress project postings dated July 2026","reason":"Buyer-side WordPress marketplace with current project feed; treat individual projects as platform application routes, never as direct-email prospects."},
-    {"organization":"MINT Talent","state":"PLATFORM_DISCOVERY","territory":"Italy / nationwide","evidence":"https://www.usemint.app/","freshness":"official platform live and crawled 2026-08-31","reason":"Italian freelance marketplace explicitly exposes WordPress Specialist/Web Designer/Developer categories and open client projects; platform application route only, not direct email."}
+    {"organization":"MINT Talent","state":"PLATFORM_DISCOVERY","territory":"Italy / nationwide","evidence":"https://www.usemint.app/","freshness":"official platform live and crawled 2026-08-31","reason":"Italian freelance marketplace explicitly exposes WordPress Specialist/Web Designer/Developer categories and open client projects; platform application route only, not direct email."},
+    {"organization":"Jobgether partner company","state":"PLATFORM_APPLICATION_ONLY","territory":"Spain / remote","evidence":"https://es.linkedin.com/jobs/view/wordpress-designer-elementor-expert-at-jobgether-4458646151","freshness":"2 hours old when verified 2026-08-31","reason":"Very fresh Spain-based remote WordPress Designer / Elementor Expert signal with WooCommerce and long-term potential, but applications are managed by an unnamed partner through Jobgether; no direct buyer email route, so never count as direct-email candidate."},
+    {"organization":"Dots.eco via Upwork","state":"PLATFORM_APPLICATION_ONLY","territory":"Worldwide / CET overlap","evidence":"https://www.upwork.com/freelance-jobs/apply/Specialist-WordPress_~022082808204456276051/","freshness":"posted July 30 2026 and still indexed current","reason":"Independent-contractor structure, worldwide remote, $1,600–2,500/month and strong WordPress/UI-UX fit, but authoritative route is Upwork and must not be converted to email."}
   ],
   "removed_this_pass": [
     {"organization":"Better Call Geeks","state":"CLOSED_REJECT"},
@@ -66,7 +69,9 @@
     {"organization":"8be Srl","state":"GEO_REJECT","reason":"Fresh freelance P.IVA WordPress-adjacent role but mandatory in-person presence at Rome/client premises conflicts with remote Spain eligibility."},
     {"organization":"IOI Agency","state":"CLOSED_REJECT","reason":"Strong WordPress/Elementor remote/P.IVA fit but authoritative LinkedIn role is one year old and explicitly no longer accepting applications."},
     {"organization":"MEDIAIMMAGINE","state":"SUPPRESSION_REJECT","reason":"Fresh independent evidence still shows strong P.IVA WordPress+Elementor demand, but organization is already FIRST_CONTACT_ALREADY_SENT in suppression registry."},
-    {"organization":"Connecta S.r.l.","state":"EMPLOYMENT_COMPATIBILITY_REJECT","reason":"Fresh WordPress+WooCommerce role with direct email and strong technical fit, but available evidence describes insertion into the team with salary band rather than explicit freelance/contract compatibility."}
+    {"organization":"Connecta S.r.l.","state":"EMPLOYMENT_COMPATIBILITY_REJECT","reason":"Fresh WordPress+WooCommerce role with direct email and strong technical fit, but available evidence describes insertion into the team with salary band rather than explicit freelance/contract compatibility."},
+    {"organization":"CANARY TECHNOLOGY INNOVATIONS / CanaryTech","state":"CLOSED_REJECT","reason":"Excellent B2B freelance WordPress/PHP/WCAG fit with published info@canarytech.ro route, but authoritative LinkedIn role explicitly says applications are no longer accepted and the post is about one year old."},
+    {"organization":"Kapetan Greece","state":"DEADLINE_REJECT","reason":"Excellent six-month freelance WordPress engagement and direct application email, but stated application deadline was 2026-08-30; do not email after deadline without a new open signal."}
   ],
   "source_files": [
     "reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
@@ -74,13 +79,14 @@
     "research/2026-08-30-fast-revenue-pass-2239.json",
     "research/2026-08-30-fast-revenue-pass-2338.json",
     "research/2026-08-31-fast-revenue-pass-0041.json",
-    "research/2026-08-31-fast-revenue-pass-0140.json"
+    "research/2026-08-31-fast-revenue-pass-0140.json",
+    "research/2026-08-31-fast-revenue-pass-0240.json"
   ],
   "territory_frontier": {
-    "Spain":"ACTIVE_SCAN — Catalunya/Barcelona expanded through Castelldefels with Veintemillas freelance-collaborator route; prior samples include Madrid, Comunitat Valenciana, Andalucia, Cantabria and broader Barcelona/Valencia/Sevilla/Bilbao/Galicia/Zaragoza/Alicante clusters. Continue remaining autonomous communities/provinces systematically.",
-    "Italy":"ACTIVE_SCAN — Lombardia/Milano, Piemonte/Torino, Lazio/Roma, Toscana/Firenze-Prato, Emilia-Romagna/Bologna, Calabria/Cosenza plus current fresh Toscana/Connecta signal reviewed and rejected for freelance incompatibility. Continue region/province frontier and rotate official careers + agency outsourcing sources.",
-    "Europe_Remote":"ACTIVE_SCAN — Germany/Poland/UK plus France/Bourgogne-Franche-Comté/Dijon now sampled with MagicWeb. Continue France department clusters, Benelux and other EU remote markets after Spain/Italy priority passes.",
-    "Worldwide_Remote":"UNDER_SEARCHED — retain only explicit buyer-side remote opportunities with clear eligibility and authoritative contact route"
+    "Spain":"ACTIVE_SCAN — Catalunya/Barcelona expanded through Castelldefels; fresh nationwide Spain Jobgether Elementor signal captured as application-only. Prior samples include Madrid, Comunitat Valenciana, Andalucia, Cantabria and broader Barcelona/Valencia/Sevilla/Bilbao/Galicia/Zaragoza/Alicante clusters. Continue remaining autonomous communities/provinces systematically.",
+    "Italy":"ACTIVE_SCAN — Lombardia/Milano, Piemonte/Torino, Lazio/Roma, Toscana/Firenze-Prato, Emilia-Romagna/Bologna, Calabria/Cosenza sampled. Continue region/province frontier and rotate official careers + agency outsourcing sources.",
+    "Europe_Remote":"ACTIVE_SCAN — Germany/Poland/UK/France sampled; Romania/CanaryTech reviewed and rejected as closed. Continue France departments, Benelux, Austria, Ireland, Portugal and other EU remote clusters after Spain/Italy priority passes.",
+    "Worldwide_Remote":"UNDER_SEARCHED — India/Kanpur added to reverify reserve through Lokesh Kapoor; Dots.eco captured as platform-only worldwide/CET contractor. Retain only explicit buyer-side remote opportunities with clear eligibility and authoritative route."
   },
   "final_gate": "freshness -> exact identity -> authoritative route/recipient -> geographic eligibility -> freelance compatibility -> VDS fit -> org-level dedup -> suppression -> Gmail/Hostinger Sent -> sender identity -> QA"
 }
