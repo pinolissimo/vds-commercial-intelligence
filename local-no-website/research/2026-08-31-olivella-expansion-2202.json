@@ -1,0 +1,37 @@
+{
+  "run_at":"2026-08-31T22:02:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","state":"ACTIVE_SCAN"},
+  "objective":"Expand uncapped RAW_DISCOVERY with a changed-source legacy local-directory/installations/construction layer, deduplicate against canonical history, first-pass website/inactivity filters, and deep-review CAN SURIA 2000 without outreach.",
+  "allocation":{"LOCAL_SME_999":"~75%","COLLABORATIONS":"~15%","EU_PROJECTS":"~10%"},
+  "source_families_used":["LOCAL_BUSINESS_DIRECTORIES","SEARCH_ROUTER","company-data/registry aggregators","trade association directory","local/map listing"],
+  "local_sme_delta":{"screened_before":246,"screened_after":255,"new_unique_identities":9,"promoted_qualified":0,"new_ready_to_contact":0},
+  "new_screened":[
+    {"business":"HORIZONTES OLIVELLA S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"Construction","evidence":"Páginas Amarillas currently lists the exact Olivella constructor at Carrer Saturn 4, Urb. Las Colinas. Exact owned-domain search did not surface a attributable site in this pass.","website_gap":"TO_VERIFY","current_activity":"CURRENT_DIRECTORY_SIGNAL","reputation":"TO_VERIFY","contactability":"PARTIAL_DIRECTORY_ROUTE"},
+    {"business":"CONSTRUIR A MEDIDA SITGES S.L.","state":"REJECTED_HAS_WEBSITE","activity":"Residential construction and renovation","evidence":"Informa D&B reports current 2026 operation, 20 employees and URL www.cam24.es; Gremi de Constructors del Garraf independently lists info@cam24.es and the Olivella address.","website_gap":"FAILED_FUNCTIONAL_OWNED_SITE"},
+    {"business":"INNOVAR 2ª PIEL","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"Renovation/general reforms","evidence":"Páginas Amarillas currently lists the service at Carrer Isard 50, Mas Mestre, Olivella. No attributable owned domain surfaced in exact-name search.","website_gap":"TO_VERIFY","current_activity":"CURRENT_DIRECTORY_SIGNAL","reputation":"TO_VERIFY","contactability":"PARTIAL_DIRECTORY_ROUTE"},
+    {"business":"TENASA INDUSTRIAL S.C.P.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"Metal structures manufacturing","evidence":"eInforma places the entity at Calle Bessons 55, 08818 Olivella and classifies it under CNAE 2513. Empresite independently repeats the Olivella identity. No attributable owned domain surfaced in this pass.","website_gap":"TO_VERIFY","current_activity":"TO_VERIFY_BEYOND_CURRENT_DIRECTORY_PRESENCE","reputation":"TO_VERIFY","contactability":"TO_VERIFY"},
+    {"business":"ACEGAS INSTALLACIONS S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"Electrical, heating, gas, water and plumbing installations; real-estate intermediation","evidence":"Current eInforma related-company surfaces place the entity at Calle Montsec 2, 08818 Olivella and describe the installations activity. No attributable owned domain surfaced in this pass.","website_gap":"TO_VERIFY","current_activity":"TO_VERIFY","reputation":"TO_VERIFY","contactability":"TO_VERIFY"},
+    {"business":"INSTALACIONES INNOVAMAS OLIVELLA S.C.P.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"Installations/services","evidence":"eInforma currently lists the exact entity at Calle dels Masets 3, 08818 Olivella. Exact-name web search did not surface a dedicated owned site.","website_gap":"TO_VERIFY","current_activity":"TO_VERIFY","reputation":"TO_VERIFY","contactability":"TO_VERIFY"},
+    {"business":"INSTALACIONES LM S.C.P.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"Installations/services","evidence":"eInforma current related-company surface lists the exact entity at Calle del Talp 14, 08818 Olivella. Exact-name search did not surface a attributable owned site.","website_gap":"TO_VERIFY","current_activity":"TO_VERIFY","reputation":"TO_VERIFY","contactability":"TO_VERIFY"},
+    {"business":"DOMUS SEGURETAT S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"Security systems installation and maintenance","evidence":"eInforma current company surfaces place the entity at Calle de Garona, 08818 Olivella and describe alarm/video-control security installation and maintenance. No attributable owned domain surfaced in this pass.","website_gap":"TO_VERIFY","current_activity":"TO_VERIFY","reputation":"TO_VERIFY","contactability":"TO_VERIFY"},
+    {"business":"JARDINERIA PINOFELS S.L.","state":"REJECTED_HAS_WEBSITE","activity":"Garden machinery/outdoor retail and ecommerce","evidence":"The official legal notice at jardineriapinofelssl.es identifies JARDINERIA PINOFELS S.L., CIF B67269175, Carrer dels Masets 40, Olivella, and explicitly declares the site official; contact and ecommerce pages are operational.","website_gap":"FAILED_FUNCTIONAL_OWNED_SITE"}
+  ],
+  "deep_review_focus":[
+    {"business":"CONSTRUCCIONS CAN SURIA 2000 SCCL","decision":"KEEP_RAW_HIGH_POTENTIAL","reason":"Current constructor-directory visibility remains corroborated, but exact-name searches still do not provide a reliable owned domain, public business email or independent reputation corpus. A map result for 'Can suria' is a residential complex at a different address and must not be conflated with the company. Continue exact phone/social/review reconciliation before promotion."},
+    {"business":"HORIZONTES OLIVELLA S.L.","decision":"KEEP_RAW","reason":"Current local constructor listing supports operating visibility, but reputation and exact-domain/contact route remain unresolved."},
+    {"business":"CONSTRUIR A MEDIDA SITGES S.L.","decision":"REJECTED_HAS_WEBSITE","reason":"Functional owned website cam24.es and trade-association email route are independently corroborated; it is outside LOCAL_SME_999."},
+    {"business":"JARDINERIA PINOFELS S.L.","decision":"REJECTED_HAS_WEBSITE","reason":"Official owned ecommerce site is functional and legal notice matches CIF and Olivella address exactly."}
+  ],
+  "sources":[
+    "https://www.paginasamarillas.es/a/constructoras/barcelona/olivella/",
+    "https://www.informa.es/directorio-empresas/Empresa_CONSTRUIR-MEDIDA-SITGES.html",
+    "https://gremiconsgarraf.cat/empreses-agremiades/",
+    "https://www.einforma.com/informacion-empresa/tenasa-industrial",
+    "https://www.einforma.com/informacion-empresa/instalaciones-innovamas-olivella",
+    "https://www.einforma.com/informacion-empresa/albolthec",
+    "https://jardineriapinofelssl.es/policies/legal-notice"
+  ],
+  "coverage_change":{"new_category_layer":"legacy Olivella local directories: constructors, renovation, metal structures, electrical/plumbing/security installations and garden retail","frontier_action":"Remain ACTIVE_SCAN. Next cycle deep-review HORIZONTES OLIVELLA and INNOVAR 2ª PIEL for exact phone/domain/social/reputation; then TENASA, ACEGAS, INNOVAMAS, INSTALACIONES LM and DOMUS SEGURETAT. Continue older Olivella category surfaces before adjacent-municipality expansion."},
+  "safety":{"outreach_sent":false,"applications_submitted":false,"forms_submitted":false,"auto_replies":false,"first_contact_created":false,"tax_claim_used":false}
+}
