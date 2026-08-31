@@ -1,26 +1,26 @@
 {
-  "schema_version": "1.5",
-  "updated_at": "2026-08-31T14:48:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after the 14:39 discovery, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
+  "schema_version": "1.6",
+  "updated_at": "2026-08-31T15:58:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 15:49 systematic discovery, freshness, route and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
-    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 21,
-    "REVIEW_REQUIRED": 29,
+    "REVIEW_REQUIRED": 30,
     "SUPPRESSED": 47,
     "HOLD": 7,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
-    "VERIFIED_DIRECT_EMAIL": "No new direct-email candidate passed every geography/eligibility gate this cycle. Altos exposes an explicit HR email but remains review because Eastern Time is preferred and EU/CET acceptance is not explicit.",
-    "VERIFIED_FORM_PLATFORM": "One new actionable form opportunity promoted: Digital Rocket / ROASROCKET MARKETING LLP WordPress Web Developer (HOT_PLUS), official Contractor role, Remote worldwide.",
-    "REVIEW_REQUIRED": "One material review item added: Altos Web Designer is explicit contract/freelance, remote and direct-email, but preferred Eastern Standard Time creates an eligibility/working-hours ambiguity for Spain-based VDS.",
+    "VERIFIED_DIRECT_EMAIL": "One new direct-email candidate passed current-demand, remote/contract, fit, route and dedup gates: SO Design Online — WordPress Website Builder, official application email support@sodesign.online.",
+    "VERIFIED_FORM_PLATFORM": "21 previously verified form/platform opportunities remain unchanged this cycle.",
+    "REVIEW_REQUIRED": "Talentchef WordPress Developer (Freelance) added as route review: official vacancy page remains live and high-fit, but the exact official application link currently returns 'Vacancy not found'.",
     "SUPPRESSED": "47 canonical acquisition identities remain suppressed; no new suppression was required this cycle.",
     "HOLD": "7 existing holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
-    "verified_direct_email_new": 0,
-    "verified_form_platform_new": 1,
+    "verified_direct_email_new": 1,
+    "verified_form_platform_new": 0,
     "review_required_new": 1,
     "hold_new": 0,
     "suppression_new": 0,
@@ -29,37 +29,49 @@
   },
   "material_verification_changes": [
     {
-      "organization": "Digital Rocket",
-      "legal_identity": "ROASROCKET MARKETING LLP",
-      "opportunity_id": "OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026",
-      "state": "VERIFIED_FORM_PLATFORM",
-      "priority": "HOT_PLUS",
-      "current_demand": "Official live WordPress Web Developer vacancy: Web Development / Remote / Contractor; role page states Remote, worldwide.",
-      "need": "WordPress builds and landing pages, Core Web Vitals, caching/image/plugin audits, tracking/CRO implementation, maintenance, PHP + HTML/CSS/JS.",
-      "route": "Official vacancy application form; no generic email substitution.",
-      "economics": "Applicant quotes own rate; probation/trial is explicitly paid work on live client accounts.",
-      "dedup": "Canonical suppression clear; repository history clear; Gmail Sent clear for Digital Rocket/digitalrocketads.com; Hostinger INBOX.Sent clear for Digital Rocket."
+      "organization": "SO Design Online",
+      "domain": "sodesign.online",
+      "opportunity_id": "OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026",
+      "state": "VERIFIED_DIRECT_EMAIL",
+      "priority": "HOT",
+      "current_demand": "Official careers board currently lists seven open roles including WordPress Website Builder — Remote / Contract or project-based.",
+      "need": "WordPress builds and maintenance, responsive HTML/CSS, page-builder/plugin workflows, redesigns, updates, launch checks, basic SEO and maintenance.",
+      "route": "Official role application email support@sodesign.online; applicants are instructed to include role title, portfolio/work samples and short introduction.",
+      "eligibility": "Role is explicitly Remote; careers FAQ states remote collaboration is possible for suitable roles/projects and gives no location restriction.",
+      "dedup": "Canonical suppression and repository history clear; Gmail Sent clear; Hostinger exact recipient support@sodesign.online clear."
     },
     {
-      "organization": "Altos",
-      "domain": "altosagency.com",
-      "state": "REVIEW_REQUIRED_TIMEZONE_ELIGIBILITY",
-      "current_demand": "Official live Web Designer vacancy: Contractor, Contract/Freelance, remote, project-based with potential ongoing collaboration.",
-      "route": "Explicit official application email HR@altosagency.com.",
-      "fit": "Strong web design/Figma/UX/responsive/accessibility/performance/SEO overlap; WordPress is preferred rather than mandatory.",
-      "dedup": "Canonical/repository clear; Gmail Sent to HR@altosagency.com clear; Hostinger INBOX.Sent to hr@altosagency.com clear.",
-      "reason_not_promoted": "Official page says preferred candidates on Eastern Standard Time. Remote is explicit, but acceptance of CET/Spain-based contractors is not explicit enough for promotion under the geographic eligibility hard gate."
+      "organization": "Talentchef",
+      "group_identity": "Little Big",
+      "domain": "talentchef.com",
+      "opportunity_id": "OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026",
+      "state": "REVIEW_REQUIRED_ROUTE",
+      "current_demand": "Official live WordPress Developer (Freelance), part-time, continuous collaboration; WordPress/Elementor plus web/hosting/DNS/SSL/Google Workspace/SEO responsibilities.",
+      "route": "Official role CTA currently resolves to an application page that says 'Vacancy not found'. No generic email substitution allowed.",
+      "fit": "Very high WordPress/Elementor/web animation/hosting-DNS-SSL/technical maintenance overlap.",
+      "dedup": "Canonical/repository clear before creation; Gmail Sent clear; Hostinger found only an internal VDS report mentioning Talentchef, not an external first contact.",
+      "reason_not_promoted": "Exact official application route is broken/inconsistent with the live role page."
     }
+  ],
+  "research_only_not_promoted": [
+    {"organization":"SiteCare","reason":"Current recurring contract WordPress role is geographically limited to LATAM, South Africa and Eastern Europe; Spain-based VDS is not eligible."},
+    {"organization":"VueloIV","reason":"Official freelance WordPress role is live and invoice-compatible, but mandatory advanced custom theme/plugin/hooks/custom-post-type requirements exceed currently verified VDS evidence; fit review required before any promotion."},
+    {"organization":"Murena","reason":"Official remote self-employed WordPress Contractor role and direct email exist, but custom theme/plugin engineering, hooks/filters, WooCommerce and Git are must-haves; truthful fit gate not yet cleared."},
+    {"organization":"Layerly","reason":"Strong remote freelance WordPress/Elementor fit, but the official job email is Cloudflare-obfuscated in retrieved evidence and the listing's original age creates freshness/route uncertainty; not promoted."},
+    {"organization":"Modesk / Axora Group","reason":"Current freelancer-network structure is visible, but the accessible official intake form is agency-side rather than a verified freelancer application path; route not established."}
   ],
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
   "source_files": [
-    "../OPERATING_RULES.md",
+    "../project/PROJECT_INSTRUCTIONS.md",
+    "../project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "../project/SOURCE_INTELLIGENCE_PROTOCOL.md",
     "../config/source-registry.json",
     "../governance/suppression-registry.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../opportunities/OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026.json",
-    "../research/2026-08-31-fast-revenue-pass-1439.json"
+    "../opportunities/OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026.json",
+    "../opportunities/OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026.json",
+    "../research/2026-08-31-fast-revenue-pass-1549.json"
   ]
 }
