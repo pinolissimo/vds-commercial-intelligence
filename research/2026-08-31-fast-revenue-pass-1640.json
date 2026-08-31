@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "cycle": "FAST_REVENUE_HUNT",
+  "verified_at": "2026-08-31T16:50:00+02:00",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "no_outreach": true,
+  "baseline": {"VERIFIED_DIRECT_EMAIL":1,"VERIFIED_FORM_PLATFORM":21,"REVIEW_REQUIRED":30,"SUPPRESSED":47,"HOLD":7},
+  "result": {"VERIFIED_DIRECT_EMAIL":1,"VERIFIED_FORM_PLATFORM":21,"REVIEW_REQUIRED":30,"SUPPRESSED":48,"HOLD":7,"new_actionable":0,"new_suppression_identity":1},
+  "read_before_search": [
+    "../project/PROJECT_INSTRUCTIONS.md",
+    "../project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "../project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "../config/source-registry.json",
+    "../governance/suppression-registry.json",
+    "../views/fast-revenue-channel-status.json",
+    "../views/fast-revenue-queue.json",
+    "../views/fast-revenue-territory-frontier.json",
+    "../outreach/2026-08-31-partner-hunt-morning-wave-02.json",
+    "../README.md"
+  ],
+  "territory_sampling": {
+    "Spain": ["Madrid","Comunitat Valenciana","País Vasco","Galicia","Balearic Islands"],
+    "Italy": ["Veneto","Lazio","Toscana","Puglia","Friuli Venezia Giulia"],
+    "remote": ["Remote Europe","worldwide remote contractor"]
+  },
+  "source_families_sampled": ["SEARCH_ROUTER","SPECIALIST_JOBS","PROFESSIONAL_NETWORKS","OFFICIAL_COMPANY","AGENCY_OUTSOURCING"],
+  "sector_sampling": ["web/digital agencies","branding/design","WordPress/Elementor","UI/UX/WCAG","science/EU communication suppliers","marketing","remote contractor marketplaces"],
+  "material_findings": [
+    {
+      "organization": "ReMedia Italia SRL",
+      "domain": "remediagroup.it",
+      "current_evidence": "Official careers page currently lists remote freelance UI/UX and web roles, including immediate insertion, project-based continuity and explicit role-specific application emails.",
+      "route": "UI/UX role: mmanca@remediagroup.it; Front-End role: rleonzi@remediagroup.it.",
+      "dedup": "Gmail Sent contains a prior direct application to rleonzi@remediagroup.it for the same commercial identity. Hostinger INBOX.Sent search for remediagroup.it returned zero. Identity-level rule therefore blocks all new first-contact variants.",
+      "decision": "SUPPRESSED_ALREADY_CONTACTED",
+      "canonical_record": "../opportunities/OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026.json"
+    },
+    {
+      "organization": "The Roadmap",
+      "current_evidence": "Freelance/part-time Madrid-or-remote graphic/web role exists in discovery evidence but current LinkedIn page states no longer accepting applications.",
+      "decision": "CLOSED_REJECT"
+    },
+    {
+      "organization": "MEDIAIMMAGINE",
+      "current_evidence": "Specialist listing remains current for WordPress + Elementor, autonomous/P.IVA, Trieste/Portogruaro with remote possibility and explicit email.",
+      "decision": "SUPPRESSION_REJECT",
+      "reason": "Canonical suppression already records 2026-08-28 first contact."
+    },
+    {
+      "organization": "Studio Magnani & Partners",
+      "current_evidence": "Official careers page includes Graphic Design freelance among profiles evaluated continuously, remote/P.IVA, with HTML/CSS/WordPress useful skills.",
+      "decision": "HOLD_STRUCTURAL_SIGNAL",
+      "reason": "Not an explicit currently prioritized VDS-fit vacancy; no inflation of actionable count."
+    }
+  ],
+  "source_gaps": [
+    "Generic regional search continues to return many supplier-side service pages rather than buyer-side external-capacity demand.",
+    "Marketplace results with anonymous buyers were excluded because exact commercial identity could not be established.",
+    "Balearic and Canary coverage remains insufficient for LOW_YIELD_VERIFIED and therefore stays under-searched/active for future source-family rotation."
+  ],
+  "frontier_action": "Advance source-family rotation rather than repeat generic regional queries; prioritize agency outsourcing/professional networks in Comunitat Valenciana, Basque Country, Galicia, Balearic/Canary clusters, Veneto/Toscana/Puglia/Sicilia, then healthcare and tourism/hospitality verticals.",
+  "quality_note": "No candidate was promoted merely to increase volume. The material gain was preventing a duplicate ReMedia application by reconciling historical Gmail Sent evidence before promotion.",
+  "execution_gate": "Partner Hunt only"
+}
