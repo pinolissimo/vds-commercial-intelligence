@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-31T07:40:00+02:00",
+  "purpose": "Machine-readable resume frontier for systematic FAST_REVENUE territory and source-family scanning. Coverage state is independent from lead count.",
+  "allowed_states": ["NOT_SCANNED", "UNDER_SEARCHED", "ACTIVE_SCAN", "COVERED_RECENTLY", "LOW_YIELD_VERIFIED"],
+  "rules": [
+    "Spain autonomous community -> province -> major municipality/agency clusters first.",
+    "Then Italy region -> province -> major municipality/agency clusters.",
+    "Then remaining Europe and strong worldwide remote markets.",
+    "Rotate source families within an active territory before advancing.",
+    "Never mark LOW_YIELD_VERIFIED without meaningful multi-family sampling.",
+    "Search-engine results are discovery signals only; primary/authoritative evidence is required for promotion."
+  ],
+  "resume_order": [
+    {
+      "territory": "Spain / Comunidad de Madrid / Madrid + Boadilla + agency clusters",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "AGENCY_OUTSOURCING"],
+      "next_families": ["SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": "Agencia Reinicia — official freelance form, general web-development fit"
+    },
+    {
+      "territory": "Spain / País Vasco-Euskadi / Bizkaia-Bilbao + Gipuzkoa-San Sebastián + Álava-Vitoria",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["PROFESSIONAL_NETWORKS", "OFFICIAL_COMPANY"],
+      "next_families": ["AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": "Sembi current WordPress-adjacent role found but presencial employment; not promoted"
+    },
+    {
+      "territory": "Spain / Castilla-La Mancha / Toledo + Ciudad Real + Albacete + Guadalajara + Cuenca",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["PROFESSIONAL_NETWORKS", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS"],
+      "latest_material_hit": null
+    },
+    {
+      "territory": "Spain / La Rioja / Logroño + agency clusters",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["PROFESSIONAL_NETWORKS", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS"],
+      "latest_material_hit": null
+    },
+    {
+      "territory": "Spain / Andalucía / Sevilla + Málaga + Granada + Córdoba + Cádiz + Almería + Huelva + Jaén",
+      "state": "UNDER_SEARCHED",
+      "recent_families": [],
+      "next_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": null
+    },
+    {
+      "territory": "Italy / Lombardia / Milano + province clusters",
+      "state": "COVERED_RECENTLY",
+      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "SPECIALIST_JOBS"],
+      "next_families": ["AGENCY_OUTSOURCING", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": "eFarm strong current freelance route suppressed by prior FIRST_CONTACT"
+    },
+    {
+      "territory": "Italy / Piemonte / Torino + province clusters",
+      "state": "COVERED_RECENTLY",
+      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "SPECIALIST_JOBS"],
+      "next_families": ["AGENCY_OUTSOURCING", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": "Crisandcris strong current freelance route suppressed by prior FIRST_CONTACT"
+    },
+    {
+      "territory": "Remote Europe / worldwide",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "next_families": ["AGENCY_OUTSOURCING", "OFFICIAL_COMPANY"],
+      "latest_material_hit": "Madeo and Bosun current remote contract/freelance WordPress signals; both official form routes"
+    }
+  ],
+  "last_research_log": "../research/2026-08-31-fast-revenue-pass-0740.json"
+}
