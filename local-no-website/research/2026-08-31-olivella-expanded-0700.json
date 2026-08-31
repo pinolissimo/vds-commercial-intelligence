@@ -1,0 +1,44 @@
+{
+  "run_at":"2026-08-31T07:00:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella"},
+  "frontier_state":"ACTIVE_SCAN",
+  "purpose":"Incremental batch discovery plus targeted deep review; no outreach.",
+  "new_screened_identities":[
+    {"business":"Molina","address":"Lugar Masía Cal Bercoc, 32, 08818 Olivella","activity":"building-material supplier","classification":"RAW_DISCOVERY_LOW_EVIDENCE","evidence":"Current map listing; 5.0/1 review; phone +34 931 039 035. Website and deeper reputation not established."},
+    {"business":"Joyce and Carla","activity":"business development service","classification":"RAW_DISCOVERY_LOW_EVIDENCE","evidence":"Current local/map discovery; 4.5/2 reviews; exact local identity/contactability still TO_VERIFY."},
+    {"business":"Casa de l'Aveyron","address":"Carrer del Botxi, 34, 08818 Olivella","activity":"fruit/vegetable wholesaler","classification":"RAW_DISCOVERY_LOW_EVIDENCE","evidence":"Current map listing; 5.0/2 reviews; phone +34 622 571 817. Website and commercial fit remain TO_VERIFY."},
+    {"business":"Arquitectura Integral del Garraf S.L.","address":"Carrer de Saturn, 39, 08818 Olivella","activity":"architecture/professional services","classification":"RAW_DISCOVERY_REVIEW_REQUIRED","evidence":"QDQ, TodosBiz and Firmania independently corroborate Olivella identity and phones; no owned site surfaced in this pass; reliable current reputation corpus not yet established."},
+    {"business":"Servicat Triangle SL","address":"Calle Via Lactea, 13, 08818 Olivella","activity":"catering/services","classification":"RAW_DISCOVERY_REVIEW_REQUIRED","evidence":"Iberinform current company record dated 2026-06-10 marks company active and exposes no website; current public-facing reputation/brand/contact route still TO_VERIFY."},
+    {"business":"Dunvega Horeca SL","address":"Calle Segre, 7, 08818 Olivella","activity":"food/beverage wholesale","classification":"RAW_DISCOVERY_REVIEW_REQUIRED","evidence":"Iberinform current company record marks company active and exposes no website; consumer-facing need, reputation and public contactability remain TO_VERIFY."},
+    {"business":"Sendero Cafè / Sendero Olivella","address":"Plaça Major, 08818 Olivella","activity":"restaurant/food truck","classification":"REJECTED_HAS_WEBSITE","evidence":"Current map/review sources show strong activity and reputation, but sendero.eatbu.com is a functional dedicated web presence and RestaurantGuru also exposes Instagram @senderoolivella."},
+    {"business":"El Pa Torrat","address":"Avinguda Hostal del Ganxo 1, 08818 Olivella","activity":"restaurant","classification":"REJECTED_HAS_WEBSITE","evidence":"Multiple current sources corroborate identity, email and Facebook; a dedicated site el-pa-torrat.es is exposed by an independent restaurant source, so website-gap is not certifiable."},
+    {"business":"Lovenet servicios de limpieza","address":"Camí Ronda de Ponent, 37, 08818 Olivella","activity":"cleaning services","classification":"REJECTED_HAS_WEBSITE","evidence":"Firmania exposes a current dedicated Wix business site and phone; therefore ineligible for LOCAL_SME_999."}
+  ],
+  "additional_fast_rejects":[
+    {"business":"Óscar Pena París / Instalos","classification":"REJECTED_HAS_WEBSITE","evidence":"instalos.com.es is a functional owned business site at Carrer de Bessons 10, Olivella."},
+    {"business":"MD Climatizaciones y Estructuras SL","classification":"REJECTED_HAS_WEBSITE","evidence":"Current Iberinform company record exposes mdclimatizacionesyestructuras.com."},
+    {"business":"Loteria i apostes","classification":"REJECTED_CLOSED","evidence":"TodosBiz marks listing closed."},
+    {"business":"El Margalló","classification":"REJECTED_CLOSED","evidence":"TodosBiz marks listing closed."}
+  ],
+  "deep_review_delta":{
+    "business":"EL MOS",
+    "canonical_id":"LOCAL-ES-CT-B-08818-EL-MOS",
+    "state_after":"RESEARCH",
+    "material_findings":[
+      "Current map listing remains 4.9/242 reviews.",
+      "GourmetLounge independently reports 4.8/99 and exposes no owned website.",
+      "TamaraRestaurant independently reports 9.6/247 and identifies Mónica and Lorena as operators with prior Sitges hospitality experience.",
+      "Exact-name search still did not surface a functional dedicated owned domain attributable to the Olivella business.",
+      "Public business email and verified social-profile ownership remain unresolved; no QUALIFIED promotion."
+    ]
+  },
+  "secondary_workstreams":{
+    "COLLABORATIONS":{"effort_share_target":0.15,"result":"Fresh WordPress/Elementor search produced no materially stronger non-duplicate opportunity in this pass; no record promoted."},
+    "EU_PROJECTS":{"effort_share_target":0.10,"new_watch_signal":{"project":"ARAL","grant_id":"101329116","start_date":"2026-09-01","eu_contribution_eur":300000,"source":"CORDIS","state":"RAW_WATCHLIST","hold_reason":"No Communication/Dissemination owner, website need or buyer/procurement path resolved."}}
+  },
+  "counter_delta":{"screened_raw":9,"rejected_has_website":4,"canonical_records":0,"under_research":0,"qualified":0,"ready_to_contact":0},
+  "outreach_actions":0,
+  "first_contact_actions":0,
+  "notes":"Search breadth increased without using deep review as a top-of-funnel bottleneck. Ambiguous/low-evidence candidates remain RAW rather than being inflated into canonical prospect records."
+}
