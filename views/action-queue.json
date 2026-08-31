@@ -1,8 +1,9 @@
 {
   "view":"Commercial action queue",
-  "updated_at":"2026-08-29T22:52:00+02:00",
-  "priority_order":["QA_RECONCILIATION","REVIEW_REQUIRED","READY_TO_CONTACT_HIGH_IMPACT","FOLLOW_UP_DUE","RESEARCH","NURTURE_FUTURE","WAITING_FOR_INBOUND"],
+  "updated_at":"2026-08-31T09:10:00+02:00",
+  "priority_order":["BOUNCE_REMEDIATION","QA_RECONCILIATION","REVIEW_REQUIRED","READY_TO_CONTACT_HIGH_IMPACT","FOLLOW_UP_DUE","RESEARCH","NURTURE_FUTURE","WAITING_FOR_INBOUND"],
   "sla_breaches":[],
+  "bounce_remediation":[{"priority":"HIGH","opportunity_id":"OPP-ES-IBERICA-STUDIO-COLLAB","entity":"Ibérica Studio","failed_email":"trabajo@ibericastudio.com","classification":"BOUNCE","evidence":"Hostinger INBOX UID 1260; SMTP 550 5.1.1 User doesn't exist","action":"VERIFY_OFFICIAL_REPLACEMENT_ROUTE_NO_BLIND_RESEND","first_contact_evidence":"Hostinger INBOX.Sent UID 120","identity_rule":"FIRST_CONTACT uniqueness remains permanent; any verified replacement is a routed continuation, not a new prospect."}],
   "qa_reconciliation":[{"priority":"CRITICAL","action":"RECONCILE_POST_1345_OUTREACH_AND_SUPPRESSION","owner":"AUTOMATION","due_at":"2026-08-28T17:30:00+02:00","status":"BREACHED_PENDING_RECONCILIATION","evidence":"../governance/suppression-emergency-2026-08-28.json","finding":"Ten older unique recipients remain pending canonicalization; two historical duplicate-first-contact violations remain preserved. Odda/ReMedia current-day sends are reconciled and suppressed."}],
   "positive_reply_user_action_required":[],
   "review_required":[{"priority":"HIGH","entity":"BATMAN / unresolved entity","email":"nobody@knows.us","sent_uid":114,"action":"VERIFY_ENTITY_AND_CONTACT_QUALITY_BEFORE_ANY_FURTHER_ACTION","reason":"No current canonical CRM evidence establishes the recipient as a verified business contact."}],
@@ -18,12 +19,9 @@
     {"rank":9,"opportunity_id":"OPP-IT-WEBGENOVA-OUTSOURCING","score":97,"owner":"AUTOMATION","action":"RESOLVE_OFFICIAL_APPLICATION_CHANNEL","status":"READY_TO_CONTACT"},
     {"rank":10,"opportunity_id":"OPP-ES-VAIVEN-WEB-FREELANCE","score":97,"owner":"AUTOMATION","action":"REVIEW_COLLABORATION_ROUTE","status":"READY_TO_CONTACT"}
   ],
-  "follow_up_waiting":[
-    {"opportunity_id":"OPP-IT-ODDA-TALENT-HUB-FREELANCE","due_at":"2026-09-03","status":"CONTACTED_NO_REPLY_YET"},
-    {"opportunity_id":"OPP-IT-REMEDIA-WEB-FREELANCE","due_at":"2026-09-03","status":"CONTACTED_NO_REPLY_YET"}
-  ],
+  "follow_up_waiting":[{"opportunity_id":"OPP-IT-ODDA-TALENT-HUB-FREELANCE","due_at":"2026-09-03","status":"CONTACTED_NO_REPLY_YET"},{"opportunity_id":"OPP-IT-REMEDIA-WEB-FREELANCE","due_at":"2026-09-03","status":"CONTACTED_NO_REPLY_YET"}],
   "scheduled_follow_ups_count":25,
-  "scheduled_follow_ups_source":"23 previously scheduled canonical follow-ups plus Odda and ReMedia after verified 2026-08-29 first contacts; reply check required before any follow-up.",
+  "scheduled_follow_ups_source":"Existing canonical follow-ups; reply check required before any follow-up. Ibérica Studio is excluded from blind follow-up because its address hard-bounced.",
   "nurture_future":[],
-  "waiting_for_inbound":[{"opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","status":"WAITING_FOR_INBOUND","action":"NONE_UNTIL_INBOUND","automation_send_forbidden":true,"reason":"User explicitly considers the warm introduction sufficient. Do not follow up or solicit; respond only if the introduced contacts initiate communication."}]
+  "waiting_for_inbound":[{"opportunity_id":"OPP-EU-BEYOND-BARRIERS-WEB","status":"WAITING_FOR_INBOUND","action":"NONE_UNTIL_INBOUND","automation_send_forbidden":true,"reason":"User explicit passive override remains in force; no genuinely new inbound message found."}]
 }
