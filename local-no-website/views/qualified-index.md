@@ -43,7 +43,6 @@ All six retain their canonical current state; final live recheck remains mandato
 | Olivella | Beauty & wellness | M & M Nail’s | RESEARCH | Identity/no-site signals present; reputation/social/email evidence insufficient |
 | Olivella | Woodworking & carpentry | Orts Fuster | RESEARCH | Current map reputation too shallow; email/social/final domain evidence pending |
 | Olivella | Hospitality | Churreria Manchega | RESEARCH | Current activity/review evidence and no-site signal present; public email/social ownership pending |
-| Olivella | Beauty & wellness | Centro de Estética y Peluquería | RESEARCH | Kept under research until contactability/social ownership are independently resolved |
 
 ## Latest material change
 
