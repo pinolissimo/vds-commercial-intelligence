@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T08:43:00+02:00",
+  "workstream": "FAST_REVENUE_HUNT",
+  "objective": "Expand Monday actionable paying-work pool without weakening identity, demand, route, geography, freelance compatibility, fit, evidence or dedup gates.",
+  "canonical_source": "pinolissimo/vds-commercial-intelligence@main",
+  "preflight_files_read": [
+    "OPERATING_RULES.md",
+    "README.md",
+    "analytics/LEARNING_LOOP.md",
+    "config/source-registry.json",
+    "governance/OUTREACH_QUALITY_GATES.md",
+    "governance/suppression-registry.json",
+    "reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "views/fast-revenue-email-queue.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "campaigns/AGENCY-OUTSOURCING-ES.json"
+  ],
+  "operating_decisions": [
+    "Search engines used for discovery only; authoritative/official evidence required for promotion.",
+    "Explicit form/platform route outranks generic email.",
+    "Supplier-side service pages are not buyer opportunities without an external-collaborator/current-demand signal.",
+    "No count promotion when exact buyer identity, cross-border eligibility, freelance compatibility or truthful VDS fit is incomplete.",
+    "Existing first-contact identity blocks any new first contact even when another address/listing appears."
+  ],
+  "baseline": {
+    "direct_email_research_pool_before_final_gate": 37,
+    "prepared_direct_email_research_entries": 17,
+    "official_mailbox_ready_pack_exact_addresses": 9,
+    "verified_form_platform_ready": 16,
+    "suppression_registry_campaign_identities": 25
+  },
+  "cycle_delta": {
+    "verified_direct_email_new": 0,
+    "verified_form_platform_new": 0,
+    "review_required_new": 2,
+    "hold_new": 2,
+    "suppressed_new": 0,
+    "actionable_count_change": 0
+  },
+  "material_findings": [
+    {
+      "organization": "SafetyNet Europe",
+      "country_scope": "Europe",
+      "sector": "NGO / digital content / safety network",
+      "state": "REVIEW_REQUIRED_FIT",
+      "official_evidence": "https://www.safetynet-europe.eu/jobs/",
+      "identity_evidence": "https://www.safetynet-europe.eu/",
+      "freshness": "Official careers page current in August 2026; organization site contains current 2026 activity.",
+      "need": "Freelance Content Creator & Growth Marketer, Europe remote/hybrid, 2 days/week; update WordPress-based platforms and publish content.",
+      "economics": "EUR 18/hour published.",
+      "route": {"type":"VERIFIED_DIRECT_EMAIL","email":"info@safetynet-europe.eu","source":"official careers page"},
+      "dedup": {
+        "canonical_repo_search": "clear",
+        "gmail_sent_exact_recipient": "clear",
+        "hostinger_sent_exact_recipient": "clear"
+      },
+      "fit": "Moderate only: WordPress/content operations overlap, but primary need is content/growth marketing rather than web design/development.",
+      "promotion_decision": "DO_NOT_PROMOTE_TO_ACTIONABLE_EMAIL"
+    },
+    {
+      "organization": "Lemon.io",
+      "country_scope": "International remote",
+      "sector": "developer marketplace / vetted contractor network",
+      "state": "REVIEW_REQUIRED_FIT",
+      "official_evidence": "https://lemon.io/for-developers/wordpress-developer-jobs/",
+      "freshness": "Official page last updated July 2026; current cycle crawl.",
+      "need": "Remote WordPress contracts, 20+ hours/week, part-time/full-time, average long-duration projects; WooCommerce, themes/plugins, performance and security.",
+      "economics": "Official page publishes ranges up to USD 73/hour on the detailed section; no VDS rate inferred.",
+      "route": {"type":"VERIFIED_FORM_PLATFORM","url":"https://lemon.io/for-developers/wordpress-developer-jobs/"},
+      "dedup": {"canonical_repo_search":"clear","gmail_sent_domain_search":"clear","hostinger_sent":"not required for platform-only promotion review"},
+      "fit": "Potentially strong in WordPress/WooCommerce/performance, but current official gate includes custom theme/plugin development and modern JS/React for Gutenberg; depth must be truthfully verified before application promotion.",
+      "promotion_decision": "DO_NOT_PROMOTE_UNTIL_FIT_VERIFIED"
+    },
+    {
+      "organization": "Logorapid",
+      "country_scope": "Spain / Catalunya / Barcelona",
+      "sector": "design/web agency",
+      "state": "HOLD_STRUCTURAL_NO_CURRENT_DEMAND",
+      "official_evidence": "https://www.logorapid.com/trabaja_en_logorapid",
+      "need": "Official talent/collaborator pool includes freelance web designers and PHP/JavaScript/CMS/WordPress programmers.",
+      "route": {"type":"OFFICIAL_DIRECT_EMAIL","email":"trabajo@logorapid.com"},
+      "promotion_decision": "HOLD",
+      "reason": "Page asks candidates to leave CV for when more collaborators are sought; no explicit current vacancy/demand signal."
+    },
+    {
+      "organization": "Upwork — WordPress Developer for Restaurant Sites",
+      "country_scope": "Worldwide",
+      "sector": "hospitality web project",
+      "state": "HOLD_ANONYMOUS_LOW_ECONOMICS",
+      "evidence": "https://www.upwork.com/freelance-jobs/apply/WordPress-Developer-for-Restaurant-Sites_~022092629216238341829/",
+      "freshness": "Posted about 3 days ago.",
+      "need": "WordPress restaurant sites with booking/pickup functionality; 1–3 month project, under 30 hours/week.",
+      "economics": "USD 5–15/hour published.",
+      "route": {"type":"PLATFORM","platform":"Upwork"},
+      "promotion_decision": "HOLD",
+      "reason": "Public listing does not establish exact buyer identity; economics are weaker than the existing fast-revenue queue."
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"organization":"MN8 Digital","state":"GEO_REJECT","reason":"Freelance WordPress/Framer role requires Zambia-based candidate."},
+    {"organization":"Magic, Inc.","state":"GEO_REJECT","reason":"Current freelance WordPress/Elementor role is Philippines-only."},
+    {"organization":"TribuESK","state":"GEO_REVIEW_REJECT","reason":"Current remote WordPress signal is explicitly grouped under LATAM; EU contractor eligibility not established."},
+    {"organization":"Hanka","state":"SUPPLIER_SIDE_REJECT","reason":"Active Galicia web/hosting/support supplier with no current external-collaborator buyer signal."},
+    {"organization":"Udista / Juanma Evaristo","state":"SUPPLIER_SIDE_REJECT","reason":"Freelance WordPress provider seeking clients, not a buyer-side opportunity."},
+    {"organization":"Maswp.net","state":"SUPPLIER_SIDE_REJECT","reason":"Freelance WordPress provider seeking clients, not buyer demand."},
+    {"organization":"Sergio Lepone","state":"SUPPLIER_SIDE_REJECT","reason":"Freelance SEO provider available for projects, not buyer demand."},
+    {"organization":"WP Team","state":"SUPPLIER_SIDE_REJECT","reason":"WordPress service supplier; no verified current external-collaborator need in this cycle."},
+    {"organization":"Upwork — urgent Elementor quick fixes","state":"ECONOMICS_REJECT","reason":"Very low fixed budget; poor revenue priority."},
+    {"organization":"Upwork — Digital Marketer / Elementor / GHL / Ads","state":"FIT_HOLD","reason":"Long-term economics are more interesting, but core demand is marketing/paid-ads/funnel operations and should not be overclaimed as VDS web-development fit."}
+  ],
+  "source_family_rotation": {
+    "Spain_Madrid": ["SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+    "Spain_Andalucia": ["OFFICIAL_COMPANY", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+    "Spain_Galicia": ["OFFICIAL_COMPANY", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "Spain_Asturias_Cantabria": ["SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "Spain_Murcia_Aragon": ["SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "Italy_Emilia_Romagna": ["SPECIALIST_JOBS", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "Italy_Lazio": ["OFFICIAL_COMPANY", "SPECIALIST_JOBS", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "Italy_Liguria": ["SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "Italy_Campania": ["OFFICIAL_COMPANY", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "Remote_Europe_Worldwide": ["OFFICIAL_COMPANY", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES", "AGENCY_OUTSOURCING", "NICHE_WORDPRESS_JOBS"]
+  },
+  "resource_optimization": {
+    "marginal_gain_observation": "Generic regional WordPress/freelance searches are currently dominated by supplier-side pages. Next passes should shift active territories toward official agency collaborator/careers pages, specialist jobs, professional networks and niche WordPress sources rather than repeating generic search-router queries.",
+    "discovery_source_added": "WordPress Shepherd can be used as a WordPress-only discovery router, but each opportunity still requires direct-employer authoritative verification.",
+    "marketplaces": "MINT Talent, WokPress and FreelanceDEV remain useful platform discovery channels, but individual projects need exact buyer identity/economics before actionable promotion."
+  },
+  "coverage_update": "views/fast-revenue-territory-frontier.json",
+  "channel_status_update": "views/fast-revenue-channel-status.json",
+  "no_outreach": true,
+  "next_resume": [
+    "Spain / País Vasco — agency outsourcing + specialist jobs + marketplaces",
+    "Spain / Andalucía — agency outsourcing + professional networks",
+    "Spain / Galicia — agency outsourcing + specialist jobs + marketplaces",
+    "Spain / Asturias-Cantabria — official company + agency outsourcing + specialist jobs",
+    "Italy / Emilia-Romagna — official company + agency outsourcing + marketplaces",
+    "Italy / Liguria — official company + agency outsourcing + specialist jobs",
+    "Sector: IT/MSP/hosting-maintenance and accessibility/WCAG/WPO",
+    "Sector: tourism/hospitality digital suppliers and EU/NGO dissemination suppliers"
+  ]
+}
