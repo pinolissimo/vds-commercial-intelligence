@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T06:38:53+02:00",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "objective": "FAST_REVENUE_HUNT",
+  "material_findings": [
+    {
+      "organization": "Crisandcris.net",
+      "territory": "Italy / Piemonte / Torino",
+      "signal": "Current official careers page explicitly seeks Web Designer Freelance with P.IVA, WordPress, HTML/CSS, MySQL, Linux/Apache/PHP, domains/DNS, performance and technical SEO; remote or hybrid; project collaboration with continuity possible.",
+      "route": "recruiting@crisandcris.net",
+      "evidence_url": "https://crisandcris.net/lavora-con-noi-webagency/",
+      "freshness": "official page crawled 2026-08-28",
+      "sent_history": "SUPPRESSED: Hostinger INBOX.Sent UID 99, sent 2026-08-28T11:27:10Z to recruiting@crisandcris.net",
+      "state": "SUPPRESSION_REJECT",
+      "reason": "Excellent current fit but prior FIRST_CONTACT exists; duplicate tolerance is zero."
+    },
+    {
+      "organization": "eFarm Group s.r.l.",
+      "territory": "Italy / Lombardia / Milano",
+      "signal": "Current official careers page and current Indeed listing seek a freelance web programmer with P.IVA/collaboration, PHP/MySQL, Symfony, WordPress and Prestashop; project or day-rate compensation.",
+      "route": "jobs@efarmgroup.com",
+      "evidence_url": "https://www.efarmgroup.com/lavora-con-noi/",
+      "freshness": "official page active; Indeed listing current as of 2026-08-24",
+      "sent_history": "SUPPRESSED: Hostinger INBOX.Sent UID 109, sent 2026-08-28T14:33:03Z to jobs@efarmgroup.com",
+      "state": "SUPPRESSION_REJECT",
+      "reason": "Strong current buyer demand and direct route, but prior FIRST_CONTACT exists."
+    },
+    {
+      "organization": "WPRobo",
+      "territory": "Remote worldwide / UK-hours overlap",
+      "signal": "Official careers page currently lists an open WordPress Developer (Remote), WordPress Support Engineer and other WordPress roles. Remote developer role is worldwide with >=3h UK-hours overlap; stack includes WordPress, PHP, WooCommerce, vanilla JS and Core Web Vitals.",
+      "route": "official application form",
+      "evidence_url": "https://wprobo.com/careers/",
+      "freshness": "official careers current; WordPress Developer posted 2026-05-24 and still Open",
+      "state": "PLATFORM_APPLICATION_ONLY_EMPLOYMENT",
+      "reason": "Current role is Full Time rather than freelance/contract, and official route is the application form; public info@wprobo.com is a project/contact address, not an authoritative application email. Do not convert to FAST_EMAIL_LANE."
+    }
+  ],
+  "rejected_non_buyers": [
+    "Sabaweb.it — supplier/freelancer offering agency partnership, not buyer demand",
+    "Nama Studio — current Shopify roles, not WordPress lane",
+    "Midable — explicitly does not outsource to external agencies/freelancers",
+    "individual freelance portfolios discovered in Spain/Italy — seller-side, not buyer-side"
+  ],
+  "territory_frontier_delta": {
+    "Italy / Lombardia / Milano": "COVERED_RECENTLY",
+    "Italy / Piemonte / Torino": "COVERED_RECENTLY",
+    "Spain / Comunidad de Madrid": "UNDER_SEARCHED",
+    "Spain / Andalucía": "UNDER_SEARCHED",
+    "Remote Europe / worldwide": "ACTIVE_SCAN"
+  },
+  "queue_effect": {
+    "potential_email_pool_before_final_gate": 37,
+    "prepared_direct_email": 17,
+    "change": 0,
+    "note": "No new direct-email candidate passed all minimum route/freshness/freelance/dedup gates in this cycle. Two strong current signals were correctly suppressed due to prior Sent evidence."
+  },
+  "outreach_performed": false
+}
