@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T17:41:50+02:00",
+  "workstream": "COLLABORATIONS",
+  "mode": "FAST_REVENUE_HUNT",
+  "no_outreach": true,
+  "canonical_source": "pinolissimo/vds-commercial-intelligence@main",
+  "inputs_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "outreach/2026-08-31-partner-hunt-morning-wave-02.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json"
+  ],
+  "search_strategy": {
+    "territories_sampled": [
+      "Spain nationwide remote","Comunitat Valenciana","País Vasco","Galicia","Asturias/Cantabria","Aragón","Castilla y León","Balearic Islands","Canary Islands",
+      "Italy: Veneto/Toscana/Liguria/Campania/Puglia/Sicilia/remaining regions",
+      "Remote Europe/worldwide"
+    ],
+    "source_families_rotated": ["SEARCH_ROUTER_DISCOVERY_ONLY","OFFICIAL_COMPANY","SPECIALIST_JOBS","PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES","AGENCY_OUTSOURCING"],
+    "sectors_sampled": ["web/digital agencies","marketing/performance","WordPress maintenance/WPO","education/training","healthcare/professional-services","tourism/hospitality","remote contractor agencies"],
+    "principle": "Search-engine and aggregator hits were discovery only; promotion required exact identity, current need, route, eligibility, fit and global dedup."
+  },
+  "material_results": [
+    {
+      "organization": "Diwar Marketing SL",
+      "opportunity_id": "OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
+      "decision": "REVIEW_REQUIRED_FRESHNESS",
+      "evidence_summary": "Company-linked LinkedIn post explicitly requests freelance web designers using UX/UI, Figma, WordPress and Elementor and directs portfolio+rates to adrian@diwarmarketing.com. Official Diwar site confirms exact organization/domain and web-design business.",
+      "freshness": "Post is approximately two months old as of 2026-08-31; no newer current-demand confirmation found in this cycle.",
+      "dedup": "Repository/suppression clear; Gmail Sent clear; official Hostinger INBOX.Sent clear for adrian@diwarmarketing.com and hola@diwarmarketing.com.",
+      "promotion": "NO — freshness gate blocks HOT/HOT+."
+    },
+    {
+      "organization": "Marka Digital",
+      "decision": "SUPPRESSED_ALREADY_CONTACTED_NO_COUNT_CHANGE",
+      "evidence_summary": "Official current role: senior freelance web design UX/CRO, Figma, WordPress+Elementor, WooCommerce, 100% remote, 20-30 EUR/hour and stable on-demand collaboration.",
+      "dedup": "Already in global suppression; Hostinger INBOX.Sent UID 85 confirms first contact to hola@markadigital.es on 2026-08-28.",
+      "promotion": "NO — identity-level duplicate gate."
+    },
+    {
+      "organization": "One Thing Marketing",
+      "decision": "NOT_PROMOTED_GEO_ELIGIBILITY",
+      "evidence_summary": "Fresh freelance WordPress/Avada role, remote, $15-25/hour, strong VDS theme fit.",
+      "blocker": "Available listings frame role as USA/EST-oriented and do not establish EU-contractor eligibility."
+    },
+    {
+      "organization": "Interplay Learning",
+      "decision": "NOT_PROMOTED_GEO_ELIGIBILITY",
+      "evidence_summary": "Current recurring WordPress+Elementor marketing developer, 10-15h/week, $30-35/hour, contract/1099.",
+      "blocker": "Available evidence specifies United States remote/1099; EU-contractor eligibility not established."
+    },
+    {
+      "organization": "SiteCare",
+      "decision": "NOT_PROMOTED_GEO_ELIGIBILITY",
+      "evidence_summary": "Posted 2026-08-29; contract, ongoing WordPress/Core Web Vitals/Figma work.",
+      "blocker": "Explicitly open only to LatAm, South Africa and Eastern Europe; Spain/Italy not eligible."
+    },
+    {
+      "organization": "Exlibris Cooperative",
+      "decision": "NOT_PROMOTED_FIT_LANGUAGE",
+      "evidence_summary": "Official active freelance network includes web designers with explicit email route.",
+      "blocker": "Strong written/spoken German and deep Alto Adige contextual knowledge are mandatory."
+    }
+  ],
+  "anonymous_or_supplier_side_rejections": "Multiple marketplace jobs had anonymous/non-verifiable buyer identity or weak economics; numerous regional results were freelancers/agencies selling services rather than organizations currently buying external capacity. None were promoted.",
+  "cycle_delta": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 0,
+    "REVIEW_REQUIRED": 1,
+    "SUPPRESSED": 0,
+    "HOLD": 0
+  },
+  "post_cycle_counts": {
+    "VERIFIED_DIRECT_EMAIL": 1,
+    "VERIFIED_FORM_PLATFORM": 21,
+    "REVIEW_REQUIRED": 31,
+    "SUPPRESSED": 48,
+    "HOLD": 7
+  },
+  "next_resume": {
+    "spain": ["Comunitat Valenciana agency-outsourcing/freelance marketplaces","País Vasco official-company/agency-outsourcing","Galicia official-company/agency-outsourcing","Balearic+Canary tourism/hospitality buyer-side sources"],
+    "italy": ["Veneto agency-outsourcing","Emilia-Romagna agency-outsourcing","Toscana/Liguria official-company","Campania/Puglia/Sicilia agency-outsourcing + professional networks","remaining province clusters"],
+    "remote": ["NGO/digital suppliers","EU-compatible freelance marketplaces","agency outsourcing networks with explicit EU contractor eligibility"],
+    "sectors": ["IT/MSP/hosting maintenance","healthcare/professional digital vendors","tourism/hospitality digital suppliers","accessibility/WCAG/WPO"]
+  },
+  "files_written": [
+    "opportunities/OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "research/2026-08-31-fast-revenue-pass-1741.json"
+  ]
+}
