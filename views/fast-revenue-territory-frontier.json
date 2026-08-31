@@ -1,23 +1,24 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-08-31T07:40:00+02:00",
-  "purpose": "Machine-readable resume frontier for systematic FAST_REVENUE territory and source-family scanning. Coverage state is independent from lead count.",
+  "schema_version": "1.1",
+  "updated_at": "2026-08-31T08:43:00+02:00",
+  "purpose": "Machine-readable resume frontier for systematic FAST_REVENUE territory, source-family and sector scanning. Coverage state is independent from lead count.",
   "allowed_states": ["NOT_SCANNED", "UNDER_SEARCHED", "ACTIVE_SCAN", "COVERED_RECENTLY", "LOW_YIELD_VERIFIED"],
   "rules": [
     "Spain autonomous community -> province -> major municipality/agency clusters first.",
-    "Then Italy region -> province -> major municipality/agency clusters.",
-    "Then remaining Europe and strong worldwide remote markets.",
-    "Rotate source families within an active territory before advancing.",
+    "Italy region -> province -> major municipality/agency clusters in parallel after priority Spain passes.",
+    "Then remaining Europe and strong worldwide remote markets explicitly open to EU contractors.",
+    "Rotate source families and sectors within an active territory before advancing.",
     "Never mark LOW_YIELD_VERIFIED without meaningful multi-family sampling.",
-    "Search-engine results are discovery signals only; primary/authoritative evidence is required for promotion."
+    "Search-engine results are discovery signals only; primary/authoritative evidence is required for promotion.",
+    "Supplier-side service pages are not buyer-demand opportunities unless an explicit collaborator/vendor/contractor signal exists."
   ],
   "resume_order": [
     {
       "territory": "Spain / Comunidad de Madrid / Madrid + Boadilla + agency clusters",
-      "state": "ACTIVE_SCAN",
-      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "AGENCY_OUTSOURCING"],
-      "next_families": ["SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
-      "latest_material_hit": "Agencia Reinicia — official freelance form, general web-development fit"
+      "state": "COVERED_RECENTLY",
+      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "next_families": ["OFFICIAL_COMPANY_RECHECK"],
+      "latest_material_hit": "Agencia Reinicia official freelance form; no additional fresh direct-email buyer passed all gates in specialist/marketplace rotation"
     },
     {
       "territory": "Spain / País Vasco-Euskadi / Bizkaia-Bilbao + Gipuzkoa-San Sebastián + Álava-Vitoria",
@@ -25,6 +26,34 @@
       "recent_families": ["PROFESSIONAL_NETWORKS", "OFFICIAL_COMPANY"],
       "next_families": ["AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
       "latest_material_hit": "Sembi current WordPress-adjacent role found but presencial employment; not promoted"
+    },
+    {
+      "territory": "Spain / Andalucía / Sevilla + Málaga + Granada + Córdoba + Cádiz + Almería + Huelva + Jaén",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["OFFICIAL_COMPANY", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "next_families": ["AGENCY_OUTSOURCING", "PROFESSIONAL_NETWORKS"],
+      "latest_material_hit": "Fresh scans produced mostly supplier-side freelancers; no new buyer-side direct-email candidate passed promotion gates"
+    },
+    {
+      "territory": "Spain / Galicia / A Coruña + Vigo-Pontevedra + Santiago + Lugo + Ourense",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["OFFICIAL_COMPANY", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": "Hanka verified as active Galicia web/hosting supplier but no external-collaborator demand signal; not a buyer opportunity"
+    },
+    {
+      "territory": "Spain / Asturias + Cantabria / Oviedo-Gijón-Santander clusters",
+      "state": "UNDER_SEARCHED",
+      "recent_families": ["SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS"],
+      "latest_material_hit": null
+    },
+    {
+      "territory": "Spain / Murcia + Aragón / Murcia-Cartagena + Zaragoza-Huesca-Teruel clusters",
+      "state": "UNDER_SEARCHED",
+      "recent_families": ["SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS"],
+      "latest_material_hit": null
     },
     {
       "territory": "Spain / Castilla-La Mancha / Toledo + Ciudad Real + Albacete + Guadalajara + Cuenca",
@@ -38,13 +67,6 @@
       "state": "ACTIVE_SCAN",
       "recent_families": ["PROFESSIONAL_NETWORKS", "SEARCH_ROUTER_DISCOVERY_ONLY"],
       "next_families": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS"],
-      "latest_material_hit": null
-    },
-    {
-      "territory": "Spain / Andalucía / Sevilla + Málaga + Granada + Córdoba + Cádiz + Almería + Huelva + Jaén",
-      "state": "UNDER_SEARCHED",
-      "recent_families": [],
-      "next_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
       "latest_material_hit": null
     },
     {
@@ -62,12 +84,51 @@
       "latest_material_hit": "Crisandcris strong current freelance route suppressed by prior FIRST_CONTACT"
     },
     {
+      "territory": "Italy / Emilia-Romagna / Bologna-Modena-Parma-Rimini clusters",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["SEARCH_ROUTER_DISCOVERY_ONLY", "SPECIALIST_JOBS"],
+      "next_families": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": null
+    },
+    {
+      "territory": "Italy / Lazio / Roma + province clusters",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["OFFICIAL_COMPANY", "SPECIALIST_JOBS", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["AGENCY_OUTSOURCING", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": "ReMedia remains fit-review only because mandatory Vue/Laravel requirements cannot be overclaimed"
+    },
+    {
+      "territory": "Italy / Liguria / Genova-Savona-La Spezia-Imperia clusters",
+      "state": "UNDER_SEARCHED",
+      "recent_families": ["SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS"],
+      "latest_material_hit": null
+    },
+    {
+      "territory": "Italy / Campania / Napoli-Salerno-Caserta-Avellino-Benevento clusters",
+      "state": "ACTIVE_SCAN",
+      "recent_families": ["OFFICIAL_COMPANY", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+      "next_families": ["AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
+      "latest_material_hit": "Daniele Debernardis current structured collaborator model remains in existing queue; no duplicate new identity created"
+    },
+    {
       "territory": "Remote Europe / worldwide",
       "state": "ACTIVE_SCAN",
-      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES"],
-      "next_families": ["AGENCY_OUTSOURCING", "OFFICIAL_COMPANY"],
-      "latest_material_hit": "Madeo and Bosun current remote contract/freelance WordPress signals; both official form routes"
+      "recent_families": ["OFFICIAL_COMPANY", "PROFESSIONAL_NETWORKS", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES", "AGENCY_OUTSOURCING"],
+      "next_families": ["OFFICIAL_COMPANY", "NICHE_WORDPRESS_JOBS", "NGO_DIGITAL_SUPPLIERS"],
+      "latest_material_hit": "SafetyNet Europe current freelance remote role with official direct email found, but retained in fit review because the need is content/growth with WordPress publishing rather than web development"
     }
   ],
-  "last_research_log": "../research/2026-08-31-fast-revenue-pass-0740.json"
+  "sector_resume_order": [
+    {"sector":"web/digital agencies + branding/design studios","state":"ACTIVE_SCAN","recent_signal":"multiple valid collaboration routes; strongest conversion segment","next_sources":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING"]},
+    {"sector":"software houses + SaaS/startups","state":"ACTIVE_SCAN","recent_signal":"several employee-only or framework-heavy roles rejected/held","next_sources":["OFFICIAL_COMPANY","SPECIALIST_JOBS"]},
+    {"sector":"ecommerce + marketing/performance agencies","state":"ACTIVE_SCAN","recent_signal":"WordPress/WooCommerce overlap remains productive but supplier-side false positives are common","next_sources":["AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS"]},
+    {"sector":"IT/MSP/system integrators + hosting/maintenance","state":"UNDER_SEARCHED","recent_signal":null,"next_sources":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING"]},
+    {"sector":"accessibility/WCAG + WPO/Core Web Vitals specialists","state":"UNDER_SEARCHED","recent_signal":"searches often return service suppliers rather than buyers","next_sources":["OFFICIAL_COMPANY","SPECIALIST_JOBS"]},
+    {"sector":"tourism/hospitality digital suppliers","state":"UNDER_SEARCHED","recent_signal":null,"next_sources":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING"]},
+    {"sector":"education/training platforms + NGOs/EU dissemination suppliers","state":"ACTIVE_SCAN","recent_signal":"SafetyNet Europe current freelance digital-content/WordPress role; fit review only","next_sources":["OFFICIAL_COMPANY","EU_PROJECT_REGISTRIES"]},
+    {"sector":"healthcare/professional-services digital vendors","state":"UNDER_SEARCHED","recent_signal":null,"next_sources":["OFFICIAL_COMPANY","SPECIALIST_JOBS"]},
+    {"sector":"event/culture agencies","state":"NOT_SCANNED","recent_signal":null,"next_sources":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING"]}
+  ],
+  "last_research_log": "../research/2026-08-31-fast-revenue-pass-0843.json"
 }
