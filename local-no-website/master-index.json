@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-31T11:01:00+02:00",
+  "updated_at":"2026-08-31T12:00:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,11 +8,11 @@
   "tax_policy":"config/tax-policy.json",
   "scan_frontier":"coverage/scan-frontier.json",
   "email_folder":"INBOX.LOCAL-SME-999",
-  "screened_raw":179,
+  "screened_raw":186,
   "canonical_prospect_records":30,
   "under_research":0,
   "canonical_finalized_rejected":22,
-  "screened_rejected_has_website":63,
+  "screened_rejected_has_website":66,
   "screened_rejected_poor_reputation":1,
   "screened_reputation_risk":6,
   "qualified":8,
@@ -55,9 +55,9 @@
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "latest_finalization_report":"research/2026-08-31-deep-review-finalization-0927.json",
   "latest_outreach_report":"../outreach/2026-08-31-partner-hunt-morning-wave-02.json",
-  "latest_discovery_report":"research/2026-08-31-olivella-incremental-1101.json",
+  "latest_discovery_report":"research/2026-08-31-olivella-incremental-1200.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":3,"final_live_gate_required_before_send":true,"latest_material_change":"All eight canonically READY_TO_CONTACT Local SME 999 prospects received exactly one personalized first contact from info@visualdesignstudio.es and were verified in Hostinger Sent UIDs 127-134. Quirogris, Nova 12 and Brush Estilistes hard-bounced and are address-suppressed. No duplicate sends occurred."},
+  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":3,"final_live_gate_required_before_send":true,"latest_material_change":"12:00 LOCAL_SME_999 research expanded Olivella by seven screened identities. Sendero Cafè, Restaurant Hostal Les Piques and Restaurant El Parador del Garraf were rejected as website-present. Al Son, Bar Rosi, Churreria Manchega-Olivella and Berrigestion remain RAW review-required; no new prospect was promoted or contacted."},
   "status":"POST_OUTREACH_MONITORING_AND_ACTIVE_DISCOVERY",
-  "next_action":"Continue Olivella breadth-first discovery and resolve high-potential RAW candidates (especially Nino y Antonio and M & M Nail's) with independent reputation/social/contact evidence; reject website-present/service-area false positives cheaply, then advance contiguously only when current municipality coverage is materially stronger."
+  "next_action":"Continue Olivella breadth-first discovery while deep-reviewing Al Son and Berrigestion first, then Bar Rosi, Churreria Manchega-Olivella, Nino y Antonio and M & M Nail's. Require independent reputation/social/contact evidence and exact identity reconciliation before any promotion; advance contiguously only after current municipality coverage is materially stronger."
 }
