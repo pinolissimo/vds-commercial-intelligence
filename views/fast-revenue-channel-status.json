@@ -1,87 +1,71 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-08-31T08:43:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status. Counts have explicit scopes so research-pool candidates are never confused with execution-ready opportunities.",
+  "schema_version": "1.1",
+  "updated_at": "2026-08-31T09:46:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after reconciliation with the 2026-08-31 Partner Hunt morning wave. Counts distinguish currently uncontacted/actionable routes from research and suppression states.",
   "counts": {
-    "VERIFIED_DIRECT_EMAIL_READY_PACK": 9,
-    "DIRECT_EMAIL_RESEARCH_POOL_BEFORE_FINAL_GATE": 37,
-    "VERIFIED_FORM_PLATFORM_READY": 16,
-    "REVIEW_REQUIRED_EMAIL_POOL_EXISTING": 20,
-    "REVIEW_REQUIRED_NEW_THIS_CYCLE": 2,
-    "SUPPRESSED_REGISTRY_IDENTITIES": 25,
-    "HOLD_DIRECT_COMMERCIAL_EXISTING": 3,
-    "HOLD_NEW_THIS_CYCLE": 2
+    "VERIFIED_DIRECT_EMAIL": 5,
+    "VERIFIED_FORM_PLATFORM": 16,
+    "REVIEW_REQUIRED": 23,
+    "SUPPRESSED": 29,
+    "HOLD": 6,
+    "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
-    "VERIFIED_DIRECT_EMAIL_READY_PACK": "Nine exact target addresses are in reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md. They still require the mandatory final pre-send freshness, route, organization-level dedup, suppression, Gmail Sent and Hostinger Sent gate.",
-    "DIRECT_EMAIL_RESEARCH_POOL_BEFORE_FINAL_GATE": "Research pool from views/fast-revenue-email-queue.json. It includes price/route/eligibility/freshness/fit review states and is not an actionable-send count.",
-    "VERIFIED_FORM_PLATFORM_READY": "Sixteen route-ready form/platform/application opportunities reconciled from the Monday Direct Outreach/Application packs; DNA Agency remains route-blocked.",
-    "REVIEW_REQUIRED_EMAIL_POOL_EXISTING": "Sum of price-gate, route/eligibility, reverify, route-review and fit-review categories in the direct-email research queue (2+6+6+5+1).",
-    "REVIEW_REQUIRED_NEW_THIS_CYCLE": "SafetyNet Europe (fit) and Lemon.io (fit/technical-depth) are research findings only; neither is promoted into the direct-email/actionable queue.",
-    "SUPPRESSED_REGISTRY_IDENTITIES": "Current governance/suppression-registry.json campaign backfill count. Historical pre-CRM Sent reconciliation remains mandatory.",
-    "HOLD_NEW_THIS_CYCLE": "Logorapid structural collaborator network lacks current explicit demand; fresh anonymous/low-economics marketplace work remains below promotion threshold."
+    "VERIFIED_DIRECT_EMAIL": "Currently uncontacted direct-email opportunities ready for Partner Hunt final pre-send gate: MarkeThink, Maia Management, Cantabria Web Design, Summum Marketing and newly verified Boneluv. Nexibo is HOLD because its official route requires a CV attachment. Visioni, Evo Sistemi, Ibérica Studio and Daniele Debernardis were contacted by Partner Hunt at 09:03 and are no longer ready candidates.",
+    "VERIFIED_FORM_PLATFORM": "Sixteen route-ready form/platform/application opportunities from the Monday application pack; no conversion to cold email is permitted.",
+    "REVIEW_REQUIRED": "Twenty existing direct-email research-review cases plus SafetyNet Europe, Lemon.io and Intervolutions fit/technical-depth review. This is not an actionable count.",
+    "SUPPRESSED": "Twenty-nine organization-level first-contact identities normalized in governance/suppression-registry.json, including the four Partner Hunt morning-wave identities; Ibérica Studio remains organization-suppressed despite address-level hard bounce.",
+    "HOLD": "Existing direct-commercial holds plus structural/low-economics cases and Nexibo route-compliance hold. HOLD is excluded from actionable totals.",
+    "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "The 37-candidate research queue is a pre-final-gate discovery pool and must not be interpreted as currently sendable. Its contacted identities are protected by suppression/Sent reconciliation."
   },
   "cycle_delta": {
-    "verified_direct_email_new": 0,
+    "verified_direct_email_new": 1,
     "verified_form_platform_new": 0,
-    "review_required_new": 2,
-    "suppressed_new": 0,
-    "hold_new": 2,
+    "review_required_new": 1,
+    "suppression_normalizations_new": 3,
     "actionable_pool_inflation": 0
   },
+  "new_verified_direct_email": [
+    {
+      "organization": "Boneluv",
+      "opportunity_id": "OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
+      "route": "hola@boneluv.com",
+      "territory": "Spain / Andalucía / Sevilla + remote",
+      "priority": "HOT_PLUS",
+      "evidence": "https://boneluv.com/trabaja-con-nosotros/",
+      "need": "Current freelancer network explicitly seeks Web Designer and WordPress Developer; WordPress/Elementor Pro/Gutenberg/PHP/CSS/JS/WooCommerce; autonomous/company invoicing; at least 1-2 projects/month; first scoped project can become ongoing collaboration.",
+      "dedup": "Canonical search clear; Gmail Sent exact identity/recipient clear; Hostinger INBOX.Sent exact recipient and identity searches clear on 2026-08-31.",
+      "route_rule": "Official careers page explicitly instructs email to hola@boneluv.com with subject 'Colaboración' + specialty."
+    }
+  ],
   "new_review_required": [
     {
-      "organization": "SafetyNet Europe",
-      "route_type": "OFFICIAL_DIRECT_EMAIL",
-      "route": "info@safetynet-europe.eu",
-      "territory": "Europe / remote-hybrid",
+      "organization": "Intervolutions / Tombatossals Softworks LLC",
+      "route_type": "OFFICIAL_FORM_PLATFORM",
+      "route": "https://intervolutions.com/careers/",
+      "territory": "Spain / Comunitat Valenciana / Castellón + remote",
       "state": "REVIEW_REQUIRED_FIT",
-      "evidence": "https://www.safetynet-europe.eu/jobs/",
-      "freshness": "Official careers page current in August 2026; organization site has current 2026 activity.",
-      "need": "Freelance Content Creator & Growth Marketer, 2 days/week; WordPress platform updating/content publishing; EUR 18/hour.",
-      "dedup": "No canonical repository match; Gmail Sent exact-recipient search clear; Hostinger INBOX.Sent exact-recipient search clear on 2026-08-31.",
-      "reason_not_promoted": "WordPress is used mainly for publishing/content operations; the buyer need is content/growth rather than web development. Truthful VDS fit is not strong enough for HOT/direct-email promotion."
-    },
-    {
-      "organization": "Lemon.io",
-      "route_type": "OFFICIAL_PLATFORM_APPLICATION",
-      "route": "https://lemon.io/for-developers/wordpress-developer-jobs/",
-      "territory": "Remote / international",
-      "state": "REVIEW_REQUIRED_FIT",
-      "evidence": "https://lemon.io/for-developers/wordpress-developer-jobs/",
-      "freshness": "Official page last updated July 2026 and crawled current cycle.",
-      "need": "Remote WordPress contracts, part-time/full-time, long-duration projects; custom themes/plugins, WooCommerce, Core Web Vitals and security.",
-      "dedup": "No canonical repository match found; Gmail Sent search for lemon.io clear.",
-      "reason_not_promoted": "The official technical gate emphasizes 3+ years commercial WordPress/PHP, custom theme/plugin development and modern JS/React for Gutenberg. Do not claim this depth without verified evidence."
+      "evidence": "https://intervolutions.com/careers/frontend-developer-freelance/",
+      "freshness": "Official careers page states all published roles accept applications today and identifies active freelance openings.",
+      "need": "Remote freelance frontend for workload peaks, €250-350/day, Figma-to-code, animation/microinteractions, APIs/CMS including WordPress, paid short test, long-term collaboration if fit.",
+      "reason_not_promoted": "Frontend role explicitly expects React or Astro in addition to strong HTML/CSS/JavaScript. Canonical VDS materials do not establish that requirement strongly enough to promote without qualification. A separate freelance web-design/maquetación role is also open but needs role-detail verification before promotion."
     }
   ],
-  "new_holds": [
-    {
-      "organization": "Logorapid",
-      "territory": "Spain / Catalunya / Barcelona",
-      "state": "HOLD_STRUCTURAL_NO_CURRENT_DEMAND",
-      "route": "trabajo@logorapid.com",
-      "evidence": "https://www.logorapid.com/trabaja_en_logorapid",
-      "reason": "Official page accepts CVs from freelance web designers/programmers including WordPress, but wording is talent-pool/when-we-need-more-collaborators rather than explicit fresh buyer demand."
-    },
-    {
-      "organization": "Upwork — WordPress Developer for Restaurant Sites",
-      "territory": "Worldwide / platform",
-      "state": "HOLD_ANONYMOUS_LOW_ECONOMICS",
-      "route": "https://www.upwork.com/freelance-jobs/apply/WordPress-Developer-for-Restaurant-Sites_~022092629216238341829/",
-      "freshness": "Posted about 3 days ago in current cycle.",
-      "reason": "Buyer identity is undisclosed and published range is USD 5–15/hour; fails exact-identity promotion gate and is weaker economically than current queue."
-    }
-  ],
-  "no_outreach": true,
+  "morning_reconciliation": {
+    "contacted_by_partner_hunt": ["Visioni", "Evo Sistemi", "Ibérica Studio", "Daniele Debernardis"],
+    "ibérica_studio": "HARD_BOUNCE at recipient address; organization-level first-contact remains permanently suppressed.",
+    "nexibo": "HOLD_ROUTE_COMPLIANCE — official route requests CV/best work and no verified CV attachment was present in the execution wave."
+  },
+  "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
   "source_files": [
+    "../opportunities/OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026.json",
     "../reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "../outreach/2026-08-31-partner-hunt-morning-wave-01.json",
+    "../governance/suppression-registry.json",
     "fast-revenue-email-queue.json",
-    "fast-revenue-queue.json",
-    "fast-revenue-territory-frontier.json",
-    "../governance/suppression-registry.json"
+    "fast-revenue-territory-frontier.json"
   ]
 }
