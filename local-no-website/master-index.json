@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-31T04:00:00+02:00",
+  "updated_at":"2026-08-31T05:00:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,10 +8,10 @@
   "tax_policy":"config/tax-policy.json",
   "scan_frontier":"coverage/scan-frontier.json",
   "email_folder":"INBOX.LOCAL-SME-999",
-  "screened_raw":146,
+  "screened_raw":150,
   "canonical_prospect_records":29,
   "under_research":24,
-  "screened_rejected_has_website":47,
+  "screened_rejected_has_website":49,
   "screened_rejected_poor_reputation":1,
   "screened_reputation_risk":6,
   "qualified":5,
@@ -50,7 +50,7 @@
   ],
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Olivella carpentry/appliance/taxi changed-category scan added four screened identities. Orts Fuster moved from RAW hold to canonical RESEARCH after map plus two independent directory-family corroborations and exact-name/domain checks found no attributable owned site. One functional-site case was rejected and two nonlocal/low-fit identities were screened out. Reputation depth, public business email and social ownership remain unresolved; no candidate was promoted to QUALIFIED."},
+  "qa_state":{"status":"RESERVOIR_EXPANDING","ready_count":5,"final_live_gate_required_before_send":true,"latest_material_change":"Olivella changed-category pass added four unique screened identities across personal training, cleaning and professional-service discovery. Aranha Olivella Brazilian jiu-jitsu Studio and Ángeles Vargas remain RAW holds because reputation depth is too shallow; Vivir y disfrutar and Jose Valero were rejected after functional owned websites were confirmed. Centro de Estética y Peluquería deep review gained primary municipal corroboration plus a second public phone, but no verified public email/social ownership surfaced, so it remains RESEARCH."},
   "status":"ACTIVE_SEARCH_AND_FILTERING",
-  "next_action":"Continue Olivella ACTIVE_SCAN with changed-source work: deepen Orts Fuster reputation/social/contactability; resolve M & M Nail´s, ECCECANIS, Rostisseria l'Asador, Al Son, Sana Tu Mente and Welifevan; sample remaining locally registered appliance-repair/metalwork/online-retail categories via municipal/directories before geographic expansion."
+  "next_action":"Continue Olivella ACTIVE_SCAN with changed-source/category work. Prioritize public business email/social ownership and current-review recency for Centro de Estética y Peluquería, Orts Fuster, M & M Nail´s, ECCECANIS, Rostisseria l'Asador, Al Son, Sana Tu Mente and Welifevan; retain shallow-reputation fitness/cleaning discoveries in RAW without deep-review throttling."
 }
