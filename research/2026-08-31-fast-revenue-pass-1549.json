@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "run_id": "FAST_REVENUE_2026-08-31_1549",
+  "verified_at": "2026-08-31T16:01:00+02:00",
+  "objective": "Expand genuinely current paying-work opportunities without count inflation; systematically rotate geography, sector and source families while prioritizing explicit official application email routes.",
+  "canonical_source": {"repository":"pinolissimo/vds-commercial-intelligence","branch":"main"},
+  "read_before_research": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "governance/suppression-registry.json",
+    "views/source-coverage.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "research/2026-08-31-fast-revenue-pass-1439.json"
+  ],
+  "source_protocol_applied": {
+    "delta_first": true,
+    "search_engines": "discovery only",
+    "promotion_evidence": "official company/application source required",
+    "channel_rule": "explicit role application form/platform/email outranks generic business contact",
+    "dedup_rule": "repository + suppression + Gmail Sent + Hostinger Sent before promotion",
+    "count_inflation_prohibited": true
+  },
+  "source_families_sampled": [
+    "OFFICIAL_COMPANY",
+    "SPECIALIST_JOBS",
+    "AGENCY_OUTSOURCING",
+    "PROFESSIONAL_NETWORKS",
+    "NICHE_WORDPRESS_JOBS",
+    "SEARCH_ROUTER_DISCOVERY_ONLY"
+  ],
+  "territory_focus": [
+    "Spain Madrid/Málaga",
+    "Spain Catalunya/Barcelona",
+    "Spain Balearic Islands",
+    "Spain Canary Islands",
+    "Italy Veneto",
+    "Remote Europe/worldwide"
+  ],
+  "sector_focus": [
+    "web/digital agencies",
+    "WordPress/frontend",
+    "IT/hosting/maintenance",
+    "tourism/hospitality digital suppliers",
+    "software/SaaS contractor roles"
+  ],
+  "promotions": [
+    {
+      "organization": "SO Design Online",
+      "opportunity_id": "OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026",
+      "state": "VERIFIED_DIRECT_EMAIL",
+      "priority": "HOT",
+      "freshness": "Official careers board is current and independently indexed as published within the last week; seven open roles are displayed on 2026-08-31.",
+      "need": "WordPress Website Builder: builds/maintenance, responsive HTML/CSS, page-builder/plugin workflows, redesigns, updates, launch checks, basic SEO and maintenance.",
+      "eligibility": "Official role is Remote / Contract or project-based; careers FAQ states remote collaboration is possible for suitable roles/projects and does not state a location restriction.",
+      "route": "support@sodesign.online — explicit role-application email on official careers page.",
+      "economics": "Paid contract/project-based work; no published rate.",
+      "dedup": "Repository/suppression clear; Gmail Sent clear; Hostinger INBOX.Sent exact recipient support@sodesign.online clear.",
+      "evidence": ["https://sodesign.online/careers/","https://sodesign.online/"]
+    }
+  ],
+  "review_required_new": [
+    {
+      "organization": "Talentchef",
+      "group_identity": "Little Big",
+      "opportunity_id": "OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026",
+      "state": "REVIEW_REQUIRED_ROUTE",
+      "why_material": "Very high-fit official WordPress Developer (Freelance), part-time continuous collaboration covering WordPress/Elementor, animations, hosting/domains/DNS/SSL, maintenance and SEO.",
+      "blocking_gate": "The live role page's exact 'Send your application now' CTA currently resolves to an official application page showing 'Vacancy not found'.",
+      "dedup": "Repository/suppression clear before record creation; Gmail Sent clear; Hostinger text match was only an internal VDS report to the user, not external outreach.",
+      "evidence": ["https://talentchef.com/en/career/wordpress-developer/","https://talentchef.com/en/careers/application/"]
+    }
+  ],
+  "research_only_not_promoted": [
+    {"organization":"SiteCare","reason":"Current recurring contract WordPress demand but explicit eligible locations exclude Spain (LATAM, South Africa, Eastern Europe only)."},
+    {"organization":"VueloIV","territory":"Barcelona","reason":"Official live freelance WordPress vacancy and invoice-compatible route found; advanced custom themes/plugins/hooks/CPT/fields requirements exceed currently verified VDS capability evidence, so no promotion."},
+    {"organization":"Murena","territory":"Remote","reason":"Official WordPress Contractor role, self-employed and direct application email found, but custom theme/plugin engineering, hooks/filters, WooCommerce and Git are must-haves not sufficiently evidenced in canonical VDS fit data."},
+    {"organization":"Layerly","territory":"Remote","reason":"Excellent freelance WordPress/Elementor fit, but exact official job email is Cloudflare-obfuscated in retrievable evidence and original listing age creates freshness ambiguity."},
+    {"organization":"Modesk / Axora Group","territory":"Veneto / Jesolo","reason":"Live freelancer-network/white-label model visible, but accessible official form is agency-side; no verified freelancer application route established."},
+    {"category":"Balearic/Canary initial sampling","reason":"Mostly supplier-side or insufficient buyer-side demand; coverage remains UNDER_SEARCHED rather than being mislabeled LOW_YIELD_VERIFIED."}
+  ],
+  "dedup_external_checks": {
+    "gmail": [
+      {"query":"in:sent (to:support@sodesign.online OR sodesign.online OR SO Design Online)","result":"0 matches"},
+      {"query":"in:sent (Talentchef OR talentchef.com OR Little Big)","result":"0 matches"}
+    ],
+    "hostinger": [
+      {"folder":"INBOX.Sent","query":"to=support@sodesign.online","result":"0 matches"},
+      {"folder":"INBOX.Sent","query":"text=SO Design Online","result":"no commercial first-contact match to the organization; unrelated/internal messages only"},
+      {"folder":"INBOX.Sent","query":"text=Talentchef","result":"one internal VDS report to allocca.pino@gmail.com; no external commercial first contact"}
+    ]
+  },
+  "counts_after_cycle": {
+    "VERIFIED_DIRECT_EMAIL": 1,
+    "VERIFIED_FORM_PLATFORM": 21,
+    "REVIEW_REQUIRED": 30,
+    "SUPPRESSED": 47,
+    "HOLD": 7
+  },
+  "frontier_changes": [
+    "Madrid remains COVERED_RECENTLY with Talentchef added as route-review evidence.",
+    "Catalunya remains COVERED_RECENTLY after VueloIV official vacancy recheck; candidate not promoted on truthful-fit grounds.",
+    "Balearic Islands and Canary Islands remain UNDER_SEARCHED after initial sampling; no LOW_YIELD designation applied.",
+    "Veneto remains ACTIVE_SCAN; Modesk/Axora adds structural freelancer-network evidence but no verified applicant route.",
+    "Remote Europe/worldwide remains COVERED_RECENTLY after SO Design Online direct-email promotion and Murena/Layerly review signals.",
+    "IT/MSP/hosting sector moved UNDER_SEARCHED -> ACTIVE_SCAN after Talentchef/Murena current-demand evidence.",
+    "Tourism/hospitality digital suppliers moved UNDER_SEARCHED -> ACTIVE_SCAN after Talentchef current buyer demand, although its route is blocked."
+  ],
+  "next_resume": [
+    "Balearic Islands: AGENCY_OUTSOURCING -> TOURISM_HOSPITALITY -> PROFESSIONAL_NETWORKS",
+    "Canary Islands: AGENCY_OUTSOURCING -> TOURISM_HOSPITALITY -> OFFICIAL_COMPANY",
+    "Comunitat Valenciana / Euskadi / Galicia: continue agency-outsourcing + marketplace rotation",
+    "Italy remaining regions: Valle d'Aosta -> Trentino-Alto Adige -> Friuli-Venezia Giulia -> Umbria -> Marche -> Abruzzo -> Molise -> Basilicata -> Sardegna, province-by-province",
+    "Healthcare/professional-services digital vendors remain UNDER_SEARCHED",
+    "Remote: NGO_DIGITAL_SUPPLIERS -> FREELANCE_MARKETPLACES -> AGENCY_OUTSOURCING"
+  ],
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
