@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T04:38:00+02:00",
+  "workstream": "COLLABORATIONS",
+  "mode": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "summary": {
+    "prior_direct_email_pool_before_final_gate": 34,
+    "new_direct_email_review_candidates": 1,
+    "estimated_direct_email_pool_before_final_gate_after_delta": 35,
+    "new_send_ready": 0,
+    "duplicate_first_contact_blocks": 1,
+    "route_unresolved_high_fit": 1,
+    "employment_or_fit_rejects": 1
+  },
+  "material_findings": [
+    {
+      "organization": "WP Elite Hub",
+      "territory": "Remote / geography not yet explicit",
+      "state": "CONTRACT_ROUTE_ELIGIBILITY_REVIEW",
+      "priority": "HOT_REVIEW",
+      "email": "hr@wpelitehub.com",
+      "evidence": "https://wpelitehub.com/careers/",
+      "verified": [
+        "official careers page current on 2026-08-31",
+        "Frontend Developer explicitly listed as Contract / Remote",
+        "WordPress Support Specialist also listed on same current careers page",
+        "official application email hr@wpelitehub.com",
+        "Hostinger INBOX.Sent exact-recipient search returned zero prior messages"
+      ],
+      "to_verify": [
+        "whether non-local/EU-based independent contractor applicants are accepted",
+        "whether the contract Frontend role materially includes WordPress delivery rather than a separate stack"
+      ],
+      "reason": "Current official contract/remote route with strong WordPress-company adjacency and exact non-guessed HR email. Keep out of EMAIL_READY until contractor geography and role scope are confirmed."
+    },
+    {
+      "organization": "Amalthea Srl / Amalthea Digital & Branding",
+      "territory": "Italy / Piemonte / Torino / Remote",
+      "state": "ROUTE_UNRESOLVED_HIGH_FIT",
+      "priority": "HOT_PLUS_FIT",
+      "evidence": "https://www.amalthea.it/lavora-con-amalthea.php",
+      "verified": [
+        "official current careers page",
+        "Full Stack Designer explicitly marked Freelance",
+        "collaboration freelance with Partita IVA or occasional service",
+        "Torino / Remote and flexible hours",
+        "UX/UI, visual design, HTML/CSS, JavaScript base, WordPress/Webflow preferred",
+        "site/landing-page/interface delivery directly matches VDS positioning"
+      ],
+      "blocking_issue": "The application email is Cloudflare-obfuscated in the available authoritative extraction; no address is guessed. Do not count as direct-email-ready until the exact destination is resolved."
+    },
+    {
+      "organization": "Pump Communication",
+      "territory": "Italy / Trentino-Alto Adige / Trento / remote-capable",
+      "state": "SUPPRESSION_REJECT",
+      "priority": "BLOCKED_DUPLICATE",
+      "evidence": "https://www.adzuna.it/details/5681942657",
+      "verified": [
+        "strong freelance continuous WordPress/Figma/UI-UX demand",
+        "published application email info@pumpcommunication.com",
+        "Hostinger Sent contains prior first contact to info@pumpcommunication.com on 2026-08-30, UID 116"
+      ],
+      "reason": "Absolute FIRST_CONTACT uniqueness invariant; never resend."
+    },
+    {
+      "organization": "Expand-Raise",
+      "territory": "Remote / international",
+      "state": "EMPLOYMENT_COMPATIBILITY_REVIEW_NOT_DIRECT_EMAIL_POOL",
+      "priority": "MEDIUM",
+      "email": "info@expand-raise.com",
+      "evidence": "https://expand-raise.com/careers/",
+      "verified": [
+        "official current Shopify / WordPress Developer role",
+        "remote",
+        "direct CV email"
+      ],
+      "reason": "Current page labels the role Full-Time, not freelance/contract; do not use merely to inflate the direct-email freelance pool."
+    }
+  ],
+  "application_only_signals": [
+    {
+      "organization": "Freelancer.com client — Madrid",
+      "state": "PLATFORM_APPLICATION_ONLY",
+      "territory": "Spain / Comunidad de Madrid / Madrid / remote",
+      "evidence": "https://www.freelancer.de/projects/wordpress/desarrollo-web-wordpress-con-elementor-40646863",
+      "freshness": "open and indexed on 2026-08-31",
+      "need": "WordPress + Elementor, Home + 5 sections + Blog, WPML, WooCommerce",
+      "reason": "Buyer-side project is highly compatible but authoritative route is the Freelancer platform; never convert to cold email."
+    }
+  ],
+  "territory_frontier_delta": {
+    "Italy": "ACTIVE_SCAN — Piemonte/Torino deepened with Amalthea; Trentino-Alto Adige/Trento rechecked through Pump but blocked by prior first contact. Continue Veneto, Friuli-Venezia Giulia, Liguria, Marche, Abruzzo and remaining provinces with official-careers/agency-outsourcing rotation.",
+    "Spain": "ACTIVE_SCAN — Madrid buyer-side platform signal captured; continue province-by-province official agency careers and freelance-collaboration routes, prioritizing remaining autonomous-community gaps.",
+    "Europe_Remote": "ACTIVE_SCAN — WP Elite Hub added to contract-route review; continue EU/UK remote agencies while requiring explicit contractor eligibility and exact published route.",
+    "Worldwide_Remote": "UNDER_SEARCHED — no promotion without explicit buyer-side contractor compatibility."
+  },
+  "quality_notes": [
+    "No outreach executed.",
+    "No guessed email addresses.",
+    "Search-engine results used only for discovery; primary pages used for identity/route where available.",
+    "Pool target is not treated as authority to weaken freshness, fit, route, dedup or suppression gates."
+  ]
+}
