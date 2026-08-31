@@ -1,52 +1,77 @@
 {
-  "schema_version": "1.3",
-  "updated_at": "2026-08-31T12:40:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after the 12:36 discovery and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
+  "schema_version": "1.4",
+  "updated_at": "2026-08-31T13:43:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 13:36 discovery, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 0,
-    "VERIFIED_FORM_PLATFORM": 18,
-    "REVIEW_REQUIRED": 27,
+    "VERIFIED_FORM_PLATFORM": 20,
+    "REVIEW_REQUIRED": 28,
     "SUPPRESSED": 47,
     "HOLD": 7,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
-    "VERIFIED_DIRECT_EMAIL": "No new direct-email candidate passed every current-demand, eligibility, route and dedup gate. The legacy 37-candidate discovery snapshot is historical only.",
-    "VERIFIED_FORM_PLATFORM": "18 currently uncontacted/actionable form/platform opportunities remain in the canonical pool; no new promotion this cycle.",
-    "REVIEW_REQUIRED": "27 existing review items remain unchanged this cycle.",
-    "SUPPRESSED": "47 canonical acquisition identities are now normalized. BSC Webdesign was added after Hostinger Sent exposed historical first-contact UID 115 despite a current high-fit contractor listing.",
-    "HOLD": "7 existing holds; no new hold this cycle.",
+    "VERIFIED_DIRECT_EMAIL": "No new direct-email candidate passed every gate. Explicit official forms outrank generic business emails for both new promotions.",
+    "VERIFIED_FORM_PLATFORM": "Two new actionable form/platform opportunities promoted this cycle: Mindrift Freelance Web Designer (HOT_PLUS) and IOCOS freelance web network (HOT).",
+    "REVIEW_REQUIRED": "One material new review item added: Alpacode is an unusually strong autonomous WordPress/UI-UX outsourcing route but explicitly restricts remote work to Italy; cross-border eligibility for Spain-based VDS is therefore not established.",
+    "SUPPRESSED": "47 canonical acquisition identities remain suppressed. Apiceweb was re-encountered and correctly rejected because both the suppression registry and Hostinger Sent UID 95 prove prior first contact.",
+    "HOLD": "7 existing holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
-    "verified_form_platform_new": 0,
-    "review_required_new": 0,
+    "verified_form_platform_new": 2,
+    "review_required_new": 1,
     "hold_new": 0,
-    "suppression_new": 1,
+    "suppression_new": 0,
     "suppression_total": 47,
     "actionable_pool_inflation": 0
   },
   "material_verification_changes": [
     {
-      "organization": "BSC Webdesign",
-      "opportunity_id": "OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026",
+      "organization": "Mindrift",
+      "opportunity_id": "OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT_PLUS",
+      "current_demand": "Fresh Spain contractor listing posted 2026-08-29 plus official Mindrift design project currently marked Open for Freelance Web Designer / Digital Experience Designer.",
+      "route": "Official Mindrift Apply/project route; no generic email substitution.",
+      "economics": "Specific Spain listing states up to USD 40/hour equivalent; official design platform advertises design-project ceilings up to USD 50/hour, kept separate from the specific listing.",
+      "dedup": "Canonical suppression clear; Hostinger Sent clear; Gmail external-first-contact check clear. Gmail keyword hits were internal VDS reporting only, not an application to Mindrift."
+    },
+    {
+      "organization": "IOCOS di G.C.",
+      "opportunity_id": "OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT",
+      "current_demand": "Official page actively builds a completely remote freelancer network for client projects across WordPress, WooCommerce, Elementor/Gutenberg, frontend, performance, integrations and UX/UI.",
+      "route": "Official freelancer application form outranks the generic info@iocos.it business address.",
+      "economics": "Applicant supplies an hourly rate; IOCOS provides task, timing and compensation in the project brief before acceptance.",
+      "dedup": "Canonical suppression clear; Gmail Sent clear; Hostinger INBOX.Sent clear."
+    },
+    {
+      "organization": "Alpacode",
+      "state": "REVIEW_REQUIRED_GEO",
+      "current_demand": "Official Q3 2026 page keeps WordPress/Astro/React development and UI/UX collaborations always open, including project assignments, subcontracting and full outsourcing with written compensation.",
+      "route": "Official application form.",
+      "dedup": "Canonical suppression clear; Gmail Sent clear; Hostinger Sent clear.",
+      "reason_not_promoted": "Official eligibility explicitly says remote from anywhere in Italy. Cross-border eligibility is not established, so the opportunity is not counted actionable."
+    },
+    {
+      "organization": "Apiceweb",
       "state": "SUPPRESSED_ALREADY_CONTACTED",
-      "current_demand": "Current Wellfound listing seeks WordPress Web Designer & Developer as a long-term remote contractor, remote-only, hiring everywhere, with Elementor/Avada/Gutenberg-style builder experience, HTML/CSS and responsive design.",
-      "route": "Official Wellfound Apply Now route; generic company email is not substituted for the platform route.",
-      "dedup": "Canonical search had no BSC record; Gmail Sent was clear; Hostinger INBOX.Sent exact recipient search found UID 115 dated 2026-08-28 to office@bscwebdesign.com. Identity-level suppression therefore blocks any new first contact."
+      "dedup": "Reverified hard block: governance registry already contains FIRST_CONTACT_ALREADY_SENT and Hostinger INBOX.Sent UID 95 dated 2026-08-28 confirms the same commercial identity was contacted."
     }
   ],
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
   "source_files": [
-    "../README.md",
     "../OPERATING_RULES.md",
     "../config/source-registry.json",
     "../governance/suppression-registry.json",
-    "fast-revenue-email-queue.json",
+    "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../opportunities/OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026.json",
-    "../research/2026-08-31-fast-revenue-pass-1236.json"
+    "../opportunities/OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026.json",
+    "../opportunities/OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026.json",
+    "../research/2026-08-31-fast-revenue-pass-1336.json"
   ]
 }
