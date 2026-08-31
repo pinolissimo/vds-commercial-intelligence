@@ -1,15 +1,8 @@
 {
   "schema_version":"1.0",
-  "updated_at":"2026-08-30T09:03:34+02:00",
+  "updated_at":"2026-08-31T09:10:00+02:00",
   "purpose":"Global pre-send suppression and first-contact deduplication registry",
-  "rules":[
-    "Check company_id/project_id, normalized domain and every recipient email before any first contact.",
-    "FIRST_CONTACT_ALREADY_SENT blocks a second first-contact even if a different email address is found.",
-    "DO_NOT_CONTACT, UNSUBSCRIBED and MANUAL_SUPPRESSION block all proactive outreach.",
-    "HARD_BOUNCE blocks the failed address but permits a verified replacement contact after review.",
-    "EXISTING_CLIENT prevents acquisition-style first-contact messaging.",
-    "Also check historical Sent/outreach logs because this registry is intentionally additive and does not erase older pre-CRM history."
-  ],
+  "rules":["Check company_id/project_id, normalized domain and every recipient email before any first contact.","FIRST_CONTACT_ALREADY_SENT blocks a second first-contact even if a different email address is found.","DO_NOT_CONTACT, UNSUBSCRIBED and MANUAL_SUPPRESSION block all proactive outreach.","HARD_BOUNCE blocks the failed address but permits a verified replacement contact after review.","EXISTING_CLIENT prevents acquisition-style first-contact messaging.","Also check historical Sent/outreach logs because this registry is intentionally additive and does not erase older pre-CRM history."],
   "entries":[
     {"entity_id":"ES-CAT-BCN-PERSUADIS","entity":"Persuadis","domain":"persuadis.com","emails":["info@persuadis.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:10:46+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
     {"entity_id":"ES-CAT-BCN-MARKA-DIGITAL","entity":"Marka Digital","domain":"markadigital.es","emails":["hola@markadigital.es"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T12:10:56+02:00","evidence":"../outreach/2026-08-28-partners-round-01.json"},
@@ -35,8 +28,9 @@
     {"entity_id":"PROJECT-EU-SOILBIOMASS","entity":"SOILBIOMASS+","domain":"reading.ac.uk","emails":["jorge.camposgonzalez@reading.ac.uk"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:36:49+02:00","evidence":"Sent UID 81"},
     {"entity_id":"PROJECT-EU-FIBRIX","entity":"FIBRIX","domain":"xamk.fi","emails":["kati.jordan@xamk.fi"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:36:55+02:00","evidence":"Sent UID 82"},
     {"entity_id":"PROJECT-EU-BEYOND-BARRIERS","entity":"BEYOND BARRIERS","domain":"uio.no","emails":["rdbernab@uio.no","r.de.l.c.bernabe@medisin.uio.no"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-28T11:37:01+02:00","evidence":"Sent UID 83"},
-    {"entity_id":"LEAD-IT-TAA-TN-PUMP-COMMUNICATION","entity":"Pump Communication","domain":"pumpcommunication.com","emails":["info@pumpcommunication.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-30T09:03:28+02:00","evidence":"Hostinger INBOX.Sent UID 116"}
+    {"entity_id":"LEAD-IT-TAA-TN-PUMP-COMMUNICATION","entity":"Pump Communication","domain":"pumpcommunication.com","emails":["info@pumpcommunication.com"],"state":"FIRST_CONTACT_ALREADY_SENT","first_contact_at":"2026-08-30T09:03:28+02:00","evidence":"Hostinger INBOX.Sent UID 116"},
+    {"entity_id":"LEAD-ES-CAT-BCN-IBERICA-STUDIO","entity":"Ibérica Studio","domain":"ibericastudio.com","emails":["trabajo@ibericastudio.com"],"state":"HARD_BOUNCE","first_contact_at":"2026-08-31T09:03:28+02:00","evidence":"Hostinger INBOX.Sent UID 120; bounce INBOX UID 1260 SMTP 550 5.1.1","note":"Organization-level first-contact history remains permanent. Failed address blocked; verified replacement route may be considered only as routed continuation after review."}
   ],
-  "coverage":{"current_campaign_first_contacts_backfilled":25,"historical_pre_crm_sent_history_check_required":true},
-  "bootstrap_note":"Current acquisition first contacts are backfilled through Pump Communication on 2026-08-30. Older pre-CRM commercial outreach remains protected by mandatory Sent/history checks until separately normalized."
+  "coverage":{"current_campaign_first_contacts_backfilled":26,"historical_pre_crm_sent_history_check_required":true},
+  "bootstrap_note":"Current acquisition first contacts are backfilled through Ibérica Studio on 2026-08-31. Older pre-CRM commercial outreach remains protected by mandatory Sent/history checks until separately normalized."
 }
