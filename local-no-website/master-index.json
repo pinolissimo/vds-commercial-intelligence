@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-08-31T12:58:00+02:00",
+  "updated_at":"2026-08-31T13:59:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -56,9 +56,9 @@
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "latest_finalization_report":"research/2026-08-31-deep-review-finalization-0927.json",
   "latest_outreach_report":"../outreach/2026-08-31-partner-hunt-morning-wave-02.json",
-  "latest_discovery_report":"research/2026-08-31-olivella-incremental-1258.json",
+  "latest_discovery_report":"research/2026-08-31-olivella-incremental-1359.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":3,"final_live_gate_required_before_send":true,"latest_material_change":"12:58 LOCAL_SME_999 research expanded Olivella to 193 lifetime screened identities. Centro de Belleza Unisex, CIM Apartments and DGTTO entered RAW review-required; Astro Bengala, Casa Mallarenga and El Pa Torrat were rejected as website-present, El Ganxo as non-commercial municipal fit. Al Son gained stronger current corroboration but remains route/review-pattern blocked. Berrigestion moved to REPUTATION_RISK_REVIEW_REQUIRED after a 3.5/17 Coches.net signal conflicted with the stronger map rating."},
+  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":3,"final_live_gate_required_before_send":true,"latest_material_change":"13:59 LOCAL_SME_999 expanded Olivella municipal-directory coverage and performed dedup QA. Several names reappearing in the active raw queue were confirmed as identities already finalized rejected at 09:27; they were not recounted or reopened because new evidence did not resolve their documented failed gates. Centro de Estetica/Peluqueria strengthened to ~4.9-5.0/48 but still lacks verified public business email/owned route; Rostisseria l'Asador strengthened to 4.8/66 plus favorable review themes but still lacks the required route; Formas remains reputation-thin. CIM Apartments remains the strongest genuine unresolved raw candidate. Additional directory entries with owned websites/closed state were eliminated without inflating lifetime counters."},
   "status":"POST_OUTREACH_MONITORING_AND_ACTIVE_DISCOVERY",
-  "next_action":"Continue Olivella breadth-first from the official municipal activity census and category rotation. Deep-review CIM Apartments and Centro de Belleza Unisex next; reconcile Berrigestion review-platform conflict before any promotion; keep Al Son blocked until a verified public business email/owned-social route and direct review-pattern inspection exist. Then reduce the remaining Olivella raw queue before contiguous expansion."
+  "next_action":"Continue Olivella only with genuinely unresolved RAW identities after reconciling against finalized-rejected history. Deep-review CIM Apartments next for non-OTA reputation plus owned social/email route; verify DGTTO second lineage and Bar Rosi current reputation/social/domain state. Do not recycle Centro de Estetica/Peluqueria, Rostisseria l'Asador, Formas, Al Son, M & M Nails, Nino y Antonio or Churreria Manchega unless materially new evidence resolves their specific canonical rejection gate. Expand contiguously only after the real Olivella unresolved queue is materially reduced."
 }
