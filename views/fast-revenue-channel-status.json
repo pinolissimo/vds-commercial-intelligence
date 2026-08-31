@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-08-31T08:43:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status. Counts have explicit scopes so research-pool candidates are never confused with execution-ready opportunities.",
+  "counts": {
+    "VERIFIED_DIRECT_EMAIL_READY_PACK": 9,
+    "DIRECT_EMAIL_RESEARCH_POOL_BEFORE_FINAL_GATE": 37,
+    "VERIFIED_FORM_PLATFORM_READY": 16,
+    "REVIEW_REQUIRED_EMAIL_POOL_EXISTING": 20,
+    "REVIEW_REQUIRED_NEW_THIS_CYCLE": 2,
+    "SUPPRESSED_REGISTRY_IDENTITIES": 25,
+    "HOLD_DIRECT_COMMERCIAL_EXISTING": 3,
+    "HOLD_NEW_THIS_CYCLE": 2
+  },
+  "count_notes": {
+    "VERIFIED_DIRECT_EMAIL_READY_PACK": "Nine exact target addresses are in reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md. They still require the mandatory final pre-send freshness, route, organization-level dedup, suppression, Gmail Sent and Hostinger Sent gate.",
+    "DIRECT_EMAIL_RESEARCH_POOL_BEFORE_FINAL_GATE": "Research pool from views/fast-revenue-email-queue.json. It includes price/route/eligibility/freshness/fit review states and is not an actionable-send count.",
+    "VERIFIED_FORM_PLATFORM_READY": "Sixteen route-ready form/platform/application opportunities reconciled from the Monday Direct Outreach/Application packs; DNA Agency remains route-blocked.",
+    "REVIEW_REQUIRED_EMAIL_POOL_EXISTING": "Sum of price-gate, route/eligibility, reverify, route-review and fit-review categories in the direct-email research queue (2+6+6+5+1).",
+    "REVIEW_REQUIRED_NEW_THIS_CYCLE": "SafetyNet Europe (fit) and Lemon.io (fit/technical-depth) are research findings only; neither is promoted into the direct-email/actionable queue.",
+    "SUPPRESSED_REGISTRY_IDENTITIES": "Current governance/suppression-registry.json campaign backfill count. Historical pre-CRM Sent reconciliation remains mandatory.",
+    "HOLD_NEW_THIS_CYCLE": "Logorapid structural collaborator network lacks current explicit demand; fresh anonymous/low-economics marketplace work remains below promotion threshold."
+  },
+  "cycle_delta": {
+    "verified_direct_email_new": 0,
+    "verified_form_platform_new": 0,
+    "review_required_new": 2,
+    "suppressed_new": 0,
+    "hold_new": 2,
+    "actionable_pool_inflation": 0
+  },
+  "new_review_required": [
+    {
+      "organization": "SafetyNet Europe",
+      "route_type": "OFFICIAL_DIRECT_EMAIL",
+      "route": "info@safetynet-europe.eu",
+      "territory": "Europe / remote-hybrid",
+      "state": "REVIEW_REQUIRED_FIT",
+      "evidence": "https://www.safetynet-europe.eu/jobs/",
+      "freshness": "Official careers page current in August 2026; organization site has current 2026 activity.",
+      "need": "Freelance Content Creator & Growth Marketer, 2 days/week; WordPress platform updating/content publishing; EUR 18/hour.",
+      "dedup": "No canonical repository match; Gmail Sent exact-recipient search clear; Hostinger INBOX.Sent exact-recipient search clear on 2026-08-31.",
+      "reason_not_promoted": "WordPress is used mainly for publishing/content operations; the buyer need is content/growth rather than web development. Truthful VDS fit is not strong enough for HOT/direct-email promotion."
+    },
+    {
+      "organization": "Lemon.io",
+      "route_type": "OFFICIAL_PLATFORM_APPLICATION",
+      "route": "https://lemon.io/for-developers/wordpress-developer-jobs/",
+      "territory": "Remote / international",
+      "state": "REVIEW_REQUIRED_FIT",
+      "evidence": "https://lemon.io/for-developers/wordpress-developer-jobs/",
+      "freshness": "Official page last updated July 2026 and crawled current cycle.",
+      "need": "Remote WordPress contracts, part-time/full-time, long-duration projects; custom themes/plugins, WooCommerce, Core Web Vitals and security.",
+      "dedup": "No canonical repository match found; Gmail Sent search for lemon.io clear.",
+      "reason_not_promoted": "The official technical gate emphasizes 3+ years commercial WordPress/PHP, custom theme/plugin development and modern JS/React for Gutenberg. Do not claim this depth without verified evidence."
+    }
+  ],
+  "new_holds": [
+    {
+      "organization": "Logorapid",
+      "territory": "Spain / Catalunya / Barcelona",
+      "state": "HOLD_STRUCTURAL_NO_CURRENT_DEMAND",
+      "route": "trabajo@logorapid.com",
+      "evidence": "https://www.logorapid.com/trabaja_en_logorapid",
+      "reason": "Official page accepts CVs from freelance web designers/programmers including WordPress, but wording is talent-pool/when-we-need-more-collaborators rather than explicit fresh buyer demand."
+    },
+    {
+      "organization": "Upwork — WordPress Developer for Restaurant Sites",
+      "territory": "Worldwide / platform",
+      "state": "HOLD_ANONYMOUS_LOW_ECONOMICS",
+      "route": "https://www.upwork.com/freelance-jobs/apply/WordPress-Developer-for-Restaurant-Sites_~022092629216238341829/",
+      "freshness": "Posted about 3 days ago in current cycle.",
+      "reason": "Buyer identity is undisclosed and published range is USD 5–15/hour; fails exact-identity promotion gate and is weaker economically than current queue."
+    }
+  ],
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only",
+  "source_files": [
+    "../reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
+    "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "fast-revenue-email-queue.json",
+    "fast-revenue-queue.json",
+    "fast-revenue-territory-frontier.json",
+    "../governance/suppression-registry.json"
+  ]
+}
