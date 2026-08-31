@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T09:37:20+02:00",
+  "workstream": "COLLABORATIONS",
+  "objective": "Delta-first FAST_REVENUE expansion with systematic geography + sector rotation and strict channel/dedup gates.",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "read_before_research": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "reports/OFFICIAL-MAILBOX-SEND-PACK-2026-08-31.md",
+    "outreach/2026-08-31-partner-hunt-morning-wave-01.json",
+    "governance/suppression-registry.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-email-queue.json",
+    "views/fast-revenue-territory-frontier.json"
+  ],
+  "material_findings": [
+    {
+      "organization": "Boneluv",
+      "territory": "Spain / Andalucía / Sevilla + remote",
+      "decision": "PROMOTE_VERIFIED_DIRECT_EMAIL",
+      "priority": "HOT_PLUS",
+      "route": "hola@boneluv.com",
+      "evidence": ["https://boneluv.com/trabaja-con-nosotros/", "https://boneluv.com/", "https://www.malt.es/profile/boneluv"],
+      "verification": "Official current collaborator page explicitly seeks Web Designer and WordPress Developer; remote; autonomous/company invoicing; 1-2 projects/month availability; WordPress/Elementor Pro/Gutenberg/PHP/CSS/JS/WooCommerce; explicit email instruction. Canonical repo, Gmail Sent and Hostinger Sent checks clear.",
+      "economics": "No numeric contractor rate; official buyer page says clients pay well and collaborator payments are punctual.",
+      "canonical_record": "../opportunities/OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026.json"
+    },
+    {
+      "organization": "Intervolutions / Tombatossals Softworks LLC",
+      "territory": "Spain / Comunitat Valenciana / Castellón + remote",
+      "decision": "REVIEW_REQUIRED_FIT",
+      "route": "official application form",
+      "evidence": ["https://intervolutions.com/careers/", "https://intervolutions.com/careers/frontend-developer-freelance/", "https://intervolutions.com/en/privacy/"],
+      "verification": "Official careers says all published roles accept applications today. Frontend freelance is remote, €250-350/day, workload-peak support, WordPress/headless CMS integration and long-term potential.",
+      "reason_not_promoted": "React or Astro is listed with the frontend requirements; truthful VDS fit is not strong enough for direct promotion. Separate freelance web-design/maquetación opening needs role-detail verification."
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"organization":"Crisandcris.net","decision":"SUPPRESSED","reason":"Excellent current freelance WordPress/P.IVA remote fit but organization has prior FIRST_CONTACT."},
+    {"organization":"Alpacode","decision":"GEO_HOLD","reason":"Current autonomous remote-native collaboration explicitly limited to working from Italy."},
+    {"organization":"Midable Digital Agency","decision":"GEO_REJECT","reason":"Official page explicitly rejects full remote/external freelance outsourcing."},
+    {"organization":"Coopit","decision":"FIT_REJECT","reason":"Current Bologna event roles are not web/digital development work."},
+    {"organization":"multiple supplier-side freelancers/agencies","decision":"NOT_BUYER_SIDE","reason":"Service-selling pages without explicit external-capacity demand are not opportunities."}
+  ],
+  "source_family_rotation": {
+    "Spain": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS", "FREELANCE_MARKETPLACES", "PROFESSIONAL_NETWORKS"],
+    "Italy": ["OFFICIAL_COMPANY", "AGENCY_OUTSOURCING", "SPECIALIST_JOBS"],
+    "sectors": ["web/digital agencies", "software houses", "hosting/maintenance", "event/culture", "ecommerce/performance"]
+  },
+  "mailbox_dedup": {
+    "Boneluv": {
+      "gmail_sent": "0 exact identity/recipient matches",
+      "hostinger_sent_to": "0 matches for hola@boneluv.com",
+      "hostinger_sent_text": "0 matches for Boneluv"
+    }
+  },
+  "qa_reconciliation": {
+    "finding": "The suppression registry at 09:10 contained Ibérica Studio but did not yet normalize the other three successful Partner Hunt morning-wave sends.",
+    "action": "Added Visioni, Evo Sistemi and Daniele Debernardis to governance/suppression-registry.json; coverage backfill increased from 26 to 29. Ibérica hard-bounce remains organization-level suppressed."
+  },
+  "cycle_delta": {
+    "verified_direct_email_new": 1,
+    "verified_form_platform_new": 0,
+    "review_required_new": 1,
+    "suppression_normalizations": 3,
+    "no_outreach": true
+  },
+  "next_resume": [
+    "Spain: Comunitat Valenciana role-detail recheck, then Basque Country and Galicia agency-outsourcing/specialist rotations; Asturias/Cantabria and Murcia/Aragón remain under-searched.",
+    "Italy: Emilia-Romagna/Liguria official-company + outsourcing rotations, then Lazio/Campania gaps.",
+    "Sector: IT/MSP/hosting, WCAG/WPO, tourism/hospitality, healthcare/professional-services and event/culture remain below desired coverage."
+  ]
+}
