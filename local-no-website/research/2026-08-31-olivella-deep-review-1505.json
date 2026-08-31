@@ -1,0 +1,98 @@
+{
+  "run_at": "2026-08-31T15:05:40+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "frontier": {
+    "country": "Spain",
+    "region": "Catalonia",
+    "province": "Barcelona",
+    "district_or_comarca": "Garraf",
+    "municipality": "Olivella",
+    "state": "ACTIVE_SCAN"
+  },
+  "screened_raw_before": 193,
+  "screened_raw_after": 193,
+  "new_identity_count": 0,
+  "deep_reviews": [
+    {
+      "business": "CIM Apartments",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED",
+      "website_gap": "INFERRED_STRONG_TO_VERIFY",
+      "reputation": "VERIFIED_STRONG_BUT_SOURCE_INDEPENDENCE_LIMITED",
+      "contactability": "PHONE_VERIFIED_EMAIL_SOCIAL_TO_VERIFY",
+      "evidence": [
+        "Google/local listing: Carrer de Can Pere Miret 7, Olivella, phone +34 648 68 12 11, 4.7/5 from 18 reviews",
+        "Booking 2026: 9.7/10 from 92 reviews, active accommodation with pool, Wi-Fi and medium/long-stay positioning",
+        "Independent local/pet directory repeats exact address and phone with 4.9/5 from 17 reviews",
+        "Exact-name/domain/social searches did not surface a functional dedicated owned website or verified owned social/email route"
+      ],
+      "decision": "KEEP_RAW_DEEP_REVIEW",
+      "blockers": ["independent non-OTA reputation lineage remains limited", "owned social/email route not verified", "dedicated-domain absence requires final confirmation before promotion"]
+    },
+    {
+      "business": "DGTTO",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED",
+      "website_gap": "TO_VERIFY",
+      "reputation": "TO_VERIFY",
+      "contactability": "PHONE_VERIFIED",
+      "evidence": [
+        "Google/local listing: Carrer de Bessons 5, Olivella, furniture store, phone +34 662 69 07 40, current weekly opening hours",
+        "Local directory independently repeats exact identity, address and phone",
+        "No sufficiently reliable independent reputation corpus or owned-domain/social evidence surfaced in this pass"
+      ],
+      "decision": "KEEP_RAW_DEEP_REVIEW",
+      "blockers": ["reputation corpus missing", "owned website/social state unresolved", "commercial traction not yet evidenced"]
+    },
+    {
+      "business": "Bar Rosi",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED_BY_MUNICIPAL_SOURCE",
+      "website_gap": "TO_VERIFY",
+      "reputation": "TO_VERIFY",
+      "contactability": "PHONE_VERIFIED",
+      "evidence": [
+        "Ajuntament d'Olivella listing updated 2024-04-19: Bessons 3 baixos zona comercial 2, phone 938 968 242",
+        "Municipal food/lodging directory repeats the exact identity and phone",
+        "Historical 2012-2014 local cycling references independently repeat the same phone, supporting continuity but not current reputation",
+        "Generic Bar Rosi web results are heavily collision-prone across other Spanish cities"
+      ],
+      "decision": "KEEP_RAW_DEEP_REVIEW",
+      "blockers": ["current independent reputation unavailable", "owned social/domain route unresolved", "common-name identity collisions require exact phone/address matching"]
+    },
+    {
+      "business": "Berrigestion Coches Vilafranca Barcelona",
+      "state": "REPUTATION_RISK_REVIEW_REQUIRED",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED",
+      "website_gap": "TO_VERIFY",
+      "reputation": "CONFLICTING",
+      "contactability": "TO_VERIFY",
+      "evidence": [
+        "Google/local listing: Plaça Catalunya 7B local 1, Olivella, used-car dealer, 4.5/5 from 99 reviews, current weekday hours",
+        "Coches.net dealer page: same Olivella location, 3.5/5 from 17 ratings and 18 active vehicle listings",
+        "Local directory independently repeats exact business identity and address"
+      ],
+      "decision": "KEEP_REPUTATION_RISK_REVIEW_REQUIRED",
+      "blockers": ["material cross-platform rating divergence", "review recency/themes/owner-response pattern not yet reconciled", "owned domain/social state unresolved"]
+    }
+  ],
+  "next_review_order": [
+    "CIM Apartments owned social/email and final dedicated-domain absence confirmation",
+    "Berrigestion Coches review recency/theme/owner-response reconciliation",
+    "DGTTO reputation and owned-domain/social discovery",
+    "Bar Rosi exact-phone current reputation/social discovery",
+    "continue genuinely unreviewed Olivella municipal/directory categories before geographic expansion"
+  ],
+  "safety": {
+    "outreach_sent": false,
+    "applications_submitted": false,
+    "forms_submitted": false,
+    "first_contact_created": false,
+    "duplicate_first_contact_created": false
+  }
+}
