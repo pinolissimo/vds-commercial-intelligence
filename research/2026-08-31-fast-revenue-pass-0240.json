@@ -1,0 +1,73 @@
+{
+  "schema_version":"1.0",
+  "run_at":"2026-08-31T02:40:00+02:00",
+  "workstream":"COLLABORATIONS",
+  "objective":"Expand Monday actionable pool without lowering quality; direct-email candidates prioritized only when buyer identity, route, eligibility, fit and freshness support promotion.",
+  "canonical_queue_after_run":"views/fast-revenue-email-queue.json",
+  "counts_after_run":{"potential_direct_email_pre_final_gate":32,"prepared_direct_email":17,"new_reverify_reserve":1,"new_application_only":2,"new_rejections":2},
+  "promotions":[
+    {
+      "organization":"Lokesh Kapoor / LK",
+      "state":"HOT_REVERIFY",
+      "email":"hello@lokeshkapoor.com",
+      "territory":"India / Uttar Pradesh / Kanpur / remote",
+      "need_evidence":"https://www.linkedin.com/posts/lokeshkapoor_wordpress-elementor-hiring-activity-7459886853857517568-4Fm_",
+      "identity_evidence":"https://lokeshkapoor.com/",
+      "fit":["WordPress","Elementor","UI/UX","responsive","SEO-friendly development","performance optimization"],
+      "route":"published resume/portfolio email",
+      "freshness":"~2 months old hiring signal; official site active in 2026",
+      "hostinger_sent_check":"CLEAR exact recipient on 2026-08-31",
+      "suppression_check":"not found in canonical suppression registry",
+      "decision":"reserve only; revalidate current acceptance and engagement structure before SEND_READY"
+    }
+  ],
+  "application_only":[
+    {
+      "organization":"Jobgether partner company",
+      "state":"PLATFORM_APPLICATION_ONLY",
+      "territory":"Spain / remote",
+      "evidence":"https://es.linkedin.com/jobs/view/wordpress-designer-elementor-expert-at-jobgether-4458646151",
+      "freshness":"2 hours old when verified",
+      "fit":"WordPress + Elementor + WooCommerce, Spain-based remote, long-term potential",
+      "reason":"unnamed partner; authoritative application path remains Jobgether, not email"
+    },
+    {
+      "organization":"Dots.eco via Upwork",
+      "state":"PLATFORM_APPLICATION_ONLY",
+      "territory":"Worldwide / CET overlap",
+      "evidence":"https://www.upwork.com/freelance-jobs/apply/Specialist-WordPress_~022082808204456276051/",
+      "freshness":"posted 2026-07-30 and currently indexed",
+      "fit":"independent contractor, WordPress UI/UX, worldwide remote, CET overlap",
+      "economics":"USD 1,600-2,500/month per listing",
+      "reason":"authoritative route is Upwork; never convert to cold email"
+    }
+  ],
+  "rejections":[
+    {
+      "organization":"CANARY TECHNOLOGY INNOVATIONS / CanaryTech",
+      "state":"CLOSED_REJECT",
+      "email":"info@canarytech.ro",
+      "evidence":"https://ro.linkedin.com/jobs/view/wordpress-developer-cms-development-fe-%2B-be-at-canary-technology-innovations-4236311772",
+      "reason":"authoritative LinkedIn page explicitly says no longer accepting applications; post ~1 year old",
+      "note":"strong B2B freelance WordPress/PHP/WCAG fit but freshness/closure gate overrides fit"
+    },
+    {
+      "organization":"Kapetan Greece",
+      "state":"DEADLINE_REJECT",
+      "email":"elianna@kapetan.gr",
+      "evidence":"https://gr.linkedin.com/jobs/view/freelance-website-developer-wordpress-%2B-ai-site-building-at-kapetan-greece-4450873612",
+      "reason":"published application deadline 2026-08-30 has passed; no new open signal found"
+    }
+  ],
+  "source_notes":[
+    "Search engines used as discovery routers only; primary/authoritative sources retained for decisions.",
+    "White-label supplier pages were not counted automatically as buyer opportunities when they primarily sell capacity rather than request it.",
+    "No outreach, application, form, DM or social message was executed in this research pass."
+  ],
+  "territory_delta":{
+    "Spain":"fresh nationwide remote Elementor opportunity captured application-only; province/community frontier remains ACTIVE_SCAN",
+    "Italy":"no new direct-email promotion in this delta; region/province frontier remains ACTIVE_SCAN",
+    "Europe_Remote":"Romania sampled via CanaryTech and rejected closed; continue remaining EU clusters",
+    "Worldwide_Remote":"Kanpur/India added as reverify reserve; worldwide contractor signal captured via Upwork"
+  }
+}
