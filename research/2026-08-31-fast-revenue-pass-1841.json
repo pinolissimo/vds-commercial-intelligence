@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T18:41:00+02:00",
+  "workstream": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "mode": "RESEARCH_ONLY_NO_OUTREACH",
+  "inputs_read": [
+    "README.md",
+    "OPERATING_RULES.md",
+    "QA_AUDIT_STANDARD.md",
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "outreach/2026-08-31-partner-hunt-morning-wave-01.json",
+    "outreach/2026-08-31-partner-hunt-morning-wave-02.json"
+  ],
+  "search_strategy": {
+    "delta_first": true,
+    "territories_sampled": [
+      "Spain nationwide + active/under-searched regional clusters",
+      "Italy active regional clusters",
+      "Remote Europe / worldwide contractor market"
+    ],
+    "sectors_sampled": [
+      "web/digital agencies",
+      "software houses / IT consulting",
+      "WordPress/Elementor contractor boards",
+      "agency freelance networks",
+      "marketing/creative agencies"
+    ],
+    "route_signals": [
+      "freelance WordPress developer",
+      "Elementor contractor",
+      "remote contract",
+      "send CV/portfolio",
+      "collaborator/freelance intake",
+      "Figma to WordPress",
+      "maintenance/performance/API"
+    ]
+  },
+  "new_actionable": [
+    {
+      "opportunity_id": "OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
+      "organization": "Sapres Technologies GmbH",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT_PLUS",
+      "published": "2026-08-30",
+      "route": "https://www.freelancermap.de/projekt/wordpress-developer-gesucht",
+      "commercial_signal": "Freelance, immediate start, 12 months++, 100% utilization, 95% remote / 5% Frankfurt onsite, English.",
+      "fit": "WordPress, Elementor, Figma, HTML/CSS/JS, performance/SEO, API/integration overlap.",
+      "dedup": {
+        "repository": "CLEAR",
+        "suppression": "CLEAR",
+        "gmail_sent": "CLEAR",
+        "hostinger_sent": "CLEAR"
+      }
+    }
+  ],
+  "not_promoted": [
+    {"organization":"Crisandcris.net","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"Current high-fit freelance WordPress/remote demand resurfaced, but organization identity already has FIRST_CONTACT history."},
+    {"organization":"BBrothers Adv","state":"RESEARCH_ONLY","reason":"Current freelance intake exists, but listed typical demand is primarily creative/media and does not establish a specific web-development buyer need."},
+    {"organization":"Studio Magnani & Partners","state":"RESEARCH_ONLY","reason":"Remote P.IVA role is primarily graphic/advertising production; WordPress is secondary, so VDS web fit is insufficient for FAST_REVENUE promotion."},
+    {"organization":"Xonex","state":"REJECTED_MODEL","reason":"Official careers page explicitly says the relevant stable role is not for freelance/P.IVA candidates."},
+    {"organization":"Performize","state":"REJECTED_MODEL","reason":"Official WordPress/PHP role explicitly excludes freelance/partita IVA collaboration."}
+  ],
+  "channel_counts_after": {
+    "VERIFIED_DIRECT_EMAIL": 1,
+    "VERIFIED_FORM_PLATFORM": 22,
+    "REVIEW_REQUIRED": 31,
+    "SUPPRESSED": 48,
+    "HOLD": 7
+  },
+  "frontier_delta": {
+    "remote_europe": "COVERED_RECENTLY with Sapres material hit; next families NGO_DIGITAL_SUPPLIERS / FREELANCE_MARKETPLACES / AGENCY_OUTSOURCING",
+    "software_houses_saas": "COVERED_RECENTLY",
+    "it_msp_system_integrators": "COVERED_RECENTLY",
+    "spain_balearic_canary": "remain UNDER_SEARCHED; no false LOW_YIELD state",
+    "italy_active_regions": "remain ACTIVE_SCAN where multi-family evidence is still incomplete"
+  },
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
