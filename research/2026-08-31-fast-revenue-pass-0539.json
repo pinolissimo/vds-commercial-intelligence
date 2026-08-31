@@ -1,0 +1,85 @@
+{
+  "run_at": "2026-08-31T05:39:00+02:00",
+  "mode": "FAST_REVENUE_HUNT_NO_OUTREACH",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "principles_applied": ["quality_before_quantity","direct_email_requires_explicit_route","no_guessed_recipients","no_route_conversion","geographic_frontier","freshness_gate","freelance_contract_compatibility_gate"],
+  "material_changes": {
+    "potential_email_pool_before_final_gate_before": 34,
+    "potential_email_pool_before_final_gate_after": 37,
+    "prepared_direct_email": 17,
+    "new_direct_email_review_candidates": 3,
+    "new_application_only_candidates": 1,
+    "new_rejects": 1
+  },
+  "new_candidates": [
+    {
+      "organization": "QWEB - Web Agency & Software House",
+      "territory": "Italy / Veneto / Venezia / San Donà di Piave",
+      "state": "GEO_EMPLOYMENT_REVIEW",
+      "priority": "HIGH",
+      "email": "job@qweb.eu",
+      "need": "Web Graphic Designer with WordPress, WooCommerce, Figma, UX/UI and HTML/CSS",
+      "contract_signal": "Current listing explicitly allows freelance if candidate has P.IVA",
+      "freshness": "Indeed freelance Veneto listing published 2026-08-29",
+      "evidence": [
+        "https://it.indeed.com/q-graphic-designer-freelance-l-veneto-offerte-lavoro.html",
+        "https://it.linkedin.com/jobs/view/web-graphic-designer-esperto-at-q-web-srl-4398274731"
+      ],
+      "blocker": "Role is explicitly in-person at San Donà di Piave. Do not promote until Spain-based eligibility/remote exception is confirmed."
+    },
+    {
+      "organization": "Azuanet Soluciones Web S.L.",
+      "territory": "Spain / Extremadura / Cáceres-Badajoz",
+      "state": "GENERAL_FREELANCE_ROUTE_REVIEW",
+      "priority": "HIGH",
+      "email": "cv@azuanet.com",
+      "need": "Agency web/e-commerce/SEO/maintenance delivery capacity",
+      "contract_signal": "Official contact page explicitly invites candidates who want to work with the company or collaborate as freelance",
+      "freshness": "Official page current and crawled 2026-08-31",
+      "evidence": ["https://azuanet.es/contacto"],
+      "blocker": "No role-specific current WordPress vacancy; current buyer need must be confirmed before HOT/EMAIL_READY promotion."
+    },
+    {
+      "organization": "2PDX Studio",
+      "territory": "Italy / Puglia / Barletta-Andria-Trani / Trani",
+      "state": "QUALIFIED_ROUTE_EMPLOYMENT_REVIEW",
+      "priority": "HIGH",
+      "email": "cv@2pdx.it",
+      "need": "Web Designer / Developer for WordPress, Webflow or other platforms with autonomous project delivery",
+      "contract_signal": "Official careers page active; engagement type not explicitly freelance/contract",
+      "freshness": "Official page crawled in 2026",
+      "evidence": ["https://2pdx.it/lavora-con-noi/"],
+      "blocker": "Freelance/contract and remote compatibility must be confirmed before EMAIL_READY."
+    }
+  ],
+  "application_only": [
+    {
+      "organization": "Talentchef / Little Big Group",
+      "territory": "Spain / Comunidad de Madrid; Málaga",
+      "state": "PLATFORM_APPLICATION_ONLY",
+      "priority": "HOT",
+      "need": "WordPress Developer (Freelance), part-time, continuous collaboration; WordPress+Elementor, hosting/domains/DNS/SSL, Google Workspace, HTML/CSS, SEO implementation",
+      "freshness": "Official current career page verified 2026-08-31",
+      "evidence": ["https://talentchef.com/en/career/wordpress-developer/"],
+      "route": "Official application action/form; no exact direct recipient email exposed in available evidence",
+      "reason_not_email_pool": "Never convert a form/application route to guessed email."
+    }
+  ],
+  "rejected": [
+    {
+      "organization": "InYourLife | Web Agency",
+      "territory": "Italy / Toscana / Firenze / Lastra a Signa",
+      "state": "GEO_REJECT",
+      "need": "WordPress, Elementor, WooCommerce, HTML/CSS/JS, UX/UI",
+      "email": "social@inyourlife.info",
+      "evidence": ["https://www.linkedin.com/company/inyourlife.info"],
+      "reason": "Role explicitly requires on-site Monday-Friday in Lastra a Signa; incompatible with Spain-based remote target."
+    }
+  ],
+  "frontier_updates": {
+    "Spain": ["Extremadura / Cáceres", "Extremadura / Badajoz", "Madrid / freelance WordPress specialist signal"],
+    "Italy": ["Veneto / Venezia", "Puglia / Barletta-Andria-Trani", "Toscana / Firenze recheck"],
+    "next_priority": ["Spain: Andalucía, Comunitat Valenciana, Galicia, Aragón, Asturias, Navarra, La Rioja, Murcia, Balears, Canarias, Basque Country", "Italy: Lombardia remaining provinces, Veneto remaining provinces, Puglia Bari-Lecce, Sicilia, Campania, Liguria, Marche, Abruzzo, Friuli-Venezia Giulia, Sardegna, Basilicata, Molise, Valle d'Aosta"]
+  },
+  "outreach_performed": false
+}
