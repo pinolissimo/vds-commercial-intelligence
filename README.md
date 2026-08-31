@@ -4,108 +4,127 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 30 agosto 2026 · 13:00 Europe/Madrid  
-**Operating mode:** **CONVERSION FIRST · THREE COMMERCIAL WORKSTREAMS · PROCUREMENT SEPARATE**  
-**QA:** `FAIL_CORRECTED` — Local SME transition-gate regression corrected; historical mailbox reconciliation remains open.
+**Snapshot:** 31 agosto 2026 · 10:23 Europe/Madrid  
+**Operating mode:** **MONDAY EXECUTION COMPLETE · INBOUND MONITORING · DISCOVERY CONTINUES**  
+**QA:** mandatory identity / freshness / route / geography / fit / suppression / global dedup / Gmail Sent / Hostinger Sent gates enforced per recipient.
 
 ---
 
 ## 🎛️ Executive Dashboard
 
-| Opportunity | Verified first contacts | Qualified not contacted | Positive referral | Meeting | Proposal | Revenue won |
-|---:|---:|---:|---:|---:|---:|---:|
-| **69** | **28** | **41** | **1** | **0** | **0** | **€0** |
+| KPI | Current verified state |
+|---|---:|
+| Monday commercial emails verified in Hostinger Sent | **21** |
+| Monday duplicate FIRST_CONTACT violations | **0** |
+| Monday positive referrals | **1** |
+| Monday negative replies | **1** |
+| Monday hard bounces | **4** |
+| Local SME 999 contacted | **8 / 8 qualified** |
+| Local SME hard bounces | **3** |
+| Suppression-normalized acquisition identities | **46** |
+| Meetings | **0** |
+| Proposals | **0** |
+| Revenue won | **€0** |
 
-**Partner accounts:** 63 · **pipeline activation:** 40.6%.
+The numerical Monday target was **30+**, but only **21** candidates survived every final gate. The shortfall is intentional: no stale, duplicate, guessed, geography-ineligible, price-gated, ambiguous-route or weak-fit candidate was converted into an email merely to reach the target.
 
-The 69 canonical opportunities belong to the EU Projects / Collaborations CRM. `LOCAL_SME_999` is intentionally counted separately so raw local discoveries never inflate qualified opportunity metrics. Public procurement is also kept operationally separate and user-managed.
-
-| Commercial segment | Current volume | Operational meaning |
-|---|---:|---|
-| 🎯 **Direct Commercial — actionable** | **24** | Personalized outreach/application only after final dedup, freshness and route gate |
-| 🟠 **Direct Commercial — HOLD** | **3** | Contract/cross-border evidence still incomplete |
-| 🏛️ **Public Procurement — manual** | **5** | User-owned GO/NO-GO and tender review; never automated outreach |
-| 🏪 **Local SME 999 — raw/deep review** | **3 / 3** | Sitges cohort under QA hold; **0 qualified, 0 ready, 0 contacted** |
+➡️ [Monday wave 01](outreach/2026-08-31-partner-hunt-morning-wave-01.json) · [Monday wave 02](outreach/2026-08-31-partner-hunt-morning-wave-02.json) · [Suppression registry](governance/suppression-registry.json)
 
 ---
 
-## 🏪 Local SME 999 — QA HOLD BEFORE QUALIFICATION
+## 🚨 Inbound events requiring attention
 
-The first local cohort was discovered in **Sitges · Garraf · Barcelona · Catalonia · Spain** across three activities: laundry, car wash and physiotherapy.
+### Daniele Debernardis — POSITIVE REFERRAL
+
+Daniele replied after the first contact and **forwarded the request to his colleague Fabio Vanacore**, who was placed in CC. This is a genuine routed referral and is now a **USER-action** thread. No automated reply and no separate first-contact solicitation to Fabio was generated.
+
+### MarkeThink — CLOSED / NEGATIVE REPLY
+
+MarkeThink replied that its selection process is already in the final stage and it is **not accepting new applications**. The opportunity is closed for this round; no follow-up is generated.
+
+---
+
+## ✉️ Monday 2026-08-31 — verified execution
+
+All items below were sent one-to-one from exactly `info@visualdesignstudio.es` and verified in official Hostinger `INBOX.Sent` before being recorded.
+
+| UID | Organization / project | Route | Outcome |
+|---:|---|---|---|
+| 118 | Visioni | `info@visioni.info` | SENT |
+| 119 | Evo Sistemi | `info@evosistemi.com` | SENT |
+| 120 | Ibérica Studio | `trabajo@ibericastudio.com` | **HARD BOUNCE** |
+| 121 | Daniele Debernardis | `info@danieledebernardis.it` | **REFERRAL RECEIVED** |
+| 124 | Boneluv | `hola@boneluv.com` | SENT |
+| 125 | Cantabria Web Design | `info@cantabriawebdesign.es` | SENT |
+| 126 | Polish Bioinformatics Society (PTBI) | `zarzad@ptbi.org.pl` | SENT |
+| 127 | Quirogris | `quirogris@gmail.com` | **HARD BOUNCE** |
+| 128 | Mythic Tattoo Studio | `mythictattooestudio.16@gmail.com` | SENT |
+| 129 | Adara Rituals de Bellesa | `adararituals@gmail.com` | SENT |
+| 130 | Ech2Onet | `ech2onet@gmail.com` | SENT |
+| 131 | Madhaus Tattoo | `madhaustattoo@gmail.com` | SENT |
+| 132 | Nova 12 | `paubess@yahoo.com.ar` | **HARD BOUNCE** |
+| 133 | Estètica Integral Vng | `esteticaintegralvng@gmail.com` | SENT |
+| 134 | Brush Estilistes Cubelles | `loreabella2014@gmail.com` | **HARD BOUNCE** |
+| 135 | MarkeThink | `info@correo.cat` | **NEGATIVE REPLY / CLOSED** |
+| 136 | Rudz Tech | `rudra@rudztech.com` | SENT + CV |
+| 137 | Nexìbo | `collab@nexibo.agency` | SENT + CV |
+| 138 | Azuanet | `cv@azuanet.com` | SENT + CV |
+| 139 | Veintemillas | `jobs@veintemillas.com` | SENT + CV |
+| 140 | CareTalyst | `info@caretalyst.com` | SENT + CV |
+
+CareTalyst requested rate information; no numeric rate was invented. The application states that a precise quotation can be supplied once scope, workflow and turnaround are known.
+
+---
+
+## 🏪 Local SME 999
+
+The backlog-finalized cohort is now fully executed under the exact-one-proactive-first-contact rule.
 
 | Metric | Value |
 |---|---:|
-| Raw discovered | **3** |
-| Deeply reviewed | **3** |
-| Under research | **3** |
-| Rejected | **0** |
-| Qualified | **0** |
-| Ready for contact review | **0** |
+| Canonical records | **30** |
+| Finalized rejected | **22** |
+| Qualified | **8** |
 | Ready to contact | **0** |
-| Contacted | **0** |
+| Contacted / Sent verified | **8** |
+| Hard bounces | **3** |
+| Delivered or no bounce observed | **5** |
 | Replies | **0** |
 | Wins | **0** |
 
-A VDS7 audit found that the three new records had been promoted to `READY_FOR_CONTACT_REVIEW` while `suppression_checked=false`. Because global organization-level deduplication, suppression and historical Sent reconciliation are mandatory before Local SME qualification, all three were deterministically returned to `RESEARCH` with append-only QA events. **No outreach had occurred.**
+Hard-bounced addresses are suppressed and will never be blindly retried. A replacement route would require new authoritative evidence and organization-level continuation review.
 
-Current research cohort:
-
-- **La Lavandería Sitges** — strong local reputation signal (4.7 / 63) and website-gap evidence, but deeper public/social evidence and global dedup remain incomplete.
-- **Ech2Onet** — 4.7 / 59, Google local + Visit Sitges identity/contact evidence; Hostinger Sent search to its public email returned zero, but organization-level global dedup remains mandatory.
-- **Equilibri, Centre de Fisioteràpia** — historical domain reported obsolete/noncurrent; direct social/public-presence verification and source-lineage review remain incomplete.
-
-Spain tax messaging is backed by official Agencia Tributaria sources and may be used only conditionally. No guaranteed deduction, fixed saving or percentage claim is permitted.
-
-➡️ [Local SME master](local-no-website/master-index.json) · [Local QA-held index](local-no-website/views/qualified-index.md) · [€999 offer](local-no-website/config/offer-999.json) · [Tax policy](local-no-website/config/tax-policy.json)
+➡️ [Local SME master](local-no-website/master-index.json) · [€999 offer](local-no-website/config/offer-999.json) · [Tax policy](local-no-website/config/tax-policy.json)
 
 ---
 
-## 🚀 Direct Commercial Conversion Plan
+## ⛔ Final-gate blocks / review queue
 
-### Tier 1 — strongest buyer intent / fit
-**Aplum Studio → Grownnectia → Virtual Marketing Spain → Mucui → Mobyleshop → Onebit → Zmot Lab**
+Examples of candidates deliberately **not sent** today:
 
-- **Aplum:** freelance 1 year + possible continuity; WordPress/Elementor/HTML/CSS/PHP with GSAP/Figma/UX-UI as explicit pluses.
-- **Grownnectia:** P.IVA, continuous infrastructure + WordPress/WooCommerce; listing currently valid through 28 Sep 2026.
-- **Virtual Marketing Spain:** verified freelancer-network listing; WordPress/Elementor/WooCommerce + AI/no-code, continuous opportunity flow, possible stable long-term collaboration.
+- **Maia Management** — central Odoo/Python fit + current-role freshness unresolved.
+- **Summum Marketing** — current official evidence says core work is internal / not outsourced.
+- **Zivadox** — requirement explicitly fulfilled/closed.
+- **HARP / HCCA** — current buyer need is HR/training, not VDS web work.
+- **Lewonit Technology / Elia Digital / MagicWeb** — mandatory or material numeric pricing gate; no approved numeric rate.
+- **Antonio De Lorenzi** — role requires Rome residence/domicile.
+- **WEB-M / Hawthorn Creative** — cross-border eligibility not sufficiently proven.
+- **A10web / 2PDX** — current roles verified but freelance/contract compatibility is not explicit.
+- **iDEA Marketing** — conflicting current official vacancy counts; `REVIEW_REQUIRED`.
+- **Spinora / Magenta / Kamon** — buyer-demand signals too old without current-open confirmation.
+- **CodeQuadrat** — excellent current Remote Europe WordPress freelance role, but the authoritative `APPLY VIA EMAIL` recipient is not exposed in available evidence; remains APPLICATION READY / route unresolved.
 
-### Tier 2 — strong recurring/agency collaboration
-**Global Service Impresa → Aderen → Vaivén Estudio → Digityze → Dream Big Design → Studiart**
-
-### Tier 3 — valid but extra constraints
-**Hays España → Mindrift → Robert Half Contracting**
-
-**DNA Agency** remains blocked until the exact current application route is re-established.
-
-➡️ [Direct Commercial Pipeline](views/direct-commercial-pipeline.json) · [Monday Direct Outreach Pack](reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md) · [Application Copy Pack](reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md) · [Exact Contact Route Matrix](views/direct-contact-route-matrix.json)
-
-Because today is Sunday, new commercial first contacts/follow-ups remain blocked by the Monday–Friday working-hours policy.
-
----
-
-## ✉️ Current-day outreach evidence
-
-Exactly **1 commercial FIRST_CONTACT** is verified today:
-
-- **Pump Communication** — `info@pumpcommunication.com` — Hostinger `INBOX.Sent` UID **116** — 30 Aug 2026 09:03:28 Europe/Madrid — subject `Candidatura freelance Web Designer & Developer — Visual Design Studio`.
-
-Hostinger UID **117** is an internal alert to `allocca.pino@gmail.com` and is **not** counted as commercial outreach.
-
-Current-day duplicate FIRST_CONTACT violations: **0**.
+➡️ [Fast revenue email queue](views/fast-revenue-email-queue.json) · [Direct route matrix](views/direct-contact-route-matrix.json)
 
 ---
 
 ## 🇪🇺 EU Projects
 
-Early-funded watchlist: **11** projects · **0 contactable now** · **1 already contacted/suppressed**.
-
-Priority research remains WP/task → responsible beneficiary → buyer/contact route before any promotion. `TO_VERIFY` and inferred digital needs are never treated as proven procurement opportunities.
-
-**SENSORAMA** remains globally suppressed from a new FIRST_CONTACT because Sent UID 79 proves prior outreach.
+EU opportunities remain governed by the project → WP/task → responsible beneficiary → verified buyer/contact route chain. Inferred digital need is never enough for outreach.
 
 ### BEYOND BARRIERS — WAITING FOR INBOUND
 
-The explicit user decision remains authoritative: `WAITING_FOR_INBOUND` · no follow-up · no solicitation · reopen only on genuinely new inbound.
+The explicit user decision remains authoritative: `WAITING_FOR_INBOUND` · no follow-up · no solicitation · reopen only on a genuinely new inbound event or a new explicit user decision.
 
 [Opportunity](opportunities/OPP-EU-BEYOND-BARRIERS-WEB.json) · [EU watchlist](eu-projects/early-funded-watchlist-2026-08-28.json)
 
@@ -115,62 +134,30 @@ The explicit user decision remains authoritative: `WAITING_FOR_INBOUND` · no fo
 
 Public administrations, municipalities, institutional bodies and regulated procurement remain a separate manual funnel. No automated first-contact outreach or bid submission.
 
-Current manual opportunities: **5**. Nearest deadlines: ABAQUA 03/09, ProBurgos 04/09, Los Realejos 10/09, Autoridad Portuaria de Sevilla 14/09, Diputació de Barcelona 08/10.
-
 ➡️ [Manual Public Procurement Report](reports/MANUAL-PROCUREMENT-OPPORTUNITIES.md) · [Public Procurement Pipeline](views/public-procurement-pipeline.json)
 
 ---
 
-## 🔻 Funnel
+## 🛡️ Safety / QA state
 
-| Stage | Volume |
-|---|---:|
-| Canonical EU/Collaboration opportunities | **69** |
-| Verified first contacts | **28** |
-| Qualified not contacted | **41** |
-| Direct commercial actionable | **24** |
-| Public procurement manual | **5** |
-| Reply threads | **1** |
-| Positive referrals | **1** — passive inbound wait |
-| Meetings | **0** |
-| Proposals | **0** |
-| Won | **0** |
-| Local SME raw / qualified / contacted | **3 / 0 / 0** |
-
-Probability model remains **UNCALIBRATED**. Weighted pipeline remains `null`. The configured **€999** Local SME offer is a product price, not won or weighted pipeline revenue.
-
----
-
-## 🗺️ Coverage
-
-- **Italy collaborations:** 17/20 territories with at least one qualified account; 32 accounts with verified region + 1 remote/geography-to-verify.
-- **Spain collaborations:** 16/19 territories with at least one qualified account; 25 accounts with verified territory + 2 remote/geography-to-verify.
-- **Local SME:** Spain → Catalonia → Barcelona → Garraf → Sitges currently has 3 raw/deep-review candidates; no qualified local prospect after QA correction.
-- Incomplete zero-result territories remain `UNDER_SEARCHED`, never `LOW_OPPORTUNITY` merely because current yield is low.
-
----
-
-## 🛡️ Safety / QA
-
-- **Latest audit:** `FAIL_CORRECTED` — [2026-08-30 13:00](audits/2026-08-30-1300.md).
-- Current-day verified commercial FIRST_CONTACT: **1**.
-- Current-day duplicate FIRST_CONTACT violations: **0**.
-- Historical duplicate events preserved: **Persuadis** and **Marmellata Lab**.
-- Ten older 28 Aug recipients remain pending canonicalization and are a hard overlap-risk constraint.
-- `BATMAN / nobody@knows.us` remains `REVIEW_REQUIRED`.
-- Local SME candidates remain `RESEARCH` until global dedup/suppression/Sent-history and residual source checks pass.
-- BEYOND BARRIERS remains passive `WAITING_FOR_INBOUND`.
-- No guessed contacts, unsupported budgets, invented probabilities, rates, availability or tax savings may advance a commercial gate.
+- Duplicate FIRST_CONTACT violations today: **0**.
+- Every actual send was verified in Hostinger Sent before being recorded.
+- Gmail Sent and Hostinger Sent were checked at the final gate for new application routes.
+- Four failed addresses are hard-bounce suppressed; organization-level first-contact history remains permanent.
+- Positive/referral/pricing/proposal/call threads remain USER action; no substantive positive response is auto-replied.
+- No guessed email, invented rate, invented availability, unsupported budget or false freshness was used.
+- Public procurement remains user-managed.
+- BEYOND BARRIERS remains passive and untouched.
 
 ---
 
 ## Top Next Actions
 
-1. Complete global dedup/suppression/Sent-history reconciliation for the 3 Local SME identities and deepen remaining source evidence.
-2. On the next working day, review the strongest 24 direct-commercial opportunities for personalized gated execution.
-3. Continue canonicalization of the 10 historical recipients and resolve `BATMAN / nobody@knows.us` before any overlap-sensitive action.
-4. Continue EU watchlist deepening for explicit Communication/Dissemination WP/task and responsible beneficiary routes; never regenerate BEYOND BARRIERS solicitation.
-5. Keep public procurement in the user-managed GO/NO-GO lane, with ABAQUA and ProBurgos nearest deadlines.
+1. **USER:** review the Daniele Debernardis → Fabio Vanacore referral thread before any response or next step.
+2. Monitor the remaining non-bounced Monday contacts for replies, CV/portfolio requests, calls or proposals.
+3. Resolve only high-value `REVIEW_REQUIRED` items with missing evidence; do not recycle stale/blocked candidates.
+4. Keep discovery focused on fresh, explicit freelance/contract/white-label/overflow demand with direct authoritative routes.
+5. Continue EU project deepening only where a defensible funded-project → responsible-beneficiary → digital-need route exists.
 
 ---
 
@@ -178,6 +165,7 @@ Probability model remains **UNCALIBRATED**. Weighted pipeline remains `null`. Th
 
 - [Master index](master-index.json)
 - [Direct Commercial Pipeline](views/direct-commercial-pipeline.json)
+- [Fast Revenue Email Queue](views/fast-revenue-email-queue.json)
 - [Public Procurement Pipeline](views/public-procurement-pipeline.json)
 - [Next Best Actions](views/next-best-actions.json)
 - [Action Queue](views/action-queue.json)
