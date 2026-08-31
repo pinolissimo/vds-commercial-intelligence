@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.8",
-  "updated_at": "2026-08-31T17:47:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after the 17:41 systematic discovery, freshness, route and global dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
+  "schema_version": "1.9",
+  "updated_at": "2026-08-31T18:47:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 18:41 systematic discovery, freshness, route and global dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
-    "VERIFIED_FORM_PLATFORM": 21,
+    "VERIFIED_FORM_PLATFORM": 22,
     "REVIEW_REQUIRED": 31,
     "SUPPRESSED": 48,
     "HOLD": 7,
@@ -12,16 +12,16 @@
   },
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate in this compact status.",
-    "VERIFIED_FORM_PLATFORM": "21 previously verified form/platform opportunities remain unchanged this cycle.",
-    "REVIEW_REQUIRED": "31 review-required opportunities now include Diwar Marketing: excellent identity/route/fit/dedup evidence, but its explicit freelance web-design demand post is approximately two months old and therefore requires a newer demand confirmation before promotion.",
-    "SUPPRESSED": "48 acquisition identities remain suppressed. Marka Digital resurfaced with an excellent official freelance WordPress/Elementor/UX-CRO role, but it was already present in suppression and Hostinger Sent confirms the 2026-08-28 first contact, so the count does not increase.",
+    "VERIFIED_FORM_PLATFORM": "22 verified form/platform opportunities now include Sapres Technologies GmbH: a newly published 12-month++ freelance WordPress/Elementor project with an explicit Freelancermap application path.",
+    "REVIEW_REQUIRED": "31 review-required opportunities remain unchanged this cycle.",
+    "SUPPRESSED": "48 acquisition identities remain suppressed.",
     "HOLD": "7 existing holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
-    "verified_form_platform_new": 0,
-    "review_required_new": 1,
+    "verified_form_platform_new": 1,
+    "review_required_new": 0,
     "hold_new": 0,
     "suppression_new": 0,
     "suppression_total": 48,
@@ -29,30 +29,23 @@
   },
   "material_verification_changes": [
     {
-      "organization": "Diwar Marketing SL",
-      "domain": "diwarmarketing.com",
-      "opportunity_id": "OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
-      "state": "REVIEW_REQUIRED_FRESHNESS",
-      "current_demand": "A company-linked LinkedIn post explicitly says Diwar needs freelance web designers for agency projects, but the post is now approximately two months old.",
-      "need": "UX/UI + Figma and WordPress + Elementor implementation for web projects.",
-      "route": "Explicit application email adrian@diwarmarketing.com in the hiring post; not guessed or derived.",
-      "eligibility": "Freelance and remote model evidenced; Spanish agency; no restrictive geography surfaced in the collaboration signals.",
-      "dedup": "CLEAR: no canonical/suppression match, Gmail Sent match or Hostinger Sent recipient match for Diwar/domain/application route.",
-      "action": "Not promoted to HOT/HOT+ because freshness is insufficient under the current gate. Recheck for a newer Diwar demand signal before Partner Hunt execution."
-    },
-    {
-      "organization": "Marka Digital",
-      "domain": "markadigital.es",
-      "state": "SUPPRESSED_ALREADY_CONTACTED",
-      "current_demand": "Official role remains highly relevant: freelance senior web design UX/CRO, Figma, WordPress+Elementor, WooCommerce, 100% remote, 20-30 EUR/hour and stable on-demand collaboration.",
-      "dedup": "BLOCKED: suppression registry already records FIRST_CONTACT_ALREADY_SENT and official Hostinger INBOX.Sent UID 85 confirms email to hola@markadigital.es on 2026-08-28.",
-      "action": "No second contact, application or queue entry created."
+      "organization": "Sapres Technologies GmbH",
+      "domain": "sapres.de",
+      "opportunity_id": "OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT_PLUS",
+      "current_demand": "Fresh Freelancermap project published 2026-08-30 for a WordPress Developer, freelance, immediate start, 12 months++, 100% utilization.",
+      "need": "WordPress/Elementor, Figma-to-WordPress, WP Webhooks/API integrations, responsive frontend, performance/usability/SEO and ongoing development.",
+      "route": "Explicit Freelancermap Bewerben/Apply route. Public listing's application email is redacted, therefore no email is inferred; generic Sapres business email is not substituted.",
+      "eligibility": "95% remote / 5% onsite Frankfurt, English. No residence-country restriction is stated. Occasional Frankfurt onsite availability remains a genuine execution condition.",
+      "dedup": "CLEAR: no canonical/suppression match, Gmail Sent match or Hostinger Sent match for Sapres/sapres.de.",
+      "action": "Promoted to HOT_PLUS VERIFIED_FORM_PLATFORM and queued for Partner Hunt final gate only."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"One Thing Marketing","reason":"Fresh freelance WordPress/Avada signal is unusually strong for VDS, but available listings frame the role as USA/EST-oriented and do not establish EU-contractor eligibility; not promoted."},
-    {"organization":"Interplay Learning","reason":"Current freelance WordPress/Elementor role is strong and recurring at $30-35/hour, but authoritative job-board evidence specifies Remote from United States / 1099 contractor; EU eligibility not established."},
-    {"organization":"SiteCare","reason":"Fresh contract WordPress/Core Web Vitals role explicitly limits candidates to LatAm, South Africa and Eastern Europe; Spain/Italy eligibility fails."}
+    {"organization":"BBrothers Adv","reason":"Official freelance intake is current and project-paid, but typical listed freelance disciplines are mainly creative/media rather than web-development capacity; insufficient specific VDS buyer need for promotion."},
+    {"organization":"Studio Magnani & Partners","reason":"Current remote P.IVA creative role includes WordPress only as a secondary skill; primary need is graphics/advertising production, so VDS web fit is not strong enough for FAST_REVENUE promotion."},
+    {"organization":"Crisandcris.net","reason":"Fresh high-fit freelance WordPress/remote project signal resurfaced, but canonical suppression already records FIRST_CONTACT_ALREADY_SENT; no second route created."}
   ],
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
@@ -64,7 +57,7 @@
     "../governance/suppression-registry.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../opportunities/OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026.json",
-    "../research/2026-08-31-fast-revenue-pass-1741.json"
+    "../opportunities/OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026.json",
+    "../research/2026-08-31-fast-revenue-pass-1841.json"
   ]
 }
