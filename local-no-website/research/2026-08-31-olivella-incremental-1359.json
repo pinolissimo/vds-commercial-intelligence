@@ -1,0 +1,78 @@
+{
+  "run_at":"2026-08-31T13:59:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella"},
+  "frontier_state":"ACTIVE_SCAN",
+  "purpose":"Research/discovery/qualification only. Expand Olivella directory coverage, deep-review high-potential no-site signals, and reconcile the raw queue against finalized canonical decisions. No outreach.",
+  "source_families_used":["T1_INSTITUTIONAL municipal directory/activity census","map/local listing","exact-name search","sector/local directories","booking/marketplace","review-derived directories"],
+  "material_findings":[
+    {
+      "business":"Centro de Estética y Peluquería / Centro de Belleza Unisex",
+      "identity_resolution":"SAME_OLIVELLA_COMMERCIAL_IDENTITY",
+      "evidence":["Current map/local data reports 4.9-5.0/48 at Plaça Catalunya 3 with phone 662001709.","Ajuntament and Diputació municipal activity data corroborate the same address/activity.","Fresha corroborates the operating salon and services.","Exact-name/phone searches still did not surface a functional dedicated owned website or a verified public business email/owned-social route."],
+      "decision":"KEEP_FINALIZED_REJECTED",
+      "reason":"New reputation evidence strengthens quality but does not resolve the canonical rejection gate INSUFFICIENT_VERIFIED_PUBLIC_CONTACT_ROUTE. Do not reinsert as RAW or promote."
+    },
+    {
+      "business":"Rostisseria l'Asador",
+      "evidence":["Current map/local signal: 4.8/66, exact Plaça Catalunya 3B identity and phone 938968300.","Independent restaurant directory reports 4.8/58 and favorable recurring themes around value, staff and order pickup/catering.","Municipal activity census remains current in the 2026 dataset.","Sector directory explicitly states website unavailable; exact search finds only an old Blogspot presence rather than a modern functional dedicated commercial site."],
+      "decision":"KEEP_FINALIZED_REJECTED",
+      "reason":"Strong reputation/website-gap evidence does not resolve the existing canonical blocker: no verified public business email/appropriate owned contact route. Do not reopen absent materially new route evidence."
+    },
+    {
+      "business":"Formas Perruqueria Unisex",
+      "evidence":["Ajuntament currently exposes phone 654066408 and public email formasperruquers@gmail.com; municipal entry last updated 2024.","Independent hair-salon directory reports only 4.5/5 from 2 Google reviews for the exact phone/address."],
+      "decision":"KEEP_FINALIZED_REJECTED",
+      "reason":"The public email was already known; reputation remains too thin and therefore does not resolve the canonical INSUFFICIENT_REPUTATION_DEPTH rejection."
+    },
+    {
+      "business":"Piscinas Olivella",
+      "evidence":["Ajuntament lists the historical Mas Milà identity and phone 652196355.","Current map/local result marks the exact business permanently closed.","Independent directory attributes historical website piscinasolivella.com and Facebook presence."],
+      "decision":"SCREENED_REJECTED_CLOSED",
+      "reason":"Closed business fails current-activity and commercial-quality gates."
+    },
+    {
+      "business":"Obrador La Fassina de Jafre SCCL",
+      "evidence":["Ajuntament identifies the exact Olivella cooperative and explicitly attributes fassinadejafre.com."],
+      "decision":"SCREENED_REJECTED_HAS_WEBSITE",
+      "reason":"Dedicated website fails LOCAL_SME_999 website-absence gate."
+    },
+    {
+      "business":"Feel Chill Experience",
+      "evidence":["Ajuntament lists the Olivella organization and public email.","LinkedIn identifies it as a non-profit organization and attributes feelchillexperience.com."],
+      "decision":"SCREENED_REJECTED_HAS_WEBSITE_NONSTANDARD_FIT",
+      "reason":"Functional attributed website and non-profit positioning fail the standard local-SME no-site offer path."
+    },
+    {
+      "business":"Veterinari Poal / Veterinari Olivella",
+      "evidence":["Ajuntament lists the Olivella route as olivella@veterinariopoal.com.","Current exact search confirms the operating Veterinari Poal owned domain veterinariopoal.com."],
+      "decision":"SCREENED_REJECTED_HAS_WEBSITE",
+      "reason":"Owned functional domain fails the website-absence gate."
+    },
+    {
+      "business":"Villa Maioli",
+      "evidence":["Current Booking listing confirms active Olivella accommodation and 10/10 from 3 Booking reviews.","Exact-name search surfaces a dedicated Villa Maioli web property at web.hotelvillamaioli.com.","Current map/local listing corroborates exact address/phone and 4.6/17."],
+      "decision":"SCREENED_REJECTED_HAS_WEBSITE",
+      "reason":"Dedicated web presence fails website-gap gate; thin review depth is immaterial after website rejection."
+    },
+    {
+      "business":"CIM Apartments",
+      "evidence":["Current Booking: 9.7/92.","Current map/local: 4.7/18 at Carrer de Can Pere Miret 7, phone 648681211.","Independent OTA-derived sources corroborate the exact accommodation but are not treated as fully independent reputation lineages.","No dedicated owned domain surfaced in exact-name search."],
+      "decision":"RAW_DISCOVERY_REVIEW_REQUIRED",
+      "reason":"High commercial quality and likely website gap remain promising. Deep review still needs non-OTA reputation lineage plus owned social/email route before promotion."
+    }
+  ],
+  "dedup_qa":{
+    "finding":"The 12:58 frontier/raw queue reintroduced several identities already finalized rejected at 09:27, including Centro de Estética y Peluquería, Al Son, M & M Nail's, Nino y Antonio, Churreria Manchega and other previously finalized records.",
+    "action":"Do not count these as new discoveries and do not reopen them unless materially new evidence resolves their documented failed gate. Future frontier queue must distinguish FINALIZED_REJECTED_HISTORY from genuinely unresolved RAW.",
+    "counter_policy":"No lifetime screened_raw increment is asserted for directory identities whose prior historical screening cannot be uniquely excluded from existing logs; this prevents artificial reservoir inflation."
+  },
+  "new_coverage_work":"Completed pages 1-5 of the Ajuntament address/directory surface as an additional municipal source-family pass and cross-checked commercial entries against map/exact-name evidence.",
+  "priority_next":["CIM Apartments: independent non-OTA reputation + owned social/email route","DGTTO: second independent identity/activity lineage","Bar Rosi: current map/reputation/social/domain verification","remaining genuinely unresolved Olivella names only after removing finalized-rejected duplicates from active queue","then contiguous adjacent Barcelona-province frontier when Olivella unresolved queue is materially reduced"],
+  "secondary_workstreams":{"COLLABORATIONS":{"result":"No promotion in this pass; LOCAL_SME_999 consumed the intended dominant effort share."},"EU_PROJECTS":{"result":"No promotion in this pass; no existing EU state modified without stronger C&D buyer-path evidence."}},
+  "outreach_actions":0,
+  "applications_submitted":0,
+  "forms_submitted":0,
+  "first_contact_actions":0,
+  "notes":"Material value this cycle is additional Olivella source coverage, stronger deep-review evidence, and canonical dedup QA. No previously finalized rejection was silently resurrected."
+}
