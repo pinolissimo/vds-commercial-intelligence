@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2",
-  "updated_at": "2026-08-31T14:49:00+02:00",
+  "schema_version": "1.3",
+  "updated_at": "2026-08-31T15:59:00+02:00",
   "purpose": "Compact evidence-first FAST_REVENUE execution shortlist. This view contains the highest-priority newly verified additions from the latest cycle. Full channel totals live in fast-revenue-channel-status.json. Execution belongs exclusively to Partner Hunt after immediate freshness, route, suppression and Sent-history gates.",
   "rules": [
     "No outreach or submission from this view alone.",
@@ -10,9 +10,9 @@
     "A different address or listing never resets identity-level contact history."
   ],
   "channel_snapshot": {
-    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 21,
-    "REVIEW_REQUIRED": 29,
+    "REVIEW_REQUIRED": 30,
     "SUPPRESSED": 47,
     "HOLD": 7
   },
@@ -21,26 +21,27 @@
   "queue": [
     {
       "rank": 1,
-      "opportunity_id": "OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026",
-      "organization": "Digital Rocket",
-      "legal_identity": "ROASROCKET MARKETING LLP",
-      "territory": "Remote worldwide",
-      "priority": "HOT_PLUS",
-      "route_type": "VERIFIED_FORM_PLATFORM",
-      "route_url": "https://digitalrocketads.com/jobs/wordpress-web-developer/",
-      "why_now": "Official live Contractor vacancy explicitly states Remote, worldwide. Direct overlap in WordPress builds, Core Web Vitals, maintenance, PHP/HTML/CSS/JS, CRO-aware landing pages and paid trial work on live client accounts.",
-      "tailored_angle": "Lead with WordPress production, responsive frontend, performance/Core Web Vitals, maintenance and conversion-focused web work. Do not overclaim deep custom plugin/theme engineering or GTM/data-layer depth unless supported by portfolio evidence.",
-      "economics": "Applicant quotes own rate; trial/probation is paid.",
-      "dedup_state": "CLEAR: canonical suppression, repository history, Gmail Sent and Hostinger Sent checks passed.",
+      "opportunity_id": "OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026",
+      "organization": "SO Design Online",
+      "territory": "Remote",
+      "priority": "HOT",
+      "route_type": "VERIFIED_DIRECT_EMAIL",
+      "route_email": "support@sodesign.online",
+      "route_url": "https://sodesign.online/careers/",
+      "why_now": "Official careers board is current and lists WordPress Website Builder as Remote / Contract or project-based. Strong overlap in WordPress, responsive HTML/CSS, redesigns, updates, maintenance and basic SEO, with an explicit role-application email.",
+      "tailored_angle": "Lead with WordPress production, responsive frontend, maintenance/redesign work, visual quality and reliable delivery. Include portfolio/work samples as the official route requests; do not claim WP Coder-specific experience unless evidenced.",
+      "economics": "Paid contract/project-based work is explicit; no published rate or budget.",
+      "dedup_state": "CLEAR: canonical suppression and repository history clear; Gmail Sent clear; Hostinger exact recipient support@sodesign.online clear.",
       "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
     }
   ],
   "material_review": [
     {
-      "organization": "Altos",
-      "state": "REVIEW_REQUIRED_TIMEZONE_ELIGIBILITY",
-      "reason": "Excellent explicit contractor/freelance web-design demand and official HR email, but the vacancy prefers Eastern Standard Time candidates; CET/Spain contractor acceptance is not explicit enough for promotion."
+      "organization": "Talentchef",
+      "opportunity_id": "OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026",
+      "state": "REVIEW_REQUIRED_ROUTE",
+      "reason": "Very high-fit live freelance WordPress/Elementor + hosting/DNS/SSL role, but its official 'Send your application now' route currently lands on 'Vacancy not found'. Recheck exact route before any application."
     }
   ],
-  "execution_note": "Partner Hunt should process Digital Rocket only after immediate pre-action freshness and dedup recheck. Existing actionable opportunities remain in canonical records and are not discarded by this compact latest-additions view."
+  "execution_note": "Partner Hunt may process SO Design Online only after its immediate pre-action freshness, identity-level suppression and Sent-history recheck. Talentchef stays blocked until the official application path is restored or another explicit role-specific official route is published."
 }
