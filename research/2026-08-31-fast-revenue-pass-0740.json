@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T07:40:00+02:00",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "objective": "FAST_REVENUE_HUNT",
+  "material_findings": [
+    {
+      "organization": "Agencia Reinicia",
+      "territory": "Spain / Comunidad de Madrid / Madrid",
+      "signal": "Official current Work with us page explicitly offers a freelance-collaborator path; agency delivers WordPress/Drupal web development, ecommerce, integrations and Core Web Vitals work.",
+      "route": "official dedicated freelance form",
+      "evidence_url": "https://www.agenciareinicia.com/trabaja-con-nosotros/",
+      "freshness": "official page crawled August 2026",
+      "state": "QUALIFIED_APPLICATION_ONLY_GENERAL_FREELANCE_ROUTE",
+      "reason": "Buyer-side freelance route is real, but current demand is general rather than role-specific and the official route is a form, so generic info@ is not promoted to direct-email."
+    },
+    {
+      "organization": "Madeo Studio",
+      "territory": "United States / New York / remote EST-hours",
+      "signal": "Official current careers page advertises a remote Contract Web Developer focused on WordPress custom themes/plugins, Gutenberg blocks, PHP, MySQL/MariaDB, JavaScript, REST APIs and Git; contract may extend and part-time/full-time availability is considered.",
+      "route": "official role application form",
+      "evidence_url": "https://madeostudio.com/careers/web-developer/",
+      "freshness": "official page crawled August 2026",
+      "state": "APPLICATION_ONLY_FIT_REVIEW",
+      "reason": "Strong technical and contract fit, but custom Gutenberg-block experience is a stated minimum and must not be overclaimed. Careers header publishes hiring@madeomedia.com, while the role itself explicitly instructs candidates to use the application form."
+    },
+    {
+      "organization": "AMO Marketing",
+      "territory": "Spain / geography not asserted from current evidence",
+      "signal": "Official current contact page has a 'Trabaja con AMO Marketing' section asking candidates with WordPress/web/ecommerce skills to send CV or portfolio; hola@amomarketing.es is published on the same page.",
+      "route": "hola@amomarketing.es",
+      "evidence_url": "https://amomarketing.es/contacto",
+      "freshness": "official page crawled August 2026",
+      "state": "REVIEW_REQUIRED_ENGAGEMENT_MODEL",
+      "reason": "Current WordPress buyer signal and direct email are credible, but freelance/contract compatibility is not explicit, so it is not promoted to the direct-email candidate pool."
+    },
+    {
+      "organization": "HYLA BELGIË",
+      "territory": "Belgium / East Flanders / Destelbergen / remote or hybrid",
+      "signal": "Very strong WordPress/ACF/CPT/Core Web Vitals/SEO/CRO/GA4-GTM freelance project with explicit email route was rediscovered.",
+      "route": "digital.marketing@hyla-belgie.be",
+      "evidence_url": "https://be.linkedin.com/jobs/view/freelance-wordpress-developer-geen-loondienst-at-hyla-belgi%C3%AB-4340314770",
+      "freshness": "listing indexed currently but job states 9 months old",
+      "state": "CLOSED_REJECT",
+      "reason": "LinkedIn explicitly says No longer accepting applications. Do not use the still-visible email to manufacture a current lead."
+    },
+    {
+      "organization": "Bosun",
+      "territory": "United States / Georgia / remote EST-hours",
+      "signal": "Official current careers page seeks a freelance WordPress Developer for ongoing projects, about 30 hours/week, remote with Eastern Time availability; strong PHP/HTML/CSS/JS/custom theme/plugin/Figma/REST/accessibility fit.",
+      "route": "official application form",
+      "evidence_url": "https://bosun.com/careers/freelance-wordpress-developer/",
+      "freshness": "official page crawled 2026-08-29",
+      "state": "PLATFORM_APPLICATION_ONLY_GEO_TIME_REVIEW",
+      "reason": "Buyer path is strong and freelance is explicit, but exact non-US contractor eligibility should be confirmed and the authoritative route is the form."
+    }
+  ],
+  "source_families_sampled": [
+    "OFFICIAL_COMPANY",
+    "PROFESSIONAL_NETWORKS",
+    "SPECIALIST_JOBS",
+    "FREELANCE_MARKETPLACES",
+    "AGENCY_OUTSOURCING",
+    "SEARCH_ROUTER_DISCOVERY_ONLY"
+  ],
+  "territory_frontier_delta": {
+    "Spain / Comunidad de Madrid": "ACTIVE_SCAN",
+    "Spain / País Vasco-Euskadi": "ACTIVE_SCAN",
+    "Spain / Castilla-La Mancha": "ACTIVE_SCAN",
+    "Spain / La Rioja": "ACTIVE_SCAN",
+    "Spain / Andalucía": "UNDER_SEARCHED",
+    "Italy / Lombardia / Milano": "COVERED_RECENTLY",
+    "Italy / Piemonte / Torino": "COVERED_RECENTLY",
+    "Remote Europe / worldwide": "ACTIVE_SCAN"
+  },
+  "queue_effect": {
+    "potential_email_pool_before_final_gate": 37,
+    "prepared_direct_email": 17,
+    "qualified_application_or_form_signals_added": 3,
+    "direct_email_change": 0,
+    "note": "No new direct-email candidate passed every freshness + explicit freelance/contract + route + fit + dedup gate. AMO Marketing remains review-only; Reinicia, Madeo and Bosun respect their official form routes."
+  },
+  "outreach_performed": false
+}
