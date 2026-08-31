@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-08-31T12:36:16+02:00",
+  "objective": "Expand current actionable paying-work opportunities without lowering qualification or dedup standards.",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "canonical_reads": [
+    "README.md",
+    "OPERATING_RULES.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-territory-frontier.json",
+    "views/fast-revenue-email-queue.json",
+    "views/fast-revenue-queue.json",
+    "views/active-freelance-opportunities.json",
+    "campaigns/AGENCY-OUTSOURCING-ES.json",
+    "campaigns/AGENCY-OUTSOURCING-IT.json",
+    "campaigns/EU-PROJECT-WEB.json"
+  ],
+  "scan_scope": {
+    "spain": ["Asturias/Cantabria", "Aragón", "Balearic Islands"],
+    "italy": ["Veneto", "Toscana", "Liguria"],
+    "remote": ["Europe", "worldwide open contractor roles"],
+    "families": ["SEARCH_ROUTER", "SPECIALIST_JOBS", "PROFESSIONAL_NETWORKS", "OFFICIAL_COMPANY"],
+    "sectors": ["web/digital agencies", "WordPress/Elementor contractors", "performance/WPO", "maintenance/overflow"]
+  },
+  "material_findings": [
+    {
+      "organization": "BSC Webdesign",
+      "territory": "Austria / Vienna + worldwide remote",
+      "current_need": "WordPress Web Designer & Developer (Remote Contractor), long-term consistent collaboration across ongoing client projects.",
+      "freshness": "Wellfound shows posted 3 weeks ago, recruiter recently active, actively hiring and remote everywhere on 2026-08-31.",
+      "fit": "Strong overlap: WordPress, Elementor/Avada/Gutenberg or similar builders, HTML/CSS, responsive web design and independent visual-quality decisions.",
+      "route": "Explicit Wellfound Apply Now route. Official company site corroborates identity and commercial activity; generic office email is not used as a replacement route.",
+      "economics": "No role rate published. Official company site advertises websites from €2,500, online shops from €3,000 and ongoing monthly support, supporting recurring commercial-value confidence.",
+      "dedup": {
+        "repository_before_audit": "No BSC record found by canonical GitHub search.",
+        "gmail_sent": "No BSC Webdesign / bscwebdesign / Tobias Berger sent match.",
+        "hostinger_sent": "MATCH: INBOX.Sent UID 115, 2026-08-28T17:05:24Z, to office@bscwebdesign.com, subject VIENNA — WordPress Web Designer & Developer | Remote Contractor.",
+        "result": "SUPPRESSED_ALREADY_CONTACTED"
+      },
+      "canonical_record": "../opportunities/OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026.json"
+    },
+    {
+      "signal": "Fresh Upwork WordPress/Elementor opportunities",
+      "examples": [
+        "2026-08-30 worldwide Senior WordPress/Elementor + UI/UX complex website rebuild",
+        "2026-08-26 established digital agency seeking long-term WordPress/Elementor partner"
+      ],
+      "promotion": "NOT_PROMOTED",
+      "reason": "Buyer commercial identity is not established to the required exact-organization standard from the available marketplace listing, so these remain discovery signals only."
+    }
+  ],
+  "coverage_outcomes": {
+    "Asturias_Cantabria": "UNDER_SEARCHED — router sampling produced no new promotable buyer-side demand; official-company and agency-outsourcing families still required.",
+    "Aragon": "UNDER_SEARCHED — no authoritative current contractor buyer route found in this pass.",
+    "Balearic": "UNDER_SEARCHED — surfaced supplier-side agency capability only; no current external-capacity demand.",
+    "Veneto": "ACTIVE_SCAN — search mostly surfaced supplier-side freelancers and previously suppressed Broovera.",
+    "Toscana": "ACTIVE_SCAN — no new authoritative current external-capacity buyer route.",
+    "Liguria": "UNDER_SEARCHED — insufficient family breadth for LOW_YIELD_VERIFIED.",
+    "Remote_Europe_Worldwide": "ACTIVE_SCAN — material BSC hit found but suppressed by historical first contact."
+  },
+  "channel_delta": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 0,
+    "REVIEW_REQUIRED": 0,
+    "SUPPRESSED": 1,
+    "HOLD": 0
+  },
+  "post_cycle_counts": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 18,
+    "REVIEW_REQUIRED": 27,
+    "SUPPRESSED": 47,
+    "HOLD": 7
+  },
+  "qa_changes": [
+    "Normalized BSC Webdesign historical first contact into suppression-registry after Hostinger Sent exposed UID 115.",
+    "Created canonical suppressed opportunity record so the live contractor role cannot be rediscovered as a new candidate.",
+    "Updated channel status and territory/sector frontier without marking any sampled territory LOW_YIELD_VERIFIED prematurely."
+  ],
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
