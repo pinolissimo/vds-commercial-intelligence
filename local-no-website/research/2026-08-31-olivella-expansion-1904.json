@@ -1,0 +1,34 @@
+{
+  "run_at":"2026-08-31T19:04:42+02:00",
+  "workstream":"LOCAL_SME_999",
+  "mode":"RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "frontier":{"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella","state":"ACTIVE_SCAN"},
+  "screened_raw_before":220,
+  "screened_raw_after":230,
+  "new_screened_identities":10,
+  "new_raw_review_required":9,
+  "new_fast_rejected":1,
+  "identity_reconciliations_not_counted":1,
+  "new_identities":[
+    {"name":"LUKINFIX S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"non-residential construction","evidence":["DatosCif current legal identity/address/object","Iberinform no-website field"],"next_gate":"operating presence + reputation + exact domain/social + public route"},
+    {"name":"TELAVAMUS S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"TO_VERIFY","evidence":["eInforma Olivella registry listing 2024"],"next_gate":"exact activity/current identity + domain + operating footprint"},
+    {"name":"GAD PROJECT SOLUTION S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"TO_VERIFY","evidence":["eInforma Olivella registry listing 2024"],"next_gate":"exact activity/current identity + domain + operating footprint"},
+    {"name":"APOLO FOOD MANAGEMENT S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"food/beverage commercial intermediary","evidence":["DatosCif legal identity and 22k EUR initial capital","Iberinform active/no website","Cinco Días WEB=N"],"next_gate":"customer-facing identity + traction/reputation + owned domain/social + route"},
+    {"name":"GIA&LUCA HORECA S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"food/beverage wholesale and road transport","evidence":["Iberinform active Olivella microenterprise/no website","BOE/BORME 2025 domicile move to Olivella"],"next_gate":"operating footprint + reputation + owned domain/social + route"},
+    {"name":"MOS-JMJ INSTALACIONES S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"installations / industrial equipment","evidence":["InfoNIF exact Olivella identity, WEB/Email/Phone absent"],"next_gate":"operating presence + reputation + exact-domain search + public route"},
+    {"name":"AJB TURBINES S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"industrial turbine manufacturing","evidence":["Iberinform active Olivella identity/no website/small revenue band"],"next_gate":"commercial-fit and operating-presence review before deeper qualification"},
+    {"name":"ALBOLTHEC S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"electrical/plumbing/gas/HVAC installations","evidence":["eInforma identity/object/address","DatosCif independent legal corroboration"],"next_gate":"reviews + current jobs/operating footprint + exact domain/social + public route"},
+    {"name":"MASCOTEROS EUROPA S.L.","state":"RAW_DISCOVERY_REVIEW_REQUIRED","activity":"pet-food manufacturing / ecommerce object","evidence":["Iberinform active Olivella identity/no website field","DatosCif independent legal corroboration"],"next_gate":"consumer-facing brand + domain/social + reputation + route"},
+    {"name":"SERVICIOS DE LIMPIEZA GARRAF24 S.L.","state":"REJECTED_HAS_WEBSITE","activity":"industrial/building cleaning","evidence":["Iberinform active exact identity","DatosCif attributes https://www.bugamar.es"],"reason":"functional attributable owned web presence"}
+  ],
+  "identity_reconciliation":[{"name":"SBV LIFESTYLE BRAND S.L.","commercial_identity":"Sitges Best Villas","result":"NOT_NEW_DO_NOT_DOUBLE_COUNT","evidence":"SitgesBestVillas.com legal notice identifies SBV LIFESTYLE BRAND S.L., VAT B66110230, C/ Segre 24 Olivella as website owner."}],
+  "deep_review_notes":[
+    {"name":"Y.G.L. SOLUTIONS S.L.","result":"REMAINS_RAW","evidence":"Pappers confirms active exact Olivella identity and IT/electronics/security object; public phone/email/web withheld, so reputation/owned footprint/contactability remain unresolved."},
+    {"name":"ALMA HOSTELERIA Y OCIO S.L.","result":"REMAINS_RAW","evidence":"OpenMercantil/BORME corroborates 2026 Olivella domicile and restaurant/hotel/catering/event object; no venue identity/reputation route established."}
+  ],
+  "secondary_workstream_signals":{"COLLABORATIONS":{"signal":"Fresh remote freelance WordPress role found outside priority geography; retained as discovery-only because current cycle prioritizes Spain/EU-fit and canonical duplicate/context checks are pending.","source":"LinkedIn fresh listing surfaced 2026-08-27"},"EU_PROJECTS":{"signal":"No EU-project candidate was promoted this cycle; search budget retained for buyer-path/C&D-chain verification rather than adding weak registry-only records."}},
+  "promotion_count":0,
+  "outreach_actions":0,
+  "first_contact_actions":0,
+  "notes":["Registry absence of website is discovery-only evidence, never sufficient for QUALIFIED.","Commercial identity dedup prevented SBV LIFESTYLE BRAND / Sitges Best Villas double counting.","Olivella remains ACTIVE_SCAN; contiguous geographic expansion is not yet justified while older registry/category rows remain unscanned and RAW queue remains material."]
+}
