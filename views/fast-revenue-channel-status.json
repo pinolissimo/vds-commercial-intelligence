@@ -1,55 +1,48 @@
 {
-  "schema_version": "1.15",
-  "updated_at": "2026-09-01T00:38:33+02:00",
+  "schema_version": "1.16",
+  "updated_at": "2026-09-01T01:40:00+02:00",
   "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 systematic breadth, route, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 23,
     "REVIEW_REQUIRED": 35,
     "SUPPRESSED": 48,
-    "HOLD": 8,
+    "HOLD": 9,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
-    "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities remain actionable; no candidate cleared every promotion gate in this cycle.",
-    "REVIEW_REQUIRED": "35 review-required opportunities remain; CodeQuadrat stays route-blocked because the official page does not expose a verifiable role-specific email recipient in accessible evidence.",
-    "SUPPRESSED": "48 acquisition identities remain suppressed; TurboBit was rediscovered and its existing suppression was independently confirmed against Hostinger Sent UID 89.",
-    "HOLD": "8 holds remain unchanged.",
+    "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities remain actionable; no new candidate cleared every promotion gate in this cycle.",
+    "REVIEW_REQUIRED": "35 review-required opportunities remain unchanged.",
+    "SUPPRESSED": "48 acquisition identities remain suppressed.",
+    "HOLD": "9 holds now include Group easyweb, whose fresh recurring WordPress/Elementor freelance demand is 100% remote but explicitly requires an active French SIRET; Spain-based autónomo eligibility is not established.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
     "verified_form_platform_new": 0,
     "review_required_new": 0,
-    "hold_new": 0,
+    "hold_new": 1,
     "suppression_new": 0,
     "suppression_total": 48,
     "actionable_pool_inflation": 0
   },
   "material_verification_changes": [
     {
-      "organization": "TurboBit IT Solutions",
-      "domain": "turbobit.it",
-      "state": "SUPPRESSED_ALREADY_CONTACTED_CONFIRMED",
-      "current_demand": "Official careers page continues to seek freelance/Partita IVA collaborators including web development/WordPress and design/UI-UX.",
-      "dedup": "Existing suppression record plus official Hostinger INBOX.Sent UID 89 confirm first contact on 2026-08-28 to hr@turbobit.it with partners@turbobit.it in cc.",
-      "action": "No promotion and no second route; identity-level suppression remains authoritative."
-    },
-    {
-      "organization": "CodeQuadrat",
-      "domain": "codequadrat.com",
-      "state": "REVIEW_REQUIRED_ROUTE_UNCHANGED",
-      "current_demand": "Official Remote (Europe) freelance WordPress role remains live with Figma-to-WordPress, responsive, animation, performance and PHP/JS requirements.",
-      "route": "Official page displays APPLY VIA EMAIL but a role-specific recipient address is still not exposed in accessible authoritative evidence.",
-      "action": "Do not substitute a generic business contact; remain review-gated."
+      "organization": "Group easyweb",
+      "domain": "group-easyweb.com",
+      "state": "HOLD_GEO_FISCAL_ELIGIBILITY",
+      "current_demand": "Fresh 2026-09-01 recurring WordPress/Elementor freelance subcontracting role; 100% remote; approximately 35h/week depending on flow; €1,800–€2,200/month published range.",
+      "route": "Current vacancy platform application route; generic official company email is not substituted.",
+      "eligibility_gate": "Listing explicitly requires an active SIRET. Cross-border acceptance of a Spain-based autónomo/VAT-EU contractor is not established.",
+      "dedup": "Repository, canonical suppression, Gmail Sent and official Hostinger INBOX.Sent are clear.",
+      "action": "Hold. Do not promote until fiscal/cross-border eligibility is verified authoritatively."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"Mindrift / Toloka AI","reason":"Fresh signal rediscovered, but it is already canonical and EXECUTION READY in the current application pack; not counted twice."},
-    {"organization":"Veta Virtual","reason":"Current syndicated WordPress-support demand conflicts with an older removed version and no sufficiently strong current primary route was established; freshness/primary-route gate blocks promotion."},
-    {"organization":"Lemon.io","reason":"Current remote WordPress-contract marketplace is economically attractive but explicitly targets senior WordPress developers with 5+ years experience; truthful-fit gate blocks promotion without canonical evidence."},
-    {"organization":"Twine anonymous corporate technology buyer","reason":"Current WordPress/Divi rebuild demand exists, but exact buyer identity is not exposed; identity hard gate blocks promotion."}
+    {"organization":"Randstad Digital Germany AG accessibility project","reason":"Fresh 100% remote freelance accessibility project exists, but the required stack is centered on Flutter/Dart/Spring Boot rather than truthful VDS web/WordPress fit."},
+    {"organization":"EDN — European Dance Development Network","reason":"Strong Europe-based freelance WordPress migration/project-management fit, but the application deadline was 1 February 2026 and the four-month contract started 1 March 2026; stale/closed for current revenue hunt."},
+    {"organization":"Anonymous current marketplace WordPress jobs","reason":"Rejected where exact buyer commercial identity was not established, regardless of freshness or technical fit."}
   ],
   "queue_reverification": {
     "Sapres Technologies GmbH": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
@@ -68,6 +61,6 @@
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0038.json"
+    "../research/2026-09-01-fast-revenue-pass-0140.json"
   ]
 }
