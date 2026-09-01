@@ -4,8 +4,8 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 31 agosto 2026 · 10:23 Europe/Madrid  
-**Operating mode:** **MONDAY EXECUTION COMPLETE · INBOUND MONITORING · DISCOVERY CONTINUES**  
+**Snapshot:** 1 settembre 2026 · 09:07 Europe/Madrid  
+**Operating mode:** **ACTIVE DISCOVERY · INBOUND MONITORING · ROUTE-SAFE EXECUTION**  
 **QA:** mandatory identity / freshness / route / geography / fit / suppression / global dedup / Gmail Sent / Hostinger Sent gates enforced per recipient.
 
 ---
@@ -15,13 +15,16 @@
 | KPI | Current verified state |
 |---|---:|
 | Monday commercial emails verified in Hostinger Sent | **21** |
+| Tuesday 1 Sep verified FIRST_CONTACT | **1** |
+| Current priority direct-email queue | **0** |
 | Monday duplicate FIRST_CONTACT violations | **0** |
+| Tuesday duplicate FIRST_CONTACT violations | **0** |
 | Monday positive referrals | **1** |
 | Monday negative replies | **1** |
 | Monday hard bounces | **4** |
+| New unmatched bounce requiring reconciliation | **1** |
 | Local SME 999 contacted | **8 / 8 qualified** |
 | Local SME hard bounces | **3** |
-| Suppression-normalized acquisition identities | **46** |
 | Meetings | **0** |
 | Proposals | **0** |
 | Revenue won | **€0** |
@@ -32,7 +35,19 @@ The numerical Monday target was **30+**, but only **21** candidates survived eve
 
 ---
 
-## 🚨 Inbound events requiring attention
+## 🚨 Current commercial events
+
+### SO Design Online — FIRST_CONTACT SENT / VERIFIED
+
+The live official careers page was reverified on 1 Sep and still lists **WordPress Website Builder — Remote / Contract or project-based**, with the exact application route `support@sodesign.online`. Global repository/suppression, Gmail Sent and Hostinger Sent checks were clear before execution. A personalized application was sent from exactly `info@visualdesignstudio.es` with a role-tailored English PDF CV and portfolio. Official Hostinger `INBOX.Sent` **UID 149** verifies transmission.
+
+**State:** `WAITING_FOR_REPLY`. No second proactive first contact may be generated. Substantive positive/referral/pricing/proposal/call replies require USER action.
+
+➡️ [Opportunity](opportunities/OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026.json) · [Verified outreach event](outreach/2026-09-01-so-design-online-first-contact.json)
+
+### Aunar Viajes — UNMATCHED HARD BOUNCE / REVIEW_REQUIRED
+
+Hostinger INBOX **UID 1282** reports delivery failure to `info@aunarviajes.com`: DNS host/domain not found. No matching canonical repository identity and no Hostinger Sent message to that recipient were found during immediate reconciliation. **Do not resend or infer campaign ownership.** Keep as `REVIEW_REQUIRED` until origin is established.
 
 ### Daniele Debernardis — POSITIVE REFERRAL
 
@@ -56,7 +71,7 @@ All items below were sent one-to-one from exactly `info@visualdesignstudio.es` a
 | 121 | Daniele Debernardis | `info@danieledebernardis.it` | **REFERRAL RECEIVED** |
 | 124 | Boneluv | `hola@boneluv.com` | SENT |
 | 125 | Cantabria Web Design | `info@cantabriawebdesign.es` | SENT |
-| 126 | Polish Bioinformatics Society (PTBI) | `zarzad@ptbi.org.pl` | SENT |
+| 126 | Polish Bioinformatics Society (PTBI) | `zarjad@ptbi.org.pl` | SENT |
 | 127 | Quirogris | `quirogris@gmail.com` | **HARD BOUNCE** |
 | 128 | Mythic Tattoo Studio | `mythictattooestudio.16@gmail.com` | SENT |
 | 129 | Adara Rituals de Bellesa | `adararituals@gmail.com` | SENT |
@@ -100,21 +115,18 @@ Hard-bounced addresses are suppressed and will never be blindly retried. A repla
 
 ## ⛔ Final-gate blocks / review queue
 
-Examples of candidates deliberately **not sent** today:
+Current priority queue contains only authoritative **form/platform** routes; SO Design Online has been removed after verified contact.
 
-- **Maia Management** — central Odoo/Python fit + current-role freshness unresolved.
-- **Summum Marketing** — current official evidence says core work is internal / not outsourced.
-- **Zivadox** — requirement explicitly fulfilled/closed.
-- **HARP / HCCA** — current buyer need is HR/training, not VDS web work.
-- **Lewonit Technology / Elia Digital / MagicWeb** — mandatory or material numeric pricing gate; no approved numeric rate.
-- **Antonio De Lorenzi** — role requires Rome residence/domicile.
-- **WEB-M / Hawthorn Creative** — cross-border eligibility not sufficiently proven.
-- **A10web / 2PDX** — current roles verified but freelance/contract compatibility is not explicit.
-- **iDEA Marketing** — conflicting current official vacancy counts; `REVIEW_REQUIRED`.
-- **Spinora / Magenta / Kamon** — buyer-demand signals too old without current-open confirmation.
-- **CodeQuadrat** — excellent current Remote Europe WordPress freelance role, but the authoritative `APPLY VIA EMAIL` recipient is not exposed in available evidence; remains APPLICATION READY / route unresolved.
+- **Sapres Technologies GmbH** — HOT+; Freelancermap application route; must confirm willingness for stated 5% Frankfurt onsite and rate requirements before submission.
+- **Cayenne Global LLC** — HOT; Upwork-only route; 50+ proposals and strong B2B-tech example requirement materially affect conversion probability.
+- **Ajax Creative** — HOT; official Freelancer Application route; generic email substitution forbidden.
+- **Global Service Impresa** — cross-border Spain eligibility not established (`Remoto tutta Italia`).
+- **Group easyweb** — French SIRET requirement blocks Spain-based autónomo unless eligibility changes.
+- **LIVEAT / Adviva** — current freelance/external signals but cross-border eligibility insufficiently explicit.
+- **Diwar Marketing** — strong fit but current demand freshness needs newer confirmation.
+- **CodeQuadrat** — current Remote-Europe WordPress freelance role, but exact authoritative email recipient remains unresolved.
 
-➡️ [Fast revenue email queue](views/fast-revenue-email-queue.json) · [Direct route matrix](views/direct-contact-route-matrix.json)
+➡️ [Current Fast Revenue Queue](views/fast-revenue-queue.json) · [Fast revenue email queue](views/fast-revenue-email-queue.json) · [Direct route matrix](views/direct-contact-route-matrix.json)
 
 ---
 
@@ -140,10 +152,11 @@ Public administrations, municipalities, institutional bodies and regulated procu
 
 ## 🛡️ Safety / QA state
 
-- Duplicate FIRST_CONTACT violations today: **0**.
-- Every actual send was verified in Hostinger Sent before being recorded.
-- Gmail Sent and Hostinger Sent were checked at the final gate for new application routes.
-- Four failed addresses are hard-bounce suppressed; organization-level first-contact history remains permanent.
+- Duplicate FIRST_CONTACT violations on 1 Sep: **0**.
+- SO Design Online was verified in Hostinger Sent before CRM state advanced to CONTACTED.
+- Gmail Sent and Hostinger Sent were checked at the final gate.
+- SO Design Online is now hard-blocked from second FIRST_CONTACT in emergency suppression memory pending primary-registry normalization.
+- Aunar Viajes unmatched bounce is REVIEW_REQUIRED; no blind resend.
 - Positive/referral/pricing/proposal/call threads remain USER action; no substantive positive response is auto-replied.
 - No guessed email, invented rate, invented availability, unsupported budget or false freshness was used.
 - Public procurement remains user-managed.
@@ -154,10 +167,11 @@ Public administrations, municipalities, institutional bodies and regulated procu
 ## Top Next Actions
 
 1. **USER:** review the Daniele Debernardis → Fabio Vanacore referral thread before any response or next step.
-2. Monitor the remaining non-bounced Monday contacts for replies, CV/portfolio requests, calls or proposals.
-3. Resolve only high-value `REVIEW_REQUIRED` items with missing evidence; do not recycle stale/blocked candidates.
-4. Keep discovery focused on fresh, explicit freelance/contract/white-label/overflow demand with direct authoritative routes.
-5. Continue EU project deepening only where a defensible funded-project → responsible-beneficiary → digital-need route exists.
+2. Monitor SO Design Online and remaining non-bounced contacts for replies, CV/portfolio requests, calls or proposals.
+3. Reconcile the unmatched Aunar Viajes bounce before associating it with any campaign or prospect.
+4. Execute form/platform opportunities only through their authoritative routes after individual final gates.
+5. Continue discovery focused on fresh, explicit freelance/contract/white-label/overflow demand with authoritative routes.
+6. Continue EU project deepening only where a defensible funded-project → responsible-beneficiary → digital-need route exists.
 
 ---
 
@@ -165,6 +179,7 @@ Public administrations, municipalities, institutional bodies and regulated procu
 
 - [Master index](master-index.json)
 - [Direct Commercial Pipeline](views/direct-commercial-pipeline.json)
+- [Current Fast Revenue Queue](views/fast-revenue-queue.json)
 - [Fast Revenue Email Queue](views/fast-revenue-email-queue.json)
 - [Public Procurement Pipeline](views/public-procurement-pipeline.json)
 - [Next Best Actions](views/next-best-actions.json)
