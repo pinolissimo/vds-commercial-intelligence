@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-01T14:30:08Z",
+  "updated_at": "2026-09-01T15:30:00Z",
   "worker": "HIGH_YIELD_JOB",
   "primary_kpi": "READY_TO_APPLY_PER_HOUR",
   "runs": [
@@ -16,15 +16,7 @@
       "started_at": "2026-09-01T14:27:08Z",
       "finished_at": "2026-09-01T14:30:08Z",
       "elapsed_minutes": 3.0,
-      "source_families_checked": [
-        "public LinkedIn/search-indexed job pages",
-        "Lavoricreativi",
-        "JOIN",
-        "official company careers pages",
-        "Freelancermap",
-        "remote/WordPress niche job boards",
-        "Upwork/public freelance listings"
-      ],
+      "source_families_checked": ["public LinkedIn/search-indexed job pages","Lavoricreativi","JOIN","official company careers pages","Freelancermap","remote/WordPress niche job boards","Upwork/public freelance listings"],
       "search_listing_probes": 29,
       "raw_hits": 79,
       "unique_candidates": 19,
@@ -41,52 +33,39 @@
       "READY_added_per_run": 1,
       "throughput_direction": "THROUGHPUT_UP",
       "comparison_basis": "READY_added increased from 0 in the immediately prior measured HIGH_YIELD_JOB run to 1 in this run.",
-      "best_source_role_family": "JOIN + official company careers / freelance WordPress / Spain-EU remote",
-      "notes": "Raw_hits counts retrieved search result records across the query fan-out. unique_candidates counts normalized plausible opportunity/organization results surviving initial relevance normalization; only six received deep verification. BrainersHub was promoted after fresh JOIN evidence, official application email verification, Spain/Barcelona relevance and repository/Gmail dedup checks."
+      "best_source_role_family": "JOIN + official company careers / freelance WordPress / Spain-EU remote"
+    },
+    {
+      "started_at": "2026-09-01T15:28:19Z",
+      "finished_at": "2026-09-01T15:30:00Z",
+      "elapsed_minutes": 1.7,
+      "source_families_checked": ["public LinkedIn jobs","Indeed Italy/Spain","SimplyHired Italy/France","Glassdoor indexed listings","JOB TODAY Spain","Workana","remote WordPress niche boards","official company pages"],
+      "search_listing_probes": 16,
+      "raw_hits": 52,
+      "unique_candidates": 15,
+      "cheap_rejects": 11,
+      "deep_verified": 4,
+      "qualified": 2,
+      "executable_route": 0,
+      "READY_added": 0,
+      "duplicates_blocked": 0,
+      "stale_closed": 3,
+      "manual_route_required": 2,
+      "route_failures": 2,
+      "current_READY_total": 8,
+      "READY_added_per_run": 0,
+      "throughput_direction": "THROUGHPUT_DOWN",
+      "comparison_basis": "HIGH_YIELD_JOB READY_added fell from 1 in the immediately prior measured run to 0. Shared READY total nevertheless increased from other workers to 8.",
+      "best_source_role_family": "Indeed/SimplyHired Italy + LinkedIn Spain / fresh freelance WordPress-WebOps",
+      "notes": "LIVEAT SRL and Act Attack were high-fit, fresh and dedup-clean but exact executable routes available to the dispatcher were not established. They were recorded as MANUAL_ROUTE_REQUIRED rather than padded into READY."
     }
   ],
   "source_yield": {
-    "JOIN|Spain-EU|WordPress|freelance": {
-      "last_scan_at": "2026-09-01T14:30:08Z",
-      "raw_hits": 1,
-      "unique_candidates": 1,
-      "qualified": 1,
-      "executable_route": 1,
-      "ready": 1,
-      "duplicate": 0,
-      "stale": 0
-    },
-    "Lavoricreativi|Italy|web-design|freelance": {
-      "last_scan_at": "2026-09-01T14:30:08Z",
-      "raw_hits": 6,
-      "unique_candidates": 4,
-      "qualified": 0,
-      "executable_route": 0,
-      "ready": 0,
-      "duplicate": 0,
-      "stale": 2,
-      "notes": "Several roles were stale, hybrid/geographically incompatible or outside core VDS fit."
-    },
-    "Freelancermap|Europe|WordPress|freelance": {
-      "last_scan_at": "2026-09-01T14:30:08Z",
-      "raw_hits": 1,
-      "unique_candidates": 1,
-      "qualified": 0,
-      "executable_route": 0,
-      "ready": 0,
-      "duplicate": 0,
-      "stale": 0,
-      "notes": "Fresh role but mandatory senior Pantheon/Entra/CI-CD architecture requirements were materially beyond truthful VDS fit."
-    },
-    "remote-niche|Europe|WordPress|mixed": {
-      "last_scan_at": "2026-09-01T14:30:08Z",
-      "raw_hits": 4,
-      "unique_candidates": 3,
-      "qualified": 0,
-      "executable_route": 0,
-      "ready": 0,
-      "duplicate": 0,
-      "stale": 1
-    }
+    "JOIN|Spain-EU|WordPress|freelance": {"last_scan_at":"2026-09-01T14:30:08Z","raw_hits":1,"unique_candidates":1,"qualified":1,"executable_route":1,"ready":1,"duplicate":0,"stale":0},
+    "Lavoricreativi|Italy|web-design|freelance": {"last_scan_at":"2026-09-01T14:30:08Z","raw_hits":6,"unique_candidates":4,"qualified":0,"executable_route":0,"ready":0,"duplicate":0,"stale":2},
+    "Freelancermap|Europe|WordPress|freelance": {"last_scan_at":"2026-09-01T14:30:08Z","raw_hits":1,"unique_candidates":1,"qualified":0,"executable_route":0,"ready":0,"duplicate":0,"stale":0},
+    "remote-niche|Europe|WordPress|mixed": {"last_scan_at":"2026-09-01T14:30:08Z","raw_hits":4,"unique_candidates":3,"qualified":0,"executable_route":0,"ready":0,"duplicate":0,"stale":1},
+    "Indeed-SimplyHired|Italy|WordPress-Elementor|freelance": {"last_scan_at":"2026-09-01T15:30:00Z","raw_hits":8,"unique_candidates":1,"qualified":1,"executable_route":0,"ready":0,"duplicate":0,"stale":0,"manual_route_required":1,"notes":"LIVEAT is exceptional fit and fresh, but currently only verified platform application route was established."},
+    "LinkedIn-JOBTODAY|Spain|WordPress-WebOps|freelance": {"last_scan_at":"2026-09-01T15:30:00Z","raw_hits":4,"unique_candidates":1,"qualified":1,"executable_route":0,"ready":0,"duplicate":0,"stale":0,"manual_route_required":1,"notes":"Act Attack Barcelona is highly fresh and relevant; exact listing route is LinkedIn. Official site email exists for other roles but was not substituted."}
   }
 }
