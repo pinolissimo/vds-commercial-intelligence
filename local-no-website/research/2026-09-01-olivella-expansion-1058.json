@@ -1,0 +1,64 @@
+{
+  "run_at":"2026-09-01T10:58:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "mode":"RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella","frontier_state":"ACTIVE_SCAN"},
+  "screened_before":320,
+  "screened_after":322,
+  "new_unique_identities":2,
+  "new_records":[
+    {
+      "business":"HomeTask",
+      "activity_type":"Painting / general renovation",
+      "cluster":"Olivella-Urbanització",
+      "state":"REPUTATION_RISK_REVIEW_REQUIRED",
+      "identity":{"status":"VERIFIED_MULTI_DIRECTORY","address":"Calle Teixo 9, 08818 Olivella","phone":"625231758"},
+      "current_activity":"VERIFIED_DIRECTORY_FRESHNESS",
+      "reputation":{"status":"RISK_SIGNAL_INSUFFICIENT_FOR_FINAL_REJECTION","signals":["Google/local listing 3.0/5 from 6 reviews","Cylex listing exposes no meaningful review corpus","Busqueda-local exposes 0 reviews"],"note":"Low Google score is concerning, but review volume is too small and cross-platform evidence too weak for REJECTED_POOR_REPUTATION."},
+      "website_gap":"TO_VERIFY_STRONG_SIGNAL",
+      "social":"TO_VERIFY",
+      "commercial_fit":"INFERRED_MEDIUM",
+      "evidence":["https://www.paginasamarillas.es/f/olivella-urbanitzacio/hometask_hs8Dl75ycT.html","https://www.cylex.es/olivella/hometask-13716089.html","https://www.busqueda-local.es/olivella/hometask-aYCXpT.html","Google/local business listing surfaced 2026-09-01"],
+      "note":"Exact phone/address identity is corroborated across independent directory families. No owned domain was established in the exact-name/phone pass. Reputation risk blocks promotion pending deeper review of review recency/themes and owned-domain/social presence."
+    },
+    {
+      "business":"Sendero Cafè / Sendero Olivella",
+      "activity_type":"Cafe / restaurant / food truck",
+      "cluster":"Olivella centre",
+      "state":"REJECTED_HAS_WEBSITE",
+      "identity":{"status":"VERIFIED","address":"Plaça Major, 08818 Olivella","phone":"696510641"},
+      "current_activity":"VERIFIED",
+      "reputation":{"status":"POSITIVE_WITH_OWNERSHIP_CHANGE_CAUTION","signals":["Top-Rated 4.8/5 from 116 reviews","Map4Leads 4.8/5 from 129 reviews","RestaurantGuru current 2026 listing"],"caution":"A recent review reports a change from the previous owner; this is a business-continuity/reputation nuance, not a website-gap override."},
+      "website_gap":"FAILED_FUNCTIONAL_DEDICATED_WEB_PRESENCE",
+      "owned_web_presence":"https://sendero.eatbu.com/",
+      "social":{"status":"VERIFIED_PUBLIC_PROFILE_SIGNAL","instagram":"@senderoolivella"},
+      "commercial_fit":"OUT_OF_SEGMENT_HAS_WEB_PRESENCE",
+      "evidence":["https://www.waze.com/live-map/directions/es/ct/olivella/sendero-cafe?to=place.ChIJowdGhWF_pBIRIFsgPlJAcOQ","https://www.top-rated.online/cities/Olivella/place/p/11838769/Sendero%2BCaf%C3%A8","https://es.restaurantguru.com/Sendero-Cafe-Olivella-Catalonia","https://map4leads.com/annuaire/entreprises/sendero-cafe-barcelona"],
+      "note":"Current identity and traction are clear, but multiple current restaurant surfaces bind Sendero Olivella to sendero.eatbu.com and Instagram. Reject from the no-functional-website €999 segment."
+    }
+  ],
+  "deep_review_changes":[
+    {
+      "business":"La Brasa de Mas Mestre",
+      "state":"REVIEW_REQUIRED_IDENTITY_ROUTE_CONFLICT",
+      "change":"The phone 671097446 previously attached by the local restaurant listing is also published by Ajuntament d'Olivella as the official contact for Piscina Municipal for the 2026 season. This creates a material identity/contact-route conflict; do not promote or infer restaurant ownership/contactability until the concession/trade identity is reconciled."
+    },
+    {
+      "business":"EL MOS",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "change":"Additional exact phone/address-bound restaurant surfaces corroborate current activity and strong reputation. Multiple surfaces expose no owned website field for this exact Olivella identity, strengthening but not yet completing the website-gap case. Social ownership and a verified public business contact route remain unresolved."
+    }
+  ],
+  "rediscovered_or_not_counted":[
+    {"business":"Arquimontgros / Montgròs Arquitectura I Urbanisme","reason":"Already resolved as REJECTED_HAS_WEBSITE in prior Olivella passes; current exact-name search again confirms arquimontgros.es."},
+    {"business":"Arquitectura Integral del Garraf S.L.","reason":"Already present in unresolved frontier state; no new decisive current website/reputation evidence in this pass."},
+    {"business":"Pintor BCN - Olivella","reason":"Previously identified as a Barcelona service-area false positive by exact phone/domain reconciliation; not recounted."},
+    {"business":"Centro de Estética y Peluquería","reason":"Previously finalized canonical identity; rediscovery does not reopen the record or FIRST_CONTACT."}
+  ],
+  "collaborations_scan":{"status":"NO_NEW_CANONICAL_PROMOTION","note":"The bilingual WordPress/Squarespace Workana opportunity remains open and relevant but is already known; no duplicate opportunity record or application was created. A lower-value WordPress maintenance listing was not promoted."},
+  "eu_projects_scan":{"status":"NO_MATERIAL_PROMOTION_THIS_CYCLE","note":"Targeted fresh search did not surface a sufficiently verified new Communication/Dissemination buyer path to change canonical EU state."},
+  "counts_delta":{"screened_raw":2,"rejected_has_website":1,"reputation_risk":1,"qualified":0,"ready_to_contact":0},
+  "outreach_actions":0,
+  "first_contact_actions":0,
+  "next_local_queue":["EL MOS owned-domain/social/contact-route verification","La Brasa de Mas Mestre concession/trade-identity and phone-route reconciliation","HomeTask review-theme/recency and owned-domain/social verification","Sitgesguagua current-activity/reputation/owned-domain verification","Obres i Reformes OR independent identity/reputation/domain review","Vetra Instalaciones reputation/domain review","Luciainteriors identity/social/reputation/domain review","continue Iberinform/eInforma E-Z and municipal/category gaps"]
+}
