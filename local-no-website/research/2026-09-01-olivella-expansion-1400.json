@@ -1,0 +1,157 @@
+{
+  "run_at": "2026-09-01T14:00:00+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "frontier": {
+    "country": "Spain",
+    "region": "Catalonia",
+    "province": "Barcelona",
+    "district_or_comarca": "Garraf",
+    "municipality": "Olivella",
+    "state": "ACTIVE_SCAN"
+  },
+  "reservoir_delta": {
+    "screened_raw_before": 325,
+    "screened_raw_after": 328,
+    "new_unique_screened": 3,
+    "rejected_has_website_delta": 1,
+    "rejected_noncommercial_fit_delta": 1,
+    "territorial_mismatch_delta": 1,
+    "qualified_delta": 0,
+    "ready_to_contact_delta": 0
+  },
+  "discoveries": [
+    {
+      "business": "Masia La Fassina de Jafre SCCL",
+      "activity_type": "Tourism / events / guided activities",
+      "location": "Masia La Fassina, s/n, Parc Natural del Garraf, 08818 Olivella",
+      "phone": "637775894",
+      "state": "REJECTED_HAS_WEBSITE",
+      "website_gap": "FAILED_VERIFIED_OWNED_SITE",
+      "evidence": [
+        {
+          "url": "https://fassinadejafre.com/es/llegar-contacto",
+          "family": "business_owned_presence",
+          "role": ["IDENTITY", "CONTACT_ROUTE", "WEBSITE"],
+          "finding": "Official site identifies Masia La Fassina in 08818 Olivella, publishes www.fassinadejafre.com and phone 637775894."
+        },
+        {
+          "url": "https://www.paginasamarillas.es/f/la-fassina-de-jafre-sccl_229721519_000000001.html",
+          "family": "local_directory",
+          "role": ["IDENTITY", "FRESHNESS", "CORROBORATION"],
+          "finding": "Current directory corroborates La Fassina de Jafre SCCL, Olivella address, phone and operating hours."
+        }
+      ],
+      "qualification_note": "Commercially plausible but ineligible for LOCAL_SME_999 because a dedicated functional owned website exists."
+    },
+    {
+      "business": "Club Arquers Olivella",
+      "activity_type": "Sports club / association",
+      "location": "Carrer de l'Arc de Sant Martí s/n, Les Colines-Est, 08818 Olivella",
+      "phone": "677104311",
+      "email": "info@arquersolivella.com",
+      "state": "REJECTED_NONCOMMERCIAL_FIT",
+      "website_gap": "NOT_APPLICABLE",
+      "evidence": [
+        {
+          "url": "https://www.federarco.es/federaciones-autonomicas/356-federacion-catalana-de-tiro-con-arco",
+          "family": "sector_federation",
+          "role": ["IDENTITY", "CONTACT_ROUTE", "CORROBORATION"],
+          "finding": "Federation listing identifies CLUB ARQUERS OLIVELLA, president, email, Olivella address, phone and website presence."
+        }
+      ],
+      "qualification_note": "Sports association rather than the target local private SME profile; excluded from the €999 SME reservoir."
+    },
+    {
+      "business": "Regalos Distribuciones",
+      "activity_type": "Promotional products / custom merchandise",
+      "location": "Map/local discovery surfaced in Olivella scan; independent supplier profile identifies operation as online / Barcelona city",
+      "phone": "623104171",
+      "state": "REJECTED_TERRITORIAL_MISMATCH",
+      "website_gap": "NOT_EVALUATED_AFTER_IDENTITY_LOCATION_CONFLICT",
+      "evidence": [
+        {
+          "url": "https://www.proveedores.com/proveedores/regalos-distribuciones/",
+          "family": "sector_directory_marketplace",
+          "role": ["IDENTITY", "LOCATION", "CONTACT_ROUTE"],
+          "finding": "Supplier profile binds phone 623104171 to Regalos Distribuciones but locates it as online / 08024 Barcelona city, not a verified Olivella operating business."
+        }
+      ],
+      "qualification_note": "Do not contaminate Olivella coverage with service-area/map spillover; excluded unless future primary evidence proves an Olivella operating identity."
+    }
+  ],
+  "deep_review": [
+    {
+      "business": "Sana Tu Mente",
+      "previous_state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "new_state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "change": "Exact domain/email search still does not establish a functional owned website. TodosBiz binds Calle Aries 16, phone 610935159 and nicole@sanatumente.es while explicitly reporting no website and a Facebook presence. The domain embedded in the email remains unresolved as business-owned web presence, and reputation remains only 5+ reviews, so promotion is blocked.",
+      "evidence": ["https://www.todosbiz.es/sana-tu-mente-610-93-51-59"]
+    },
+    {
+      "business": "EL MOS",
+      "state": "FINALIZED_REJECTED_HISTORY_PRESERVED",
+      "change": "Current exact-address/phone sources continue to show strong reputation and no dedicated website field, but they do not resolve the finalized rejection gate: no verified public email/contact route. Per canonical policy, do not reopen the finalized record solely because repeated discovery evidence remains positive.",
+      "evidence": [
+        "https://www.gourmetlounge.es/el-mos-en-olivella-provincia-de-barcelona/",
+        "https://tamararestaurant.es/restaurante/el-mos-2/"
+      ]
+    },
+    {
+      "business": "Vetra Instalaciones",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "change": "Cronoshare continues to identify an Olivella 08818 HVAC/aerothermal installer with validated email and phone, 10/10 from 2 reviews and one recorded hire. Review volume remains below the hard reputation threshold and exact owned-domain identity remains unresolved; the unrelated VETRA engineering site must not be attributed.",
+      "evidence": ["https://www.cronoshare.com/servicios/presupuesto-mantenimiento-aire-acondicionado/barcelona/vilanova-i-la-geltru"]
+    }
+  ],
+  "secondary_watch": {
+    "collaborations": [
+      {
+        "opportunity": "Bilingual Front-End Developer & Webmaster (WordPress & Squarespace) - On Demand",
+        "source": "Workana",
+        "status": "KNOWN_OR_REVIEW_REQUIRED_NO_ACTION",
+        "note": "Open ongoing B2B agency need remains relevant, but no application or duplicate action performed."
+      },
+      {
+        "opportunity": "Senior Product Designer - Freelance 6 months - Spain",
+        "source": "IxDF",
+        "status": "WATCH_SIGNAL_REVIEW_REQUIRED",
+        "note": "Fresh Spain freelance design signal; role fit and canonical dedup/buyer identity require workstream reconciliation before any promotion."
+      }
+    ],
+    "eu_projects": [
+      {
+        "project": "HARVEST",
+        "grant_agreement_id": "101294152",
+        "start_date": "2026-09-01",
+        "status": "WATCH_SIGNAL_REVIEW_REQUIRED",
+        "note": "Fresh CORDIS project starting today; dissemination/web buyer path not yet verified."
+      },
+      {
+        "project": "BELOOP",
+        "grant_agreement_id": "101291625",
+        "start_date": "2026-09-01",
+        "status": "WATCH_SIGNAL_REVIEW_REQUIRED",
+        "note": "Fresh CORDIS project starting today; communication/dissemination WP and web need not yet verified."
+      }
+    ]
+  },
+  "next_queue": [
+    "Sana Tu Mente domain/Facebook ownership and independent reputation",
+    "La Brasa de Mas Mestre identity/management-route reconciliation",
+    "HomeTask reputation deep review",
+    "Olivella Instal·lacions independent reputation/domain/social closure",
+    "Rehabilitaciones Lorenzo Romero current-activity/domain/reputation",
+    "Obres i Reformes OR independent identity/reputation/domain",
+    "Vetra Instalaciones independent reputation and owned-domain closure",
+    "Luciainteriors identity/social/domain/reputation",
+    "continue Iberinform/eInforma Olivella E-Z and under-sampled activity categories"
+  ],
+  "safety": {
+    "outreach_sent": false,
+    "applications_submitted": false,
+    "forms_submitted": false,
+    "auto_replies": false,
+    "first_contact_actions": false
+  }
+}
