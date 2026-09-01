@@ -1,54 +1,55 @@
 {
-  "schema_version": "1.19",
-  "updated_at": "2026-09-01T04:45:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 systematic breadth, route, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
+  "schema_version": "1.20",
+  "updated_at": "2026-09-01T05:40:00+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 delta-first breadth, freshness, geography and dedup QA cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
-    "VERIFIED_FORM_PLATFORM": 23,
+    "VERIFIED_FORM_PLATFORM": 22,
     "REVIEW_REQUIRED": 38,
     "SUPPRESSED": 48,
-    "HOLD": 9,
+    "HOLD": 10,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
-    "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities remain actionable; no new candidate cleared every promotion gate in this cycle.",
-    "REVIEW_REQUIRED": "38 review-required opportunities now include TechBiz Global GmbH: strong long-term freelance WordPress demand, but the official role conflicts between 'work from anywhere' language and a mandatory preferred-location selector that omits Spain.",
+    "VERIFIED_FORM_PLATFORM": "22 verified form/platform opportunities remain actionable. Global Service Impresa was removed from this actionable count after authoritative re-verification established an explicit Italy-only remote scope.",
+    "REVIEW_REQUIRED": "38 review-required opportunities remain unchanged in this cycle.",
     "SUPPRESSED": "48 acquisition identities remain suppressed.",
-    "HOLD": "9 holds remain unchanged.",
+    "HOLD": "10 holds now include Global Service Impresa because the official developer role says 'Remoto (tutta Italia)', which does not establish eligibility for a Spain-based contractor.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
     "verified_form_platform_new": 0,
-    "review_required_new": 1,
-    "hold_new": 0,
+    "verified_form_platform_removed": 1,
+    "review_required_new": 0,
+    "hold_new": 1,
     "suppression_new": 0,
     "suppression_total": 48,
     "actionable_pool_inflation": 0
   },
   "material_verification_changes": [
     {
-      "organization": "TechBiz Global GmbH",
-      "domain": "techbiz.global",
-      "state": "REVIEW_REQUIRED_GEO_ELIGIBILITY_CONFLICT",
-      "current_demand": "Official live role: Freelance Web and WordPress developer, part-time on-demand for long-term; WordPress, HTML/CSS/JavaScript, responsive development and SEO; independent specialist listing is open until 2026-09-10.",
-      "route": "Official TechBiz Global application form on jobs.techbiz.global. Generic email substitution is not permitted.",
-      "eligibility_gate": "Official role says work from anywhere, but the mandatory preferred-work-location selector enumerates locations and does not include Spain. Independent listing metadata also limits the role to named countries. Exact Spain-based contractor eligibility is unresolved.",
-      "economics": "Application form exposes €6–€8, €8–€10, €10–€12 and €12+/hour bands; this lowers commercial priority even if geography clears.",
-      "dedup": "Repository/suppression, Gmail Sent and official Hostinger INBOX.Sent are clear.",
-      "action": "Review only. No application until Spain/EU eligibility clears."
+      "organization": "Global Service Impresa",
+      "domain": "globalserviceimpresa.it",
+      "state": "HOLD_GEO_ELIGIBILITY_ITALY_ONLY",
+      "current_demand": "Official current role remains commercially strong: Freelance Developer / Creative, project-based, WordPress, HTML/CSS/JS, e-commerce, custom software, integrations/automation, Partita IVA/regime forfettario, compensation per project and possible continuing collaboration.",
+      "route": "Official application form on the company careers page. No generic-email substitution is permitted.",
+      "eligibility_gate": "Authoritative page explicitly states 'Remoto (tutta Italia)'. This verifies remote work within Italy but does not establish cross-border eligibility for a contractor based in Spain.",
+      "dedup": "Canonical first-contact history is clear. Gmail matches are internal VDS reporting only; official Hostinger INBOX.Sent search returned zero Global Service matches on 2026-09-01.",
+      "action": "Hold. Do not submit unless authoritative evidence establishes Spain/EU cross-border contractor eligibility."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"GigWay (Pty) Ltd","reason":"Official WordPress freelancer network is remote, project-paid and recurring, but the role was posted in 2025 and is materially stale for HOT/current promotion despite remaining visible."},
-    {"organization":"Alta Ignite / Lanex Group LLC","reason":"Official Europe-remote WordPress Developer opening is full-time employment, not verified freelance/contractor work; role also asks 3+ years custom theme/plugin production and solid PHP."},
-    {"organization":"Anonymous current marketplace projects","reason":"Current WordPress demand continues, but exact commercial buyer identity is often not established; identity hard gate blocks promotion."}
+    {"organization":"Anonymous current agency marketplace project","reason":"Fresh recurring WordPress/automation demand was found, but exact commercial buyer identity is not visible; identity hard gate blocks promotion."},
+    {"organization":"Exlibris / South Tyrol web-design pool","reason":"Freelance web-design signal exists but strong German-language and local South-Tyrol cultural knowledge requirements materially reduce truthful VDS fit."},
+    {"organization":"DISOTECH","reason":"Remote-Europe WordPress freelance signal is materially stale (approximately eight months old), so it is not promoted as current FAST_REVENUE demand."}
   ],
   "queue_reverification": {
     "Sapres Technologies GmbH": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
     "Ajax Creative": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT.",
-    "SO Design Online": "Official careers page remains current, remote collaboration possible, and support@sodesign.online remains the explicit application email; stays sole VERIFIED_DIRECT_EMAIL / HOT."
+    "SO Design Online": "Official careers route remains the sole VERIFIED_DIRECT_EMAIL / HOT in the compact queue.",
+    "Global Service Impresa": "Removed from actionable form/platform pool; HOLD_GEO_ELIGIBILITY_ITALY_ONLY."
   },
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
@@ -60,9 +61,9 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-EU-TECHBIZ-GLOBAL-FREELANCE-WORDPRESS-2026.json",
+    "../opportunities/OPP-IT-GLOBALSERVICE-FREELANCE-DEVELOPER.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0440.json"
+    "../research/2026-09-01-fast-revenue-pass-0537.json"
   ]
 }
