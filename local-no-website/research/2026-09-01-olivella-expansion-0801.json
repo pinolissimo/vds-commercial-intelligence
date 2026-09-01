@@ -1,0 +1,167 @@
+{
+  "run_at": "2026-09-01T08:01:00+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "territory": {
+    "country": "Spain",
+    "region": "Catalonia",
+    "province": "Barcelona",
+    "district_or_comarca": "Garraf",
+    "municipality": "Olivella",
+    "frontier_state": "ACTIVE_SCAN"
+  },
+  "allocation_note": "LOCAL_SME_999 priority preserved; this pass expanded specialist renovation/HVAC/interior-design/architecture local surfaces and performed exact-name/domain checks. No outreach.",
+  "delta": {
+    "screened_before": 308,
+    "new_unique_screened": 5,
+    "screened_after": 313,
+    "new_rejected_has_website": 2,
+    "new_raw_review": 3,
+    "new_qualified": 0
+  },
+  "discoveries": [
+    {
+      "business": "Obres i Reformes OR",
+      "activity_type": "Construction and renovation",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "identity": "INFERRED_LOCAL_LISTING",
+      "current_activity": "VERIFIED_BY_LOCAL_LISTING",
+      "reputation": {
+        "status": "TO_VERIFY_INDEPENDENTLY",
+        "discovery_signal": "5.0/5 from 9 local reviews"
+      },
+      "website_gap": "TO_VERIFY",
+      "contactability": "PHONE_PUBLIC",
+      "public_phone": "+34633372455",
+      "evidence": [
+        {
+          "family": "LOCAL_MAP",
+          "role": ["DISCOVERY", "IDENTITY", "FRESHNESS", "REPUTATION_SIGNAL"],
+          "note": "Current Olivella local result classifies the business as home builder/construction, shows public phone, operating hours and 5.0/9 reputation signal."
+        },
+        {
+          "family": "SEARCH_ROUTER",
+          "role": ["WEBSITE_GAP_CHECK"],
+          "note": "Exact-name and exact-phone searches did not establish an attributable owned domain or owned social profile in this pass; absence is not yet VERIFIED."
+        }
+      ],
+      "next_gate": "Bind a second independent identity/reputation lineage to phone 633372455, establish Olivella address/operator identity, then repeat owned-domain/social check."
+    },
+    {
+      "business": "Vetra Instalaciones",
+      "activity_type": "HVAC/air-conditioning installations",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity": "VERIFIED_MARKETPLACE_LOCALITY",
+      "current_activity": "VERIFIED_SPECIALIST_MARKETPLACE",
+      "reputation": {
+        "status": "INSUFFICIENT_DEPTH",
+        "signal": "10/10 from 2 marketplace reviews; 1 reported hire"
+      },
+      "website_gap": "TO_VERIFY",
+      "contactability": "PLATFORM_ROUTE_VERIFIED; PUBLIC_EMAIL_NOT_EXTRACTED",
+      "evidence": [
+        {
+          "url": "https://www.cronoshare.com/servicios/presupuesto-instalacion-aire-acondicionado/barcelona/olivella",
+          "family": "SPECIALIST_MARKETPLACE",
+          "role": ["DISCOVERY", "IDENTITY", "NEED", "REPUTATION_SIGNAL"],
+          "note": "Cronoshare identifies Vetra Instalaciones in Olivella 08818 for air conditioning, heat pumps, aerothermal and radiant-floor installations; email and phone are platform-validated."
+        },
+        {
+          "family": "SEARCH_ROUTER",
+          "role": ["DOMAIN_RECONCILIATION"],
+          "note": "Search surfaced an unrelated Peru-based VETRA engineering site; it was not attributed to the Olivella business. No owned domain was verified."
+        }
+      ],
+      "next_gate": "Resolve exact phone/email from public sources outside gated marketplace where possible, find independent reputation/social lineage, verify no owned site."
+    },
+    {
+      "business": "Luciainteriors",
+      "activity_type": "Interior design/home staging",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity": "VERIFIED_MARKETPLACE_LOCALITY",
+      "current_activity": "VERIFIED_SPECIALIST_MARKETPLACE",
+      "reputation": {
+        "status": "TO_VERIFY",
+        "signal": "No independent review corpus established in this pass"
+      },
+      "website_gap": "TO_VERIFY",
+      "contactability": "PLATFORM_EMAIL_VALIDATED; PUBLIC_ROUTE_NOT_YET_EXTRACTED",
+      "evidence": [
+        {
+          "url": "https://www.cronoshare.com/servicios/empresas-reformas/barcelona/vilafranca-del-penedes",
+          "family": "SPECIALIST_MARKETPLACE",
+          "role": ["DISCOVERY", "IDENTITY", "SERVICE_POSITIONING"],
+          "note": "Cronoshare identifies Luciainteriors as an Olivella 08818 interior designer and reports validated email."
+        },
+        {
+          "family": "SEARCH_ROUTER",
+          "role": ["WEBSITE_SOCIAL_CHECK"],
+          "note": "No attributable owned website/social identity was established in the first exact-name pass."
+        }
+      ],
+      "next_gate": "Resolve exact commercial identity, public route, owned social/domain and independent reputation before scoring."
+    },
+    {
+      "business": "Locos Por El Clima",
+      "activity_type": "HVAC/air-conditioning installations",
+      "state": "REJECTED_HAS_WEBSITE",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED",
+      "website_gap": "FAILED_EXISTING_FUNCTIONAL_SITE",
+      "evidence": [
+        {
+          "url": "https://www.locosporelclima.com/",
+          "family": "OFFICIAL_COMPANY",
+          "role": ["IDENTITY", "SERVICES", "CONTACT_ROUTE", "FRESHNESS"],
+          "note": "Functional owned website markets HVAC maintenance/subscriptions, shows current 2026 project imagery, service areas Sitges/Vilanova/Vilafranca, public email info@locosporelclima.com and phone 611511824."
+        },
+        {
+          "url": "https://www.cronoshare.com/servicios/presupuesto-mantenimiento-aire-acondicionado/barcelona/sitges",
+          "family": "SPECIALIST_MARKETPLACE",
+          "role": ["CORROBORATION", "REPUTATION_SIGNAL", "LOCALITY"],
+          "note": "Cronoshare places the business in Olivella 08818 and reports 9.8/10 from 7 marketplace reviews and 12 hires."
+        }
+      ],
+      "reason": "Fails LOCAL_SME_999 website-absence gate."
+    },
+    {
+      "business": "Arquimontgros",
+      "activity_type": "Architecture/professional services",
+      "state": "REJECTED_HAS_WEBSITE",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED",
+      "website_gap": "FAILED_EXISTING_FUNCTIONAL_SITE",
+      "evidence": [
+        {
+          "url": "https://www.arquimontgros.es/contacto",
+          "family": "OFFICIAL_COMPANY",
+          "role": ["IDENTITY", "CONTACT_ROUTE", "LOCATION"],
+          "note": "Functional owned website provides Olivella address, phones and email arquimontgros@netscape.net."
+        },
+        {
+          "url": "https://www.todosbiz.es/arquimontgros_1B-938-96-17-87",
+          "family": "LOCAL_BUSINESS_DIRECTORIES",
+          "role": ["CORROBORATION", "DOMAIN"],
+          "note": "Independent directory corroborates Olivella identity and owned domain arquimontgros.es."
+        },
+        {
+          "url": "https://firmania.es/olivella/arquimontgros-1564146",
+          "family": "LOCAL_BUSINESS_DIRECTORIES",
+          "role": ["FRESHNESS", "CORROBORATION"],
+          "note": "Listing marked updated 2026-02-20 corroborates address, phone and official site."
+        }
+      ],
+      "reason": "Fails LOCAL_SME_999 website-absence gate."
+    }
+  ],
+  "frontier_next": [
+    "Obres i Reformes OR independent identity/reputation/domain review",
+    "Vetra Instalaciones exact public identity/reputation/domain review",
+    "Luciainteriors public identity/social/reputation/domain review",
+    "continue Villa Sitges Mas Mestre and Restaurante Villa Reis deep review",
+    "continue Al Son, Can Suria Restaurante Braseria, Villa Moments, Queviures Lafita and La Tasqueta del Garraf",
+    "continue Olivella municipal census and Iberinform/eInforma E-Z before adjacent-municipality expansion"
+  ],
+  "outreach_performed": false,
+  "first_contact_actions_created": false
+}
