@@ -1,0 +1,65 @@
+{
+  "run_at":"2026-09-01T10:02:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "mode":"RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella","frontier_state":"ACTIVE_SCAN"},
+  "screened_before":317,
+  "screened_after":320,
+  "new_unique_identities":3,
+  "new_records":[
+    {
+      "business":"EL MOS",
+      "activity_type":"Restaurant / gastrobar",
+      "cluster":"Mas Milà",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "identity":{"status":"VERIFIED","address":"Plaça Catalunya 5B, 08818 Olivella","phone":"618056126"},
+      "current_activity":"VERIFIED",
+      "reputation":{"status":"POSITIVE_MULTI_SURFACE_SIGNAL","signals":["Google/local listing 4.9/5, 242 reviews","restaurant guide 4.8/5, 99 reviews","independent restaurant surface 9.6/10, 247 reviews"],"independence_caution":"Some restaurant-guide surfaces may derive data from Google; do not sum review counts as independent corpus."},
+      "website_gap":"TO_VERIFY_STRONG_SIGNAL",
+      "social":"TO_VERIFY",
+      "commercial_fit":"INFERRED_HIGH",
+      "evidence":["Google local business listing surfaced 2026-09-01","https://www.gourmetlounge.es/el-mos-en-olivella-provincia-de-barcelona/","https://tamararestaurant.es/restaurante/el-mos-2/"],
+      "note":"Current restaurant with substantial customer traction. Exact-name search did not establish an owned dedicated domain in this pass; generic name collisions exist, so phone/address-bound domain and social verification remain mandatory before qualification."
+    },
+    {
+      "business":"La Brasa de Mas Mestre",
+      "activity_type":"Restaurant",
+      "cluster":"Mas Mestre",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "identity":{"status":"VERIFIED","address":"Urb. Mas Mestre, Passatge dels Esports 1, 08818 Olivella","phone":"671097446"},
+      "current_activity":"VERIFIED",
+      "reputation":{"status":"POSITIVE_SIGNAL","signal":"Google/local listing 4.9/5, 94 reviews"},
+      "website_gap":"TO_VERIFY",
+      "social":"TO_VERIFY",
+      "commercial_fit":"INFERRED_HIGH",
+      "evidence":["Google local business listing surfaced 2026-09-01"],
+      "note":"Strong local restaurant traction and plausible €999 economics. Exact-name/domain/social and independent reputation lineage must be completed before qualification."
+    },
+    {
+      "business":"Lampista ID Fontanero Electricista",
+      "activity_type":"Electrical and plumbing services",
+      "cluster":"Olivella other commercial clusters",
+      "state":"REJECTED_HAS_WEBSITE",
+      "identity":{"status":"VERIFIED","address":"Carrer del Tudo 22, 08818 Olivella","phone":"660576527"},
+      "current_activity":"VERIFIED_LISTING",
+      "reputation":{"status":"INSUFFICIENT","signal":"5.0/5 from 1 review"},
+      "website_gap":"FAILED_FUNCTIONAL_DEDICATED_WEB_PRESENCE",
+      "owned_website":"https://instalacionesdavid.tayona.website",
+      "evidence":["Google local business listing surfaced 2026-09-01","https://localitybiz.es/catalu%C3%B1a/servicios-electricidad-gas-en-barcelona","https://www.botiguesdecatalunya.cat/es/poblacion/olivella"],
+      "note":"Two local-directory surfaces bind the same Olivella address/phone to a dedicated instalacionesdavid.tayona.website presence. Reject from no-functional-website segment; do not infer quality from the single review."
+    }
+  ],
+  "rediscovered_or_not_counted":[
+    {"business":"Restaurant Hostal Les Piques","reason":"Already resolved in prior Olivella research; no duplicate insertion."},
+    {"business":"Centro de Estética y Peluquería","reason":"Previously finalized canonical identity; rediscovery does not reopen FIRST_CONTACT or reservoir identity."},
+    {"business":"Obres i Reformes OR","reason":"Already in RAW review queue; current local listing still shows 5.0/5 from 9 reviews, but no new independent identity/domain evidence sufficient to change state."},
+    {"business":"Al Son","reason":"Already in RAW review queue; current local listing still shows 4.4/5 from 295 reviews, but this cycle produced no decisive owned-domain/social evidence."},
+    {"business":"Molina","reason":"Already present in unresolved frontier state; map rediscovery with only one review is not a new identity."}
+  ],
+  "collaborations_scan":{"status":"NO_MATERIAL_PROMOTION_THIS_CYCLE","note":"Resource allocation preserved; no new collaboration signal was strong enough to alter canonical state without duplicating prior discovery."},
+  "eu_projects_scan":{"status":"NO_MATERIAL_PROMOTION_THIS_CYCLE","note":"No newly verified Communication/Dissemination buyer path strong enough to alter canonical EU state during this cycle."},
+  "counts_delta":{"screened_raw":3,"rejected_has_website":1,"qualified":0,"ready_to_contact":0},
+  "outreach_actions":0,
+  "first_contact_actions":0,
+  "next_local_queue":["EL MOS phone/address-bound owned-domain and social verification plus independent reputation lineage","La Brasa de Mas Mestre exact-domain/social and independent reputation verification","Sitgesguagua current-activity/reputation/owned-domain verification","Obres i Reformes OR independent identity/reputation/domain review","Vetra Instalaciones reputation/domain review","Luciainteriors identity/social/reputation/domain review","continue Iberinform/eInforma E-Z and municipal/category gaps"]
+}
