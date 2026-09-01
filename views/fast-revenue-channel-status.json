@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.17",
-  "updated_at": "2026-09-01T02:45:00+02:00",
+  "schema_version": "1.18",
+  "updated_at": "2026-09-01T03:38:00+02:00",
   "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 systematic breadth, route, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 23,
-    "REVIEW_REQUIRED": 36,
+    "REVIEW_REQUIRED": 37,
     "SUPPRESSED": 48,
     "HOLD": 9,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
@@ -13,8 +13,8 @@
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
     "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities remain actionable; no new candidate cleared every promotion gate in this cycle.",
-    "REVIEW_REQUIRED": "36 review-required opportunities now include BruntWork's fresh 2026-08-31 WordPress independent-contractor opening, blocked only by exact-role geography eligibility.",
-    "SUPPRESSED": "48 acquisition identities remain suppressed.",
+    "REVIEW_REQUIRED": "37 review-required opportunities now include Hjemmesider og Marketing's official ongoing freelancer/collaborator invitation, blocked by exact cross-border eligibility and paid web-collaboration model.",
+    "SUPPRESSED": "48 acquisition identities remain suppressed; BSC Webdesign is confirmed already-contacted by Hostinger Sent UID 115 and remains suppressed.",
     "HOLD": "9 holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
@@ -29,26 +29,34 @@
   },
   "material_verification_changes": [
     {
-      "organization": "BruntWork",
-      "domain": "bruntwork.co",
-      "state": "REVIEW_REQUIRED_GEO_ELIGIBILITY",
-      "current_demand": "Official WordPress Developer vacancy published 2026-08-31; 20 hours/week; independent contractor; permanent work from home; 10:00-14:00 UK-time schedule; multi-component WordPress subscription marketplace build.",
-      "route": "Official BruntWork Careers Apply Now flow with assessment questions, technical check and voice recording.",
-      "eligibility_gate": "The exact vacancy does not explicitly state Spain/EU/worldwide applicant eligibility. BruntWork has global remote positioning and other Spain-timezone roles, but that is not substituted for exact-opening eligibility evidence.",
+      "organization": "Hjemmesider og Marketing",
+      "domain": "hjemmesiderogmarketing.dk",
+      "state": "REVIEW_REQUIRED_GEO_COMMERCIAL_MODEL",
+      "current_demand": "Official careers page says collaborators are always welcome and that the agency continuously seeks freelancers/collaborators across WordPress/Webflow and related digital skills.",
+      "route": "Official careers application email kontakt@hjemmesiderogmarketing.dk.",
+      "eligibility_gate": "Flexible work is explicit, but Spain/EU cross-border remote eligibility is not. The page also does not establish compensation/project assignment terms for the web-freelancer lane.",
       "dedup": "Repository, canonical suppression, Gmail Sent and official Hostinger INBOX.Sent are clear.",
-      "action": "Review only. No application until exact-role geographic eligibility clears."
+      "action": "Review only. No application/email until exact commercial model and cross-border eligibility clear."
+    },
+    {
+      "organization": "BSC Webdesign",
+      "domain": "bscwebdesign.at",
+      "state": "SUPPRESSED_ALREADY_CONTACTED",
+      "current_demand": "Current Wellfound role remains highly relevant: WordPress Web Designer & Developer, contract, remote everywhere, long-term and consistent collaboration.",
+      "route": "Wellfound Apply Now is current, but identity-level contact history overrides route freshness.",
+      "dedup": "Hostinger INBOX.Sent UID 115 shows FIRST_CONTACT on 2026-08-28 to office@bscwebdesign.com. Gmail alone was clear, demonstrating why official Hostinger Sent remains mandatory.",
+      "action": "No new first contact or platform application."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"Creativelement SRL / creative. retail & visual design","reason":"Strong WordPress/P.IVA collaboration signal in Prato was verified as approximately 11 months old and no longer accepting applications; stale/closed."},
-    {"organization":"Jobgether partner-company WordPress Designer","reason":"Fresh Spain-remote WordPress/Elementor signal, but the actual partner buyer identity is undisclosed and the engagement model is not cleanly freelance/contractor."},
-    {"organization":"TribuESK WordPress Developer recruiting signal","reason":"Very fresh named recruiter signal, but the role is grouped under LATAM-only remote positions and the end client is undisclosed; EU eligibility fails."},
-    {"organization":"Anonymous current Workana/WokPress WordPress projects","reason":"Several current recurring WordPress/Elementor needs were found, but exact commercial buyer identity was not established; identity hard gate blocks promotion."}
+    {"organization":"Alta Ignite / Lanex Group LLC","reason":"Official Europe-remote WordPress Developer opening is full-time employment, not verified freelance/contractor work; role also asks 3+ years custom theme/plugin production and solid PHP."},
+    {"organization":"Digiestate Marketing Agency Pvt Ltd","reason":"Long-term freelance web developer signal exists but public evidence is about six months old; not promoted as current HOT demand."},
+    {"organization":"Anonymous current marketplace projects","reason":"Current WordPress demand continues, but exact commercial buyer identity is often not established; identity hard gate blocks promotion."}
   ],
   "queue_reverification": {
     "Sapres Technologies GmbH": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
     "Ajax Creative": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT.",
-    "SO Design Online": "No contradictory route/freshness signal found; remains sole VERIFIED_DIRECT_EMAIL / HOT."
+    "SO Design Online": "Official careers page remains current, remote collaboration possible, and support@sodesign.online remains the explicit application email; stays sole VERIFIED_DIRECT_EMAIL / HOT."
   },
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
@@ -60,9 +68,9 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-WW-BRUNTWORK-WORDPRESS-MARKETPLACE-2026.json",
+    "../opportunities/OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0235.json"
+    "../research/2026-09-01-fast-revenue-pass-0335.json"
   ]
 }
