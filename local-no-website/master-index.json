@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-09-01T13:01:00+02:00",
+  "updated_at":"2026-09-01T14:00:00+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,14 +8,14 @@
   "tax_policy":"config/tax-policy.json",
   "scan_frontier":"coverage/scan-frontier.json",
   "email_folder":"INBOX.LOCAL-SME-999",
-  "screened_raw":325,
+  "screened_raw":328,
   "canonical_prospect_records":31,
   "under_research":1,
   "canonical_finalized_rejected":22,
-  "screened_rejected_has_website":110,
+  "screened_rejected_has_website":111,
   "screened_rejected_poor_reputation":1,
   "screened_reputation_risk":12,
-  "screened_rejected_noncommercial_fit":6,
+  "screened_rejected_noncommercial_fit":7,
   "qualified":8,
   "ready_for_contact_review":0,
   "ready_to_contact":0,
@@ -57,9 +57,9 @@
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "latest_finalization_report":"research/2026-08-31-deep-review-finalization-0927.json",
   "latest_outreach_report":"../outreach/2026-08-31-partner-hunt-morning-wave-02.json",
-  "latest_discovery_report":"research/2026-09-01-olivella-expansion-1301.json",
+  "latest_discovery_report":"research/2026-09-01-olivella-expansion-1400.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":4,"final_live_gate_required_before_send":true,"latest_material_change":"13:01 LOCAL_SME_999 expanded Olivella from 323 to 325 screened identities. Sana Tu Mente entered RAW review with public phone/email and an inferred no-site signal but insufficient reputation depth and unresolved sanatumente.es domain ownership. Lovenet/LOVENET CB was rejected because its dedicated Wix website is currently functional despite strong reputation. Olivella Instal·lacions received additional current identity/activity verification but remains RAW pending reputation and owned-domain/social closure. Secondary scanner work added one fresh Spain Upwork WordPress redesign watch signal and two CORDIS projects starting 2026-09-01; no outreach."},
+  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":4,"final_live_gate_required_before_send":true,"latest_material_change":"14:00 LOCAL_SME_999 expanded Olivella from 325 to 328 screened identities. Masia La Fassina de Jafre was rejected because its dedicated fassinadejafre.com site is functional; Club Arquers Olivella was rejected as noncommercial-fit for the SME offer; Regalos Distribuciones was excluded as a territorial/service-area mismatch after independent evidence located the operation in Barcelona city rather than a verified Olivella business. Sana Tu Mente and Vetra Instalaciones remain RAW pending decisive domain/reputation evidence. EL MOS finalized rejection history was explicitly preserved and not reopened because no new evidence resolves its missing verified public email/contact-route gate. Secondary research recorded fresh collaboration and CORDIS watch signals; no outreach."},
   "status":"POST_OUTREACH_MONITORING_AND_ACTIVE_DISCOVERY",
-  "next_action":"Preserve all existing suppression/Sent history. Remain on Olivella: resolve Sana Tu Mente sanatumente.es/Facebook ownership and independent reputation; complete EL MOS phone/address-bound owned-domain/social/contact-route verification; continue La Brasa identity reconciliation and HomeTask reputation review; resolve Olivella Instal·lacions reputation/domain/social status; independently verify Rehabilitaciones Lorenzo Romero current activity/domain/reputation; continue Sitgesguagua, Obres i Reformes OR, Vetra Instalaciones and Luciainteriors; continue Iberinform/eInforma E-Z and unresolved municipal/category surfaces before adjacent-municipality expansion."
+  "next_action":"Preserve all existing suppression/Sent history. Remain on Olivella: resolve Sana Tu Mente sanatumente.es/Facebook ownership and independent reputation; continue La Brasa identity reconciliation and HomeTask reputation review; resolve Olivella Instal·lacions reputation/domain/social status; independently verify Rehabilitaciones Lorenzo Romero current activity/domain/reputation; continue Obres i Reformes OR, Vetra Instalaciones and Luciainteriors; continue Iberinform/eInforma E-Z and unresolved municipal/category surfaces before adjacent-municipality expansion. Do not reopen EL MOS or other finalized rejected records unless materially new evidence resolves their failed gate."
 }
