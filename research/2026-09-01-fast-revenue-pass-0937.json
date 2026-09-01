@@ -1,0 +1,59 @@
+{
+  "run_at": "2026-09-01T09:37:00+02:00",
+  "mode": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "required_files_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "project/workstreams/COLLABORATIONS.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-territory-frontier.json"
+  ],
+  "delta_first_findings": [
+    {
+      "organization": "Wordune",
+      "result": "PROMOTED_VERIFIED_FORM_PLATFORM_HOT",
+      "official_hiring_url": "https://wordune.com/hiring/",
+      "official_route_url": "https://wordune.com/submit-project/",
+      "need": "Open Figma Designer recruiting driven by increased Figma-to-WordPress demand; 3 seats; one-year recruiting period; WordPress-theme-aware design expected.",
+      "eligibility": "Europe explicitly accepted; remote; no physical-presence or specific-hours requirement.",
+      "economics": "$40/hour EU; monthly payment after client confirmation; no guaranteed hours stated.",
+      "dedup": {
+        "repository": "0 matches before opportunity creation",
+        "gmail_sent": "0 matches",
+        "hostinger_sent": "only internal VDS report UID 147 mentioning Wordune; no commercial application/contact to Wordune",
+        "suppression": "no Wordune identity found"
+      },
+      "route_rule": "Official CV/ticket submission outranks generic info@wordune.com.",
+      "fit_caveat": "Figma-specific experience must be evidenced from actual portfolio/work; do not invent years or tool depth."
+    }
+  ],
+  "breadth_scan_notes": [
+    "Fresh Spain/Italy search passes remained dominated by supplier-side freelancer/agency pages rather than explicit buyer-side external-capacity demand.",
+    "Anonymous marketplace demand was not promoted because exact buyer identity was unavailable.",
+    "Expired, employment-only, geography-restricted or weak-fit signals were not added to actionable counts.",
+    "Remote-Europe/agency-outsourcing produced the highest marginal information gain in this cycle through Wordune."
+  ],
+  "channel_counts_after": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 24,
+    "REVIEW_REQUIRED": 40,
+    "SUPPRESSED": 49,
+    "HOLD": 10
+  },
+  "compact_queue_after": [
+    "Sapres Technologies GmbH — HOT_PLUS",
+    "Wordune — HOT",
+    "Cayenne Global, LLC — HOT",
+    "Ajax Creative — HOT"
+  ],
+  "frontier_change": "Europe remote / web-design + WordPress agency network marked COVERED_RECENTLY with Wordune as latest material hit; Spain/Italy incomplete territories remain ACTIVE_SCAN/UNDER_SEARCHED rather than being falsely downgraded to low-yield.",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
