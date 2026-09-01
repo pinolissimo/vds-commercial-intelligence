@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.18",
-  "updated_at": "2026-09-01T03:38:00+02:00",
+  "schema_version": "1.19",
+  "updated_at": "2026-09-01T04:45:00+02:00",
   "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 systematic breadth, route, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 23,
-    "REVIEW_REQUIRED": 37,
+    "REVIEW_REQUIRED": 38,
     "SUPPRESSED": 48,
     "HOLD": 9,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
@@ -13,8 +13,8 @@
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
     "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities remain actionable; no new candidate cleared every promotion gate in this cycle.",
-    "REVIEW_REQUIRED": "37 review-required opportunities now include Hjemmesider og Marketing's official ongoing freelancer/collaborator invitation, blocked by exact cross-border eligibility and paid web-collaboration model.",
-    "SUPPRESSED": "48 acquisition identities remain suppressed; BSC Webdesign is confirmed already-contacted by Hostinger Sent UID 115 and remains suppressed.",
+    "REVIEW_REQUIRED": "38 review-required opportunities now include TechBiz Global GmbH: strong long-term freelance WordPress demand, but the official role conflicts between 'work from anywhere' language and a mandatory preferred-location selector that omits Spain.",
+    "SUPPRESSED": "48 acquisition identities remain suppressed.",
     "HOLD": "9 holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
@@ -29,28 +29,20 @@
   },
   "material_verification_changes": [
     {
-      "organization": "Hjemmesider og Marketing",
-      "domain": "hjemmesiderogmarketing.dk",
-      "state": "REVIEW_REQUIRED_GEO_COMMERCIAL_MODEL",
-      "current_demand": "Official careers page says collaborators are always welcome and that the agency continuously seeks freelancers/collaborators across WordPress/Webflow and related digital skills.",
-      "route": "Official careers application email kontakt@hjemmesiderogmarketing.dk.",
-      "eligibility_gate": "Flexible work is explicit, but Spain/EU cross-border remote eligibility is not. The page also does not establish compensation/project assignment terms for the web-freelancer lane.",
-      "dedup": "Repository, canonical suppression, Gmail Sent and official Hostinger INBOX.Sent are clear.",
-      "action": "Review only. No application/email until exact commercial model and cross-border eligibility clear."
-    },
-    {
-      "organization": "BSC Webdesign",
-      "domain": "bscwebdesign.at",
-      "state": "SUPPRESSED_ALREADY_CONTACTED",
-      "current_demand": "Current Wellfound role remains highly relevant: WordPress Web Designer & Developer, contract, remote everywhere, long-term and consistent collaboration.",
-      "route": "Wellfound Apply Now is current, but identity-level contact history overrides route freshness.",
-      "dedup": "Hostinger INBOX.Sent UID 115 shows FIRST_CONTACT on 2026-08-28 to office@bscwebdesign.com. Gmail alone was clear, demonstrating why official Hostinger Sent remains mandatory.",
-      "action": "No new first contact or platform application."
+      "organization": "TechBiz Global GmbH",
+      "domain": "techbiz.global",
+      "state": "REVIEW_REQUIRED_GEO_ELIGIBILITY_CONFLICT",
+      "current_demand": "Official live role: Freelance Web and WordPress developer, part-time on-demand for long-term; WordPress, HTML/CSS/JavaScript, responsive development and SEO; independent specialist listing is open until 2026-09-10.",
+      "route": "Official TechBiz Global application form on jobs.techbiz.global. Generic email substitution is not permitted.",
+      "eligibility_gate": "Official role says work from anywhere, but the mandatory preferred-work-location selector enumerates locations and does not include Spain. Independent listing metadata also limits the role to named countries. Exact Spain-based contractor eligibility is unresolved.",
+      "economics": "Application form exposes €6–€8, €8–€10, €10–€12 and €12+/hour bands; this lowers commercial priority even if geography clears.",
+      "dedup": "Repository/suppression, Gmail Sent and official Hostinger INBOX.Sent are clear.",
+      "action": "Review only. No application until Spain/EU eligibility clears."
     }
   ],
   "research_only_not_promoted": [
+    {"organization":"GigWay (Pty) Ltd","reason":"Official WordPress freelancer network is remote, project-paid and recurring, but the role was posted in 2025 and is materially stale for HOT/current promotion despite remaining visible."},
     {"organization":"Alta Ignite / Lanex Group LLC","reason":"Official Europe-remote WordPress Developer opening is full-time employment, not verified freelance/contractor work; role also asks 3+ years custom theme/plugin production and solid PHP."},
-    {"organization":"Digiestate Marketing Agency Pvt Ltd","reason":"Long-term freelance web developer signal exists but public evidence is about six months old; not promoted as current HOT demand."},
     {"organization":"Anonymous current marketplace projects","reason":"Current WordPress demand continues, but exact commercial buyer identity is often not established; identity hard gate blocks promotion."}
   ],
   "queue_reverification": {
@@ -68,9 +60,9 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026.json",
+    "../opportunities/OPP-EU-TECHBIZ-GLOBAL-FREELANCE-WORDPRESS-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0335.json"
+    "../research/2026-09-01-fast-revenue-pass-0440.json"
   ]
 }
