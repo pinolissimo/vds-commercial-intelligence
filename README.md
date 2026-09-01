@@ -4,7 +4,7 @@
 > **North Star:** `qualified conversations → meetings → proposals → contracts → € won`  
 > **VDS7:** precisione > volume · evidenza > inferenza · duplicate FIRST_CONTACT tolerance = **0**
 
-**Snapshot:** 1 settembre 2026 · 09:07 Europe/Madrid  
+**Snapshot:** 1 settembre 2026 · 10:08 Europe/Madrid  
 **Operating mode:** **ACTIVE DISCOVERY · INBOUND MONITORING · ROUTE-SAFE EXECUTION**  
 **QA:** mandatory identity / freshness / route / geography / fit / suppression / global dedup / Gmail Sent / Hostinger Sent gates enforced per recipient.
 
@@ -22,9 +22,10 @@
 | Monday positive referrals | **1** |
 | Monday negative replies | **1** |
 | Monday hard bounces | **4** |
-| New unmatched bounce requiring reconciliation | **1** |
-| Local SME 999 contacted | **8 / 8 qualified** |
-| Local SME hard bounces | **3** |
+| Tuesday bounce/reconciliation events | **2** |
+| Local SME 999 canonical records | **31** |
+| Local SME 999 contacted / Sent verified | **8 / 8** |
+| Local SME hard bounces | **4** |
 | Meetings | **0** |
 | Proposals | **0** |
 | Revenue won | **€0** |
@@ -36,6 +37,16 @@ The numerical Monday target was **30+**, but only **21** candidates survived eve
 ---
 
 ## 🚨 Current commercial events
+
+### Piscina Municipal de Sitges — HARD BOUNCE / PUBLIC-ENTITY BOUNDARY REVIEW
+
+Hostinger INBOX **UID 1283** reports a permanent delivery failure for `info@pmsitges.cat`: **SMTP 550 5.1.1 — User unknown in virtual alias table**. The bounce attachment contains the original authenticated outgoing message, timestamped **1 Sep 2026 · 09:45:57 Europe/Madrid**, subject `Una propuesta digital concreta para Piscina Municipal de Sitges`.
+
+A matching message was **not found in the latest Hostinger Sent delta**, therefore the CRM does **not** claim `SENT_VERIFIED`. The delivery attempt itself is nevertheless proven by the RFC822 payload inside the bounce and permanently consumes first-contact uniqueness: **no blind resend, no second cold first-contact, no alternative-address reset**.
+
+This event also exposed a QA boundary issue: no canonical record existed before the attempt and the identity appears to be a **municipal/public sports facility**. A reconciliation record has now been created, the failed route is emergency-suppressed, and the identity is `REVIEW_REQUIRED_PUBLIC_ENTITY_BOUNDARY`. Automated LOCAL_SME_999 outreach is blocked; any legitimate public-sector route belongs under the user-managed procurement boundary.
+
+➡️ [Reconciliation record](local-no-website/spain/catalonia/barcelona/sitges/municipal-sports-facility/LOCAL-ES-CT-B-SITGES-PISCINA-MUNICIPAL.json) · [Action queue](views/action-queue.json) · [Emergency suppression](governance/suppression-emergency-2026-08-28.json)
 
 ### SO Design Online — FIRST_CONTACT SENT / VERIFIED
 
@@ -51,7 +62,7 @@ Hostinger INBOX **UID 1282** reports delivery failure to `info@aunarviajes.com`:
 
 ### Daniele Debernardis — POSITIVE REFERRAL
 
-Daniele replied after the first contact and **forwarded the request to his colleague Fabio Vanacore**, who was placed in CC. This is a genuine routed referral and is now a **USER-action** thread. No automated reply and no separate first-contact solicitation to Fabio was generated.
+Daniele replied after the first contact and **forwarded the request to his colleague Fabio Vanacore**, who was placed in CC. This is a genuine routed referral. No automated reply and no separate first-contact solicitation to Fabio was generated.
 
 ### MarkeThink — CLOSED / NEGATIVE REPLY
 
@@ -93,21 +104,22 @@ CareTalyst requested rate information; no numeric rate was invented. The applica
 
 ## 🏪 Local SME 999
 
-The backlog-finalized cohort is now fully executed under the exact-one-proactive-first-contact rule.
+The backlog-finalized cohort remains fully executed under the exact-one-proactive-first-contact rule. The additional Piscina Municipal record exists only for **bounce/QA reconciliation** and is not counted as a newly qualified/contacted SME.
 
 | Metric | Value |
 |---|---:|
-| Canonical records | **30** |
+| Canonical records | **31** |
+| Under research / boundary review | **1** |
 | Finalized rejected | **22** |
 | Qualified | **8** |
 | Ready to contact | **0** |
 | Contacted / Sent verified | **8** |
-| Hard bounces | **3** |
+| Hard bounces | **4** |
 | Delivered or no bounce observed | **5** |
 | Replies | **0** |
 | Wins | **0** |
 
-Hard-bounced addresses are suppressed and will never be blindly retried. A replacement route would require new authoritative evidence and organization-level continuation review.
+Hard-bounced addresses are suppressed and will never be blindly retried. A replacement route would require new authoritative evidence and organization-level continuation review. Public/municipal identities are excluded from automated LOCAL_SME_999 solicitation.
 
 ➡️ [Local SME master](local-no-website/master-index.json) · [€999 offer](local-no-website/config/offer-999.json) · [Tax policy](local-no-website/config/tax-policy.json)
 
@@ -115,8 +127,9 @@ Hard-bounced addresses are suppressed and will never be blindly retried. A repla
 
 ## ⛔ Final-gate blocks / review queue
 
-Current priority queue contains only authoritative **form/platform** routes; SO Design Online has been removed after verified contact.
+Current priority queue contains only authoritative **form/platform** routes plus QA reconciliation items; SO Design Online has been removed after verified contact.
 
+- **Piscina Municipal de Sitges** — CRITICAL QA: failed route suppressed; no matching Sent UID; municipal/public-sector boundary review required; no resend.
 - **Sapres Technologies GmbH** — HOT+; Freelancermap application route; must confirm willingness for stated 5% Frankfurt onsite and rate requirements before submission.
 - **Cayenne Global LLC** — HOT; Upwork-only route; 50+ proposals and strong B2B-tech example requirement materially affect conversion probability.
 - **Ajax Creative** — HOT; official Freelancer Application route; generic email substitution forbidden.
@@ -144,7 +157,7 @@ The explicit user decision remains authoritative: `WAITING_FOR_INBOUND` · no fo
 
 ## 🏛️ Public Procurement — USER MANAGED
 
-Public administrations, municipalities, institutional bodies and regulated procurement remain a separate manual funnel. No automated first-contact outreach or bid submission.
+Public administrations, municipalities, institutional bodies and regulated procurement remain a separate manual funnel. No automated first-contact outreach or bid submission. The Piscina Municipal reconciliation is explicitly held at this boundary until identity/procurement status is resolved.
 
 ➡️ [Manual Public Procurement Report](reports/MANUAL-PROCUREMENT-OPPORTUNITIES.md) · [Public Procurement Pipeline](views/public-procurement-pipeline.json)
 
@@ -154,9 +167,10 @@ Public administrations, municipalities, institutional bodies and regulated procu
 
 - Duplicate FIRST_CONTACT violations on 1 Sep: **0**.
 - SO Design Online was verified in Hostinger Sent before CRM state advanced to CONTACTED.
-- Gmail Sent and Hostinger Sent were checked at the final gate.
-- SO Design Online is now hard-blocked from second FIRST_CONTACT in emergency suppression memory pending primary-registry normalization.
-- Aunar Viajes unmatched bounce is REVIEW_REQUIRED; no blind resend.
+- Piscina Municipal de Sitges bounce is proven by INBOX UID 1283, but **SENT is not claimed** because a matching Hostinger Sent UID was not verified.
+- `info@pmsitges.cat` is blocked in emergency suppression; first-contact uniqueness is not reset by finding another address.
+- Piscina Municipal is `REVIEW_REQUIRED_PUBLIC_ENTITY_BOUNDARY`; no automated LOCAL_SME resend or public-sector solicitation is permitted.
+- Aunar Viajes unmatched bounce remains REVIEW_REQUIRED; no blind resend.
 - Positive/referral/pricing/proposal/call threads remain USER action; no substantive positive response is auto-replied.
 - No guessed email, invented rate, invented availability, unsupported budget or false freshness was used.
 - Public procurement remains user-managed.
@@ -166,12 +180,13 @@ Public administrations, municipalities, institutional bodies and regulated procu
 
 ## Top Next Actions
 
-1. **USER:** review the Daniele Debernardis → Fabio Vanacore referral thread before any response or next step.
+1. **QA:** reconcile Piscina Municipal de Sitges as a municipal/public identity; keep the failed route suppressed and do not resend.
 2. Monitor SO Design Online and remaining non-bounced contacts for replies, CV/portfolio requests, calls or proposals.
 3. Reconcile the unmatched Aunar Viajes bounce before associating it with any campaign or prospect.
-4. Execute form/platform opportunities only through their authoritative routes after individual final gates.
-5. Continue discovery focused on fresh, explicit freelance/contract/white-label/overflow demand with authoritative routes.
-6. Continue EU project deepening only where a defensible funded-project → responsible-beneficiary → digital-need route exists.
+4. Keep the Daniele Debernardis → Fabio Vanacore referral as a routed continuation; no new first-contact path.
+5. Execute form/platform opportunities only through their authoritative routes after individual final gates.
+6. Continue discovery focused on fresh, explicit freelance/contract/white-label/overflow demand with authoritative routes.
+7. Continue EU project deepening only where a defensible funded-project → responsible-beneficiary → digital-need route exists.
 
 ---
 
