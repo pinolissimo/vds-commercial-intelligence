@@ -1,0 +1,111 @@
+{
+  "run_at": "2026-09-01T12:01:00+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "frontier": {
+    "country": "Spain",
+    "region": "Catalonia",
+    "province": "Barcelona",
+    "district_or_comarca": "Garraf",
+    "municipality": "Olivella",
+    "state": "ACTIVE_SCAN"
+  },
+  "delta": {
+    "screened_raw_before": 322,
+    "screened_raw_after": 323,
+    "new_unique_screened": 1,
+    "qualified_before": 8,
+    "qualified_after": 8,
+    "ready_to_contact_before": 0,
+    "ready_to_contact_after": 0
+  },
+  "new_screened": [
+    {
+      "business": "Deixalleria d'Olivella",
+      "activity_type": "Municipal recycling facility",
+      "state": "REJECTED_NONCOMMERCIAL_FIT",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED",
+      "commercial_fit": "REJECTED",
+      "reason": "Current Ajuntament d'Olivella evidence identifies the facility as the municipal recycling service. It is public infrastructure rather than an addressable private SME for VDS Business Web Presence €999.",
+      "evidence": [
+        {
+          "source_family": "municipal_primary",
+          "url": "https://www.olivella.cat/serveis-i-tramits/serveis/deixalleria.html",
+          "observed": "Ajuntament page updated 2026-07-09 identifies Deixalleria d'Olivella as a municipal waste/reuse service at BV2111 km 11.600."
+        },
+        {
+          "source_family": "local_directory",
+          "url": "https://www.todosbiz.es/deixalleria-dolivella-663-76-98-96",
+          "observed": "Directory corroborates Olivella identity, operating hours and links the web presence to olivella.cat."
+        }
+      ]
+    }
+  ],
+  "deep_review_changes": [
+    {
+      "business": "EL MOS",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "identity": "VERIFIED",
+      "current_activity": "VERIFIED",
+      "reputation": "STRONG_POSITIVE_MULTI_SURFACE",
+      "website_gap": "INFERRED_HIGH_CONFIDENCE_TO_VERIFY",
+      "contact_route": "VERIFIED_PHONE",
+      "promotion_decision": "HOLD_RAW",
+      "reason": "Maps/local business data bind EL MOS to Plaça Catalunya 5B and +34 618 05 61 26 with 4.9/5 and 242 reviews. Independent restaurant surfaces report the same address/phone and approximately 4.8/5 with ~99 reviews while exposing no owned website. Exact-name search remains collision-prone and no verified owned social/email route was established in this pass, so the record is not promoted prematurely.",
+      "evidence": [
+        {
+          "source_family": "map_local",
+          "observed": "4.9/5, 242 reviews, Plaça Catalunya 5B, phone +34 618 05 61 26."
+        },
+        {
+          "source_family": "restaurant_directory",
+          "url": "https://www.gourmetlounge.es/el-mos-en-olivella-provincia-de-barcelona/",
+          "observed": "Same Olivella address and phone; 4.8 rating / 99 reviews; website field not populated."
+        },
+        {
+          "source_family": "restaurant_directory_independent",
+          "url": "https://tamararestaurant.es/restaurante/el-mos-2/",
+          "observed": "Same Olivella address; 9.6/10 from 247 reviews and current restaurant description."
+        }
+      ]
+    },
+    {
+      "business": "Rehabilitaciones Lorenzo Romero",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity": "CORROBORATED_SINGLE_SPECIALIST_SURFACE",
+      "current_activity": "TO_VERIFY",
+      "website_gap": "TO_VERIFY",
+      "reputation": "TO_VERIFY",
+      "commercial_fit": "INFERRED_PLAUSIBLE",
+      "promotion_decision": "HOLD_RAW",
+      "reason": "A specialist renovation marketplace associates the business with Serra d'Oliana 7, 08818 Olivella and claims broad renovation capability plus extensive historical project activity. The profile is explicitly unverified, so current activity, owned-domain absence, independent reputation and direct public business route remain mandatory before promotion.",
+      "evidence": [
+        {
+          "source_family": "specialist_marketplace",
+          "url": "https://www.hazmeprecio.com/empresa/rehabilitaciones-lorenzo-romero",
+          "observed": "Olivella address, renovation service scope and historical project/budget activity; profile marked unverified."
+        }
+      ]
+    }
+  ],
+  "coverage_work": {
+    "category_expansion": [
+      "municipal/local-services false-positive elimination",
+      "construction/renovation specialist marketplace deep review",
+      "restaurant owned-domain and reputation reconciliation"
+    ],
+    "frontier_action": "Remain ACTIVE_SCAN in Olivella; continue unresolved private-SME categories and Iberinform/eInforma E-Z before adjacent-municipality expansion.",
+    "source_access_gaps": [
+      "Exact-name social searches for EL MOS remain collision-prone across several unrelated restaurants; require phone/address-bound attribution before social ownership is accepted.",
+      "Rehabilitaciones Lorenzo Romero currently depends on an unverified specialist-marketplace profile; independent present-day identity and reputation evidence is still required."
+    ]
+  },
+  "safety": {
+    "outreach_sent": false,
+    "applications_submitted": false,
+    "forms_submitted": false,
+    "auto_replies": false,
+    "first_contact_actions_created": false
+  }
+}
