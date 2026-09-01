@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.26",
-  "updated_at": "2026-09-01T11:42:00+02:00",
+  "schema_version": "1.27",
+  "updated_at": "2026-09-01T12:42:00+02:00",
   "purpose": "Channel-separated FAST_REVENUE status. Counts represent current uncontacted/actionable routes plus review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 0,
     "VERIFIED_FORM_PLATFORM": 24,
-    "REVIEW_REQUIRED": 43,
+    "REVIEW_REQUIRED": 44,
     "SUPPRESSED": 49,
     "HOLD": 10,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
@@ -13,7 +13,7 @@
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "0: no currently uncontacted direct-email candidate passes all gates.",
     "VERIFIED_FORM_PLATFORM": "24 unchanged; no new candidate passed every promotion gate in this cycle.",
-    "REVIEW_REQUIRED": "43 after adding SiteMile as a material contract WooCommerce signal blocked by route and truthful-fit-depth gates.",
+    "REVIEW_REQUIRED": "44 after adding Koda North as a material Europe-remote WordPress signal blocked by current-role freshness and exact engagement/route gates.",
     "SUPPRESSED": "49 unchanged.",
     "HOLD": "10 unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
@@ -28,14 +28,14 @@
   },
   "material_verification_changes": [
     {
-      "organization": "SiteMile / SC Sitemile SRL",
-      "domain": "sitemile.com",
-      "state": "REVIEW_REQUIRED_ROUTE_TRUTHFUL_FIT_DEPTH",
-      "current_demand": "Current specialist WordPress job-board inventory still lists WooCommerce Specialist: Contract, Remote, USD 50-70/hour, working on SiteMile and client stores/marketplace themes.",
-      "route": "BLOCKED: listing says Apply should open employer form, but the current employer link resolves to the SiteMile homepage rather than a role-specific application form. Generic quote/contact routes must not substitute it.",
-      "eligibility_gate": "PASSED at listing level: Remote / Remote with no country exclusion shown and Contract engagement explicit.",
-      "dedup": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger full INBOX.Sent history 0; suppression clear.",
-      "fit_gate": "REVIEW_REQUIRED: listing demands deep hands-on WooCommerce and strong PHP/WooCommerce hooks. Canonical VDS evidence must support this depth before promotion.",
+      "organization": "Koda North",
+      "domain": "kodanorth.com",
+      "state": "REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT",
+      "current_demand": "A secondary listing published 2026-08-03 reports a Europe-remote WordPress Developer role covering WordPress, PHP, HTML/CSS/JavaScript, custom themes/plugins and Git.",
+      "route": "BLOCKED: current official careers page lists five live roles but no WordPress Developer. Use only the official Koda North careers flow if the WordPress role is authoritatively refreshed; generic info/project contacts must not substitute.",
+      "eligibility_gate": "PARTIALLY PASSED: secondary role evidence says Europe remote, and current official careers separately confirms Europe/UK remote hiring capability; this does not prove the WordPress role itself is still open.",
+      "dedup": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger INBOX.Sent searches for Koda North and kodanorth.com 0; suppression clear.",
+      "fit_gate": "STRONG IF CURRENT: WordPress/PHP/frontend/Git/API overlap is strong, but freshness and exact engagement model block promotion.",
       "action": "Added to REVIEW_REQUIRED only; not actionable."
     }
   ],
@@ -57,9 +57,9 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026.json",
+    "../opportunities/OPP-EU-KODA-NORTH-WORDPRESS-DEVELOPER-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-1142.json"
+    "../research/2026-09-01-fast-revenue-pass-1242.json"
   ]
 }
