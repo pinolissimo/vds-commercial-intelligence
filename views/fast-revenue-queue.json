@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.19",
-  "updated_at": "2026-09-01T09:37:00+02:00",
+  "schema_version": "1.20",
+  "updated_at": "2026-09-01T10:40:00+02:00",
   "purpose": "Compact evidence-first FAST_REVENUE execution shortlist. Execution belongs exclusively to Partner Hunt after immediate freshness, route, suppression and Sent-history gates.",
   "rules": [
     "No outreach or submission from this view alone.",
@@ -12,7 +12,7 @@
   "channel_snapshot": {
     "VERIFIED_DIRECT_EMAIL": 0,
     "VERIFIED_FORM_PLATFORM": 24,
-    "REVIEW_REQUIRED": 40,
+    "REVIEW_REQUIRED": 42,
     "SUPPRESSED": 49,
     "HOLD": 10
   },
@@ -42,8 +42,7 @@
       "route_url": "https://wordune.com/submit-project/",
       "why_now": "Official current hiring page states Open to recruit for 3 Figma Designer seats, one-year period, explicit Europe eligibility and increased Figma-to-WordPress demand.",
       "economics": "$40/hour for EU applicants; monthly payment after client confirmation; no guaranteed hours published.",
-      "execution_caveat": "Use the official CV/ticket path linked from hiring, not generic email. Show only demonstrable Figma-specific work; WordPress-theme-aware design is explicitly expected.",
-      "dedup_state": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger Sent had only an internal VDS report mention, no commercial Wordune contact; suppression clear.",
+      "execution_caveat": "Use only demonstrable Figma-specific work and the official CV/ticket route.",
       "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
     },
     {
@@ -54,9 +53,9 @@
       "priority": "HOT",
       "route_type": "VERIFIED_FORM_PLATFORM",
       "route_url": "https://www.upwork.com/freelance-jobs/apply/Senior-Web-Designer-WordPress-Developer-B2B-Deep-Technology-Website-Redesign_~022094501377834803355/",
-      "why_now": "Published 2026-08-31 and live on 2026-09-01. Named buyer seeks design-first Figma + WordPress execution for a sophisticated B2B deep-tech redesign, explicitly Worldwide.",
-      "economics": "$2,500–$3,500 fixed price; approximately $3,000 target; 6–8 week target.",
-      "execution_caveat": "50+ proposals and strong B2B-tech example requirement; use only demonstrable VDS portfolio proof.",
+      "why_now": "Published 2026-08-31; named buyer seeks design-first Figma + WordPress execution and explicitly accepts Worldwide applicants.",
+      "economics": "$2,500-$3,500 fixed price; approximately $3,000 target; 6-8 week target.",
+      "execution_caveat": "Use only demonstrable B2B-tech and Figma/WordPress portfolio evidence.",
       "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
     },
     {
@@ -67,13 +66,15 @@
       "priority": "HOT",
       "route_type": "VERIFIED_FORM_PLATFORM",
       "route_url": "https://www.ajaxcreative.com/jobs/freelance-web-designer-job-posting",
-      "why_now": "Official live Remote - Freelance vacancy seeks per-project/on-call Web Designer capacity and explicitly permits work from anywhere.",
+      "why_now": "Official live Remote-Freelance vacancy seeks per-project/on-call Web Designer capacity and explicitly permits work from anywhere.",
       "economics": "Competitive compensation per project; no numeric rate or guaranteed volume published.",
       "execution_caveat": "Use official Freelancer Application path and only portfolio-backed design-tool experience.",
       "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
     }
   ],
   "material_review": [
+    {"organization":"Human Made Limited","state":"REVIEW_REQUIRED_TRUTHFUL_FIT_SENIORITY","reason":"Current worldwide-remote WordPress freelancer programme is genuine, but the available engineering role is Senior Web Engineer and enterprise-level fit must be proven truthfully before promotion."},
+    {"organization":"One Thing Marketing","state":"REVIEW_REQUIRED_GEO_ROUTE_TRUTHFUL_FIT","reason":"Fresh freelance WordPress/Avada demand at $15-$25/hour, but Spain/EU eligibility and exact authoritative application route are unresolved and the role requires home-services-industry experience."},
     {"organization":"Algert, Inc.","state":"REVIEW_REQUIRED_GEO_ELIGIBILITY","reason":"Official WordPress/Webflow front-end application is live but Spain/EU eligibility is not established for the exact role."},
     {"organization":"Afternow (formerly BB Agency)","state":"REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT","reason":"Europe-Remote freelance talent pool is current, but exact Visual/Web Designer role freshness conflicts with the current official vacancy list."},
     {"organization":"Global Service Impresa","state":"HOLD_GEO_ELIGIBILITY_ITALY_ONLY","reason":"Current high-fit freelance role says Remoto tutta Italia; Spain-based cross-border eligibility not established."},
@@ -81,18 +82,12 @@
     {"organization":"Hjemmesider og Marketing","state":"REVIEW_REQUIRED_GEO_COMMERCIAL_MODEL","reason":"Current collaborator/freelancer intake with WordPress/Webflow, but Spain eligibility and project economics not established."},
     {"organization":"BruntWork","state":"REVIEW_REQUIRED_GEO_ELIGIBILITY","reason":"Current independent-contractor WordPress role; exact Spain/EU eligibility not explicit."},
     {"organization":"Group easyweb","state":"HOLD_GEO_FISCAL_ELIGIBILITY","reason":"Strong recurring remote demand but active French SIRET explicitly required."},
-    {"organization":"LIVEAT SRL","state":"REVIEW_REQUIRED_GEO_FISCAL_ELIGIBILITY","reason":"Fresh WordPress/Elementor freelance demand; Spain-based autónomo eligibility insufficiently explicit."},
-    {"organization":"Adviva Srl [WMR]","state":"REVIEW_REQUIRED_GEO_REMOTE","reason":"Current external/freelancer WordPress collaboration; cross-border remote eligibility not explicit."},
-    {"organization":"Visible Comunicación Estratégica","state":"HOLD_EMPLOYMENT_MODEL","reason":"Fresh WordPress/WooCommerce need but employment/substitution model rather than verified freelance contract."},
-    {"organization":"Diwar Marketing SL","state":"REVIEW_REQUIRED_FRESHNESS","reason":"Strong freelance web-design fit but demand needs newer confirmation."},
-    {"organization":"Talentchef","state":"REVIEW_REQUIRED_ROUTE","reason":"High-fit WordPress/Elementor signal but official application route remains broken."},
-    {"organization":"Bosun","state":"REVIEW_REQUIRED_GEO_TIMEZONE_FIT","reason":"Current freelance WordPress role; EU eligibility/timezone and custom PHP depth need resolution."},
     {"organization":"CodeQuadrat","state":"REVIEW_REQUIRED_ROUTE","reason":"Current Remote-Europe WordPress freelance role but exact role-specific email recipient is not exposed in authoritative evidence."}
   ],
   "suppressed_reverification": [
     {"organization":"BSC Webdesign","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"Hostinger Sent UID 115 proves prior FIRST_CONTACT."},
     {"organization":"SO Design Online","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"FIRST_CONTACT sent 2026-09-01; Hostinger Sent UID 149; WAITING_FOR_REPLY."}
   ],
-  "cycle_reverification": "2026-09-01 09:37 FAST_REVENUE promoted Wordune after official current-role, Europe eligibility, economics, route and dedup verification. Post-SO-Design channel totals were reconciled to 0 direct-email / 24 form-platform / 40 review / 49 suppressed / 10 hold.",
+  "cycle_reverification": "2026-09-01 10:40 FAST_REVENUE added two material REVIEW_REQUIRED candidates but promoted none. Actionable queue remains four strict all-gates-clear candidates.",
   "execution_note": "No outreach by FAST_REVENUE. Partner Hunt is the sole execution gate."
 }
