@@ -1,0 +1,109 @@
+{
+  "run_at": "2026-09-01T04:02:10+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "frontier": {
+    "country": "Spain",
+    "region": "Catalonia",
+    "province": "Barcelona",
+    "district_or_comarca": "Garraf",
+    "municipality": "Olivella",
+    "state": "ACTIVE_SCAN"
+  },
+  "screened_before": 288,
+  "screened_after": 293,
+  "new_unique_screened": 5,
+  "new_raw": [
+    {
+      "business": "Orts Fuster",
+      "activity_type": "Woodworking and carpentry",
+      "address": "Av. de la Sardana, 38, 08818 Olivella, Barcelona",
+      "phone": "+34627760866",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "website_gate": "TO_VERIFY",
+      "reputation": {
+        "status": "TO_VERIFY",
+        "map_signal": "5.0/5 from 5 reviews",
+        "note": "Small review corpus; insufficient for hard reputation promotion gate."
+      },
+      "evidence": [
+        {"family":"LOCAL_MAP","status":"VERIFIED","note":"Current map listing with exact Olivella address, phone, hours and 5.0/5 from 5 reviews."},
+        {"family":"LOCAL_DIRECTORY","status":"VERIFIED","note":"Botigues de Catalunya independently lists Orts Fuster at the same Olivella address and phone."},
+        {"family":"EXACT_NAME_SEARCH","status":"TO_VERIFY","note":"No owned domain was established in the exact-name/phone pass; absence is not yet considered verified."}
+      ]
+    },
+    {
+      "business": "Nino y Antonio los magos Mecanicos Olivella",
+      "activity_type": "Automotive repair",
+      "address": "08818 Olivella, Barcelona",
+      "phone": "+34610490880",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "website_gate": "TO_VERIFY",
+      "reputation": {
+        "status": "INFERRED_POSITIVE_NEEDS_CROSS_PLATFORM",
+        "map_signal": "5.0/5 from 16 reviews",
+        "note": "Good local traction signal, but independent reputation lineage is still missing."
+      },
+      "evidence": [
+        {"family":"LOCAL_MAP","status":"VERIFIED","note":"Current Olivella mechanic listing, phone, operating hours and 5.0/5 from 16 reviews."},
+        {"family":"EXACT_NAME_SEARCH","status":"TO_VERIFY","note":"Exact-name/phone pass did not establish an owned website or verified social profile."}
+      ]
+    }
+  ],
+  "new_rejected_has_website": [
+    {
+      "business": "Reformas Brian Group / BRIAN GROUP 2014",
+      "activity_type": "Construction and renovation",
+      "address": "Carrer de la Verge, 22, 08818 Olivella, Barcelona",
+      "phone": "+34647852497",
+      "state": "REJECTED_HAS_WEBSITE",
+      "reason": "Exact phone and trade-name reconciliation establishes the functional owned site reformasbriangroup.com, with current services, portfolio, WhatsApp and Instagram linkage.",
+      "reputation_signal": "Map surface reports 5.0/5 with 40 reviews; Cybo reports 5.0/5 with 27, but website gate already rejects the opportunity."
+    },
+    {
+      "business": "Serveis per a la Infància Créixer Junts",
+      "activity_type": "Childcare / education services",
+      "address": "C/de l’Oreneta 15, 08818 Olivella, Barcelona",
+      "state": "REJECTED_HAS_WEBSITE",
+      "reason": "Official/current company website creixerjunts.cat exposes Olivella legal/contact identity, services, phone and email; fails website-absence gate."
+    },
+    {
+      "business": "Supamax Europe S.L. / Fable England EU",
+      "activity_type": "Online retail / wholesale",
+      "address": "Carrer L'Arc de Sant Martí, 68, 08818 Olivella, Barcelona",
+      "state": "REJECTED_HAS_WEBSITE",
+      "reason": "Fable England's current official EU site identifies Supamax Europe S.L. as the registered trade entity at the Olivella address and provides active ecommerce/contact routes; fails website-absence gate."
+    }
+  ],
+  "dedup_reconciliations": [
+    {
+      "business": "Centro de Estética y Peluquería",
+      "address": "Plaça Catalunya, 3, 08818 Olivella, Barcelona",
+      "phone": "+34662001709",
+      "action": "DO_NOT_RECOUNT_DO_NOT_REOPEN",
+      "reason": "Current Maps/Fresha evidence is materially consistent with the already finalized canonical rejected identity referenced in qualified-index.md; no new gate-resolving public email or owned-domain evidence was found."
+    },
+    {
+      "business": "Marcos Sanchez - Barcelona wedding photographer",
+      "phone": "+34678401505",
+      "action": "NOT_COUNTED_AS_OLIVELLA_NEW_IDENTITY",
+      "reason": "Local-map discovery lacked an Olivella address; exact verification identifies a Barcelona-based business with functional owned site marcossanchez.net. Avoid service-area territorial pollution."
+    }
+  ],
+  "source_access_notes": [
+    "Map discovery can return service-establishment businesses without a municipality-bound operating address; do not increment Olivella coverage unless address/identity is bound to the territory.",
+    "Exact phone search is high-value for generic trade names and should precede website-gap inference.",
+    "A record already finalized rejected must not re-enter RAW merely because a new map/booking surface appears; only materially gate-resolving evidence can reopen it."
+  ],
+  "next_review_queue": [
+    "Nino y Antonio los magos Mecanicos Olivella: exact social/owned-domain and independent reputation lineage",
+    "Orts Fuster: exact social/domain/contact route and current operating footprint",
+    "Formas Perruqueria Unisex: independent reputation and owned-domain/social ownership",
+    "M & M Nail´s: phone/address-bound social and reputation reconciliation",
+    "DECOCEMENT ESPAÑA S.L.: current operating footprint/domain/reputation",
+    "DUNDOG RENTA 83 S.L.: exact owned-domain/B2B operating presence",
+    "continue Olivella E→Z legal/company rows and under-sampled map categories"
+  ],
+  "outreach_actions": 0,
+  "first_contact_actions": 0
+}
