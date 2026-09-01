@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.20",
-  "updated_at": "2026-09-01T05:40:00+02:00",
-  "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 delta-first breadth, freshness, geography and dedup QA cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
+  "schema_version": "1.21",
+  "updated_at": "2026-09-01T06:37:39+02:00",
+  "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 delta-first breadth, freshness, geography and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
-    "VERIFIED_FORM_PLATFORM": 22,
+    "VERIFIED_FORM_PLATFORM": 23,
     "REVIEW_REQUIRED": 38,
     "SUPPRESSED": 48,
     "HOLD": 10,
@@ -12,44 +12,48 @@
   },
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
-    "VERIFIED_FORM_PLATFORM": "22 verified form/platform opportunities remain actionable. Global Service Impresa was removed from this actionable count after authoritative re-verification established an explicit Italy-only remote scope.",
+    "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities are actionable after adding Cayenne Global's fresh worldwide Upwork project.",
     "REVIEW_REQUIRED": "38 review-required opportunities remain unchanged in this cycle.",
     "SUPPRESSED": "48 acquisition identities remain suppressed.",
-    "HOLD": "10 holds now include Global Service Impresa because the official developer role says 'Remoto (tutta Italia)', which does not establish eligibility for a Spain-based contractor.",
+    "HOLD": "10 holds remain unchanged; Global Service Impresa remains held because the official role says 'Remoto (tutta Italia)'.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
-    "verified_form_platform_new": 0,
-    "verified_form_platform_removed": 1,
+    "verified_form_platform_new": 1,
+    "verified_form_platform_removed": 0,
     "review_required_new": 0,
-    "hold_new": 1,
+    "hold_new": 0,
     "suppression_new": 0,
     "suppression_total": 48,
     "actionable_pool_inflation": 0
   },
   "material_verification_changes": [
     {
-      "organization": "Global Service Impresa",
-      "domain": "globalserviceimpresa.it",
-      "state": "HOLD_GEO_ELIGIBILITY_ITALY_ONLY",
-      "current_demand": "Official current role remains commercially strong: Freelance Developer / Creative, project-based, WordPress, HTML/CSS/JS, e-commerce, custom software, integrations/automation, Partita IVA/regime forfettario, compensation per project and possible continuing collaboration.",
-      "route": "Official application form on the company careers page. No generic-email substitution is permitted.",
-      "eligibility_gate": "Authoritative page explicitly states 'Remoto (tutta Italia)'. This verifies remote work within Italy but does not establish cross-border eligibility for a contractor based in Spain.",
-      "dedup": "Canonical first-contact history is clear. Gmail matches are internal VDS reporting only; official Hostinger INBOX.Sent search returned zero Global Service matches on 2026-09-01.",
-      "action": "Hold. Do not submit unless authoritative evidence establishes Spain/EU cross-border contractor eligibility."
+      "organization": "Cayenne Global, LLC",
+      "domain": "cayennecom.com",
+      "state": "VERIFIED_FORM_PLATFORM",
+      "priority": "HOT",
+      "current_demand": "Upwork project published 2026-08-31 seeks a Senior Web Designer + WordPress Developer for a sophisticated B2B deep-technology website redesign. Figma-first design, WordPress build, responsive QA, SEO migration, performance, analytics, training and launch support are explicit.",
+      "route": "Live Upwork project only; the platform route outranks Cayenne's generic official contact form or public PR addresses.",
+      "eligibility_gate": "PASS: project explicitly states Worldwide.",
+      "economics": "$2,500–$3,500 fixed price; target approximately $3,000, with four published milestones and a 6–8 week target timeline.",
+      "dedup": "CLEAR: repository search returned zero Cayenne matches before creation; Gmail Sent = 0; official Hostinger INBOX.Sent search for Cayenne = 0.",
+      "fit_caveat": "High VDS overlap, but Partner Hunt must answer the buyer's B2B-tech portfolio questions only with demonstrable work and must not invent semiconductor-specific experience.",
+      "action": "Promoted to READY_FOR_PARTNER_HUNT_FINAL_GATE."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"Anonymous current agency marketplace project","reason":"Fresh recurring WordPress/automation demand was found, but exact commercial buyer identity is not visible; identity hard gate blocks promotion."},
-    {"organization":"Exlibris / South Tyrol web-design pool","reason":"Freelance web-design signal exists but strong German-language and local South-Tyrol cultural knowledge requirements materially reduce truthful VDS fit."},
-    {"organization":"DISOTECH","reason":"Remote-Europe WordPress freelance signal is materially stale (approximately eight months old), so it is not promoted as current FAST_REVENUE demand."}
+    {"organization":"Anonymous current WordPress maintenance/Elementor marketplace projects","reason":"Fresh worldwide demand exists, including ongoing work, but exact buyer commercial identity is not visible; identity hard gate blocks promotion."},
+    {"organization":"Pavago","reason":"Fresh WordPress listing is full-time and location-restricted to South Africa; not compatible with this freelance/Spain eligibility lane."},
+    {"organization":"Anonymous UK marketing agency Upwork role","reason":"Current recurring Elementor/automation demand exists, but buyer identity is not established in accessible evidence; no promotion."}
   ],
   "queue_reverification": {
-    "Sapres Technologies GmbH": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
-    "Ajax Creative": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT.",
-    "SO Design Online": "Official careers route remains the sole VERIFIED_DIRECT_EMAIL / HOT in the compact queue.",
-    "Global Service Impresa": "Removed from actionable form/platform pool; HOLD_GEO_ELIGIBILITY_ITALY_ONLY."
+    "Sapres Technologies GmbH": "Remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
+    "Cayenne Global, LLC": "New VERIFIED_FORM_PLATFORM / HOT; fresh named-buyer worldwide project with strong economics and clean dedup.",
+    "Ajax Creative": "Remains VERIFIED_FORM_PLATFORM / HOT.",
+    "SO Design Online": "Remains the sole VERIFIED_DIRECT_EMAIL / HOT in the compact queue.",
+    "Global Service Impresa": "Remains HOLD_GEO_ELIGIBILITY_ITALY_ONLY."
   },
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
@@ -57,13 +61,14 @@
     "../project/PROJECT_INSTRUCTIONS.md",
     "../project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
     "../project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "../project/workstreams/COLLABORATIONS.md",
     "../config/source-registry.json",
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-IT-GLOBALSERVICE-FREELANCE-DEVELOPER.json",
+    "../opportunities/OPP-WW-CAYENNE-GLOBAL-WORDPRESS-B2B-REDESIGN-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0537.json"
+    "../research/2026-09-01-fast-revenue-pass-0637.json"
   ]
 }
