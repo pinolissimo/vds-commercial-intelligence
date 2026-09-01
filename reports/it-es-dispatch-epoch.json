@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "epoch_id": "first-use-20260901",
+  "reset_at": "2026-09-01T19:19:00Z",
+  "reset_scope": "RUN_AND_EPOCH_COUNTERS_ONLY",
+  "historical_dedup_memory_preserved": true,
+  "baseline": {
+    "unique_organizations_sent": 0,
+    "provider_messages": 0,
+    "duplicate_incidents": 0,
+    "verified_submissions": 0,
+    "replies": 0,
+    "positive": 0,
+    "won": 0
+  },
+  "current": {
+    "unique_organizations_sent": 9,
+    "provider_messages": 11,
+    "verified_submissions": 0,
+    "duplicate_incidents": 2,
+    "replies": 0,
+    "positive": 0,
+    "won": 0,
+    "remaining_certified_ready": 1
+  },
+  "first_live_run": {
+    "run_id": "live-first-use-20260901-1919",
+    "result": "DISPATCHED_WITH_CONCURRENCY_INCIDENT",
+    "intended_unique_organizations": 9,
+    "verified_unique_organizations": 9,
+    "provider_duplicate_messages": [
+      {"canonical_identity_key":"org:amomarketing.es","uid":169,"original_uid":168},
+      {"canonical_identity_key":"org:bpnexus.com","uid":172,"original_uid":171}
+    ]
+  },
+  "post_incident_remediation": {
+    "global_atomic_dispatch_lease": "governance/it-es-dispatch-lease.json",
+    "lease_protocol": "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md",
+    "per_identity_jit_sent_recheck": true,
+    "immediate_commit_after_each_send": true,
+    "miners_external_action_write_forbidden": true,
+    "performance_watch_lease_audit_enabled": true
+  },
+  "counting_rule": "Unique organizations and raw provider messages are always reported separately. Historical contacted identities remain suppressed even though this epoch's run counters were reset."
+}
