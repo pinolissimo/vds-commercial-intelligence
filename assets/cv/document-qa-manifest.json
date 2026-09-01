@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "verified_at": "2026-09-01T18:59:00Z",
+  "status": "PASS",
+  "purpose": "Canonical document-QA evidence for VDS IT/ES automated application dispatcher.",
+  "qa_policy": {
+    "master_pdf_reuse_allowed": true,
+    "candidate_specific_tailoring_required_only_when_materially_needed": true,
+    "hash_must_match_before_send": true,
+    "materialize_library_file_before_send": true,
+    "hostinger_attachment_encoding": "base64",
+    "hostinger_attachment_content_type": "application/pdf",
+    "send_block_on_hash_mismatch_or_materialization_failure": true
+  },
+  "masters": {
+    "ES_MASTER_QA": {
+      "language": "es",
+      "library_file_id": "file_00000000f0608211bf1d00a3a8e39f1f",
+      "source_name": "Giuseppe_Allocca_CV_Generico_ES(1).pdf",
+      "send_filename": "Giuseppe_Allocca_CV_ES.pdf",
+      "size_bytes": 137287,
+      "sha256": "42ef310e73fbc747570571f519d858fe701dc3fe3d1935c2da736d8e259ac560",
+      "pages": 2,
+      "pdf_preflight": {
+        "openable": true,
+        "encrypted": false,
+        "likely_scanned": false,
+        "xfa_present": false
+      },
+      "content_checks": {
+        "name_and_contact_present": true,
+        "visualdesignstudio_url_present": true,
+        "linkedin_url_present": true,
+        "wordpress_html_css_javascript_php_present": true,
+        "truthful_external_collaborator_history_present": true,
+        "language_match": "PASS"
+      },
+      "visual_render_qa": {
+        "pages_rendered": 2,
+        "clipping": false,
+        "overlap": false,
+        "broken_glyphs": false,
+        "layout": "PASS"
+      },
+      "qa_result": "PASS"
+    },
+    "IT_MASTER_QA": {
+      "language": "it",
+      "library_file_id": "file_00000000385481f4875c7e6c34a82273",
+      "source_name": "Giuseppe_Allocca_CV_Generico_IT(1).pdf",
+      "send_filename": "Giuseppe_Allocca_CV_IT.pdf",
+      "size_bytes": 133498,
+      "sha256": "db92237096c502fa7291d10c4e6fbb3e26bf39ffddcb5ea7d3f735f8cce1830f",
+      "pages": 2,
+      "pdf_preflight": {
+        "openable": true,
+        "encrypted": false,
+        "likely_scanned": false,
+        "xfa_present": false
+      },
+      "content_checks": {
+        "name_and_contact_present": true,
+        "visualdesignstudio_url_present": true,
+        "linkedin_url_present": true,
+        "wordpress_html_css_javascript_php_present": true,
+        "truthful_external_collaborator_history_present": true,
+        "language_match": "PASS"
+      },
+      "visual_render_qa": {
+        "pages_rendered": 2,
+        "clipping": false,
+        "overlap": false,
+        "broken_glyphs": false,
+        "layout": "PASS"
+      },
+      "qa_result": "PASS"
+    },
+    "EN_MASTER_QA": {
+      "language": "en",
+      "library_file_id": "file_00000000698481f5b1be1a5a6e5f7e2b",
+      "source_name": "Giuseppe_Allocca_Master_CV_EN(1).pdf",
+      "send_filename": "Giuseppe_Allocca_CV_EN.pdf",
+      "size_bytes": 134861,
+      "sha256": "8bef1c5d81d0ab974e23544e9f2040920da7e367a33535c9eddc36de46434fed",
+      "pages": 2,
+      "pdf_preflight": {
+        "openable": true,
+        "encrypted": false,
+        "likely_scanned": false,
+        "xfa_present": false
+      },
+      "content_checks": {
+        "name_and_contact_present": true,
+        "visualdesignstudio_url_present": true,
+        "linkedin_url_present": true,
+        "wordpress_html_css_javascript_php_present": true,
+        "truthful_external_collaborator_history_present": true,
+        "language_match": "PASS"
+      },
+      "visual_render_qa": {
+        "pages_rendered": 2,
+        "clipping": false,
+        "overlap": false,
+        "broken_glyphs": false,
+        "layout": "PASS"
+      },
+      "qa_result": "PASS"
+    }
+  },
+  "ready_assignments": {
+    "org:amomarketing.es": "ES_MASTER_QA",
+    "org:logorapid.com": "ES_MASTER_QA",
+    "org:bpnexus.com": "IT_MASTER_QA",
+    "org:brainershub.com": "EN_MASTER_QA",
+    "org:kuna.it": "IT_MASTER_QA",
+    "org:mywayspain.es": "ES_MASTER_QA",
+    "org:creative.it": "IT_MASTER_QA",
+    "org:acidamarketing.com": "ES_MASTER_QA"
+  },
+  "runtime_attachment_contract": {
+    "steps": [
+      "read latest READY queue",
+      "resolve canonical identity to assigned master profile",
+      "materialize exact library_file_id",
+      "verify byte size and SHA-256",
+      "base64 encode exact verified bytes",
+      "attach using Hostinger send attachments[] with filename/content/contentType/encoding",
+      "after send verify Sent copy contains the expected PDF attachment filename and nonzero attachment size"
+    ],
+    "failure_mode": "FAIL_CLOSED_DOCUMENT_QA"
+  }
+}
