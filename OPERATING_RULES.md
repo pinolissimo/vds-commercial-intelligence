@@ -35,6 +35,24 @@ Un lead diventa `READY_TO_CONTACT` solo con dominio verificato, attività pertin
 ## Outreach
 Messaggi one-to-one e personalizzati, nella lingua del destinatario quando possibile, con riferimento a un bisogno/modello verificato e CTA a bassa frizione. Nessun doppio contatto senza controllo della timeline. Invio automatico solo quando il canale invita esplicitamente candidature/collaborazioni; gli altri casi richiedono approvazione.
 
+## Document QA gate — mandatory before every send
+Nessun CV, portfolio, PDF, DOCX, proposta, lettera o altro allegato professionale può essere inviato senza un controllo finale completo sul file esatto che verrà allegato.
+
+Il gate è bloccante e deve verificare almeno:
+- rendering visivo di **tutte le pagine** del documento finale;
+- assenza di testo tagliato, sovrapposto, fuori margine o con spaziature anomale;
+- tipografia coerente: font, gerarchie, dimensioni, interlinea, pesi e allineamenti;
+- encoding e glifi corretti, inclusi accenti, ñ, apostrofi, bullet e simboli;
+- grafica, immagini e fotografia nitide e correttamente posizionate;
+- dati di contatto, URL, LinkedIn, email, telefono e nomi verificati carattere per carattere;
+- lingua coerente con candidatura e destinatario;
+- contenuto veritiero e coerente con il profilo master;
+- PDF apribile, non corrotto, con numero di pagine atteso e testo estraibile quando previsto;
+- verifica del PDF finale **dopo** la conversione, non solo del DOCX sorgente.
+
+Per i documenti generati/modificati, il workflow obbligatorio è: `edit/create → render → visual inspection → fix → re-render → final preflight → send`.
+Se anche un solo controllo fallisce, stato `DOCUMENT_QA_FAILED` e **invio vietato** fino alla correzione.
+
 ## Campaign intelligence
 Ogni messaggio appartiene a una campagna. Misurare: sent, replies, reply rate, positive replies, meetings, proposals, wins e revenue won.
 
