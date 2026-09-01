@@ -1,7 +1,7 @@
 # Monday Application Copy Pack — 31 Aug 2026
 
 **Purpose:** ready-to-use, opportunity-specific application text for non-email direct-commercial routes. Public procurement is excluded.  
-**Execution rule:** use the exact application/form/platform route; final freshness + global dedup + suppression + Sent-history gate still applies immediately before submission.
+**Execution rule:** use the exact application/form/platform route; final freshness + global dedup + suppression + Sent-history + geographic eligibility gate still applies immediately before submission. **Copy availability never implies execution eligibility.**
 
 ## 1. Aplum Studio — LinkedIn Apply
 **Status:** EXECUTION READY · highest priority  
@@ -38,10 +38,11 @@
 > Hola, soy Giuseppe Allocca, desarrollador web freelance y fundador de Visual Design Studio. Busco precisamente una colaboración recurrente con un estudio/agencia, no un proyecto aislado. Trabajo con WordPress y Elementor, frontend a medida, responsive, optimización y mantenimiento, y puedo integrarme en un flujo de producción existente respetando diseño, tiempos y criterios del estudio. Me interesa especialmente una relación estable donde pueda aportar fiabilidad y calidad visual/técnica. Portfolio: https://www.visualdesignstudio.es/. Si os encaja, podemos empezar con un primer proyecto o una pequeña prueba de colaboración.
 
 ## 5. Global Service Impresa — official form
-**Status:** EXECUTION READY  
-**Verified need:** remote freelance developer/creative; WordPress, JS, e-commerce, custom software; possible continuity.
+**Status:** HOLD_GEO_ELIGIBILITY_ITALY_ONLY — DO NOT SUBMIT FROM SPAIN  
+**Verified need:** current freelance/project-based developer/creative; WordPress, HTML/CSS/JS, e-commerce, custom software, integrations/automation; compensation per project and possible continuity.  
+**Blocking evidence:** the authoritative current role explicitly states **“Remoto (tutta Italia)”**. This verifies remote work within Italy but does not establish cross-border eligibility for a Spain-based contractor. Official form remains the only valid route.
 
-**Application text (IT):**
+**Prepared text — retain only if geography later clears (IT):**
 > Buongiorno, sono Giuseppe Allocca, web developer freelance e fondatore di Visual Design Studio. Vorrei candidarmi per collaborazioni su progetti web e digitali. Il mio profilo combina WordPress, HTML/CSS/JavaScript, sviluppo frontend custom, e-commerce, UX/UI e integrazioni, con esperienza tecnica IT che mi permette di gestire il progetto con autonomia anche oltre la sola parte grafica. Sono interessato soprattutto a collaborazioni continuative e remote con un team che gestisce più clienti. Portfolio: https://www.visualdesignstudio.es/.
 
 ## 6. Mobyleshop — official careers
@@ -140,12 +141,13 @@
 Aplum Studio → Grownnectia → Virtual Marketing Spain → Mucui → Mobyleshop → Onebit → Zmot Lab
 
 ### Tier 2 — strong recurring/agency fit
-Global Service Impresa → Aderen → Vaivén Estudio → Digityze → Dream Big Design → Studiart
+Aderen → Vaivén Estudio → Digityze → Dream Big Design → Studiart
 
 ### Tier 3 — viable but lower fit / extra constraints
 Hays España → Mindrift → Robert Half Contracting
 
-### Blocked
+### Hold / Blocked
+Global Service Impresa — **HOLD_GEO_ELIGIBILITY_ITALY_ONLY**; official role says `Remoto (tutta Italia)`, so do not submit from Spain unless cross-border eligibility is established.  
 DNA Agency — exact application route still requires re-verification.
 
 ## Submission QA
@@ -153,4 +155,5 @@ DNA Agency — exact application route still requires re-verification.
 - Do not provide invented rates, availability or years of experience. Answer numeric mandatory fields only from verified user data.
 - Use portfolio URL in every application; attach CV only where the platform explicitly requests or supports it.
 - Preserve platform context: Workana/LinkedIn/recruiter applications are not cold emails.
+- Geographic/remote eligibility must be supported by authoritative evidence for the exact role; “remote” does not automatically mean cross-border EU.
 - After each real submission, record exact route, timestamp and evidence in canonical CRM before moving to the next organization.
