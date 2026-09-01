@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-01T14:48:00+02:00",
+  "workstream": "COLLABORATIONS",
+  "mode": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "preflight_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "views/source-coverage.md",
+    "views/territorial-coverage.md"
+  ],
+  "search_strategy": {
+    "delta_first": true,
+    "families": ["OFFICIAL_COMPANY","SPECIALIST_JOBS","AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"],
+    "signals": ["freelance WordPress developer","Web Developer contract","Figma-to-web","Webflow","Core Web Vitals","accessibility","tourism hospitality digital supplier","Creative Designer freelance","Europe remote","Spain remote contract"],
+    "territorial_focus": ["Spain active-scan regions","Balearic Islands under-searched","Italy active-scan regions","Remote Europe","Worldwide explicitly open to EU contractors"],
+    "sector_focus": ["web/digital agencies","software/SaaS","tourism/hospitality technology","marketing/creative","WCAG/WPO/Core Web Vitals","ecommerce","IT/web operations"],
+    "stop_condition": "After Lodgify and LocalStack were fully qualified as material review candidates, additional fresh results were anonymous marketplace buyers, supplier-side pages, geography-restricted roles, old/expired listings, or roles with material truthful-fit gaps. Marginal promotion value fell below the next search cost."
+  },
+  "material_new_candidates": [
+    {
+      "opportunity_id": "OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
+      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT_DESIGN_DEPTH",
+      "why_material": "Official live Europe-remote Freelance Contract Creative Designer role at Lodgify with an exact Lever application. The form explicitly supports Spain-based applicants and cross-border freelancers and asks EUR hourly expectations for a 40h/week freelance role.",
+      "why_not_actionable": "Canonical VDS material supports Figma/web design/UX-UI, but does not establish the requested specialist brand/marketing-design depth, advanced Figma components/libraries capability or the corroborated three-year design minimum.",
+      "route": "Exact official Lodgify Lever application.",
+      "dedup": {"repository":0,"gmail_sent":0,"hostinger_sent":0,"suppression":"CLEAR"}
+    },
+    {
+      "opportunity_id": "OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
+      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT_WEBFLOW",
+      "why_material": "Official current six-month Remote Web Developer contract explicitly includes Spain, publishes Spain compensation EUR 3,150-4,250/month, and strongly overlaps VDS on Figma-to-web, responsive frontend, accessibility, performance/Core Web Vitals, SEO, CMS, QA and AI-assisted workflows.",
+      "why_not_actionable": "Hands-on Webflow experience is an explicit requirement and is not established anywhere in the canonical commercial repository; promotion would overstate fit.",
+      "route": "Exact LocalStack Ashby application.",
+      "dedup": {"repository":0,"gmail_sent":0,"hostinger_sent":0,"suppression":"CLEAR"}
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"candidate":"FS Studio — WordPress Web Developer","reason":"Excellent technical fit and Spain listed in the official Ashby location set, with body text describing a remote contract; however freshness is weak/conflicted because the official role was crawled months ago and specialist evidence indicates an older/expired listing. Not promoted under the fresh-demand gate."},
+    {"candidate":"Anonymous/partially named Upwork WordPress projects","reason":"Fresh buyer demand exists but exact commercial organization identity is missing or insufficiently authoritative, failing the hard identity gate."},
+    {"candidate":"Remote design jobs represented by intermediary/hidden-client listings","reason":"Current freelance demand exists but the actual buyer identity is withheld, failing the exact-organization gate."},
+    {"candidate":"Regional Spain/Italy supplier pages","reason":"Agency/freelancer service pages without explicit current external-capacity demand are supplier-side signals, not paying-work buyer demand."},
+    {"candidate":"Balearic targeted pass","reason":"No new authoritative current buyer-demand hit; remained UNDER_SEARCHED because niche/local-network source-family coverage is incomplete."}
+  ],
+  "dedup_audit": {
+    "lodgify_repository":"No Lodgify identity/domain before record creation.",
+    "lodgify_gmail_sent":"0 Gmail Sent matches.",
+    "lodgify_hostinger_sent":"0 official INBOX.Sent matches.",
+    "localstack_repository":"No LocalStack identity/domain before record creation.",
+    "localstack_gmail_sent":"0 Gmail Sent matches.",
+    "localstack_hostinger_sent":"0 official INBOX.Sent matches."
+  },
+  "channel_counts_after": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 24,
+    "REVIEW_REQUIRED": 47,
+    "SUPPRESSED": 49,
+    "HOLD": 10
+  },
+  "actionable_queue_changed": false,
+  "actionable_queue": ["Sapres Technologies GmbH","Wordune","Cayenne Global, LLC","Ajax Creative"],
+  "frontier_change": "Tourism/hospitality digital suppliers and accessibility/WPO were advanced to COVERED_RECENTLY after material current primary-source hits at Lodgify and LocalStack. Catalunya/Spain-remote and Europe-remote lanes were refreshed. Balearics remains UNDER_SEARCHED; incomplete Spain/Italy territories remain ACTIVE_SCAN.",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
