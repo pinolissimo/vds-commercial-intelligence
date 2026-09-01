@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-01T07:36:55+02:00",
+  "mode": "FAST_REVENUE_HUNT_DELTA_FIRST_MAX_PRACTICAL_BREADTH",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only",
+  "canonical_inputs_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "project/workstreams/COLLABORATIONS.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/source-coverage.md",
+    "views/territorial-coverage.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "research/2026-09-01-fast-revenue-pass-0637.json"
+  ],
+  "search_strategy": {
+    "principle": "delta-first; deepen named-buyer Europe-remote agency/contractor signals while continuing targeted Spain/Italy under-covered regional sampling; reject supplier-side pages and anonymous marketplace buyers rather than inflate counts",
+    "territory_focus": ["Comunitat Valenciana", "País Vasco", "Galicia", "Aragón", "Castilla y León", "Balearic Islands", "Emilia-Romagna", "Toscana", "Liguria", "Campania", "Puglia", "Sicilia", "Croatia / Europe Remote", "Remote Europe/worldwide"],
+    "sector_focus": ["web/digital agencies", "branding/design studios", "WordPress/Elementor", "agency outsourcing", "accessibility/WPO/Core Web Vitals", "named-buyer marketplace projects"],
+    "source_focus": ["OFFICIAL_COMPANY", "SPECIALIST_JOBS", "PROFESSIONAL_NETWORKS", "AGENCY_OUTSOURCING", "FREELANCE_MARKETPLACES", "SEARCH_ROUTER_DISCOVERY_ONLY"],
+    "promotion_rule": "named organization, authoritative identity, explicit current paying need, exact application route, Spain/EU eligibility, freelance/contract model, truthful VDS fit and global dedup must all pass before actionable promotion"
+  },
+  "material_addition": {
+    "organization": "Afternow (formerly BB Agency)",
+    "opportunity_id": "OPP-EU-HR-AFTERNOW-VISUAL-WEB-DESIGN-FREELANCE-2026",
+    "new_state": "REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT",
+    "priority": "HOT_IF_ROLE_REOPENS",
+    "official_identity_url": "https://afternow.co/careers/",
+    "freshness": "Afternow's official careers page is live and its Europe-Remote freelance specialist Open Application is current. Recent late-August official/search and LinkedIn evidence surfaced Visual / Web Designer Europe Remote, while the exact official careers page fetched on 2026-09-01 currently lists five core roles and omits that position. Earlier professional-network evidence also marked a version of the role closed. Exact role-open state therefore conflicts.",
+    "need": "Recent Visual/Web Designer signal plus current official freelance-specialist network for project-based needs; web/UI/Figma agency capacity aligns strongly with VDS.",
+    "engagement": "Europe-Remote freelance/B2B talent-pool route is authoritative; exact Visual/Web Designer paying vacancy must be revalidated.",
+    "economics": "Recent specialist evidence described approximately €3,000–€3,700 gross/month full-time equivalent, but economics are not promoted as actionable while exact role freshness conflicts.",
+    "route": "Official Afternow/BambooHR route only; do not replace with generic email and do not submit a generic talent-pool application as a substitute for proving the specific role is open.",
+    "vds_fit": "HIGH for web design, UX/UI, Figma, responsive and agency collaboration; years-of-experience claims remain subject to truthful portfolio evidence.",
+    "dedup": {
+      "repository": "CLEAR: repository-wide Afternow / BB Agency / afternow.co search returned zero matches before creation.",
+      "suppression": "CLEAR: no canonical Afternow/BB Agency identity found before creation.",
+      "gmail_sent": "CLEAR: zero Sent message IDs for Afternow / BB Agency / afternow.co.",
+      "hostinger_sent": "CLEAR: zero official INBOX.Sent matches for Afternow and BB Agency."
+    },
+    "blocking_gate": "The specific Visual/Web Designer role is not present in the exact current official vacancy list, so fresh paying-role availability is not established despite a live Europe-Remote freelance talent pool."
+  },
+  "not_promoted": [
+    {"organization":"SiteCare","reason":"Strong fresh WordPress/Core Web Vitals contractor need, but published geography targets Latin America, South Africa and Eastern Europe rather than Spain; geography gate fails."},
+    {"organization":"Avada / ThemeFusion","reason":"Official remote contractor openings are live, but current design role has geography, mandatory desired-hourly-rate and truthful experience gates; Gmail keyword matches for Avada are ambiguous because the term appears in unrelated historical work. No count added."},
+    {"signal":"Fresh anonymous WordPress/Elementor/automation marketplace projects","reason":"Some are worldwide, recurring or contract-to-hire, but buyer commercial identity is not visible; exact-identity hard gate blocks promotion."},
+    {"signal":"Spain regional agency batches","reason":"Valencia, Basque Country, Galicia, Aragón, Castilla y León and Balearic results were predominantly suppliers selling web services or lacked current external-capacity demand."},
+    {"signal":"Italy regional agency batches","reason":"Bologna, Firenze, Genova, Napoli, Bari and Palermo results were predominantly supplier-side, stale or lacked explicit freelance/contract buyer demand."},
+    {"organization":"Mindrift","reason":"Fresh worldwide freelance web-design signal was re-encountered, but Mindrift already exists in canonical application materials; no duplicate candidate/count."},
+    {"organization":"BSC Webdesign","reason":"Current attractive Remote Everywhere contractor role remains identity-level suppressed because official Hostinger Sent UID 115 proves prior first contact."}
+  ],
+  "counts_before": {"VERIFIED_DIRECT_EMAIL":1,"VERIFIED_FORM_PLATFORM":23,"REVIEW_REQUIRED":38,"SUPPRESSED":48,"HOLD":10},
+  "counts_after": {"VERIFIED_DIRECT_EMAIL":1,"VERIFIED_FORM_PLATFORM":23,"REVIEW_REQUIRED":39,"SUPPRESSED":48,"HOLD":10},
+  "compact_queue_after": [
+    {"rank":1,"organization":"Sapres Technologies GmbH","priority":"HOT_PLUS","route":"VERIFIED_FORM_PLATFORM"},
+    {"rank":2,"organization":"Cayenne Global, LLC","priority":"HOT","route":"VERIFIED_FORM_PLATFORM"},
+    {"rank":3,"organization":"Ajax Creative","priority":"HOT","route":"VERIFIED_FORM_PLATFORM"},
+    {"rank":4,"organization":"SO Design Online","priority":"HOT","route":"VERIFIED_DIRECT_EMAIL"}
+  ],
+  "frontier_delta": [
+    "Added Croatia / Krk + Europe-Remote digital agency cluster as COVERED_RECENTLY after Afternow verification.",
+    "Remote Europe remains productive but constrained by exact role freshness and buyer-identity gates; next families remain named-buyer projects, agency outsourcing and official-company role refresh.",
+    "Balearic Islands remains UNDER_SEARCHED; supplier-heavy results still do not justify LOW_YIELD_VERIFIED.",
+    "Valencia, Basque Country, Galicia, Aragón, Castilla y León and active Italy regional lanes remain ACTIVE_SCAN; no false low-yield classification.",
+    "Accessibility/WPO sector remains ACTIVE_SCAN; SiteCare is a strong current signal but geography excludes Spain."
+  ],
+  "files_changed": [
+    "opportunities/OPP-EU-HR-AFTERNOW-VISUAL-WEB-DESIGN-FREELANCE-2026.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "research/2026-09-01-fast-revenue-pass-0736.json"
+  ],
+  "outcome": "One material named-buyer Europe-Remote account added to REVIEW_REQUIRED after strict freshness gating; no actionable-count inflation and no outreach performed."
+}
