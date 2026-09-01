@@ -1,0 +1,83 @@
+{
+  "run_at":"2026-09-01T09:00:00+02:00",
+  "workstream":"LOCAL_SME_999",
+  "mode":"RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella","frontier_state":"ACTIVE_SCAN"},
+  "screened_before":313,
+  "screened_after":317,
+  "new_unique_identities":4,
+  "new_records":[
+    {
+      "business":"Sitgesguagua",
+      "activity_type":"Pet breeder/retail",
+      "cluster":"Mas Mestre",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity":{"status":"VERIFIED","address":"Avinguda Mas Mestre 14, 08818 Olivella","phone":"626373580"},
+      "website_gap":"TO_VERIFY",
+      "social":{"status":"VERIFIED_PUBLIC_PROFILE","platform":"Facebook","url":"https://www.facebook.com/SITGESGUAGUA"},
+      "reputation":"TO_VERIFY",
+      "commercial_fit":"INFERRED_MEDIUM",
+      "evidence":["https://www.paginasamarillas.es/f/olivella/sitgesguagua_218926426_000000001.html","https://www.starofservice.es/el-servicio-de-criador-de-animales/near-me"],
+      "note":"Independent exact-name/phone search did not establish a dedicated owned domain. Facebook presence increases digital-fit signal, but current activity and reputation require deeper verification before qualification."
+    },
+    {
+      "business":"Astro Bengala",
+      "activity_type":"Pet breeder/retail",
+      "cluster":"Mas Mestre",
+      "state":"REJECTED_HAS_WEBSITE",
+      "identity":{"status":"VERIFIED","address":"Carrer Muntanyes de Prades, Mas Mestre, 08818 Olivella","phone":"665350248"},
+      "website_gap":"FAILED_FUNCTIONAL_OWNED_SITE",
+      "owned_website":"https://www.astrobengala.com/",
+      "reputation":{"status":"REPUTATION_RISK_REVIEW_NOT_NEEDED_AFTER_WEBSITE_REJECT","signal":"3.9/5 reported by specialist review surface"},
+      "evidence":["https://www.paginasamarillas.es/f/olivella/astro-bengala_231541244_000000001.html","https://zonacachorros.com/astro-bengala/","https://www.astrobengala.com/pages/atencion-al-cliente"],
+      "note":"Functional Shopify site with current 2026 content and matching WhatsApp/phone conclusively fails LOCAL_SME_999 website-absence gate."
+    },
+    {
+      "business":"Bugamar",
+      "activity_type":"Cleaning and home services",
+      "cluster":"Mas Milà",
+      "state":"REJECTED_HAS_WEBSITE",
+      "identity":{"status":"VERIFIED","address":"Carrer de l'Aquari 5, 08818 Olivella","phone":"665584767"},
+      "website_gap":"FAILED_FUNCTIONAL_OWNED_SITE",
+      "owned_website":"https://bugamar.es/",
+      "reputation":{"status":"POSITIVE_SIGNAL","signal":"4.8/5 across 240 reviews reported by independent local aggregator"},
+      "evidence":["https://bugamar.es/contactar/","https://www.paginasamarillas.es/f/olivella/bugamar_224494724_000000001.html","https://barcelona.cool/categorias/empresas-de-limpieza/bugamar-empresa-de-limpieza"],
+      "note":"Owned domain directly verifies Olivella branch, phone and business email; reject despite strong commercial quality because website already exists."
+    },
+    {
+      "business":"Jardineria Pinofels S.L.",
+      "activity_type":"Home and garden services",
+      "cluster":"Olivella other commercial clusters",
+      "state":"REJECTED_HAS_WEBSITE",
+      "identity":{"status":"VERIFIED","address":"Carrer dels Masets 40, 08818 Olivella","phone":"666328726","nif":"B67269175"},
+      "website_gap":"FAILED_FUNCTIONAL_OWNED_SITE",
+      "owned_website":"https://jardineriapinofelssl.es/",
+      "evidence":["https://jardineriapinofelssl.es/policies/legal-notice","https://jardineriapinofelssl.es/pages/contact","https://jardineriapinofelssl.es/pages/quienes-somos"],
+      "note":"Official legal notice identifies the site as the company's official website and matches Olivella address, NIF, phone and email."
+    }
+  ],
+  "false_positive_or_noncounted":[
+    {
+      "name":"Can Camps",
+      "reason":"Directory labels it as winery, but institutional heritage source identifies the exact Olivella Can Camps as a private residential masia; commercial identity is not sufficiently established, so it is not counted as a new SME identity."
+    }
+  ],
+  "collaborations_scan":[
+    {
+      "signal":"Workana bilingual WordPress/Squarespace ongoing B2B agency role",
+      "status":"REDISCOVERED_NO_DUPLICATE_ACTION",
+      "url":"https://www.workana.com/en/job/bilingual-front-end-developer-webmaster-wordpress-squarespace-on-demand"
+    },
+    {
+      "signal":"Workana maintenance/configuration of 52 WordPress sites via Modular DS",
+      "status":"DISCOVERY_SIGNAL_REVIEW_REQUIRED",
+      "url":"https://www.workana.com/job/especialista-en-mantenimiento-y-configuracion-de-sitios-web-wordpress-52-sitios",
+      "note":"Open listing, recurring monthly relationship and verified payment method; no application or contact action executed."
+    }
+  ],
+  "eu_projects_scan":{"status":"NO_PROMOTION_THIS_CYCLE","note":"No newly verified Communication/Dissemination buyer path strong enough to alter canonical EU state during this cycle."},
+  "counts_delta":{"screened_raw":4,"rejected_has_website":3,"qualified":0,"ready_to_contact":0},
+  "outreach_actions":0,
+  "first_contact_actions":0,
+  "next_local_queue":["Sitgesguagua current-activity/reputation/owned-domain verification","Obres i Reformes OR independent identity/reputation/domain review","Vetra Instalaciones reputation/domain review","Luciainteriors identity/social/reputation/domain review","Villa Sitges Mas Mestre","Restaurante Villa Reis","Al Son","Can Surià Restaurante Braseria","Villa Moments","continue Iberinform/eInforma E-Z and municipal category gaps"]
+}
