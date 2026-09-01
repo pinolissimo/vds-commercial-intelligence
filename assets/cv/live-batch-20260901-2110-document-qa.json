@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "run_id": "live-operator-epoch-001-20260901-2110",
+  "verified_at": "2026-09-01T19:12:00Z",
+  "status": "PASS",
+  "purpose": "Exact byte-level QA evidence for the operator-triggered first live dispatcher batch.",
+  "derivation_policy": "Compact dispatch-safe PDFs were generated from the truthful QA-passed ES/IT/EN master CV content. These bytes are new artifacts and were independently preflighted, rendered and hash-verified before send.",
+  "documents": {
+    "ES_DISPATCH_SAFE": {
+      "path": "Giuseppe_Allocca_CV_ES_DISPATCH_SAFE.pdf",
+      "send_filename": "Giuseppe_Allocca_CV_ES.pdf",
+      "language": "es",
+      "size_bytes": 4835,
+      "sha256": "e14208736e522b712005d77430b61129ceff7131f72e9ab5590ca95049520770",
+      "pages": 1,
+      "pdf_preflight": "PASS",
+      "visual_render_qa": "PASS",
+      "content_truthfulness_qa": "PASS"
+    },
+    "IT_DISPATCH_SAFE": {
+      "path": "Giuseppe_Allocca_CV_IT_DISPATCH_SAFE.pdf",
+      "send_filename": "Giuseppe_Allocca_CV_IT.pdf",
+      "language": "it",
+      "size_bytes": 4788,
+      "sha256": "801b4932f769a18b229af253886419eb1a4bdf6f8f8276bba7a50d9881e2e6e5",
+      "pages": 1,
+      "pdf_preflight": "PASS",
+      "visual_render_qa": "PASS",
+      "content_truthfulness_qa": "PASS"
+    },
+    "EN_DISPATCH_SAFE": {
+      "path": "Giuseppe_Allocca_CV_EN_DISPATCH_SAFE.pdf",
+      "send_filename": "Giuseppe_Allocca_CV_EN.pdf",
+      "language": "en",
+      "size_bytes": 4813,
+      "sha256": "c3593637bbb65f1a5bf740a96c46feebf4e55e690a31d2a16b3ff6a5da28322d",
+      "pages": 1,
+      "pdf_preflight": "PASS",
+      "visual_render_qa": "PASS",
+      "content_truthfulness_qa": "PASS"
+    }
+  },
+  "assignments": {
+    "org:amomarketing.es": "ES_DISPATCH_SAFE",
+    "org:logorapid.com": "ES_DISPATCH_SAFE",
+    "org:bpnexus.com": "IT_DISPATCH_SAFE",
+    "org:brainershub.com": "EN_DISPATCH_SAFE",
+    "org:kuna.it": "IT_DISPATCH_SAFE",
+    "org:mywayspain.es": "ES_DISPATCH_SAFE",
+    "org:creative.it": "IT_DISPATCH_SAFE",
+    "org:acidamarketing.com": "ES_DISPATCH_SAFE",
+    "org:lefthandedstudio.com": "IT_DISPATCH_SAFE"
+  },
+  "left_handed_motivation_requirement": {
+    "satisfied_by": "personalized Italian motivation letter in email body plus portfolio link and CV attachment",
+    "status": "PASS"
+  },
+  "send_invariant": "After every Hostinger send, verify Sent recipient, subject and non-zero PDF attachment before recording VERIFIED_EMAIL_SENT."
+}
