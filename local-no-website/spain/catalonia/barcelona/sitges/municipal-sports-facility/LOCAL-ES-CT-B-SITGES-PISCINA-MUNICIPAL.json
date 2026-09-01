@@ -1,0 +1,30 @@
+{
+  "schema_version":"1.0",
+  "entity_id":"LOCAL-ES-CT-B-SITGES-PISCINA-MUNICIPAL",
+  "workstream":"LOCAL_SME_999",
+  "business_name":"Piscina Municipal de Sitges",
+  "country":"Spain",
+  "region":"Catalonia",
+  "province":"Barcelona",
+  "district_or_comarca":"Garraf",
+  "municipality":"Sitges",
+  "activity_type":"Municipal sports facility",
+  "public_entity_or_public_service_signal":true,
+  "commercial_eligibility":"REVIEW_REQUIRED_PUBLIC_ENTITY_BOUNDARY",
+  "lifecycle_state":"HARD_BOUNCE_RECONCILIATION",
+  "reply_state":"BOUNCE",
+  "proactive_first_contact_permitted":false,
+  "first_contact_uniqueness":"PERMANENTLY_CONSUMED_BY_DELIVERY_ATTEMPT",
+  "contact_route":{"email":"info@pmsitges.cat","state":"HARD_BOUNCE_BLOCKED","smtp_status":"550 5.1.1","diagnostic":"Recipient address rejected: User unknown in virtual alias table"},
+  "outreach_evidence":{"attempted_at":"2026-09-01T09:45:57+02:00","subject":"Una propuesta digital concreta para Piscina Municipal de Sitges","hostinger_sent_uid":null,"sent_folder_verified":false,"delivery_attempt_evidence":"Bounce INBOX UID 1283 contains original RFC822 message and authenticated sender evidence","message_id":"<178824875525.16668.5861145227592054091@visualdesignstudio.es>"},
+  "qa_findings":[
+    "No canonical CRM record or suppression entry was found before reply-watch reconciliation.",
+    "The attempted message is evidenced by the bounce attachment, but no matching Hostinger Sent UID was present in the latest Sent delta; therefore SENT is not claimed.",
+    "Because this appears to be a municipal/public-service identity, automated direct commercial outreach must remain blocked pending public-entity/procurement boundary review."
+  ],
+  "timeline":[
+    {"at":"2026-09-01T09:45:57+02:00","event":"DELIVERY_ATTEMPT_EVIDENCED_BY_BOUNCE_ATTACHMENT","email":"info@pmsitges.cat","sent_verified":false},
+    {"at":"2026-09-01T09:46:07+02:00","event":"HARD_BOUNCE","inbox_uid":1283,"smtp_status":"550 5.1.1","classification":"BOUNCE"},
+    {"at":"2026-09-01T10:04:00+02:00","event":"REPLY_WATCH_GLOBAL_IDENTITY_RECONCILIATION","state":"REVIEW_REQUIRED_PUBLIC_ENTITY_BOUNDARY","action":"BLOCK_FAILED_ADDRESS_AND_NO_AUTOMATIC_RESEND"}
+  ]
+}
