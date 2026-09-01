@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-01T11:42:00+02:00",
+  "workstream": "COLLABORATIONS",
+  "mode": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "preflight_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-territory-frontier.json",
+    "views/source-coverage.md"
+  ],
+  "search_strategy": {
+    "delta_first": true,
+    "families": ["OFFICIAL_COMPANY","SPECIALIST_JOBS","AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS","NICHE_WORDPRESS_JOBS"],
+    "signals": ["freelance WordPress","WooCommerce contractor","WordPress maintenance contractor","Core Web Vitals","white-label web development","remote Europe","worldwide contract"],
+    "territorial_focus": ["Spain ACTIVE_SCAN and Balearic UNDER_SEARCHED frontier","Italy ACTIVE_SCAN frontier","Remote Europe","Worldwide explicitly remote/contract"],
+    "stop_condition": "Marginal local results were predominantly supplier-side pages or anonymous marketplace buyers; remote niche WordPress inventory yielded one named material buyer, then further hits failed route/identity/fit gates."
+  },
+  "material_new_candidates": [
+    {
+      "opportunity_id": "OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026",
+      "state": "REVIEW_REQUIRED_ROUTE_TRUTHFUL_FIT_DEPTH",
+      "why_material": "Active niche WordPress board still lists a SiteMile WooCommerce Specialist contract at USD 50-70/hour, remote, working across SiteMile and client ecommerce/marketplace projects; official SiteMile site independently confirms the agency identity and active WooCommerce/WordPress service line.",
+      "why_not_actionable": "The current Apply link resolves to the SiteMile homepage instead of a role-specific form, and the role explicitly demands deep hands-on WooCommerce plus strong PHP/WooCommerce hooks that require stronger canonical VDS proof before truthful promotion.",
+      "dedup": {"repository":0,"gmail_sent":0,"hostinger_sent":0,"suppression":"CLEAR"}
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"candidate":"RankForge — WordPress SEO Consultant","reason":"The niche board route points to example.com and multiple unrelated RankForge commercial identities exist; exact organization identity/application route cannot be safely established."},
+    {"candidate":"Brightcart — WooCommerce Store Specialist","reason":"Niche board listing has an example.com application route and no safely established authoritative buyer identity/route."},
+    {"candidate":"Brahma srl — Firenze web/social/AI collaborator","reason":"Fresh aggregator signal suggests freelance/P.IVA long-term web work, but exact commercial identity and authoritative application route are unresolved; visible job copy includes a placeholder email field."},
+    {"candidate":"Addlance Napoli PHP/WordPress collaboration","reason":"Technically relevant remote collaboration signal but buyer organization identity is hidden, failing the exact-identity gate."},
+    {"candidate":"Workana/local Spain-Italy signals","reason":"Material-looking results were predominantly anonymous buyers or supplier-side pages; neither category can be promoted under the canonical rules."}
+  ],
+  "dedup_audit": {
+    "gmail_sent_siteMile":"0 matching messages for SiteMile / sitemile.com / SC Sitemile.",
+    "hostinger_sent_siteMile":"Full official INBOX.Sent history reviewed: 149 messages across two pages; no SiteMile/sitemile.com first contact.",
+    "suppression_siteMile":"No SiteMile identity/domain in canonical suppression registry.",
+    "canonical_repo_siteMile":"No SiteMile record before creation."
+  },
+  "channel_counts_after": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 24,
+    "REVIEW_REQUIRED": 43,
+    "SUPPRESSED": 49,
+    "HOLD": 10
+  },
+  "actionable_queue_changed": false,
+  "actionable_queue": ["Sapres Technologies GmbH","Wordune","Cayenne Global, LLC","Ajax Creative"],
+  "frontier_change": "Remote WordPress/WooCommerce agency and ecommerce lane refreshed with SiteMile as material review-only hit. Spain/Italy incomplete territories remain ACTIVE_SCAN/UNDER_SEARCHED; no territory was falsely advanced to LOW_YIELD_VERIFIED after supplier-side/anonymous results.",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
