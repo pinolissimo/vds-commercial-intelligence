@@ -1,0 +1,97 @@
+{
+  "run_at":"2026-09-01T03:01:57+02:00",
+  "workstream":"LOCAL_SME_999",
+  "territory":{"country":"Spain","region":"Catalonia","province":"Barcelona","district_or_comarca":"Garraf","municipality":"Olivella","state":"ACTIVE_SCAN"},
+  "mode":"BATCH_DISCOVERY_PLUS_DEEP_REVIEW",
+  "allocation":{"LOCAL_SME_999":0.75,"COLLABORATIONS":0.15,"EU_PROJECTS":0.10},
+  "new_unique_screened":5,
+  "screened_delta":{"before":283,"after":288},
+  "discoveries":[
+    {
+      "business":"Formas Perruqueria Unisex",
+      "activity_type":"Hair salon",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "identity":{"status":"VERIFIED","address":"Aquari, s/n, local 3, Mas Milà, 08818 Olivella","phone":"654 066 408","email":"formasperruquers@gmail.com"},
+      "website_gap":{"status":"TO_VERIFY","note":"Exact-name search did not surface an attributable dedicated site; municipal listing exposes no owned website. Absence not yet proven across enough independent source families."},
+      "reputation":{"status":"TO_VERIFY","note":"No trustworthy independent review corpus was found in this pass."},
+      "commercial_fit":{"status":"INFERRED","note":"Active local hair salon with public email and recurring customer need; strong fit if website absence and reputation gates pass."},
+      "evidence":["Ajuntament d'Olivella business directory, updated 2024-04-16","Ajuntament d'Olivella address/phone directory current crawl"]
+    },
+    {
+      "business":"M & M Nail´s",
+      "activity_type":"Beauty and wellness",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity":{"status":"VERIFIED","address":"Carrer Verge (Urb. Mas Milà), 17, 08818 Olivella","phone":"636 156 963"},
+      "website_gap":{"status":"TO_VERIFY","note":"Páginas Amarillas exposes no dedicated website in the surfaced record. Search results for generic M&M Nails are highly collision-prone, so ownership must be resolved by phone/address before inferring absence."},
+      "reputation":{"status":"TO_VERIFY","note":"No independently attributable review corpus established."},
+      "commercial_fit":{"status":"INFERRED","note":"Manicure, facial, depilation, lashes and beauty treatments are suitable for a local premium web-presence offer if identity/social/reputation gates pass."},
+      "evidence":["Páginas Amarillas Olivella listing","Cylex category surface corroborating same Olivella address/phone"]
+    },
+    {
+      "business":"DUNDOG RENTA 83 S.L.",
+      "activity_type":"Food/beverage wholesale and logistics",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY",
+      "identity":{"status":"VERIFIED","cif":"B65620668","address":"Calle del Segre, 7, 08818 Olivella"},
+      "current_activity":{"status":"VERIFIED","note":"Iberinform marks active in June 2026; InfoNIF reports latest accounts 2024; Empresia reports sales band around €1M+ but values vary across aggregators."},
+      "website_gap":{"status":"TO_VERIFY","note":"Iberinform, Cinco Días and InfoNIF expose no web field; exact owned-domain search still required before qualification."},
+      "reputation":{"status":"TO_VERIFY","note":"B2B wholesale/logistics entity; consumer-review gate may be less applicable but commercial credibility must be established independently."},
+      "commercial_fit":{"status":"INFERRED_LOW","note":"Economically plausible buyer but website value is less obvious than customer-facing local services."},
+      "evidence":["Iberinform active company profile","InfoNIF company profile","DatosCif/BORME history","Empresia company profile"]
+    },
+    {
+      "business":"DECOCEMENT ESPAÑA S.L.",
+      "activity_type":"Construction materials and decoration",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED",
+      "identity":{"status":"VERIFIED","cif":"B65263931","address":"CL Macia Pou de la Vinya, s/n, 08818 Olivella","phone":"93 624 29 04"},
+      "current_activity":{"status":"TO_VERIFY","note":"Registry identity and phone are established, but present-day customer-facing activity requires a fresh independent operating signal."},
+      "website_gap":{"status":"TO_VERIFY","note":"No owned domain established in this pass."},
+      "reputation":{"status":"TO_VERIFY"},
+      "commercial_fit":{"status":"INFERRED","note":"Construction/decor products and works can benefit materially from portfolio/services web presence if current activity is confirmed."},
+      "evidence":["DatosCif company profile","Iberinform Olivella directory row"]
+    },
+    {
+      "business":"CONSTRUTAIM DEL GARRAF S.L.",
+      "activity_type":"Construction and renovation",
+      "state":"REJECTED_INACTIVE_EXTINGUISHED",
+      "identity":{"status":"VERIFIED","address":"Calle de la Via Lactia, 95, 08818 Olivella"},
+      "current_activity":{"status":"VERIFIED_NEGATIVE","note":"eInforma explicitly marks the company EXTINQUIDA/EXTINGUIDA."},
+      "commercial_fit":{"status":"REJECTED","reason":"Fails current-activity gate."},
+      "evidence":["eInforma company profile marked extinguished","Iberinform Olivella directory row"]
+    }
+  ],
+  "deep_review":[
+    {
+      "business":"GRAMULI S.L.",
+      "previous_state":"RAW_DISCOVERY_REVIEW_REQUIRED",
+      "new_state":"RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY",
+      "change":"Identity is corroborated at Cal Gabarro/Las Colinas with phones 938968857 and 938968328, but source descriptions conflict (public pools/personal services/gardening-renovation) and an independent directory reports 0 reviews. Commercial identity and customer-facing offer remain too ambiguous for promotion."
+    },
+    {
+      "business":"Estanc Olivella",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY",
+      "change":"Current activity remains corroborated by municipal listing updated 2025-02-18 and FedEx location, but reputation depth and €999 commercial upside remain insufficiently demonstrated."
+    },
+    {
+      "business":"Casa Dolly",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY",
+      "change":"Tripadvisor shows only one review; reputation corpus remains too thin for a hard reputation gate and owned-domain absence remains unresolved."
+    }
+  ],
+  "secondary_workstreams":[
+    {
+      "workstream":"COLLABORATIONS",
+      "result":"NO_NEW_CANONICAL_IDENTITY",
+      "note":"The already-known Workana bilingual WordPress/Squarespace webmaster listing remains open and high-fit; no duplicate record created because the buyer identity is still unresolved."
+    },
+    {
+      "workstream":"EU_PROJECTS",
+      "result":"DISCOVERY_SIGNAL",
+      "opportunity":"VALORAIL — GA 101323996",
+      "state":"WATCHLIST_RESEARCH_REQUIRED",
+      "note":"CORDIS fact sheet published 2026-08-28 shows start 2026-09-01 and €599,968.32 EU contribution. No Communication/Dissemination WP owner or buyer path established yet, so no qualification/promotion."
+    }
+  ],
+  "rules_applied":["NO_OUTREACH","GLOBAL_DEDUP","NO_WEBSITE_FIELD_IS_NOT_PROOF","REPUTATION_GATE_HARD","EVIDENCE_BEFORE_INFERENCE"],
+  "next_priority":["Formas Perruqueria Unisex website/social/reputation review","M & M Nail´s phone-bound social/reputation/domain reconciliation","DECOCEMENT ESPAÑA present-day operating footprint","DUNDOG RENTA 83 exact owned-domain/B2B presence","GRAMULI exact business-model reconciliation","continue Iberinform Olivella rows from E onward"],
+  "outreach_performed":false
+}
