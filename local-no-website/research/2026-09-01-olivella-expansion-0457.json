@@ -1,0 +1,95 @@
+{
+  "run_at": "2026-09-01T04:57:53+02:00",
+  "workstream": "LOCAL_SME_999",
+  "territory": {"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella"},
+  "frontier_state": "ACTIVE_SCAN",
+  "purpose": "Batch local/map discovery plus exact-name website/reputation verification. Research only; no outreach.",
+  "new_screened_identities": [
+    {
+      "business": "Oswen Gestión Inmobiliaria",
+      "activity_type": "Real estate",
+      "address": "Plaça Catalunya 7, 08818 Olivella",
+      "phone": "649132405",
+      "state": "REJECTED_HAS_WEBSITE",
+      "website": "https://www.oswenrs.com/",
+      "evidence": [
+        "Official owned website identifies the Olivella Mas Milà agency, address, phone and info@oswenrs.com.",
+        "Idealista independently corroborates the agency as active since 2022 with current Olivella inventory.",
+        "Trustlocal shows 9.1/10 from 31 reviews; map discovery showed 5.0/43. Reputation is strong but website gate is decisive."
+      ],
+      "verification": {"identity":"VERIFIED","current_activity":"VERIFIED","website_presence":"VERIFIED","reputation":"VERIFIED"}
+    },
+    {
+      "business": "OOA Gallery",
+      "activity_type": "Art gallery / art advisory",
+      "address": "Carrer de l’Os Blanc 30, 08818 Olivella",
+      "phone": "618356351",
+      "state": "REJECTED_HAS_WEBSITE",
+      "website": "https://ooagallery.com/",
+      "evidence": [
+        "Official June 2026 legal notice identifies OOA Gallery, owner Sorella Acosta Stoefs, Olivella registered address, phone, email and ooagallery.com.",
+        "Official site confirms active commercial gallery/advisory activity; independent artist/gallery references corroborate identity."
+      ],
+      "verification": {"identity":"VERIFIED","current_activity":"VERIFIED","website_presence":"VERIFIED"}
+    },
+    {
+      "business": "Restaurant Hostal Les Piques",
+      "activity_type": "Hospitality / restaurant",
+      "address": "Avinguda de Can Turiols 1A, 08818 Olivella",
+      "phone": "938968180",
+      "state": "REJECTED_HAS_WEBSITE",
+      "website": "https://www.posada-piques.com/",
+      "evidence": [
+        "Ajuntament d'Olivella lists the restaurant/hostal and its dedicated website.",
+        "Penedès Turisme independently confirms the same phone, address, website and hospitality services.",
+        "Map discovery shows 4.5/5 from 1,553 reviews, confirming substantial current customer traction."
+      ],
+      "verification": {"identity":"VERIFIED","current_activity":"VERIFIED","website_presence":"VERIFIED","reputation":"VERIFIED"}
+    },
+    {
+      "business": "La Merla Blanca",
+      "activity_type": "Accommodation / property-related legacy listing",
+      "address": "Corral Nou / Plana Novella, 08818 Olivella",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY",
+      "evidence": [
+        "Local-directory discovery places La Merla Blanca in Olivella with a 4.5 signal.",
+        "Exact-name search found a legacy Blogger identity from 2009 with Olivella address and phones, but no sufficiently fresh business-owned presence or current operating evidence."
+      ],
+      "verification": {"identity":"INFERRED","current_activity":"TO_VERIFY","website_presence":"TO_VERIFY","reputation":"TO_VERIFY"},
+      "next_gate": "Verify whether the accommodation/property activity is still operating in 2026, then exact-domain/social/reputation checks."
+    }
+  ],
+  "deep_review": [
+    {
+      "business": "Nino y Antonio los magos Mecanicos Olivella",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "change": "A second independent directory corroborates phone 610490880, Olivella location, opening hours and oil-change service. No owned domain was established in exact-name/phone search. A genuinely independent reputation lineage is still missing, so no promotion."
+    },
+    {
+      "business": "Casa Colina",
+      "state": "REPUTATION_RISK_REVIEW_REQUIRED",
+      "change": "TodosBiz reports 3.8/5 from more than 10 reviews and no website; another accommodation directory reports 2.8/5 from 6 reviews at the same address/phone. The cross-platform rating pattern is weak/inconsistent enough to trigger reputation-risk review, not qualification."
+    },
+    {
+      "business": "Orts Fuster",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "change": "Map identity remains exact at Av. de la Sardana 38 with phone 627760866 and 5.0/5 from 5 reviews. Exact phone/name search did not establish an owned website; review volume is still too small for the hard reputation gate."
+    }
+  ],
+  "false_local_or_dedup_findings": [
+    {
+      "business": "Pintor BCN - Olivella",
+      "state": "FALSE_LOCAL_SERVICE_AREA_RESULT",
+      "reason": "Map surfaced Carrer de Bessons 2W, Olivella with phone 638073210, but exact phone verification resolves to Pintor BCN at Travessera de Dalt 20, Barcelona, with owned site pintorbcn.com. Do not count as an Olivella SME identity."
+    }
+  ],
+  "counts_delta": {"screened_raw": 4, "rejected_has_website": 3, "reputation_risk": 1, "qualified": 0},
+  "next_actions": [
+    "Continue Olivella map/local categories not yet meaningfully sampled.",
+    "Deep-review Nino y Antonio for independent reputation and owned-domain absence.",
+    "Verify Orts Fuster social/domain and broader reputation.",
+    "Resolve La Merla Blanca current operating status before any commercial scoring.",
+    "Continue Formas Perruqueria, M & M Nail´s, DECOCEMENT, DUNDOG and E→Z registry rows."
+  ],
+  "outreach_performed": false
+}
