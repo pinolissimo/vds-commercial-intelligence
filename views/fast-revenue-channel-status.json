@@ -1,19 +1,19 @@
 {
-  "schema_version": "1.25",
-  "updated_at": "2026-09-01T10:40:00+02:00",
+  "schema_version": "1.26",
+  "updated_at": "2026-09-01T11:42:00+02:00",
   "purpose": "Channel-separated FAST_REVENUE status. Counts represent current uncontacted/actionable routes plus review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 0,
     "VERIFIED_FORM_PLATFORM": 24,
-    "REVIEW_REQUIRED": 42,
+    "REVIEW_REQUIRED": 43,
     "SUPPRESSED": 49,
     "HOLD": 10,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "0: no currently uncontacted direct-email candidate passes all gates.",
-    "VERIFIED_FORM_PLATFORM": "24 unchanged; no new candidate passed all promotion gates in this cycle.",
-    "REVIEW_REQUIRED": "42 after adding Human Made and One Thing Marketing as material but blocked current opportunities.",
+    "VERIFIED_FORM_PLATFORM": "24 unchanged; no new candidate passed every promotion gate in this cycle.",
+    "REVIEW_REQUIRED": "43 after adding SiteMile as a material contract WooCommerce signal blocked by route and truthful-fit-depth gates.",
     "SUPPRESSED": "49 unchanged.",
     "HOLD": "10 unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
@@ -21,32 +21,21 @@
   "cycle_delta": {
     "verified_direct_email_new": 0,
     "verified_form_platform_new": 0,
-    "review_required_new": 2,
+    "review_required_new": 1,
     "hold_new": 0,
     "suppression_new": 0,
     "actionable_pool_inflation": 0
   },
   "material_verification_changes": [
     {
-      "organization": "Human Made Limited",
-      "domain": "humanmade.com",
-      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT_SENIORITY",
-      "current_demand": "Official WordPress freelancer programme currently lists Senior Web Engineer and Scrum Master.",
-      "route": "Official freelancer programme/application route.",
-      "eligibility_gate": "PASSED: official careers information welcomes candidates globally and describes fully remote work.",
-      "dedup": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger Sent 0; suppression clear.",
-      "fit_gate": "BLOCKED pending truthful evidence of the enterprise/senior WordPress engineering level expected by the currently available role.",
-      "action": "Added to REVIEW_REQUIRED only; not actionable."
-    },
-    {
-      "organization": "One Thing Marketing",
-      "domain": "onethingmarketing.net",
-      "state": "REVIEW_REQUIRED_GEO_ROUTE_TRUTHFUL_FIT",
-      "current_demand": "Fresh freelance WordPress/Avada Web Designer role, $15-$25/hour, virtual/remote.",
-      "eligibility_gate": "UNRESOLVED: current sources conflict between broad remote surfaces and USA categorization.",
-      "route": "Role-specific authoritative route not sufficiently verified; generic company contact must not substitute it.",
-      "dedup": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger Sent 0; suppression clear.",
-      "fit_gate": "Strong Avada/WordPress overlap, but listing explicitly requires home-services-industry web-design experience; must not be claimed without proof.",
+      "organization": "SiteMile / SC Sitemile SRL",
+      "domain": "sitemile.com",
+      "state": "REVIEW_REQUIRED_ROUTE_TRUTHFUL_FIT_DEPTH",
+      "current_demand": "Current specialist WordPress job-board inventory still lists WooCommerce Specialist: Contract, Remote, USD 50-70/hour, working on SiteMile and client stores/marketplace themes.",
+      "route": "BLOCKED: listing says Apply should open employer form, but the current employer link resolves to the SiteMile homepage rather than a role-specific application form. Generic quote/contact routes must not substitute it.",
+      "eligibility_gate": "PASSED at listing level: Remote / Remote with no country exclusion shown and Contract engagement explicit.",
+      "dedup": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger full INBOX.Sent history 0; suppression clear.",
+      "fit_gate": "REVIEW_REQUIRED: listing demands deep hands-on WooCommerce and strong PHP/WooCommerce hooks. Canonical VDS evidence must support this depth before promotion.",
       "action": "Added to REVIEW_REQUIRED only; not actionable."
     }
   ],
@@ -68,10 +57,9 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-WW-HUMAN-MADE-FREELANCE-WORDPRESS-2026.json",
-    "../opportunities/OPP-WW-ONE-THING-MARKETING-WORDPRESS-AVADA-2026.json",
+    "../opportunities/OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-1040.json"
+    "../research/2026-09-01-fast-revenue-pass-1142.json"
   ]
 }
