@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.22",
-  "updated_at": "2026-09-01T07:36:55+02:00",
+  "schema_version": "1.23",
+  "updated_at": "2026-09-01T08:39:00+02:00",
   "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 delta-first breadth, freshness, geography and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 23,
-    "REVIEW_REQUIRED": 39,
+    "REVIEW_REQUIRED": 40,
     "SUPPRESSED": 48,
     "HOLD": 10,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
@@ -13,9 +13,9 @@
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
     "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities remain actionable; no new all-gates-clear route was added in this cycle.",
-    "REVIEW_REQUIRED": "39 review-required opportunities after adding Afternow because the exact Visual/Web Designer vacancy has a material freshness conflict despite an open Europe-Remote freelance talent pool.",
+    "REVIEW_REQUIRED": "40 review-required opportunities after adding Algert, Inc.; its official WordPress/Webflow front-end application is currently live but Spain/EU contractor eligibility is not established for the exact role.",
     "SUPPRESSED": "48 acquisition identities remain suppressed.",
-    "HOLD": "10 holds remain unchanged; Global Service Impresa remains held because the official role says 'Remoto (tutta Italia)'.",
+    "HOLD": "10 holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
@@ -30,32 +30,30 @@
   },
   "material_verification_changes": [
     {
-      "organization": "Afternow (formerly BB Agency)",
-      "domain": "afternow.co",
-      "state": "REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT",
-      "priority": "HOT_IF_ROLE_REOPENS",
-      "current_demand": "Afternow's official careers page currently keeps a Europe-Remote freelance specialist Open Application live. Recent late-August official/search and LinkedIn evidence also surfaced a Visual / Web Designer Europe-remote role, but the exact official careers page fetched on 2026-09-01 now lists five core vacancies and does not include that design role.",
-      "route": "Official Afternow/BambooHR application flow only; generic business email substitution is forbidden.",
-      "eligibility_gate": "PASS for the freelance talent pool: Europe Remote is explicit. Exact design-role freshness does not pass.",
-      "economics": "Recent specialist evidence described approximately €3,000–€3,700 gross/month full-time equivalent for the design role; not treated as actionable economics until exact role-open state is revalidated.",
-      "dedup": "CLEAR: repository-wide search was zero before record creation; Gmail Sent = 0; official Hostinger INBOX.Sent searches for Afternow and BB Agency = 0.",
-      "fit_caveat": "Strong web/UI/Figma/agency overlap, but years-of-professional-design requirements must be answered only with demonstrable experience.",
-      "action": "Added to REVIEW_REQUIRED; no promotion to FAST_REVENUE actionable queue until the specific role is authoritatively live again."
+      "organization": "Algert, Inc.",
+      "domain": "algert.co",
+      "state": "REVIEW_REQUIRED_GEO_ELIGIBILITY",
+      "priority": "HOT_IF_EU_ELIGIBILITY_CLEARS",
+      "current_demand": "Official Algert careers currently lists Front End Dev covering WordPress, Webflow and HubSpot and links to a live role-specific application; the form explicitly asks about WordPress/Webflow experience.",
+      "route": "Official Algert application form only; recent listing evidence explicitly says LinkedIn applications are not reviewed.",
+      "eligibility_gate": "NOT PASSED: flexible/remote contractor evidence exists, but the exact current official role does not establish Spain/EU eligibility and recent syndicated variants are location-specific.",
+      "economics": "Competitive pay stated; no authoritative numeric amount. Official form asks applicant for monthly salary expectation in USD.",
+      "dedup": "CLEAR: repository search zero before record creation; Gmail Sent = 0; official Hostinger INBOX.Sent = 0; no suppression identity found.",
+      "fit_caveat": "Strong Figma-to-web, WordPress, responsive frontend and performance overlap; Webflow/Framer/HubSpot experience must not be overstated.",
+      "action": "Added to REVIEW_REQUIRED; no actionable promotion until cross-border Spain/EU eligibility is authoritatively established."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"SiteCare","reason":"Fresh ongoing WordPress/Core Web Vitals contract demand is strong, but the published geography targets Latin America, South Africa and Eastern Europe rather than Spain; geography gate blocks promotion."},
-    {"organization":"Anonymous current Spain/Europe WordPress marketplace buyers","reason":"Fresh recurring WordPress/Elementor/automation demand exists, including contract-to-hire signals, but exact commercial buyer identity is hidden or anonymous; identity hard gate blocks promotion."},
-    {"organization":"Avada / ThemeFusion","reason":"Official remote contractor design/development openings are live, but geography, mandatory desired-rate input and truthful experience fit need resolution; Gmail Sent keyword matches are ambiguous because 'Avada' appears in unrelated historical work. No count added."},
-    {"organization":"Regional Spain/Italy agency results","reason":"Valencia, Basque/Galicia/Castilla/Balearic and Bologna/Firenze/Genova/Napoli/Bari/Palermo query batches remained predominantly supplier-side rather than explicit current external-capacity buyer demand."}
+    {"organization":"Regional Spain/Italy supplier results","reason":"Current breadth queries continued to return predominantly freelancers/agencies selling WordPress services rather than explicit buyer-side external-capacity demand."},
+    {"organization":"QuoLAB","reason":"Official Bologna agency accepts external collaborators, but current page is a generic talent intake without a role-specific WordPress/external-capacity need; insufficient for promotion."},
+    {"organization":"Anonymous current WordPress marketplace buyers","reason":"Fresh demand exists but exact commercial buyer identity remains hidden; identity hard gate blocks promotion."}
   ],
   "queue_reverification": {
     "Sapres Technologies GmbH": "Remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
     "Cayenne Global, LLC": "Remains VERIFIED_FORM_PLATFORM / HOT and compact-queue rank #2.",
     "Ajax Creative": "Remains VERIFIED_FORM_PLATFORM / HOT and compact-queue rank #3.",
     "SO Design Online": "Remains the sole VERIFIED_DIRECT_EMAIL / HOT and compact-queue rank #4.",
-    "Afternow (formerly BB Agency)": "New REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT; open Europe-Remote freelance talent pool is verified but the specific Visual/Web Designer role is not currently present in the exact official vacancy list.",
-    "Global Service Impresa": "Remains HOLD_GEO_ELIGIBILITY_ITALY_ONLY."
+    "Algert, Inc.": "New REVIEW_REQUIRED_GEO_ELIGIBILITY; exact official application is live, geography unresolved."
   },
   "no_outreach_by_fast_revenue_hunt": true,
   "execution_gate": "Partner Hunt only",
@@ -68,9 +66,9 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-EU-HR-AFTERNOW-VISUAL-WEB-DESIGN-FREELANCE-2026.json",
+    "../opportunities/OPP-WW-ALGERT-FRONT-END-WORDPRESS-WEBFLOW-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0736.json"
+    "../research/2026-09-01-fast-revenue-pass-0836.json"
   ]
 }
