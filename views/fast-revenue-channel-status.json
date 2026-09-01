@@ -1,44 +1,53 @@
 {
-  "schema_version": "1.24",
-  "updated_at": "2026-09-01T09:37:00+02:00",
-  "purpose": "Channel-separated FAST_REVENUE status after post-SO-Design reconciliation and Wordune verification. Counts represent current uncontacted/actionable routes plus review, suppression and hold states.",
+  "schema_version": "1.25",
+  "updated_at": "2026-09-01T10:40:00+02:00",
+  "purpose": "Channel-separated FAST_REVENUE status. Counts represent current uncontacted/actionable routes plus review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 0,
     "VERIFIED_FORM_PLATFORM": 24,
-    "REVIEW_REQUIRED": 40,
+    "REVIEW_REQUIRED": 42,
     "SUPPRESSED": 49,
     "HOLD": 10,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
   },
   "count_notes": {
-    "VERIFIED_DIRECT_EMAIL": "0: SO Design Online was sent and verified in Hostinger Sent UID 149 and is now suppressed/waiting for reply.",
-    "VERIFIED_FORM_PLATFORM": "24 after promoting Wordune through its official CV/ticket route.",
-    "REVIEW_REQUIRED": "40; Algert remains the latest unresolved geo-eligibility review addition.",
-    "SUPPRESSED": "49 after SO Design Online organization-level first contact suppression.",
+    "VERIFIED_DIRECT_EMAIL": "0: no currently uncontacted direct-email candidate passes all gates.",
+    "VERIFIED_FORM_PLATFORM": "24 unchanged; no new candidate passed all promotion gates in this cycle.",
+    "REVIEW_REQUIRED": "42 after adding Human Made and One Thing Marketing as material but blocked current opportunities.",
+    "SUPPRESSED": "49 unchanged.",
     "HOLD": "10 unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
-    "verified_form_platform_new": 1,
-    "review_required_new": 0,
+    "verified_form_platform_new": 0,
+    "review_required_new": 2,
     "hold_new": 0,
     "suppression_new": 0,
     "actionable_pool_inflation": 0
   },
   "material_verification_changes": [
     {
-      "organization": "Wordune",
-      "domain": "wordune.com",
-      "state": "VERIFIED_FORM_PLATFORM",
-      "priority": "HOT",
-      "current_demand": "Official hiring page currently states Figma Designer, Open to recruit, 3 seats, one-year period, increased Figma-to-WordPress conversion demand and WordPress-theme-aware design requirements.",
-      "route": "Official CV/ticket submission flow linked from the hiring page; generic info@wordune.com is not used because the explicit role route outranks it.",
-      "eligibility_gate": "PASSED: applicant location explicitly includes Europe; remote collaboration with no physical-presence or specific-hours requirement.",
-      "economics": "Official EU rate $40/hour; monthly payment after client confirmation; no guaranteed hours published.",
-      "dedup": "CLEAR: repository search 0 before record creation; Gmail Sent 0; Hostinger Sent search returned only internal VDS report UID 147 to the user's Gmail, not a commercial Wordune contact; suppression clear.",
-      "fit_caveat": "Strong WordPress/web-design overlap, but Partner Hunt must use only demonstrable Figma-specific proof and must not invent experience depth.",
-      "action": "Promoted to VERIFIED_FORM_PLATFORM / HOT; execution remains Partner Hunt only."
+      "organization": "Human Made Limited",
+      "domain": "humanmade.com",
+      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT_SENIORITY",
+      "current_demand": "Official WordPress freelancer programme currently lists Senior Web Engineer and Scrum Master.",
+      "route": "Official freelancer programme/application route.",
+      "eligibility_gate": "PASSED: official careers information welcomes candidates globally and describes fully remote work.",
+      "dedup": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger Sent 0; suppression clear.",
+      "fit_gate": "BLOCKED pending truthful evidence of the enterprise/senior WordPress engineering level expected by the currently available role.",
+      "action": "Added to REVIEW_REQUIRED only; not actionable."
+    },
+    {
+      "organization": "One Thing Marketing",
+      "domain": "onethingmarketing.net",
+      "state": "REVIEW_REQUIRED_GEO_ROUTE_TRUTHFUL_FIT",
+      "current_demand": "Fresh freelance WordPress/Avada Web Designer role, $15-$25/hour, virtual/remote.",
+      "eligibility_gate": "UNRESOLVED: current sources conflict between broad remote surfaces and USA categorization.",
+      "route": "Role-specific authoritative route not sufficiently verified; generic company contact must not substitute it.",
+      "dedup": "CLEAR: repository 0 before creation; Gmail Sent 0; Hostinger Sent 0; suppression clear.",
+      "fit_gate": "Strong Avada/WordPress overlap, but listing explicitly requires home-services-industry web-design experience; must not be claimed without proof.",
+      "action": "Added to REVIEW_REQUIRED only; not actionable."
     }
   ],
   "queue_reverification": {
@@ -59,9 +68,10 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
-    "../opportunities/OPP-EU-WORDUNE-FIGMA-WORDPRESS-DESIGNER-2026.json",
+    "../opportunities/OPP-WW-HUMAN-MADE-FREELANCE-WORDPRESS-2026.json",
+    "../opportunities/OPP-WW-ONE-THING-MARKETING-WORDPRESS-AVADA-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0937.json"
+    "../research/2026-09-01-fast-revenue-pass-1040.json"
   ]
 }
