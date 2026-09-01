@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-01T13:42:00+02:00",
+  "workstream": "COLLABORATIONS",
+  "mode": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "preflight_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "governance/OUTREACH_QUALITY_GATES.md",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "views/source-coverage.md",
+    "views/territorial-coverage.md"
+  ],
+  "search_strategy": {
+    "delta_first": true,
+    "families": ["OFFICIAL_COMPANY","SPECIALIST_JOBS","NICHE_WORDPRESS_JOBS","AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"],
+    "signals": ["freelance WordPress developer","Elementor contractor","WooCommerce contractor","Figma-to-WordPress","Core Web Vitals","WCAG","white-label","external collaborator","send CV/portfolio","Europe remote","worldwide contractor"],
+    "territorial_focus": ["Balearic Islands UNDER_SEARCHED","Spain ACTIVE_SCAN regions","Italy ACTIVE_SCAN regions","Remote Europe","Worldwide explicitly remote"],
+    "sector_focus": ["web/digital agencies","software/SaaS","ecommerce/marketing agencies","IT/web-ops/maintenance","WCAG/WPO","tourism/hospitality","NGO/mission-driven digital"],
+    "stop_condition": "After Pangolin Marketing was fully verified as a material but blocked current signal, additional fresh results were either anonymous marketplace buyers, closed/stale roles, supplier-side pages, geography-restricted roles or roles whose engagement model failed the freelance/contract gate. Marginal promotion value became low."
+  },
+  "material_new_candidates": [
+    {
+      "opportunity_id": "OPP-WW-PANGOLIN-MARKETING-SENIOR-WORDPRESS-2026",
+      "state": "REVIEW_REQUIRED_ENGAGEMENT_SENIORITY_FIT",
+      "why_material": "Pangolin's official careers page currently lists one Senior WordPress Developer opening as Remote / Work From Anywhere. The detailed WordPress Jobs listing dated 2026-08-27 shows unusually strong overlap with VDS: Figma-to-WordPress, Elementor/Divi, PHP/HTML/CSS/JS, APIs/webhooks, hosting/DNS/SSL, Core Web Vitals, staging/deployment and ongoing maintenance across B2B SaaS/climate-tech clients. Recent recruiter evidence corroborates active hiring.",
+      "why_not_actionable": "Authoritative current evidence labels the role Full-Time and does not establish independent-contractor/freelance compatibility. The role also requires senior ownership and must-have depth in custom themes, multisite, basic React and web operations; required years and depth cannot be inferred or overstated.",
+      "route": "Official Pangolin careers Apply Now flow outranks the explicit recruiting email published in the specialist listing/recruiter post.",
+      "dedup": {"repository":0,"gmail_sent":0,"hostinger_sent_name":0,"hostinger_sent_domain":0,"suppression":"CLEAR"}
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"candidate":"Radish Lab — WordPress Developer full-time contractor","reason":"Very fresh and commercially strong long-term contractor role, but current authoritative application page requires candidates within two hours of New York and explicitly says candidates outside the Americas will not be considered."},
+    {"candidate":"SiteCare — WordPress Developer contract","reason":"Fresh ongoing contract with strong WordPress/WooCommerce/Core Web Vitals/Figma fit, but location eligibility is limited to LatAm, South Africa and Eastern Europe; Spain does not pass the geography gate."},
+    {"candidate":"WP-OK — external WordPress collaborators","reason":"Official page strongly validates remote P.IVA/equivalent-foreign collaborator model and excellent VDS fit, but explicitly states no positions are currently open and the form is only for future opportunities; not current buyer demand."},
+    {"candidate":"Brahma srl Firenze — freelance web/social/AI collaborator","reason":"Aggregators show a continuing P.IVA collaboration signal with WordPress/Shopify, but evidence is old and one source requires local residence; no authoritative current role-specific route sufficient for promotion."},
+    {"candidate":"EfficientVision — WordPress Full-Stack Developer","reason":"Fresh remote role signals exist, but exact geography/contract compatibility for a Spain-based EU contractor is not authoritatively established and available sources conflict on role framing."},
+    {"candidate":"Futuristic IT — maintenance/improvements","reason":"Current named WordPress Jobs buyer need is real, but listing is Full Time with Saudi Arabia location and $100 budget; contractor/Spain compatibility and economics are not attractive enough to promote."},
+    {"candidate":"Deliberate Catalyst / 3D Modeling Service LTD / anonymous Upwork buyers","reason":"Fresh project demand exists, but geography/economics or exact commercial identity/value failed the promotion threshold; anonymous marketplace buyers fail the hard identity gate."},
+    {"candidate":"Balearic and other Spain/Italy regional scans","reason":"Predominantly supplier-side agency/freelancer pages or stale/local-only listings. No territory was falsely upgraded to LOW_YIELD_VERIFIED; Balearics remains UNDER_SEARCHED and incomplete regions remain ACTIVE_SCAN."}
+  ],
+  "dedup_audit": {
+    "pangolin_repository":"No Pangolin Marketing record before creation.",
+    "pangolin_gmail_sent":"0 matching Sent messages for Pangolin Marketing / pangolinmarketing.com / drishti@pangolinmarketing.com.",
+    "pangolin_hostinger_sent":"0 official INBOX.Sent matches for Pangolin Marketing and 0 for pangolinmarketing.com.",
+    "pangolin_suppression":"No Pangolin Marketing identity/domain found in canonical suppression registry."
+  },
+  "channel_counts_after": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 24,
+    "REVIEW_REQUIRED": 45,
+    "SUPPRESSED": 49,
+    "HOLD": 10
+  },
+  "actionable_queue_changed": false,
+  "actionable_queue": ["Sapres Technologies GmbH","Wordune","Cayenne Global, LLC","Ajax Creative"],
+  "frontier_change": "Remote worldwide agency/WordPress/web-ops lane refreshed with Pangolin as a strong material review candidate. Balearics remains UNDER_SEARCHED; Spain/Italy incomplete territories remain ACTIVE_SCAN. WCAG/WPO remains ACTIVE_SCAN because fresh high-fit roles found this pass were geography- or engagement-blocked.",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
