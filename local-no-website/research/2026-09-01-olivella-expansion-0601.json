@@ -1,0 +1,136 @@
+{
+  "run_at": "2026-09-01T06:01:52+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "territory": {"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella","state":"ACTIVE_SCAN"},
+  "source_strategy": "Fresh municipal activity census layer plus exact-name/local/reputation verification. Search-engine results used only as routers; independent lineages not double-counted.",
+  "new_unique_screened": 8,
+  "screened_total_before": 297,
+  "screened_total_after": 305,
+  "discoveries": [
+    {
+      "business": "Al Son",
+      "activity": "Bar",
+      "cluster": "Mas Mila",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "evidence": [
+        {"source":"Diputacio de Barcelona municipal activity census","role":"IDENTITY_FRESHNESS","tier":"T1_INSTITUTIONAL","finding":"Current census row at Placa Catalunya, Olivella; restaurant/bar activity remains registered."},
+        {"source":"Google local listing","role":"REPUTATION_FRESHNESS","tier":"T4_SIGNAL","finding":"4.4/5 from 295 reviews; phone +34 617 635 858 and current opening hours."},
+        {"source":"Ajuntament d'Olivella tourism listing","role":"IDENTITY","tier":"T1_INSTITUTIONAL","finding":"Municipal listing corroborates Bar Al Son in Mas Mila, though older phone data differs and therefore requires route reconciliation."}
+      ],
+      "website_gap": "TO_VERIFY: exact-name pass did not establish a functional dedicated owned website; aggregator pages are not owned web evidence.",
+      "reputation": "VERIFIED strong volume with acceptable 4.4 rating; recurring complaint themes and cross-platform consistency still TO_VERIFY.",
+      "contactability": "Phone route public but conflicting historical/current numbers require reconciliation; no email guessed.",
+      "commercial_fit": "INFERRED_HIGH: active local hospitality business with substantial customer traction and visible need for owned presence if website absence is confirmed."
+    },
+    {
+      "business": "Can Suria Restaurante Braseria / LA BRASERIA",
+      "activity": "Restaurant",
+      "cluster": "Can Suria",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "evidence": [
+        {"source":"Diputacio de Barcelona municipal activity census","role":"IDENTITY_FRESHNESS","tier":"T1_INSTITUTIONAL","finding":"LA BRASERIA registered at Av Hostal del Ganxo 1 with activity/license data updated in 2025."},
+        {"source":"Google local listing","role":"REPUTATION_FRESHNESS","tier":"T4_SIGNAL","finding":"Can Suria Restaurante Braseria at same address; 4.3/5 from 93 reviews, phone +34 635 919 726, current hours."}
+      ],
+      "website_gap": "TO_VERIFY: no dedicated owned domain established in this pass.",
+      "reputation": "VERIFIED usable review volume; complaint-pattern review still TO_VERIFY.",
+      "identity": "INFERRED likely same commercial establishment as census LA BRASERIA; exact trade-name reconciliation required before promotion.",
+      "commercial_fit": "INFERRED_HIGH if owned-site gap is confirmed."
+    },
+    {
+      "business": "Queviures Lafita",
+      "activity": "Food retail",
+      "cluster": "Mas Mila",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "evidence": [{"source":"Diputacio de Barcelona municipal activity census","role":"IDENTITY_FRESHNESS","tier":"T1_INSTITUTIONAL","finding":"Retail food establishment at Placa Catalunya 3 A2; activity modified 2025-03-25 and licensed 2024-06-07."}],
+      "website_gap": "TO_VERIFY",
+      "reputation": "TO_VERIFY",
+      "contactability": "TO_VERIFY",
+      "commercial_fit": "INFERRED_MEDIUM: locally customer-facing but economics and demand must be established."
+    },
+    {
+      "business": "Fruiteria Rachid",
+      "activity": "Mobile fruit and vegetable retail",
+      "cluster": "Mas Mila",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY",
+      "evidence": [{"source":"Diputacio de Barcelona municipal activity census","role":"IDENTITY","tier":"T1_INSTITUTIONAL","finding":"Municipal census confirms mobile fruit/vegetable retail at Placa Catalunya; license 2020 and last modification 2023-10-05."}],
+      "website_gap": "TO_VERIFY",
+      "reputation": "TO_VERIFY",
+      "contactability": "TO_VERIFY",
+      "commercial_fit": "INFERRED_LOW_MEDIUM due mobile-market model and unclear EUR999 buying capacity."
+    },
+    {
+      "business": "Villa Moments",
+      "activity": "Short-stay accommodation",
+      "cluster": "Mas Mestre",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "evidence": [
+        {"source":"Diputacio de Barcelona municipal activity census","role":"IDENTITY_FRESHNESS","tier":"T1_INSTITUTIONAL","finding":"Tourist accommodation at Carrer Muntanyes de Prades 33; license 2025-02-19 and modification 2025-03-25."},
+        {"source":"Google local listing","role":"IDENTITY","tier":"T4_SIGNAL","finding":"Villa Moments at exact address; current holiday-home listing but no usable review score exposed."},
+        {"source":"Clubrural","role":"DISCOVERY_CORROBORATION","tier":"T3_AGGREGATOR","finding":"Current accommodation inventory describes Villa Moments in Mas Mestre."}
+      ],
+      "website_gap": "TO_VERIFY: OTA/directory inventory is not an owned website.",
+      "reputation": "TO_VERIFY",
+      "contactability": "TO_VERIFY",
+      "commercial_fit": "INFERRED_HIGH if independently operated and without owned site because direct-booking economics could support EUR999."
+    },
+    {
+      "business": "La Tasqueta del Garraf",
+      "activity": "Cafe/bar",
+      "cluster": "Mas Mila",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "evidence": [{"source":"Diputacio de Barcelona municipal activity census","role":"IDENTITY","tier":"T1_INSTITUTIONAL","finding":"Cafe/bar at Placa Catalunya 3; municipal census row remains present."}],
+      "website_gap": "TO_VERIFY",
+      "reputation": "TO_VERIFY",
+      "contactability": "TO_VERIFY",
+      "commercial_fit": "INFERRED_MEDIUM_HIGH pending current operating status and reputation."
+    },
+    {
+      "business": "Fincas La Masia",
+      "activity": "Real estate",
+      "cluster": "Mas Mila",
+      "state": "REJECTED_HAS_WEBSITE",
+      "evidence": [
+        {"source":"Diputacio de Barcelona municipal activity census","role":"IDENTITY_FRESHNESS","tier":"T1_INSTITUTIONAL","finding":"Current municipal census identifies Fincas La Masia / Fincas La Masia Real State at Avinguda Mas Mila."},
+        {"source":"vendetucasaconmigo.es legal notice","role":"OWNED_WEBSITE_IDENTITY_CONTACT","tier":"T1_PRIMARY","finding":"Official legal notice identifies Fincas la Masia Real State S.L., Olivella address, phone, email and owned website vendetucasaconmigo.es."},
+        {"source":"Idealista professional profile","role":"CORROBORATION_FRESHNESS","tier":"T2_SPECIALIST","finding":"Active agency profile, 112 properties and client since 2015; points users to agency website."}
+      ],
+      "reason": "Functional dedicated owned website verified."
+    },
+    {
+      "business": "El Margallo",
+      "activity": "Restaurant",
+      "cluster": "Olivella",
+      "state": "REJECTED_INACTIVE_CLOSED",
+      "evidence": [
+        {"source":"Diputacio de Barcelona municipal activity census","role":"DISCOVERY_IDENTITY","tier":"T1_INSTITUTIONAL","finding":"Census row discovered as restaurant/cafe identity."},
+        {"source":"TodosBiz","role":"CURRENT_STATUS","tier":"T3_AGGREGATOR","finding":"Listing explicitly marked closed; phone and hours are historical."}
+      ],
+      "reason": "Fails current-activity/commercial-quality gate; closed status outweighs website-gap signal."
+    }
+  ],
+  "deep_review_updates": [
+    {
+      "business":"Formas Perruqueria Unisex",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED",
+      "change":"Municipal census freshly corroborates active hair-salon identity. Independent directory reports only 4.5/5 from 2 Google reviews; reputation corpus remains too thin for promotion despite verified municipal phone/email route and no owned domain established."
+    },
+    {
+      "business":"Nino y Antonio los magos Mecanicos Olivella",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_HIGH_POTENTIAL",
+      "change":"Independent directory corroborates exact phone +34 610 490 880, Olivella identity and current service hours. Website absence and reputation-lineage independence remain unresolved, so no promotion."
+    }
+  ],
+  "secondary_workstreams": {
+    "COLLABORATIONS": [
+      {"signal":"Workana — Especialista en Mantenimiento y Configuracion de Sitios Web WordPress (52 sitios)","state":"DISCOVERY_SIGNAL_UNCANONICALIZED_THIS_RUN","why":"Open long-term recurring maintenance, 52 WordPress sites, Modular DS, weekly checklist, EUR200-300/month cited in listing; strong fit but buyer identity/global dedup require canonical workstream reconciliation before insertion."},
+      {"signal":"Workana — Disenador Web Experto en WordPress, Elementor y Webflow", "state":"DISCOVERY_SIGNAL_UNCANONICALIZED_THIS_RUN","why":"Published 2026-08-04, payment verified, open/evaluating proposals; buyer identity and cross-workstream dedup still required."}
+    ],
+    "EU_PROJECTS": {"state":"NO_NEW_PROMOTION","note":"Fresh CORDIS search did not produce a sufficiently verified new Communication/Dissemination buyer path in this cycle; no low-confidence EU record was added."}
+  },
+  "next_local_queue": ["Al Son owned-domain/social/reputation-pattern + phone reconciliation","Can Suria Restaurante Braseria trade-name/domain/social/reputation review","Villa Moments owned-domain/direct-booking/contact route review","Queviures Lafita exact local/social/domain/reputation review","La Tasqueta del Garraf current-activity/reputation/domain review","continue Olivella municipal census unreviewed rows and Iberinform/eInforma E-Z"],
+  "outreach_actions": 0,
+  "applications_submitted": 0,
+  "forms_submitted": 0,
+  "first_contacts_created": 0
+}
