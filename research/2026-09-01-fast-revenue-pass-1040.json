@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-01T10:40:00+02:00",
+  "workstream": "COLLABORATIONS",
+  "mode": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "preflight_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "views/source-coverage.md"
+  ],
+  "search_strategy": {
+    "delta_first": true,
+    "families": ["OFFICIAL_COMPANY","SPECIALIST_JOBS","AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"],
+    "signals": ["freelance WordPress","Elementor contractor","Figma to WordPress","white-label web development","Core Web Vitals","remote Europe","long-term freelance web design"],
+    "territorial_focus": ["Spain active/under-searched frontier","Italy active frontier","Remote Europe","Worldwide explicitly EU-compatible"],
+    "stop_condition": "Marginal results shifted predominantly to supplier-side pages, anonymous marketplace buyers, employment-only roles or already-known candidates."
+  },
+  "material_new_candidates": [
+    {
+      "opportunity_id": "OPP-WW-HUMAN-MADE-FREELANCE-WORDPRESS-2026",
+      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT_SENIORITY",
+      "why_material": "Official current WordPress freelancer programme, worldwide remote eligibility and explicit Senior Web Engineer freelance opening.",
+      "why_not_actionable": "Current engineering opening is explicitly senior/enterprise WordPress; truthful VDS seniority proof is insufficiently established for automatic promotion.",
+      "dedup": {"repository":0,"gmail_sent":0,"hostinger_sent":0}
+    },
+    {
+      "opportunity_id": "OPP-WW-ONE-THING-MARKETING-WORDPRESS-AVADA-2026",
+      "state": "REVIEW_REQUIRED_GEO_ROUTE_TRUTHFUL_FIT",
+      "why_material": "Fresh freelance WordPress/Avada role, $15-$25/hour, virtual/remote and strong technical overlap.",
+      "why_not_actionable": "Cross-border Spain/EU eligibility conflicts across current sources; exact authoritative application route was not verified; home-services-industry experience is explicitly required.",
+      "dedup": {"repository":0,"gmail_sent":0,"hostinger_sent":0}
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"candidate":"SLI Productions","reason":"Current freelance web/WordPress demand is UK-based only."},
+    {"candidate":"S. Med","reason":"Current long-term freelance WordPress role requires mandatory German-speaking customer communication; truthful fit fails."},
+    {"candidate":"SiteCare","reason":"Fresh contract WordPress role explicitly limits candidate regions and does not include Spain."},
+    {"candidate":"Room4 Media","reason":"Fresh aggregator signal duplicated a two-year-old employer post; current authoritative role freshness/geo route not sufficiently established."},
+    {"candidate":"Workana 52-site WordPress maintenance project","reason":"Buyer commercial identity remains anonymous, failing exact-identity gate."},
+    {"candidate":"One-off/supplier white-label pages","reason":"Supplier-side service offer is not buyer-side current demand."}
+  ],
+  "channel_counts_after": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 24,
+    "REVIEW_REQUIRED": 42,
+    "SUPPRESSED": 49,
+    "HOLD": 10
+  },
+  "actionable_queue_changed": false,
+  "actionable_queue": ["Sapres Technologies GmbH","Wordune","Cayenne Global, LLC","Ajax Creative"],
+  "frontier_change": "Remote Europe/worldwide WordPress agency lane refreshed; Human Made and One Thing Marketing recorded as material review-only signals. Spain/Italy incomplete territories remain ACTIVE_SCAN/UNDER_SEARCHED rather than being misclassified LOW_YIELD.",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
