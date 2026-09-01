@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.17",
-  "updated_at": "2026-09-01T07:36:55+02:00",
+  "schema_version": "1.18",
+  "updated_at": "2026-09-01T09:05:00+02:00",
   "purpose": "Compact evidence-first FAST_REVENUE execution shortlist. Full channel totals live in fast-revenue-channel-status.json. Execution belongs exclusively to Partner Hunt after immediate freshness, route, suppression and Sent-history gates.",
   "rules": [
     "No outreach or submission from this view alone.",
@@ -10,14 +10,14 @@
     "A different address or listing never resets identity-level contact history."
   ],
   "channel_snapshot": {
-    "VERIFIED_DIRECT_EMAIL": 1,
+    "VERIFIED_DIRECT_EMAIL": 0,
     "VERIFIED_FORM_PLATFORM": 23,
     "REVIEW_REQUIRED": 39,
-    "SUPPRESSED": 48,
+    "SUPPRESSED": 49,
     "HOLD": 10
   },
   "queue_scope": "CURRENT_PRIORITY_ACTIONABLE",
-  "queue_total": 4,
+  "queue_total": 3,
   "queue": [
     {
       "rank": 1,
@@ -60,20 +60,6 @@
       "execution_caveat": "Use the official Freelancer Application path, not the generic footer email; position only portfolio-backed design-tool experience.",
       "dedup_state": "CLEAR from prior verified cycle; Partner Hunt must immediately recheck canonical suppression plus Gmail/Hostinger Sent before execution.",
       "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
-    },
-    {
-      "rank": 4,
-      "opportunity_id": "OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026",
-      "organization": "SO Design Online",
-      "territory": "Remote",
-      "priority": "HOT",
-      "route_type": "VERIFIED_DIRECT_EMAIL",
-      "route_email": "support@sodesign.online",
-      "route_url": "https://sodesign.online/careers/",
-      "why_now": "Official careers board is current and lists WordPress Website Builder as Remote / Contract or project-based. Strong overlap in WordPress, responsive HTML/CSS, redesigns, updates, maintenance and basic SEO, with an explicit role-application email.",
-      "economics": "Paid contract/project-based work is explicit; no published rate or budget.",
-      "dedup_state": "CLEAR from prior verified cycle. Partner Hunt must immediately recheck canonical suppression plus Gmail/Hostinger Sent before execution.",
-      "action_state": "READY_FOR_PARTNER_HUNT_FINAL_GATE"
     }
   ],
   "material_review": [
@@ -92,8 +78,9 @@
     {"organization":"CodeQuadrat","state":"REVIEW_REQUIRED_ROUTE","reason":"Official Remote-Europe freelance WordPress demand remains live and high-fit, but APPLY VIA EMAIL does not expose a verifiable role-specific recipient in accessible authoritative evidence. Generic contact substitution is forbidden."}
   ],
   "suppressed_reverification": [
-    {"organization":"BSC Webdesign","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"Highly attractive current Remote Everywhere / Contract WordPress Web Designer & Developer vacancy was reverified, but Hostinger INBOX.Sent UID 115 proves FIRST_CONTACT to office@bscwebdesign.com on 2026-08-28. New platform application is blocked at organization identity level."}
+    {"organization":"BSC Webdesign","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"Highly attractive current Remote Everywhere / Contract WordPress Web Designer & Developer vacancy was reverified, but Hostinger INBOX.Sent UID 115 proves FIRST_CONTACT to office@bscwebdesign.com on 2026-08-28. New platform application is blocked at organization identity level."},
+    {"organization":"SO Design Online","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"Verified FIRST_CONTACT sent 2026-09-01 from info@visualdesignstudio.es to support@sodesign.online with role-tailored English CV; Hostinger INBOX.Sent UID 149. Opportunity is now WAITING_FOR_REPLY and must not be regenerated."}
   ],
-  "cycle_reverification": "2026-09-01 07:36 delta-first breadth pass found Afternow as a high-potential Europe-Remote agency account with an official open freelance talent pool and clean dedup, but correctly kept it outside the actionable queue because the specific Visual/Web Designer vacancy has conflicting current freshness evidence. The four-item actionable queue remains unchanged.",
-  "execution_note": "No outreach performed. Partner Hunt remains the sole execution gate."
+  "cycle_reverification": "2026-09-01 09:05 Partner Hunt executed the only VERIFIED_DIRECT_EMAIL item remaining in the current queue. SO Design Online passed live official-source, route, remote/contract fit, Gmail/Hostinger Sent and suppression gates; Hostinger Sent UID 149 verifies transmission. Remaining three actionable items are form/platform routes only.",
+  "execution_note": "SO Design Online FIRST_CONTACT sent and verified. No other email route remains in this current priority queue. Platform/form opportunities remain separate and require their own authoritative-route execution gate."
 }
