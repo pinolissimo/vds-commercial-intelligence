@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.13",
-  "updated_at": "2026-09-01T03:39:00+02:00",
+  "schema_version": "1.14",
+  "updated_at": "2026-09-01T04:47:00+02:00",
   "purpose": "Compact evidence-first FAST_REVENUE execution shortlist. Full channel totals live in fast-revenue-channel-status.json. Execution belongs exclusively to Partner Hunt after immediate freshness, route, suppression and Sent-history gates.",
   "rules": [
     "No outreach or submission from this view alone.",
@@ -12,7 +12,7 @@
   "channel_snapshot": {
     "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 23,
-    "REVIEW_REQUIRED": 37,
+    "REVIEW_REQUIRED": 38,
     "SUPPRESSED": 48,
     "HOLD": 9
   },
@@ -63,6 +63,7 @@
     }
   ],
   "material_review": [
+    {"organization":"TechBiz Global GmbH","opportunity_id":"OPP-EU-TECHBIZ-GLOBAL-FREELANCE-WORDPRESS-2026","state":"REVIEW_REQUIRED_GEO_ELIGIBILITY_CONFLICT","reason":"Official current role is freelance/contractor, part-time on-demand for long-term, remote, WordPress/HTML/CSS/JavaScript/SEO with official form. It says work from anywhere, but the mandatory preferred-work-location selector omits Spain; specialist listing metadata also restricts locations. Dedup is clean. Published rate bands top out at €12+/hour, reducing economics even if geography clears."},
     {"organization":"Hjemmesider og Marketing","opportunity_id":"OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026","state":"REVIEW_REQUIRED_GEO_COMMERCIAL_MODEL","reason":"Official current careers page says collaborators are always welcome and continuously seeks freelancers/collaborators with WordPress/Webflow skills; direct application email is explicit and dedup is clean, but cross-border Spain/EU eligibility and paid web-project assignment terms are not established."},
     {"organization":"BruntWork","opportunity_id":"OPP-WW-BRUNTWORK-WORDPRESS-MARKETPLACE-2026","state":"REVIEW_REQUIRED_GEO_ELIGIBILITY","reason":"Official vacancy published 2026-08-31: WordPress Developer, 20h/week, independent contractor, permanent work from home, UK-time schedule, subscription marketplace/portal build. Exact role does not explicitly establish Spain/EU/worldwide applicant eligibility, so it is not promoted despite clean repo/Gmail/Hostinger dedup."},
     {"organization":"Group easyweb","opportunity_id":"OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026","state":"HOLD_GEO_FISCAL_ELIGIBILITY","reason":"Very fresh recurring WordPress/Elementor freelance subcontracting demand, 100% remote and €1,800–€2,200/month, but the listing explicitly requires an active French SIRET; Spain-based autónomo/VAT-EU eligibility is not established."},
@@ -77,6 +78,6 @@
   "suppressed_reverification": [
     {"organization":"BSC Webdesign","state":"SUPPRESSED_ALREADY_CONTACTED","reason":"Highly attractive current Remote Everywhere / Contract WordPress Web Designer & Developer vacancy was reverified, but Hostinger INBOX.Sent UID 115 proves FIRST_CONTACT to office@bscwebdesign.com on 2026-08-28. New platform application is blocked at organization identity level."}
   ],
-  "cycle_reverification": "2026-09-01 03:35 breadth pass added Hjemmesider og Marketing as REVIEW_REQUIRED_GEO_COMMERCIAL_MODEL only and reverified BSC Webdesign as already-contacted. No all-gates-clear addition. Sapres, Ajax Creative and SO Design Online remain the compact actionable top three.",
+  "cycle_reverification": "2026-09-01 04:40 breadth pass added TechBiz Global GmbH as REVIEW_REQUIRED_GEO_ELIGIBILITY_CONFLICT only. No all-gates-clear addition. Sapres, Ajax Creative and SO Design Online remain the compact actionable top three.",
   "execution_note": "No outreach performed. Partner Hunt remains the sole execution gate."
 }
