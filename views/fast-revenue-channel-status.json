@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.16",
-  "updated_at": "2026-09-01T01:40:00+02:00",
+  "schema_version": "1.17",
+  "updated_at": "2026-09-01T02:45:00+02:00",
   "purpose": "Compact channel-separated FAST_REVENUE status after the 2026-09-01 systematic breadth, route, freshness and dedup cycle. Counts distinguish currently uncontacted/actionable routes from review, suppression and hold states.",
   "counts": {
     "VERIFIED_DIRECT_EMAIL": 1,
     "VERIFIED_FORM_PLATFORM": 23,
-    "REVIEW_REQUIRED": 35,
+    "REVIEW_REQUIRED": 36,
     "SUPPRESSED": 48,
     "HOLD": 9,
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": 37
@@ -13,36 +13,37 @@
   "count_notes": {
     "VERIFIED_DIRECT_EMAIL": "SO Design Online remains the sole currently uncontacted direct-email candidate.",
     "VERIFIED_FORM_PLATFORM": "23 verified form/platform opportunities remain actionable; no new candidate cleared every promotion gate in this cycle.",
-    "REVIEW_REQUIRED": "35 review-required opportunities remain unchanged.",
+    "REVIEW_REQUIRED": "36 review-required opportunities now include BruntWork's fresh 2026-08-31 WordPress independent-contractor opening, blocked only by exact-role geography eligibility.",
     "SUPPRESSED": "48 acquisition identities remain suppressed.",
-    "HOLD": "9 holds now include Group easyweb, whose fresh recurring WordPress/Elementor freelance demand is 100% remote but explicitly requires an active French SIRET; Spain-based autónomo eligibility is not established.",
+    "HOLD": "9 holds remain unchanged.",
     "DIRECT_EMAIL_RESEARCH_POOL_LEGACY_SNAPSHOT": "Historical research context only; never interpret as sendable."
   },
   "cycle_delta": {
     "verified_direct_email_new": 0,
     "verified_form_platform_new": 0,
-    "review_required_new": 0,
-    "hold_new": 1,
+    "review_required_new": 1,
+    "hold_new": 0,
     "suppression_new": 0,
     "suppression_total": 48,
     "actionable_pool_inflation": 0
   },
   "material_verification_changes": [
     {
-      "organization": "Group easyweb",
-      "domain": "group-easyweb.com",
-      "state": "HOLD_GEO_FISCAL_ELIGIBILITY",
-      "current_demand": "Fresh 2026-09-01 recurring WordPress/Elementor freelance subcontracting role; 100% remote; approximately 35h/week depending on flow; €1,800–€2,200/month published range.",
-      "route": "Current vacancy platform application route; generic official company email is not substituted.",
-      "eligibility_gate": "Listing explicitly requires an active SIRET. Cross-border acceptance of a Spain-based autónomo/VAT-EU contractor is not established.",
+      "organization": "BruntWork",
+      "domain": "bruntwork.co",
+      "state": "REVIEW_REQUIRED_GEO_ELIGIBILITY",
+      "current_demand": "Official WordPress Developer vacancy published 2026-08-31; 20 hours/week; independent contractor; permanent work from home; 10:00-14:00 UK-time schedule; multi-component WordPress subscription marketplace build.",
+      "route": "Official BruntWork Careers Apply Now flow with assessment questions, technical check and voice recording.",
+      "eligibility_gate": "The exact vacancy does not explicitly state Spain/EU/worldwide applicant eligibility. BruntWork has global remote positioning and other Spain-timezone roles, but that is not substituted for exact-opening eligibility evidence.",
       "dedup": "Repository, canonical suppression, Gmail Sent and official Hostinger INBOX.Sent are clear.",
-      "action": "Hold. Do not promote until fiscal/cross-border eligibility is verified authoritatively."
+      "action": "Review only. No application until exact-role geographic eligibility clears."
     }
   ],
   "research_only_not_promoted": [
-    {"organization":"Randstad Digital Germany AG accessibility project","reason":"Fresh 100% remote freelance accessibility project exists, but the required stack is centered on Flutter/Dart/Spring Boot rather than truthful VDS web/WordPress fit."},
-    {"organization":"EDN — European Dance Development Network","reason":"Strong Europe-based freelance WordPress migration/project-management fit, but the application deadline was 1 February 2026 and the four-month contract started 1 March 2026; stale/closed for current revenue hunt."},
-    {"organization":"Anonymous current marketplace WordPress jobs","reason":"Rejected where exact buyer commercial identity was not established, regardless of freshness or technical fit."}
+    {"organization":"Creativelement SRL / creative. retail & visual design","reason":"Strong WordPress/P.IVA collaboration signal in Prato was verified as approximately 11 months old and no longer accepting applications; stale/closed."},
+    {"organization":"Jobgether partner-company WordPress Designer","reason":"Fresh Spain-remote WordPress/Elementor signal, but the actual partner buyer identity is undisclosed and the engagement model is not cleanly freelance/contractor."},
+    {"organization":"TribuESK WordPress Developer recruiting signal","reason":"Very fresh named recruiter signal, but the role is grouped under LATAM-only remote positions and the end client is undisclosed; EU eligibility fails."},
+    {"organization":"Anonymous current Workana/WokPress WordPress projects","reason":"Several current recurring WordPress/Elementor needs were found, but exact commercial buyer identity was not established; identity hard gate blocks promotion."}
   ],
   "queue_reverification": {
     "Sapres Technologies GmbH": "No contradictory route/freshness signal found; remains VERIFIED_FORM_PLATFORM / HOT_PLUS and compact-queue rank #1.",
@@ -59,8 +60,9 @@
     "../governance/suppression-registry.json",
     "../reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
     "../reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "../opportunities/OPP-WW-BRUNTWORK-WORDPRESS-MARKETPLACE-2026.json",
     "fast-revenue-queue.json",
     "fast-revenue-territory-frontier.json",
-    "../research/2026-09-01-fast-revenue-pass-0140.json"
+    "../research/2026-09-01-fast-revenue-pass-0235.json"
   ]
 }
