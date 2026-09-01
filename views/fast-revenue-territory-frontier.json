@@ -1,59 +1,68 @@
 {
-  "schema_version":"3.3",
-  "updated_at":"2026-09-01T07:36:55+02:00",
-  "purpose":"Machine-readable resume frontier for systematic FAST_REVENUE territory, source-family and sector scanning. Coverage state is independent from lead count.",
-  "allowed_states":["NOT_SCANNED","UNDER_SEARCHED","ACTIVE_SCAN","COVERED_RECENTLY","LOW_YIELD_VERIFIED"],
-  "rules":["Spain autonomous community -> province -> major municipality/agency clusters first.","Italy region -> province -> major municipality/agency clusters in parallel after priority Spain passes.","Then remaining Europe and strong worldwide remote markets explicitly open to EU contractors.","Rotate source families and sectors within an active territory before advancing.","Never mark LOW_YIELD_VERIFIED without meaningful multi-family sampling.","Search-engine results are discovery signals only; authoritative evidence is required for promotion.","Supplier-side service pages are not buyer-demand opportunities unless an explicit collaborator/vendor/contractor signal exists."],
-  "spain_resume_order":[
-    {"territory":"Catalunya / Barcelona-Girona-Lleida-Tarragona clusters","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
-    {"territory":"Comunidad de Madrid / Madrid-Boadilla clusters","state":"COVERED_RECENTLY","next_families":["FREELANCE_MARKETPLACES"]},
-    {"territory":"Comunitat Valenciana / Valencia-Alicante-Castellón clusters","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","OFFICIAL_COMPANY_DEEPENING"],"cycle_note":"07:36 pass remained supplier-heavy; no new explicit external-capacity buyer demand."},
-    {"territory":"País Vasco-Euskadi / Bizkaia-Gipuzkoa-Álava clusters","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"],"cycle_note":"07:36 pass did not produce an all-gates-clear buyer; continue source-family rotation rather than classify low-yield."},
+  "schema_version": "3.4",
+  "updated_at": "2026-09-01T09:37:00+02:00",
+  "purpose": "Machine-readable systematic FAST_REVENUE territory/source/sector frontier. Coverage state is independent from lead count.",
+  "allowed_states": ["NOT_SCANNED","UNDER_SEARCHED","ACTIVE_SCAN","COVERED_RECENTLY","LOW_YIELD_VERIFIED"],
+  "rules": [
+    "Spain autonomous community -> province -> major city/agency clusters first.",
+    "Italy region -> province -> major city/agency clusters in parallel.",
+    "Then remote Europe and worldwide opportunities explicitly open to EU contractors.",
+    "Rotate source families and sectors before advancing.",
+    "Never mark LOW_YIELD_VERIFIED without meaningful multi-family sampling.",
+    "Search-engine results are discovery only; authoritative evidence is required for promotion.",
+    "Supplier-side service pages are not buyer demand without explicit collaborator/vendor/contractor evidence."
+  ],
+  "spain_resume_order": [
+    {"territory":"Catalunya / Barcelona-Girona-Lleida-Tarragona","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
+    {"territory":"Comunidad de Madrid / Madrid-Boadilla","state":"COVERED_RECENTLY","next_families":["FREELANCE_MARKETPLACES"]},
+    {"territory":"Comunitat Valenciana / Valencia-Alicante-Castellón","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","OFFICIAL_COMPANY_DEEPENING"]},
+    {"territory":"País Vasco / Bizkaia-Gipuzkoa-Álava","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
     {"territory":"Andalucía / Sevilla-Málaga-Granada-Córdoba-Cádiz-Almería-Huelva-Jaén","state":"COVERED_RECENTLY","next_families":["PROFESSIONAL_NETWORKS","TOURISM_HOSPITALITY"]},
-    {"territory":"Galicia / A Coruña-Vigo/Pontevedra-Santiago-Lugo-Ourense","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"],"cycle_note":"07:36 results remained predominantly supplier-side."},
-    {"territory":"Asturias + Cantabria / Oviedo-Gijón-Santander clusters","state":"ACTIVE_SCAN","recent_families":["SEARCH_ROUTER_DISCOVERY_ONLY","SPECIALIST_JOBS","PROFESSIONAL_NETWORKS","OFFICIAL_COMPANY_QUERY_PASS"],"next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"],"cycle_note":"Recent deepening continues to surface active suppliers rather than explicit current external-capacity buyers."},
-    {"territory":"Murcia / Murcia-Cartagena clusters","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"],"latest_material_hit":"Mobyleshop remains REVIEW_REQUIRED_GEO_FRESHNESS."},
-    {"territory":"Aragón / Zaragoza-Huesca-Teruel clusters","state":"ACTIVE_SCAN","next_families":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS"],"cycle_note":"07:36 breadth sample produced no promotable buyer-side external-capacity signal."},
-    {"territory":"Castilla y León / Valladolid-León-Burgos-Salamanca-Zamora clusters","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"],"cycle_note":"07:36 breadth sample produced no promotable buyer-side external-capacity signal."},
-    {"territory":"Castilla-La Mancha / Toledo-Ciudad Real-Albacete-Guadalajara-Cuenca","state":"ACTIVE_SCAN","recent_families":["SEARCH_ROUTER_DISCOVERY_ONLY","OFFICIAL_COMPANY_QUERY_PASS"],"next_families":["AGENCY_OUTSOURCING","SPECIALIST_JOBS","PROFESSIONAL_NETWORKS"],"cycle_note":"Recent Toledo/Castilla-La Mancha sampling returned agencies selling WordPress/web services, not explicit current buyers."},
-    {"territory":"Balearic Islands / Palma-Ibiza-Menorca clusters","state":"UNDER_SEARCHED","recent_families":["SEARCH_ROUTER_DISCOVERY_ONLY","OFFICIAL_COMPANY_INITIAL","SPECIALIST_JOBS_INITIAL","TOURISM_HOSPITALITY_QUERY_PASS","AGENCY_OUTSOURCING_QUERY_PASS","FREELANCE_QUERY_PASS","OFFICIAL_COMPANY_DEEPENING_QUERY_PASS","PROFESSIONAL_NETWORK_QUERY_PASS"],"next_families":["OFFICIAL_COMPANY_DEEPENING","NICHE_LOCAL_NETWORKS"],"cycle_note":"07:36 Balearic sampling still produced supplier-side pages. Coverage is broader but not deep enough for LOW_YIELD_VERIFIED."},
-    {"territory":"Canary Islands / Las Palmas-Santa Cruz clusters","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","OFFICIAL_COMPANY_DEEPENING"],"latest_material_hit":"Visible Comunicación Estratégica remains HOLD_EMPLOYMENT_MODEL."},
-    {"territory":"Remaining Spain / Navarra-La Rioja-Extremadura + remaining province clusters","state":"ACTIVE_SCAN","next_families":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING","SPECIALIST_JOBS"]},
+    {"territory":"Galicia / A Coruña-Vigo/Pontevedra-Santiago-Lugo-Ourense","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Asturias + Cantabria / Oviedo-Gijón-Santander","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
+    {"territory":"Murcia / Murcia-Cartagena","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
+    {"territory":"Aragón / Zaragoza-Huesca-Teruel","state":"ACTIVE_SCAN","next_families":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Castilla y León / Valladolid-León-Burgos-Salamanca-Zamora","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Castilla-La Mancha / Toledo-Ciudad Real-Albacete-Guadalajara-Cuenca","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","SPECIALIST_JOBS","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Balearic Islands / Palma-Ibiza-Menorca","state":"UNDER_SEARCHED","next_families":["OFFICIAL_COMPANY_DEEPENING","NICHE_LOCAL_NETWORKS"]},
+    {"territory":"Canary Islands / Las Palmas-Santa Cruz","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","OFFICIAL_COMPANY_DEEPENING"]},
+    {"territory":"Remaining Spain / Navarra-La Rioja-Extremadura + remaining provinces","state":"ACTIVE_SCAN","next_families":["OFFICIAL_COMPANY","AGENCY_OUTSOURCING","SPECIALIST_JOBS"]},
     {"territory":"Spain nationwide remote / contractor platforms","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","NICHE_JOB_BOARDS"]}
   ],
-  "italy_resume_order":[
-    {"territory":"Lombardia / Milano + province clusters","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"],"latest_material_hit":"LIVEAT SRL remains REVIEW_REQUIRED_GEO_FISCAL_ELIGIBILITY."},
-    {"territory":"Piemonte / Torino + province clusters","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
-    {"territory":"Veneto / Venezia-Padova-Treviso-Verona-Vicenza clusters","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","OFFICIAL_COMPANY_DEEPENING"],"latest_material_hit":"Adviva Srl [WMR] remains REVIEW_REQUIRED_GEO_REMOTE."},
-    {"territory":"Emilia-Romagna / Bologna-Modena-Parma-Rimini clusters","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"],"cycle_note":"07:36 Bologna/Emilia-Romagna results remained supplier-side or lacked explicit external-capacity demand."},
-    {"territory":"Lazio / Roma + province clusters","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
-    {"territory":"Toscana / Firenze-Prato-Pisa-Lucca-Siena clusters","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"],"cycle_note":"07:36 Firenze/Toscana pass remained supplier-heavy; no all-gates-clear buyer."},
-    {"territory":"Liguria / Genova-Savona-La Spezia-Imperia clusters","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"],"cycle_note":"07:36 Genova/Liguria results did not establish fresh external-capacity buyer demand."},
-    {"territory":"Campania / Napoli-Salerno-Caserta-Avellino-Benevento clusters","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"],"latest_material_hit":"Global Service Impresa remains HOLD_GEO_ELIGIBILITY_ITALY_ONLY.","cycle_note":"07:36 Napoli/Campania scan produced no new all-gates-clear buyer."},
-    {"territory":"Puglia / Bari-Lecce-Taranto-Brindisi-BAT-Foggia clusters","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"],"cycle_note":"07:36 Bari/Puglia scan produced no new all-gates-clear buyer."},
-    {"territory":"Sicilia / Palermo-Catania-Messina-Siracusa clusters","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"],"cycle_note":"07:36 Palermo/Sicilia pass returned supplier-side or non-current pages; no promotion."},
-    {"territory":"Calabria / Reggio Calabria-Catanzaro-Cosenza-Crotone-Vibo Valentia clusters","state":"ACTIVE_SCAN","latest_material_hit":"IOCOS remains prior HOT VERIFIED_FORM_PLATFORM.","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
-    {"territory":"Remaining Italy / Valle d'Aosta-Trentino Alto Adige-Friuli Venezia Giulia-Umbria-Marche-Abruzzo-Molise-Basilicata-Sardegna + remaining province clusters","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"]}
+  "italy_resume_order": [
+    {"territory":"Lombardia / Milano + provinces","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
+    {"territory":"Piemonte / Torino + provinces","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
+    {"territory":"Veneto / Venezia-Padova-Treviso-Verona-Vicenza","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","OFFICIAL_COMPANY_DEEPENING"]},
+    {"territory":"Emilia-Romagna / Bologna-Modena-Parma-Rimini","state":"ACTIVE_SCAN","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES"]},
+    {"territory":"Lazio / Roma + provinces","state":"COVERED_RECENTLY","next_families":["AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Toscana / Firenze-Prato-Pisa-Lucca-Siena","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"]},
+    {"territory":"Liguria / Genova-Savona-La Spezia-Imperia","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"]},
+    {"territory":"Campania / Napoli-Salerno-Caserta-Avellino-Benevento","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Puglia / Bari-Lecce-Taranto-Brindisi-BAT-Foggia","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"]},
+    {"territory":"Sicilia / Palermo-Catania-Messina-Siracusa","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"]},
+    {"territory":"Calabria / Reggio Calabria-Catanzaro-Cosenza-Crotone-Vibo Valentia","state":"ACTIVE_SCAN","next_families":["FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Remaining Italy / Valle d'Aosta-Trentino Alto Adige-Friuli Venezia Giulia-Umbria-Marche-Abruzzo-Molise-Basilicata-Sardegna + remaining provinces","state":"ACTIVE_SCAN","next_families":["PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES"]}
   ],
-  "europe_resume":[
-    {"territory":"Croatia / Krk + Europe-Remote digital agency cluster","state":"COVERED_RECENTLY","latest_material_hit":"Afternow (formerly BB Agency) added REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT: official Europe-Remote freelance talent pool is open, but the recent Visual/Web Designer vacancy is absent from the exact current official role list.","next_families":["OFFICIAL_COMPANY_ROLE_REFRESH","AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS"]},
+  "europe_resume": [
+    {"territory":"Europe remote web/WordPress/design agency network","state":"COVERED_RECENTLY","latest_material_hit":"Wordune promoted VERIFIED_FORM_PLATFORM / HOT: official current Figma Designer recruiting, Europe eligible, remote, one-year period, $40/hour EU rate, increased Figma-to-WordPress demand.","next_families":["AGENCY_OUTSOURCING","OFFICIAL_COMPANY_ROLE_REFRESH","PROFESSIONAL_NETWORKS"]},
+    {"territory":"Croatia / Krk + Europe-Remote digital agency cluster","state":"COVERED_RECENTLY","latest_material_hit":"Afternow remains REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT.","next_families":["OFFICIAL_COMPANY_ROLE_REFRESH","AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS"]},
     {"territory":"Denmark / Copenhagen-Taastrup digital-agency cluster","state":"ACTIVE_SCAN","latest_material_hit":"Hjemmesider og Marketing remains REVIEW_REQUIRED_GEO_COMMERCIAL_MODEL.","next_families":["PROFESSIONAL_NETWORKS","SPECIALIST_JOBS"]},
-    {"territory":"Austria / Vienna agency cluster","state":"COVERED_RECENTLY","latest_material_hit":"BSC Webdesign remains SUPPRESSED_ALREADY_CONTACTED by Hostinger Sent UID 115.","next_families":["AGENCY_OUTSOURCING","OFFICIAL_COMPANY"]},
+    {"territory":"Austria / Vienna agency cluster","state":"COVERED_RECENTLY","latest_material_hit":"BSC Webdesign remains SUPPRESSED_ALREADY_CONTACTED.","next_families":["AGENCY_OUTSOURCING","OFFICIAL_COMPANY"]},
     {"territory":"Central/Eastern Europe multi-country contractor cluster","state":"ACTIVE_SCAN","latest_material_hit":"TechBiz Global GmbH remains REVIEW_REQUIRED_GEO_ELIGIBILITY_CONFLICT.","next_families":["OFFICIAL_COMPANY_GEO_ELIGIBILITY_DEEPENING","AGENCY_OUTSOURCING"]}
   ],
-  "remote_resume":[
-    {"territory":"Remote Europe / worldwide explicitly or practically open to EU contractors","state":"COVERED_RECENTLY","recent_families":["OFFICIAL_COMPANY","SPECIALIST_JOBS","NICHE_WORDPRESS_JOBS","AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES","NAMED_BUYER_MARKETPLACE_PROJECTS","NGO_DIGITAL_SUPPLIERS","GMAIL_SENT_DEDUP","HOSTINGER_SENT_DEDUP"],"next_families":["NAMED_BUYER_MARKETPLACE_PROJECTS","AGENCY_OUTSOURCING","OFFICIAL_COMPANY_ROLE_REFRESH"],"latest_material_hit":"Afternow adds a named Europe-Remote agency account with an official open freelance talent pool and clean dedup, but specific Visual/Web Designer freshness conflicts; remains REVIEW_REQUIRED. Cayenne Global remains the latest all-gates-clear HOT addition.","cycle_note":"07:36 remote deepening again confirmed that exact buyer identity and role freshness are the limiting gates: anonymous marketplace jobs were rejected and Afternow was not over-promoted."}
+  "remote_resume": [
+    {"territory":"Remote Europe / worldwide explicitly open to EU contractors","state":"COVERED_RECENTLY","recent_families":["OFFICIAL_COMPANY","SPECIALIST_JOBS","NICHE_WORDPRESS_JOBS","AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS","FREELANCE_MARKETPLACES","NAMED_BUYER_MARKETPLACE_PROJECTS","NGO_DIGITAL_SUPPLIERS","GMAIL_SENT_DEDUP","HOSTINGER_SENT_DEDUP"],"next_families":["NAMED_BUYER_MARKETPLACE_PROJECTS","AGENCY_OUTSOURCING","OFFICIAL_COMPANY_ROLE_REFRESH"],"latest_material_hit":"Wordune is the newest all-gates-clear HOT addition: explicit Europe eligibility, remote one-year recruiting period, official $40/hour EU rate and role-specific ticket route."}
   ],
-  "sector_resume_order":[
-    {"sector":"web/digital agencies + branding/design studios","state":"COVERED_RECENTLY","recent_signal":"Afternow adds a current Europe-Remote freelance-network buyer signal with a recent Visual/Web Designer role conflict requiring exact freshness revalidation.","next_sources":["AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS","OFFICIAL_COMPANY_ROLE_REFRESH"]},
-    {"sector":"software houses + SaaS/startups","state":"COVERED_RECENTLY","recent_signal":"TechBiz remains geography-review; Sapres actionable; BruntWork geo-review.","next_sources":["OFFICIAL_COMPANY_GEO_ELIGIBILITY_DEEPENING","FREELANCE_MARKETPLACES"]},
+  "sector_resume_order": [
+    {"sector":"web/digital agencies + branding/design studios","state":"COVERED_RECENTLY","recent_signal":"Wordune adds explicit current paid Figma-to-WordPress design capacity demand for Europe.","next_sources":["AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS","OFFICIAL_COMPANY_ROLE_REFRESH"]},
+    {"sector":"software houses + SaaS/startups","state":"COVERED_RECENTLY","next_sources":["OFFICIAL_COMPANY_GEO_ELIGIBILITY_DEEPENING","FREELANCE_MARKETPLACES"]},
     {"sector":"ecommerce + marketing/performance agencies","state":"COVERED_RECENTLY","next_sources":["AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS"]},
     {"sector":"IT/MSP/system integrators + hosting/maintenance","state":"COVERED_RECENTLY","next_sources":["AGENCY_OUTSOURCING","OFFICIAL_COMPANY"]},
-    {"sector":"accessibility/WCAG + WPO/Core Web Vitals specialists","state":"ACTIVE_SCAN","recent_signal":"SiteCare surfaced strong current WordPress/Core Web Vitals contractor demand but excludes Spain through its published geography; no promotion.","next_sources":["OFFICIAL_COMPANY","SPECIALIST_JOBS","AGENCY_OUTSOURCING"]},
-    {"sector":"tourism/hospitality digital suppliers","state":"ACTIVE_SCAN","recent_signal":"Balearic/Canary passes remain supplier-heavy.","next_sources":["AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS","OFFICIAL_COMPANY"]},
+    {"sector":"accessibility/WCAG + WPO/Core Web Vitals specialists","state":"ACTIVE_SCAN","next_sources":["OFFICIAL_COMPANY","SPECIALIST_JOBS","AGENCY_OUTSOURCING"]},
+    {"sector":"tourism/hospitality digital suppliers","state":"ACTIVE_SCAN","next_sources":["AGENCY_OUTSOURCING","PROFESSIONAL_NETWORKS","OFFICIAL_COMPANY"]},
     {"sector":"education/training platforms + NGOs/EU dissemination suppliers","state":"COVERED_RECENTLY","next_sources":["OFFICIAL_COMPANY","EU_PROJECT_REGISTRIES","NGO_DIGITAL_SUPPLIERS"]},
     {"sector":"healthcare/professional-services digital vendors","state":"COVERED_RECENTLY","next_sources":["AGENCY_OUTSOURCING","OFFICIAL_COMPANY"]},
     {"sector":"event/culture agencies","state":"COVERED_RECENTLY","next_sources":["AGENCY_OUTSOURCING","OFFICIAL_COMPANY"]}
   ],
-  "last_research_log":"../research/2026-09-01-fast-revenue-pass-0736.json"
+  "last_research_log": "../research/2026-09-01-fast-revenue-pass-0937.json"
 }
