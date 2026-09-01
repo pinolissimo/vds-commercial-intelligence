@@ -1,6 +1,6 @@
 # VDS IT/ES Acquisition Chain — Transactional Execution Protocol
 
-Version: 1.1
+Version: 1.2
 Effective: 2026-09-01
 
 ## Purpose
@@ -58,7 +58,7 @@ A discovery worker may write `READY_TO_APPLY` only when ALL of the following are
 1. canonical organization identity resolved;
 2. current need/freshness verified from authoritative evidence;
 3. truthful VDS fit verified;
-4. geography/remote/cross-border eligibility resolved;
+4. no explicit contract-model exclusion such as `no freelance`, `no contractors`, `no external collaborators`, or equivalent; absence of an explicit freelance/contractor label does NOT block promotion. Full-time/indefinite/salary/benefits/on-site language does not by itself block a VDS external-collaboration application, although any genuine legal/work-authorization/geographic impossibility still blocks;
 5. exact official execution route resolved;
 6. route is executable by the scheduled dispatcher;
 7. if email route: exact official application/collaboration recipient verified; generic unrelated contact email is insufficient;
@@ -68,7 +68,26 @@ A discovery worker may write `READY_TO_APPLY` only when ALL of the following are
 11. CV/document requirement known; if a document is mandatory but cannot be prepared/QA'd by dispatcher, record non-executable rather than READY;
 12. legal/channel state resolved.
 
-If any item is unknown, ambiguous or unavailable, the candidate MUST NOT enter READY.
+If any mandatory item is unknown, ambiguous or unavailable, the candidate MUST NOT enter READY.
+
+## Contract-model openness — operator policy
+For opportunities whose technical/commercial fit is otherwise valid, the pipeline MUST assume that an external/freelance proposal is commercially permissible unless the authoritative opportunity or organization explicitly states that freelance/contractors/external collaborators are not accepted.
+
+Therefore, the following signals MUST NOT by themselves block READY promotion:
+- full-time wording;
+- permanent/indefinite employment wording;
+- salary ranges;
+- employee benefits;
+- ordinary employment-contract terminology;
+- hybrid/on-site expectations;
+- location references;
+- absence of the words freelance, contractor, autónomo or P.IVA.
+
+The application must remain truthful: VDS presents Giuseppe Allocca / Visual Design Studio ES as an external freelance/autónomo collaborator and never pretends to accept an employee relationship that has not been agreed.
+
+On the contract-model dimension, block only on an explicit authoritative exclusion such as `no freelance`, `no contractors`, `employees only`, `no external collaborators`, or an equivalent unambiguous statement.
+
+This policy does NOT override genuine blockers unrelated to contract model, including legal/work-authorization impossibility, sanctions/compliance restrictions, platform rules, impossible mandatory geography, explicit licensing/certification requirements, invalid route, stale/closed opportunity, duplicate prior contact, or failed document QA.
 
 ## Producer write discipline
 Before modifying the shared READY queue, each producer MUST:
@@ -97,7 +116,7 @@ Operator-approved temporary minimum: **7 certified executable candidates**. This
 The raw queue count is never the threshold value.
 
 ## Mandatory sanitization
-Any stale/duplicate/non-executable item discovered by the dispatcher is immediately removed or demoted from READY and recorded with an exact reason. It must not remain as READY for the next cycle.
+Any stale/duplicate/non-executable item discovered by the dispatcher is immediately removed or demoted from READY and recorded with an exact reason. It must not remain as READY for the next cycle. Lack of an explicit freelance/contractor label is NOT a non-executable reason; contract-model blocking requires an explicit authoritative exclusion as defined above.
 
 Manual sends performed interactively by the user/assistant are treated as external state changes. On the next producer/dispatcher reconciliation, matching identities must be removed from READY as `ALREADY_CONTACTED`.
 
