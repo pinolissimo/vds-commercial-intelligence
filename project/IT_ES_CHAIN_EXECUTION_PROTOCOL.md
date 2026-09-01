@@ -1,6 +1,6 @@
 # VDS IT/ES Acquisition Chain — Transactional Execution Protocol
 
-Version: 1.0
+Version: 1.1
 Effective: 2026-09-01
 
 ## Purpose
@@ -88,9 +88,11 @@ The dispatcher MUST perform a full final reconciliation before calculating the t
 Order:
 `READ_LATEST_QUEUE -> SANITIZE -> FINAL_DEDUP -> ROUTE_RECHECK -> FRESHNESS_RECHECK -> DOCUMENT_READINESS -> EXECUTABLE_READY_COUNT -> THRESHOLD_DECISION`
 
-### Threshold
-- `EXECUTABLE_READY_COUNT < 10` -> send/submit NOTHING.
-- `EXECUTABLE_READY_COUNT >= 10` -> execute the entire valid batch unless a provider/legal/deliverability blocker arises during execution.
+### Threshold — temporary live validation policy
+Operator-approved temporary minimum: **7 certified executable candidates**. This temporary value is intended to validate the first real automatic dispatch cycle while preserving every quality gate. Raise it back to 10 when reservoir replenishment is consistently healthy.
+
+- `EXECUTABLE_READY_COUNT < 7` -> send/submit NOTHING.
+- `EXECUTABLE_READY_COUNT >= 7` -> execute the entire valid batch unless a provider/legal/deliverability blocker arises during execution.
 
 The raw queue count is never the threshold value.
 
@@ -132,7 +134,7 @@ Minimum fields:
 
 Valid result examples: `DISPATCHED`, `THRESHOLD_NOT_REACHED`, `BLOCKED_DEPENDENCY`, `FAILED`, `DRY_RUN_WOULD_DISPATCH`, `DRY_RUN_THRESHOLD_NOT_REACHED`.
 
-If raw READY >=10 but final executable READY <10, the event is explicitly surfaced as `BATCH_BLOCKED_AFTER_FINAL_GATE`.
+If raw READY >=7 but final executable READY <7, the event is explicitly surfaced as `BATCH_BLOCKED_AFTER_FINAL_GATE`.
 
 ## Dry-run safety mode
 A dry-run MUST execute every read, dedup, sanitization, route/freshness decision, threshold calculation and planned-message/document QA step but MUST NOT call any mail-send, form-submit, DM or platform submission action.
@@ -144,7 +146,7 @@ Performance + Reply Watch must treat `reports/it-es-batch-dispatcher-runs.jsonl`
 
 It must flag:
 - missing dispatcher run record for an expected scheduled cycle;
-- raw >=10 but executable <10;
+- raw >=7 but executable <7;
 - stale/duplicate entries surviving in READY;
 - any Sent message whose canonical identity was not recorded by dispatcher or a clearly identified manual interactive action;
 - any producer that promotes a candidate without full READY certification.
