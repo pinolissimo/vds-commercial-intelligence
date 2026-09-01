@@ -1,0 +1,87 @@
+{
+  "run_at": "2026-09-01T01:58:00+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "frontier": {"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella","state":"ACTIVE_SCAN"},
+  "allocation_note": "Local-SME-first cycle; no outreach or first-contact action.",
+  "source_families_used": ["municipal/local institutional directory","local business directories","specialist home-services marketplace","company/legal registries","exact-name web search","business-owned web"],
+  "new_screened_identities": [
+    {
+      "business": "GRAMULI S.L.",
+      "activity_type": "Local services / pool-related legacy listing",
+      "stage": "RAW_DISCOVERY",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "evidence_status": {"identity":"VERIFIED","current_activity":"TO_VERIFY","website_gap":"TO_VERIFY","reputation":"TO_VERIFY","contactability":"INFERRED"},
+      "evidence": [
+        {"source":"QDQ","url":"https://www.qdq.com/gramuli-s-l-240679","finding":"Current directory surface places GRAMULI S.L. at Cal Gabarro, Urb. Las Colinas, 08818 Olivella and marks the listing open."},
+        {"source":"TodosBiz","url":"https://www.todosbiz.es/gramuli-938-96-88-57","finding":"Independent directory corroborates Gramuli at Carrer de Cal Gabarro 20, Olivella, with public phone 938 96 88 57 / 938 96 83 28; no owned website is shown."}
+      ],
+      "decision": "Keep RAW. Exact legal identity/current activity, independent reputation and dedicated-domain absence must be resolved before promotion."
+    },
+    {
+      "business": "Lovenet servicios de limpieza / LOVENET CB",
+      "activity_type": "Cleaning services",
+      "stage": "REJECTED",
+      "state": "REJECTED_HAS_WEBSITE",
+      "evidence_status": {"identity":"VERIFIED","current_activity":"VERIFIED","website_gap":"FAILED_EXISTING_WEB","reputation":"INSUFFICIENT"},
+      "evidence": [
+        {"source":"Cylex","url":"https://www.cylex.es/olivella/lovenet-servicios-de-limpieza-14195635.html","finding":"Updated 2026-06-08; address Camí Ronda de Ponent 37, phone 603 01 50 94, and dedicated Wix business site."},
+        {"source":"Iberinform","url":"https://www.iberinform.es/empresa/9979301/lovenet","finding":"LOVENET CB is active, CIF E06860704, Calle Ponent 37, 08818 Olivella, CNAE 8121."}
+      ],
+      "decision": "Reject from LOCAL_SME_999 because an active dedicated business web presence exists, even though it uses a Wix subdomain."
+    },
+    {
+      "business": "Piscinas Olivella",
+      "activity_type": "Pool construction and maintenance",
+      "stage": "REJECTED",
+      "state": "REJECTED_HAS_WEBSITE",
+      "evidence_status": {"identity":"VERIFIED","current_activity":"VERIFIED","website_gap":"FAILED_EXISTING_WEB","reputation":"INFERRED"},
+      "evidence": [
+        {"source":"Ajuntament d'Olivella","url":"https://www.olivella.cat/adreces-i-telefons/piscinas-olivella.html","finding":"Municipal directory lists Piscinas Olivella at Plaça Catalunya 1, Mas Milà with two public phones."},
+        {"source":"Houzz","url":"https://www.houzz.es/profesionales/construccion-de-piscinas/piscinas-olivella-pfvwes-pf~1512666878","finding":"Specialist profile identifies piscinasolivella.com as the business website and reports pool-construction services in Olivella/Garraf."}
+      ],
+      "decision": "Reject: dedicated website piscinasolivella.com is explicitly attributed to the business."
+    },
+    {
+      "business": "PISCINES RIBES S.L.",
+      "activity_type": "Pool construction and maintenance",
+      "stage": "REJECTED",
+      "state": "REJECTED_HAS_WEBSITE",
+      "evidence_status": {"identity":"VERIFIED","current_activity":"VERIFIED","website_gap":"FAILED_EXISTING_WEB","reputation":"VERIFIED"},
+      "evidence": [
+        {"source":"DatosCif","url":"https://www.datoscif.es/empresa/piscines-ribes-sl","finding":"Legal identity B72935604, constituted 2022-12-22, domicile in Olivella, pool construction/maintenance object."},
+        {"source":"Official website legal notice","url":"https://piscinesribes.com/aviso-legal/","finding":"Official legal notice identifies Piscines Ribes S.L., NIF B72935604 and piscinesribes.com."},
+        {"source":"RoseFeels/local review mirror","url":"https://rosefeels.es/piscines-ribes/","finding":"Current Sant Pere de Ribes operating location, 4.6/5 from 12 Google Business reviews reported, and same owned domain."}
+      ],
+      "decision": "Reject: functional owned website is verified. Territorial record is useful for identity reconciliation because legal domicile is Olivella while customer-facing operation is Sant Pere de Ribes."
+    },
+    {
+      "business": "Feel Chill Experience",
+      "activity_type": "Nonprofit event / entertainment",
+      "stage": "REJECTED",
+      "state": "REJECTED_NONCOMMERCIAL_FIT",
+      "evidence_status": {"identity":"VERIFIED","current_activity":"INFERRED","website_gap":"FAILED_EXISTING_WEB","commercial_fit":"FAILED"},
+      "evidence": [
+        {"source":"Ajuntament d'Olivella","url":"https://www.olivella.cat/el-municipi/altres-associacions-i-entitats","finding":"Municipal association directory lists Feel Chill Experience with public email."},
+        {"source":"LinkedIn","url":"https://es.linkedin.com/company/feel-chill-experience","finding":"Identifies it as an Olivella nonprofit organization and lists feelchillexperience.com as website."}
+      ],
+      "decision": "Reject from €999 SME funnel: nonprofit/event identity and existing website both fail core fit."
+    }
+  ],
+  "deep_review_delta": [
+    {
+      "business":"Estanc Olivella",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED_LOW_PRIORITY",
+      "finding":"Municipal source remains fresh (updated 2025-02-18) with public phone and opening hours, but no independent reputation corpus or strong €999 commercial upside was established in this pass. No promotion."
+    },
+    {
+      "business":"Casa Dolly",
+      "state":"RAW_DISCOVERY_REVIEW_REQUIRED",
+      "finding":"Exact-name search did not produce new decisive owned-domain or reputation evidence in this pass. Preserve unresolved state rather than infer absence."
+    }
+  ],
+  "counters_delta": {"screened_raw":5,"rejected_has_website":3,"rejected_noncommercial_fit":1,"new_raw_unresolved":1,"qualified":0,"ready_to_contact":0},
+  "next_frontier_work": ["GRAMULI exact legal/current-activity/domain/reputation reconciliation","Casa Dolly dedicated-domain/reputation route","Estanc Olivella reputation and commercial-fit check","ALPHA ESTRUC legal identity/domain/reputation","CONDUCTOS CARTIZ current operating footprint/domain/reputation","WELIFEVAN owned-domain/social/reputation"],
+  "outreach_actions": 0,
+  "first_contact_actions": 0
+}
