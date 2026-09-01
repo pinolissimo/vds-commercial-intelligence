@@ -1,6 +1,6 @@
 {
   "pipeline":"VDS Local SME 999",
-  "updated_at":"2026-09-01T04:57:53+02:00",
+  "updated_at":"2026-09-01T06:01:52+02:00",
   "countries_active":["Spain"],
   "countries_planned":["Italy","San Marino","Switzerland-Italian","Slovenia-Italian","Croatia-Istria","Malta","Andorra","Gibraltar"],
   "schema":"../schema/local-no-website.schema.json",
@@ -8,11 +8,11 @@
   "tax_policy":"config/tax-policy.json",
   "scan_frontier":"coverage/scan-frontier.json",
   "email_folder":"INBOX.LOCAL-SME-999",
-  "screened_raw":297,
+  "screened_raw":305,
   "canonical_prospect_records":30,
   "under_research":0,
   "canonical_finalized_rejected":22,
-  "screened_rejected_has_website":101,
+  "screened_rejected_has_website":102,
   "screened_rejected_poor_reputation":1,
   "screened_reputation_risk":10,
   "screened_rejected_noncommercial_fit":4,
@@ -56,9 +56,9 @@
   "prepared_campaign":"outreach/2026-08-31-prepared-cohort.json",
   "latest_finalization_report":"research/2026-08-31-deep-review-finalization-0927.json",
   "latest_outreach_report":"../outreach/2026-08-31-partner-hunt-morning-wave-02.json",
-  "latest_discovery_report":"research/2026-09-01-olivella-expansion-0457.json",
+  "latest_discovery_report":"research/2026-09-01-olivella-expansion-0601.json",
   "rules":{"deduplicate_first_contact":true,"suppression_registry":"../governance/suppression-registry.json","verify_no_working_website_with_multiple_signals":true,"tax_claim_requires_official_country_source":true,"exactly_one_proactive_first_contact":true,"separate_from_partner_pipeline":true,"quality_gates":"../governance/OUTREACH_QUALITY_GATES.md"},
-  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":3,"final_live_gate_required_before_send":true,"latest_material_change":"04:57 LOCAL_SME_999 expanded Olivella from 293 to 297 unique screened identities. Oswen Gestión Inmobiliaria, OOA Gallery and Restaurant Hostal Les Piques were rejected for verified functional owned websites. La Merla Blanca entered low-priority RAW pending current-activity verification. Casa Colina moved to reputation-risk review after weak/inconsistent cross-platform ratings. Pintor BCN - Olivella was identified as a false-local service-area result tied by phone to a Barcelona business and was not counted. No outreach."},
+  "qa_state":{"status":"POST_OUTREACH_MONITORING","ready_count":0,"contacted_count":8,"hard_bounce_count":3,"final_live_gate_required_before_send":true,"latest_material_change":"06:01 LOCAL_SME_999 expanded Olivella from 297 to 305 unique screened identities using a fresh municipal-activity-census layer plus exact-name/local verification. Al Son, Can Suria Restaurante Braseria/LA BRASERIA, Queviures Lafita, Fruiteria Rachid, Villa Moments and La Tasqueta del Garraf entered RAW review at differentiated priority. Fincas La Masia was rejected for a verified functional owned website; El Margallo was rejected as closed. Formas Perruqueria remains RAW because its independent reputation corpus is only two reviews. No outreach."},
   "status":"POST_OUTREACH_MONITORING_AND_ACTIVE_DISCOVERY",
-  "next_action":"Remain on Olivella. Deep-review Nino y Antonio los magos Mecanicos for independent reputation plus owned-domain absence; verify Orts Fuster exact social/domain and broader reputation; resolve La Merla Blanca current operating status; continue Formas Perruqueria, M & M Nail´s, DECOCEMENT ESPAÑA, DUNDOG RENTA 83 and Olivella E→Z registry rows; keep filtering service-area false locals before adjacent-municipality expansion."
+  "next_action":"Remain on Olivella. Deep-review Al Son owned-domain/social/reputation pattern and reconcile current phone route; reconcile LA BRASERIA with Can Suria Restaurante Braseria and verify owned domain/social/reputation; verify Villa Moments direct-booking/owned-domain/contact route; review Queviures Lafita and La Tasqueta del Garraf; continue unreviewed municipal census rows plus Iberinform/eInforma E→Z before adjacent-municipality expansion."
 }
