@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "state": "IDLE",
+  "lease_id": null,
+  "owner": null,
+  "acquired_at": null,
+  "expires_at": null,
+  "last_released_at": "2026-09-01T19:27:00Z",
+  "last_run_id": "live-first-use-20260901-1919",
+  "last_incident": {
+    "timestamp": "2026-09-01T19:26:00Z",
+    "type": "CONCURRENT_EXECUTOR_DUPLICATE_SEND",
+    "affected": ["org:amomarketing.es", "org:bpnexus.com"],
+    "hostinger_duplicate_uids": [169, 172]
+  },
+  "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or 409 update conflict means ABORT_WITHOUT_SEND."
+}
