@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "event_type": "HARD_BOUNCE_REVIEW_REQUIRED",
+  "event_at": "2026-09-01T07:36:41+02:00",
+  "inbox_uid": 1282,
+  "failed_recipient": "info@aunarviajes.com",
+  "domain": "aunarviajes.com",
+  "smtp_evidence": "Host or domain name not found. Name service error for name=aunarviajes.com type=A: Host not found",
+  "reconciliation": {
+    "canonical_repository_identity": "NOT_FOUND",
+    "hostinger_sent_exact_recipient": "NOT_FOUND",
+    "campaign_attribution": "UNRESOLVED"
+  },
+  "state": "REVIEW_REQUIRED",
+  "hard_rules": [
+    "Do not resend.",
+    "Do not infer campaign or organization ownership from the bounce alone.",
+    "Reconcile original send evidence before any CRM/suppression normalization beyond this event record."
+  ]
+}
