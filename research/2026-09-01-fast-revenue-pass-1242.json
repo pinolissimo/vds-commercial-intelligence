@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-01T12:42:00+02:00",
+  "workstream": "COLLABORATIONS",
+  "mode": "FAST_REVENUE_HUNT",
+  "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
+  "preflight_read": [
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "project/SOURCE_INTELLIGENCE_PROTOCOL.md",
+    "config/source-registry.json",
+    "project/workstreams/COLLABORATIONS.md",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-territory-frontier.json",
+    "views/source-coverage.md"
+  ],
+  "search_strategy": {
+    "delta_first": true,
+    "families": ["OFFICIAL_COMPANY","SPECIALIST_JOBS","AGENCY_OUTSOURCING","FREELANCE_MARKETPLACES","PROFESSIONAL_NETWORKS","NICHE_WORDPRESS_JOBS"],
+    "signals": ["freelance WordPress developer","Figma to WordPress","WooCommerce contractor","Elementor contractor","Core Web Vitals","white-label web development","external collaborator","remote Europe","worldwide contract"],
+    "territorial_focus": ["Spain ACTIVE_SCAN + Balearic UNDER_SEARCHED","Italy ACTIVE_SCAN","Remote Europe","Worldwide explicitly open to EU contractors"],
+    "stop_condition": "After the Koda North material hit, additional regional results were predominantly supplier-side agency/freelancer pages, stale listings, anonymous marketplace buyers or geography-restricted roles; marginal information gain fell below promotion value."
+  },
+  "material_new_candidates": [
+    {
+      "opportunity_id": "OPP-EU-KODA-NORTH-WORDPRESS-DEVELOPER-2026",
+      "state": "REVIEW_REQUIRED_ROLE_FRESHNESS_CONFLICT",
+      "why_material": "A secondary listing published 2026-08-03 reports a Europe-remote Koda North WordPress Developer opening requiring WordPress, PHP, HTML/CSS/JavaScript, custom themes/plugins, Git and API work; official Koda North identity and active Europe hiring are independently verified.",
+      "why_not_actionable": "The current official careers page lists five live roles and WordPress Developer is not among them. Exact current engagement model and role-specific official application route therefore remain unresolved.",
+      "dedup": {"repository":0,"gmail_sent":0,"hostinger_sent":0,"suppression":"CLEAR"}
+    }
+  ],
+  "rejected_or_not_promoted": [
+    {"candidate":"SiteCare — WordPress Developer Contract","reason":"Fresh and high-fit but authoritative listing limits candidates to LatAm, South Africa and Eastern Europe; Spain is outside the stated geography."},
+    {"candidate":"Alliance4Europe — freelance web developer","reason":"Excellent EU-only fit and direct email route, but the official page is explicitly CLOSED and the 21 June 2026 deadline has passed."},
+    {"candidate":"Shaheen Institute — institutional WordPress contract","reason":"Fresh named buyer and direct application email, but contractors must be GCC-based and the 23 August 2026 deadline has passed."},
+    {"candidate":"De La Fabrica — WordPress/WooCommerce","reason":"Internship period January-June 2026 is stale/expired and is not a current paying freelance contract."},
+    {"candidate":"Balearic/Mallorca agency scan","reason":"Altesa Studio, Staycreative, Profundi, Hupe, Aux Studio, Magnifiqus and similar results are supplier-side service pages without explicit current external-collaborator demand; Balearics remains UNDER_SEARCHED rather than LOW_YIELD_VERIFIED."},
+    {"candidate":"Italy regional scan","reason":"Bologna/Firenze/Bari/Palermo queries yielded supplier-side pages or previously unresolved/stale signals; Brahma remains an aggregator-only signal without a sufficiently authoritative route."},
+    {"candidate":"Anonymous Upwork WordPress/Elementor projects","reason":"Several fresh worldwide contract-to-hire signals exist but exact commercial buyer identity is not established, failing the hard identity gate."}
+  ],
+  "dedup_audit": {
+    "gmail_sent_koda_north":"0 matching Sent messages for Koda North / kodanorth.com.",
+    "hostinger_sent_koda_north":"0 official INBOX.Sent search matches for Koda North and 0 for kodanorth.com.",
+    "suppression_koda_north":"No Koda North identity/domain found in canonical suppression registry.",
+    "canonical_repo_koda_north":"No Koda North record before creation."
+  },
+  "channel_counts_after": {
+    "VERIFIED_DIRECT_EMAIL": 0,
+    "VERIFIED_FORM_PLATFORM": 24,
+    "REVIEW_REQUIRED": 44,
+    "SUPPRESSED": 49,
+    "HOLD": 10
+  },
+  "actionable_queue_changed": false,
+  "actionable_queue": ["Sapres Technologies GmbH","Wordune","Cayenne Global, LLC","Ajax Creative"],
+  "frontier_change": "Europe-remote software/web lane refreshed with Koda North as a material freshness-conflict candidate. Balearic Islands remains UNDER_SEARCHED after supplier-side results; Spain/Italy incomplete territories remain ACTIVE_SCAN. No geography was falsely advanced to LOW_YIELD_VERIFIED.",
+  "no_outreach": true,
+  "execution_gate": "Partner Hunt only"
+}
