@@ -7,9 +7,9 @@
 
 - **7 direct-email drafts** are prepared in Gmail for review/reference only.
 - **17 application/form/platform opportunities** have opportunity-specific execution copy in [`MONDAY-APPLICATION-COPY-PACK-2026-08-31.md`](MONDAY-APPLICATION-COPY-PACK-2026-08-31.md).
-- **23/24 direct-commercial opportunities are execution-ready at route level.**
+- **22 verified form/platform opportunities remain actionable in the current FAST_REVENUE channel view.** The historical 17-item Monday pack is not itself a live count.
+- **Global Service Impresa is now HOLD** after 1 Sep authoritative re-verification: the official role explicitly says `Remoto (tutta Italia)`, so Spain-based cross-border contractor eligibility is not established.
 - **DNA Agency** remains blocked pending exact current route re-verification.
-- **3 additional strong-fit opportunities remain HOLD** for contract/cross-border eligibility: Dato Digitale, Walkstone, CyberOptik.
 - Final organization-level dedup + suppression + Gmail/Hostinger Sent + freshness verification remains mandatory immediately before each real first contact.
 
 ## A. Direct email — 7 drafts prepared
@@ -41,37 +41,37 @@ The seven Gmail drafts are content-review artifacts. **Actual VDS commercial fir
 7. **Zmot Lab — READY.** Official external-P.IVA senior developer form.
 
 ### Tier 2 — strong agency/recurring fit
-8. **Global Service Impresa — READY.** Official form; freelance developer/creative, possible continuity.
-9. **Aderen — READY.** Aderen People application route; long-term freelance WordPress signal.
-10. **Vaivén Estudio — READY / ROUTE RESOLVED.** Actual public post asks for a remote freelance WordPress/Elementor programmer and explicitly says to write privately or send work examples. Use LinkedIn private message + 2–3 relevant portfolio examples.
-11. **Digityze — READY / ROUTE RESOLVED.** Official page states “Il nostro Network ti aspetta”; use official Network CTA/contact flow. Named founders and business emails are public fallback only.
-12. **Dream Big Design — READY.** Official P.IVA freelancer-network CTA.
-13. **Studiart — READY.** Official role-specific CV form.
+8. **Aderen — READY.** Aderen People application route; long-term freelance WordPress signal.
+9. **Vaivén Estudio — READY / ROUTE RESOLVED.** Actual public post asks for a remote freelance WordPress/Elementor programmer and explicitly says to write privately or send work examples. Use LinkedIn private message + 2–3 relevant portfolio examples.
+10. **Digityze — READY / ROUTE RESOLVED.** Official page states “Il nostro Network ti aspetta”; use official Network CTA/contact flow. Named founders and business emails are public fallback only.
+11. **Dream Big Design — READY.** Official P.IVA freelancer-network CTA.
+12. **Studiart — READY.** Official role-specific CV form.
 
 ### Tier 3 — viable with extra constraints
-14. **Hays España — READY AFTER CURRENT LISTING REFRESH.** Use recruiter/listing route; never infer end client.
-15. **Mindrift — READY.** Platform apply; remote/project-based.
-16. **Robert Half Contracting — READY WITH FIT CAVEAT.** Fresh Bari Frontend Developer Freelance listing reverified: project through Dec 2026, full-time, hybrid 2 days/week; Vue/React expected. Commercially valid, but hybrid Bari and framework requirements reduce fit versus WordPress-first leads.
+13. **Hays España — READY AFTER CURRENT LISTING REFRESH.** Use recruiter/listing route; never infer end client.
+14. **Mindrift — READY.** Platform apply; remote/project-based.
+15. **Robert Half Contracting — READY WITH FIT CAVEAT.** Fresh Bari Frontend Developer Freelance listing reverified: project through Dec 2026, full-time, hybrid 2 days/week; Vue/React expected. Commercially valid, but hybrid Bari and framework requirements reduce fit versus WordPress-first leads.
 
-### Blocked
+### Hold / blocked
+16. **Global Service Impresa — HOLD_GEO_ELIGIBILITY_ITALY_ONLY.** Official current developer/creative role is genuinely freelance/project-based and high-fit, but explicitly states `Remoto (tutta Italia)`. Do not submit from Spain unless authoritative evidence establishes cross-border Spain/EU contractor eligibility. Official form remains the only valid route.
 17. **DNA Agency — ROUTE REVIEW REQUIRED.** Strong P.IVA WordPress partner signal remains, but exact current application path was not safely re-resolved. No guessed email, no submission.
 
 ## C. Application copy
 
-All tailored application/DM/form texts are ready here:
+All tailored application/DM/form texts remain here:
 
 ➡️ [`reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md`](MONDAY-APPLICATION-COPY-PACK-2026-08-31.md)
 
-The copy avoids invented rates, availability, years of experience, end-client identities and unsupported claims.
+**Important:** copy text being present does not imply execution eligibility. Current canonical opportunity/channel state overrides historical pack labels.
 
 ## D. Monday operating model
 
-### 09:00 Partner Hunt pass
-1. Read canonical CRM + this pack + route matrix.
+### Partner Hunt pass
+1. Read canonical CRM + current channel/queue views + this pack.
 2. Re-run organization-level canonical/suppression/Sent dedup.
-3. Recheck freshness/route for the exact candidate being actioned.
+3. Recheck freshness, geography/remote eligibility and exact route for the candidate being actioned.
 4. Use the **official VDS sender** for email first contacts where available.
-5. Respect the existing hard daily first-contact cap and do not bypass explicit form/platform routes.
+5. Respect explicit form/platform routes; do not bypass them with generic business email.
 6. Verify every actual send/submission with evidence before CRM state advances.
 
 ### Public procurement
@@ -79,13 +79,13 @@ Never enters this run. User-managed report: [`MANUAL-PROCUREMENT-OPPORTUNITIES.m
 
 ## QA findings
 
-- No external first contact was sent during preparation.
+- No external first contact was sent during preparation or this FAST_REVENUE QA correction.
 - Seven email drafts are saved, not sent.
-- Gmail exact-recipient Sent check for the seven direct emails returned zero matches on 30 Aug.
-- Virtual Marketing Spain route is now **unblocked**: misleading Milanuncios slug, correct verified listing body.
-- Vaivén route is now **resolved** to private message/work examples from the actual public post.
-- Robert Half Bari role is currently live but downgraded in execution priority because of hybrid location + Vue/React requirements.
-- Digityze official Network CTA and named public business contacts were reverified.
-- DNA Agency remains the only one of the 24 direct-commercial group blocked by unresolved route.
+- Global Service Impresa was **downgraded from READY to HOLD on 1 Sep 2026** because authoritative current evidence explicitly limits the remote scope to Italy.
+- Gmail matches for Global Service are internal VDS reports, not commercial first contact; official Hostinger Sent search returned zero Global Service matches on 1 Sep.
+- Virtual Marketing Spain route remains unblocked: misleading Milanuncios slug, correct verified listing body.
+- Vaivén route remains resolved to private message/work examples from the actual public post.
+- Robert Half Bari role remains lower priority because of hybrid location + Vue/React requirements.
+- DNA Agency remains blocked by unresolved route.
 
-> Conversion principle: strongest verified buyer intent first; respect buyer channel; one organization = one first-contact history.
+> Conversion principle: strongest verified buyer intent first; respect buyer channel; one organization = one first-contact history; cross-border eligibility must be proven, not assumed.
