@@ -76,3 +76,8 @@ Una company canonica può avere più opportunity. Timeline append-only. Ogni inf
 - 40–70 lead realmente qualificati come primo target operativo.
 - Qualità prima della quantità.
 - KPI finale: `conversazioni → meeting → proposte → contratti → revenue`.
+
+## IT/ES scheduled acquisition chain — mandatory transactional contract
+La catena automatica IT/ES (`:00 Search Fanout → :15 Direct Route → :30 High-Yield Job → :45 Batch Dispatcher`) è regolata obbligatoriamente da `project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md`.
+
+Per questa catena `READY_TO_APPLY` significa **certificato ed eseguibile**, non candidato provvisorio. I producer devono completare dedup globale e verifica route immediatamente prima della scrittura in coda; il dispatcher ripete il controllo come ultima difesa. La soglia batch è calcolata esclusivamente sul numero finale `EXECUTABLE_READY_COUNT`, mai sul conteggio grezzo della coda. Ogni ciclo dispatcher deve essere auditabile, inclusi i cicli con zero invii. Il protocollo IT/ES prevale su qualsiasi precedente regola meno restrittiva relativa a READY, dedup, route o batch dispatch.
