@@ -1,0 +1,81 @@
+{
+  "run_at": "2026-09-01T07:02:04+02:00",
+  "workstream": "LOCAL_SME_999",
+  "mode": "RESEARCH_DISCOVERY_QUALIFICATION_ONLY",
+  "territory": {"country":"Spain","region":"Catalonia","province":"Barcelona","comarca":"Garraf","municipality":"Olivella","state":"ACTIVE_SCAN"},
+  "source_strategy": "Expand new hospitality/recreation surface in Mas Mila/Mas Mestre using local directories, current OTA inventory, exact-name/phone search and independent reputation signals. Search results are discovery routers only; mirrored OTA/review pages are not counted as independent lineages.",
+  "new_unique_screened": 3,
+  "screened_total_before": 305,
+  "screened_total_after": 308,
+  "discoveries": [
+    {
+      "business": "Villa Sitges Mas Mestre",
+      "activity": "Short-stay accommodation",
+      "cluster": "Mas Mestre",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "evidence": [
+        {"source":"TodosBiz","role":"IDENTITY_CONTACT_DISCOVERY","tier":"T3_AGGREGATOR","finding":"Carrer del Segre 16, Olivella; phone +34 660 615 172, public email xavier_planas@hotmail.com, Facebook/Tripadvisor routes; explicitly reports no owned website."},
+        {"source":"Google local listing","role":"REPUTATION_FRESHNESS","tier":"T4_SIGNAL","finding":"Exact address/phone identity; 4.2/5 from 11 reviews."},
+        {"source":"Central de Reservas / Amimir current inventory","role":"CURRENT_ACTIVITY_CORROBORATION","tier":"T3_AGGREGATOR","finding":"Current bookable accommodation inventory at Carrer del Segre 16 with detailed property services; OTA pages are one distribution family, not owned-site evidence."}
+      ],
+      "website_gap": "INFERRED_NOT_VERIFIED: exact-name pass found OTA/directory inventory but no functional dedicated owned domain. A Facebook page exists; ownership/activity still TO_VERIFY.",
+      "reputation": "TO_VERIFY: 4.2/5 from 11 local reviews is a usable signal but too small for strong reputation qualification; review themes include one serious property-condition complaint and several positive stays.",
+      "contactability": "VERIFIED_PUBLIC_DIRECTORY_ROUTE: phone and email exposed by a current directory; ownership must be reconfirmed before any later contact stage.",
+      "commercial_fit": "INFERRED_MEDIUM_HIGH: direct-booking economics could support EUR999 if the property is independently operated and lacks an owned site."
+    },
+    {
+      "business": "Restaurante Villa Reis",
+      "activity": "Restaurant",
+      "cluster": "Mas Mila / Can Mila",
+      "state": "REPUTATION_RISK_REVIEW_REQUIRED",
+      "evidence": [
+        {"source":"Paginas Amarillas","role":"IDENTITY_CONTACT_DISCOVERY","tier":"T3_AGGREGATOR","finding":"Avinguda Mas Mila 6, Olivella; phone 938 968 861; restaurant category; no owned site exposed."},
+        {"source":"Sluurpy","role":"REPUTATION_CORROBORATION","tier":"T3_AGGREGATOR","finding":"Reports very small and inconsistent reputation corpus: Google 5.0/5 and Tripadvisor 3.0/5, six total reviews shown."},
+        {"source":"Tripadvisor Casa Colina page","role":"LOCAL_CORROBORATION","tier":"T3_AGGREGATOR","finding":"Mentions Restaurante Villa Reis as a nearby Olivella barbecue restaurant, corroborating local identity but not current ownership."}
+      ],
+      "website_gap": "TO_VERIFY: no owned domain established in this pass.",
+      "reputation": "REPUTATION_RISK: cross-platform inconsistency and very small volume; one isolated low platform score is not enough for rejection but blocks promotion.",
+      "contactability": "Phone only; no email guessed.",
+      "commercial_fit": "INFERRED_MEDIUM if current activity and acceptable reputation are verified."
+    },
+    {
+      "business": "Piscina De Mas Mestre",
+      "activity": "Public swimming pool / recreation facility",
+      "cluster": "Mas Mestre",
+      "state": "REJECTED_NONCOMMERCIAL_FIT",
+      "evidence": [
+        {"source":"current local directory","role":"IDENTITY_ACTIVITY","tier":"T3_AGGREGATOR","finding":"08818 Olivella; phone +34 686 660 702; public swimming pool; current daily hours."},
+        {"source":"specialist pool directory","role":"REPUTATION_CORROBORATION","tier":"T3_AGGREGATOR","finding":"4.3/5 from 65 Google Business Profile opinions; identifies the venue as a public pool."},
+        {"source":"Ajuntament d'Olivella news","role":"INSTITUTIONAL_CORROBORATION","tier":"T1_INSTITUTIONAL","finding":"July 3, 2026 municipal notice refers to the piscina de Mas Mestre as local public infrastructure."}
+      ],
+      "reason": "Public/community facility rather than an independently addressable SME for the EUR999 commercial offer. Reputation is acceptable but commercial-quality gate fails by entity type."
+    }
+  ],
+  "deep_review_updates": [
+    {
+      "business": "Villa Moments",
+      "state": "RAW_DISCOVERY_REVIEW_REQUIRED",
+      "change": "Diputacio municipal census confirms tourist-accommodation license at Carrer Muntanyes de Prades 33 (license 2025-02-19; modified 2025-03-25). Sitges Hills Villas currently markets the exact property with booking request, EUR1,250-2,950/week pricing and multiple 5/5 Airbnb testimonials. This proves active commercial demand but is a third-party management/distribution website, not yet proof of a property-owned domain. Direct-operator identity and owned-site gap remain open."
+    }
+  ],
+  "secondary_workstreams": {
+    "COLLABORATIONS": {"state":"NO_NEW_CANONICAL_PROMOTION","note":"Fresh WordPress recurring-maintenance search did not produce a materially better verified buyer identity than existing collaboration signals; no duplicate opportunity created."},
+    "EU_PROJECTS": [
+      {"signal":"MEDCONNECT — GA 101296089","state":"DISCOVERY_WATCH_SIGNAL","why":"CORDIS confirms signature 2026-05-20, start 2026-09-01 and a Mediterranean connectivity/platform objective. Potential dissemination/platform fit is plausible, but Communication/Dissemination WP owner, web need and buyer path remain unverified; no promotion."}
+    ]
+  },
+  "next_local_queue": [
+    "Villa Sitges Mas Mestre exact operator/legal identity + owned-domain/social/reputation-lineage review",
+    "Restaurante Villa Reis current-activity + reputation-pattern + domain/social review",
+    "Al Son owned-domain/social/reputation-pattern + phone reconciliation",
+    "Can Suria Restaurante Braseria trade-name/domain/social/reputation review",
+    "Villa Moments direct-operator identity/owned-domain reconciliation",
+    "Queviures Lafita exact local/social/domain/reputation review",
+    "La Tasqueta del Garraf current-activity/reputation/domain review",
+    "continue Olivella municipal census unreviewed rows and Iberinform/eInforma E-Z"
+  ],
+  "outreach_actions": 0,
+  "applications_submitted": 0,
+  "forms_submitted": 0,
+  "first_contacts_created": 0
+}
