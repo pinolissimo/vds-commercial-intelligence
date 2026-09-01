@@ -1,0 +1,71 @@
+{
+  "schema_version":"1.0",
+  "run_at":"2026-09-01T05:37:20+02:00",
+  "mode":"FAST_REVENUE_HUNT_DELTA_FIRST_MAX_PRACTICAL_BREADTH",
+  "source_of_truth":"pinolissimo/vds-commercial-intelligence@main",
+  "no_outreach":true,
+  "execution_gate":"Partner Hunt only",
+  "canonical_inputs_read":[
+    "project/PROJECT_INSTRUCTIONS.md",
+    "project/RESOURCE_OPTIMIZATION_PROTOCOL.md",
+    "config/source-registry.json",
+    "governance/suppression-registry.json",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "opportunities/OPP-IT-GLOBALSERVICE-FREELANCE-DEVELOPER.json"
+  ],
+  "search_strategy":{
+    "principle":"delta-first; deepen only evidence gaps that can change promotion state; rotate territory/source/sector when marginal information gain falls",
+    "territory_focus":["Spain ACTIVE_SCAN/UNDER_SEARCHED frontier","Italy ACTIVE_SCAN frontier","Remote Europe/worldwide"],
+    "sector_focus":["web/digital agencies","agency outsourcing","WordPress/Elementor recurring collaboration","WCAG/WPO","named-buyer marketplace demand"],
+    "route_focus":["official application forms","explicit application emails","platform routes"],
+    "discovery_only_sources_are_not_promotion_evidence":true
+  },
+  "material_change":{
+    "organization":"Global Service Impresa",
+    "opportunity_id":"OPP-IT-GLOBALSERVICE-FREELANCE-DEVELOPER",
+    "previous_state":"READY_FOR_DAILY_OUTREACH_REVIEW / actionable form-platform",
+    "new_state":"HOLD_GEO_ELIGIBILITY_ITALY_ONLY",
+    "authoritative_url":"https://www.globalserviceimpresa.it/lavora-con-noi/",
+    "verified_need":"Current official Freelance Developer / Creative project collaboration; WordPress, HTML/CSS/JS, e-commerce, custom software, integrations/automation; Partita IVA/regime forfettario; compensation per project; possible continuing collaboration.",
+    "route":"Official application form only.",
+    "blocking_evidence":"Official current page explicitly states 'Remoto (tutta Italia)'. Remote work is therefore verified for Italy, but cross-border eligibility from Spain is not established.",
+    "qa_reason":"Prior execution-ready classification treated remote-Italy evidence as sufficient for a Spain-based contractor. This violates evidence-before-inference geography gate.",
+    "dedup":{
+      "canonical_first_contact":"CLEAR",
+      "gmail_sent":"Two matches were internal VDS reports/self-communications, not commercial first contact.",
+      "hostinger_sent":"0 matches in official INBOX.Sent search on 2026-09-01",
+      "result":"CLEAR, but geography blocks execution independently"
+    }
+  },
+  "other_current_signals_not_promoted":[
+    {"signal":"Fresh recurring WordPress + automation marketplace work for a Spanish agency","state":"REJECTED_IDENTITY_GATE","reason":"Buyer organization is anonymous on the accessible listing; exact commercial identity cannot be established."},
+    {"organization":"Exlibris","state":"NOT_PROMOTED_TRUTHFUL_FIT","reason":"Freelance web-design pool requires strong German and deep South-Tyrol cultural knowledge; insufficient truthful fit for FAST_REVENUE priority."},
+    {"organization":"DISOTECH","state":"NOT_PROMOTED_STALE","reason":"Remote-Europe freelance WordPress signal is approximately eight months old and not fresh enough for HOT/current promotion."}
+  ],
+  "counts_before":{"VERIFIED_DIRECT_EMAIL":1,"VERIFIED_FORM_PLATFORM":23,"REVIEW_REQUIRED":38,"SUPPRESSED":48,"HOLD":9},
+  "counts_after":{"VERIFIED_DIRECT_EMAIL":1,"VERIFIED_FORM_PLATFORM":22,"REVIEW_REQUIRED":38,"SUPPRESSED":48,"HOLD":10},
+  "compact_queue_after":[
+    {"rank":1,"organization":"Sapres Technologies GmbH","priority":"HOT_PLUS","route":"VERIFIED_FORM_PLATFORM"},
+    {"rank":2,"organization":"Ajax Creative","priority":"HOT","route":"VERIFIED_FORM_PLATFORM"},
+    {"rank":3,"organization":"SO Design Online","priority":"HOT","route":"VERIFIED_DIRECT_EMAIL"}
+  ],
+  "frontier_changes":[
+    "Campania remains ACTIVE_SCAN; Global Service is recorded as a strong current buyer signal but geography hold.",
+    "Remote frontier records Italy-only scope as a dominant cross-border blocker, not an actionable remote-EU signal.",
+    "No territory was incorrectly promoted to LOW_YIELD_VERIFIED from a shallow pass."
+  ],
+  "files_changed":[
+    "opportunities/OPP-IT-GLOBALSERVICE-FREELANCE-DEVELOPER.json",
+    "views/fast-revenue-channel-status.json",
+    "views/fast-revenue-queue.json",
+    "views/fast-revenue-territory-frontier.json",
+    "reports/MONDAY-DIRECT-OUTREACH-PACK-2026-08-31.md",
+    "reports/MONDAY-APPLICATION-COPY-PACK-2026-08-31.md",
+    "research/2026-09-01-fast-revenue-pass-0537.json"
+  ],
+  "outcome":"No new all-gates-clear paying-work opportunity promoted. One materially unsafe actionable classification removed before Partner Hunt execution. Precision improved without inflating counts."
+}
