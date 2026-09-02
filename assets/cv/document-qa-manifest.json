@@ -1,52 +1,87 @@
 {
-  "schema_version": "1.3",
-  "verified_at": "2026-09-01T18:59:00Z",
-  "updated_at": "2026-09-02T07:08:00Z",
+  "schema_version": "1.4",
+  "verified_at": "2026-09-02T10:55:00Z",
+  "updated_at": "2026-09-02T10:55:00Z",
   "status": "PASS",
-  "purpose": "Canonical document-QA evidence and runtime attachment contract for VDS IT/ES automated application dispatcher.",
+  "purpose": "Canonical document-QA evidence and PUBLIC-LINK delivery contract for VDS automated professional applications.",
   "qa_policy": {
-    "master_pdf_reuse_allowed": true,
     "approved_originals_only": true,
     "automatic_tailoring_forbidden": true,
     "variant_requires_explicit_owner_approval": true,
-    "hash_must_match_before_send": true,
     "google_drive_access_requires_explicit_owner_permission": true,
-    "hostinger_attachment_encoding": "base64",
-    "hostinger_attachment_content_type": "application/pdf",
-    "send_block_on_hash_mismatch_or_bridge_failure": true
+    "automatic_delivery_mode": "PUBLIC_LINK_ONLY",
+    "automatic_application_attachments_forbidden": true,
+    "public_link_must_resolve_before_send": true,
+    "language_mapping_required": true
+  },
+  "public_manifest": {
+    "repository": "pinolissimo/Portfolio",
+    "branch": "main",
+    "path": "documents/public-document-manifest.json",
+    "url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/public-document-manifest.json",
+    "status": "PUBLIC_AVAILABLE"
   },
   "masters": {
     "ES_MASTER_QA": {
-      "language":"es","library_file_id":"file_00000000f0608211bf1d00a3a8e39f1f","source_name":"Giuseppe_Allocca_CV_Generico_ES(1).pdf","send_filename":"Giuseppe_Allocca_CV_ES.pdf","size_bytes":137287,"sha256":"42ef310e73fbc747570571f519d858fe701dc3fe3d1935c2da736d8e259ac560","pages":2,
-      "runtime_base64_bridge":{"mode":"PAGED_TEXT","wrapped_file_id":"file_000000006b388210a18830f1d66ce620","wrapped_library_file_id":"libfile_1d5ae75d44c4819194716f7c69539bc5","library_path":"/VDS/RuntimeBridge/CV/ES_MASTER_APPROVED_WRAPPED.b64","line_count":23,"read_window_lines":2,"base64_length":183052,"decoded_size_bytes":137287,"decoded_sha256":"42ef310e73fbc747570571f519d858fe701dc3fe3d1935c2da736d8e259ac560"},
-      "qa_result":"PASS"
+      "language": "es",
+      "source_name": "Giuseppe_Allocca_CV_Generico_ES(1).pdf",
+      "size_bytes": 137287,
+      "sha256": "42ef310e73fbc747570571f519d858fe701dc3fe3d1935c2da736d8e259ac560",
+      "pages": 2,
+      "public_path": "documents/Giuseppe_Allocca_CV_Generico_ES.pdf",
+      "public_html_url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_ES.pdf",
+      "public_raw_url": "https://raw.githubusercontent.com/pinolissimo/Portfolio/main/documents/Giuseppe_Allocca_CV_Generico_ES.pdf",
+      "public_size_bytes": 137287,
+      "github_blob_sha": "a5f6cd81ec541b507b7a35d2e083e58cd21948ff",
+      "qa_result": "PASS",
+      "public_status": "PUBLIC_AVAILABLE"
     },
     "IT_MASTER_QA": {
-      "language":"it","library_file_id":"file_00000000385481f4875c7e6c34a82273","source_name":"Giuseppe_Allocca_CV_Generico_IT(1).pdf","send_filename":"Giuseppe_Allocca_CV_IT.pdf","size_bytes":133498,"sha256":"db92237096c502fa7291d10c4e6fbb3e26bf39ffddcb5ea7d3f735f8cce1830f","pages":2,
-      "runtime_base64_bridge":{"mode":"PAGED_TEXT","wrapped_file_id":"file_0000000095b88210a591f6f3161bb848","wrapped_library_file_id":"libfile_1e33f79e56e48191b719e8141491f27c","library_path":"/VDS/RuntimeBridge/CV/IT_MASTER_APPROVED_WRAPPED.b64","line_count":23,"read_window_lines":2,"base64_length":178000,"decoded_size_bytes":133498,"decoded_sha256":"db92237096c502fa7291d10c4e6fbb3e26bf39ffddcb5ea7d3f735f8cce1830f"},
-      "qa_result":"PASS"
+      "language": "it",
+      "source_name": "Giuseppe_Allocca_CV_Generico_IT(1).pdf",
+      "size_bytes": 133498,
+      "sha256": "db92237096c502fa7291d10c4e6fbb3e26bf39ffddcb5ea7d3f735f8cce1830f",
+      "pages": 2,
+      "public_path": "documents/Giuseppe_Allocca_CV_Generico_IT.pdf",
+      "public_html_url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_IT.pdf",
+      "public_raw_url": "https://raw.githubusercontent.com/pinolissimo/Portfolio/main/documents/Giuseppe_Allocca_CV_Generico_IT.pdf",
+      "public_size_bytes": 133498,
+      "github_blob_sha": "b6992c9c05cc5fb8dfdae075c2abbecc608eaecd",
+      "qa_result": "PASS",
+      "public_status": "PUBLIC_AVAILABLE"
     },
     "EN_MASTER_QA": {
-      "language":"en","library_file_id":"file_00000000698481f5b1be1a5a6e5f7e2b","source_name":"Giuseppe_Allocca_Master_CV_EN(1).pdf","send_filename":"Giuseppe_Allocca_CV_EN.pdf","size_bytes":134861,"sha256":"8bef1c5d81d0ab974e23544e9f2040920da7e367a33535c9eddc36de46434fed","pages":2,
-      "runtime_base64_bridge":{"mode":"PAGED_TEXT","wrapped_file_id":"file_00000000ccec81f49f770081c7054702","wrapped_library_file_id":"libfile_9f8da86d2fc88191a72f3bc415818787","library_path":"/VDS/RuntimeBridge/CV/EN_MASTER_APPROVED_WRAPPED.b64","line_count":23,"read_window_lines":2,"base64_length":179816,"decoded_size_bytes":134861,"decoded_sha256":"8bef1c5d81d0ab974e23544e9f2040920da7e367a33535c9eddc36de46434fed"},
-      "qa_result":"PASS"
+      "language": "en",
+      "source_name": "Giuseppe_Allocca_Master_CV_EN(1).pdf",
+      "size_bytes": 134861,
+      "sha256": "8bef1c5d81d0ab974e23544e9f2040920da7e367a33535c9eddc36de46434fed",
+      "pages": 2,
+      "public_path": "documents/Giuseppe_Allocca_Master_CV_EN.pdf",
+      "public_html_url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_Master_CV_EN.pdf",
+      "public_raw_url": "https://raw.githubusercontent.com/pinolissimo/Portfolio/main/documents/Giuseppe_Allocca_Master_CV_EN.pdf",
+      "public_size_bytes": 134861,
+      "github_blob_sha": "81f23ba038b5e5e33a6ce2cdb1b458775d7438f5",
+      "qa_result": "PASS",
+      "public_status": "PUBLIC_AVAILABLE"
     }
   },
-  "ready_assignments": {
-    "org:amomarketing.es":"ES_MASTER_QA","org:logorapid.com":"ES_MASTER_QA","org:bpnexus.com":"IT_MASTER_QA","org:brainershub.com":"EN_MASTER_QA","org:kuna.it":"IT_MASTER_QA","org:mywayspain.es":"ES_MASTER_QA","org:creative.it":"IT_MASTER_QA","org:acidamarketing.com":"ES_MASTER_QA","org:lefthandedstudio.com":"IT_MASTER_QA","org:doozy.it":"IT_MASTER_QA","org:2pdx.it":"IT_MASTER_QA","org:eclettica.me":"IT_MASTER_QA","org:arakne.it":"IT_MASTER_QA","org:kfadv.it":"IT_MASTER_QA","org:hubaffiliations.com":"IT_MASTER_QA","org:wecomm.es":"ES_MASTER_QA","org:mutart.eu":"IT_MASTER_QA"
-  },
-  "runtime_attachment_contract": {
-    "preferred_bridge":"PAGED_PREENCODED_BASE64_LIBRARY_TEXT",
-    "steps":[
-      "resolve approved master profile",
-      "read wrapped_file_id sequentially in 2-line windows from line 1 through line_count",
-      "extract only the Base64 payload text from returned file lines and concatenate in exact line order, removing presentation labels and line separators",
-      "require concatenated character count to equal base64_length",
-      "use concatenated text unchanged as Hostinger attachment content with encoding base64 and contentType application/pdf",
-      "after send verify Sent attachment filename and exact sizeBytes equals decoded_size_bytes",
-      "on any truncated/missing line, length mismatch, provider ambiguity or attachment mismatch fail closed and never blind retry"
+  "delivery_contract": {
+    "mode": "LINK_ONLY",
+    "steps": [
+      "resolve recipient language and approved master profile",
+      "read the canonical public manifest",
+      "verify the corresponding public GitHub document still exists and matches expected filename and byte size",
+      "include the verified public HTML URL when CV/document evidence is required or materially beneficial",
+      "send with attachments=[]",
+      "after provider send verify Hostinger Sent and attachments array EMPTY",
+      "on broken/missing public URL repair canonical link state and retry on the next safe cycle; never silently strand executable READY work"
     ],
-    "google_drive":"FORBIDDEN_WITHOUT_EXPLICIT_OWNER_PERMISSION",
-    "failure_mode":"FAIL_CLOSED_DOCUMENT_QA"
+    "language_map": {
+      "it": "IT_MASTER_QA",
+      "es": "ES_MASTER_QA",
+      "en": "EN_MASTER_QA"
+    },
+    "google_drive": "FORBIDDEN_WITHOUT_EXPLICIT_OWNER_PERMISSION",
+    "legacy_base64_bridge": "DEPRECATED_NOT_FOR_AUTOMATIC_DELIVERY"
   }
 }
