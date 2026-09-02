@@ -1,0 +1,43 @@
+{
+  "run_id": "direct-route-closer-20260902T1837Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "starting_backlog": 2,
+  "starting_ready": 0,
+  "candidates_closed": 2,
+  "ready_added": 0,
+  "manual_route": 2,
+  "explicit_no_freelance": 0,
+  "stale": 0,
+  "duplicates": 0,
+  "route_failures": 0,
+  "ending_ready": 0,
+  "elapsed_seconds": 75,
+  "ready_closures_per_minute": 0.0,
+  "total_closures_per_minute": 1.6,
+  "source_fanout_run": "search-fanout-20260902T1827Z",
+  "closures": [
+    {
+      "canonical_identity_key": "org:salentofactory.com",
+      "organization": "Salento Factory",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "fit_score": 99,
+      "route": "VERIFIED_OFFICIAL_FREELANCE_APPLICATION_FORM",
+      "evidence": "Official careers page current 2026-09-02 explicitly seeks freelance professionals, including WordPress Expert; remote freelancers outside Lecce accepted; portfolio required; exact candidature route is dedicated form with PDF CV upload.",
+      "blocker": "Dispatcher is not certified to execute this form. info@salentofactory.com is a generic company contact and must not substitute the careers form."
+    },
+    {
+      "canonical_identity_key": "org:estroagency.it",
+      "organization": "Estro Agency / YUBA S.r.l.",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "fit_score": 94,
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "evidence": "Official careers page current 2026-09-02 says talent search never stops, explicitly welcomes Web developer spontaneous CVs, and exposes a dedicated CV-upload application form. Third-party current demand evidence also shows freelance/P.IVA web/UX roles, but authoritative execution remains the official form.",
+      "blocker": "Dispatcher is not certified to execute the official CV-upload form; no authoritative direct application email is published on the careers page."
+    }
+  ],
+  "mailbox_jit": "NOT_RUN_NO_CANDIDATE_REACHED_PRE_READY_EMAIL_ROUTE_GATE",
+  "result": "SUCCESS_ALL_CURRENT_FANOUT_SURVIVORS_CLOSED_NO_FALSE_READY",
+  "external_actions": "NONE",
+  "dispatch_lease": "NOT_ACQUIRED"
+}
