@@ -1,0 +1,72 @@
+{
+  "run_id": "high-yield-final-qualifier-20260902T2042Z",
+  "worker": "VDS_HIGH_YIELD_FINAL_QUALIFIER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "DEEP_FIT_RANKING_FINAL_READY_CERTIFICATION_STATE_WRITE_ONLY",
+  "starting_ready_to_apply": 0,
+  "ending_ready_to_apply": 0,
+  "candidates_ranked": 6,
+  "deep_checked": 2,
+  "ready_added": 0,
+  "elapsed_time_seconds": 96,
+  "ready_added_per_minute": 0.0,
+  "ranking_basis": "Consumed latest shared queue and newest Direct Route closure first. The 20:35Z Direct Route run had already closed Lucasweb as ALREADY_CONTACTED, Fabrico and Avada as MANUAL_ROUTE_REQUIRED, and Atomica as LEGAL_GEOGRAPHIC_BLOCK, so stable route/identity work inside TTL was not repeated. Secondary work was limited to the best unresolved direct-email/backlog survivors with plausible READY conversion.",
+  "deep_checks": [
+    {
+      "canonical_identity_key": "org:visioni.info",
+      "organization": "Visioni",
+      "fit_score": 95,
+      "state": "REVIEW_REQUIRED_FRESHNESS",
+      "route": "DIRECT_EMAIL_VISIBLE_ON_OFFICIAL_SITE_BUT_VACANCY_FRESHNESS_NOT_CERTIFIED",
+      "recipient": "info@visioni.info",
+      "evidence": "Official pages still expose Web Designer and Web Developer freelance collaboration language with HTML/CSS/JavaScript, PHP/MySQL and CMS including WordPress, and the official contact page exposes info@visioni.info. However the site's visible news/currentness signals are overwhelmingly 2013-2016 and the open-position pages are undated, so current demand cannot be certified merely because the pages remain online.",
+      "block_reason": "Fresh authoritative demand date/current hiring signal unresolved. Unknown mandatory freshness gate prevents READY."
+    },
+    {
+      "canonical_identity_key": "org:evosistemi.com",
+      "organization": "Evo Sistemi",
+      "fit_score": 97,
+      "state": "ROUTE_UNRESOLVED",
+      "route": "CURRENT_OFFICIAL_COLLABORATION_PAGE_WITH_CALL_WHATSAPP_AUDIT_PATHS",
+      "evidence": "Current official Lavora con noi page explicitly invites web designers, developers and UX professionals to collaborate on digital projects and highlights websites, SEO, cybersecurity, AI, performance and related skills. Current official company pages confirm WordPress, WooCommerce, PrestaShop, UX, security, maintenance, accessibility and performance work. The collaboration page's prescribed next steps are audit, founder call and WhatsApp; the site's general info@evosistemi.com address is not presented as the exact application/collaboration email route.",
+      "block_reason": "No exact authoritative dispatcher-executable application email route established; generic company email substitution is forbidden."
+    }
+  ],
+  "trusted_current_closures_not_researched_again": [
+    {"canonical_identity_key":"org:lucasweb.it","state":"ALREADY_CONTACTED","reason":"Hostinger UID 206 organization-level FIRST_CONTACT already proven by Direct Route within TTL."},
+    {"canonical_identity_key":"org:fabrico.digital","state":"MANUAL_ROUTE_REQUIRED","reason":"Official application form plus unresolved Milan work-location compatibility; stable fresh closure within TTL."},
+    {"canonical_identity_key":"org:atomicastudio.com","state":"LEGAL_GEOGRAPHIC_BLOCK","reason":"Official role requires two days on-site Rome; stable fresh closure within TTL."},
+    {"canonical_identity_key":"org:avada.com","state":"MANUAL_ROUTE_REQUIRED","reason":"Official careers application form required for remote contractor roles; dispatcher form support not certified."}
+  ],
+  "mailbox_incremental_reconciliation": {
+    "performed": false,
+    "reason": "No candidate passed freshness/route executability before dedup-mailbox stage; mailbox scans would have been redundant. Dispatcher will JIT reconcile any future promotion."
+  },
+  "queue_write": "NO_PROMOTION_NO_QUEUE_REPLACEMENT_REQUIRED; LATEST_QUEUE_READ_EMPTY",
+  "gate_counts": {
+    "manual_route_required": 2,
+    "route_unresolved": 1,
+    "freshness_review": 1,
+    "legal_geographic_block": 1,
+    "already_contacted": 1,
+    "explicit_no_freelance": 0,
+    "ready_added": 0
+  },
+  "downstream_dispatcher_acceptance_rate": {
+    "rolling_observed_certifications": 13,
+    "dispatcher_accepted": 12,
+    "dispatcher_jit_rejected": 1,
+    "rate": 0.923,
+    "latest_observed_dispatch": "ONDEUEV_UID_207_AND_LA_TEVA_WEB_UID_208_VERIFIED_SENT",
+    "quality_adjusted_accepted": 11,
+    "quality_adjusted_rate": 0.846,
+    "note": "Adds the two latest verified dispatcher successes to the prior rolling window while retaining the known historical quality regression adjustment."
+  },
+  "outbound_actions": "NONE",
+  "dispatch_lease": "NOT_ACQUIRED",
+  "result": "SUCCESS_ZERO_READY_QUALITY_PRESERVED"
+}
