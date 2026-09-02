@@ -1,0 +1,103 @@
+{
+  "run_id": "high-yield-final-qualifier-20260902T1946Z",
+  "worker": "VDS_HIGH_YIELD_FINAL_QUALIFIER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "DEEP_FIT_RANKING_FINAL_READY_CERTIFICATION_STATE_WRITE_ONLY",
+  "starting_ready_to_apply": 1,
+  "ending_ready_to_apply": 2,
+  "candidates_ranked": 6,
+  "deep_checked": 2,
+  "ready_added": 1,
+  "elapsed_time_seconds": 175,
+  "ready_added_per_minute": 0.343,
+  "ranking_basis": "Consumed current shared backlog and newest Direct Route closures first. Quality Web and Brahma remain route-unresolved; QuoLAB remains form-only/manual within TTL. Because the executable queue was only one, limited secondary discovery targeted current Spanish agency web-development talent routes. La Teva Web ranked first and Madriz Agency second; only survivors likely to cross READY gates received deeper checks.",
+  "ready_promotions": [
+    {
+      "canonical_identity_key": "org:latevaweb.com",
+      "organization": "La Teva Web SL",
+      "fit_score": 97,
+      "state": "READY_TO_APPLY",
+      "route": "VERIFIED_DIRECT_EMAIL",
+      "recipient": "rrhh@latevaweb.com",
+      "opportunity_url": "https://www.latevaweb.com/trabajo",
+      "reason": "Current official careers page states the agency is always open to new talent, names web programming, content layout and web design among team profiles, and gives rrhh@latevaweb.com as an explicit CV route. Current official service pages confirm WordPress, WooCommerce, custom web development, UX/UI, security, loading-speed and SEO delivery, producing a strong truthful VDS fit and recurring agency-work potential.",
+      "contract_model_gate": "PASS_NO_EXPLICIT_AUTHORITATIVE_NO_FREELANCE_NO_CONTRACTOR_NO_EXTERNAL_COLLABORATOR_EXCLUSION",
+      "geography_gate": "PASS_SPAIN_BASED_NO_MANDATORY_RESIDENCY_OR_CROSS_BORDER_EXCLUSION_FOUND",
+      "document_mapping": "ES_MASTER_QA_PUBLIC_LINK_PASS",
+      "dedup": "CLEAR_LATEST_QUEUE_AND_CANONICAL_INDEX; GITHUB_SEARCH_NO_LATEVAWEB_FIRST_CONTACT; HOSTINGER_SENT_FULL_AVAILABLE_HISTORY_202_MESSAGES_UID_1_THROUGH_206_EXHAUSTIVELY_CHECKED_NO_MATCH; GMAIL_SENT_EXACT_RECIPIENT_ZERO"
+    }
+  ],
+  "blocked_or_deferred": [
+    {
+      "canonical_identity_key": "org:qualityweb.it",
+      "organization": "Quality Web SRL",
+      "state": "ROUTE_UNRESOLVED",
+      "block_reason": "Strong freelance WordPress/Elementor/WooCommerce signal remains third-party; no exact company-controlled current vacancy route has been resolved."
+    },
+    {
+      "canonical_identity_key": "org:brahma.it",
+      "organization": "Brahma srl",
+      "state": "ROUTE_UNRESOLVED",
+      "block_reason": "Promising freelance/P.IVA WordPress/Shopify signal but canonical company demand, exact authoritative route and geography remain unresolved."
+    },
+    {
+      "canonical_identity_key": "org:quolab.it",
+      "organization": "Studio SBS SRL / QuoLAB",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "block_reason": "Current authoritative application route is a form; no email substitution permitted."
+    },
+    {
+      "canonical_identity_key": "org:madrizagency.com",
+      "organization": "Madriz Agency",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "block_reason": "Current working-together page exposes a dedicated application form; published work@ address was not treated as an exact application-email substitute."
+    },
+    {
+      "canonical_identity_key": "org:nokeon.com",
+      "organization": "Nokeon",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "block_reason": "Current official web-developer route is a careers form with CV; generic company email substitution is forbidden."
+    }
+  ],
+  "mailbox_incremental_reconciliation": {
+    "performed": true,
+    "candidate": "org:latevaweb.com",
+    "hostinger_sent_total_messages": 202,
+    "hostinger_full_history_pages_checked": 3,
+    "hostinger_fresh_latest_uid": 206,
+    "hostinger_match": false,
+    "gmail_exact_recipient_match": false
+  },
+  "document_qa": {
+    "manifest_status": "PASS",
+    "verified_at": "2026-09-02T10:55:00Z",
+    "language": "es",
+    "public_url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_ES.pdf",
+    "delivery_mode": "LINK_ONLY"
+  },
+  "downstream_dispatcher_acceptance_rate": {
+    "rolling_observed_certifications": 11,
+    "dispatcher_accepted": 10,
+    "dispatcher_jit_rejected": 1,
+    "rate": 0.909,
+    "latest_observed_dispatch": "LUCASWEB_SENT_HOSTINGER_UID_206",
+    "quality_adjusted_accepted": 9,
+    "quality_adjusted_rate": 0.818,
+    "note": "The known historical Cantabria organization-level dedup regression remains quality-adjusted out. Ondeuev and La Teva Web are not included until Dispatcher JIT resolves them."
+  },
+  "gate_counts": {
+    "manual_route_required": 3,
+    "route_unresolved": 2,
+    "freshness_review": 0,
+    "explicit_no_freelance": 0,
+    "duplicates_blocking_promoted_candidate": 0,
+    "ready_added": 1
+  },
+  "queue_write": "PERFORMED_SINGLE_BATCH_MERGE; EXISTING_ONDEUEV_PRESERVED; LA_TEVA_WEB_RESERVED_FOR_BATCH_DISPATCHER; POST_WRITE_IDENTITY_VERIFIED_EXACTLY_ONCE",
+  "outbound_actions": "NONE",
+  "dispatch_lease": "NOT_ACQUIRED"
+}
