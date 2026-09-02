@@ -1,0 +1,51 @@
+{
+  "run_id": "cvbridge-live-20260902-0711z",
+  "started_at": "2026-09-02T07:11:00Z",
+  "finished_at": "2026-09-02T07:13:00Z",
+  "mode": "LIVE",
+  "trigger": "OWNER_IMMEDIATE_CV_BRIDGE_DISPATCH",
+  "lease": {
+    "lease_id": "lease-cvbridge-20260902-0711z",
+    "acquired": true,
+    "ownership_reread_verified": true
+  },
+  "raw_ready_count_observed": 8,
+  "known_ready_identities": [
+    "org:doozy.it",
+    "org:2pdx.it",
+    "org:eclettica.me",
+    "org:arakne.it",
+    "org:kfadv.it",
+    "org:hubaffiliations.com",
+    "org:wecomm.es",
+    "org:mutart.eu"
+  ],
+  "jit_dedup": {
+    "recipient_index_checked": true,
+    "hostinger_sent_latest_100_checked": true,
+    "gmail_sent_exact_ready_recipient_search_checked": true,
+    "junolab_blocked_as_already_contacted": "HOSTINGER_SENT_UID_180_2026-09-02T06:58:10Z",
+    "new_prior_contact_matches_for_known_ready": 0
+  },
+  "document_qa": {
+    "manifest_schema": "1.3",
+    "approved_originals_only": true,
+    "runtime_bridge": "PAGED_TEXT",
+    "required_action": "Files.read sequential 2-line windows",
+    "files_read_action_available_in_current_runtime": false,
+    "file_library_search_located_wrapped_files": true,
+    "file_library_open_result_truncated": true,
+    "exact_base64_reconstruction_verified": false,
+    "result": "FAIL_CLOSED_DOCUMENT_QA"
+  },
+  "attempted": 0,
+  "verified_email_sent": 0,
+  "delivery_state_unknown": 0,
+  "dependency_failures": [
+    "FILES_READ_CONNECTOR_ACTION_UNAVAILABLE_IN_CURRENT_AUTOMATION_RUNTIME",
+    "FILE_SEARCH_FULL_CONTENT_TRUNCATED_CANNOT_PROVE_BASE64_LENGTH_OR_BYTE_IDENTITY",
+    "ALL_OBSERVED_READY_IDENTITIES_REQUIRE_APPROVED_ORIGINAL_CV"
+  ],
+  "result": "BLOCKED_DEPENDENCY_NO_SEND",
+  "safety_decision": "No partial/truncated Base64 attachment was sent. No blind retry performed."
+}
