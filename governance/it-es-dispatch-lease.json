@@ -1,19 +1,30 @@
 {
   "schema_version": "1.0",
-  "state": "ACTIVE",
-  "lease_id": "lease-scheduled-20260902-1855z-lucasweb",
-  "owner": "SOLE_VDS_IT_ES_BATCH_DISPATCHER",
-  "run_id": "scheduled-dispatch-20260902-1855z",
-  "acquired_at": "2026-09-02T18:55:20Z",
-  "expires_at": "2026-09-02T19:10:20Z",
-  "last_released_at": "2026-09-02T17:59:35Z",
-  "last_run_id": "scheduled-dispatch-20260902-1759z",
+  "state": "IDLE",
+  "lease_id": null,
+  "owner": null,
+  "run_id": null,
+  "acquired_at": null,
+  "expires_at": null,
+  "last_released_at": "2026-09-02T18:56:05Z",
+  "last_run_id": "scheduled-dispatch-20260902-1855z",
   "last_incident": {
     "timestamp": "2026-09-01T19:26:00Z",
     "type": "CONCURRENT_EXECUTOR_DUPLICATE_SEND",
     "affected": ["org:amomarketing.es", "org:bpnexus.com"],
     "hostinger_duplicate_uids": [169, 172]
   },
-  "last_run_result": "DISPATCHED_CANTABRIA_UID_204_LINK_ONLY_NO_ATTACHMENTS_QUEUE_DRAINED",
+  "last_run_result": "DISPATCHED_LUCASWEB_UID_206_LINK_ONLY_NO_ATTACHMENTS_QUEUE_DRAINED",
+  "recovery_evidence": {
+    "reconciled_at": "2026-09-02T18:56:05Z",
+    "hostinger_latest_verified_uid": 206,
+    "post_run_verified_uids": [206],
+    "provider_ambiguity": false,
+    "duplicate_first_contact_detected": false,
+    "queue_drained": true,
+    "recipient_index_event_pending_reconciliation": true,
+    "public_document_link_verified": true,
+    "remaining_ready_count": 0
+  },
   "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or conflict means abort without send."
 }
