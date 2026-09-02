@@ -1,28 +1,29 @@
 {
   "schema_version": "1.0",
-  "state": "ACTIVE",
-  "lease_id": "lease-cvlink-repair-20260902-1108z",
-  "owner": "interactive-owner-authorized-repair",
-  "run_id": "interactive-cvlink-repair-20260902-1108z",
-  "acquired_at": "2026-09-02T11:08:30Z",
-  "expires_at": "2026-09-02T11:23:30Z",
-  "last_released_at": "2026-09-02T10:17:35Z",
-  "last_run_id": "scheduled-live-20260902-1012z",
+  "state": "IDLE",
+  "lease_id": null,
+  "owner": null,
+  "run_id": null,
+  "acquired_at": null,
+  "expires_at": null,
+  "last_released_at": "2026-09-02T11:10:10Z",
+  "last_run_id": "interactive-cvlink-repair-20260902-1108z",
   "last_incident": {
     "timestamp": "2026-09-01T19:26:00Z",
     "type": "CONCURRENT_EXECUTOR_DUPLICATE_SEND",
     "affected": ["org:amomarketing.es", "org:bpnexus.com"],
     "hostinger_duplicate_uids": [169, 172]
   },
-  "last_run_result": "DISPATCHED_UIDS_190_191_NO_ATTACHMENTS_3_RETRY_REQUIRED_DOCUMENT_PUBLIC_LINK_UNAVAILABLE",
+  "last_run_result": "DISPATCHED_UIDS_192_193_194_LINK_ONLY_NO_ATTACHMENTS_QUEUE_DRAINED",
   "recovery_evidence": {
-    "reconciled_at": "2026-09-02T11:07:30Z",
-    "hostinger_latest_verified_uid": 191,
+    "reconciled_at": "2026-09-02T11:10:10Z",
+    "hostinger_latest_verified_uid": 194,
+    "post_run_verified_uids": [192, 193, 194],
     "provider_ambiguity": false,
     "duplicate_first_contact_detected": false,
     "queue_recipient_index_consistent": true,
-    "gmail_preflight_hits_for_pending_three": 0,
-    "document_link_blocker_repaired": true
+    "document_link_blocker_repaired": true,
+    "remaining_ready_count": 0
   },
-  "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission."
+  "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or conflict means abort without send."
 }
