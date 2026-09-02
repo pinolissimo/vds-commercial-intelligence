@@ -1,0 +1,88 @@
+{
+  "run_id": "high-yield-final-qualifier-20260902T1847Z",
+  "worker": "VDS_HIGH_YIELD_FINAL_QUALIFIER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "DEEP_FIT_RANKING_FINAL_READY_CERTIFICATION_STATE_WRITE_ONLY",
+  "starting_ready_to_apply": 0,
+  "ending_ready_to_apply": 1,
+  "candidates_ranked": 3,
+  "deep_checked": 1,
+  "ready_added": 1,
+  "elapsed_time_seconds": 220,
+  "ready_added_per_minute": 0.273,
+  "ranking_basis": "Consumed the newest Direct Route outputs first. Salento Factory and Estro Agency were already conclusively closed as MANUAL_ROUTE_REQUIRED within TTL, so their stable identity/route work was not repeated. Because the executable pipeline was empty, discovery was limited to one high-intent authoritative survivor with a direct route, Lucasweb.",
+  "ready_promotions": [
+    {
+      "canonical_identity_key": "org:lucasweb.it",
+      "organization": "Lucasweb S.r.l.",
+      "fit_score": 99,
+      "state": "READY_TO_APPLY",
+      "route": "VERIFIED_DIRECT_EMAIL",
+      "recipient": "info@lucasweb.it",
+      "email_subject_hint": "Agenzia in outsourcing",
+      "opportunity_url": "https://www.lucasweb.it/lavora-con-noi",
+      "reason": "Official current careers page marks 'Agenzia in outsourcing' as an open position and provides a direct email route. The model is explicitly agency-to-agency outsourcing: Lucasweb supplies the quote to the agency and has no direct client contact. This is a truthful and unusually strong VDS white-label/overflow match with recurring potential and does not require unsupported senior-PHP claims.",
+      "document_mapping": "IT_MASTER_QA_PUBLIC_LINK_PASS",
+      "dedup": "CLEAR_CURRENT_QUEUE_AND_CANONICAL_INDEX_FOR_LUCASWEB; GITHUB_CODE_SEARCH_NO_LUCASWEB_FIRST_CONTACT; HOSTINGER_SENT_FULL_HISTORY_201_MESSAGES_EXHAUSTIVELY_CHECKED_THROUGH_UID_205_NO_LUCASWEB; GMAIL_SENT_EXACT_RECIPIENT_DOMAIN_OR_ORG_ZERO"
+    }
+  ],
+  "inherited_results": [
+    {
+      "canonical_identity_key": "org:salentofactory.com",
+      "organization": "Salento Factory",
+      "fit_score": 99,
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "block_reason": "Current official freelance WordPress Expert lane uses a dedicated application form with PDF CV upload; generic email substitution is forbidden."
+    },
+    {
+      "canonical_identity_key": "org:estroagency.it",
+      "organization": "Estro Agency / YUBA S.r.l.",
+      "fit_score": 94,
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "block_reason": "Current authoritative careers flow uses a dedicated CV-upload form and publishes no direct application email."
+    }
+  ],
+  "mailbox_incremental_reconciliation": {
+    "performed": true,
+    "candidate": "org:lucasweb.it",
+    "hostinger_sent_total_messages": 201,
+    "hostinger_full_history_pages_checked": 3,
+    "hostinger_fresh_latest_uid": 205,
+    "hostinger_lucasweb_match": false,
+    "gmail_exact_recipient_domain_or_org_match": false
+  },
+  "document_qa": {
+    "manifest_status": "PASS",
+    "verified_at": "2026-09-02T10:55:00Z",
+    "language": "it",
+    "public_url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_IT.pdf",
+    "delivery_mode": "LINK_ONLY"
+  },
+  "downstream_dispatcher_acceptance_rate": {
+    "rolling_observed_certifications": 10,
+    "dispatcher_accepted": 9,
+    "dispatcher_jit_rejected": 1,
+    "rate": 0.9,
+    "latest_observed_dispatch": "CANTABRIA_WEB_DESIGN_SENT_HOSTINGER_UID_204",
+    "quality_regression_new_this_run": true,
+    "quality_regression_detail": "Full-history Hostinger reconciliation exposed an earlier organization-level FIRST_CONTACT to Cantabria Web Design at UID 125 (2026-08-31, info@cantabriawebdesign.es), predating the later UID 204 send to rrhh@cantabriawebdesign.es. Different recipient does not reset FIRST_CONTACT, so Cantabria should have been blocked by JIT dedup. This does not affect Lucasweb, which is clean across the entire Sent history.",
+    "quality_adjusted_accepted": 8,
+    "quality_adjusted_rate": 0.8,
+    "note": "Lucasweb is newly certified and is not included in this denominator until Dispatcher JIT resolves it."
+  },
+  "gate_counts": {
+    "manual_route_required": 2,
+    "route_unresolved": 0,
+    "freshness_review": 0,
+    "explicit_no_freelance": 0,
+    "duplicates_blocking_current_candidate": 0,
+    "ready": 1
+  },
+  "queue_write": "PERFORMED_SINGLE_BATCH_MERGE; LUCASWEB_RESERVED_FOR_BATCH_DISPATCHER; POST_WRITE_IDENTITY_VERIFIED_EXACTLY_ONCE",
+  "outbound_actions": "NONE",
+  "dispatch_lease": "NOT_ACQUIRED"
+}
