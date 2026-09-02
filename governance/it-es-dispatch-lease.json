@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "state": "IDLE",
-  "lease_id": null,
-  "owner": null,
-  "run_id": null,
-  "acquired_at": null,
-  "expires_at": null,
+  "state": "ACTIVE",
+  "lease_id": "lease-scheduled-dispatch-20260902-1654z",
+  "owner": "VDS Batch Dispatcher",
+  "run_id": "scheduled-dispatch-20260902-1654z",
+  "acquired_at": "2026-09-02T16:54:00Z",
+  "expires_at": "2026-09-02T17:09:00Z",
   "last_released_at": "2026-09-02T13:10:45Z",
   "last_run_id": "scheduled-dispatch-20260902-125648z",
   "last_incident": {
@@ -16,14 +16,13 @@
   },
   "last_run_result": "DISPATCHED_UIDS_196_197_198_199_200_201_202_LINK_ONLY_NO_ATTACHMENTS_QUEUE_DRAINED",
   "recovery_evidence": {
-    "reconciled_at": "2026-09-02T13:10:45Z",
+    "reconciled_at": "2026-09-02T16:54:00Z",
     "hostinger_latest_verified_uid": 202,
-    "post_run_verified_uids": [196,197,198,199,200,201,202],
     "provider_ambiguity": false,
     "duplicate_first_contact_detected": false,
     "queue_recipient_index_consistent": true,
     "public_document_link_verified": true,
-    "remaining_ready_count": 0
+    "remaining_ready_count": 1
   },
   "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or conflict means abort without send."
 }
