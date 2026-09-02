@@ -1,0 +1,105 @@
+{
+  "run_id": "it-es-high-yield-job-20260902T1057Z",
+  "timestamp_utc": "2026-09-02T10:57:00Z",
+  "mode": "TURBO_AGGRESSIVE_REPLENISHMENT",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "DISCOVERY_QUALIFICATION_STATE_WRITE_ONLY",
+  "external_actions_performed": 0,
+  "dispatch_lease_acquired": false,
+  "starting_ready": 0,
+  "ending_ready": 0,
+  "queue_nonready_retry_required": 3,
+  "ready_target": 20,
+  "safety_floor": 12,
+  "sources": [
+    "official company careers pages",
+    "current web/job search fanout",
+    "GitHub canonical queue/ledger/index search",
+    "Hostinger Sent READ_ONLY full history",
+    "Gmail Sent READ_ONLY exact-recipient checks"
+  ],
+  "metrics": {
+    "search_probes": 33,
+    "raw_hits_reviewed": 76,
+    "unique_candidates_normalized": 24,
+    "backlog_additions": 1,
+    "deep_verified": 8,
+    "qualified": 1,
+    "ready_added": 0,
+    "duplicates": 3,
+    "stale_closed": 3,
+    "manual_route_required": 5,
+    "explicit_no_freelance": 0,
+    "route_failures": 2,
+    "truthful_fit_blocks": 2,
+    "geography_blocks": 1,
+    "document_execution_blocks": 1
+  },
+  "mailbox_dedup": {
+    "hostinger_sent_total": 187,
+    "hostinger_latest_uid": 191,
+    "hostinger_full_history_pages_read": 2,
+    "gmail_exact_recipient_checks": [
+      "infovistalegre@mobyleshop.com"
+    ],
+    "mobyleshop_prior_contact": false
+  },
+  "new_backlog": [
+    {
+      "canonical_identity_key": "org:mobyleshop.com",
+      "organization": "Mobyleshop",
+      "country": "Spain",
+      "opportunity": "Administrador Web WPO Freelance",
+      "opportunity_url": "https://mobyleshop.com/trabajar-con-nosotros/",
+      "route": "VERIFIED_DIRECT_EMAIL",
+      "recipient": "infovistalegre@mobyleshop.com",
+      "fit_score": 96,
+      "fit_state": "QUALIFIED_NON_EXECUTABLE",
+      "status": "RETRY_REQUIRED_DOCUMENT_PUBLIC_LINK_UNAVAILABLE",
+      "freshness_evidence": "Official careers page crawled last week and live on 2026-09-02 lists Administrador Web WPO Freelance.",
+      "fit_evidence": "WordPress maintenance, advanced HTML/CSS3/JavaScript/PHP, MySQL, WordPress security/performance; Elementor, UI/usability and Git are valued extras.",
+      "contract_model_evidence": "Role title explicitly says Freelance.",
+      "route_evidence": "Official careers page explicitly says to send CV to infovistalegre@mobyleshop.com.",
+      "document_requirement": "CV_REQUIRED",
+      "blocker": "Current dispatcher state proves canonical ES public CV URL unavailable; mandatory CV cannot presently pass document QA/executability gate.",
+      "dedup_evidence": "No GitHub canonical match; no Hostinger Sent match across all 187 messages through UID191; Gmail Sent exact-recipient query returned zero results."
+    }
+  ],
+  "notable_rechecks": [
+    {
+      "organization": "AndaluzIA | Agencia Marketing Inteligente",
+      "status": "STALE_CLOSED",
+      "reason": "LinkedIn authoritative listing explicitly says applications are no longer accepted."
+    },
+    {
+      "organization": "Witapp",
+      "status": "GEOGRAPHY_OR_FIT_BLOCK",
+      "reason": "UX/UI role explicitly excludes remote collaboration; Web Specialist role is primarily PPC/SEO/analytics rather than core VDS web production."
+    },
+    {
+      "organization": "Secretkey",
+      "status": "ALREADY_CONTACTED",
+      "reason": "Current third-party Front End Developer role matches WordPress/frontend stack, but organization is already present in historical Sent evidence."
+    },
+    {
+      "organization": "eFarm Group",
+      "status": "ALREADY_CONTACTED",
+      "reason": "Previously contacted in Hostinger Sent (UID109)."
+    },
+    {
+      "organization": "Pump Communication",
+      "status": "ALREADY_CONTACTED",
+      "reason": "Previously contacted in Hostinger Sent (UID116/117)."
+    }
+  ],
+  "queue_state_observation": "Current queue contains zero READY_TO_APPLY records and three RETRY_REQUIRED records, all blocked by DOCUMENT_PUBLIC_LINK_UNAVAILABLE. The prior two READY candidates were dispatched as Hostinger UID190 and UID191 and removed/reconciled by the dispatcher.",
+  "yield": {
+    "ready_per_run": 0,
+    "qualified_per_unique": 0.0417,
+    "assessment": "THROUGHPUT_BLOCKED_BY_DOCUMENT_EXECUTABILITY",
+    "next_best_action": "Continue discovery for direct-email opportunities where a portfolio/link/message is sufficient and no mandatory CV attachment is required; retain Mobyleshop for immediate promotion once canonical ES CV document access is repaired."
+  }
+}
