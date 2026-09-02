@@ -1,0 +1,90 @@
+{
+  "run_id": "it-es-high-yield-final-qualifier-20260902T1149Z",
+  "timestamp_utc": "2026-09-02T11:49:00Z",
+  "mode": "HIGH_THROUGHPUT_FINAL_QUALIFICATION",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "DEEP_FIT_RANKING_FINAL_READY_CERTIFICATION_STATE_WRITE_ONLY",
+  "external_actions_performed": 0,
+  "dispatch_lease_acquired": false,
+  "starting_ready": 1,
+  "ending_ready": 1,
+  "ready_target": 20,
+  "safety_floor": 12,
+  "candidates_ranked": 6,
+  "deep_checked": 5,
+  "ready_added": 0,
+  "elapsed_seconds": 162,
+  "ready_added_per_minute": 0.0,
+  "downstream_dispatcher_acceptance_rate": {
+    "rate": 1.0,
+    "basis": "Fully visible LIVE dispatcher records with outbound attempts show 10 unique organizations attempted and 10 verified sent (9/9 in live-first-use-20260901-1919 plus 1/1 Studio Liz in scheduled-live-20260902-0941z). No-attempt dependency/threshold runs excluded. Later dispatcher records exist but are truncated in the connector response and are therefore not used to inflate this metric."
+  },
+  "ranked_batch": [
+    {
+      "canonical_identity_key": "org:datodigitale.it",
+      "organization": "Dato Digitale",
+      "fit_score": 97,
+      "state": "ROUTE_UNRESOLVED",
+      "reason": "Current authoritative demand is strong for Web Developer / Programmatore WordPress, but the careers instruction still lacks an exact vacancy-bound authoritative recipient; generic company contact is not substituted."
+    },
+    {
+      "canonical_identity_key": "org:mobyleshop.com",
+      "organization": "Mobyleshop",
+      "fit_score": 96,
+      "state": "REVIEW_REQUIRED_GEOGRAPHY",
+      "reason": "Official careers page remains live and lists Administrador Web WPO Freelance with direct CV email. The prior document blocker is resolved by the canonical ES public CV manifest, but authoritative remote/cross-border eligibility remains unproven while secondary evidence described presencial Murcia."
+    },
+    {
+      "canonical_identity_key": "org:grownnectia.com",
+      "organization": "Grownnectia",
+      "fit_score": 96,
+      "state": "AUTHORITATIVE_EXACT_ROLE_ROUTE_UNRESOLVED",
+      "reason": "Fresh official careers evidence confirms active P.IVA/project collaboration models and technology/software lanes, but the previously discovered WordPress/system role is still not corroborated as an exact current authoritative vacancy with an executable application route."
+    },
+    {
+      "canonical_identity_key": "org:liveat.it",
+      "organization": "LIVEAT SRL / Liveat Agency",
+      "fit_score": 96,
+      "state": "AUTHORITATIVE_EXACT_ROLE_ROUTE_UNRESOLVED",
+      "reason": "Current third-party demand remains strong for WordPress/Elementor freelance full-remote production, but no authoritative company vacancy/recipient was established in this run."
+    },
+    {
+      "canonical_identity_key": "org:ingeniovirtual.com",
+      "organization": "IngenioVirtual",
+      "fit_score": 88,
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "Official page explicitly welcomes freelance collaborators for WordPress/WooCommerce and related web work, but the collaborator route is the dedicated form. The email route on the same page belongs to covered staff positions and cannot be substituted for the collaborator form."
+    },
+    {
+      "canonical_identity_key": "org:remediagroup.it",
+      "organization": "ReMedia Italia",
+      "fit_score": 91,
+      "state": "ALREADY_CONTACTED",
+      "reason": "Fresh official freelance remote web roles remain attractive, but organization-level historical first contact already exists and FIRST_CONTACT cannot reset for another listing/recipient."
+    }
+  ],
+  "block_counts": {
+    "route_unresolved": 3,
+    "geography_unresolved": 1,
+    "manual_route_required": 1,
+    "duplicate_already_contacted": 1,
+    "explicit_no_freelance": 0,
+    "document_block": 0,
+    "truthful_fit_block": 0
+  },
+  "state_writes": [
+    {
+      "path": "opportunities/OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026.json",
+      "action": "UPDATED",
+      "result": "Document gate moved from blocked to resolved; remaining hard blocker normalized to geography/cross-border eligibility only.",
+      "commit": "9123d735eca96cb5e86a82a304f03d4b97592b2f"
+    }
+  ],
+  "queue_write": "NOT_PERFORMED_NO_CANDIDATE_PASSED_ALL_READY_GATES",
+  "mailbox_jit_reconciliation": "NOT_RUN_NO_CANDIDATE_REACHED_FINAL_DEDUP_GATE; prior mailbox evidence was not redundantly refreshed for candidates that failed route/geography/manual-route gates first.",
+  "quality_assessment": "NO_REGRESSION. READY production is zero this run because the strongest survivors fail hard route/geography gates, not because of document readiness. Canonical ES/IT/EN public CV links are now PASS and available for future finalists.",
+  "next_best_lane": "Prioritize fresh direct-email agency-overflow/WordPress opportunities with explicit remote or geography-neutral execution. Recheck Mobyleshop only when authoritative remote/cross-border eligibility changes; do not waste mailbox probes before then."
+}
