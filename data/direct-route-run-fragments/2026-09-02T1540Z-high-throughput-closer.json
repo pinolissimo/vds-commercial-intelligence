@@ -1,0 +1,110 @@
+{
+  "started_at": "2026-09-02T15:37:47Z",
+  "finished_at": "2026-09-02T15:40:00Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "ROUTE_IDENTITY_FRESHNESS_CLOSURE_STATE_WRITE_ONLY",
+  "external_actions": 0,
+  "dispatch_lease_acquired": false,
+  "starting_backlog_records": 5,
+  "starting_ready": 0,
+  "source_fanout_fragment": "data/search-fanout-fragments/2026-09-02T1527Z.jsonl",
+  "recovery_backlog_processed_first": true,
+  "recovery_nonterminal_preserved": [
+    "org:wprobo.com",
+    "org:piksel",
+    "org:onebit.it"
+  ],
+  "closure_records": [
+    {
+      "canonical_identity_key": "org:markadigital.es",
+      "organization": "Marka Digital",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "fit_score": 96,
+      "reason": "Official current opportunity dated 2026-03-03 explicitly seeks a senior freelance web designer for WordPress + Elementor, WooCommerce, UX/CRO, HTML/CSS/JS, 100% remote, paid per project and stable on-demand collaboration. The exact authorized application route is the embedded application form and it requires a CV plus project links. Footer hola@markadigital.es is a generic business contact and cannot substitute for the application form. Scheduled dispatcher support for this exact form is not certified.",
+      "evidence_url": "https://markadigital.es/blog/empleo/buscamos-disenador-a-web-freelance-ux-cro/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "document_requirement": "CV_UPLOAD_REQUIRED_AND_PROJECT_LINKS",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Unsupported form route fails before READY."
+    },
+    {
+      "canonical_identity_key": "org:cgmconsulting.it",
+      "organization": "CGM Consulting S.r.l.",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "fit_score": 97,
+      "reason": "Official live Senior WordPress Developer vacancy is full remote and strongly matched: custom WordPress templates/plugins, PHP, MySQL, CSS, JavaScript/jQuery, Bootstrap, ACF, UX and Figma/wireframing. The vacancy explicitly instructs applicants through its application form with mandatory CV upload. recruiting@cgmconsulting.it is authoritatively identified as HR department contact on the official contact page, but the vacancy does not explicitly authorize that address as the application route, so it cannot replace the listed form. Full-time/permanent wording is not treated as a freelance blocker.",
+      "evidence_url": "https://cgmconsulting.it/offerta-lavoro/senior-wordpress-developer-da-remoto/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "document_requirement": "CV_UPLOAD_REQUIRED",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Unsupported exact vacancy form fails before READY; no email-route substitution."
+    },
+    {
+      "canonical_identity_key": "org:wprobo.com",
+      "organization": "WPRobo",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "fit_score": 98,
+      "reason": "Fresh official role remains live, posted 2026-05-24, worldwide remote with UK-hours overlap, and covers custom themes/plugins, WooCommerce, PHP, vanilla JavaScript, Core Web Vitals and migrations. Exact route is the official application form with mandatory CV/resume. This matches the existing canonical recovery state; dispatcher form capability is not certified.",
+      "evidence_url": "https://wprobo.com/careers/wordpress-developer-remote/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "document_requirement": "CV_RESUME_UPLOAD_REQUIRED",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Already resolved as manual-route in canonical recovery backlog; unsupported form fails before READY."
+    },
+    {
+      "canonical_identity_key": "org:agenciareinicia.com",
+      "organization": "Agencia Reinicia",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "fit_score": 88,
+      "reason": "Official careers page explicitly separates employees, freelancers and companies and directs freelance collaborators to a dedicated external form. The agency currently offers web/app design and development, ecommerce, APIs/integrations and web design services, providing credible agency-overflow fit, but the authoritative freelance collaboration action is form-only. Generic info@agenciareinicia.com is separately published as the business contact and cannot substitute.",
+      "evidence_url": "https://www.agenciareinicia.com/trabaja-con-nosotros/",
+      "route": "VERIFIED_OFFICIAL_FREELANCE_COLLABORATION_FORM",
+      "document_requirement": "FORM_DEPENDENT_NOT_REQUIRED_FOR_AUTOMATED_EMAIL_ROUTE",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Unsupported dedicated freelance form fails before READY."
+    },
+    {
+      "canonical_identity_key": "org:ecoavantis.com",
+      "organization": "Ecoavantis",
+      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT",
+      "fit_score": 82,
+      "reason": "Official talent page is live and explicitly seeks freelance/autonomo collaborators, but the currently listed matching profile is Diseñador y/o maquetador freelance focused on Adobe, infographics and publication layout. The company also has programming, web development and UX capabilities, yet no current web-development/WordPress opening is stated. Exact application is a CV-upload form. Do not infer a WordPress/web implementation vacancy from the agency service mix.",
+      "evidence_url": "https://ecoavantis.com/talento/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "document_requirement": "CV_UPLOAD_REQUIRED",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Truthful-fit/current-demand gate fails before READY; form-only route is an additional executability blocker."
+    }
+  ],
+  "mailbox_dedup": {
+    "strategy": "canonical_index_primary; mailbox JIT intentionally skipped for candidates failing route/fit gates before READY",
+    "recipient_index_last_known_hostinger_uid_from_current_queue_state": 202,
+    "fresh_jit_checks": 0,
+    "note": "No candidate reached READY promotion, so no mailbox Sent scan was necessary under the high-throughput protocol."
+  },
+  "queue_write": {
+    "performed": false,
+    "reason": "No candidate qualified for READY_TO_APPLY; current canonical queue is empty."
+  },
+  "metrics": {
+    "starting_backlog": 5,
+    "candidates_closed": 5,
+    "ready_added": 0,
+    "manual_route": 4,
+    "explicit_no_freelance": 0,
+    "stale": 0,
+    "duplicates": 0,
+    "route_failures": 0,
+    "truthful_fit_blocks": 1,
+    "elapsed_seconds": 133,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 2.26
+  },
+  "ending_ready": 0,
+  "quality_result": "ALL_1527Z_FANOUT_SURVIVORS_CLOSED_WITHOUT_FALSE_READY; EXACT_ROUTE_AND_CONTRACT_MODEL_INTEGRITY_PRESERVED"
+}
