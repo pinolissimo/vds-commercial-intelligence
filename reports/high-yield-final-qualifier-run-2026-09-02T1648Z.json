@@ -1,0 +1,94 @@
+{
+  "run_id": "high-yield-final-qualifier-20260902T1648Z",
+  "worker": "VDS_HIGH_YIELD_FINAL_QUALIFIER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "DEEP_FIT_RANKING_FINAL_READY_CERTIFICATION_STATE_WRITE_ONLY",
+  "starting_ready_to_apply": 0,
+  "ending_ready_to_apply": 1,
+  "candidates_ranked": 6,
+  "deep_checked": 3,
+  "ready_added": 1,
+  "elapsed_time_seconds": 229,
+  "ready_added_per_minute": 0.262,
+  "ranking_basis": "Fresh Direct Route closure inherited within TTL; only email-executable or potentially email-executable survivors were deep-checked. Secondary discovery was limited because the executable reservoir was empty.",
+  "ready_promotions": [
+    {
+      "canonical_identity_key": "org:mobyleshop.com",
+      "organization": "Mobyleshop",
+      "fit_score": 96,
+      "state": "READY_TO_APPLY",
+      "route": "VERIFIED_DIRECT_EMAIL",
+      "recipient": "infovistalegre@mobyleshop.com",
+      "opportunity_url": "https://mobyleshop.com/trabajar-con-nosotros/",
+      "reason": "Official current careers page still lists Administrador Web WPO Freelance and directly requests CV by email. Strong truthful WordPress maintenance/WPO/PHP/JS fit. Prior rejection based on Murcia/on-site locality was re-evaluated under protocol v1.3: location/on-site wording alone is not a contract-model block and no authoritative residency/cross-border exclusion is stated for this freelance role.",
+      "document_mapping": "ES_MASTER_QA_PUBLIC_LINK_PASS",
+      "dedup": "CLEAR_CANONICAL_QUEUE_INDEX_LEDGER; HOSTINGER_FULL_SENT_HISTORY_198_MESSAGES_THROUGH_UID_202_NO_MATCH; FRESH_HEAD_UID_202; GMAIL_SENT_EXACT_RECIPIENT_AND_DOMAIN_NO_MATCH"
+    }
+  ],
+  "deep_checked_results": [
+    {
+      "canonical_identity_key": "org:mobyleshop.com",
+      "organization": "Mobyleshop",
+      "fit_score": 96,
+      "state": "READY_TO_APPLY"
+    },
+    {
+      "canonical_identity_key": "org:visilay.com",
+      "organization": "Visilay",
+      "fit_score": 96,
+      "state": "REVIEW_REQUIRED_ROUTE_RESOLUTION",
+      "block_reason": "Official current careers page explicitly seeks Sviluppatore WordPress (Astra ed Elementor) and requires CV by email, but the crawler redacts the exact recipient. A separate older Visilay role used info@visilay.com, but protocol forbids substituting a route from another listing without exact authority proof."
+    },
+    {
+      "canonical_identity_key": "org:argobs.com",
+      "organization": "Web Design by Argo / Argo Business Solutions",
+      "fit_score": 85,
+      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT",
+      "block_reason": "Official direct route job@argobs.com exists, but the current Web Designer profile includes Magento/Prestashop and Adobe-tool expectations not sufficiently corroborated for VDS at final-certification confidence."
+    }
+  ],
+  "inherited_direct_route_results": [
+    {"canonical_identity_key":"org:adviva.it","state":"MANUAL_ROUTE_REQUIRED","fit_score":98},
+    {"canonical_identity_key":"org:intervolutions.com","state":"MANUAL_ROUTE_REQUIRED","fit_score":97},
+    {"canonical_identity_key":"org:xonex.it","state":"REJECT_EXPLICIT_NO_EXTERNAL_COLLABORATORS","fit_score":88}
+  ],
+  "mailbox_incremental_reconciliation": {
+    "performed": true,
+    "candidate": "org:mobyleshop.com",
+    "hostinger_full_history_messages_checked": 198,
+    "hostinger_latest_uid": 202,
+    "hostinger_match": false,
+    "gmail_exact_recipient_match": false,
+    "gmail_domain_match": false
+  },
+  "document_qa": {
+    "manifest_status": "PASS",
+    "verified_at": "2026-09-02T10:55:00Z",
+    "language": "es",
+    "public_url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_ES.pdf",
+    "delivery_mode": "LINK_ONLY"
+  },
+  "downstream_dispatcher_acceptance_rate": {
+    "rolling_last_eight_observed_certifications": 0.875,
+    "accepted": 7,
+    "rejected_by_jit": 1,
+    "quality_regression_new_this_run": false,
+    "note": "New Mobyleshop certification has not yet reached dispatcher, so it is not included in observed acceptance denominator."
+  },
+  "gate_counts": {
+    "manual_route_required": 2,
+    "route_unresolved": 1,
+    "truthful_fit_review": 1,
+    "explicit_no_freelance_or_external": 1,
+    "stale": 0,
+    "duplicates_new": 0,
+    "ready": 1
+  },
+  "queue_write": "PERFORMED_SINGLE_BATCH_MERGE; MOBYLESHOP_RESERVED_FOR_BATCH_DISPATCHER",
+  "outbound_actions": "NONE",
+  "dispatch_lease": "NOT_ACQUIRED"
+}
