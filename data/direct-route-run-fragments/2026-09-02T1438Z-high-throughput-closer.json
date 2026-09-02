@@ -1,0 +1,102 @@
+{
+  "started_at": "2026-09-02T14:37:39Z",
+  "finished_at": "2026-09-02T14:38:39Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocols_read": [
+    "project/IT_ES_CHAIN_EXECUTION_PROTOCOL.md",
+    "project/IT_ES_DISPATCH_LEASE_PROTOCOL.md"
+  ],
+  "role_boundary": "ROUTE_IDENTITY_FRESHNESS_CLOSURE_STATE_WRITE_ONLY",
+  "external_actions": 0,
+  "dispatch_lease_acquired": false,
+  "starting_backlog_records": 5,
+  "starting_ready": 0,
+  "source_fanout_fragment": "data/search-fanout-fragments/2026-09-02T1424Z.jsonl",
+  "recovery_backlog_processed_first": true,
+  "recovery_nonterminal_preserved": [
+    "org:wprobo.com",
+    "org:piksel",
+    "org:onebit.it"
+  ],
+  "closure_records": [
+    {
+      "canonical_identity_key": "org:onebit.it",
+      "organization": "OneBit S.a.s.",
+      "state": "MANUAL_ROUTE_REQUIRED_CROSS_BORDER_CONFIRMATION",
+      "reason": "Reused fresh canonical recovery evidence. Official collaboration page explicitly seeks freelance web developers with active Partita IVA for overflow work, but the exact route is an unsupported official form/manual channel and authoritative evidence still does not establish that Spanish EU autonomo/VAT status satisfies the stated Italian Partita IVA requirement.",
+      "evidence_url": "https://www.onebit.it/web-agency-a-torino-lavora-con-noi/",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Failed route/legal executability gates before READY; canonical recipient index is primary cache."
+    },
+    {
+      "canonical_identity_key": "org:turbobit.it",
+      "organization": "TurboBit IT Solutions",
+      "state": "ALREADY_CONTACTED",
+      "reason": "Canonical recovery backlog already contains terminal organization-level dedup evidence HOSTINGER_SENT_UID_89_2026-08-28 to hr@turbobit.it with cc partners@turbobit.it. Different route/listing/recipient never resets FIRST_CONTACT. Fanout dedup cache was stale and is superseded by canonical recovery evidence.",
+      "evidence_url": "https://www.turbobit.it/careers/",
+      "dedup_evidence": "HOSTINGER_SENT_UID_89_2026-08-28",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Terminal canonical prior-contact evidence already resolves dedup."
+    },
+    {
+      "canonical_identity_key": "org:minimalstudio.it",
+      "organization": "Minimal Studio s.r.l.",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "Official careers page is current and strongly matched: Sviluppatore Web Full Stack includes responsive sites, ecommerce and landing pages, HTML5/CSS3/modern JavaScript, PHP, WordPress/WooCommerce, SEO, performance and security. It explicitly offers collaboration with P.IVA. The exact authorized application route is the careers form with mandatory CV upload; footer info@minimalstudio.it is generic and cannot substitute. Dispatcher support for this form is not certified.",
+      "evidence_url": "https://www.minimalstudio.it/lavora-con-noi/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "document_requirement": "CV_UPLOAD_REQUIRED",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Unsupported form route fails before READY."
+    },
+    {
+      "canonical_identity_key": "org:syde.com",
+      "organization": "Syde GmbH",
+      "state": "REVIEW_REQUIRED_TRUTHFUL_FIT",
+      "reason": "Current official Senior WordPress Engineer role is 100% remote and highly relevant to WordPress, but mandatory requirements include expert-level PHP with 5+ years, deep OOP, real-world Gutenberg custom-block work with React, CI/CD and automated testing, mentoring/tech-lead capability, and professional working English. Current canonical VDS profile evidence does not support enough of these mandatory senior requirements for truthful READY certification. The exact application route is also a Personio form, not a dispatcher-certified direct email route.",
+      "evidence_url": "https://syde.jobs.personio.com/job/2380764",
+      "route": "OFFICIAL_PERSONIO_APPLICATION_FORM",
+      "document_requirement": "ENGLISH_RESUME_REQUIRED",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Truthful-fit gate fails before READY; unsupported form is an additional executability blocker."
+    },
+    {
+      "canonical_identity_key": "org:kodanorth.com",
+      "organization": "Koda North",
+      "state": "HOLD_STALE_SOURCE_AUTHORITY",
+      "reason": "The August 3 third-party WordPress Developer Europe-remote signal is not present on the current authoritative Koda North careers surface. The official site currently publishes different roles dated August 27, including Associate Software Engineer for Europe/UK, all using a secure application form. Without current authoritative confirmation of the WordPress vacancy, freshness/source authority fails and generic info@kodanorth.com cannot substitute for the official application route.",
+      "evidence_url": "https://kodanorth.com/careers/associate-software-engineer",
+      "third_party_signal_url": "https://remotejobsearch.com/hu/jobs/9340517140471971741-wordpress-developer-koda-north",
+      "mailbox_jit_performed": false,
+      "mailbox_jit_reason": "Current authoritative demand for the WordPress role is not established."
+    }
+  ],
+  "mailbox_dedup": {
+    "strategy": "canonical_index_primary; no expensive mailbox scan for candidates failing earlier gates",
+    "recipient_index_reconciled_through_hostinger_uid": 202,
+    "full_history_scan_per_failed_candidate": false,
+    "fresh_jit_checks": 0,
+    "note": "No candidate reached the actual READY promotion gate, so fresh mailbox JIT was intentionally skipped under the throughput protocol. Dispatcher would repeat full JIT before any send if a future candidate becomes READY."
+  },
+  "queue_write": {
+    "performed": false,
+    "reason": "No candidate qualified for READY_TO_APPLY; canonical queue was already empty and no promotion merge was required."
+  },
+  "metrics": {
+    "starting_backlog": 5,
+    "candidates_closed": 5,
+    "ready_added": 0,
+    "manual_route": 2,
+    "explicit_no_freelance": 0,
+    "stale": 1,
+    "duplicates": 1,
+    "route_failures": 0,
+    "truthful_fit_blocks": 1,
+    "elapsed_seconds": 60,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 5.0
+  },
+  "ending_ready": 0,
+  "quality_result": "ALL_CURRENT_FANOUT_SURVIVORS_CLOSED_WITHOUT_FALSE_READY; ROUTE_DEDUP_AND_TRUTHFUL_FIT_INTEGRITY_PRESERVED"
+}
