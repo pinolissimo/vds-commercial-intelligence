@@ -205,5 +205,6 @@ Public administrations, municipalities, institutional bodies and regulated procu
 - [Local SME 999](local-no-website/master-index.json)
 - [Job Source Intelligence](job-intel/README.md)
 - [Public Procurement Intelligence](public-procurement/README.md)
+- [Growth Intelligence](growth-intelligence/README.md)
 
 > **Conversion > activity. Evidence > inference. Revenue > vanity metrics.**
