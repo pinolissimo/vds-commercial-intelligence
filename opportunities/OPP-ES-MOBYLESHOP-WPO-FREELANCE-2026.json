@@ -1,22 +1,24 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "opportunity_id": "OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026",
   "workstream": "COLLABORATIONS",
   "organization": "Mobyleshop",
   "domain": "mobyleshop.com",
   "territory": {"country":"Spain","autonomous_community":"Región de Murcia","province":"Murcia","cluster":"Murcia"},
-  "state": "REVIEW_REQUIRED_GEO_FRESHNESS",
+  "state": "REVIEW_REQUIRED_GEOGRAPHY",
   "priority": "HIGH",
-  "route": {"type":"VERIFIED_DIRECT_EMAIL_REVIEW_ONLY","email":"infovistalegre@mobyleshop.com","alternate_form":"https://www.mobyleshop.com/trabaja-con-nosotros/","route_instruction":"Official careers page explicitly invites CV submission to this email and also exposes an application form; do not execute until geography/freshness conflict is resolved.","source":"https://www.mobyleshop.com/trabaja-con-nosotros/"},
+  "route": {"type":"VERIFIED_DIRECT_EMAIL_REVIEW_ONLY","email":"infovistalegre@mobyleshop.com","alternate_form":"https://mobyleshop.com/trabajar-con-nosotros/","route_instruction":"Official careers page explicitly invites CV submission to this email and also exposes an application form; do not execute until geography/cross-border eligibility is resolved.","source":"https://mobyleshop.com/trabajar-con-nosotros/"},
   "need": {"current_signal":true,"engagement":"Administrador Web WPO Freelance","skills":["WordPress maintenance","WPO/performance","HTML","CSS3","JavaScript","PHP","MySQL","WordPress security","Elementor","SEO/SEM","UI/usability","Git"]},
-  "eligibility": {"remote":null,"geography":"Official page does not establish remote/cross-border eligibility; a current aggregator copy describes the role as presencial in Murcia.","freelance_compatible":true},
-  "vds_fit": {"rating":"STRONG_WITH_TECHNICAL_CAVEATS","basis":"Strong overlap with WordPress, Elementor, frontend, performance and maintenance.","caveats":"Do not overclaim advanced PHP/MySQL/theme-plugin engineering depth."},
+  "eligibility": {"remote":null,"geography":"Official careers page revalidated 2026-09-02 still lists the freelance role but does not establish remote/cross-border eligibility; prior secondary evidence described the role as presencial in Murcia. Geography therefore remains unresolved rather than inferred.","freelance_compatible":true},
+  "vds_fit": {"rating":"STRONG_WITH_TECHNICAL_CAVEATS","score":96,"basis":"Strong overlap with WordPress, Elementor, frontend, performance, security and maintenance.","caveats":"Do not overclaim advanced PHP/MySQL/theme-plugin engineering depth; theme/plugin development is listed as valued rather than mandatory on the official page."},
+  "document_gate": {"requirement":"CV_REQUIRED","language":"es","state":"RESOLVED_PUBLIC_LINK_AVAILABLE","public_url":"https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_ES.pdf","qa_manifest":"assets/cv/document-qa-manifest.json","qa_verified_at":"2026-09-02T10:55:00Z","public_size_bytes":137287},
   "evidence": [
-    {"url":"https://www.mobyleshop.com/trabaja-con-nosotros/","role":["IDENTITY","NEED","CONTACT_ROUTE"],"tier":"T1_PRIMARY","verified_on":"2026-08-31"},
-    {"url":"https://www.opcionempleo.com/jobad/es39b105c72e633de5aecc09a6405f8d57","role":["FRESHNESS_CONFLICT","GEOGRAPHY_CORROBORATION"],"tier":"T3_AGGREGATOR","verified_on":"2026-08-31"}
+    {"url":"https://mobyleshop.com/trabajar-con-nosotros/","role":["IDENTITY","NEED","CONTACT_ROUTE","CONTRACT_MODEL"],"tier":"T1_PRIMARY","verified_on":"2026-09-02"},
+    {"url":"https://www.opcionempleo.com/jobad/es39b105c72e633de5aecc09a6405f8d57","role":["GEOGRAPHY_CONFLICT"],"tier":"T3_AGGREGATOR","verified_on":"2026-08-31"}
   ],
-  "dedup": {"canonical_repository":"CLEAR on 2026-08-31 before record creation.","suppression":"No matching canonical suppression identity found during cycle.","sent_history":"No promotion permitted until final Gmail/Hostinger exact-route gate is repeated after eligibility resolution."},
-  "reason_not_promoted":"Authoritative current careers page still lists the freelance role, but remote/cross-border eligibility is unproven and a secondary listing reports presencial Murcia plus an 8 Aug 2026 deadline. Keep in review rather than inflate actionable counts.",
-  "outreach": {"sent":false,"execution_gate":"Partner Hunt only"},
-  "verified_at": "2026-08-31T11:43:00+02:00"
+  "dedup": {"canonical_repository":"CLEAR on prior final qualifier run through 2026-09-02T10:57Z.","suppression":"No matching canonical suppression identity found during prior cycle.","sent_history":"Prior full Hostinger Sent history through UID191 and Gmail exact-recipient check were clean; fresh mailbox JIT intentionally not repeated because geography gate fails before READY."},
+  "reason_not_promoted":"Document/public-link blocker is repaired. Remaining hard gate is geography: authoritative careers evidence does not establish remote/cross-border execution while secondary current evidence described presencial Murcia. READY cannot be certified until that conflict is resolved.",
+  "next_action":"Revalidate only if Mobyleshop publishes remote/cross-border eligibility or an authoritative source clarifies that the freelance WPO role can be performed remotely from Spain/EU. Do not repeat mailbox dedup before that gate passes.",
+  "outreach": {"sent":false,"execution_gate":"Batch Dispatcher only"},
+  "verified_at": "2026-09-02T11:49:00Z"
 }
