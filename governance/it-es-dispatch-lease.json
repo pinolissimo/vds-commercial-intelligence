@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "state": "IDLE",
-  "lease_id": null,
-  "owner": null,
-  "run_id": null,
-  "acquired_at": null,
-  "expires_at": null,
+  "state": "ACTIVE",
+  "lease_id": "lease-scheduled-20260902-1759z-cantabria",
+  "owner": "SOLE_VDS_IT_ES_BATCH_DISPATCHER",
+  "run_id": "scheduled-dispatch-20260902-1759z",
+  "acquired_at": "2026-09-02T17:59:00Z",
+  "expires_at": "2026-09-02T18:14:00Z",
   "last_released_at": "2026-09-02T16:54:46Z",
   "last_run_id": "scheduled-dispatch-20260902-1654z",
   "last_incident": {
@@ -13,17 +13,6 @@
     "type": "CONCURRENT_EXECUTOR_DUPLICATE_SEND",
     "affected": ["org:amomarketing.es", "org:bpnexus.com"],
     "hostinger_duplicate_uids": [169, 172]
-  },
-  "last_run_result": "DISPATCHED_UID_203_LINK_ONLY_NO_ATTACHMENTS_QUEUE_DRAINED",
-  "recovery_evidence": {
-    "reconciled_at": "2026-09-02T16:54:46Z",
-    "hostinger_latest_verified_uid": 203,
-    "post_run_verified_uids": [203],
-    "provider_ambiguity": false,
-    "duplicate_first_contact_detected": false,
-    "queue_recipient_index_consistent": true,
-    "public_document_link_verified": true,
-    "remaining_ready_count": 0
   },
   "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or conflict means abort without send."
 }
