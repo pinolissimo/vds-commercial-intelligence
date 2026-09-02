@@ -1,0 +1,67 @@
+{
+  "run_id": "direct-route-closer-20260902T1940Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "starting_backlog": 4,
+  "starting_ready": 0,
+  "candidates_closed": 4,
+  "ready_added": 1,
+  "manual_route": 1,
+  "explicit_no_freelance": 0,
+  "stale": 0,
+  "duplicates": 0,
+  "route_failures": 2,
+  "ending_ready": 1,
+  "elapsed_seconds": 401,
+  "ready_closures_per_minute": 0.15,
+  "total_closures_per_minute": 0.60,
+  "source_fanout_run": "search-fanout-20260902T1922Z",
+  "recovery_backlog": "CHECKED_FIRST_NO_NEW_RECOVERY_CLOSURES",
+  "closures": [
+    {
+      "canonical_identity_key": "org:ondeuev.com",
+      "organization": "Ondeuev",
+      "state": "READY_TO_APPLY",
+      "fit_score": 95,
+      "route": "VERIFIED_DIRECT_EMAIL",
+      "recipient": "talent@ondeuev.com",
+      "evidence": "Current official collaboration/contact page states Ondeuev is always open to new collaborations, explicitly includes programmers, and directs CV or portfolio to talent@ondeuev.com. The agency's positioning includes web and digital work. Spanish public CV link is PASS under the canonical document manifest.",
+      "contract_model_gate": "PASS_NO_EXPLICIT_NO_FREELANCE_NO_CONTRACTOR_EXCLUSION",
+      "geography_gate": "PASS_NO_MANDATORY_LOCALITY_OR_ONSITE_RESTRICTION_STORED_FOR_THIS_COLLABORATION_ROUTE",
+      "dedup": "GITHUB_QUEUE_INDEX_LEDGER_CLEAR; HOSTINGER_SENT_INCREMENTAL_RECHECK_THROUGH_UID_206_NO_ONDEUEV_MATCH; GMAIL_SENT_ZERO",
+      "queue_commit": "b94faa14dfb067e32ea97a7c28fea55930e7d2f7"
+    },
+    {
+      "canonical_identity_key": "org:studiosbs.com",
+      "organization": "Studio SBS SRL / QuoLAB",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "fit_score": 90,
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "evidence": "Official QuoLAB careers page explicitly accepts external collaborators and the company is a web agency focused on websites, ecommerce and web marketing.",
+      "blocker": "Exact authoritative application route is the official form; scheduled Dispatcher support for this exact form is not certified. Preserve Studio SBS SRL as organization-level identity and do not substitute a generic email."
+    },
+    {
+      "canonical_identity_key": "org:qualitywebsrl.it",
+      "organization": "Quality Web SRL",
+      "state": "ROUTE_UNRESOLVED",
+      "fit_score": 99,
+      "route": "THIRD_PARTY_SIGNAL_ONLY",
+      "evidence": "Fresh third-party signal is an excellent technical/commercial fit: freelance P.IVA, WordPress, Elementor, WooCommerce, frontend, ecommerce, UX and performance.",
+      "blocker": "Canonical evidence does not establish a company-controlled current vacancy, resolve remote-versus-locality conflict, or provide an exact authoritative application route. No generic business contact substitution permitted."
+    },
+    {
+      "canonical_identity_key": "org:brahma-srl-firenze",
+      "organization": "Brahma srl",
+      "state": "ROUTE_UNRESOLVED",
+      "fit_score": 96,
+      "route": "THIRD_PARTY_SIGNAL_ONLY",
+      "evidence": "Current-accessible third-party surfaces describe freelance/P.IVA continuous collaboration involving WordPress/Shopify, HTML/CSS/JavaScript, SEO and AI tools.",
+      "blocker": "Canonical company domain/legal identity, company-controlled current demand, exact authoritative route and Spain-to-Firenze geography feasibility remain unresolved. No READY promotion without those gates."
+    }
+  ],
+  "mailbox_jit": "ONDEUEV_ONLY_HOSTINGER_SENT_READ_ONLY_INCREMENTAL_THROUGH_UID_206_NO_MATCH; GMAIL_SENT_READ_ONLY_ZERO",
+  "queue_write_verification": "PASS_ONDEUEV_CANONICAL_IDENTITY_PRESENT_EXACTLY_ONCE_AFTER_WRITE",
+  "result": "SUCCESS_4_CURRENT_FANOUT_SURVIVORS_CLOSED_1_CERTIFIED_READY",
+  "external_actions": "NONE",
+  "dispatch_lease": "NOT_ACQUIRED"
+}
