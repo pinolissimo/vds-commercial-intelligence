@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDS Job Demand Signal",
+  "type": "object",
+  "required": ["source_id", "source_url", "company_name", "title", "territory"],
+  "properties": {
+    "source_id": {"type": "string"},
+    "source_url": {"type": "string", "format": "uri"},
+    "company_name": {"type": "string"},
+    "company_domain": {"type": ["string", "null"]},
+    "official_url": {"type": ["string", "null"], "format": "uri"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "territory": {"type": "string"},
+    "official_source_verified": {"type": "boolean"},
+    "currently_open": {"type": "boolean"},
+    "route_type": {"enum": ["DIRECT_EMAIL", "FORM", "PLATFORM", "MANUAL", "UNVERIFIED", "CLOSED"]},
+    "route_explicit": {"type": "boolean"},
+    "application_url": {"type": ["string", "null"], "format": "uri"},
+    "attachments_required": {"type": "boolean"}
+  }
+}

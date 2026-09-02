@@ -203,5 +203,6 @@ Public administrations, municipalities, institutional bodies and regulated procu
 - [Success Indicators](views/success-indicators.json)
 - [Active Opportunities](views/active-freelance-opportunities.json)
 - [Local SME 999](local-no-website/master-index.json)
+- [Job Source Intelligence](job-intel/README.md)
 
 > **Conversion > activity. Evidence > inference. Revenue > vanity metrics.**
