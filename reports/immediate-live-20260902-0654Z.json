@@ -1,0 +1,41 @@
+{
+  "run_id": "immediate-live-20260902-0654Z",
+  "mode": "LIVE",
+  "started_at": "2026-09-02T06:54:30Z",
+  "finished_at": "2026-09-02T06:59:00Z",
+  "raw_ready_count": 16,
+  "adaptive_policy": "NO_FIXED_MINIMUM",
+  "lease": {
+    "lease_id": "lease-immediate-20260902-0654Z-a1",
+    "acquired": true,
+    "ownership_reread_verified": true,
+    "released_to_idle": true
+  },
+  "dedup": {
+    "gmail_sent_exact_ready_recipients": 0,
+    "hostinger_sent_recent_reconciliation": "NO_MATCH_FOR_CURRENT_READY_RECIPIENTS_BEFORE_SEND",
+    "canonical_recipient_index_rechecked": true
+  },
+  "document_qa": {
+    "ES_MASTER_QA": {"size_bytes":137287,"sha256":"42ef310e73fbc747570571f519d858fe701dc3fe3d1935c2da736d8e259ac560","exact_original_verified":true},
+    "IT_MASTER_QA": {"size_bytes":133498,"sha256":"db92237096c502fa7291d10c4e6fbb3e26bf39ffddcb5ea7d3f735f8cce1830f","exact_original_verified":true,"embedded_image_present":true},
+    "EN_MASTER_QA": {"size_bytes":134861,"sha256":"8bef1c5d81d0ab974e23544e9f2040920da7e367a33535c9eddc36de46434fed","exact_original_verified":true}
+  },
+  "verified_sends": [
+    {
+      "canonical_identity_key":"org:junolab.it",
+      "organization":"Juno Lab SRL",
+      "recipient":"jobs@junolab.it",
+      "subject":"Web Designer",
+      "hostinger_uid":180,
+      "sent_at":"2026-09-02T06:58:10Z",
+      "bcc_owner":true,
+      "cv_required":false,
+      "attachments":0,
+      "sent_verification":"PASS"
+    }
+  ],
+  "blocked_dependency": "HOSTINGER_ATTACHMENT_BASE64_BRIDGE_FOR_CV_REQUIRED_IDENTITIES",
+  "note": "Exact original PDF bytes exist and match the canonical hashes, but this automation runtime cannot pass the container-backed raw/base64 payload into the Hostinger connector attachment content field without exposing/copying the full base64 string through the model interface. Fail-closed policy therefore prevented CV-required sends. Juno Lab was valid without a formal CV and was sent and verified. Canonical recipient index was immediately updated to block duplicate re-contact. Queue still contains the Juno record, but the canonical recipient index now dominates final JIT dedup and will sanitize it on the next dispatcher pass.",
+  "result":"PARTIAL_DISPATCH_1_VERIFIED_SENT_REMAINING_CV_REQUIRED_BLOCKED"
+}
