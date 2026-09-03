@@ -1,0 +1,35 @@
+{
+  "run_id": "search-fanout-20260903T1723Z",
+  "timestamp": "2026-09-03T17:23:19Z",
+  "worker": "SEARCH_FANOUT",
+  "mode": "HIGH_THROUGHPUT",
+  "starting_READY": 0,
+  "ending_READY": 0,
+  "query_source_lanes": 8,
+  "search_source_probes": 51,
+  "raw_signals": 87,
+  "unique_orgs": 39,
+  "cheap_pass": 1,
+  "backlog_added": 1,
+  "immediate_READY_added": 0,
+  "duplicates": 4,
+  "stale_rejected": 11,
+  "other_cheap_rejects": 23,
+  "elapsed_seconds": null,
+  "unique_orgs_per_minute": null,
+  "yield_spain": 0,
+  "yield_italy": 1,
+  "yield_eu_language_compatible": 0,
+  "survivor_organizations": ["ThreeCommerce"],
+  "duplicate_evidence": [
+    "Act Attack — already persisted in the immediately preceding Search Fanout fragment",
+    "Owen Thomas / OT Group — canonical organization already present in acquisition discovery state",
+    "other repeated board copies and known organizations were collapsed before survivor consideration"
+  ],
+  "best_yield_combinations": [
+    "Italy ecommerce freelance-network + WordPress/WooCommerce + agency overflow/partnership",
+    "Spain/Italy explicit current freelance/contract demand with early canonical dedup",
+    "EU language-compatible Italian/Spanish contractor queries with geography and language evidence enforced"
+  ],
+  "counting_note": "Eight logical lanes covered Spain, Italy and EU language-compatible discovery. search_source_probes=51 counts the query and cheap-verification probes issued in the instrumented fanout batches. raw_signals=87 is the conservative count of candidate-bearing result surfaces explicitly reviewed before canonicalization; unique_orgs=39 counts identifiable organizations after early normalization. Category totals are mutually exclusive at organization level for the counted set: 1 survivor, 4 canonical duplicates, 11 stale/closed/geography-invalid rejects and 23 other cheap rejects. Individual freelancer supply profiles and anonymous marketplace buyers were excluded from qualified-organization yield. No deep recipient verification or READY forcing was performed. ThreeCommerce was retained as a breadth survivor rather than certified current hiring demand because the official pages establish an active freelance ecommerce network and agency-collaboration model but do not prove current intake of additional external collaborators. Elapsed runtime was not available from a reliable monotonic source."
+}
