@@ -1,0 +1,82 @@
+{
+  "run_id": "direct-route-closer-20260903T1436Z",
+  "timestamp": "2026-09-03T14:36:16Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocol_version": "1.3",
+  "source_fanout_run": "search-fanout-20260903T1423Z",
+  "geographic_language_policy": "SPAIN_ITALY_PLUS_EU_LANGUAGE_COMPATIBLE",
+  "starting_backlog": 2,
+  "closures": [
+    {
+      "canonical_identity_key": "org:marketizados.com",
+      "organization": "Marketizados",
+      "market": "ES",
+      "language_lane": "Spain",
+      "fit_score": 98,
+      "final_state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "Current official Marketizados company surface explicitly invites freelance, agency or studio collaborators and specifically lists PHP, WordPress, integrations and automations. The authoritative collaboration route is the embedded official collaboration form with name, email, specialty and optional portfolio/web/LinkedIn fields. Dispatcher form execution is unsupported. hola@marketizados.com is published as the general HQ contact and is not substituted for the dedicated collaboration form. No explicit no-freelance exclusion or incompatible geographic restriction is present.",
+      "authoritative_company_url": "https://marketizados.com/",
+      "route": "OFFICIAL_COLLABORATION_FORM",
+      "route_type": "FORM",
+      "recipient_authority": "FORM_ONLY_NO_DEDICATED_APPLICATION_EMAIL",
+      "document_link_requirement": "OPTIONAL_PORTFOLIO_OR_WEB_OR_LINKEDIN_FIELD",
+      "legal_geographic_state": "PASS_NO_EXPLICIT_INCOMPATIBLE_RESTRICTION",
+      "mailbox_jit_dedup_performed": false
+    },
+    {
+      "canonical_identity_key": "org:playthinkcreative.it",
+      "organization": "Play / Think Creative",
+      "market": "IT",
+      "language_lane": "Italy",
+      "fit_score": 99,
+      "final_state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "Current official careers page explicitly states that Play / Think Creative is considering outsourcing collaborations with Partita IVA. The WEB lane is an exceptional VDS fit: HTML5, CSS3, JavaScript, responsive/mobile-first, WordPress theme/plugin customization, PHP and/or Node.js, MySQL, security, performance, technical SEO, UX/UI and Figma. The exact authoritative application route is the official candidate form and it requires CV PDF upload. marketing@playthinkcreative.it is explicitly presented for further information, not as the application route, so it is not substituted. Full-time wording is not treated as a blocker. Smart Working is stated and no employees-only/no-freelance exclusion exists. Cross-border Spanish-autonomo equivalence to the stated Italian Partita IVA wording is not explicitly certified by the employer and should be confirmed only if manually applying, but the unsupported form route already makes the candidate non-executable by Dispatcher.",
+      "authoritative_company_url": "https://playthinkcreative.it/lavora-con-noi/",
+      "route": "OFFICIAL_CANDIDATE_FORM_WITH_CV_UPLOAD",
+      "route_type": "FORM",
+      "recipient_authority": "FORM_ONLY_MARKETING_EMAIL_INFORMATION_ONLY",
+      "document_link_requirement": "CV_PDF_UPLOAD_REQUIRED_MANUAL_ROUTE",
+      "legal_geographic_state": "NO_EXPLICIT_LOCATION_BLOCK; EU_CROSS_BORDER_VAT_EQUIVALENCE_NOT_EMPLOYER_CERTIFIED",
+      "mailbox_jit_dedup_performed": false
+    }
+  ],
+  "metrics": {
+    "candidates_closed": 2,
+    "ready_added": 0,
+    "manual_route": 2,
+    "explicit_no_freelance": 0,
+    "stale": 0,
+    "duplicates": 0,
+    "route_failures": 0,
+    "legal_geographic_blocks": 0,
+    "spain_closures": 1,
+    "italy_closures": 1,
+    "eu_language_compatible_closures": 0,
+    "elapsed_seconds": 64,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 1.875,
+    "ending_ready_count": 0
+  },
+  "write_discipline": {
+    "canonical_queue_checked": true,
+    "canonical_recipient_index_checked": true,
+    "promotion_attempted": false,
+    "queue_write_performed": false,
+    "shared_state_write_serialized": true,
+    "post_write_verification_required": true
+  },
+  "dedup": {
+    "mailbox_jit_scan_performed": false,
+    "reason": "Both candidates failed Dispatcher route support before pre-READY. Per dedup-speed protocol, full Sent reconciliation was intentionally skipped.",
+    "queue_observed_ready_count": 0,
+    "hostinger_last_verified_uid_from_canonical_lease_queue_state": 237
+  },
+  "safety": {
+    "external_send_actions": 0,
+    "forms_submitted": 0,
+    "dms_sent": 0,
+    "dispatch_lease_acquired": false,
+    "external_write_send_tools_used": false
+  }
+}
