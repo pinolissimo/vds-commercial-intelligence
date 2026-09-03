@@ -1,0 +1,74 @@
+{
+  "run_id": "direct-route-closer-20260903T1742Z",
+  "timestamp": "2026-09-03T17:42:00Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocol_version": "1.3",
+  "source_fanout_run": "search-fanout-20260903T1723Z",
+  "geographic_language_policy": "SPAIN_ITALY_PLUS_EU_LANGUAGE_COMPATIBLE",
+  "starting_backlog": 1,
+  "closures": [
+    {
+      "canonical_identity_key": "org:threecommerce.it",
+      "organization": "ThreeCommerce",
+      "market": "IT",
+      "language_lane": "Italy",
+      "fit_score": 90,
+      "final_state": "HOLD_STALE_SOURCE_AUTHORITY",
+      "reason": "Current official ThreeCommerce surfaces confirm a strong technical/commercial fit around WordPress/WooCommerce, frontend/backend, UX/UI and ongoing support/outsourcing for agencies, and describe ThreeCommerce as a network of independent ecommerce professionals. However, the authoritative surface verified in this run is an agency-facing service/partnership offer: it explains how agencies can use the ThreeCommerce network for workload peaks, one-shot work and continuing collaborations, but it does not establish current intake of new external freelancers/collaborators. No dedicated current collaborator/application route or recipient authority was verified. A generic corporate contact therefore cannot be substituted. Because current authoritative demand for an additional external collaborator is unproven, the candidate is non-executable and is not promoted to READY.",
+      "authoritative_company_url": "https://www.threecommerce.it/",
+      "authoritative_opportunity_url": "https://www.threecommerce.it/cosa-possiamo-fare-per-te/web-agency",
+      "route": "NO_CURRENT_AUTHORITATIVE_EXTERNAL_COLLABORATOR_INTAKE_ROUTE_VERIFIED",
+      "route_type": "UNRESOLVED_AFTER_SOURCE_AUTHORITY_FAILURE",
+      "recipient_authority": "NONE_VERIFIED_FOR_NEW_EXTERNAL_COLLABORATOR_INTAKE",
+      "document_link_requirement": "NOT_REACHED; CANDIDATE_FAILED_CURRENT_DEMAND_AND_ROUTE_AUTHORITY_GATES BEFORE PRE_READY",
+      "contract_model_state": "OFFICIAL_SITE_DESCRIBES_FREELANCE_NETWORK; NO_EXPLICIT_NO_FREELANCE_EXCLUSION",
+      "legal_geographic_state": "NOT_REQUIRED_FOR_EXECUTION_AFTER_PRIOR SOURCE_AUTHORITY FAILURE; SPAIN_BASED_CROSS_BORDER_INTAKE_NOT_ESTABLISHED",
+      "truthful_fit_state": "STRONG_WORDPRESS_WOOCOMMERCE_FRONTEND_UX_UI_SUPPORT_FIT",
+      "mailbox_jit_dedup_performed": false,
+      "freshness_evidence": "Official ThreeCommerce site and agency-facing service surface verified current in the source Fanout on 2026-09-03; downstream closure found no authoritative evidence that the currently active network is accepting additional external collaborators."
+    }
+  ],
+  "metrics": {
+    "candidates_closed": 1,
+    "ready_added": 0,
+    "manual_route": 0,
+    "explicit_no_freelance": 0,
+    "stale": 1,
+    "duplicates": 0,
+    "route_failures": 0,
+    "legal_geographic_blocks": 0,
+    "spain_closures": 0,
+    "italy_closures": 1,
+    "eu_language_compatible_closures": 0,
+    "elapsed_seconds": 255,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 0.2353,
+    "ending_ready_count": 0
+  },
+  "write_discipline": {
+    "canonical_queue_checked": true,
+    "canonical_recipient_index_checked": true,
+    "promotion_attempted": false,
+    "queue_write_performed": false,
+    "shared_state_write_serialized": true,
+    "post_write_verification_required": true,
+    "latest_queue_blob_before_decision": "9487ce8558bab233cfa4991cb825318718d8fbfa",
+    "latest_recipient_index_blob_before_decision": "5a1d27ac4bdd63a4462d343ecac7dba1d1271e97"
+  },
+  "dedup": {
+    "mailbox_jit_scan_performed": false,
+    "reason": "Candidate failed current authoritative-demand/route-authority gates before pre-READY; per dedup-speed protocol a fresh mailbox Sent scan was intentionally skipped.",
+    "queue_observed_ready_count": 0,
+    "canonical_identity_in_current_queue": false,
+    "canonical_identity_in_current_recipient_index": false,
+    "hostinger_last_verified_uid_from_canonical_state": 237
+  },
+  "safety": {
+    "external_send_actions": 0,
+    "forms_submitted": 0,
+    "dms_sent": 0,
+    "dispatch_lease_acquired": false,
+    "external_write_send_tools_used": false
+  }
+}
