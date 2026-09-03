@@ -1,0 +1,42 @@
+{
+  "run_id": "direct-route-closer-20260903T2140Z",
+  "timestamp": "2026-09-03T21:40:09Z",
+  "mode": "HIGH_THROUGHPUT_CLOSURE_STATE_WRITE_ONLY",
+  "source_backlog": "data/search-fanout-fragments/2026-09-03T2122Z.jsonl",
+  "starting_backlog": 1,
+  "closures": [
+    {
+      "canonical_identity_key": "org:ugeceagency.com",
+      "organization": "UGECE Agency",
+      "country": "Spain",
+      "fit_score": 97,
+      "state": "HOLD_STALE_SOURCE_AUTHORITY",
+      "reason_code": "CURRENT_AUTHORITATIVE_WORDPRESS_DEMAND_NOT_RECONFIRMED",
+      "current_demand_signal": "UGECE's employer-branded LinkedIn company surface still exposes the explicit Freelance WordPress + SEO tecnico collaboration post, but the post is approximately six months old. Current September 2026 company activity is visible, yet no newer UGECE-controlled WordPress/SEO hiring or collaboration notice was found.",
+      "official_identity": "UGECE Agency / ugeceagency.com confirmed by the current official website and matching LinkedIn company profile headquartered in Barcelona.",
+      "route_integrity": "The historical employer-branded collaboration post explicitly directs candidates to hello@ugeceagency.com. The current official website still publishes hello@ugeceagency.com as the agency contact, but does not currently bind that address to an open WordPress/SEO collaboration. Therefore recipient existence is confirmed but current application-route authority is not sufficient for READY certification.",
+      "contract_model": "Historical authoritative demand explicitly states freelance, autonomo, recurring remote hourly collaboration; no explicit no-freelance/no-contractors exclusion found.",
+      "geography_legal": "Historical opportunity is explicitly remote and Spain-based; no geographic blocker identified for a Spain-based autonomo profile.",
+      "document_link_requirement": "Not evaluated because current-demand freshness failed before pre-READY.",
+      "dedup": "Canonical READY queue observed empty and recipient index latest verified contact is Adalop UID 237. Full mailbox JIT dedup intentionally skipped because UGECE failed the current-authoritative-demand gate before pre-READY.",
+      "next_action": "Re-open only if UGECE republishes or otherwise authoritatively confirms that the WordPress/technical-SEO freelance need remains open; then perform fresh organization-level GitHub plus Sent dedup immediately before READY promotion."
+    }
+  ],
+  "metrics": {
+    "candidates_closed": 1,
+    "ready_added": 0,
+    "manual_route": 0,
+    "explicit_no_freelance": 0,
+    "stale": 1,
+    "duplicates": 0,
+    "route_failures": 0,
+    "spain_closures": 1,
+    "italy_closures": 0,
+    "eu_language_compatible_extra_it_es_closures": 0,
+    "elapsed_seconds": 167,
+    "ready_closures_per_minute": 0,
+    "total_closure_throughput_per_minute": 0.3593
+  },
+  "lease_observation": "IDLE_READ_ONLY_NO_ACQUIRE",
+  "external_actions": "NONE"
+}
