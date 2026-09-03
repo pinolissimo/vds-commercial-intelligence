@@ -1,0 +1,86 @@
+{
+  "run_id": "direct-route-closer-20260903T1136Z",
+  "timestamp": "2026-09-03T11:36:00Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocol_version": "1.3",
+  "source_fanout_run": "search-fanout-20260903T1127Z",
+  "geographic_language_policy": "SPAIN_ITALY_PLUS_EU_LANGUAGE_COMPATIBLE",
+  "starting_backlog": 3,
+  "closures": [
+    {
+      "canonical_identity_key": "org:graphalia.com",
+      "organization": "Graphalia Web Agency",
+      "market": "IT",
+      "language_lane": "Italy",
+      "fit_score": 98,
+      "final_state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "Current official careers page explicitly recruits freelance professionals with Partita IVA, states 100% remote work, and shows WordPress/WooCommerce as core technologies. The exact authoritative application route is the on-page form requiring candidate data and CV upload. No dedicated dispatcher-supported application email is authorized, so generic contact channels are not substituted. The unsupported form is sufficient to make the candidate non-executable regardless of unresolved Spain-based fiscal equivalence.",
+      "authoritative_company_url": "https://www.graphalia.com/lavora-con-noi/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "mailbox_jit_dedup_performed": false
+    },
+    {
+      "canonical_identity_key": "org:alpacode.it",
+      "organization": "Alpacode",
+      "market": "IT",
+      "language_lane": "Italy",
+      "fit_score": 96,
+      "final_state": "LEGAL_GEOGRAPHIC_BLOCK",
+      "reason": "Current official careers page has always-open remote project/outsourcing collaborations including WordPress development and explicitly supports freelancers, studios and micro-agencies. However, geographic scope is repeatedly and authoritatively limited to Italy: 'Remote · tutta Italia', 'Da tutta Italia', and 'Da dove vuoi, in Italia'. A Spain-based EU autonomo is therefore not certified eligible under the current opportunity terms. The same page also routes applications through its official form, so there is no email route to substitute.",
+      "authoritative_company_url": "https://alpacode.it/lavora-con-noi/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "mailbox_jit_dedup_performed": false
+    },
+    {
+      "canonical_identity_key": "org:novicrea.com",
+      "organization": "Novicrea / Clear Code di Mazzucco Matteo",
+      "market": "IT",
+      "language_lane": "Italy",
+      "fit_score": 90,
+      "final_state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "Current official careers page explicitly lists a PHP Freelance position with P.IVA for continuous collaboration, requiring PHP, Laravel and MySQL, and separately a freelance WordPress-content role. The exact authoritative application route is the on-page form with mandatory PDF CV upload. No dedicated application email is established. Remote/cross-border eligibility and a direct WordPress-development requirement are not certified, but the unsupported form already makes this candidate non-executable for Dispatcher.",
+      "authoritative_company_url": "https://novicrea.com/lavora-con-noi/",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "mailbox_jit_dedup_performed": false
+    }
+  ],
+  "metrics": {
+    "candidates_closed": 3,
+    "ready_added": 0,
+    "manual_route": 2,
+    "explicit_no_freelance": 0,
+    "stale": 0,
+    "duplicates": 0,
+    "route_failures": 0,
+    "legal_geographic_blocks": 1,
+    "spain_closures": 0,
+    "italy_closures": 3,
+    "eu_language_compatible_closures": 0,
+    "elapsed_seconds": 200,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 0.9,
+    "ending_ready_count": 0
+  },
+  "write_discipline": {
+    "canonical_queue_checked": true,
+    "canonical_recipient_index_checked": true,
+    "promotion_attempted": false,
+    "queue_write_performed": false,
+    "shared_state_write_serialized": true,
+    "post_write_verification_required": true
+  },
+  "dedup": {
+    "mailbox_jit_scan_performed": false,
+    "reason": "No candidate passed route/geography gates to reach pre-READY; mailbox scan intentionally skipped under dedup-speed protocol.",
+    "queue_observed_ready_count": 0,
+    "hostinger_last_verified_uid_from_canonical_lease_queue_state": 210
+  },
+  "safety": {
+    "external_send_actions": 0,
+    "forms_submitted": 0,
+    "dms_sent": 0,
+    "dispatch_lease_acquired": false,
+    "external_write_send_tools_used": false
+  }
+}
