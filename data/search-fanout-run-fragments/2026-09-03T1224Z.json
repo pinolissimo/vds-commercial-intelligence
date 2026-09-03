@@ -1,0 +1,66 @@
+{
+  "run_id": "search-fanout-20260903T1224Z",
+  "timestamp": "2026-09-03T12:24:00Z",
+  "worker": "SEARCH_FANOUT",
+  "mode": "HIGH_THROUGHPUT",
+  "ready_observed": 0,
+  "queue_pressure_policy": "80_PERCENT_EXPLICIT_CURRENT_DEMAND_DIRECT_ROUTE",
+  "survivors": [
+    {
+      "canonical_identity_key": "org:avalora.com",
+      "organization": "Avalora Tecnologías de la Información",
+      "country": "Spain",
+      "region_city": "Madrid / remote",
+      "market_lane": "SPAIN",
+      "opportunity_url": "https://www.publipega.com/empleos/desarrollador-a-frontend-freelance-con-experiencia-en-umbraco/",
+      "state": "REVIEW_REQUIRED_SOURCE_FRESHNESS",
+      "route": "THIRD_PARTY_LISTING_ROUTE_TO_VERIFY_DOWNSTREAM",
+      "fit_score": 94,
+      "evidence": "Current indexed listing names Avalora and explicitly seeks a freelance frontend collaborator for remote Umbraco web projects at up to 40 EUR/hour, requiring HTML5, CSS3, JavaScript, modern frontend frameworks and UX/UI judgement. The listing surface currently shows a 1 September 2026 publication marker, but also contains an older February date, so freshness/authority must be resolved downstream rather than forced READY.",
+      "blocker": "The discovered opportunity surface is third-party and contains conflicting publication-date metadata. Authoritative Avalora vacancy confirmation, exact recipient/application route and current freelance opening must be established downstream.",
+      "next_verification_action": "Check Avalora's authoritative careers/current vacancies for the same Umbraco freelance need, reconcile the conflicting freshness metadata, then resolve the exact official route before any READY promotion."
+    },
+    {
+      "canonical_identity_key": "org:purplesoft.it",
+      "organization": "PurpleSoft - Digital Products & AI Solutions",
+      "country": "Italy",
+      "region_city": "Seveso (MB) / work mode to verify",
+      "market_lane": "ITALY",
+      "opportunity_url": "https://www.jobijoba.it/annunci-di-lavoro/13/68aebb75eff9c51effc69b4110fe9b64",
+      "state": "REVIEW_REQUIRED_CONTRACT_ROUTE",
+      "route": "THIRD_PARTY_LISTING_ROUTE_TO_VERIFY_DOWNSTREAM",
+      "fit_score": 92,
+      "evidence": "Recent August 2026 indexed demand for a WordPress Web Designer / UX-UI specialist: WordPress, Elementor, Figma, responsive web interfaces, landing pages and ecommerce are central, with at least two years of agency or freelance experience requested. This is a strong stack-fit demand signal for VDS.",
+      "blocker": "The discovered source is a job-board surface rather than an authoritative company careers page, and it does not establish freelance/contractor engagement, remote eligibility or a canonical direct route.",
+      "next_verification_action": "Downstream worker should verify the opportunity on an authoritative PurpleSoft surface, determine contractor/freelance and remote/cross-border eligibility, and resolve the exact route."
+    }
+  ],
+  "metrics": {
+    "query_source_lanes": 8,
+    "query_probes": 22,
+    "raw_signals": 38,
+    "unique_orgs": 22,
+    "cheap_pass": 2,
+    "backlog_added": 2,
+    "immediate_ready_added": 0,
+    "duplicates": 4,
+    "stale_rejected": 8,
+    "other_rejected": 8,
+    "yield_by_lane": {
+      "spain": 1,
+      "italy": 1,
+      "eu_language_compatible": 0
+    },
+    "elapsed_minutes": null,
+    "unique_orgs_per_minute": null,
+    "notes": "High-throughput breadth pass across Spain, Italy and EU language-compatible lanes. Broovera and Amony were known identities; repeated same-run surfaces were canonicalized early. Outvise's current LinkedIn signal was closed, while UST lacked explicit freelance status and older Wiselyst/Brahma surfaces were not promoted. Anonymous marketplace opportunities were rejected because canonical organization identity was unavailable."
+  },
+  "safety": {
+    "emails_sent": 0,
+    "forms_submitted": 0,
+    "dms_sent": 0,
+    "dispatch_lease_acquired": false,
+    "external_write_send_tools_invoked": false,
+    "ready_queue_written": false
+  }
+}
