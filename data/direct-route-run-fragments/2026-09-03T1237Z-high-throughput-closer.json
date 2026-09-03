@@ -1,0 +1,74 @@
+{
+  "run_id": "direct-route-closer-20260903T1237Z",
+  "timestamp": "2026-09-03T12:37:00Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocol_version": "1.3",
+  "source_fanout_run": "search-fanout-20260903T1224Z",
+  "geographic_language_policy": "SPAIN_ITALY_PLUS_EU_LANGUAGE_COMPATIBLE",
+  "starting_backlog": 2,
+  "closures": [
+    {
+      "canonical_identity_key": "org:avalora.com",
+      "organization": "Avalora Tecnologias de la Informacion",
+      "market": "ES",
+      "language_lane": "Spain",
+      "fit_score": 94,
+      "final_state": "HOLD_STALE_SOURCE_AUTHORITY",
+      "reason": "The fresh official Avalora careers surface does not list the third-party Umbraco freelance frontend opportunity. Current authoritative openings shown by Avalora are Full Stack Developer (TypeScript) and technical support roles; no matching current freelance Umbraco demand is confirmed. Therefore the third-party listing with conflicting publication metadata cannot satisfy the authoritative freshness gate. No generic corporate email is substituted for an unverified vacancy route.",
+      "authoritative_company_url": "https://www.avalora.com/",
+      "route": "UNRESOLVED_THIRD_PARTY_ONLY",
+      "mailbox_jit_dedup_performed": false
+    },
+    {
+      "canonical_identity_key": "org:purplesoft.it",
+      "organization": "PurpleSoft - Digital Products & AI Solutions",
+      "market": "IT",
+      "language_lane": "Italy",
+      "fit_score": 92,
+      "final_state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "A current employer-branded LinkedIn job surface confirms active Web Designer demand in Seveso with WordPress, Elementor, Figma, responsive web interfaces, landing pages and ecommerce; it explicitly accepts at least two years of experience gained in a web agency or as a freelancer and requires portfolio evidence. No explicit no-freelance/no-contractor exclusion is present. The authoritative execution path is the LinkedIn application platform, not a dedicated dispatcher-supported application email. Generic company contact email is not substituted. Full-time wording and location reference alone are not treated as contract blockers. Manual application should still truthfully verify the Figma/Adobe proficiency requirements before submission.",
+      "authoritative_company_url": "https://it.linkedin.com/jobs/view/web-designer-at-purplesoft-digital-products-ai-solutions-4431512690",
+      "route": "VERIFIED_EMPLOYER_BRANDED_LINKEDIN_APPLICATION_PLATFORM",
+      "mailbox_jit_dedup_performed": false
+    }
+  ],
+  "metrics": {
+    "candidates_closed": 2,
+    "ready_added": 0,
+    "manual_route": 1,
+    "explicit_no_freelance": 0,
+    "stale": 1,
+    "duplicates": 0,
+    "route_failures": 0,
+    "legal_geographic_blocks": 0,
+    "spain_closures": 1,
+    "italy_closures": 1,
+    "eu_language_compatible_closures": 0,
+    "elapsed_seconds": 95,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 1.2632,
+    "ending_ready_count": 0
+  },
+  "write_discipline": {
+    "canonical_queue_checked": true,
+    "canonical_recipient_index_checked": true,
+    "promotion_attempted": false,
+    "queue_write_performed": false,
+    "shared_state_write_serialized": true,
+    "post_write_verification_required": true
+  },
+  "dedup": {
+    "mailbox_jit_scan_performed": false,
+    "reason": "Avalora failed authoritative freshness before pre-READY. PurpleSoft failed dispatcher route support before pre-READY. Per dedup-speed protocol, no mailbox Sent scan was needed.",
+    "queue_observed_ready_count": 0,
+    "hostinger_last_verified_uid_from_canonical_lease_queue_state": 210
+  },
+  "safety": {
+    "external_send_actions": 0,
+    "forms_submitted": 0,
+    "dms_sent": 0,
+    "dispatch_lease_acquired": false,
+    "external_write_send_tools_used": false
+  }
+}
