@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "state": "IDLE",
-  "lease_id": null,
-  "owner": null,
-  "run_id": null,
-  "acquired_at": null,
-  "expires_at": null,
+  "state": "ACTIVE",
+  "lease_id": "lease-scheduled-dispatch-20260903-0658z-sirup",
+  "owner": "VDS_IT_ES_BATCH_DISPATCHER",
+  "run_id": "scheduled-dispatch-20260903-0658z",
+  "acquired_at": "2026-09-03T06:58:45Z",
+  "expires_at": "2026-09-03T07:13:45Z",
   "last_released_at": "2026-09-03T00:56:10Z",
   "last_run_id": "scheduled-dispatch-20260903-0056z",
   "last_incident": {
@@ -16,15 +16,12 @@
   },
   "last_run_result": "DISPATCHED_UALA_ONLINE_UID_209_LINK_ONLY_NO_ATTACHMENTS_QUEUE_DRAINED",
   "recovery_evidence": {
-    "reconciled_at": "2026-09-03T00:56:10Z",
+    "reconciled_at": "2026-09-03T06:58:45Z",
     "hostinger_latest_verified_uid": 209,
-    "post_run_verified_uids": [209],
     "provider_ambiguity": false,
     "duplicate_first_contact_detected": false,
-    "queue_drained": true,
-    "recipient_index_event_pending_reconciliation": true,
     "public_document_link_verified": true,
-    "remaining_ready_count": 0
+    "remaining_ready_count": 1
   },
   "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or conflict means abort without send."
 }
