@@ -1,0 +1,70 @@
+{
+  "run_id": "direct-route-closer-20260903T1635Z",
+  "timestamp": "2026-09-03T16:35:00Z",
+  "worker": "DIRECT_ROUTE_CLOSER",
+  "mode": "HIGH_THROUGHPUT",
+  "protocol_version": "1.3",
+  "source_fanout_run": "search-fanout-20260903T1626Z",
+  "geographic_language_policy": "SPAIN_ITALY_PLUS_EU_LANGUAGE_COMPATIBLE",
+  "starting_backlog": 1,
+  "closures": [
+    {
+      "canonical_identity_key": "org:act-attack-barcelona-es",
+      "organization": "Act Attack",
+      "market": "ES",
+      "language_lane": "Spain",
+      "fit_score": 98,
+      "final_state": "MANUAL_ROUTE_REQUIRED",
+      "reason": "Fresh employer-branded LinkedIn vacancy confirms WordPress & Web Operations Assistant demand: remote, 2-4 hours/week, project-based, freelancer able to invoice, WordPress Multisite/Oxygen Builder, HTML/CSS/PHP edits, plugins/backend/API/Brevo, UX/UI improvements and occasional Plesk tasks; Barcelona residence or a visit every two months is preferred rather than stated as a hard requirement. The current authoritative vacancy execution route is LinkedIn Apply/platform. Act Attack's own website has an official Community Assistants vacancy with a direct Gmail/WhatsApp application route, but that route belongs to a different role and cannot be substituted for the current WordPress vacancy. Dispatcher platform/form execution is unsupported, so automatic READY certification is prohibited. No authoritative no-freelance exclusion exists; the vacancy explicitly requires freelancer/invoicing capability. Fluent English is explicitly required and must be assessed truthfully in any manual application.",
+      "authoritative_company_url": "https://actattacktheater.com/",
+      "authoritative_opportunity_url": "https://es.linkedin.com/jobs/view/wordpress-web-operations-assistant-at-act-attack-4460822622",
+      "route": "LINKEDIN_APPLY_PLATFORM",
+      "route_type": "PLATFORM_FORM",
+      "recipient_authority": "PLATFORM_ONLY_NO_DEDICATED_EMAIL_AUTHORIZED_FOR_THIS_ROLE",
+      "document_link_requirement": "NOT_NEEDED_FOR_AUTOMATIC_ROUTE_AFTER_PLATFORM_BLOCK; MANUAL_APPLICATION_SHOULD_REVIEW_LINKEDIN_FORM_REQUIREMENTS",
+      "contract_model_state": "EXPLICIT_FREELANCE_PROJECT_BASED_ABLE_TO_INVOICE",
+      "legal_geographic_state": "REMOTE_CONFIRMED; BARCELONA_RESIDENCE_OR_BIMONTHLY_VISIT_PREFERRED_NOT_HARD_BLOCK",
+      "truthful_fit_state": "STRONG_WORDPRESS_FRONTEND_UX_UI_OPERATIONS_FIT; OXYGEN_BUILDER_AND_FLUENT_ENGLISH_MUST_NOT_BE_OVERSTATED",
+      "mailbox_jit_dedup_performed": false,
+      "freshness_evidence": "Employer-branded LinkedIn listing crawled 2026-09-03 and shown as posted within hours; additional Spanish job surfaces crawled 2026-09-03 also show the role current with application horizon into late October/early November 2026."
+    }
+  ],
+  "metrics": {
+    "candidates_closed": 1,
+    "ready_added": 0,
+    "manual_route": 1,
+    "explicit_no_freelance": 0,
+    "stale": 0,
+    "duplicates": 0,
+    "route_failures": 0,
+    "legal_geographic_blocks": 0,
+    "spain_closures": 1,
+    "italy_closures": 0,
+    "eu_language_compatible_closures": 0,
+    "elapsed_seconds": 95,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 0.6316,
+    "ending_ready_count": 0
+  },
+  "write_discipline": {
+    "canonical_queue_checked": true,
+    "canonical_recipient_index_required_for_promotion": false,
+    "promotion_attempted": false,
+    "queue_write_performed": false,
+    "shared_state_write_serialized": true,
+    "post_write_verification_required": true
+  },
+  "dedup": {
+    "mailbox_jit_scan_performed": false,
+    "reason": "Candidate failed Dispatcher route-support gate before pre-READY; per dedup-speed protocol full Sent reconciliation was intentionally skipped.",
+    "queue_observed_ready_count": 0,
+    "hostinger_last_verified_uid_from_canonical_lease_queue_state": 237
+  },
+  "safety": {
+    "external_send_actions": 0,
+    "forms_submitted": 0,
+    "dms_sent": 0,
+    "dispatch_lease_acquired": false,
+    "external_write_send_tools_used": false
+  }
+}
