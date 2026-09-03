@@ -1,0 +1,80 @@
+{
+  "run_id": "search-fanout-20260903T1127Z",
+  "timestamp": "2026-09-03T11:27:00Z",
+  "worker": "SEARCH_FANOUT",
+  "mode": "HIGH_THROUGHPUT",
+  "ready_observed": 0,
+  "queue_pressure_policy": "80_PERCENT_EXPLICIT_CURRENT_DEMAND_DIRECT_ROUTE",
+  "survivors": [
+    {
+      "canonical_identity_key": "org:graphalia.com",
+      "organization": "Graphalia Web Agency",
+      "country": "Italy",
+      "region_city": "Colleferro (Roma) / 100% remote",
+      "market_lane": "ITALY",
+      "opportunity_url": "https://www.graphalia.com/lavora-con-noi/",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "fit_score": 98,
+      "evidence": "Official live careers page states the team works 100% remotely, explicitly says it does not seek employees but collaborates with freelance professionals with Partita IVA, and invites professionals to apply. The same page identifies WordPress and WooCommerce among core web technologies/services and describes Graphalia as a web digital agency producing websites and ecommerce.",
+      "blocker": "Authoritative careers route is the on-page application form with CV upload; no dispatcher-supported direct application email is established. Spain-based EU cross-border fiscal eligibility is not explicitly stated.",
+      "next_verification_action": "Manual-route/downstream worker should confirm acceptance of a Spain-based EU autonomo and preserve the official form route; do not substitute a generic contact channel."
+    },
+    {
+      "canonical_identity_key": "org:alpacode.it",
+      "organization": "Alpacode",
+      "country": "Italy",
+      "region_city": "Remote-native / Italy",
+      "market_lane": "ITALY",
+      "opportunity_url": "https://alpacode.it/lavora-con-noi/",
+      "state": "REVIEW_REQUIRED_GEOGRAPHY_SCOPE",
+      "route": "OFFICIAL_CAREERS_FLOW_TO_VERIFY_DOWNSTREAM",
+      "fit_score": 96,
+      "evidence": "Official live careers page recruits external collaborators for single tasks or complete projects, explicitly remote-native, with written compensation and no fixed employee schedule. Open collaboration categories include UI/UX and code, with client work including websites, ecommerce and management systems.",
+      "blocker": "The page explicitly frames geographic availability as 'da qualsiasi punto d'Italia' / 'da tutta Italia'; it does not authoritatively confirm Spain-based EU contractors. Exact execution route should be resolved downstream.",
+      "next_verification_action": "Confirm whether a Spain-based EU autonomo is accepted and resolve the exact authoritative application route before any READY promotion."
+    },
+    {
+      "canonical_identity_key": "org:novicrea.com",
+      "organization": "Novicrea / Clear Code di Mazzucco Matteo",
+      "country": "Italy",
+      "region_city": "Vigonovo (VE) / remote status to verify",
+      "market_lane": "ITALY",
+      "opportunity_url": "https://novicrea.com/lavora-con-noi/",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "fit_score": 90,
+      "evidence": "Official live careers page currently lists 'Sviluppatore PHP Freelance' with P.IVA for continuous collaboration, requiring PHP, Laravel and MySQL; the same careers surface also recruits WordPress-focused content expertise. This is a commercially plausible adjacent web-development demand signal for VDS.",
+      "blocker": "Authoritative route is the official application form with PDF CV upload; remote/cross-border eligibility and direct WordPress-development need are not explicitly established.",
+      "next_verification_action": "Downstream worker should confirm remote Spain-based contractor eligibility and whether current PHP work can truthfully fit the VDS profile; preserve the form route."
+    }
+  ],
+  "metrics": {
+    "query_source_lanes": 8,
+    "query_probes": 20,
+    "raw_signals": 47,
+    "unique_orgs": 31,
+    "cheap_pass": 3,
+    "backlog_added": 3,
+    "immediate_ready_added": 0,
+    "duplicates": 4,
+    "stale_rejected": 5,
+    "other_rejected": 19,
+    "yield_by_lane": {
+      "spain": 0,
+      "italy": 3,
+      "eu_language_compatible": 0
+    },
+    "elapsed_minutes": null,
+    "unique_orgs_per_minute": null,
+    "notes": "Raw and unique counts reflect returned commercially plausible search surfaces after cheap normalization. Known duplicates included IOCOS, Web Station, Global Service Impresa and repeated freelancer/agency surfaces. Closed Estudio Dame listing was rejected as stale. Anonymous partner/company marketplace listings were not promoted because canonical organization identity was unavailable."
+  },
+  "safety": {
+    "emails_sent": 0,
+    "forms_submitted": 0,
+    "dms_sent": 0,
+    "dispatch_lease_acquired": false,
+    "external_write_send_tools_invoked": false,
+    "ready_queue_written": false
+  }
+}
