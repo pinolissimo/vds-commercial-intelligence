@@ -1,7 +1,7 @@
 # VDS IT/ES Acquisition Chain — Transactional Execution Protocol
 
-Version: 1.3  
-Effective: 2026-09-02
+Version: 1.4  
+Effective: 2026-09-04
 
 ## Purpose
 
@@ -12,9 +12,9 @@ Mandatory shared contract for the scheduled VDS IT/ES acquisition chain. It prev
 Current canonical cycle:
 1. `:20` — Performance + Reply Watch / watchdog
 2. `:25` — Search Fanout
-3. `:40` — Direct Route Miner
-4. `:55` — High-Yield Job Miner
-5. `:10` of the following hour — Batch Dispatcher
+3. `:35` — Direct Route Miner
+4. `:45` — High-Yield Job Miner
+5. `:55` — Batch Dispatcher
 
 Discovery workers NEVER send or submit. Batch Dispatcher is the only scheduled first-contact sender.
 
@@ -30,6 +30,7 @@ Required shared files:
 - `reports/it-es-batch-dispatcher-runs.jsonl`
 - `governance/it-es-dispatch-lease.json`
 - `assets/cv/document-qa-manifest.json`
+- `project/DAILY_METRICS_PROTOCOL.md`
 
 Public professional-document manifest:
 - repository `pinolissimo/Portfolio`, branch `main`
@@ -187,6 +188,23 @@ After each verified send and before the next identity:
 3. remove identity from READY;
 4. record provider UID/evidence.
 
+## Daily metrics — mandatory
+
+All workers MUST read and obey `project/DAILY_METRICS_PROTOCOL.md` on every run.
+
+Daily boundaries use `Europe/Madrid` calendar time. Each worker writes only its own file under `metrics/daily/` to prevent concurrent-writer collisions.
+
+The Batch Dispatcher MUST update `metrics/daily/YYYY-MM-DD-dispatcher.json` in the SAME run after every provider-verified first-contact send. The daily send count is therefore authoritative without rescanning Hostinger/Gmail. Internal alerts, tests, owner reports, replies and manual/interactively executed messages never increment the automatic first-contact counter.
+
+Every daily update is idempotent through `counted_run_ids`; the same run must never increment counters twice.
+
+Fast query rule:
+- `quante email oggi?` -> read today's dispatcher daily file;
+- `quante opportunità oggi?` -> read today's Search Fanout daily file;
+- pipeline/day statistics -> read today's summary file;
+- 7/30/90-day statistics -> aggregate the relevant daily files;
+- mailbox/history rescans are fallback audit only when a daily counter is missing or inconsistent.
+
 ## Observability
 
 Every Dispatcher run appends to `reports/it-es-batch-dispatcher-runs.jsonl`, including zero-send runs.
@@ -221,7 +239,9 @@ Watchdog flags:
 - producer promotion without full READY certification;
 - attachment-policy regression;
 - stale/ambiguous lease;
-- concurrent sender.
+- concurrent sender;
+- missing/stale daily metrics file for an active worker;
+- mismatch between provider-verified dispatcher sends and daily dispatcher counter.
 
 ## Hard invariants
 
@@ -235,3 +255,4 @@ Watchdog flags:
 8. Automatic application attachments are forbidden; verified public links only.
 9. No blind retry after ambiguous provider response.
 10. Safely resolvable technical faults must not strand valid READY work.
+11. Daily counters are incremental, idempotent and queryable without historical mailbox scans.
