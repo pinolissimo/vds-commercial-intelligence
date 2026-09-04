@@ -1,27 +1,35 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "date": "2026-09-04",
-  "updated_at": "2026-09-04T06:40:51Z",
-  "runs": 1,
-  "raw_signals_reviewed": 10,
-  "semantic_candidates_consumed": 0,
+  "updated_at": "2026-09-04T07:04:00Z",
+  "runs": 2,
+  "raw_signals_reviewed": 17,
+  "semantic_candidates_consumed": 1,
+  "existing_hot_hotplus_blockers_inspected": 3,
+  "blockers_closed_or_decisively_reclassified": 3,
+  "route_closures": 1,
   "unique_new_organizations": 2,
   "explicit_demand": 2,
-  "direct_routes": 1,
+  "direct_routes": 2,
   "agency_signals": 2,
   "eu_project_signals": 0,
-  "territory_enriched": 1,
+  "territory_enriched": 2,
   "cross_signal_merges_pending_next_ranker": 3,
   "already_contacted_orgs_identified": 1,
   "manual_route_candidates": 1,
   "high_value_candidates": 1,
-  "spain": {"new": 1, "high_value": 1, "territory_enriched": 1},
-  "italy": {"new": 1, "high_value": 0, "territory_enriched": 0},
+  "spain": {"new": 1, "high_value_current": 0, "territory_enriched": 1, "stale_high_fit": 1, "current_model_blocked": 1},
+  "italy": {"new": 1, "high_value_current": 1, "territory_enriched": 1, "route_closed": 1},
   "eu": {"new": 0, "high_value": 0},
   "source_territory_yield": [
-    {"source":"public_linkedin_plus_official_site","territory":"Spain|Cataluña|Barcelona","new":1,"hot_plus":1},
-    {"source":"official_careers_page","territory":"Italy|Lazio|Roma","new":1,"warm":1},
-    {"source":"official_contact_geo_enrichment","territory":"Spain|Castilla y León|Valladolid","new":0,"history_corrected":1}
+    {"source":"official_careers_plus_official_contact","territory":"Italy|Lazio|Roma","new":1,"hot":1,"route_closed":1},
+    {"source":"public_linkedin_plus_official_site","territory":"Spain|Cataluña|Barcelona","new":1,"stale_hold":1},
+    {"source":"official_site_current_operating_model","territory":"Spain|Castilla y León|Valladolid","new":0,"fit_blocked":1}
   ],
-  "diagnosis": "High-frequency public job feeds produced zero semantic-pass seeds, so this run shifted research toward high-intent agency signals. UGECE Agency is the strongest new signal: explicit recurring freelance WordPress + technical SEO demand, official email corroboration, Barcelona geography, and no provider suppression match."
+  "mission_sampling": {
+    "areas": ["Barcelona", "Valencia", "Bologna", "Milano"],
+    "new_promotable_canonical_organizations": 0,
+    "quality_result": "NO_GATE_WEAKENING"
+  },
+  "diagnosis": "Middle-funnel closure produced one materially improved opportunity: Ieros now has a current official collaboration/partner-network demand and exact official email route. UGECE remains high-fit but the WordPress freelance call is approximately six months old, so freshness blocks automatic promotion. Summum is blocked by its current 100%-in-house core operating model. Public high-frequency feed now has one semantic pass, but current acquisition value remains concentrated in authoritative agency/collaboration pages rather than broad job-feed volume."
 }
