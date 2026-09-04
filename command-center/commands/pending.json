@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.2",
-  "updated_at": "2026-09-04T15:47:00+02:00",
-  "policy": "Existing production tasks consume commands as non-bypassing overlays. Normal discovery and execution continue even if the bridge is unavailable.",
+  "schema_version": "1.3",
+  "updated_at": "2026-09-04T18:36:00+02:00",
+  "policy": "Commands target only the two active self-contained execution flows. Normal discovery and execution continue even if the bridge is unavailable.",
   "commands": [
     {
       "schema_version": "1.2",
@@ -13,80 +13,57 @@
       "owner_command": "non vedo altri invii.controlla che il motore sia acceso e funzionante. se ci sono blocchi risolvili",
       "command_class": "REFRESH",
       "intent": "verify_and_remediate_operational_blocks",
-      "summary": "Verifica operativa del motore e diagnosi/rimozione dei soli blocchi tecnici o di coda, senza modificare architettura, soglie qualitative o gate di sicurezza.",
+      "summary": "Verifica operativa del motore e diagnosi/rimozione dei soli blocchi tecnici o di coda, senza abbassare i hard gate.",
       "parameters": {
         "scope": ["worker_health","queue_freshness","pipeline_progression","provider_connectivity","route_verification"],
         "remediation": "only_non_policy_operational_blocks",
-        "preserve_production_core": true,
-        "preserve_manual_routes": true,
-        "preserve_quality_thresholds": true,
-        "evidence_snapshot": {
-          "health_status": "OK",
-          "sent_today": 9,
-          "ready": 25,
-          "manual_action": 5,
-          "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION"
-        }
+        "preserve_global_dedup": true,
+        "preserve_manual_routes": true
       },
-      "target_workers": ["AGENCY_RADAR","LINKEDIN_HUNTER","UNIFIED_LOOP"],
+      "target_workers": ["LINKEDIN_HUNTER","UNIFIED_LOOP"],
       "requires_task_bridge": true,
       "requires_existing_gates": true,
       "risk": "MEDIUM",
       "owner_confirmation_required": false,
-      "answer": "Avvio verifica completa di motore, code e connettività; eventuali blocchi solo operativi saranno rimossi mantenendo invariati tutti i gate e le soglie.",
+      "answer": "Verifica completa di motore, code e connettività attraverso i due flussi attivi.",
       "production_core_modified": false,
       "normal_cycle_must_continue": true,
-      "execution_policy": "EXISTING_TASKS_AND_GATES_REMAIN_AUTHORITATIVE",
+      "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
       "status": "PENDING_TASK_BRIDGE"
     },
     {
-      "schema_version": "1.2",
+      "schema_version": "1.3",
       "command_id": "CMD-TURBO-20260904T154700-01",
       "created_at": "2026-09-04T15:47:00+02:00",
       "expires_at": "2026-09-05T15:47:00+02:00",
       "source": "OWNER_CHAT_AUTHORIZATION",
       "model": "GPT-5.6-Sol",
-      "owner_command": "Accelerare drasticamente il motore senza abbassare la qualità: più HOT devono diventare READY e tutti i READY eseguibili devono essere inviati nello stesso ciclo.",
+      "owner_command": "Accelerare drasticamente il motore senza abbassare la qualità: più opportunità valide devono produrre un flusso regolare di messaggi verificati.",
       "command_class": "PRIORITY_DIRECTIVE",
-      "intent": "middle_funnel_turbo_quality_preserved",
-      "summary": "Modalità turbo sul collo di bottiglia HOT→READY: meno ricerca ridondante, più chiusura route/recipient/freshness/identity e conversione same-run; nessun gate viene abbassato.",
+      "intent": "simple_regular_revenue_flow",
+      "summary": "Eliminati i passaggi intermedi obbligatori: i due flussi attivi qualificano, decidono e inviano nello stesso ciclo mantenendo solo i hard gate reali.",
       "parameters": {
-        "mode": "MIDDLE_FUNNEL_TURBO",
-        "capacity": {"closure_and_exploitation_pct":85,"exploration_pct":10,"strategic_reserve_pct":5},
-        "closure_targets": {
-          "hot_blockers_inspected_per_closure_cycle":20,
-          "semantic_pass_deep_checked_per_sender_cycle":25,
-          "process_all_direct_authoritative_email_candidates":true,
-          "same_run_ready_certification":true,
-          "same_run_send_after_certification":true,
-          "send_all_executable_ready":true
-        },
-        "priority_order": [
-          "fresh_direct_email_route_24h",
-          "fresh_direct_email_route_7d",
-          "HOT_PLUS_route_recipient_closure",
-          "HOT_route_recipient_closure",
-          "manual_route_preserve_and_alert",
-          "new_discovery_only_after_closure_capacity"
-        ],
-        "preserve_quality_thresholds": true,
+        "mode": "SIMPLE_REVENUE_FLOW",
+        "serious_candidate_decisions_per_execution_run_target": 40,
+        "send_all_valid_send_now": true,
+        "same_run_qualification_and_send": true,
+        "no_batch_minimum": true,
         "preserve_global_dedup": true,
-        "preserve_route_authority": true,
-        "preserve_freshness": true,
+        "preserve_authoritative_route": true,
+        "preserve_current_need": true,
         "preserve_truthful_fit": true,
         "preserve_legal_channel_gates": true,
-        "deepseek_shadow_only": true,
-        "no_new_sender": true
+        "deepseek_shadow_only": true
       },
-      "target_workers": ["AGENCY_RADAR","LINKEDIN_HUNTER","UNIFIED_LOOP"],
+      "target_workers": ["LINKEDIN_HUNTER","UNIFIED_LOOP"],
       "requires_task_bridge": true,
       "requires_existing_gates": true,
       "risk": "LOW",
       "owner_confirmation_required": false,
-      "answer": "Attivata priorità turbo sul middle funnel. Aumenta la capacità di chiusura e same-run conversion, non la permissività dei gate.",
-      "production_core_modified": false,
+      "answer": "Attivato il flusso semplice: discovery continuo e due worker end-to-end alternati ogni 30 minuti.",
+      "production_core_modified": true,
       "normal_cycle_must_continue": true,
-      "execution_policy": "EXISTING_TASKS_AND_GATES_REMAIN_AUTHORITATIVE",
+      "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
       "status": "PENDING_TASK_BRIDGE"
     }
   ]
