@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04T06:25:00Z",
+  "objective": "Maximize qualified/HOT/READY/verified-send/reply yield per unit of search effort without reducing geographic coverage or safety gates.",
+  "allocation": {
+    "exploration_pct": 25,
+    "exploitation_pct": 75,
+    "minimum_country_share_pct": {"Spain": 40, "Italy": 40},
+    "adaptive_reserve_pct": 20
+  },
+  "source_scoring": {
+    "weights": {
+      "fresh_unique_signal_rate": 0.15,
+      "verified_open_rate": 0.15,
+      "high_fit_rate": 0.20,
+      "direct_route_rate": 0.15,
+      "hot_ready_rate": 0.20,
+      "verified_send_rate": 0.10,
+      "positive_reply_rate": 0.05
+    },
+    "penalties": {
+      "duplicate_rate": 0.15,
+      "stale_rate": 0.15,
+      "route_failure_rate": 0.10,
+      "error_rate": 0.10
+    }
+  },
+  "reallocation": {
+    "evaluation_window_days": 7,
+    "minimum_sample_before_penalty": 20,
+    "max_weight_change_per_cycle_pct": 20,
+    "never_disable_high_authority_source_on_small_sample": true,
+    "retain_exploration_floor_for_low_yield_territories": true
+  },
+  "performance_targets": {
+    "discovery_refresh_minutes": 15,
+    "task_validation_minutes": 60,
+    "cross_signal_latency_target_minutes": 30,
+    "zero_duplicate_first_contact": true
+  }
+}
