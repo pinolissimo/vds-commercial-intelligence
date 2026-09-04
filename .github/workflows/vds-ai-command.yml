@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: vds-ai-command
@@ -56,14 +57,48 @@ jobs:
           git add api/v1 command-center/commands/pending.json || true
           if git diff --cached --quiet; then
             echo "Nothing to commit"
+          else
+            git commit -m "command-center: record AI owner directive"
+            for attempt in 1 2 3; do
+              if git push origin HEAD:main; then
+                break
+              fi
+              echo "Push raced with another worker; rebasing (attempt $attempt)"
+              git pull --rebase origin main
+              if [ "$attempt" -eq 3 ]; then
+                git push origin HEAD:main
+              fi
+            done
+          fi
+
+      - name: Immediate safe discovery kick for REFRESH health commands
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -s api/v1/ai-command/latest.json ]; then
             exit 0
           fi
-          git commit -m "command-center: record AI owner directive"
-          for attempt in 1 2 3; do
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            echo "Push raced with another worker; rebasing (attempt $attempt)"
-            git pull --rebase origin main
-          done
-          git push origin HEAD:main
+          CLASS="$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('api/v1/ai-command/latest.json').read_text())
+          print(d.get('command_class',''))
+          PY
+          )"
+          INTENT="$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('api/v1/ai-command/latest.json').read_text())
+          print(d.get('intent',''))
+          PY
+          )"
+          if [ "$CLASS" = "REFRESH" ] && [ "$INTENT" = "verify_and_remediate_operational_blocks" ]; then
+            echo "Owner requested operational verification; dispatching existing discovery workflow without changing policy or gates."
+            gh api --method POST \
+              "repos/${GITHUB_REPOSITORY}/actions/workflows/high-frequency-discovery.yml/dispatches" \
+              -f ref=main
+          else
+            echo "No immediate discovery kick required for class=$CLASS intent=$INTENT"
+          fi
