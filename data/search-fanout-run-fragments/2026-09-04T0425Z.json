@@ -1,0 +1,73 @@
+{
+  "run_id": "search-fanout-20260904T0425Z",
+  "timestamp": "2026-09-04T04:25:00Z",
+  "worker": "SEARCH_FANOUT",
+  "mode": "HIGH_THROUGHPUT",
+  "protocol_version": "1.3",
+  "ready_count_observed": 1,
+  "lease_state_observed": "IDLE",
+  "sent_cache_checked_through_uid": 237,
+  "survivors": [
+    {
+      "canonical_identity_key": "org:markethink.net",
+      "organization": "MarkeThink",
+      "country": "Spain",
+      "region_city": "Cerdanyola del Valles / Barcelona",
+      "opportunity_url": "https://es.linkedin.com/posts/enrique-camba-7a722b28_wordpress-empleo-desarrolloweb-activity-7482800505237180416--xiY",
+      "website_url": "https://www.markethink.net/",
+      "state": "REVIEW_REQUIRED_AUTHORITATIVE_ROUTE",
+      "route": "LINKEDIN_COMPANY_PRINCIPAL_POST_NO_EXECUTION_ENDPOINT_BOUND",
+      "fit_score": 99,
+      "evidence": "MarkeThink/Enrique Camba published about one month ago that the Barcelona WordPress agency is seeking a senior WordPress developer for remote part-time work, explicitly noting the opportunity is especially suitable for freelancers. Stack includes WordPress, Elementor, HTML, CSS, PHP, PrestaShop, SEO, WPO, security, migrations and hosting operations. Official company site independently confirms MarkeThink is an active Barcelona WordPress/WooCommerce agency led by Enrique Camba.",
+      "blocker": "Discovery did not spend depth resolving the exact authoritative application endpoint/recipient or final JIT organization-level mailbox dedup. The post describes an employee contract compatible with freelancers but does not itself bind a dispatcher-supported route.",
+      "next_verification_action": "Direct Route should bind the current LinkedIn demand to the exact official application recipient/route and perform full canonical plus Sent reconciliation before any READY promotion."
+    },
+    {
+      "canonical_identity_key": "org:202digitalrep.com",
+      "organization": "202 Digital Reputation",
+      "country": "Spain",
+      "region_city": "Barcelona / 100% remote",
+      "opportunity_url": "https://es.linkedin.com/jobs/view/freelance-experto-en-wordpress-at-202-digital-reputation-4208196050",
+      "website_url": "https://202digitalrep.com/",
+      "state": "REVIEW_REQUIRED_AUTHORITATIVE_FRESHNESS_AND_ROUTE",
+      "route": "LINKEDIN_JOB_WRITE_US_CALL_TO_ACTION_NO_EXACT_RECIPIENT_BOUND",
+      "fit_score": 98,
+      "evidence": "Indexed LinkedIn vacancy explicitly seeks a freelance autonomo WordPress specialist for the agency collaborator network, requires invoicing ability and WordPress/Oxygen, values Elementor/CSS/JS, offers 100% remote hourly/project collaboration and a potential long-term relationship. Official company site confirms 202 Digital Reputation is an active Barcelona agency.",
+      "blocker": "The indexed job surface does not expose a trustworthy publication date in discovery output or an exact authoritative execution recipient; current-open status must be confirmed before READY.",
+      "next_verification_action": "High-Yield/Direct Route should verify vacancy freshness on an authoritative current surface, resolve the exact application endpoint, then complete full organization-level JIT dedup."
+    },
+    {
+      "canonical_identity_key": "org:direzionex.vercel.app",
+      "organization": "DirezioneX",
+      "country": "Germany",
+      "region_city": "Cologne / EU language-compatible Italian lane",
+      "opportunity_url": "https://direzionex.vercel.app/lavora-con-noi/posizioni/sviluppo",
+      "website_url": "https://direzionex.vercel.app/",
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "route": "VERIFIED_OFFICIAL_APPLICATION_FORM",
+      "fit_score": 95,
+      "language_market_evidence": "Authoritative opportunity page is written in Italian and explicitly addresses Italian applicants while listing a Cologne, Germany address; therefore it qualifies for the EU language-compatible lane without assuming local language from geography.",
+      "evidence": "Official current development-position page states the work is collaboration rather than employment, starts with occasional paid assignments and can grow to part-time contract work, has no fixed hours, and clients are supplied by the network. Stack is Next.js/React/TypeScript with explicit WordPress work for clients that already use WordPress. Page was indexed as published last month and provides a dedicated application form.",
+      "blocker": "Authoritative route is a form, so it is not dispatcher-executable; downstream should also confirm practical cross-border invoicing/legal compatibility for a Spain-based autonomo before any manual action.",
+      "next_verification_action": "Manual-route/downstream worker should validate current workload and EU cross-border invoicing compatibility; do not substitute a generic email for the official application form."
+    }
+  ],
+  "metrics": {
+    "query_source_lanes": 8,
+    "query_probes": 22,
+    "raw_signals": 55,
+    "unique_orgs": 32,
+    "cheap_pass": 3,
+    "backlog_added": 3,
+    "immediate_ready_added": 0,
+    "duplicates": 7,
+    "stale_rejected": 6,
+    "other_cheap_rejected": 16,
+    "yield_spain": 2,
+    "yield_italy": 0,
+    "yield_eu_language_compatible_outside_it_es": 1,
+    "elapsed_minutes": null,
+    "unique_orgs_per_minute": null
+  },
+  "notes": "Breadth-first discovery only. READY pressure observed at 1, so approximately 80% of search capacity was biased toward explicit current demand/direct-route sources. Early dedup/rejects included previously known Broovera and Páginas Web Valencia plus individual freelancers/self-supply pages and stale listings. No email, form, DM, application, external write/send action or dispatch lease acquisition. Final full mailbox reconciliation remains mandatory downstream before READY/send."
+}
