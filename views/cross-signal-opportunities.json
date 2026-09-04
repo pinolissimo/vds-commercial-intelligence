@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.3",
-  "updated_at": "2026-09-04T07:07:00Z",
+  "schema_version": "1.4",
+  "updated_at": "2026-09-04T08:10:43Z",
   "ranking_model": {
     "explicit_demand": 0.35,
     "vds_fit": 0.2,
@@ -97,8 +97,8 @@
       "priority_tier": "WARM",
       "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
       "reservation_status": "NONE_KNOWN",
-      "recommended_executor": "NONE_UNTIL_FRESH_DEMAND",
-      "next_best_action": "HOLD_STALE_OR_UNCERTAIN",
+      "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
+      "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
       "blockers_missing_gates": [
         "CURRENT_OPENING_NOT_PROVEN"
       ],
@@ -108,7 +108,7 @@
         "source": "https://ugeceagency.com/",
         "supporting_signal": "https://es.linkedin.com/company/ugece-agency"
       },
-      "rationale": "Strong VDS fit and current official email route, but the specific freelance WordPress/technical-SEO demand surfaced on LinkedIn is approximately six months old. Freshness overrides the previous HOT+ score; no new first contact until current demand is independently re-proven."
+      "rationale": "Historical recurring WordPress/technical-SEO freelance demand plus strong current business fit remains strategically valuable, but current external demand is not proven. Preserve for HISTORICAL_RECURRING_SIGNAL human review; never auto-send from stale demand."
     },
     {
       "canonical_identity_key": "org:visioni.info",
@@ -425,18 +425,18 @@
         "total": 84.0
       },
       "priority_tier": "HOT",
-      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+      "contact_status": "CONTACTED_MANUAL_APPLICATION",
       "reservation_status": "NONE_KNOWN",
-      "recommended_executor": "VDS LinkedIn Job Hunter",
-      "next_best_action": "MANUAL_APPLY_HIGH_PRIORITY",
+      "recommended_executor": "NONE_NEW_FIRST_CONTACT",
+      "next_best_action": "WAIT_FOR_REPLY",
       "blockers_missing_gates": [
-        "JOB_PLATFORM_APPLY_REQUIRED"
+        "PRIOR_FIRST_CONTACT_OR_OWNER_APPLICATION_RECORDED"
       ],
       "route": {
         "type": "JOB_PLATFORM_APPLY",
         "source": "https://bebee.com/it/jobs/sistemista-e-sviluppatore-wordpress-infrastruttura-grownnectia-piva-ibrido-grownnectia-srl-roma-lazi--t7xk-780729090"
       },
-      "rationale": "Strong recurring P.IVA/WordPress-infrastructure fit; manual platform application remains the correct route."
+      "rationale": "Global provider/manual contact history now proves a prior professional first contact/application. Preserve the opportunity for reply-driven continuation only; no new FIRST_CONTACT through another route."
     },
     {
       "canonical_identity_key": "org:globalserviceimpresa.it",
@@ -463,18 +463,18 @@
         "total": 83.5
       },
       "priority_tier": "HOT",
-      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+      "contact_status": "CONTACTED",
       "reservation_status": "NONE_KNOWN",
-      "recommended_executor": "VDS LinkedIn Job Hunter",
-      "next_best_action": "MANUAL_APPLY_HIGH_PRIORITY",
+      "recommended_executor": "NONE_NEW_FIRST_CONTACT",
+      "next_best_action": "WAIT_FOR_REPLY",
       "blockers_missing_gates": [
-        "OFFICIAL_APPLICATION_FORM_REQUIRED"
+        "PRIOR_FIRST_CONTACT_OR_OWNER_APPLICATION_RECORDED"
       ],
       "route": {
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://www.globalserviceimpresa.it/lavora-con-noi/"
       },
-      "rationale": "Explicit freelance-developer opportunity; manual official form is required."
+      "rationale": "Global provider/manual contact history now proves a prior professional first contact/application. Preserve the opportunity for reply-driven continuation only; no new FIRST_CONTACT through another route."
     },
     {
       "canonical_identity_key": "org:mobyleshop.com",
@@ -630,19 +630,18 @@
         "total": 81.6
       },
       "priority_tier": "HOT",
-      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+      "contact_status": "CONTACTED",
       "reservation_status": "NONE_KNOWN",
-      "recommended_executor": "VDS LinkedIn Job Hunter",
-      "next_best_action": "MANUAL_APPLY_HIGH_PRIORITY",
+      "recommended_executor": "NONE_NEW_FIRST_CONTACT",
+      "next_best_action": "WAIT_FOR_REPLY",
       "blockers_missing_gates": [
-        "OFFICIAL_APPLICATION_FORM_REQUIRED",
-        "FIT_CAVEAT_SENIOR_REQUIREMENTS"
+        "PRIOR_FIRST_CONTACT_OR_OWNER_APPLICATION_RECORDED"
       ],
       "route": {
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://zmotlab.it/lavora-con-noi/sviluppatore-senior/"
       },
-      "rationale": "Fresh P.IVA demand and good general web fit, with a senior-role fit caveat and required application form."
+      "rationale": "Global provider/manual contact history now proves a prior professional first contact/application. Preserve the opportunity for reply-driven continuation only; no new FIRST_CONTACT through another route."
     },
     {
       "canonical_identity_key": "org:mindrift.ai",
@@ -720,6 +719,49 @@
         "source": "https://www.hays.es/web/hays-es-technology"
       },
       "rationale": "Potential intermediary lead, but refreshed vacancy evidence and careful fit handling are still required."
+    },
+    {
+      "canonical_identity_key": "org:alpacode.it",
+      "organization": "Alpacode",
+      "domain": "alpacode.it",
+      "country": "IT",
+      "segment": "AGENCY_WHITE_LABEL",
+      "signal_families": [
+        "CURRENT_RECURRING_OUTSOURCING",
+        "OFFICIAL_COLLABORATION_PAGE",
+        "PIVA_SUBCONTRACTING",
+        "OFFICIAL_APPLICATION_FORM"
+      ],
+      "source_lineage_count": 1,
+      "source_ids": [
+        "official_collaboration_page"
+      ],
+      "query_or_intent": "freelance wordpress outsourcing partita IVA remote Italy",
+      "evidence_timestamps": [
+        "2026-09-04T08:04:00Z"
+      ],
+      "scores": {
+        "fit": 96,
+        "demand": 100,
+        "route": 40,
+        "freshness": 100,
+        "recurring_economic": 100,
+        "independent_confirmation": 70,
+        "total": 87.2
+      },
+      "priority_tier": "HOT+",
+      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+      "reservation_status": "NONE_KNOWN",
+      "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
+      "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
+      "blockers_missing_gates": [
+        "OFFICIAL_APPLICATION_FORM_REQUIRED"
+      ],
+      "route": {
+        "type": "OFFICIAL_APPLICATION_FORM",
+        "source": "https://alpacode.it/lavora-con-noi/"
+      },
+      "rationale": "Current official page explicitly keeps remote collaborations open throughout Italy for WordPress developers, including P.IVA-to-P.IVA subcontracting/outsourcing and continued work after successful delivery. Excellent recurring VDS fit; official form requires human execution."
     }
   ],
   "known_contacted_exclusions": [
@@ -806,6 +848,7 @@
     "AUTO_EMAIL_NOW",
     "QUEUE_FOR_SEND_WINDOW",
     "MANUAL_APPLY_HIGH_PRIORITY",
+    "HUMAN_REVIEW_HIGH_VALUE",
     "RESEARCH_RECIPIENT",
     "ENRICH_TERRITORY",
     "FOLLOWUP_1_ELIGIBILITY_REVIEW",
@@ -814,5 +857,5 @@
     "FOLLOW_UP_ONLY_IF_REQUESTED",
     "HOLD_STALE_OR_UNCERTAIN"
   ],
-  "note": "Reconciled fresh Agency+EU closure state and 7 high-frequency semantic passes. Ieros is the only current cross-signal organization promoted to AUTO_EMAIL_NOW; downstream sender must still perform mandatory JIT dedup/reservation/provider checks. UGECE is downgraded to WARM/HOLD because current opening is not proven. No external action performed."
+  "note": "Reconciled current Agency+EU signals, Human Review High Value protocol, and provider/manual history through Hostinger UID 274. Alpacode added as HOT+ human-review/manual-route; Ieros remains executable subject to downstream JIT checks; Global Service Impresa, Zmot Lab and Grownnectia are continuation-only. No external action performed."
 }
