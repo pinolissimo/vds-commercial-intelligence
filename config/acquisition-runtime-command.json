@@ -1,48 +1,13 @@
 {
-  "schema_version": "1.2",
-  "updated_at": "2026-09-04T18:36:00+02:00",
-  "mode": "SIMPLE_REVENUE_FLOW",
-  "architecture": {
-    "discovery": "GITHUB_HIGH_FREQUENCY_INDEPENDENT",
-    "active_execution_workers": ["LINKEDIN_HUNTER", "UNIFIED_LOOP"],
-    "retired_intermediate_workers": ["AGENCY_RADAR", "CROSS_SIGNAL_RANKER"],
-    "mandatory_handoffs_between_discovery_and_send": 0,
-    "operational_states": ["SEND_NOW", "MANUAL_APPLY", "WAIT_RESEARCH", "REJECT"]
-  },
+  "schema_version": "1.1",
+  "updated_at": "2026-09-04T18:20:07Z",
+  "mode": "MIDDLE_FUNNEL_TURBO",
   "capacity": {
-    "qualification_and_execution_pct": 90,
-    "exploration_pct": 5,
+    "exploitation_pct": 85,
+    "exploration_pct": 10,
     "strategic_reserve_pct": 5
   },
-  "diagnosed_bottleneck": "EXCESSIVE_INTERMEDIATE_HANDOFFS_AND_OVERGATING",
-  "throughput": {
-    "serious_candidate_decisions_per_execution_run_target": 40,
-    "send_all_valid_send_now": true,
-    "no_batch_minimum": true,
-    "same_run_qualification_and_send": true,
-    "core_kpi": "PROVIDER_VERIFIED_FIRST_CONTACTS_PER_HOUR",
-    "regular_flow_schedule": {
-      "job_flow_minute": 8,
-      "revenue_flow_minute": 38,
-      "effective_execution_opportunity_interval_minutes": 30
-    }
-  },
-  "hard_send_gates": [
-    "GLOBAL_ORGANIZATION_DEDUP_AND_RESERVATION_CLEAR",
-    "CURRENT_NEED_OR_LISTING",
-    "TRUTHFUL_REASONABLE_VDS_FIT",
-    "AUTHORITATIVE_APPROPRIATE_ROUTE_AND_RECIPIENT",
-    "LEGAL_CHANNEL_AND_OPTOUT_CLEAR",
-    "SEND_WINDOW_OPEN",
-    "UNAMBIGUOUS_PROVIDER_STATE"
-  ],
-  "non_blocking_by_itself": [
-    "MISSING_NONESSENTIAL_METADATA",
-    "NO_EXPLICIT_FREELANCE_WORDING",
-    "FULL_TIME_OR_SALARY_WORDING_WITHOUT_EXPLICIT_EXTERNAL_EXCLUSION",
-    "MISSING_OBSOLETE_INTERMEDIATE_STATE",
-    "DEEPSEEK_SHADOW_DISAGREEMENT"
-  ],
+  "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
   "source_priority": {
     "joa_es_webdesigner_title": 1.52,
     "joa_it_webdev_title": 1.51,
@@ -58,8 +23,8 @@
     "joa_it_web_performance_body": 0.97,
     "jobicy_europe": 0.79,
     "joa_eu_remote_wordpress": 0.79,
-    "nomado_webdev": 0.77,
     "remotive": 0.76,
+    "nomado_webdev": 0.73,
     "joa_it_wordpress_body": 0.7,
     "remotejobs_contract_frontend": 0.68,
     "joa_es_wordpress_body": 0.67,
@@ -68,8 +33,8 @@
     "nomado_wordpress": 0.62,
     "wwr_sysadmin": 0.6,
     "arbeitnow_eu": 0.58,
-    "wwr_programming": 0.58,
     "joa_es_woocommerce_body": 0.58,
+    "wwr_programming": 0.57,
     "himalayas": 0.56,
     "joa_it_woocommerce_body": 0.56,
     "remoteok": 0.5,
@@ -83,26 +48,37 @@
     "joa_es_frontend_title",
     "joa_es_web_performance_body"
   ],
-  "harvest_areas": ["Italy|Lazio|Roma"],
+  "harvest_areas": [],
   "explore_or_revisit_areas": [
-    "Italy|Puglia|Bari",
-    "Italy|Veneto|Venezia",
-    "Italy|Calabria|Reggio Calabria",
-    "Spain|Aragón|Zaragoza",
     "Spain|Comunitat Valenciana|Castellón",
-    "Italy|Emilia-Romagna|Piacenza",
+    "Italy|Puglia|Bari",
+    "Italy|Calabria|Reggio Calabria",
+    "Italy|Veneto|Venezia",
+    "Spain|Aragón|Zaragoza",
     "Italy|Piemonte|Torino",
+    "Italy|Emilia-Romagna|Piacenza",
     "Spain|Galicia|A Coruña",
     "Spain|Asturias|Asturias",
     "Spain|Castilla y León|Valladolid",
-    "Spain|Castilla y León|Burgos",
-    "Spain|Comunitat Valenciana|Alicante"
+    "Spain|Comunitat Valenciana|Alicante",
+    "Spain|Castilla y León|Burgos"
   ],
-  "route_policy": {
-    "job_or_application_lane": "Automatic email requires the exact authoritative application/candidacy email. Official form/platform-only routes are MANUAL_APPLY and are never replaced by a generic address.",
-    "b2b_agency_commercial_lane": "An official organization-owned partnership/collaboration/hello/business/general email is valid for a genuine B2B external-capacity proposal when no application-only route is bypassed and all hard gates pass."
+  "turbo": {
+    "enabled": true,
+    "quality_gates_unchanged": true,
+    "target_hot_blockers_inspected_per_closure_cycle": 20,
+    "target_semantic_pass_deep_checked_per_sender_cycle": 25,
+    "same_run_ready_certification": true,
+    "same_run_send_after_certification": true,
+    "send_all_executable_ready": true,
+    "prefer_direct_authoritative_email_routes": true,
+    "prefer_fresh_24h_then_7d": true,
+    "manual_route_preservation": true,
+    "never_promote_from_deepseek_shadow": true
   },
-  "contract_model_policy": "Lack of explicit freelance/P.IVA wording is not a blocker. A truthful external freelance/P.IVA proposal may be sent through an authoritative email route unless the source explicitly excludes freelancers/contractors/external collaborators.",
-  "deepseek_policy": "SHADOW_AND_PRIORITY_ONLY_NEVER_VETO_NEVER_AUTHORIZE_SEND",
-  "instruction": "SIMPLE_REVENUE_FLOW: discovery stays broad and independent; each active execution worker consumes candidates directly, decides SEND_NOW/MANUAL_APPLY/WAIT_RESEARCH/REJECT, and sends all valid SEND_NOW in the same run. Fail closed only on real risk, not obsolete intermediate architecture."
+  "route_policy": {
+    "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email.",
+    "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity proposal, when no application-only route is being bypassed and all legal, identity, fit, freshness and dedup gates pass."
+  },
+  "instruction": "MIDDLE_FUNNEL_TURBO: spend most capacity closing exact route, recipient, freshness, identity, geography and dedup blockers; deep-check fresh SEMANTIC_PASS candidates likely to become executable; certify and send in the same authorized sender run when all gates pass. Never weaken dedup, route integrity, freshness, legality, truthful-fit or provider verification gates. DeepSeek remains shadow-only."
 }
