@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - feature/vds-command-center-v1
+      - 'feature/vds-command-*'
     paths:
       - 'command-center/**'
       - 'api/v1/**'
+      - 'project/COMMAND_CENTER_TASK_BRIDGE_PROTOCOL.md'
       - 'scripts/build_command_center_api.py'
       - 'scripts/vds_ai_command.py'
       - 'scripts/prepare_command_center_assets.py'
@@ -41,7 +42,10 @@ jobs:
             scripts/test_command_center.py
 
       - name: JavaScript syntax
-        run: node --check command-center/assets/app.js
+        run: |
+          node --check command-center/assets/app.js
+          node --check command-center/assets/sodium-bootstrap.js
+          node --check command-center/assets/secure-onboarding.js
 
       - name: Build read-only projections
         run: python3 scripts/build_command_center_api.py
@@ -49,7 +53,26 @@ jobs:
       - name: Static security and architecture QA
         run: python3 scripts/test_command_center.py
 
-      - name: Test local asset vendoring
+      - name: Validate command bridge schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          pending=json.loads(Path('command-center/commands/pending.json').read_text())
+          processed=json.loads(Path('command-center/commands/processed.json').read_text())
+          assert pending['schema_version'] == '1.2'
+          assert isinstance(pending['commands'], list)
+          assert isinstance(processed['receipts'], list)
+          text=Path('scripts/vds_ai_command.py').read_text()
+          for worker in ('AGENCY_RADAR','LINKEDIN_HUNTER','UNIFIED_LOOP'):
+              assert worker in text
+          assert 'normal_cycle_must_continue' in text
+          assert 'expires_at' in text
+          PY
+
+      - name: Test local asset vendoring and secure onboarding injection
         run: |
           rm -rf /tmp/vds-pages
           mkdir -p /tmp/vds-pages
@@ -58,6 +81,13 @@ jobs:
           test -s /tmp/vds-pages/assets/fonts/dm-sans.woff2
           test -s /tmp/vds-pages/assets/fonts/material-symbols-rounded.woff2
           test -s /tmp/vds-pages/assets/vendor/chart.umd.min.js
+          test -s /tmp/vds-pages/assets/vendor/sodium.js
+          grep -q 'assets/secure-onboarding.js' /tmp/vds-pages/index.html
+          grep -q 'assets/vendor/sodium.js' /tmp/vds-pages/index.html
+          grep -q 'Secrets read/write' /tmp/vds-pages/index.html
+          grep -q 'crypto_box_seal' /tmp/vds-pages/assets/secure-onboarding.js
+          ! grep -R -E 'sk-[A-Za-z0-9_-]{20,}' /tmp/vds-pages
+          ! grep -R 'localStorage' /tmp/vds-pages/assets/*.js
 
       - name: Verify production discovery workflow unchanged in feature branch
         shell: bash
