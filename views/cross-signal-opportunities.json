@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.4",
-  "updated_at": "2026-09-04T11:50:11Z",
+  "schema_version": "1.8",
+  "updated_at": "2026-09-04T12:09:01Z",
   "ranking_model": {
     "explicit_demand": 0.35,
     "vds_fit": 0.2,
@@ -11,6 +11,33 @@
   },
   "history_policy": "PROVIDER_SUPPRESSION_AND_CANONICAL_HISTORY_OVERRIDE_SCORE_FOR_NEW_FIRST_CONTACT",
   "opportunities": [
+    {
+      "canonical_identity_key": "org:liveat-agency.it",
+      "organization": "LIVEAT Agency / LIVEAT S.r.l.",
+      "country": "IT",
+      "segment": "DIRECT_JOB",
+      "scores": {
+        "total": 95.0
+      },
+      "priority_tier": "HOT+",
+      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+      "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
+      "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
+      "blockers_missing_gates": [
+        "PORTAL_APPLICATION_REQUIRED_AND_NO_EXACT_AUTHORITATIVE_DIRECT_APPLICATION_EMAIL_VERIFIED"
+      ],
+      "route": {
+        "type": "JOB_PORTAL_APPLICATION",
+        "source": "https://www.simplyhired.it/job/3kBOwtjgLEHGUOybuTYlxGUTgGTm2OI_x2Vf-9WCn2bBW1FvWtbHmw"
+      },
+      "source_ids": [
+        "fresh_web_job_portal_plus_official_company"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ],
+      "rationale": "Near-ideal VDS fit: WordPress, Elementor, web design, landing pages, optimization, P.IVA, full remote and explicit recurring-work path after an initial test project."
+    },
     {
       "canonical_identity_key": "org:adviva.it",
       "organization": "Adviva",
@@ -62,13 +89,19 @@
       "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
       "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
       "blockers_missing_gates": [
-        "OFFICIAL_APPLICATION_FORM"
+        "FORM_REQUIRES_OWNER_RATE_AND_WEEKLY_AVAILABILITY"
       ],
       "route": {
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://iocos.it/opportunita-di-lavoro/"
       },
-      "rationale": "High-value soft-blocked job preserved for owner review."
+      "rationale": "High-value soft-blocked job preserved for owner review.",
+      "source_ids": [
+        "fresh_web_official_careers"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ]
     },
     {
       "canonical_identity_key": "org:twine.net",
@@ -89,7 +122,13 @@
         "type": "PLATFORM_APPLY",
         "source": "https://www.linkedin.com/jobs/view/freelance-web-designer-%E2%80%93-wordpress-divi-rebuild-at-twine-4449569070"
       },
-      "rationale": "Near-exact VDS fit: WordPress, Divi, HTML/CSS, responsive, performance, migration, remote project-based work and possible future updates."
+      "rationale": "Near-exact VDS fit: WordPress, Divi, HTML/CSS, responsive, performance, migration, remote project-based work and possible future updates.",
+      "source_ids": [
+        "linkedin_public"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ]
     },
     {
       "canonical_identity_key": "org:visioni.info",
@@ -182,13 +221,19 @@
       "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
       "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
       "blockers_missing_gates": [
-        "OFFICIAL_APPLICATION_FORM"
+        "FORM_ONLY_ROUTE"
       ],
       "route": {
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://www.ril.es/conocenos/ofertas-empleo"
       },
-      "rationale": "High-value soft-blocked job preserved for owner review."
+      "rationale": "High-value soft-blocked job preserved for owner review.",
+      "source_ids": [
+        "fresh_web_official_careers"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ]
     },
     {
       "canonical_identity_key": "org:dreambigdesign.it",
@@ -276,7 +321,7 @@
         "recipient": "careers@heritage-srl.it",
         "source": "https://it.linkedin.com/jobs/view/web-graphic-designer-%E2%80%94-collaborazione-p-iva-at-heritage-1644799318"
       },
-      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_278_2026-09-04T08:42:36Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
+      "rationale": "Provider-verified job first contact UID 278; continuation-only."
     },
     {
       "canonical_identity_key": "org:jobgether.com",
@@ -386,7 +431,7 @@
         "source": "https://ieros.it/contatti",
         "supporting_signal": "https://ieros.it/lavoro"
       },
-      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_276_2026-09-04T08:15:48Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
+      "rationale": "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation. (HOSTINGER_SENT_UID_276_2026-09-04T08:15:48Z)"
     },
     {
       "canonical_identity_key": "org:publydea.com",
@@ -401,13 +446,46 @@
       "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
       "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
       "blockers_missing_gates": [
-        "DIRECT_APPLICATION_EMAIL"
+        "EMPLOYER_EXPLICITLY_REQUESTS_CV_ATTACHMENT + CONTRACT_MODEL_NOT_STATED"
       ],
       "route": {
         "type": "DIRECT_APPLICATION_EMAIL",
         "source": "https://publydea.com/trabajo"
       },
-      "rationale": "Near-direct VDS technical fit: WordPress, Divi, maintenance, SEO adjacency and visual judgement, with an authoritative candidacy email and openness to creating a role/candidatura espontánea."
+      "rationale": "Near-direct VDS technical fit: WordPress, Divi, maintenance, SEO adjacency and visual judgement, with an authoritative candidacy email and openness to creating a role/candidatura espontánea.",
+      "source_ids": [
+        "fresh_web_official_careers"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ]
+    },
+    {
+      "canonical_identity_key": "org:genestack.com",
+      "organization": "Genestack Ltd",
+      "country": "ES",
+      "segment": "DIRECT_JOB",
+      "scores": {
+        "total": 89.0
+      },
+      "priority_tier": "HOT+",
+      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+      "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
+      "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
+      "blockers_missing_gates": [
+        "ATS_FORM_ROUTE + MODX_AWS_CORE_STACK_REQUIRES_TRUTHFUL_FIT_REVIEW"
+      ],
+      "route": {
+        "type": "BREEZY_ATS_APPLICATION",
+        "source": "https://genestack-ltd.breezy.hr/p/d4b8a102c332-website-developer"
+      },
+      "source_ids": [
+        "employer_direct_ats_plus_fresh_web"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ],
+      "rationale": "Explicit remote contract/freelance model, recurring retainer, long-term technical-partner intent and strong overlap with VDS maintenance, HTML/CSS/JS, performance, responsive/accessibility, hosting and troubleshooting strengths."
     },
     {
       "canonical_identity_key": "org:moloandco.com",
@@ -428,7 +506,13 @@
         "type": "LINKEDIN_APPLY",
         "source": "https://es.linkedin.com/jobs/view/dise%C3%B1ador-wordpress-multisite-%C2%B7-figma-%C2%B7-desarrollo-a-medida-at-molo-co-4462805091"
       },
-      "rationale": "Exceptional technical overlap with VDS and direct relevance of reusable architecture, WordPress, performance, WooCommerce and agency production; strong potential partner/overflow value even though the vacancy itself is internal/on-site."
+      "rationale": "Exceptional technical overlap with VDS and direct relevance of reusable architecture, WordPress, performance, WooCommerce and agency production; strong potential partner/overflow value even though the vacancy itself is internal/on-site.",
+      "source_ids": [
+        "linkedin_public"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ]
     },
     {
       "canonical_identity_key": "org:danieledebernardis.it",
@@ -510,7 +594,7 @@
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://alpacode.it/lavora-con-noi/"
       },
-      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_280_2026-09-04T09:30:56Z). Preserve only for reply-driven or otherwise policy-compliant continuation.",
+      "rationale": "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation. (HOSTINGER_SENT_UID_280_2026-09-04T09:30:56Z)",
       "territory": {
         "country": "IT",
         "region": null,
@@ -537,7 +621,7 @@
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://avangarde.it/posizioniapertecandidatura/1572"
       },
-      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_279_2026-09-04T09:24:05Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
+      "rationale": "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation. (HOSTINGER_SENT_UID_279_2026-09-04T09:24:05Z)"
     },
     {
       "canonical_identity_key": "org:ideamarketing.es",
@@ -647,7 +731,7 @@
         "type": "JOB_PLATFORM_APPLY",
         "source": "https://bebee.com/it/jobs/sistemista-e-sviluppatore-wordpress-infrastruttura-grownnectia-piva-ibrido-grownnectia-srl-roma-lazi--t7xk-780729090"
       },
-      "rationale": "Global organization history proves prior professional contact/application (data/human-review-owner-actions/2026-09-04-grownnectia-manual-apply.json). Preserve only for reply-driven or otherwise policy-compliant continuation."
+      "rationale": "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation."
     },
     {
       "canonical_identity_key": "org:omegacrmconsulting.com",
@@ -668,7 +752,13 @@
         "type": "LINKEDIN_APPLY",
         "source": "https://es.linkedin.com/jobs/view/wordpress-developer-at-omega-crm-a-merkle-company-4460755266"
       },
-      "rationale": "Strong overlap across WordPress/CMS, responsive implementation, accessibility, performance and broad technical/communication profile; major digital organization with recurring project capacity."
+      "rationale": "Strong overlap across WordPress/CMS, responsive implementation, accessibility, performance and broad technical/communication profile; major digital organization with recurring project capacity.",
+      "source_ids": [
+        "linkedin_public"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ]
     },
     {
       "canonical_identity_key": "org:globalserviceimpresa.it",
@@ -706,7 +796,7 @@
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://www.globalserviceimpresa.it/lavora-con-noi/"
       },
-      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_273_2026-09-04T07:41:58Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
+      "rationale": "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation. (HOSTINGER_SENT_UID_273_2026-09-04T07:41:58Z)"
     },
     {
       "canonical_identity_key": "org:mobyleshop.com",
@@ -944,7 +1034,7 @@
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://zmotlab.it/lavora-con-noi/sviluppatore-senior/"
       },
-      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_274_2026-09-04T07:59:55Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
+      "rationale": "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation. (HOSTINGER_SENT_UID_274_2026-09-04T07:59:55Z)"
     },
     {
       "canonical_identity_key": "org:decskill.com",
@@ -965,7 +1055,13 @@
         "type": "EXACT_ROUTE_TO_RECOVER",
         "source": "https://es.linkedin.com/jobs/maquetador-a-web-empleos"
       },
-      "rationale": "Strong HTML/CSS/responsive/accessibility/Figma fit and 100% remote Spain context; Angular appears additive rather than the entire role in secondary evidence."
+      "rationale": "Strong HTML/CSS/responsive/accessibility/Figma fit and 100% remote Spain context; Angular appears additive rather than the entire role in secondary evidence.",
+      "source_ids": [
+        "linkedin_public_plus_secondary"
+      ],
+      "evidence_timestamps": [
+        "2026-09-04T13:42:00+02:00"
+      ]
     },
     {
       "canonical_identity_key": "org:hays.es",
@@ -1201,6 +1297,6 @@
     "FOLLOW_UP_ONLY_IF_REQUESTED",
     "HOLD_STALE_OR_UNCERTAIN"
   ],
-  "note": "Reconciled current Agency+EU signals, Human Review High Value protocol, and provider/manual history through Hostinger UID 274. Alpacode added as HOT+ human-review/manual-route; Ieros remains executable subject to downstream JIT checks; Global Service Impresa, Zmot Lab and Grownnectia are continuation-only. No external action performed.",
-  "history_reconciled_through": "Cache reconciled through Hostinger Sent UID 280 plus recovered historical Juno Lab FIRST_CONTACT UID 180. Gmail is notifications/BCC only and is not a professional dedup source. The Visual Corner has an explicit hard owner stop recorded on 2026-09-04."
+  "note": "Runtime reconciliation merges current Agency/EU, LinkedIn/job, Human Review, global-sent and provider-history evidence; high-value job soft blocks are mirrored into Human Review; no external action performed.",
+  "history_reconciled_through": "Hostinger/provider evidence through UID 280"
 }
