@@ -22,6 +22,7 @@ ICONS_CSS = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:o
 ONBOARDING_MARKER = "assets/secure-onboarding.js"
 TOKEN_HELPER_MARKER = "assets/github-token-helper.js"
 LIVE_EXPORT_MARKER = "assets/live-export.js"
+EXECUTABLE_READY_MARKER = "assets/executable-ready.js"
 EXPORT_CSS_MARKER = "assets/export.css"
 
 
@@ -59,6 +60,8 @@ def inject_command_center_enhancements(root: Path) -> None:
         )
     if LIVE_EXPORT_MARKER not in html:
         scripts += '<script type="module" src="assets/live-export.js"></script>'
+    if EXECUTABLE_READY_MARKER not in html:
+        scripts += '<script type="module" src="assets/executable-ready.js"></script>'
     if scripts:
         html = html.replace("</body>", scripts + "</body>")
     index.write_text(html, encoding="utf-8")
