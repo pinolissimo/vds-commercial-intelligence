@@ -48,10 +48,6 @@ jobs:
       - name: Commit discovery and adaptive intelligence state
         shell: bash
         run: |
-          if git diff --quiet -- views data metrics config/adaptive-search-runtime.json; then
-            echo "No discovery changes"
-            exit 0
-          fi
           git config user.name "vds-discovery-bot"
           git config user.email "actions@users.noreply.github.com"
           git add views/high-frequency-discovery-latest.json \
@@ -62,6 +58,10 @@ jobs:
                   metrics/high-frequency-watch-state.json \
                   metrics/territory-yield-radar-state.json \
                   config/adaptive-search-runtime.json
+          if git diff --cached --quiet; then
+            echo "No discovery changes"
+            exit 0
+          fi
           git commit -m "data: refresh discovery and adaptive radar"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
