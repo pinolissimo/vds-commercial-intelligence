@@ -1,51 +1,39 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T09:13:44Z",
+  "updated_at": "2026-09-04T09:14:05Z",
   "counted_run_ids": [
     "cross-signal-20260904T061252Z",
     "cross-signal-20260904T064442Z",
-    "cross-signal-20260904T070700Z"
+    "cross-signal-20260904T070700Z",
+    "cross-signal-runtime-20260904T0914Z"
   ],
   "cumulative_processing": {
-    "runs": 3,
-    "organization_evaluations": 49,
+    "runs": 4,
+    "organization_evaluations": 76,
     "cross_workstream_collisions_prevented": 20,
     "provider_history_corrections": 9,
     "new_organizations_merged": 2,
     "history_conflicts_fail_closed": 1,
-    "fresh_semantic_passes_reviewed": 7
+    "fresh_semantic_passes_reviewed": 81
   },
   "last_snapshot": {
-    "organizations": 17,
-    "independent_multi_source_orgs": 1,
-    "hot_plus": 6,
-    "hot": 8,
+    "organizations": 27,
+    "hot_plus": 12,
+    "hot": 12,
     "warm": 2,
-    "hold_below_warm": 1,
-    "new_first_contact_executable": 1,
-    "auto_email_now": 1,
-    "queued_for_window": 0,
-    "manual_high_priority": 4,
-    "research_recipient": 0,
-    "territory_enrichment_required_or_active": 0,
-    "followup_1_eligibility_review": 0,
+    "new_first_contact_executable": 0,
+    "human_review_high_value": 8,
+    "waiting_reply": 5,
     "duplicate_or_history_blocked": 9,
-    "waiting_reply": 0,
-    "stale_or_uncertain": 3
+    "stale_or_uncertain": 5
   },
   "current_action_distribution": {
+    "HUMAN_REVIEW_HIGH_VALUE": 8,
     "DO_NOT_CONTACT_DUPLICATE": 9,
-    "MANUAL_APPLY_HIGH_PRIORITY": 4,
-    "RESEARCH_RECIPIENT": 0,
-    "HOLD_STALE_OR_UNCERTAIN": 3,
-    "AUTO_EMAIL_NOW": 1,
-    "QUEUE_FOR_SEND_WINDOW": 0,
-    "ENRICH_TERRITORY": 0,
-    "FOLLOWUP_1_ELIGIBILITY_REVIEW": 0,
-    "WAIT_FOR_REPLY": 0,
-    "FOLLOW_UP_ONLY_IF_REQUESTED": 0
+    "WAIT_FOR_REPLY": 5,
+    "HOLD_STALE_OR_UNCERTAIN": 5
   },
   "source_distribution": {
     "agency_eu_radar_current": 3,
@@ -72,12 +60,11 @@
     "territory_radar": "NO_HARVEST_AREAS_INSUFFICIENT_SAMPLE"
   },
   "material_changes": [
-    "Promoted Ieros (Roma) from WARM/RESEARCH_RECIPIENT to HOT+/AUTO_EMAIL_NOW after official current freelance-collaboration demand and exact official email route were resolved; no provider-history match and no active reservation were present at ranking time.",
-    "Downgraded UGECE Agency from HOT+ to WARM/HOLD because its specific freelance WordPress/technical-SEO demand is approximately six months old and current opening status is not proven.",
-    "Reclassified Summum Marketing below WARM due to current official in-house operating model and no verified external web-production demand; unresolved provider-history conflict remains non-actionable.",
-    "Reviewed seven fresh semantic-pass public job signals but did not promote them into the cross-signal execution set without authoritative employer/route verification."
+    "org:adviva.it:NEW_HUMAN_REVIEW",
+    "org:krossup.it:NEW_HUMAN_REVIEW",
+    "org:mindrift.ai:HUMAN_REVIEW->STALE"
   ],
-  "note": "Snapshot metrics are state counts, not additive send counts. Cross-Signal Ranker performed analysis/ranking/state-write only and no external action.",
+  "note": "State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action.",
   "runs": 4,
   "evaluated": 18,
   "hot_plus": 7,
@@ -92,5 +79,12 @@
   "followup_eligibility": 0,
   "duplicate_history_blocked": 9,
   "waiting_reply": 4,
-  "stale_or_uncertain": 2
+  "stale_or_uncertain": 2,
+  "fresh_semantic_state": {
+    "input": 570,
+    "pass": 74,
+    "review": 7,
+    "reject": 489
+  },
+  "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION"
 }
