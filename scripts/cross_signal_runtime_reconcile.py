@@ -117,8 +117,14 @@ def main():
                 material.append(f"{key}:NEW_HUMAN_REVIEW")
             opps[key] = o
         elif key in opps and next_action == "HOLD_STALE_OR_UNCERTAIN":
-            opps[key]["next_best_action"] = "HOLD_STALE_OR_UNCERTAIN"
-            opps[key]["recommended_executor"] = "NONE_NEW_FIRST_CONTACT"
+            # A current canonical Human Review record is a stronger preservation state than a radar HOLD,
+            # provided it is still pending and no hard exclusion/history applies.
+            if key in hr_items and hr_items[key].get("owner_decision") == "PENDING":
+                opps[key]["next_best_action"] = "HUMAN_REVIEW_HIGH_VALUE"
+                opps[key]["recommended_executor"] = "OWNER_HUMAN_REVIEW_ONLY"
+            else:
+                opps[key]["next_best_action"] = "HOLD_STALE_OR_UNCERTAIN"
+                opps[key]["recommended_executor"] = "NONE_NEW_FIRST_CONTACT"
 
     # Merge latest job state and fix stale/manual regressions.
     removed = list(hr.get("removed_or_closed", []))
@@ -186,7 +192,24 @@ def main():
     hotp=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="HOT+")
     hot=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="HOT")
     warm=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="WARM")
-    metrics.update({"schema_version":"1.3","updated_at":stamp,"last_snapshot":{"organizations":len(cross["opportunities"]),"hot_plus":hotp,"hot":hot,"warm":warm,"new_first_contact_executable":actions.get("AUTO_EMAIL_NOW",0)+actions.get("QUEUE_FOR_SEND_WINDOW",0),"human_review_high_value":actions.get("HUMAN_REVIEW_HIGH_VALUE",0),"waiting_reply":actions.get("WAIT_FOR_REPLY",0),"duplicate_or_history_blocked":actions.get("DO_NOT_CONTACT_DUPLICATE",0),"stale_or_uncertain":actions.get("HOLD_STALE_OR_UNCERTAIN",0)},"current_action_distribution":actions,"fresh_semantic_state":{"input":sem.get("input_signal_count",0),"pass":sem.get("semantic_pass_count",0),"review":sem.get("semantic_review_count",0),"reject":sem.get("semantic_reject_count",0)},"diagnosed_bottleneck":perf.get("diagnosed_bottleneck"),"material_changes":material[-30:],"note":"State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action."})
+    executable = actions.get("AUTO_EMAIL_NOW",0)+actions.get("QUEUE_FOR_SEND_WINDOW",0)
+    metrics.update({"schema_version":"1.3","updated_at":stamp,"last_snapshot":{"organizations":len(cross["opportunities"]),"hot_plus":hotp,"hot":hot,"warm":warm,"new_first_contact_executable":executable,"human_review_high_value":actions.get("HUMAN_REVIEW_HIGH_VALUE",0),"waiting_reply":actions.get("WAIT_FOR_REPLY",0),"duplicate_or_history_blocked":actions.get("DO_NOT_CONTACT_DUPLICATE",0),"stale_or_uncertain":actions.get("HOLD_STALE_OR_UNCERTAIN",0)},"current_action_distribution":actions,"fresh_semantic_state":{"input":sem.get("input_signal_count",0),"pass":sem.get("semantic_pass_count",0),"review":sem.get("semantic_review_count",0),"reject":sem.get("semantic_reject_count",0)},"diagnosed_bottleneck":perf.get("diagnosed_bottleneck"),"material_changes":material[-30:],"note":"State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action."})
+    # Canonicalize legacy top-level counters to exactly match the current snapshot.
+    metrics["runs"] = int(metrics.get("cumulative_processing",{}).get("runs",0))
+    metrics["evaluated"] = len(cross["opportunities"])
+    metrics["hot_plus"] = hotp
+    metrics["hot"] = hot
+    metrics["warm"] = warm
+    metrics["new_first_contact_executable"] = executable
+    metrics["queued"] = actions.get("QUEUE_FOR_SEND_WINDOW",0)
+    metrics["manual_high_priority"] = actions.get("MANUAL_APPLY_HIGH_PRIORITY",0)
+    metrics["human_review_high_value"] = actions.get("HUMAN_REVIEW_HIGH_VALUE",0)
+    metrics["research_recipient"] = actions.get("RESEARCH_RECIPIENT",0)
+    metrics["territory_enrichment"] = actions.get("ENRICH_TERRITORY",0)
+    metrics["followup_eligibility"] = actions.get("FOLLOWUP_1_ELIGIBILITY_REVIEW",0)
+    metrics["duplicate_history_blocked"] = actions.get("DO_NOT_CONTACT_DUPLICATE",0)
+    metrics["waiting_reply"] = actions.get("WAIT_FOR_REPLY",0)
+    metrics["stale_or_uncertain"] = actions.get("HOLD_STALE_OR_UNCERTAIN",0)
 
     save("views/cross-signal-opportunities.json", cross)
     save("views/human-review-high-value.json", hr)
