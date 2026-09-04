@@ -46,15 +46,23 @@ jobs:
           test -s .pages/assets/app.css
           test -s .pages/assets/command.css
           test -s .pages/assets/app.js
+          test -s .pages/assets/secure-onboarding.js
+          test -s .pages/assets/sodium-bootstrap.js
           test -s .pages/assets/fonts/dm-sans.woff2
           test -s .pages/assets/fonts/material-symbols-rounded.woff2
           test -s .pages/assets/vendor/chart.umd.min.js
+          test -s .pages/assets/vendor/sodium.js
           test ! -d .pages/api
           grep -q "api.github.com" .pages/index.html
           grep -q "sessionStorage" .pages/assets/app.js
           grep -q "VDS Engine" .pages/index.html
-          ! grep -R "OPENAI_API_KEY" .pages
+          grep -q "assets/secure-onboarding.js" .pages/index.html
+          grep -q "assets/vendor/sodium.js" .pages/index.html
+          grep -q "Secrets read/write" .pages/index.html
+          grep -q "crypto_box_seal" .pages/assets/secure-onboarding.js
+          ! grep -R -E "sk-[A-Za-z0-9_-]{20,}" .pages
           ! grep -R "fonts.googleapis.com\|cdn.jsdelivr.net" .pages/index.html
+          ! grep -R "localStorage" .pages/assets/*.js
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
