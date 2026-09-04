@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "state": "IDLE",
-  "lease_id": null,
-  "owner": null,
-  "run_id": null,
-  "acquired_at": null,
-  "expires_at": null,
+  "state": "ACTIVE",
+  "lease_id": "lease-unified-acquisition-20260904T0816Z",
+  "owner": "VDS_UNIFIED_ACQUISITION",
+  "run_id": "unified-acquisition-20260904T0811Z",
+  "acquired_at": "2026-09-04T08:16:20Z",
+  "expires_at": "2026-09-04T08:31:20Z",
   "last_released_at": "2026-09-04T04:57:30Z",
   "last_run_id": "scheduled-dispatch-20260904T0456Z",
   "last_incident": {
@@ -16,15 +16,15 @@
   },
   "last_run_result": "DISPATCHED_PAGINAS_WEB_VALENCIA_UID_272_LINK_ONLY_NO_DOCUMENT_ATTACHMENTS_SIGNATURE_PRIVACY_VERIFIED_QUEUE_DRAINED",
   "recovery_evidence": {
-    "reconciled_at": "2026-09-04T04:57:30Z",
-    "hostinger_latest_verified_uid": 272,
-    "post_run_verified_uids": [272],
+    "reconciled_at": "2026-09-04T08:16:20Z",
+    "hostinger_latest_verified_uid": 274,
+    "post_run_verified_uids": [273,274],
     "provider_ambiguity": false,
     "duplicate_first_contact_detected": false,
     "queue_drained": true,
     "recipient_index_event_pending_reconciliation": false,
     "public_document_link_verified": true,
-    "remaining_ready_count": 0
+    "remaining_ready_count": 1
   },
   "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or conflict means abort without send."
 }
