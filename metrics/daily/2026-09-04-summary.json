@@ -1,49 +1,91 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "3.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T08:30:00+02:00",
-  "status": "DEGRADED_MISSING_UNIFIED_METRICS",
-  "research": {
-    "raw_signals": null,
-    "unique_organizations": null,
-    "backlog_added": null
+  "updated_at": "2026-09-04T08:52:00+02:00",
+  "status": "DEGRADED_SEMANTIC_YIELD_AND_MIDDLE_FUNNEL",
+  "discovery": {
+    "raw_signals": 138,
+    "semantic_pass": 0,
+    "semantic_review": 0,
+    "semantic_reject": 138,
+    "unique_organizations": 30,
+    "current_source_ranking": ["remotive", "wwr_design", "wwr_sysadmin", "wwr_programming", "arbeitnow_eu"],
+    "current_territory_harvest": [],
+    "current_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
+    "note": "High-frequency semantic gate is 0/138; Unified independently consumed 4 semantic candidates from 45 raw signals in its first v3 daily run."
   },
   "qualification": {
-    "ready_added_total": null,
-    "manual_route_required": null
+    "hot_plus": 7,
+    "hot": 8,
+    "ready_added": 0,
+    "current_ready_count": 0,
+    "manual_route_required": 4,
+    "territory_enrichment_pending": 13,
+    "new_first_contact_executable": 0
   },
-  "dispatch": {
-    "emails_verified_sent": 1,
-    "unique_organizations_sent": 1,
-    "spain_sends": 1,
-    "italy_sends": 0,
-    "eu_language_compatible_sends": 0,
-    "duplicates_blocked": null,
-    "retry_required": null
+  "execution": {
+    "first_contacts_verified_sent": 1,
+    "unique_organizations_first_contacted": 1,
+    "followup_1_verified_sent": 0,
+    "spain_first_contacts": 1,
+    "italy_first_contacts": 0,
+    "duplicates_blocked": 0,
+    "delivery_state_unknown": 0,
+    "latest_provider_uid": 272,
+    "provider_uid_continuity": "CONTINUOUS_THROUGH_272",
+    "sending_window_status_at_watch": "CLOSED_BEFORE_09_00"
   },
   "outcomes": {
+    "replies": 0,
     "positive_replies": 0,
+    "interviews_or_calls": 0,
+    "proposals": 0,
+    "won": 0,
     "bounces": 0
   },
-  "current_ready_count": 0,
-  "manual_action": {
-    "pending_count": null
-  },
-  "watchdog": {
-    "architecture_repaired_at": "2026-09-04T08:29:47+02:00",
-    "unified_schedule_expected_minute": 25,
-    "unified_metrics_missing": true,
+  "health": {
+    "expected_five_task_state": "PASS",
+    "legacy_senders_disabled": true,
+    "github_fanout": {
+      "latest_run_started_at": "2026-09-04T06:40:10Z",
+      "latest_run_conclusion": "success",
+      "fresh": true
+    },
+    "unified_loop": {
+      "latest_daily_run_id": "vds-unified-acquisition-20260904T064653Z",
+      "latest_run_result": "DISCOVERY_QUALIFICATION_ONLY_ZERO_SEND",
+      "worker_metrics_present": true
+    },
     "lease_state": "IDLE",
-    "latest_verified_provider_uid": 272,
-    "ready_queue_reconciled": true
+    "active_global_reservations": 0,
+    "ready_queue_reconciled": true,
+    "document_policy": "LINK_ONLY",
+    "unresolved_anomalies": [
+      "HIGH_FREQUENCY_SEMANTIC_PASS_ZERO_OF_138",
+      "NO_CURRENT_EXECUTABLE_FIRST_CONTACT_DESPITE_15_HOT_OR_HOT_PLUS",
+      "TERRITORY_ENRICHMENT_QUEUE_13"
+    ]
   },
-  "sources": {
-    "unified_daily": "metrics/daily/2026-09-04-unified.json (missing at this run)",
-    "dispatcher_daily": "metrics/daily/2026-09-04-dispatcher.json",
-    "ready_queue": "views/it-es-partner-apply-ready-queue.json",
-    "recipient_index": "views/it-es-partner-apply-recipients.json",
-    "lease": "governance/it-es-dispatch-lease.json"
+  "performance": {
+    "source_priority_adjustment_active": true,
+    "source_multipliers": {
+      "remotive": 0.76,
+      "wwr_design": 0.66,
+      "wwr_sysadmin": 0.60,
+      "wwr_programming": 0.58,
+      "arbeitnow_eu": 0.57,
+      "himalayas": 0.57,
+      "remoteok": 0.50,
+      "wwr_frontend": 0.50
+    },
+    "diagnosis": "Public high-frequency feeds are producing volume but no semantic-pass yield. Agency/high-intent research is currently the productive lane. Keep quality gates unchanged; continue source down-weighting and prioritize route closure plus territory enrichment for qualified candidates."
   },
-  "note": "Migration-day dispatcher baseline preserved: one verified automatic first contact, Hostinger UID 272. Research/qualification counters remain null rather than inferred because the mandatory unified daily file is absent. No new relevant positive reply or hard bounce was observed in the current Hostinger inbox window."
+  "provider_check": {
+    "hostinger_sent_total_messages": 268,
+    "highest_uid": 272,
+    "new_uid_above_checkpoint": false,
+    "latest_verified_first_contact": "Páginas Web Valencia / UID 272",
+    "new_relevant_inbound_since_prior_watch": false
+  }
 }
