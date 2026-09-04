@@ -1,10 +1,10 @@
-# VDS Global Organization Dedup Protocol v1.1
+# VDS Global Organization Dedup Protocol v1.2
 
 Effective: 2026-09-04
 
 ## Purpose
 
-This protocol is mandatory for EVERY VDS automation or interactive workflow that can create a first commercial/job contact. It provides one organization-level identity layer across commercial outreach, job applications, agency/white-label discovery, EU-project intelligence and future workstreams.
+Mandatory for EVERY VDS automation or interactive workflow capable of professional outbound first contact. It provides one organization-level identity and sent-history layer across commercial outreach, job applications, agency/white-label discovery, EU-project intelligence and future workstreams.
 
 ## Hard invariant
 
@@ -14,18 +14,25 @@ A commercial organization/employer may receive only one unsolicited/proactive fi
 
 A different email, person, office, vacancy, source, geography, campaign, workstream or automation NEVER resets first-contact history.
 
-## Canonical files
+## Professional mail ownership
 
-- `views/global-organization-index.json` — compact cross-workstream identity/contact cache.
-- `views/global-sent-email-index.json` — fast cache of provider-verified professional outbound messages.
-- `governance/global-contact-reservations.json` — short-lived pre-send reservations.
+- Professional outbound mail is sent ONLY from Hostinger mailbox `info@visualdesignstudio.es`.
+- Hostinger Sent is the provider source of truth for professional outbound delivery evidence.
+- Gmail is used ONLY for owner notifications and BCC copies. Gmail is NOT a professional outbound source and MUST NOT be queried for routine professional-email deduplication.
+
+## Canonical fast registry
+
+Routine first-contact dedup MUST be JSON-first.
+
+Canonical files:
+- `views/global-organization-index.json` — compact cross-workstream organization/contact cache.
+- `views/global-sent-email-index.json` — compact fast lookup of provider-verified professional outbound messages.
+- `data/global-sent-email-ledger.jsonl` — durable append-only chronological professional sent ledger.
+- `governance/global-contact-reservations.json` — short-lived pre-send organization reservations.
 - `views/cross-signal-opportunities.json` — ranked cross-source opportunity view.
-- Existing workstream recipient indexes/ledgers remain authoritative historical evidence.
-- Hostinger Sent is the SOLE provider source of truth for professional outbound mail.
+- Existing workstream recipient indexes/ledgers remain supporting historical evidence.
 
-Gmail is used only for owner notifications/BCC copies and is NOT a professional outbound source and is NOT required for routine professional-email deduplication.
-
-The JSON indexes are fast operational caches. They accelerate normal checks but never override credible Hostinger/canonical historical evidence.
+The JSON indexes are the PRIMARY operational lookup path. Hostinger mailbox scans are fallback/reconciliation, not the normal query path.
 
 ## Canonical identity
 
@@ -40,45 +47,59 @@ Store aliases, brands, domains and known recruiter/company names under the same 
 
 Every sender MUST execute immediately before EACH provider call:
 
-`READ_GLOBAL_SENT_INDEX -> REFETCH_GLOBAL_ORG_INDEX -> REFRESH_WORKSTREAM_HISTORY -> RESOLVE_CANONICAL_ORG -> CHECK_ACTIVE_RESERVATION -> RESERVE_ORG_ATOMICALLY -> TARGETED_HOSTINGER_SENT_CHECK_IF_REQUIRED -> RECHECK_CANONICAL_STATE -> SEND -> VERIFY_HOSTINGER_SENT -> COMMIT_SENT_INDEX -> COMMIT_GLOBAL_CONTACT -> RELEASE_RESERVATION`
+`READ_GLOBAL_SENT_INDEX -> READ_GLOBAL_ORG_INDEX -> READ_RELEVANT_WORKSTREAM_INDEX -> RESOLVE_CANONICAL_ORG -> CHECK_ACTIVE_RESERVATION -> RESERVE_ORG_ATOMICALLY -> TARGETED_HOSTINGER_RECONCILIATION_IF_REQUIRED -> RECHECK_INDEX_STATE -> SEND_HOSTINGER -> VERIFY_HOSTINGER_SENT -> APPEND_GLOBAL_SENT_LEDGER -> UPDATE_GLOBAL_SENT_INDEX -> UPDATE_GLOBAL_ORG_INDEX -> UPDATE_WORKSTREAM_STATE -> RELEASE_RESERVATION`
 
-Routine dedup should normally be satisfied by the small JSON indexes + canonical workstream history. A targeted Hostinger Sent query is mandatory when:
-- the organization is absent from the JSON cache but historical ambiguity exists;
-- the cache is stale/inconsistent;
-- provider UID continuity is broken;
-- a reservation recovery is required;
-- immediately validating the just-executed send.
+Routine dedup is normally satisfied by the compact JSON indexes plus relevant workstream history.
 
-Do NOT rescan the full Hostinger Sent mailbox on every candidate when the indexed state is current and coherent.
+A targeted Hostinger Sent check is required only when one or more of these apply:
+- canonical organization/history is absent or ambiguous;
+- JSON cache is missing, stale or internally inconsistent;
+- provider UID continuity indicates a gap;
+- a stale reservation is being recovered;
+- provider response is ambiguous;
+- validating the message that was just sent.
+
+DO NOT rescan the full Hostinger Sent mailbox for every candidate when indexed state is current and coherent.
+
+Gmail is excluded from this sequence.
 
 If any mandatory step is ambiguous or fails closed, do not send.
 
+## Sent registry write contract
+
+After EVERY Hostinger-verified professional send, in the SAME run and BEFORE the next organization:
+
+1. append one immutable event to `data/global-sent-email-ledger.jsonl` where append is available; if append mutation is unavailable, persist an equivalent durable pending event and reconcile it later;
+2. update `views/global-sent-email-index.json` by latest-SHA read/merge/write;
+3. update `views/global-organization-index.json` status to `CONTACTED`;
+4. update originating workstream ledger/index;
+5. release reservation only after canonical commit.
+
+Minimum sent record fields:
+- `provider_uid`;
+- `sent_at`;
+- `canonical_identity_key`;
+- `organization`;
+- `recipient`;
+- `subject`;
+- `workstream` / task;
+- `action_type` where useful;
+- `state=VERIFIED_EMAIL_SENT`.
+
+Provider UID is globally unique within the Hostinger Sent mailbox and MUST never be counted twice.
+
+## Fast query policy
+
+For ordinary questions and dedup checks:
+- today's professional sends -> query `views/global-sent-email-index.json` by Europe/Madrid date;
+- history for one organization -> query global organization + sent indexes;
+- sends by workstream -> query global sent index;
+- daily statistics -> use daily metrics first, then global sent index if needed;
+- full Hostinger scans -> audit/recovery fallback only.
+
 ## Provider reconciliation
 
-Hostinger Sent is the authoritative provider evidence for professional outbound mail from `info@visualdesignstudio.es`.
-
-A recipient/address-only search is insufficient when reconciliation is needed. Use organization name, canonical domain, aliases, known recipient domains, subjects/context and workstream records where necessary.
-
-Any credible prior first-contact evidence blocks a new first contact even when the newly discovered route uses another address.
-
-Gmail BCC/notification copies may support owner visibility but never establish or invalidate professional-send state.
-
-## Sent-email JSON index
-
-`views/global-sent-email-index.json` stores one compact record per provider-verified professional outbound message, including at minimum:
-- provider UID;
-- sent timestamp;
-- canonical organization key;
-- organization;
-- recipient;
-- subject;
-- workstream/task;
-- action type;
-- verification state.
-
-After EVERY Hostinger-verified professional send, append/merge the message into this index in the same run before moving to the next organization.
-
-Provider UID is unique. The same UID must never be counted twice. The index should support immediate questions such as today's sends, sends by workstream, sends by organization and anti-dup checks without rescanning the mailbox.
+Hostinger Sent remains authoritative when evidence conflicts with JSON. Reconciliation should be targeted whenever possible using provider UID, recipient domain, organization aliases, subject/context and known timestamps. Any credible prior first-contact evidence blocks a new first contact even if another recipient is now available.
 
 ## Reservation rules
 
@@ -93,24 +114,9 @@ Before send, atomically reserve the canonical organization through latest-SHA co
 - expires_at;
 - state `ACTIVE`.
 
-An unexpired reservation owned by another run blocks sending. Never overwrite another active reservation blindly. Stale reservation recovery requires Hostinger + canonical reconciliation first.
+An unexpired reservation owned by another run blocks sending. Never overwrite another active reservation blindly. Stale reservation recovery requires targeted Hostinger + canonical reconciliation first.
 
 Reservation is released only after verified Sent + canonical commit, or after a confirmed zero-send abort.
-
-## Global contact commit
-
-After provider verification and before the next send, update the global organization index with:
-- canonical key;
-- organization;
-- aliases/domains when known;
-- first-contact timestamp;
-- workstream/source task;
-- recipient;
-- provider UID/evidence;
-- status `CONTACTED`;
-- last action.
-
-Also update the originating workstream ledger/index and `views/global-sent-email-index.json`. Historical evidence must never be deleted merely to permit another first contact.
 
 ## Job vs commercial collision policy
 
@@ -118,17 +124,8 @@ A prior general commercial first contact to an organization normally blocks a ne
 
 ## Cross-signal use
 
-Discovery/ranking tasks should enrich the same organization with signals instead of creating duplicate organizations. Signals may include:
-- LinkedIn/public job signal;
-- official careers signal;
-- agency external-collaborator/white-label signal;
-- EU project/dissemination signal;
-- website/performance/digital-need signal;
-- reply/referral signal;
-- previous contact status.
-
-Multiple independent fresh signals increase priority, never permission to bypass dedup.
+Discovery/ranking tasks enrich the SAME canonical organization instead of creating duplicates. Multiple independent fresh signals increase priority but NEVER permit bypassing first-contact history.
 
 ## Default safety rule for future tasks
 
-Any future VDS task with outbound capability is NON-COMPLIANT unless its prompt explicitly requires this protocol, global organization identity resolution, atomic reservation, current JSON sent-index checks and Hostinger Sent verification of every actual professional send.
+Any future VDS task with outbound capability is NON-COMPLIANT unless its prompt explicitly requires this protocol, JSON-first global sent lookup, canonical organization identity resolution, atomic reservation and Hostinger Sent verification of every actual professional send.
