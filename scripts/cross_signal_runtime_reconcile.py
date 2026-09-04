@@ -177,8 +177,54 @@ def main():
                 continue
             o = opps.get(key, {})
             score = float(j.get("fit_score", hr_items.get(key,{}).get("score",75)))
-            o.update({"canonical_identity_key":key,"organization":j.get("organization"),"country":j.get("country"),"segment":"DIRECT_JOB","scores":{"total":score},"priority_tier":"HOT+" if score>=85 else "HOT","contact_status":"NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX","recommended_executor":"OWNER_HUMAN_REVIEW_ONLY","next_best_action":"HUMAN_REVIEW_HIGH_VALUE","blockers_missing_gates":[j.get("route","MANUAL_OR_SOFT_BLOCK")],"route":{"type":j.get("route"),"source":j.get("opportunity_url")},"rationale":hr_items.get(key,{}).get("why_high_value") or "High-value soft-blocked job preserved for owner review."})
+            o.update({"canonical_identity_key":key,"organization":j.get("organization"),"country":j.get("country"),"segment":"DIRECT_JOB","scores":{"total":score},"priority_tier":"HOT+" if score>=85 else "HOT","contact_status":"NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX","recommended_executor":"OWNER_HUMAN_REVIEW_ONLY","next_best_action":"HUMAN_REVIEW_HIGH_VALUE","blockers_missing_gates":[j.get("reason") or j.get("route") or "MANUAL_OR_SOFT_BLOCK"],"route":{"type":j.get("route"),"source":j.get("opportunity_url")},"source_ids":[j.get("source_id")] if j.get("source_id") else [],"evidence_timestamps":[jobs.get("updated_at")],"rationale":hr_items.get(key,{}).get("why_high_value") or "High-value soft-blocked job preserved for owner review."})
+            if key not in opps:
+                material.append(f"{key}:NEW_JOB_HUMAN_REVIEW_CROSS_SIGNAL")
             opps[key] = o
+
+            # Mandatory Human Review protocol merge for newly discovered high-value job soft blocks.
+            if score >= 75 and key not in hr_items:
+                route_type = j.get("route") or "MANUAL_OR_SOFT_BLOCK"
+                reason = j.get("reason") or route_type
+                review_class = j.get("review_class") or ("MANUAL_ROUTE" if any(x in route_type for x in ["FORM", "ATS", "PORTAL", "PLATFORM", "LINKEDIN"]) else "ROUTE_AMBIGUITY")
+                authoritative_routes = []
+                if j.get("opportunity_url"):
+                    authoritative_routes.append({"type":route_type,"url":j.get("opportunity_url")})
+                known_contacts = []
+                if j.get("recipient"):
+                    known_contacts.append({"type":"APPLICATION_EMAIL","value":j.get("recipient"),"authority":"JOB_HUNTER_VERIFIED_ROUTE_CONTEXT"})
+                hr_items[key] = {
+                    "canonical_identity_key": key,
+                    "organization": j.get("organization"),
+                    "country": j.get("country"),
+                    "website": None,
+                    "opportunity_url": j.get("opportunity_url"),
+                    "source_urls": [j.get("opportunity_url")] if j.get("opportunity_url") else [],
+                    "evidence_summary": f"Current high-value job/collaboration signal: {j.get('role') or 'web opportunity'}. Freshness: {j.get('freshness') or 'verified current by Job Hunter'}. Fit score {score:.0f}/100.",
+                    "evidence_strength": "JOB_HUNTER_VERIFIED_CURRENT",
+                    "signal_date": jobs.get("updated_at") or stamp,
+                    "score": score,
+                    "priority": "HOT+" if score >= 85 else "HOT",
+                    "why_high_value": f"Strong truthful VDS fit ({score:.0f}/100) with current demand; automation stopped only because the authoritative route/contract/attachment decision requires human execution or judgement.",
+                    "automatic_block_reason": reason,
+                    "review_class": review_class,
+                    "verified_facts": [x for x in [j.get("role"), j.get("freshness"), f"Route: {route_type}"] if x],
+                    "inferences": ["Commercial value depends on the exact contract/route requirements; no unsupported skill, rate or availability claim is assumed."],
+                    "safe_alternative_angles": ["Use only the verified application/platform/form route and present the strongest truthful VDS fit; do not substitute a generic contact channel."],
+                    "known_public_contacts": known_contacts,
+                    "authoritative_routes": authoritative_routes,
+                    "decision_maker": None,
+                    "language": "IT" if j.get("country") == "IT" else "ES" if j.get("country") == "ES" else "EN",
+                    "dedup_status": j.get("dedup") or "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+                    "do_not_bypass_constraints": ["Do not bypass the authoritative application route.","Do not invent unsupported stack depth, contract compatibility, rate or availability.","Attachment approval protocol applies if a CV/file upload is mandatory."],
+                    "recommended_human_checks": ["Confirm the opening is still accepting applications.","Review mandatory stack/contract fields against the verified VDS profile.","If a file upload is required, use only an exact owner-approved attachment."],
+                    "recommended_action": "MANUAL_APPLY" if review_class == "MANUAL_ROUTE" else "HUMAN_REVIEW",
+                    "owner_decision": "PENDING",
+                    "created_at": stamp,
+                    "updated_at": stamp,
+                    "source_task": "VDS LinkedIn Job Hunter"
+                }
+                material.append(f"{key}:NEW_JOB_HUMAN_REVIEW_QUEUE_ITEM")
 
     for key, item in hr_items.items():
         if key in contacted or item.get("owner_decision") != "PENDING" or item.get("execution_status") in {"CONTACT_ALREADY_EXECUTED","OWNER_STOP_DO_NOT_CONTACT"}:
@@ -197,15 +243,15 @@ def main():
         except Exception: return 0.0
 
     cross["opportunities"] = sorted(opps.values(), key=score, reverse=True)
-    cross["schema_version"] = "1.7"
+    cross["schema_version"] = "1.8"
     cross["updated_at"] = stamp
     provider_checkpoint = max(int(suppression.get("scan",{}).get("highest_uid_seen",0) or 0), highest_sent_uid)
     cross["history_reconciled_through"] = f"Hostinger/provider evidence through UID {provider_checkpoint}"
-    cross["note"] = "Runtime reconciliation merges current Agency/EU, LinkedIn/job, Human Review, global-sent and provider-history evidence; no external action performed."
+    cross["note"] = "Runtime reconciliation merges current Agency/EU, LinkedIn/job, Human Review, global-sent and provider-history evidence; high-value job soft blocks are mirrored into Human Review; no external action performed."
 
     hr["items"] = sorted(hr_items.values(), key=lambda x: float(x.get("score",0) or 0), reverse=True)
     hr["removed_or_closed"] = removed
-    hr["schema_version"] = "1.2"
+    hr["schema_version"] = "1.3"
     hr["updated_at"] = stamp
     pending = sum(1 for x in hr["items"] if x.get("owner_decision") == "PENDING")
     approved = sum(1 for x in hr["items"] if x.get("owner_decision") == "APPROVE_OUTREACH")
@@ -231,7 +277,7 @@ def main():
     hot=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="HOT")
     warm=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="WARM")
     executable = actions.get("AUTO_EMAIL_NOW",0)+actions.get("QUEUE_FOR_SEND_WINDOW",0)
-    metrics.update({"schema_version":"1.4","updated_at":stamp,"last_snapshot":{"organizations":len(cross["opportunities"]),"hot_plus":hotp,"hot":hot,"warm":warm,"new_first_contact_executable":executable,"human_review_high_value":actions.get("HUMAN_REVIEW_HIGH_VALUE",0),"waiting_reply":actions.get("WAIT_FOR_REPLY",0),"duplicate_or_history_blocked":actions.get("DO_NOT_CONTACT_DUPLICATE",0),"stale_or_uncertain":actions.get("HOLD_STALE_OR_UNCERTAIN",0),"provider_history_reconciled_through_uid":provider_checkpoint},"current_action_distribution":actions,"fresh_semantic_state":{"input":sem.get("input_signal_count",0),"pass":sem.get("semantic_pass_count",0),"review":sem.get("semantic_review_count",0),"reject":sem.get("semantic_reject_count",0)},"diagnosed_bottleneck":perf.get("diagnosed_bottleneck"),"material_changes":material[-30:],"note":"State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action."})
+    metrics.update({"schema_version":"1.5","updated_at":stamp,"last_snapshot":{"organizations":len(cross["opportunities"]),"hot_plus":hotp,"hot":hot,"warm":warm,"new_first_contact_executable":executable,"human_review_high_value":actions.get("HUMAN_REVIEW_HIGH_VALUE",0),"waiting_reply":actions.get("WAIT_FOR_REPLY",0),"duplicate_or_history_blocked":actions.get("DO_NOT_CONTACT_DUPLICATE",0),"stale_or_uncertain":actions.get("HOLD_STALE_OR_UNCERTAIN",0),"provider_history_reconciled_through_uid":provider_checkpoint},"current_action_distribution":actions,"fresh_semantic_state":{"input":sem.get("input_signal_count",0),"pass":sem.get("semantic_pass_count",0),"review":sem.get("semantic_review_count",0),"reject":sem.get("semantic_reject_count",0)},"diagnosed_bottleneck":perf.get("diagnosed_bottleneck"),"material_changes":material[-30:],"note":"State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action."})
     metrics["runs"] = int(metrics.get("cumulative_processing",{}).get("runs",0))
     metrics["evaluated"] = len(cross["opportunities"])
     metrics["hot_plus"] = hotp
