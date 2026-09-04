@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04T06:18:00Z",
+  "policy": {
+    "purpose": "High-frequency public-source discovery only; no outreach, no LinkedIn automation, no access-control bypass.",
+    "run_interval_minutes": 15,
+    "official_watch_pages_interval_minutes": 60,
+    "max_latest_signals": 1500
+  },
+  "profile_keywords": [
+    "wordpress",
+    "woocommerce",
+    "frontend",
+    "front-end",
+    "web developer",
+    "web designer",
+    "html",
+    "css",
+    "javascript",
+    "php",
+    "website",
+    "web performance",
+    "core web vitals",
+    "wpo",
+    "maintenance",
+    "migration",
+    "accessibility",
+    "ux",
+    "ui",
+    "technical support",
+    "web support",
+    "webmaster"
+  ],
+  "remote_geo_keywords": [
+    "remote",
+    "worldwide",
+    "anywhere",
+    "europe",
+    "european union",
+    "eu",
+    "emea",
+    "spain",
+    "españa",
+    "italy",
+    "italia"
+  ],
+  "sources": [
+    {
+      "id": "remoteok",
+      "kind": "remoteok_json",
+      "url": "https://remoteok.com/api",
+      "enabled": true
+    },
+    {
+      "id": "wwr_frontend",
+      "kind": "rss",
+      "url": "https://weworkremotely.com/categories/remote-front-end-programming-jobs.rss",
+      "enabled": true
+    },
+    {
+      "id": "wwr_programming",
+      "kind": "rss",
+      "url": "https://weworkremotely.com/categories/remote-programming-jobs.rss",
+      "enabled": true
+    },
+    {
+      "id": "wwr_design",
+      "kind": "rss",
+      "url": "https://weworkremotely.com/categories/remote-design-jobs.rss",
+      "enabled": true
+    },
+    {
+      "id": "wwr_sysadmin",
+      "kind": "rss",
+      "url": "https://weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss",
+      "enabled": true
+    }
+  ],
+  "official_watch_pages": [],
+  "notes": [
+    "LinkedIn itself is not fetched by this script. LinkedIn Job Hunter continues to use public/indexed signals and authoritative employer sources.",
+    "Agency/EU and LinkedIn tasks may add public official careers/collaboration/project pages to official_watch_pages for periodic change detection.",
+    "CORDIS remains handled by the Agency + EU Signal Radar until a stable keyless structured feed/query is explicitly configured; CORDIS DET API requires an API key."
+  ]
+}
