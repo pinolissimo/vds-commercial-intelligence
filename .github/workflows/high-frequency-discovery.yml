@@ -16,6 +16,7 @@ on:
       - "scripts/territory_radar_guard.py"
       - "scripts/acquisition_performance_optimizer.py"
       - "scripts/search_mission_planner.py"
+      - "scripts/multi_engine_query_router.py"
       - "scripts/cross_signal_human_review_reconcile.py"
       - "scripts/merge_human_review_pending.py"
       - "scripts/reconcile_global_contact_history.py"
@@ -23,6 +24,7 @@ on:
       - "config/high-frequency-discovery-sources.json"
       - "config/supplemental-public-sources.json"
       - "config/direct-employer-bulk-sources.json"
+      - "config/multi-engine-search-router.json"
       - "config/semantic-opportunity-policy.json"
       - "config/search-territory-frontier.json"
       - "config/adaptive-search-policy.json"
@@ -77,6 +79,9 @@ jobs:
       - name: Build territorial high-intent search missions
         run: python scripts/search_mission_planner.py
 
+      - name: Build multi-engine query fanout missions
+        run: python scripts/multi_engine_query_router.py
+
       - name: Merge pending high-value human review records
         run: python scripts/merge_human_review_pending.py
 
@@ -98,6 +103,7 @@ jobs:
                   views/territory-enrichment-queue.json \
                   views/acquisition-performance.json \
                   views/search-mission-plan.json \
+                  views/multi-engine-search-missions.json \
                   views/cross-signal-opportunities.json \
                   views/human-review-high-value.json \
                   data/high-frequency-discovery/raw-signals.jsonl \
@@ -114,7 +120,7 @@ jobs:
             echo "No discovery changes"
             exit 0
           fi
-          git commit -m "data: refresh expanded discovery acquisition radar missions and cross-signal review"
+          git commit -m "data: refresh expanded multi-engine discovery acquisition radar"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             sleep $((i * 3))
