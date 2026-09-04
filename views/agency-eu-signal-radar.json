@@ -1,10 +1,36 @@
 {
-  "schema_version": "1.1",
-  "updated_at": "2026-09-04T07:04:00Z",
-  "strategy": "AGENCY_EU_SIGNAL_RADAR_MIDDLE_FUNNEL_CLOSURE",
+  "schema_version": "1.2",
+  "updated_at": "2026-09-04T08:04:00Z",
+  "strategy": "AGENCY_EU_SIGNAL_RADAR_MIDDLE_FUNNEL_CLOSURE_PLUS_HUMAN_REVIEW",
   "capacity": {"exploitation_pct": 70, "exploration_pct": 20, "strategic_reserve_pct": 10},
   "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
   "signals": [
+    {
+      "canonical_identity_key": "org:alpacode.it",
+      "organization": "Alpacode",
+      "domain": "alpacode.it",
+      "country": "IT",
+      "region": null,
+      "province": null,
+      "city": null,
+      "segment": "AGENCY_WHITE_LABEL",
+      "priority_tier": "HOT+",
+      "source_id": "official_collaboration_page",
+      "source_urls": ["https://alpacode.it/lavora-con-noi/"],
+      "query_or_intent": "freelance wordpress outsourcing partita IVA remote Italy",
+      "evidence_timestamp": "2026-09-04T08:04:00Z",
+      "freshness": "CURRENT_OFFICIAL_PAGE_RECHECKED_2026-09-04",
+      "demand": "Official collaboration page states collaborations are always open for remote task/project work throughout Italy, explicitly including WordPress developers. It offers both project work inside Alpacode's pipeline and P.IVA-to-P.IVA subcontracts/outsourcing, with continued work after successful delivery.",
+      "route": {"type": "OFFICIAL_APPLICATION_FORM", "recipient": null, "authority": "OFFICIAL_COLLABORATION_FORM", "source": "https://alpacode.it/lavora-con-noi/"},
+      "vds_fit_hints": ["WordPress", "WooCommerce", "UI/UX", "performance", "clean implementation", "remote project work", "subcontracting", "outsourcing", "P.IVA collaboration", "recurring delivery"],
+      "recurring_economic_potential": "VERY_HIGH_EXPLICIT_RECURRING_OUTSOURCING",
+      "global_contact_state": "NO_MATCH_FOUND_IN_PROVIDER_SUPPRESSION_INDEX_OR_REPOSITORY_SEARCH_AS_OF_2026-09-04",
+      "missing_gates": ["MANUAL_FORM_SUBMISSION_REQUIRED", "FINAL_GLOBAL_INDEX_RECHECK_BY_DOWNSTREAM_OR_OWNER"],
+      "recommended_downstream_executor": "OWNER_MANUAL_ROUTE",
+      "recommended_next_action": "MANUAL_ROUTE_REQUIRED",
+      "confidence": "VERY_HIGH",
+      "closure_note": "Do not substitute a generic email: the official page provides a dedicated candidacy form and explicitly describes autonomous/outsourcing relationships. Preserve as high-value human review/manual apply."
+    },
     {
       "canonical_identity_key": "org:ieros.it",
       "organization": "Ieros",
@@ -14,22 +40,22 @@
       "province": "Roma",
       "city": "Roma",
       "segment": "AGENCY_WHITE_LABEL",
-      "priority_tier": "HOT",
+      "priority_tier": "HOT+",
       "source_id": "official_careers_plus_official_contact",
       "source_urls": ["https://ieros.it/lavoro", "https://ieros.it/contatti", "https://ieros.it/"],
       "query_or_intent": "agency partner network freelance web marketing Italy",
-      "evidence_timestamp": "2026-09-04T07:04:00Z",
+      "evidence_timestamp": "2026-09-04T08:04:00Z",
       "freshness": "CURRENT_OFFICIAL_PAGES_ACCESSIBLE_2026-09-04",
-      "demand": "Official Lavora con noi page explicitly asks experienced freelance consultants/designers to send a CV and explain how they could collaborate. The same page states Ieros is seeking small/medium web agencies and SEO consultants to expand its partner network across Italy.",
+      "demand": "Official Lavora con noi page explicitly seeks experienced freelance consultants/designers and small/medium web agencies/SEO consultants for the partner network.",
       "route": {"type": "EMAIL", "recipient": "info@ieros.it", "authority": "OFFICIAL_CONTACT_PAGE_REFERENCED_BY_OFFICIAL_LAVORA_CON_NOI", "source": "https://ieros.it/contatti"},
       "vds_fit_hints": ["web agency partnership", "WordPress/web services adjacency", "SEO/web marketing adjacency", "UX/UI", "AI/technology", "cross-disciplinary technical profile"],
       "recurring_economic_potential": "MEDIUM_TO_HIGH_PARTNER_NETWORK",
       "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_AS_OF_2026-09-04T06:30:00Z",
-      "missing_gates": ["FINAL_GLOBAL_INDEX_RECHECK", "VERIFY_PARTNER_TERMS_DO_NOT_REQUIRE_UNSUITABLE_PAID_MEMBERSHIP"],
+      "missing_gates": [],
       "recommended_downstream_executor": "VDS Unified Acquisition Loop",
-      "recommended_next_action": "QUEUE_FOR_FINAL_QUALIFICATION",
+      "recommended_next_action": "AUTO_EMAIL_NOW",
       "confidence": "HIGH",
-      "closure_note": "Exact official email route resolved this run; do not guess another recipient. Downstream should position as external web/technical partner and verify commercial partner terms before any send."
+      "closure_note": "Middle-funnel closure remains complete; downstream sender must execute normal JIT dedup/reservation/provider verification."
     },
     {
       "canonical_identity_key": "org:ugeceagency.com",
@@ -40,22 +66,22 @@
       "province": "Barcelona",
       "city": "Barcelona",
       "segment": "AGENCY_WHITE_LABEL",
-      "priority_tier": "WARM_STALE_SIGNAL",
-      "source_id": "public_linkedin_plus_official_site",
+      "priority_tier": "WARM_STALE_SIGNAL_STRATEGIC_REVIEW",
+      "source_id": "historical_public_linkedin_plus_current_official_site",
       "source_urls": ["https://es.linkedin.com/company/ugece-agency", "https://ugeceagency.com/"],
       "query_or_intent": "freelance wordpress seo recurrent agency Spain",
-      "evidence_timestamp": "2026-09-04T07:04:00Z",
-      "freshness": "COMPANY_CURRENT_BUT_FREELANCE_POST_APPROX_6_MONTHS_OLD",
-      "demand": "The public LinkedIn company page still exposes a recurring freelance WordPress + technical SEO call with explicit email route, but the post is approximately six months old. Official company site and hello@ugeceagency.com are current; current opening status is not proven.",
-      "route": {"type": "EMAIL", "recipient": "hello@ugeceagency.com", "authority": "LINKEDIN_ROLE_SIGNAL_PLUS_CURRENT_OFFICIAL_SITE_EMAIL", "source": "https://ugeceagency.com/"},
+      "evidence_timestamp": "2026-09-04T08:04:00Z",
+      "freshness": "COMPANY_AND_EMAIL_CURRENT_BUT_SPECIFIC_FREELANCE_CALL_APPROX_6_MONTHS_OLD",
+      "demand": "Historical recurring freelance WordPress/technical-SEO call remains strong fit evidence; current official site is active and exposes hello@ugeceagency.com, but current opening is not independently proven.",
+      "route": {"type": "EMAIL", "recipient": "hello@ugeceagency.com", "authority": "CURRENT_OFFICIAL_SITE_EMAIL_NOT_CURRENT_APPLICATION_AUTHORITY", "source": "https://ugeceagency.com/"},
       "vds_fit_hints": ["WordPress", "maintenance", "performance", "technical SEO", "security awareness", "responsive/content changes", "ongoing support"],
-      "recurring_economic_potential": "HIGH_IF_OPEN",
+      "recurring_economic_potential": "HIGH_IF_RECURRING_MODEL_STILL_ACTIVE",
       "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_AS_OF_2026-09-04T06:30:00Z",
-      "missing_gates": ["CURRENT_OPENING_NOT_PROVEN", "FINAL_GLOBAL_INDEX_RECHECK", "OWNER_APPROVED_RATE_IF_NUMERIC_RATE_REQUIRED"],
-      "recommended_downstream_executor": "NONE_UNTIL_FRESH_DEMAND",
+      "missing_gates": ["CURRENT_OPENING_NOT_PROVEN"],
+      "recommended_downstream_executor": "OWNER_HUMAN_REVIEW_ONLY",
       "recommended_next_action": "HOLD_STALE_OR_UNCERTAIN",
       "confidence": "HIGH_ON_HISTORICAL_SIGNAL_LOW_ON_CURRENT_OPENING",
-      "closure_note": "Do not auto-send solely because the email route is current. Freshness gate overrides fit/route score."
+      "closure_note": "Preserve for HISTORICAL_RECURRING_SIGNAL human review; do not auto-send from stale demand."
     },
     {
       "canonical_identity_key": "org:summummarketing.es",
@@ -72,7 +98,7 @@
       "query_or_intent": "agency external collaboration fit recheck",
       "evidence_timestamp": "2026-09-04T07:04:00Z",
       "freshness": "CURRENT_OFFICIAL_SITE_2026-09-04",
-      "demand": "No suitable current external web-production demand verified. Official team page states core execution is 100% in-house and explicitly describes no structural freelance outsourcing for core work.",
+      "demand": "No suitable current external web-production demand verified; current official operating model indicates core execution is in-house.",
       "route": {"type": "EMAIL", "recipient": "talento@summummarketing.es", "authority": "OFFICIAL_CONTACT_PAGE"},
       "vds_fit_hints": ["web/ecommerce", "digital agency"],
       "recurring_economic_potential": "LOW_FOR_VDS_EXTERNAL_PRODUCTION_UNDER_CURRENT_MODEL",
@@ -80,38 +106,27 @@
       "missing_gates": [],
       "recommended_downstream_executor": "NONE_NEW_FIRST_CONTACT",
       "recommended_next_action": "HOLD_STALE_OR_UNCERTAIN",
-      "confidence": "HIGH",
-      "history_note": "Provider suppression index currently has no summummarketing.es domain entry despite older radar claim. Targeted mailbox search was unavailable in this runtime. This history conflict does not affect the current no-send decision because the official operating model itself is a sufficient commercial-fit blocker."
+      "confidence": "HIGH"
     }
   ],
   "mission_execution": {
-    "missions_sampled": [
-      "Spain|Cataluña|Barcelona|AGENCY_WHITE_LABEL",
-      "Spain|Comunitat Valenciana|Valencia|AGENCY_WHITE_LABEL",
-      "Italy|Emilia-Romagna|Bologna|AGENCY_WHITE_LABEL",
-      "Italy|Lombardia|Milano|AGENCY_WHITE_LABEL"
-    ],
-    "new_promotable_canonical_organizations": 0,
-    "notes": [
-      "Mission searches produced mostly supplier/self-promotion pages, anonymous marketplace opportunities, or stale listings rather than a new canonical organization with fresh explicit web demand and an authoritative route.",
-      "A current marketplace project can be useful for the job/manual-application lane but lacks canonical buyer identity and therefore is not promoted here as an email-ready organization.",
-      "No quality gate was weakened to manufacture volume."
-    ]
+    "missions_sampled": ["Italy|Lombardia|Milano|AGENCY_WHITE_LABEL", "Spain|Cataluña|Barcelona|AGENCY_WHITE_LABEL"],
+    "new_promotable_canonical_organizations": 1,
+    "new_high_value_manual_routes": 1,
+    "notes": ["Alpacode is a materially new exact-fit recurring outsourcing signal from an official current page.", "Other sampled results were internal roles, generic supplier pages, or lower-fit freelance opportunities and were not promoted.", "No quality gate was weakened."]
   },
-  "eu_project_lane": {
-    "new_hot_candidates": 0,
-    "notes": [
-      "No new project met the combined threshold of current web/dissemination ownership, plausible external procurement/outsourcing need, canonical responsible organization and actionable authoritative route in this run.",
-      "Existing EU intelligence remains preserved for subsequent cycles."
-    ]
-  },
+  "eu_project_lane": {"new_hot_candidates": 0, "notes": ["No newly verified EU-project buyer reached the current threshold in this cycle."]},
   "territory_enrichment_completed": [
-    {"canonical_identity_key": "org:ieros.it", "country": "IT", "region": "Lazio", "province": "Roma", "city": "Roma", "evidence": "https://ieros.it/contatti"},
-    {"canonical_identity_key": "org:summummarketing.es", "country": "ES", "region": "Castilla y León", "province": "Valladolid", "city": "Valladolid", "evidence": "https://summummarketing.es/contacto/"}
+    {"canonical_identity_key": "org:ieros.it", "country": "IT", "region": "Lazio", "province": "Roma", "city": "Roma", "evidence": "https://ieros.it/contatti"}
   ],
+  "human_review_recovery": {
+    "material_candidates": ["org:alpacode.it", "org:ugeceagency.com"],
+    "hard_exclusions_not_recovered": ["org:summummarketing.es"],
+    "principle": "Preservation only; no route/dedup/legal constraint is bypassed."
+  },
   "cross_signal_merge": {
     "state": "RADAR_UPDATED_FOR_IMMEDIATE_NEXT_CROSS_SIGNAL_RUN",
-    "material_changes": ["org:ieros.it ROUTE_CLOSED_AND_PROMOTED_TO_FINAL_QUALIFICATION", "org:ugeceagency.com STALE_DEMAND_HOLD", "org:summummarketing.es CURRENT_MODEL_FIT_BLOCK"],
-    "history_correction_required": ["org:summummarketing.es"]
+    "material_changes": ["org:alpacode.it NEW_HOTPLUS_MANUAL_ROUTE", "org:ieros.it REMAINS_AUTO_EMAIL_NOW", "org:ugeceagency.com PRESERVE_FOR_HISTORICAL_RECURRING_SIGNAL_REVIEW"],
+    "history_correction_required": []
   }
 }
