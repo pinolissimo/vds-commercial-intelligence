@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-04T09:09:25Z",
+  "updated_at": "2026-09-04T09:10:11Z",
   "ranking_model": {
     "explicit_demand": 0.35,
     "vds_fit": 0.2,
@@ -46,18 +46,20 @@
         "total": 89.45
       },
       "priority_tier": "HOT+",
-      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
+      "contact_status": "CONTACTED",
       "reservation_status": "NONE_ACTIVE",
-      "recommended_executor": "VDS Unified Acquisition Loop",
-      "next_best_action": "AUTO_EMAIL_NOW",
-      "blockers_missing_gates": [],
+      "recommended_executor": "NONE_NEW_FIRST_CONTACT",
+      "next_best_action": "WAIT_FOR_REPLY",
+      "blockers_missing_gates": [
+        "PRIOR_FIRST_CONTACT_OR_OWNER_APPLICATION_RECORDED"
+      ],
       "route": {
         "type": "EMAIL",
         "recipient": "info@ieros.it",
         "source": "https://ieros.it/contatti",
         "supporting_signal": "https://ieros.it/lavoro"
       },
-      "rationale": "Current official Lavora con noi page explicitly invites experienced freelance consultants/designers to send a CV and explain collaboration, and also seeks web agencies/SEO consultants for a partner network. Official contact route is resolved, Rome geography is verified, provider suppression/global sent indexes show no prior contact, and no active reservation exists. Use the freelance-collaboration route; downstream sender must still perform its mandatory JIT rechecks before provider action."
+      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_276_2026-09-04T08:15:48Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
     },
     {
       "canonical_identity_key": "org:ugeceagency.com",
@@ -436,7 +438,7 @@
         "type": "JOB_PLATFORM_APPLY",
         "source": "https://bebee.com/it/jobs/sistemista-e-sviluppatore-wordpress-infrastruttura-grownnectia-piva-ibrido-grownnectia-srl-roma-lazi--t7xk-780729090"
       },
-      "rationale": "Global provider/manual contact history now proves a prior professional first contact/application. Preserve the opportunity for reply-driven continuation only; no new FIRST_CONTACT through another route."
+      "rationale": "Global organization history proves prior professional contact/application (data/human-review-owner-actions/2026-09-04-grownnectia-manual-apply.json). Preserve only for reply-driven or otherwise policy-compliant continuation."
     },
     {
       "canonical_identity_key": "org:globalserviceimpresa.it",
@@ -474,7 +476,7 @@
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://www.globalserviceimpresa.it/lavora-con-noi/"
       },
-      "rationale": "Global provider/manual contact history now proves a prior professional first contact/application. Preserve the opportunity for reply-driven continuation only; no new FIRST_CONTACT through another route."
+      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_273_2026-09-04T07:41:58Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
     },
     {
       "canonical_identity_key": "org:mobyleshop.com",
@@ -641,7 +643,7 @@
         "type": "OFFICIAL_APPLICATION_FORM",
         "source": "https://zmotlab.it/lavora-con-noi/sviluppatore-senior/"
       },
-      "rationale": "Global provider/manual contact history now proves a prior professional first contact/application. Preserve the opportunity for reply-driven continuation only; no new FIRST_CONTACT through another route."
+      "rationale": "Global organization history proves prior professional contact/application (HOSTINGER_SENT_UID_274_2026-09-04T07:59:55Z). Preserve only for reply-driven or otherwise policy-compliant continuation."
     },
     {
       "canonical_identity_key": "org:mindrift.ai",
@@ -857,5 +859,6 @@
     "FOLLOW_UP_ONLY_IF_REQUESTED",
     "HOLD_STALE_OR_UNCERTAIN"
   ],
-  "note": "Reconciled current Agency+EU signals, Human Review High Value protocol, and provider/manual history through Hostinger UID 274. Alpacode added as HOT+ human-review/manual-route; Ieros remains executable subject to downstream JIT checks; Global Service Impresa, Zmot Lab and Grownnectia are continuation-only. No external action performed."
+  "note": "Reconciled current Agency+EU signals, Human Review High Value protocol, and provider/manual history through Hostinger UID 274. Alpacode added as HOT+ human-review/manual-route; Ieros remains executable subject to downstream JIT checks; Global Service Impresa, Zmot Lab and Grownnectia are continuation-only. No external action performed.",
+  "history_reconciled_through": "Cache reconciled through Hostinger Sent UID 278. Gmail is notifications/BCC only and is not a professional dedup source. The Visual Corner has an explicit hard owner stop recorded on 2026-09-04."
 }
