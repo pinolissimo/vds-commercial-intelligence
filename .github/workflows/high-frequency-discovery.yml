@@ -20,6 +20,7 @@ on:
       - "scripts/cross_signal_human_review_reconcile.py"
       - "scripts/merge_human_review_pending.py"
       - "scripts/reconcile_global_contact_history.py"
+      - "scripts/build_command_center_api.py"
       - "data/human-review-pending/**"
       - "config/high-frequency-discovery-sources.json"
       - "config/supplemental-public-sources.json"
@@ -91,6 +92,9 @@ jobs:
       - name: Reconcile global contacted/owner-stop history
         run: python scripts/reconcile_global_contact_history.py
 
+      - name: Refresh Command Center private projections
+        run: python3 scripts/build_command_center_api.py
+
       - name: Commit discovery and adaptive intelligence state
         shell: bash
         run: |
@@ -112,6 +116,7 @@ jobs:
             python scripts/merge_human_review_pending.py
             python scripts/cross_signal_human_review_reconcile.py
             python scripts/reconcile_global_contact_history.py
+            python3 scripts/build_command_center_api.py
           }
 
           stage_state() {
@@ -134,16 +139,17 @@ jobs:
                     metrics/territory-yield-radar-state.json \
                     metrics/daily/*-cross-signal.json \
                     config/adaptive-search-runtime.json \
-                    config/acquisition-runtime-command.json
+                    config/acquisition-runtime-command.json \
+                    api/v1
           }
 
           commit_state() {
             stage_state
             if git diff --cached --quiet; then
-              echo "No discovery changes"
+              echo "No discovery/projection changes"
               return 1
             fi
-            git commit -m "data: refresh expanded multi-engine discovery acquisition radar"
+            git commit -m "data: refresh discovery radar and command center projections"
           }
 
           if ! commit_state; then
@@ -152,7 +158,7 @@ jobs:
 
           for attempt in 1 2 3; do
             if git push origin HEAD:main; then
-              echo "Discovery state committed on attempt ${attempt}"
+              echo "Discovery + projection state committed on attempt ${attempt}"
               exit 0
             fi
 
@@ -162,11 +168,11 @@ jobs:
             git reset --hard origin/main
             run_pipeline
             if ! commit_state; then
-              echo "Fresh canonical state already contains equivalent discovery output"
+              echo "Fresh canonical state already contains equivalent output"
               exit 0
             fi
             sleep $((attempt * 2))
           done
 
-          echo "Unable to commit discovery state after collision-safe retries" >&2
+          echo "Unable to commit discovery/projection state after collision-safe retries" >&2
           exit 1
