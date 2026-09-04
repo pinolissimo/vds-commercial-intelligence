@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04",
+  "purpose": "Generate high-precision search-engine discovery variants from canonical territorial missions. Search-engine results are discovery signals only; authoritative source verification remains mandatory.",
+  "engine_order": ["google", "bing", "brave", "duckduckgo"],
+  "policy": {
+    "max_missions": 20,
+    "max_variants_per_mission": 7,
+    "fresh_windows_days": [1, 7, 30],
+    "no_search_result_scraping_in_github_actions": true,
+    "authoritative_verification_required": true,
+    "quality_gates_unchanged": true
+  },
+  "negative_noise": ["-indeed", "-glassdoor", "-jooble", "-talent.com", "-jobrapido", "-simplyhired"],
+  "official_job_domains": [
+    "jobs.lever.co",
+    "boards.greenhouse.io",
+    "jobs.ashbyhq.com",
+    "apply.workable.com",
+    "careers-page.com",
+    "teamtailor.com",
+    "personio.com",
+    "recruitee.com"
+  ],
+  "segment_variants": {
+    "DIRECT_JOB": ["fresh_1d", "fresh_7d", "ats_scoped", "linkedin_indexed", "official_careers"],
+    "AGENCY_WHITE_LABEL": ["fresh_7d", "official_careers", "official_site", "exact_route_terms"],
+    "DIRECT_BUYER_WEB_NEED": ["fresh_7d", "fresh_30d", "official_site", "procurement_pdf"],
+    "WPO_MAINTENANCE": ["fresh_7d", "official_site", "exact_route_terms"],
+    "EU_PROJECT": ["fresh_30d", "eu_official", "pdf_evidence", "partner_site"]
+  }
+}
