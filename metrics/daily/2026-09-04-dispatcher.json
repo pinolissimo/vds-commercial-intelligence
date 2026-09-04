@@ -2,11 +2,21 @@
   "schema_version": "1.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T07:43:00+02:00",
+  "updated_at": "2026-09-04T08:46:53+02:00",
   "backfilled": true,
-  "backfill_scope": "verified automated Batch Dispatcher first-contact sends up to 07:43 Europe/Madrid",
+  "backfill_scope": "verified automated Batch Dispatcher first-contact sends plus subsequent Unified Acquisition Loop runs",
+  "runs": 2,
+  "emails_attempted": 1,
   "emails_verified_sent": 1,
   "unique_organizations_sent": 1,
+  "followup_1_verified_sent": 0,
+  "duplicates_blocked": 0,
+  "manual_route_required": 1,
+  "retry_required": 0,
+  "delivery_state_unknown": 0,
+  "spain_sends": 1,
+  "italy_sends": 0,
+  "eu_language_compatible_sends": 0,
   "provider_uids": [272],
   "send_events": [
     {
@@ -14,9 +24,13 @@
       "organization": "Paginas Web Valencia",
       "recipient": "info@paginaswebvalencia.eu",
       "sent_at_utc": "2026-09-04T04:57:14Z",
-      "sent_at_local": "2026-09-04T06:57:14+02:00"
+      "sent_at_local": "2026-09-04T06:57:14+02:00",
+      "action_type": "FIRST_CONTACT"
     }
   ],
-  "counted_run_ids": ["scheduled-dispatch-20260904T0456Z"],
-  "note": "Initialized from dispatcher audit/provider Sent evidence. Future runs update this file incrementally under DAILY_METRICS_PROTOCOL.md."
+  "counted_run_ids": [
+    "scheduled-dispatch-20260904T0456Z",
+    "vds-unified-acquisition-20260904T064653Z"
+  ],
+  "note": "Unified run occurred outside the allowed 09:00-19:00 outbound window and performed discovery/qualification only; no provider action or lease acquisition occurred."
 }
