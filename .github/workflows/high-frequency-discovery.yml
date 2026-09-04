@@ -1,0 +1,55 @@
+name: VDS High-Frequency Discovery Fanout
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/high-frequency-discovery.yml"
+      - "scripts/high_frequency_discovery.py"
+      - "config/high-frequency-discovery-sources.json"
+      - "config/search-territory-frontier.json"
+      - "config/adaptive-search-policy.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vds-high-frequency-discovery-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run public-source fanout
+        run: python scripts/high_frequency_discovery.py
+
+      - name: Commit discovery state
+        shell: bash
+        run: |
+          if git diff --quiet -- views data metrics; then
+            echo "No discovery changes"
+            exit 0
+          fi
+          git config user.name "vds-discovery-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add views/high-frequency-discovery-latest.json data/high-frequency-discovery/raw-signals.jsonl metrics/high-frequency-discovery-state.json metrics/high-frequency-watch-state.json
+          git commit -m "data: refresh high-frequency discovery"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 3))
+          done
+          exit 1
