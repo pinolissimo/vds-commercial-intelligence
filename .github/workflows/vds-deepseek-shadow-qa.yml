@@ -1,0 +1,87 @@
+name: VDS DeepSeek Shadow — QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/deepseek_shadow_semantic.py'
+      - 'config/deepseek-shadow-policy.json'
+      - '.github/workflows/high-frequency-discovery.yml'
+      - '.github/workflows/vds-deepseek-shadow-qa.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vds-deepseek-shadow-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  shadow-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Python syntax
+        run: python3 -m py_compile scripts/deepseek_shadow_semantic.py
+
+      - name: Verify policy is shadow-only
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('config/deepseek-shadow-policy.json').read_text())
+          assert p['mode']=='SHADOW_ONLY'
+          inv=p['production_invariants']
+          assert inv['may_change_semantic_state'] is False
+          assert inv['may_create_ready'] is False
+          assert inv['may_change_dedup'] is False
+          assert inv['may_change_routes'] is False
+          assert inv['may_trigger_send'] is False
+          assert inv['existing_gates_authoritative'] is True
+          assert inv['failure_must_not_block_discovery'] is True
+          assert p['model']=='deepseek-v4-flash'
+          PY
+
+      - name: Prove no production mutation without API secret
+        shell: bash
+        env:
+          DEEPSEEK_API_KEY: ''
+        run: |
+          set -euo pipefail
+          sha256sum views/high-frequency-discovery-qualified-seeds.json \
+                    views/cross-signal-opportunities.json \
+                    views/global-organization-index.json \
+                    views/global-sent-email-index.json \
+                    governance/global-contact-reservations.json > /tmp/before.sha
+          python3 scripts/deepseek_shadow_semantic.py
+          sha256sum views/high-frequency-discovery-qualified-seeds.json \
+                    views/cross-signal-opportunities.json \
+                    views/global-organization-index.json \
+                    views/global-sent-email-index.json \
+                    governance/global-contact-reservations.json > /tmp/after.sha
+          diff -u /tmp/before.sha /tmp/after.sha
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('views/deepseek-shadow-latest.json').read_text())
+          assert d['mode']=='SHADOW_ONLY'
+          assert d['production_decisions_mutated'] is False
+          assert d['last_run_status'] in {'SKIPPED_NO_DEEPSEEK_API_KEY','NO_NEW_UNSEEN_SAMPLE'}
+          assert d['promotion_gate']['automatic_production_promotion_allowed'] is False
+          PY
+
+      - name: Verify production workflow fails open around DeepSeek
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'DeepSeek semantic shadow evaluation' .github/workflows/high-frequency-discovery.yml
+          grep -q 'continue-on-error: true' .github/workflows/high-frequency-discovery.yml
+          grep -q 'DEEPSEEK_API_KEY.*secrets.DEEPSEEK_API_KEY' .github/workflows/high-frequency-discovery.yml
+          grep -q 'DeepSeek shadow failed open during collision rebuild' .github/workflows/high-frequency-discovery.yml
+          ! grep -R -E 'deepseek[_-]?(api[_-]?)?key.{0,8}[=:].{10,}' --include='*.json' --include='*.py' --include='*.yml' . | grep -v 'DEEPSEEK_API_KEY'
