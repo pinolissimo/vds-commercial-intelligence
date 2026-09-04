@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-09-04T06:38:00Z",
-  "principle": "Search for explicit current professional demand and collaboration routes, not generic company directories. Substitute verified territory names and rotate templates to avoid repeatedly scanning the same query.",
+  "schema_version": "1.1",
+  "updated_at": "2026-09-04T06:59:00Z",
+  "principle": "Search first for explicit current professional demand and collaboration routes; add a controlled direct-buyer lane for organizations showing a concrete current website/performance/maintenance/rebuild need. Generic directories alone never justify outreach.",
   "segments": {
     "AGENCY_WHITE_LABEL": {
       "weight": 1.4,
@@ -24,6 +24,25 @@
         "\"partita IVA\" wordpress web agency {territory}",
         "\"collaborazione continuativa\" freelance wordpress {territory}",
         "\"subfornitura\" sviluppo web agenzia {territory}"
+      ]
+    },
+    "DIRECT_BUYER_WEB_NEED": {
+      "weight": 1.3,
+      "spain": [
+        "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") {territory}",
+        "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") {territory}",
+        "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa {territory}",
+        "\"solicitud de presupuesto\" (web OR wordpress OR ecommerce) {territory}",
+        "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) {territory}",
+        "\"mejora web\" empresa (wordpress OR rendimiento OR conversión) {territory}"
+      ],
+      "italy": [
+        "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") {territory}",
+        "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") {territory}",
+        "\"necessitiamo\" (\"nuovo sito\" OR \"rifacimento sito\" OR \"migrazione wordpress\") azienda {territory}",
+        "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) {territory}",
+        "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) {territory}",
+        "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) {territory}"
       ]
     },
     "DIRECT_JOB": {
@@ -49,6 +68,19 @@
         "site:linkedin.com/jobs/view web designer freelance Italy remote"
       ]
     },
+    "EU_PROJECT": {
+      "weight": 1.15,
+      "spain": [
+        "site:europa.eu project dissemination website Spain kickoff 2026",
+        "Horizon project \"communication and dissemination\" Spain website 2026",
+        "Interreg project Spain \"website\" dissemination 2026"
+      ],
+      "italy": [
+        "site:europa.eu project dissemination website Italy kickoff 2026",
+        "Horizon project \"communication and dissemination\" Italy website 2026",
+        "Interreg project Italy \"website\" dissemination 2026"
+      ]
+    },
     "WPO_MAINTENANCE": {
       "weight": 1.05,
       "spain": [
@@ -63,19 +95,6 @@
         "\"ottimizzazione wordpress\" freelance {territory}",
         "\"migrazione wordpress\" freelance agenzia {territory}"
       ]
-    },
-    "EU_PROJECT": {
-      "weight": 1.15,
-      "spain": [
-        "site:europa.eu project dissemination website Spain kickoff 2026",
-        "Horizon project \"communication and dissemination\" Spain website 2026",
-        "Interreg project Spain \"website\" dissemination 2026"
-      ],
-      "italy": [
-        "site:europa.eu project dissemination website Italy kickoff 2026",
-        "Horizon project \"communication and dissemination\" Italy website 2026",
-        "Interreg project Italy \"website\" dissemination 2026"
-      ]
     }
   },
   "source_families_to_rotate": [
@@ -83,9 +102,11 @@
     "public/indexed LinkedIn job pages",
     "specialized job boards",
     "agency websites",
+    "official company news/procurement/request pages",
     "professional directories as discovery only then official-site verification",
     "EU official/project/partner sources"
   ],
+  "direct_buyer_hard_gate": "A direct buyer may be contacted only when current public evidence establishes a concrete web/digital need plus a legally/channel-appropriate authoritative organization route. Mere weak design, generic directory presence, or guessed need is insufficient.",
   "negative_intent": [
     "sales-only commission roles",
     "office assistant",
