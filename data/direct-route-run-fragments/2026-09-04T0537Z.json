@@ -1,0 +1,47 @@
+{
+  "run_id": "direct-route-20260904T0537Z",
+  "timestamp": "2026-09-04T05:37:16Z",
+  "worker": "DIRECT_ROUTE",
+  "mode": "HIGH_THROUGHPUT",
+  "protocol_version": "1.3",
+  "starting_backlog": 1,
+  "closures": [
+    {
+      "canonical_identity_key": "org:itsliquid.com",
+      "organization": "ITSLIQUID Group",
+      "country": "Italy",
+      "region_city": "Bari / remote listing",
+      "fit_score": 97,
+      "state": "HOLD_STALE_SOURCE_AUTHORITY",
+      "route": "AUTHORITATIVE_CAREERS_EMAIL_EXISTS_BUT_WEBMASTER_ROLE_NOT_CURRENTLY_CONFIRMED",
+      "authoritative_route": "director@itsliquid.com",
+      "route_authority_evidence": "Current official ITSLIQUID Contact / Job Opportunities page explicitly instructs applicants for its currently listed opportunities to send CV, portfolio and motivation letter to director@itsliquid.com or use the form.",
+      "freshness_evidence": "The employer-controlled current Job Opportunities surface lists Internship Program, Art Curator Freelance, and Graphic Designer for Contemporary Art, but does not list Webmaster/Web Developer. The WordPress/PHP/HTML/CSS/MySQL/JavaScript Webmaster demand is sourced from Bakeca and dated 2026-03-31.",
+      "contract_model": "Third-party Webmaster listing explicitly states Libero professionista / Partita IVA and 100% remote capability; no explicit no-freelance exclusion.",
+      "blocker": "Current authoritative employer surface does not confirm that the Webmaster/Web Developer need remains open. The dedicated careers email cannot by itself refresh a five-month-old third-party role. Unknown freshness gate prevents READY promotion.",
+      "dedup": "CANONICAL_LEDGER_NO_MATCH_OBSERVED; mailbox JIT intentionally not run because freshness failed before pre-READY. Latest canonical recipient index/provider reconciliation is UID 272.",
+      "document_requirement": "Official careers route requires CV, portfolio and motivation letter; LINK_ONLY policy would require verified public document links if a current matching role is later confirmed.",
+      "next_verification_action": "Reopen only if ITSLIQUID publishes or directly confirms a current Webmaster/Web Developer/WordPress opportunity on an employer-controlled surface. Then resolve cross-border Spain/EU invoicing and perform fresh organization-level mailbox JIT dedup before READY promotion."
+    }
+  ],
+  "metrics": {
+    "candidates_closed": 1,
+    "ready_added": 0,
+    "manual_route": 0,
+    "explicit_no_freelance": 0,
+    "stale": 1,
+    "duplicates": 0,
+    "route_failures": 0,
+    "spain_closures": 0,
+    "italy_closures": 1,
+    "eu_language_compatible_outside_it_es_closures": 0,
+    "elapsed_seconds": 150,
+    "ready_closures_per_minute": 0.0,
+    "total_closures_per_minute": 0.4
+  },
+  "ready_queue_observed": 0,
+  "lease_state_observed": "IDLE",
+  "mailbox_jit_scans": 0,
+  "external_actions": "NONE",
+  "notes": "Read chain execution protocol v1.3 and dispatch lease protocol. No email, form, DM, application, dispatch lease acquisition, or external communication WRITE/SEND action performed."
+}
