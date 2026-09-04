@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Interpret one dashboard command through OpenAI and write a structured, non-bypassing command record.
+"""Interpret one dashboard command through OpenAI and write a structured command record.
 
-This script NEVER sends mail and NEVER mutates the existing acquisition task architecture.
-It only writes additive command/analysis JSON for the existing task bridge to consume.
+Hard invariant: this script NEVER sends mail and NEVER changes the existing
+acquisition-task architecture. It writes only additive command/analysis JSON for
+the existing task bridge to consume while all current gates remain authoritative.
 """
 from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -70,28 +72,24 @@ def call_openai(api_key: str, model: str, command: str, context: dict) -> dict:
     req = urllib.request.Request(
         "https://api.openai.com/v1/responses",
         data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
         method="POST",
     )
     try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            data = json.loads(r.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace")
-        raise RuntimeError(f"OpenAI HTTP {e.code}: {body[:800]}") from e
+        with urllib.request.urlopen(req, timeout=90) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"OpenAI HTTP {exc.code}: {body[:800]}") from exc
     text = extract_output_text(data).strip()
     if text.startswith("```"):
         text = text.strip("`")
         if text.lower().startswith("json"):
             text = text[4:].lstrip()
     try:
-        parsed = json.loads(text)
-    except json.JSONDecodeError as e:
-        raise RuntimeError(f"OpenAI returned non-JSON command output: {text[:800]}") from e
-    return parsed
+        return json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"OpenAI returned non-JSON command output: {text[:800]}") from exc
 
 
 def normalize(parsed: dict) -> dict:
@@ -115,6 +113,15 @@ def normalize(parsed: dict) -> dict:
     }
 
 
+def safe_request_id(value: str) -> str | None:
+    value = (value or "").strip()
+    if not value:
+        return None
+    if not re.fullmatch(r"[A-Za-z0-9._:-]{8,120}", value):
+        raise RuntimeError("Invalid VDS_REQUEST_ID")
+    return value
+
+
 def main() -> int:
     if len(sys.argv) < 2 or not sys.argv[1].strip():
         print("usage: vds_ai_command.py '<command>'", file=sys.stderr)
@@ -133,9 +140,9 @@ def main() -> int:
     }
     parsed = normalize(call_openai(api_key, model, command, context))
     now = datetime.now(timezone.utc).astimezone(MADRID).isoformat(timespec="seconds")
-    command_id = datetime.now(timezone.utc).strftime("CMD-%Y%m%dT%H%M%SZ")
+    command_id = safe_request_id(os.environ.get("VDS_REQUEST_ID", "")) or datetime.now(timezone.utc).strftime("CMD-%Y%m%dT%H%M%SZ")
     record = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "command_id": command_id,
         "created_at": now,
         "source": "VDS_COMMAND_CENTER_GITHUB_PAGES",
@@ -157,9 +164,10 @@ def main() -> int:
         QUEUE.parent.mkdir(parents=True, exist_ok=True)
         queue = load("command-center/commands/pending.json", {"schema_version": "1.0", "commands": []})
         commands = queue.get("commands") if isinstance(queue.get("commands"), list) else []
-        commands.append(record)
+        if not any(item.get("command_id") == command_id for item in commands if isinstance(item, dict)):
+            commands.append(record)
         queue = {
-            "schema_version": "1.0",
+            "schema_version": "1.1",
             "updated_at": now,
             "policy": "Existing production tasks consume commands without bypassing existing gates or reducing normal discovery quality.",
             "commands": commands[-50:],
