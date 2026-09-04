@@ -13,8 +13,11 @@ from pathlib import Path
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36"
 CHART_URL = "https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
+# Official libsodium.js 0.8.4 release commit; browser bundle is intentionally vendored at Pages build time.
+SODIUM_URL = "https://raw.githubusercontent.com/jedisct1/libsodium.js/2830fcf2ce8cefd3fdc7e1efc9fc1cee1d2d95b7/dist/browsers/sodium.js"
 DM_CSS = "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
 ICONS_CSS = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+ONBOARDING_MARKER = "assets/secure-onboarding.js"
 
 
 def fetch(url: str) -> bytes:
@@ -28,8 +31,24 @@ def font_url(css_url: str) -> str:
     urls = re.findall(r"url\((https://[^)]+\.woff2)\)", css)
     if not urls:
         raise RuntimeError(f"No WOFF2 found in {css_url}")
-    # Google Fonts emits subset blocks; the final block is normally latin.
     return urls[-1]
+
+
+def inject_secure_onboarding(root: Path) -> None:
+    index = root / "index.html"
+    html = index.read_text(encoding="utf-8")
+    html = html.replace(
+        "Permessi consigliati: repository singolo · Contents read-only · Actions read/write.",
+        "Permessi consigliati: repository singolo · Contents read-only · Actions read/write · Secrets read/write.",
+    )
+    if ONBOARDING_MARKER not in html:
+        scripts = (
+            '<script src="assets/sodium-bootstrap.js"></script>'
+            '<script src="assets/vendor/sodium.js"></script>'
+            '<script type="module" src="assets/secure-onboarding.js"></script>'
+        )
+        html = html.replace("</body>", scripts + "</body>")
+    index.write_text(html, encoding="utf-8")
 
 
 def main() -> int:
@@ -43,6 +62,7 @@ def main() -> int:
         fonts / "dm-sans.woff2": font_url(DM_CSS),
         fonts / "material-symbols-rounded.woff2": font_url(ICONS_CSS),
         vendor / "chart.umd.min.js": CHART_URL,
+        vendor / "sodium.js": SODIUM_URL,
     }
     for path, url in assets.items():
         data = fetch(url)
@@ -50,6 +70,8 @@ def main() -> int:
             raise RuntimeError(f"Downloaded asset unexpectedly small: {url} ({len(data)} bytes)")
         path.write_bytes(data)
         print(f"asset {path}: {len(data)} bytes")
+
+    inject_secure_onboarding(root)
     return 0
 
 

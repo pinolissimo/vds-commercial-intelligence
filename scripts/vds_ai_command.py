@@ -13,7 +13,7 @@ import re
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -21,13 +21,19 @@ ROOT = Path(__file__).resolve().parents[1]
 MADRID = ZoneInfo("Europe/Madrid")
 OUT = ROOT / "api" / "v1" / "ai-command"
 QUEUE = ROOT / "command-center" / "commands" / "pending.json"
+WORKERS = {"AGENCY_RADAR", "LINKEDIN_HUNTER", "UNIFIED_LOOP"}
 
 SYSTEM = """You are VDS Commercial Intelligence Command Router.
 Interpret the owner's natural-language command for the existing VDS commercial acquisition system.
-The current production task architecture is authoritative and must not be weakened, replaced or bypassed.
+The current production task architecture is authoritative and must not be weakened, replaced, paused, rescheduled or bypassed.
 Never invent an opportunity, recipient, route, sent status, reply, rate, eligibility, freshness or evidence.
-Never authorize duplicate FIRST_CONTACT. Any SEND_DIRECTIVE must preserve all existing gates: global organization dedup, suppression, authoritative route, freshness, geography/remote compatibility, fit, legal constraints, provider verification and manual-route preservation.
+Never authorize duplicate FIRST_CONTACT. Any SEND_DIRECTIVE must preserve all existing gates: global organization dedup, suppression, authoritative route, freshness, geography/remote compatibility, fit, legal constraints, sending window, provider verification and manual-route preservation.
 Quality thresholds must never be lowered merely to increase volume.
+
+Allowed worker IDs:
+- AGENCY_RADAR: agency/white-label/EU-project/direct-buyer/WPO research and route closure.
+- LINKEDIN_HUNTER: direct job discovery/qualification and job application execution through its existing rules.
+- UNIFIED_LOOP: commercial/agency/EU READY execution and broad commercial acquisition priorities through its existing rules.
 
 Return ONLY one compact JSON object with exactly these keys:
 {
@@ -35,12 +41,14 @@ Return ONLY one compact JSON object with exactly these keys:
   "intent": "short snake_case intent",
   "summary": "concise Italian explanation",
   "parameters": {},
+  "target_workers": ["AGENCY_RADAR|LINKEDIN_HUNTER|UNIFIED_LOOP"],
   "requires_task_bridge": true,
   "requires_existing_gates": true,
   "risk": "LOW|MEDIUM|HIGH",
   "owner_confirmation_required": false,
   "answer": "direct Italian answer when command is analytical; otherwise short operational acknowledgement"
 }
+Routing rules: job/direct-job search or job send -> LINKEDIN_HUNTER; agency/white-label/EU-project/WPO/direct-buyer research -> AGENCY_RADAR; commercial READY send -> UNIFIED_LOOP; broad acquisition priority/refresh -> all relevant workers. Do not route a send directive to a worker that does not already possess that send authority.
 Use owner_confirmation_required=true only for commands that would materially alter safety/quality policy or are ambiguous/high-risk. Normal requests to search, prioritize or send already-valid READY items do not need an extra confirmation, but execution remains gated.
 """
 
@@ -55,9 +63,9 @@ def load(rel: str, default):
 def extract_output_text(response: dict) -> str:
     for item in response.get("output", []):
         if item.get("type") == "message":
-            for c in item.get("content", []):
-                if c.get("type") in {"output_text", "text"} and c.get("text"):
-                    return c["text"]
+            for content in item.get("content", []):
+                if content.get("type") in {"output_text", "text"} and content.get("text"):
+                    return content["text"]
     return response.get("output_text", "") or ""
 
 
@@ -67,7 +75,7 @@ def call_openai(api_key: str, model: str, command: str, context: dict) -> dict:
         "instructions": SYSTEM,
         "input": "OWNER COMMAND:\n" + command + "\n\nCURRENT READ-ONLY SNAPSHOT:\n" + json.dumps(context, ensure_ascii=False),
         "reasoning": {"effort": "low"},
-        "max_output_tokens": 1400,
+        "max_output_tokens": 1600,
     }
     req = urllib.request.Request(
         "https://api.openai.com/v1/responses",
@@ -92,6 +100,21 @@ def call_openai(api_key: str, model: str, command: str, context: dict) -> dict:
         raise RuntimeError(f"OpenAI returned non-JSON command output: {text[:800]}") from exc
 
 
+def fallback_targets(command_class: str, intent: str, parameters: dict) -> list[str]:
+    haystack = " ".join([intent, json.dumps(parameters, ensure_ascii=False)]).lower()
+    if command_class == "SEND_DIRECTIVE":
+        return ["LINKEDIN_HUNTER"] if any(k in haystack for k in ("job", "vacancy", "linkedin", "candidatur")) else ["UNIFIED_LOOP"]
+    if command_class == "SEARCH_DIRECTIVE":
+        if any(k in haystack for k in ("job", "vacancy", "linkedin", "ats", "direct_job")):
+            return ["LINKEDIN_HUNTER"]
+        if any(k in haystack for k in ("agency", "agenz", "white_label", "eu_project", "horizon", "prima", "wpo", "buyer")):
+            return ["AGENCY_RADAR"]
+        return ["AGENCY_RADAR", "LINKEDIN_HUNTER"]
+    if command_class in {"PRIORITY_DIRECTIVE", "REFRESH"}:
+        return ["AGENCY_RADAR", "LINKEDIN_HUNTER", "UNIFIED_LOOP"]
+    return []
+
+
 def normalize(parsed: dict) -> dict:
     allowed = {"ANALYZE", "SEARCH_DIRECTIVE", "SEND_DIRECTIVE", "PRIORITY_DIRECTIVE", "REFRESH", "UNKNOWN"}
     cls = str(parsed.get("command_class", "UNKNOWN")).upper()
@@ -100,12 +123,27 @@ def normalize(parsed: dict) -> dict:
     risk = str(parsed.get("risk", "MEDIUM")).upper()
     if risk not in {"LOW", "MEDIUM", "HIGH"}:
         risk = "MEDIUM"
+    params = parsed.get("parameters") if isinstance(parsed.get("parameters"), dict) else {}
+    intent = str(parsed.get("intent") or "unknown")[:120]
+    raw_targets = parsed.get("target_workers") if isinstance(parsed.get("target_workers"), list) else []
+    targets = []
+    for value in raw_targets:
+        worker = str(value).upper().strip()
+        if worker in WORKERS and worker not in targets:
+            targets.append(worker)
+    requires_bridge = bool(parsed.get("requires_task_bridge", cls not in {"ANALYZE", "UNKNOWN"}))
+    if requires_bridge and not targets:
+        targets = fallback_targets(cls, intent, params)
+    if cls in {"ANALYZE", "UNKNOWN"}:
+        targets = []
+        requires_bridge = False
     return {
         "command_class": cls,
-        "intent": str(parsed.get("intent") or "unknown")[:120],
+        "intent": intent,
         "summary": str(parsed.get("summary") or "")[:1200],
-        "parameters": parsed.get("parameters") if isinstance(parsed.get("parameters"), dict) else {},
-        "requires_task_bridge": bool(parsed.get("requires_task_bridge", cls not in {"ANALYZE", "UNKNOWN"})),
+        "parameters": params,
+        "target_workers": targets,
+        "requires_task_bridge": requires_bridge,
         "requires_existing_gates": True,
         "risk": risk,
         "owner_confirmation_required": bool(parsed.get("owner_confirmation_required", False)),
@@ -139,19 +177,23 @@ def main() -> int:
         "health": load("api/v1/health.json", {}),
     }
     parsed = normalize(call_openai(api_key, model, command, context))
-    now = datetime.now(timezone.utc).astimezone(MADRID).isoformat(timespec="seconds")
-    command_id = safe_request_id(os.environ.get("VDS_REQUEST_ID", "")) or datetime.now(timezone.utc).strftime("CMD-%Y%m%dT%H%M%SZ")
+    now_utc = datetime.now(timezone.utc)
+    now = now_utc.astimezone(MADRID).isoformat(timespec="seconds")
+    expires_at = (now_utc + timedelta(hours=24)).astimezone(MADRID).isoformat(timespec="seconds")
+    command_id = safe_request_id(os.environ.get("VDS_REQUEST_ID", "")) or now_utc.strftime("CMD-%Y%m%dT%H%M%SZ")
     record = {
-        "schema_version": "1.1",
+        "schema_version": "1.2",
         "command_id": command_id,
         "created_at": now,
+        "expires_at": expires_at,
         "source": "VDS_COMMAND_CENTER_GITHUB_PAGES",
         "model": model,
         "owner_command": command,
         **parsed,
         "production_core_modified": False,
+        "normal_cycle_must_continue": True,
         "execution_policy": "EXISTING_TASKS_AND_GATES_REMAIN_AUTHORITATIVE",
-        "status": "PENDING_TASK_BRIDGE" if parsed["requires_task_bridge"] and not parsed["owner_confirmation_required"] else ("ANSWERED" if parsed["command_class"] == "ANALYZE" else "REVIEW_REQUIRED"),
+        "status": "PENDING_TASK_BRIDGE" if parsed["requires_task_bridge"] and parsed["target_workers"] and not parsed["owner_confirmation_required"] else ("ANSWERED" if parsed["command_class"] == "ANALYZE" else "REVIEW_REQUIRED"),
     }
 
     OUT.mkdir(parents=True, exist_ok=True)
@@ -162,19 +204,19 @@ def main() -> int:
 
     if record["status"] == "PENDING_TASK_BRIDGE":
         QUEUE.parent.mkdir(parents=True, exist_ok=True)
-        queue = load("command-center/commands/pending.json", {"schema_version": "1.0", "commands": []})
+        queue = load("command-center/commands/pending.json", {"schema_version": "1.2", "commands": []})
         commands = queue.get("commands") if isinstance(queue.get("commands"), list) else []
         if not any(item.get("command_id") == command_id for item in commands if isinstance(item, dict)):
             commands.append(record)
         queue = {
-            "schema_version": "1.1",
+            "schema_version": "1.2",
             "updated_at": now,
-            "policy": "Existing production tasks consume commands without bypassing existing gates or reducing normal discovery quality.",
-            "commands": commands[-50:],
+            "policy": "Existing production tasks consume commands as non-bypassing overlays. Normal discovery and execution continue even if the bridge is unavailable.",
+            "commands": commands[-60:],
         }
         QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    print(json.dumps({"command_id": command_id, "class": record["command_class"], "status": record["status"]}, ensure_ascii=False))
+    print(json.dumps({"command_id": command_id, "class": record["command_class"], "status": record["status"], "target_workers": record["target_workers"]}, ensure_ascii=False))
     return 0
 
 
