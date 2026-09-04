@@ -1,143 +1,157 @@
 {
-  "schema_version": "3.0",
+  "schema_version": "4.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T15:54:00+02:00",
-  "status": "PASS_ENGINE_HEALTHY_NEW_MANUAL_ACTION_ATTACHMENT_AUDIT_FALSE_POSITIVE_CORRECTED",
-  "discovery": {
-    "raw_signals": 611,
-    "semantic_pass": 75,
-    "semantic_review": 7,
-    "semantic_reject": 529,
-    "semantic_pass_rate": 0.1227,
-    "current_source_ranking": ["joa_es_webdesigner_title", "joa_it_webdev_title", "nomado_frontend", "joa_es_web_performance_body", "joa_it_webdesigner_title"],
-    "current_territory_harvest": ["Italy|Lazio|Roma"],
-    "current_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
-    "territory_enrichment_pending": 29,
-    "fanout_latest_state_updated_at": "2026-09-04T13:32:12Z",
-    "fanout_fresh_within_25_minutes_at_watch": true,
-    "recovery_kick_required": false
+  "updated_at": "2026-09-04T20:20:30+02:00",
+  "status": "DISCOVERY_RECOVERED_PROVIDER_DELTA_SEND_WINDOW_AUDIT_REQUIRED",
+  "architecture": {
+    "expected_active_chatgpt_tasks": ["VDS Performance + Reply Watch", "VDS Job Flow", "VDS Revenue Flow"],
+    "active_task_count": 3,
+    "state": "PASS",
+    "legacy_and_intermediate_tasks_disabled": true,
+    "agency_radar_disabled_intentionally": true,
+    "cross_signal_ranker_disabled_intentionally": true
   },
-  "qualification": {
-    "hot_plus": 20,
-    "hot": 12,
-    "current_executable_cross_signal": 0,
-    "current_ready_count": 0,
-    "job_ready_count": 0,
-    "unified_ready_added_today": 1,
-    "unified_manual_route_required_today": 6,
-    "linkedin_manual_high_priority_today": 13,
-    "human_review_high_value_pending": 15,
-    "new_human_review_this_watch": ["Intervolutions"],
-    "new_human_review_owner_alert_sent": true
+  "discovery": {
+    "pre_watch_latest_view_updated_at": "2026-09-04T16:05:10Z",
+    "pre_watch_latest_scheduled_run": {
+      "run_number": 51,
+      "created_at": "2026-09-04T16:40:12Z",
+      "conclusion": "failure"
+    },
+    "stale_over_25_minutes": true,
+    "recovery_kick_performed": true,
+    "recovery_reason": "WATCHDOG_STALE_FANOUT_RECOVERY",
+    "recovery_requested_by": "VDS_PERFORMANCE_REPLY_WATCH",
+    "recovery_workflow_run": {
+      "run_number": 52,
+      "run_id": 33905212294,
+      "conclusion": "success",
+      "completed_at": "2026-09-04T18:20:18Z"
+    },
+    "post_recovery_latest_view_updated_at": "2026-09-04T18:19:51Z",
+    "current_state": "RECOVERED_AND_PERSISTED",
+    "quality_or_send_policy_changed": false
+  },
+  "flow_health": {
+    "job_flow": {
+      "latest_run_at": "2026-09-04T20:11:03+02:00",
+      "normal_cycle_completed": true,
+      "serious_candidates_evaluated": 40,
+      "send_now": 2,
+      "provider_verified_first_contacts_this_run": 0,
+      "manual_apply_new": 2,
+      "send_window_open": false,
+      "deferred_send_now": [
+        {"organization":"Mutart S.r.l.","recipient":"work@mutart.eu"},
+        {"organization":"Corposostenibile","recipient":"hr@corposostenibile.com"}
+      ]
+    },
+    "revenue_flow": {
+      "latest_run_at": "2026-09-04T19:38:45+02:00",
+      "normal_cycle_completed": true,
+      "serious_candidates_evaluated": 45,
+      "send_now": 0,
+      "provider_verified_first_contacts_this_run": 0,
+      "manual_apply": 3,
+      "wait_research": 11,
+      "reject": 31,
+      "route_failures": 11,
+      "dominant_blocker": "AUTHORITATIVE_ROUTE_OR_CANONICAL_IDENTITY_RESOLUTION"
+    },
+    "flow_strangulation_detected": false
   },
   "execution": {
-    "automatic_first_contacts_verified_sent": 3,
-    "automatic_unique_organizations_first_contacted": 3,
-    "commercial_automatic_first_contacts": 2,
-    "job_automatic_first_contacts": 1,
-    "followup_1_verified_sent": 0,
-    "owner_approved_human_review_first_contacts": 4,
-    "reconciled_concurrent_first_contacts_not_counted_as_worker_automatic": 1,
-    "reply_continuations_not_counted_as_first_contact": 2,
-    "latest_acquisition_provider_uid": 280,
-    "latest_professional_continuation_uid": 283,
-    "latest_provider_uid_any_action": 284,
-    "provider_uid_continuity": "CONTINUOUS_THROUGH_284; UID_281_UID_282_UID_284_INTERNAL_NOTIFICATIONS_EXCLUDED_FROM_ACQUISITION_KPI; UID_283_RECONCILED_REPLY_CONTINUATION_NOT_FIRST_CONTACT",
-    "latest_automatic_events": [
-      {"organization":"Páginas Web Valencia","provider_uid":272,"lane":"commercial"},
-      {"organization":"Ieros","provider_uid":276,"lane":"commercial"},
-      {"organization":"Heritage S.r.l.","provider_uid":278,"lane":"job"}
-    ]
+    "automatic_commercial_first_contacts_verified_sent": 5,
+    "automatic_job_first_contacts_verified_sent": 1,
+    "automatic_first_contacts_verified_sent_total": 6,
+    "automatic_first_contacts_per_operational_hour": 0.6,
+    "automatic_followup_1_verified_sent": 0,
+    "owner_manual_interactive_first_contacts_reconciled": 6,
+    "unresolved_actor_provider_first_contacts": 2,
+    "unresolved_actor_provider_uids": [289, 290],
+    "unresolved_actor_events_counted_as_automatic_worker_kpi": false,
+    "latest_provider_uid_observed": 290
+  },
+  "provider_delta_audit": {
+    "status": "AUDIT_REQUIRED",
+    "events": [
+      {
+        "provider_uid": 289,
+        "sent_at_utc": "2026-09-04T17:05:24Z",
+        "sent_at_local": "2026-09-04T19:05:24+02:00",
+        "recipient": "info@3dwasp.com",
+        "canonical_domain": "3dwasp.com",
+        "subject": "Candidatura / collaborazione — IoT, embedded, robotica e digital fabrication",
+        "actor_attribution": "UNRESOLVED",
+        "send_window_relation": "AFTER_AUTOMATED_CUTOFF",
+        "dedup_action": "GLOBAL_SENT_AND_SUPPRESSION_RECONCILED"
+      },
+      {
+        "provider_uid": 290,
+        "sent_at_utc": "2026-09-04T17:05:45Z",
+        "sent_at_local": "2026-09-04T19:05:45+02:00",
+        "recipient": "3dprint@lamaquina.io",
+        "canonical_domain": "lamaquina.io",
+        "subject": "Propuesta de colaboración — IoT, digital fabrication y desarrollo software",
+        "actor_attribution": "UNRESOLVED",
+        "send_window_relation": "AFTER_AUTOMATED_CUTOFF",
+        "dedup_action": "GLOBAL_SENT_AND_SUPPRESSION_RECONCILED"
+      }
+    ],
+    "assessment": "If these were manual/interactive owner-authorized sends there is no worker violation. If generated automatically by an acquisition worker, this is a CRITICAL send-window violation. Canonical evidence currently does not establish the actor, so attribution remains unresolved and no resend is permitted."
   },
   "outcomes": {
     "replies": 2,
     "positive_replies": 1,
     "rejections_or_not_now": 1,
-    "interviews_or_calls": 0,
+    "calls": 0,
+    "interviews": 0,
     "proposals": 0,
     "won": 0,
     "bounces": 0,
     "new_relevant_inbound_since_prior_watch": 0,
     "new_hard_bounces_since_prior_watch": 0,
-    "positive_reply_events": [
-      {
-        "organization": "EXCELY / UMFCD contact",
-        "sender": "Brandusa Bitel <brandusa.bitel@umfcd.ro>",
-        "subject": "Re: EXCELY — digital presence for the new Centre of Excellence",
-        "received_at": "2026-09-04T10:20:12Z",
-        "classification": "POSITIVE_INTEREST_WAIT_FOR_REPLY",
-        "recommended_action": "WAIT_FOR_REPLY_NO_AUTOMATIC_FOLLOWUP",
-        "owner_alert_sent": true
-      }
-    ],
-    "rejection_events": [
-      {
-        "organization": "PUSH Design Lab / wepush.org",
-        "sender": "Emilia Pardi <e.pardi@wepush.org>",
-        "subject": "Re: Candidatura spontanea - Web Developer | progetti UE e digital innovation",
-        "received_at": "2026-09-04T10:24:14Z",
-        "classification": "NOT_NOW_TEAM_CAPACITY_COVERED",
-        "followup_policy": "BLOCK_AUTOMATIC_FOLLOWUP"
-      }
+    "positive_reply": {
+      "organization": "EXCELY / UMFCD",
+      "sender": "Brandusa Bitel <brandusa.bitel@umfcd.ro>",
+      "classification": "POSITIVE_INTEREST_WAIT_FOR_REPLY",
+      "recommended_action": "WAIT_FOR_REPLY_NO_AUTOMATIC_FOLLOWUP"
+    },
+    "not_now_reply": {
+      "organization": "PUSH Design Lab / WePush",
+      "classification": "NOT_NOW_TEAM_CAPACITY_COVERED",
+      "followup_1_blocked": true
+    }
+  },
+  "command_center_bridge": {
+    "current_target_workers_valid": true,
+    "current_target_workers": ["LINKEDIN_HUNTER", "UNIFIED_LOOP"],
+    "requires_agency_radar": false,
+    "historical_agency_radar_receipts_ignored_as_current_dependency": true,
+    "bridge_pauses_normal_flows": false
+  },
+  "global_dedup": {
+    "provider_suppression_reconciled_through_uid": 290,
+    "global_sent_index_reconciled_through_uid": 290,
+    "newly_suppressed_domains_this_watch": ["3dwasp.com", "lamaquina.io"],
+    "gmail_role": "NOTIFICATIONS_AND_BCC_ONLY",
+    "blind_resend_allowed": false
+  },
+  "bottleneck": {
+    "dominant": "ROUTE_AND_IDENTITY_CLOSURE",
+    "evidence": "Latest Revenue Flow evaluated 45 serious candidates but produced 11 WAIT_RESEARCH route/identity blockers and zero SEND_NOW; latest Job Flow independently closed two SEND_NOW but deferred them solely because the send window was closed.",
+    "next_optimization": [
+      "Prioritize JIT revalidation of Mutart S.r.l. and Corposostenibile in the next authorized Job Flow send window.",
+      "Spend Revenue Flow capacity on resolving the 11 exact authoritative route/canonical identity blockers before increasing raw discovery volume.",
+      "Audit the actor/source of provider UIDs 289-290 without contacting recipients or retrying delivery.",
+      "Continue monitoring recovered High-Frequency Discovery Fanout persistence and scheduler continuity."
     ]
   },
-  "health": {
-    "expected_five_task_state": "PASS",
-    "legacy_senders_disabled": true,
-    "lease_state": "IDLE",
-    "active_global_reservations": 0,
-    "commercial_ready_queue": 0,
-    "job_ready_queue": 0,
-    "send_window_compliance": "PASS",
-    "command_center_bridge": {
-      "pending_records": 2,
-      "processed_receipts": 3,
-      "stuck_commands": 0,
-      "bridge_regressions": 0,
-      "completed_command": "CMD-WEB-20260904T124212-7d2d9ce4",
-      "new_command_pending_not_stuck": "CMD-TURBO-20260904T154700-01"
-    },
-    "attachment_policy": {
-      "status": "PASS_CURRENT_POLICY_NO_RETROACTIVE_VIOLATION",
-      "current_approved_attachment_registry_count": 0,
-      "historical_uids_reviewed": [275,277],
-      "chronology": "The Visual Corner outreach/attachment continuation was recorded owner-approved at 10:18 Europe/Madrid; attachment safety protocol and approval registry were created later at approximately 10:23. Current hard gate applies prospectively.",
-      "future_rule": "NO_NEW_PROFESSIONAL_ATTACHMENT_UNLESS_EXACT_CURRENT_OWNER_APPROVAL_EXISTS"
-    },
-    "human_review_report_projection": "STALE_REPORT_MD_VS_CURRENT_JSON",
-    "unresolved_anomalies": ["reports/human-review-high-value.md is stale versus canonical human-review JSON"]
-  },
-  "performance": {
-    "semantic_quality_nonzero": true,
-    "semantic_pass_rate": 0.1227,
-    "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
-    "runtime_mode": "MIDDLE_FUNNEL_TURBO",
-    "quality_gates_unchanged": true,
-    "quality_diagnosis": "611 RAW produce 75 semantic pass and 7 review, while 20 HOT+ and 12 HOT produce zero executable cross-signal READY. Continue route/recipient/freshness closure and manual-route conversion without lowering final gates."
-  },
-  "manual_action": {
-    "new_owner_action_this_watch": {
-      "organization": "Intervolutions",
-      "score": 95,
-      "priority": "HOT+",
-      "route": "https://intervolutions.com/careers/maquetacion-web-freelance/",
-      "automatic_block_reason": "MANUAL_FORM_SUBMISSION_REQUIRED; OWNER_APPROVED_CV_ATTACHMENT_REQUIRED_IF_UPLOAD_USED",
-      "recommended_action": "MANUAL_APPLY"
-    },
-    "owner_alert_sent_provider_uid": 282,
-    "watchdog_correction_sent_provider_uid": 284
-  },
-  "provider_check": {
-    "hostinger_sent_highest_uid_observed": 284,
-    "provider_suppression_checkpoint": 284,
-    "hostinger_acquisition_first_contact_state_reconciled_through_uid": 280,
-    "uid_283_classification": "REPLY_CONTINUATION_BROWN_MEDIA_NOT_FIRST_CONTACT",
-    "uid_281_classification": "INTERNAL_NOTIFICATION",
-    "uid_282_classification": "INTERNAL_NOTIFICATION_WATCHDOG_ALERT",
-    "uid_284_classification": "INTERNAL_NOTIFICATION_WATCHDOG_CORRECTION",
-    "new_first_contact_uids_since_prior_summary": [],
-    "new_relevant_inbound_uids_since_prior_watch": [],
-    "new_hard_bounce_since_prior_watch": false
+  "daily_report": {
+    "sent_to_owner": true,
+    "recipient": "allocca.pino@gmail.com",
+    "subject": "VDS Acquisition Report — 2026-09-04",
+    "gmail_message_id": "1a06da75b7a1fed2"
   }
 }
