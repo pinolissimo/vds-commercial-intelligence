@@ -1,12 +1,26 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-09-04T13:32:51Z",
+  "schema_version": "1.1",
+  "updated_at": "2026-09-04T15:46:00+02:00",
+  "mode": "MIDDLE_FUNNEL_TURBO",
   "capacity": {
-    "exploitation_pct": 70,
-    "exploration_pct": 20,
-    "strategic_reserve_pct": 10
+    "exploitation_pct": 85,
+    "exploration_pct": 10,
+    "strategic_reserve_pct": 5
   },
   "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
+  "turbo": {
+    "enabled": true,
+    "quality_gates_unchanged": true,
+    "target_hot_blockers_inspected_per_closure_cycle": 20,
+    "target_semantic_pass_deep_checked_per_sender_cycle": 25,
+    "same_run_ready_certification": true,
+    "same_run_send_after_certification": true,
+    "send_all_executable_ready": true,
+    "prefer_direct_authoritative_email_routes": true,
+    "prefer_fresh_24h_then_7d": true,
+    "manual_route_preservation": true,
+    "never_promote_from_deepseek_shadow": true
+  },
   "source_priority": {
     "joa_es_webdesigner_title": 1.52,
     "joa_it_webdev_title": 1.51,
@@ -44,7 +58,8 @@
     "joa_it_webdev_title",
     "nomado_frontend",
     "joa_es_web_performance_body",
-    "joa_it_webdesigner_title"
+    "joa_it_webdesigner_title",
+    "remotejobs_contract_wordpress"
   ],
   "harvest_areas": [
     "Italy|Lazio|Roma"
@@ -63,5 +78,5 @@
     "Spain|Comunitat Valenciana|Alicante",
     "Spain|Castilla y León|Burgos"
   ],
-  "instruction": "Downstream tasks must use these weights for research depth only; never weaken dedup, route, freshness, legality or truthful-fit gates."
+  "instruction": "TURBO means more closure depth and same-run conversion, never weaker gates. Resolve route/recipient/freshness/identity/geography blockers first, consume fresh SEMANTIC_PASS, certify only fully executable identities, and send every executable READY during the allowed window. DeepSeek remains observational shadow-only."
 }
