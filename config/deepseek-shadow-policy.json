@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "enabled": true,
+  "mode": "SHADOW_ONLY",
+  "model": "deepseek-v4-flash",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "sample_per_run": 24,
+  "sample_mix": {
+    "SEMANTIC_PASS": 10,
+    "SEMANTIC_REVIEW": 6,
+    "SEMANTIC_REJECT": 8
+  },
+  "max_retained_evaluations": 3000,
+  "min_sample_for_pilot_recommendation": 200,
+  "minimum_ready_rate_improvement_pp": 5.0,
+  "temperature": 0.1,
+  "thinking": "disabled",
+  "max_tokens": 6000,
+  "request_timeout_seconds": 45,
+  "production_invariants": {
+    "may_change_semantic_state": false,
+    "may_create_ready": false,
+    "may_change_dedup": false,
+    "may_change_routes": false,
+    "may_trigger_send": false,
+    "existing_gates_authoritative": true,
+    "failure_must_not_block_discovery": true
+  },
+  "pricing_usd_per_million_tokens": {
+    "deepseek-v4-flash": {
+      "off_peak": {
+        "input_cache_hit": 0.007,
+        "input_cache_miss": 0.22,
+        "output": 0.66
+      },
+      "peak": {
+        "input_cache_hit": 0.014,
+        "input_cache_miss": 0.44,
+        "output": 1.32
+      },
+      "peak_utc_hours": [
+        [1, 4],
+        [6, 10]
+      ]
+    }
+  }
+}
