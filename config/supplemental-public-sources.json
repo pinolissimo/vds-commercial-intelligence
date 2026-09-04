@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04T07:04:00Z",
+  "sources": [
+    {
+      "id": "remote_landers",
+      "kind": "remote_landers_json",
+      "url": "https://remotelanders.com/api/jobs?category=Engineering&limit=100&page=1",
+      "authority": "PUBLIC_ATS_DIRECT_INDEX",
+      "min_poll_minutes": 15,
+      "enabled": true,
+      "note": "Listings are sourced directly from employer ATS; public API refreshes roughly every 10 minutes."
+    },
+    {
+      "id": "jobicy_europe",
+      "kind": "jobicy_json",
+      "url": "https://jobicy.com/api/v2/remote-jobs?count=200&geo=europe&industry=engineering",
+      "authority": "PUBLIC_REMOTE_JOBS_API",
+      "min_poll_minutes": 60,
+      "enabled": true,
+      "note": "Jobicy production guidance: do not poll more frequently than once per hour."
+    }
+  ],
+  "policy": {
+    "merge_into": "views/high-frequency-discovery-latest.json",
+    "profile_config": "config/high-frequency-discovery-sources.json",
+    "state": "metrics/supplemental-public-sources-state.json",
+    "purpose": "Discovery only. Every signal remains subject to semantic, freshness, exact-route, fit and global dedup gates before execution."
+  }
+}
