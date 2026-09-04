@@ -94,35 +94,79 @@ jobs:
       - name: Commit discovery and adaptive intelligence state
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "vds-discovery-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add views/high-frequency-discovery-latest.json \
-                  views/high-frequency-discovery-qualified-seeds.json \
-                  views/search-source-performance.json \
-                  views/territory-yield-radar.json \
-                  views/territory-enrichment-queue.json \
-                  views/acquisition-performance.json \
-                  views/search-mission-plan.json \
-                  views/multi-engine-search-missions.json \
-                  views/cross-signal-opportunities.json \
-                  views/human-review-high-value.json \
-                  data/high-frequency-discovery/raw-signals.jsonl \
-                  metrics/high-frequency-discovery-state.json \
-                  metrics/high-frequency-watch-state.json \
-                  metrics/high-frequency-semantic-gate.json \
-                  metrics/supplemental-public-sources-state.json \
-                  metrics/direct-employer-bulk-sources-state.json \
-                  metrics/territory-yield-radar-state.json \
-                  metrics/daily/2026-09-04-cross-signal.json \
-                  config/adaptive-search-runtime.json \
-                  config/acquisition-runtime-command.json
-          if git diff --cached --quiet; then
-            echo "No discovery changes"
+
+          run_pipeline() {
+            python scripts/high_frequency_discovery.py
+            python scripts/supplemental_public_sources.py
+            python scripts/direct_employer_bulk_sources.py
+            python scripts/opportunity_semantic_gate.py
+            python scripts/search_source_optimizer.py
+            python scripts/territory_yield_radar.py
+            python scripts/territory_radar_guard.py
+            python scripts/acquisition_performance_optimizer.py
+            python scripts/search_mission_planner.py
+            python scripts/multi_engine_query_router.py
+            python scripts/merge_human_review_pending.py
+            python scripts/cross_signal_human_review_reconcile.py
+            python scripts/reconcile_global_contact_history.py
+          }
+
+          stage_state() {
+            git add views/high-frequency-discovery-latest.json \
+                    views/high-frequency-discovery-qualified-seeds.json \
+                    views/search-source-performance.json \
+                    views/territory-yield-radar.json \
+                    views/territory-enrichment-queue.json \
+                    views/acquisition-performance.json \
+                    views/search-mission-plan.json \
+                    views/multi-engine-search-missions.json \
+                    views/cross-signal-opportunities.json \
+                    views/human-review-high-value.json \
+                    data/high-frequency-discovery/raw-signals.jsonl \
+                    metrics/high-frequency-discovery-state.json \
+                    metrics/high-frequency-watch-state.json \
+                    metrics/high-frequency-semantic-gate.json \
+                    metrics/supplemental-public-sources-state.json \
+                    metrics/direct-employer-bulk-sources-state.json \
+                    metrics/territory-yield-radar-state.json \
+                    metrics/daily/*-cross-signal.json \
+                    config/adaptive-search-runtime.json \
+                    config/acquisition-runtime-command.json
+          }
+
+          commit_state() {
+            stage_state
+            if git diff --cached --quiet; then
+              echo "No discovery changes"
+              return 1
+            fi
+            git commit -m "data: refresh expanded multi-engine discovery acquisition radar"
+          }
+
+          if ! commit_state; then
             exit 0
           fi
-          git commit -m "data: refresh expanded multi-engine discovery acquisition radar"
-          for i in 1 2 3; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
-            sleep $((i * 3))
+
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              echo "Discovery state committed on attempt ${attempt}"
+              exit 0
+            fi
+
+            echo "Concurrent main update detected; rebuilding from freshest canonical state (attempt ${attempt})"
+            git rebase --abort 2>/dev/null || true
+            git fetch origin main
+            git reset --hard origin/main
+            run_pipeline
+            if ! commit_state; then
+              echo "Fresh canonical state already contains equivalent discovery output"
+              exit 0
+            fi
+            sleep $((attempt * 2))
           done
+
+          echo "Unable to commit discovery state after collision-safe retries" >&2
           exit 1
