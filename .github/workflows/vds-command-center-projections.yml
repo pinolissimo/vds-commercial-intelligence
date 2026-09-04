@@ -1,9 +1,7 @@
-name: VDS Command Center — Projections
+name: VDS Command Center — Projections (Recovery)
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '4,14,24,34,44,54 * * * *'
 
 permissions:
   contents: write
@@ -41,7 +39,18 @@ jobs:
             if git push origin HEAD:main; then
               exit 0
             fi
-            echo "Push raced with another worker; rebasing (attempt $attempt)"
-            git pull --rebase origin main
+            echo "Push raced with another worker; refreshing canonical state (attempt $attempt)"
+            git rebase --abort 2>/dev/null || true
+            git fetch origin main
+            git reset --hard origin/main
+            python3 scripts/build_command_center_api.py
+            git add api/v1
+            if git diff --cached --quiet; then
+              echo "Latest main already contains equivalent projections"
+              exit 0
+            fi
+            git commit -m "dashboard: refresh command center projections"
+            sleep $((attempt * 2))
           done
-          git push origin HEAD:main
+          echo "Unable to commit recovery projections after retries" >&2
+          exit 1
