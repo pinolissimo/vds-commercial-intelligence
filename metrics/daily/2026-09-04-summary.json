@@ -2,27 +2,30 @@
   "schema_version": "3.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T08:52:00+02:00",
-  "status": "DEGRADED_SEMANTIC_YIELD_AND_MIDDLE_FUNNEL",
+  "updated_at": "2026-09-04T09:40:00+02:00",
+  "status": "SEMANTIC_RECOVERY_WITH_MIDDLE_FUNNEL_EXECUTION_GAP",
   "discovery": {
-    "raw_signals": 138,
-    "semantic_pass": 0,
+    "raw_signals": 235,
+    "semantic_pass": 7,
     "semantic_review": 0,
-    "semantic_reject": 138,
+    "semantic_reject": 228,
     "unique_organizations": 30,
-    "current_source_ranking": ["remotive", "wwr_design", "wwr_sysadmin", "wwr_programming", "arbeitnow_eu"],
+    "current_source_ranking": ["jobicy_europe", "remotive", "wwr_design", "wwr_sysadmin", "arbeitnow_eu", "wwr_programming"],
     "current_territory_harvest": [],
-    "current_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
-    "note": "High-frequency semantic gate is 0/138; Unified independently consumed 4 semantic candidates from 45 raw signals in its first v3 daily run."
+    "current_bottleneck": "MIDDLE_FUNNEL_ROUTE_TO_EXECUTION",
+    "note": "High-frequency semantic yield recovered from the prior 0/138 snapshot to 7/235 without lowering final quality gates. Jobicy Europe accounts for 6 semantic passes and Arbeitnow for 1; authoritative agency/collaboration research remains the strongest route-closure lane."
   },
   "qualification": {
-    "hot_plus": 7,
+    "hot_plus": 6,
     "hot": 8,
     "ready_added": 0,
     "current_ready_count": 0,
     "manual_route_required": 4,
-    "territory_enrichment_pending": 13,
-    "new_first_contact_executable": 0
+    "territory_enrichment_pending": 10,
+    "new_first_contact_executable": 1,
+    "executable_identity": "org:ieros.it",
+    "human_review_pending": 4,
+    "human_review_manual_applied": 1
   },
   "execution": {
     "first_contacts_verified_sent": 1,
@@ -34,7 +37,8 @@
     "delivery_state_unknown": 0,
     "latest_provider_uid": 272,
     "provider_uid_continuity": "CONTINUOUS_THROUGH_272",
-    "sending_window_status_at_watch": "CLOSED_BEFORE_09_00"
+    "sending_window_status_at_watch": "OPEN_09_00_19_00",
+    "executable_not_consumed": ["org:ieros.it"]
   },
   "outcomes": {
     "replies": 0,
@@ -48,38 +52,47 @@
     "expected_five_task_state": "PASS",
     "legacy_senders_disabled": true,
     "github_fanout": {
-      "latest_run_started_at": "2026-09-04T06:40:10Z",
+      "latest_run_started_at": "2026-09-04T07:03:40Z",
+      "latest_run_completed_at": "2026-09-04T07:04:00Z",
       "latest_run_conclusion": "success",
-      "fresh": true
+      "fresh": false,
+      "anomaly": "NO_FRESH_15_MINUTE_RUN_EVIDENCE_FOR_MORE_THAN_TWO_EXPECTED_CYCLES"
     },
     "unified_loop": {
       "latest_daily_run_id": "vds-unified-acquisition-20260904T064653Z",
       "latest_run_result": "DISCOVERY_QUALIFICATION_ONLY_ZERO_SEND",
-      "worker_metrics_present": true
+      "worker_metrics_present": true,
+      "post_09_10_canonical_run_evidence": false,
+      "executable_cross_signal_pending": "org:ieros.it"
     },
     "lease_state": "IDLE",
     "active_global_reservations": 0,
     "ready_queue_reconciled": true,
     "document_policy": "LINK_ONLY",
+    "global_dedup_reconciliation": "GROWNNNECTIA_OWNER_MANUAL_APPLICATION_RECORDED_AND_BLOCKED_FOR_NEW_FIRST_CONTACT",
     "unresolved_anomalies": [
-      "HIGH_FREQUENCY_SEMANTIC_PASS_ZERO_OF_138",
-      "NO_CURRENT_EXECUTABLE_FIRST_CONTACT_DESPITE_15_HOT_OR_HOT_PLUS",
-      "TERRITORY_ENRICHMENT_QUEUE_13"
+      "HIGH_FREQUENCY_FANOUT_STALE_AFTER_2026-09-04T07:04:00Z",
+      "IEROS_HOT_PLUS_AUTO_EMAIL_NOW_NOT_CONSUMED_BY_EXPECTED_UNIFIED_SEND_WINDOW_CYCLE"
     ]
   },
   "performance": {
+    "semantic_quality_recovery": true,
     "source_priority_adjustment_active": true,
-    "source_multipliers": {
-      "remotive": 0.76,
-      "wwr_design": 0.66,
-      "wwr_sysadmin": 0.60,
-      "wwr_programming": 0.58,
-      "arbeitnow_eu": 0.57,
-      "himalayas": 0.57,
-      "remoteok": 0.50,
-      "wwr_frontend": 0.50
-    },
-    "diagnosis": "Public high-frequency feeds are producing volume but no semantic-pass yield. Agency/high-intent research is currently the productive lane. Keep quality gates unchanged; continue source down-weighting and prioritize route closure plus territory enrichment for qualified candidates."
+    "top_semantic_source": "jobicy_europe",
+    "top_route_closure_lane": "official_agency_careers_plus_official_contact",
+    "diagnosis": "Top-of-funnel semantic quality has materially improved, so the active bottleneck has shifted toward route-to-execution handoff. Ieros demonstrates successful route closure and high-quality executable demand, but it remains unconsumed despite the active sending window. Do not increase RAW volume until the 15-minute fanout cadence and Unified ingestion/execution continuity are restored."
+  },
+  "human_review": {
+    "pending": 4,
+    "manual_applied_by_owner": 1,
+    "pending_ranked": [
+      {"organization":"Global Service Impresa","score":83.5,"recommended_action":"MANUAL_APPLY"},
+      {"organization":"Zmot Lab","score":81.6,"recommended_action":"MANUAL_APPLY_IF_FIT_PASSES"},
+      {"organization":"Mindrift","score":76.7,"recommended_action":"MANUAL_APPLY"},
+      {"organization":"UGECE Agency","score":70.8,"recommended_action":"HOLD_FOR_FRESH_RESEARCH"}
+    ],
+    "owner_alert_sent": true,
+    "grownnectia_state": "SUBMITTED_BY_OWNER_WAIT_FOR_REPLY"
   },
   "provider_check": {
     "hostinger_sent_total_messages": 268,
