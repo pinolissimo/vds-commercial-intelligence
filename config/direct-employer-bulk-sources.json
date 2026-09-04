@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04T09:10:00Z",
+  "policy": {
+    "purpose": "High-volume public discovery only. No outreach. Every row still passes semantic, freshness, route, fit, legal/channel and global dedup gates.",
+    "profile_config": "config/high-frequency-discovery-sources.json",
+    "merge_into": "views/high-frequency-discovery-latest.json",
+    "state": "metrics/direct-employer-bulk-sources-state.json",
+    "max_latest_signals": 5000,
+    "host_rate_limit_seconds": {
+      "api.jobopportunitiesapi.org": 0.6,
+      "remotejobs.org": 0.25,
+      "api.nomado24.de": 0.25
+    }
+  },
+  "sources": [
+    {"id":"joa_it_wordpress_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&title=wordpress&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_wordpress_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&title=wordpress&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_webdev_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&title=web%20developer&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_webdev_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&title=web%20developer&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_webdesigner_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&title=web%20designer&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_webdesigner_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&title=web%20designer&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_frontend_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&title=frontend&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_frontend_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&title=frontend&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_webmaster_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&title=webmaster&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_webmaster_title","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&title=webmaster&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_wordpress_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&description_contains=wordpress&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_wordpress_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&description_contains=wordpress&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_woocommerce_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&description_contains=woocommerce&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_woocommerce_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&description_contains=woocommerce&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_elementor_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&description_contains=elementor&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_elementor_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&description_contains=elementor&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_it_web_performance_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=IT&description_contains=core%20web%20vitals&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_es_web_performance_body","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=ES&description_contains=core%20web%20vitals&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":15,"enabled":true},
+    {"id":"joa_eu_remote_wordpress","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=PT,FR,DE,NL,BE,AT,IE&title=wordpress&remote_confirmed=true&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":30,"enabled":true},
+    {"id":"joa_eu_remote_webdev","kind":"jobopportunities_json","url":"https://api.jobopportunitiesapi.org/public/jobs?country=PT,FR,DE,NL,BE,AT,IE&title=web%20developer&remote_confirmed=true&include_description=true&limit=50","dedup_source_id":"jobopportunities_api","authority":"EMPLOYER_DIRECT_ATS_CAREER_INDEX","min_poll_minutes":30,"enabled":true},
+
+    {"id":"remotejobs_freelance_wordpress","kind":"remotejobs_org_json","url":"https://remotejobs.org/api/v1/jobs?type=freelance&q=wordpress&limit=50","dedup_source_id":"remotejobs_org","authority":"PUBLIC_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+    {"id":"remotejobs_contract_wordpress","kind":"remotejobs_org_json","url":"https://remotejobs.org/api/v1/jobs?type=contract&q=wordpress&limit=50","dedup_source_id":"remotejobs_org","authority":"PUBLIC_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+    {"id":"remotejobs_freelance_webdev","kind":"remotejobs_org_json","url":"https://remotejobs.org/api/v1/jobs?type=freelance&q=web%20developer&limit=50","dedup_source_id":"remotejobs_org","authority":"PUBLIC_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+    {"id":"remotejobs_contract_webdev","kind":"remotejobs_org_json","url":"https://remotejobs.org/api/v1/jobs?type=contract&q=web%20developer&limit=50","dedup_source_id":"remotejobs_org","authority":"PUBLIC_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+    {"id":"remotejobs_freelance_webdesigner","kind":"remotejobs_org_json","url":"https://remotejobs.org/api/v1/jobs?type=freelance&q=web%20designer&limit=50","dedup_source_id":"remotejobs_org","authority":"PUBLIC_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+    {"id":"remotejobs_contract_frontend","kind":"remotejobs_org_json","url":"https://remotejobs.org/api/v1/jobs?type=contract&q=frontend&limit=50","dedup_source_id":"remotejobs_org","authority":"PUBLIC_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+
+    {"id":"nomado_wordpress","kind":"nomado24_json","url":"https://api.nomado24.de/api/public/v1/jobs?per_page=100&q=wordpress&language=en","dedup_source_id":"nomado24","authority":"PUBLIC_EU_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+    {"id":"nomado_webdev","kind":"nomado24_json","url":"https://api.nomado24.de/api/public/v1/jobs?per_page=100&q=web%20developer&language=en","dedup_source_id":"nomado24","authority":"PUBLIC_EU_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true},
+    {"id":"nomado_frontend","kind":"nomado24_json","url":"https://api.nomado24.de/api/public/v1/jobs?per_page=100&q=frontend&language=en","dedup_source_id":"nomado24","authority":"PUBLIC_EU_REMOTE_JOBS_API","min_poll_minutes":30,"enabled":true}
+  ]
+}
