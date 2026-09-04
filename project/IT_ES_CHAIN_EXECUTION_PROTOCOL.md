@@ -1,161 +1,143 @@
-# VDS Unified Acquisition Loop — Transactional Execution Protocol
+# VDS Acquisition Chain — Adaptive Execution Protocol
 
-Version: 2.0  
+Version: 3.0  
 Effective: 2026-09-04
 
 ## Purpose
 
-Mandatory shared contract for the scheduled VDS acquisition engine. The former four-stage scheduled chain is consolidated into one stateful sequential task to reduce task-slot usage and discovery-to-send latency while preserving all safety, deduplication, route, delivery-verification and audit invariants.
+Canonical shared contract for the VDS acquisition architecture. The system combines high-frequency GitHub discovery with five specialized ChatGPT Tasks, global organization-level deduplication, adaptive source/territory ranking, controlled outbound execution and reply/performance monitoring.
 
 ## Active architecture
 
-Exactly TWO scheduled tasks are active for this subsystem:
+Exactly FIVE VDS acquisition Tasks are expected active:
 
-1. `VDS Unified Acquisition Loop` — hourly operational engine and SOLE scheduled first-contact sender.
-2. `VDS Performance + Reply Watch` — independent watchdog/reply monitor; NEVER sends first-contact outreach.
+1. `VDS LinkedIn Job Hunter` — hourly at :00 Europe/Madrid. Job discovery/qualification 24/7; authorized job/application sender only 09:00–19:00 inclusive.
+2. `VDS Agency + EU Signal Radar` — hourly at :38. Intelligence/discovery only; NEVER sends first contact or follow-up.
+3. `VDS Cross-Signal Ranker` — hourly at :43. Merge/ranking/state only; NEVER sends first contact or follow-up.
+4. `VDS Unified Acquisition Loop` — hourly at :48. Commercial/client/agency/EU discovery/qualification 24/7; authorized commercial sender only 09:00–19:00 inclusive.
+5. `VDS Performance + Reply Watch` — hourly at :55. Independent watchdog/reply/outcome monitor; NEVER sends acquisition first contacts/follow-ups.
 
-The former scheduled `VDS Direct Route Miner`, `VDS High-Yield Job Miner` and `VDS Batch Dispatcher` are retired/disabled. No other scheduled task may execute VDS first-contact outreach.
+Legacy scheduled senders/miners including `VDS Direct Route Miner`, `VDS High-Yield Job Miner`, `VDS Batch Dispatcher`, `VDS IT/ES Auto Apply`, `VDS Partner Hunt` and equivalent retired senders MUST remain disabled.
 
-## Unified sequential state machine
+In addition, GitHub Actions `VDS High-Frequency Discovery Fanout` runs approximately every 15 minutes and is DISCOVERY/ANALYSIS ONLY. It never sends outreach.
 
-Every Unified Loop run executes, in order:
+## Mandatory shared protocols
 
-`PRECHECK -> DISCOVERY -> CHEAP_FILTER -> ROUTE_CLOSURE -> FINAL_QUALIFICATION -> READY_CERTIFICATION -> ACQUIRE_DISPATCH_LEASE -> JIT_DEDUP -> DISPATCH_ALL_EXECUTABLE -> VERIFY_SENT -> COMMIT_AFTER_EACH_SEND -> DAILY_METRICS -> RELEASE_LEASE -> RUN_AUDIT`
+Every active acquisition Task must obey, where relevant:
+- `project/GLOBAL_ORGANIZATION_DEDUP_PROTOCOL.md` v1.3+
+- `project/MAX_PERFORMANCE_ACQUISITION_PROTOCOL.md` v1.1+
+- `project/DAILY_METRICS_PROTOCOL.md` v3.0+
 
-A run may reuse fresh canonical evidence from prior runs and must not redo expensive stable checks without a freshness/conflict reason.
+Operational/adaptive inputs include:
+- `views/provider-contact-suppression-index.json`
+- `views/global-organization-index.json`
+- `views/global-sent-email-index.json`
+- `governance/global-contact-reservations.json`
+- `views/high-frequency-discovery-latest.json`
+- `views/high-frequency-discovery-qualified-seeds.json`
+- `views/search-source-performance.json`
+- `views/territory-yield-radar.json`
+- `views/territory-enrichment-queue.json`
+- `views/acquisition-performance.json`
+- `config/acquisition-runtime-command.json`
+- `views/search-mission-plan.json`
+- `views/cross-signal-opportunities.json`
 
-If a phase cannot complete for one candidate, record an explicit state/reason and continue with independent candidates where safe. Never discard a good opportunity merely because manual action is required: record `MANUAL_ROUTE_REQUIRED` with the exact route and operational information for owner notification.
+Canonical repository: `pinolissimo/vds-commercial-intelligence`, branch `main`.
 
-## Canonical state
+## Provider and communication ownership
 
-Repository: `pinolissimo/vds-commercial-intelligence`, branch `main`.
+Professional outbound mail is sent ONLY from Hostinger mailbox `info@visualdesignstudio.es`.
 
-Required shared files include:
-- `views/it-es-partner-apply-ready-queue.json`
-- `views/it-es-partner-apply-recipients.json`
-- `data/it-es-partner-apply-ledger.jsonl`
-- `reports/it-es-partner-apply-cumulative.md`
-- `reports/it-es-batch-dispatcher-runs.jsonl`
-- `governance/it-es-dispatch-lease.json`
-- `assets/cv/document-qa-manifest.json`
-- `project/DAILY_METRICS_PROTOCOL.md`
+`allocca.pino@gmail.com` is notifications/BCC only. Gmail is NOT a professional outbound source and MUST NOT be used for routine professional-email deduplication.
 
-Public professional-document manifest:
-- repository `pinolissimo/Portfolio`, branch `main`
-- `documents/public-document-manifest.json`
+Authorized acquisition senders:
+- LinkedIn Job Hunter for job/application lane;
+- Unified Acquisition Loop for commercial/client/agency/EU lane.
 
-GitHub state is necessary but not sufficient for first-contact deduplication. Before READY certification use current indexed history plus fresh mailbox evidence as required; immediately before EACH send repeat organization-level JIT dedup against GitHub + Hostinger Sent + Gmail Sent.
+All other active Tasks are non-senders.
 
-## Canonical identity invariant
+## Sending window
 
-FIRST_CONTACT is unique by commercial organization identity, not by email, vacancy, office, source, geography, campaign or workstream. A different recipient or listing NEVER resets prior-contact history.
+External acquisition `FIRST_CONTACT` and policy-compliant `FOLLOWUP_1` emails are permitted only from 09:00 through 19:00 Europe/Madrid inclusive.
 
-## Execution states
+Outside the window all search, verification, enrichment, ranking, READY preparation, dedup and queueing continue normally, but external acquisition email count must remain zero.
 
-`DISCOVERED -> QUALIFYING -> VERIFIED_NON_EXECUTABLE | READY_TO_APPLY -> DISPATCH_RECHECK -> VERIFIED_EMAIL_SENT | VERIFIED_SUBMISSION | DELIVERY_STATE_UNKNOWN | BLOCKED_FINAL_GATE | RETRY_REQUIRED`
+## Global identity and dedup invariant
 
-Explicit non-executable/retry reasons include:
-- `MANUAL_ROUTE_REQUIRED`
-- `ALREADY_CONTACTED`
-- `REVIEW_REQUIRED`
-- `HOLD_STALE`
-- `LEGAL_GEOGRAPHIC_BLOCK`
-- `ROUTE_UNRESOLVED`
-- `DOCUMENT_PUBLIC_LINK_UNAVAILABLE`
-- `LEGAL_CHANNEL_BLOCKER`
-- `DELIVERY_STATE_UNKNOWN`
+`NO_DUPLICATE_FIRST_CONTACT_GLOBAL`
 
-## Discovery and throughput policy
+FIRST_CONTACT is unique by canonical commercial organization/employer identity, not by email, vacancy, person, office, geography, campaign, source or workstream.
 
-Search Spain and Italy as Tier 1 in parallel where possible, plus EU language-compatible opportunities where authoritative evidence shows Italian/Spanish relevance or EU-remote compatibility. Prioritize explicit current paid demand, direct authoritative routes, WordPress/frontend/performance/maintenance/agency-overflow fit, recurring potential and fastest plausible path to paid work.
+Routine dedup is JSON-first using provider suppression, global organization/sent indexes, workstream history and active organization reservations. Hostinger Sent is the provider source of truth and is queried selectively for ambiguity/recovery/UID gaps and post-send verification. A different recipient or new vacancy NEVER resets prior contact history.
 
-Use cheap-first triage. Maximize unique plausible organizations without deep-checking obvious rejects. Reuse fresh route/identity evidence. Deep-check only candidates likely to become executable READY. Optimize throughput without lowering qualification thresholds.
+## Reservation / concurrency model
 
-## VDS fit policy
+Both authorized senders MUST atomically reserve the canonical organization in `governance/global-contact-reservations.json` immediately before provider action. A conflicting active reservation blocks that send.
 
-Evaluate truthful fit across WordPress/frontend/web development, performance/WPO, maintenance, UX/UI implementation, integrations, IT systems/support, cybersecurity awareness, IoT/maker and technical troubleshooting where relevant.
+Unified additionally owns the commercial dispatch lease `governance/it-es-dispatch-lease.json` for its commercial lane. LinkedIn Job Hunter does not use that commercial lease but MUST use the same global organization reservation and dedup layer.
 
-VDS Engine may be used as benefit-level evidence of performance-oriented, versatile, maintainable and quality-focused delivery, verifiable from `https://www.visualdesignstudio.es/` and where useful `https://www.visualdesignstudio.es/vds-demo/#top`. Never disclose proprietary internals or fabricate capabilities, seniority or certifications.
+## Discovery and adaptive-search model
 
-Official LinkedIn supporting evidence when useful: `https://www.linkedin.com/in/giuseppe-allocca-itechnician/`.
+Search Spain and Italy continuously and systematically, plus strategically strong EU-remote/language-compatible opportunities.
+
+Default capacity allocation from `MAX_PERFORMANCE_ACQUISITION_PROTOCOL.md`:
+- ~70% exploitation of highest-yield resolved territory × source × intent combinations;
+- ~20% under-sampled Spain/Italy exploration;
+- ~10% strategic reserve for emerging direct demand / EU timing / high-value signals.
+
+Use `views/search-mission-plan.json` as the preferred current high-intent territorial agenda. Consume semantic-pass seeds before raw feed noise. Country-only unresolved buckets are enrichment demand, never HARVEST targets. No-data/tiny-sample territories remain EXPLORATION until a meaningful sample exists.
+
+## Funnel / north star
+
+Optimize:
+
+`DISCOVERED -> SEMANTIC_PASS -> VERIFIED -> HOT -> READY -> FIRST_CONTACT_SENT -> REPLIED -> POSITIVE -> MEETING -> PROPOSAL -> WON`
+
+Raw lead count is not the north-star KPI. Prefer recurring/partner economics and shortest truthful path to paid work.
+
+## Cross-signal rule
+
+All discovery streams must merge by canonical organization identity. Multiple independent fresh signals increase priority/confidence but NEVER bypass dedup, freshness, route, legal/channel or truthful-fit gates.
+
+Provider suppression/history overrides stale `UNCONTACTED` labels. Cross-Signal Ranker must repair conflicting states every run.
 
 ## READY certification
 
-A candidate may enter `READY_TO_APPLY` only when all mandatory gates are resolved:
+A candidate can become executable READY only when all relevant gates are resolved:
 1. canonical organization identity;
-2. current need/freshness from authoritative evidence;
+2. current authoritative demand/need and freshness;
 3. truthful VDS fit;
-4. no explicit authoritative exclusion of freelancers/contractors/external collaborators;
-5. exact official execution route;
-6. Unified Loop can execute that exact route;
-7. exact authoritative recipient for email routes;
-8. unsupported form/platform routes become `MANUAL_ROUTE_REQUIRED`;
-9. organization-level dedup across canonical state and available Sent evidence;
-10. no active reservation/contact collision;
-11. document requirement known and verified public link available when required/beneficial;
-12. legal/channel/geographic state resolved.
+4. geographic/legal/channel compatibility;
+5. exact authoritative application/collaboration route;
+6. exact authoritative recipient for email route;
+7. sender can execute that exact route;
+8. global history/suppression indicates no prohibited FIRST_CONTACT collision;
+9. no conflicting reservation;
+10. required public professional-document link is available where needed;
+11. no explicit authoritative blocker.
 
-Unknown mandatory gate => not READY.
+Unsupported form/platform/Easy Apply/ATS => `MANUAL_ROUTE_REQUIRED` with exact URL/reason/instructions. Never substitute a generic email.
 
-## Contract-model policy
+## VDS fit and positioning
 
-Full-time, permanent/indefinite, salary, benefits, ordinary employee wording, hybrid/on-site wording, location reference, or absence of freelance terminology do NOT by themselves block an external freelance/autónomo proposal.
+Evaluate truthful fit across WordPress/frontend/web development, WooCommerce, performance/WPO/Core Web Vitals, maintenance, migrations/rebuilds, responsive/mobile-first, UX/UI implementation, integrations, hosting/domain/DNS, IT systems/support, cybersecurity awareness, IoT/maker and technical troubleshooting where genuinely relevant.
 
-Block contract model only on explicit authoritative equivalents of: no freelancers, no contractors, employees only, no external collaborators. This never overrides genuine legal, geographic, route, stale, licensing/certification or dedup blockers.
+VDS Engine is described only at benefit level: performance, quality, versatility, maintainability and pragmatic implementation. Never disclose proprietary internals or fabricate capabilities/seniority/certifications/rates/availability.
 
-## Dispatch transaction and sole-writer rule
+## Dispatch floor
 
-Only `VDS Unified Acquisition Loop` may acquire the live dispatch lease or execute first-contact sends.
+Within the allowed sending window there is NO fixed minimum batch threshold:
+- executable READY = 0 -> send none;
+- executable READY >= 1 -> authorized sender should execute all currently valid identities for its lane in that run, subject to provider/reservation/route gates.
 
-Dispatch order:
+No valid READY item may remain parked merely because the batch is small.
 
-`ACQUIRE_LEASE -> READ_LATEST_QUEUE -> SANITIZE -> FINAL_DEDUP -> ROUTE_RECHECK -> FRESHNESS_RECHECK -> DOCUMENT_LINK_RECHECK -> EXECUTABLE_READY_COUNT -> DISPATCH_ALL_EXECUTABLE -> VERIFY_SENT -> COMMIT_AFTER_EACH_SEND -> RELEASE_LEASE`
+## Email execution
 
-Before queue or contacted-state writes, refetch latest canonical state, merge rather than overwrite, and verify the resulting identity exactly once.
+One-to-one via Hostinger from `info@visualdesignstudio.es`. BCC `allocca.pino@gmail.com` where supported. Use the recipient's natural professional language. Messages must be concise, opportunity-specific and truthful.
 
-## Dispatch floor — HARD OWNER POLICY
-
-There is NO fixed minimum batch threshold.
-
-- `EXECUTABLE_READY_COUNT = 0` -> no send.
-- `EXECUTABLE_READY_COUNT >= 1` -> dispatch every currently valid executable identity in the same run.
-
-No valid executable READY item may remain parked merely because the batch is small.
-
-## Delivery-completion invariant
-
-A genuinely executable READY identity must not remain unsent because of a safely resolvable technical/process problem.
-
-For resolvable dependency failures:
-1. identify exact cause;
-2. repair deterministic canonical state;
-3. re-read affected dependencies;
-4. rerun JIT dedup and route/freshness gates;
-5. continue in the SAME run when safe;
-6. otherwise record `RETRY_REQUIRED:<exact reason>` for the next Unified Loop run.
-
-Never bypass dedup, route authority, legal/geographic blockers, explicit no-freelance exclusions, lease ownership or provider-state ambiguity.
-
-## Public document delivery — LINK ONLY
-
-Automatic professional applications use verified public GitHub document links only. Automatic email attachments must be empty.
-
-Canonical approved CVs:
-- ES: `https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_ES.pdf`
-- IT: `https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_IT.pdf`
-- EN: `https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_Master_CV_EN.pdf`
-
-Correct language mapping is required. Broken/missing public URL is a repairable dependency failure. Legacy attachment/Base64 bridges are deprecated. Google Drive is forbidden without explicit owner permission.
-
-## Route integrity
-
-Use the exact authoritative application/collaboration route. A form/platform-only opportunity may never be converted to generic email merely because another company email exists. Unsupported route => `MANUAL_ROUTE_REQUIRED` and preserve/notify rather than discard.
-
-## Email policy
-
-Send one-to-one from `info@visualdesignstudio.es` via Hostinger. BCC `allocca.pino@gmail.com` where supported. Use the natural professional language supported by the opportunity. Messages must be concise, opportunity-specific and truthful.
-
-Mandatory text signature:
+Mandatory signature:
 
 Giuseppe Allocca  
 Visual Design Studio  
@@ -164,88 +146,60 @@ https://www.visualdesignstudio.es/
 info@visualdesignstudio.es  
 +34 646 457 747
 
-After the signature add one short language-matched privacy/confidentiality line; commercial outreach includes a simple opt-out. Do not add long boilerplate.
+Add one compact language-matched privacy/confidentiality line; proactive commercial outreach includes a simple opt-out.
 
-## Sent verification
+## Sent verification and commit
 
-After every provider action, confirm official Hostinger Sent evidence BEFORE recording `VERIFIED_EMAIL_SENT`.
+No `VERIFIED_EMAIL_SENT` state without official Hostinger Sent evidence.
 
-Required verification:
-- recipient;
-- subject;
-- provider UID;
-- attachments array empty;
-- required text signature/privacy footer.
+After each provider action, verify recipient, subject, provider UID and relevant document/signature policy. Then, before moving to the next organization:
+1. persist global sent ledger/index event with action type;
+2. update global organization state while preserving original first-contact timestamp;
+3. update provider suppression index;
+4. update originating workstream ledger/index;
+5. remove/update READY state;
+6. increment the correct daily counter exactly once;
+7. release organization reservation.
 
-Provider ambiguity => `DELIVERY_STATE_UNKNOWN`; never blind retry.
+Provider ambiguity => `DELIVERY_STATE_UNKNOWN`; never blind resend.
 
-## Per-send commit
+## Follow-up
 
-After each verified send and before the next identity:
-1. update recipient index;
-2. append/persist ledger event;
-3. remove identity from READY;
-4. record provider UID/evidence;
-5. increment the current daily automatic-send counter exactly once.
+At most one automatic `FOLLOWUP_1` may be executed, only under the strict eligibility contract in `MAX_PERFORMANCE_ACQUISITION_PROTOCOL.md`. It is never a new FIRST_CONTACT and never increments first-contact counters. Rejection, bounce, opt-out, reply, owner stop or prior FOLLOWUP_1 blocks it.
 
-## Daily metrics — mandatory
+## Manual-action preservation
 
-The Unified Loop and Watchdog MUST read and obey `project/DAILY_METRICS_PROTOCOL.md` every run.
-
-Daily boundaries use `Europe/Madrid`. The Unified Loop owns operational counters; the Watchdog owns aggregate summary/outcomes. Updates are incremental and idempotent by `counted_run_ids`.
-
-Fast statistics must read the small daily JSON files first; mailbox/history rescans are audit fallback only when missing/inconsistent.
-
-## Observability
-
-Every Unified Loop run must leave durable run evidence, including zero-send runs. Continue using `reports/it-es-batch-dispatcher-runs.jsonl` where feasible for backward-compatible dispatch observability; connector limitations may use durable per-run files under `data/it-es-partner-apply-ledger-pending/`.
-
-Minimum run evidence:
-- run_id/times/mode;
-- discovery/qualification counts;
-- raw/sanitized/executable READY counts;
-- repairs attempted/completed;
-- removed/demoted identities;
-- attempted/verified sends;
-- delivery-state unknown/retry-required;
-- remaining READY;
-- dependency failures;
-- provider UIDs;
-- document links used;
-- attachment-empty verification;
-- daily metrics update;
-- final result.
+A strong opportunity that automation cannot complete must never be discarded. Persist exact route, URL, reason, fit/freshness and owner next step. Watchdog surfaces qualified new manual actions without repeated duplicate alerts.
 
 ## Watchdog contract
 
-The independent Watchdog flags:
-- expected Unified Loop cycle missing;
-- executable READY surviving a completed Unified Loop without hard blocker;
-- `RETRY_REQUIRED` surviving more than one safe cycle;
-- stale/duplicate identities surviving READY;
-- Sent message not reconciled to canonical state;
-- READY promotion without full certification;
-- attachment-policy regression;
-- stale/ambiguous lease;
-- any concurrent/legacy sender becoming active;
-- missing/stale daily metrics;
-- mismatch between provider-verified sends and daily counter;
-- positive/referral/proposal/budget/call replies;
-- hard bounces.
+Watchdog validates:
+- all five expected Tasks active and legacy senders disabled;
+- GitHub 15-minute fanout freshness/success;
+- semantic and adaptive outputs current;
+- provider UID continuity / global index reconciliation;
+- zero duplicate first contacts;
+- sending-window compliance;
+- reservation/lease health;
+- READY items not stranded without blockers;
+- source × territory × segment funnel yield;
+- positive replies, meetings/proposals/wins and bounces;
+- follow-up compliance;
+- daily metrics completeness.
 
-The Watchdog may repair safe scheduling/state drift but NEVER sends first-contact outreach or clears dedup/contact history.
+Watchdog may safely repair deterministic state/schedule/adaptive drift but NEVER send acquisition FIRST_CONTACT/FOLLOWUP_1 or clear historical contact memory.
 
 ## Hard invariants
 
-1. Zero duplicate first contact.
-2. Unified Loop is the sole scheduled first-contact sender.
-3. Only certified executable candidates enter READY.
-4. Floor 1: any executable READY count >=1 is dispatchable in the same run.
-5. No route substitution.
-6. Every operational run is auditable.
-7. No SENT state without provider evidence.
-8. Automatic application attachments are forbidden; verified public links only.
-9. No blind retry after ambiguous provider response.
-10. Safely resolvable technical faults must not strand valid READY work.
-11. Daily counters are incremental, idempotent and queryable without historical mailbox scans.
-12. Manual-route opportunities are preserved and surfaced, never silently discarded.
+1. Zero duplicate FIRST_CONTACT globally.
+2. Only LinkedIn Job Hunter and Unified Acquisition Loop may send acquisition email, each only in its defined lane/window.
+3. Gmail is notifications/BCC only.
+4. Hostinger Sent is provider delivery evidence.
+5. Global organization reservation before every acquisition send.
+6. No route substitution.
+7. No SENT state without provider verification.
+8. No blind resend after ambiguous provider result.
+9. Manual-route opportunities are preserved and surfaced.
+10. Daily counters are incremental/idempotent and routine statistics require no historical mailbox rescan.
+11. Adaptive optimization may reallocate search effort but never weaken safety or factual qualification gates.
+12. Performance is judged primarily by qualified conversations / positive outcomes, not raw volume.
