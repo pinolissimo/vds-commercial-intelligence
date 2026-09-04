@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#12100f">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://raw.githubusercontent.com; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+  <title>VDS Commercial Intelligence — Command Center</title>
+  <meta name="description" content="VDS Commercial Intelligence Command Center: live acquisition funnel, opportunities, outbound and task intelligence.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.0/dist/css/tabulator.min.css">
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="VDS Command Center home">
+        <span class="brand-mark">VDS</span>
+        <span><strong>Commercial Intelligence</strong><small>Command Center</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="live-pill"><i></i> LIVE READ MODEL</span>
+        <span id="generatedAt" class="muted">caricamento…</span>
+        <a class="command-button" href="command.html">AI Command Console →</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Revenue command center</p>
+          <h1>Ricerca, qualifica e conversione.<br><span>Una sola vista operativa.</span></h1>
+          <p class="hero-copy">La dashboard legge proiezioni derivate dal repository. Il motore di acquisizione esistente resta separato, invariato e autorevole.</p>
+        </div>
+        <div class="hero-status" id="heroStatus">
+          <div class="status-dot"></div>
+          <div><strong>Production core</strong><span>verifica…</span></div>
+        </div>
+      </section>
+
+      <section class="kpi-grid" aria-label="KPI principali">
+        <article class="kpi"><span>Input ultimo ciclo</span><strong id="kpiInput">—</strong><small>segnali analizzati</small></article>
+        <article class="kpi"><span>Semantic pass</span><strong id="kpiPass">—</strong><small id="kpiPassRate">—</small></article>
+        <article class="kpi"><span>Opportunità attive</span><strong id="kpiOpps">—</strong><small>vista canonica</small></article>
+        <article class="kpi accent"><span>READY</span><strong id="kpiReady">—</strong><small>route non manuale</small></article>
+        <article class="kpi"><span>Manual action</span><strong id="kpiManual">—</strong><small>da non perdere</small></article>
+        <article class="kpi"><span>Inviate oggi</span><strong id="kpiSent">—</strong><small>provider-verified cache</small></article>
+        <article class="kpi"><span>Success index</span><strong id="kpiSuccess">—</strong><small>indice operativo</small></article>
+        <article class="kpi"><span>Client proxy</span><strong id="kpiProxy">—</strong><small>proxy non calibrato</small></article>
+      </section>
+
+      <section class="grid-2">
+        <article class="panel chart-panel">
+          <div class="panel-head"><div><p class="eyebrow">Pipeline</p><h2>Stati opportunità</h2></div><span class="muted">live JSON</span></div>
+          <div class="chart-wrap"><canvas id="statusChart"></canvas></div>
+        </article>
+        <article class="panel chart-panel">
+          <div class="panel-head"><div><p class="eyebrow">Discovery</p><h2>Ultimo semantic gate</h2></div><span id="semanticRun" class="muted">—</span></div>
+          <div class="chart-wrap"><canvas id="semanticChart"></canvas></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head stack-mobile">
+          <div><p class="eyebrow">Opportunity explorer</p><h2>Pipeline filtrabile</h2></div>
+          <div class="filters">
+            <input id="oppSearch" type="search" placeholder="Cerca ID, azienda, tipo, stato…" aria-label="Cerca opportunità">
+            <select id="statusFilter" aria-label="Filtra stato"><option value="">Tutti gli stati</option></select>
+            <button id="resetFilters" type="button">Reset</button>
+          </div>
+        </div>
+        <div id="opportunityTable" class="data-table"></div>
+      </section>
+
+      <section class="grid-2">
+        <article class="panel">
+          <div class="panel-head"><div><p class="eyebrow">Outbound</p><h2>Invii di oggi</h2></div><strong id="outboundBadge" class="badge">0</strong></div>
+          <div id="outboundList" class="timeline empty">Nessun dato disponibile.</div>
+        </article>
+        <article class="panel">
+          <div class="panel-head"><div><p class="eyebrow">AI command channel</p><h2>Ultimo comando</h2></div><a href="command.html" class="inline-link">Apri console</a></div>
+          <div id="aiLatest" class="ai-card"><span class="muted">Nessun comando elaborato.</span></div>
+        </article>
+      </section>
+
+      <section class="grid-3">
+        <article class="panel mini"><p class="eyebrow">Router</p><strong id="routerMissions">—</strong><span>missioni</span><small id="routerVariants">— query variants</small></article>
+        <article class="panel mini"><p class="eyebrow">Bottleneck</p><strong id="bottleneck">—</strong><span>diagnosi corrente</span></article>
+        <article class="panel mini"><p class="eyebrow">Safety</p><strong>0</strong><span>duplicate FIRST_CONTACT tolerance</span><small>gate non aggirabili dalla dashboard</small></article>
+      </section>
+    </main>
+
+    <footer>
+      <span>VDS Engine UI · GitHub Pages · JSON read models</span>
+      <a href="https://github.com/pinolissimo/vds-commercial-intelligence" rel="noopener">Repository</a>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.0/dist/js/tabulator.min.js"></script>
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>
