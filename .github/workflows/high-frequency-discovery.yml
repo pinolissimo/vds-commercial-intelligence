@@ -2,7 +2,7 @@ name: VDS High-Frequency Discovery Fanout
 
 on:
   schedule:
-    # Stagger away from common GitHub Actions minute boundaries to reduce scheduler congestion.
+    # Six runs/hour, staggered away from the top of the hour.
     - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
   push:
@@ -20,11 +20,6 @@ on:
       - "scripts/acquisition_performance_optimizer.py"
       - "scripts/search_mission_planner.py"
       - "scripts/multi_engine_query_router.py"
-      - "scripts/cross_signal_human_review_reconcile.py"
-      - "scripts/merge_human_review_pending.py"
-      - "scripts/reconcile_global_contact_history.py"
-      - "scripts/build_command_center_api.py"
-      - "data/human-review-pending/**"
       - "config/high-frequency-discovery-sources.json"
       - "config/supplemental-public-sources.json"
       - "config/direct-employer-bulk-sources.json"
@@ -93,19 +88,7 @@ jobs:
       - name: Build multi-engine query fanout missions
         run: python scripts/multi_engine_query_router.py
 
-      - name: Merge pending high-value human review records
-        run: python scripts/merge_human_review_pending.py
-
-      - name: Reconcile cross-signal + high-value human review
-        run: python scripts/cross_signal_human_review_reconcile.py
-
-      - name: Reconcile global contacted/owner-stop history
-        run: python scripts/reconcile_global_contact_history.py
-
-      - name: Refresh Command Center private projections
-        run: python3 scripts/build_command_center_api.py
-
-      - name: Commit discovery and adaptive intelligence state
+      - name: Commit discovery-owned state safely
         shell: bash
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -114,6 +97,9 @@ jobs:
           git config user.name "vds-discovery-bot"
           git config user.email "actions@users.noreply.github.com"
 
+          # Single-writer boundary: this workflow commits only discovery-owned artifacts.
+          # Cross-signal, human-review and api/v1 are deliberately owned by their dedicated
+          # workers/projection workflow, eliminating the dominant main-branch write race.
           run_pipeline() {
             python scripts/high_frequency_discovery.py
             python scripts/supplemental_public_sources.py
@@ -126,10 +112,6 @@ jobs:
             python scripts/acquisition_performance_optimizer.py
             python scripts/search_mission_planner.py
             python scripts/multi_engine_query_router.py
-            python scripts/merge_human_review_pending.py
-            python scripts/cross_signal_human_review_reconcile.py
-            python scripts/reconcile_global_contact_history.py
-            python3 scripts/build_command_center_api.py
           }
 
           stage_state() {
@@ -142,8 +124,6 @@ jobs:
                     views/acquisition-performance.json \
                     views/search-mission-plan.json \
                     views/multi-engine-search-missions.json \
-                    views/cross-signal-opportunities.json \
-                    views/human-review-high-value.json \
                     data/high-frequency-discovery/raw-signals.jsonl \
                     metrics/high-frequency-discovery-state.json \
                     metrics/high-frequency-watch-state.json \
@@ -152,42 +132,46 @@ jobs:
                     metrics/supplemental-public-sources-state.json \
                     metrics/direct-employer-bulk-sources-state.json \
                     metrics/territory-yield-radar-state.json \
-                    metrics/daily/*-cross-signal.json \
                     config/adaptive-search-runtime.json \
-                    config/acquisition-runtime-command.json \
-                    api/v1
+                    config/acquisition-runtime-command.json
           }
 
           commit_state() {
             stage_state
             if git diff --cached --quiet; then
-              echo "No discovery/projection changes"
+              echo "No discovery-owned changes"
               return 1
             fi
-            git commit -m "data: refresh discovery radar and command center projections"
+            git commit -m "data: refresh discovery-owned intelligence"
           }
 
           if ! commit_state; then
             exit 0
           fi
 
-          for attempt in 1 2 3; do
+          for attempt in 1 2 3 4 5 6 7 8; do
             if git push origin HEAD:main; then
-              echo "Discovery + projection state committed on attempt ${attempt}"
+              echo "Discovery state committed on attempt ${attempt}"
               exit 0
             fi
 
-            echo "Concurrent main update detected; rebuilding from freshest canonical state (attempt ${attempt})"
-            git rebase --abort 2>/dev/null || true
+            echo "Concurrent main update detected (attempt ${attempt}); rebasing discovery-only commit"
             git fetch origin main
+            if git rebase origin/main; then
+              sleep $((attempt + 1))
+              continue
+            fi
+
+            # A same-file race is unusual but recoverable: rebuild from freshest canonical state.
+            git rebase --abort 2>/dev/null || true
             git reset --hard origin/main
             run_pipeline
             if ! commit_state; then
-              echo "Fresh canonical state already contains equivalent output"
+              echo "Fresh canonical state already contains equivalent discovery output"
               exit 0
             fi
-            sleep $((attempt * 2))
+            sleep $((attempt * 2 + 1))
           done
 
-          echo "Unable to commit discovery/projection state after collision-safe retries" >&2
+          echo "Unable to persist discovery state after eight collision-safe attempts" >&2
           exit 1
