@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "run_id": "unified-acquisition-20260904T1207Z",
+  "worker_id": "UNIFIED_LOOP",
+  "run_started_at": "2026-09-04T14:07:39+02:00",
+  "repository": "pinolissimo/vds-commercial-intelligence",
+  "branch": "main",
+  "normal_cycle_completed": true,
+  "existing_gates_preserved": true,
+  "mandatory_reads": {
+    "core_protocols": "OK",
+    "dedup_state": "OK",
+    "adaptive_inputs": "OK",
+    "human_review_state": "OK",
+    "public_document_manifest": "PASS",
+    "dispatch_lease_protocol_state": "OK",
+    "command_center_bridge": "OK"
+  },
+  "command_center": {
+    "pending_eligible_for_unified_loop": 0,
+    "consumed": 0,
+    "receipts_written": 0
+  },
+  "adaptive_command": {
+    "bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
+    "capacity_pct": {"exploitation": 70, "exploration": 20, "strategic_reserve": 10},
+    "primary_harvest_area": "Italy|Lazio|Roma"
+  },
+  "sending_window": {
+    "state": "OPEN",
+    "allowed": true
+  },
+  "provider_state": {
+    "provider": "HOSTINGER",
+    "highest_indexed_uid": 280,
+    "provider_call_performed": false,
+    "provider_ambiguity": false
+  },
+  "reservation_and_lease": {
+    "active_global_reservations_seen": 0,
+    "dispatch_lease_initial_state": "IDLE",
+    "lease_acquired": false,
+    "reason_not_acquired": "NO_EXECUTABLE_READY"
+  },
+  "ready_recertification": {
+    "projection_ready_to_contact_seen": 4,
+    "executable_ready": 0,
+    "items": [
+      {"organization": "Studiart", "result": "DUPLICATE_BLOCKED", "reason": "provider suppression contains studiart.it"},
+      {"organization": "Nexibo", "result": "DUPLICATE_BLOCKED", "reason": "provider suppression contains nexibo.agency"},
+      {"organization": "WebGenova", "result": "NOT_READY", "reason": "authoritative executable application/collaboration channel unresolved"},
+      {"organization": "Lu Vaiven", "result": "NOT_READY", "reason": "official domain resolved but exact authoritative email recipient absent"}
+    ]
+  },
+  "discovery": {
+    "public_probes": 8,
+    "new_commercially_qualified": 0,
+    "new_ready": 0,
+    "new_human_review_high_value": 0,
+    "note": "Fresh Spain/Italy WordPress/freelance/agency probes yielded marketplace, seller-side, employee-only or otherwise non-qualifying signals; thresholds were not weakened."
+  },
+  "followup_1": {
+    "eligible": 0,
+    "sent": 0
+  },
+  "dispatch": {
+    "first_contact_attempted": 0,
+    "first_contact_verified_sent": 0,
+    "external_send_count": 0,
+    "provider_uids": []
+  },
+  "metrics_commits": [
+    "c570e5055ba27f98e1b43453c55505a2b069714f",
+    "bf7a7769738eb2f821131189de070817912befeb"
+  ],
+  "result": "ZERO_SEND_NO_EXECUTABLE_READY_NORMAL_CYCLE_COMPLETED"
+}
