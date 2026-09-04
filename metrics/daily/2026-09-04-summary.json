@@ -2,103 +2,123 @@
   "schema_version": "3.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T09:40:00+02:00",
-  "status": "SEMANTIC_RECOVERY_WITH_MIDDLE_FUNNEL_EXECUTION_GAP",
+  "updated_at": "2026-09-04T10:57:00+02:00",
+  "status": "EXECUTION_RECOVERED_WITH_STALE_FANOUT_AND_DERIVED_VIEW_LAG",
   "discovery": {
-    "raw_signals": 235,
+    "raw_signals": 239,
     "semantic_pass": 7,
     "semantic_review": 0,
-    "semantic_reject": 228,
+    "semantic_reject": 232,
     "unique_organizations": 30,
-    "current_source_ranking": ["jobicy_europe", "remotive", "wwr_design", "wwr_sysadmin", "arbeitnow_eu", "wwr_programming"],
-    "current_territory_harvest": [],
-    "current_bottleneck": "MIDDLE_FUNNEL_ROUTE_TO_EXECUTION",
-    "note": "High-frequency semantic yield recovered from the prior 0/138 snapshot to 7/235 without lowering final quality gates. Jobicy Europe accounts for 6 semantic passes and Arbeitnow for 1; authoritative agency/collaboration research remains the strongest route-closure lane."
+    "semantic_pass_rate": 0.0293,
+    "current_source_ranking": ["jobicy_europe", "remotive", "wwr_design", "wwr_sysadmin", "arbeitnow_eu"],
+    "current_territory_harvest": ["Italy|Lazio|Roma"],
+    "current_bottleneck": "HIGH_FREQUENCY_FANOUT_CADENCE_PLUS_MANUAL_ROUTE_HEAVY_MIDDLE_FUNNEL",
+    "note": "Semantic yield remains non-zero at 7/239. Final precision gates remain intact. High-frequency state has not refreshed since the successful 08:10Z workflow, so source/territory adaptive views are stale relative to subsequent execution events."
   },
   "qualification": {
     "hot_plus": 6,
     "hot": 8,
-    "ready_added": 0,
+    "ready_added_commercial": 1,
     "current_ready_count": 0,
-    "manual_route_required": 4,
+    "job_ready_count": 0,
+    "manual_route_required_current_job_lane": 5,
+    "human_review_pending_recorded": 8,
     "territory_enrichment_pending": 10,
-    "new_first_contact_executable": 1,
-    "executable_identity": "org:ieros.it",
-    "human_review_pending": 4,
-    "human_review_manual_applied": 1
+    "notable_new_manual_high_value": ["Twine", "molo&CO", "Avangarde", "Omega CRM", "Decskill España", "Alpacode"]
   },
   "execution": {
-    "first_contacts_verified_sent": 1,
-    "unique_organizations_first_contacted": 1,
+    "automatic_first_contacts_verified_sent": 3,
+    "automatic_unique_organizations_first_contacted": 3,
+    "commercial_automatic_first_contacts": 2,
+    "job_automatic_first_contacts": 1,
     "followup_1_verified_sent": 0,
-    "spain_first_contacts": 1,
-    "italy_first_contacts": 0,
+    "spain_automatic_first_contacts": 1,
+    "italy_automatic_first_contacts": 2,
+    "owner_approved_human_review_first_contacts": 2,
+    "reconciled_concurrent_first_contacts_not_counted_as_worker_automatic": 1,
+    "reply_continuations_not_counted_as_first_contact": 1,
     "duplicates_blocked": 0,
     "delivery_state_unknown": 0,
-    "latest_provider_uid": 272,
-    "provider_uid_continuity": "CONTINUOUS_THROUGH_272",
-    "sending_window_status_at_watch": "OPEN_09_00_19_00",
-    "executable_not_consumed": ["org:ieros.it"]
+    "latest_provider_uid": 278,
+    "provider_uid_continuity": "CONTINUOUS_THROUGH_278",
+    "current_executable_ready": [],
+    "latest_automatic_events": [
+      {"organization":"Páginas Web Valencia","provider_uid":272,"lane":"commercial"},
+      {"organization":"Ieros","provider_uid":276,"lane":"commercial"},
+      {"organization":"Heritage S.r.l.","provider_uid":278,"lane":"job"}
+    ]
   },
   "outcomes": {
-    "replies": 0,
+    "new_relevant_replies_since_prior_watch": 0,
     "positive_replies": 0,
     "interviews_or_calls": 0,
     "proposals": 0,
     "won": 0,
-    "bounces": 0
+    "new_hard_bounces_since_prior_watch": 0
   },
   "health": {
     "expected_five_task_state": "PASS",
     "legacy_senders_disabled": true,
     "github_fanout": {
-      "latest_run_started_at": "2026-09-04T07:03:40Z",
-      "latest_run_completed_at": "2026-09-04T07:04:00Z",
+      "latest_run_started_at": "2026-09-04T08:10:33Z",
+      "latest_run_completed_at": "2026-09-04T08:10:48Z",
       "latest_run_conclusion": "success",
       "fresh": false,
       "anomaly": "NO_FRESH_15_MINUTE_RUN_EVIDENCE_FOR_MORE_THAN_TWO_EXPECTED_CYCLES"
     },
+    "agency_radar_latest_state": "PRESENT_08:04Z",
+    "cross_signal_latest_state": "PRESENT_08:10Z_BUT_STALE_VS_PROVIDER_HISTORY",
     "unified_loop": {
-      "latest_daily_run_id": "vds-unified-acquisition-20260904T064653Z",
-      "latest_run_result": "DISCOVERY_QUALIFICATION_ONLY_ZERO_SEND",
-      "worker_metrics_present": true,
-      "post_09_10_canonical_run_evidence": false,
-      "executable_cross_signal_pending": "org:ieros.it"
+      "latest_run_id": "unified-acquisition-20260904T0811Z",
+      "latest_run_result": "VERIFIED_FIRST_CONTACT_SENT_IEROS_UID_276",
+      "previous_ieros_execution_gap_resolved": true
+    },
+    "linkedin_job_hunter": {
+      "latest_result": "HERITAGE_VERIFIED_FIRST_CONTACT_UID_278_QUEUE_DRAINED",
+      "attachments": 0
     },
     "lease_state": "IDLE",
     "active_global_reservations": 0,
-    "ready_queue_reconciled": true,
-    "document_policy": "LINK_ONLY",
-    "global_dedup_reconciliation": "GROWNNNECTIA_OWNER_MANUAL_APPLICATION_RECORDED_AND_BLOCKED_FOR_NEW_FIRST_CONTACT",
+    "commercial_ready_queue": 0,
+    "job_ready_queue": 0,
+    "provider_suppression_checkpoint": 278,
+    "document_policy_current_automatic_sends": "NO_ATTACHMENTS_VERIFIED_FOR_IEROS_AND_HERITAGE",
+    "derived_state_lag": [
+      "views/cross-signal-opportunities.json still labels Ieros AUTO_EMAIL_NOW/UNCONTACTED although canonical provider/global indexes show CONTACTED UID 276 and WAIT_FOR_REPLY",
+      "views/agency-eu-signal-radar.json still carries pre-send Ieros AUTO_EMAIL_NOW state",
+      "reports/human-review-high-value.md lags Global Service/Zmot executed states, omits Alpacode from ranked urgent section, and still presents Mindrift for review although the latest Job Hunter run rejected the listing as closed/stale"
+    ],
     "unresolved_anomalies": [
-      "HIGH_FREQUENCY_FANOUT_STALE_AFTER_2026-09-04T07:04:00Z",
-      "IEROS_HOT_PLUS_AUTO_EMAIL_NOW_NOT_CONSUMED_BY_EXPECTED_UNIFIED_SEND_WINDOW_CYCLE"
+      "HIGH_FREQUENCY_FANOUT_STALE_AFTER_2026-09-04T08:10:48Z",
+      "DERIVED_CROSS_SIGNAL_AND_HUMAN_REVIEW_VIEWS_REQUIRE_NEXT_WRITER_RECONCILIATION"
     ]
   },
   "performance": {
-    "semantic_quality_recovery": true,
-    "source_priority_adjustment_active": true,
+    "semantic_quality_nonzero": true,
+    "semantic_pass_rate": 0.0293,
     "top_semantic_source": "jobicy_europe",
     "top_route_closure_lane": "official_agency_careers_plus_official_contact",
-    "diagnosis": "Top-of-funnel semantic quality has materially improved, so the active bottleneck has shifted toward route-to-execution handoff. Ieros demonstrates successful route closure and high-quality executable demand, but it remains unconsumed despite the active sending window. Do not increase RAW volume until the 15-minute fanout cadence and Unified ingestion/execution continuity are restored."
+    "territory_signal": "Italy|Lazio|Roma currently ranks highest but remains an insufficient sample; downstream Ieros send should be incorporated before further territorial reward.",
+    "diagnosis": "The prior Ieros route-to-execution gap is resolved and the Job Hunter also converted Heritage to a verified send. The immediate technical bottleneck is now stale 15-minute discovery/adaptive state, while the commercial opportunity bottleneck is a high share of valuable manual/platform routes rather than stranded READY. Do not lower quality gates."
   },
   "human_review": {
-    "pending": 4,
+    "pending_recorded": 8,
     "manual_applied_by_owner": 1,
-    "pending_ranked": [
-      {"organization":"Global Service Impresa","score":83.5,"recommended_action":"MANUAL_APPLY"},
-      {"organization":"Zmot Lab","score":81.6,"recommended_action":"MANUAL_APPLY_IF_FIT_PASSES"},
-      {"organization":"Mindrift","score":76.7,"recommended_action":"MANUAL_APPLY"},
-      {"organization":"UGECE Agency","score":70.8,"recommended_action":"HOLD_FOR_FRESH_RESEARCH"}
-    ],
-    "owner_alert_sent": true,
-    "grownnectia_state": "SUBMITTED_BY_OWNER_WAIT_FOR_REPLY"
+    "approved_outreach_already_executed": 2,
+    "new_owner_alert_sent_this_watch": true,
+    "new_owner_alert_organizations": ["Twine", "molo&CO", "Avangarde", "Alpacode", "Omega CRM", "Decskill España"],
+    "stale_record_requiring_reconciliation": "Mindrift is still PENDING in human-review state while the latest LinkedIn worker metric says the listing is closed/stale and rejected.",
+    "grownnectia_state": "SUBMITTED_BY_OWNER_WAIT_FOR_REPLY",
+    "global_service_state": "CONTACTED_UID_273_WAIT_FOR_REPLY",
+    "zmot_state": "CONTACTED_UID_274_WAIT_FOR_REPLY"
   },
   "provider_check": {
-    "hostinger_sent_total_messages": 268,
-    "highest_uid": 272,
-    "new_uid_above_checkpoint": false,
-    "latest_verified_first_contact": "Páginas Web Valencia / UID 272",
-    "new_relevant_inbound_since_prior_watch": false
+    "hostinger_sent_metadata_reconciled_through_uid": 278,
+    "new_uid_above_previous_272_checkpoint": true,
+    "new_verified_provider_events": [273,274,275,276,277,278],
+    "latest_verified_automatic_first_contact": "Heritage S.r.l. / UID 278",
+    "new_relevant_inbound_since_prior_watch": false,
+    "new_hard_bounce_since_prior_watch": false
   }
 }
