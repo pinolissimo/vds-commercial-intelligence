@@ -3,102 +3,191 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#12100f">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://raw.githubusercontent.com; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="color-scheme" content="light dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
   <title>VDS Commercial Intelligence — Command Center</title>
-  <meta name="description" content="VDS Commercial Intelligence Command Center: live acquisition funnel, opportunities, outbound and task intelligence.">
+  <meta name="description" content="Command center operativo VDS: risultati di oggi, aziende e contatti, opportunità, outbound e produttività geografica.">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.0/dist/css/tabulator.min.css">
   <link rel="stylesheet" href="assets/app.css">
 </head>
 <body>
-  <div class="shell">
-    <header class="topbar">
-      <a class="brand" href="./" aria-label="VDS Command Center home">
-        <span class="brand-mark">VDS</span>
-        <span><strong>Commercial Intelligence</strong><small>Command Center</small></span>
+  <a class="skip-link" href="#main">Vai ai contenuti</a>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="VDS Commercial Intelligence">
+        <span class="brand-mark" aria-hidden="true">VDS</span>
+        <span class="brand-copy"><strong>Commercial Intelligence</strong><small>Command Center</small></span>
       </a>
-      <div class="top-actions">
-        <span class="live-pill"><i></i> LIVE READ MODEL</span>
-        <span id="generatedAt" class="muted">caricamento…</span>
-        <a class="command-button" href="command.html">AI Command Console →</a>
+      <div class="header-actions">
+        <span class="health-pill" id="healthPill"><i aria-hidden="true"></i><span>Sincronizzazione</span></span>
+        <button class="icon-button" id="refreshButton" type="button" aria-label="Aggiorna dati" title="Aggiorna dati">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8.1 8.1 0 0 0-15.5-2M4 5v4h4M4 13a8.1 8.1 0 0 0 15.5 2M20 19v-4h-4"/></svg>
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div>
-          <p class="eyebrow">Revenue command center</p>
-          <h1>Ricerca, qualifica e conversione.<br><span>Una sola vista operativa.</span></h1>
-          <p class="hero-copy">La dashboard legge proiezioni derivate dal repository. Il motore di acquisizione esistente resta separato, invariato e autorevole.</p>
+  <main id="main" class="page-shell">
+    <section class="intro" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">VDS acquisition intelligence</p>
+        <h1 id="pageTitle">Oggi, a colpo d’occhio.</h1>
+        <p class="intro-copy">Risultati commerciali, ritmo di invio, risposte, aziende raccolte e territori più produttivi. Il motore di ricerca resta indipendente e continua a lavorare.</p>
+      </div>
+      <div class="freshness-card" aria-label="Stato aggiornamento dati">
+        <span class="freshness-label">Dati aggiornati</span>
+        <strong id="generatedAt">—</strong>
+        <small id="dataAge">lettura in corso</small>
+      </div>
+    </section>
+
+    <section class="today-section" aria-labelledby="todayTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">Risultati della giornata</p><h2 id="todayTitle">Oggi</h2></div>
+        <span class="section-note" id="sendingWindow">09:00–19:00 Europe/Madrid</span>
+      </div>
+      <div class="today-grid">
+        <article class="metric-card metric-primary">
+          <div class="metric-top"><span>Mail inviate</span><span class="metric-symbol" aria-hidden="true">↗</span></div>
+          <strong id="todaySent">—</strong>
+          <small><b id="todayFirstContacts">—</b> primi contatti</small>
+        </article>
+        <article class="metric-card metric-positive">
+          <div class="metric-top"><span>Risposte positive</span><span class="metric-symbol" aria-hidden="true">＋</span></div>
+          <strong id="todayPositive">—</strong>
+          <small>segnali commerciali favorevoli</small>
+        </article>
+        <article class="metric-card metric-negative">
+          <div class="metric-top"><span>Risposte negative</span><span class="metric-symbol" aria-hidden="true">−</span></div>
+          <strong id="todayNegative">—</strong>
+          <small>classificate oggi</small>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Messaggi / ora</span><span class="metric-symbol" aria-hidden="true">⌁</span></div>
+          <strong id="todayRate">—</strong>
+          <small>media nella finestra attiva</small>
+        </article>
+        <article class="metric-card">
+          <div class="metric-top"><span>Aziende indicizzate</span><span class="metric-symbol" aria-hidden="true">◎</span></div>
+          <strong id="companiesIndexed">—</strong>
+          <small>ricercabili nel CRM operativo</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="overview-grid" aria-label="Stato operativo">
+      <article class="glass-panel spotlight-card">
+        <div class="panel-head">
+          <div><p class="eyebrow">Discovery engine</p><h2>Motore di ricerca</h2></div>
+          <span class="status-chip good" id="engineStatus">Attivo</span>
         </div>
-        <div class="hero-status" id="heroStatus">
-          <div class="status-dot"></div>
-          <div><strong>Production core</strong><span>verifica…</span></div>
+        <div class="spotlight-value"><strong id="semanticInput">—</strong><span>segnali nell’ultimo ciclo</span></div>
+        <div class="stat-row">
+          <div><span>Semantic pass</span><strong id="semanticPass">—</strong></div>
+          <div><span>Pass rate</span><strong id="semanticRate">—</strong></div>
+          <div><span>Query variants</span><strong id="queryVariants">—</strong></div>
         </div>
-      </section>
+        <div class="engine-note"><i aria-hidden="true"></i><span>La dashboard legge proiezioni e non può fermare, modificare o aggirare il motore di acquisizione.</span></div>
+      </article>
 
-      <section class="kpi-grid" aria-label="KPI principali">
-        <article class="kpi"><span>Input ultimo ciclo</span><strong id="kpiInput">—</strong><small>segnali analizzati</small></article>
-        <article class="kpi"><span>Semantic pass</span><strong id="kpiPass">—</strong><small id="kpiPassRate">—</small></article>
-        <article class="kpi"><span>Opportunità attive</span><strong id="kpiOpps">—</strong><small>vista canonica</small></article>
-        <article class="kpi accent"><span>READY</span><strong id="kpiReady">—</strong><small>route non manuale</small></article>
-        <article class="kpi"><span>Manual action</span><strong id="kpiManual">—</strong><small>da non perdere</small></article>
-        <article class="kpi"><span>Inviate oggi</span><strong id="kpiSent">—</strong><small>provider-verified cache</small></article>
-        <article class="kpi"><span>Success index</span><strong id="kpiSuccess">—</strong><small>indice operativo</small></article>
-        <article class="kpi"><span>Client proxy</span><strong id="kpiProxy">—</strong><small>proxy non calibrato</small></article>
-      </section>
-
-      <section class="grid-2">
-        <article class="panel chart-panel">
-          <div class="panel-head"><div><p class="eyebrow">Pipeline</p><h2>Stati opportunità</h2></div><span class="muted">live JSON</span></div>
-          <div class="chart-wrap"><canvas id="statusChart"></canvas></div>
-        </article>
-        <article class="panel chart-panel">
-          <div class="panel-head"><div><p class="eyebrow">Discovery</p><h2>Ultimo semantic gate</h2></div><span id="semanticRun" class="muted">—</span></div>
-          <div class="chart-wrap"><canvas id="semanticChart"></canvas></div>
-        </article>
-      </section>
-
-      <section class="panel">
-        <div class="panel-head stack-mobile">
-          <div><p class="eyebrow">Opportunity explorer</p><h2>Pipeline filtrabile</h2></div>
-          <div class="filters">
-            <input id="oppSearch" type="search" placeholder="Cerca ID, azienda, tipo, stato…" aria-label="Cerca opportunità">
-            <select id="statusFilter" aria-label="Filtra stato"><option value="">Tutti gli stati</option></select>
-            <button id="resetFilters" type="button">Reset</button>
-          </div>
+      <article class="glass-panel">
+        <div class="panel-head">
+          <div><p class="eyebrow">Pipeline</p><h2>Conversione</h2></div>
+          <span class="status-chip" id="activeOppsChip">— attive</span>
         </div>
-        <div id="opportunityTable" class="data-table"></div>
-      </section>
+        <div class="conversion-list">
+          <div class="conversion-row"><span>READY</span><div class="track"><i id="readyBar"></i></div><strong id="readyCount">—</strong></div>
+          <div class="conversion-row"><span>Manual</span><div class="track"><i id="manualBar"></i></div><strong id="manualCount">—</strong></div>
+          <div class="conversion-row"><span>Contattate</span><div class="track"><i id="contactedBar"></i></div><strong id="contactedCount">—</strong></div>
+        </div>
+        <div class="small-kpi-grid">
+          <div><span>Success index</span><strong id="successIndex">—</strong></div>
+          <div><span>Client proxy</span><strong id="clientProxy">—</strong></div>
+        </div>
+      </article>
+    </section>
 
-      <section class="grid-2">
-        <article class="panel">
-          <div class="panel-head"><div><p class="eyebrow">Outbound</p><h2>Invii di oggi</h2></div><strong id="outboundBadge" class="badge">0</strong></div>
-          <div id="outboundList" class="timeline empty">Nessun dato disponibile.</div>
-        </article>
-        <article class="panel">
-          <div class="panel-head"><div><p class="eyebrow">AI command channel</p><h2>Ultimo comando</h2></div><a href="command.html" class="inline-link">Apri console</a></div>
-          <div id="aiLatest" class="ai-card"><span class="muted">Nessun comando elaborato.</span></div>
-        </article>
-      </section>
+    <section class="glass-panel territory-panel" aria-labelledby="territoryTitle">
+      <div class="panel-head stack-on-mobile">
+        <div><p class="eyebrow">Geographic intelligence</p><h2 id="territoryTitle">Produttività per territorio</h2></div>
+        <div class="segmented" role="group" aria-label="Visualizzazione produttività">
+          <button class="segment active" type="button" data-territory-view="territories" aria-pressed="true">Territori</button>
+          <button class="segment" type="button" data-territory-view="countries" aria-pressed="false">Paesi</button>
+        </div>
+      </div>
+      <p class="panel-description">Heatmap ordinata sullo score adattivo già calcolato dal motore. Più la barra è intensa, maggiore è il rendimento corrente.</p>
+      <div id="territoryHeatmap" class="heatmap" aria-live="polite"></div>
+    </section>
 
-      <section class="grid-3">
-        <article class="panel mini"><p class="eyebrow">Router</p><strong id="routerMissions">—</strong><span>missioni</span><small id="routerVariants">— query variants</small></article>
-        <article class="panel mini"><p class="eyebrow">Bottleneck</p><strong id="bottleneck">—</strong><span>diagnosi corrente</span></article>
-        <article class="panel mini"><p class="eyebrow">Safety</p><strong>0</strong><span>duplicate FIRST_CONTACT tolerance</span><small>gate non aggirabili dalla dashboard</small></article>
-      </section>
-    </main>
+    <section class="glass-panel explorer-panel" aria-labelledby="companiesTitle">
+      <div class="panel-head stack-on-mobile">
+        <div><p class="eyebrow">Company intelligence</p><h2 id="companiesTitle">Aziende e contatti</h2></div>
+        <span class="status-chip" id="companyResultCount">—</span>
+      </div>
+      <div class="search-toolbar" role="search">
+        <label class="search-field">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+          <span class="sr-only">Cerca aziende e contatti</span>
+          <input id="companySearch" type="search" autocomplete="off" placeholder="Cerca azienda, dominio, email, paese…">
+        </label>
+        <select id="companyCountry" aria-label="Filtra per paese"><option value="">Tutti i paesi</option></select>
+        <select id="companyContacted" aria-label="Filtra per stato contatto">
+          <option value="">Tutti gli stati</option>
+          <option value="contacted">Contattate</option>
+          <option value="not-contacted">Non contattate</option>
+        </select>
+        <button class="text-button" id="resetCompanyFilters" type="button">Azzera filtri</button>
+      </div>
+      <div class="table-shell" tabindex="0" aria-label="Elenco aziende scorrevole">
+        <table class="data-table">
+          <thead><tr><th>Azienda</th><th>Paese</th><th>Contatti</th><th>Opportunità</th><th>Priorità</th><th>Stato</th></tr></thead>
+          <tbody id="companyRows"></tbody>
+        </table>
+      </div>
+      <div id="companyEmpty" class="empty-state" hidden>Nessuna azienda corrisponde ai filtri selezionati.</div>
+      <div class="pagination-row">
+        <span id="companyPaginationInfo">—</span>
+        <div><button id="companyPrev" class="icon-button small" type="button" aria-label="Pagina precedente">‹</button><button id="companyNext" class="icon-button small" type="button" aria-label="Pagina successiva">›</button></div>
+      </div>
+    </section>
 
-    <footer>
-      <span>VDS Engine UI · GitHub Pages · JSON read models</span>
-      <a href="https://github.com/pinolissimo/vds-commercial-intelligence" rel="noopener">Repository</a>
-    </footer>
-  </div>
+    <section class="two-column">
+      <article class="glass-panel" aria-labelledby="outboundTitle">
+        <div class="panel-head"><div><p class="eyebrow">Outbound</p><h2 id="outboundTitle">Invii di oggi</h2></div><span class="status-chip" id="outboundCount">—</span></div>
+        <div id="outboundTimeline" class="timeline"></div>
+      </article>
+      <article class="glass-panel" aria-labelledby="replyTitle">
+        <div class="panel-head"><div><p class="eyebrow">Reply intelligence</p><h2 id="replyTitle">Risposte di oggi</h2></div><span class="status-chip" id="replyCount">—</span></div>
+        <div id="replyTimeline" class="timeline"></div>
+      </article>
+    </section>
+
+    <section class="glass-panel explorer-panel" aria-labelledby="opportunitiesTitle">
+      <div class="panel-head stack-on-mobile">
+        <div><p class="eyebrow">Opportunity explorer</p><h2 id="opportunitiesTitle">Opportunità</h2></div>
+        <span class="status-chip" id="opportunityResultCount">—</span>
+      </div>
+      <div class="search-toolbar compact" role="search">
+        <label class="search-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span class="sr-only">Cerca opportunità</span><input id="opportunitySearch" type="search" placeholder="Cerca ID, azienda, tipo, stato…"></label>
+        <select id="opportunityStatus" aria-label="Filtra opportunità per stato"><option value="">Tutti gli stati</option></select>
+      </div>
+      <div class="table-shell" tabindex="0" aria-label="Elenco opportunità scorrevole">
+        <table class="data-table compact-table">
+          <thead><tr><th>Opportunità</th><th>Paese</th><th>Tipo</th><th>Priorità</th><th>Freshness</th><th>Stato</th></tr></thead>
+          <tbody id="opportunityRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div><strong>VDS Commercial Intelligence</strong><span>Read-model UI · Production core separato</span></div>
+    <a href="https://github.com/pinolissimo/vds-commercial-intelligence" rel="noopener">Repository ↗</a>
+  </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tabulator-tables@6.5.0/dist/js/tabulator.min.js"></script>
   <script type="module" src="assets/app.js"></script>
 </body>
 </html>
