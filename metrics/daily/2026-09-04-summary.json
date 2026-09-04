@@ -2,15 +2,16 @@
   "schema_version": "1.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T07:43:00+02:00",
-  "status": "INITIALIZED_FROM_VERIFIED_STATE",
+  "updated_at": "2026-09-04T08:30:00+02:00",
+  "status": "DEGRADED_MISSING_UNIFIED_METRICS",
   "research": {
     "raw_signals": null,
     "unique_organizations": null,
     "backlog_added": null
   },
   "qualification": {
-    "ready_added_total": null
+    "ready_added_total": null,
+    "manual_route_required": null
   },
   "dispatch": {
     "emails_verified_sent": 1,
@@ -22,13 +23,27 @@
     "retry_required": null
   },
   "outcomes": {
-    "positive_replies": null,
-    "bounces": null
+    "positive_replies": 0,
+    "bounces": 0
   },
   "current_ready_count": 0,
-  "sources": {
-    "dispatcher_daily": "metrics/daily/2026-09-04-dispatcher.json",
-    "ready_queue": "views/it-es-partner-apply-ready-queue.json"
+  "manual_action": {
+    "pending_count": null
   },
-  "note": "Initialized immediately. Watchdog is sole ongoing writer and will populate research/qualification fields from worker-owned daily files as they run under DAILY_METRICS_PROTOCOL.md."
+  "watchdog": {
+    "architecture_repaired_at": "2026-09-04T08:29:47+02:00",
+    "unified_schedule_expected_minute": 25,
+    "unified_metrics_missing": true,
+    "lease_state": "IDLE",
+    "latest_verified_provider_uid": 272,
+    "ready_queue_reconciled": true
+  },
+  "sources": {
+    "unified_daily": "metrics/daily/2026-09-04-unified.json (missing at this run)",
+    "dispatcher_daily": "metrics/daily/2026-09-04-dispatcher.json",
+    "ready_queue": "views/it-es-partner-apply-ready-queue.json",
+    "recipient_index": "views/it-es-partner-apply-recipients.json",
+    "lease": "governance/it-es-dispatch-lease.json"
+  },
+  "note": "Migration-day dispatcher baseline preserved: one verified automatic first contact, Hostinger UID 272. Research/qualification counters remain null rather than inferred because the mandatory unified daily file is absent. No new relevant positive reply or hard bounce was observed in the current Hostinger inbox window."
 }
