@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04T06:38:00Z",
+  "principle": "Search for explicit current professional demand and collaboration routes, not generic company directories. Substitute verified territory names and rotate templates to avoid repeatedly scanning the same query.",
+  "segments": {
+    "AGENCY_WHITE_LABEL": {
+      "weight": 1.4,
+      "spain": [
+        "\"colaborador freelance\" (wordpress OR frontend OR \"desarrollo web\") {territory}",
+        "\"colaboradores freelance\" agencia web {territory}",
+        "\"trabaja con nosotros\" freelance wordpress {territory}",
+        "\"trabaja con nosotros\" \"desarrollador web\" freelance {territory}",
+        "\"colaboración freelance\" \"diseño web\" {territory}",
+        "\"white label\" agencia web freelance España {territory}",
+        "\"partner\" \"desarrollo web\" agencia freelance {territory}",
+        "\"autónomo\" wordpress agencia {territory}"
+      ],
+      "italy": [
+        "\"collaboratore freelance\" (wordpress OR frontend OR \"sviluppo web\") {territory}",
+        "\"collaboratori freelance\" web agency {territory}",
+        "\"lavora con noi\" freelance wordpress {territory}",
+        "\"lavora con noi\" \"sviluppatore web\" freelance {territory}",
+        "\"collaborazione freelance\" \"web designer\" {territory}",
+        "\"partita IVA\" wordpress web agency {territory}",
+        "\"collaborazione continuativa\" freelance wordpress {territory}",
+        "\"subfornitura\" sviluppo web agenzia {territory}"
+      ]
+    },
+    "DIRECT_JOB": {
+      "weight": 1.25,
+      "spain": [
+        "wordpress developer freelance remoto España {territory}",
+        "frontend developer freelance remoto España {territory}",
+        "web designer freelance remoto España {territory}",
+        "woocommerce freelance remoto España {territory}",
+        "\"send cv\" wordpress Spain remote",
+        "\"envía tu CV\" wordpress freelance {territory}",
+        "site:linkedin.com/jobs/view wordpress freelance Spain remote",
+        "site:linkedin.com/jobs/view frontend freelance Spain remote"
+      ],
+      "italy": [
+        "wordpress developer freelance remoto Italia {territory}",
+        "sviluppatore wordpress freelance remoto Italia {territory}",
+        "web designer freelance partita IVA remoto {territory}",
+        "frontend developer freelance partita IVA {territory}",
+        "\"invia CV\" wordpress freelance {territory}",
+        "\"candidatura\" \"partita IVA\" wordpress {territory}",
+        "site:linkedin.com/jobs/view wordpress freelance Italy remote",
+        "site:linkedin.com/jobs/view web designer freelance Italy remote"
+      ]
+    },
+    "WPO_MAINTENANCE": {
+      "weight": 1.05,
+      "spain": [
+        "\"mantenimiento wordpress\" freelance agencia {territory}",
+        "\"core web vitals\" freelance España {territory}",
+        "\"optimización wordpress\" freelance {territory}",
+        "\"migración wordpress\" freelance agencia {territory}"
+      ],
+      "italy": [
+        "\"manutenzione wordpress\" freelance agenzia {territory}",
+        "\"core web vitals\" freelance Italia {territory}",
+        "\"ottimizzazione wordpress\" freelance {territory}",
+        "\"migrazione wordpress\" freelance agenzia {territory}"
+      ]
+    },
+    "EU_PROJECT": {
+      "weight": 1.15,
+      "spain": [
+        "site:europa.eu project dissemination website Spain kickoff 2026",
+        "Horizon project \"communication and dissemination\" Spain website 2026",
+        "Interreg project Spain \"website\" dissemination 2026"
+      ],
+      "italy": [
+        "site:europa.eu project dissemination website Italy kickoff 2026",
+        "Horizon project \"communication and dissemination\" Italy website 2026",
+        "Interreg project Italy \"website\" dissemination 2026"
+      ]
+    }
+  },
+  "source_families_to_rotate": [
+    "official company careers/collaboration pages",
+    "public/indexed LinkedIn job pages",
+    "specialized job boards",
+    "agency websites",
+    "professional directories as discovery only then official-site verification",
+    "EU official/project/partner sources"
+  ],
+  "negative_intent": [
+    "sales-only commission roles",
+    "office assistant",
+    "pure social media/copywriting",
+    "US-only/UK-only geo exclusions",
+    "stack-specific roles materially outside truthful VDS capability",
+    "stale/closed listings"
+  ]
+}
