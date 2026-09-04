@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f5f5f7">
   <meta name="color-scheme" content="light dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
   <title>VDS Commercial Intelligence — Command Center</title>
   <meta name="description" content="Command center operativo VDS: risultati di oggi, aziende e contatti, opportunità, outbound e produttività geografica.">
   <link rel="manifest" href="manifest.webmanifest">
@@ -19,6 +19,7 @@
       <div class="header-actions">
         <span class="health-pill" id="healthPill"><i aria-hidden="true"></i><span>Sincronizzazione</span></span>
         <button class="icon-button" id="refreshButton" type="button" aria-label="Aggiorna dati" title="Aggiorna dati"><span class="material-symbols" aria-hidden="true">refresh</span></button>
+        <button class="icon-button" id="authButton" type="button" aria-label="Gestisci accesso GitHub" title="Accesso GitHub"><span class="material-symbols" aria-hidden="true">lock</span></button>
       </div>
     </div>
   </header>
@@ -26,7 +27,7 @@
   <main id="main" class="page-shell">
     <section class="intro" aria-labelledby="pageTitle">
       <div><p class="eyebrow">VDS acquisition intelligence</p><h1 id="pageTitle">Oggi, a colpo d’occhio.</h1><p class="intro-copy">Risultati commerciali, ritmo di invio, risposte, aziende raccolte e territori più produttivi. Il motore di ricerca resta indipendente e continua a lavorare.</p></div>
-      <div class="freshness-card" aria-label="Stato aggiornamento dati"><span class="freshness-label">Dati aggiornati</span><strong id="generatedAt">—</strong><small id="dataAge">lettura in corso</small></div>
+      <div class="freshness-card" aria-label="Stato aggiornamento dati"><span>Dati aggiornati</span><strong id="generatedAt">—</strong><small id="dataAge">accesso richiesto</small></div>
     </section>
 
     <section class="today-section" aria-labelledby="todayTitle">
@@ -40,56 +41,38 @@
       </div>
     </section>
 
-    <section class="glass-panel activity-panel" aria-labelledby="activityTitle">
-      <div class="panel-head"><div><p class="eyebrow">Throughput</p><h2 id="activityTitle">Ritmo degli invii</h2></div><span class="status-chip">media oraria</span></div>
-      <div class="chart-area"><canvas id="hourlyChart" aria-label="Grafico messaggi inviati per ora"></canvas></div>
+    <section class="glass-panel command-panel" aria-labelledby="commandTitle">
+      <div class="panel-head stack-on-mobile"><div><p class="eyebrow">AI control plane</p><h2 id="commandTitle">Dai una disposizione al motore</h2></div><span class="status-chip" id="commandStatus">GitHub Action + OpenAI</span></div>
+      <p class="panel-description">Scrivi in italiano naturale. Le disposizioni vengono interpretate dall’AI, registrate nel repository e non possono aggirare dedup, quality gate, route verification o suppression.</p>
+      <form id="commandForm" class="command-form">
+        <label class="command-input"><span class="material-symbols" aria-hidden="true">auto_awesome</span><span class="sr-only">Disposizione per il motore VDS</span><textarea id="commandText" rows="3" maxlength="4000" placeholder="Es. Oggi aumenta la priorità delle collaborazioni P.IVA WordPress in Lombardia e Catalogna, senza abbassare i criteri di qualità."></textarea></label>
+        <button id="commandSubmit" class="primary-button" type="submit"><span class="material-symbols" aria-hidden="true">arrow_upward</span><span>Invia disposizione</span></button>
+      </form>
+      <div id="commandResult" class="command-result" hidden></div>
     </section>
+
+    <section class="glass-panel activity-panel" aria-labelledby="activityTitle"><div class="panel-head"><div><p class="eyebrow">Throughput</p><h2 id="activityTitle">Ritmo degli invii</h2></div><span class="status-chip">media oraria</span></div><div class="chart-area"><canvas id="hourlyChart" aria-label="Grafico messaggi inviati per ora"></canvas></div></section>
 
     <section class="overview-grid" aria-label="Stato operativo">
-      <article class="glass-panel spotlight-card">
-        <div class="panel-head"><div><p class="eyebrow">Discovery engine</p><h2>Motore di ricerca</h2></div><span class="status-chip good" id="engineStatus">Attivo</span></div>
-        <div class="spotlight-value"><strong id="semanticInput">—</strong><span>segnali nell’ultimo ciclo</span></div>
-        <div class="stat-row"><div><span>Semantic pass</span><strong id="semanticPass">—</strong></div><div><span>Pass rate</span><strong id="semanticRate">—</strong></div><div><span>Query variants</span><strong id="queryVariants">—</strong></div></div>
-        <div class="engine-note"><i aria-hidden="true"></i><span>La dashboard legge proiezioni e non può fermare, modificare o aggirare il motore di acquisizione.</span></div>
-      </article>
-      <article class="glass-panel">
-        <div class="panel-head"><div><p class="eyebrow">Pipeline</p><h2>Conversione</h2></div><span class="status-chip" id="activeOppsChip">— attive</span></div>
-        <div class="conversion-list"><div class="conversion-row"><span>READY</span><div class="track"><i id="readyBar"></i></div><strong id="readyCount">—</strong></div><div class="conversion-row"><span>Manual</span><div class="track"><i id="manualBar"></i></div><strong id="manualCount">—</strong></div><div class="conversion-row"><span>Contattate</span><div class="track"><i id="contactedBar"></i></div><strong id="contactedCount">—</strong></div></div>
-        <div class="small-kpi-grid"><div><span>Success index</span><strong id="successIndex">—</strong></div><div><span>Client proxy</span><strong id="clientProxy">—</strong></div></div>
-      </article>
+      <article class="glass-panel spotlight-card"><div class="panel-head"><div><p class="eyebrow">Discovery engine</p><h2>Motore di ricerca</h2></div><span class="status-chip good" id="engineStatus">Attivo</span></div><div class="spotlight-value"><strong id="semanticInput">—</strong><span>segnali nell’ultimo ciclo</span></div><div class="stat-row"><div><span>Semantic pass</span><strong id="semanticPass">—</strong></div><div><span>Pass rate</span><strong id="semanticRate">—</strong></div><div><span>Query variants</span><strong id="queryVariants">—</strong></div></div><div class="engine-note"><i aria-hidden="true"></i><span>La dashboard legge proiezioni e non può fermare, modificare o aggirare il motore di acquisizione.</span></div></article>
+      <article class="glass-panel"><div class="panel-head"><div><p class="eyebrow">Pipeline</p><h2>Conversione</h2></div><span class="status-chip" id="activeOppsChip">— attive</span></div><div class="conversion-list"><div class="conversion-row"><span>READY</span><div class="track"><i id="readyBar"></i></div><strong id="readyCount">—</strong></div><div class="conversion-row"><span>Manual</span><div class="track"><i id="manualBar"></i></div><strong id="manualCount">—</strong></div><div class="conversion-row"><span>Contattate</span><div class="track"><i id="contactedBar"></i></div><strong id="contactedCount">—</strong></div></div><div class="small-kpi-grid"><div><span>Success index</span><strong id="successIndex">—</strong></div><div><span>Client proxy</span><strong id="clientProxy">—</strong></div></div></article>
     </section>
 
-    <section class="glass-panel territory-panel" aria-labelledby="territoryTitle">
-      <div class="panel-head stack-on-mobile"><div><p class="eyebrow">Geographic intelligence</p><h2 id="territoryTitle">Produttività per territorio</h2></div><div class="segmented" role="group" aria-label="Visualizzazione produttività"><button class="segment active" type="button" data-territory-view="territories" aria-pressed="true">Territori</button><button class="segment" type="button" data-territory-view="countries" aria-pressed="false">Paesi</button></div></div>
-      <p class="panel-description">Heatmap ordinata sullo score adattivo già calcolato dal motore. Più la barra è intensa, maggiore è il rendimento corrente.</p><div id="territoryHeatmap" class="heatmap" aria-live="polite"></div>
-    </section>
+    <section class="glass-panel territory-panel" aria-labelledby="territoryTitle"><div class="panel-head stack-on-mobile"><div><p class="eyebrow">Geographic intelligence</p><h2 id="territoryTitle">Produttività per territorio</h2></div><div class="segmented" role="group" aria-label="Visualizzazione produttività"><button class="segment active" type="button" data-territory-view="territories" aria-pressed="true">Territori</button><button class="segment" type="button" data-territory-view="countries" aria-pressed="false">Paesi</button></div></div><p class="panel-description">Heatmap ordinata sullo score adattivo già calcolato dal motore. Più la barra è intensa, maggiore è il rendimento corrente.</p><div id="territoryHeatmap" class="heatmap" aria-live="polite"></div></section>
 
-    <section class="glass-panel explorer-panel" aria-labelledby="companiesTitle">
-      <div class="panel-head stack-on-mobile"><div><p class="eyebrow">Company intelligence</p><h2 id="companiesTitle">Aziende e contatti</h2></div><span class="status-chip" id="companyResultCount">—</span></div>
-      <div class="search-toolbar" role="search">
-        <label class="search-field"><span class="material-symbols" aria-hidden="true">search</span><span class="sr-only">Cerca aziende e contatti</span><input id="companySearch" type="search" autocomplete="off" placeholder="Cerca azienda, dominio, email, paese…"></label>
-        <select id="companyCountry" aria-label="Filtra per paese"><option value="">Tutti i paesi</option></select>
-        <select id="companyContacted" aria-label="Filtra per stato contatto"><option value="">Tutti gli stati</option><option value="contacted">Contattate</option><option value="not-contacted">Non contattate</option></select>
-        <button class="text-button" id="resetCompanyFilters" type="button">Azzera filtri</button>
-      </div>
-      <div class="table-shell" tabindex="0" aria-label="Elenco aziende scorrevole"><table class="data-table"><thead><tr><th>Azienda</th><th>Paese</th><th>Contatti</th><th>Opportunità</th><th>Priorità</th><th>Stato</th></tr></thead><tbody id="companyRows"></tbody></table></div>
-      <div id="companyEmpty" class="empty-state" hidden>Nessuna azienda corrisponde ai filtri selezionati.</div>
-      <div class="pagination-row"><span id="companyPaginationInfo">—</span><div><button id="companyPrev" class="icon-button small" type="button" aria-label="Pagina precedente"><span class="material-symbols">chevron_left</span></button><button id="companyNext" class="icon-button small" type="button" aria-label="Pagina successiva"><span class="material-symbols">chevron_right</span></button></div></div>
-    </section>
+    <section class="glass-panel explorer-panel" aria-labelledby="companiesTitle"><div class="panel-head stack-on-mobile"><div><p class="eyebrow">Company intelligence</p><h2 id="companiesTitle">Aziende e contatti</h2></div><span class="status-chip" id="companyResultCount">—</span></div><div class="search-toolbar" role="search"><label class="search-field"><span class="material-symbols" aria-hidden="true">search</span><span class="sr-only">Cerca aziende e contatti</span><input id="companySearch" type="search" autocomplete="off" placeholder="Cerca azienda, dominio, email, paese…"></label><select id="companyCountry" aria-label="Filtra per paese"><option value="">Tutti i paesi</option></select><select id="companyContacted" aria-label="Filtra per stato contatto"><option value="">Tutti gli stati</option><option value="contacted">Contattate</option><option value="not-contacted">Non contattate</option></select><button class="text-button" id="resetCompanyFilters" type="button">Azzera filtri</button></div><div class="table-shell" tabindex="0" aria-label="Elenco aziende scorrevole"><table class="data-table"><thead><tr><th>Azienda</th><th>Paese</th><th>Contatti</th><th>Opportunità</th><th>Priorità</th><th>Stato</th></tr></thead><tbody id="companyRows"></tbody></table></div><div id="companyEmpty" class="empty-state" hidden>Nessuna azienda corrisponde ai filtri selezionati.</div><div class="pagination-row"><span id="companyPaginationInfo">—</span><div><button id="companyPrev" class="icon-button small" type="button" aria-label="Pagina precedente"><span class="material-symbols">chevron_left</span></button><button id="companyNext" class="icon-button small" type="button" aria-label="Pagina successiva"><span class="material-symbols">chevron_right</span></button></div></div></section>
 
-    <section class="two-column">
-      <article class="glass-panel" aria-labelledby="outboundTitle"><div class="panel-head"><div><p class="eyebrow">Outbound</p><h2 id="outboundTitle">Invii di oggi</h2></div><span class="status-chip" id="outboundCount">—</span></div><div id="outboundTimeline" class="timeline"></div></article>
-      <article class="glass-panel" aria-labelledby="replyTitle"><div class="panel-head"><div><p class="eyebrow">Reply intelligence</p><h2 id="replyTitle">Risposte di oggi</h2></div><span class="status-chip" id="replyCount">—</span></div><div id="replyTimeline" class="timeline"></div></article>
-    </section>
+    <section class="two-column"><article class="glass-panel" aria-labelledby="outboundTitle"><div class="panel-head"><div><p class="eyebrow">Outbound</p><h2 id="outboundTitle">Invii di oggi</h2></div><span class="status-chip" id="outboundCount">—</span></div><div id="outboundTimeline" class="timeline"></div></article><article class="glass-panel" aria-labelledby="replyTitle"><div class="panel-head"><div><p class="eyebrow">Reply intelligence</p><h2 id="replyTitle">Risposte di oggi</h2></div><span class="status-chip" id="replyCount">—</span></div><div id="replyTimeline" class="timeline"></div></article></section>
 
-    <section class="glass-panel explorer-panel" aria-labelledby="opportunitiesTitle">
-      <div class="panel-head stack-on-mobile"><div><p class="eyebrow">Opportunity explorer</p><h2 id="opportunitiesTitle">Opportunità</h2></div><span class="status-chip" id="opportunityResultCount">—</span></div>
-      <div class="search-toolbar compact" role="search"><label class="search-field"><span class="material-symbols" aria-hidden="true">search</span><span class="sr-only">Cerca opportunità</span><input id="opportunitySearch" type="search" placeholder="Cerca ID, azienda, tipo, stato…"></label><select id="opportunityStatus" aria-label="Filtra opportunità per stato"><option value="">Tutti gli stati</option></select></div>
-      <div class="table-shell" tabindex="0" aria-label="Elenco opportunità scorrevole"><table class="data-table compact-table"><thead><tr><th>Opportunità</th><th>Paese</th><th>Tipo</th><th>Priorità</th><th>Freshness</th><th>Stato</th></tr></thead><tbody id="opportunityRows"></tbody></table></div>
-    </section>
+    <section class="glass-panel explorer-panel" aria-labelledby="opportunitiesTitle"><div class="panel-head stack-on-mobile"><div><p class="eyebrow">Opportunity explorer</p><h2 id="opportunitiesTitle">Opportunità</h2></div><span class="status-chip" id="opportunityResultCount">—</span></div><div class="search-toolbar compact" role="search"><label class="search-field"><span class="material-symbols" aria-hidden="true">search</span><span class="sr-only">Cerca opportunità</span><input id="opportunitySearch" type="search" placeholder="Cerca ID, azienda, tipo, stato…"></label><select id="opportunityStatus" aria-label="Filtra opportunità per stato"><option value="">Tutti gli stati</option></select></div><div class="table-shell" tabindex="0" aria-label="Elenco opportunità scorrevole"><table class="data-table compact-table"><thead><tr><th>Opportunità</th><th>Paese</th><th>Tipo</th><th>Priorità</th><th>Freshness</th><th>Stato</th></tr></thead><tbody id="opportunityRows"></tbody></table></div></section>
   </main>
 
-  <footer class="app-footer"><div><strong>VDS Commercial Intelligence</strong><span>VDS Engine read-model UI · Production core separato</span></div><a href="https://github.com/pinolissimo/vds-commercial-intelligence" rel="noopener">Repository ↗</a></footer>
+  <footer class="app-footer"><div><strong>VDS Commercial Intelligence</strong><span>VDS Engine read-model UI · dati privati letti via GitHub API</span></div><a href="https://github.com/pinolissimo/vds-commercial-intelligence" rel="noopener">Repository ↗</a></footer>
+
+  <div id="authOverlay" class="auth-overlay" hidden>
+    <section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="auth-icon"><span class="material-symbols" aria-hidden="true">shield_lock</span></div><p class="eyebrow">Private repository access</p><h2 id="authTitle">Collega la dashboard a GitHub</h2><p>I dati CRM non vengono pubblicati su GitHub Pages. Inserisci un fine-grained token limitato a questo repository. Il token resta soltanto nella sessione di questo browser.</p><label class="token-field"><span>GitHub token</span><input id="githubToken" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…"></label><div id="authError" class="auth-error" hidden></div><div class="auth-actions"><button id="authCancel" class="text-button" type="button">Annulla</button><button id="authConnect" class="primary-button" type="button"><span class="material-symbols" aria-hidden="true">lock_open</span><span>Connetti</span></button></div><small>Permessi consigliati: repository singolo · Contents read-only · Actions read/write.</small></section>
+  </div>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="assets/vendor/chart.umd.min.js"></script>
   <script type="module" src="assets/app.js"></script>
