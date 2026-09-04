@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "updated_at": "2026-09-04T20:11:03+02:00",
+  "updated_at": "2026-09-04T22:05:00+02:00",
   "task": "VDS JOB FLOW",
   "queue": [
     {
@@ -15,7 +15,7 @@
       "recipient": "work@mutart.eu",
       "decision": "SEND_NOW",
       "execution_state": "DEFERRED_SEND_WINDOW_CLOSED",
-      "dedup": "CLEAR_PROVIDER_SUPPRESSION_GLOBAL_ORG_AND_RESERVATIONS_AT_2026-09-04T20:11+02:00",
+      "dedup": "CLEAR_PROVIDER_SUPPRESSION_GLOBAL_ORG_AND_RESERVATIONS_AT_LAST_RECHECK",
       "next_action": "At first 09:00-19:00 Europe/Madrid run, reverify listing current + organization dedup/reservation, then send via normal Hostinger path if still clear.",
       "language": "IT"
     },
@@ -31,13 +31,30 @@
       "recipient": "hr@corposostenibile.com",
       "decision": "SEND_NOW",
       "execution_state": "DEFERRED_SEND_WINDOW_CLOSED",
-      "dedup": "CLEAR_PROVIDER_SUPPRESSION_GLOBAL_ORG_AND_RESERVATIONS_AT_2026-09-04T20:11+02:00",
+      "dedup": "CLEAR_PROVIDER_SUPPRESSION_GLOBAL_ORG_AND_RESERVATIONS_AT_LAST_RECHECK",
       "next_action": "At first 09:00-19:00 Europe/Madrid run, reverify listing current + organization dedup/reservation, then send via normal Hostinger path if still clear.",
       "language": "IT"
+    },
+    {
+      "canonical_identity_key": "org:witapp.it",
+      "organization": "Witapp SRL",
+      "country": "IT",
+      "role": "Web Specialist",
+      "opportunity_url": "https://www.witapp.it/careers/",
+      "freshness": "OFFICIAL_CAREERS_PAGE_CURRENT_AT_2026-09-04_RECHECK",
+      "fit": "GOOD_WORDPRESS_HTML_CSS_JAVASCRIPT_WEB_SPECIALIST_GA4_DIGITAL_WEB",
+      "route": "DIRECT_APPLICATION_EMAIL",
+      "recipient": "candidature@witapp.it",
+      "decision": "SEND_NOW",
+      "execution_state": "DEFERRED_SEND_WINDOW_CLOSED",
+      "dedup": "CLEAR_PROVIDER_SUPPRESSION_GLOBAL_ORG_AND_RESERVATIONS_AT_2026-09-04T22:05+02:00",
+      "next_action": "At first 09:00-19:00 Europe/Madrid run, reverify careers page current + organization dedup/reservation, then send a truthful external freelance/P.IVA proposal to the authoritative candidacy email if still clear.",
+      "language": "IT",
+      "contract_note": "Official page describes a Firenze role and does not explicitly state freelance; external P.IVA format may be proposed truthfully without claiming it is accepted."
     }
   ],
   "counts": {
-    "SEND_NOW_DEFERRED_BY_WINDOW": 2,
+    "SEND_NOW_DEFERRED_BY_WINDOW": 3,
     "MANUAL_ROUTE_REQUIRED": 16,
     "HUMAN_REVIEW_HIGH_VALUE": 14
   },
@@ -65,10 +82,10 @@
     }
   ],
   "last_reconciliation": {
-    "result": "TWO_DIRECT_EMAIL_CANDIDATES_QUALIFIED_AND_DEFERRED_ONLY_BY_SEND_WINDOW",
-    "provider_suppression_checkpoint_uid_observed": 288,
+    "result": "THREE_DIRECT_EMAIL_CANDIDATES_QUALIFIED_AND_DEFERRED_ONLY_BY_SEND_WINDOW",
+    "provider_suppression_checkpoint_uid_observed": 290,
     "latest_external_job_send_uid": 278,
     "active_reservations": 0,
-    "note": "Mutart and Corposostenibile both have exact authoritative candidacy emails and strong current VDS fit. No email sent because the live 09:00-19:00 Europe/Madrid window is closed. Both require full JIT revalidation before provider action."
+    "note": "Mutart, Corposostenibile and Witapp have exact authoritative candidacy emails and reasonable truthful VDS fit. No email sent because the live 09:00-19:00 Europe/Madrid window is closed. All require full JIT revalidation before provider action. Provider UIDs 289-290 are unrelated dedup events preserved globally."
   }
 }
