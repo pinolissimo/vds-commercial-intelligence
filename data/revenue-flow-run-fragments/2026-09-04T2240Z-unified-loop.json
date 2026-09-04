@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "worker_id": "UNIFIED_LOOP",
+  "run_at": "2026-09-04T22:40:50Z",
+  "canonical_repo": "pinolissimo/vds-commercial-intelligence",
+  "send_window": {"timezone":"Europe/Madrid","allowed":"09:00-19:00","open":false},
+  "source_state": {
+    "discovery_signal_count": 687,
+    "semantic_pass_count": 79,
+    "new_signals_latest_refresh": 0,
+    "provider_suppression_through_uid": 290,
+    "active_reservations": 0,
+    "runtime_mode": "MIDDLE_FUNNEL_TURBO"
+  },
+  "command_bridge": {
+    "worker_id":"UNIFIED_LOOP",
+    "new_receipts_written":0,
+    "reason":"Eligible pending commands already have idempotent UNIFIED_LOOP receipts in processed.json."
+  },
+  "decisions": [
+    {
+      "canonical_identity_key":"org:mutart.eu",
+      "organization":"Mutart",
+      "opportunity":"Sviluppatore WordPress front-end",
+      "decision":"WAIT_RESEARCH",
+      "single_blocker":"SEND_WINDOW_CLOSED",
+      "next_lookup":"At first in-window cycle, revalidate employer listing, work@mutart.eu, organization-level dedup and reservations immediately before provider action.",
+      "evidence":"Fresh employer LinkedIn listing exposes work@mutart.eu and asks for CV; role covers WordPress custom themes, ACF, WooCommerce, HTML/CSS/PHP/JavaScript, hosting, staging, performance, SEO and maintenance. Listing says full-time, which does not itself prohibit a truthful external/P.IVA proposal under current Revenue Flow contract policy.",
+      "route":"work@mutart.eu",
+      "route_type":"EXACT_CANDIDACY_EMAIL",
+      "freshness":"CURRENT_2026-09-04_RECHECK",
+      "fit":"STRONG"
+    },
+    {
+      "canonical_identity_key":"org:2next.it",
+      "organization":"2Next Srl",
+      "opportunity":"Web & Design Design/Administrator",
+      "decision":"WAIT_RESEARCH",
+      "single_blocker":"SEND_WINDOW_CLOSED",
+      "next_lookup":"At first in-window cycle, revalidate info@2next.it, current role text, organization-level dedup and reservations before provider action.",
+      "evidence":"Official careers page currently says the company needs Web/Marketing Web & Design Design/Administrator skills including PHP, JavaScript, HTML5/CSS and WordPress and explicitly instructs candidates to send CV/brief presentation to info@2next.it.",
+      "route":"info@2next.it",
+      "route_type":"OFFICIAL_EXACT_CAREERS_EMAIL",
+      "freshness":"CURRENT_OFFICIAL_PAGE_2026-09-04_RECHECK",
+      "fit":"GOOD"
+    },
+    {
+      "canonical_identity_key":"org:witapp.it",
+      "organization":"Witapp SRL",
+      "opportunity":"Web Specialist",
+      "decision":"WAIT_RESEARCH",
+      "single_blocker":"SEND_WINDOW_CLOSED",
+      "next_lookup":"At first in-window cycle, revalidate candidature@witapp.it, role conditions, organization-level dedup and reservations before provider action.",
+      "evidence":"Official careers page currently exposes Web Specialist and instructs applications by email to candidature@witapp.it. WordPress, HTML, CSS and JavaScript are listed as plus skills. Role location is Firenze; no explicit no-freelance/no-contractors exclusion was found in the Web Specialist section during this recheck.",
+      "route":"candidature@witapp.it",
+      "route_type":"OFFICIAL_EXACT_CANDIDACY_EMAIL",
+      "freshness":"CURRENT_OFFICIAL_PAGE_2026-09-04_RECHECK",
+      "fit":"MODERATE_GOOD"
+    }
+  ],
+  "metrics": {
+    "serious_candidates_evaluated":3,
+    "send_now":0,
+    "provider_verified_first_contacts":0,
+    "manual_apply":0,
+    "wait_research":{"SEND_WINDOW_CLOSED":3},
+    "reject":0,
+    "duplicates_blocked":0,
+    "provider_verified_first_contacts_per_run":0
+  },
+  "notes":[
+    "No external email action was attempted outside the authorized send window.",
+    "The projected api/v1/opportunities.json contains stale internal READY-style labels and cannot override provider suppression/global dedup; Revenue Flow did not use those labels as send authorization.",
+    "No Gmail data was used for professional dedup."
+  ]
+}
