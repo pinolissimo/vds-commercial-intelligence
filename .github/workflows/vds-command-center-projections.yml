@@ -1,0 +1,47 @@
+name: VDS Command Center — Projections
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '4,14,24,34,44,54 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vds-command-center-projections
+  cancel-in-progress: true
+
+jobs:
+  build-read-model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout canonical repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build disposable API projections
+        run: python3 scripts/build_command_center_api.py
+
+      - name: Commit projection delta only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "vds-command-center-bot"
+          git config user.email "35764978+pinolissimo@users.noreply.github.com"
+          git add api/v1
+          if git diff --cached --quiet; then
+            echo "No projection changes"
+            exit 0
+          fi
+          git commit -m "dashboard: refresh command center projections"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push raced with another worker; rebasing (attempt $attempt)"
+            git pull --rebase origin main
+          done
+          git push origin HEAD:main
