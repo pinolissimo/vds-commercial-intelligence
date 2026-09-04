@@ -1,85 +1,38 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-09-04T06:18:00Z",
+  "schema_version": "1.1",
+  "updated_at": "2026-09-04T06:27:00Z",
   "policy": {
     "purpose": "High-frequency public-source discovery only; no outreach, no LinkedIn automation, no access-control bypass.",
     "run_interval_minutes": 15,
     "official_watch_pages_interval_minutes": 60,
-    "max_latest_signals": 1500
+    "max_latest_signals": 2500,
+    "territory_frontier": "config/search-territory-frontier.json",
+    "adaptive_policy": "config/adaptive-search-policy.json"
   },
   "profile_keywords": [
-    "wordpress",
-    "woocommerce",
-    "frontend",
-    "front-end",
-    "web developer",
-    "web designer",
-    "html",
-    "css",
-    "javascript",
-    "php",
-    "website",
-    "web performance",
-    "core web vitals",
-    "wpo",
-    "maintenance",
-    "migration",
-    "accessibility",
-    "ux",
-    "ui",
-    "technical support",
-    "web support",
-    "webmaster"
+    "wordpress","woocommerce","frontend","front-end","web developer","web designer","html","css","javascript","php","website","web performance","core web vitals","wpo","maintenance","migration","accessibility","ux","ui","technical support","web support","webmaster","web development","web design","website maintenance","website redesign","cms"
+  ],
+  "commercial_keywords": [
+    "freelance","freelancer","contractor","external collaborator","collaborator","collaboration","white label","white-label","overflow","subcontractor","subcontracting","partner","agency","maintenance","project based","project-based","remote"
   ],
   "remote_geo_keywords": [
-    "remote",
-    "worldwide",
-    "anywhere",
-    "europe",
-    "european union",
-    "eu",
-    "emea",
-    "spain",
-    "españa",
-    "italy",
-    "italia"
+    "remote","worldwide","anywhere","europe","european union","eu","emea","spain","españa","italy","italia","barcelona","madrid","valencia","bilbao","málaga","sevilla","milano","roma","torino","bologna","firenze","napoli"
   ],
   "sources": [
-    {
-      "id": "remoteok",
-      "kind": "remoteok_json",
-      "url": "https://remoteok.com/api",
-      "enabled": true
-    },
-    {
-      "id": "wwr_frontend",
-      "kind": "rss",
-      "url": "https://weworkremotely.com/categories/remote-front-end-programming-jobs.rss",
-      "enabled": true
-    },
-    {
-      "id": "wwr_programming",
-      "kind": "rss",
-      "url": "https://weworkremotely.com/categories/remote-programming-jobs.rss",
-      "enabled": true
-    },
-    {
-      "id": "wwr_design",
-      "kind": "rss",
-      "url": "https://weworkremotely.com/categories/remote-design-jobs.rss",
-      "enabled": true
-    },
-    {
-      "id": "wwr_sysadmin",
-      "kind": "rss",
-      "url": "https://weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss",
-      "enabled": true
-    }
+    {"id":"remoteok","kind":"remoteok_json","url":"https://remoteok.com/api","enabled":true,"authority":"PUBLIC_JOB_API"},
+    {"id":"remotive","kind":"remotive_json","url":"https://remotive.com/api/remote-jobs","enabled":true,"authority":"PUBLIC_JOB_API","note":"Public API data may be delayed by the provider."},
+    {"id":"arbeitnow_eu","kind":"arbeitnow_json","url":"https://www.arbeitnow.com/api/job-board-api","enabled":true,"authority":"PUBLIC_JOB_API_ATS_AGGREGATION"},
+    {"id":"himalayas","kind":"himalayas_json","url":"https://himalayas.app/jobs/api?limit=20","enabled":true,"authority":"PUBLIC_JOB_API","attribution_required":true},
+    {"id":"wwr_frontend","kind":"rss","url":"https://weworkremotely.com/categories/remote-front-end-programming-jobs.rss","enabled":true,"authority":"PUBLIC_RSS"},
+    {"id":"wwr_programming","kind":"rss","url":"https://weworkremotely.com/categories/remote-programming-jobs.rss","enabled":true,"authority":"PUBLIC_RSS"},
+    {"id":"wwr_design","kind":"rss","url":"https://weworkremotely.com/categories/remote-design-jobs.rss","enabled":true,"authority":"PUBLIC_RSS"},
+    {"id":"wwr_sysadmin","kind":"rss","url":"https://weworkremotely.com/categories/remote-devops-sysadmin-jobs.rss","enabled":true,"authority":"PUBLIC_RSS"}
   ],
   "official_watch_pages": [],
   "notes": [
     "LinkedIn itself is not fetched by this script. LinkedIn Job Hunter continues to use public/indexed signals and authoritative employer sources.",
-    "Agency/EU and LinkedIn tasks may add public official careers/collaboration/project pages to official_watch_pages for periodic change detection.",
-    "CORDIS remains handled by the Agency + EU Signal Radar until a stable keyless structured feed/query is explicitly configured; CORDIS DET API requires an API key."
+    "Agency/EU and LinkedIn tasks should add high-value public official careers/collaboration/project pages to official_watch_pages for periodic change detection.",
+    "The full Spain/Italy geographic search frontier is defined separately and must be used by Tasks for systematic web discovery and by the performance optimizer for coverage analysis.",
+    "CORDIS/project intelligence remains handled by the Agency + EU Signal Radar and official project/partner pages unless a stable structured API with appropriate access is configured."
   ]
 }
