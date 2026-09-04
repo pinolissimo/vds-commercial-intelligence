@@ -1,64 +1,62 @@
 # VDS — High-Value Human Review Queue
 
-Updated: 2026-09-04
+Updated: 2026-09-04 09:40 Europe/Madrid
 
-This report lists commercially strong opportunities that automation could not safely execute but that may deserve a reasoned owner review.
+This report lists commercially strong opportunities that automation cannot safely execute but that deserve owner review. Human review never bypasses deduplication, legal/channel restrictions, explicit no-freelance/no-agency constraints, or authoritative application routes.
 
-## Operating rule
+## New urgent items from fresh-first job scan
 
-Only **SOFT-BLOCKED** opportunities belong here. Explicit no-freelance/no-agency/no-external-collaborator statements, opt-outs, legal prohibitions, unresolved identity, guessed contacts and duplicate first contacts are **not** recoverable through this queue.
-
-For every item the report shows why it is attractive, why automation stopped, verified facts vs inference, the verified route/contact, safe alternative angles, checks required before contact and a recommended owner decision.
-
-## Pending review — ranked
-
-### 1. Grownnectia — IT — HOT — 84.0
-**Why high value:** recurring P.IVA signal, strong WordPress + infrastructure fit, high continuity/economic potential.  
-**Automatic block:** `JOB_PLATFORM_APPLY_REQUIRED`.  
-**Verified route:** job-platform application.  
-**Human review:** first verify the vacancy on an official employer source and current P.IVA/role terms. If still current, apply manually. Consider a separate B2B capacity approach only if the official company site independently authorizes that kind of professional contact.  
-**Do not bypass:** do not replace the platform with a guessed/generic email.  
-**Suggested decision:** `MANUAL_APPLY` after freshness verification.
-
-### 2. Global Service Impresa — IT — HOT — 83.5
-**Why high value:** explicit freelance-developer demand, strong VDS fit, official route and good recurring potential.  
-**Automatic block:** `OFFICIAL_APPLICATION_FORM_REQUIRED`.  
-**Verified route:** https://www.globalserviceimpresa.it/lavora-con-noi/  
-**Human review:** confirm the form is still open and submit manually with the most relevant Italian CV/portfolio.  
-**Do not bypass:** use the official form rather than a generic email for automation convenience.  
-**Suggested decision:** `MANUAL_APPLY`.
-
-### 3. Zmot Lab — IT — HOT — 81.6
-**Why high value:** fresh P.IVA demand and good web-development overlap.  
-**Automatic block:** `OFFICIAL_APPLICATION_FORM_REQUIRED` + `FIT_CAVEAT_SENIOR_REQUIREMENTS`.  
-**Verified route:** https://zmotlab.it/lavora-con-noi/sviluppatore-senior/  
-**Human review:** compare mandatory senior requirements against Giuseppe's real CV. If the core fit is defensible, apply manually and position VDS on the matching web/frontend/performance strengths without overstating unsupported stack depth.  
-**Do not bypass:** no fabricated seniority/technologies and no generic-email substitution without independent authority.  
-**Suggested decision:** `MANUAL_APPLY` if mandatory-fit review passes.
-
-### 4. Mindrift — Remote — HOT — 76.7
-**Why high value:** current freelance model, remote accessibility and useful web/design fit.  
+### 1. Twine — EEA remote — HOT+ — 92
+**Role:** Freelance Web Designer — WordPress Divi Rebuild.  
+**Freshness:** LinkedIn still exposes Apply; listed about one week ago.  
+**Why high value:** extremely close fit: WordPress, Divi, HTML/CSS, responsive, performance, testing, staging-to-live migration, project-based remote engagement and possible future updates.  
 **Automatic block:** `PLATFORM_APPLY_REQUIRED`.  
-**Verified route:** https://mindrift.ai/apply  
-**Human review:** check current project availability, compensation/commitment and select the most relevant platform profile.  
-**Do not bypass:** do not send an application to support/legal/generic mailboxes.  
-**Suggested decision:** `MANUAL_APPLY`.
+**Route:** https://www.linkedin.com/jobs/view/freelance-web-designer-%E2%80%93-wordpress-divi-rebuild-at-twine-4449569070  
+**Recommended owner action:** `MANUAL_APPLY` through the platform. Use strong Divi/WordPress examples and the verified English CV link. Do not use `support@twine.net` as an application route.
 
-### 5. UGECE Agency — ES — strategic exception — 70.8
-**Why high value:** fit 94/100 and recurring/economic potential 95/100; historical freelance WordPress/technical-SEO usage plus a current official business email.  
-**Automatic block:** `CURRENT_OPENING_NOT_PROVEN`; the specific freelance signal is about six months old.  
-**Verified contact:** hello@ugeceagency.com via https://ugeceagency.com/  
-**Human review:** search latest careers/LinkedIn/company posts for fresh evidence. If no current vacancy exists but the official business route is appropriate, evaluate a low-pressure B2B overflow/availability proposal that does **not** claim UGECE is currently looking for freelancers.  
-**Do not bypass:** historical demand must never be presented as current fact.  
-**Suggested decision:** `HOLD` pending fresh research, then possible `APPROVE_OUTREACH` if the B2B angle is independently justified.
+### 2. molo&CO — Málaga — HOT+ — 88
+**Role:** Diseñador WordPress Multisite · Figma · Desarrollo a medida.  
+**Freshness:** observed approximately 22 minutes after publication.  
+**Why high value:** WordPress, WooCommerce, ACF, PHP, HTML/CSS/JS, APIs, performance, security, Figma, component systems and agency production are unusually close to VDS capabilities.  
+**Automatic block:** advertised as stable full-time, on-site Málaga; LinkedIn Apply route.  
+**Route:** https://es.linkedin.com/jobs/view/dise%C3%B1ador-wordpress-multisite-%C2%B7-figma-%C2%B7-desarrollo-a-medida-at-molo-co-4462805091  
+**Recommended owner action:** decide between manual employment application and a separate B2B/overflow review. Never claim the vacancy itself accepts freelancers.
 
-## Decision states
+### 3. Avangarde — Italy — HOT+ — 87
+**Role:** Web Developer Junior.  
+**Freshness:** official page published 29 July 2026 and still accessible.  
+**Why high value:** WordPress, HTML5, CSS3, JavaScript, PHP, MySQL, responsive; critically, the official page explicitly states possible P.IVA collaboration with a published daily-rate range.  
+**Automatic block:** official application form required.  
+**Route:** https://avangarde.it/posizioniapertecandidatura/1572  
+**Recommended owner action:** `MANUAL_APPLY` using the official form and Italian CV/portfolio, positioning truthfully for P.IVA collaboration.
 
-- `PENDING`
-- `APPROVE_OUTREACH`
-- `MANUAL_APPLY`
-- `HOLD`
-- `REJECT`
+### 4. Omega CRM, A Merkle Company — Madrid — HOT — 84
+**Role:** Wordpress Developer / Web-CMS Consultant.  
+**Freshness:** observed within minutes of publication on 4 September 2026.  
+**Why high value:** WordPress/CMS, Figma-to-responsive implementation, accessibility, performance, SEO/CRO and stakeholder coordination. Large digital organization with recurring project capacity.  
+**Automatic block:** permanent role requiring at least two on-site days/week in Madrid; LinkedIn Apply route.  
+**Route:** https://es.linkedin.com/jobs/view/wordpress-developer-at-omega-crm-a-merkle-company-4460755266  
+**Recommended owner action:** manual application if Madrid hybrid employment is acceptable; otherwise B2B alternative only after an independently verified partner/vendor route.
+
+### 5. Decskill España — Spain remote — HOT — 78
+**Role:** Maquetador Web / 100% Remoto España.  
+**Freshness:** LinkedIn index shows about one day old.  
+**Why high value:** HTML5/CSS3, Figma, responsive and WCAG align well; secondary detail says Angular is valued.  
+**Automatic block:** exact individual authoritative application URL not yet recovered; Angular fit must be verified.  
+**Route to recover:** https://es.linkedin.com/jobs/maquetador-a-web-empleos  
+**Recommended owner action:** recover the exact Decskill posting, verify mandatory requirements, then manual apply if compatible.
+
+## Existing queue state
+
+- Grownnectia — **already submitted manually by owner**; `WAIT_FOR_REPLY`, no new FIRST_CONTACT.
+- Global Service Impresa — HOT 83.5 — official application form, pending manual apply.
+- Zmot Lab — HOT 81.6 — official form, senior-fit check required.
+- Mindrift — HOT 76.7 — platform apply, pending manual review.
+- UGECE Agency — strategic WARM 70.8 — historical recurring signal; fresh demand not proven.
+
+## Current execution rule
+
+No fresh item in this scan has an authoritative direct application email. Therefore no Hostinger first-contact email was sent. This is intentional route integrity, not a lack of commercially useful opportunities.
 
 Canonical protocol: `project/HUMAN_REVIEW_HIGH_VALUE_PROTOCOL.md`  
 Machine-readable queue: `views/human-review-high-value.json`
