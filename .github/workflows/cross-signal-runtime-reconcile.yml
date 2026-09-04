@@ -5,8 +5,10 @@ on:
     paths:
       - "scripts/cross_signal_runtime_reconcile.py"
       - "scripts/radar_human_review_reconcile.py"
+      - "scripts/merge_human_review_pending.py"
       - ".github/workflows/cross-signal-runtime-reconcile.yml"
       - "runtime/cross-signal-trigger.json"
+      - "data/human-review-pending/**"
   workflow_dispatch:
 
 permissions:
@@ -29,6 +31,8 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      - name: Merge pending high-value human review records
+        run: python scripts/merge_human_review_pending.py
       - name: Reconcile cross-signal state
         run: python scripts/cross_signal_runtime_reconcile.py
       - name: Materialize high-value radar soft blocks
