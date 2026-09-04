@@ -1,11 +1,24 @@
 # VDS Command Center Task Bridge Protocol
 
-Version: 1.0
+Version: 1.1
 Status: production invariant
 
 ## Purpose
 
-The Command Center is an additive control plane around the existing VDS acquisition tasks. It MUST NOT replace, weaken, pause, reschedule or bypass the production discovery/sending architecture.
+The Command Center is an additive control plane around the simplified VDS acquisition architecture. It MUST NOT weaken, pause, bypass or replace independent discovery or the two active execution flows.
+
+## Production architecture
+
+- GitHub high-frequency discovery remains independent and always-on.
+- `LINKEDIN_HUNTER` -> **VDS Job Flow**: self-contained direct-job discovery/qualification/decision/application execution.
+- `UNIFIED_LOOP` -> **VDS Revenue Flow**: self-contained commercial/agency/EU/direct-buyer discovery/qualification/decision/outreach execution.
+- `AGENCY_RADAR` and the former Cross-Signal intermediate handoff are retired/disabled and MUST NOT be required for command execution.
+
+The execution model is intentionally short:
+
+`DISCOVERY -> QUALIFY/DECIDE -> SEND_NOW | MANUAL_APPLY | WAIT_RESEARCH | REJECT`
+
+No dashboard command may recreate a mandatory multi-worker handoff between discovery and send.
 
 ## Canonical files
 
@@ -17,35 +30,34 @@ The Command Center is an additive control plane around the existing VDS acquisit
 
 Exactly these production workers consume dashboard directives:
 
-- `AGENCY_RADAR` → VDS Agency + EU Signal Radar
-- `LINKEDIN_HUNTER` → VDS LinkedIn Job Hunter
-- `UNIFIED_LOOP` → VDS Unified Acquisition Loop
+- `LINKEDIN_HUNTER` → VDS Job Flow
+- `UNIFIED_LOOP` → VDS Revenue Flow
 
 ## Read order on every normal worker run
 
-1. Run the worker's existing mandatory reads and safety checks.
+1. Run the worker's minimal mandatory reads and hard safety checks.
 2. Read `command-center/commands/pending.json` if present.
 3. Read `command-center/commands/processed.json` if present.
 4. Select commands where:
    - `status == PENDING_TASK_BRIDGE`;
    - this worker ID appears in `target_workers`;
    - command is not expired;
-   - no receipt exists for the tuple `(command_id, worker_id)`.
-5. Consume selected commands oldest-first, without skipping the worker's normal cycle.
-6. Apply the directive only as an overlay to priorities/search scope/execution intent that the worker already owns.
-7. Re-run every existing gate before any state promotion or external provider action.
+   - no receipt exists for `(command_id, worker_id)`.
+5. Consume selected commands oldest-first without skipping the ordinary end-to-end worker cycle.
+6. Apply the directive only as a priority/search/execution overlay inside the worker's existing authority.
+7. Re-run all hard gates before any external provider action.
 8. Append one receipt per consumed command and worker.
 
 ## Idempotency
 
-A receipt key is `command_id + worker_id`. If the same worker sees a command again after a successful or blocked receipt, it MUST NOT execute it again.
+A receipt key is `command_id + worker_id`. A worker that already has a receipt for a command MUST NOT execute it again.
 
 Receipt schema:
 
 ```json
 {
   "command_id": "CMD-...",
-  "worker_id": "AGENCY_RADAR",
+  "worker_id": "LINKEDIN_HUNTER|UNIFIED_LOOP",
   "consumed_at": "ISO-8601 Europe/Madrid",
   "result": "APPLIED|NO_ACTION|BLOCKED|EXPIRED|REVIEW_REQUIRED",
   "summary": "short factual result",
@@ -56,46 +68,42 @@ Receipt schema:
 }
 ```
 
-`external_send_count` and `provider_uids` are evidence fields only. A receipt NEVER authorizes or proves a send without the normal provider verification evidence.
+`external_send_count` and `provider_uids` are evidence fields only. A receipt NEVER authorizes or proves a send without normal provider verification.
 
 ## Routing
 
-The AI router assigns `target_workers` deterministically:
+- job/direct-job/vacancy/application search or send → `LINKEDIN_HUNTER`
+- agency/white-label/EU-project/WPO/direct-buyer/commercial search or send → `UNIFIED_LOOP`
+- broad acquisition priority/refresh → both active workers
 
-- job/direct-job search or job send → `LINKEDIN_HUNTER`
-- agency, white-label, EU-project, WPO/direct-buyer research → `AGENCY_RADAR`
-- commercial READY send/priority directives → `UNIFIED_LOOP`
-- broad acquisition priority/refresh directives → all relevant workers
+Never target retired `AGENCY_RADAR`.
 
-If routing is ambiguous, target all relevant read/analysis workers but do not broaden external-send authority.
-
-## Non-bypass invariants
+## Hard non-bypass invariants
 
 No dashboard command may override:
 
-- global organization first-contact dedup;
-- provider suppression/history;
-- active reservation/lease rules;
-- exact authoritative route/recipient requirements;
-- freshness/current-demand checks;
-- geography/remote/legal/channel compatibility;
+- organization-level first-contact dedup and suppression;
+- active reservation rules;
+- current/fresh need verification;
 - truthful VDS fit;
-- manual-route preservation;
-- sending window;
+- authoritative route/recipient requirements;
+- legal/channel compatibility and opt-out/prohibition;
+- send window;
 - Hostinger Sent verification;
-- hard opt-out/prohibition;
-- maximum one eligible follow-up.
+- manual-route preservation;
+- maximum one eligible follow-up;
+- ambiguous-delivery no-blind-resend rule.
 
-A directive asking to lower quality, ignore dedup, guess contacts, bypass a route, resend ambiguous delivery, or activate another sender MUST be recorded as `REVIEW_REQUIRED` or `BLOCKED` and not executed.
+Missing nonessential metadata, lack of explicit freelance wording, or obsolete internal intermediate-state labels are NOT independent hard blockers.
 
 ## Availability invariant
 
-Command consumption is subordinate to the existing worker mission. Failure to read, parse or write Command Center files MUST NOT stop normal discovery, qualification, reply monitoring or already-authorized production execution. Persist the bridge error when possible and continue the normal cycle safely.
+Command handling is subordinate to the worker's ordinary mission. Failure to read, parse or write Command Center files MUST NOT stop discovery, qualification, reply monitoring or authorized execution. Persist the bridge error when possible and continue safely.
 
 ## Concurrency
 
-Before updating `processed.json`, refetch its latest SHA and merge the new receipt into the existing array. Never replace unrelated receipts. Retry a SHA conflict by refetching/merging; do not hold or pause the acquisition engine.
+Before updating `processed.json`, refetch latest state and merge the new receipt without replacing unrelated receipts. Retry conflicts by refetching/merging. Do not pause the acquisition engine.
 
 ## Retention
 
-Pending commands have a default TTL of 24 hours unless the router assigns a shorter explicit expiry. Completed/expired commands can remain in the bounded pending history; workers rely on receipts + expiry, not destructive queue removal, which avoids race conditions between workers.
+Pending commands have a default TTL of 24 hours unless the router assigns a shorter explicit expiry. Completed/expired commands may remain in bounded history; workers rely on receipts + expiry rather than destructive removal.
