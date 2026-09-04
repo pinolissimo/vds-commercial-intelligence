@@ -66,60 +66,32 @@ def parse_date(value):
 
 
 CITY_MAP = {
-    # Spain
-    "barcelona": ("Spain", "Cataluña", "Barcelona"),
-    "sitges": ("Spain", "Cataluña", "Barcelona"),
-    "girona": ("Spain", "Cataluña", "Girona"),
-    "tarragona": ("Spain", "Cataluña", "Tarragona"),
-    "lleida": ("Spain", "Cataluña", "Lleida"),
-    "madrid": ("Spain", "Comunidad de Madrid", "Madrid"),
-    "valencia": ("Spain", "Comunitat Valenciana", "Valencia"),
-    "alicante": ("Spain", "Comunitat Valenciana", "Alicante"),
-    "castellón": ("Spain", "Comunitat Valenciana", "Castellón"),
-    "bilbao": ("Spain", "País Vasco", "Bizkaia"),
-    "san sebastián": ("Spain", "País Vasco", "Gipuzkoa"),
-    "vitoria": ("Spain", "País Vasco", "Álava"),
-    "sevilla": ("Spain", "Andalucía", "Sevilla"),
-    "málaga": ("Spain", "Andalucía", "Málaga"),
-    "malaga": ("Spain", "Andalucía", "Málaga"),
-    "granada": ("Spain", "Andalucía", "Granada"),
-    "cádiz": ("Spain", "Andalucía", "Cádiz"),
-    "zaragoza": ("Spain", "Aragón", "Zaragoza"),
-    "murcia": ("Spain", "Región de Murcia", "Murcia"),
-    "palma": ("Spain", "Illes Balears", "Illes Balears"),
-    "las palmas": ("Spain", "Canarias", "Las Palmas"),
-    "santa cruz de tenerife": ("Spain", "Canarias", "Santa Cruz de Tenerife"),
-    "a coruña": ("Spain", "Galicia", "A Coruña"),
-    "vigo": ("Spain", "Galicia", "Pontevedra"),
-    "oviedo": ("Spain", "Asturias", "Asturias"),
-    "santander": ("Spain", "Cantabria", "Cantabria"),
-    # Italy
-    "milano": ("Italy", "Lombardia", "Milano"),
-    "milan": ("Italy", "Lombardia", "Milano"),
-    "bergamo": ("Italy", "Lombardia", "Bergamo"),
-    "brescia": ("Italy", "Lombardia", "Brescia"),
-    "monza": ("Italy", "Lombardia", "Monza e Brianza"),
-    "torino": ("Italy", "Piemonte", "Torino"),
-    "turin": ("Italy", "Piemonte", "Torino"),
-    "bologna": ("Italy", "Emilia-Romagna", "Bologna"),
-    "modena": ("Italy", "Emilia-Romagna", "Modena"),
-    "parma": ("Italy", "Emilia-Romagna", "Parma"),
-    "roma": ("Italy", "Lazio", "Roma"),
-    "rome": ("Italy", "Lazio", "Roma"),
-    "firenze": ("Italy", "Toscana", "Firenze"),
-    "florence": ("Italy", "Toscana", "Firenze"),
-    "pisa": ("Italy", "Toscana", "Pisa"),
-    "napoli": ("Italy", "Campania", "Napoli"),
-    "naples": ("Italy", "Campania", "Napoli"),
-    "bari": ("Italy", "Puglia", "Bari"),
-    "genova": ("Italy", "Liguria", "Genova"),
-    "genoa": ("Italy", "Liguria", "Genova"),
-    "palermo": ("Italy", "Sicilia", "Palermo"),
-    "catania": ("Italy", "Sicilia", "Catania"),
-    "venezia": ("Italy", "Veneto", "Venezia"),
-    "venice": ("Italy", "Veneto", "Venezia"),
-    "padova": ("Italy", "Veneto", "Padova"),
-    "verona": ("Italy", "Veneto", "Verona")
+    "barcelona": ("Spain", "Cataluña", "Barcelona"), "sitges": ("Spain", "Cataluña", "Barcelona"),
+    "girona": ("Spain", "Cataluña", "Girona"), "tarragona": ("Spain", "Cataluña", "Tarragona"),
+    "lleida": ("Spain", "Cataluña", "Lleida"), "madrid": ("Spain", "Comunidad de Madrid", "Madrid"),
+    "valencia": ("Spain", "Comunitat Valenciana", "Valencia"), "alicante": ("Spain", "Comunitat Valenciana", "Alicante"),
+    "castellón": ("Spain", "Comunitat Valenciana", "Castellón"), "bilbao": ("Spain", "País Vasco", "Bizkaia"),
+    "san sebastián": ("Spain", "País Vasco", "Gipuzkoa"), "vitoria": ("Spain", "País Vasco", "Álava"),
+    "sevilla": ("Spain", "Andalucía", "Sevilla"), "málaga": ("Spain", "Andalucía", "Málaga"),
+    "malaga": ("Spain", "Andalucía", "Málaga"), "granada": ("Spain", "Andalucía", "Granada"),
+    "cádiz": ("Spain", "Andalucía", "Cádiz"), "zaragoza": ("Spain", "Aragón", "Zaragoza"),
+    "murcia": ("Spain", "Región de Murcia", "Murcia"), "palma": ("Spain", "Illes Balears", "Illes Balears"),
+    "las palmas": ("Spain", "Canarias", "Las Palmas"), "santa cruz de tenerife": ("Spain", "Canarias", "Santa Cruz de Tenerife"),
+    "a coruña": ("Spain", "Galicia", "A Coruña"), "vigo": ("Spain", "Galicia", "Pontevedra"),
+    "oviedo": ("Spain", "Asturias", "Asturias"), "santander": ("Spain", "Cantabria", "Cantabria"),
+    "milano": ("Italy", "Lombardia", "Milano"), "milan": ("Italy", "Lombardia", "Milano"),
+    "bergamo": ("Italy", "Lombardia", "Bergamo"), "brescia": ("Italy", "Lombardia", "Brescia"),
+    "monza": ("Italy", "Lombardia", "Monza e Brianza"), "torino": ("Italy", "Piemonte", "Torino"),
+    "turin": ("Italy", "Piemonte", "Torino"), "bologna": ("Italy", "Emilia-Romagna", "Bologna"),
+    "modena": ("Italy", "Emilia-Romagna", "Modena"), "parma": ("Italy", "Emilia-Romagna", "Parma"),
+    "roma": ("Italy", "Lazio", "Roma"), "rome": ("Italy", "Lazio", "Roma"),
+    "firenze": ("Italy", "Toscana", "Firenze"), "florence": ("Italy", "Toscana", "Firenze"),
+    "pisa": ("Italy", "Toscana", "Pisa"), "napoli": ("Italy", "Campania", "Napoli"),
+    "naples": ("Italy", "Campania", "Napoli"), "bari": ("Italy", "Puglia", "Bari"),
+    "genova": ("Italy", "Liguria", "Genova"), "genoa": ("Italy", "Liguria", "Genova"),
+    "palermo": ("Italy", "Sicilia", "Palermo"), "catania": ("Italy", "Sicilia", "Catania"),
+    "venezia": ("Italy", "Veneto", "Venezia"), "venice": ("Italy", "Veneto", "Venezia"),
+    "padova": ("Italy", "Veneto", "Padova"), "verona": ("Italy", "Veneto", "Verona")
 }
 
 
@@ -154,26 +126,27 @@ def classify(signal, policy, now):
     geo_exclusions = hits(" ".join([location, title]), policy["hard_geo_exclusion_terms"])
     geo = geo_enrich(location, combined)
 
-    score = 15
-    score += min(45, len(role_hits) * 18)
-    score += min(24, len(skill_hits) * 4)
-    score += min(16, len(intent_hits) * 4)
+    # Discovery should favor recall. Final quality remains enforced downstream.
+    score = 10
+    score += min(56, len(role_hits) * 28)
+    score += min(25, len(skill_hits) * 5)
+    score += min(15, len(intent_hits) * 5)
     if geo["country"] in ("Spain", "Italy"):
-        score += 15
+        score += 20
     elif geo["country"] in ("EU_REMOTE", "WORLDWIDE_REMOTE"):
+        score += 15
+    elif signal.get("target_geo_bucket") in ("SPAIN", "ITALY", "EU_REMOTE", "WORLDWIDE_REMOTE", "EU_REMOTE_TO_VERIFY", "ITALY_OR_INCLUDES_ITALY", "SPAIN_OR_INCLUDES_SPAIN"):
         score += 10
-    elif signal.get("target_geo_bucket") in ("SPAIN", "ITALY", "EU_REMOTE", "WORLDWIDE_REMOTE"):
-        score += 8
 
     reasons = []
     if negative_hits:
-        score -= 55
+        score -= 60
         reasons.append("NEGATIVE_ROLE_TITLE")
-    if mismatch_hits and not role_hits:
-        score -= 30
+    if mismatch_hits:
+        score -= 35 if not role_hits else 20
         reasons.append("STACK_MISMATCH_TITLE")
     if geo_exclusions:
-        score -= 60
+        score -= 65
         reasons.append("HARD_GEO_EXCLUSION")
 
     pub = parse_date(signal.get("published_at"))
@@ -188,19 +161,26 @@ def classify(signal, policy, now):
             score -= 20
             reasons.append("AGING")
         elif age_days <= limits["preferred"]:
-            score += 8
+            score += 10
 
-    # Incidental-keyword guard: no title-role evidence means the body alone cannot produce AUTO_PROMOTE.
     incidental_only = not role_hits and bool(skill_hits)
     if incidental_only:
-        score = min(score, 59)
+        score = min(score, 49)
         reasons.append("INCIDENTAL_BODY_KEYWORDS_ONLY")
+
+    # A real target role with fresh evidence is review-worthy even when geography needs verification.
+    if role_hits and not negative_hits and not geo_exclusions and "STALE_OVER_MAX" not in reasons:
+        score = max(score, 54)
+    # A real target role plus Spain/Italy/EU-remote compatibility should reach promotion when fresh.
+    if role_hits and geo["country"] in ("Spain", "Italy", "EU_REMOTE", "WORLDWIDE_REMOTE") and not negative_hits and not geo_exclusions and "STALE_OVER_MAX" not in reasons:
+        score = max(score, 74)
 
     score = max(0, min(100, round(score, 1)))
     thresholds = policy["thresholds"]
-    if score >= thresholds["promote"] and not any(r in reasons for r in ["NEGATIVE_ROLE_TITLE", "HARD_GEO_EXCLUSION", "STALE_OVER_MAX"]):
+    hard_block = any(r in reasons for r in ["NEGATIVE_ROLE_TITLE", "HARD_GEO_EXCLUSION", "STALE_OVER_MAX"])
+    if score >= thresholds["promote"] and not hard_block:
         state = "SEMANTIC_PASS"
-    elif score >= thresholds["review"]:
+    elif score >= thresholds["review"] and not hard_block:
         state = "SEMANTIC_REVIEW"
     else:
         state = "SEMANTIC_REJECT"
@@ -230,7 +210,7 @@ def main():
     reject = sorted([x for x in rows if x["semantic_state"] == "SEMANTIC_REJECT"], key=lambda x: x["semantic_score"], reverse=True)
     stamp = now.replace(microsecond=0).isoformat().replace("+00:00", "Z")
     dump(OUT_PATH, {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "updated_at": stamp,
         "input_signal_count": len(rows),
         "semantic_pass_count": len(promote),
@@ -240,7 +220,7 @@ def main():
         "semantic_review": review[:300],
         "semantic_reject_sample": reject[:100]
     })
-    metrics = load(METRICS_PATH, {"schema_version": "1.0", "runs": 0, "total_input": 0, "total_pass": 0, "total_review": 0, "total_reject": 0})
+    metrics = load(METRICS_PATH, {"schema_version": "1.1", "runs": 0, "total_input": 0, "total_pass": 0, "total_review": 0, "total_reject": 0})
     metrics.update({
         "updated_at": stamp,
         "runs": int(metrics.get("runs", 0)) + 1,
