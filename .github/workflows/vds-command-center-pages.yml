@@ -44,6 +44,7 @@ jobs:
           set -euo pipefail
           test -s .pages/index.html
           test -s .pages/assets/app.css
+          test -s .pages/assets/command.css
           test -s .pages/assets/app.js
           test -s .pages/assets/fonts/dm-sans.woff2
           test -s .pages/assets/fonts/material-symbols-rounded.woff2
@@ -51,7 +52,9 @@ jobs:
           test ! -d .pages/api
           grep -q "api.github.com" .pages/index.html
           grep -q "sessionStorage" .pages/assets/app.js
+          grep -q "VDS Engine" .pages/index.html
           ! grep -R "OPENAI_API_KEY" .pages
+          ! grep -R "fonts.googleapis.com\|cdn.jsdelivr.net" .pages/index.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
