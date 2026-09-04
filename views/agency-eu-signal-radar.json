@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04T06:40:51Z",
+  "strategy": "AGENCY_EU_SIGNAL_RADAR_ADAPTIVE",
+  "capacity": {"exploitation_pct": 70, "exploration_pct": 20, "strategic_reserve_pct": 10},
+  "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
+  "signals": [
+    {
+      "canonical_identity_key": "org:ugeceagency.com",
+      "organization": "UGECE Agency",
+      "domain": "ugeceagency.com",
+      "country": "ES",
+      "region": "Cataluña",
+      "province": "Barcelona",
+      "city": "Barcelona",
+      "segment": "AGENCY_WHITE_LABEL",
+      "priority_tier": "HOT+",
+      "source_id": "public_linkedin_plus_official_site",
+      "source_urls": ["https://es.linkedin.com/company/ugece-agency", "https://ugeceagency.com/"],
+      "query_or_intent": "freelance wordpress seo recurrent agency Spain",
+      "evidence_timestamp": "2026-09-04T06:40:51Z",
+      "freshness": "CURRENT_PUBLIC_SIGNAL_RECHECKED",
+      "demand": "Explicit recurring freelance WordPress + technical SEO collaboration; maintenance, security, performance, incidents, service-page changes, Search Console and on-page technical SEO; remote; autónomo required.",
+      "route": {"type": "EMAIL", "recipient": "hello@ugeceagency.com", "authority": "LINKEDIN_JOB_SIGNAL_PLUS_OFFICIAL_SITE_EMAIL"},
+      "vds_fit_hints": ["WordPress", "maintenance", "performance", "technical SEO", "security awareness", "responsive/content changes", "ongoing support"],
+      "recurring_economic_potential": "HIGH_RECURRING_HOURLY_COLLABORATION",
+      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_AS_OF_2026-09-04T06:30:00Z",
+      "missing_gates": ["FINAL_CURRENT_OPENING_RECHECK_BY_DOWNSTREAM_SENDER", "FINAL_GLOBAL_INDEX_RECHECK", "OWNER_APPROVED_RATE_IF_NUMERIC_RATE_REQUIRED"],
+      "recommended_downstream_executor": "VDS Unified Acquisition Loop",
+      "recommended_next_action": "QUEUE_FOR_FINAL_QUALIFICATION",
+      "confidence": "HIGH"
+    },
+    {
+      "canonical_identity_key": "org:ieros.it",
+      "organization": "Ieros",
+      "domain": "ieros.it",
+      "country": "IT",
+      "region": "Lazio",
+      "province": "Roma",
+      "city": "Roma",
+      "segment": "AGENCY_WHITE_LABEL",
+      "priority_tier": "WARM",
+      "source_id": "official_careers_page",
+      "source_urls": ["https://ieros.it/lavoro", "https://ieros.it/"],
+      "query_or_intent": "agency partner network freelance web marketing Italy",
+      "evidence_timestamp": "2026-09-04T06:40:51Z",
+      "freshness": "OFFICIAL_PAGE_CURRENTLY_ACCESSIBLE",
+      "demand": "Official careers/partner page seeks experienced freelance consultants/designers and explicitly states it is looking for small/medium web agencies and SEO consultants to expand its partner network across Italy.",
+      "route": {"type": "OFFICIAL_PAGE_EMAIL_OR_CONTACT", "recipient": null, "authority": "OFFICIAL_CAREERS_PAGE"},
+      "vds_fit_hints": ["web agency partnership", "SEO/web marketing adjacency", "UX/UI", "AI/technology", "cross-disciplinary technical profile"],
+      "recurring_economic_potential": "MEDIUM_TO_HIGH_PARTNER_NETWORK",
+      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_AS_OF_2026-09-04T06:30:00Z",
+      "missing_gates": ["EXACT_AUTHORITATIVE_COLLABORATION_EMAIL_OR_ROUTE", "ROLE_FIT_REFINEMENT"],
+      "recommended_downstream_executor": "VDS Unified Acquisition Loop",
+      "recommended_next_action": "RESEARCH_RECIPIENT",
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "canonical_identity_key": "org:summummarketing.es",
+      "organization": "Summum Marketing",
+      "domain": "summummarketing.es",
+      "country": "ES",
+      "region": "Castilla y León",
+      "province": "Valladolid",
+      "city": "Valladolid",
+      "segment": "AGENCY_WHITE_LABEL",
+      "priority_tier": "HISTORY_ENRICHED",
+      "source_id": "official_contact_geo_enrichment",
+      "source_urls": ["https://summummarketing.es/contacto/"],
+      "query_or_intent": "territory enrichment",
+      "evidence_timestamp": "2026-09-04T06:40:51Z",
+      "freshness": "CURRENT_OFFICIAL_SITE",
+      "demand": "Existing agency/talent signal retained for intelligence only.",
+      "route": {"type": "EMAIL", "recipient": "talento@summummarketing.es", "authority": "OFFICIAL_CONTACT_PAGE"},
+      "vds_fit_hints": ["web/ecommerce", "digital agency", "remote work"],
+      "recurring_economic_potential": "HIGH_AGENCY_CAPACITY",
+      "global_contact_state": "ALREADY_CONTACTED_PROVIDER_HISTORY",
+      "missing_gates": [],
+      "recommended_downstream_executor": "NONE_NEW_FIRST_CONTACT",
+      "recommended_next_action": "DO_NOT_CONTACT_DUPLICATE",
+      "confidence": "HIGH",
+      "history_note": "Domain is present in provider-contact-suppression-index; prior cross-signal UNCONTACTED label is stale and must be corrected downstream."
+    }
+  ],
+  "eu_project_lane": {
+    "new_hot_candidates": 0,
+    "notes": [
+      "Current search found active/recent funded-project signals, but no new candidate met the stricter web/dissemination ownership + procurement/outsourcing + route threshold in this run.",
+      "NBS360 already has an official website, reducing immediate website-build value; no promotion.",
+      "URWAN is in transfer phase with an established project website; no fresh web-build need promoted."
+    ]
+  },
+  "territory_enrichment_completed": [
+    {"canonical_identity_key": "org:summummarketing.es", "country": "ES", "region": "Castilla y León", "province": "Valladolid", "city": "Valladolid", "evidence": "https://summummarketing.es/contacto/"}
+  ],
+  "cross_signal_merge": {
+    "state": "RADAR_IS_CANONICAL_INPUT_FOR_NEXT_CROSS_SIGNAL_RUN",
+    "new_candidates": ["org:ugeceagency.com", "org:ieros.it"],
+    "history_correction_required": ["org:summummarketing.es"]
+  }
+}
