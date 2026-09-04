@@ -48,6 +48,7 @@ jobs:
           test -s .pages/assets/export.css
           test -s .pages/assets/app.js
           test -s .pages/assets/live-export.js
+          test -s .pages/assets/executable-ready.js
           test -s .pages/assets/secure-onboarding.js
           test -s .pages/assets/sodium-bootstrap.js
           test -s .pages/assets/fonts/dm-sans.woff2
@@ -66,6 +67,8 @@ jobs:
           grep -q "data-export-format=\"xlsx\"" .pages/assets/live-export.js
           grep -q "data-export-format=\"pdf\"" .pages/assets/live-export.js
           grep -q "assets/live-export.js" .pages/index.html
+          grep -q "assets/executable-ready.js" .pages/index.html
+          grep -q "acquisition-performance.json" .pages/assets/executable-ready.js
           grep -q "assets/export.css" .pages/index.html
           grep -q "VDS Engine" .pages/index.html
           grep -q "assets/secure-onboarding.js" .pages/index.html
@@ -76,6 +79,7 @@ jobs:
           grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
           node --check .pages/assets/app.js
           node --check .pages/assets/live-export.js
+          node --check .pages/assets/executable-ready.js
           node --check .pages/assets/secure-onboarding.js
           ! grep -R -E "sk-[A-Za-z0-9_-]{20,}" .pages
           ! grep -R "fonts.googleapis.com\|cdn.jsdelivr.net" .pages/index.html
