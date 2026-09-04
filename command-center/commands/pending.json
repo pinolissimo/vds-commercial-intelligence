@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "updated_at": "2026-09-04T14:42:31+02:00",
+  "updated_at": "2026-09-04T15:47:00+02:00",
   "policy": "Existing production tasks consume commands as non-bypassing overlays. Normal discovery and execution continue even if the bridge is unavailable.",
   "commands": [
     {
@@ -15,13 +15,7 @@
       "intent": "verify_and_remediate_operational_blocks",
       "summary": "Verifica operativa del motore e diagnosi/rimozione dei soli blocchi tecnici o di coda, senza modificare architettura, soglie qualitative o gate di sicurezza.",
       "parameters": {
-        "scope": [
-          "worker_health",
-          "queue_freshness",
-          "pipeline_progression",
-          "provider_connectivity",
-          "route_verification"
-        ],
+        "scope": ["worker_health","queue_freshness","pipeline_progression","provider_connectivity","route_verification"],
         "remediation": "only_non_policy_operational_blocks",
         "preserve_production_core": true,
         "preserve_manual_routes": true,
@@ -34,16 +28,62 @@
           "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION"
         }
       },
-      "target_workers": [
-        "AGENCY_RADAR",
-        "LINKEDIN_HUNTER",
-        "UNIFIED_LOOP"
-      ],
+      "target_workers": ["AGENCY_RADAR","LINKEDIN_HUNTER","UNIFIED_LOOP"],
       "requires_task_bridge": true,
       "requires_existing_gates": true,
       "risk": "MEDIUM",
       "owner_confirmation_required": false,
       "answer": "Avvio verifica completa di motore, code e connettività; eventuali blocchi solo operativi saranno rimossi mantenendo invariati tutti i gate e le soglie.",
+      "production_core_modified": false,
+      "normal_cycle_must_continue": true,
+      "execution_policy": "EXISTING_TASKS_AND_GATES_REMAIN_AUTHORITATIVE",
+      "status": "PENDING_TASK_BRIDGE"
+    },
+    {
+      "schema_version": "1.2",
+      "command_id": "CMD-TURBO-20260904T154700-01",
+      "created_at": "2026-09-04T15:47:00+02:00",
+      "expires_at": "2026-09-05T15:47:00+02:00",
+      "source": "OWNER_CHAT_AUTHORIZATION",
+      "model": "GPT-5.6-Sol",
+      "owner_command": "Accelerare drasticamente il motore senza abbassare la qualità: più HOT devono diventare READY e tutti i READY eseguibili devono essere inviati nello stesso ciclo.",
+      "command_class": "PRIORITY_DIRECTIVE",
+      "intent": "middle_funnel_turbo_quality_preserved",
+      "summary": "Modalità turbo sul collo di bottiglia HOT→READY: meno ricerca ridondante, più chiusura route/recipient/freshness/identity e conversione same-run; nessun gate viene abbassato.",
+      "parameters": {
+        "mode": "MIDDLE_FUNNEL_TURBO",
+        "capacity": {"closure_and_exploitation_pct":85,"exploration_pct":10,"strategic_reserve_pct":5},
+        "closure_targets": {
+          "hot_blockers_inspected_per_closure_cycle":20,
+          "semantic_pass_deep_checked_per_sender_cycle":25,
+          "process_all_direct_authoritative_email_candidates":true,
+          "same_run_ready_certification":true,
+          "same_run_send_after_certification":true,
+          "send_all_executable_ready":true
+        },
+        "priority_order": [
+          "fresh_direct_email_route_24h",
+          "fresh_direct_email_route_7d",
+          "HOT_PLUS_route_recipient_closure",
+          "HOT_route_recipient_closure",
+          "manual_route_preserve_and_alert",
+          "new_discovery_only_after_closure_capacity"
+        ],
+        "preserve_quality_thresholds": true,
+        "preserve_global_dedup": true,
+        "preserve_route_authority": true,
+        "preserve_freshness": true,
+        "preserve_truthful_fit": true,
+        "preserve_legal_channel_gates": true,
+        "deepseek_shadow_only": true,
+        "no_new_sender": true
+      },
+      "target_workers": ["AGENCY_RADAR","LINKEDIN_HUNTER","UNIFIED_LOOP"],
+      "requires_task_bridge": true,
+      "requires_existing_gates": true,
+      "risk": "LOW",
+      "owner_confirmation_required": false,
+      "answer": "Attivata priorità turbo sul middle funnel. Aumenta la capacità di chiusura e same-run conversion, non la permissività dei gate.",
       "production_core_modified": false,
       "normal_cycle_must_continue": true,
       "execution_policy": "EXISTING_TASKS_AND_GATES_REMAIN_AUTHORITATIVE",
