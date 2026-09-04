@@ -1,10 +1,36 @@
 {
-  "schema_version": "1.2",
-  "updated_at": "2026-09-04T08:04:00Z",
+  "schema_version": "1.3",
+  "updated_at": "2026-09-04T09:05:00Z",
   "strategy": "AGENCY_EU_SIGNAL_RADAR_MIDDLE_FUNNEL_CLOSURE_PLUS_HUMAN_REVIEW",
   "capacity": {"exploitation_pct": 70, "exploration_pct": 20, "strategic_reserve_pct": 10},
-  "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
+  "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_AND_MANUAL_HIGH_VALUE_EXECUTION",
   "signals": [
+    {
+      "canonical_identity_key": "org:adviva.it",
+      "organization": "Adviva",
+      "domain": "adviva.it",
+      "country": "IT",
+      "region": "Veneto",
+      "province": "Venezia",
+      "city": "Campolongo Maggiore",
+      "segment": "AGENCY_WHITE_LABEL",
+      "priority_tier": "HOT+",
+      "source_id": "official_collaboration_page_plus_official_contact",
+      "source_urls": ["https://www.adviva.it/job/", "https://www.adviva.it/contatti/"],
+      "query_or_intent": "continuous freelance agency WordPress frontend backend Italy",
+      "evidence_timestamp": "2026-09-04T09:05:00Z",
+      "freshness": "CURRENT_OFFICIAL_PAGES_RECHECKED_2026-09-04",
+      "demand": "Official Lavora con noi page explicitly states continuous collaborations with external partners and freelancers for WordPress frontend/backend, PrestaShop frontend/backend and System Administration, including spontaneous applications for Freelance and Agencies.",
+      "route": {"type": "OFFICIAL_APPLICATION_FORM", "recipient": null, "authority": "OFFICIAL_FREELANCE_AGENCY_APPLICATION_FORM", "source": "https://www.adviva.it/job/"},
+      "vds_fit_hints": ["WordPress frontend", "WordPress backend", "frontend", "system administration", "web agency production", "external freelance", "agency collaboration", "recurring collaboration"],
+      "recurring_economic_potential": "VERY_HIGH_EXPLICIT_CONTINUOUS_EXTERNAL_COLLABORATION",
+      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_THROUGH_UID_278",
+      "missing_gates": ["MANUAL_FORM_SUBMISSION_REQUIRED", "OWNER_ATTACHMENT_APPROVAL_IF_FORM_REQUIRES_CV_UPLOAD"],
+      "recommended_downstream_executor": "OWNER_MANUAL_ROUTE",
+      "recommended_next_action": "MANUAL_ROUTE_REQUIRED",
+      "confidence": "VERY_HIGH",
+      "closure_note": "Near-ideal VDS agency-partner signal. Use only the dedicated official freelance/agency application form. Do not substitute the general adviva@wmr.it contact route."
+    },
     {
       "canonical_identity_key": "org:alpacode.it",
       "organization": "Alpacode",
@@ -22,14 +48,40 @@
       "freshness": "CURRENT_OFFICIAL_PAGE_RECHECKED_2026-09-04",
       "demand": "Official collaboration page states collaborations are always open for remote task/project work throughout Italy, explicitly including WordPress developers. It offers both project work inside Alpacode's pipeline and P.IVA-to-P.IVA subcontracts/outsourcing, with continued work after successful delivery.",
       "route": {"type": "OFFICIAL_APPLICATION_FORM", "recipient": null, "authority": "OFFICIAL_COLLABORATION_FORM", "source": "https://alpacode.it/lavora-con-noi/"},
-      "vds_fit_hints": ["WordPress", "WooCommerce", "UI/UX", "performance", "clean implementation", "remote project work", "subcontracting", "outsourcing", "P.IVA collaboration", "recurring delivery"],
+      "vds_fit_hints": ["WordPress", "WooCommerce", "UI/UX", "performance", "remote project work", "subcontracting", "outsourcing", "P.IVA collaboration", "recurring delivery"],
       "recurring_economic_potential": "VERY_HIGH_EXPLICIT_RECURRING_OUTSOURCING",
-      "global_contact_state": "NO_MATCH_FOUND_IN_PROVIDER_SUPPRESSION_INDEX_OR_REPOSITORY_SEARCH_AS_OF_2026-09-04",
-      "missing_gates": ["MANUAL_FORM_SUBMISSION_REQUIRED", "FINAL_GLOBAL_INDEX_RECHECK_BY_DOWNSTREAM_OR_OWNER"],
+      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_THROUGH_UID_278",
+      "missing_gates": ["MANUAL_FORM_SUBMISSION_REQUIRED", "FINAL_GLOBAL_INDEX_RECHECK_BY_OWNER"],
       "recommended_downstream_executor": "OWNER_MANUAL_ROUTE",
       "recommended_next_action": "MANUAL_ROUTE_REQUIRED",
       "confidence": "VERY_HIGH",
-      "closure_note": "Do not substitute a generic email: the official page provides a dedicated candidacy form and explicitly describes autonomous/outsourcing relationships. Preserve as high-value human review/manual apply."
+      "closure_note": "Dedicated form; preserve as high-value manual apply."
+    },
+    {
+      "canonical_identity_key": "org:krossup.it",
+      "organization": "KrossUp Studio",
+      "domain": "krossup.it",
+      "country": "IT",
+      "region": "Puglia",
+      "province": "Bari",
+      "city": "Bari",
+      "segment": "AGENCY_WHITE_LABEL",
+      "priority_tier": "HOT",
+      "source_id": "official_careers_plus_official_studio",
+      "source_urls": ["https://www.krossup.it/lavora-con-noi/", "https://www.krossup.it/studio/"],
+      "query_or_intent": "agency collaborations frontend backend web development Italy",
+      "evidence_timestamp": "2026-09-04T09:05:00Z",
+      "freshness": "CURRENT_OFFICIAL_PAGES_RECHECKED_2026-09-04",
+      "demand": "Official careers page states it evaluates applications and collaborations for front-end and back-end development. Official studio pages confirm web development, ecommerce, maintenance, performance and technical production capabilities in Bari.",
+      "route": {"type": "OFFICIAL_APPLICATION_FORM", "recipient": null, "authority": "OFFICIAL_CAREERS_FORM", "source": "https://www.krossup.it/lavora-con-noi/"},
+      "vds_fit_hints": ["frontend", "backend", "web development", "ecommerce", "maintenance", "performance", "UX/UI", "agency production"],
+      "recurring_economic_potential": "HIGH_IF_EXTERNAL_COLLABORATION_MATCH_CONFIRMED",
+      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_THROUGH_UID_278",
+      "missing_gates": ["MANUAL_FORM_SUBMISSION_REQUIRED", "EXTERNAL_FREELANCE_MODEL_NOT_EXPLICIT", "OWNER_ATTACHMENT_APPROVAL_IF_CV_UPLOAD_REQUIRED"],
+      "recommended_downstream_executor": "OWNER_HUMAN_REVIEW_ONLY",
+      "recommended_next_action": "MANUAL_ROUTE_REQUIRED",
+      "confidence": "HIGH",
+      "closure_note": "Official site explicitly says collaborations, but does not explicitly state freelance/agency contract model. Preserve for human review and use only the careers form if owner chooses to proceed."
     },
     {
       "canonical_identity_key": "org:ieros.it",
@@ -40,22 +92,22 @@
       "province": "Roma",
       "city": "Roma",
       "segment": "AGENCY_WHITE_LABEL",
-      "priority_tier": "HOT+",
+      "priority_tier": "HOT+_CONTACTED",
       "source_id": "official_careers_plus_official_contact",
       "source_urls": ["https://ieros.it/lavoro", "https://ieros.it/contatti", "https://ieros.it/"],
       "query_or_intent": "agency partner network freelance web marketing Italy",
-      "evidence_timestamp": "2026-09-04T08:04:00Z",
+      "evidence_timestamp": "2026-09-04T09:05:00Z",
       "freshness": "CURRENT_OFFICIAL_PAGES_ACCESSIBLE_2026-09-04",
       "demand": "Official Lavora con noi page explicitly seeks experienced freelance consultants/designers and small/medium web agencies/SEO consultants for the partner network.",
       "route": {"type": "EMAIL", "recipient": "info@ieros.it", "authority": "OFFICIAL_CONTACT_PAGE_REFERENCED_BY_OFFICIAL_LAVORA_CON_NOI", "source": "https://ieros.it/contatti"},
-      "vds_fit_hints": ["web agency partnership", "WordPress/web services adjacency", "SEO/web marketing adjacency", "UX/UI", "AI/technology", "cross-disciplinary technical profile"],
+      "vds_fit_hints": ["web agency partnership", "WordPress/web services adjacency", "SEO/web marketing adjacency", "UX/UI", "cross-disciplinary technical profile"],
       "recurring_economic_potential": "MEDIUM_TO_HIGH_PARTNER_NETWORK",
-      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_AS_OF_2026-09-04T06:30:00Z",
+      "global_contact_state": "CONTACTED_HOSTINGER_SENT_UID_276_2026-09-04T08:15:48Z",
       "missing_gates": [],
-      "recommended_downstream_executor": "VDS Unified Acquisition Loop",
-      "recommended_next_action": "AUTO_EMAIL_NOW",
-      "confidence": "HIGH",
-      "closure_note": "Middle-funnel closure remains complete; downstream sender must execute normal JIT dedup/reservation/provider verification."
+      "recommended_downstream_executor": "NONE_NEW_FIRST_CONTACT",
+      "recommended_next_action": "WAIT_FOR_REPLY",
+      "confidence": "VERY_HIGH",
+      "closure_note": "Provider/global organization index now proves first contact was sent. New FIRST_CONTACT is blocked; preserve only as WAIT_FOR_REPLY/eligible future continuation under policy."
     },
     {
       "canonical_identity_key": "org:ugeceagency.com",
@@ -72,16 +124,16 @@
       "query_or_intent": "freelance wordpress seo recurrent agency Spain",
       "evidence_timestamp": "2026-09-04T08:04:00Z",
       "freshness": "COMPANY_AND_EMAIL_CURRENT_BUT_SPECIFIC_FREELANCE_CALL_APPROX_6_MONTHS_OLD",
-      "demand": "Historical recurring freelance WordPress/technical-SEO call remains strong fit evidence; current official site is active and exposes hello@ugeceagency.com, but current opening is not independently proven.",
+      "demand": "Historical recurring freelance WordPress/technical-SEO call remains strong fit evidence; current official site is active but current opening is not independently proven.",
       "route": {"type": "EMAIL", "recipient": "hello@ugeceagency.com", "authority": "CURRENT_OFFICIAL_SITE_EMAIL_NOT_CURRENT_APPLICATION_AUTHORITY", "source": "https://ugeceagency.com/"},
-      "vds_fit_hints": ["WordPress", "maintenance", "performance", "technical SEO", "security awareness", "responsive/content changes", "ongoing support"],
+      "vds_fit_hints": ["WordPress", "maintenance", "performance", "technical SEO", "ongoing support"],
       "recurring_economic_potential": "HIGH_IF_RECURRING_MODEL_STILL_ACTIVE",
-      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_AS_OF_2026-09-04T06:30:00Z",
+      "global_contact_state": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_THROUGH_UID_278",
       "missing_gates": ["CURRENT_OPENING_NOT_PROVEN"],
       "recommended_downstream_executor": "OWNER_HUMAN_REVIEW_ONLY",
       "recommended_next_action": "HOLD_STALE_OR_UNCERTAIN",
       "confidence": "HIGH_ON_HISTORICAL_SIGNAL_LOW_ON_CURRENT_OPENING",
-      "closure_note": "Preserve for HISTORICAL_RECURRING_SIGNAL human review; do not auto-send from stale demand."
+      "closure_note": "Preserve for historical recurring signal review; do not auto-send from stale demand."
     },
     {
       "canonical_identity_key": "org:summummarketing.es",
@@ -102,7 +154,7 @@
       "route": {"type": "EMAIL", "recipient": "talento@summummarketing.es", "authority": "OFFICIAL_CONTACT_PAGE"},
       "vds_fit_hints": ["web/ecommerce", "digital agency"],
       "recurring_economic_potential": "LOW_FOR_VDS_EXTERNAL_PRODUCTION_UNDER_CURRENT_MODEL",
-      "global_contact_state": "PROVIDER_HISTORY_CONFLICT_REMAINS_UNRESOLVED_BUT_NO_SEND_NEEDED_DUE_CURRENT_MODEL_MISMATCH",
+      "global_contact_state": "HISTORY_CONFLICT_REMAINS_UNRESOLVED_BUT_NO_SEND_NEEDED_DUE_CURRENT_MODEL_MISMATCH",
       "missing_gates": [],
       "recommended_downstream_executor": "NONE_NEW_FIRST_CONTACT",
       "recommended_next_action": "HOLD_STALE_OR_UNCERTAIN",
@@ -110,23 +162,24 @@
     }
   ],
   "mission_execution": {
-    "missions_sampled": ["Italy|Lombardia|Milano|AGENCY_WHITE_LABEL", "Spain|Cataluña|Barcelona|AGENCY_WHITE_LABEL"],
-    "new_promotable_canonical_organizations": 1,
-    "new_high_value_manual_routes": 1,
-    "notes": ["Alpacode is a materially new exact-fit recurring outsourcing signal from an official current page.", "Other sampled results were internal roles, generic supplier pages, or lower-fit freelance opportunities and were not promoted.", "No quality gate was weakened."]
+    "missions_sampled": ["Italy|Lazio|Roma|AGENCY_WHITE_LABEL", "Italy|Piemonte|Torino|AGENCY_WHITE_LABEL", "Spain|Cataluña|Barcelona|AGENCY_WHITE_LABEL", "Spain|Comunitat Valenciana|Valencia|AGENCY_WHITE_LABEL"],
+    "new_promotable_canonical_organizations": 2,
+    "new_high_value_manual_routes": 2,
+    "notes": ["Adviva is a new exact-fit continuous external WordPress/freelance/agency collaboration signal from an official page.", "KrossUp is a current official development-collaboration signal preserved as human-review manual route because freelance/agency contract model is not explicit.", "A Torino search surfaced TP with explicit no-freelance wording; it was hard-excluded and not preserved.", "No quality or dedup gate was weakened."]
   },
   "eu_project_lane": {"new_hot_candidates": 0, "notes": ["No newly verified EU-project buyer reached the current threshold in this cycle."]},
   "territory_enrichment_completed": [
-    {"canonical_identity_key": "org:ieros.it", "country": "IT", "region": "Lazio", "province": "Roma", "city": "Roma", "evidence": "https://ieros.it/contatti"}
+    {"canonical_identity_key": "org:adviva.it", "country": "IT", "region": "Veneto", "province": "Venezia", "city": "Campolongo Maggiore", "evidence": "https://www.adviva.it/contatti/"},
+    {"canonical_identity_key": "org:krossup.it", "country": "IT", "region": "Puglia", "province": "Bari", "city": "Bari", "evidence": "https://www.krossup.it/studio/"}
   ],
   "human_review_recovery": {
-    "material_candidates": ["org:alpacode.it", "org:ugeceagency.com"],
-    "hard_exclusions_not_recovered": ["org:summummarketing.es"],
+    "material_candidates": ["org:adviva.it", "org:krossup.it", "org:alpacode.it", "org:ugeceagency.com"],
+    "hard_exclusions_not_recovered": ["org:summummarketing.es", "org:tpdesign.it"],
     "principle": "Preservation only; no route/dedup/legal constraint is bypassed."
   },
   "cross_signal_merge": {
     "state": "RADAR_UPDATED_FOR_IMMEDIATE_NEXT_CROSS_SIGNAL_RUN",
-    "material_changes": ["org:alpacode.it NEW_HOTPLUS_MANUAL_ROUTE", "org:ieros.it REMAINS_AUTO_EMAIL_NOW", "org:ugeceagency.com PRESERVE_FOR_HISTORICAL_RECURRING_SIGNAL_REVIEW"],
-    "history_correction_required": []
+    "material_changes": ["org:adviva.it NEW_HOTPLUS_MANUAL_ROUTE", "org:krossup.it NEW_HOT_MANUAL_ROUTE_REVIEW", "org:ieros.it CONTACTED_UID_276_WAIT_FOR_REPLY"],
+    "history_correction_required": ["org:ieros.it AUTO_EMAIL_NOW -> WAIT_FOR_REPLY"]
   }
 }
