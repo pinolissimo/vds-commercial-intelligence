@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "scripts/cross_signal_runtime_reconcile.py"
+      - "scripts/radar_human_review_reconcile.py"
       - ".github/workflows/cross-signal-runtime-reconcile.yml"
       - "runtime/cross-signal-trigger.json"
   workflow_dispatch:
@@ -30,6 +31,8 @@ jobs:
           python-version: "3.12"
       - name: Reconcile cross-signal state
         run: python scripts/cross_signal_runtime_reconcile.py
+      - name: Materialize high-value radar soft blocks
+        run: python scripts/radar_human_review_reconcile.py
       - name: Commit state
         shell: bash
         run: |
