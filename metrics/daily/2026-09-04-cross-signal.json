@@ -1,43 +1,46 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T06:44:42Z",
+  "updated_at": "2026-09-04T07:07:00Z",
   "counted_run_ids": [
     "cross-signal-20260904T061252Z",
-    "cross-signal-20260904T064442Z"
+    "cross-signal-20260904T064442Z",
+    "cross-signal-20260904T070700Z"
   ],
   "cumulative_processing": {
-    "runs": 2,
-    "organization_evaluations": 32,
-    "cross_workstream_collisions_prevented": 11,
+    "runs": 3,
+    "organization_evaluations": 49,
+    "cross_workstream_collisions_prevented": 20,
     "provider_history_corrections": 9,
     "new_organizations_merged": 2,
-    "history_conflicts_fail_closed": 1
+    "history_conflicts_fail_closed": 1,
+    "fresh_semantic_passes_reviewed": 7
   },
   "last_snapshot": {
     "organizations": 17,
     "independent_multi_source_orgs": 1,
-    "hot_plus": 7,
+    "hot_plus": 6,
     "hot": 8,
     "warm": 2,
-    "new_first_contact_executable": 0,
-    "auto_email_now": 0,
+    "hold_below_warm": 1,
+    "new_first_contact_executable": 1,
+    "auto_email_now": 1,
     "queued_for_window": 0,
     "manual_high_priority": 4,
-    "research_recipient": 2,
-    "territory_enrichment_required_or_active": 1,
+    "research_recipient": 0,
+    "territory_enrichment_required_or_active": 0,
     "followup_1_eligibility_review": 0,
     "duplicate_or_history_blocked": 9,
     "waiting_reply": 0,
-    "stale_or_uncertain": 2
+    "stale_or_uncertain": 3
   },
   "current_action_distribution": {
     "DO_NOT_CONTACT_DUPLICATE": 9,
     "MANUAL_APPLY_HIGH_PRIORITY": 4,
-    "RESEARCH_RECIPIENT": 2,
-    "HOLD_STALE_OR_UNCERTAIN": 2,
-    "AUTO_EMAIL_NOW": 0,
+    "RESEARCH_RECIPIENT": 0,
+    "HOLD_STALE_OR_UNCERTAIN": 3,
+    "AUTO_EMAIL_NOW": 1,
     "QUEUE_FOR_SEND_WINDOW": 0,
     "ENRICH_TERRITORY": 0,
     "FOLLOWUP_1_ELIGIBILITY_REVIEW": 0,
@@ -45,9 +48,9 @@
     "FOLLOW_UP_ONLY_IF_REQUESTED": 0
   },
   "source_distribution": {
-    "agency_eu_radar_new": 2,
-    "historical_cross_signal_carried": 15,
-    "high_frequency_semantic_pass_new": 0
+    "agency_eu_radar_current": 3,
+    "historical_cross_signal_carried": 14,
+    "high_frequency_semantic_pass_new_unverified": 7
   },
   "territory_distribution_verified_or_explicit": {
     "Spain|Cataluña|Barcelona": 1,
@@ -63,17 +66,16 @@
   },
   "input_status": {
     "provider_contact_suppression_index": "FULL_HOSTINGER_METADATA_CHECKPOINT_268_MESSAGES_UID_272",
-    "linkedin_job_index": "NOT_YET_CREATED",
-    "agency_eu_radar_state": "AVAILABLE_UPDATED_2026-09-04T06:40:51Z",
-    "unified_ready_queue": "EMPTY",
-    "high_frequency_semantic_gate": "138_INPUT_0_PASS_138_REJECT",
+    "global_contact_reservations": "EMPTY_AT_RANK_TIME",
+    "agency_eu_radar_state": "AVAILABLE_UPDATED_2026-09-04T07:04:00Z",
+    "high_frequency_semantic_gate": "235_INPUT_7_PASS_228_REJECT",
     "territory_radar": "NO_HARVEST_AREAS_INSUFFICIENT_SAMPLE"
   },
   "material_changes": [
-    "Reclassified 9 ranked opportunities as provider-history blocked for new FIRST_CONTACT.",
-    "Merged UGECE Agency as HOT+ and Ieros as WARM from the Agency+EU radar.",
-    "Fail-closed Summum Marketing because Agency radar claims prior provider history while the full provider suppression index contains no summummarketing.es domain match.",
-    "Reduced current manual high-priority pool from 8 to 4 after organization-level historical-contact collision checks."
+    "Promoted Ieros (Roma) from WARM/RESEARCH_RECIPIENT to HOT+/AUTO_EMAIL_NOW after official current freelance-collaboration demand and exact official email route were resolved; no provider-history match and no active reservation were present at ranking time.",
+    "Downgraded UGECE Agency from HOT+ to WARM/HOLD because its specific freelance WordPress/technical-SEO demand is approximately six months old and current opening status is not proven.",
+    "Reclassified Summum Marketing below WARM due to current official in-house operating model and no verified external web-production demand; unresolved provider-history conflict remains non-actionable.",
+    "Reviewed seven fresh semantic-pass public job signals but did not promote them into the cross-signal execution set without authoritative employer/route verification."
   ],
-  "note": "Snapshot metrics are state counts, not additive send counts. No outbound action performed by Cross-Signal Ranker."
+  "note": "Snapshot metrics are state counts, not additive send counts. Cross-Signal Ranker performed analysis/ranking/state-write only and no external action."
 }
