@@ -75,12 +75,10 @@ def main():
     valid_modes = {"HARVEST", "REVISIT", "EXPLORATION"}
     areas = [a for a in radar.get("areas", []) if a.get("mode") in valid_modes and a.get("region") not in {None, "UNRESOLVED"} and a.get("province") not in {None, "UNRESOLVED"}]
     area_by_key = {a.get("area_key"): a for a in areas}
-    slot = int(now.timestamp() // 900)
+    slot = int(now.timestamp() // 600)
 
     selected = []
     seen = set()
-    # Per country: strongest learned area first, then one strategic-density prior, then one rotating exploration area.
-    # This gives urgent commercial density without sacrificing nationwide exploration.
     for country in ("Spain", "Italy"):
         country_areas = [a for a in areas if a.get("country") == country]
         exploit = sorted(
@@ -100,7 +98,6 @@ def main():
         for a in rotate_pick(explore, slot + (0 if country == "Spain" else 11), 1):
             add_unique(selected, seen, a)
 
-        # If there is no learned exploit yet, use a second strategic metro instead of leaving capacity idle.
         if not exploit and len([a for a in selected if a.get("country") == country]) < 3:
             for a in priors:
                 if a.get("area_key") not in seen:
@@ -114,13 +111,12 @@ def main():
         lang = "spain" if country == "Spain" else "italy"
         label = territory_label(area)
         mode = area.get("mode")
-        # Four intents per strategic territory to increase route-closure probability.
-        for offset in range(4):
+        for offset in range(len(segments)):
             seg_name, seg = segments[(slot + ai + offset) % len(segments)]
             templates = seg.get(lang, [])
             if not templates:
                 continue
-            template = templates[(slot + ai * 4 + offset) % len(templates)]
+            template = templates[(slot + ai * len(segments) + offset) % len(templates)]
             missions.append({
                 "mission_id": f"{slot}-{ai}-{offset}",
                 "country": country,
@@ -136,16 +132,17 @@ def main():
             })
 
     output = {
-        "schema_version": "1.2",
+        "schema_version": "1.3",
         "updated_at": now.replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        "cycle_minutes": 15,
+        "cycle_minutes": 10,
         "diagnosed_bottleneck": cmd.get("diagnosed_bottleneck"),
         "capacity": cmd.get("capacity", {"exploitation_pct": 70, "exploration_pct": 20, "strategic_reserve_pct": 10}),
         "selected_areas": [{"area_key": a.get("area_key"), "mode": a.get("mode"), "score": a.get("score")} for a in selected],
         "missions": missions,
         "country_counts": {"Spain": sum(1 for a in selected if a.get("country") == "Spain"), "Italy": sum(1 for a in selected if a.get("country") == "Italy")},
-        "strategy": "LEARNED_YIELD_PLUS_STRATEGIC_DENSITY_PLUS_NATIONWIDE_ROTATION",
-        "instruction": "Execute highest-value missions with fresh web search. When learned yield is sparse, prioritize major digital/business ecosystems while preserving one rotating exploratory territory per country. Verify authoritative demand/route and provider suppression before any downstream execution."
+        "strategy": "LEARNED_YIELD_PLUS_STRATEGIC_DENSITY_PLUS_NATIONWIDE_ROTATION_ALL_INTENTS",
+        "multi_engine_router": "views/multi-engine-search-missions.json",
+        "instruction": "Execute highest-value missions every 10 minutes. Discovery-capable tasks MUST also consume views/multi-engine-search-missions.json and fan out its highest-priority variants across independent search engines/search backends when available. Search snippets are discovery only: verify current authoritative demand, exact route, truthful fit and global provider suppression before promotion or execution. Quality gates never weaken."
     }
     save(OUT, output)
     print(json.dumps({"selected_areas": len(selected), "missions": len(missions), "countries": output["country_counts"], "bottleneck": output["diagnosed_bottleneck"]}))
