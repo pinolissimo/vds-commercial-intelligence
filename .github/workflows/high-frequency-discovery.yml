@@ -13,6 +13,7 @@ on:
       - "scripts/supplemental_public_sources.py"
       - "scripts/direct_employer_bulk_sources.py"
       - "scripts/opportunity_semantic_gate.py"
+      - "scripts/deepseek_shadow_semantic.py"
       - "scripts/search_source_optimizer.py"
       - "scripts/territory_yield_radar.py"
       - "scripts/territory_radar_guard.py"
@@ -29,6 +30,7 @@ on:
       - "config/direct-employer-bulk-sources.json"
       - "config/multi-engine-search-router.json"
       - "config/semantic-opportunity-policy.json"
+      - "config/deepseek-shadow-policy.json"
       - "config/search-territory-frontier.json"
       - "config/adaptive-search-policy.json"
       - "config/territorial-intent-query-playbook.json"
@@ -67,6 +69,12 @@ jobs:
       - name: Apply semantic role geo freshness gate
         run: python scripts/opportunity_semantic_gate.py
 
+      - name: DeepSeek semantic shadow evaluation
+        continue-on-error: true
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: python scripts/deepseek_shadow_semantic.py
+
       - name: Rank source performance
         run: python scripts/search_source_optimizer.py
 
@@ -99,6 +107,8 @@ jobs:
 
       - name: Commit discovery and adaptive intelligence state
         shell: bash
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
           set -euo pipefail
           git config user.name "vds-discovery-bot"
@@ -109,6 +119,7 @@ jobs:
             python scripts/supplemental_public_sources.py
             python scripts/direct_employer_bulk_sources.py
             python scripts/opportunity_semantic_gate.py
+            python scripts/deepseek_shadow_semantic.py || echo "DeepSeek shadow failed open during collision rebuild"
             python scripts/search_source_optimizer.py
             python scripts/territory_yield_radar.py
             python scripts/territory_radar_guard.py
@@ -124,6 +135,7 @@ jobs:
           stage_state() {
             git add views/high-frequency-discovery-latest.json \
                     views/high-frequency-discovery-qualified-seeds.json \
+                    views/deepseek-shadow-latest.json \
                     views/search-source-performance.json \
                     views/territory-yield-radar.json \
                     views/territory-enrichment-queue.json \
@@ -136,6 +148,7 @@ jobs:
                     metrics/high-frequency-discovery-state.json \
                     metrics/high-frequency-watch-state.json \
                     metrics/high-frequency-semantic-gate.json \
+                    metrics/deepseek-shadow-state.json \
                     metrics/supplemental-public-sources-state.json \
                     metrics/direct-employer-bulk-sources-state.json \
                     metrics/territory-yield-radar-state.json \
