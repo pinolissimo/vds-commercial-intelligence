@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "run_id": "vds-unified-acquisition-20260904T064653Z",
+  "worker": "VDS Unified Acquisition Loop",
+  "run_started_at": "2026-09-04T06:46:53Z",
+  "local_time_europe_madrid": "2026-09-04T08:46:53+02:00",
+  "sending_window_gate": "CLOSED_BEFORE_09_00",
+  "provider_actions": 0,
+  "dispatch_lease_acquired": false,
+  "provider_checkpoint_uid": 272,
+  "ready_seen": 0,
+  "new_survivors": [
+    {
+      "canonical_identity_key": "org:brahma.website",
+      "organization": "Brahma Srl",
+      "domain": "brahma.website",
+      "country": "IT",
+      "territory": {"country":"IT","region":"Toscana","province":"Firenze","city":"Firenze"},
+      "segment": "DIRECT_JOB",
+      "priority_tier": "HOT",
+      "fit_score": 94,
+      "source_ids": ["jobijoba_it", "official_site"],
+      "source_urls": [
+        "https://www.jobijoba.it/annunci-di-lavoro/13/7e22a7541e384ea87e4452824012a66e",
+        "https://center117.it/"
+      ],
+      "evidence": "Freelance/Partita IVA collaboration described as continuativa; WordPress/Shopify web design and maintenance, HTML/CSS/JavaScript and SEO on-page. Official company site corroborates Brahma Srl identity in Firenze and info@brahma.website.",
+      "route": {"type":"EMAIL_GENERIC_OFFICIAL","recipient":"info@brahma.website","authority":"OFFICIAL_SITE_GENERIC_CONTACT_NOT_YET_VERIFIED_AS_APPLICATION_ROUTE"},
+      "state": "BACKLOG_HIGH_INTENT",
+      "missing_gates": [
+        "CURRENT_OPENING_RECHECK_ON_COMPANY_CONTROLLED_SOURCE",
+        "AUTHORITATIVE_APPLICATION_ROUTE_CONFIRMATION",
+        "SPAIN_AUTONOMO_TO_ITALY_PIVA_COMPATIBILITY",
+        "FINAL_GLOBAL_PROVIDER_JIT_DEDUP"
+      ]
+    },
+    {
+      "canonical_identity_key": "org:codeable.io",
+      "organization": "Codeable",
+      "domain": "codeable.io",
+      "country": "EU_REMOTE_GLOBAL",
+      "segment": "FREELANCE_PLATFORM",
+      "priority_tier": "HIGH",
+      "fit_score": 96,
+      "source_ids": ["official_site"],
+      "source_urls": [
+        "https://www.codeable.io/freelance-wordpress-developer-jobs/",
+        "https://www.codeable.io/"
+      ],
+      "evidence": "Official current pages state Codeable is a WordPress-only freelance platform, accepts applications to its expert network globally, and routes experts to short-term, recurring and full-time WordPress work. Current expert page exposes Join the Waitlist rather than a direct email route.",
+      "route": {"type":"MANUAL_PLATFORM_APPLICATION","source":"https://www.codeable.io/freelance-wordpress-developer-jobs/"},
+      "state": "MANUAL_ROUTE_REQUIRED",
+      "missing_gates": [
+        "OWNER_MANUAL_PLATFORM_APPLICATION",
+        "EXPERT_VETTING_ELIGIBILITY_CONFIRMATION",
+        "FINAL_GLOBAL_PROVIDER_JIT_DEDUP_IF_EMAIL_ROUTE_LATER_EMERGES"
+      ]
+    }
+  ],
+  "qualification_updates": [
+    {
+      "canonical_identity_key": "org:ugeceagency.com",
+      "organization": "UGECE Agency",
+      "state": "HOLD_NOT_READY",
+      "evidence_urls": ["https://es.linkedin.com/company/ugece-agency", "https://ugeceagency.com/"],
+      "finding": "Direct hello@ugeceagency.com route and recurring WordPress/technical-SEO freelance demand are corroborated, but the hiring post is approximately six months old; freshness remains insufficient for READY without a current-opening confirmation.",
+      "missing_gates": ["FINAL_CURRENT_OPENING_RECHECK", "FINAL_GLOBAL_INDEX_RECHECK"]
+    }
+  ],
+  "metrics": {
+    "query_lanes": 8,
+    "query_probes": 22,
+    "raw_search_results_reviewed": 45,
+    "unique_organizations_estimated": 30,
+    "semantic_candidates": 4,
+    "cheap_pass": 2,
+    "backlog_added": 2,
+    "ready_added": 0,
+    "manual_route_required": 1,
+    "duplicates_or_known": 2,
+    "stale_or_rejected": 26,
+    "territory_yield": {"Spain":0,"Italy":1,"EU_language_compatible":0,"EU_remote_platform":1}
+  },
+  "audit": {
+    "provider_suppression_refetched_before_write": true,
+    "global_reservations_refetched_before_write": true,
+    "dispatch_lease_refetched_before_write": true,
+    "no_email_form_dm_or_platform_submission": true,
+    "notes": "Outside allowed outbound window. No READY identity certified. State-write only."
+  }
+}
