@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Interpret one dashboard command through OpenAI and write a structured command record.
+"""Interpret one dashboard command and queue it for the simplified VDS flows.
 
-Hard invariant: this script NEVER sends mail and NEVER changes the existing
-acquisition-task architecture. It writes only additive command/analysis JSON for
-the existing task bridge to consume while all current gates remain authoritative.
+Hard invariants: this script NEVER sends mail; dashboard commands are overlays only;
+normal discovery and the two self-contained execution flows remain authoritative.
 """
 from __future__ import annotations
 
@@ -21,35 +20,33 @@ ROOT = Path(__file__).resolve().parents[1]
 MADRID = ZoneInfo("Europe/Madrid")
 OUT = ROOT / "api" / "v1" / "ai-command"
 QUEUE = ROOT / "command-center" / "commands" / "pending.json"
-WORKERS = {"AGENCY_RADAR", "LINKEDIN_HUNTER", "UNIFIED_LOOP"}
+WORKERS = {"LINKEDIN_HUNTER", "UNIFIED_LOOP"}
 
 SYSTEM = """You are VDS Commercial Intelligence Command Router.
-Interpret the owner's natural-language command for the existing VDS commercial acquisition system.
-The current production task architecture is authoritative and must not be weakened, replaced, paused, rescheduled or bypassed.
-Never invent an opportunity, recipient, route, sent status, reply, rate, eligibility, freshness or evidence.
-Never authorize duplicate FIRST_CONTACT. Any SEND_DIRECTIVE must preserve all existing gates: global organization dedup, suppression, authoritative route, freshness, geography/remote compatibility, fit, legal constraints, sending window, provider verification and manual-route preservation.
-Quality thresholds must never be lowered merely to increase volume.
+Interpret the owner's natural-language command for the simplified VDS acquisition system.
+Production architecture: independent GitHub discovery plus exactly two self-contained execution flows:
+- LINKEDIN_HUNTER = VDS Job Flow: direct-job discovery, qualification, manual-route preservation and authorized direct-email application execution.
+- UNIFIED_LOOP = VDS Revenue Flow: agency/white-label/EU/direct-buyer/commercial discovery, qualification, manual-route preservation and authorized direct-email execution.
+The old AGENCY_RADAR and CROSS-SIGNAL intermediate workers are disabled and MUST NOT be targeted.
 
-Allowed worker IDs:
-- AGENCY_RADAR: agency/white-label/EU-project/direct-buyer/WPO research and route closure.
-- LINKEDIN_HUNTER: direct job discovery/qualification and job application execution through its existing rules.
-- UNIFIED_LOOP: commercial/agency/EU READY execution and broad commercial acquisition priorities through its existing rules.
+Never invent an opportunity, recipient, route, sent status, reply, rate, eligibility, freshness or evidence.
+Never authorize duplicate FIRST_CONTACT. SEND directives preserve the real hard gates: organization-level dedup/suppression/reservation, current need, truthful fit, authoritative route, legal/channel compatibility, send window and provider verification. Missing nonessential metadata must not become a synthetic blocker. Form/platform-only routes remain manual.
 
 Return ONLY one compact JSON object with exactly these keys:
 {
   "command_class": "ANALYZE|SEARCH_DIRECTIVE|SEND_DIRECTIVE|PRIORITY_DIRECTIVE|REFRESH|UNKNOWN",
-  "intent": "short snake_case intent",
+  "intent": "short_snake_case_intent",
   "summary": "concise Italian explanation",
   "parameters": {},
-  "target_workers": ["AGENCY_RADAR|LINKEDIN_HUNTER|UNIFIED_LOOP"],
+  "target_workers": ["LINKEDIN_HUNTER|UNIFIED_LOOP"],
   "requires_task_bridge": true,
   "requires_existing_gates": true,
   "risk": "LOW|MEDIUM|HIGH",
   "owner_confirmation_required": false,
-  "answer": "direct Italian answer when command is analytical; otherwise short operational acknowledgement"
+  "answer": "direct Italian answer when analytical; otherwise short operational acknowledgement"
 }
-Routing rules: job/direct-job search or job send -> LINKEDIN_HUNTER; agency/white-label/EU-project/WPO/direct-buyer research -> AGENCY_RADAR; commercial READY send -> UNIFIED_LOOP; broad acquisition priority/refresh -> all relevant workers. Do not route a send directive to a worker that does not already possess that send authority.
-Use owner_confirmation_required=true only for commands that would materially alter safety/quality policy or are ambiguous/high-risk. Normal requests to search, prioritize or send already-valid READY items do not need an extra confirmation, but execution remains gated.
+Routing: direct job/vacancy/application -> LINKEDIN_HUNTER. Agency/white-label/EU-project/WPO/direct-buyer/commercial -> UNIFIED_LOOP. Broad acquisition priority/refresh -> both. Never route a send to a worker outside its existing send authority.
+Use owner_confirmation_required=true only for a genuinely ambiguous/high-risk request that would alter hard safety policy. Normal search, priority, refresh, or sending of already-valid candidates does not require another confirmation, but all hard gates remain mandatory.
 """
 
 
@@ -102,16 +99,11 @@ def call_openai(api_key: str, model: str, command: str, context: dict) -> dict:
 
 def fallback_targets(command_class: str, intent: str, parameters: dict) -> list[str]:
     haystack = " ".join([intent, json.dumps(parameters, ensure_ascii=False)]).lower()
-    if command_class == "SEND_DIRECTIVE":
-        return ["LINKEDIN_HUNTER"] if any(k in haystack for k in ("job", "vacancy", "linkedin", "candidatur")) else ["UNIFIED_LOOP"]
-    if command_class == "SEARCH_DIRECTIVE":
-        if any(k in haystack for k in ("job", "vacancy", "linkedin", "ats", "direct_job")):
-            return ["LINKEDIN_HUNTER"]
-        if any(k in haystack for k in ("agency", "agenz", "white_label", "eu_project", "horizon", "prima", "wpo", "buyer")):
-            return ["AGENCY_RADAR"]
-        return ["AGENCY_RADAR", "LINKEDIN_HUNTER"]
+    jobish = any(k in haystack for k in ("job", "vacancy", "linkedin", "ats", "candidatur", "direct_job", "application"))
+    if command_class in {"SEND_DIRECTIVE", "SEARCH_DIRECTIVE"}:
+        return ["LINKEDIN_HUNTER"] if jobish else ["UNIFIED_LOOP"]
     if command_class in {"PRIORITY_DIRECTIVE", "REFRESH"}:
-        return ["AGENCY_RADAR", "LINKEDIN_HUNTER", "UNIFIED_LOOP"]
+        return ["LINKEDIN_HUNTER", "UNIFIED_LOOP"]
     return []
 
 
@@ -126,7 +118,7 @@ def normalize(parsed: dict) -> dict:
     params = parsed.get("parameters") if isinstance(parsed.get("parameters"), dict) else {}
     intent = str(parsed.get("intent") or "unknown")[:120]
     raw_targets = parsed.get("target_workers") if isinstance(parsed.get("target_workers"), list) else []
-    targets = []
+    targets: list[str] = []
     for value in raw_targets:
         worker = str(value).upper().strip()
         if worker in WORKERS and worker not in targets:
@@ -182,7 +174,7 @@ def main() -> int:
     expires_at = (now_utc + timedelta(hours=24)).astimezone(MADRID).isoformat(timespec="seconds")
     command_id = safe_request_id(os.environ.get("VDS_REQUEST_ID", "")) or now_utc.strftime("CMD-%Y%m%dT%H%M%SZ")
     record = {
-        "schema_version": "1.2",
+        "schema_version": "1.3",
         "command_id": command_id,
         "created_at": now,
         "expires_at": expires_at,
@@ -192,7 +184,7 @@ def main() -> int:
         **parsed,
         "production_core_modified": False,
         "normal_cycle_must_continue": True,
-        "execution_policy": "EXISTING_TASKS_AND_GATES_REMAIN_AUTHORITATIVE",
+        "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
         "status": "PENDING_TASK_BRIDGE" if parsed["requires_task_bridge"] and parsed["target_workers"] and not parsed["owner_confirmation_required"] else ("ANSWERED" if parsed["command_class"] == "ANALYZE" else "REVIEW_REQUIRED"),
     }
 
@@ -204,14 +196,14 @@ def main() -> int:
 
     if record["status"] == "PENDING_TASK_BRIDGE":
         QUEUE.parent.mkdir(parents=True, exist_ok=True)
-        queue = load("command-center/commands/pending.json", {"schema_version": "1.2", "commands": []})
+        queue = load("command-center/commands/pending.json", {"schema_version": "1.3", "commands": []})
         commands = queue.get("commands") if isinstance(queue.get("commands"), list) else []
         if not any(item.get("command_id") == command_id for item in commands if isinstance(item, dict)):
             commands.append(record)
         queue = {
-            "schema_version": "1.2",
+            "schema_version": "1.3",
             "updated_at": now,
-            "policy": "Existing production tasks consume commands as non-bypassing overlays. Normal discovery and execution continue even if the bridge is unavailable.",
+            "policy": "Dashboard commands route only to the two active self-contained flows. Discovery and normal execution continue even if the bridge is unavailable.",
             "commands": commands[-60:],
         }
         QUEUE.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
