@@ -2,11 +2,13 @@ name: VDS High-Frequency Discovery Fanout
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    # Stagger away from common GitHub Actions minute boundaries to reduce scheduler congestion.
+    - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
   push:
     paths:
       - ".github/workflows/high-frequency-discovery.yml"
+      - "governance/high-frequency-discovery-kick.json"
       - "scripts/high_frequency_discovery.py"
       - "scripts/supplemental_public_sources.py"
       - "scripts/direct_employer_bulk_sources.py"
