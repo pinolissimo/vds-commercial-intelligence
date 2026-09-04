@@ -1,7 +1,23 @@
-name: VDS Command Center — Projections (Recovery)
+name: VDS Command Center — Projections
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'views/**'
+      - 'metrics/**'
+      - 'governance/**'
+      - 'campaigns/**'
+      - 'leads/**'
+      - 'outreach/**'
+      - 'reports/**'
+      - 'runtime/**'
+      - 'config/**'
+      - 'command-center/commands/**'
+      - 'scripts/build_command_center_api.py'
+      - '.github/workflows/vds-command-center-projections.yml'
 
 permissions:
   contents: write
@@ -52,5 +68,5 @@ jobs:
             git commit -m "dashboard: refresh command center projections"
             sleep $((attempt * 2))
           done
-          echo "Unable to commit recovery projections after retries" >&2
+          echo "Unable to commit projections after retries" >&2
           exit 1
