@@ -2,34 +2,34 @@
   "schema_version": "3.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T14:53:00+02:00",
-  "status": "PASS_FANOUT_ACTIVE_COMMAND_PENDING_NOT_STUCK",
+  "updated_at": "2026-09-04T15:51:00+02:00",
+  "status": "CRITICAL_ATTACHMENT_POLICY_REGRESSION_DETECTED_OTHERWISE_ENGINE_HEALTHY",
   "discovery": {
-    "raw_signals": 605,
+    "raw_signals": 611,
     "semantic_pass": 75,
     "semantic_review": 7,
-    "semantic_reject": 523,
-    "semantic_pass_rate": 0.1240,
-    "unique_organizations": 34,
+    "semantic_reject": 529,
+    "semantic_pass_rate": 0.1227,
     "current_source_ranking": ["joa_es_webdesigner_title", "joa_it_webdev_title", "nomado_frontend", "joa_es_web_performance_body", "joa_it_webdesigner_title"],
     "current_territory_harvest": ["Italy|Lazio|Roma"],
     "current_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
-    "territory_enrichment_pending": 30,
-    "note": "High-frequency discovery is fresh and active. Semantic yield remains nonzero and final precision remains downstream; continue prioritizing route/recipient/freshness closure and geographic enrichment over lowering quality gates."
+    "territory_enrichment_pending": 29,
+    "fanout_latest_state_updated_at": "2026-09-04T13:32:12Z",
+    "fanout_fresh_within_25_minutes_at_watch": true,
+    "recovery_kick_required": false
   },
   "qualification": {
-    "hot_plus": 19,
+    "hot_plus": 20,
     "hot": 12,
     "current_executable_cross_signal": 0,
     "current_ready_count": 0,
     "job_ready_count": 0,
     "unified_ready_added_today": 1,
-    "unified_manual_route_required_today": 3,
+    "unified_manual_route_required_today": 6,
     "linkedin_manual_high_priority_today": 13,
-    "human_review_high_value_current": 14,
-    "waiting_reply_current": 7,
-    "duplicate_or_history_blocked_current": 9,
-    "stale_or_uncertain_current": 4
+    "human_review_high_value_pending": 15,
+    "new_human_review_this_watch": ["Intervolutions"],
+    "new_human_review_owner_alert_sent": true
   },
   "execution": {
     "automatic_first_contacts_verified_sent": 3,
@@ -41,18 +41,12 @@
     "reconciled_concurrent_first_contacts_not_counted_as_worker_automatic": 1,
     "reply_continuations_not_counted_as_first_contact": 1,
     "latest_acquisition_provider_uid": 280,
-    "latest_provider_uid_any_action": 281,
-    "provider_uid_continuity": "CONTINUOUS_THROUGH_281_UID_281_INTERNAL_NOTIFICATION_EXCLUDED_FROM_ACQUISITION_KPI",
+    "latest_provider_uid_any_action": 282,
+    "provider_uid_continuity": "CONTINUOUS_THROUGH_282; UID_281_AND_UID_282_INTERNAL_NOTIFICATIONS_EXCLUDED_FROM_ACQUISITION_KPI",
     "latest_automatic_events": [
       {"organization":"Páginas Web Valencia","provider_uid":272,"lane":"commercial"},
       {"organization":"Ieros","provider_uid":276,"lane":"commercial"},
       {"organization":"Heritage S.r.l.","provider_uid":278,"lane":"job"}
-    ],
-    "owner_approved_human_review_events": [
-      {"organization":"Global Service Impresa","provider_uid":273},
-      {"organization":"Zmot Lab","provider_uid":274},
-      {"organization":"Avangarde","provider_uid":279},
-      {"organization":"Alpacode","provider_uid":280}
     ]
   },
   "outcomes": {
@@ -72,7 +66,6 @@
         "subject": "Re: EXCELY — digital presence for the new Centre of Excellence",
         "received_at": "2026-09-04T10:20:12Z",
         "classification": "POSITIVE_INTEREST_WAIT_FOR_REPLY",
-        "context": "Will check VDS portfolio and get back to Giuseppe",
         "recommended_action": "WAIT_FOR_REPLY_NO_AUTOMATIC_FOLLOWUP",
         "owner_alert_sent": true
       }
@@ -84,7 +77,6 @@
         "subject": "Re: Candidatura spontanea - Web Developer | progetti UE e digital innovation",
         "received_at": "2026-09-04T10:24:14Z",
         "classification": "NOT_NOW_TEAM_CAPACITY_COVERED",
-        "context": "Web development is currently covered internally; they may contact VDS if future opportunities open",
         "followup_policy": "BLOCK_AUTOMATIC_FOLLOWUP"
       }
     ]
@@ -92,48 +84,60 @@
   "health": {
     "expected_five_task_state": "PASS",
     "legacy_senders_disabled": true,
-    "github_fanout": {
-      "latest_state_updated_at": "2026-09-04T12:50:26Z",
-      "latest_observed_workflow_started_at": "2026-09-04T12:49:47Z",
-      "fresh_within_25_minutes": true,
-      "latest_observed_workflow_status": "in_progress",
-      "recovery_kick_required": false
-    },
-    "command_center_bridge": {
-      "pending_commands": 1,
-      "receipts": 0,
-      "stuck_commands": 0,
-      "bridge_regressions": 0,
-      "status": "PASS_PENDING_COMMAND_WITHOUT_TWO_ELIGIBLE_WORKER_OPPORTUNITIES_YET",
-      "latest_command_id": "CMD-WEB-20260904T124212-7d2d9ce4"
-    },
     "lease_state": "IDLE",
     "active_global_reservations": 0,
     "commercial_ready_queue": 0,
     "job_ready_queue": 0,
-    "provider_suppression_checkpoint": 281,
-    "document_policy": "NO_NEW_AUTOMATIC_ATTACHMENT_REGRESSION_OBSERVED",
     "send_window_compliance": "PASS",
+    "command_center_bridge": {
+      "pending_records": 2,
+      "processed_receipts": 3,
+      "stuck_commands": 0,
+      "bridge_regressions": 0,
+      "completed_command": "CMD-WEB-20260904T124212-7d2d9ce4",
+      "new_command_pending_not_stuck": "CMD-TURBO-20260904T154700-01"
+    },
+    "attachment_policy": {
+      "status": "CRITICAL_REGRESSION",
+      "approved_attachment_registry_count": 0,
+      "violating_provider_uids": [275,277],
+      "details": [
+        "UID 275 FIRST_CONTACT to The Visual Corner included TheVisualCorner_Lighthouse_Mobile.jpg while approved-attachments registry was empty.",
+        "UID 277 REPLY_CONTINUATION to The Visual Corner included TheVisualCorner_Lighthouse_Mobile_Desktop.jpg while approved-attachments registry was empty."
+      ],
+      "automatic_correction_or_resend": false,
+      "owner_alert_sent_provider_uid": 282
+    },
     "human_review_report_projection": "STALE_REPORT_MD_VS_CURRENT_JSON",
-    "unresolved_anomalies": ["reports/human-review-high-value.md remains older than current canonical human-review JSON and should be regenerated by its owning projection path"]
+    "unresolved_anomalies": [
+      "CRITICAL_ATTACHMENT_POLICY_REGRESSION_UID_275_UID_277",
+      "reports/human-review-high-value.md is stale versus canonical human-review JSON"
+    ]
   },
   "performance": {
     "semantic_quality_nonzero": true,
-    "semantic_pass_rate": 0.1240,
+    "semantic_pass_rate": 0.1227,
     "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
-    "quality_diagnosis": "605 RAW produce 75 semantic pass and 7 review, while 19 HOT+ and 12 HOT currently produce zero executable cross-signal READY. Preserve final quality gates and concentrate on authoritative route closure/manual conversion and territory enrichment."
+    "runtime_mode": "MIDDLE_FUNNEL_TURBO",
+    "quality_gates_unchanged": true,
+    "quality_diagnosis": "611 RAW produce 75 semantic pass and 7 review, while 20 HOT+ and 12 HOT produce zero executable cross-signal READY. Continue route/recipient/freshness closure and manual-route conversion without lowering final gates."
   },
-  "human_review": {
-    "pending": 14,
-    "new_or_materially_changed_this_watch": [],
-    "owner_alert_sent_this_watch": false,
-    "contacted_waiting_reply": ["Global Service Impresa", "Zmot Lab", "Avangarde", "Alpacode"],
-    "owner_alert_dedup_rule": "ONLY_NEW_OR_MATERIALLY_CHANGED_PENDING_ITEMS"
+  "manual_action": {
+    "new_owner_action_this_watch": {
+      "organization": "Intervolutions",
+      "score": 95,
+      "priority": "HOT+",
+      "route": "https://intervolutions.com/careers/maquetacion-web-freelance/",
+      "automatic_block_reason": "MANUAL_FORM_SUBMISSION_REQUIRED; OWNER_APPROVED_CV_ATTACHMENT_REQUIRED_IF_UPLOAD_USED",
+      "recommended_action": "MANUAL_APPLY"
+    },
+    "owner_alert_sent_provider_uid": 282
   },
   "provider_check": {
-    "hostinger_sent_highest_uid_observed": 281,
+    "hostinger_sent_highest_uid_observed": 282,
     "hostinger_acquisition_state_reconciled_through_uid": 280,
-    "uid_281_classification": "INTERNAL_NOTIFICATION_OWNER_ALERT_EXCLUDED_FROM_FIRST_CONTACT_COUNTERS",
+    "uid_281_classification": "INTERNAL_NOTIFICATION",
+    "uid_282_classification": "INTERNAL_NOTIFICATION_WATCHDOG_ALERT",
     "new_acquisition_uids_since_prior_summary": [],
     "new_relevant_inbound_uids_since_prior_watch": [],
     "new_hard_bounce_since_prior_watch": false
