@@ -28,6 +28,7 @@ def main():
     cross = load("views/cross-signal-opportunities.json", {"schema_version":"1.4","opportunities":[]})
     hr = load("views/human-review-high-value.json", {"schema_version":"1.0","items":[],"metrics":{}})
     orgidx = load("views/global-organization-index.json", {"contacted":[]})
+    sentidx = load("views/global-sent-email-index.json", {"messages":[]})
     suppression = load("views/provider-contact-suppression-index.json", {"contacted_domains":[]})
     jobs = load("views/linkedin-job-applications.json", {"evaluated":[]})
     radar = load("views/agency-eu-signal-radar.json", {"signals":[]})
@@ -39,9 +40,37 @@ def main():
     contacted = {x.get("canonical_identity_key"):x for x in orgidx.get("contacted", []) if x.get("canonical_identity_key")}
     suppressed_domains = set(suppression.get("contacted_domains", []))
 
+    # Merge provider-verified sent index into contact memory so the freshest provider evidence
+    # wins immediately even when global-org/suppression caches lag by one reconciliation cycle.
+    provider_contacted = {}
+    highest_sent_uid = 0
+    for msg in sentidx.get("messages", []):
+        try:
+            highest_sent_uid = max(highest_sent_uid, int(msg.get("provider_uid") or 0))
+        except Exception:
+            pass
+        key = msg.get("canonical_identity_key")
+        if not key:
+            continue
+        action = msg.get("action_type")
+        if action in {None, "FIRST_CONTACT"}:
+            provider_contacted[key] = {
+                "canonical_identity_key": key,
+                "organization": msg.get("organization"),
+                "status": "CONTACTED",
+                "provider_evidence": f"HOSTINGER_SENT_UID_{msg.get('provider_uid')}_{msg.get('sent_at')}",
+                "first_contact_at": msg.get("sent_at"),
+                "recipient": msg.get("recipient"),
+                "source": "GLOBAL_SENT_EMAIL_INDEX",
+            }
+
+    for key, state in provider_contacted.items():
+        if key not in contacted:
+            contacted[key] = state
+
     material = []
 
-    # Global history always overrides rank/action.
+    # Global/provider history always overrides rank/action.
     for key, state in contacted.items():
         if key not in opps:
             continue
@@ -57,7 +86,9 @@ def main():
             o["contact_status"] = state.get("status", "CONTACTED")
             o["blockers_missing_gates"] = ["PRIOR_FIRST_CONTACT_OR_OWNER_APPLICATION_RECORDED"]
             o["recommended_executor"] = "NONE_NEW_FIRST_CONTACT"
-            o["rationale"] = "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation."
+            ev = state.get("provider_evidence")
+            suffix = f" ({ev})" if ev else ""
+            o["rationale"] = "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation." + suffix
         if o.get("next_best_action") != new_action:
             material.append(f"{key}:{o.get('next_best_action')}->{new_action}")
         o["next_best_action"] = new_action
@@ -71,6 +102,28 @@ def main():
             o["next_best_action"] = "DO_NOT_CONTACT_DUPLICATE"
             o["blockers_missing_gates"] = ["PROVIDER_HISTORY_DOMAIN_MATCH"]
             material.append(f"{key}:provider-history-block")
+
+    # Reconcile Human Review against freshest provider contact memory.
+    for key, item in list(hr_items.items()):
+        if key not in contacted:
+            continue
+        state = contacted[key]
+        if state.get("owner_stop") or state.get("status") == "OWNER_STOP_DO_NOT_CONTACT":
+            item["dedup_status"] = "OWNER_STOP_DO_NOT_CONTACT"
+            item["owner_decision"] = "REJECT"
+            item["execution_status"] = "OWNER_STOP_DO_NOT_CONTACT"
+            item["recommended_action"] = "NO_ACTION"
+        else:
+            item["dedup_status"] = state.get("status", "CONTACTED")
+            item["execution_status"] = "CONTACT_ALREADY_EXECUTED"
+            item["recommended_action"] = "WAIT_FOR_REPLY"
+            if item.get("owner_decision") == "PENDING":
+                item["owner_decision"] = "APPROVE_OUTREACH"
+            item["do_not_bypass_constraints"] = list(dict.fromkeys((item.get("do_not_bypass_constraints") or []) + [
+                "Do not initiate another FIRST_CONTACT; future action must be a compliant continuation."
+            ]))
+        item["updated_at"] = stamp
+        material.append(f"{key}:HUMAN_REVIEW_RECONCILED_WITH_PROVIDER_HISTORY")
 
     # Merge current Agency/EU signals. Soft-blocked HOT/HOT+ becomes Human Review.
     for s in radar.get("signals", []):
@@ -117,8 +170,6 @@ def main():
                 material.append(f"{key}:NEW_HUMAN_REVIEW")
             opps[key] = o
         elif key in opps and next_action == "HOLD_STALE_OR_UNCERTAIN":
-            # A current canonical Human Review record is a stronger preservation state than a radar HOLD,
-            # provided it is still pending and no hard exclusion/history applies.
             if key in hr_items and hr_items[key].get("owner_decision") == "PENDING":
                 opps[key]["next_best_action"] = "HUMAN_REVIEW_HIGH_VALUE"
                 opps[key]["recommended_executor"] = "OWNER_HUMAN_REVIEW_ONLY"
@@ -149,32 +200,33 @@ def main():
                     removed_keys.add(key)
                 material.append(f"{key}:HUMAN_REVIEW->STALE")
         elif state == "HUMAN_REVIEW_HIGH_VALUE":
+            if key in contacted:
+                continue
             o = opps.get(key, {})
             score = float(j.get("fit_score", hr_items.get(key,{}).get("score",75)))
             o.update({"canonical_identity_key":key,"organization":j.get("organization"),"country":j.get("country"),"segment":"DIRECT_JOB","scores":{"total":score},"priority_tier":"HOT+" if score>=85 else "HOT","contact_status":"NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX","recommended_executor":"OWNER_HUMAN_REVIEW_ONLY","next_best_action":"HUMAN_REVIEW_HIGH_VALUE","blockers_missing_gates":[j.get("route","MANUAL_OR_SOFT_BLOCK")],"route":{"type":j.get("route"),"source":j.get("opportunity_url")},"rationale":hr_items.get(key,{}).get("why_high_value") or "High-value soft-blocked job preserved for owner review."})
             opps[key] = o
 
-    # Re-sort by score while hard/wait states remain represented.
     def score(x):
         try: return float((x.get("scores") or {}).get("total",0))
         except Exception: return 0.0
-    cross["opportunities"] = sorted(opps.values(), key=score, reverse=True)
-    cross["schema_version"] = "1.5"
-    cross["updated_at"] = stamp
-    cross["history_reconciled_through"] = f"Hostinger/provider cache through UID {suppression.get('scan',{}).get('highest_uid_seen','unknown')}"
-    cross["note"] = "Runtime reconciliation merges current Agency/EU, LinkedIn/job and provider-history evidence; no external action performed."
 
-    # Human-review queue: preserve unrelated records, remove stale pending items, keep execution history.
+    cross["opportunities"] = sorted(opps.values(), key=score, reverse=True)
+    cross["schema_version"] = "1.6"
+    cross["updated_at"] = stamp
+    provider_checkpoint = max(int(suppression.get("scan",{}).get("highest_uid_seen",0) or 0), highest_sent_uid)
+    cross["history_reconciled_through"] = f"Hostinger/provider evidence through UID {provider_checkpoint}"
+    cross["note"] = "Runtime reconciliation merges current Agency/EU, LinkedIn/job, global-sent and provider-history evidence; no external action performed."
+
     hr["items"] = sorted(hr_items.values(), key=lambda x: float(x.get("score",0) or 0), reverse=True)
     hr["removed_or_closed"] = removed
-    hr["schema_version"] = "1.1"
+    hr["schema_version"] = "1.2"
     hr["updated_at"] = stamp
     pending = sum(1 for x in hr["items"] if x.get("owner_decision") == "PENDING")
     approved = sum(1 for x in hr["items"] if x.get("owner_decision") == "APPROVE_OUTREACH")
     manual = sum(1 for x in hr["items"] if x.get("owner_decision") == "MANUAL_APPLY")
-    hr["metrics"] = {"pending":pending,"approved_outreach":approved,"manual_apply":manual,"hold":sum(1 for x in hr["items"] if x.get("owner_decision")=="HOLD"),"rejected":len(removed),"submitted_by_owner":sum(1 for x in hr["items"] if x.get("execution_status")=="CONTACT_ALREADY_EXECUTED")}
+    hr["metrics"] = {"pending":pending,"approved_outreach":approved,"manual_apply":manual,"hold":sum(1 for x in hr["items"] if x.get("owner_decision")=="HOLD"),"rejected":len(removed),"contact_already_executed":sum(1 for x in hr["items"] if x.get("execution_status")=="CONTACT_ALREADY_EXECUTED")}
 
-    # Daily metrics: idempotent run accounting and latest state snapshot.
     day = dt.datetime.now(dt.timezone(dt.timedelta(hours=2))).date().isoformat()
     mpath = f"metrics/daily/{day}-cross-signal.json"
     metrics = load(mpath, {"schema_version":"1.3","date":day,"timezone":"Europe/Madrid","counted_run_ids":[],"cumulative_processing":{"runs":0}})
@@ -186,15 +238,16 @@ def main():
         cp["runs"] = int(cp.get("runs",0)) + 1
         cp["organization_evaluations"] = int(cp.get("organization_evaluations",0)) + len(cross["opportunities"])
         cp["fresh_semantic_passes_reviewed"] = int(cp.get("fresh_semantic_passes_reviewed",0)) + int(sem.get("semantic_pass_count",0))
+
     actions = {}
     for x in cross["opportunities"]:
-        a=x.get("next_best_action","UNKNOWN"); actions[a]=actions.get(a,0)+1
+        a=x.get("next_best_action","UNKNOWN")
+        actions[a]=actions.get(a,0)+1
     hotp=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="HOT+")
     hot=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="HOT")
     warm=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="WARM")
     executable = actions.get("AUTO_EMAIL_NOW",0)+actions.get("QUEUE_FOR_SEND_WINDOW",0)
-    metrics.update({"schema_version":"1.3","updated_at":stamp,"last_snapshot":{"organizations":len(cross["opportunities"]),"hot_plus":hotp,"hot":hot,"warm":warm,"new_first_contact_executable":executable,"human_review_high_value":actions.get("HUMAN_REVIEW_HIGH_VALUE",0),"waiting_reply":actions.get("WAIT_FOR_REPLY",0),"duplicate_or_history_blocked":actions.get("DO_NOT_CONTACT_DUPLICATE",0),"stale_or_uncertain":actions.get("HOLD_STALE_OR_UNCERTAIN",0)},"current_action_distribution":actions,"fresh_semantic_state":{"input":sem.get("input_signal_count",0),"pass":sem.get("semantic_pass_count",0),"review":sem.get("semantic_review_count",0),"reject":sem.get("semantic_reject_count",0)},"diagnosed_bottleneck":perf.get("diagnosed_bottleneck"),"material_changes":material[-30:],"note":"State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action."})
-    # Canonicalize legacy top-level counters to exactly match the current snapshot.
+    metrics.update({"schema_version":"1.4","updated_at":stamp,"last_snapshot":{"organizations":len(cross["opportunities"]),"hot_plus":hotp,"hot":hot,"warm":warm,"new_first_contact_executable":executable,"human_review_high_value":actions.get("HUMAN_REVIEW_HIGH_VALUE",0),"waiting_reply":actions.get("WAIT_FOR_REPLY",0),"duplicate_or_history_blocked":actions.get("DO_NOT_CONTACT_DUPLICATE",0),"stale_or_uncertain":actions.get("HOLD_STALE_OR_UNCERTAIN",0),"provider_history_reconciled_through_uid":provider_checkpoint},"current_action_distribution":actions,"fresh_semantic_state":{"input":sem.get("input_signal_count",0),"pass":sem.get("semantic_pass_count",0),"review":sem.get("semantic_review_count",0),"reject":sem.get("semantic_reject_count",0)},"diagnosed_bottleneck":perf.get("diagnosed_bottleneck"),"material_changes":material[-30:],"note":"State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action."})
     metrics["runs"] = int(metrics.get("cumulative_processing",{}).get("runs",0))
     metrics["evaluated"] = len(cross["opportunities"])
     metrics["hot_plus"] = hotp
@@ -214,7 +267,7 @@ def main():
     save("views/cross-signal-opportunities.json", cross)
     save("views/human-review-high-value.json", hr)
     save(mpath, metrics)
-    print(json.dumps({"updated_at":stamp,"opportunities":len(cross["opportunities"]),"human_review_pending":pending,"material_changes":material,"actions":actions}, ensure_ascii=False))
+    print(json.dumps({"updated_at":stamp,"opportunities":len(cross["opportunities"]),"human_review_pending":pending,"provider_checkpoint":provider_checkpoint,"material_changes":material,"actions":actions}, ensure_ascii=False))
 
 if __name__ == "__main__":
     main()

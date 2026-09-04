@@ -1,39 +1,41 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.4",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T09:16:16Z",
+  "updated_at": "2026-09-04T10:09:55Z",
   "counted_run_ids": [
     "cross-signal-20260904T061252Z",
     "cross-signal-20260904T064442Z",
     "cross-signal-20260904T070700Z",
     "cross-signal-runtime-20260904T0914Z",
-    "cross-signal-runtime-20260904T0916Z"
+    "cross-signal-runtime-20260904T0916Z",
+    "cross-signal-runtime-20260904T1009Z"
   ],
   "cumulative_processing": {
-    "runs": 5,
-    "organization_evaluations": 103,
+    "runs": 6,
+    "organization_evaluations": 133,
     "cross_workstream_collisions_prevented": 20,
     "provider_history_corrections": 9,
     "new_organizations_merged": 2,
     "history_conflicts_fail_closed": 1,
-    "fresh_semantic_passes_reviewed": 155
+    "fresh_semantic_passes_reviewed": 230
   },
   "last_snapshot": {
-    "organizations": 27,
-    "hot_plus": 12,
+    "organizations": 30,
+    "hot_plus": 15,
     "hot": 12,
     "warm": 2,
     "new_first_contact_executable": 0,
-    "human_review_high_value": 9,
-    "waiting_reply": 5,
+    "human_review_high_value": 10,
+    "waiting_reply": 7,
     "duplicate_or_history_blocked": 9,
-    "stale_or_uncertain": 4
+    "stale_or_uncertain": 4,
+    "provider_history_reconciled_through_uid": 280
   },
   "current_action_distribution": {
-    "HUMAN_REVIEW_HIGH_VALUE": 9,
+    "HUMAN_REVIEW_HIGH_VALUE": 10,
     "DO_NOT_CONTACT_DUPLICATE": 9,
-    "WAIT_FOR_REPLY": 5,
+    "WAIT_FOR_REPLY": 7,
     "HOLD_STALE_OR_UNCERTAIN": 4
   },
   "source_distribution": {
@@ -60,28 +62,36 @@
     "high_frequency_semantic_gate": "235_INPUT_7_PASS_228_REJECT",
     "territory_radar": "NO_HARVEST_AREAS_INSUFFICIENT_SAMPLE"
   },
-  "material_changes": [],
+  "material_changes": [
+    "org:avangarde.it:HUMAN_REVIEW_HIGH_VALUE->WAIT_FOR_REPLY",
+    "org:alpacode.it:HUMAN_REVIEW_HIGH_VALUE->WAIT_FOR_REPLY",
+    "org:alpacode.it:HUMAN_REVIEW_RECONCILED_WITH_PROVIDER_HISTORY",
+    "org:avangarde.it:HUMAN_REVIEW_RECONCILED_WITH_PROVIDER_HISTORY",
+    "org:grownnectia.com:HUMAN_REVIEW_RECONCILED_WITH_PROVIDER_HISTORY",
+    "org:globalserviceimpresa.it:HUMAN_REVIEW_RECONCILED_WITH_PROVIDER_HISTORY",
+    "org:zmotlab.it:HUMAN_REVIEW_RECONCILED_WITH_PROVIDER_HISTORY"
+  ],
   "note": "State counts only. Cross-Signal performed analysis/ranking/state-write only; no external action.",
-  "runs": 5,
-  "evaluated": 27,
-  "hot_plus": 12,
+  "runs": 6,
+  "evaluated": 30,
+  "hot_plus": 15,
   "hot": 12,
   "warm": 2,
   "new_first_contact_executable": 0,
   "queued": 0,
   "manual_high_priority": 0,
-  "human_review_high_value": 9,
+  "human_review_high_value": 10,
   "research_recipient": 0,
   "territory_enrichment": 0,
   "followup_eligibility": 0,
   "duplicate_history_blocked": 9,
-  "waiting_reply": 5,
+  "waiting_reply": 7,
   "stale_or_uncertain": 4,
   "fresh_semantic_state": {
-    "input": 570,
-    "pass": 74,
+    "input": 579,
+    "pass": 75,
     "review": 7,
-    "reject": 489
+    "reject": 497
   },
   "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION"
 }
