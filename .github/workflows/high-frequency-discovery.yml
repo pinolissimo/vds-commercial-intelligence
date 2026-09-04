@@ -8,6 +8,7 @@ on:
     paths:
       - ".github/workflows/high-frequency-discovery.yml"
       - "scripts/high_frequency_discovery.py"
+      - "scripts/supplemental_public_sources.py"
       - "scripts/opportunity_semantic_gate.py"
       - "scripts/search_source_optimizer.py"
       - "scripts/territory_yield_radar.py"
@@ -15,6 +16,7 @@ on:
       - "scripts/acquisition_performance_optimizer.py"
       - "scripts/search_mission_planner.py"
       - "config/high-frequency-discovery-sources.json"
+      - "config/supplemental-public-sources.json"
       - "config/semantic-opportunity-policy.json"
       - "config/search-territory-frontier.json"
       - "config/adaptive-search-policy.json"
@@ -42,8 +44,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run public-source fanout
+      - name: Run core public-source fanout
         run: python scripts/high_frequency_discovery.py
+
+      - name: Merge supplemental rate-aware public sources
+        run: python scripts/supplemental_public_sources.py
 
       - name: Apply semantic role geo freshness gate
         run: python scripts/opportunity_semantic_gate.py
@@ -79,6 +84,7 @@ jobs:
                   metrics/high-frequency-discovery-state.json \
                   metrics/high-frequency-watch-state.json \
                   metrics/high-frequency-semantic-gate.json \
+                  metrics/supplemental-public-sources-state.json \
                   metrics/territory-yield-radar-state.json \
                   config/adaptive-search-runtime.json \
                   config/acquisition-runtime-command.json
