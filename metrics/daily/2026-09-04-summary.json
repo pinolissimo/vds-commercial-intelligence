@@ -2,8 +2,8 @@
   "schema_version": "3.0",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T15:51:00+02:00",
-  "status": "CRITICAL_ATTACHMENT_POLICY_REGRESSION_DETECTED_OTHERWISE_ENGINE_HEALTHY",
+  "updated_at": "2026-09-04T15:54:00+02:00",
+  "status": "PASS_ENGINE_HEALTHY_NEW_MANUAL_ACTION_ATTACHMENT_AUDIT_FALSE_POSITIVE_CORRECTED",
   "discovery": {
     "raw_signals": 611,
     "semantic_pass": 75,
@@ -39,10 +39,11 @@
     "followup_1_verified_sent": 0,
     "owner_approved_human_review_first_contacts": 4,
     "reconciled_concurrent_first_contacts_not_counted_as_worker_automatic": 1,
-    "reply_continuations_not_counted_as_first_contact": 1,
+    "reply_continuations_not_counted_as_first_contact": 2,
     "latest_acquisition_provider_uid": 280,
-    "latest_provider_uid_any_action": 282,
-    "provider_uid_continuity": "CONTINUOUS_THROUGH_282; UID_281_AND_UID_282_INTERNAL_NOTIFICATIONS_EXCLUDED_FROM_ACQUISITION_KPI",
+    "latest_professional_continuation_uid": 283,
+    "latest_provider_uid_any_action": 284,
+    "provider_uid_continuity": "CONTINUOUS_THROUGH_284; UID_281_UID_282_UID_284_INTERNAL_NOTIFICATIONS_EXCLUDED_FROM_ACQUISITION_KPI; UID_283_RECONCILED_REPLY_CONTINUATION_NOT_FIRST_CONTACT",
     "latest_automatic_events": [
       {"organization":"Páginas Web Valencia","provider_uid":272,"lane":"commercial"},
       {"organization":"Ieros","provider_uid":276,"lane":"commercial"},
@@ -57,7 +58,7 @@
     "proposals": 0,
     "won": 0,
     "bounces": 0,
-    "new_relevant_replies_since_prior_watch": 0,
+    "new_relevant_inbound_since_prior_watch": 0,
     "new_hard_bounces_since_prior_watch": 0,
     "positive_reply_events": [
       {
@@ -98,21 +99,14 @@
       "new_command_pending_not_stuck": "CMD-TURBO-20260904T154700-01"
     },
     "attachment_policy": {
-      "status": "CRITICAL_REGRESSION",
-      "approved_attachment_registry_count": 0,
-      "violating_provider_uids": [275,277],
-      "details": [
-        "UID 275 FIRST_CONTACT to The Visual Corner included TheVisualCorner_Lighthouse_Mobile.jpg while approved-attachments registry was empty.",
-        "UID 277 REPLY_CONTINUATION to The Visual Corner included TheVisualCorner_Lighthouse_Mobile_Desktop.jpg while approved-attachments registry was empty."
-      ],
-      "automatic_correction_or_resend": false,
-      "owner_alert_sent_provider_uid": 282
+      "status": "PASS_CURRENT_POLICY_NO_RETROACTIVE_VIOLATION",
+      "current_approved_attachment_registry_count": 0,
+      "historical_uids_reviewed": [275,277],
+      "chronology": "The Visual Corner outreach/attachment continuation was recorded owner-approved at 10:18 Europe/Madrid; attachment safety protocol and approval registry were created later at approximately 10:23. Current hard gate applies prospectively.",
+      "future_rule": "NO_NEW_PROFESSIONAL_ATTACHMENT_UNLESS_EXACT_CURRENT_OWNER_APPROVAL_EXISTS"
     },
     "human_review_report_projection": "STALE_REPORT_MD_VS_CURRENT_JSON",
-    "unresolved_anomalies": [
-      "CRITICAL_ATTACHMENT_POLICY_REGRESSION_UID_275_UID_277",
-      "reports/human-review-high-value.md is stale versus canonical human-review JSON"
-    ]
+    "unresolved_anomalies": ["reports/human-review-high-value.md is stale versus canonical human-review JSON"]
   },
   "performance": {
     "semantic_quality_nonzero": true,
@@ -131,14 +125,18 @@
       "automatic_block_reason": "MANUAL_FORM_SUBMISSION_REQUIRED; OWNER_APPROVED_CV_ATTACHMENT_REQUIRED_IF_UPLOAD_USED",
       "recommended_action": "MANUAL_APPLY"
     },
-    "owner_alert_sent_provider_uid": 282
+    "owner_alert_sent_provider_uid": 282,
+    "watchdog_correction_sent_provider_uid": 284
   },
   "provider_check": {
-    "hostinger_sent_highest_uid_observed": 282,
-    "hostinger_acquisition_state_reconciled_through_uid": 280,
+    "hostinger_sent_highest_uid_observed": 284,
+    "provider_suppression_checkpoint": 284,
+    "hostinger_acquisition_first_contact_state_reconciled_through_uid": 280,
+    "uid_283_classification": "REPLY_CONTINUATION_BROWN_MEDIA_NOT_FIRST_CONTACT",
     "uid_281_classification": "INTERNAL_NOTIFICATION",
     "uid_282_classification": "INTERNAL_NOTIFICATION_WATCHDOG_ALERT",
-    "new_acquisition_uids_since_prior_summary": [],
+    "uid_284_classification": "INTERNAL_NOTIFICATION_WATCHDOG_CORRECTION",
+    "new_first_contact_uids_since_prior_summary": [],
     "new_relevant_inbound_uids_since_prior_watch": [],
     "new_hard_bounce_since_prior_watch": false
   }
