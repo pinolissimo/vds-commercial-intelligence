@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "run_id": "unified-acquisition-20260904T0910Z",
+  "run_at": "2026-09-04T09:12:00Z",
+  "task": "VDS Unified Acquisition Loop",
+  "sending_window_gate": "OPEN",
+  "precheck": {
+    "global_dedup_protocol": "v1.3",
+    "human_review_protocol": "v1.0",
+    "dispatch_lease_state": "IDLE",
+    "active_global_reservations": 0,
+    "provider_suppression_checkpoint_uid": 278,
+    "ready_partner_queue_seen": 0,
+    "ready_linkedin_queue_seen": 0
+  },
+  "adaptive_command": {
+    "bottleneck": "RAW_SOURCE_PRECISION",
+    "capacity_pct": {"exploitation": 70, "exploration": 20, "strategic_reserve": 10},
+    "harvest_area": "Italy|Lazio|Roma"
+  },
+  "discovery_and_qualification": {
+    "new_high_value_soft_blocked": [
+      {
+        "canonical_identity_key": "org:lwlcompany.com",
+        "organization": "LWL S.r.l. Società Benefit / Correre Naturale",
+        "country": "IT",
+        "territory": {"region": "Veneto", "province": "Vicenza", "city": "Caldogno/Vicenza"},
+        "website": "https://www.correrenaturale.com/",
+        "opportunity_url": "https://www.correrenaturale.com/lavora-con-noi/ai-automation-specialist/",
+        "source_urls": [
+          "https://www.correrenaturale.com/lavora-con-noi/ai-automation-specialist/",
+          "https://www.correrenaturale.com/termini-e-condizioni/"
+        ],
+        "signal_date": "2026-09-04 current official page rechecked",
+        "score": 82,
+        "priority": "HOT",
+        "evidence_strength": "CURRENT_PRIMARY_OFFICIAL",
+        "evidence_summary": "Official current IT & Automation Specialist opening: remote with periodic Vicenza meetings, P.IVA, hands-on WordPress administration/security/PHP/REST/ACF, WooCommerce operations/integrations, CRM/automation, GTM and related troubleshooting/maintenance ownership.",
+        "why_high_value": "Strong overlap with VDS WordPress/PHP/frontend, WooCommerce, production troubleshooting, security/performance mindset and automation/IT profile; explicit P.IVA and remote model materially improve commercial compatibility.",
+        "facts_vs_inference": {
+          "facts": [
+            "Official page states remote work with periodic Vicenza meetings and P.IVA contract.",
+            "Official page requires real WordPress administration, PHP customization, WooCommerce, CRM configuration/automation and GTM familiarity.",
+            "Official route is a dedicated application questionnaire and asks the applicant to prepare a PDF CV; optional short video is prioritized but not mandatory."
+          ],
+          "inference": [
+            "VDS has strong overlap on WordPress/PHP/WooCommerce/IT troubleshooting, but advanced Zoho/GTM depth must not be claimed unless verified by the owner/CV."
+          ]
+        },
+        "automatic_block_reason": "OFFICIAL_APPLICATION_FORM_REQUIRES_MANUAL_QUESTIONNAIRE_AND_PDF_CV",
+        "review_class": "MANUAL_ROUTE",
+        "known_public_contacts": [],
+        "authoritative_routes": [
+          {"type": "OFFICIAL_APPLICATION_FORM", "url": "https://www.correrenaturale.com/lavora-con-noi/ai-automation-specialist/"}
+        ],
+        "language": "IT",
+        "dedup_status": "NO_MATCH_IN_CURRENT_PROVIDER_SUPPRESSION_OR_GLOBAL_ORGANIZATION_INDEX; targeted Sent text check found no attributable prior LWL/Correre Naturale contact",
+        "safe_alternative_angles": [
+          "Manual application through the official questionnaire, emphasizing only verified WordPress/PHP/WooCommerce/security/troubleshooting/automation experience.",
+          "Treat Zoho/GTM/Deluge/server-side-tracking requirements conservatively and disclose real depth rather than overstate fit."
+        ],
+        "recommended_human_checks": [
+          "Confirm willingness/ability for periodic Vicenza meetings.",
+          "Confirm exact hands-on Zoho CRM and GTM experience before claiming those must-haves.",
+          "Use an owner-approved PDF CV only; do not auto-generate or auto-upload an attachment."
+        ],
+        "recommended_action": "MANUAL_APPLY",
+        "owner_decision": "PENDING",
+        "source_task": "VDS Unified Acquisition Loop"
+      }
+    ],
+    "duplicate_blocked": [
+      {
+        "organization": "MarkeThink",
+        "recipient": "info@correo.cat",
+        "reason": "TARGETED_HOSTINGER_SENT_CONFIRMED_PRIOR_FIRST_CONTACT",
+        "provider_uid": 135,
+        "sent_at": "2026-08-31T08:12:23Z",
+        "subject": "Candidatura — Desarrollador WordPress senior / Elementor"
+      }
+    ]
+  },
+  "dispatch": {
+    "raw_ready_seen": 0,
+    "executable_ready_seen": 0,
+    "first_contacts_attempted": 0,
+    "first_contacts_verified_sent": 0,
+    "followup_1_verified_sent": 0,
+    "lease_acquired": false,
+    "result": "ZERO_SEND_NO_EXECUTABLE_READY"
+  },
+  "human_review": {
+    "created_or_preserved": 1,
+    "owner_decision": "PENDING",
+    "canonical_view_merge_status": "PENDING_SAFE_MERGE_BY_CANONICAL_REBUILDER",
+    "reason": "Concurrent human-review view changed during this run; durable fragment written rather than overwriting newer canonical state."
+  },
+  "audit": {
+    "no_duplicate_first_contact_global": "PASS",
+    "no_unapproved_attachment": "PASS",
+    "no_external_form_submission": "PASS",
+    "provider_ambiguity": false,
+    "lease_left_untouched": true
+  }
+}
