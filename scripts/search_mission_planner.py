@@ -9,10 +9,39 @@ CMD = ROOT / "config/acquisition-runtime-command.json"
 PLAY = ROOT / "config/territorial-intent-query-playbook.json"
 OUT = ROOT / "views/search-mission-plan.json"
 
+STRATEGIC_PRIOR = {
+    "Spain": [
+        "Spain|Cataluña|Barcelona",
+        "Spain|Comunidad de Madrid|Madrid",
+        "Spain|Comunitat Valenciana|Valencia",
+        "Spain|País Vasco|Bizkaia",
+        "Spain|Andalucía|Málaga",
+        "Spain|Andalucía|Sevilla",
+        "Spain|Comunitat Valenciana|Alicante",
+        "Spain|Aragón|Zaragoza",
+        "Spain|Cataluña|Tarragona",
+        "Spain|Galicia|A Coruña"
+    ],
+    "Italy": [
+        "Italy|Lombardia|Milano",
+        "Italy|Lazio|Roma",
+        "Italy|Piemonte|Torino",
+        "Italy|Emilia-Romagna|Bologna",
+        "Italy|Toscana|Firenze",
+        "Italy|Campania|Napoli",
+        "Italy|Veneto|Padova",
+        "Italy|Veneto|Verona",
+        "Italy|Lombardia|Bergamo",
+        "Italy|Lombardia|Brescia"
+    ]
+}
+
 
 def load(p, d):
-    try: return json.loads(p.read_text(encoding="utf-8"))
-    except Exception: return d
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return d
 
 
 def save(p, x):
@@ -26,9 +55,16 @@ def territory_label(area):
 
 
 def rotate_pick(pool, slot, count):
-    if not pool: return []
+    if not pool:
+        return []
     start = (slot * max(1, count)) % len(pool)
     return [pool[(start + i) % len(pool)] for i in range(min(count, len(pool)))]
+
+
+def add_unique(selected, seen, area):
+    if area and area.get("area_key") not in seen:
+        selected.append(area)
+        seen.add(area.get("area_key"))
 
 
 def main():
@@ -38,19 +74,38 @@ def main():
     play = load(PLAY, {"segments": {}})
     valid_modes = {"HARVEST", "REVISIT", "EXPLORATION"}
     areas = [a for a in radar.get("areas", []) if a.get("mode") in valid_modes and a.get("region") not in {None, "UNRESOLVED"} and a.get("province") not in {None, "UNRESOLVED"}]
+    area_by_key = {a.get("area_key"): a for a in areas}
     slot = int(now.timestamp() // 900)
 
     selected = []
     seen = set()
-    # Guarantee both countries are represented whenever candidate areas exist.
+    # Per country: strongest learned area first, then one strategic-density prior, then one rotating exploration area.
+    # This gives urgent commercial density without sacrificing nationwide exploration.
     for country in ("Spain", "Italy"):
         country_areas = [a for a in areas if a.get("country") == country]
-        exploit = [a for a in country_areas if a.get("mode") in {"HARVEST", "REVISIT"}]
-        explore = [a for a in country_areas if a.get("mode") == "EXPLORATION"]
-        picks = exploit[:2] + rotate_pick(explore, slot + (0 if country == "Spain" else 7), 2)
-        for a in picks:
-            if a.get("area_key") not in seen:
-                selected.append(a); seen.add(a.get("area_key"))
+        exploit = sorted(
+            [a for a in country_areas if a.get("mode") in {"HARVEST", "REVISIT"}],
+            key=lambda a: (float(a.get("score", 0)), int((a.get("metrics") or {}).get("hot", 0)), int((a.get("metrics") or {}).get("ready", 0))),
+            reverse=True
+        )
+        if exploit:
+            add_unique(selected, seen, exploit[0])
+
+        priors = [area_by_key[k] for k in STRATEGIC_PRIOR.get(country, []) if k in area_by_key and area_by_key[k].get("mode") != "COOLDOWN"]
+        if priors:
+            strategic = priors[slot % min(len(priors), 6)]
+            add_unique(selected, seen, strategic)
+
+        explore = [a for a in country_areas if a.get("mode") == "EXPLORATION" and a.get("area_key") not in seen]
+        for a in rotate_pick(explore, slot + (0 if country == "Spain" else 11), 1):
+            add_unique(selected, seen, a)
+
+        # If there is no learned exploit yet, use a second strategic metro instead of leaving capacity idle.
+        if not exploit and len([a for a in selected if a.get("country") == country]) < 3:
+            for a in priors:
+                if a.get("area_key") not in seen:
+                    add_unique(selected, seen, a)
+                    break
 
     segments = sorted(play.get("segments", {}).items(), key=lambda kv: float(kv[1].get("weight", 1)), reverse=True)
     missions = []
@@ -59,11 +114,13 @@ def main():
         lang = "spain" if country == "Spain" else "italy"
         label = territory_label(area)
         mode = area.get("mode")
-        for offset in range(3):
+        # Four intents per strategic territory to increase route-closure probability.
+        for offset in range(4):
             seg_name, seg = segments[(slot + ai + offset) % len(segments)]
             templates = seg.get(lang, [])
-            if not templates: continue
-            template = templates[(slot + ai * 3 + offset) % len(templates)]
+            if not templates:
+                continue
+            template = templates[(slot + ai * 4 + offset) % len(templates)]
             missions.append({
                 "mission_id": f"{slot}-{ai}-{offset}",
                 "country": country,
@@ -79,15 +136,16 @@ def main():
             })
 
     output = {
-        "schema_version": "1.1",
+        "schema_version": "1.2",
         "updated_at": now.replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "cycle_minutes": 15,
         "diagnosed_bottleneck": cmd.get("diagnosed_bottleneck"),
-        "capacity": cmd.get("capacity", {"exploitation_pct":70,"exploration_pct":20,"strategic_reserve_pct":10}),
+        "capacity": cmd.get("capacity", {"exploitation_pct": 70, "exploration_pct": 20, "strategic_reserve_pct": 10}),
         "selected_areas": [{"area_key": a.get("area_key"), "mode": a.get("mode"), "score": a.get("score")} for a in selected],
         "missions": missions,
-        "country_counts": {"Spain": sum(1 for a in selected if a.get("country")=="Spain"), "Italy": sum(1 for a in selected if a.get("country")=="Italy")},
-        "instruction": "Execute highest-value independent missions with fresh web search. Verify against authoritative sources and provider suppression history. ROTATE_OUT/COOLDOWN/ENRICHMENT_REQUIRED areas are excluded from search missions."
+        "country_counts": {"Spain": sum(1 for a in selected if a.get("country") == "Spain"), "Italy": sum(1 for a in selected if a.get("country") == "Italy")},
+        "strategy": "LEARNED_YIELD_PLUS_STRATEGIC_DENSITY_PLUS_NATIONWIDE_ROTATION",
+        "instruction": "Execute highest-value missions with fresh web search. When learned yield is sparse, prioritize major digital/business ecosystems while preserving one rotating exploratory territory per country. Verify authoritative demand/route and provider suppression before any downstream execution."
     }
     save(OUT, output)
     print(json.dumps({"selected_areas": len(selected), "missions": len(missions), "countries": output["country_counts"], "bottleneck": output["diagnosed_bottleneck"]}))
