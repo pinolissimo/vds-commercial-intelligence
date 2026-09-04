@@ -60,6 +60,9 @@ jobs:
           grep -q "assets/vendor/sodium.js" .pages/index.html
           grep -q "Secrets read/write" .pages/index.html
           grep -q "crypto_box_seal" .pages/assets/secure-onboarding.js
+          grep -q "DEEPSEEK_API_KEY" .pages/assets/secure-onboarding.js
+          grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
+          node --check .pages/assets/secure-onboarding.js
           ! grep -R -E "sk-[A-Za-z0-9_-]{20,}" .pages
           ! grep -R "fonts.googleapis.com\|cdn.jsdelivr.net" .pages/index.html
           ! grep -R "localStorage" .pages/assets/*.js
