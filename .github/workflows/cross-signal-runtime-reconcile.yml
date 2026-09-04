@@ -1,0 +1,47 @@
+name: VDS Cross-Signal Runtime Reconcile
+
+on:
+  push:
+    paths:
+      - "scripts/cross_signal_runtime_reconcile.py"
+      - ".github/workflows/cross-signal-runtime-reconcile.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vds-cross-signal-runtime-reconcile-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Reconcile cross-signal state
+        run: python scripts/cross_signal_runtime_reconcile.py
+      - name: Commit state
+        shell: bash
+        run: |
+          git config user.name "vds-cross-signal-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add views/cross-signal-opportunities.json views/human-review-high-value.json metrics/daily/*-cross-signal.json
+          if git diff --cached --quiet; then
+            echo "No cross-signal state changes"
+            exit 0
+          fi
+          git commit -m "data: reconcile cross-signal ranking and human review"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 3))
+          done
+          exit 1
