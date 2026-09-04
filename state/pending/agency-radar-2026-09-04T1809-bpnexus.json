@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-09-04T18:09:00+02:00",
+  "source_task": "VDS Agency + EU Signal Radar",
+  "merge_targets": ["views/agency-eu-signal-radar.json", "views/cross-signal-opportunities.json"],
+  "signal": {
+    "canonical_identity_key": "org:bpnexus.com",
+    "organization": "BP Nexus",
+    "domain": "bpnexus.com",
+    "country": "IT",
+    "region": "Piemonte",
+    "province": "Torino",
+    "city": "Volpiano",
+    "segment": "AGENCY_WHITE_LABEL",
+    "priority_tier": "HOT+",
+    "score": 96,
+    "source_id": "official_current_partnership_page_plus_official_company_site",
+    "source_urls": ["https://bpnexus.com/lavora-con-noi", "https://bpnexus.com/"],
+    "query_or_intent": "agency freelance subcontracting structured partnership IT development Italy direct authoritative email",
+    "evidence_timestamp": "2026-09-04T18:09:00+02:00",
+    "freshness": "CURRENT_OFFICIAL_RECHECK_2026-09-04",
+    "demand": "Official collaboration page explicitly seeks IT consulting companies, system integrators and specialized freelancers for structured collaborations on complex projects. It explicitly accepts occasional project work and continuing partnerships, and states interest in qualified subcontracting, co-development and reciprocal referrals.",
+    "route": {
+      "type": "EMAIL",
+      "recipient": "amministrazione@bpnexus.com",
+      "authority": "OFFICIAL_EXPLICIT_PARTNERSHIP_APPLICATION_ROUTE",
+      "source": "https://bpnexus.com/lavora-con-noi",
+      "required_subject_pattern": "Partnership - [Nome Società/Freelance]"
+    },
+    "territory_evidence": "Official company site states office at Corso Europa 599, Volpiano (TO).",
+    "vds_fit_hints": ["web/full-stack development", "IT support", "digitalization", "software development", "subcontracting", "co-development", "recurring partnership", "PMI/enterprise projects"],
+    "recurring_economic_potential": "VERY_HIGH_EXPLICIT_CONTINUING_PARTNERSHIPS_AND_MEDIUM_LONG_TERM_PROJECTS",
+    "global_contact_state": "NO_REPOSITORY_MATCH_FOUND_FOR_BPNEXUS.COM_AT_2026-09-04T18:09+02:00; DOWNSTREAM_MUST_RECHECK_LATEST_PROVIDER_SUPPRESSION_GLOBAL_SENT_GLOBAL_ORG_AND_RESERVATIONS",
+    "missing_gates": ["DOWNSTREAM_JIT_GLOBAL_PROVIDER_DEDUP_RECHECK_REQUIRED"],
+    "recommended_downstream_executor": "UNIFIED_LOOP",
+    "recommended_next_action": "CERTIFY_EXECUTABLE_READY_IF_LATEST_GLOBAL_HISTORY_AND_RESERVATION_GATES_STILL_CLEAR",
+    "confidence": "VERY_HIGH",
+    "human_review_required": false,
+    "external_send_count": 0,
+    "notes": "This is a genuine B2B partnership route, not a job/application route. The official page itself instructs partnership proposals to the exact email, so no generic-email substitution occurs. Radar has no outbound authority."
+  }
+}
