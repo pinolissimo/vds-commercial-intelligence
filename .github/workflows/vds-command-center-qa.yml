@@ -46,6 +46,7 @@ jobs:
           node --check command-center/assets/app.js
           node --check command-center/assets/sodium-bootstrap.js
           node --check command-center/assets/secure-onboarding.js
+          node --check command-center/assets/github-token-helper.js
 
       - name: Build read-only projections
         run: python3 scripts/build_command_center_api.py
@@ -88,9 +89,12 @@ jobs:
           test -s /tmp/vds-pages/assets/fonts/material-symbols-rounded.woff2
           test -s /tmp/vds-pages/assets/vendor/chart.umd.min.js
           test -s /tmp/vds-pages/assets/vendor/sodium.js
+          grep -q 'assets/github-token-helper.js' /tmp/vds-pages/index.html
           grep -q 'assets/secure-onboarding.js' /tmp/vds-pages/index.html
           grep -q 'assets/vendor/sodium.js' /tmp/vds-pages/index.html
           grep -q 'Secrets read/write' /tmp/vds-pages/index.html
+          grep -q 'personal-access-tokens/new' /tmp/vds-pages/assets/github-token-helper.js
+          grep -q 'contents=read&actions=write&secrets=write' /tmp/vds-pages/assets/github-token-helper.js
           grep -q 'crypto_box_seal' /tmp/vds-pages/assets/secure-onboarding.js
           ! grep -R -E 'sk-[A-Za-z0-9_-]{20,}' /tmp/vds-pages
           ! grep -R 'localStorage' /tmp/vds-pages/assets/*.js

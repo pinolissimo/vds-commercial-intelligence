@@ -18,6 +18,7 @@ SODIUM_URL = "https://raw.githubusercontent.com/jedisct1/libsodium.js/2830fcf2ce
 DM_CSS = "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
 ICONS_CSS = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 ONBOARDING_MARKER = "assets/secure-onboarding.js"
+TOKEN_HELPER_MARKER = "assets/github-token-helper.js"
 
 
 def fetch(url: str) -> bytes:
@@ -41,12 +42,16 @@ def inject_secure_onboarding(root: Path) -> None:
         "Permessi consigliati: repository singolo · Contents read-only · Actions read/write.",
         "Permessi consigliati: repository singolo · Contents read-only · Actions read/write · Secrets read/write.",
     )
+    scripts = ""
+    if TOKEN_HELPER_MARKER not in html:
+        scripts += '<script type="module" src="assets/github-token-helper.js"></script>'
     if ONBOARDING_MARKER not in html:
-        scripts = (
+        scripts += (
             '<script src="assets/sodium-bootstrap.js"></script>'
             '<script src="assets/vendor/sodium.js"></script>'
             '<script type="module" src="assets/secure-onboarding.js"></script>'
         )
+    if scripts:
         html = html.replace("</body>", scripts + "</body>")
     index.write_text(html, encoding="utf-8")
 
