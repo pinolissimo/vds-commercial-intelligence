@@ -1,0 +1,68 @@
+name: VDS Command Center — QA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/vds-command-center-v1
+    paths:
+      - 'command-center/**'
+      - 'api/v1/**'
+      - 'scripts/build_command_center_api.py'
+      - 'scripts/vds_ai_command.py'
+      - 'scripts/prepare_command_center_assets.py'
+      - 'scripts/test_command_center.py'
+      - '.github/workflows/vds-command-center-*.yml'
+      - '.github/workflows/vds-ai-command.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vds-command-center-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout feature branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python syntax
+        run: |
+          python3 -m py_compile \
+            scripts/build_command_center_api.py \
+            scripts/vds_ai_command.py \
+            scripts/prepare_command_center_assets.py \
+            scripts/test_command_center.py
+
+      - name: JavaScript syntax
+        run: node --check command-center/assets/app.js
+
+      - name: Build read-only projections
+        run: python3 scripts/build_command_center_api.py
+
+      - name: Static security and architecture QA
+        run: python3 scripts/test_command_center.py
+
+      - name: Test local asset vendoring
+        run: |
+          rm -rf /tmp/vds-pages
+          mkdir -p /tmp/vds-pages
+          cp -R command-center/. /tmp/vds-pages/
+          python3 scripts/prepare_command_center_assets.py /tmp/vds-pages
+          test -s /tmp/vds-pages/assets/fonts/dm-sans.woff2
+          test -s /tmp/vds-pages/assets/fonts/material-symbols-rounded.woff2
+          test -s /tmp/vds-pages/assets/vendor/chart.umd.min.js
+
+      - name: Verify production discovery workflow unchanged in feature branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git diff --exit-code origin/main -- .github/workflows/high-frequency-discovery.yml
+          git diff --exit-code origin/main -- .github/workflows/cross-signal-runtime-reconcile.yml
