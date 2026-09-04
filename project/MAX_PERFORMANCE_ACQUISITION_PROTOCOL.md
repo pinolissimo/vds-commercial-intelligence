@@ -1,4 +1,4 @@
-# VDS Max-Performance Acquisition Protocol v1.0
+# VDS Max-Performance Acquisition Protocol v1.1
 
 Effective: 2026-09-04
 
@@ -19,8 +19,12 @@ Every active discovery/ranking/execution task MUST read when present:
 - `views/high-frequency-discovery-qualified-seeds.json`
 - `views/search-source-performance.json`
 - `views/territory-yield-radar.json`
+- `views/territory-enrichment-queue.json`
 - `views/acquisition-performance.json`
 - `config/adaptive-search-runtime.json`
+- `config/acquisition-runtime-command.json`
+- `config/territorial-intent-query-playbook.json`
+- `views/search-mission-plan.json`
 - `views/cross-signal-opportunities.json`
 - `views/provider-contact-suppression-index.json`
 - `project/GLOBAL_ORGANIZATION_DEDUP_PROTOCOL.md`
@@ -34,6 +38,20 @@ Default discovery/research budget:
 
 The allocation is adaptive, never a rigid quota. Quality gates never weaken to fill volume.
 
+## Search mission planner
+
+`views/search-mission-plan.json` is the current machine-generated territorial search agenda. Discovery-capable tasks should execute its highest-value independent missions before inventing unrelated broad queries, then use remaining capacity for strategic/fresh evidence.
+
+Each mission carries country, region, province, territory mode, segment and a high-intent query. Missions are generated from `config/territorial-intent-query-playbook.json` and rotate every 15-minute discovery cycle.
+
+High-value query intent includes:
+- agency external/freelance/white-label/overflow collaboration;
+- WordPress/frontend/web-design freelance jobs and direct CV routes;
+- WPO/Core Web Vitals/maintenance/migration external demand;
+- early EU-project communication/dissemination/web signals.
+
+Mission execution MUST verify results against authoritative current sources and global contact history. Search-engine snippets/directories are discovery evidence, not sufficient send authority.
+
 ## Territory lifecycle
 
 Use the Territory Yield Radar lifecycle:
@@ -41,9 +59,10 @@ Use the Territory Yield Radar lifecycle:
 - `HARVEST`: concentrate search while marginal downstream yield remains high;
 - `COOLDOWN`: pause concentrated effort after saturation or harvest cap;
 - `REVISIT`: return after cooldown and resample;
-- `LOW_YIELD_VERIFIED`: retain only a small exploration floor.
+- `LOW_YIELD_VERIFIED`: retain only a small exploration floor;
+- `ENRICHMENT_REQUIRED`: country is known but region/province is unresolved; enrich before using the bucket for geographic ranking.
 
-Never permanently abandon Spain or Italy. Country -> region -> province -> city/cluster enrichment should be verified whenever it materially improves attribution.
+Never permanently abandon Spain or Italy. Country -> region -> province -> city/cluster enrichment should be verified whenever it materially improves attribution. Country-only unresolved buckets may NEVER become HARVEST targets.
 
 ## Source and query optimization
 
@@ -51,12 +70,12 @@ Do not optimize for `raw_signals` alone. Attribute each material candidate using
 - `source_id` / source family;
 - `query_id` or search intent;
 - country/region/province/city;
-- segment (`AGENCY_WHITE_LABEL`, `JOB_DIRECT`, `EU_PROJECT`, `WPO_MAINTENANCE`, `LOCAL_CLIENT`, other);
+- segment (`AGENCY_WHITE_LABEL`, `DIRECT_JOB`, `EU_PROJECT`, `WPO_MAINTENANCE`, `LOCAL_CLIENT`, other);
 - route type;
 - message/CTA variant;
 - discovery and send timestamps.
 
-Prefer sources/queries producing VERIFIED/HOT/READY/SENT/POSITIVE outcomes. Penalize high noise, stale results, duplicates, inaccessible routes and geo incompatibility.
+Prefer sources/queries producing VERIFIED/HOT/READY/SENT/POSITIVE outcomes. Penalize high noise, stale results, duplicates, inaccessible routes and geo incompatibility. Preserve a small exploration floor for low-yield sources so the system can detect future changes.
 
 ## Semantic gate before deep verification
 
@@ -75,6 +94,8 @@ Examples:
 - `Remote Office Assistant` mentioning WordPress in body -> normally REJECT/HOLD;
 - `Frontend / WordPress Developer` -> promote;
 - US-only .NET/Angular role without EU eligibility -> reject despite HTML/CSS keywords.
+
+A zero semantic-pass cycle is acceptable when the public feed is genuinely noisy; the system must not weaken thresholds merely to manufacture candidates. Instead, shift search capacity toward higher-intent territorial missions and source families.
 
 ## Commercial-priority hierarchy
 
@@ -149,4 +170,4 @@ Track at minimum:
 
 ## Continuous improvement rule
 
-Every Watchdog cycle should inspect deltas, not blindly recompute history. A sustained performance regression must produce a concrete diagnosis and a safe adjustment to source weights, territory allocation, semantic filters, route verification or messaging. Never improve a vanity metric by lowering quality.
+Every Watchdog cycle should inspect deltas, not blindly recompute history. A sustained performance regression must produce a concrete diagnosis and a safe adjustment to source weights, territory allocation, semantic filters, route verification, mission mix or messaging. Never improve a vanity metric by lowering quality.
