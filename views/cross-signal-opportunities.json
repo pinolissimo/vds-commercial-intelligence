@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-04T06:05:00Z",
+  "ranking_model": {
+    "explicit_demand": 0.35,
+    "vds_fit": 0.20,
+    "verified_direct_route": 0.15,
+    "freshness": 0.10,
+    "recurring_or_economic_potential": 0.10,
+    "independent_signal_confirmation": 0.10
+  },
+  "opportunities": [],
+  "allowed_next_best_actions": [
+    "AUTO_EMAIL_NOW",
+    "QUEUE_FOR_SEND_WINDOW",
+    "MANUAL_APPLY_HIGH_PRIORITY",
+    "RESEARCH_RECIPIENT",
+    "WAIT_FOR_REPLY",
+    "DO_NOT_CONTACT_DUPLICATE",
+    "FOLLOW_UP_ONLY_IF_REQUESTED",
+    "HOLD_STALE_OR_UNCERTAIN"
+  ],
+  "note": "Organizations are merged by canonical identity. Multiple independent signals increase priority but never override global dedup, route, freshness or legal/channel gates."
+}
