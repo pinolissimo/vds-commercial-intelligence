@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "updated_at": "2026-09-04T10:12:09Z",
+  "updated_at": "2026-09-04T10:35:49Z",
   "protocol": "project/HUMAN_REVIEW_HIGH_VALUE_PROTOCOL.md",
   "status": "ACTIVE",
   "purpose": "High-value soft-blocked opportunities preserved for owner human review. This queue never bypasses explicit no-contact/no-freelance/no-agency/legal/dedup constraints.",
@@ -268,7 +268,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T10:12:09Z",
+      "updated_at": "2026-09-04T10:35:49Z",
       "source_task": "VDS Cross-Signal Ranker",
       "schema_version": "1.0",
       "verified_facts": [
@@ -327,7 +327,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T10:12:09Z",
+      "updated_at": "2026-09-04T10:35:49Z",
       "source_task": "VDS LinkedIn Job Hunter",
       "execution_status": "CONTACT_ALREADY_EXECUTED"
     },
@@ -419,7 +419,7 @@
       "execution_status": "CONTACT_ALREADY_EXECUTED",
       "submitted_at": "2026-09-04",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T10:12:09Z",
+      "updated_at": "2026-09-04T10:35:49Z",
       "source_task": "VDS Performance + Reply Watch deterministic reconciliation",
       "owner_action_evidence": "data/human-review-owner-actions/2026-09-04-grownnectia-manual-apply.json"
     },
@@ -464,7 +464,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T10:12:09Z",
+      "updated_at": "2026-09-04T10:35:49Z",
       "source_task": "VDS Cross-Signal Ranker retroactive recovery",
       "execution_status": "CONTACT_ALREADY_EXECUTED"
     },
@@ -579,7 +579,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T10:12:09Z",
+      "updated_at": "2026-09-04T10:35:49Z",
       "source_task": "VDS Cross-Signal Ranker retroactive recovery",
       "execution_status": "CONTACT_ALREADY_EXECUTED"
     },
@@ -686,15 +686,79 @@
         "The recurring freelance model may still exist, but current demand is not proven."
       ],
       "state": "PENDING_CANONICAL_QUEUE_MERGE"
+    },
+    {
+      "schema_version": "1.0",
+      "canonical_identity_key": "org:publydea.com",
+      "organization": "Publydea Comunicación",
+      "country": "ES",
+      "website": "https://publydea.com/",
+      "opportunity_url": "https://publydea.com/trabajo",
+      "source_urls": [
+        "https://publydea.com/trabajo"
+      ],
+      "evidence_summary": "Current official careers page explicitly lists Especialista en WordPress among profiles of interest, seeking WordPress build/maintenance capability with Divi, SEO/local SEO and visual judgement. It provides trabajo@publydea.com as the explicit candidacy email and also accepts spontaneous proposals, but the freelance/autónomo contract model is not stated.",
+      "evidence_strength": "PRIMARY_OFFICIAL_CURRENT",
+      "signal_date": "2026-09-04 official recheck",
+      "score": 86.0,
+      "priority": "HOT+",
+      "why_high_value": "Near-direct VDS technical fit: WordPress, Divi, maintenance, SEO adjacency and visual judgement, with an authoritative candidacy email and openness to creating a role/candidatura espontánea.",
+      "automatic_block_reason": "CONTRACT_MODEL_UNCLEAR",
+      "review_class": "B2B_ALTERNATIVE",
+      "verified_facts": [
+        "Official careers page currently lists Especialista en WordPress.",
+        "WordPress construction and maintenance are explicit.",
+        "Divi, SEO, local SEO and visual judgement are valued.",
+        "trabajo@publydea.com is explicitly published for candidacies.",
+        "Spontaneous candidacy/proposing a role is explicitly invited."
+      ],
+      "inferences": [
+        "Freelance/autónomo/B2B collaboration is not explicitly stated.",
+        "A B2B external-collaboration proposal may be legitimate because spontaneous proposals are invited, but owner judgement is required."
+      ],
+      "safe_alternative_angles": [
+        "Owner may review whether to approach through the explicit candidacy email with a transparent freelance/B2B proposal, without claiming the advertised profile is freelance."
+      ],
+      "known_public_contacts": [
+        {
+          "type": "CANDIDACY_EMAIL",
+          "value": "trabajo@publydea.com",
+          "source": "https://publydea.com/trabajo",
+          "authority": "OFFICIAL_CANDIDACY_ROUTE"
+        }
+      ],
+      "authoritative_routes": [
+        {
+          "type": "EMAIL",
+          "value": "trabajo@publydea.com",
+          "url": "https://publydea.com/trabajo"
+        }
+      ],
+      "language": "ES",
+      "dedup_status": "NO_DOMAIN_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_THROUGH_UID_278",
+      "do_not_bypass_constraints": [
+        "Do not state or imply that Publydea offers freelance/P.IVA terms without confirmation.",
+        "Human-review state is not authorization to send."
+      ],
+      "recommended_human_checks": [
+        "Decide whether a transparent B2B/freelance alternative is acceptable despite unspecified contract model.",
+        "Recheck provider/global history immediately before any owner-approved outreach.",
+        "Emphasize WordPress, Divi, maintenance, responsive/performance and visual implementation truthfully."
+      ],
+      "recommended_action": "HUMAN_REVIEW_B2B",
+      "owner_decision": "PENDING",
+      "created_at": "2026-09-04T10:05:00Z",
+      "updated_at": "2026-09-04T10:05:00Z",
+      "source_task": "VDS Agency + EU Signal Radar"
     }
   ],
   "metrics": {
-    "pending": 8,
+    "pending": 9,
     "approved_outreach": 4,
     "manual_apply": 1,
     "hold": 0,
-    "rejected": 1,
-    "contact_already_executed": 5
+    "rejected": 0,
+    "submitted_by_owner": 5
   },
   "removed_or_closed": [
     {
