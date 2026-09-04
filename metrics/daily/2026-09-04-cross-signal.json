@@ -1,30 +1,79 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "date": "2026-09-04",
   "timezone": "Europe/Madrid",
-  "updated_at": "2026-09-04T06:12:52Z",
-  "counted_run_ids": ["cross-signal-20260904T061252Z"],
-  "counters": {
-    "runs": 1,
-    "organizations_evaluated": 15,
-    "multi_signal_orgs": 15,
-    "hot_plus": 6,
+  "updated_at": "2026-09-04T06:44:42Z",
+  "counted_run_ids": [
+    "cross-signal-20260904T061252Z",
+    "cross-signal-20260904T064442Z"
+  ],
+  "cumulative_processing": {
+    "runs": 2,
+    "organization_evaluations": 32,
+    "cross_workstream_collisions_prevented": 11,
+    "provider_history_corrections": 9,
+    "new_organizations_merged": 2,
+    "history_conflicts_fail_closed": 1
+  },
+  "last_snapshot": {
+    "organizations": 17,
+    "independent_multi_source_orgs": 1,
+    "hot_plus": 7,
     "hot": 8,
-    "warm": 1,
+    "warm": 2,
+    "new_first_contact_executable": 0,
     "auto_email_now": 0,
     "queued_for_window": 0,
-    "manual_high_priority": 8,
-    "research_recipient": 6,
-    "duplicate_blocked": 2,
-    "already_contacted_waiting": 0,
-    "stale_or_uncertain": 1,
-    "cross_workstream_collisions_prevented": 2
+    "manual_high_priority": 4,
+    "research_recipient": 2,
+    "territory_enrichment_required_or_active": 1,
+    "followup_1_eligibility_review": 0,
+    "duplicate_or_history_blocked": 9,
+    "waiting_reply": 0,
+    "stale_or_uncertain": 2
+  },
+  "current_action_distribution": {
+    "DO_NOT_CONTACT_DUPLICATE": 9,
+    "MANUAL_APPLY_HIGH_PRIORITY": 4,
+    "RESEARCH_RECIPIENT": 2,
+    "HOLD_STALE_OR_UNCERTAIN": 2,
+    "AUTO_EMAIL_NOW": 0,
+    "QUEUE_FOR_SEND_WINDOW": 0,
+    "ENRICH_TERRITORY": 0,
+    "FOLLOWUP_1_ELIGIBILITY_REVIEW": 0,
+    "WAIT_FOR_REPLY": 0,
+    "FOLLOW_UP_ONLY_IF_REQUESTED": 0
+  },
+  "source_distribution": {
+    "agency_eu_radar_new": 2,
+    "historical_cross_signal_carried": 15,
+    "high_frequency_semantic_pass_new": 0
+  },
+  "territory_distribution_verified_or_explicit": {
+    "Spain|Cataluña|Barcelona": 1,
+    "Spain|Castilla y León|Valladolid": 1,
+    "Italy|Lazio|Roma": 2,
+    "Italy|Emilia-Romagna|Piacenza": 1,
+    "Italy|Piemonte|Torino": 1,
+    "other_or_unresolved": 11
+  },
+  "segment_distribution": {
+    "AGENCY_WHITE_LABEL": 9,
+    "DIRECT_JOB": 8
   },
   "input_status": {
+    "provider_contact_suppression_index": "FULL_HOSTINGER_METADATA_CHECKPOINT_268_MESSAGES_UID_272",
     "linkedin_job_index": "NOT_YET_CREATED",
-    "agency_eu_radar_state": "NOT_YET_CREATED",
+    "agency_eu_radar_state": "AVAILABLE_UPDATED_2026-09-04T06:40:51Z",
     "unified_ready_queue": "EMPTY",
-    "global_reservations": "EMPTY"
+    "high_frequency_semantic_gate": "138_INPUT_0_PASS_138_REJECT",
+    "territory_radar": "NO_HARVEST_AREAS_INSUFFICIENT_SAMPLE"
   },
-  "note": "Initial cross-signal graph built from canonical active-freelance and direct-route views plus global organization/sent indexes. No outbound action performed."
+  "material_changes": [
+    "Reclassified 9 ranked opportunities as provider-history blocked for new FIRST_CONTACT.",
+    "Merged UGECE Agency as HOT+ and Ieros as WARM from the Agency+EU radar.",
+    "Fail-closed Summum Marketing because Agency radar claims prior provider history while the full provider suppression index contains no summummarketing.es domain match.",
+    "Reduced current manual high-priority pool from 8 to 4 after organization-level historical-contact collision checks."
+  ],
+  "note": "Snapshot metrics are state counts, not additive send counts. No outbound action performed by Cross-Signal Ranker."
 }
