@@ -1,4 +1,4 @@
-# VDS Max-Performance Acquisition Protocol v1.1
+# VDS Max-Performance Acquisition Protocol v1.2
 
 Effective: 2026-09-04
 
@@ -28,6 +28,8 @@ Every active discovery/ranking/execution task MUST read when present:
 - `views/cross-signal-opportunities.json`
 - `views/provider-contact-suppression-index.json`
 - `project/GLOBAL_ORGANIZATION_DEDUP_PROTOCOL.md`
+- `project/ATTACHMENT_SAFETY_PROTOCOL.md`
+- `governance/approved-attachments.json`
 
 ## Capacity allocation
 
@@ -149,6 +151,26 @@ Routine dedup is JSON-first using:
 - active organization reservations.
 
 Hostinger Sent is authoritative and is queried only for targeted reconciliation/recovery and post-send verification when indexed state is coherent. Gmail is notifications/BCC only.
+
+## Attachment integrity and owner approval — ABSOLUTE HARD GATE
+
+`project/ATTACHMENT_SAFETY_PROTOCOL.md` is mandatory and outranks throughput, convenience, message urgency and any per-task attachment behavior.
+
+No professional outbound message may contain an attachment unless ALL of the following are true:
+1. the exact file has passed format-appropriate technical integrity validation;
+2. the exact file has been shown to Giuseppe Allocca in ChatGPT for inspection;
+3. Giuseppe has explicitly approved that exact file;
+4. `governance/approved-attachments.json` contains the approval bound to exact filename, byte size and SHA-256;
+5. immediately before send, the sender recomputes size + SHA-256 from the immutable source and obtains an exact match;
+6. the provider attachment payload is built from those exact approved bytes with no conversion/recompression/regeneration after approval.
+
+**No approval registry entry = no attachment.**
+
+Automations may not autonomously generate, convert, tailor, export, compress, resize or otherwise create a new attachment for immediate sending. If a recipient requires a file and no exact approved file exists, the opportunity is blocked as `OWNER_ATTACHMENT_APPROVAL_REQUIRED` or uses a previously verified public document link where allowed.
+
+After send, provider Sent metadata must be checked. When the sent attachment bytes can be retrieved, they must be hash-compared with the approved SHA-256. A provider success code or filename alone is never proof that the attachment is healthy.
+
+Any attachment error or ambiguity causes a hard stop. **Never send an automatic correction, replacement or second message.** Escalate to the owner for a decision.
 
 ## Performance KPIs
 
