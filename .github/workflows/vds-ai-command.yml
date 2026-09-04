@@ -1,0 +1,64 @@
+name: VDS Command Center — AI Command
+
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'Natural-language owner command'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vds-ai-command
+  cancel-in-progress: false
+
+jobs:
+  interpret-command:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout canonical repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Refresh read model before interpretation
+        run: python3 scripts/build_command_center_api.py
+
+      - name: Interpret owner command through OpenAI
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.6-terra' }}
+          VDS_COMMAND: ${{ inputs.command }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${OPENAI_API_KEY:-}" ]; then
+            echo "OPENAI_API_KEY repository secret is missing" >&2
+            exit 2
+          fi
+          python3 scripts/vds_ai_command.py "$VDS_COMMAND"
+
+      - name: Commit command record and projection delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "vds-command-center-bot"
+          git config user.email "35764978+pinolissimo@users.noreply.github.com"
+          git add api/v1 command-center/commands/pending.json || true
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+          git commit -m "command-center: record AI owner directive"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push raced with another worker; rebasing (attempt $attempt)"
+            git pull --rebase origin main
+          done
+          git push origin HEAD:main
