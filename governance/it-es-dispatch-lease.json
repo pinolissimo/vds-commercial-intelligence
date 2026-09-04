@@ -1,30 +1,30 @@
 {
   "schema_version": "1.0",
-  "state": "ACTIVE",
-  "lease_id": "lease-unified-20260904T1630Z-tif",
-  "owner": "UNIFIED_LOOP",
-  "run_id": "unified-acquisition-20260904T1630Z",
-  "acquired_at": "2026-09-04T16:30:45Z",
-  "expires_at": "2026-09-04T16:45:45Z",
-  "last_released_at": "2026-09-04T08:17:20Z",
-  "last_run_id": "unified-acquisition-20260904T1009Z",
+  "state": "IDLE",
+  "lease_id": null,
+  "owner": null,
+  "run_id": null,
+  "acquired_at": null,
+  "expires_at": null,
+  "last_released_at": "2026-09-04T16:31:50Z",
+  "last_run_id": "unified-acquisition-20260904T1630Z",
   "last_incident": {
     "timestamp": "2026-09-01T19:26:00Z",
     "type": "CONCURRENT_EXECUTOR_DUPLICATE_SEND",
     "affected": ["org:amomarketing.es", "org:bpnexus.com"],
     "hostinger_duplicate_uids": [169,172]
   },
-  "last_run_result": "IN_PROGRESS_TIF_CREATIVEHUB_FIRST_CONTACT",
+  "last_run_result": "VERIFIED_FIRST_CONTACT_SENT_TIF_CREATIVEHUB_UID_286",
   "recovery_evidence": {
-    "reconciled_at": "2026-09-04T16:30:05Z",
-    "hostinger_latest_verified_uid": 285,
-    "post_run_verified_uids": [285],
+    "reconciled_at": "2026-09-04T16:31:50Z",
+    "hostinger_latest_verified_uid": 286,
+    "post_run_verified_uids": [286],
     "provider_ambiguity": false,
     "duplicate_first_contact_detected": false,
-    "queue_drained": false,
+    "queue_drained": true,
     "recipient_index_event_pending_reconciliation": false,
     "public_document_link_verified": true,
-    "remaining_ready_count": 1
+    "remaining_ready_count": 0
   },
   "rule": "Every LIVE executor must atomically acquire this lease with GitHub SHA compare-and-swap before any external send/submission. Any active unexpired lease or conflict means abort without send."
 }
