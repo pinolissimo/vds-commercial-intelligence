@@ -1,11 +1,11 @@
 # VDS Acquisition Chain — Adaptive Execution Protocol
 
-Version: 3.0  
+Version: 3.1  
 Effective: 2026-09-04
 
 ## Purpose
 
-Canonical shared contract for the VDS acquisition architecture. The system combines high-frequency GitHub discovery with five specialized ChatGPT Tasks, global organization-level deduplication, adaptive source/territory ranking, controlled outbound execution and reply/performance monitoring.
+Canonical shared contract for the VDS acquisition architecture. The system combines high-frequency GitHub discovery with five specialized ChatGPT Tasks, global organization-level deduplication, adaptive source/territory ranking, controlled outbound execution, high-value human-review recovery and reply/performance monitoring.
 
 ## Active architecture
 
@@ -27,6 +27,7 @@ Every active acquisition Task must obey, where relevant:
 - `project/GLOBAL_ORGANIZATION_DEDUP_PROTOCOL.md` v1.3+
 - `project/MAX_PERFORMANCE_ACQUISITION_PROTOCOL.md` v1.1+
 - `project/DAILY_METRICS_PROTOCOL.md` v3.0+
+- `project/HUMAN_REVIEW_HIGH_VALUE_PROTOCOL.md` v1.0+
 
 Operational/adaptive inputs include:
 - `views/provider-contact-suppression-index.json`
@@ -42,6 +43,7 @@ Operational/adaptive inputs include:
 - `config/acquisition-runtime-command.json`
 - `views/search-mission-plan.json`
 - `views/cross-signal-opportunities.json`
+- `views/human-review-high-value.json`
 
 Canonical repository: `pinolissimo/vds-commercial-intelligence`, branch `main`.
 
@@ -94,6 +96,10 @@ Optimize:
 
 `DISCOVERED -> SEMANTIC_PASS -> VERIFIED -> HOT -> READY -> FIRST_CONTACT_SENT -> REPLIED -> POSITIVE -> MEETING -> PROPOSAL -> WON`
 
+For strong opportunities that cannot become READY for a SOFT reason, preserve a parallel recovery path:
+
+`VERIFIED_HIGH_VALUE -> SOFT_BLOCKED -> HUMAN_REVIEW_HIGH_VALUE -> OWNER_DECISION -> normal gates if approved`
+
 Raw lead count is not the north-star KPI. Prefer recurring/partner economics and shortest truthful path to paid work.
 
 ## Cross-signal rule
@@ -118,6 +124,8 @@ A candidate can become executable READY only when all relevant gates are resolve
 11. no explicit authoritative blocker.
 
 Unsupported form/platform/Easy Apply/ATS => `MANUAL_ROUTE_REQUIRED` with exact URL/reason/instructions. Never substitute a generic email.
+
+If a candidate is high-value but fails READY only for a SOFT, reviewable reason, evaluate it under `project/HUMAN_REVIEW_HIGH_VALUE_PROTOCOL.md` instead of discarding it.
 
 ## VDS fit and positioning
 
@@ -167,9 +175,22 @@ Provider ambiguity => `DELIVERY_STATE_UNKNOWN`; never blind resend.
 
 At most one automatic `FOLLOWUP_1` may be executed, only under the strict eligibility contract in `MAX_PERFORMANCE_ACQUISITION_PROTOCOL.md`. It is never a new FIRST_CONTACT and never increments first-contact counters. Rejection, bounce, opt-out, reply, owner stop or prior FOLLOWUP_1 blocks it.
 
-## Manual-action preservation
+## Manual-action and high-value review preservation
 
-A strong opportunity that automation cannot complete must never be discarded. Persist exact route, URL, reason, fit/freshness and owner next step. Watchdog surfaces qualified new manual actions without repeated duplicate alerts.
+A strong opportunity that automation cannot complete must never be silently discarded.
+
+Two distinct preservation paths apply:
+
+1. `MANUAL_ROUTE_REQUIRED` — exact form/ATS/platform route is known but automation cannot execute it. Persist exact URL, reason, fit/freshness and owner next step.
+2. `HUMAN_REVIEW_HIGH_VALUE` — opportunity is commercially strong but SOFT-BLOCKED and may justify owner reasoning about a legitimate alternative route or positioning. Persist it in `views/human-review-high-value.json` and surface it in `reports/human-review-high-value.md` according to `project/HUMAN_REVIEW_HIGH_VALUE_PROTOCOL.md`.
+
+Typical recoverable review classes include internal hiring that may support a B2B overflow angle, reciprocal white-label/partner fit, route ambiguity, contradictory but promising evidence, recurring historical freelancer usage, decision-maker review and cross-border contracting questions.
+
+HARD exclusions must never be converted into a workaround: explicit no-freelance/no-agency/no-external-collaborator language, opt-out/DO_NOT_CONTACT, legal prohibitions, unresolved identity, guessed-only contacts and duplicate first contacts remain blocked.
+
+Workers should perform a retroactive recovery pass over recent `REJECTED`, `HOLD`, `MANUAL_ROUTE_REQUIRED`, `REVIEW_REQUIRED`, `ROUTE_UNRESOLVED`, `CONTRACT_MODEL_UNCLEAR` and equivalent states, promoting only qualifying SOFT-BLOCKED high-value opportunities.
+
+No item in `HUMAN_REVIEW_HIGH_VALUE` may be automatically sent merely because it is in that queue. Owner review is required before it can re-enter normal READY/pre-send gates.
 
 ## Watchdog contract
 
@@ -182,6 +203,8 @@ Watchdog validates:
 - sending-window compliance;
 - reservation/lease health;
 - READY items not stranded without blockers;
+- high-value SOFT-BLOCKED items preserved in the human-review queue rather than silently lost;
+- owner is surfaced only NEW/materially changed `HUMAN_REVIEW_HIGH_VALUE` items, without duplicate alerts;
 - source × territory × segment funnel yield;
 - positive replies, meetings/proposals/wins and bounces;
 - follow-up compliance;
@@ -200,6 +223,7 @@ Watchdog may safely repair deterministic state/schedule/adaptive drift but NEVER
 7. No SENT state without provider verification.
 8. No blind resend after ambiguous provider result.
 9. Manual-route opportunities are preserved and surfaced.
-10. Daily counters are incremental/idempotent and routine statistics require no historical mailbox rescan.
-11. Adaptive optimization may reallocate search effort but never weaken safety or factual qualification gates.
-12. Performance is judged primarily by qualified conversations / positive outcomes, not raw volume.
+10. High-value SOFT-BLOCKED opportunities are preserved for owner review; hard prohibitions are never bypassed.
+11. Daily counters are incremental/idempotent and routine statistics require no historical mailbox rescan.
+12. Adaptive optimization may reallocate search effort but never weaken safety or factual qualification gates.
+13. Performance is judged primarily by qualified conversations / positive outcomes, not raw volume.
