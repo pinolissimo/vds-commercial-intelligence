@@ -45,16 +45,28 @@ jobs:
           test -s .pages/index.html
           test -s .pages/assets/app.css
           test -s .pages/assets/command.css
+          test -s .pages/assets/export.css
           test -s .pages/assets/app.js
+          test -s .pages/assets/live-export.js
           test -s .pages/assets/secure-onboarding.js
           test -s .pages/assets/sodium-bootstrap.js
           test -s .pages/assets/fonts/dm-sans.woff2
           test -s .pages/assets/fonts/material-symbols-rounded.woff2
           test -s .pages/assets/vendor/chart.umd.min.js
+          test -s .pages/assets/vendor/xlsx.full.min.js
+          test -s .pages/assets/vendor/jspdf.umd.min.js
+          test -s .pages/assets/vendor/jspdf.plugin.autotable.min.js
           test -s .pages/assets/vendor/sodium.js
           test ! -d .pages/api
           grep -q "api.github.com" .pages/index.html
           grep -q "sessionStorage" .pages/assets/app.js
+          grep -q "AUTO_SYNC_FOREGROUND_MS=5000" .pages/assets/live-export.js
+          grep -q "DISCOVERY_STALE_MS=17\*60\*1000" .pages/assets/live-export.js
+          grep -q "deepseek-shadow.json" .pages/assets/live-export.js
+          grep -q "data-export-format=\"xlsx\"" .pages/assets/live-export.js
+          grep -q "data-export-format=\"pdf\"" .pages/assets/live-export.js
+          grep -q "assets/live-export.js" .pages/index.html
+          grep -q "assets/export.css" .pages/index.html
           grep -q "VDS Engine" .pages/index.html
           grep -q "assets/secure-onboarding.js" .pages/index.html
           grep -q "assets/vendor/sodium.js" .pages/index.html
@@ -62,6 +74,8 @@ jobs:
           grep -q "crypto_box_seal" .pages/assets/secure-onboarding.js
           grep -q "DEEPSEEK_API_KEY" .pages/assets/secure-onboarding.js
           grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
+          node --check .pages/assets/app.js
+          node --check .pages/assets/live-export.js
           node --check .pages/assets/secure-onboarding.js
           ! grep -R -E "sk-[A-Za-z0-9_-]{20,}" .pages
           ! grep -R "fonts.googleapis.com\|cdn.jsdelivr.net" .pages/index.html
