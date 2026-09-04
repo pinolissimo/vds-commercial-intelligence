@@ -17,6 +17,9 @@ on:
       - "scripts/acquisition_performance_optimizer.py"
       - "scripts/search_mission_planner.py"
       - "scripts/cross_signal_human_review_reconcile.py"
+      - "scripts/merge_human_review_pending.py"
+      - "scripts/reconcile_global_contact_history.py"
+      - "data/human-review-pending/**"
       - "config/high-frequency-discovery-sources.json"
       - "config/supplemental-public-sources.json"
       - "config/direct-employer-bulk-sources.json"
@@ -74,8 +77,14 @@ jobs:
       - name: Build territorial high-intent search missions
         run: python scripts/search_mission_planner.py
 
+      - name: Merge pending high-value human review records
+        run: python scripts/merge_human_review_pending.py
+
       - name: Reconcile cross-signal + high-value human review
         run: python scripts/cross_signal_human_review_reconcile.py
+
+      - name: Reconcile global contacted/owner-stop history
+        run: python scripts/reconcile_global_contact_history.py
 
       - name: Commit discovery and adaptive intelligence state
         shell: bash
