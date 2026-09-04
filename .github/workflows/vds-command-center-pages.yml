@@ -6,7 +6,6 @@ on:
     branches: [main]
     paths:
       - 'command-center/**'
-      - 'api/v1/**'
       - 'scripts/prepare_command_center_assets.py'
       - '.github/workflows/vds-command-center-pages.yml'
 
@@ -30,20 +29,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Stage static VDS app
+      - name: Stage static VDS shell only
         shell: bash
         run: |
           set -euo pipefail
           rm -rf .pages
-          mkdir -p .pages/api
+          mkdir -p .pages
           cp -R command-center/. .pages/
-          if [ -d api/v1 ]; then
-            mkdir -p .pages/api/v1
-            cp -R api/v1/. .pages/api/v1/
-          fi
           python3 scripts/prepare_command_center_assets.py .pages
 
-      - name: Static smoke test
+      - name: Security and static smoke test
         shell: bash
         run: |
           set -euo pipefail
@@ -53,13 +48,15 @@ jobs:
           test -s .pages/assets/fonts/dm-sans.woff2
           test -s .pages/assets/fonts/material-symbols-rounded.woff2
           test -s .pages/assets/vendor/chart.umd.min.js
-          grep -q "production core" .pages/index.html
-          grep -q "companies.json" .pages/assets/app.js
+          test ! -d .pages/api
+          grep -q "api.github.com" .pages/index.html
+          grep -q "sessionStorage" .pages/assets/app.js
+          ! grep -R "OPENAI_API_KEY" .pages
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload VDS Command Center
+      - name: Upload VDS Command Center shell
         uses: actions/upload-pages-artifact@v3
         with:
           path: .pages
