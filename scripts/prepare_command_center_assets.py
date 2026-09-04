@@ -16,6 +16,7 @@ CHART_URL = "https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
 SODIUM_URL = "https://cdn.jsdelivr.net/npm/libsodium-wrappers@0.7.15/dist/browsers/sodium.js"
 DM_CSS = "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
 ICONS_CSS = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+ONBOARDING_MARKER = "assets/secure-onboarding.js"
 
 
 def fetch(url: str) -> bytes:
@@ -30,6 +31,23 @@ def font_url(css_url: str) -> str:
     if not urls:
         raise RuntimeError(f"No WOFF2 found in {css_url}")
     return urls[-1]
+
+
+def inject_secure_onboarding(root: Path) -> None:
+    index = root / "index.html"
+    html = index.read_text(encoding="utf-8")
+    html = html.replace(
+        "Permessi consigliati: repository singolo · Contents read-only · Actions read/write.",
+        "Permessi consigliati: repository singolo · Contents read-only · Actions read/write · Secrets read/write.",
+    )
+    if ONBOARDING_MARKER not in html:
+        scripts = (
+            '<script src="assets/sodium-bootstrap.js"></script>'
+            '<script src="assets/vendor/sodium.js"></script>'
+            '<script type="module" src="assets/secure-onboarding.js"></script>'
+        )
+        html = html.replace("</body>", scripts + "</body>")
+    index.write_text(html, encoding="utf-8")
 
 
 def main() -> int:
@@ -51,6 +69,8 @@ def main() -> int:
             raise RuntimeError(f"Downloaded asset unexpectedly small: {url} ({len(data)} bytes)")
         path.write_bytes(data)
         print(f"asset {path}: {len(data)} bytes")
+
+    inject_secure_onboarding(root)
     return 0
 
 
