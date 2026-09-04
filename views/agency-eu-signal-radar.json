@@ -1,10 +1,17 @@
 {
-  "schema_version": "1.4",
-  "updated_at": "2026-09-04T12:05:00Z",
+  "schema_version": "1.5",
+  "updated_at": "2026-09-04T13:04:35Z",
   "strategy": "AGENCY_EU_SIGNAL_RADAR_MIDDLE_FUNNEL_CLOSURE_PLUS_MULTI_ENGINE_HIGH_VALUE_REVIEW",
   "capacity": {"exploitation_pct":70,"exploration_pct":20,"strategic_reserve_pct":10},
   "diagnosed_bottleneck": "MIDDLE_FUNNEL_ROUTE_DEDUP_READY_PRODUCTION",
   "signals": [
+    {
+      "canonical_identity_key":"org:intervolutions.com","organization":"Intervolutions","domain":"intervolutions.com","country":"ES","region":"Comunitat Valenciana","province":"Castellón","city":"Castellón","segment":"AGENCY_WHITE_LABEL","priority_tier":"HOT+","score":95,
+      "source_id":"official_current_careers_and_role_pages","source_urls":["https://intervolutions.com/careers/","https://intervolutions.com/careers/frontend-developer-freelance/","https://intervolutions.com/careers/maquetacion-web-freelance/"],"query_or_intent":"agency freelance frontend web design WordPress remote Spain recurring","evidence_timestamp":"2026-09-04T13:04:35Z","freshness":"CURRENT_OFFICIAL_HIRING_NOW_2026-09-04",
+      "demand":"Official careers page states all listed positions accept applications today and explicitly includes two freelance remote roles. Front-End Developer is project-based, integrates CMS including WordPress, values performance/WCAG and ongoing availability, and offers a long-term relationship after a short paid test. Web design/maquetación is freelance remote per project, requires strong HTML/CSS/Figma, values WordPress, accessibility and performance, and explicitly offers a constant flow of assignments if work is good.",
+      "route":{"type":"OFFICIAL_APPLICATION_FORM","recipient":null,"authority":"ROLE_SPECIFIC_OFFICIAL_APPLICATION_FORM","source":"https://intervolutions.com/careers/maquetacion-web-freelance/"},
+      "vds_fit_hints":["HTML/CSS/JavaScript","WordPress","responsive","performance","accessibility","Figma implementation","remote freelance","recurring assignments"],"recurring_economic_potential":"VERY_HIGH_EXPLICIT_LONG_TERM_AND_CONSTANT_FLOW","global_contact_state":"NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX_THROUGH_UID_281","missing_gates":["MANUAL_FORM_SUBMISSION_REQUIRED","OWNER_APPROVED_CV_ATTACHMENT_REQUIRED_IF_UPLOAD_USED"],"recommended_downstream_executor":"OWNER_MANUAL_ROUTE","recommended_next_action":"MANUAL_ROUTE_REQUIRED","confidence":"VERY_HIGH","closure_note":"Current demand, freelance contract, geography and authoritative route are resolved. Generic contact email is not substituted for the role-specific form."
+    },
     {
       "canonical_identity_key":"org:iocos.it","organization":"IOCOS","domain":"iocos.it","country":"IT","region":"Calabria","province":"Reggio Calabria","city":"Reggio Calabria","segment":"AGENCY_WHITE_LABEL","priority_tier":"HOT+","score":94,
       "source_id":"official_freelancer_network_and_company_site","source_urls":["https://iocos.it/opportunita-di-lavoro/","https://iocos.it/"],"query_or_intent":"freelance network wordpress woocommerce remote Italy","evidence_timestamp":"2026-09-04T12:05:00Z","freshness":"CURRENT_OFFICIAL_RECHECK_2026-09-04",
@@ -52,21 +59,19 @@
     }
   ],
   "mission_execution": {
-    "multi_engine_query_variants_executed_this_run": 20,
+    "multi_engine_query_variants_executed_this_run": 12,
     "segments_sampled": ["AGENCY_WHITE_LABEL","DIRECT_BUYER_WEB_NEED","WPO_MAINTENANCE","EU_PROJECT"],
-    "new_promotable_canonical_organizations": 0,
-    "middle_funnel_material_closures": ["org:iocos.it CONTRACT+ROUTE+GEO_RESOLVED","org:ril.es CONTRACT+ROUTE+GEO_RESOLVED","org:publydea.com ROUTE+MULTISITE_GEO_RESOLVED","org:liveat-agency.it FRESHNESS_REVERIFIED"],
-    "history_blocked": ["org:crisandcris.net"],
-    "hard_exclusions": ["ND Web Design — explicit internal/no external collaborator model"],
+    "new_promotable_canonical_organizations": 1,
+    "middle_funnel_material_closures": ["org:intervolutions.com CURRENT_DEMAND+FREELANCE+ROUTE+GEO_RESOLVED"],
+    "history_blocked": [],
+    "hard_exclusions": [],
     "quality_result": "NO_GATE_WEAKENING"
   },
   "eu_project_lane": {"new_hot_candidates":0,"notes":["No newly verified EU-project buyer reached the promotion threshold in this cycle."]},
   "territory_enrichment_completed": [
-    {"canonical_identity_key":"org:iocos.it","country":"IT","region":"Calabria","province":"Reggio Calabria","city":"Reggio Calabria","evidence":"https://iocos.it/"},
-    {"canonical_identity_key":"org:ril.es","country":"ES","region":"Aragón","province":"Zaragoza","city":"Zaragoza","evidence":"https://www.ril.es/"},
-    {"canonical_identity_key":"org:publydea.com","country":"ES","region":"MULTI_SITE","province":"Toledo + Málaga","city":"Illescas + Torremolinos","evidence":"https://publydea.com/contacto"}
+    {"canonical_identity_key":"org:intervolutions.com","country":"ES","region":"Comunitat Valenciana","province":"Castellón","city":"Castellón","evidence":"https://intervolutions.com/careers/"}
   ],
-  "human_review_recovery": {"material_candidates":["org:iocos.it","org:ril.es","org:liveat-agency.it","org:publydea.com","org:adviva.it","org:krossup.it","org:dreambigdesign.it","org:ugeceagency.com"],"hard_exclusions_not_recovered":["org:crisandcris.net","ND Web Design"],"principle":"Preservation only; no route/dedup/legal constraint bypassed."},
-  "command_center_bridge": {"pending_commands_for_agency_radar":0,"receipts_written":0,"normal_cycle_completed":true,"existing_gates_preserved":true},
-  "cross_signal_merge": {"state":"RADAR_UPDATED_FOR_NEXT_CROSS_SIGNAL_RUNTIME_RECONCILIATION","material_changes":["org:iocos.it HOT+ MANUAL_ROUTE CONTRACT+GEO CLOSED","org:ril.es HOT+ MANUAL_ROUTE FREELANCE+GEO CLOSED","org:liveat-agency.it HOT+ MANUAL_ROUTE FRESHNESS REVERIFIED","org:publydea.com HOT+ B2B_REVIEW ROUTE+GEO CLOSED","org:alpacode.it CONTACTED_UID_280_WAIT_FOR_REPLY","org:crisandcris.net HISTORY_BLOCKED"]}
+  "human_review_recovery": {"material_candidates":["org:intervolutions.com","org:iocos.it","org:ril.es","org:liveat-agency.it","org:publydea.com","org:adviva.it","org:krossup.it","org:dreambigdesign.it","org:ugeceagency.com"],"hard_exclusions_not_recovered":["org:crisandcris.net"],"principle":"Preservation only; no route/dedup/legal constraint bypassed."},
+  "command_center_bridge": {"pending_commands_for_agency_radar":1,"receipts_written":1,"normal_cycle_completed":true,"existing_gates_preserved":true,"command_id":"CMD-WEB-20260904T124212-7d2d9ce4","result":"APPLIED","summary":"Operational overlay completed: normal radar healthy; provider suppression continuity through UID 281; current bottleneck remains middle-funnel route/READY production; one new high-value manual-route opportunity verified. No outbound action."},
+  "cross_signal_merge": {"state":"RADAR_UPDATED_FOR_NEXT_CROSS_SIGNAL_RUNTIME_RECONCILIATION","material_changes":["org:intervolutions.com HOT+ MANUAL_ROUTE CURRENT+FREELANCE+RECURRING+GEO CLOSED"]}
 }
