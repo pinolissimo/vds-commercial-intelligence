@@ -40,8 +40,6 @@ def main():
     contacted = {x.get("canonical_identity_key"):x for x in orgidx.get("contacted", []) if x.get("canonical_identity_key")}
     suppressed_domains = set(suppression.get("contacted_domains", []))
 
-    # Merge provider-verified sent index into contact memory so the freshest provider evidence
-    # wins immediately even when global-org/suppression caches lag by one reconciliation cycle.
     provider_contacted = {}
     highest_sent_uid = 0
     for msg in sentidx.get("messages", []):
@@ -70,7 +68,6 @@ def main():
 
     material = []
 
-    # Global/provider history always overrides rank/action.
     for key, state in contacted.items():
         if key not in opps:
             continue
@@ -93,7 +90,6 @@ def main():
             material.append(f"{key}:{o.get('next_best_action')}->{new_action}")
         o["next_best_action"] = new_action
 
-    # Provider suppression also blocks any residual fresh-first-contact recommendation.
     for key, o in list(opps.items()):
         domain = o.get("domain")
         if domain in suppressed_domains and key not in contacted and o.get("next_best_action") in {"AUTO_EMAIL_NOW","QUEUE_FOR_SEND_WINDOW","MANUAL_APPLY_HIGH_PRIORITY","HUMAN_REVIEW_HIGH_VALUE","RESEARCH_RECIPIENT"}:
@@ -103,7 +99,6 @@ def main():
             o["blockers_missing_gates"] = ["PROVIDER_HISTORY_DOMAIN_MATCH"]
             material.append(f"{key}:provider-history-block")
 
-    # Reconcile Human Review against freshest provider contact memory.
     for key, item in list(hr_items.items()):
         if key not in contacted:
             continue
@@ -119,13 +114,10 @@ def main():
             item["recommended_action"] = "WAIT_FOR_REPLY"
             if item.get("owner_decision") == "PENDING":
                 item["owner_decision"] = "APPROVE_OUTREACH"
-            item["do_not_bypass_constraints"] = list(dict.fromkeys((item.get("do_not_bypass_constraints") or []) + [
-                "Do not initiate another FIRST_CONTACT; future action must be a compliant continuation."
-            ]))
+            item["do_not_bypass_constraints"] = list(dict.fromkeys((item.get("do_not_bypass_constraints") or []) + ["Do not initiate another FIRST_CONTACT; future action must be a compliant continuation."]))
         item["updated_at"] = stamp
         material.append(f"{key}:HUMAN_REVIEW_RECONCILED_WITH_PROVIDER_HISTORY")
 
-    # Merge current Agency/EU signals. Soft-blocked HOT/HOT+ becomes Human Review.
     for s in radar.get("signals", []):
         key = s.get("canonical_identity_key")
         if not key:
@@ -147,25 +139,7 @@ def main():
         if hot and next_action == "MANUAL_ROUTE_REQUIRED":
             hr_score = float(hr_items.get(key, {}).get("score", tier_score(tier)))
             o = opps.get(key, {})
-            o.update({
-                "canonical_identity_key": key,
-                "organization": s.get("organization"),
-                "domain": domain,
-                "country": s.get("country"),
-                "territory": {"country":s.get("country"),"region":s.get("region"),"province":s.get("province"),"city":s.get("city")},
-                "segment": s.get("segment"),
-                "scores": {"total": hr_score},
-                "priority_tier": "HOT+" if hr_score >= 85 else "HOT",
-                "contact_status": s.get("global_contact_state", "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX"),
-                "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
-                "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
-                "blockers_missing_gates": s.get("missing_gates", []),
-                "route": s.get("route"),
-                "source_ids": [s.get("source_id")] if s.get("source_id") else [],
-                "query_or_intent": s.get("query_or_intent"),
-                "evidence_timestamps": [s.get("evidence_timestamp")] if s.get("evidence_timestamp") else [],
-                "rationale": s.get("closure_note") or s.get("demand")
-            })
+            o.update({"canonical_identity_key":key,"organization":s.get("organization"),"domain":domain,"country":s.get("country"),"territory":{"country":s.get("country"),"region":s.get("region"),"province":s.get("province"),"city":s.get("city")},"segment":s.get("segment"),"scores":{"total":hr_score},"priority_tier":"HOT+" if hr_score>=85 else "HOT","contact_status":s.get("global_contact_state","NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX"),"recommended_executor":"OWNER_HUMAN_REVIEW_ONLY","next_best_action":"HUMAN_REVIEW_HIGH_VALUE","blockers_missing_gates":s.get("missing_gates",[]),"route":s.get("route"),"source_ids":[s.get("source_id")] if s.get("source_id") else [],"query_or_intent":s.get("query_or_intent"),"evidence_timestamps":[s.get("evidence_timestamp")] if s.get("evidence_timestamp") else [],"rationale":s.get("closure_note") or s.get("demand")})
             if key not in opps:
                 material.append(f"{key}:NEW_HUMAN_REVIEW")
             opps[key] = o
@@ -177,7 +151,6 @@ def main():
                 opps[key]["next_best_action"] = "HOLD_STALE_OR_UNCERTAIN"
                 opps[key]["recommended_executor"] = "NONE_NEW_FIRST_CONTACT"
 
-    # Merge latest job state and fix stale/manual regressions.
     removed = list(hr.get("removed_or_closed", []))
     removed_keys = {x.get("canonical_identity_key") for x in removed}
     for j in jobs.get("evaluated", []):
@@ -207,16 +180,28 @@ def main():
             o.update({"canonical_identity_key":key,"organization":j.get("organization"),"country":j.get("country"),"segment":"DIRECT_JOB","scores":{"total":score},"priority_tier":"HOT+" if score>=85 else "HOT","contact_status":"NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX","recommended_executor":"OWNER_HUMAN_REVIEW_ONLY","next_best_action":"HUMAN_REVIEW_HIGH_VALUE","blockers_missing_gates":[j.get("route","MANUAL_OR_SOFT_BLOCK")],"route":{"type":j.get("route"),"source":j.get("opportunity_url")},"rationale":hr_items.get(key,{}).get("why_high_value") or "High-value soft-blocked job preserved for owner review."})
             opps[key] = o
 
+    for key, item in hr_items.items():
+        if key in contacted or item.get("owner_decision") != "PENDING" or item.get("execution_status") in {"CONTACT_ALREADY_EXECUTED","OWNER_STOP_DO_NOT_CONTACT"}:
+            continue
+        score_value = float(item.get("score",0) or 0)
+        if score_value < 75 and not str(item.get("priority","")).startswith("STRATEGIC_EXCEPTION"):
+            continue
+        if key not in opps:
+            routes = item.get("authoritative_routes") or []
+            route = routes[0] if routes else {"type":item.get("review_class","HUMAN_REVIEW")}
+            opps[key] = {"canonical_identity_key":key,"organization":item.get("organization"),"country":item.get("country"),"segment":"AGENCY_WHITE_LABEL" if item.get("review_class") in {"PARTNER_ANGLE","B2B_ALTERNATIVE"} else "DIRECT_JOB","scores":{"total":score_value},"priority_tier":"HOT+" if score_value>=85 else "HOT","contact_status":item.get("dedup_status","NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX"),"recommended_executor":"OWNER_HUMAN_REVIEW_ONLY","next_best_action":"HUMAN_REVIEW_HIGH_VALUE","blockers_missing_gates":[item.get("automatic_block_reason","SOFT_BLOCK_REQUIRES_HUMAN_REVIEW")],"route":route,"source_ids":[item.get("source_task")] if item.get("source_task") else [],"evidence_timestamps":[item.get("updated_at") or item.get("signal_date")],"rationale":item.get("why_high_value") or item.get("evidence_summary")}
+            material.append(f"{key}:HUMAN_REVIEW_MERGED_INTO_CROSS_SIGNAL")
+
     def score(x):
         try: return float((x.get("scores") or {}).get("total",0))
         except Exception: return 0.0
 
     cross["opportunities"] = sorted(opps.values(), key=score, reverse=True)
-    cross["schema_version"] = "1.6"
+    cross["schema_version"] = "1.7"
     cross["updated_at"] = stamp
     provider_checkpoint = max(int(suppression.get("scan",{}).get("highest_uid_seen",0) or 0), highest_sent_uid)
     cross["history_reconciled_through"] = f"Hostinger/provider evidence through UID {provider_checkpoint}"
-    cross["note"] = "Runtime reconciliation merges current Agency/EU, LinkedIn/job, global-sent and provider-history evidence; no external action performed."
+    cross["note"] = "Runtime reconciliation merges current Agency/EU, LinkedIn/job, Human Review, global-sent and provider-history evidence; no external action performed."
 
     hr["items"] = sorted(hr_items.values(), key=lambda x: float(x.get("score",0) or 0), reverse=True)
     hr["removed_or_closed"] = removed
@@ -241,8 +226,7 @@ def main():
 
     actions = {}
     for x in cross["opportunities"]:
-        a=x.get("next_best_action","UNKNOWN")
-        actions[a]=actions.get(a,0)+1
+        a=x.get("next_best_action","UNKNOWN"); actions[a]=actions.get(a,0)+1
     hotp=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="HOT+")
     hot=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="HOT")
     warm=sum(1 for x in cross["opportunities"] if x.get("priority_tier")=="WARM")
