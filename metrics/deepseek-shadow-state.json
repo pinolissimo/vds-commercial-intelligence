@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 13,
+  "runs": 14,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -5053,6 +5053,113 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "df705a5b4e23b0dc4feb2a9c954f6762",
+      "evaluated_at": "2026-09-04T20:09:10Z",
+      "organization": "Faculty",
+      "title": "Frontend Engineer",
+      "location": "UK - London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/faculty/frontend-engineer-london-77178",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 65.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend Engineer role with HTML/JavaScript, but no explicit WordPress/WooCommerce or web performance scope; likely product company, not freelance-compatible.",
+      "deepseek_risk_flags": [
+        "no_freelance_evidence",
+        "stack_fit_partial",
+        "geo_uk_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001525225,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e05496515a4677f872379c500e5c5d1b",
+      "evaluated_at": "2026-09-04T20:09:10Z",
+      "organization": "Phantom",
+      "title": "Senior Software Engineer, Frontend",
+      "location": "LATAM,  Canada,  Europe,  USA",
+      "opportunity_url": "https://jobicy.com/jobs/152539-senior-software-engineer-frontend",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 60.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior Frontend Engineer remote role across Europe, but core stack likely modern JS frameworks; no WordPress/WooCommerce or freelance evidence.",
+      "deepseek_risk_flags": [
+        "no_freelance_evidence",
+        "stack_fit_partial",
+        "geo_broad_eu"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001525225,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "dc8401dee856d9bb70bcb39a9196143b",
+      "evaluated_at": "2026-09-04T20:09:10Z",
+      "organization": "Fueled",
+      "title": "Senior Full Stack Engineer",
+      "location": "Anywhere",
+      "opportunity_url": "https://jobicy.com/jobs/152547-senior-full-stack-engineer",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior Full Stack Engineer with CMS/frontend mentions, but no WordPress/WooCommerce specificity; contractor mention may not imply freelance compatibility.",
+      "deepseek_risk_flags": [
+        "stack_fit_partial",
+        "contractor_mention_unclear",
+        "geo_worldwide"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001525225,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9fdaec4be47d0f4d4684363eb4507cb1",
+      "evaluated_at": "2026-09-04T20:09:10Z",
+      "organization": "Sungrow Emea",
+      "title": "Senior EV Field Service Engineer - UK",
+      "location": "UK - Milton Keynes",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/sungrow-emea/senior-ev-field-service-engineer-uk-uk-milton-keynes-97567",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "EV Field Service Engineer role is hardware/electrical maintenance, completely unrelated to web development.",
+      "deepseek_risk_flags": [
+        "irrelevant_domain",
+        "maintenance_keyword_misleading"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001525225,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -5199,8 +5306,20 @@
       "completion_tokens": 397,
       "total_tokens": 1433,
       "estimated_cost_usd": 0.00043541
+    },
+    {
+      "at": "2026-09-04T20:09:10Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 4,
+      "valid_evaluation_count": 4,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 1061,
+      "completion_tokens": 568,
+      "total_tokens": 1885,
+      "estimated_cost_usd": 0.00061009
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-04T19:10:30Z"
+  "updated_at": "2026-09-04T20:09:10Z"
 }
