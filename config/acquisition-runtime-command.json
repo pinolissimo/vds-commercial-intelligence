@@ -1,7 +1,17 @@
 {
-  "schema_version": "1.1",
-  "updated_at": "2026-09-05T20:25:01Z",
+  "schema_version": "1.2",
+  "updated_at": "2026-09-05T23:47:00+02:00",
   "mode": "MIDDLE_FUNNEL_TURBO",
+  "revenue_flow_preflight": {
+    "required": true,
+    "protocol": "project/REVENUE_FLOW_SELF_HEALING_PROTOCOL.md",
+    "executable": "scripts/revenue_flow_preflight.py",
+    "default_mode": "--repair",
+    "run_before_candidate_processing": true,
+    "derived_cache_drift_is_repairable_not_global_blocker": true,
+    "large_github_content_omission_is_not_empty_snapshot": true,
+    "provider_calls_require_post_repair_unambiguous_state": true
+  },
   "capacity": {
     "exploitation_pct": 85,
     "exploration_pct": 10,
@@ -83,5 +93,5 @@
     "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email.",
     "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity proposal, when no application-only route is being bypassed and all legal, identity, fit, freshness and dedup gates pass."
   },
-  "instruction": "MIDDLE_FUNNEL_TURBO: spend most capacity closing exact route, recipient, freshness, identity, geography and dedup blockers; deep-check fresh SEMANTIC_PASS candidates likely to become executable; certify and send in the same authorized sender run when all gates pass. Never weaken dedup, route integrity, freshness, legality, truthful-fit or provider verification gates. DeepSeek remains shadow-only."
+  "instruction": "MIDDLE_FUNNEL_TURBO: run the mandatory Revenue Flow self-healing preflight first; repair deterministic derived-cache drift from the durable ledger before candidate processing; never interpret missing inline content for a large GitHub file as an empty snapshot without size/blob confirmation. Then spend most capacity closing exact route, recipient, freshness, identity, geography and dedup blockers; deep-check fresh SEMANTIC_PASS candidates likely to become executable; certify and send in the same authorized sender run when all gates pass. Never weaken dedup, route integrity, freshness, legality, truthful-fit or provider verification gates. DeepSeek remains shadow-only."
 }
