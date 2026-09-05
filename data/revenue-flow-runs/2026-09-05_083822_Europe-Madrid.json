@@ -16,8 +16,9 @@
   "followup_1_verified_per_run":0,
   "evidence_reuse":"Reused current canonical 08:06 decision evidence within TTL and independently applied UNIFIED_LOOP deterministic gates; stale Agency/Cross-Signal state was not a prerequisite.",
   "discovery_state":{"latest_canonical_input_count":749,"latest_semantic_pass_count":81,"new_unconsumed_delta_found":false,"last_discovery_refresh_observed":"2026-09-05T05:46:25Z"},
-  "metrics":{"serious_candidates_evaluated":40,"SEND_NOW":0,"MANUAL_APPLY":17,"WAIT_RESEARCH":5,"REJECT":18,"duplicates_blocked":7,"provider_verified_first_contacts":0,"delivery_state_unknown":0,"replies_or_outcomes_observed_this_run":0},
+  "metrics":{"serious_candidates_evaluated":40,"SEND_NOW":0,"MANUAL_APPLY":18,"WAIT_RESEARCH":5,"REJECT":17,"duplicates_blocked":7,"provider_verified_first_contacts":0,"delivery_state_unknown":0,"replies_or_outcomes_observed_this_run":0},
   "wait_research_by_blocker":{"SEND_WINDOW_CLOSED":2,"EXACT_CURRENT_ROLE_PAGE_NOT_REVERIFIED":1,"FRESHNESS_UNCERTAIN":1,"SEND_WINDOW_CLOSED_AND_ROLE_FIT_NEEDS_FINAL_TRUTHFUL_UIUX_CHECK":1},
+  "reject_by_reason":{"GLOBAL_DUPLICATE_PROVIDER_HISTORY":7,"TRUTHFUL_FIT_FAILURE":5,"CURRENT_ROLE_NOT_CORE_WEB_NEED":1,"OFFICIAL_PAGE_NO_OPEN_POSITIONS":1,"FRESHNESS_FAILURE":1,"LISTING_NO_LONGER_ACCEPTING_APPLICATIONS":1,"CURRENT_ROLE_INTERNSHIP_CONTENT_FOCUS":1},
   "priority_preserved":[
     {"organization":"Mutart","outcome":"WAIT_RESEARCH","blocker":"SEND_WINDOW_CLOSED","verified_route":"work@mutart.eu","next_lookup":"At first authorized cycle recheck current listing, suppression/history, reservation and provider state; send only if all hard gates still pass."},
     {"organization":"2Next Srl","outcome":"WAIT_RESEARCH","blocker":"SEND_WINDOW_CLOSED","verified_route":"info@2next.it","next_lookup":"At first authorized cycle recheck current need and all JIT hard gates."},
@@ -25,7 +26,8 @@
     {"organization":"Corposostenibile","outcome":"WAIT_RESEARCH","blocker":"EXACT_CURRENT_ROLE_PAGE_NOT_REVERIFIED","verified_route":"hr@corposostenibile.com","next_lookup":"Recover exact current WebDeveloper role evidence before promotion."},
     {"organization":"Zoom Digital / Madrid Posicionamiento Web","outcome":"WAIT_RESEARCH","blocker":"FRESHNESS_UNCERTAIN","next_lookup":"Verify a current 2026 demand signal before any routing decision."}
   ],
-  "manual_apply_preserved":["Codelia Studio","PutPut Comunicacions","iDEA Marketing","Haz Marca Marketing Digital","Pensando en Red","AD Consulting Italia","Genestack Ltd","Emira Digital / Dritara","LIVEAT Agency","IOCOS","Internetimage.it Srl","Next Adv","Parrotto Web Solution","RemoteTask Online","Solluton","Coresol Studio","Eight Sleep"],
-  "reject_summary":{"count":18,"includes_global_duplicates":7,"rule":"No role/person/email/source change resets organization-level FIRST_CONTACT history."},
+  "manual_apply_preserved":["Codelia Studio","PutPut Comunicacions","iDEA Marketing","Haz Marca Marketing Digital","Pensando en Red","AD Consulting Italia","Genestack Ltd","Emira Digital / Dritara","LIVEAT Agency","IOCOS","Internetimage.it Srl","Next Adv","Parrotto Web Solution","RemoteTask Online","Solluton","Coresol Studio","B.R.E.S. Srls","Eight Sleep"],
+  "reject_summary":{"count":17,"includes_global_duplicates":7,"rule":"No role/person/email/source change resets organization-level FIRST_CONTACT history."},
+  "canonical_quality_finding":{"source":"views/direct-job-flow-latest.json","finding":"run_summary says MANUAL_APPLY=17 and REJECT=18, while the 40 enumerated decisions count to MANUAL_APPLY=18, WAIT_RESEARCH=5, REJECT=17.","action":"This run uses enumerated decision counts and does not propagate the inconsistent source summary."},
   "notes":["No provider call was made because the live send window was closed.","Provider suppression/global sent/global organization history remain coherent through Hostinger UID 290.","Global reservations are empty.","No generic email substituted for an official form/platform application route.","DeepSeek was not used as an authorization source."]
 }
