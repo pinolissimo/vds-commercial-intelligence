@@ -1,18 +1,31 @@
 {
-  "schema_version": "1.0",
-  "updated_at": "2026-09-02T00:00:00+02:00",
-  "status": "IMPLEMENTED_AWAITING_MEASURED_FEED",
+  "schema_version": "1.1",
+  "updated_at": "2026-09-05T19:06:58+02:00",
+  "status": "MEASURED_FEED_ACTIVE",
   "sending_performed": false,
   "metrics": {
-    "signals_seen": 0,
+    "signals_seen": 40,
+    "serious_candidates_evaluated": 40,
     "canonical_organizations": 0,
     "official_sources_verified": 0,
     "routes_verified": 0,
     "ready_to_apply": 0,
+    "SEND_NOW": 0,
+    "MANUAL_APPLY": 0,
+    "WAIT_RESEARCH": 2,
+    "REJECT": 38,
+    "provider_verified_first_contacts_per_run": 0,
     "manual_route_required": 0,
     "blocked_no_external": 0,
     "stale": 0,
-    "already_contacted": 0
+    "already_contacted": 0,
+    "route_failures": 0
   },
-  "note": "Zero is intentional: no live source result or outreach has been fabricated. Metrics populate only from measured local runs."
+  "source": {
+    "path": "data/high-frequency-discovery/raw-signals.jsonl",
+    "lines": "350-389",
+    "latest_discovery_commit": "63c718dbe0e88126a5e396c5753e4a75d3814b0d"
+  },
+  "ledger": "state/direct-job-ledger.jsonl",
+  "note": "Measured self-contained direct-job flow. The current fresh tranche is dominated by role-function and unsupported-stack false positives. No live send was performed outside the authorized 09:00-19:00 Europe/Madrid window."
 }
