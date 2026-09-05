@@ -1,0 +1,17 @@
+{
+  "schema_version":"1.0",
+  "worker_id":"LINKEDIN_HUNTER",
+  "mode":"SELF_CONTAINED_JOB_FLOW",
+  "run_at":"2026-09-05T12:09:15+02:00",
+  "inside_send_window":true,
+  "canonical_repository":"pinolissimo/vds-commercial-intelligence",
+  "canonical_branch":"main",
+  "provider_checkpoint_uid":295,
+  "provider_verified_first_contacts_per_run":1,
+  "decisions":[
+    {"organization":"Mutart","outcome":"REJECT","reason":"GLOBAL_DUPLICATE: provider Sent contains FIRST_CONTACT UID 293 today and historical UID 188; no resend."},
+    {"organization":"2Next Srl","outcome":"REJECT","reason":"GLOBAL_DUPLICATE: provider Sent contains FIRST_CONTACT UID 294 today; no resend."},
+    {"organization":"Witapp SRL","outcome":"SEND_NOW","route":"OFFICIAL_DIRECT_CANDIDACY_EMAIL","recipient":"candidature@witapp.it","role":"Web Specialist","freshness":"Official careers page crawled 2026-09-04 and currently lists the role.","fit":"WordPress plus HTML/CSS/JavaScript are explicit pluses; application text truthfully proposes external P.IVA format without claiming acceptance.","provider_result":"VERIFIED_EMAIL_SENT","provider_uid":295,"subject":"Candidatura — Web Specialist","bcc_owner":true}
+  ],
+  "notes":["JIT provider checks corrected stale pre-send state for Mutart and 2Next before any provider call.","Witapp had no prior Sent recipient/domain evidence in targeted provider search before send."]
+}
