@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "worker_id": "UNIFIED_LOOP",
+  "run_at": "2026-09-05T00:38:32Z",
+  "canonical_repo": "pinolissimo/vds-commercial-intelligence",
+  "send_window": {"timezone":"Europe/Madrid","allowed":"09:00-19:00","open":false},
+  "source_state": {
+    "discovery_latest_commit":"2f3449a5dce6b0a5b3cb406015a802b3326688e2",
+    "discovery_latest_refresh":"2026-09-04T23:15:09Z",
+    "runtime_mode":"MIDDLE_FUNNEL_TURBO",
+    "active_reservations":0,
+    "global_sent_ledger_latest_uid_observed":288,
+    "provider_checkpoint_from_current_flow_state":290,
+    "command_bridge_unified_receipts_present":true
+  },
+  "decisions": [
+    {"canonical_identity_key":"org:mutart.eu","organization":"Mutart","opportunity":"Sviluppatore WordPress front-end","decision":"WAIT_RESEARCH","blocker":"SEND_WINDOW_CLOSED","next_lookup":"First in-window cycle: JIT recheck listing, work@mutart.eu, provider suppression/history and reservations, then send if all hard gates still pass.","evidence_reused_within_ttl":true},
+    {"canonical_identity_key":"org:2next.it","organization":"2Next Srl","opportunity":"Web & Design Design/Administrator","decision":"WAIT_RESEARCH","blocker":"SEND_WINDOW_CLOSED","next_lookup":"First in-window cycle: JIT recheck current need, info@2next.it, provider suppression/history and reservations, then send if all hard gates still pass.","evidence_reused_within_ttl":true},
+    {"canonical_identity_key":"org:lendable.co.uk","organization":"Lendable","opportunity":"Senior Python Engineer (Full Stack)","decision":"REJECT","reason":"TRUTHFUL_FIT_FAILURE_SENIOR_PYTHON_FULL_STACK_NOT_VDS_CORE","source_signal_key":"f1a86a7732f82921b707bc1c7290e67d"},
+    {"canonical_identity_key":"org:lendable.co.uk","organization":"Lendable","opportunity":"Senior Full Stack Engineer","decision":"REJECT","reason":"TRUTHFUL_FIT_FAILURE_SENIOR_FULL_STACK_ROLE_OUTSIDE_VDS_CURRENT_CORE_DEPTH","source_signal_key":"5d0cf72b4b67d36736f4bfd85532a735"},
+    {"canonical_identity_key":"org:lendable.co.uk","organization":"Lendable","opportunity":"Data Platform Engineer","decision":"REJECT","reason":"TRUTHFUL_FIT_FAILURE_DATA_PLATFORM_NOT_VDS_TARGET","source_signal_key":"fbc81ecc6b37d9e3a574505066643809"},
+    {"canonical_identity_key":"org:axle-careers","organization":"Axle Careers","opportunity":"Solutions Engineer","decision":"REJECT","reason":"TRUTHFUL_FIT_FAILURE_GENERIC_SOLUTIONS_ENGINEERING_SIGNAL_WITHOUT_WEB_BUYER_NEED","source_signal_key":"72a9feeb088e13261307286392e02031"},
+    {"canonical_identity_key":"org:axle-careers","organization":"Axle Careers","opportunity":"Software Engineer","decision":"REJECT","reason":"TRUTHFUL_FIT_FAILURE_GENERIC_SOFTWARE_ENGINEERING_SIGNAL_WITHOUT_WEB_BUYER_NEED","source_signal_key":"8bd52d2263e486ddab7cc91e648c2bcf"},
+    {"canonical_identity_key":"org:axle-careers","organization":"Axle Careers","opportunity":"Data Science","decision":"REJECT","reason":"TRUTHFUL_FIT_FAILURE_DATA_SCIENCE_NOT_VDS_TARGET","source_signal_key":"f136eae71b0cc5f47d01ce914df60d48"}
+  ],
+  "metrics": {
+    "serious_candidates_evaluated":8,
+    "fresh_candidates_consumed":6,
+    "send_now":0,
+    "provider_verified_first_contacts":0,
+    "manual_apply":0,
+    "wait_research":{"SEND_WINDOW_CLOSED":2},
+    "reject":6,
+    "duplicates_blocked":0,
+    "stale":0,
+    "route_failures":0,
+    "followups_sent":0,
+    "provider_verified_first_contacts_per_run":0
+  },
+  "notes":[
+    "No provider action attempted outside the authorized send window.",
+    "Freshest discovery delta contained six new London-oriented engineering/data signals; none represented a truthful VDS web/WordPress/direct-buyer fit.",
+    "Mutart and 2Next remain preserved without redundant re-research because their verified evidence is still within TTL; they require JIT pre-send checks in-window.",
+    "Pending Command Center directives already have UNIFIED_LOOP receipts, so no duplicate receipt was appended."
+  ]
+}
