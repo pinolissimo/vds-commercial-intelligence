@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "updated_at": "2026-09-05T10:19:47+02:00",
+  "updated_at": "2026-09-05T11:52:22+02:00",
   "policy": "Dashboard commands route only to the two active self-contained flows. Discovery and normal execution continue even if the bridge is unavailable.",
   "commands": [
     {
@@ -124,6 +124,38 @@
       "risk": "MEDIUM",
       "owner_confirmation_required": false,
       "answer": "Avvio controllo completo, sblocco operativo consentito e invio dei soli messaggi già idonei via email diretta; nessun bypass dei gate o delle rotte manuali.",
+      "production_core_modified": false,
+      "normal_cycle_must_continue": true,
+      "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
+      "status": "PENDING_TASK_BRIDGE"
+    },
+    {
+      "schema_version": "1.3",
+      "command_id": "CMD-WEB-20260905T095210-ce5e814",
+      "created_at": "2026-09-05T11:52:22+02:00",
+      "expires_at": "2026-09-06T11:52:22+02:00",
+      "source": "VDS_COMMAND_CENTER_GITHUB_PAGES",
+      "model": "gpt-5.6-terra",
+      "owner_command": "Solo 2 invii oggi mi sembra molto poco",
+      "command_class": "PRIORITY_DIRECTIVE",
+      "intent": "increase_today_outreach_priority",
+      "summary": "Accolgo la priorità di aumentare gli invii oggi: i due flussi devono accelerare qualificazione e preparazione degli invii validi, senza deroghe ai controlli obbligatori.",
+      "parameters": {
+        "time_scope": "today",
+        "priority": "high",
+        "objective": "maximize_valid_first_contacts_within_remaining_send_window",
+        "preserve_hard_gates": true,
+        "manual_routes": "preserve_manual"
+      },
+      "target_workers": [
+        "LINKEDIN_HUNTER",
+        "UNIFIED_LOOP"
+      ],
+      "requires_task_bridge": true,
+      "requires_existing_gates": true,
+      "risk": "MEDIUM",
+      "owner_confirmation_required": false,
+      "answer": "Priorità aumentata per oggi: acceleriamo la coda di contatti validi nei due flussi, mantenendo deduplica, verifica del bisogno e del canale, compatibilità legale e finestra di invio.",
       "production_core_modified": false,
       "normal_cycle_must_continue": true,
       "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
