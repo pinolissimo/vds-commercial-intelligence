@@ -1,0 +1,43 @@
+name: VDS Revenue Flow Preflight
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/revenue_flow_preflight.py'
+      - 'tests/test_revenue_flow_preflight.py'
+      - 'data/global-sent-email-ledger.jsonl'
+      - 'views/provider-contact-suppression-index.json'
+      - 'views/global-sent-email-index.json'
+      - 'views/global-organization-index.json'
+      - 'views/high-frequency-discovery-latest.json'
+      - 'governance/global-contact-reservations.json'
+      - 'config/acquisition-runtime-command.json'
+      - 'project/REVENUE_FLOW_SELF_HEALING_PROTOCOL.md'
+      - '.github/workflows/revenue-flow-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  invariants:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout canonical main
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile preflight
+        run: python -m py_compile scripts/revenue_flow_preflight.py
+
+      - name: Run deterministic unit tests
+        run: python -m unittest tests/test_revenue_flow_preflight.py -v
+
+      - name: Verify canonical state has no repairable drift
+        run: python scripts/revenue_flow_preflight.py --check
