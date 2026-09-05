@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-05T18:11:12Z",
+  "updated_at": "2026-09-05T20:25:03Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 212,
-    "agreement_count": 105,
-    "agreement_pct": 49.53,
+    "evaluated_total": 213,
+    "agreement_count": 106,
+    "agreement_pct": 49.77,
     "deepseek_promote": 17,
     "vds_promote": 88,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 30,
-    "cumulative_estimated_cost_usd": 0.035145,
+    "request_count": 31,
+    "cumulative_estimated_cost_usd": 0.035311,
     "cost_per_evaluated_candidate_usd": 0.00016578,
-    "cost_per_deepseek_promote_usd": 0.00206734,
-    "cost_per_observed_ready_or_contacted_usd": 0.01757241,
+    "cost_per_deepseek_promote_usd": 0.00207709,
+    "cost_per_observed_ready_or_contacted_usd": 0.01765526,
     "latest_request": {
-      "at": "2026-09-05T18:11:07Z",
+      "at": "2026-09-05T20:25:01Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 6,
-      "valid_evaluation_count": 6,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 1566,
-      "completion_tokens": 813,
-      "total_tokens": 2635,
-      "estimated_cost_usd": 0.00088289
+      "prompt_cache_miss_tokens": 256,
+      "completion_tokens": 163,
+      "total_tokens": 675,
+      "estimated_cost_usd": 0.00016569
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,32 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7e6b9f4a57988e15687796b9be6485e0",
-      "evaluated_at": "2026-09-04T14:53:56Z",
-      "organization": "Canonical",
-      "title": "Ubuntu Linux Kernel Engineer - Silicon Enablement",
-      "location": "Anywhere",
-      "opportunity_url": "https://jobicy.com/jobs/149533-ubuntu-linux-kernel-engineer-silicon-enablement",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Ubuntu Linux Kernel Engineer; maintenance keyword incidental, core is kernel engineering.",
-      "deepseek_risk_flags": [
-        "kernel role",
-        "stack mismatch"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001376021,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "260b59abdf63045a663fe7526a68cc60",
       "evaluated_at": "2026-09-04T14:53:56Z",
@@ -1378,9 +1352,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9f0302bd2605ce433c2f079ef0167a88",
+      "evaluated_at": "2026-09-05T20:25:01Z",
+      "organization": "",
+      "title": "Senior Web Designer",
+      "location": "Argentina",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 60.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior Web Designer role with strong HTML/CSS/UI/UX fit, but lacks explicit WordPress/WooCommerce or web performance requirements and is located in Argentina, outside primary Spain/Italy/EU-remote focus.",
+      "deepseek_risk_flags": [
+        "Location mismatch",
+        "No explicit WordPress/WooCommerce",
+        "Generic collaboration mention"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016569,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 6,
-  "source_semantic_updated_at": "2026-09-05T18:11:07Z"
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-05T20:25:01Z"
 }
