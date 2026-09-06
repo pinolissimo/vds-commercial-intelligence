@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-06T23:08:00+02:00",
+  "updated_at": "2026-09-07T01:05:12+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -13,30 +13,36 @@
   "global_provider_checkpoint_uid": 304,
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
-  "source": "data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 715,
-  "run_detail_file": "state/direct-job-run-20260906T2308.jsonl",
-  "serious_signals_evaluated": 12,
-  "unique_organization_identities": 5,
+  "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
+  "raw_checkpoint_through_line": 743,
+  "run_detail_file": "state/direct-job-run-20260907T0105.jsonl",
+  "serious_signals_evaluated": 30,
+  "unique_organization_identities": 9,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
     "WAIT_RESEARCH": 0,
-    "REJECT": 12,
+    "REJECT": 30,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
     "owner_answers_resolved": 0,
-    "provider_verified_first_contacts": 0
+    "provider_verified_first_contacts": 0,
+    "duplicates_blocked": 0,
+    "stale": 0,
+    "route_failures": 0
   },
   "manual_apply": [],
   "notes": [
-    "TURBO exploitation-first policy remained authoritative.",
-    "Processed all 12 new canonical raw signals after checkpoint 703; no raw signals exist after line 715.",
-    "No eligible ANSWERED_RECHECK_REQUIRED human-review item was identified.",
-    "All 12 signals failed deterministic fit or canonical-identity gates; no route work or human-review recovery was justified.",
-    "Global sent state remains coherent through Hostinger UID 304.",
+    "Mandatory self-healing preflight found durable sent ledger and all three derived provider/global caches coherent through Hostinger UID 304; reservations are empty.",
+    "TURBO exploitation-first policy remained authoritative: two historical WAIT_RESEARCH items were resolved before broad raw expansion.",
+    "Taktile Senior Full-Stack Engineer and Roku Senior Software Engineer Full Stack were closed as truthful-fit rejects after current role verification.",
+    "Processed every fresh canonical raw signal after checkpoint 715 through line 743; only 28 fresh signals were available, so the configured target of 40 was not fabricated by recycling decided identities.",
+    "The superficially promising Semdor Pharma Fullstack signal was verified as the current Bloombase ERP vacancy requiring React, Node.js/NestJS, TypeScript and very good German, so it is a deterministic fit reject rather than a WordPress opportunity.",
+    "INIT Senior UI/UX was verified current but requires at least five years UX/UI, relevant qualification, design-system ownership, complex-product/client leadership and very good German and English; no unsupported seniority or language claim was made.",
+    "No eligible ANSWERED_RECHECK_REQUIRED human-review item was identified and no new high-value soft blocker survived fit/identity gates.",
+    "Command Center pending set is empty; no targeted overlay required consumption.",
     "Live-send window is closed; no provider action was attempted."
   ]
 }
