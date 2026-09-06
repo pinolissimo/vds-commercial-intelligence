@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-06T08:24:32Z",
+  "updated_at": "2026-09-06T08:51:15Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 226,
-    "agreement_count": 115,
-    "agreement_pct": 50.88,
+    "evaluated_total": 229,
+    "agreement_count": 118,
+    "agreement_pct": 51.53,
     "deepseek_promote": 18,
     "vds_promote": 92,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 39,
-    "cumulative_estimated_cost_usd": 0.039179,
-    "cost_per_evaluated_candidate_usd": 0.00017336,
-    "cost_per_deepseek_promote_usd": 0.00217663,
-    "cost_per_observed_ready_or_contacted_usd": 0.01958966,
-    "latest_request": null
+    "request_count": 40,
+    "cumulative_estimated_cost_usd": 0.040106,
+    "cost_per_evaluated_candidate_usd": 0.00017514,
+    "cost_per_deepseek_promote_usd": 0.00222811,
+    "cost_per_observed_ready_or_contacted_usd": 0.02005302,
+    "latest_request": {
+      "at": "2026-09-06T08:51:12Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 832,
+      "completion_tokens": 422,
+      "total_tokens": 1510,
+      "estimated_cost_usd": 0.0009267
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,84 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "0a9a51f6a331c3a2640b893cbc4e0e72",
-      "evaluated_at": "2026-09-04T15:13:08Z",
-      "organization": "Geeks on Site",
-      "title": "OPG QA Specialist - Website UX & Quality Assurance (Remote - LATAM) Part-Time",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/opg-qa-specialist-website-ux-quality-assurance-remote-latam-part-time-geeks-on-site",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 40,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Website UX & QA specialist, remote part-time, relevant to web support but limited to LATAM.",
-      "deepseek_risk_flags": [
-        "geo_restriction_latam",
-        "qa_focus_not_dev"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 8.37073e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "3c90e0e3fb1c53a0a406884cf3531bca",
-      "evaluated_at": "2026-09-04T15:13:08Z",
-      "organization": "jetbrains",
-      "title": "Software Developer  Java/ Node.JS (Web Development Team)",
-      "location": "Berlin; Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/jetbrains/software-developer-java-nodejs-web-development-team-berlin-munich-453740",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 40,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Java/Node.js developer for web team, core stack mismatch, no WordPress.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "role_mismatch"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 8.37073e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "aa3ea178de24ea312c5ca381e5b9ecf4",
-      "evaluated_at": "2026-09-04T15:13:08Z",
-      "organization": "Ashby",
-      "title": "Staff Software Engineer, Product Engineering - EU",
-      "location": "Europe",
-      "opportunity_url": "https://jobicy.com/jobs/151856-staff-software-engineer-product-engineering-eu-2",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 40,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Staff Software Engineer, product engineering, likely full-stack, no WordPress or frontend web focus.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "stack_mismatch"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 8.37073e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "5d06b942342dde6a0d15e678ae8dc23b",
       "evaluated_at": "2026-09-04T15:13:08Z",
@@ -1382,9 +1315,90 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f8e477a9bb85fd306c4dcaa7a2000691",
+      "evaluated_at": "2026-09-06T08:51:12Z",
+      "organization": "DiliTrust",
+      "title": "Software Engineer - AI Platform (Frontend)",
+      "location": "Paris - La Défense",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/dilitrust/software-engineer-ai-platform-frontend-paris-la-defense-30686",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Frontend role but focused on AI platform, likely React/TypeScript, not WordPress/WooCommerce; location Paris, remote unclear.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "geo_mismatch",
+        "employment_type_unclear"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003089,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d8042456e30b17587c2c1cbf99f3f1a5",
+      "evaluated_at": "2026-09-06T08:51:12Z",
+      "organization": "DiliTrust",
+      "title": "Senior FullStack Software Engineer (Node.js / Vue.js) - Full remote",
+      "location": "Paris - La Défense",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/dilitrust/senior-fullstack-software-engineer-nodejs-vuejs-full-remote-paris-la-defense-151911",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior fullstack Node.js/Vue.js role, no WordPress/WooCommerce or frontend web stack fit; maintenance keyword generic.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "seniority_mismatch",
+        "geo_mismatch"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003089,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "293f768afdaadc640f87ee2e2d816979",
+      "evaluated_at": "2026-09-06T08:51:12Z",
+      "organization": "Cribl",
+      "title": "Partner Solutions Engineer, Southern Europe",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/cribl/partner-solutions-engineer-southern-europe-305658",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Partner Solutions Engineer role for observability platform, not web development; partner keyword is generic and not freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "stack_mismatch",
+        "geo_unclear"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0003089,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-06T08:24:31Z"
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 3,
+  "source_semantic_updated_at": "2026-09-06T08:51:11Z"
 }
