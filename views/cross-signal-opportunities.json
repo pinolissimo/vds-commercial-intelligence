@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8",
-  "updated_at": "2026-09-04T16:13:53Z",
+  "updated_at": "2026-09-06T11:52:49Z",
   "ranking_model": {
     "explicit_demand": 0.35,
     "vds_fit": 0.2,
@@ -112,6 +112,33 @@
         "2026-09-04T13:04:35Z"
       ],
       "rationale": "Current demand, freelance contract, geography and authoritative route are resolved. Generic contact email is not substituted for the role-specific form."
+    },
+    {
+      "canonical_identity_key": "org:eccolomarketing.it",
+      "organization": "Eccolo Marketing",
+      "country": "IT",
+      "segment": "DIRECT_JOB",
+      "scores": {
+        "total": 95.0
+      },
+      "priority_tier": "HOT+",
+      "contact_status": "NO_CURRENT_PROVIDER_SUPPRESSION_MATCH_AT_REVENUE_FLOW_RECHECK",
+      "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
+      "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
+      "blockers_missing_gates": [
+        "OFFICIAL_APPLICATION_FORM_REQUIRED"
+      ],
+      "route": {
+        "type": "OFFICIAL_APPLICATION_FORM",
+        "url": "https://www.eccolomarketing.it/lavora-con-noi/web-designer/"
+      },
+      "source_ids": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "evidence_timestamps": [
+        "2026-09-06T11:48:00Z"
+      ],
+      "rationale": "Excellent direct fit for freelance/P.IVA web production and recurring agency work."
     },
     {
       "canonical_identity_key": "org:iocos.it",
@@ -577,17 +604,17 @@
         "total": 89.0
       },
       "priority_tier": "HOT+",
-      "contact_status": "NO_MATCH_IN_PROVIDER_SUPPRESSION_INDEX",
-      "recommended_executor": "OWNER_HUMAN_REVIEW_ONLY",
-      "next_best_action": "HUMAN_REVIEW_HIGH_VALUE",
+      "contact_status": "CONTACTED",
+      "recommended_executor": "NONE_NEW_FIRST_CONTACT",
+      "next_best_action": "WAIT_FOR_REPLY",
       "blockers_missing_gates": [
-        "EMPLOYER_EXPLICITLY_REQUESTS_CV_ATTACHMENT + CONTRACT_MODEL_NOT_STATED"
+        "PRIOR_FIRST_CONTACT_OR_OWNER_APPLICATION_RECORDED"
       ],
       "route": {
         "type": "DIRECT_APPLICATION_EMAIL",
         "source": "https://publydea.com/trabajo"
       },
-      "rationale": "Near-direct VDS technical fit: WordPress, Divi, maintenance, SEO adjacency and visual judgement, with an authoritative candidacy email and openness to spontaneous role proposals.",
+      "rationale": "Global organization/provider history proves prior professional contact/application. Preserve only for reply-driven or otherwise policy-compliant continuation. (HOSTINGER_SENT_UID_285_2026-09-04T16:16:35Z)",
       "source_ids": [
         "fresh_web_official_careers"
       ],
@@ -1453,5 +1480,5 @@
     "HOLD_STALE_OR_UNCERTAIN"
   ],
   "note": "Runtime reconciliation merges current Agency/EU, LinkedIn/job, Human Review, global-sent and provider-history evidence; high-value job soft blocks are mirrored into Human Review; no external action performed.",
-  "history_reconciled_through": "Hostinger/provider evidence through UID 284"
+  "history_reconciled_through": "Hostinger/provider evidence through UID 301"
 }

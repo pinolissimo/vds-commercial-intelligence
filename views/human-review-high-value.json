@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "updated_at": "2026-09-04T16:13:53Z",
+  "updated_at": "2026-09-06T11:52:49Z",
   "protocol": "project/HUMAN_REVIEW_HIGH_VALUE_PROTOCOL.md",
   "status": "ACTIVE",
   "purpose": "High-value soft-blocked opportunities preserved for owner human review. This queue never bypasses explicit no-contact/no-freelance/no-agency/legal/dedup constraints.",
@@ -201,6 +201,54 @@
       "owner_decision": "PENDING",
       "source_task": "VDS Agency + EU Signal Radar",
       "state": "PENDING_CANONICAL_QUEUE_MERGE"
+    },
+    {
+      "schema_version": "1.1",
+      "canonical_identity_key": "org:eccolomarketing.it",
+      "organization": "Eccolo Marketing",
+      "country": "IT",
+      "opportunity_url": "https://www.eccolomarketing.it/lavora-con-noi/web-designer/",
+      "source_urls": [
+        "https://www.eccolomarketing.it/lavora-con-noi/web-designer/"
+      ],
+      "evidence_summary": "Current official Web Designer vacancy with P.IVA, WordPress, WooCommerce, Elementor, HTML/CSS/PHP/JavaScript requirements strongly aligned with VDS.",
+      "evidence_strength": "OFFICIAL_CURRENT",
+      "signal_date": "2026-09-01",
+      "score": 95,
+      "priority": "HOT+",
+      "why_high_value": "Excellent direct fit for freelance/P.IVA web production and recurring agency work.",
+      "automatic_block_reason": "OFFICIAL_APPLICATION_FORM_REQUIRED",
+      "review_class": "MANUAL_ROUTE",
+      "authoritative_routes": [
+        {
+          "type": "OFFICIAL_APPLICATION_FORM",
+          "url": "https://www.eccolomarketing.it/lavora-con-noi/web-designer/"
+        }
+      ],
+      "dedup_status": "NO_CURRENT_PROVIDER_SUPPRESSION_MATCH_AT_REVENUE_FLOW_RECHECK",
+      "recommended_action": "MANUAL_APPLY",
+      "owner_question_pack": {
+        "review_state": "AWAITING_OWNER_ANSWER",
+        "questions": [
+          {
+            "question_id": "org:eccolomarketing.it:Q1",
+            "question": "Vuoi procedere manualmente tramite il form ufficiale per questa opportunità P.IVA ad alta compatibilità?",
+            "answer_type": "YES_NO",
+            "choices": [],
+            "why_it_matters": "Il form ufficiale è l'unica rotta applicativa autorevole.",
+            "unlock_if": "YES => MANUAL_APPLY",
+            "owner_answer": null,
+            "answered_at": null
+          }
+        ],
+        "questioned_at": null,
+        "last_material_change_at": "2026-09-06T11:48:00Z",
+        "next_gate_after_answer": "REVERIFY_AND_RECLASSIFY"
+      },
+      "owner_decision": "PENDING",
+      "created_at": "2026-09-06T11:48:00Z",
+      "updated_at": "2026-09-06T11:48:00Z",
+      "source_task": "VDS_REVENUE_FLOW"
     },
     {
       "canonical_identity_key": "org:iocos.it",
@@ -724,7 +772,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T16:13:53Z",
+      "updated_at": "2026-09-06T11:52:49Z",
       "source_task": "VDS Cross-Signal Ranker",
       "schema_version": "1.0",
       "verified_facts": [
@@ -783,7 +831,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T16:13:53Z",
+      "updated_at": "2026-09-06T11:52:49Z",
       "source_task": "VDS LinkedIn Job Hunter",
       "execution_status": "CONTACT_ALREADY_EXECUTED"
     },
@@ -912,20 +960,21 @@
         }
       ],
       "language": "ES",
-      "dedup_status": "NO_DOMAIN_MATCH_IN_PROVIDER_SUPPRESSION_OR_GLOBAL_SENT_INDEX_THROUGH_UID_280_AT_RECHECK",
+      "dedup_status": "CONTACTED",
       "do_not_bypass_constraints": [
         "Do not state or imply that Publydea offers freelance/P.IVA terms without confirmation.",
-        "Human-review state is not authorization to send."
+        "Human-review state is not authorization to send.",
+        "Do not initiate another FIRST_CONTACT; future action must be a compliant continuation."
       ],
       "recommended_human_checks": [
         "Decide whether a transparent B2B/freelance alternative is acceptable despite unspecified contract model.",
         "Recheck provider/global history immediately before any owner-approved outreach.",
         "Emphasize WordPress, Divi, maintenance, responsive/performance and visual implementation truthfully."
       ],
-      "recommended_action": "HUMAN_REVIEW_B2B",
-      "owner_decision": "PENDING",
+      "recommended_action": "WAIT_FOR_REPLY",
+      "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04T10:05:00Z",
-      "updated_at": "2026-09-04T14:05:00+02:00",
+      "updated_at": "2026-09-06T11:52:49Z",
       "source_task": "VDS Agency + EU Signal Radar",
       "territory": {
         "country": "ES",
@@ -933,7 +982,8 @@
         "province": "Toledo + Málaga",
         "city": "Illescas + Torremolinos"
       },
-      "state": "PENDING_CANONICAL_QUEUE_MERGE"
+      "state": "PENDING_CANONICAL_QUEUE_MERGE",
+      "execution_status": "CONTACT_ALREADY_EXECUTED"
     },
     {
       "canonical_identity_key": "org:omegacrmconsulting.com",
@@ -1023,7 +1073,7 @@
       "execution_status": "CONTACT_ALREADY_EXECUTED",
       "submitted_at": "2026-09-04",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T16:13:53Z",
+      "updated_at": "2026-09-06T11:52:49Z",
       "source_task": "VDS Performance + Reply Watch deterministic reconciliation",
       "owner_action_evidence": "data/human-review-owner-actions/2026-09-04-grownnectia-manual-apply.json"
     },
@@ -1068,7 +1118,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T16:13:53Z",
+      "updated_at": "2026-09-06T11:52:49Z",
       "source_task": "VDS Cross-Signal Ranker retroactive recovery",
       "execution_status": "CONTACT_ALREADY_EXECUTED"
     },
@@ -1183,7 +1233,7 @@
       "recommended_action": "WAIT_FOR_REPLY",
       "owner_decision": "APPROVE_OUTREACH",
       "created_at": "2026-09-04",
-      "updated_at": "2026-09-04T16:13:53Z",
+      "updated_at": "2026-09-06T11:52:49Z",
       "source_task": "VDS Cross-Signal Ranker retroactive recovery",
       "execution_status": "CONTACT_ALREADY_EXECUTED"
     },
@@ -1294,11 +1344,11 @@
   ],
   "metrics": {
     "pending": 17,
-    "approved_outreach": 4,
+    "approved_outreach": 5,
     "manual_apply": 1,
     "hold": 0,
     "rejected": 1,
-    "contact_already_executed": 5
+    "contact_already_executed": 6
   },
   "removed_or_closed": [
     {
