@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-06T14:10:31+02:00",
+  "updated_at": "2026-09-06T16:08:38+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -10,20 +10,20 @@
   },
   "send_window": "09:00-19:00 Europe/Madrid",
   "send_allowed_now": true,
-  "global_provider_checkpoint_uid": 301,
+  "global_provider_checkpoint_uid": 304,
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
   "source": "data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 655,
-  "run_detail_file": "state/direct-job-run-20260906T1410.jsonl",
-  "serious_signals_evaluated": 28,
-  "unique_organization_identities": 20,
+  "raw_checkpoint_through_line": 669,
+  "run_detail_file": "state/direct-job-run-20260906T1608.jsonl",
+  "serious_signals_evaluated": 14,
+  "unique_organization_identities": 6,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
     "WAIT_RESEARCH": 0,
-    "REJECT": 28,
+    "REJECT": 14,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
@@ -31,11 +31,11 @@
     "provider_verified_first_contacts": 0
   },
   "notes": [
-    "TURBO exploitation was checked first. No undecided qualified semantic-pass or ANSWERED_RECHECK_REQUIRED human-review item remained eligible without reprocessing already-decided identities.",
-    "Processed all 28 genuinely unprocessed canonical raw signals available after the prior checkpoint, excluding raw lines 640-645 already decided by the 13:08 cycle.",
-    "No candidate passed the truthful VDS fit gate, so route research and provider sending were not warranted.",
-    "Global provider UID 301 is an Expand-Raise first contact owned by VDS_REVENUE_FLOW; it is globally authoritative for dedup and is not counted as a LINKEDIN_HUNTER first contact.",
-    "Command Center pending set was empty.",
+    "TURBO exploitation was checked first; no eligible unresolved qualified semantic-pass or ANSWERED_RECHECK_REQUIRED identity remained without reprocessing.",
+    "Processed all 14 genuinely new canonical raw signals available after line 655 and advanced the exploration checkpoint through line 669.",
+    "Hypertrics Softwareentwickler was authoritatively verified current but rejected because the core stack includes C# and TypeScript and the role is on-site in Schutterwald, Germany.",
+    "All remaining fresh signals failed deterministic role-function, core-stack, or employer-identity gates before route research was warranted.",
+    "Provider preflight remained unambiguous through Hostinger UID 304; no live application email was sent.",
     "No generic application email was inferred or substituted."
   ]
 }
