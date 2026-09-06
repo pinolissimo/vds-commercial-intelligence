@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-06T06:03:17Z",
+  "updated_at": "2026-09-06T07:23:53Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 224,
+    "evaluated_total": 226,
     "agreement_count": 115,
-    "agreement_pct": 51.34,
+    "agreement_pct": 50.88,
     "deepseek_promote": 18,
-    "vds_promote": 91,
+    "vds_promote": 92,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 77
+    "deepseek_demoted_from_vds_promote": 78
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 2.2,
+    "vds_promote_hot_rate_pct": 2.17,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 11.11,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 38,
-    "cumulative_estimated_cost_usd": 0.038512,
-    "cost_per_evaluated_candidate_usd": 0.00017193,
-    "cost_per_deepseek_promote_usd": 0.00213957,
-    "cost_per_observed_ready_or_contacted_usd": 0.01925612,
+    "request_count": 39,
+    "cumulative_estimated_cost_usd": 0.039179,
+    "cost_per_evaluated_candidate_usd": 0.00017336,
+    "cost_per_deepseek_promote_usd": 0.00217663,
+    "cost_per_observed_ready_or_contacted_usd": 0.01958966,
     "latest_request": {
-      "at": "2026-09-06T06:03:11Z",
+      "at": "2026-09-06T07:23:50Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 6,
-      "valid_evaluation_count": 6,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 1664,
-      "prompt_cache_miss_tokens": 110,
-      "completion_tokens": 841,
-      "total_tokens": 2615,
-      "estimated_cost_usd": 0.00118182
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 587,
+      "completion_tokens": 307,
+      "total_tokens": 1150,
+      "estimated_cost_usd": 0.0006671
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,57 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "589eaa5537b54de0fc1227b11d91038c",
-      "evaluated_at": "2026-09-04T15:13:08Z",
-      "organization": "Lemon.io",
-      "title": "Senior Data Engineer",
-      "location": "LATAM, Europe, USA, Canada, APAC",
-      "opportunity_url": "https://remotive.com/remote-jobs/software-development/senior-data-engineer-2091097",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 40,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Data Engineer, completely unrelated role.",
-      "deepseek_risk_flags": [
-        "role_mismatch"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 8.37073e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "e614ebe28b42eecf7de6c64d8a30de0a",
-      "evaluated_at": "2026-09-04T15:13:08Z",
-      "organization": "Scratch Financial",
-      "title": "Sr. Fullstack Developer, Originations",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/sr-fullstack-developer-originations-scratch-financial",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 40,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Sr. Fullstack Developer, likely React/Node stack, no WordPress or frontend web focus.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "role_mismatch"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 8.37073e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "0a9a51f6a331c3a2640b893cbc4e0e72",
       "evaluated_at": "2026-09-04T15:13:08Z",
@@ -1388,9 +1337,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "55e1a7ffd7491ed65f6c5eb4e4199bb5",
+      "evaluated_at": "2026-09-06T07:23:50Z",
+      "organization": "Fundcraft",
+      "title": "Senior Frontend Engineer",
+      "location": "Girona, Spain",
+      "opportunity_url": "https://apply.workable.com/j/25F72B346C/apply",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 65.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Frontend Engineer role in Spain with frontend/UI/UX and maintenance keywords, but full-time on-site employment and no explicit WordPress/WooCommerce or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "full-time employment",
+        "on-site",
+        "no freelance indication",
+        "no WordPress/WooCommerce mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00033355,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8d0a6b6ac293512c0a907ee6dae3f5b4",
+      "evaluated_at": "2026-09-06T07:23:50Z",
+      "organization": "Athereon",
+      "title": "(Senior) Software Developer Frontend / React (m/w/d)",
+      "location": "Saarbrücken",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/athereon/senior-software-developer-frontend-react-saarbrucken-42438",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Frontend/React developer role in Germany, no WordPress/WooCommerce scope, no freelance compatibility, and unclear remote/geo fit.",
+      "deepseek_risk_flags": [
+        "React-heavy",
+        "no WordPress/WooCommerce",
+        "no freelance indication",
+        "geo unclear"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00033355,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 6,
-  "source_semantic_updated_at": "2026-09-06T06:03:10Z"
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-06T07:23:49Z"
 }
