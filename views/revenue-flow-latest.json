@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-06T13:50:00+02:00",
+  "updated_at": "2026-09-06T13:55:00+02:00",
   "worker_id": "UNIFIED_LOOP",
   "mode": "SELF_CONTAINED_VDS_REVENUE_FLOW",
   "canonical_branch": "main",
@@ -66,13 +66,15 @@
     {"organization":"Frem Digital AS","blocker":"EXACT_AUTHORITATIVE_CAREERS_RECIPIENT_UNRESOLVED"}
   ],
   "human_review": {
-    "fragment_path": "data/human-review-high-value-fragments/2026-09-06T1148Z-revenue-flow.json",
+    "canonical_view": "views/human-review-high-value.json",
+    "owner_report": "reports/human-review-high-value.md",
     "items_created_or_updated": 5,
     "owner_question_pack_only": true
   },
   "notes": [
     "The complete 40-candidate decision set is persisted in run_file.",
     "Expand-Raise UID 301 is committed across durable ledger, provider suppression, global sent index and global organization index; reservation is released.",
+    "High-value soft-block recovery is merged into the canonical human-review queue and owner report.",
     "No eligible UNIFIED_LOOP command was pending."
   ]
 }
