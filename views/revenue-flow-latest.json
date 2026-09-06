@@ -1,14 +1,14 @@
 {
   "schema_version":"1.5",
-  "updated_at":"2026-09-06T22:35:49+02:00",
+  "updated_at":"2026-09-07T01:35:58+02:00",
   "worker_id":"UNIFIED_LOOP",
   "mode":"SELF_CONTAINED_VDS_REVENUE_FLOW",
   "runtime_mode":"MIDDLE_FUNNEL_TURBO",
   "canonical_branch":"main",
-  "run_file":"data/revenue-flow-runs/2026-09-06T22-35-49+02-00.json",
+  "run_file":"data/revenue-flow-runs/2026-09-07T01-35-58+02-00.json",
   "send_window":"09:00-19:00 Europe/Madrid",
   "send_allowed_now":false,
-  "preflight":{"provider_checkpoint_uid":304,"provider_state":"UNAMBIGUOUS_THROUGH_UID_304","reservations_active":0,"reservation_artifact":"governance/global-contact-reservations.json","reservation_artifact_path_status":"RESOLVED","reservation_effect":"NO_BLOCK; SEND STILL DISALLOWED BY TIME WINDOW","discovery_latest_blob_sha":"3c6fedae50ab3ce40a73fb357aebdf9a0e3ce642","semantic_pass_proxy":93,"runtime_turbo_active":true,"qualified_backlog_first":true,"exploitation_pct":85,"exploration_pct":10,"strategic_reserve_pct":5,"runtime_self_healing_contract_active":true,"legacy_cross_signal_required":false,"agency_radar_required":false,"separate_ready_builder_required":false},
+  "preflight":{"provider_checkpoint_uid":304,"provider_state":"UNAMBIGUOUS_THROUGH_UID_304","reservations_active":0,"reservation_artifact":"governance/global-contact-reservations.json","reservation_artifact_path_status":"RESOLVED","reservation_effect":"NO_BLOCK; SEND DISALLOWED BY TIME WINDOW","discovery_latest_blob_sha":"624524efb009802e1f7bb37a721824c028c28077","discovery_signal_count":1201,"new_signals_latest_refresh":0,"semantic_pass_proxy":94,"runtime_turbo_active":true,"qualified_backlog_first":true,"exploitation_pct":85,"exploration_pct":10,"strategic_reserve_pct":5,"runtime_self_healing_contract_active":true,"legacy_cross_signal_required":false,"agency_radar_required":false,"separate_ready_builder_required":false},
   "command_center":{"pending_after_cycle":0,"eligible_commands_consumed":0,"external_sends_from_commands":0},
   "serious_candidates_evaluated":40,
   "allocation":{"backlog_exploitation":34,"exploration":4,"strategic_reserve_high_value_recovery":2},
@@ -16,5 +16,5 @@
   "manual_apply_highlights":[{"organization":"Sapres Technologies GmbH","url":"https://www.freelancermap.de/projekt/wordpress-developer-gesucht"},{"organization":"Wordune","url":"https://wordune.com/submit-project/"},{"organization":"Cayenne Global, LLC","url":"https://www.upwork.com/freelance-jobs/apply/Senior-Web-Designer-WordPress-Developer-B2B-Deep-Technology-Website-Redesign_~022094501377834803355/"},{"organization":"Ajax Creative","url":"https://www.ajaxcreative.com/jobs/freelance-web-designer-job-posting"},{"organization":"Eccolo Marketing","url":"https://www.eccolomarketing.it/lavora-con-noi/web-designer/"},{"organization":"LIVEAT Agency / LIVEAT S.r.l.","url":"https://www.simplyhired.it/job/3kBOwtjgLEHGUOybuTYlxGUTgGTm2OI_x2Vf-9WCn2bBW1FvWtbHmw"}],
   "wait_research":{"CURRENT_NEED_FRESHNESS_UNRESOLVED":18,"EXACT_AUTHORITATIVE_ROUTE_UNRESOLVED":1},
   "human_review":{"canonical_view":"views/human-review-high-value.json","items_preserved":9,"new_items":0,"owner_answers_reentered":0},
-  "notes":["No live provider call was attempted because sending is outside the permitted window.","Self-healing preflight resolved the stale reservation-path fault: governance/global-contact-reservations.json is present and contains zero active reservations.","Provider/global state remains reconciled through Hostinger UID 304.","Complete per-candidate decisions are stored in run_file."]
+  "notes":["No live provider call was attempted outside the permitted send window.","Latest discovery refresh contains 1201 signals and zero new signals, so TURBO concentrated on unresolved qualified backlog while preserving exploration.","Provider/global state remains reconciled through Hostinger UID 304 with zero active reservations.","Complete per-candidate decisions are stored in run_file."]
 }
