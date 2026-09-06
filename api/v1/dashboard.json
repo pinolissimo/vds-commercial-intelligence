@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.1",
-  "generated_at": "2026-09-06T10:00:03+02:00",
+  "schema_version": "1.2",
+  "generated_at": "2026-09-06T10:23:44+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -12,23 +12,27 @@
     "replies_negative": 0,
     "replies_neutral": 0,
     "hard_bounces": 0,
-    "messages_per_active_hour": 1.0,
-    "first_contacts_per_active_hour": 1.0,
-    "active_window_elapsed_hours": 1.0,
+    "messages_per_active_hour": 0.72,
+    "first_contacts_per_active_hour": 0.72,
+    "active_window_elapsed_hours": 1.4,
     "sending_window": "09:00-19:00 Europe/Madrid"
   },
   "headline": {
-    "semantic_input_last_run": 1033,
+    "semantic_input_last_run": 1041,
     "semantic_pass_last_run": 89,
-    "semantic_pass_rate_pct": 8.62,
+    "semantic_pass_rate_pct": 8.55,
     "active_opportunities": 53,
-    "ready": 25,
+    "ready": 4,
     "manual_action": 5,
     "contacted_in_active_view": 21,
     "sent_today": 1,
     "success_index_pct": 68,
     "new_client_probability_proxy_pct": 88,
-    "companies_indexed": 97
+    "companies_indexed": 97,
+    "ready_legacy_compat_previous_value": 25,
+    "executable_ready_now": 4,
+    "legacy_ready_advisory": 21,
+    "semantic_pass_backlog_proxy": 89
   },
   "status_counts": {
     "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
@@ -55,10 +59,10 @@
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
       "score": 100.0,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-06T22:24:56.318171Z",
+      "cooldown_until": "2026-09-07T02:01:15.276478Z",
       "heat_pct": 100.0
     },
     {
@@ -67,10 +71,10 @@
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
       "score": 56.38,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-06T22:24:56.318171Z",
+      "cooldown_until": "2026-09-07T02:01:15.276478Z",
       "heat_pct": 56.4
     },
     {
@@ -80,28 +84,16 @@
       "territory": "Roma",
       "score": 49.16,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-07T00:03:17.423712Z",
       "heat_pct": 49.2
     },
     {
-      "area": "Spain|Comunitat Valenciana|Castellón",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "territory": "Castellón",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
-    },
-    {
-      "area": "Italy|Veneto|Venezia",
+      "area": "Italy|Puglia|Bari",
       "country": "Italy",
-      "region": "Veneto",
-      "territory": "Venezia",
+      "region": "Puglia",
+      "territory": "Bari",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -134,10 +126,22 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Puglia|Bari",
+      "area": "Spain|Comunitat Valenciana|Castellón",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "territory": "Castellón",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Veneto|Venezia",
       "country": "Italy",
-      "region": "Puglia",
-      "territory": "Bari",
+      "region": "Veneto",
+      "territory": "Venezia",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -177,8 +181,8 @@
       "score": 16.64,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 75,
-      "cooldown_until": "2026-09-07T01:23:53.218231Z",
+      "low_yield_cycles": 76,
+      "cooldown_until": "2026-09-07T02:01:15.276478Z",
       "heat_pct": 16.6
     },
     {
@@ -189,8 +193,8 @@
       "score": 14.49,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 75,
-      "cooldown_until": "2026-09-07T01:23:53.218231Z",
+      "low_yield_cycles": 76,
+      "cooldown_until": "2026-09-07T02:01:15.276478Z",
       "heat_pct": 14.5
     }
   ],
@@ -200,15 +204,15 @@
       "territories": 108,
       "average_score": 3.78,
       "best_score": 100.0,
-      "harvest_territories": 2,
+      "harvest_territories": 1,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
       "country": "Spain",
       "territories": 53,
-      "average_score": 4.2,
+      "average_score": 4.24,
       "best_score": 56.38,
-      "harvest_territories": 1,
+      "harvest_territories": 0,
       "top_territory": "Spain|UNRESOLVED|UNRESOLVED"
     }
   ],
@@ -223,5 +227,72 @@
     "sent_verification_required": true,
     "dashboard_can_bypass_gates": false,
     "production_search_is_independent_from_dashboard": true
+  },
+  "operational_funnel": {
+    "schema_version": "1.0",
+    "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
+    "stages": {
+      "raw_signals": 1041,
+      "semantic_input": 1041,
+      "semantic_pass": 89,
+      "company_verified": null,
+      "route_found": null,
+      "dedup_ok": null,
+      "executable_ready_now": 4,
+      "manual_apply_now": 5,
+      "wait_research_now": 2,
+      "contacted_in_active_view": 21,
+      "provider_verified_first_contacts_today": 1
+    },
+    "instrumentation": {
+      "company_verified": "NOT_CANONICALLY_METERED_YET",
+      "route_found": "NOT_CANONICALLY_METERED_YET",
+      "dedup_ok": "NOT_CANONICALLY_METERED_YET",
+      "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
+    },
+    "attrition": {
+      "semantic_reject": 937,
+      "semantic_review": 15,
+      "semantic_pass_to_executable_gap_proxy": 85,
+      "legacy_ready_advisory_excluded": 21
+    },
+    "status_classes": {
+      "LEGACY_ADVISORY": 21,
+      "CONTACTED": 21,
+      "EXECUTABLE": 4,
+      "MANUAL_APPLY": 5,
+      "WAIT_RESEARCH": 2
+    },
+    "status_counts": {
+      "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
+      "CONTACTED": 20,
+      "READY_TO_CONTACT": 4,
+      "READY_TO_CONTACT_MANUAL_ROUTE": 5,
+      "DRAFT_REVIEW_REQUIRED": 1,
+      "CHANNEL_REVERIFY": 1,
+      "CONTACTED_PENDING_CANONICAL_RECONCILIATION": 1
+    },
+    "pressure": {
+      "qualified_backlog_proxy": 89,
+      "executable_ready_now": 4,
+      "conversion_pressure_ratio": 22.25,
+      "turbo_enabled": false,
+      "turbo_reason": null
+    }
+  },
+  "readiness_semantics": {
+    "headline_ready_means": "EXECUTABLE_CANDIDATE_STATUS_ONLY; LIVE_JIT_GATES_REMAIN_AUTHORITATIVE",
+    "requires_live_jit_preflight_before_provider_call": true,
+    "legacy_advisory_is_excluded": true,
+    "legacy_advisory_statuses": [
+      "READY_FOR_DAILY_OUTREACH_REVIEW"
+    ],
+    "executable_statuses": [
+      "AUTO_EMAIL_NOW",
+      "EXECUTABLE_READY",
+      "QUEUE_FOR_SEND_WINDOW",
+      "READY_TO_CONTACT",
+      "SEND_NOW"
+    ]
   }
 }
