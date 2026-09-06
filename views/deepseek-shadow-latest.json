@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-06T14:00:37Z",
+  "updated_at": "2026-09-06T15:43:57Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 240,
-    "agreement_count": 127,
-    "agreement_pct": 52.92,
+    "evaluated_total": 242,
+    "agreement_count": 128,
+    "agreement_pct": 52.89,
     "deepseek_promote": 19,
-    "vds_promote": 95,
+    "vds_promote": 96,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 80
+    "deepseek_demoted_from_vds_promote": 81
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 21.05,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 2.11,
+    "vds_promote_hot_rate_pct": 2.08,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 10.53,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 42,
-    "cumulative_estimated_cost_usd": 0.041163,
-    "cost_per_evaluated_candidate_usd": 0.00017151,
-    "cost_per_deepseek_promote_usd": 0.00216649,
-    "cost_per_observed_ready_or_contacted_usd": 0.02058166,
+    "request_count": 43,
+    "cumulative_estimated_cost_usd": 0.041502,
+    "cost_per_evaluated_candidate_usd": 0.0001715,
+    "cost_per_deepseek_promote_usd": 0.00218432,
+    "cost_per_observed_ready_or_contacted_usd": 0.02075108,
     "latest_request": {
-      "at": "2026-09-06T14:00:31Z",
+      "at": "2026-09-06T15:43:54Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 5,
-      "valid_evaluation_count": 5,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1536,
-      "prompt_cache_miss_tokens": 89,
-      "completion_tokens": 756,
-      "total_tokens": 2381,
-      "estimated_cost_usd": 0.00052929
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 593,
+      "completion_tokens": 313,
+      "total_tokens": 1162,
+      "estimated_cost_usd": 0.00033883
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6274bffc33d818465feab9a12717f0a2",
-      "evaluated_at": "2026-09-04T19:10:30Z",
-      "organization": "Vivenu",
-      "title": "Senior Security Engineer - AppSec (d/f/m)",
-      "location": "Remote Germany",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/vivenu/remote-senior-security-engineer-appsec-404043",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 10.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Security engineering role unrelated to web development; maintenance keyword is misleading.",
-      "deepseek_risk_flags": [
-        "Unrelated domain",
-        "Keyword mismatch",
-        "No freelance compatibility"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001451367,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "df705a5b4e23b0dc4feb2a9c954f6762",
-      "evaluated_at": "2026-09-04T20:09:10Z",
-      "organization": "Faculty",
-      "title": "Frontend Engineer",
-      "location": "UK - London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/faculty/frontend-engineer-london-77178",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 65.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Frontend Engineer role with HTML/JavaScript, but no explicit WordPress/WooCommerce or web performance scope; likely product company, not freelance-compatible.",
-      "deepseek_risk_flags": [
-        "no_freelance_evidence",
-        "stack_fit_partial",
-        "geo_uk_only"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001525225,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "e05496515a4677f872379c500e5c5d1b",
       "evaluated_at": "2026-09-04T20:09:10Z",
@@ -1399,9 +1345,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "88b761f60a11c38e03808a958cc43c10",
+      "evaluated_at": "2026-09-06T15:43:54Z",
+      "organization": "soprasteria",
+      "title": "Frontend Developer (Vue.js / Nuxt)",
+      "location": "Alacant, Spain",
+      "opportunity_url": "https://careers.soprasteria.es/job/frontend-developer-vue-js-nuxt-in-alacant-spain-jid-9143",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Frontend developer role focused on Vue.js/Nuxt, with no explicit WordPress/WooCommerce or web performance scope. Generic frontend skills match but core stack is not aligned with target profile.",
+      "deepseek_risk_flags": [
+        "Vue.js/Nuxt core stack",
+        "No WordPress/WooCommerce mention",
+        "Hybrid work may require relocation"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.000169415,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9496eec19269ec59afe08c2b976b6412",
+      "evaluated_at": "2026-09-06T15:43:54Z",
+      "organization": "Vmlenterprisesolutions",
+      "title": "Consultant Développeur Marketing Technology (CRM & Data) – 3 à 5 ans d’expérience",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/vmlenterprisesolutions/consultant-developpeur-marketing-technology-crm-data-3-a-5-ans-dexperience-paris-295267",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Marketing technology consultant role focused on CRM and data, not web development. Only generic HTML/JavaScript/migration keywords appear, with no WordPress, frontend, or web performance relevance.",
+      "deepseek_risk_flags": [
+        "CRM/data focus",
+        "No web development scope",
+        "Location Paris outside target geos"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000169415,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 5,
-  "source_semantic_updated_at": "2026-09-06T14:00:30Z"
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-06T15:43:53Z"
 }
