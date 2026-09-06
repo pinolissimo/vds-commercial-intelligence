@@ -1,80 +1,81 @@
 {
-  "schema_version": "1.4",
-  "updated_at": "2026-09-06T13:55:00+02:00",
+  "schema_version": "1.5",
+  "updated_at": "2026-09-06T20:40:35+02:00",
   "worker_id": "UNIFIED_LOOP",
   "mode": "SELF_CONTAINED_VDS_REVENUE_FLOW",
+  "runtime_mode": "MIDDLE_FUNNEL_TURBO",
   "canonical_branch": "main",
-  "run_file": "data/revenue-flow-runs/2026-09-06T13-50-00+02-00.json",
+  "run_file": "data/revenue-flow-runs/2026-09-06T20-40-35+02-00.json",
   "send_window": "09:00-19:00 Europe/Madrid",
-  "send_allowed_now": true,
+  "send_allowed_now": false,
   "preflight": {
-    "status": "HEALTHY_AFTER_UID_301_COMMIT",
-    "provider_checkpoint_uid": 301,
-    "reservations_active": 0,
-    "discovery_signal_count": 1021,
-    "semantic_pass_proxy": 88,
+    "provider_checkpoint_uid": 304,
+    "provider_state": "UNAMBIGUOUS_THROUGH_UID_304",
+    "reservations_active": null,
+    "reservation_artifact_path_status": "CANONICAL_PATH_NOT_RESOLVED_IN_CURRENT_REPOSITORY_TREE",
+    "reservation_effect": "FAIL_CLOSED_FOR_PROVIDER_SEND; NON_SEND_QUALIFICATION_CONTINUES",
+    "discovery_latest_blob_sha": "4b9be88195a25a722f144684a06adc78c2d51e5e",
+    "semantic_pass_proxy": 93,
     "runtime_turbo_active": true,
     "qualified_backlog_first": true,
-    "exploration_floor_pct": 10,
+    "exploitation_pct": 85,
+    "exploration_pct": 10,
+    "strategic_reserve_pct": 5,
     "runtime_self_healing_contract_active": true,
     "legacy_cross_signal_required": false,
     "agency_radar_required": false,
     "separate_ready_builder_required": false
   },
-  "command_center": {"eligible_commands_consumed":0,"pending_after_cycle":0,"external_sends_from_commands":0},
+  "command_center": {
+    "pending_after_cycle": 0,
+    "eligible_commands_consumed": 0,
+    "external_sends_from_commands": 0
+  },
   "serious_candidates_evaluated": 40,
+  "allocation": {
+    "backlog_exploitation": 34,
+    "exploration": 4,
+    "strategic_reserve_high_value_recovery": 2
+  },
   "run_summary": {
-    "SEND_NOW": 1,
-    "MANUAL_APPLY": 7,
-    "WAIT_RESEARCH": 3,
-    "REJECT": 29,
-    "duplicates_blocked": 7,
-    "stale": 1,
-    "route_failures_or_missing_exact_route": 2,
-    "provider_verified_FIRST_CONTACT": 1,
-    "provider_verified_first_contacts_per_run": 1.0,
-    "replies_or_outcomes_observed": 0,
-    "human_review_items_created_or_updated": 5,
-    "unanswered_owner_questions": 5,
+    "SEND_NOW": 0,
+    "MANUAL_APPLY": 6,
+    "WAIT_RESEARCH": 19,
+    "REJECT": 15,
+    "duplicates_blocked": 15,
+    "stale_or_current_need_research": 18,
+    "route_failures_or_missing_exact_route": 1,
+    "provider_verified_FIRST_CONTACT": 0,
+    "provider_verified_first_contacts_per_run": 0,
+    "replies_or_paid_outcomes_observed": 0,
+    "human_review_items_created_or_updated": 0,
+    "unanswered_owner_questions": 9,
     "owner_answers_resolved": 0,
     "normal_cycle_completed": true
   },
-  "provider_verified_sends": [
-    {
-      "canonical_identity_key": "org:expand-raise.com",
-      "organization": "Expand-Raise",
-      "recipient": "info@expand-raise.com",
-      "subject": "Application — Remote WordPress Developer | Giuseppe Allocca",
-      "provider_uid": 301,
-      "sent_at": "2026-09-06T11:45:14Z",
-      "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
-      "bcc_owner": true
-    }
-  ],
   "manual_apply_highlights": [
+    {"organization":"Sapres Technologies GmbH","url":"https://www.freelancermap.de/projekt/wordpress-developer-gesucht"},
+    {"organization":"Wordune","url":"https://wordune.com/submit-project/"},
+    {"organization":"Cayenne Global, LLC","url":"https://www.upwork.com/freelance-jobs/apply/Senior-Web-Designer-WordPress-Developer-B2B-Deep-Technology-Website-Redesign_~022094501377834803355/"},
+    {"organization":"Ajax Creative","url":"https://www.ajaxcreative.com/jobs/freelance-web-designer-job-posting"},
     {"organization":"Eccolo Marketing","url":"https://www.eccolomarketing.it/lavora-con-noi/web-designer/"},
-    {"organization":"LIVEAT Agency","url":"https://www.simplyhired.it/job/3kBOwtjgLEHGUOybuTYlxGUTgGTm2OI_x2Vf-9WCn2bBW1FvWtbHmw"},
-    {"organization":"Idimad 360","url":"https://idimad360.com/trabaja-con-nosotros/"},
-    {"organization":"Craq Design Studio","url":"https://craqdesign.com/careers/"},
-    {"organization":"QuoLAB","url":"https://www.quolab.it/lavora-con-noi/"},
-    {"organization":"Growmodo GmbH","url":"https://es.indeed.com/cmp/Growmodo"}
+    {"organization":"LIVEAT Agency / LIVEAT S.r.l.","url":"https://www.simplyhired.it/job/3kBOwtjgLEHGUOybuTYlxGUTgGTm2OI_x2Vf-9WCn2bBW1FvWtbHmw"}
   ],
-  "wait_research": [
-    {"organization":"Ingenio Virtual","blocker":"CURRENT_FRESHNESS_UNRESOLVED"},
-    {"organization":"Artwork Web Agency","blocker":"EXACT_AUTHORITATIVE_CAREERS_RECIPIENT_UNRESOLVED"},
-    {"organization":"Frem Digital AS","blocker":"EXACT_AUTHORITATIVE_CAREERS_RECIPIENT_UNRESOLVED"}
-  ],
+  "wait_research": {
+    "CURRENT_NEED_FRESHNESS_UNRESOLVED": 18,
+    "EXACT_AUTHORITATIVE_ROUTE_UNRESOLVED": 1
+  },
   "human_review": {
     "canonical_view": "views/human-review-high-value.json",
-    "owner_report": "reports/human-review-high-value.md",
-    "items_created_or_updated": 5,
-    "owner_question_pack_only": true
+    "items_preserved": 9,
+    "new_items": 0,
+    "owner_answers_reentered": 0
   },
   "notes": [
-    "The complete 40-candidate decision set is persisted in run_file.",
-    "Expand-Raise UID 301 is committed across durable ledger, provider suppression, global sent index and global organization index; reservation is released.",
-    "High-value soft-block recovery is merged into the canonical human-review queue and owner report.",
-    "No eligible UNIFIED_LOOP command was pending."
+    "No live provider call was attempted because sending was not permitted at this cycle time.",
+    "Provider suppression, global organization and global sent indexes are reconciled through Hostinger UID 304. Summum Marketing UID 303 and DevXpire UID 304 are already-contacted identities and remain blocked from new FIRST_CONTACT.",
+    "This run repairs the stale Revenue Flow checkpoint that previously stopped at UID 301.",
+    "Reservation artifact path remains unresolved in current main; sender therefore remains fail-closed whenever reservation state cannot be read, without blocking discovery/qualification.",
+    "Complete per-candidate decisions are stored in run_file."
   ]
 }
