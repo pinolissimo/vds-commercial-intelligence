@@ -17,6 +17,7 @@ on:
       - 'config/**'
       - 'command-center/commands/**'
       - 'scripts/build_command_center_api.py'
+      - 'scripts/enrich_command_center_funnel.py'
       - '.github/workflows/vds-command-center-projections.yml'
 
 permissions:
@@ -37,7 +38,9 @@ jobs:
           fetch-depth: 0
 
       - name: Build disposable API projections
-        run: python3 scripts/build_command_center_api.py
+        run: |
+          python3 scripts/build_command_center_api.py
+          python3 scripts/enrich_command_center_funnel.py
 
       - name: Commit projection delta only
         shell: bash
@@ -60,6 +63,7 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             python3 scripts/build_command_center_api.py
+            python3 scripts/enrich_command_center_funnel.py
             git add api/v1
             if git diff --cached --quiet; then
               echo "Latest main already contains equivalent projections"

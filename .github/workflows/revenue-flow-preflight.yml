@@ -5,7 +5,10 @@ on:
     branches: [main]
     paths:
       - 'scripts/revenue_flow_preflight.py'
+      - 'scripts/acquisition_performance_optimizer.py'
+      - 'scripts/enrich_command_center_funnel.py'
       - 'tests/test_revenue_flow_preflight.py'
+      - 'tests/test_acquisition_throughput_policy.py'
       - 'data/global-sent-email-ledger.jsonl'
       - 'views/provider-contact-suppression-index.json'
       - 'views/global-sent-email-index.json'
@@ -33,11 +36,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Compile preflight
-        run: python -m py_compile scripts/revenue_flow_preflight.py
+      - name: Compile safety and throughput policy
+        run: |
+          python -m py_compile scripts/revenue_flow_preflight.py
+          python -m py_compile scripts/acquisition_performance_optimizer.py
+          python -m py_compile scripts/enrich_command_center_funnel.py
 
       - name: Run deterministic unit tests
-        run: python -m unittest tests/test_revenue_flow_preflight.py -v
+        run: python -m unittest tests/test_revenue_flow_preflight.py tests/test_acquisition_throughput_policy.py -v
 
       - name: Verify canonical state has no repairable drift
         run: python scripts/revenue_flow_preflight.py --check
