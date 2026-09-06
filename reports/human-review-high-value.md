@@ -1,62 +1,61 @@
 # VDS — High-Value Human Review Queue
 
-Updated: 2026-09-04 09:40 Europe/Madrid
+Updated: 2026-09-06 13:54 Europe/Madrid
 
-This report lists commercially strong opportunities that automation cannot safely execute but that deserve owner review. Human review never bypasses deduplication, legal/channel restrictions, explicit no-freelance/no-agency constraints, or authoritative application routes.
+This report surfaces commercially strong opportunities that automation cannot safely execute end-to-end. Human review never bypasses global deduplication, authoritative routes, legal/channel restrictions, opt-outs, or explicit no-freelance/no-external constraints.
 
-## New urgent items from fresh-first job scan
+## New / materially recovered by Revenue Flow
 
-### 1. Twine — EEA remote — HOT+ — 92
-**Role:** Freelance Web Designer — WordPress Divi Rebuild.  
-**Freshness:** LinkedIn still exposes Apply; listed about one week ago.  
-**Why high value:** extremely close fit: WordPress, Divi, HTML/CSS, responsive, performance, testing, staging-to-live migration, project-based remote engagement and possible future updates.  
-**Automatic block:** `PLATFORM_APPLY_REQUIRED`.  
-**Route:** https://www.linkedin.com/jobs/view/freelance-web-designer-%E2%80%93-wordpress-divi-rebuild-at-twine-4449569070  
-**Recommended owner action:** `MANUAL_APPLY` through the platform. Use strong Divi/WordPress examples and the verified English CV link. Do not use `support@twine.net` as an application route.
+### 1. Eccolo Marketing — HOT+ — 95
+**Opportunity:** Web Designer / P.IVA.  
+**Why it matters:** unusually close VDS fit: WordPress, WooCommerce, Elementor, HTML/CSS/PHP/JavaScript and freelance/P.IVA model.  
+**Verified route:** official application form — https://www.eccolomarketing.it/lavora-con-noi/web-designer/  
+**Automatic block:** `OFFICIAL_APPLICATION_FORM_REQUIRED`.  
+**Owner question:** Vuoi procedere manualmente tramite il form ufficiale per questa opportunità P.IVA ad alta compatibilità?  
+**If YES:** reverify the live form and execute `MANUAL_APPLY`; never substitute a generic email.
 
-### 2. molo&CO — Málaga — HOT+ — 88
-**Role:** Diseñador WordPress Multisite · Figma · Desarrollo a medida.  
-**Freshness:** observed approximately 22 minutes after publication.  
-**Why high value:** WordPress, WooCommerce, ACF, PHP, HTML/CSS/JS, APIs, performance, security, Figma, component systems and agency production are unusually close to VDS capabilities.  
-**Automatic block:** advertised as stable full-time, on-site Málaga; LinkedIn Apply route.  
-**Route:** https://es.linkedin.com/jobs/view/dise%C3%B1ador-wordpress-multisite-%C2%B7-figma-%C2%B7-desarrollo-a-medida-at-molo-co-4462805091  
-**Recommended owner action:** decide between manual employment application and a separate B2B/overflow review. Never claim the vacancy itself accepts freelancers.
+### 2. Idimad 360 — HOT+ — 91
+**Opportunity:** PROGRAMADOR path covering WordPress / PrestaShop / application development.  
+**Why it matters:** strong WordPress/front-end/full-stack adjacency through an official current careers route.  
+**Verified route:** https://idimad360.com/trabaja-con-nosotros/  
+**Automatic block:** `OFFICIAL_APPLICATION_FORM_REQUIRED`.  
+**Owner question:** Vuoi presentare manualmente la candidatura tramite il form ufficiale di Idimad 360?  
+**If YES:** reverify the route and execute `MANUAL_APPLY`.
 
-### 3. Avangarde — Italy — HOT+ — 87
-**Role:** Web Developer Junior.  
-**Freshness:** official page published 29 July 2026 and still accessible.  
-**Why high value:** WordPress, HTML5, CSS3, JavaScript, PHP, MySQL, responsive; critically, the official page explicitly states possible P.IVA collaboration with a published daily-rate range.  
-**Automatic block:** official application form required.  
-**Route:** https://avangarde.it/posizioniapertecandidatura/1572  
-**Recommended owner action:** `MANUAL_APPLY` using the official form and Italian CV/portfolio, positioning truthfully for P.IVA collaboration.
+### 3. Craq Design Studio — HOT — 89
+**Opportunity:** spontaneous freelance candidature.  
+**Why it matters:** official careers page explicitly welcomes freelance professionals; strong design-led web/frontend alignment.  
+**Verified route:** https://craqdesign.com/careers/  
+**Automatic block:** `OFFICIAL_APPLICATION_FORM_REQUIRED`.  
+**Owner question:** Vuoi inviare manualmente una candidatura freelance tramite il form ufficiale di Craq Design Studio?  
+**If YES:** `MANUAL_APPLY` after live route recheck.
 
-### 4. Omega CRM, A Merkle Company — Madrid — HOT — 84
-**Role:** Wordpress Developer / Web-CMS Consultant.  
-**Freshness:** observed within minutes of publication on 4 September 2026.  
-**Why high value:** WordPress/CMS, Figma-to-responsive implementation, accessibility, performance, SEO/CRO and stakeholder coordination. Large digital organization with recurring project capacity.  
-**Automatic block:** permanent role requiring at least two on-site days/week in Madrid; LinkedIn Apply route.  
-**Route:** https://es.linkedin.com/jobs/view/wordpress-developer-at-omega-crm-a-merkle-company-4460755266  
-**Recommended owner action:** manual application if Madrid hybrid employment is acceptable; otherwise B2B alternative only after an independently verified partner/vendor route.
+### 4. Growmodo GmbH — HOT — 88
+**Opportunity:** WordPress Developer / AI Specialist signal in the current Spain-facing hiring surface.  
+**Why it matters:** WordPress + AI-assisted development and distributed production are strategically close to VDS.  
+**Verified route:** current platform application path — https://es.indeed.com/cmp/Growmodo  
+**Automatic block:** `CURRENT_PLATFORM_APPLICATION_ROUTE_ONLY`.  
+**Owner question:** Vuoi procedere manualmente attraverso il percorso candidatura/piattaforma ufficiale per Growmodo?  
+**If YES:** reverify the exact live role/route and execute `MANUAL_APPLY`.
 
-### 5. Decskill España — Spain remote — HOT — 78
-**Role:** Maquetador Web / 100% Remoto España.  
-**Freshness:** LinkedIn index shows about one day old.  
-**Why high value:** HTML5/CSS3, Figma, responsive and WCAG align well; secondary detail says Angular is valued.  
-**Automatic block:** exact individual authoritative application URL not yet recovered; Angular fit must be verified.  
-**Route to recover:** https://es.linkedin.com/jobs/maquetador-a-web-empleos  
-**Recommended owner action:** recover the exact Decskill posting, verify mandatory requirements, then manual apply if compatible.
+### 5. QuoLAB — HOT — 86
+**Opportunity:** external collaborator route.  
+**Why it matters:** official careers page explicitly supports external collaborators; compatible with VDS web/digital production.  
+**Verified route:** https://www.quolab.it/lavora-con-noi/  
+**Automatic block:** `OFFICIAL_APPLICATION_FORM_REQUIRED`.  
+**Owner question:** Vuoi procedere manualmente tramite il form ufficiale come collaboratore esterno?  
+**If YES:** `MANUAL_APPLY` after live route recheck.
 
-## Existing queue state
+## Existing high-value items retained
 
-- Grownnectia — **already submitted manually by owner**; `WAIT_FOR_REPLY`, no new FIRST_CONTACT.
-- Global Service Impresa — HOT 83.5 — official application form, pending manual apply.
-- Zmot Lab — HOT 81.6 — official form, senior-fit check required.
-- Mindrift — HOT 76.7 — platform apply, pending manual review.
-- UGECE Agency — strategic WARM 70.8 — historical recurring signal; fresh demand not proven.
+- **Emira Digital / Dritara — HOT+ 96:** freelance WordPress Platform Lead, published budget EUR 3,000–5,000; Dritara profile-match route and truthful seniority review remain mandatory.
+- **LIVEAT Agency — HOT+ 95:** explicit Freelance/P.IVA, full remote, WordPress/Elementor and recurring-work potential; job-platform application route only.
+- **Intervolutions — HOT+ 95:** official freelance remote WordPress/front-end/web-layout roles with paid test and recurring assignment potential; official form required.
+- **IOCOS — HOT+ 94:** completely remote freelancer network with WordPress/WooCommerce/frontend/performance requirements; official freelancer form requires owner rate and availability.
 
-## Current execution rule
+## Revenue Flow action completed in the same cycle
 
-No fresh item in this scan has an authoritative direct application email. Therefore no Hostinger first-contact email was sent. This is intentional route integrity, not a lack of commercially useful opportunities.
+**Expand-Raise** passed deterministic hard gates and was no longer a human-review item. FIRST_CONTACT was sent through Hostinger to `info@expand-raise.com` and provider-verified as **UID 301**. It is now globally suppressed from any new FIRST_CONTACT.
 
 Canonical protocol: `project/HUMAN_REVIEW_HIGH_VALUE_PROTOCOL.md`  
 Machine-readable queue: `views/human-review-high-value.json`
