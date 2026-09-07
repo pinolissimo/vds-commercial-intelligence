@@ -2,13 +2,19 @@ name: VDS High-Frequency Discovery Fanout
 
 on:
   schedule:
-    # Six runs/hour, staggered away from the top of the hour.
+    # Six chances/hour, staggered away from the top of the hour.
     - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
   push:
     paths:
       - ".github/workflows/high-frequency-discovery.yml"
       - "governance/high-frequency-discovery-kick.json"
+      # Independent execution flows also kick discovery. This makes a missed GitHub cron
+      # non-fatal as long as either active execution flow is running.
+      - "state/direct-job-run-*.jsonl"
+      - "state/direct-job-ledger.jsonl"
+      - "state/revenue-flow-run-*.jsonl"
+      - "state/revenue-flow-ledger.jsonl"
       - "scripts/high_frequency_discovery.py"
       - "scripts/supplemental_public_sources.py"
       - "scripts/direct_employer_bulk_sources.py"
@@ -40,7 +46,7 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -52,16 +58,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      # Discovery is deliberately fail-open at the source/enrichment layer. One broken
+      # source or optimizer must never stop the other sources or the execution flows.
       - name: Run core public-source fanout
+        continue-on-error: true
         run: python scripts/high_frequency_discovery.py
 
       - name: Merge supplemental rate-aware public sources
+        continue-on-error: true
         run: python scripts/supplemental_public_sources.py
 
       - name: Merge employer-direct and expanded remote bulk sources
+        continue-on-error: true
         run: python scripts/direct_employer_bulk_sources.py
 
       - name: Apply semantic role geo freshness gate
+        continue-on-error: true
         run: python scripts/opportunity_semantic_gate.py
 
       - name: DeepSeek semantic shadow evaluation
@@ -71,47 +83,68 @@ jobs:
         run: python scripts/deepseek_shadow_semantic.py
 
       - name: Rank source performance
+        continue-on-error: true
         run: python scripts/search_source_optimizer.py
 
       - name: Update territory yield radar
+        continue-on-error: true
         run: python scripts/territory_yield_radar.py
 
       - name: Guard unresolved territories and build enrichment queue
+        continue-on-error: true
         run: python scripts/territory_radar_guard.py
 
       - name: Optimize downstream acquisition capacity
+        continue-on-error: true
         run: python scripts/acquisition_performance_optimizer.py
 
       - name: Build territorial high-intent search missions
+        continue-on-error: true
         run: python scripts/search_mission_planner.py
 
       - name: Build multi-engine query fanout missions
+        continue-on-error: true
         run: python scripts/multi_engine_query_router.py
 
       - name: Commit discovery-owned state safely
         shell: bash
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          VDS_RUN_ID: ${{ github.run_id }}
+          VDS_EVENT: ${{ github.event_name }}
         run: |
           set -euo pipefail
           git config user.name "vds-discovery-bot"
           git config user.email "actions@users.noreply.github.com"
 
           # Single-writer boundary: this workflow commits only discovery-owned artifacts.
-          # Cross-signal, human-review and api/v1 are deliberately owned by their dedicated
-          # workers/projection workflow, eliminating the dominant main-branch write race.
-          run_pipeline() {
-            python scripts/high_frequency_discovery.py
-            python scripts/supplemental_public_sources.py
-            python scripts/direct_employer_bulk_sources.py
-            python scripts/opportunity_semantic_gate.py
-            python scripts/deepseek_shadow_semantic.py || echo "DeepSeek shadow failed open during collision rebuild"
-            python scripts/search_source_optimizer.py
-            python scripts/territory_yield_radar.py
-            python scripts/territory_radar_guard.py
-            python scripts/acquisition_performance_optimizer.py
-            python scripts/search_mission_planner.py
-            python scripts/multi_engine_query_router.py
+          # Cross-signal, human-review and api/v1 remain owned elsewhere.
+          run_pipeline_fail_open() {
+            python scripts/high_frequency_discovery.py || echo "WARN core discovery failed"
+            python scripts/supplemental_public_sources.py || echo "WARN supplemental discovery failed"
+            python scripts/direct_employer_bulk_sources.py || echo "WARN employer-direct discovery failed"
+            python scripts/opportunity_semantic_gate.py || echo "WARN semantic gate failed; preserve last good seeds"
+            python scripts/deepseek_shadow_semantic.py || echo "WARN DeepSeek shadow failed open"
+            python scripts/search_source_optimizer.py || echo "WARN source optimizer failed"
+            python scripts/territory_yield_radar.py || echo "WARN territory radar failed"
+            python scripts/territory_radar_guard.py || echo "WARN territory guard failed"
+            python scripts/acquisition_performance_optimizer.py || echo "WARN acquisition optimizer failed"
+            python scripts/search_mission_planner.py || echo "WARN mission planner failed"
+            python scripts/multi_engine_query_router.py || echo "WARN multi-engine router failed"
+          }
+
+          write_heartbeat() {
+            mkdir -p metrics
+            cat > metrics/runtime-discovery-heartbeat.json <<EOF
+          {
+            "schema_version": "1.0",
+            "generated_at_utc": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "workflow_run_id": "${VDS_RUN_ID}",
+            "trigger": "${VDS_EVENT}",
+            "state": "DISCOVERY_CYCLE_REACHED_PERSISTENCE",
+            "policy": "SOURCE_AND_ENRICHMENT_FAILURES_ARE_NON_FATAL; EXECUTION_FLOWS_REMAIN_INDEPENDENT"
+          }
+          EOF
           }
 
           stage_state() {
@@ -132,11 +165,13 @@ jobs:
                     metrics/supplemental-public-sources-state.json \
                     metrics/direct-employer-bulk-sources-state.json \
                     metrics/territory-yield-radar-state.json \
+                    metrics/runtime-discovery-heartbeat.json \
                     config/adaptive-search-runtime.json \
                     config/acquisition-runtime-command.json
           }
 
           commit_state() {
+            write_heartbeat
             stage_state
             if git diff --cached --quiet; then
               echo "No discovery-owned changes"
@@ -145,6 +180,8 @@ jobs:
             git commit -m "data: refresh discovery-owned intelligence"
           }
 
+          # Persist whatever successful source/enrichment output exists. Do not rerun the
+          # whole pipeline unless a same-file race actually forces a rebuild.
           if ! commit_state; then
             exit 0
           fi
@@ -162,10 +199,9 @@ jobs:
               continue
             fi
 
-            # A same-file race is unusual but recoverable: rebuild from freshest canonical state.
             git rebase --abort 2>/dev/null || true
             git reset --hard origin/main
-            run_pipeline
+            run_pipeline_fail_open
             if ! commit_state; then
               echo "Fresh canonical state already contains equivalent discovery output"
               exit 0
