@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-07T08:01:50Z",
+  "updated_at": "2026-09-07T10:07:31Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 254,
+    "evaluated_total": 256,
     "agreement_count": 131,
-    "agreement_pct": 51.57,
+    "agreement_pct": 51.17,
     "deepseek_promote": 20,
-    "vds_promote": 98,
+    "vds_promote": 99,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 82
+    "deepseek_demoted_from_vds_promote": 83
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 20.0,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 2.04,
+    "vds_promote_hot_rate_pct": 2.02,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 10.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 52,
-    "cumulative_estimated_cost_usd": 0.044539,
-    "cost_per_evaluated_candidate_usd": 0.00017535,
-    "cost_per_deepseek_promote_usd": 0.00222695,
-    "cost_per_observed_ready_or_contacted_usd": 0.02226947,
+    "request_count": 53,
+    "cumulative_estimated_cost_usd": 0.044775,
+    "cost_per_evaluated_candidate_usd": 0.0001749,
+    "cost_per_deepseek_promote_usd": 0.00223874,
+    "cost_per_observed_ready_or_contacted_usd": 0.02238744,
     "latest_request": {
-      "at": "2026-09-07T08:01:48Z",
+      "at": "2026-09-07T10:07:28Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 512,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 768,
       "prompt_cache_miss_tokens": 55,
-      "completion_tokens": 151,
-      "total_tokens": 718,
-      "estimated_cost_usd": 0.00023069
+      "completion_tokens": 331,
+      "total_tokens": 1154,
+      "estimated_cost_usd": 0.00023594
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,58 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ec2d4ad80bc1fda9f77c85c9fd519cd0",
-      "evaluated_at": "2026-09-05T08:36:49Z",
-      "organization": "LivePerson",
-      "title": "Technical Support Engineer II",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/technical-support-engineer-ii-cee0bfc0d6",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Technical support engineer role matches technical support skills, but lacks web development/WordPress context. May involve product support rather than web development.",
-      "deepseek_risk_flags": [
-        "role_may_be_product_support",
-        "no_web_development_scope"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000310916,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "f96f4b52b32854add4776c7357c80452",
-      "evaluated_at": "2026-09-05T08:36:49Z",
-      "organization": "",
-      "title": "Vonage: AEM Developer",
-      "location": "",
-      "opportunity_url": "https://weworkremotely.com/remote-jobs/vonage-aem-developer",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "AEM (Adobe Experience Manager) developer role; AEM is a heavy Java-based CMS, not aligned with WordPress/WooCommerce or typical freelance web development stack. No freelance compatibility evidence.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_aem",
-        "no_freelance_evidence"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000310916,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "42cb2d2a3e11a3e3ce44b2b85575e1e2",
       "evaluated_at": "2026-09-05T18:11:07Z",
@@ -1401,9 +1349,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c74601234a3ddffae4c56e6045c922ad",
+      "evaluated_at": "2026-09-07T10:07:28Z",
+      "organization": "Sopra Steria",
+      "title": "Senior Frontend React",
+      "location": "Madrid",
+      "opportunity_url": "https://jobs.smartrecruiters.com/SopraSteria1/744000146667080-senior-frontend-react?oga=true",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 83,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Frontend React role at Sopra Steria in Madrid matches frontend/HTML/JS skills and is remote in Spain, but core stack is React with no WordPress/WooCommerce or web performance scope, and full-time employment limits freelance compatibility.",
+      "deepseek_risk_flags": [
+        "React-heavy core role",
+        "Full-time employment",
+        "No WordPress/WooCommerce mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00011797,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e1f84caa32193f29c245978680338f4a",
+      "evaluated_at": "2026-09-07T10:07:28Z",
+      "organization": "Koppla",
+      "title": "Product Engineer - Frontend (all genders)",
+      "location": "Berlin (hybrid)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/koppla/product-engineer-frontend-all-genders-berlin-hybrid-115094",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Product Engineer Frontend role in Berlin is generic frontend with no WordPress/WooCommerce or web performance scope, location outside target geographies, and no clear freelance compatibility despite generic collaboration/partner mentions.",
+      "deepseek_risk_flags": [
+        "Generic frontend role",
+        "Location outside target geographies",
+        "No freelance/contract evidence",
+        "No WordPress/WooCommerce mention"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00011797,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-07T08:01:47Z"
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-07T10:07:27Z"
 }
