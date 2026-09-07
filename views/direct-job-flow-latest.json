@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-07T11:10:34+02:00",
+  "updated_at": "2026-09-07T12:06:02+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -14,16 +14,16 @@
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
   "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 780,
-  "run_detail_file": "state/direct-job-run-20260907T1110.jsonl",
-  "serious_signals_evaluated": 9,
-  "unique_organization_identities": 2,
+  "raw_checkpoint_through_line": 798,
+  "run_detail_file": "state/direct-job-run-20260907T1206.jsonl",
+  "serious_signals_evaluated": 19,
+  "unique_organization_identities": 8,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
     "WAIT_RESEARCH": 1,
-    "REJECT": 8,
+    "REJECT": 18,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
@@ -33,8 +33,8 @@
     "duplicates_blocked": 0,
     "stale": 0,
     "route_failures": 1,
-    "fit_rejects": 1,
-    "identity_hard_rejects": 7
+    "fit_rejects": 13,
+    "identity_hard_rejects": 5
   },
   "manual_apply": [],
   "wait_research": [
@@ -46,14 +46,15 @@
     }
   ],
   "reject_breakdown": {
-    "FALSE_OR_UNRESOLVED_EMPLOYER_IDENTITY_HARD_EXCLUSION": 7,
-    "ROLE_FUNCTION_MISMATCH": 1
+    "FALSE_OR_UNRESOLVED_EMPLOYER_IDENTITY_HARD_EXCLUSION": 5,
+    "ROLE_FUNCTION_OR_UNSUPPORTED_CORE_STACK_MISMATCH": 13
   },
   "notes": [
     "Runtime remains MIDDLE_FUNNEL_TURBO with 85% exploitation and a 10% exploration floor.",
-    "Exploitation-first recheck keeps Frem Digital as the strongest unresolved candidate; the exact authoritative careers recipient remains unresolved in canonical evidence and no address was guessed or derived.",
-    "All fresh canonical raw signals 773-780 were consumed completely. Seven Himalayas signals lack resolvable canonical employer identity and are hard rejects; Workidentity Network & Infrastructure Engineer is a role-function mismatch.",
-    "No ANSWERED_RECHECK_REQUIRED human-review item was present; four existing items remain AWAITING_OWNER_ANSWER with seven unanswered owner-authoritative questions total.",
+    "Exploitation-first recheck keeps Frem Digital as the strongest unresolved candidate; the exact authoritative careers recipient remains unresolved and no address was guessed or derived.",
+    "All fresh canonical raw signals 781-798 were consumed completely.",
+    "Koppla Product Engineer - Frontend and Greenpocket React Developer were examined as the closest fresh frontend signals but do not pass truthful VDS fit/geography gates; Greenpocket Kotlin/Java is an unsupported core stack.",
+    "No ANSWERED_RECHECK_REQUIRED human-review item was found; existing owner-authoritative questions remain unchanged.",
     "The send window was open, but no candidate passed all SEND_NOW hard gates, therefore no Hostinger send was attempted.",
     "No already-decided/contacted identity was recycled to inflate the runtime decision target."
   ]
