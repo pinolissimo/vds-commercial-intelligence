@@ -22,6 +22,7 @@ on:
       - 'command-center/commands/**'
       - 'scripts/build_command_center_api.py'
       - 'scripts/enrich_command_center_funnel.py'
+      - 'scripts/overlay_provider_live_dashboard.py'
       - '.github/workflows/vds-command-center-projections.yml'
 
 permissions:
@@ -46,6 +47,7 @@ jobs:
         run: |
           python3 scripts/build_command_center_api.py
           python3 scripts/enrich_command_center_funnel.py
+          python3 scripts/overlay_provider_live_dashboard.py
 
       - name: Commit projection delta only
         shell: bash
@@ -69,6 +71,7 @@ jobs:
             git reset --hard origin/main
             python3 scripts/build_command_center_api.py
             python3 scripts/enrich_command_center_funnel.py
+            python3 scripts/overlay_provider_live_dashboard.py
             git add api/v1
             if git diff --cached --quiet; then
               echo "Latest main already contains equivalent projections"
