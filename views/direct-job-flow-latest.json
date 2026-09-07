@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-07T13:15:30+02:00",
+  "updated_at": "2026-09-07T14:13:27+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -16,27 +16,27 @@
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
   "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 805,
-  "run_detail_file": "state/direct-job-run-20260907T1315.jsonl",
-  "serious_signals_evaluated": 8,
-  "unique_organization_identities": 7,
+  "raw_checkpoint_through_line": 824,
+  "run_detail_file": "state/direct-job-run-20260907T1413.jsonl",
+  "serious_signals_evaluated": 20,
+  "unique_resolved_organization_identities": 6,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
     "WAIT_RESEARCH": 1,
-    "REJECT": 7,
+    "REJECT": 19,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
     "unanswered_owner_questions_total": 7,
     "owner_answers_resolved": 0,
     "provider_verified_first_contacts": 0,
-    "duplicates_blocked": 0,
+    "duplicates_blocked": 4,
     "stale": 0,
     "route_failures": 1,
-    "fit_rejects": 7,
-    "identity_hard_rejects": 0
+    "fit_rejects": 9,
+    "identity_hard_rejects": 10
   },
   "manual_apply": [],
   "wait_research": [
@@ -48,20 +48,20 @@
     }
   ],
   "reject_breakdown": {
-    "UNSUPPORTED_CORE_BACKEND_SENIOR_ROLE": 2,
-    "UNSUPPORTED_CORE_STACK_ANGULAR": 1,
-    "UNSUPPORTED_CORE_STACK_FLUTTER": 1,
-    "ROLE_FUNCTION_MISMATCH_DATABASE_ADMINISTRATION": 1,
-    "LOW_TRUTHFUL_VDS_FIT_AND_NO_VERIFIED_REMOTE_FEASIBILITY_FROM_CANONICAL_SIGNAL": 1,
-    "ROLE_FUNCTION_MISMATCH_STUDENT_TEXT_CONTENT": 1
+    "UNRESOLVED_CANONICAL_EMPLOYER_IDENTITY": 10,
+    "SENIOR_FULLSTACK_OR_SOFTWARE_ROLE_LOW_TRUTHFUL_FIT_OR_GEO": 3,
+    "ROLE_FUNCTION_OR_HYBRID_GEO_MISMATCH": 2,
+    "UNSUPPORTED_CORE_STACK_SAP": 1,
+    "SAME_ORGANIZATION_ALREADY_DECIDED_THIS_RUN": 3
   },
   "notes": [
-    "Mandatory self-healing preflight found durable/suppression/global-sent/global-organization professional contact state coherent through Hostinger UID 304; UIDs 305-307 are owner/report messages only and create no new professional contact identity.",
-    "Runtime remains MIDDLE_FUNNEL_TURBO with 85% exploitation and a 10% exploration floor.",
-    "Exploitation-first recheck keeps Frem Digital as the strongest unresolved candidate; its official careers page remains current and explicitly seeks WordPress freelancers, but the exact careers recipient is still masked in retrievable authoritative evidence and no address was guessed or derived.",
-    "All seven fresh canonical raw signals 799-805 were consumed completely.",
-    "No ANSWERED_RECHECK_REQUIRED human-review item was found; existing owner-authoritative questions remain unchanged.",
+    "Runtime remains MIDDLE_FUNNEL_TURBO with 85% exploitation and a minimum 10% exploration floor.",
+    "Exploitation-first recheck keeps Frem Digital AS as the strongest unresolved candidate; the exact authoritative careers recipient remains obfuscated and no address was guessed or derived.",
+    "All 19 fresh canonical raw signals 806-824 were consumed completely.",
+    "Ten Himalayas signals fail the hard canonical-identity gate because organization and authoritative opportunity URL are absent from the canonical signal; high raw keyword scores do not waive this gate.",
+    "Nine employer-identified Arbeitnow signals were rejected for role/stack/geography mismatch; repeated Pair and Westernacher vacancies were not treated as new organization identities.",
+    "No new owner-authoritative soft blocker was created and no ANSWERED_RECHECK_REQUIRED item was identified in the current human-review state.",
     "The send window was open, but no candidate passed all SEND_NOW hard gates, therefore no Hostinger application send was attempted.",
-    "No already-decided/contacted identity was recycled to inflate the runtime decision target."
+    "Provider suppression/global organization state remains authoritative through professional Hostinger UID 304; later UIDs previously recorded as 305-307 remain noncommercial owner/report traffic in current canonical state."
   ]
 }
