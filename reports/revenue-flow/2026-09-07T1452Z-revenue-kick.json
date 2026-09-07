@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "run_timestamp_utc": "2026-09-07T14:52:00Z",
+  "mode": "IMMEDIATE_ROUTE_FIRST_RECOVERY",
+  "serious_candidates_evaluated": 16,
+  "direct_email_harvest_evaluated": 11,
+  "SEND_NOW": 1,
+  "provider_verified_FIRST_CONTACT": 1,
+  "MANUAL_APPLY": 5,
+  "WAIT_RESEARCH": 2,
+  "REJECT": 8,
+  "duplicates_blocked": 3,
+  "verified_sends": [
+    {
+      "organization": "Enigmia",
+      "recipient": "freelances@enigmia.es",
+      "subject": "Colaboración freelance — desarrollo web, frontend y rendimiento",
+      "provider": "Hostinger",
+      "sent_uid": 310,
+      "sent_timestamp_utc": "2026-09-07T14:51:36Z",
+      "bcc_owner": true,
+      "attachments": 0,
+      "authoritative_evidence": "https://enigmia.es/trabaja-con-nosotros/",
+      "route_evidence": "Official careers page explicitly invites freelancers to email freelances@enigmia.es"
+    }
+  ],
+  "manual_apply": [
+    {"organization":"Sinfonialab","reason":"careers/candidature route present but no exact application email verified; generic footer email not substituted"},
+    {"organization":"ESC Agency","reason":"explicit Freelance Graphic & Web Designer vacancy routes through Candidati form; generic info email not substituted"},
+    {"organization":"Agencia Reinicia","reason":"official page explicitly routes freelancers to a dedicated contact form; generic info email not substituted"},
+    {"organization":"Marka Digital","reason":"current freelance web designer opportunity exposes Apply route; generic hola email not treated as application address"},
+    {"organization":"IngenioVirtual","reason":"freelance collaborator lane is form-based; the direct-email front-end vacancy is marked covered"}
+  ],
+  "wait_research": [
+    {"organization":"Pump Communication","reason":"strong freelance WordPress/UI opportunity found on third-party source, but no current authoritative company-source confirmation obtained in this run"},
+    {"organization":"Opt Media","reason":"official page exposes direct application emails, but vacancy content uses materially dated stack language; current-demand freshness remains uncertain"}
+  ],
+  "reject": [
+    {"organization":"Cavendish Media","reason":"duplicate prior first contact verified in Hostinger Sent UID 192"},
+    {"organization":"TIF creativehub","reason":"duplicate prior first contact verified in Hostinger Sent UID 286"},
+    {"organization":"Crisandcris.net","reason":"duplicate prior first contact verified in Hostinger Sent UID 99"},
+    {"organization":"break","reason":"stale LinkedIn vacancy; no longer accepting applications"},
+    {"organization":"Azuanet","reason":"current freelance route exists but mandatory advanced PHP/MySQL/JS/OOP and 5-year experience requirements are not safely established as truthful fit"},
+    {"organization":"InYourLife","reason":"current role is explicitly in-person in Lastra a Signa, Monday-Friday; geographic model incompatible with external remote proposal"},
+    {"organization":"Muza Studio","reason":"current WordPress role is explicitly full-time in-person in Catania; no external freelance route"},
+    {"organization":"Avante","reason":"current direct-email freelance role is content-marketing focused rather than a strong VDS web-development fit"}
+  ],
+  "safety_notes": [
+    "No guessed recipients used.",
+    "No form/platform-only route was bypassed with a generic email.",
+    "Hostinger Sent evidence was checked before the verified send.",
+    "Provider Sent evidence is authoritative against duplicate resend."
+  ]
+}
