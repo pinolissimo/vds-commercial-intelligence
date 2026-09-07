@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-07T04:07:37+02:00",
+  "updated_at": "2026-09-07T05:05:45+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -14,16 +14,16 @@
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
   "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 755,
-  "run_detail_file": "state/direct-job-run-20260907T0407.jsonl",
-  "serious_signals_evaluated": 2,
-  "unique_organization_identities": 2,
+  "raw_checkpoint_through_line": 763,
+  "run_detail_file": "state/direct-job-run-20260907T0505.jsonl",
+  "serious_signals_evaluated": 9,
+  "unique_organization_identities": 7,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
     "WAIT_RESEARCH": 1,
-    "REJECT": 1,
+    "REJECT": 8,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
@@ -32,7 +32,7 @@
     "duplicates_blocked": 0,
     "stale": 0,
     "route_failures": 1,
-    "fit_rejects": 1
+    "fit_rejects": 8
   },
   "manual_apply": [],
   "wait_research": [
@@ -40,15 +40,14 @@
       "organization": "Frem Digital AS",
       "fit_score": 96,
       "blocker": "EXACT_AUTHORITATIVE_APPLICATION_EMAIL_OBFUSCATED",
-      "next_lookup": "Recover the exact careers recipient from authoritative source content; never guess or derive it. Recheck the explicit 3+ years WordPress requirement truthfully before any application."
+      "next_lookup": "Recover the exact careers recipient from authoritative Frem Digital source content; never guess or derive it. Recheck the explicit 3+ years WordPress requirement truthfully before any application."
     }
   ],
   "notes": [
     "Runtime remains MIDDLE_FUNNEL_TURBO with 85% exploitation and a 10% exploration floor.",
-    "Exploitation-first rechecked Frem Digital: current official careers evidence still seeks freelancers and a WordPress Developer, but the exact careers recipient remains obfuscated in retrieved authoritative content, so the hard route gate is not waived.",
-    "The only fresh canonical raw signal after checkpoint 754 was Jedox GmbH Sales Account Executive - Enterprise, UKI; it was rejected for role-function mismatch before route work.",
-    "No owner-authoritative soft blocker was newly created; Frem remains a worker-research route fact, not an owner question.",
+    "Exploitation-first recheck keeps Frem Digital in WAIT_RESEARCH because exact authoritative careers recipient remains unresolved; this is a worker-research fact, not an owner-authoritative question.",
+    "Fresh canonical raw signals 756-763 were consumed completely: Digital Career Institute x2, Ineratec x2, Reev, neoshare, Isarsoft and Schiller International University all fail truthful role/stack fit gates.",
     "No live provider send was attempted outside the authorized send window.",
-    "Global durable sent ledger remains verified through Hostinger UID 304."
+    "Global durable sent/provider suppression state remains reconciled through Hostinger UID 304."
   ]
 }
