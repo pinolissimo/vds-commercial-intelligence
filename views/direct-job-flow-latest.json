@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-07T07:08:27+02:00",
+  "updated_at": "2026-09-07T11:10:34+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -9,31 +9,32 @@
     "priority": "UNRESOLVED_SEMANTIC_PASS_BEFORE_BROAD_RAW_EXPANSION"
   },
   "send_window": "09:00-19:00 Europe/Madrid",
-  "send_allowed_now": false,
+  "send_allowed_now": true,
   "global_provider_checkpoint_uid": 304,
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
   "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 772,
-  "run_detail_file": "state/direct-job-run-20260907T0708.jsonl",
-  "serious_signals_evaluated": 10,
+  "raw_checkpoint_through_line": 780,
+  "run_detail_file": "state/direct-job-run-20260907T1110.jsonl",
+  "serious_signals_evaluated": 9,
   "unique_organization_identities": 2,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
     "WAIT_RESEARCH": 1,
-    "REJECT": 9,
+    "REJECT": 8,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
+    "unanswered_owner_questions_total": 7,
     "owner_answers_resolved": 0,
     "provider_verified_first_contacts": 0,
     "duplicates_blocked": 0,
     "stale": 0,
     "route_failures": 1,
     "fit_rejects": 1,
-    "identity_hard_rejects": 8
+    "identity_hard_rejects": 7
   },
   "manual_apply": [],
   "wait_research": [
@@ -41,19 +42,19 @@
       "organization": "Frem Digital AS",
       "fit_score": 96,
       "blocker": "EXACT_AUTHORITATIVE_APPLICATION_EMAIL_OBFUSCATED",
-      "next_lookup": "Recover the exact careers recipient from authoritative Frem Digital source content; never guess or derive it. Recheck the explicit 3+ years WordPress requirement truthfully before any application."
+      "next_lookup": "Recover the exact careers recipient only from employer-controlled authoritative evidence in canonical truth; never guess or derive it. Recheck the explicit 3+ years WordPress requirement truthfully before any application."
     }
   ],
   "reject_breakdown": {
-    "FALSE_OR_UNRESOLVED_EMPLOYER_IDENTITY_HARD_EXCLUSION": 8,
+    "FALSE_OR_UNRESOLVED_EMPLOYER_IDENTITY_HARD_EXCLUSION": 7,
     "ROLE_FUNCTION_MISMATCH": 1
   },
   "notes": [
     "Runtime remains MIDDLE_FUNNEL_TURBO with 85% exploitation and a 10% exploration floor.",
-    "Exploitation-first authoritative recheck confirms Frem Digital careers and WordPress demand remain current, but the exact careers recipient remains masked in retrievable source content; no address was guessed or derived.",
-    "All fresh canonical raw signals 764-772 were consumed completely. Eight Himalayas signals lack resolvable canonical employer identity and are hard rejects; Avepoint Mid-Market Account Executive is a role-function mismatch.",
-    "No ANSWERED_RECHECK_REQUIRED human-review item was present and no owner-research question was created.",
-    "No live provider send was attempted outside the authorized send window.",
-    "Global durable sent/provider suppression state remains reconciled through Hostinger UID 304 with zero active reservations and no pending Command Center commands."
+    "Exploitation-first recheck keeps Frem Digital as the strongest unresolved candidate; the exact authoritative careers recipient remains unresolved in canonical evidence and no address was guessed or derived.",
+    "All fresh canonical raw signals 773-780 were consumed completely. Seven Himalayas signals lack resolvable canonical employer identity and are hard rejects; Workidentity Network & Infrastructure Engineer is a role-function mismatch.",
+    "No ANSWERED_RECHECK_REQUIRED human-review item was present; four existing items remain AWAITING_OWNER_ANSWER with seven unanswered owner-authoritative questions total.",
+    "The send window was open, but no candidate passed all SEND_NOW hard gates, therefore no Hostinger send was attempted.",
+    "No already-decided/contacted identity was recycled to inflate the runtime decision target."
   ]
 }
