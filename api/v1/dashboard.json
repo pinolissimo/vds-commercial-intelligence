@@ -1,20 +1,20 @@
 {
-  "schema_version": "1.3",
-  "generated_at": "2026-09-07T17:11:54+02:00",
+  "schema_version": "1.1",
+  "generated_at": "2026-09-07T17:15:28+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
     "date": "2026-09-07",
-    "sent": 3,
-    "first_contacts_sent": 3,
+    "sent": 0,
+    "first_contacts_sent": 0,
     "replies_total": 0,
     "replies_positive": 0,
     "replies_negative": 0,
     "replies_neutral": 0,
     "hard_bounces": 0,
-    "messages_per_active_hour": 0.37,
-    "first_contacts_per_active_hour": 0.37,
-    "active_window_elapsed_hours": 8.2,
+    "messages_per_active_hour": 0.0,
+    "first_contacts_per_active_hour": 0.0,
+    "active_window_elapsed_hours": 8.26,
     "sending_window": "09:00-19:00 Europe/Madrid"
   },
   "headline": {
@@ -22,17 +22,13 @@
     "semantic_pass_last_run": 97,
     "semantic_pass_rate_pct": 7.46,
     "active_opportunities": 53,
-    "ready": 4,
+    "ready": 25,
     "manual_action": 5,
     "contacted_in_active_view": 21,
-    "sent_today": 3,
+    "sent_today": 0,
     "success_index_pct": 68,
     "new_client_probability_proxy_pct": 88,
-    "companies_indexed": 99,
-    "ready_legacy_compat_previous_value": 25,
-    "executable_ready_now": 4,
-    "legacy_ready_advisory": 21,
-    "semantic_pass_backlog_proxy": 97
+    "companies_indexed": 99
   },
   "status_counts": {
     "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
@@ -227,78 +223,5 @@
     "sent_verification_required": true,
     "dashboard_can_bypass_gates": false,
     "production_search_is_independent_from_dashboard": true
-  },
-  "provider_live_overlay": {
-    "updated_at": "2026-09-07T17:04:43+02:00",
-    "successful_events_merged": 3,
-    "failed_or_bounced_events_excluded": 1,
-    "provider_of_record": "HOSTINGER_SENT"
-  },
-  "operational_funnel": {
-    "schema_version": "1.0",
-    "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
-    "stages": {
-      "raw_signals": 1300,
-      "semantic_input": 1300,
-      "semantic_pass": 97,
-      "company_verified": null,
-      "route_found": null,
-      "dedup_ok": null,
-      "executable_ready_now": 4,
-      "manual_apply_now": 5,
-      "wait_research_now": 2,
-      "contacted_in_active_view": 21,
-      "provider_verified_first_contacts_today": 3
-    },
-    "instrumentation": {
-      "company_verified": "NOT_CANONICALLY_METERED_YET",
-      "route_found": "NOT_CANONICALLY_METERED_YET",
-      "dedup_ok": "NOT_CANONICALLY_METERED_YET",
-      "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
-    },
-    "attrition": {
-      "semantic_reject": 1174,
-      "semantic_review": 29,
-      "semantic_pass_to_executable_gap_proxy": 93,
-      "legacy_ready_advisory_excluded": 21
-    },
-    "status_classes": {
-      "LEGACY_ADVISORY": 21,
-      "CONTACTED": 21,
-      "EXECUTABLE": 4,
-      "MANUAL_APPLY": 5,
-      "WAIT_RESEARCH": 2
-    },
-    "status_counts": {
-      "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
-      "CONTACTED": 20,
-      "READY_TO_CONTACT": 4,
-      "READY_TO_CONTACT_MANUAL_ROUTE": 5,
-      "DRAFT_REVIEW_REQUIRED": 1,
-      "CHANNEL_REVERIFY": 1,
-      "CONTACTED_PENDING_CANONICAL_RECONCILIATION": 1
-    },
-    "pressure": {
-      "qualified_backlog_proxy": 97,
-      "executable_ready_now": 4,
-      "conversion_pressure_ratio": 24.25,
-      "turbo_enabled": true,
-      "turbo_reason": "QUALIFIED_BACKLOG_PRESSURE"
-    }
-  },
-  "readiness_semantics": {
-    "headline_ready_means": "EXECUTABLE_CANDIDATE_STATUS_ONLY; LIVE_JIT_GATES_REMAIN_AUTHORITATIVE",
-    "requires_live_jit_preflight_before_provider_call": true,
-    "legacy_advisory_is_excluded": true,
-    "legacy_advisory_statuses": [
-      "READY_FOR_DAILY_OUTREACH_REVIEW"
-    ],
-    "executable_statuses": [
-      "AUTO_EMAIL_NOW",
-      "EXECUTABLE_READY",
-      "QUEUE_FOR_SEND_WINDOW",
-      "READY_TO_CONTACT",
-      "SEND_NOW"
-    ]
   }
 }

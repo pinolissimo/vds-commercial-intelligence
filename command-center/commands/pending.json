@@ -1,6 +1,41 @@
 {
-  "schema_version": "1.4",
-  "updated_at": "2026-09-06T01:38:14+02:00",
-  "policy": "Dashboard commands route only to the two active self-contained flows. Discovery and normal execution continue even if the bridge is unavailable. Expired commands and commands consumed by the target worker are removed from the active pending set.",
-  "commands": []
+  "schema_version": "1.3",
+  "updated_at": "2026-09-07T17:15:36+02:00",
+  "policy": "Dashboard commands route only to the two active self-contained flows. Discovery and normal execution continue even if the bridge is unavailable.",
+  "commands": [
+    {
+      "schema_version": "1.3",
+      "command_id": "CMD-WEB-20260907T151519-b1ec2718",
+      "created_at": "2026-09-07T17:15:36+02:00",
+      "expires_at": "2026-09-08T17:15:36+02:00",
+      "source": "VDS_COMMAND_CENTER_GITHUB_PAGES",
+      "model": "gpt-5.6-terra",
+      "owner_command": "Che potenziale ha il serbatoio? Oggi è lunedì vorrei inviare il massimo numero di e-mail possibile.",
+      "command_class": "SEND_DIRECTIVE",
+      "intent": "maximize_valid_daily_email_outreach",
+      "summary": "Il serbatoio mostra 53 opportunità attive, 25 pronte e 5 con instradamento manuale; avvio l'invio del massimo volume validabile oggi senza superare i gate.",
+      "parameters": {
+        "scope": "all_existing_eligible_direct_email_candidates",
+        "date": "2026-09-07",
+        "timezone": "Europe/Madrid",
+        "sending_window": "09:00-19:00",
+        "exclude_manual_routes": true,
+        "enforce_organization_dedup": true,
+        "enforce_current_need_fit_route_channel_and_provider_verification": true
+      },
+      "target_workers": [
+        "LINKEDIN_HUNTER",
+        "UNIFIED_LOOP"
+      ],
+      "requires_task_bridge": true,
+      "requires_existing_gates": true,
+      "risk": "MEDIUM",
+      "owner_confirmation_required": false,
+      "answer": "Avvio l'invio del massimo numero di prime e-mail realmente idonee entro la finestra odierna; le 5 opportunità a percorso manuale restano manuali e ogni invio passa deduplica, verifica del bisogno, route, canale e provider.",
+      "production_core_modified": false,
+      "normal_cycle_must_continue": true,
+      "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
+      "status": "PENDING_TASK_BRIDGE"
+    }
+  ]
 }
