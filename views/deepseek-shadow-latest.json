@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-07T16:23:44Z",
+  "updated_at": "2026-09-07T16:41:29Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,35 +14,46 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 263,
-    "agreement_count": 136,
-    "agreement_pct": 51.71,
-    "deepseek_promote": 20,
-    "vds_promote": 101,
+    "evaluated_total": 266,
+    "agreement_count": 137,
+    "agreement_pct": 51.5,
+    "deepseek_promote": 21,
+    "vds_promote": 104,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 85
+    "deepseek_demoted_from_vds_promote": 87
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
-    "deepseek_promote_hot_rate_pct": 20.0,
+    "deepseek_promote_hot_rate_pct": 19.05,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.98,
+    "vds_promote_hot_rate_pct": 1.92,
     "deepseek_promote_ready_or_contacted": 2,
-    "deepseek_promote_ready_or_contacted_rate_pct": 10.0,
+    "deepseek_promote_ready_or_contacted_rate_pct": 9.52,
     "vds_promote_ready_or_contacted": 0,
     "vds_promote_ready_or_contacted_rate_pct": 0.0,
-    "ready_rate_improvement_pp": 10.0,
+    "ready_rate_improvement_pp": 9.52,
     "recovered_candidates_observed_hot": 2,
     "recovered_candidates_observed_ready_or_contacted": 2,
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 60,
-    "cumulative_estimated_cost_usd": 0.046058,
-    "cost_per_evaluated_candidate_usd": 0.00017512,
-    "cost_per_deepseek_promote_usd": 0.00230288,
-    "cost_per_observed_ready_or_contacted_usd": 0.02302881,
-    "latest_request": null
+    "request_count": 61,
+    "cumulative_estimated_cost_usd": 0.046508,
+    "cost_per_evaluated_candidate_usd": 0.00017484,
+    "cost_per_deepseek_promote_usd": 0.00221467,
+    "cost_per_observed_ready_or_contacted_usd": 0.02325399,
+    "latest_request": {
+      "at": "2026-09-07T16:41:25Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 836,
+      "completion_tokens": 401,
+      "total_tokens": 1493,
+      "estimated_cost_usd": 0.00045037
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,86 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b416ff6f14ab9753d634bb2e4f26c042",
-      "evaluated_at": "2026-09-05T22:13:33Z",
-      "organization": "mercor",
-      "title": "Frontend Code Evaluation Specialist",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/frontend-code-evaluation-specialist-mercor",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 78,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "PROMOTE",
-      "deepseek_score": 85.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Remote frontend code evaluation role with strong match to HTML/CSS/JS and web development skills; likely freelance-friendly given remote nature and evaluation tasks.",
-      "deepseek_risk_flags": [
-        "Explicit freelance contract not confirmed",
-        "Employer type unknown"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000146614,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "602394588351167a14aab1c26ac80e48",
-      "evaluated_at": "2026-09-05T22:13:33Z",
-      "organization": "",
-      "title": "Frontend Code Evaluation Specialist",
-      "location": "Austria",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 70.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Frontend code evaluation role with relevant stack fit and contractor mention, but lacks location and employer details; remote status unclear.",
-      "deepseek_risk_flags": [
-        "Incomplete listing",
-        "Remote status unverified",
-        "No employer info"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000146614,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "abb652eb25985ef8c366debf10ef4187",
-      "evaluated_at": "2026-09-05T22:13:33Z",
-      "organization": "FELD M",
-      "title": "Senior Implementation Specialist Digital Analytics (w/m/d)",
-      "location": "Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/feld-m/senior-implementation-specialist-digital-analytics-munich-123058",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Digital analytics implementation role with some JavaScript relevance but core focus on analytics tools, not web development/WordPress; location Munich limits Spain/Italy fit.",
-      "deepseek_risk_flags": [
-        "Stack mismatch",
-        "Location mismatch",
-        "Employment type unclear"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000146614,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "01135b48e2c1856b8c202ef7612088e2",
       "evaluated_at": "2026-09-05T22:13:33Z",
@@ -1395,9 +1326,87 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "461784cf7f33438f8a20a99852c73424",
+      "evaluated_at": "2026-09-07T16:41:25Z",
+      "organization": "Soda Data Nv",
+      "title": "Senior Frontend Engineer (Full-stack)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-full-stack-f07f6b6fba",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend engineering role but no explicit WordPress/WooCommerce or web performance scope; likely product-focused with modern JS frameworks.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_possible",
+        "no_freelance_indication"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.0001501233,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5205a8cd5724790d15de3d8a8a149b67",
+      "evaluated_at": "2026-09-07T16:41:25Z",
+      "organization": "Soda Data Nv",
+      "title": "Senior Full-Stack Engineer (Backend + Frontend)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-full-stack-engineer-backend-frontend-7a7c0b112c",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 50.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full-stack role with backend emphasis; only generic frontend match, no WordPress or web-specific scope.",
+      "deepseek_risk_flags": [
+        "backend_heavy",
+        "no_freelance_indication"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.0001501233,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c204afe8eef66fc670554314b9da18bf",
+      "evaluated_at": "2026-09-07T16:41:25Z",
+      "organization": "GoodHabitz",
+      "title": "Marketing Web Developer (Webflow)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/marketing-web-developer-webflow-2c7ae30382",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "PROMOTE",
+      "deepseek_score": 78.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Explicit web developer role with marketing focus; Webflow is adjacent to WordPress and fits frontend/UX skills, though not exact stack.",
+      "deepseek_risk_flags": [
+        "webflow_not_wordpress",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.0001501233,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-07T16:23:43Z"
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 3,
+  "source_semantic_updated_at": "2026-09-07T16:41:24Z"
 }
