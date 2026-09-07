@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-07T02:02:00Z",
+  "updated_at": "2026-09-07T03:02:30Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 252,
-    "agreement_count": 130,
-    "agreement_pct": 51.59,
+    "evaluated_total": 254,
+    "agreement_count": 131,
+    "agreement_pct": 51.57,
     "deepseek_promote": 20,
     "vds_promote": 98,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 47,
-    "cumulative_estimated_cost_usd": 0.043201,
-    "cost_per_evaluated_candidate_usd": 0.00017143,
-    "cost_per_deepseek_promote_usd": 0.00216003,
-    "cost_per_observed_ready_or_contacted_usd": 0.02160031,
-    "latest_request": null
+    "request_count": 48,
+    "cumulative_estimated_cost_usd": 0.043599,
+    "cost_per_evaluated_candidate_usd": 0.00017165,
+    "cost_per_deepseek_promote_usd": 0.00217995,
+    "cost_per_observed_ready_or_contacted_usd": 0.02179951,
+    "latest_request": {
+      "at": "2026-09-07T03:02:28Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 80,
+      "completion_tokens": 267,
+      "total_tokens": 1115,
+      "estimated_cost_usd": 0.00039839
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,58 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "1f9b6699637bf83cfb6956a303922172",
-      "evaluated_at": "2026-09-05T08:36:49Z",
-      "organization": "Lumicode",
-      "title": "Senior Frontend Developer (Remote)",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-developer-remote-4a4b0d8a90",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 65.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior frontend developer role, likely React-based; matches frontend skills but no WordPress/WooCommerce or performance emphasis. Remote EU/EMEA is compatible, but freelance compatibility is unverified.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_react",
-        "freelance_compatibility_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000310916,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "b02b558a28ac441f6963ddd939b3f25f",
-      "evaluated_at": "2026-09-05T08:36:49Z",
-      "organization": "",
-      "title": "Senior Frontend Developer (React React Native)",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-developer-react-react-native-50c1653317",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 76,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 40.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Core role is React/React Native development, which is a stack mismatch for a WordPress/WooCommerce-focused profile. No meaningful web/WordPress scope.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_react_native",
-        "no_wordpress_scope"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000310916,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ec2d4ad80bc1fda9f77c85c9fd519cd0",
       "evaluated_at": "2026-09-05T08:36:49Z",
@@ -1390,9 +1349,61 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "fbc3f6183b6b2d4c3f1000024b2598ac",
+      "evaluated_at": "2026-09-07T03:02:28Z",
+      "organization": "neoshare",
+      "title": "Senior Frontend Software Engineer - Angular (m/f/x)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/neoshare/senior-frontend-software-engineer-angular-berlin-198663",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Core role is Angular frontend engineering, no WordPress/WooCommerce or web performance scope; freelance compatibility not evidenced.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "no_freelance_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000199195,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "16bad76979ff3de714defd1e8bf7dd15",
+      "evaluated_at": "2026-09-07T03:02:28Z",
+      "organization": "Schiller International University",
+      "title": "Spanish Instructor, PT Adjunct Faculty or Freelance - Paris",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/schiller-international-university/spanish-instructor-pt-adjunct-faculty-or-freelance-paris-358075",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 5.0,
+      "deepseek_confidence": 0.95,
+      "deepseek_primary_reason": "Teaching Spanish role, no web development or IT stack relevance; freelance mention is incidental.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "irrelevant_freelance"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000199195,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-07T02:01:58Z"
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-07T03:02:27Z"
 }
