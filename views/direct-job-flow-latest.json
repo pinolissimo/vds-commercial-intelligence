@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-07T14:13:27+02:00",
+  "updated_at": "2026-09-07T15:19:04+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -16,27 +16,27 @@
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
   "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 824,
-  "run_detail_file": "state/direct-job-run-20260907T1413.jsonl",
-  "serious_signals_evaluated": 20,
-  "unique_resolved_organization_identities": 6,
+  "raw_checkpoint_through_line": 827,
+  "run_detail_file": "state/direct-job-run-20260907T1519.jsonl",
+  "serious_signals_evaluated": 4,
+  "unique_resolved_organization_identities": 4,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
     "WAIT_RESEARCH": 1,
-    "REJECT": 19,
+    "REJECT": 3,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
     "unanswered_owner_questions_total": 7,
     "owner_answers_resolved": 0,
     "provider_verified_first_contacts": 0,
-    "duplicates_blocked": 4,
+    "duplicates_blocked": 0,
     "stale": 0,
     "route_failures": 1,
-    "fit_rejects": 9,
-    "identity_hard_rejects": 10
+    "fit_rejects": 3,
+    "identity_hard_rejects": 0
   },
   "manual_apply": [],
   "wait_research": [
@@ -44,24 +44,21 @@
       "organization": "Frem Digital AS",
       "fit_score": 96,
       "blocker": "EXACT_AUTHORITATIVE_APPLICATION_EMAIL_OBFUSCATED",
-      "next_lookup": "Recover the exact careers recipient only from employer-controlled authoritative evidence in canonical truth; never guess or derive it. Recheck the explicit 3+ years WordPress requirement truthfully before any application."
+      "next_lookup": "Recover the exact careers recipient only from employer-controlled authoritative evidence already admitted into canonical truth; never guess or derive it. Recheck the explicit 3+ years WordPress requirement truthfully before any application."
     }
   ],
   "reject_breakdown": {
-    "UNRESOLVED_CANONICAL_EMPLOYER_IDENTITY": 10,
-    "SENIOR_FULLSTACK_OR_SOFTWARE_ROLE_LOW_TRUTHFUL_FIT_OR_GEO": 3,
-    "ROLE_FUNCTION_OR_HYBRID_GEO_MISMATCH": 2,
-    "UNSUPPORTED_CORE_STACK_SAP": 1,
-    "SAME_ORGANIZATION_ALREADY_DECIDED_THIS_RUN": 3
+    "ROLE_FUNCTION_MISMATCH_SEO_GEO_MANAGEMENT_NOT_CORE_VDS_JOB_FIT": 1,
+    "ROLE_FUNCTION_MISMATCH_PAYLOAD_INTEGRATION_ENGINEERING": 1,
+    "ROLE_FUNCTION_MISMATCH_QA_ENGINEERING_NOT_CORE_VDS_JOB_FIT": 1
   },
   "notes": [
     "Runtime remains MIDDLE_FUNNEL_TURBO with 85% exploitation and a minimum 10% exploration floor.",
     "Exploitation-first recheck keeps Frem Digital AS as the strongest unresolved candidate; the exact authoritative careers recipient remains obfuscated and no address was guessed or derived.",
-    "All 19 fresh canonical raw signals 806-824 were consumed completely.",
-    "Ten Himalayas signals fail the hard canonical-identity gate because organization and authoritative opportunity URL are absent from the canonical signal; high raw keyword scores do not waive this gate.",
-    "Nine employer-identified Arbeitnow signals were rejected for role/stack/geography mismatch; repeated Pair and Westernacher vacancies were not treated as new organization identities.",
-    "No new owner-authoritative soft blocker was created and no ANSWERED_RECHECK_REQUIRED item was identified in the current human-review state.",
+    "All 3 fresh canonical raw signals 825-827 were consumed completely; canonical raw supply ends at line 827.",
+    "The runtime target of 40 serious decisions could not be reached from available supply without recycling already-decided identities, which is prohibited.",
+    "No ANSWERED_RECHECK_REQUIRED item was identified in current human-review state.",
     "The send window was open, but no candidate passed all SEND_NOW hard gates, therefore no Hostinger application send was attempted.",
-    "Provider suppression/global organization state remains authoritative through professional Hostinger UID 304; later UIDs previously recorded as 305-307 remain noncommercial owner/report traffic in current canonical state."
+    "Provider suppression/global organization state remains authoritative through professional Hostinger UID 304; reservations are empty."
   ]
 }
