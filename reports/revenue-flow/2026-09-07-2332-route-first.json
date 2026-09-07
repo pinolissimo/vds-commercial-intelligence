@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-07T23:32:58+02:00",
+  "mode": "AUTONOMOUS_ROUTE_FIRST",
+  "send_window_open": false,
+  "metrics": {
+    "serious_candidates_evaluated": 14,
+    "direct_email_harvest_evaluated": 14,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 4,
+    "wait_research": 6,
+    "reject": 4,
+    "duplicates": 0,
+    "route_failures": 4
+  },
+  "notes": [
+    "No provider call attempted because live sending window was closed.",
+    "Hostinger account state was readable, but POST-based Sent search was blocked by connector safety checks; therefore potentially sendable direct-email identities remain WAIT_RESEARCH until next-window JIT provider dedup.",
+    "Search snippets/directories were not treated as sufficient evidence; candidates below are based on organization-owned pages returned by fresh web retrieval."
+  ],
+  "candidates": [
+    {"organization":"Cantabria Web Design","domain":"cantabriawebdesign.es","route":"rrhh@cantabriawebdesign.es","result":"WAIT_RESEARCH","reason":"Official employment email and active team invitation; exact current role/freelance model plus Hostinger JIT dedup require recheck in live window.","source":"https://cantabriawebdesign.es/"},
+    {"organization":"La Teva Web","domain":"latevaweb.com","route":"rrhh@latevaweb.com","result":"WAIT_RESEARCH","reason":"Official page says always open to new talent and gives CV email; provider dedup could not be completed in this run.","source":"https://www.latevaweb.com/trabajo"},
+    {"organization":"Dato Digitale","domain":"datodigitale.it","route":"info@datodigitale.it","result":"WAIT_RESEARCH","reason":"Official page explicitly lists Web Developer and WordPress Programmer; exact candidacy route appears to be general mailbox and requires JIT provider dedup.","source":"https://www.datodigitale.it/lavora-con-noi/"},
+    {"organization":"Systematika","domain":"systematika.it","route":"info@systematika.it","result":"WAIT_RESEARCH","reason":"Official careers page requests CV and cover letter by email; role fit and JIT provider dedup require next-window recheck.","source":"https://systematika.it/lavora-con-noi/"},
+    {"organization":"Swype Lab","domain":"swypelab.com","route":"info@swypelab.com","result":"WAIT_RESEARCH","reason":"Official page lists Web Developer with HTML/CSS/JS/PHP/WordPress and a careers contact context; exact application-vs-general route and provider dedup require recheck.","source":"https://www.swypelab.com/contatti/"},
+    {"organization":"Hitech Srl","domain":"hitech.srl","route":"job@hitech.srl","result":"WAIT_RESEARCH","reason":"Official careers section explicitly provides job email; specific open web role not established in this pass and provider dedup unavailable.","source":"https://hitech.srl/contact-1/"},
+    {"organization":"Next Adv","domain":"nextadv.it","route":"official application form","result":"MANUAL_APPLY","reason":"Current official page describes WordPress/Shopify/HTML/CSS/PHP/JS and allows regular P.IVA relationship, but candidature is form-based.","source":"https://www.nextadv.it/lavora-con-noi/"},
+    {"organization":"FMD Sysnet","domain":"fmdsysnet.it","route":"official application form","result":"MANUAL_APPLY","reason":"Constant search for WordPress Developer, HTML/CSS/JS Developer and Web & Graphic Designer; P.IVA field present; form-only application.","source":"https://www.fmdsysnet.it/lavora-con-noi/"},
+    {"organization":"Good Working","domain":"goodworking.it","route":"official application form","result":"MANUAL_APPLY","reason":"Remote collaboration and P.IVA language present, but application-only form must be used.","source":"https://www.goodworking.it/lavora-con-noi/"},
+    {"organization":"Firewall Srl","domain":"firewallsrl.com","route":"official application form","result":"MANUAL_APPLY","reason":"Graphic & Web Designer Fullstack role includes Partita IVA and WordPress/PHP/HTML/CSS/JS; application route is form-based.","source":"https://www.firewallsrl.com/it/lavora-con-noi"},
+    {"organization":"Peslam Estudios","domain":"peslam.com","route":"info@peslam.com","result":"REJECT","reason":"Current official listing imposes age under 30 and local Ciudad Real presence, incompatible with truthful VDS positioning.","source":"https://peslam.com/empleo/"},
+    {"organization":"Federazione Trentina Pro Loco","domain":"unplitrentino.it","route":"comunicazione@unplitrentino.it","result":"REJECT","reason":"Role is primarily communication/social/portal management with degree requirement; not a strong paid-work fit for VDS web-development outreach.","source":"https://unplitrentino.it/lavora-con-noi/"},
+    {"organization":"Echopress","domain":"echopress.it","route":"not explicit on retrieved careers page","result":"REJECT","reason":"Web Developer role is frontend/framework oriented with Joomla preference, but no authoritative application email was exposed in this retrieval.","source":"https://www.echopress.it/lavora-con-noi/"},
+    {"organization":"Studio Magnani & Partners","domain":"studiomagnani.eu","route":"not explicit on retrieved page","result":"REJECT","reason":"P.IVA remote profile is mainly graphic/content production with WordPress only secondary; route not closed and fit below priority threshold.","source":"https://www.studiomagnani.eu/lavora-con-noi/"}
+  ]
+}
