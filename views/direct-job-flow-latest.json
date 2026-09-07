@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-07T02:07:16+02:00",
+  "updated_at": "2026-09-07T03:09:54+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -14,57 +14,60 @@
   "jobflow_last_owned_provider_uid": 300,
   "reservations_active": 0,
   "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
-  "raw_checkpoint_through_line": 743,
-  "run_detail_file": "state/direct-job-run-20260907T0207.jsonl",
-  "serious_signals_evaluated": 6,
-  "unique_organization_identities": 6,
+  "raw_checkpoint_through_line": 754,
+  "run_detail_file": "state/direct-job-run-20260907T0309.jsonl",
+  "serious_signals_evaluated": 14,
+  "unique_organization_identities": 10,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
-    "MANUAL_APPLY": 0,
-    "WAIT_RESEARCH": 3,
-    "REJECT": 3,
+    "MANUAL_APPLY": 2,
+    "WAIT_RESEARCH": 1,
+    "REJECT": 11,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
     "owner_answers_resolved": 0,
     "provider_verified_first_contacts": 0,
     "duplicates_blocked": 0,
-    "stale": 3,
-    "route_failures": 3
+    "stale": 0,
+    "route_failures": 1,
+    "fit_rejects": 11
   },
-  "manual_apply": [],
-  "wait_research": [
+  "manual_apply": [
     {
-      "organization": "LIVEAT SRL / Liveat Agency",
-      "fit_score": 96,
-      "blocker": "AUTHORITATIVE_APPLICATION_ROUTE_UNRESOLVED",
-      "next_lookup": "Resolve official employer-authorized application route; do not substitute generic contact or third-party quick-apply as direct email."
+      "organization": "LIVEAT Agency / LIVEAT S.r.l.",
+      "fit_score": 95,
+      "route_type": "JOB_PORTAL_APPLICATION",
+      "url": "https://www.simplyhired.it/job/3kBOwtjgLEHGUOybuTYlxGUTgGTm2OI_x2Vf-9WCn2bBW1FvWtbHmw",
+      "owner_action": "Apply through the current portal route with truthful WordPress/Elementor, landing-page, optimization and portfolio evidence; do not substitute a generic company email.",
+      "requested_materials": ["CV/public CV link where accepted", "short introduction", "portfolio examples"]
     },
     {
       "organization": "Artwork Web Agency",
       "fit_score": 85,
-      "blocker": "EXACT_AUTHORITATIVE_APPLICATION_EMAIL_OBFUSCATED",
-      "next_lookup": "Recover exact careers mailto from authoritative source content."
-    },
+      "route_type": "OFFICIAL_CAREERS_CURRICULUM_ACTION",
+      "url": "https://www.artworkstudios.it/lavora-con-noi.html",
+      "owner_action": "Use the official INVIA CURRICULUM action for the PHP developer/external-programmer profile; do not substitute a generic footer/company email.",
+      "requested_materials": ["detailed CV", "relevant projects", "current contractual status"]
+    }
+  ],
+  "wait_research": [
     {
       "organization": "Frem Digital AS",
       "fit_score": 96,
       "blocker": "EXACT_AUTHORITATIVE_APPLICATION_EMAIL_OBFUSCATED",
-      "next_lookup": "Resolve exact careers recipient from authoritative source content."
+      "next_lookup": "Recover the exact careers recipient from authoritative source content; never guess or derive it. Recheck the explicit 3+ years WordPress requirement truthfully before any application."
     }
   ],
   "notes": [
-    "No fresh canonical raw signals exist after checkpoint 743; the exploration floor could not consume nonexistent supply and no decided identity was recycled.",
-    "TURBO exploitation-first pass resolved six unresolved high-yield backlog identities.",
-    "LIVEAT remains a very strong current WordPress/Elementor freelance P.IVA full-remote opportunity, but the exact employer-authoritative route is still unresolved; no generic address was substituted.",
-    "Artwork Web Agency official careers remains current and explicitly accepts remote external programmers; exact careers recipient remains masked and is the sole blocker.",
-    "Frem Digital official careers remains current and explicitly seeks freelance WordPress developers; exact application recipient remains masked and is the sole blocker.",
-    "Grownnectia exact WordPress/system role was not corroborated on the current official careers inventory and was closed as stale for this candidate instance.",
-    "Marketing Performance exact Web Designer demand was not revalidated authoritatively and was closed as stale for this candidate instance.",
-    "Ingenio Virtual exact canonical employer demand could not be revalidated without crossing identity to a similarly named different organization, so the candidate was closed rather than merged.",
-    "No owner-authoritative soft blocker was created; current unresolved blockers are worker-research route facts.",
-    "Command Center pending set is empty; no targeted overlay required consumption.",
-    "Live-send window is closed; no provider action was attempted."
+    "Mandatory self-healing preflight found the durable sent ledger and all three derived contact caches coherent through Hostinger UID 304; reservations are empty.",
+    "TURBO exploitation-first resolved LIVEAT and Artwork from WAIT_RESEARCH to actionable MANUAL_APPLY without weakening the route gate.",
+    "Frem Digital remains the only unresolved high-value research item because the exact authoritative careers recipient is still obfuscated; no generic address was substituted.",
+    "All 11 fresh canonical raw signals after checkpoint 743 were consumed and assigned exactly one outcome; no decided/contacted identity was recycled to inflate throughput.",
+    "The only fresh raw signal with superficially strong web/CMS keywords, Community Web Manager, was verified as a US-only senior ServiceNow role requiring 7 years and Khoros/AEM-oriented experience, so it fails truthful fit/geography gates.",
+    "No owner-authoritative soft blocker was newly created this run; current Frem blockage remains a worker-research route fact.",
+    "Command Center pending set is empty; processed receipts were read and no targeted overlay is outstanding.",
+    "Live-send window is closed; no provider call was attempted."
   ]
 }
