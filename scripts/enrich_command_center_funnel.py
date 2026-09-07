@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
 """Enrich Command Center dashboard with operational funnel semantics.
 
-This is a read-model postprocessor only. It never writes canonical operational
-state and never authorizes outreach.
+This is a read-model postprocessor only. It never authorizes outreach.
+It also merges the low-latency provider outbound reconciliation overlay so
+provider-verified Hostinger sends appear in the Command Center immediately,
+even when the slower global sent index has not yet been reconciled.
 """
 from __future__ import annotations
 
 import json
 from collections import Counter
+from datetime import datetime, time, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-DASHBOARD = ROOT / "api" / "v1" / "dashboard.json"
+API = ROOT / "api" / "v1"
+DASHBOARD = API / "dashboard.json"
+TODAY = API / "today.json"
+OUTBOUND = API / "outbound.json"
 ACQUISITION = ROOT / "views" / "acquisition-performance.json"
 ACTIVE = ROOT / "views" / "active-freelance-opportunities.json"
+LIVE_PROVIDER = ROOT / "state" / "provider-outbound-live.json"
+MADRID = ZoneInfo("Europe/Madrid")
 
 EXECUTABLE_STATUSES = {
     "SEND_NOW",
@@ -37,6 +46,20 @@ def save(path: Path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def parse_dt(value):
+    if not value or not isinstance(value, str):
+        return None
+    try:
+        if value.endswith("Z"):
+            value = value[:-1] + "+00:00"
+        dt = datetime.fromisoformat(value)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=MADRID)
+        return dt
+    except ValueError:
+        return None
+
+
 def classify_status(status: str) -> str:
     s = str(status or "UNKNOWN").upper()
     if s in LEGACY_ADVISORY_STATUSES:
@@ -54,6 +77,86 @@ def classify_status(status: str) -> str:
     return "OTHER"
 
 
+def merge_live_provider_outbound(dashboard: dict) -> dict:
+    """Merge verified live Hostinger events into dashboard/today/outbound read models.
+
+    Failed/bounced attempts remain in the live audit overlay but are excluded from
+    successful sent counters. Provider UID is the idempotency key.
+    """
+    today_model = load(TODAY, {})
+    outbound_model = load(OUTBOUND, {})
+    live = load(LIVE_PROVIDER, {"events": []})
+
+    base_messages = outbound_model.get("messages") if isinstance(outbound_model.get("messages"), list) else []
+    by_uid = {}
+    for message in base_messages:
+        uid = message.get("provider_uid")
+        if uid is not None:
+            by_uid[str(uid)] = dict(message)
+
+    for event in live.get("events") or []:
+        if not isinstance(event, dict):
+            continue
+        if event.get("state") != "VERIFIED_EMAIL_SENT":
+            continue
+        uid = event.get("provider_uid")
+        if uid is None:
+            continue
+        by_uid[str(uid)] = dict(event)
+
+    messages = list(by_uid.values())
+    messages.sort(key=lambda m: (m.get("sent_at") or "", int(m.get("provider_uid") or 0)), reverse=True)
+
+    now_local = datetime.now(timezone.utc).astimezone(MADRID)
+    local_date = now_local.date()
+    today_messages = []
+    for message in messages:
+        dt = parse_dt(message.get("sent_at"))
+        if dt and dt.astimezone(MADRID).date() == local_date:
+            item = dict(message)
+            item["sent_at_local"] = dt.astimezone(MADRID).isoformat(timespec="seconds")
+            today_messages.append(item)
+    today_messages.sort(key=lambda m: m.get("sent_at", ""), reverse=True)
+    first_contacts = [m for m in today_messages if m.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"]
+
+    window_start = datetime.combine(local_date, time(9, 0), tzinfo=MADRID)
+    window_end = datetime.combine(local_date, time(19, 0), tzinfo=MADRID)
+    elapsed_end = min(max(now_local, window_start), window_end)
+    elapsed_hours = max((elapsed_end - window_start).total_seconds() / 3600.0, 0.0)
+    sent_rate = round(len(today_messages) / elapsed_hours, 2) if elapsed_hours > 0 else 0.0
+    first_rate = round(len(first_contacts) / elapsed_hours, 2) if elapsed_hours > 0 else 0.0
+
+    today_model["sent_count"] = len(today_messages)
+    today_model["first_contact_count"] = len(first_contacts)
+    today_model["messages_per_active_hour"] = sent_rate
+    today_model["first_contacts_per_active_hour"] = first_rate
+    today_model["sent"] = today_messages
+    today_model["provider_live_overlay_updated_at"] = live.get("updated_at")
+    save(TODAY, today_model)
+
+    outbound_model["provider_of_record"] = "HOSTINGER_SENT"
+    outbound_model["messages"] = messages
+    outbound_model["today_count"] = len(today_messages)
+    outbound_model["today_first_contact_count"] = len(first_contacts)
+    outbound_model["messages_per_active_hour"] = sent_rate
+    outbound_model["provider_live_overlay_updated_at"] = live.get("updated_at")
+    save(OUTBOUND, outbound_model)
+
+    today_dash = dashboard.setdefault("today", {})
+    today_dash["sent"] = len(today_messages)
+    today_dash["first_contacts_sent"] = len(first_contacts)
+    today_dash["messages_per_active_hour"] = sent_rate
+    today_dash["first_contacts_per_active_hour"] = first_rate
+    dashboard.setdefault("headline", {})["sent_today"] = len(today_messages)
+    dashboard["provider_live_overlay"] = {
+        "updated_at": live.get("updated_at"),
+        "successful_events_merged": sum(1 for e in (live.get("events") or []) if isinstance(e, dict) and e.get("state") == "VERIFIED_EMAIL_SENT"),
+        "failed_or_bounced_events_excluded": sum(1 for e in (live.get("events") or []) if isinstance(e, dict) and e.get("state") != "VERIFIED_EMAIL_SENT"),
+        "provider_of_record": "HOSTINGER_SENT",
+    }
+    return dashboard
+
+
 def main() -> int:
     dashboard = load(DASHBOARD, {})
     acquisition = load(ACQUISITION, {})
@@ -61,6 +164,8 @@ def main() -> int:
     runtime = load(ROOT / "config" / "acquisition-runtime-command.json", {})
     if not dashboard:
         raise SystemExit("dashboard.json missing; run build_command_center_api.py first")
+
+    dashboard = merge_live_provider_outbound(dashboard)
 
     opps = active.get("opportunities") if isinstance(active.get("opportunities"), list) else []
     classes = Counter(classify_status(o.get("status")) for o in opps)
@@ -127,7 +232,7 @@ def main() -> int:
     headline["legacy_ready_advisory"] = legacy_advisory
     headline["semantic_pass_backlog_proxy"] = semantic_pass
 
-    dashboard["schema_version"] = "1.2"
+    dashboard["schema_version"] = "1.3"
     dashboard["operational_funnel"] = operational_funnel
     dashboard["readiness_semantics"] = {
         "headline_ready_means": "EXECUTABLE_CANDIDATE_STATUS_ONLY; LIVE_JIT_GATES_REMAIN_AUTHORITATIVE",
