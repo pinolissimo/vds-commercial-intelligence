@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "updated_at": "2026-09-07T01:05:12+02:00",
+  "updated_at": "2026-09-07T02:07:16+02:00",
   "worker_id": "LINKEDIN_HUNTER",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "runtime_policy": {
@@ -15,33 +15,55 @@
   "reservations_active": 0,
   "source": "qualified_backlog_plus_data/high-frequency-discovery/raw-signals.jsonl",
   "raw_checkpoint_through_line": 743,
-  "run_detail_file": "state/direct-job-run-20260907T0105.jsonl",
-  "serious_signals_evaluated": 30,
-  "unique_organization_identities": 9,
+  "run_detail_file": "state/direct-job-run-20260907T0207.jsonl",
+  "serious_signals_evaluated": 6,
+  "unique_organization_identities": 6,
   "provider_verified_first_contacts_per_run": 0,
   "run_summary": {
     "SEND_NOW": 0,
     "MANUAL_APPLY": 0,
-    "WAIT_RESEARCH": 0,
-    "REJECT": 30,
+    "WAIT_RESEARCH": 3,
+    "REJECT": 3,
     "human_review_items_created": 0,
     "human_review_items_updated": 0,
     "unanswered_owner_questions_created_this_run": 0,
     "owner_answers_resolved": 0,
     "provider_verified_first_contacts": 0,
     "duplicates_blocked": 0,
-    "stale": 0,
-    "route_failures": 0
+    "stale": 3,
+    "route_failures": 3
   },
   "manual_apply": [],
+  "wait_research": [
+    {
+      "organization": "LIVEAT SRL / Liveat Agency",
+      "fit_score": 96,
+      "blocker": "AUTHORITATIVE_APPLICATION_ROUTE_UNRESOLVED",
+      "next_lookup": "Resolve official employer-authorized application route; do not substitute generic contact or third-party quick-apply as direct email."
+    },
+    {
+      "organization": "Artwork Web Agency",
+      "fit_score": 85,
+      "blocker": "EXACT_AUTHORITATIVE_APPLICATION_EMAIL_OBFUSCATED",
+      "next_lookup": "Recover exact careers mailto from authoritative source content."
+    },
+    {
+      "organization": "Frem Digital AS",
+      "fit_score": 96,
+      "blocker": "EXACT_AUTHORITATIVE_APPLICATION_EMAIL_OBFUSCATED",
+      "next_lookup": "Resolve exact careers recipient from authoritative source content."
+    }
+  ],
   "notes": [
-    "Mandatory self-healing preflight found durable sent ledger and all three derived provider/global caches coherent through Hostinger UID 304; reservations are empty.",
-    "TURBO exploitation-first policy remained authoritative: two historical WAIT_RESEARCH items were resolved before broad raw expansion.",
-    "Taktile Senior Full-Stack Engineer and Roku Senior Software Engineer Full Stack were closed as truthful-fit rejects after current role verification.",
-    "Processed every fresh canonical raw signal after checkpoint 715 through line 743; only 28 fresh signals were available, so the configured target of 40 was not fabricated by recycling decided identities.",
-    "The superficially promising Semdor Pharma Fullstack signal was verified as the current Bloombase ERP vacancy requiring React, Node.js/NestJS, TypeScript and very good German, so it is a deterministic fit reject rather than a WordPress opportunity.",
-    "INIT Senior UI/UX was verified current but requires at least five years UX/UI, relevant qualification, design-system ownership, complex-product/client leadership and very good German and English; no unsupported seniority or language claim was made.",
-    "No eligible ANSWERED_RECHECK_REQUIRED human-review item was identified and no new high-value soft blocker survived fit/identity gates.",
+    "No fresh canonical raw signals exist after checkpoint 743; the exploration floor could not consume nonexistent supply and no decided identity was recycled.",
+    "TURBO exploitation-first pass resolved six unresolved high-yield backlog identities.",
+    "LIVEAT remains a very strong current WordPress/Elementor freelance P.IVA full-remote opportunity, but the exact employer-authoritative route is still unresolved; no generic address was substituted.",
+    "Artwork Web Agency official careers remains current and explicitly accepts remote external programmers; exact careers recipient remains masked and is the sole blocker.",
+    "Frem Digital official careers remains current and explicitly seeks freelance WordPress developers; exact application recipient remains masked and is the sole blocker.",
+    "Grownnectia exact WordPress/system role was not corroborated on the current official careers inventory and was closed as stale for this candidate instance.",
+    "Marketing Performance exact Web Designer demand was not revalidated authoritatively and was closed as stale for this candidate instance.",
+    "Ingenio Virtual exact canonical employer demand could not be revalidated without crossing identity to a similarly named different organization, so the candidate was closed rather than merged.",
+    "No owner-authoritative soft blocker was created; current unresolved blockers are worker-research route facts.",
     "Command Center pending set is empty; no targeted overlay required consumption.",
     "Live-send window is closed; no provider action was attempted."
   ]
