@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-07T16:59:37+02:00",
+  "provider_of_record": "HOSTINGER_SENT",
+  "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced attempts remain audit-only and are never counted as successful outbound.",
+  "events": [
+    {
+      "provider_uid": 309,
+      "sent_at": "2026-09-07T14:42:28Z",
+      "canonical_identity_key": "org:indaweb.it",
+      "organization": "Indaweb S.R.L.",
+      "recipient": "info@indaweb.it",
+      "subject": "Web Developer / Digital Technical Specialist — proposta collaborazione P.IVA",
+      "workstream": "VDS_REVENUE_FLOW_RECOVERY",
+      "state": "VERIFIED_EMAIL_SENT",
+      "action_type": "FIRST_CONTACT",
+      "attachments": 0,
+      "bcc_owner": true
+    },
+    {
+      "provider_uid": 310,
+      "sent_at": "2026-09-07T14:51:36Z",
+      "canonical_identity_key": "org:enigmia.es",
+      "organization": "Enigmia",
+      "recipient": "freelances@enigmia.es",
+      "subject": "Colaboración freelance — desarrollo web, frontend y rendimiento",
+      "workstream": "VDS_REVENUE_FLOW_RECOVERY",
+      "state": "HARD_BOUNCE_WRONG_ADDRESS",
+      "action_type": "FIRST_CONTACT_ATTEMPT",
+      "attachments": 0,
+      "bcc_owner": true,
+      "bounce_uid": 1398,
+      "bounce_at": "2026-09-07T14:51:41Z",
+      "replacement_recipient": "info@enigmia.es",
+      "count_as_successful_outbound": false
+    },
+    {
+      "provider_uid": 311,
+      "sent_at": "2026-09-07T14:59:32Z",
+      "canonical_identity_key": "org:enigmia.es",
+      "organization": "Enigmia",
+      "recipient": "info@enigmia.es",
+      "subject": "Colaboración freelance — desarrollo web, frontend y rendimiento",
+      "workstream": "VDS_REVENUE_FLOW_CORRECTED_ROUTE",
+      "state": "VERIFIED_EMAIL_SENT",
+      "action_type": "FIRST_CONTACT",
+      "attachments": 0,
+      "bcc_owner": true,
+      "corrects_failed_provider_uid": 310
+    }
+  ]
+}
