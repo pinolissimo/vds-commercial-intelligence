@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-07T17:34:14+02:00",
+  "updated_at": "2026-09-07T18:04:20+02:00",
   "provider_of_record": "HOSTINGER_SENT",
-  "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced attempts remain audit-only and are never counted as successful outbound.",
+  "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced/duplicate-policy-violation attempts remain audit-only and are never counted as successful first-contact outbound.",
   "events": [
     {
       "provider_uid": 309,
@@ -56,10 +56,13 @@
       "recipient": "jobs@efarmgroup.com",
       "subject": "Candidatura — Programmatore web freelance | WordPress / PHP",
       "workstream": "VDS_JOB_FLOW",
-      "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
+      "state": "DUPLICATE_FIRST_CONTACT_POLICY_VIOLATION",
+      "action_type": "FIRST_CONTACT_ATTEMPT",
       "attachments": 0,
-      "bcc_owner": true
+      "bcc_owner": true,
+      "count_as_successful_outbound": false,
+      "duplicate_of_provider_uid": 109,
+      "audit_note": "Fresh Hostinger Sent reconciliation found prior professional contact to the same organization/recipient on 2026-08-28. UID 312 remains immutable provider audit evidence but must not count as a new first contact."
     },
     {
       "provider_uid": 313,
