@@ -47,6 +47,7 @@ jobs:
           test -s .pages/assets/command.css
           test -s .pages/assets/export.css
           test -s .pages/assets/app.js
+          test -s .pages/assets/token-persistence.js
           test -s .pages/assets/live-export.js
           test -s .pages/assets/executable-ready.js
           test -s .pages/assets/secure-onboarding.js
@@ -61,6 +62,8 @@ jobs:
           test ! -d .pages/api
           grep -q "api.github.com" .pages/index.html
           grep -q "sessionStorage" .pages/assets/app.js
+          grep -q "localStorage" .pages/assets/token-persistence.js
+          grep -q "assets/token-persistence.js" .pages/index.html
           grep -q "AUTO_SYNC_FOREGROUND_MS=5000" .pages/assets/live-export.js
           grep -q "DISCOVERY_STALE_MS=17\*60\*1000" .pages/assets/live-export.js
           grep -q "deepseek-shadow.json" .pages/assets/live-export.js
@@ -78,12 +81,15 @@ jobs:
           grep -q "DEEPSEEK_API_KEY" .pages/assets/secure-onboarding.js
           grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
           node --check .pages/assets/app.js
+          node --check .pages/assets/token-persistence.js
           node --check .pages/assets/live-export.js
           node --check .pages/assets/executable-ready.js
           node --check .pages/assets/secure-onboarding.js
           ! grep -R -E "sk-[A-Za-z0-9_-]{20,}" .pages
           ! grep -R "fonts.googleapis.com\|cdn.jsdelivr.net" .pages/index.html
-          ! grep -R "localStorage" .pages/assets/*.js
+          # Persistent browser storage is allowed only in the dedicated GitHub-token bootstrap.
+          test "$(grep -R -l "localStorage" .pages/assets/*.js | wc -l)" -eq 1
+          grep -R -l "localStorage" .pages/assets/*.js | grep -q "token-persistence.js"
 
       - name: Configure Pages
         uses: actions/configure-pages@v6
