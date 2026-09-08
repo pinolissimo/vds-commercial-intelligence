@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 148,
+  "runs": 149,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -7628,6 +7628,60 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "09a1e7a7fca0f39c1b256f0e953b41fc",
+      "evaluated_at": "2026-09-08T19:46:43Z",
+      "organization": "Comand Ai",
+      "title": "Front-end Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/comand-ai/front-end-engineer-london-20309",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 60.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Front-end engineer role with generic front-end match, but no explicit WordPress/WooCommerce or web performance stack; location London and unclear remote status reduce compatibility with target geos.",
+      "deepseek_risk_flags": [
+        "stack_fit_uncertain",
+        "geo_mismatch_likely",
+        "remote_status_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166335,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f3533811c01886b17ecb5f74f16d0e7c",
+      "evaluated_at": "2026-09-08T19:46:43Z",
+      "organization": "okta",
+      "title": "Senior Solutions Engineer,Auth0",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/okta/senior-solutions-engineerauth0-london-248819",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior Solutions Engineer for Auth0/Okta is identity/security solutions engineering, not web development; generic keyword matches (frontend, html, php) do not indicate meaningful WordPress/web scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "stack_mismatch",
+        "geo_mismatch_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166335,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -8650,8 +8704,20 @@
       "completion_tokens": 296,
       "total_tokens": 1080,
       "estimated_cost_usd": 0.00025878
+    },
+    {
+      "at": "2026-09-08T19:46:43Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 541,
+      "completion_tokens": 321,
+      "total_tokens": 1118,
+      "estimated_cost_usd": 0.00033267
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-08T19:28:37Z"
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-08T19:46:43Z"
 }

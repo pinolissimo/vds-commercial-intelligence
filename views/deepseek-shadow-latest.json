@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-08T19:28:37Z",
+  "updated_at": "2026-09-08T19:46:46Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 287,
-    "agreement_count": 147,
-    "agreement_pct": 51.22,
+    "evaluated_total": 289,
+    "agreement_count": 149,
+    "agreement_pct": 51.56,
     "deepseek_promote": 23,
     "vds_promote": 113,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 85,
-    "cumulative_estimated_cost_usd": 0.053434,
-    "cost_per_evaluated_candidate_usd": 0.00018618,
-    "cost_per_deepseek_promote_usd": 0.00232323,
-    "cost_per_observed_ready_or_contacted_usd": 0.02671719,
-    "latest_request": null
+    "request_count": 86,
+    "cumulative_estimated_cost_usd": 0.053767,
+    "cost_per_evaluated_candidate_usd": 0.00018605,
+    "cost_per_deepseek_promote_usd": 0.0023377,
+    "cost_per_observed_ready_or_contacted_usd": 0.02688352,
+    "latest_request": {
+      "at": "2026-09-08T19:46:43Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 541,
+      "completion_tokens": 321,
+      "total_tokens": 1118,
+      "estimated_cost_usd": 0.00033267
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6af121a918f5dad54e2bfea234df0f11",
-      "evaluated_at": "2026-09-06T14:00:31Z",
-      "organization": "ethikos",
-      "title": "Frontend Developer (Western EU)",
-      "location": "Western EU",
-      "opportunity_url": "https://jobs.ethikos.es/jobs/2749587-frontend-developer-western-eu",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "PROMOTE",
-      "deepseek_score": 85.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Frontend Developer role based in Spain (Western EU) with hybrid remote, matching frontend/UI/UX skills; strong geographic fit, though no explicit WordPress or freelance contract details.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_mention",
-        "hybrid_remote_may_require_relocation",
-        "employment_type_unknown"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000105858,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "261af8dfc2e490db1475861f74daaacc",
-      "evaluated_at": "2026-09-06T14:00:31Z",
-      "organization": "Digital cuisine",
-      "title": "Senior Frontend Developer",
-      "location": "El Puerto de Santa María, AN, Spain",
-      "opportunity_url": "https://jobs.smartrecruiters.com/DigitalCuisine/503e0987-f9af-41cc-9a8e-47169359dfeb",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 46,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Frontend Developer job posting is from 2021, over five years old, making it stale and no longer a current opportunity.",
-      "deepseek_risk_flags": [
-        "stale_posting",
-        "no_wordpress_woocommerce_mention",
-        "employment_type_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000105858,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "037a532acce6e8b1b91f548359809887",
       "evaluated_at": "2026-09-06T14:00:31Z",
@@ -1395,9 +1352,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "09a1e7a7fca0f39c1b256f0e953b41fc",
+      "evaluated_at": "2026-09-08T19:46:43Z",
+      "organization": "Comand Ai",
+      "title": "Front-end Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/comand-ai/front-end-engineer-london-20309",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 60.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Front-end engineer role with generic front-end match, but no explicit WordPress/WooCommerce or web performance stack; location London and unclear remote status reduce compatibility with target geos.",
+      "deepseek_risk_flags": [
+        "stack_fit_uncertain",
+        "geo_mismatch_likely",
+        "remote_status_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166335,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f3533811c01886b17ecb5f74f16d0e7c",
+      "evaluated_at": "2026-09-08T19:46:43Z",
+      "organization": "okta",
+      "title": "Senior Solutions Engineer,Auth0",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/okta/senior-solutions-engineerauth0-london-248819",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior Solutions Engineer for Auth0/Okta is identity/security solutions engineering, not web development; generic keyword matches (frontend, html, php) do not indicate meaningful WordPress/web scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "stack_mismatch",
+        "geo_mismatch_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166335,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-08T19:28:36Z"
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-08T19:46:42Z"
 }
