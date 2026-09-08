@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-08T05:58:29+02:00",
+  "generated_at": "2026-09-08T06:00:10+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -18,9 +18,9 @@
     "sending_window": "09:00-19:00 Europe/Madrid"
   },
   "headline": {
-    "semantic_input_last_run": 1386,
+    "semantic_input_last_run": 1398,
     "semantic_pass_last_run": 105,
-    "semantic_pass_rate_pct": 7.58,
+    "semantic_pass_rate_pct": 7.51,
     "active_opportunities": 53,
     "ready": 4,
     "manual_action": 5,
@@ -60,7 +60,7 @@
       "territory": "UNRESOLVED",
       "score": 100.0,
       "mode": "HARVEST",
-      "harvest_cycles": 2,
+      "harvest_cycles": 3,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-08T17:43:44.645220Z",
       "heat_pct": 100.0
@@ -70,12 +70,12 @@
       "country": "Spain",
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
-      "score": 54.09,
+      "score": 52.74,
       "mode": "HARVEST",
-      "harvest_cycles": 2,
+      "harvest_cycles": 3,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-08T17:43:44.645220Z",
-      "heat_pct": 54.1
+      "heat_pct": 52.7
     },
     {
       "area": "Italy|Lazio|Roma",
@@ -83,23 +83,11 @@
       "region": "Lazio",
       "territory": "Roma",
       "score": 49.16,
-      "mode": "COOLDOWN",
-      "harvest_cycles": 0,
+      "mode": "HARVEST",
+      "harvest_cycles": 1,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-08T20:02:29.947028Z",
       "heat_pct": 49.2
-    },
-    {
-      "area": "Italy|Veneto|Venezia",
-      "country": "Italy",
-      "region": "Veneto",
-      "territory": "Venezia",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
     },
     {
       "area": "Spain|Aragón|Zaragoza",
@@ -114,10 +102,22 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Spain|Comunitat Valenciana|Castellón",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "territory": "Castellón",
+      "area": "Italy|Veneto|Venezia",
+      "country": "Italy",
+      "region": "Veneto",
+      "territory": "Venezia",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Calabria|Reggio Calabria",
+      "country": "Italy",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -138,10 +138,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Calabria|Reggio Calabria",
-      "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
+      "area": "Spain|Comunitat Valenciana|Castellón",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "territory": "Castellón",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -181,7 +181,7 @@
       "score": 18.92,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
-      "low_yield_cycles": 80,
+      "low_yield_cycles": 79,
       "cooldown_until": "2026-09-08T08:34:53.368289Z",
       "heat_pct": 18.9
     },
@@ -190,28 +190,28 @@
       "country": "Italy",
       "region": "Lombardia",
       "territory": "Milano",
-      "score": 15.28,
+      "score": 14.9,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 130,
-      "cooldown_until": "2026-09-08T20:02:29.947028Z",
-      "heat_pct": 15.3
+      "low_yield_cycles": 131,
+      "cooldown_until": "2026-09-08T21:59:52.679781Z",
+      "heat_pct": 14.9
     }
   ],
   "top_countries": [
     {
       "country": "Italy",
       "territories": 108,
-      "average_score": 3.77,
+      "average_score": 3.76,
       "best_score": 100.0,
-      "harvest_territories": 1,
+      "harvest_territories": 2,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
       "country": "Spain",
       "territories": 53,
-      "average_score": 4.52,
-      "best_score": 54.09,
+      "average_score": 4.5,
+      "best_score": 52.74,
       "harvest_territories": 1,
       "top_territory": "Spain|UNRESOLVED|UNRESOLVED"
     }
@@ -238,8 +238,8 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 1386,
-      "semantic_input": 1386,
+      "raw_signals": 1398,
+      "semantic_input": 1398,
       "semantic_pass": 105,
       "company_verified": null,
       "route_found": null,
@@ -257,7 +257,7 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 1251,
+      "semantic_reject": 1263,
       "semantic_review": 30,
       "semantic_pass_to_executable_gap_proxy": 101,
       "legacy_ready_advisory_excluded": 21
