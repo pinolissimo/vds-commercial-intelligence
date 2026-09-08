@@ -21,6 +21,7 @@ DM_CSS = "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..
 ICONS_CSS = "https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 ONBOARDING_MARKER = "assets/secure-onboarding.js"
 TOKEN_HELPER_MARKER = "assets/github-token-helper.js"
+TOKEN_PERSISTENCE_MARKER = "assets/token-persistence.js"
 LIVE_EXPORT_MARKER = "assets/live-export.js"
 EXECUTABLE_READY_MARKER = "assets/executable-ready.js"
 EXPORT_CSS_MARKER = "assets/export.css"
@@ -47,8 +48,17 @@ def inject_command_center_enhancements(root: Path) -> None:
         "Permessi consigliati: repository singolo · Contents read-only · Actions read/write.",
         "Permessi consigliati: repository singolo · Contents read-only · Actions read/write · Secrets read/write.",
     )
+    html = html.replace(
+        "Il token resta soltanto nella sessione di questo browser.",
+        "Il token viene conservato in questo browser e riutilizzato ai successivi avvii finché non scegli di disconnettere GitHub.",
+    )
     if EXPORT_CSS_MARKER not in html:
         html = html.replace("</head>", '<link rel="stylesheet" href="assets/export.css">\n</head>')
+    if TOKEN_PERSISTENCE_MARKER not in html:
+        html = html.replace(
+            '<script type="module" src="assets/app.js"></script>',
+            '<script src="assets/token-persistence.js"></script><script type="module" src="assets/app.js"></script>',
+        )
     scripts = ""
     if TOKEN_HELPER_MARKER not in html:
         scripts += '<script type="module" src="assets/github-token-helper.js"></script>'
