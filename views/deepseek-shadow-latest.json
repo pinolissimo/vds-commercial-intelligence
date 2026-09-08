@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-08T17:27:39Z",
+  "updated_at": "2026-09-08T17:45:30Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 81,
-    "cumulative_estimated_cost_usd": 0.05283,
-    "cost_per_evaluated_candidate_usd": 0.00018537,
-    "cost_per_deepseek_promote_usd": 0.00229695,
-    "cost_per_observed_ready_or_contacted_usd": 0.02641491,
-    "latest_request": null
+    "request_count": 82,
+    "cumulative_estimated_cost_usd": 0.052973,
+    "cost_per_evaluated_candidate_usd": 0.00018587,
+    "cost_per_deepseek_promote_usd": 0.00230316,
+    "cost_per_observed_ready_or_contacted_usd": 0.02648631,
+    "latest_request": {
+      "at": "2026-09-08T17:45:27Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 0,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 266,
+      "completion_tokens": 125,
+      "total_tokens": 647,
+      "estimated_cost_usd": 0.00014281
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -1397,7 +1408,7 @@
       "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-08T17:27:38Z"
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-08T17:45:26Z"
 }
