@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-08T18:21:50Z",
+  "updated_at": "2026-09-08T18:39:53Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 285,
-    "agreement_count": 145,
-    "agreement_pct": 50.88,
+    "evaluated_total": 287,
+    "agreement_count": 147,
+    "agreement_pct": 51.22,
     "deepseek_promote": 23,
     "vds_promote": 113,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 84,
-    "cumulative_estimated_cost_usd": 0.053176,
-    "cost_per_evaluated_candidate_usd": 0.00018658,
-    "cost_per_deepseek_promote_usd": 0.00231198,
-    "cost_per_observed_ready_or_contacted_usd": 0.0265878,
+    "request_count": 85,
+    "cumulative_estimated_cost_usd": 0.053434,
+    "cost_per_evaluated_candidate_usd": 0.00018618,
+    "cost_per_deepseek_promote_usd": 0.00232323,
+    "cost_per_observed_ready_or_contacted_usd": 0.02671719,
     "latest_request": {
-      "at": "2026-09-08T18:21:48Z",
+      "at": "2026-09-08T18:39:51Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 10,
-      "completion_tokens": 144,
-      "total_tokens": 666,
-      "estimated_cost_usd": 0.00010082
+      "prompt_cache_miss_tokens": 272,
+      "completion_tokens": 296,
+      "total_tokens": 1080,
+      "estimated_cost_usd": 0.00025878
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a9535bd949bcdd1d690585c3b9bf1cc5",
-      "evaluated_at": "2026-09-06T14:00:31Z",
-      "organization": "ClickUp",
-      "title": "Staff Frontend Engineer",
-      "location": "Bulgaria,  Czechia,  Hungary,  Ireland,  Poland,  Ukraine",
-      "opportunity_url": "https://jobicy.com/jobs/152644-staff-frontend-engineer",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 70.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Staff Frontend Engineer role at ClickUp matches frontend skills (HTML/CSS/JS) and is remote in EU, but lacks explicit WordPress/WooCommerce scope and is likely a full-time staff position, reducing freelance compatibility.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_mention",
-        "likely_fulltime_staff_role",
-        "generic_collaboration_mention"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000105858,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "e903f03fedbfb175a5156f14e905f32b",
-      "evaluated_at": "2026-09-06T14:00:31Z",
-      "organization": "ClickUp",
-      "title": "Senior Frontend Engineer",
-      "location": "Bulgaria,  Czechia,  Hungary,  Ireland,  Poland,  Ukraine",
-      "opportunity_url": "https://jobicy.com/jobs/152642-senior-frontend-engineer-2",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 70.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Senior Frontend Engineer role at ClickUp matches frontend skills and EU remote, but no WordPress/WooCommerce or freelance indication; likely full-time employment.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_mention",
-        "likely_fulltime_staff_role",
-        "generic_collaboration_mention"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000105858,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6af121a918f5dad54e2bfea234df0f11",
       "evaluated_at": "2026-09-06T14:00:31Z",
@@ -1406,9 +1352,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7a3abef8a78141bfd72722959f8d8002",
+      "evaluated_at": "2026-09-08T18:39:51Z",
+      "organization": "",
+      "title": "&#x28;Senior&#x29; Java&#x2f;Angular Developer &ndash; Full Remote",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Core role is Java/Angular development; no WordPress/WooCommerce or web performance/maintenance scope. Frontend/HTML/CSS/JS mentions are generic and secondary to a backend-heavy stack.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "geo_mismatch",
+        "generic_keyword_match"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012939,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "adbcfefbb854b8af7b2afc058f124406",
+      "evaluated_at": "2026-09-08T18:39:51Z",
+      "organization": "METYCLE",
+      "title": "Automation Engineer - PLC / Plant Control (m/f/d)",
+      "location": "Cologne (GER)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/metycle/automation-engineer-plc-plant-control-cologne-ger-73673",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 5.0,
+      "deepseek_confidence": 0.95,
+      "deepseek_primary_reason": "Automation/PLC engineering role unrelated to web development; keyword matches on 'maintenance' and 'remote' are misleading.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "geo_mismatch",
+        "misleading_keywords"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012939,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-08T18:21:47Z"
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-08T18:39:49Z"
 }
