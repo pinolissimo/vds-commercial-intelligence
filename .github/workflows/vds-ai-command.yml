@@ -30,8 +30,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Refresh read model before interpretation
-        run: python3 scripts/build_command_center_api.py
+      - name: Refresh complete read model before interpretation
+        run: |
+          python3 scripts/build_command_center_api.py
+          python3 scripts/enrich_command_center_funnel.py
+          python3 scripts/overlay_provider_live_dashboard.py
 
       - name: Interpret owner command through OpenAI
         env:
@@ -47,6 +50,36 @@ jobs:
             exit 2
           fi
           python3 scripts/vds_ai_command.py "$VDS_COMMAND"
+
+      - name: Verify provider-live projection invariant
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from datetime import datetime
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          madrid = ZoneInfo('Europe/Madrid')
+          today = json.loads(Path('api/v1/today.json').read_text())
+          live = json.loads(Path('state/provider-outbound-live.json').read_text())
+          date_str = today.get('date')
+          expected = 0
+          for event in live.get('events', []):
+              if event.get('state') != 'VERIFIED_EMAIL_SENT' or event.get('count_as_successful_outbound') is False:
+                  continue
+              sent_at = event.get('sent_at')
+              if not sent_at:
+                  continue
+              dt = datetime.fromisoformat(sent_at.replace('Z', '+00:00'))
+              if str(dt.astimezone(madrid).date()) == date_str:
+                  expected += 1
+          actual = int(today.get('sent_count') or 0)
+          if actual < expected:
+              raise SystemExit(f'Provider-live invariant failed: today.sent_count={actual}, expected_at_least={expected}')
+          print(f'Provider-live invariant OK: today.sent_count={actual}, provider-live={expected}')
+          PY
 
       - name: Commit command record and projection delta
         shell: bash
