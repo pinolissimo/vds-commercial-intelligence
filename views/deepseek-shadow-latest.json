@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-08T01:28:31Z",
+  "updated_at": "2026-09-08T02:02:29Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 274,
-    "agreement_count": 139,
-    "agreement_pct": 50.73,
+    "evaluated_total": 276,
+    "agreement_count": 140,
+    "agreement_pct": 50.72,
     "deepseek_promote": 22,
-    "vds_promote": 108,
+    "vds_promote": 109,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 90
+    "deepseek_demoted_from_vds_promote": 91
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 18.18,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.85,
+    "vds_promote_hot_rate_pct": 1.83,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 9.09,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 67,
-    "cumulative_estimated_cost_usd": 0.049046,
-    "cost_per_evaluated_candidate_usd": 0.000179,
-    "cost_per_deepseek_promote_usd": 0.00222935,
-    "cost_per_observed_ready_or_contacted_usd": 0.02452283,
+    "request_count": 68,
+    "cumulative_estimated_cost_usd": 0.049477,
+    "cost_per_evaluated_candidate_usd": 0.00017927,
+    "cost_per_deepseek_promote_usd": 0.00224898,
+    "cost_per_observed_ready_or_contacted_usd": 0.02473874,
     "latest_request": {
-      "at": "2026-09-08T01:28:27Z",
+      "at": "2026-09-08T02:02:25Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 1115,
-      "completion_tokens": 569,
-      "total_tokens": 1940,
-      "estimated_cost_usd": 0.00124526
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 21,
+      "completion_tokens": 312,
+      "total_tokens": 1101,
+      "estimated_cost_usd": 0.00043183
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "55e1a7ffd7491ed65f6c5eb4e4199bb5",
-      "evaluated_at": "2026-09-06T07:23:50Z",
-      "organization": "Fundcraft",
-      "title": "Senior Frontend Engineer",
-      "location": "Girona, Spain",
-      "opportunity_url": "https://apply.workable.com/j/25F72B346C/apply",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 65.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Senior Frontend Engineer role in Spain with frontend/UI/UX and maintenance keywords, but full-time on-site employment and no explicit WordPress/WooCommerce or freelance compatibility.",
-      "deepseek_risk_flags": [
-        "full-time employment",
-        "on-site",
-        "no freelance indication",
-        "no WordPress/WooCommerce mention"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00033355,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "8d0a6b6ac293512c0a907ee6dae3f5b4",
-      "evaluated_at": "2026-09-06T07:23:50Z",
-      "organization": "Athereon",
-      "title": "(Senior) Software Developer Frontend / React (m/w/d)",
-      "location": "Saarbrücken",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/athereon/senior-software-developer-frontend-react-saarbrucken-42438",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Frontend/React developer role in Germany, no WordPress/WooCommerce scope, no freelance compatibility, and unclear remote/geo fit.",
-      "deepseek_risk_flags": [
-        "React-heavy",
-        "no WordPress/WooCommerce",
-        "no freelance indication",
-        "geo unclear"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00033355,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f8e477a9bb85fd306c4dcaa7a2000691",
       "evaluated_at": "2026-09-06T08:51:12Z",
@@ -1405,9 +1349,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "200cf76bca6fbe542afb1f4bde101f52",
+      "evaluated_at": "2026-09-08T02:02:25Z",
+      "organization": "pwc",
+      "title": "Web Designer Stage - Milano [IFS]",
+      "location": "Milan",
+      "opportunity_url": "https://pwc.wd3.myworkdayjobs.com/global_campus_careers/job/Milan/Web-Designer-Stage---Milano--IFS-_760146WD",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Web designer internship in Milan, Italy, matches geography and basic web design keyword, but is an internship (stage) with no explicit freelance/contract compatibility and lacks WordPress/WooCommerce/frontend stack depth.",
+      "deepseek_risk_flags": [
+        "internship role",
+        "no freelance compatibility evidence",
+        "generic web design scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.000215915,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "1fd1d989ceb92750a4f3d2188a0bb87b",
+      "evaluated_at": "2026-09-08T02:02:25Z",
+      "organization": "",
+      "title": "IFS Training and Application Analyst EMEA",
+      "location": "Italy",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Role is an IFS Training and Application Analyst, focused on ERP application support, not web development. Only generic terms like maintenance and technical support appear, with no WordPress or frontend relevance.",
+      "deepseek_risk_flags": [
+        "no web development scope",
+        "generic maintenance terms",
+        "no freelance compatibility evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000215915,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-09-08T01:28:26Z"
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-08T02:02:24Z"
 }
