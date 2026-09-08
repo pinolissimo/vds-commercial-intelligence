@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-08T14:26:38Z",
+  "updated_at": "2026-09-08T14:44:42Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 281,
+    "evaluated_total": 283,
     "agreement_count": 143,
-    "agreement_pct": 50.89,
+    "agreement_pct": 50.53,
     "deepseek_promote": 23,
-    "vds_promote": 112,
+    "vds_promote": 113,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 93
+    "deepseek_demoted_from_vds_promote": 94
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 17.39,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.79,
+    "vds_promote_hot_rate_pct": 1.77,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.7,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 79,
-    "cumulative_estimated_cost_usd": 0.052327,
-    "cost_per_evaluated_candidate_usd": 0.00018622,
-    "cost_per_deepseek_promote_usd": 0.00227509,
-    "cost_per_observed_ready_or_contacted_usd": 0.0261635,
+    "request_count": 80,
+    "cumulative_estimated_cost_usd": 0.052538,
+    "cost_per_evaluated_candidate_usd": 0.00018565,
+    "cost_per_deepseek_promote_usd": 0.00228426,
+    "cost_per_observed_ready_or_contacted_usd": 0.02626903,
     "latest_request": {
-      "at": "2026-09-08T14:26:35Z",
+      "at": "2026-09-08T14:44:40Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 58,
-      "completion_tokens": 162,
-      "total_tokens": 732,
-      "estimated_cost_usd": 0.00012326
+      "prompt_cache_hit_tokens": 768,
+      "prompt_cache_miss_tokens": 71,
+      "completion_tokens": 288,
+      "total_tokens": 1127,
+      "estimated_cost_usd": 0.00021108
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,59 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b1eebd0770697c5600c2c086361cc61e",
-      "evaluated_at": "2026-09-06T12:06:30Z",
-      "organization": "Gismart",
-      "title": "Creative Production Lead (Radiotech)",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/gismart/remote-creative-production-lead-radiotech-185726",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Creative Production Lead role, no web development or WordPress scope; generic collaboration/freelance keywords not indicative of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "Creative role",
-        "No tech stack fit",
-        "Generic freelance mention"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 8.8e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "c69b6cd376feea642645cbeb154ce3fd",
-      "evaluated_at": "2026-09-06T12:06:30Z",
-      "organization": "Gismart",
-      "title": "Billing Manager (FitMe)",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/gismart/remote-billing-manager-fitme-281438",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Billing Manager role, no web development or WordPress scope; partner keyword irrelevant.",
-      "deepseek_risk_flags": [
-        "Billing role",
-        "No tech stack fit"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 8.8e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c564c77026e31964ce60d2e85ba167c4",
       "evaluated_at": "2026-09-06T12:06:30Z",
@@ -1404,9 +1351,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c512095933ec1d227776ba004580d6ed",
+      "evaluated_at": "2026-09-08T14:44:40Z",
+      "organization": "SumUp",
+      "title": "Senior Frontend Engineer – Sell Online",
+      "location": "Cologne, North Rhine-Westphalia, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/sumup/senior-frontend-engineer-sell-online-cologne-498609",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 65.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Frontend engineering role with strong frontend/UI/UX fit, but no explicit WordPress/WooCommerce or web performance scope; likely product-focused rather than freelance web development.",
+      "deepseek_risk_flags": [
+        "No WordPress/WooCommerce mention",
+        "Likely full-time employment",
+        "Generic collaboration mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00010554,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "fabc4e2df182d94a377cbc9897db6145",
+      "evaluated_at": "2026-09-08T14:44:40Z",
+      "organization": "freenow",
+      "title": "Senior IT Technical Support Specialist (m/f/d)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/freenow/senior-it-technical-support-specialist-london-416798",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "IT technical support role, not web development; lacks WordPress/frontend/web stack relevance despite maintenance keyword.",
+      "deepseek_risk_flags": [
+        "IT support not web development",
+        "No web stack fit",
+        "Likely full-time employment"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00010554,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-08T14:26:34Z"
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-08T14:44:38Z"
 }
