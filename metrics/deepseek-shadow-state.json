@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 134,
+  "runs": 135,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -7520,6 +7520,60 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b67339fe8115409652741f7eb091ec27",
+      "evaluated_at": "2026-09-08T15:40:32Z",
+      "organization": "",
+      "title": "(Fluent English) Technical Support Consultant",
+      "location": "Serbia",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 60.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Technical support role with website mentions, but no explicit WordPress/WooCommerce or web development stack; freelance compatibility unclear.",
+      "deepseek_risk_flags": [
+        "generic technical support",
+        "no explicit web stack",
+        "freelance compatibility unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000145875,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2e46e5761bd86f1f23fc298dc281cfa9",
+      "evaluated_at": "2026-09-08T15:40:32Z",
+      "organization": "goPro Consultancy Group ltd.",
+      "title": "Java Solution Architect - Full Remote",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/java-solution-architect-full-remote-gopro-consultancy-group-ltd",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Core role is Java Solution Architect; front-end keywords are incidental and no WordPress/web development scope.",
+      "deepseek_risk_flags": [
+        "Java-heavy core",
+        "no WordPress/WooCommerce",
+        "frontend keywords incidental"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.000145875,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -8482,8 +8536,20 @@
       "completion_tokens": 288,
       "total_tokens": 1127,
       "estimated_cost_usd": 0.00021108
+    },
+    {
+      "at": "2026-09-08T15:40:32Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 502,
+      "completion_tokens": 272,
+      "total_tokens": 1030,
+      "estimated_cost_usd": 0.00029175
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-08T15:22:29Z"
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-08T15:40:32Z"
 }
