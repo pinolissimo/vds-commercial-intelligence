@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-09T10:35:22Z",
+  "updated_at": "2026-09-09T10:53:33Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 296,
-    "agreement_count": 155,
-    "agreement_pct": 52.36,
+    "evaluated_total": 297,
+    "agreement_count": 156,
+    "agreement_pct": 52.53,
     "deepseek_promote": 23,
     "vds_promote": 114,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 99,
-    "cumulative_estimated_cost_usd": 0.059274,
-    "cost_per_evaluated_candidate_usd": 0.00020025,
-    "cost_per_deepseek_promote_usd": 0.00257712,
-    "cost_per_observed_ready_or_contacted_usd": 0.02963684,
+    "request_count": 100,
+    "cumulative_estimated_cost_usd": 0.059464,
+    "cost_per_evaluated_candidate_usd": 0.00020021,
+    "cost_per_deepseek_promote_usd": 0.00258537,
+    "cost_per_observed_ready_or_contacted_usd": 0.02973178,
     "latest_request": {
-      "at": "2026-09-09T10:35:20Z",
+      "at": "2026-09-09T10:53:31Z",
       "model": "deepseek-v4-flash",
       "candidate_count": 1,
-      "valid_evaluation_count": 0,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 41,
-      "completion_tokens": 167,
-      "total_tokens": 720,
-      "estimated_cost_usd": 0.00012282
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 297,
+      "completion_tokens": 186,
+      "total_tokens": 739,
+      "estimated_cost_usd": 0.00018989
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "f5f458721d099529c556b28885221994",
-      "evaluated_at": "2026-09-06T21:44:07Z",
-      "organization": "Init Ag",
-      "title": "Senior Frontend Angular Developer (all genders)",
-      "location": "Hamburg",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-frontend-angular-developer-all-genders-hamburg-142014",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Core role is Angular-specific, no WordPress or web development scope; not a strong fit for target profile.",
-      "deepseek_risk_flags": [
-        "Angular-heavy role",
-        "No WordPress/WooCommerce",
-        "Location Germany not in target geo"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001448271,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "72fafe06131beb2f67f0d0564787cea5",
       "evaluated_at": "2026-09-06T21:44:07Z",
@@ -1407,9 +1380,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "54384d3a7e043ebab72f741beb4209d3",
+      "evaluated_at": "2026-09-09T10:53:31Z",
+      "organization": "Docebo",
+      "title": "Technical Account Manager",
+      "location": "London, UK",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/docebo/technical-account-manager-london-110114",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Role is a Technical Account Manager at Docebo, focused on client relationship management and support, not web development. Only generic front-end keywords (CSS, HTML, JavaScript) appear, with no WordPress, WooCommerce, or web performance scope. Contractor/partner mentions are not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "generic_keyword_only",
+        "contractor_mention_not_freelance"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018989,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-09T10:35:19Z"
+  "source_semantic_updated_at": "2026-09-09T10:53:30Z"
 }

@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 175,
+  "runs": 176,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -7871,6 +7871,33 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "54384d3a7e043ebab72f741beb4209d3",
+      "evaluated_at": "2026-09-09T10:53:31Z",
+      "organization": "Docebo",
+      "title": "Technical Account Manager",
+      "location": "London, UK",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/docebo/technical-account-manager-london-110114",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Role is a Technical Account Manager at Docebo, focused on client relationship management and support, not web development. Only generic front-end keywords (CSS, HTML, JavaScript) appear, with no WordPress, WooCommerce, or web performance scope. Contractor/partner mentions are not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "generic_keyword_only",
+        "contractor_mention_not_freelance"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018989,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -9061,8 +9088,20 @@
       "completion_tokens": 167,
       "total_tokens": 720,
       "estimated_cost_usd": 0.00012282
+    },
+    {
+      "at": "2026-09-09T10:53:31Z",
+      "model": "deepseek-v4-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 297,
+      "completion_tokens": 186,
+      "total_tokens": 739,
+      "estimated_cost_usd": 0.00018989
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-09T10:35:20Z"
+  "updated_at": "2026-09-09T10:53:31Z"
 }
