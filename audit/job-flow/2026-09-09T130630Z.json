@@ -1,0 +1,43 @@
+{
+  "run_at": "2026-09-09T13:06:30Z",
+  "workstream": "VDS_JOB_FLOW",
+  "serious_candidates": 24,
+  "direct_email_harvest_count": 11,
+  "SEND_NOW": 1,
+  "provider_verified_FIRST_CONTACT": 1,
+  "MANUAL_APPLY": 4,
+  "WAIT_RESEARCH": 4,
+  "REJECT": 15,
+  "duplicates": 6,
+  "fit_failures": 8,
+  "route_failures": 5,
+  "sends": [
+    {
+      "provider_uid": 364,
+      "sent_at": "2026-09-09T13:05:52Z",
+      "canonical_identity_key": "org:mcandersoninstitute.tech",
+      "organization": "McAnderson Institute of Technology",
+      "recipient": "info@mcandersoninstitute.tech",
+      "subject": "Application — WordPress Designer | remote freelance collaboration",
+      "state": "VERIFIED_EMAIL_SENT",
+      "action_type": "FIRST_CONTACT",
+      "attachments": 0,
+      "bcc_owner": true,
+      "provider_postcheck": "Sent folder verified; no immediate bounce found"
+    }
+  ],
+  "notable_decisions": [
+    {"organization":"McAnderson Institute of Technology","outcome":"SEND_NOW","reason":"Employer careers page lists fully remote freelance WordPress Designer and exact application email."},
+    {"organization":"Sketch Dental / Sketch Creative","outcome":"MANUAL_APPLY","reason":"Strong part-time contractor WordPress fit but official route is application form; UK-based wording also requires human review."},
+    {"organization":"S. Med","outcome":"REJECT","reason":"Mandatory German speaking/reading."},
+    {"organization":"SecretKey","outcome":"REJECT","reason":"Current listing explicitly says no freelance collaborations and on-site Rome."},
+    {"organization":"Antonio De Lorenzi","outcome":"REJECT","reason":"Freelance role requires candidates resident/domiciled in Rome."},
+    {"organization":"ReMedia IT","outcome":"REJECT","reason":"Organization already contacted in provider Sent history (UID 357); same-organization dedup applies."},
+    {"organization":"Digimates","outcome":"REJECT","reason":"Organization already contacted in provider Sent history (UID 334)."},
+    {"organization":"Nexus Web & Software","outcome":"REJECT","reason":"Organization already contacted in provider Sent history (UID 325)."}
+  ],
+  "live_projection": {
+    "provider_outbound_live_write": "DEFERRED_NONFATAL",
+    "reason": "Current file was safely fetched and SHA resolved, but full latest projection also lacks provider UIDs 362 and 363 from other concurrent workers; avoiding a stale full-file replacement that could drop concurrent events. UID 364 is provider-authoritative and MUST NOT be resent. Watchdog/latest-SHA reconciler should merge 362, 363, 364."
+  }
+}
