@@ -1,0 +1,38 @@
+{
+  "run_at": "2026-09-09T20:04:46+02:00",
+  "workstream": "VDS_JOB_FLOW",
+  "send_window_open": false,
+  "live_send_attempted": false,
+  "summary": {
+    "serious_candidates": 18,
+    "direct_email_harvest_count": 8,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 4,
+    "wait_research": 3,
+    "reject": 11,
+    "duplicates": 3,
+    "fit_failures": 5,
+    "route_failures": 4
+  },
+  "ab_variants_sent": {"CLASSIC_APPLICATION": 0, "EXTERNAL_CAPACITY_OFFER": 0},
+  "notable_decisions": [
+    {"organization":"Doozy Service","outcome":"REJECT","reason":"provider dedup: prior professional contact UID 181 on 2026-09-02","route":"hello@doozy.it"},
+    {"organization":"ACIDA Marketing","outcome":"REJECT","reason":"provider dedup: prior professional contact UID 177 on 2026-09-01","route":"hola@acidamarketing.com"},
+    {"organization":"independent L.","outcome":"WAIT_RESEARCH","reason":"authoritative direct route verified and no Hostinger Sent match; mandatory PHP/MySQL/MariaDB/Web Services fit needs conservative confirmation before any send; send window closed","route":"info@independent.it"},
+    {"organization":"KOM Agencia Digital","outcome":"MANUAL_APPLY","reason":"current WordPress/Elementor/WooCommerce role is remote and freelance-project oriented but official application requires account/platform workflow","route":"https://kom.pe/jobs/puesto/disenador-web-wordpress-elementor-woocommerce-avanzado-part-time-remoto-peru/"},
+    {"organization":"Crisandcris.net","outcome":"REJECT","reason":"provider/canonical duplicate from prior VDS outreach","route":"recruiting@crisandcris.net"},
+    {"organization":"Andreoli Estudio","outcome":"REJECT","reason":"mandatory 2+ years role-specific experience and prior evaluation; no safe new first-contact basis","route":"hello@andreo.li"},
+    {"organization":"Bellop","outcome":"REJECT","reason":"prior evaluated mandatory-core mismatch; no new qualifying signal","route":"team@bellop.io"},
+    {"organization":"Kuduy","outcome":"MANUAL_APPLY","reason":"current project-based remote Web Developer role, employer application form only","route":"https://kuduy.com/careers/"},
+    {"organization":"Haz Marca Marketing","outcome":"MANUAL_APPLY","reason":"WordPress/web and freelance collaboration accepted but official candidacy route is form","route":"https://hazmarca.marketing/trabaja-con-nosotros/"},
+    {"organization":"Redline Company","outcome":"REJECT","reason":"Estepona office-only and full-contract requirement; remote explicitly unavailable","route":"employer careers email exposed"}
+  ],
+  "provider_checks": [
+    {"recipient":"hello@doozy.it","result":"DUPLICATE","uid":181},
+    {"recipient":"hola@acidamarketing.com","result":"DUPLICATE","uid":177},
+    {"recipient":"info@independent.it","result":"CLEAR","matches":0}
+  ],
+  "funnel_outcomes_observed_this_run": {"reply":0,"positive_reply":0,"interview_call":0,"proposal":0,"won":0},
+  "notes":"Outside live-send window. Fresh route-first harvesting continued. No send was attempted. Direct-email candidates were verified against employer-controlled sources where possible and provider evidence was used for dedup."
+}
