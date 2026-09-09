@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-09T07:18:32Z",
+  "updated_at": "2026-09-09T07:36:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 292,
-    "agreement_count": 151,
-    "agreement_pct": 51.71,
+    "evaluated_total": 294,
+    "agreement_count": 153,
+    "agreement_pct": 52.04,
     "deepseek_promote": 23,
     "vds_promote": 114,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 91,
-    "cumulative_estimated_cost_usd": 0.056231,
-    "cost_per_evaluated_candidate_usd": 0.00019257,
-    "cost_per_deepseek_promote_usd": 0.00244482,
-    "cost_per_observed_ready_or_contacted_usd": 0.02811542,
+    "request_count": 92,
+    "cumulative_estimated_cost_usd": 0.05678,
+    "cost_per_evaluated_candidate_usd": 0.00019313,
+    "cost_per_deepseek_promote_usd": 0.00246868,
+    "cost_per_observed_ready_or_contacted_usd": 0.02838983,
     "latest_request": {
-      "at": "2026-09-09T07:18:29Z",
+      "at": "2026-09-09T07:36:17Z",
       "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 328,
-      "completion_tokens": 317,
-      "total_tokens": 901,
-      "estimated_cost_usd": 0.00056634
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 316,
+      "completion_tokens": 305,
+      "total_tokens": 1133,
+      "estimated_cost_usd": 0.00054881
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "2bc711e05500b4e6f11f94ee2793e36a",
-      "evaluated_at": "2026-09-06T19:04:45Z",
-      "organization": "Open Cosmos",
-      "title": "Senior React Frontend Developer (Data)",
-      "location": "Didcot",
-      "opportunity_url": "https://careers.open-cosmos.com/jobs/7772658-senior-react-frontend-developer-data",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Core role is Senior React frontend for data products at an aerospace company; no WordPress/WooCommerce or web performance/maintenance scope. Generic 'partner' mention does not indicate freelance compatibility. On-site in UK, not Spain/Italy.",
-      "deepseek_risk_flags": [
-        "core_stack_mismatch",
-        "no_freelance_evidence",
-        "geo_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00010799,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "094fc6115e25f5e6768c21dd72f773ad",
-      "evaluated_at": "2026-09-06T19:04:45Z",
-      "organization": "Tether Operations Limited",
-      "title": "Frontend Software Engineer (100% Remote)",
-      "location": "Remote job",
-      "opportunity_url": "https://careers.tether.io/o/frontend-software-engineer-100-remote-11/c/new",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "100% remote frontend role with JavaScript/UI fit, but no WordPress/WooCommerce or web performance/maintenance scope. Likely full-time employment at Tether; freelance compatibility unverified.",
-      "deepseek_risk_flags": [
-        "stack_partial_match",
-        "no_freelance_evidence",
-        "employment_likely"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00010799,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "54aff11131200bea50144d7763cf29d8",
       "evaluated_at": "2026-09-06T19:04:45Z",
@@ -1406,9 +1352,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "51f60152af711f9519e322da2dbfeae6",
+      "evaluated_at": "2026-09-09T07:36:17Z",
+      "organization": "Speechify",
+      "title": "Senior Software Engineer, Windows/Desktop Applications - Frankfurt, Germany",
+      "location": "Frankfurt, Hesse, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/speechify/senior-software-engineer-windows-desktop-applications-frankfurt-germany-227938",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Core role is Windows/Desktop software engineering at Speechify, with no WordPress/WooCommerce or web stack relevance. Matched keywords are generic and do not indicate meaningful web development scope.",
+      "deepseek_risk_flags": [
+        "stack mismatch",
+        "geo mismatch",
+        "role seniority mismatch"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000274405,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c14d3d26e95f76f041e0de61bd620596",
+      "evaluated_at": "2026-09-09T07:36:17Z",
+      "organization": "",
+      "title": "Platform.sh: Billing Systems Architect",
+      "location": "",
+      "opportunity_url": "https://weworkremotely.com/remote-jobs/platform-sh-billing-systems-architect",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Billing Systems Architect role is backend/infrastructure focused, no WordPress/WooCommerce or frontend web development scope. Remote mention is generic and not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "stack mismatch",
+        "role seniority mismatch",
+        "generic remote mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.000274405,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-09T07:18:28Z"
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-09T07:36:15Z"
 }
