@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-09T15:33:23Z",
+  "updated_at": "2026-09-09T15:51:32Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -42,18 +42,7 @@
     "cost_per_evaluated_candidate_usd": 0.0002038,
     "cost_per_deepseek_promote_usd": 0.00267601,
     "cost_per_observed_ready_or_contacted_usd": 0.03077408,
-    "latest_request": {
-      "at": "2026-09-09T15:33:21Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 78,
-      "completion_tokens": 172,
-      "total_tokens": 762,
-      "estimated_cost_usd": 0.00013426
-    }
+    "latest_request": null
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -1409,7 +1398,8 @@
       "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "SHADOW_EVALUATION_OK",
+  "last_run_status": "SHADOW_API_ERROR_FAIL_OPEN",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-09T15:33:19Z"
+  "source_semantic_updated_at": "2026-09-09T15:51:29Z",
+  "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
