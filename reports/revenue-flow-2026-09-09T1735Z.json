@@ -1,0 +1,98 @@
+{
+  "run_at": "2026-09-09T17:35:24Z",
+  "local_context": "Europe/Madrid outside authorized live-send window",
+  "serious_candidates_evaluated": 60,
+  "direct_email_harvest_evaluated": 34,
+  "SEND_NOW": 0,
+  "provider_verified_FIRST_CONTACT": 0,
+  "MANUAL_APPLY": 17,
+  "WAIT_RESEARCH": 15,
+  "WAIT_RESEARCH_by_blocker": {
+    "SEND_WINDOW_CLOSED_PROVIDER_CLEAR": 3,
+    "ROUTE_OR_APPLICATION_CHANNEL_NEEDS_CONFIRMATION": 10,
+    "STALE_OR_CURRENT_NEED_UNCERTAIN": 2
+  },
+  "REJECT": 28,
+  "duplicates": 11,
+  "route_failures": 0,
+  "delivery_state_unknown": 0,
+  "commercial_archetype_counts": {
+    "AGENCY_EXTERNAL_CAPACITY": 43,
+    "SME_WEB_IMPROVEMENT": 8,
+    "EU_DISSEMINATION_SPECIALIST": 9
+  },
+  "ab_variants_sent": {
+    "CREDENTIALS_CLASSIC": 0,
+    "VALUE_MICRO_COMMITMENT": 0
+  },
+  "downstream_outcomes_new_this_run": {
+    "reply": 0,
+    "qualified_positive_reply": 0,
+    "referral": 0,
+    "call_or_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue": 0
+  },
+  "provider_reconciliation": [
+    {
+      "provider_uid": 360,
+      "organization": "WStation",
+      "recipient": "hr@wstation.it",
+      "state": "HARD_BOUNCE_WRONG_ADDRESS",
+      "count_as_successful_outbound": false,
+      "bounce_inbox_uid": 1415,
+      "bounce_evidence": "550 5.1.1 Recipient address rejected: User doesn't exist",
+      "replacement_recipient": null,
+      "retry_authorized": false
+    }
+  ],
+  "next_live_window_provider_clear_shortlist": [
+    {
+      "organization": "Hit Production Srl",
+      "recipient": "info@hitproduction.it",
+      "canonical_identity_key": "org:hitproduction.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "proposed_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "OFFER_1_2_RELEVANT_WORK_EXAMPLES",
+      "status": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0,
+      "github_cache_matches": 0
+    },
+    {
+      "organization": "KERN-IT",
+      "recipient": "jobs@kern-it.be",
+      "canonical_identity_key": "org:kern-it.be",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "proposed_variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "OFFER_RELEVANT_FRONTEND_UX_EXAMPLES",
+      "status": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0,
+      "github_cache_matches": 0
+    },
+    {
+      "organization": "Zasca",
+      "recipient": "info@zasca.com",
+      "canonical_identity_key": "org:zasca.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "proposed_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "OFFER_OVERFLOW_CAPACITY_EXAMPLES",
+      "status": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0,
+      "github_cache_matches": 0
+    }
+  ],
+  "decision_counts_only": {
+    "WAIT_RESEARCH": 15,
+    "MANUAL_APPLY": 17,
+    "REJECT": 28
+  },
+  "notes": [
+    "No live sending performed because the authorized 09:00-19:00 Europe/Madrid window was closed.",
+    "Provider evidence remains authoritative; no blind retry for WStation UID 360.",
+    "provider-outbound-live.json was not destructively rewritten because the connector returned the large one-line content truncated; reconciliation is recorded in this audit for safe later merge."
+  ]
+}
