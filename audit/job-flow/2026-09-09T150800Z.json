@@ -1,0 +1,80 @@
+{
+  "run_at": "2026-09-09T15:08:00Z",
+  "workstream": "VDS_JOB_FLOW",
+  "serious_candidates": 34,
+  "direct_email_harvest_count": 16,
+  "outcomes": {
+    "SEND_NOW": 3,
+    "provider_verified_FIRST_CONTACT": 3,
+    "MANUAL_APPLY": 6,
+    "WAIT_RESEARCH": 5,
+    "REJECT": 20
+  },
+  "failure_counts": {
+    "duplicates": 4,
+    "fit_or_geography": 13,
+    "route_only_or_unverified": 7
+  },
+  "provider_verified_sends": [
+    {
+      "provider_uid": 371,
+      "sent_at": "2026-09-09T15:05:14Z",
+      "canonical_identity_key": "org:outpaceseo.com",
+      "organization": "Outpace SEO",
+      "recipient": "hr@outpaceseo.com",
+      "subject": "Application — WordPress Developer / Designer",
+      "state": "VERIFIED_EMAIL_SENT",
+      "action_type": "FIRST_CONTACT",
+      "attachments": 0,
+      "bcc_owner": false
+    },
+    {
+      "provider_uid": 372,
+      "sent_at": "2026-09-09T15:05:42Z",
+      "canonical_identity_key": "org:pladinum.com",
+      "organization": "Pladinum",
+      "recipient": "careers@pladinum.com",
+      "subject": "Application — Support Engineer | WordPress / hosting / DNS",
+      "state": "VERIFIED_EMAIL_SENT",
+      "action_type": "FIRST_CONTACT",
+      "attachments": 0,
+      "bcc_owner": false
+    },
+    {
+      "provider_uid": 373,
+      "sent_at": "2026-09-09T15:06:04Z",
+      "canonical_identity_key": "org:pearlpointdesign.com",
+      "organization": "PearlPoint Design Studio",
+      "recipient": "job@pearlpointdesign.com",
+      "subject": "Application — Web Designer | WordPress + Elementor",
+      "state": "VERIFIED_EMAIL_SENT",
+      "action_type": "FIRST_CONTACT",
+      "attachments": 0,
+      "bcc_owner": false
+    }
+  ],
+  "notable_decisions": [
+    {"organization":"So Design Online","outcome":"REJECT","reason":"provider duplicate; prior professional application UID 149"},
+    {"organization":"Nexus Web & Software","outcome":"REJECT","reason":"provider/state duplicate UID 325"},
+    {"organization":"WP Elite Hub","outcome":"REJECT","reason":"provider/state duplicate UID 343"},
+    {"organization":"CreateX Digital Agency","outcome":"REJECT","reason":"provider/state duplicate UID 346"},
+    {"organization":"NewWay Software","outcome":"WAIT_RESEARCH","reason":"current employer careers page has WordPress Developer, but exact address is obfuscated on employer-controlled page"},
+    {"organization":"WebGee","outcome":"WAIT_RESEARCH","reason":"current WordPress openings visible, application address obfuscated"},
+    {"organization":"Canonical","outcome":"MANUAL_APPLY","reason":"current EMEA web developer role; official application route is platform/form"},
+    {"organization":"Digital Rocket","outcome":"MANUAL_APPLY","reason":"current remote contractor WordPress role; official route is application form"},
+    {"organization":"Webzworld","outcome":"MANUAL_APPLY","reason":"current careers route is employer form; generic info address not substituted"},
+    {"organization":"WP Wizards","outcome":"REJECT","reason":"employer explicitly hires only within United States"},
+    {"organization":"PressTitan","outcome":"REJECT","reason":"current global WordPress/support positions limited to Mexico or Philippines"},
+    {"organization":"WPXERO","outcome":"REJECT","reason":"employer explicitly states no open roles right now"},
+    {"organization":"BDevs Tech","outcome":"REJECT","reason":"current developer role requires 3+ years plugin development/OOP PHP and Elementor widget API"},
+    {"organization":"WonderLister","outcome":"REJECT","reason":"requires 5+ years WordPress plus 3+ years PHP and JavaScript coding"},
+    {"organization":"My VA Support","outcome":"REJECT","reason":"LATAM-only candidate restriction"},
+    {"organization":"Syde","outcome":"REJECT","reason":"senior enterprise WordPress ownership/custom plugin-theme architecture mismatch"}
+  ],
+  "bridge_status": {
+    "state_provider_outbound_live_json_updated": false,
+    "reason": "connector returned the existing large JSON content truncated; unsafe to perform destructive full-file replacement",
+    "resend_authorized": false,
+    "pending_provider_uids": [371,372,373]
+  }
+}
