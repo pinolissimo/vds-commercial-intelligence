@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-09T21:46:38+02:00",
+  "generated_at": "2026-09-09T22:04:42+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -18,9 +18,9 @@
     "sending_window": "09:00-19:00 Europe/Madrid"
   },
   "headline": {
-    "semantic_input_last_run": 1762,
+    "semantic_input_last_run": 1768,
     "semantic_pass_last_run": 111,
-    "semantic_pass_rate_pct": 6.3,
+    "semantic_pass_rate_pct": 6.28,
     "active_opportunities": 53,
     "ready": 4,
     "manual_action": 5,
@@ -60,7 +60,7 @@
       "territory": "UNRESOLVED",
       "score": 100.0,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-10T13:28:17.822458Z",
       "heat_pct": 100.0
@@ -71,10 +71,10 @@
       "region": "Lazio",
       "territory": "Roma",
       "score": 49.16,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-10T12:55:08.494215Z",
+      "cooldown_until": "2026-09-10T14:04:26.262293Z",
       "heat_pct": 49.2
     },
     {
@@ -84,22 +84,10 @@
       "territory": "UNRESOLVED",
       "score": 46.11,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-10T13:28:17.822458Z",
       "heat_pct": 46.1
-    },
-    {
-      "area": "Italy|Calabria|Reggio Calabria",
-      "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
     },
     {
       "area": "Spain|Aragón|Zaragoza",
@@ -118,6 +106,18 @@
       "country": "Italy",
       "region": "Veneto",
       "territory": "Venezia",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Calabria|Reggio Calabria",
+      "country": "Italy",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -193,8 +193,8 @@
       "score": 14.75,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 233,
-      "cooldown_until": "2026-09-10T13:46:24.031404Z",
+      "low_yield_cycles": 234,
+      "cooldown_until": "2026-09-10T14:04:26.262293Z",
       "heat_pct": 14.8
     }
   ],
@@ -204,7 +204,7 @@
       "territories": 108,
       "average_score": 3.76,
       "best_score": 100.0,
-      "harvest_territories": 2,
+      "harvest_territories": 1,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
@@ -238,8 +238,8 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 1762,
-      "semantic_input": 1762,
+      "raw_signals": 1768,
+      "semantic_input": 1768,
       "semantic_pass": 111,
       "company_verified": null,
       "route_found": null,
@@ -257,7 +257,7 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 1612,
+      "semantic_reject": 1618,
       "semantic_review": 39,
       "semantic_pass_to_executable_gap_proxy": 107,
       "legacy_ready_advisory_excluded": 21
