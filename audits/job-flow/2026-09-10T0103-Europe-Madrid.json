@@ -1,0 +1,47 @@
+{
+  "run_at_local": "2026-09-10T01:03:36+02:00",
+  "workstream": "VDS_JOB_FLOW",
+  "send_window_open": false,
+  "provider_verified_first_contact": 0,
+  "serious_decisions": 8,
+  "direct_email_harvest_count": 5,
+  "outcomes": {
+    "SEND_NOW": 0,
+    "MANUAL_APPLY": 1,
+    "WAIT_RESEARCH": 1,
+    "REJECT": 6
+  },
+  "reject_breakdown": {
+    "duplicate": 4,
+    "fit_or_explicit_contract_location_mismatch": 2,
+    "route_failure": 0
+  },
+  "ab_variants_sent": {
+    "CLASSIC_APPLICATION": 0,
+    "EXTERNAL_CAPACITY_OFFER": 0
+  },
+  "reply_outcomes": {
+    "new_reply": 0,
+    "qualified_positive_reply": 0,
+    "interview_call": 0,
+    "proposal": 0,
+    "won": 0
+  },
+  "provider_corrections": [
+    {"provider_uid": 348, "recipient": "recruitment@metadrift.co", "bounce_uid": 1407, "state": "HARD_BOUNCE_WRONG_ADDRESS", "evidence": "550 5.1.1 user does not exist"},
+    {"provider_uid": 352, "recipient": "jobb@mediseo.no", "bounce_uid": 1409, "state": "HARD_BOUNCE_WRONG_ADDRESS", "evidence": "550 no mailbox by that name"},
+    {"provider_uid": 353, "recipient": "marketing@jethosthub.com", "bounce_uid": 1410, "state": "DELIVERY_FAILED", "evidence": "554 5.7.1 relay access denied"},
+    {"provider_uid": 360, "recipient": "hr@wstation.it", "bounce_uid": 1415, "state": "HARD_BOUNCE_WRONG_ADDRESS", "evidence": "550 5.1.1 user does not exist"}
+  ],
+  "notable_decisions": [
+    {"organization": "BlitheDigital", "outcome": "REJECT", "reason": "duplicate; Hostinger Sent UID 193"},
+    {"organization": "Uala Online", "outcome": "REJECT", "reason": "duplicate; Hostinger Sent UID 209"},
+    {"organization": "2PDX Studio", "outcome": "REJECT", "reason": "duplicate; Hostinger Sent UID 182"},
+    {"organization": "Crisandcris.net", "outcome": "REJECT", "reason": "duplicate; provider live state UID 318"},
+    {"organization": "intratto", "outcome": "MANUAL_APPLY", "reason": "official careers page recruits freelance network incl. WordPress/web designers, but authoritative route is form-only"},
+    {"organization": "Top Physio", "outcome": "REJECT", "reason": "explicit no partita IVA/no occasional collaborations and on-site Rome"},
+    {"organization": "City-Com", "outcome": "REJECT", "reason": "senior multi-year core requirement and full-time employer framing"},
+    {"organization": "Shibumi Agency", "outcome": "WAIT_RESEARCH", "reason": "email route seen only on third-party source in this run; employer-controlled verification not obtained"}
+  ],
+  "live_bridge_note": "No new outbound occurred. Provider bounce corrections were recorded here for reconciliation; full provider-outbound-live.json replacement was not attempted because connector retrieval is truncated and unsafe for whole-file replacement. No resend is authorized for failed UIDs."
+}
