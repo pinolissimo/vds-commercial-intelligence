@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 256,
+  "runs": 257,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -8704,6 +8704,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cc3998fdf927963cf0eaa7eaf91b30a2",
+      "evaluated_at": "2026-09-10T22:03:52Z",
+      "organization": "Re:Build Manufacturing",
+      "title": "Senior Frontend Engineer",
+      "location": "United States",
+      "opportunity_url": "https://remotelanders.com/jobs/senior-frontend-engineer-re-build-manufacturing-133050",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Frontend Engineer role at a US manufacturing company with only generic 'frontend' keyword match; no evidence of WordPress/WooCommerce, custom HTML/CSS/JS, performance, maintenance, or freelance/contract compatibility, and location is United States (not Spain/Italy/EU-remote).",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "us_only_location",
+        "generic_keyword_match_only",
+        "no_stack_detail"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00013489,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "52cf2fb8a36aa3a575d053eacbbd3a0a",
+      "evaluated_at": "2026-09-10T22:03:52Z",
+      "organization": "Calstart",
+      "title": "Web Developer II",
+      "location": "United States",
+      "opportunity_url": "https://remotelanders.com/jobs/web-developer-ii-calstart-feop1s",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Web Developer II title is broadly relevant to the target profile, but no stack details, no WordPress/WooCommerce confirmation, no freelance/contract signal, and location is United States rather than Spain/Italy/EU-remote.",
+      "deepseek_risk_flags": [
+        "no_stack_detail",
+        "no_wordpress_woocommerce_confirmation",
+        "no_freelance_or_contract_signal",
+        "us_only_location"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00013489,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -10326,9 +10383,21 @@
       "completion_tokens": 152,
       "total_tokens": 719,
       "estimated_cost_usd": 0.0001978
+    },
+    {
+      "at": "2026-09-10T22:03:52Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 256,
+      "completion_tokens": 318,
+      "total_tokens": 1086,
+      "estimated_cost_usd": 0.00026978
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-10T19:51:37Z",
+  "updated_at": "2026-09-10T22:03:52Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
