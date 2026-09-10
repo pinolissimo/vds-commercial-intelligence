@@ -1,0 +1,115 @@
+{
+  "run_at": "2026-09-11T01:32:44+02:00",
+  "mode": "DISCOVER_QUALIFY_NO_SEND_WINDOW_CLOSED",
+  "send_window": "09:00-19:00 Europe/Madrid",
+  "counts": {
+    "serious_candidates_evaluated": 34,
+    "direct_email_harvest_evaluated": 23,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 5,
+    "wait_research": 14,
+    "reject": 15,
+    "duplicates": 3,
+    "route_failures": 3,
+    "delivery_state_unknown": 0
+  },
+  "archetypes": {
+    "AGENCY_EXTERNAL_CAPACITY": 22,
+    "SME_WEB_IMPROVEMENT": 2,
+    "EU_DISSEMINATION_SPECIALIST": 10
+  },
+  "ab_new_outbound": {"CREDENTIALS_CLASSIC": 0, "VALUE_MICRO_COMMITMENT": 0},
+  "downstream_new": {
+    "reply": 0,
+    "qualified_positive_reply": 0,
+    "referral": 0,
+    "call_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue_eur": 0
+  },
+  "provider_dedup_corrections": [
+    {
+      "organization": "Marka Digital",
+      "recipient": "hola@markadigital.es",
+      "decision": "REJECT",
+      "blocker": "DUPLICATE_PROVIDER_SENT",
+      "provider_uid": 85,
+      "sent_at": "2026-08-28T10:10:57Z"
+    },
+    {
+      "organization": "Nexibo",
+      "recipient": "collab@nexibo.agency",
+      "decision": "REJECT",
+      "blocker": "DUPLICATE_PROVIDER_SENT",
+      "provider_uid": 137,
+      "sent_at": "2026-08-31T08:14:47Z"
+    },
+    {
+      "organization": "BP Nexus",
+      "recipient": "amministrazione@bpnexus.com",
+      "decision": "REJECT",
+      "blocker": "DUPLICATE_PROVIDER_SENT",
+      "provider_uids": [171,172],
+      "latest_sent_at": "2026-09-01T19:22:54Z"
+    }
+  ],
+  "high_value_wait_research": [
+    {
+      "organization": "Banana_code",
+      "recipient": "banana@banana.com.hr",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0,
+      "github_email_matches": 0,
+      "signal": "EU-based white-label WordPress/WooCommerce/Divi agency explicitly addressing agency project overload"
+    },
+    {
+      "organization": "SilentWP",
+      "recipient": "hi@silentwp.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED_AND_CANONICAL_DEDUP_FINAL_CHECK",
+      "provider_sent_matches": 0,
+      "signal": "white-label WordPress capacity, maintenance and performance for agencies"
+    },
+    {
+      "organization": "Pasquale Marinelli Visual & Web Design",
+      "recipient": "info@pasqualemarinelli.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0,
+      "github_email_matches": 0,
+      "signal": "publicly seeks freelance collaborators"
+    }
+  ],
+  "competitive_or_nonbuyer_reject_examples": [
+    "Labeless",
+    "WPForma",
+    "ThemeLocation",
+    "White Label Design Agency",
+    "WP Elevate",
+    "WhiteLabelWP Agency",
+    "Winectra",
+    "Shades of Media"
+  ],
+  "eu_wait_research_examples": [
+    "WIT Berry",
+    "EFMC",
+    "Nexuswelt",
+    "AGATA",
+    "ESCI",
+    "Web Bay",
+    "Insight Media",
+    "Sustainable Innovations Europe"
+  ],
+  "notes": [
+    "No professional inbound newer than Hostinger INBOX UID 1430 was found.",
+    "No email was sent because the authorized live-send window was closed.",
+    "Provider Sent evidence corrected stale prior assumptions for Marka Digital, Nexibo and BP Nexus; these identities must never be resent as first contacts.",
+    "Fresh web discovery was performed independently; search snippets were not treated as sufficient route proof without authoritative evidence."
+  ]
+}
