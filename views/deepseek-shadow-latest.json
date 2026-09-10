@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-10T00:59:51Z",
+  "updated_at": "2026-09-10T02:00:42Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 310,
-    "agreement_count": 161,
-    "agreement_pct": 51.94,
+    "evaluated_total": 311,
+    "agreement_count": 162,
+    "agreement_pct": 52.09,
     "deepseek_promote": 23,
     "vds_promote": 119,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 123,
-    "cumulative_estimated_cost_usd": 0.065357,
-    "cost_per_evaluated_candidate_usd": 0.00021083,
-    "cost_per_deepseek_promote_usd": 0.00284163,
-    "cost_per_observed_ready_or_contacted_usd": 0.03267872,
-    "latest_request": null
+    "request_count": 124,
+    "cumulative_estimated_cost_usd": 0.065793,
+    "cost_per_evaluated_candidate_usd": 0.00021155,
+    "cost_per_deepseek_promote_usd": 0.00286059,
+    "cost_per_observed_ready_or_contacted_usd": 0.03289674,
+    "latest_request": {
+      "at": "2026-09-10T02:00:40Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 511,
+      "completion_tokens": 160,
+      "total_tokens": 671,
+      "estimated_cost_usd": 0.00043604
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "36251cae8f55b0e51b84fab5040422c8",
-      "evaluated_at": "2026-09-07T14:53:55Z",
-      "organization": "Soda Data Nv",
-      "title": "Senior Frontend Engineer (Full-stack)",
-      "location": "France",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/soda-data-nv/remote-senior-frontend-engineer-full-stack-france-447542",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 65.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Frontend engineering role with UI focus, but no explicit WordPress/WooCommerce or web performance scope; likely product/tech company context rather than freelance web development.",
-      "deepseek_risk_flags": [
-        "No WordPress/WooCommerce mention",
-        "Generic frontend role",
-        "Unclear freelance compatibility"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001058633,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6845b643ff883bd0e90b64603d5ef104",
       "evaluated_at": "2026-09-07T14:53:55Z",
@@ -1398,10 +1382,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "61f3bf31a92823abf23ca5c013b13ef7",
+      "evaluated_at": "2026-09-10T02:00:40Z",
+      "organization": "",
+      "title": "Full Stack Developer",
+      "location": "Ireland, Netherlands, Portugal, Spain, United Kingdom",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Generic 'Full Stack Developer' posting with no explicit WordPress/WooCommerce or web-maintenance scope; matched keywords are only broad (frontend, javascript, migration) and the sole commercial keyword 'partner' is not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "generic_full_stack_role",
+        "no_wordpress_woocommerce_scope",
+        "freelance_compatibility_unproven",
+        "no_publication_date",
+        "no_employment_type"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00043604,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-10T00:59:49Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-10T02:00:39Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
