@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 228,
+  "runs": 229,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -8394,6 +8394,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cf7d5785c91d13fd3c2f34bc396c0f30",
+      "evaluated_at": "2026-09-10T10:17:42Z",
+      "organization": "",
+      "title": "Frontend Developer (React, TypeScript)",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Core role is React/TypeScript frontend development, which is a stack mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS profile; no WordPress, WooCommerce, or web-performance scope is evidenced.",
+      "deepseek_risk_flags": [
+        "react_typescript_core_stack",
+        "no_wordpress_woocommerce_scope",
+        "us_location_geo_mismatch",
+        "freelance_compatibility_unproven"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016589,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "80e62060bce8917e9e750cbcc90c20bb",
+      "evaluated_at": "2026-09-10T10:17:42Z",
+      "organization": "",
+      "title": "Technical Support Specialist",
+      "location": "Mexico",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 48.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Technical Support Specialist partially overlaps with the profile's technical web support/IT skills, but no WordPress, web-maintenance, or web-specific support scope is evidenced, and Mexico location is outside primary Spain/Italy/EU-remote markets.",
+      "deepseek_risk_flags": [
+        "generic_technical_support_scope",
+        "no_web_wordpress_specificity",
+        "mexico_geo_mismatch",
+        "freelance_compatibility_unproven"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016589,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -9920,9 +9976,21 @@
       "completion_tokens": 194,
       "total_tokens": 737,
       "estimated_cost_usd": 0.00044047
+    },
+    {
+      "at": "2026-09-10T10:17:42Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 580,
+      "completion_tokens": 308,
+      "total_tokens": 1016,
+      "estimated_cost_usd": 0.00033178
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-10T09:59:35Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-10T10:17:42Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
