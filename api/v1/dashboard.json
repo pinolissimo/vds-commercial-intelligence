@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-10T16:54:56+02:00",
+  "generated_at": "2026-09-10T17:13:37+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -12,14 +12,14 @@
     "replies_negative": 0,
     "replies_neutral": 0,
     "hard_bounces": 0,
-    "messages_per_active_hour": 2.53,
-    "first_contacts_per_active_hour": 2.4,
-    "active_window_elapsed_hours": 7.92,
+    "messages_per_active_hour": 2.43,
+    "first_contacts_per_active_hour": 2.31,
+    "active_window_elapsed_hours": 8.23,
     "sending_window": "09:00-19:00 Europe/Madrid"
   },
   "headline": {
-    "semantic_input_last_run": 1975,
-    "semantic_pass_last_run": 118,
+    "semantic_input_last_run": 1993,
+    "semantic_pass_last_run": 119,
     "semantic_pass_rate_pct": 5.97,
     "active_opportunities": 53,
     "ready": 4,
@@ -32,7 +32,7 @@
     "ready_legacy_compat_previous_value": 25,
     "executable_ready_now": 4,
     "legacy_ready_advisory": 21,
-    "semantic_pass_backlog_proxy": 118
+    "semantic_pass_backlog_proxy": 119
   },
   "status_counts": {
     "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
@@ -59,10 +59,10 @@
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
       "score": 100.0,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-11T07:59:40.807130Z",
+      "cooldown_until": "2026-09-11T09:13:02.005204Z",
       "heat_pct": 100.0
     },
     {
@@ -72,7 +72,7 @@
       "territory": "Roma",
       "score": 49.16,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-11T08:36:42.294488Z",
       "heat_pct": 49.2
@@ -88,18 +88,6 @@
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-11T01:01:23.384097Z",
       "heat_pct": 43.7
-    },
-    {
-      "area": "Italy|Calabria|Reggio Calabria",
-      "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
     },
     {
       "area": "Spain|Comunitat Valenciana|Castellón",
@@ -118,6 +106,18 @@
       "country": "Italy",
       "region": "Puglia",
       "territory": "Bari",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Calabria|Reggio Calabria",
+      "country": "Italy",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -193,8 +193,8 @@
       "score": 14.75,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 271,
-      "cooldown_until": "2026-09-11T08:54:37.671337Z",
+      "low_yield_cycles": 272,
+      "cooldown_until": "2026-09-11T09:13:02.005204Z",
       "heat_pct": 14.8
     }
   ],
@@ -204,7 +204,7 @@
       "territories": 108,
       "average_score": 3.76,
       "best_score": 100.0,
-      "harvest_territories": 2,
+      "harvest_territories": 1,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
@@ -238,9 +238,9 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 1975,
-      "semantic_input": 1975,
-      "semantic_pass": 118,
+      "raw_signals": 1993,
+      "semantic_input": 1993,
+      "semantic_pass": 119,
       "company_verified": null,
       "route_found": null,
       "dedup_ok": null,
@@ -257,9 +257,9 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 1815,
+      "semantic_reject": 1832,
       "semantic_review": 42,
-      "semantic_pass_to_executable_gap_proxy": 114,
+      "semantic_pass_to_executable_gap_proxy": 115,
       "legacy_ready_advisory_excluded": 21
     },
     "status_classes": {
@@ -279,9 +279,9 @@
       "CONTACTED_PENDING_CANONICAL_RECONCILIATION": 1
     },
     "pressure": {
-      "qualified_backlog_proxy": 118,
+      "qualified_backlog_proxy": 119,
       "executable_ready_now": 4,
-      "conversion_pressure_ratio": 29.5,
+      "conversion_pressure_ratio": 29.75,
       "turbo_enabled": true,
       "turbo_reason": "QUALIFIED_BACKLOG_PRESSURE"
     }
