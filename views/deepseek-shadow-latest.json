@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-10T08:55:39Z",
+  "updated_at": "2026-09-10T09:13:18Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 314,
+    "evaluated_total": 315,
     "agreement_count": 162,
-    "agreement_pct": 51.59,
+    "agreement_pct": 51.43,
     "deepseek_promote": 23,
-    "vds_promote": 122,
+    "vds_promote": 123,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 103
+    "deepseek_demoted_from_vds_promote": 104
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 17.39,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.64,
+    "vds_promote_hot_rate_pct": 1.63,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.7,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 126,
-    "cumulative_estimated_cost_usd": 0.066522,
-    "cost_per_evaluated_candidate_usd": 0.00021185,
-    "cost_per_deepseek_promote_usd": 0.00289225,
-    "cost_per_observed_ready_or_contacted_usd": 0.03326082,
-    "latest_request": null
+    "request_count": 127,
+    "cumulative_estimated_cost_usd": 0.066962,
+    "cost_per_evaluated_candidate_usd": 0.00021258,
+    "cost_per_deepseek_promote_usd": 0.0029114,
+    "cost_per_observed_ready_or_contacted_usd": 0.03348106,
+    "latest_request": {
+      "at": "2026-09-10T09:13:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 415,
+      "completion_tokens": 194,
+      "total_tokens": 737,
+      "estimated_cost_usd": 0.00044047
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,32 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "5205a8cd5724790d15de3d8a8a149b67",
-      "evaluated_at": "2026-09-07T16:41:25Z",
-      "organization": "Soda Data Nv",
-      "title": "Senior Full-Stack Engineer (Backend + Frontend)",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-full-stack-engineer-backend-frontend-7a7c0b112c",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 50.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Full-stack role with backend emphasis; only generic frontend match, no WordPress or web-specific scope.",
-      "deepseek_risk_flags": [
-        "backend_heavy",
-        "no_freelance_indication"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.0001501233,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c204afe8eef66fc670554314b9da18bf",
       "evaluated_at": "2026-09-07T16:41:25Z",
@@ -1406,10 +1391,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a477fe0b0cdbf49015958d1043bec28f",
+      "evaluated_at": "2026-09-10T09:13:16Z",
+      "organization": "Bjak",
+      "title": "Frontend Engineer",
+      "location": "Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bjak/frontend-engineer-germany-87472",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 42.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Frontend Engineer' at Bjak (Germany) matches only the generic 'frontend' keyword; no evidence of WordPress/WooCommerce, custom HTML/CSS/JS scope, performance/Core Web Vitals, maintenance, or UX/UI specifics, and no explicit freelance/contract signal. Geo is Germany, outside primary Spain/Italy markets and not confirmed EU-remote.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets",
+        "remote_state_unknown",
+        "stack_scope_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00044047,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-10T08:55:37Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-10T09:13:14Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

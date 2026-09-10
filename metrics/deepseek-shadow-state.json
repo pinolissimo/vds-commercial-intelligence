@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 223,
+  "runs": 224,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -8365,6 +8365,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a477fe0b0cdbf49015958d1043bec28f",
+      "evaluated_at": "2026-09-10T09:13:16Z",
+      "organization": "Bjak",
+      "title": "Frontend Engineer",
+      "location": "Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bjak/frontend-engineer-germany-87472",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 42.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Frontend Engineer' at Bjak (Germany) matches only the generic 'frontend' keyword; no evidence of WordPress/WooCommerce, custom HTML/CSS/JS scope, performance/Core Web Vitals, maintenance, or UX/UI specifics, and no explicit freelance/contract signal. Geo is Germany, outside primary Spain/Italy markets and not confirmed EU-remote.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets",
+        "remote_state_unknown",
+        "stack_scope_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00044047,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -9879,9 +9908,21 @@
       "completion_tokens": 337,
       "total_tokens": 1128,
       "estimated_cost_usd": 0.00052024
+    },
+    {
+      "at": "2026-09-10T09:13:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 415,
+      "completion_tokens": 194,
+      "total_tokens": 737,
+      "estimated_cost_usd": 0.00044047
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-10T08:55:38Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-10T09:13:16Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
