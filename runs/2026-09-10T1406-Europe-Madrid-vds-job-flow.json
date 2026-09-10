@@ -1,0 +1,43 @@
+{
+  "run_at": "2026-09-10T14:06:06+02:00",
+  "workstream": "VDS_JOB_FLOW",
+  "serious_candidates": 16,
+  "direct_email_harvest_count": 9,
+  "outcomes": {
+    "SEND_NOW": 4,
+    "PROVIDER_VERIFIED_FIRST_CONTACT": 4,
+    "MANUAL_APPLY": 3,
+    "WAIT_RESEARCH": 2,
+    "REJECT": 7
+  },
+  "blockers": {
+    "duplicates": 0,
+    "fit_failures": 4,
+    "route_failures_or_non_email_routes": 5
+  },
+  "ab_test": {
+    "CLASSIC_APPLICATION": 2,
+    "EXTERNAL_CAPACITY_OFFER": 2
+  },
+  "provider_verified_sends": [
+    {"provider_uid":401,"organization":"YES.WHY","recipient":"jobs@yeswhy.de","variant":"EXTERNAL_CAPACITY_OFFER","reply":true,"positive_reply":false,"interview_call":false,"proposal":false,"won":false,"reply_type":"APPLICATION_RECEIPT"},
+    {"provider_uid":402,"organization":"Lektorat Unker","recipient":"jobs@lektorat-unker.de","variant":"CLASSIC_APPLICATION","reply":true,"positive_reply":false,"interview_call":false,"proposal":false,"won":false,"reply_type":"AUTOMATED_APPLICATION_RECEIPT"},
+    {"provider_uid":403,"organization":"Pinn.Media","recipient":"hr@pinn.media","variant":"EXTERNAL_CAPACITY_OFFER","reply":false,"positive_reply":false,"interview_call":false,"proposal":false,"won":false},
+    {"provider_uid":404,"organization":"IDEASEVEN DIGITAL","recipient":"jobs@ideaseven.com","variant":"CLASSIC_APPLICATION","reply":false,"positive_reply":false,"interview_call":false,"proposal":false,"won":false}
+  ],
+  "prior_funnel_outcomes_observed": {
+    "qualified_positive_reply": 1,
+    "micro_commitment_reply": 1,
+    "organization": "Tyron",
+    "note": "Prior reply remains the strongest active commercial signal; recipient requested representative examples, B2B collaboration model and indicative rates."
+  },
+  "notes": [
+    "YES.WHY employer careers page explicitly accepts freelancer WordPress developers and provides jobs@yeswhy.de.",
+    "Lektorat Unker explicitly seeks independent freelance WordPress experts for long-term project cooperation and provides jobs@lektorat-unker.de.",
+    "Pinn.Media careers page lists remote contract web roles and directs portfolios to hr@pinn.media.",
+    "IDEASEVEN careers page lists current WordPress Guru and fully remote Front End roles and directs applications to jobs@ideaseven.com.",
+    "Alectiv classified MANUAL_APPLY because the vacancy page uses Apply now without exposing a distinct authoritative application email.",
+    "Invulu classified WAIT_RESEARCH because the employer page obfuscates its application address and exact route could not be safely recovered.",
+    "No blind resend permitted; Hostinger Sent UIDs are authoritative."
+  ]
+}
