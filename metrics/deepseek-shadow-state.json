@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 235,
+  "runs": 236,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -8450,6 +8450,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8b20d030b28d2ec2bac826ed4ace22b5",
+      "evaluated_at": "2026-09-10T12:22:54Z",
+      "organization": "FELD M",
+      "title": "Senior Implementation Specialist Digital Analytics (w/m/d)",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/feld-m/senior-implementation-specialist-digital-analytics-munich-118308",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is a Senior Implementation Specialist in Digital Analytics (analytics/tag-management implementation), not a WordPress/WooCommerce/frontend web-development role; matched keywords 'javascript' and 'migration' are incidental and the commercial hits 'agency'/'partner' are generic and do not evidence freelance compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_analytics_not_web_dev",
+        "no_wordpress_woocommerce_scope",
+        "generic_partner_agency_mention_not_freelance_proof",
+        "onsite_munich_geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019053,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "25cf197e7b9fdd7036ab3151058514e9",
+      "evaluated_at": "2026-09-10T12:22:54Z",
+      "organization": "jetbrains",
+      "title": "Senior Test Automation Engineer (TeamCity)",
+      "location": "Berlin; Munich; Remote",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/jetbrains/remote-senior-test-automation-engineer-teamcity-138995",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior Test Automation Engineer (TeamCity) is a QA/automation engineering role with no WordPress, WooCommerce, frontend or web-performance scope; matched keywords 'accessibility' and 'maintenance' are incidental and 'remote' is only a location attribute, not freelance compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_qa_automation",
+        "no_web_dev_scope",
+        "keyword_noise_accessibility_maintenance",
+        "remote_label_not_contract_proof"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00019053,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -9988,9 +10044,21 @@
       "completion_tokens": 308,
       "total_tokens": 1016,
       "estimated_cost_usd": 0.00033178
+    },
+    {
+      "at": "2026-09-10T12:22:54Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 696,
+      "completion_tokens": 344,
+      "total_tokens": 1168,
+      "estimated_cost_usd": 0.00038106
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-10T12:04:59Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-10T12:22:54Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
