@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 255,
+  "runs": 256,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -8676,6 +8676,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "943cafdb04bf458300f9084e54603002",
+      "evaluated_at": "2026-09-10T19:51:37Z",
+      "organization": "Athereon",
+      "title": "(Senior) Software Developer Frontend / React (m/w/d)",
+      "location": "Saarbrücken",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/athereon/senior-software-developer-frontend-react-saarbrucken-165730",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is React frontend development, which is a stack mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; no WordPress, WooCommerce, or meaningful matching web scope present.",
+      "deepseek_risk_flags": [
+        "react_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_unverified_non_target_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001978,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -10286,9 +10314,21 @@
       "completion_tokens": 209,
       "total_tokens": 763,
       "estimated_cost_usd": 0.00023256
+    },
+    {
+      "at": "2026-09-10T19:51:37Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 439,
+      "completion_tokens": 152,
+      "total_tokens": 719,
+      "estimated_cost_usd": 0.0001978
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-10T17:52:40Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-10T19:51:37Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

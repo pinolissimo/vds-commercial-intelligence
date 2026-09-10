@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-10T17:52:40Z",
+  "updated_at": "2026-09-10T19:51:39Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 325,
+    "evaluated_total": 326,
     "agreement_count": 169,
-    "agreement_pct": 52.0,
+    "agreement_pct": 51.84,
     "deepseek_promote": 23,
     "vds_promote": 125,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 134,
-    "cumulative_estimated_cost_usd": 0.068896,
-    "cost_per_evaluated_candidate_usd": 0.00021199,
-    "cost_per_deepseek_promote_usd": 0.00299549,
-    "cost_per_observed_ready_or_contacted_usd": 0.03444813,
-    "latest_request": null
+    "request_count": 135,
+    "cumulative_estimated_cost_usd": 0.069094,
+    "cost_per_evaluated_candidate_usd": 0.00021195,
+    "cost_per_deepseek_promote_usd": 0.00300409,
+    "cost_per_observed_ready_or_contacted_usd": 0.03454704,
+    "latest_request": {
+      "at": "2026-09-10T19:51:37Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 439,
+      "completion_tokens": 152,
+      "total_tokens": 719,
+      "estimated_cost_usd": 0.0001978
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "1fd1d989ceb92750a4f3d2188a0bb87b",
-      "evaluated_at": "2026-09-08T02:02:25Z",
-      "organization": "",
-      "title": "IFS Training and Application Analyst EMEA",
-      "location": "Italy",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Role is an IFS Training and Application Analyst, focused on ERP application support, not web development. Only generic terms like maintenance and technical support appear, with no WordPress or frontend relevance.",
-      "deepseek_risk_flags": [
-        "no web development scope",
-        "generic maintenance terms",
-        "no freelance compatibility evidence"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.000215915,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "81f7d42f2e7ddd37d6de0bffdce90539",
       "evaluated_at": "2026-09-08T09:00:03Z",
@@ -1422,10 +1406,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "943cafdb04bf458300f9084e54603002",
+      "evaluated_at": "2026-09-10T19:51:37Z",
+      "organization": "Athereon",
+      "title": "(Senior) Software Developer Frontend / React (m/w/d)",
+      "location": "Saarbrücken",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/athereon/senior-software-developer-frontend-react-saarbrucken-165730",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is React frontend development, which is a stack mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; no WordPress, WooCommerce, or meaningful matching web scope present.",
+      "deepseek_risk_flags": [
+        "react_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_unverified_non_target_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001978,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-10T17:52:38Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-10T19:51:35Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
