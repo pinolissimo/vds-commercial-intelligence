@@ -1,0 +1,73 @@
+{
+  "run_at": "2026-09-10T15:33:23Z",
+  "workstream": "VDS_REVENUE_FLOW",
+  "send_window": "OPEN",
+  "serious_candidates_evaluated": 62,
+  "direct_email_harvest_evaluated": 35,
+  "decisions": {
+    "SEND_NOW": 1,
+    "MANUAL_APPLY": 9,
+    "WAIT_RESEARCH": 15,
+    "REJECT": 37
+  },
+  "provider_verified_FIRST_CONTACT": 1,
+  "duplicates": 8,
+  "route_failures": 3,
+  "delivery_state_unknown": 0,
+  "wait_research_blockers": {
+    "no_current_external_capacity_trigger": 10,
+    "official_direct_route_not_verified": 3,
+    "fit_requires_additional_stack_or_context_verification": 2
+  },
+  "commercial_archetypes": {
+    "AGENCY_EXTERNAL_CAPACITY": 43,
+    "SME_WEB_IMPROVEMENT": 3,
+    "EU_DISSEMINATION_SPECIALIST": 16
+  },
+  "ab_first_contacts": {
+    "CREDENTIALS_CLASSIC": 1,
+    "VALUE_MICRO_COMMITMENT": 0
+  },
+  "downstream_new_in_this_run": {
+    "reply": 0,
+    "qualified_positive_reply": 0,
+    "referral": 0,
+    "call_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue_eur": 0
+  },
+  "provider_events": [
+    {
+      "provider_uid": 411,
+      "organization": "Teamsy",
+      "recipient": "info@teamsy.it",
+      "subject": "Capacità web esterna per i team Teamsy — WordPress / frontend",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "SEND_1_2_RELEVANT_EXAMPLES",
+      "state": "VERIFIED_EMAIL_SENT",
+      "bcc_owner": true
+    }
+  ],
+  "selected_candidate_decisions": [
+    {"organization":"Teamsy","result":"SEND_NOW","reason":"Official site states a model based on selected vertical freelancers coordinated into custom teams; official info@teamsy.it route; provider and GitHub dedup clear."},
+    {"organization":"EuroAquaTours","result":"REJECT","reason":"Duplicate: Hostinger Sent UID 323 already exists."},
+    {"organization":"Crisandcris.net","result":"REJECT","reason":"Duplicate: Hostinger Sent UIDs 318 and 99 already exist."},
+    {"organization":"PoligoniLab","result":"REJECT","reason":"Duplicate: Hostinger Sent UID 166 already exists."},
+    {"organization":"Creativelement","result":"MANUAL_APPLY","reason":"Official careers page prescribes application form with CV/portfolio upload."},
+    {"organization":"PMA","result":"MANUAL_APPLY","reason":"Official partner flow uses candidatura/partner form."},
+    {"organization":"ReMedia Group","result":"REJECT","reason":"Current frontend role requires Vue.js and fluent English; not a clean truthful fit for this contact lane and prior outbound exists."},
+    {"organization":"Midable","result":"REJECT","reason":"Explicitly states it does not outsource to external agencies/freelancers and does not work full remote."},
+    {"organization":"WIT Berry","result":"WAIT_RESEARCH","reason":"Strong EU dissemination/website fit but no verified current need for external web capacity."},
+    {"organization":"BCComm","result":"WAIT_RESEARCH","reason":"Uses a network of expert collaborators and handles EU-funded communication projects, but no direct current web-capacity trigger verified."},
+    {"organization":"Neonek","result":"WAIT_RESEARCH","reason":"Has collaborator network and agency subcontracting experience, but current buyer-side capacity need not verified."},
+    {"organization":"Tripart","result":"WAIT_RESEARCH","reason":"Uses selected external collaborators; official email rendered masked and therefore no safe direct route used."}
+  ],
+  "provider_state_notes": [
+    "WP Origami UID 409 hard bounce remains authoritative: recrutement@wporigami.com returned 550 5.1.1 user does not exist; no retry authorized.",
+    "UID 411 verified in Hostinger Sent with recipient, subject and owner BCC.",
+    "No immediate bounce or new reply appeared after UID 411 verification.",
+    "Canonical state/provider-outbound-live.json latest SHA was read as dd5d71efbf606f475c2cb0f680406a08f1ee80f9 but connector returned file content truncated; unsafe replacement was not attempted. UID 411 was written to an idempotent pending overlay for reconciliation."
+  ]
+}
