@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-10T13:41:52Z",
+  "updated_at": "2026-09-10T13:59:40Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 320,
-    "agreement_count": 165,
-    "agreement_pct": 51.56,
+    "evaluated_total": 321,
+    "agreement_count": 166,
+    "agreement_pct": 51.71,
     "deepseek_promote": 23,
     "vds_promote": 124,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 130,
-    "cumulative_estimated_cost_usd": 0.06789,
-    "cost_per_evaluated_candidate_usd": 0.00021216,
-    "cost_per_deepseek_promote_usd": 0.00295175,
-    "cost_per_observed_ready_or_contacted_usd": 0.03394518,
-    "latest_request": null
+    "request_count": 131,
+    "cumulative_estimated_cost_usd": 0.068094,
+    "cost_per_evaluated_candidate_usd": 0.00021213,
+    "cost_per_deepseek_promote_usd": 0.0029606,
+    "cost_per_observed_ready_or_contacted_usd": 0.03404694,
+    "latest_request": {
+      "at": "2026-09-10T13:59:38Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 414,
+      "completion_tokens": 169,
+      "total_tokens": 711,
+      "estimated_cost_usd": 0.00020352
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,32 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b98f12b23351449f09237b7ca935e035",
-      "evaluated_at": "2026-09-08T01:28:27Z",
-      "organization": "mercor",
-      "title": "Frontend Developer - Fully Remote | Upto $85/hr",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/frontend-developer-fully-remote-upto-85hr-mercor",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "PROMOTE",
-      "deepseek_score": 85.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Frontend developer role with strong match to frontend/JS/UI skills, fully remote, and high hourly rate indicates freelance compatibility.",
-      "deepseek_risk_flags": [
-        "No explicit WordPress/WooCommerce mention",
-        "Generic frontend role may not require web performance or maintenance"
-      ],
-      "deepseek_contract_compatibility": "HIGH",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000311315,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a1d4df542fd0cf0ba385fc5a75f82f02",
       "evaluated_at": "2026-09-08T01:28:27Z",
@@ -1415,10 +1400,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "587df5127ffc941b280c661bb0cdc8b1",
+      "evaluated_at": "2026-09-10T13:59:38Z",
+      "organization": "",
+      "title": "Senior MEAN Developer &ndash; Full Remote &#x28;Contractor&#x29;",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Senior MEAN (MongoDB, Express, Angular, Node) developer position, which is a core Angular/Node stack mismatch for a WordPress/WooCommerce/frontend-focused freelance profile; matched keywords like html/css/javascript are generic and do not indicate meaningful WordPress or matching web scope.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_angular_node",
+        "no_wordpress_woocommerce_scope",
+        "us_location_geo_mismatch",
+        "generic_keyword_matches"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020352,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-10T13:41:50Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-10T13:59:36Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
