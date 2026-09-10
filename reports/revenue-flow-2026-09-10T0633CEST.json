@@ -1,0 +1,112 @@
+{
+  "run_at": "2026-09-10T06:33:15+02:00",
+  "send_window": {"open": false, "authorized_hours": "09:00-19:00 Europe/Madrid"},
+  "serious_candidates_evaluated": 60,
+  "direct_email_harvest_evaluated": 33,
+  "decisions": {
+    "SEND_NOW": 0,
+    "provider_verified_FIRST_CONTACT": 0,
+    "MANUAL_APPLY": 14,
+    "WAIT_RESEARCH": 21,
+    "REJECT": 25,
+    "duplicates": 1,
+    "route_failures": 0,
+    "delivery_state_unknown": 0
+  },
+  "wait_research_blockers": {
+    "SEND_WINDOW_CLOSED": 9,
+    "PROVIDER_DEDUP_REQUIRED_BEFORE_SEND": 7,
+    "CURRENT_NEED_OR_ROUTE_NEEDS_ONE_MORE_CHECK": 5
+  },
+  "commercial_archetype_counts": {
+    "AGENCY_EXTERNAL_CAPACITY": 47,
+    "SME_WEB_IMPROVEMENT": 1,
+    "EU_DISSEMINATION_SPECIALIST": 12
+  },
+  "ab_test": {
+    "CREDENTIALS_CLASSIC": 0,
+    "VALUE_MICRO_COMMITMENT": 0,
+    "note": "No sends outside live window; variants will be assigned JIT before provider-verified sends."
+  },
+  "top_fresh_candidates": [
+    {
+      "organization": "Tyron",
+      "country": "Spain",
+      "official_route": "tamayo@tyron.es",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED + PROVIDER_DEDUP_REQUIRED_BEFORE_SEND",
+      "evidence": "Official collaborations page explicitly invites freelancers/agencies; developers sought for SvelteKit, Next.js and WordPress; direct named email route."
+    },
+    {
+      "organization": "2PDX Studio",
+      "country": "Italy",
+      "official_route": "cv@2pdx.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED + PROVIDER_DEDUP_REQUIRED_BEFORE_SEND",
+      "evidence": "Official careers page seeks Web Designer / Developer for WordPress, Webflow and similar platforms; exact application email with CV/portfolio instruction."
+    },
+    {
+      "organization": "Publydea Comunicación",
+      "country": "Spain",
+      "official_route": "trabajo@publydea.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED + PROVIDER_DEDUP_REQUIRED_BEFORE_SEND",
+      "evidence": "Official jobs page explicitly seeks WordPress specialist and accepts spontaneous applications by email."
+    },
+    {
+      "organization": "Cleverage",
+      "country": "Italy",
+      "official_route": "info@cleverage.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED + PROVIDER_DEDUP_REQUIRED_BEFORE_SEND",
+      "evidence": "Official page says it is always looking for talent to join the team or collaborate on specific projects, includes Web developer and remote/project-based collaboration."
+    },
+    {
+      "organization": "Doozy",
+      "country": "Italy",
+      "official_route": "hello@doozy.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED + PROVIDER_DEDUP_REQUIRED_BEFORE_SEND",
+      "evidence": "Official careers page for web developers/technicians; email is explicitly stated as an alternative application route to the form; page updated May 2026."
+    },
+    {
+      "organization": "rIL",
+      "country": "Spain",
+      "official_route": "info@ril.es",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "APPLICATION_ROUTE_NEEDS_ONE_MORE_CHECK",
+      "evidence": "Official employment page has active Front-End Developer role allowing contract or freelance and remote from Spain; general official email is visible but exact candidacy route requires final verification."
+    }
+  ],
+  "manual_apply_examples": [
+    "Adviva - explicit freelance/agencies/WordPress external collaboration but application flow is form-based",
+    "Redman - active WordPress/Elementor role with application form",
+    "Zaliza - web development/WordPress profile but application flow is form-based",
+    "E-TERNA - web/front-end/web-design fit but official career flow is form-based",
+    "digitalDot - application flow is form-based"
+  ],
+  "reject_examples": [
+    "Lucasweb - duplicate identity already known from previous Revenue Flow runs",
+    "WIT Berry - strong EU dissemination agency but this evidence shows supplier/consortium capacity, not a current need for external VDS capacity",
+    "Nexuswelt - same: EU communication supplier evidence, no current buying/external-capacity signal",
+    "Pigiota314 - direct competitor/supplier positioning, not a current buyer signal",
+    "Fastlane - EU/science communications supplier evidence without external-capacity hiring/collaboration signal"
+  ],
+  "downstream_outcomes_observed": {
+    "reply": 0,
+    "qualified_positive_reply": 0,
+    "referral": 0,
+    "call_or_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue": 0,
+    "note": "No fresh Hostinger provider inbox read was available through the exposed connector operations in this run; no downstream event is claimed without provider evidence."
+  },
+  "provider_note": "No email was sent because the live window was closed. Provider dedup is required JIT before any future send; no prospect is promoted to SEND_NOW without it."
+}
