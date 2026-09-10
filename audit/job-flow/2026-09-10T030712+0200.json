@@ -1,0 +1,106 @@
+{
+  "run_at": "2026-09-10T03:07:12+02:00",
+  "workstream": "VDS_JOB_FLOW",
+  "send_window_open": false,
+  "summary": {
+    "serious_candidates": 24,
+    "direct_email_harvest": 11,
+    "SEND_NOW": 0,
+    "provider_verified_FIRST_CONTACT": 0,
+    "MANUAL_APPLY": 7,
+    "WAIT_RESEARCH": 4,
+    "REJECT": 13,
+    "duplicates": 5,
+    "fit_failures": 5,
+    "route_failures": 4,
+    "variant_A_sent": 0,
+    "variant_B_sent": 0,
+    "reply_outcomes_new": 0,
+    "positive_reply_outcomes_new": 0,
+    "interview_call_outcomes_new": 0,
+    "proposal_outcomes_new": 0,
+    "won_outcomes_new": 0
+  },
+  "priority_queue": [
+    {
+      "organization": "Host-Fusion",
+      "role": "Technical Support L1/L2",
+      "outcome": "WAIT_RESEARCH",
+      "route": "empleo@host-fusion.com",
+      "reason": "Employer-controlled careers page states 'Estamos contratando', remote support, hosting/cPanel/WHM/Apache/migrations/WordPress support; provider Sent search returned zero. Hold because send window is closed and listing age warrants one bounded freshness check before a future send.",
+      "preferred_variant": "EXTERNAL_CAPACITY_OFFER"
+    },
+    {
+      "organization": "Rubrika",
+      "role": "Web/WordPress external capacity",
+      "outcome": "WAIT_RESEARCH",
+      "route": "info@rubrika.es",
+      "reason": "Current employer-controlled site explicitly labels the address under 'Trabaja con nosotros'; strong WordPress/web/app/technical implementation overlap; provider Sent search returned zero. No specific vacancy text surfaced, so one bounded current-need verification remains before future send.",
+      "preferred_variant": "EXTERNAL_CAPACITY_OFFER"
+    },
+    {
+      "organization": "Dortoka",
+      "role": "Disenador grafico web",
+      "outcome": "WAIT_RESEARCH",
+      "route": "dortoka@dortoka.com",
+      "reason": "Employer-controlled job page requests CV by email and requires advanced WordPress plus HTML/CSS; JavaScript/PHP valued. Full-time/local framing needs one bounded check for external-collaboration acceptability before future send.",
+      "preferred_variant": "CLASSIC_APPLICATION"
+    },
+    {
+      "organization": "Sitelicon",
+      "role": "Web/WordPress production capacity",
+      "outcome": "WAIT_RESEARCH",
+      "route": null,
+      "reason": "Current site has a Careers section and strong WordPress/web/maintenance fit, but only commercial contact email surfaced; exact candidacy route not yet verified, so no substitution or guessed recipient."
+    }
+  ],
+  "manual_apply": [
+    {"organization":"Alligator.it","role":"Web Designer / WordPress Developer","reason":"Current employer-controlled vacancy, WordPress/WooCommerce/HTML/CSS/PHP/JS fit; official route is the application form."},
+    {"organization":"Redman","role":"Disenador/a y Desarrollador/a Web WordPress (Elementor Pro)","reason":"Current WordPress/Elementor vacancy; official route is application form."},
+    {"organization":"Codelia Studio","role":"Diseno web / Landing pages","reason":"Current careers form includes WordPress and HTML/CSS tracks; form-only route."},
+    {"organization":"Digital One","role":"Web/digital spontaneous","reason":"Careers page is form-only; generic info address not substituted."},
+    {"organization":"Syde","role":"Senior WordPress Engineer","reason":"Current official role but application is via Personio; seniority materially above documented fit."},
+    {"organization":"WordPress Shepherd / Cobalt Labs","role":"Custom Plugin Developer","reason":"Fresh listing routes to employer application form; expert plugin/PHP requirements make fit weak."},
+    {"organization":"La Ultima Agencia","role":"Open application","reason":"Official careers route is form-only; generic hello email not substituted."}
+  ],
+  "reject_highlights": [
+    {"organization":"Eclettica","reason":"Duplicate: already professionally contacted in canonical/provider history."},
+    {"organization":"Publydea","reason":"Duplicate: provider-verified prior contact already exists."},
+    {"organization":"LogoRapid","reason":"Duplicate: Hostinger Sent confirms UID 170 to trabajo@logorapid.com."},
+    {"organization":"Daniele Debernardis","reason":"Duplicate: Hostinger Sent confirms UID 121 to info@danieledebernardis.it."},
+    {"organization":"Lucasweb","reason":"Duplicate: canonical GitHub history records provider-verified Lucasweb contact (UID 206 / later live-state reference UID 319)."},
+    {"organization":"Antonio De Lorenzi","reason":"Current freelance web designer/developer opportunity has exact email route but explicitly requires residence/domicile in Rome."},
+    {"organization":"Henry & Co.","reason":"Strong freelance WordPress/web fit and exact job email, but job page dates to 2018; stale need fails current-listing gate."},
+    {"organization":"Avante","reason":"Current direct-email role is freelance content marketing, not VDS core technical fit."},
+    {"organization":"Yeb","reason":"Senior PHP role requires at least 5 years and is primarily employment/on-site; mandatory-core mismatch."},
+    {"organization":"TeamQ","reason":"Current WordPress opening is senior and form-only; senior mandatory requirement exceeds documented fit."},
+    {"organization":"Geolat","reason":"Careers route exists but profile/domain is environmental services rather than relevant technical web production need."},
+    {"organization":"Sitelicon commercial route","reason":"hola@sitelicon.com is explicitly a commercial contact, not an authoritative application route."},
+    {"organization":"Wasisco/UCV listing","reason":"Third-party route with hidden email plus explicit Florence-area residence requirement; no authoritative direct-email route."}
+  ],
+  "provider_snapshot": {
+    "mailbox": "info@visualdesignstudio.es",
+    "sent_count": 369,
+    "latest_professional_outbound_uid": 378,
+    "latest_professional_outbound_organization": "Spark Experience",
+    "dedup_verified": {
+      "LogoRapid": 170,
+      "Daniele Debernardis": 121,
+      "Lucasweb": 206
+    },
+    "provider_clear_checked": [
+      "empleo@host-fusion.com",
+      "info@rubrika.es",
+      "info@antoniodelorenzi.it"
+    ],
+    "no_new_send_this_run": true
+  },
+  "funnel_snapshot": {
+    "new_reply": 0,
+    "latest_known_positive_signal": "Agomir marketing reply forwarded VDS proposal internally for evaluation",
+    "latest_known_positive_reply_uid": 1417,
+    "openresearch_uid_1414": "automated/application-system response, not counted positive",
+    "os2_uid_1411": "non-positive/administrative response, not counted positive"
+  },
+  "notes": "Outside authorized live-send window. Fresh route-first discovery, qualification, provider dedup and routing completed independently. No provider send attempted, so state/provider-outbound-live.json required no new outbound event in this run."
+}
