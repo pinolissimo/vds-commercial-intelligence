@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 242,
+  "runs": 243,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -8563,6 +8563,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "647d1cb4ee1bcddd7c066002882484d8",
+      "evaluated_at": "2026-09-10T14:18:32Z",
+      "organization": "Agentur Anmut GmbH",
+      "title": "Werkstudent IT im Bereich Informatik und Webentwicklung (m/w/d)",
+      "location": "Stuttgart",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/agentur-anmut-gmbh/werkstudent-it-im-bereich-informatik-und-webentwicklung-stuttgart-478368",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Werkstudent (working-student) position in Stuttgart, Germany — a part-time student role, not freelance/contract work, and outside the primary Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "student_role_not_freelance",
+        "onsite_germany_outside_primary_markets",
+        "no_explicit_freelance_or_contract_signal",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020374,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -10137,9 +10165,21 @@
       "completion_tokens": 169,
       "total_tokens": 711,
       "estimated_cost_usd": 0.00020352
+    },
+    {
+      "at": "2026-09-10T14:18:32Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 454,
+      "completion_tokens": 156,
+      "total_tokens": 738,
+      "estimated_cost_usd": 0.00020374
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-10T13:59:38Z",
+  "updated_at": "2026-09-10T14:18:32Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

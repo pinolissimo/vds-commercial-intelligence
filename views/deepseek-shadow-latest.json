@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-10T13:59:40Z",
+  "updated_at": "2026-09-10T14:18:34Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 321,
-    "agreement_count": 166,
-    "agreement_pct": 51.71,
+    "evaluated_total": 322,
+    "agreement_count": 167,
+    "agreement_pct": 51.86,
     "deepseek_promote": 23,
     "vds_promote": 124,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 131,
-    "cumulative_estimated_cost_usd": 0.068094,
-    "cost_per_evaluated_candidate_usd": 0.00021213,
-    "cost_per_deepseek_promote_usd": 0.0029606,
-    "cost_per_observed_ready_or_contacted_usd": 0.03404694,
+    "request_count": 132,
+    "cumulative_estimated_cost_usd": 0.068298,
+    "cost_per_evaluated_candidate_usd": 0.0002121,
+    "cost_per_deepseek_promote_usd": 0.00296946,
+    "cost_per_observed_ready_or_contacted_usd": 0.0341488,
     "latest_request": {
-      "at": "2026-09-10T13:59:38Z",
+      "at": "2026-09-10T14:18:32Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 414,
-      "completion_tokens": 169,
-      "total_tokens": 711,
-      "estimated_cost_usd": 0.00020352
+      "prompt_cache_miss_tokens": 454,
+      "completion_tokens": 156,
+      "total_tokens": 738,
+      "estimated_cost_usd": 0.00020374
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a1d4df542fd0cf0ba385fc5a75f82f02",
-      "evaluated_at": "2026-09-08T01:28:27Z",
-      "organization": "Stp One",
-      "title": "Technical Solutions Engineer",
-      "location": "Karlsruhe, GER",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/stp-one/technical-solutions-engineer-karlsruhe-ger-17667",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Technical solutions engineer role with maintenance and support keywords, but unclear stack fit and location in Germany; may be full-time.",
-      "deepseek_risk_flags": [
-        "No explicit web/WordPress stack",
-        "Location Germany may not match target geos",
-        "Employment type unclear"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000311315,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "159887e14839050d1678581752aae8e9",
       "evaluated_at": "2026-09-08T01:28:27Z",
@@ -1428,10 +1401,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "647d1cb4ee1bcddd7c066002882484d8",
+      "evaluated_at": "2026-09-10T14:18:32Z",
+      "organization": "Agentur Anmut GmbH",
+      "title": "Werkstudent IT im Bereich Informatik und Webentwicklung (m/w/d)",
+      "location": "Stuttgart",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/agentur-anmut-gmbh/werkstudent-it-im-bereich-informatik-und-webentwicklung-stuttgart-478368",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Werkstudent (working-student) position in Stuttgart, Germany — a part-time student role, not freelance/contract work, and outside the primary Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "student_role_not_freelance",
+        "onsite_germany_outside_primary_markets",
+        "no_explicit_freelance_or_contract_signal",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020374,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-10T13:59:36Z",
+  "source_semantic_updated_at": "2026-09-10T14:18:30Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
