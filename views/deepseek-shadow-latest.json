@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-10T14:54:37Z",
+  "updated_at": "2026-09-10T15:13:01Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 322,
-    "agreement_count": 167,
-    "agreement_pct": 51.86,
+    "evaluated_total": 324,
+    "agreement_count": 168,
+    "agreement_pct": 51.85,
     "deepseek_promote": 23,
-    "vds_promote": 124,
+    "vds_promote": 125,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 105
+    "deepseek_demoted_from_vds_promote": 106
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 17.39,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.61,
+    "vds_promote_hot_rate_pct": 1.6,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.7,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 132,
-    "cumulative_estimated_cost_usd": 0.068298,
-    "cost_per_evaluated_candidate_usd": 0.0002121,
-    "cost_per_deepseek_promote_usd": 0.00296946,
-    "cost_per_observed_ready_or_contacted_usd": 0.0341488,
-    "latest_request": null
+    "request_count": 133,
+    "cumulative_estimated_cost_usd": 0.068664,
+    "cost_per_evaluated_candidate_usd": 0.00021193,
+    "cost_per_deepseek_promote_usd": 0.00298538,
+    "cost_per_observed_ready_or_contacted_usd": 0.03433186,
+    "latest_request": {
+      "at": "2026-09-10T15:12:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 736,
+      "completion_tokens": 308,
+      "total_tokens": 1172,
+      "estimated_cost_usd": 0.0003661
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "159887e14839050d1678581752aae8e9",
-      "evaluated_at": "2026-09-08T01:28:27Z",
-      "organization": "Towa",
-      "title": "Senior Consultant Search, Content & AI Visibility (SEO/GEO) (m/w/d), München",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/towa/senior-consultant-search-content-ai-visibility-seo-geo-munchen-388853",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 60.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "SEO/GEO consultant role with CMS and Core Web Vitals keywords, but location Munich and no explicit freelance compatibility.",
-      "deepseek_risk_flags": [
-        "Location Munich not target",
-        "Generic partner mention not proof of freelance",
-        "Role may be full-time"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000311315,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "6057c06d3c4098d17aea9afeab70927b",
-      "evaluated_at": "2026-09-08T01:28:27Z",
-      "organization": "Towa",
-      "title": "Senior Consultant Search, Content & AI Visibility (SEO/GEO) (m/w/d), Düsseldorf",
-      "location": "Düsseldorf",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/towa/senior-consultant-search-content-ai-visibility-seo-geo-dusseldorf-131447",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 60.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Similar SEO/GEO consultant role with CMS and Core Web Vitals keywords, but location Düsseldorf and no explicit freelance compatibility.",
-      "deepseek_risk_flags": [
-        "Location Düsseldorf not target",
-        "Generic partner mention not proof of freelance",
-        "Role may be full-time"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000311315,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "200cf76bca6fbe542afb1f4bde101f52",
       "evaluated_at": "2026-09-08T02:02:25Z",
@@ -1418,10 +1375,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c9da2e6161cc5302be95e2818ea5fc96",
+      "evaluated_at": "2026-09-10T15:12:59Z",
+      "organization": "Real Digital",
+      "title": "Senior Full-Stack Engineer (all genders) | Backend or Frontend Focus",
+      "location": "Remote oder Köln / Darmstadt / Düsseldorf / Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/real-digital/remote-senior-full-stack-engineer-all-genders-backend-or-frontend-focus-382606",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 73,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior full-stack role with frontend and PHP mentions, but title emphasizes backend/frontend full-stack engineering rather than WordPress/WooCommerce or web-maintenance scope; stack fit is partial and unverified.",
+      "deepseek_risk_flags": [
+        "full-stack scope may be React/Node/Laravel-heavy",
+        "no explicit WordPress/WooCommerce evidence",
+        "employment type unknown",
+        "freelance compatibility unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018305,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8db66bf288642b064ff8a5c83d4b83f9",
+      "evaluated_at": "2026-09-10T15:12:59Z",
+      "organization": "Datadog",
+      "title": "Partner Solutions Architect (Pan-EMEA GSI)",
+      "location": "Remote",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/datadog/remote-partner-solutions-architect-pan-emea-gsi-342806",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Partner Solutions Architect at Datadog is a pre-sales/partner-ecosystem technical role, not a web-development or WordPress opportunity; keyword matches (partner, collaboration, remote) are incidental and do not indicate freelance web work.",
+      "deepseek_risk_flags": [
+        "role is solutions architecture/pre-sales, not web development",
+        "keyword matches are generic and misleading",
+        "no WordPress/WooCommerce/frontend web scope",
+        "likely full-time enterprise role"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018305,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-10T14:54:35Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-10T15:12:57Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
