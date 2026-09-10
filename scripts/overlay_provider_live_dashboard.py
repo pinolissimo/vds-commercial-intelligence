@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
-"""Merge provider-verified outbound events into Command Center projections.
+"""Merge provider-verified outbound evidence into Command Center projections.
 
-Sources of truth are:
-- state/provider-outbound-live.json (canonical provider ledger)
-- state/provider-outbound-live-pending-*.json (append-only safety fragments)
+Provider evidence can arrive in three supported layouts:
+1) state/provider-outbound-live.json                     canonical envelope
+2) state/provider-outbound-live-pending-*.json           flat pending envelopes
+3) state/provider-outbound-live-pending/*.json            per-event pending fragments
 
-Pending fragments exist because some connector writes cannot safely replace a large
-canonical JSON file. They are therefore first-class provider evidence, not temporary
-noise. This overlay always aggregates canonical + pending evidence, deduplicates by
-provider_uid, and lets the newest provider evidence win for the same UID.
-
-It never invents sends and never counts failed/bounced/duplicate-policy attempts as
-successful outbound.
+All layouts are first-class evidence. The projection layer aggregates them on every
+run, deduplicates by provider_uid, lets the newest evidence win for the same UID,
+and counts only VERIFIED_EMAIL_SENT events that are not explicitly excluded.
 """
 from __future__ import annotations
 
@@ -24,7 +21,6 @@ ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "state"
 API = ROOT / "api" / "v1"
 MADRID = ZoneInfo("Europe/Madrid")
-PENDING_GLOB = "provider-outbound-live-pending-*.json"
 
 
 def load(path: Path, default):
@@ -53,61 +49,84 @@ def parse_dt(value):
 
 
 def is_success(event):
-    if event.get("state") != "VERIFIED_EMAIL_SENT":
-        return False
-    if event.get("count_as_successful_outbound") is False:
-        return False
-    return isinstance(event.get("provider_uid"), int)
+    return (
+        event.get("state") == "VERIFIED_EMAIL_SENT"
+        and event.get("count_as_successful_outbound") is not False
+        and isinstance(event.get("provider_uid"), int)
+    )
 
 
-def event_rank(event, source_mtime=0.0):
-    """Return a deterministic freshness rank for conflicting evidence."""
-    for key in ("updated_at", "sent_at"):
-        dt = parse_dt(event.get(key))
+def source_paths():
+    paths = [STATE / "provider-outbound-live.json"]
+    paths.extend(sorted(STATE.glob("provider-outbound-live-pending-*.json")))
+    pending_dir = STATE / "provider-outbound-live-pending"
+    if pending_dir.is_dir():
+        paths.extend(sorted(pending_dir.glob("*.json")))
+    return paths
+
+
+def payload_events(payload):
+    """Normalize both envelope payloads and one-event fragment payloads."""
+    if not isinstance(payload, dict):
+        return []
+    events = payload.get("events")
+    if isinstance(events, list):
+        return [event for event in events if isinstance(event, dict)]
+    if isinstance(payload.get("provider_uid"), int):
+        return [payload]
+    return []
+
+
+def event_rank(event, payload_updated_at, source_mtime):
+    """Deterministic freshness rank; later provider evidence wins for one UID."""
+    for value in (payload_updated_at, event.get("updated_at"), event.get("sent_at")):
+        dt = parse_dt(value)
         if dt:
             return (dt.timestamp(), source_mtime)
     return (source_mtime, source_mtime)
 
 
 def provider_evidence():
-    """Aggregate canonical provider ledger and all pending safety fragments."""
-    sources = [STATE / "provider-outbound-live.json", *sorted(STATE.glob(PENDING_GLOB))]
     by_uid = {}
     ranks = {}
-    newest_updated_at = None
-    newest_updated_dt = None
+    newest_at = None
+    newest_dt = None
     loaded_sources = 0
     pending_sources = 0
 
-    for path in sources:
+    for path in source_paths():
         payload = load(path, None)
-        if not isinstance(payload, dict):
+        events = payload_events(payload)
+        if not isinstance(payload, dict) or not events:
             continue
+
         loaded_sources += 1
-        if path.name.startswith("provider-outbound-live-pending-"):
+        if path.name != "provider-outbound-live.json":
             pending_sources += 1
+
         source_mtime = path.stat().st_mtime if path.exists() else 0.0
+        payload_updated_at = payload.get("updated_at")
 
-        updated_at = payload.get("updated_at")
-        updated_dt = parse_dt(updated_at)
-        if updated_dt and (newest_updated_dt is None or updated_dt > newest_updated_dt):
-            newest_updated_dt = updated_dt
-            newest_updated_at = updated_at
+        candidate_times = [payload_updated_at]
+        candidate_times.extend(event.get("sent_at") for event in events)
+        for value in candidate_times:
+            dt = parse_dt(value)
+            if dt and (newest_dt is None or dt > newest_dt):
+                newest_dt = dt
+                newest_at = value
 
-        for event in payload.get("events") or []:
-            if not isinstance(event, dict):
-                continue
+        for event in events:
             uid = event.get("provider_uid")
             if not isinstance(uid, int):
                 continue
-            rank = event_rank({**event, "updated_at": updated_at}, source_mtime)
+            rank = event_rank(event, payload_updated_at, source_mtime)
             if uid not in by_uid or rank >= ranks[uid]:
                 by_uid[uid] = dict(event)
                 ranks[uid] = rank
 
     return {
         "events": list(by_uid.values()),
-        "updated_at": newest_updated_at,
+        "updated_at": newest_at,
         "loaded_sources": loaded_sources,
         "pending_sources": pending_sources,
     }
@@ -130,14 +149,12 @@ def main():
         if isinstance(uid, int):
             merged[uid] = dict(item)
 
-    # Provider evidence is authoritative for an existing UID. Keep unsuccessful
-    # evidence too so a newer bounce/duplicate marker can prevent stale success
-    # records from surviving in the merged outbound ledger.
+    # Provider evidence is authoritative for the same UID, including a later
+    # bounce/duplicate marker that must invalidate a stale success record.
     for event in live.get("events") or []:
         uid = event.get("provider_uid")
-        if not isinstance(uid, int):
-            continue
-        merged[uid] = {**merged.get(uid, {}), **event}
+        if isinstance(uid, int):
+            merged[uid] = {**merged.get(uid, {}), **event}
 
     messages = sorted(merged.values(), key=lambda x: x.get("provider_uid", 0))
     today_messages = []
@@ -154,7 +171,6 @@ def main():
     today_messages.sort(key=lambda x: x.get("sent_at", ""), reverse=True)
     first_contacts = [m for m in today_messages if m.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"]
 
-    # Preserve builder-computed elapsed-hour denominator when available.
     elapsed = ((dashboard.get("today") or {}).get("active_window_elapsed_hours") or 0)
     messages_per_hour = round(len(today_messages) / elapsed, 2) if elapsed else 0.0
     first_contacts_per_hour = round(len(first_contacts) / elapsed, 2) if elapsed else 0.0
@@ -194,7 +210,7 @@ def main():
         "Provider live overlay: "
         f"{len(today_messages)} successful outbound today, "
         f"{len(first_contacts)} first contacts, "
-        f"{live.get('pending_sources', 0)} pending fragments reconciled"
+        f"{live.get('pending_sources', 0)} pending sources reconciled"
     )
     return 0
 
