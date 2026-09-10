@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-10T17:00:40Z",
+  "updated_at": "2026-09-10T17:16:47Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 324,
-    "agreement_count": 168,
-    "agreement_pct": 51.85,
+    "evaluated_total": 325,
+    "agreement_count": 169,
+    "agreement_pct": 52.0,
     "deepseek_promote": 23,
     "vds_promote": 125,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 133,
-    "cumulative_estimated_cost_usd": 0.068664,
-    "cost_per_evaluated_candidate_usd": 0.00021193,
-    "cost_per_deepseek_promote_usd": 0.00298538,
-    "cost_per_observed_ready_or_contacted_usd": 0.03433186,
-    "latest_request": null
+    "request_count": 134,
+    "cumulative_estimated_cost_usd": 0.068896,
+    "cost_per_evaluated_candidate_usd": 0.00021199,
+    "cost_per_deepseek_promote_usd": 0.00299549,
+    "cost_per_observed_ready_or_contacted_usd": 0.03444813,
+    "latest_request": {
+      "at": "2026-09-10T17:16:45Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 426,
+      "completion_tokens": 209,
+      "total_tokens": 763,
+      "estimated_cost_usd": 0.00023256
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "200cf76bca6fbe542afb1f4bde101f52",
-      "evaluated_at": "2026-09-08T02:02:25Z",
-      "organization": "pwc",
-      "title": "Web Designer Stage - Milano [IFS]",
-      "location": "Milan",
-      "opportunity_url": "https://pwc.wd3.myworkdayjobs.com/global_campus_careers/job/Milan/Web-Designer-Stage---Milano--IFS-_760146WD",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Web designer internship in Milan, Italy, matches geography and basic web design keyword, but is an internship (stage) with no explicit freelance/contract compatibility and lacks WordPress/WooCommerce/frontend stack depth.",
-      "deepseek_risk_flags": [
-        "internship role",
-        "no freelance compatibility evidence",
-        "generic web design scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000215915,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1fd1d989ceb92750a4f3d2188a0bb87b",
       "evaluated_at": "2026-09-08T02:02:25Z",
@@ -1420,10 +1404,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7a988e6630bdc750134fea3ca9d0eea0",
+      "evaluated_at": "2026-09-10T17:16:45Z",
+      "organization": "okta",
+      "title": "Senior Solutions Engineer,Auth0",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/okta/senior-solutions-engineerauth0-london-454160",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Solutions Engineer role at Okta/Auth0 in London is a pre-sales/technical sales engineering position centered on identity/authentication products, not a WordPress/WooCommerce/frontend web development role; matched keywords (frontend, html, php) are incidental and the 'partner' commercial keyword refers to channel/partner sales, not freelance collaboration.",
+      "deepseek_risk_flags": [
+        "role_is_solutions_engineering_not_web_development",
+        "identity_auth_domain_mismatch",
+        "on_site_london_not_spain_italy_or_eu_remote",
+        "no_freelance_or_contract_compatibility_evidence",
+        "keyword_matches_incidental"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00023256,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-10T17:00:38Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-10T17:16:43Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
