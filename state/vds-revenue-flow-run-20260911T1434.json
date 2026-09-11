@@ -1,0 +1,38 @@
+{
+  "run_at":"2026-09-11T14:34:31+02:00",
+  "serious_candidates_evaluated":29,
+  "direct_email_harvest_evaluated":19,
+  "send_now":1,
+  "provider_verified_first_contact":1,
+  "manual_apply":5,
+  "wait_research":8,
+  "reject":15,
+  "duplicates":5,
+  "route_failures":4,
+  "delivery_state_unknown":0,
+  "hard_bounce_discovered":1,
+  "commercial_archetypes":{"AGENCY_EXTERNAL_CAPACITY":25,"SME_WEB_IMPROVEMENT":0,"EU_DISSEMINATION_SPECIALIST":4},
+  "ab_variants_sent":{"CREDENTIALS_CLASSIC":1,"VALUE_MICRO_COMMITMENT":0},
+  "downstream":{"reply":0,"qualified_positive_reply":0,"referral":0,"call_interview":0,"proposal":0,"won":0,"revenue":0},
+  "provider_events":[
+    {"provider_uid":434,"organization":"Hit Production Srl","recipient":"info@hitproduction.it","result":"VERIFIED_EMAIL_SENT","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"CREDENTIALS_CLASSIC","micro_cta_type":"DIRECT_PROJECT_FIT"},
+    {"provider_uid":432,"organization":"Web-Net","recipient":"hr@web-net.org","result":"HARD_BOUNCE_WRONG_ADDRESS","bounce_uid":1435,"count_as_successful_outbound":false}
+  ],
+  "notable_decisions":[
+    {"organization":"Hit Production Srl","result":"SEND_NOW","reason":"official careers page explicitly seeks web designers/developers for collaborations and publishes info@hitproduction.it for candidatures; provider and GitHub dedup clean"},
+    {"organization":"Ieros","result":"REJECT","reason":"duplicate provider Sent UID 276"},
+    {"organization":"START Agenzia Creativa","result":"REJECT","reason":"duplicate provider Sent UID 387"},
+    {"organization":"Eclettica","result":"REJECT","reason":"duplicate provider Sent UID 183"},
+    {"organization":"Evo Sistemi","result":"REJECT","reason":"duplicate provider Sent UID 119"},
+    {"organization":"Crisandcris.net","result":"REJECT","reason":"known duplicate provider history"},
+    {"organization":"Apiceweb","result":"MANUAL_APPLY","reason":"application form with mandatory CV upload"},
+    {"organization":"Webora","result":"MANUAL_APPLY","reason":"prescribed application form with CV upload"},
+    {"organization":"EWAKE","result":"MANUAL_APPLY","reason":"careers/application flow; do not bypass with general email"},
+    {"organization":"Humans Agency","result":"MANUAL_APPLY","reason":"prescribed careers form with CV"},
+    {"organization":"Red Onion","result":"MANUAL_APPLY","reason":"prescribed application form with CV"},
+    {"organization":"Antonio De Lorenzi","result":"REJECT","reason":"web designer/developer freelance role explicitly limited to candidates resident/domiciled in Rome"},
+    {"organization":"Erga Web Solution","result":"WAIT_RESEARCH","reason":"strong current collaboration signal but careers page does not publish a candidacy-specific email and general info route should not bypass application intent"},
+    {"organization":"Expansion Group","result":"WAIT_RESEARCH","reason":"future-collaboration archive signal; route not sufficiently candidacy-specific"}
+  ],
+  "notes":"Provider evidence authoritative. No blind retry for UID 432. UID 434 verified in Sent with recipient, subject, BCC owner and CV attachment. Live overlay could not be safely latest-SHA merged because connector returns provider-outbound-live.json as one oversized truncated content line; reconciliation file written instead."
+}
