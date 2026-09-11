@@ -1,0 +1,76 @@
+{
+  "run_at": "2026-09-11T06:05:00Z",
+  "workstream": "VDS_JOB_FLOW",
+  "send_window": "CLOSED",
+  "serious_candidates": 18,
+  "direct_email_harvest_count": 10,
+  "metrics": {
+    "SEND_NOW": 0,
+    "PROVIDER_VERIFIED_FIRST_CONTACT": 0,
+    "MANUAL_APPLY": 3,
+    "WAIT_RESEARCH": 3,
+    "REJECT": 12,
+    "duplicates_provider": 6,
+    "route_failures": 2,
+    "fit_or_mandatory_mismatch": 4
+  },
+  "ab_variants_sent": {
+    "CLASSIC_APPLICATION": 0,
+    "EXTERNAL_CAPACITY_OFFER": 0
+  },
+  "funnel_outcomes_detected": {
+    "reply": 0,
+    "positive_reply": 0,
+    "interview_call": 0,
+    "proposal": 0,
+    "won": 0
+  },
+  "priority_clean_routes": [
+    {
+      "organization": "TIF creativehub",
+      "recipient": "candidature@tif.agency",
+      "role": "Web Designer",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "commercial_variant_next": "EXTERNAL_CAPACITY_OFFER",
+      "provider_sent_matches": 0,
+      "fit": ["WordPress", "Elementor", "HTML", "CSS", "UX/UI", "e-commerce"]
+    },
+    {
+      "organization": "DigitalPA",
+      "recipient": "curricula@digitalpa.it",
+      "role": "PHP Software Developer (WordPress/WooCommerce & Symfony)",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "commercial_variant_next": "CLASSIC_APPLICATION",
+      "provider_sent_matches": 0,
+      "fit": ["WordPress", "WooCommerce", "PHP", "frontend"]
+    },
+    {
+      "organization": "Visilay",
+      "role": "Sviluppatore WordPress (Astra ed Elementor)",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "APPLICATION_EMAIL_OBSCURED_IN_CRAWLER",
+      "fit": ["WordPress", "Elementor"]
+    }
+  ],
+  "manual_apply": [
+    {"organization": "Rúbrika", "reason": "career form is authoritative route"},
+    {"organization": "Haz Marca", "reason": "current WordPress/freelance area, form-only"},
+    {"organization": "VueloIV", "reason": "current freelance WordPress/front-end role, application form route"}
+  ],
+  "provider_duplicates": [
+    {"organization": "EuroAquaTours", "provider_uid": 323},
+    {"organization": "Nexus Web & Software", "provider_uid": 325},
+    {"organization": "Herdl", "provider_uid": 329},
+    {"organization": "Digimates", "provider_uid": 334},
+    {"organization": "Mobyleshop", "provider_uid": 203},
+    {"organization": "Publydea/Crisandcris", "evidence": "previous provider-verified sends already established in canonical flow"}
+  ],
+  "notable_rejects": [
+    {"organization": "Antonio De Lorenzi", "reason": "mandatory Rome residence/domicile for web designer freelance role"},
+    {"organization": "SAHARA Werbeagentur", "reason": "perfect German explicitly mandatory"},
+    {"organization": "Drimz AI", "reason": "must already live in Genoa and work on-site"},
+    {"organization": "Henry & Co", "reason": "vacancy is many years old/stale"}
+  ]
+}
