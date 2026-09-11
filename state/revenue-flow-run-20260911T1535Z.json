@@ -1,0 +1,82 @@
+{
+  "run_at": "2026-09-11T15:35:30Z",
+  "mode": "DIRECT_EMAIL_DISCOVERY_QUALIFY_DECIDE_SEND_ROUTE",
+  "send_window_open": true,
+  "summary": {
+    "serious_candidates_evaluated": 27,
+    "direct_email_harvest_evaluated": 19,
+    "send_now": 1,
+    "provider_verified_first_contact": 1,
+    "manual_apply": 6,
+    "wait_research": 5,
+    "reject": 15,
+    "duplicates": 2,
+    "route_failures": 0,
+    "delivery_state_unknown": 0,
+    "hard_bounces_detected": 1
+  },
+  "send_now_events": [
+    {
+      "provider_uid": 447,
+      "organization": "Afterstudio Collective",
+      "recipient": "info@afterstudio.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "SEND_2_WORKLOAD_EXAMPLES",
+      "provider_verified": true
+    }
+  ],
+  "provider_corrections": [
+    {
+      "provider_uid": 446,
+      "organization": "Helixa Tech",
+      "recipient": "hr@helixatech.com",
+      "state": "HARD_BOUNCE_WRONG_ADDRESS",
+      "bounce_uid": 1438,
+      "count_as_successful_outbound": false,
+      "no_blind_retry": true
+    }
+  ],
+  "manual_apply_examples": [
+    "Amalthea Digital & Branding — Full Stack Designer freelance, P.IVA/remote; application requires CV + presentation + portfolio",
+    "Craq Design Studio — freelance collaboration via prescribed spontaneous-application route",
+    "PlayMore! — Graphic/Web Developer P.IVA/part-time; requires CV + portfolio + short presentation",
+    "Yunikon — careers route explicitly requests CV",
+    "Brithers — current Programador role; prescribed email application requires CV attachment",
+    "Xonex — application form prescribed"
+  ],
+  "wait_research_examples": [
+    "UGECE Agency — strong WordPress/SEO freelance match but public hiring signal is ~6 months old",
+    "KForge — partnership page is current but primarily supplier/agency-partner oriented; buyer-side trigger not established",
+    "Afterstudio additional capacity beyond first contact — now reserved by UID 447",
+    "Abruzzo Digitale — current P.IVA roles found, but no sufficiently specific web-development opening in retrieved evidence",
+    "B4web — developer route exists but public page did not expose a usable application email for this role"
+  ],
+  "duplicate_examples": [
+    {"organization":"BP Nexus","provider_uids":[171,172]},
+    {"organization":"TurboBit IT Solutions","provider_uids":[313]}
+  ],
+  "archetype_counts": {
+    "AGENCY_EXTERNAL_CAPACITY": 22,
+    "SME_WEB_IMPROVEMENT": 1,
+    "EU_DISSEMINATION_SPECIALIST": 4
+  },
+  "ab_first_contacts_this_run": {
+    "CREDENTIALS_CLASSIC": 0,
+    "VALUE_MICRO_COMMITMENT": 1
+  },
+  "downstream_new_since_previous_run": {
+    "reply": 0,
+    "qualified_positive_reply": 0,
+    "referral": 0,
+    "call_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue": 0
+  },
+  "notes": [
+    "Hostinger Sent is authoritative for dedup and delivery verification.",
+    "provider-outbound-live.json was not blindly replaced because the connector returned its full content truncated; UID 447 and bounce correction UID 446 were persisted in an idempotent reconciliation file instead.",
+    "No resend is authorized for provider UIDs 446 or 447."
+  ]
+}
