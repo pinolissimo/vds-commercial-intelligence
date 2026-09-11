@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-11T13:38:01Z",
+  "updated_at": "2026-09-11T15:00:49Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 335,
+    "evaluated_total": 336,
     "agreement_count": 170,
-    "agreement_pct": 50.75,
+    "agreement_pct": 50.6,
     "deepseek_promote": 23,
     "vds_promote": 128,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 139,
-    "cumulative_estimated_cost_usd": 0.070911,
-    "cost_per_evaluated_candidate_usd": 0.00021168,
-    "cost_per_deepseek_promote_usd": 0.00308309,
-    "cost_per_observed_ready_or_contacted_usd": 0.03545558,
-    "latest_request": null
+    "request_count": 140,
+    "cumulative_estimated_cost_usd": 0.071075,
+    "cost_per_evaluated_candidate_usd": 0.00021153,
+    "cost_per_deepseek_promote_usd": 0.00309021,
+    "cost_per_observed_ready_or_contacted_usd": 0.03553745,
+    "latest_request": {
+      "at": "2026-09-11T15:00:47Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 189,
+      "completion_tokens": 181,
+      "total_tokens": 754,
+      "estimated_cost_usd": 0.00016373
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7a3abef8a78141bfd72722959f8d8002",
-      "evaluated_at": "2026-09-08T18:39:51Z",
-      "organization": "",
-      "title": "&#x28;Senior&#x29; Java&#x2f;Angular Developer &ndash; Full Remote",
-      "location": "United States",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Core role is Java/Angular development; no WordPress/WooCommerce or web performance/maintenance scope. Frontend/HTML/CSS/JS mentions are generic and secondary to a backend-heavy stack.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "geo_mismatch",
-        "generic_keyword_match"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00012939,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "adbcfefbb854b8af7b2afc058f124406",
       "evaluated_at": "2026-09-08T18:39:51Z",
@@ -1441,10 +1425,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9692eb0cc7780cd3c8dc0a54a32e8342",
+      "evaluated_at": "2026-09-11T15:00:47Z",
+      "organization": "neoshare",
+      "title": "Senior Frontend Software Engineer - Angular (m/f/x)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/neoshare/senior-frontend-software-engineer-angular-berlin-173426",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is Senior Frontend Software Engineer - Angular, an Angular-heavy engineering position that does not match the target profile's WordPress/WooCommerce/custom HTML-CSS-JS web-development focus; only generic frontend/UI/UX keyword overlap exists.",
+      "deepseek_risk_flags": [
+        "angular_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_signal",
+        "generic_collaboration_keyword_only",
+        "location_berlin_onsite_unknown_remote"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00016373,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-11T13:37:59Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-11T15:00:45Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
