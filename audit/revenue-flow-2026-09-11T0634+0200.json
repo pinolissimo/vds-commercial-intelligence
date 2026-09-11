@@ -1,0 +1,109 @@
+{
+  "run_at": "2026-09-11T06:34:40+02:00",
+  "mode": "DISCOVER_QUALIFY_NO_SEND_WINDOW_CLOSED",
+  "send_window": "09:00-19:00 Europe/Madrid",
+  "counts": {
+    "serious_candidates_evaluated": 60,
+    "direct_email_harvest_evaluated": 41,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 10,
+    "wait_research": 18,
+    "reject": 32,
+    "duplicates": 3,
+    "route_failures": 5,
+    "delivery_state_unknown": 0
+  },
+  "archetypes": {
+    "AGENCY_EXTERNAL_CAPACITY": 43,
+    "SME_WEB_IMPROVEMENT": 4,
+    "EU_DISSEMINATION_SPECIALIST": 13
+  },
+  "ab_new_outbound": {
+    "CREDENTIALS_CLASSIC": 0,
+    "VALUE_MICRO_COMMITMENT": 0
+  },
+  "downstream_new": {
+    "reply": 0,
+    "qualified_positive_reply": 0,
+    "referral": 0,
+    "call_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue_eur": 0
+  },
+  "provider_dedup_corrections": [
+    {
+      "organization": "Iberica Studio",
+      "recipient": "trabajo@ibericastudio.com",
+      "decision": "REJECT",
+      "blocker": "DUPLICATE_PROVIDER_SENT",
+      "provider_uid": 120,
+      "sent_at": "2026-08-31T07:03:28Z"
+    },
+    {
+      "organization": "Crisandcris.net",
+      "recipient": "recruiting@crisandcris.net",
+      "decision": "REJECT",
+      "blocker": "DUPLICATE_PROVIDER_SENT",
+      "provider_uids": [99,318],
+      "latest_sent_at": "2026-09-08T07:36:37Z"
+    }
+  ],
+  "high_value_wait_research": [
+    {
+      "organization": "El Mecano",
+      "recipient": "info@elmecano.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0,
+      "github_email_matches": 0
+    },
+    {
+      "organization": "Pasquale Marinelli Visual & Web Design",
+      "recipient": "info@pasqualemarinelli.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0,
+      "github_email_matches": 0
+    },
+    {
+      "organization": "Ofifacil",
+      "recipient": "info@ofifacil.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "provider_sent_matches": 0
+    }
+  ],
+  "manual_apply_examples": [
+    "iDEA Marketing",
+    "Agencia Reinicia",
+    "Good Rebels",
+    "The Hoop Studio",
+    "Hays client via job route"
+  ],
+  "reject_examples": [
+    "Antonio De Lorenzi - explicit Rome residency requirement",
+    "Crisandcris.net - duplicate provider first contact already exists",
+    "Iberica Studio - duplicate provider first contact already exists",
+    "Banana_code - supplier-side white-label provider without verified buyer trigger",
+    "Perel Web Studio - supplier-side white-label provider"
+  ],
+  "eu_wait_research_examples": [
+    "WIT Berry",
+    "Elements Digital",
+    "LOMARTOV",
+    "HELP EU",
+    "Fastlane"
+  ],
+  "notes": [
+    "Independent fresh discovery performed across Spain, Italy and EU/remote-compatible sources.",
+    "Provider inbox has no professional message newer than UID 1430.",
+    "No live email was sent because the authorized send window was closed.",
+    "Provider evidence remains authoritative for deduplication.",
+    "Fresh discovery surfaced active freelance routes, but several were form/platform-only, supplier-side, duplicate, or had explicit geographic constraints."
+  ]
+}
