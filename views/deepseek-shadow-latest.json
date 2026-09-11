@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-11T07:07:38Z",
+  "updated_at": "2026-09-11T07:59:37Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 328,
+    "evaluated_total": 329,
     "agreement_count": 170,
-    "agreement_pct": 51.83,
+    "agreement_pct": 51.67,
     "deepseek_promote": 23,
-    "vds_promote": 126,
+    "vds_promote": 127,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 107
+    "deepseek_demoted_from_vds_promote": 108
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 17.39,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.59,
+    "vds_promote_hot_rate_pct": 1.57,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.7,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 136,
-    "cumulative_estimated_cost_usd": 0.069364,
-    "cost_per_evaluated_candidate_usd": 0.00021148,
-    "cost_per_deepseek_promote_usd": 0.00301582,
-    "cost_per_observed_ready_or_contacted_usd": 0.03468193,
-    "latest_request": null
+    "request_count": 137,
+    "cumulative_estimated_cost_usd": 0.069671,
+    "cost_per_evaluated_candidate_usd": 0.00021176,
+    "cost_per_deepseek_promote_usd": 0.00302916,
+    "cost_per_observed_ready_or_contacted_usd": 0.03483531,
+    "latest_request": {
+      "at": "2026-09-11T07:59:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 172,
+      "completion_tokens": 171,
+      "total_tokens": 727,
+      "estimated_cost_usd": 0.00030678
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c6a665d70ecb9b007ba3384ef3307617",
-      "evaluated_at": "2026-09-08T09:00:03Z",
-      "organization": "GlassFlow",
-      "title": "Frontend Engineer",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/glassflow/frontend-engineer-berlin-475016",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 81,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Frontend engineer role in Berlin, but no WordPress/WooCommerce or web performance signals; likely product/engineering focus.",
-      "deepseek_risk_flags": [
-        "No WordPress/WooCommerce mention",
-        "Location Berlin not primary market",
-        "Generic collaboration mention not proof of freelance"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022096,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "70ead286b4b1c31f5a26a1af8f6bef71",
       "evaluated_at": "2026-09-08T09:00:03Z",
@@ -1427,10 +1411,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "dec99c236203df9df740e9482c65d216",
+      "evaluated_at": "2026-09-11T07:59:34Z",
+      "organization": "Bjak",
+      "title": "Frontend Engineer",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/bjak/frontend-engineer-london-303387",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.45,
+      "deepseek_primary_reason": "Frontend Engineer role with matching HTML/CSS/UI/accessibility keywords, but no explicit WordPress/WooCommerce scope, no stated freelance/contract compatibility, and geo/remote status unverified (UK-based, outside primary Spain/Italy markets).",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "freelance_compatibility_unstated",
+        "geo_outside_primary_markets",
+        "remote_state_unknown",
+        "employment_type_unknown",
+        "collaboration_keyword_only_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00030678,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-11T07:07:37Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-11T07:59:33Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
