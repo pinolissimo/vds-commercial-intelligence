@@ -1,0 +1,71 @@
+{
+  "run_at": "2026-09-11T14:38:30Z",
+  "serious_candidates_evaluated": 20,
+  "direct_email_harvest_evaluated": 15,
+  "decisions": {
+    "SEND_NOW": 1,
+    "MANUAL_APPLY": 3,
+    "WAIT_RESEARCH": 3,
+    "REJECT": 13,
+    "duplicates": 4,
+    "route_failures": 0
+  },
+  "provider_verified_first_contacts": [
+    {
+      "provider_uid": 442,
+      "organization": "Pixy Labs",
+      "recipient": "info@pixylabs.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "SEND_1_2_WORKLOAD_EXAMPLES"
+    }
+  ],
+  "downstream": {
+    "qualified_positive_reply": 1,
+    "referral": 0,
+    "call_invitation": 1,
+    "call_booked": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue_eur": 0,
+    "detail": "Teamsy INBOX UID 1437 invited VDS to discuss possible inclusion on their site/network in a call next week. VDS replied provider-verified as Sent UID 443 with three calendar-checked time options."
+  },
+  "archetype_counts": {
+    "AGENCY_EXTERNAL_CAPACITY": 20,
+    "SME_WEB_IMPROVEMENT": 0,
+    "EU_DISSEMINATION_SPECIALIST": 0
+  },
+  "ab_variant_counts_sent": {
+    "CREDENTIALS_CLASSIC": 1,
+    "VALUE_MICRO_COMMITMENT": 0
+  },
+  "candidate_decisions": [
+    ["Crisandcris.net","REJECT","DUPLICATE_PROVIDER_HISTORY"],
+    ["Pixy Labs","SEND_NOW","VERIFIED_ROUTE_AND_CURRENT_COLLAB_SIGNAL"],
+    ["ReMedia IT","REJECT","DUPLICATE_PROVIDER_HISTORY"],
+    ["TurboBit IT Solutions","REJECT","DUPLICATE_PROVIDER_HISTORY_UID_313"],
+    ["Fluido Factory","REJECT","NO_CURRENT_EXTERNAL_CAPACITY_BUYER_TRIGGER"],
+    ["Miosi Riccardo","REJECT","SUPPLIER_SIDE_NO_BUYER_TRIGGER"],
+    ["Sabaweb","REJECT","SUPPLIER_SIDE_NO_BUYER_TRIGGER"],
+    ["PlanetConsult","WAIT_RESEARCH","COLLAB_SIGNAL_TOO_GENERIC"],
+    ["TTen Srl","MANUAL_APPLY","REGISTRATION_APPLICATION_ROUTE"],
+    ["Web & Design Roma","REJECT","NO_EXTERNAL_CAPACITY_SIGNAL"],
+    ["Sphaera","MANUAL_APPLY","DEDICATED_COLLABORATION_APPLICATION_ROUTE"],
+    ["Lucasweb","REJECT","DUPLICATE_PROVIDER_HISTORY"],
+    ["Way Web Agency","WAIT_RESEARCH","NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"],
+    ["emmecubo","WAIT_RESEARCH","JOB_EMAIL_PRESENT_BUT_ROLE_CONTEXT_NOT_VERIFIED"],
+    ["WP Team","REJECT","SUPPLIER_SIDE_NO_BUYER_TRIGGER"],
+    ["Crebs","REJECT","DIRECTORY_PLATFORM_NOT_DIRECT_BUYER"],
+    ["DigitallySara","REJECT","SOLO_SUPPLIER_NO_BUYER_TRIGGER"],
+    ["Webila","REJECT","NO_EXTERNAL_CAPACITY_SIGNAL"],
+    ["IOCOS","MANUAL_APPLY","DEDICATED_FREELANCER_FORM_ROUTE"],
+    ["ABA Web Agency","REJECT","CURRENT_ROLE_MISMATCH_CONTENT_CREATOR"]
+  ],
+  "delivery_state_unknown": 0,
+  "notes": [
+    "Hostinger provider evidence checked before Pixy Labs send: zero prior Sent matches.",
+    "GitHub audit search for pixylabs returned zero matches before send.",
+    "Provider-outbound-live direct replacement was not attempted because connector returned the large file truncated; UID 442 was persisted idempotently under state/provider-outbound-reconcile/uid-442.json to avoid history loss and prevent resend.",
+    "YUM Sistemas prior attempt remains hard-bounced at INBOX UID 1436 (550 no such recipient); no blind retry performed."
+  ]
+}
