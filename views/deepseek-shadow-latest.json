@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-11T15:00:49Z",
+  "updated_at": "2026-09-11T16:05:08Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 336,
+    "evaluated_total": 338,
     "agreement_count": 170,
-    "agreement_pct": 50.6,
+    "agreement_pct": 50.3,
     "deepseek_promote": 23,
-    "vds_promote": 128,
+    "vds_promote": 130,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 109
+    "deepseek_demoted_from_vds_promote": 111
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 17.39,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.56,
+    "vds_promote_hot_rate_pct": 1.54,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.7,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 140,
-    "cumulative_estimated_cost_usd": 0.071075,
-    "cost_per_evaluated_candidate_usd": 0.00021153,
-    "cost_per_deepseek_promote_usd": 0.00309021,
-    "cost_per_observed_ready_or_contacted_usd": 0.03553745,
+    "request_count": 141,
+    "cumulative_estimated_cost_usd": 0.071365,
+    "cost_per_evaluated_candidate_usd": 0.00021114,
+    "cost_per_deepseek_promote_usd": 0.00310283,
+    "cost_per_observed_ready_or_contacted_usd": 0.03568258,
     "latest_request": {
-      "at": "2026-09-11T15:00:47Z",
+      "at": "2026-09-11T16:05:06Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 384,
-      "prompt_cache_miss_tokens": 189,
-      "completion_tokens": 181,
-      "total_tokens": 754,
-      "estimated_cost_usd": 0.00016373
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 222,
+      "completion_tokens": 359,
+      "total_tokens": 1221,
+      "estimated_cost_usd": 0.00029026
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "adbcfefbb854b8af7b2afc058f124406",
-      "evaluated_at": "2026-09-08T18:39:51Z",
-      "organization": "METYCLE",
-      "title": "Automation Engineer - PLC / Plant Control (m/f/d)",
-      "location": "Cologne (GER)",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/metycle/automation-engineer-plc-plant-control-cologne-ger-73673",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Automation/PLC engineering role unrelated to web development; keyword matches on 'maintenance' and 'remote' are misleading.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "geo_mismatch",
-        "misleading_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00012939,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "09a1e7a7fca0f39c1b256f0e953b41fc",
-      "evaluated_at": "2026-09-08T19:46:43Z",
-      "organization": "Comand Ai",
-      "title": "Front-end Engineer",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/comand-ai/front-end-engineer-london-20309",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 60.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Front-end engineer role with generic front-end match, but no explicit WordPress/WooCommerce or web performance stack; location London and unclear remote status reduce compatibility with target geos.",
-      "deepseek_risk_flags": [
-        "stack_fit_uncertain",
-        "geo_mismatch_likely",
-        "remote_status_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000166335,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f3533811c01886b17ecb5f74f16d0e7c",
       "evaluated_at": "2026-09-08T19:46:43Z",
@@ -1454,10 +1400,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "54e52b4173e929016bc1228c89620f23",
+      "evaluated_at": "2026-09-11T16:05:06Z",
+      "organization": "Lightspeedhq",
+      "title": "Senior Frontend Developer - React.js (all genders)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/lightspeedhq/senior-frontend-developer-reactjs-all-genders-berlin-110719",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Senior Frontend Developer role centered on React.js, a stack mismatch for a WordPress/WooCommerce-focused freelance profile; no meaningful WordPress, WooCommerce, or maintenance scope indicated.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "no_wordpress_scope",
+        "no_freelance_compatibility_evidence",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00014513,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5e67ca2968487f0b8a8222530d3aec0c",
+      "evaluated_at": "2026-09-11T16:05:06Z",
+      "organization": "Holzland Becker",
+      "title": "(Senior) Frontend Web Developer (w/m/d)",
+      "location": "Offenbach am Main, Hessen, Deutschland",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/holzland-becker/senior-frontend-web-developer-offenbach-am-main-203920",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend Web Developer role with strong keyword alignment (HTML, CSS, JS, Core Web Vitals, UI/UX) matching the target profile, but no explicit WordPress/WooCommerce scope and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "no_wordpress_scope_confirmed",
+        "no_freelance_compatibility_evidence",
+        "geo_unverified",
+        "on_site_location_offenbach"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014513,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-11T15:00:45Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-11T16:05:04Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
