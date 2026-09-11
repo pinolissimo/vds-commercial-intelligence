@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 285,
+  "runs": 286,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -9079,6 +9079,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b38fddb2352c7defe06b071f791d8f76",
+      "evaluated_at": "2026-09-11T19:52:26Z",
+      "organization": "Kpler",
+      "title": "Full Stack Engineer",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/kpler/full-stack-engineer-united-kingdom-2851",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Full Stack Engineer role at Kpler in the United Kingdom; only generic frontend/javascript/php keyword matches with no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and UK location is not a primary target market (Spain/Italy/EU-remote).",
+      "deepseek_risk_flags": [
+        "non_target_geo_uk",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_matches_only",
+        "freelance_compatibility_unverified",
+        "full_stack_role_likely_broader_than_web_specialism"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018921,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "22d89e5a09ab784c16d8af1065616d2f",
+      "evaluated_at": "2026-09-11T19:52:26Z",
+      "organization": "Thgingenuity",
+      "title": "Database Engineer (DBA)",
+      "location": "Manchester",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/thgingenuity/database-engineer-dba-manchester-168361",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Database Engineer (DBA) role in Manchester is a core database/infrastructure position with no meaningful WordPress, WooCommerce, frontend or web-performance scope; matched keywords (maintenance, migration, collaboration) are generic and do not indicate stack fit or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_stack_mismatch_dba",
+        "non_target_geo_uk",
+        "generic_keyword_matches_only",
+        "no_web_wordpress_scope",
+        "freelance_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018921,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -10785,9 +10843,21 @@
       "completion_tokens": 193,
       "total_tokens": 763,
       "estimated_cost_usd": 0.00017099
+    },
+    {
+      "at": "2026-09-11T19:52:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 681,
+      "completion_tokens": 345,
+      "total_tokens": 1154,
+      "estimated_cost_usd": 0.00037842
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-11T18:03:53Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-11T19:52:26Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

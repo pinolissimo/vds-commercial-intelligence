@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-11T18:03:53Z",
+  "updated_at": "2026-09-11T19:52:29Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 339,
-    "agreement_count": 170,
-    "agreement_pct": 50.15,
+    "evaluated_total": 341,
+    "agreement_count": 172,
+    "agreement_pct": 50.44,
     "deepseek_promote": 23,
     "vds_promote": 131,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 142,
-    "cumulative_estimated_cost_usd": 0.071536,
-    "cost_per_evaluated_candidate_usd": 0.00021102,
-    "cost_per_deepseek_promote_usd": 0.00311027,
-    "cost_per_observed_ready_or_contacted_usd": 0.03576808,
-    "latest_request": null
+    "request_count": 143,
+    "cumulative_estimated_cost_usd": 0.071915,
+    "cost_per_evaluated_candidate_usd": 0.00021089,
+    "cost_per_deepseek_promote_usd": 0.00312672,
+    "cost_per_observed_ready_or_contacted_usd": 0.03595728,
+    "latest_request": {
+      "at": "2026-09-11T19:52:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 681,
+      "completion_tokens": 345,
+      "total_tokens": 1154,
+      "estimated_cost_usd": 0.00037842
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "19d22444f175b02e8953637da46e7b2e",
-      "evaluated_at": "2026-09-09T03:04:17Z",
-      "organization": "Brandung",
-      "title": "Trainee Frontend Development (m/w/d)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/brandung/trainee-frontend-development-berlin-451627",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 73,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Frontend trainee role with HTML/CSS/JS and website keywords, but it is a junior/trainee position in Berlin, not freelance-compatible, and lacks WordPress/WooCommerce or performance emphasis.",
-      "deepseek_risk_flags": [
-        "trainee role",
-        "location Berlin",
-        "no freelance indication"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002165533,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "b8b2df4d84170fa7c6f052402d1d7acb",
-      "evaluated_at": "2026-09-09T03:04:17Z",
-      "organization": "",
-      "title": "Software Engineer Frontend - React",
-      "location": "India",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Frontend React role with maintenance keywords and contractor mention, but core stack is React, not WordPress/WooCommerce, and location India with unclear remote compatibility.",
-      "deepseek_risk_flags": [
-        "React-heavy",
-        "location India",
-        "unclear remote"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002165533,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "fbb43fd4df3629c50034756ec4a19ca6",
       "evaluated_at": "2026-09-09T03:04:17Z",
@@ -1447,10 +1404,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b38fddb2352c7defe06b071f791d8f76",
+      "evaluated_at": "2026-09-11T19:52:26Z",
+      "organization": "Kpler",
+      "title": "Full Stack Engineer",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/kpler/full-stack-engineer-united-kingdom-2851",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Full Stack Engineer role at Kpler in the United Kingdom; only generic frontend/javascript/php keyword matches with no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and UK location is not a primary target market (Spain/Italy/EU-remote).",
+      "deepseek_risk_flags": [
+        "non_target_geo_uk",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_matches_only",
+        "freelance_compatibility_unverified",
+        "full_stack_role_likely_broader_than_web_specialism"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018921,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "22d89e5a09ab784c16d8af1065616d2f",
+      "evaluated_at": "2026-09-11T19:52:26Z",
+      "organization": "Thgingenuity",
+      "title": "Database Engineer (DBA)",
+      "location": "Manchester",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/thgingenuity/database-engineer-dba-manchester-168361",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Database Engineer (DBA) role in Manchester is a core database/infrastructure position with no meaningful WordPress, WooCommerce, frontend or web-performance scope; matched keywords (maintenance, migration, collaboration) are generic and do not indicate stack fit or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_stack_mismatch_dba",
+        "non_target_geo_uk",
+        "generic_keyword_matches_only",
+        "no_web_wordpress_scope",
+        "freelance_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018921,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-11T18:03:52Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-11T19:52:24Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
