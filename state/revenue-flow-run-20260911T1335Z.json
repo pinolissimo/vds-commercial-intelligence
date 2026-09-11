@@ -4,18 +4,20 @@
   "serious_candidates_evaluated":60,
   "direct_email_harvest_evaluated":43,
   "decisions":{"SEND_NOW":4,"MANUAL_APPLY":12,"WAIT_RESEARCH":18,"REJECT":26},
-  "provider_verified_first_contact":4,
+  "provider_verified_first_contact":3,
+  "hard_bounce_wrong_address":1,
   "duplicates":4,
-  "route_failures":7,
+  "route_failures":8,
   "delivery_state_unknown":0,
   "wait_research_blockers":{"stale_signal":6,"application_route_ambiguous":7,"buyer_trigger_not_strong_enough":5},
   "commercial_archetypes":{"AGENCY_EXTERNAL_CAPACITY":46,"SME_WEB_IMPROVEMENT":5,"EU_DISSEMINATION_SPECIALIST":9},
-  "ab_first_contacts":{"CREDENTIALS_CLASSIC":1,"VALUE_MICRO_COMMITMENT":3},
+  "ab_attempts":{"CREDENTIALS_CLASSIC":1,"VALUE_MICRO_COMMITMENT":3},
+  "ab_successful_first_contacts":{"CREDENTIALS_CLASSIC":0,"VALUE_MICRO_COMMITMENT":3},
   "sent":[
-    {"provider_uid":437,"organization":"Cleverage Srl","recipient":"info@cleverage.it","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"VALUE_MICRO_COMMITMENT","micro_cta_type":"SEND_1_2_RELEVANT_EXAMPLES"},
-    {"provider_uid":438,"organization":"Modemore / Mitrovo S.r.l.","recipient":"info@modemore.it","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"VALUE_MICRO_COMMITMENT","micro_cta_type":"SEND_2_RELEVANT_WORKS"},
-    {"provider_uid":439,"organization":"YUM Sistemas","recipient":"cv@yumsistemas.com","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"CREDENTIALS_CLASSIC","micro_cta_type":"SEND_RELEVANT_EXAMPLES"},
-    {"provider_uid":440,"organization":"FuturArea snc","recipient":"info@futurarea.it","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"VALUE_MICRO_COMMITMENT","micro_cta_type":"EXTERNAL_MODEL_FIT_PLUS_EXAMPLES"}
+    {"provider_uid":437,"organization":"Cleverage Srl","recipient":"info@cleverage.it","state":"VERIFIED_EMAIL_SENT","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"VALUE_MICRO_COMMITMENT","micro_cta_type":"SEND_1_2_RELEVANT_EXAMPLES"},
+    {"provider_uid":438,"organization":"Modemore / Mitrovo S.r.l.","recipient":"info@modemore.it","state":"VERIFIED_EMAIL_SENT","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"VALUE_MICRO_COMMITMENT","micro_cta_type":"SEND_2_RELEVANT_WORKS"},
+    {"provider_uid":439,"organization":"YUM Sistemas","recipient":"cv@yumsistemas.com","state":"HARD_BOUNCE_WRONG_ADDRESS","count_as_successful_outbound":false,"bounce_uid":1436,"commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"CREDENTIALS_CLASSIC","micro_cta_type":"SEND_RELEVANT_EXAMPLES"},
+    {"provider_uid":440,"organization":"FuturArea snc","recipient":"info@futurarea.it","state":"VERIFIED_EMAIL_SENT","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","commercial_variant":"VALUE_MICRO_COMMITMENT","micro_cta_type":"EXTERNAL_MODEL_FIT_PLUS_EXAMPLES"}
   ],
   "provider_duplicates_blocked":[
     {"organization":"GoalNet","recipient":"info@goalnet.it","prior_provider_uid":363},
@@ -25,7 +27,7 @@
   ],
   "manual_apply_examples":["Next Adv","E-TERNA","PutPut","TREADY","Agenzia Brand","Adviva","Xonex","Redman","Haz Marca Marketing","Molecole"],
   "downstream":{"reply":0,"qualified_positive_reply":0,"referral":0,"call_interview":0,"proposal":0,"won":0,"revenue":0},
-  "provider_notes":{"latest_inbox_professional_reply_uid":1434,"bounce_uid_1435":"hr@web-net.org hard bounce 550 5.1.1 User unknown; previously identified failed outbound remains non-success"},
-  "live_overlay_write":"deferred_to_reconcile_queue_because_provider-outbound-live.json could not be safely fetched in full without truncation",
+  "provider_notes":{"latest_inbox_professional_reply_uid":1434,"bounce_uid_1435":"hr@web-net.org hard bounce 550 5.1.1 User unknown; previously identified failed outbound remains non-success","bounce_uid_1436":"cv@yumsistemas.com hard bounce 550 No such recipient here; no blind retry; generic info@yumsistemas.com not used because application-style route requires exact candidacy email"},
+  "live_overlay_write":"deferred_to_reconcile_queue_because provider-outbound-live.json could not be safely fetched in full without truncation",
   "reconcile_file":"state/provider-outbound-reconcile-20260911T1335Z.jsonl"
 }
