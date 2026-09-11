@@ -1,0 +1,62 @@
+{
+  "run_at": "2026-09-11T15:08:00Z",
+  "workstream": "VDS_JOB_FLOW",
+  "provider_of_record": "HOSTINGER_SENT",
+  "serious_candidates": 30,
+  "direct_email_harvest_count": 16,
+  "send_now_attempts": 3,
+  "provider_verified_first_contact": 2,
+  "hard_bounce_wrong_address": 1,
+  "manual_apply": 10,
+  "wait_research": 6,
+  "reject": 11,
+  "duplicate_failures": 6,
+  "fit_or_location_failures": 5,
+  "route_failures_or_unverified_routes": 10,
+  "commercial_variants": {
+    "CLASSIC_APPLICATION": {"attempted": 2, "verified_success": 1, "hard_bounce": 1},
+    "EXTERNAL_CAPACITY_OFFER": {"attempted": 1, "verified_success": 1, "hard_bounce": 0}
+  },
+  "provider_events": [
+    {"provider_uid":444,"organization":"eMondoTech","state":"VERIFIED_EMAIL_SENT","commercial_variant":"CLASSIC_APPLICATION"},
+    {"provider_uid":445,"organization":"Pinn.Media","state":"VERIFIED_EMAIL_SENT","commercial_variant":"EXTERNAL_CAPACITY_OFFER"},
+    {"provider_uid":446,"organization":"HelixaTech","state":"HARD_BOUNCE_WRONG_ADDRESS","bounce_uid":1438}
+  ],
+  "prior_funnel_outcomes_observed": {
+    "qualified_positive_reply": 1,
+    "organization": "Teamsy",
+    "interview_call_intent": 1,
+    "completed_call": 0,
+    "proposal": 0,
+    "won": 0,
+    "note": "Teamsy proposed a call for next week; reply already sent from provider as UID 443. No duplicate follow-up sent in this run."
+  },
+  "notable_decisions": [
+    {"organization":"eMondoTech","outcome":"SEND_NOW","reason":"current employer-controlled Lavora con noi page, exact CV email, strong WordPress/frontend fit, provider/canonical dedup clean"},
+    {"organization":"Pinn.Media","outcome":"SEND_NOW","reason":"current contract/remote developer roles, exact hr email, HTML/CSS/JS performance/CMS/WordPress fit, provider/canonical dedup clean"},
+    {"organization":"HelixaTech","outcome":"SEND_NOW","reason":"current WordPress role and exact HR route; provider send later hard-bounced due invalid mail host"},
+    {"organization":"BlitheDigital","outcome":"REJECT","reason":"duplicate provider contact UID 193"},
+    {"organization":"MSZLAB","outcome":"REJECT","reason":"duplicate provider contact UID 322"},
+    {"organization":"Crisandcris","outcome":"REJECT","reason":"duplicate provider contacts UID 99/318"},
+    {"organization":"WP Elite Hub","outcome":"REJECT","reason":"duplicate provider contact UID 343"},
+    {"organization":"Nexus Web & Software","outcome":"REJECT","reason":"duplicate provider contact UID 325"},
+    {"organization":"So Design Online","outcome":"REJECT","reason":"duplicate provider history"},
+    {"organization":"Solluton","outcome":"MANUAL_APPLY","reason":"strong remote contract WordPress fit but application form only"},
+    {"organization":"AdSTARS","outcome":"MANUAL_APPLY","reason":"strong remote WordPress fit but application form is authoritative route"},
+    {"organization":"OptiNest","outcome":"MANUAL_APPLY","reason":"WordPress/Elementor/WooCommerce fit; application form only"},
+    {"organization":"WebPigment","outcome":"MANUAL_APPLY","reason":"WordPress role but application form only"},
+    {"organization":"Coresol Studio","outcome":"MANUAL_APPLY","reason":"remote WordPress studio; published hiring process uses online application"},
+    {"organization":"Crednology Holding Corp.","outcome":"WAIT_RESEARCH","reason":"current remote WordPress role, but exact application address remains protected/redacted in retrieved source"},
+    {"organization":"BDevs Tech","outcome":"WAIT_RESEARCH","reason":"current WordPress roles and email application stated, but Cloudflare-protected address not safely recoverable"},
+    {"organization":"PurplePress","outcome":"WAIT_RESEARCH","reason":"direct jobs email exists but listing publication age needs current-need verification before send"},
+    {"organization":"Talentform","outcome":"REJECT","reason":"Rome on-site marketing-heavy role; poor fit to autonomous technical-partner model"},
+    {"organization":"LARC","outcome":"REJECT","reason":"marketing internship/on-site role, not technical VDS fit"},
+    {"organization":"JP Droni","outcome":"REJECT","reason":"current direct-email role is data labeling, mandatory-core mismatch"},
+    {"organization":"INCI Tech","outcome":"REJECT","reason":"WordPress role explicitly asks 5 years; unsupported mandatory experience"}
+  ],
+  "state_persistence": {
+    "live_projection_direct_merge": "DEFERRED_UNSAFE_TRUNCATED_READ",
+    "reconciliation_file": "state/provider-outbound-reconciliation-20260911T1507Z.json",
+    "resend_authorized": false
+  }
+}
