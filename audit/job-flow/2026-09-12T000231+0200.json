@@ -1,0 +1,118 @@
+{
+  "run_at": "2026-09-12T00:02:31+02:00",
+  "mode": "DISCOVERY_QUALIFY_OUTSIDE_SEND_WINDOW",
+  "send_window": "09:00-19:00 Europe/Madrid",
+  "metrics": {
+    "serious_candidates": 8,
+    "direct_email_harvest_count": 5,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 3,
+    "wait_research": 3,
+    "reject": 2,
+    "duplicates": 1,
+    "fit_failures": 0,
+    "route_failures": 4,
+    "variant_A_sent": 0,
+    "variant_B_sent": 0,
+    "new_reply": 0,
+    "new_positive_reply": 0,
+    "new_interview_call": 0,
+    "new_proposal": 0,
+    "new_won": 0
+  },
+  "decisions": [
+    {
+      "organization": "Clover Labs",
+      "canonical_identity_key": "cloverlabs.io",
+      "source": "https://cloverlabs.io/careers/",
+      "route": "jobs@cloverlabs.io",
+      "need": "Senior WordPress Developer; remote; company describes itself as a community of freelancers",
+      "outcome": "WAIT_RESEARCH",
+      "blocker": "send_window_closed",
+      "next_variant": "CLASSIC_APPLICATION",
+      "micro_cta_type": "offer_relevant_wordpress_examples",
+      "provider_dedup": "clean",
+      "github_dedup": "clean"
+    },
+    {
+      "organization": "PressTitan",
+      "canonical_identity_key": "presstitan.com",
+      "source": "https://www.presstitan.com/careers/",
+      "route": "careers@presstitan.com",
+      "need": "ongoing WordPress technical talent/open application",
+      "outcome": "WAIT_RESEARCH",
+      "blocker": "send_window_closed",
+      "next_variant": "EXTERNAL_CAPACITY_OFFER",
+      "micro_cta_type": "offer_1_2_relevant_examples_and_capacity_note",
+      "provider_dedup": "clean",
+      "github_dedup": "clean"
+    },
+    {
+      "organization": "Appslanka",
+      "canonical_identity_key": "appslanka.it",
+      "source": "https://appslanka.it/lavora-con-noi",
+      "route": null,
+      "need": "collaborators/freelancers for frontend, web platforms and UI/UX",
+      "outcome": "WAIT_RESEARCH",
+      "blocker": "career page exposes email CTA but exact candidacy mailbox must be confirmed; info@appslanka.it is public company email but not substituted as candidacy route",
+      "next_variant": "EXTERNAL_CAPACITY_OFFER",
+      "provider_dedup_info_appslanka": "clean",
+      "github_dedup": "clean"
+    },
+    {
+      "organization": "Born West",
+      "canonical_identity_key": "bornwest.com",
+      "source": "https://www.bornwest.com/careers",
+      "need": "Experienced WordPress Developer remote",
+      "outcome": "MANUAL_APPLY",
+      "blocker": "specific role uses external application link; hello@bornwest.com is generic for no-match inquiries and is not substituted"
+    },
+    {
+      "organization": "Syde",
+      "canonical_identity_key": "syde.com",
+      "source": "https://syde.jobs.personio.com/job/2380764",
+      "need": "Senior WordPress Engineer 100% remote",
+      "outcome": "MANUAL_APPLY",
+      "blocker": "authoritative Personio form route"
+    },
+    {
+      "organization": "WPRobo",
+      "canonical_identity_key": "wprobo.com",
+      "source": "https://wprobo.com/careers/wordpress-developer-remote/",
+      "need": "WordPress Developer remote; themes/plugins/WooCommerce/Core Web Vitals",
+      "outcome": "MANUAL_APPLY",
+      "blocker": "authoritative application form only"
+    },
+    {
+      "organization": "SEO Boss",
+      "canonical_identity_key": "seoboss.org",
+      "source": "https://seoboss.org/career/",
+      "route": "info@seoboss.org",
+      "need": "Full-Stack Developer remote; PHP/WordPress and modern frontend",
+      "outcome": "REJECT",
+      "blocker": "duplicate_provider",
+      "provider_evidence": "Sent UID 349 on 2026-09-09"
+    },
+    {
+      "organization": "CorpComm",
+      "canonical_identity_key": "corpcomm-inc.com",
+      "source": "https://corpcomm-inc.com/careers/wordpress-developer",
+      "need": "part-time remote WordPress Developer; performance/Core Web Vitals/security/accessibility",
+      "outcome": "REJECT",
+      "blocker": "exact application email is Cloudflare-obfuscated and could not be verified without guessing; no substitute route used"
+    }
+  ],
+  "prior_funnel_check": {
+    "teamsy": "previous qualified positive reply / call intent remains known; no newer message in this run",
+    "pixy_labs": "previous human reply remains known; no newer message in this run",
+    "nitaco": "reply rechecked: role closed; profile may be retained for future freelance opportunities; not positive",
+    "new_attributable_progress": false
+  },
+  "notes": [
+    "No live email was sent because the current local time was outside the permitted send window.",
+    "Provider Sent evidence was treated as authoritative for deduplication.",
+    "No generic company mailbox was substituted for a role-specific application route.",
+    "No provider-outbound-live event was written because there was no provider-verified send in this run."
+  ]
+}
