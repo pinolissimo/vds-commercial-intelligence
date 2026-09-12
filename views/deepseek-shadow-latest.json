@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-12T20:41:53Z",
+  "updated_at": "2026-09-12T22:04:25Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 362,
-    "agreement_count": 188,
-    "agreement_pct": 51.93,
+    "evaluated_total": 363,
+    "agreement_count": 189,
+    "agreement_pct": 52.07,
     "deepseek_promote": 23,
     "vds_promote": 135,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 156,
-    "cumulative_estimated_cost_usd": 0.076029,
-    "cost_per_evaluated_candidate_usd": 0.00021003,
-    "cost_per_deepseek_promote_usd": 0.00330561,
-    "cost_per_observed_ready_or_contacted_usd": 0.03801455,
-    "latest_request": null
+    "request_count": 157,
+    "cumulative_estimated_cost_usd": 0.076254,
+    "cost_per_evaluated_candidate_usd": 0.00021007,
+    "cost_per_deepseek_promote_usd": 0.00331538,
+    "cost_per_observed_ready_or_contacted_usd": 0.03812687,
+    "latest_request": {
+      "at": "2026-09-12T22:04:23Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 447,
+      "completion_tokens": 190,
+      "total_tokens": 765,
+      "estimated_cost_usd": 0.00022464
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7e18698e1f0faad63dc5e1d10b0fd7e6",
-      "evaluated_at": "2026-09-10T07:01:20Z",
-      "organization": "celonis",
-      "title": "(Senior) Frontend Engineer - Visual Experiences",
-      "location": "Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/celonis/senior-frontend-engineer-visual-experiences-munich-299236",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior frontend role at Celonis in Munich with accessibility/CSS/UI/UX keywords, but no WordPress/WooCommerce or explicit freelance/contract evidence; enterprise product role likely full-time onsite/hybrid, and geo is Munich (not Spain/Italy).",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_scope",
-        "likely_full_time_employment",
-        "onsite_munich_not_target_geo",
-        "enterprise_product_role",
-        "no_explicit_freelance_or_contract_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00026012,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "4594bcf568f977681d0222fc8c51eb9e",
       "evaluated_at": "2026-09-10T07:01:20Z",
@@ -1473,10 +1455,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "60bd11addbcf5af4ec93dc3307bd291c",
+      "evaluated_at": "2026-09-12T22:04:23Z",
+      "organization": "TransilvaniaHR",
+      "title": "Senior React Software Engineer (Romania, Remote)",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-react-software-engineer-romania-remote-transilvaniahr",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is Senior React Software Engineer; React-heavy engineering is a stack mismatch for a WordPress/WooCommerce/frontend freelance profile, and the only matches are generic keywords (accessibility, frontend, javascript, ui, ux) with no WordPress, WooCommerce, or web-maintenance scope.",
+      "deepseek_risk_flags": [
+        "react_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_matches_only",
+        "no_explicit_freelance_or_contract_evidence",
+        "geo_bucket_italy_but_role_is_romania_remote"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022464,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-12T20:41:51Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-12T22:04:22Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
