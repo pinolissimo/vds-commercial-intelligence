@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 299,
+  "runs": 300,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -9447,6 +9447,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "21446a5a3a5b68bebe7cd38c74178b85",
+      "evaluated_at": "2026-09-12T08:55:07Z",
+      "organization": "Td Synnex",
+      "title": "Digital Marketing Intern",
+      "location": "Milano, Italy",
+      "opportunity_url": "https://synnex.wd5.myworkdayjobs.com/tdsynnexcareers/job/Milano-Italy/Digital-Marketing-Intern_R55755",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Digital Marketing Intern at Td Synnex, not a freelance web-development opportunity; matched keywords (cms, html, maintenance, web development, website, wordpress) appear incidental to a marketing internship rather than core web-dev scope, and it is an on-site internship in Milan with no freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "on_site_only",
+        "marketing_role_not_web_dev",
+        "keyword_matches_incidental",
+        "no_explicit_freelance_or_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00044971,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -11237,9 +11266,21 @@
       "completion_tokens": 310,
       "total_tokens": 1170,
       "estimated_cost_usd": 0.00051496
+    },
+    {
+      "at": "2026-09-12T08:55:07Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 463,
+      "completion_tokens": 185,
+      "total_tokens": 776,
+      "estimated_cost_usd": 0.00044971
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-12T08:05:47Z",
+  "updated_at": "2026-09-12T08:55:07Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
