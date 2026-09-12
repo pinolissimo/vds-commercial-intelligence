@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-12T09:03:24+02:00",
+  "generated_at": "2026-09-12T09:04:44+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -14,13 +14,13 @@
     "hard_bounces": 0,
     "messages_per_active_hour": 0.0,
     "first_contacts_per_active_hour": 0.0,
-    "active_window_elapsed_hours": 0.06,
+    "active_window_elapsed_hours": 0.08,
     "sending_window": "09:00-19:00 Europe/Madrid"
   },
   "headline": {
-    "semantic_input_last_run": 2286,
+    "semantic_input_last_run": 2296,
     "semantic_pass_last_run": 128,
-    "semantic_pass_rate_pct": 5.6,
+    "semantic_pass_rate_pct": 5.57,
     "active_opportunities": 53,
     "ready": 4,
     "manual_action": 5,
@@ -59,10 +59,10 @@
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
       "score": 100.0,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-12T21:05:03.973185Z",
+      "cooldown_until": "2026-09-13T01:04:24.478871Z",
       "heat_pct": 100.0
     },
     {
@@ -72,7 +72,7 @@
       "territory": "Roma",
       "score": 49.16,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-12T22:49:29.741037Z",
       "heat_pct": 49.2
@@ -90,22 +90,10 @@
       "heat_pct": 43.7
     },
     {
-      "area": "Spain|Comunitat Valenciana|Castellón",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "territory": "Castellón",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
-    },
-    {
-      "area": "Spain|Aragón|Zaragoza",
-      "country": "Spain",
-      "region": "Aragón",
-      "territory": "Zaragoza",
+      "area": "Italy|Veneto|Venezia",
+      "country": "Italy",
+      "region": "Veneto",
+      "territory": "Venezia",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -126,10 +114,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Puglia|Bari",
-      "country": "Italy",
-      "region": "Puglia",
-      "territory": "Bari",
+      "area": "Spain|Aragón|Zaragoza",
+      "country": "Spain",
+      "region": "Aragón",
+      "territory": "Zaragoza",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -138,10 +126,22 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Veneto|Venezia",
+      "area": "Spain|Comunitat Valenciana|Castellón",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "territory": "Castellón",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Puglia|Bari",
       "country": "Italy",
-      "region": "Veneto",
-      "territory": "Venezia",
+      "region": "Puglia",
+      "territory": "Bari",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -193,8 +193,8 @@
       "score": 14.75,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 323,
-      "cooldown_until": "2026-09-13T00:01:44.952982Z",
+      "low_yield_cycles": 324,
+      "cooldown_until": "2026-09-13T01:04:24.478871Z",
       "heat_pct": 14.8
     }
   ],
@@ -204,13 +204,13 @@
       "territories": 108,
       "average_score": 3.76,
       "best_score": 100.0,
-      "harvest_territories": 2,
+      "harvest_territories": 1,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
       "country": "Spain",
       "territories": 53,
-      "average_score": 4.25,
+      "average_score": 4.24,
       "best_score": 43.69,
       "harvest_territories": 0,
       "top_territory": "Spain|UNRESOLVED|UNRESOLVED"
@@ -238,8 +238,8 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 2286,
-      "semantic_input": 2286,
+      "raw_signals": 2296,
+      "semantic_input": 2296,
       "semantic_pass": 128,
       "company_verified": null,
       "route_found": null,
@@ -257,7 +257,7 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 2106,
+      "semantic_reject": 2116,
       "semantic_review": 52,
       "semantic_pass_to_executable_gap_proxy": 124,
       "legacy_ready_advisory_excluded": 21
