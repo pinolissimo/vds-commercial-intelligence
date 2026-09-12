@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-12T17:03:01Z",
+  "updated_at": "2026-09-12T18:01:21Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 360,
-    "agreement_count": 186,
-    "agreement_pct": 51.67,
+    "evaluated_total": 361,
+    "agreement_count": 187,
+    "agreement_pct": 51.8,
     "deepseek_promote": 23,
     "vds_promote": 135,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 154,
-    "cumulative_estimated_cost_usd": 0.075697,
-    "cost_per_evaluated_candidate_usd": 0.00021027,
-    "cost_per_deepseek_promote_usd": 0.00329118,
-    "cost_per_observed_ready_or_contacted_usd": 0.03784863,
-    "latest_request": null
+    "request_count": 155,
+    "cumulative_estimated_cost_usd": 0.075862,
+    "cost_per_evaluated_candidate_usd": 0.00021014,
+    "cost_per_deepseek_promote_usd": 0.00329833,
+    "cost_per_observed_ready_or_contacted_usd": 0.03793082,
+    "latest_request": {
+      "at": "2026-09-12T18:01:19Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 201,
+      "completion_tokens": 178,
+      "total_tokens": 763,
+      "estimated_cost_usd": 0.00016439
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "61f3bf31a92823abf23ca5c013b13ef7",
-      "evaluated_at": "2026-09-10T02:00:40Z",
-      "organization": "",
-      "title": "Full Stack Developer",
-      "location": "Ireland, Netherlands, Portugal, Spain, United Kingdom",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Generic 'Full Stack Developer' posting with no explicit WordPress/WooCommerce or web-maintenance scope; matched keywords are only broad (frontend, javascript, migration) and the sole commercial keyword 'partner' is not evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "generic_full_stack_role",
-        "no_wordpress_woocommerce_scope",
-        "freelance_compatibility_unproven",
-        "no_publication_date",
-        "no_employment_type"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00043604,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "0d7826a79047fde9bb9030bd95685fd4",
       "evaluated_at": "2026-09-10T04:43:15Z",
@@ -1472,10 +1454,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b83a9e1979084991f6679aa1ee8bd463",
+      "evaluated_at": "2026-09-12T18:01:19Z",
+      "organization": "Vmlenterprisesolutions",
+      "title": "Stage de fin d’études – Consultant·e Développeur·se MarTech ",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/vmlenterprisesolutions/stage-de-fin-detudes-consultante-developpeurse-martech-paris-409102",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Internship ('Stage de fin d'études') MarTech consultant/developer role in Paris; it is an end-of-studies internship, not freelance/contract work, and the stack match is only generic keywords (css/html/javascript/migration) with no explicit WordPress/WooCommerce or web-performance scope.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "on_site_paris",
+        "no_explicit_wordpress_woocommerce_scope",
+        "generic_keyword_match_only",
+        "martech_consultant_role"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016439,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-12T17:02:59Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-12T18:01:18Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

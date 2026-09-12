@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 308,
+  "runs": 309,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -9672,6 +9672,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b83a9e1979084991f6679aa1ee8bd463",
+      "evaluated_at": "2026-09-12T18:01:19Z",
+      "organization": "Vmlenterprisesolutions",
+      "title": "Stage de fin d’études – Consultant·e Développeur·se MarTech ",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/vmlenterprisesolutions/stage-de-fin-detudes-consultante-developpeurse-martech-paris-409102",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Internship ('Stage de fin d'études') MarTech consultant/developer role in Paris; it is an end-of-studies internship, not freelance/contract work, and the stack match is only generic keywords (css/html/javascript/migration) with no explicit WordPress/WooCommerce or web-performance scope.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "on_site_paris",
+        "no_explicit_wordpress_woocommerce_scope",
+        "generic_keyword_match_only",
+        "martech_consultant_role"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016439,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -11522,9 +11551,21 @@
       "completion_tokens": 170,
       "total_tokens": 746,
       "estimated_cost_usd": 0.00021166
+    },
+    {
+      "at": "2026-09-12T18:01:19Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 201,
+      "completion_tokens": 178,
+      "total_tokens": 763,
+      "estimated_cost_usd": 0.00016439
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-12T17:03:01Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-12T18:01:19Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
