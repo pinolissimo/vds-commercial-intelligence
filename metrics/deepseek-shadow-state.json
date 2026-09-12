@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 288,
+  "runs": 289,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -9250,6 +9250,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "29d868dda55acf6a8ab9efd51f9ece20",
+      "evaluated_at": "2026-09-12T00:04:46Z",
+      "organization": "Onapsis",
+      "title": "Marketing Associate (Contractor)",
+      "location": "London, England, United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/onapsis/marketing-associate-contractor-london-225096",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Marketing Associate (Contractor), not a web development role; matched keywords 'maintenance' and 'website' are incidental and do not indicate WordPress/WooCommerce/frontend scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch_marketing",
+        "keyword_only_match",
+        "no_web_dev_scope",
+        "location_london_not_target_geo"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00013975,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -10980,9 +11008,21 @@
       "completion_tokens": 574,
       "total_tokens": 1905,
       "estimated_cost_usd": 0.00042628
+    },
+    {
+      "at": "2026-09-12T00:04:46Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 188,
+      "completion_tokens": 145,
+      "total_tokens": 717,
+      "estimated_cost_usd": 0.00013975
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-11T22:11:10Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-12T00:04:46Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
