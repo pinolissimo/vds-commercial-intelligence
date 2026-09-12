@@ -1,0 +1,66 @@
+{
+  "run_at": "2026-09-12T13:37:54Z",
+  "serious_candidates_evaluated": 20,
+  "direct_email_harvest_evaluated": 9,
+  "send_now": 2,
+  "provider_verified_first_contact": 2,
+  "manual_apply": 2,
+  "wait_research": {
+    "total": 1,
+    "by_blocker": {
+      "official_email_not_verified": 1
+    }
+  },
+  "reject": 15,
+  "duplicates": 3,
+  "route_failures": 0,
+  "delivery_state_unknown": 0,
+  "first_contacts_by_archetype": {
+    "AGENCY_EXTERNAL_CAPACITY": 2,
+    "SME_WEB_IMPROVEMENT": 0,
+    "EU_DISSEMINATION_SPECIALIST": 0
+  },
+  "first_contacts_by_variant": {
+    "CREDENTIALS_CLASSIC": 1,
+    "VALUE_MICRO_COMMITMENT": 1
+  },
+  "sent": [
+    {
+      "provider_uid": 470,
+      "organization": "R&D Digital",
+      "recipient": "info@red-digital.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "SEND_1_2_RELEVANT_EXAMPLES_AND_WORKLOAD"
+    },
+    {
+      "provider_uid": 471,
+      "organization": "Zindex",
+      "recipient": "info@zindex.it",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "SEND_2_WHITE_LABEL_WORKLOAD_EXAMPLES"
+    }
+  ],
+  "manual_apply_examples": [
+    "Adviva — application form required",
+    "Amalthea — current freelance role but candidacy address not safely recoverable from authoritative source"
+  ],
+  "wait_research_examples": [
+    "Tripart — external-collaborator signal verified; exact official direct-email route unresolved"
+  ],
+  "duplicate_examples": [
+    "Lucasweb — prior Hostinger Sent UID 206 to info@lucasweb.it; same-domain identity also present in provider overlay",
+    "OS2 — prior professional contact recorded",
+    "Crisandcris.net — prior/duplicate provider identity recorded"
+  ],
+  "downstream_new": {
+    "micro_commitment_reply": 0,
+    "qualified_positive_reply_or_referral": 0,
+    "call_or_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue": 0
+  },
+  "notes": "No immediate bounce or new commercial reply observed after provider verification of UIDs 470-471. The live overlay was stale and not atomically replaced; a dedicated reconciliation payload was committed instead, preserving provider authority and preventing resend."
+}
