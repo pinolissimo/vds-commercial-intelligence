@@ -1,0 +1,79 @@
+{
+  "run_at": "2026-09-12T15:45:20Z",
+  "provider_of_record": "HOSTINGER_SENT",
+  "serious_candidates_evaluated": 45,
+  "direct_email_harvest_evaluated": 20,
+  "decisions": {
+    "SEND_NOW": 2,
+    "MANUAL_APPLY": 14,
+    "WAIT_RESEARCH": 6,
+    "REJECT": 23
+  },
+  "provider_verified_first_contact": 2,
+  "duplicates": 14,
+  "route_failures": 0,
+  "delivery_state_unknown": 0,
+  "wait_research_by_blocker": {
+    "insufficient_current_buying_signal": 4,
+    "stale_or_uncertain_need": 2
+  },
+  "first_contacts": [
+    {
+      "provider_uid": 477,
+      "organization": "Hother Studio",
+      "recipient": "hola@hotherestudio.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "SEND_1_2_WORKLOAD_EXAMPLES"
+    },
+    {
+      "provider_uid": 478,
+      "organization": "ReLiving MRKG LAB",
+      "recipient": "digitalmarketing@reliving-mi.com",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "DIRECT_FIT_EVALUATION"
+    }
+  ],
+  "archetype_counts_first_contact": {
+    "AGENCY_EXTERNAL_CAPACITY": 2,
+    "SME_WEB_IMPROVEMENT": 0,
+    "EU_DISSEMINATION_SPECIALIST": 0
+  },
+  "variant_counts_first_contact": {
+    "CREDENTIALS_CLASSIC": 1,
+    "VALUE_MICRO_COMMITMENT": 1
+  },
+  "downstream_outcomes": [
+    {
+      "organization": "Teslhub",
+      "inbound_uid": 1448,
+      "outbound_reply_uid": 476,
+      "reply": true,
+      "qualified_positive_reply": true,
+      "referral": false,
+      "call_interview": true,
+      "proposal": false,
+      "won": false,
+      "revenue": 0,
+      "note": "Founder asked to take the discussion one step further, requested the normal project process and proposed WhatsApp Business. Replied with project workflow and WhatsApp/short-call acceptance."
+    }
+  ],
+  "notable_manual_apply": [
+    "Adviva",
+    "NOIS3",
+    "Amalthea",
+    "B&A Consulting",
+    "MarketingBooster",
+    "Haz Marca",
+    "Sigma Marketing",
+    "IOCOS",
+    "rIL",
+    "Marketizados",
+    "MagicNet",
+    "Noetic Creative",
+    "CUENTO Marketing",
+    "Human Made"
+  ],
+  "notes": "Fresh route-first discovery was performed independently. Provider Sent dedup was authoritative before each send. No new hard bounce was observed for UIDs 477-478 in the immediate post-send check. Direct atomic replacement of the stale provider-outbound-live overlay was not performed because the connector exposes the large file in truncated chunks; an idempotent reconciliation payload keyed by provider_uid was committed instead to avoid destructive state loss."
+}
