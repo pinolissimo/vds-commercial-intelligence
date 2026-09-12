@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-12T12:49:12Z",
+  "updated_at": "2026-09-12T14:02:50Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 358,
-    "agreement_count": 185,
-    "agreement_pct": 51.68,
+    "evaluated_total": 359,
+    "agreement_count": 186,
+    "agreement_pct": 51.81,
     "deepseek_promote": 23,
     "vds_promote": 134,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 152,
-    "cumulative_estimated_cost_usd": 0.075352,
-    "cost_per_evaluated_candidate_usd": 0.00021048,
-    "cost_per_deepseek_promote_usd": 0.00327618,
-    "cost_per_observed_ready_or_contacted_usd": 0.03767611,
+    "request_count": 153,
+    "cumulative_estimated_cost_usd": 0.075486,
+    "cost_per_evaluated_candidate_usd": 0.00021027,
+    "cost_per_deepseek_promote_usd": 0.00328198,
+    "cost_per_observed_ready_or_contacted_usd": 0.0377428,
     "latest_request": {
-      "at": "2026-09-12T12:49:09Z",
+      "at": "2026-09-12T14:02:48Z",
       "model": "deepseek-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 939,
-      "completion_tokens": 403,
-      "total_tokens": 1470,
-      "estimated_cost_usd": 0.00047346
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 177,
+      "completion_tokens": 139,
+      "total_tokens": 700,
+      "estimated_cost_usd": 0.00013337
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "811b0baae7909099e3a42c1bb32547e7",
-      "evaluated_at": "2026-09-09T21:55:15Z",
-      "organization": "Grafana Labs",
-      "title": "Backend Engineer - Platform - Stacks | UK | Remote",
-      "location": "Germany,  Ireland,  Spain,  Sweden,  UK",
-      "opportunity_url": "https://jobicy.com/jobs/152920-backend-engineer-platform-stacks-uk-remote",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Backend Engineer role at Grafana Labs focused on platform stacks; no frontend or WordPress/WooCommerce relevance. Full-time remote role, not freelance-compatible.",
-      "deepseek_risk_flags": [
-        "Backend platform role",
-        "No web development scope",
-        "Full-time employment"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001482117,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "5a78a627960138674874d4f29a18d752",
       "evaluated_at": "2026-09-09T21:55:15Z",
@@ -1481,10 +1454,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "84186b851e30dd8f12aea4cb3684112c",
+      "evaluated_at": "2026-09-12T14:02:48Z",
+      "organization": "onapsis",
+      "title": "Marketing Associate (Contractor)",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/onapsis/marketing-associate-contractor-203923",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Marketing Associate (Contractor), not a web development role; matched keywords 'maintenance' and 'website' are incidental and do not indicate WordPress/WooCommerce/frontend web-development scope.",
+      "deepseek_risk_flags": [
+        "role_title_mismatch",
+        "keyword_only_match",
+        "no_web_dev_scope",
+        "no_stack_evidence"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00013337,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 3,
-  "source_semantic_updated_at": "2026-09-12T12:49:07Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-12T14:02:47Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
