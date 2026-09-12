@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "run_at": "2026-09-12T09:09:00Z",
+  "workstream": "VDS_JOB_FLOW",
+  "send_window_open": true,
+  "metrics": {
+    "serious_candidates": 29,
+    "direct_email_harvest": 9,
+    "send_now": 2,
+    "provider_verified_first_contact": 2,
+    "manual_apply": 8,
+    "wait_research": 3,
+    "reject": 16,
+    "duplicates": 4,
+    "route_failures": 9,
+    "fit_or_constraint_failures": 9,
+    "commercial_variants_sent": {
+      "CLASSIC_APPLICATION": 1,
+      "EXTERNAL_CAPACITY_OFFER": 1
+    }
+  },
+  "provider_verified_sends": [
+    {
+      "provider_uid": 459,
+      "organization": "Cosmotech",
+      "canonical_identity_key": "org:cosmotech.no",
+      "recipient": "careers@cosmotech.no",
+      "subject": "Application — Website Operations Coordinator | Giuseppe Allocca",
+      "commercial_variant": "CLASSIC_APPLICATION",
+      "segment": "WEB_AGENCY_WEBSITE_OPERATIONS",
+      "micro_cta_type": "SEND_2_RELEVANT_EXAMPLES_AND_WORKLOAD",
+      "attachments": 0,
+      "bcc_owner": false,
+      "provider_verified": true
+    },
+    {
+      "provider_uid": 460,
+      "organization": "Elia Digital & AI Solutions",
+      "canonical_identity_key": "org:elia-digital.de",
+      "recipient": "info@elia-digital.de",
+      "subject": "External WordPress capacity — freelance collaboration",
+      "commercial_variant": "EXTERNAL_CAPACITY_OFFER",
+      "segment": "AGENCY_EXTERNAL_CAPACITY",
+      "micro_cta_type": "SEND_2_RELEVANT_EXAMPLES_AND_WORKLOAD",
+      "attachments": 0,
+      "bcc_owner": false,
+      "provider_verified": true
+    }
+  ],
+  "funnel_outcomes": [
+    {
+      "organization": "XTechAI",
+      "provider_uid_first_contact": 449,
+      "commercial_variant": "EXTERNAL_CAPACITY_OFFER",
+      "outcome": "QUALIFIED_POSITIVE_REPLY",
+      "reply_uid": 1443,
+      "detail": "Explicit confirmation that Giuseppe can fit their collaborator network for WordPress, frontend, maintenance, WPO and technical web support; official Partner Network registration requested.",
+      "next_route": "MANUAL_APPLY",
+      "manual_url": "https://xtechai.eu/xtechai-partner-network/"
+    },
+    {
+      "organization": "Teslhub",
+      "outcome": "PROPOSAL_REQUESTED_CALL_PATH_OPEN",
+      "reply_uid": 1444,
+      "detail": "Alessandro requested a mini-proposal covering home and section architecture, news/reviews/guides/events/services, publishing simplicity, performance, maintenance and security, and explicitly offered a subsequent phone or WhatsApp Business conversation."
+    }
+  ],
+  "decisions": [
+    {"organization":"Cosmotech","outcome":"SEND_NOW","route":"careers@cosmotech.no","reason":"Current official remote part-time Website Operations Coordinator role; WordPress/CMS, QA, launch coordination and performance fit; canonical and Hostinger Sent clean."},
+    {"organization":"Elia Digital & AI Solutions","outcome":"SEND_NOW","route":"info@elia-digital.de","reason":"Current official freelance remote WordPress & Elementor Specialist opening; exact employer-controlled open-application email; canonical and provider clean."},
+    {"organization":"Amalthea","outcome":"MANUAL_APPLY","reason":"Current freelance/P.IVA Full Stack Designer role fits UX/UI/front-end/WordPress-adjacent work, but application email is Cloudflare-obfuscated and could not be verified exactly."},
+    {"organization":"yform.de","outcome":"MANUAL_APPLY","reason":"Current remote freelance Frontend Developer role includes HTML/CSS/JS and WordPress; official application channel is a form."},
+    {"organization":"CUENTO Marketing","outcome":"MANUAL_APPLY","reason":"Current part-time freelance remote WordPress Web Designer/Developer role; official application is form-only."},
+    {"organization":"Born West","outcome":"MANUAL_APPLY","reason":"Current WordPress opening but vacancy-specific route is application flow, not generic email."},
+    {"organization":"Envatiq","outcome":"MANUAL_APPLY","reason":"Current remote WordPress Developer listing without a verified exact employer candidacy email."},
+    {"organization":"Greatives","outcome":"MANUAL_APPLY","reason":"Current long-term freelance remote WordPress Backend Developer; official route is form."},
+    {"organization":"WebGee","outcome":"MANUAL_APPLY","reason":"Current remote WordPress roles; exact application mailbox is masked/not verifiable in authoritative page."},
+    {"organization":"Voicemod","outcome":"MANUAL_APPLY","reason":"Current Spain-remote WordPress Developer opportunity; platform/application route, no exact employer application email verified."},
+    {"organization":"Check in s.r.l.","outcome":"WAIT_RESEARCH","reason":"Authoritative company email exists and a strong WordPress/freelance signal was found, but the need is six months old and current listing could not be re-verified."},
+    {"organization":"Windy Agency","outcome":"WAIT_RESEARCH","reason":"Current freelance remote WordPress role with exact crew email, but apparent LATAM team/location constraint requires one bounded eligibility check before send."},
+    {"organization":"FyerX","outcome":"WAIT_RESEARCH","reason":"Fresh freelance WordPress signal found, but no exact current employer-controlled direct email route verified."},
+    {"organization":"RankSages","outcome":"REJECT","reason":"Current direct email route exists but listing requires 3+ years WordPress experience; this seniority was not verified and is not invented."},
+    {"organization":"Aixant","outcome":"REJECT","reason":"Senior/high-traffic WordPress role explicitly requires 3+ years; seniority/high-traffic requirement not verified."},
+    {"organization":"NOIS3","outcome":"REJECT","reason":"Current developer profile makes React/Next and broader stack core requirements beyond the demonstrated fit."},
+    {"organization":"Uaoh","outcome":"REJECT","reason":"Explicit on-site requirement and explicit no-freelance/no-remote exclusion."},
+    {"organization":"MyComp","outcome":"REJECT","reason":"Explicit no freelance/external consultants; also previously contacted."},
+    {"organization":"Novicrea","outcome":"REJECT","reason":"Freelance PHP opening requires Laravel/MySQL as core stack; mandatory mismatch."},
+    {"organization":"Douscents","outcome":"REJECT","reason":"Relevant WordPress signal is stale, not a current employer need."},
+    {"organization":"Marquistas","outcome":"REJECT","reason":"Freelance web-developer signal is stale and not current."},
+    {"organization":"WE Wilke Experience","outcome":"REJECT","reason":"Referenced WordPress role is explicitly offline/closed."},
+    {"organization":"Digital Culture NYC","outcome":"REJECT","reason":"Relevant listing is stale (2025), not current."},
+    {"organization":"WebPigment","outcome":"REJECT","reason":"Senior WordPress role requires 4+ years; mandatory seniority not verified."},
+    {"organization":"Madeinoxy","outcome":"REJECT","reason":"Role is geographically based in Pakistan."},
+    {"organization":"MetaDrift","outcome":"REJECT","reason":"Duplicate/provider history exists and prior authoritative route hard-bounced; no resend."},
+    {"organization":"DualLayer","outcome":"REJECT","reason":"Organization already professionally contacted; duplicate identity."},
+    {"organization":"Doozy","outcome":"REJECT","reason":"Organization already professionally contacted; duplicate identity."},
+    {"organization":"Hubken","outcome":"REJECT","reason":"Role requires 3+ years and uses form-only route; mandatory seniority not verified."}
+  ],
+  "provider_live_bridge": {
+    "path": "state/provider-outbound-live.json",
+    "merged_through_provider_uid": 460,
+    "commit_sha": "eb8f8d86a7faf0db4ec4bb90e8a1180b4a293324"
+  }
+}
