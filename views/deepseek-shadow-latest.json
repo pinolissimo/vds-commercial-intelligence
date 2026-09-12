@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-12T07:04:24Z",
+  "updated_at": "2026-09-12T08:05:50Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 350,
-    "agreement_count": 177,
-    "agreement_pct": 50.57,
+    "evaluated_total": 352,
+    "agreement_count": 179,
+    "agreement_pct": 50.85,
     "deepseek_promote": 23,
     "vds_promote": 134,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 148,
-    "cumulative_estimated_cost_usd": 0.073672,
-    "cost_per_evaluated_candidate_usd": 0.00021049,
-    "cost_per_deepseek_promote_usd": 0.00320311,
-    "cost_per_observed_ready_or_contacted_usd": 0.03683579,
+    "request_count": 149,
+    "cumulative_estimated_cost_usd": 0.074187,
+    "cost_per_evaluated_candidate_usd": 0.00021076,
+    "cost_per_deepseek_promote_usd": 0.0032255,
+    "cost_per_observed_ready_or_contacted_usd": 0.03709327,
     "latest_request": {
-      "at": "2026-09-12T07:04:21Z",
+      "at": "2026-09-12T08:05:47Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 384,
-      "prompt_cache_miss_tokens": 181,
-      "completion_tokens": 221,
-      "total_tokens": 786,
-      "estimated_cost_usd": 0.00037674
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 220,
+      "completion_tokens": 310,
+      "total_tokens": 1170,
+      "estimated_cost_usd": 0.00051496
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7b65fa1c304e52395f0a1ebda7b62203",
-      "evaluated_at": "2026-09-09T14:21:15Z",
-      "organization": "Celonis",
-      "title": "(Senior) Frontend Engineer - Visual Experiences",
-      "location": "Germany only",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-visual-experiences-370a1ba444",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 81,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior Frontend Engineer role at Celonis, Germany-only, no WordPress/WooCommerce or web performance/maintenance scope; core frontend engineering not aligned with freelance web development profile.",
-      "deepseek_risk_flags": [
-        "Germany-only location",
-        "No WordPress/WooCommerce",
-        "Likely full-time employment"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001247,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "7e26f0ba52f74b19420c1b08336c14a8",
-      "evaluated_at": "2026-09-09T14:21:15Z",
-      "organization": "veeamsoftware",
-      "title": "Senior Customer Success Engineer",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/veeamsoftware/remote-senior-customer-success-engineer-390555",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Customer Success Engineer role at Veeam, remote but focused on customer success and migration, not web development; generic mentions of collaboration/partner do not indicate freelance compatibility.",
-      "deepseek_risk_flags": [
-        "Role mismatch",
-        "Generic collaboration terms",
-        "No web development stack"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001247,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "83cd5ee935cffb0b08b0f2dbc7804ac0",
       "evaluated_at": "2026-09-09T16:27:36Z",
@@ -1472,10 +1418,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "242243e43bb3ca68f9823bfb41723897",
+      "evaluated_at": "2026-09-12T08:05:47Z",
+      "organization": "semrush",
+      "title": "Brand Visibility Product Expert, SEO & AI Visibility (Enterprise Solution Unit)",
+      "location": "Spain",
+      "opportunity_url": "https://semrush.wd5.myworkdayjobs.com/semrushcareers/job/Spain/Brand-Visibility-Product-Expert--SEO---AI-Visibility--Enterprise-Solution-Unit-_JR100924",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Role is an enterprise SEO/AI-visibility product expert position at Semrush, not a web development, WordPress, or frontend build role; matched keywords (core web vitals, css, html, javascript, website) are incidental to an SEO product context rather than core stack demand.",
+      "deepseek_risk_flags": [
+        "non-development core role",
+        "on_site only",
+        "enterprise product/SEO focus",
+        "no explicit freelance or contract signal",
+        "keyword matches appear incidental"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00025748,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ba927176adf23335339aef9ad825894a",
+      "evaluated_at": "2026-09-12T08:05:47Z",
+      "organization": "Flora Food Group",
+      "title": "Project Engineering Manager - Core Spreads Manufacturing",
+      "location": "Pratau, Saxony-Anhalt, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/flora-food-group/project-engineering-manager-core-spreads-manufacturing-pratau-468428",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Manufacturing project engineering manager role in Germany with no web development, WordPress, frontend, or web performance scope; only 'maintenance' overlaps and it refers to industrial maintenance, not website maintenance.",
+      "deepseek_risk_flags": [
+        "entirely unrelated industry (food manufacturing)",
+        "no web/WordPress/frontend scope",
+        "geo mismatch (Germany, not Spain/Italy/EU-remote web work)",
+        "keyword match is a false positive"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00025748,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-12T07:04:19Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-12T08:05:45Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
