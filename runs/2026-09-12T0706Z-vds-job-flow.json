@@ -1,0 +1,59 @@
+{
+  "run_at": "2026-09-12T07:06:00Z",
+  "workstream": "VDS_JOB_FLOW",
+  "serious_candidates": 12,
+  "direct_email_harvest_count": 9,
+  "outcomes": {
+    "SEND_NOW": 2,
+    "PROVIDER_VERIFIED_FIRST_CONTACT": 2,
+    "MANUAL_APPLY": 3,
+    "WAIT_RESEARCH": 1,
+    "REJECT": 6
+  },
+  "blockers": {
+    "duplicates": 4,
+    "fit_failures": 0,
+    "route_failures": 3,
+    "current_need_or_geo_failures": 1
+  },
+  "ab_test": {
+    "CLASSIC_APPLICATION": 1,
+    "EXTERNAL_CAPACITY_OFFER": 1
+  },
+  "funnel_outcomes_observed_this_run": {
+    "reply": 0,
+    "positive_reply": 0,
+    "interview_or_call": 0,
+    "proposal": 0,
+    "won": 0
+  },
+  "provider_verified_sends": [
+    {
+      "provider_uid": 449,
+      "organization": "XTechAI",
+      "recipient": "rrhh@xtechai.eu",
+      "variant": "EXTERNAL_CAPACITY_OFFER"
+    },
+    {
+      "provider_uid": 450,
+      "organization": "Clover Labs",
+      "recipient": "jobs@cloverlabs.io",
+      "variant": "CLASSIC_APPLICATION"
+    }
+  ],
+  "notable_decisions": [
+    {"organization":"Veintemillas","outcome":"REJECT","reason":"provider duplicate; prior UID 139"},
+    {"organization":"Appslanka","outcome":"MANUAL_APPLY","reason":"official application form available; exact application mailbox not independently exposed by parsed route"},
+    {"organization":"Futuraweb","outcome":"MANUAL_APPLY","reason":"current WordPress Web Designer need; parsed official page exposes application form but not a distinct application mailbox"},
+    {"organization":"SDi Digital Group","outcome":"MANUAL_APPLY","reason":"no current matching open offer; official autocandidatura route is portal/form"},
+    {"organization":"Studio Nouvelle","outcome":"WAIT_RESEARCH","reason":"current Web Designer need verified but application route not explicit enough for safe automatic email"},
+    {"organization":"MyComp","outcome":"REJECT","reason":"provider duplicate UID 368"},
+    {"organization":"Studio Liz","outcome":"REJECT","reason":"provider duplicate"},
+    {"organization":"PlayMore","outcome":"REJECT","reason":"provider duplicate UID 355"},
+    {"organization":"Eclettica","outcome":"REJECT","reason":"canonical/provider duplicate from prior flow"},
+    {"organization":"Serfe","outcome":"REJECT","reason":"no sufficiently specific current matching need established for this run"}
+  ],
+  "live_overlay_status": "REPAIR_FILE_WRITTEN",
+  "live_overlay_repair_file": "state/provider-outbound-live-repair-2026-09-12T0705Z.json",
+  "notes": "Hostinger Sent is authoritative. Direct rewrite of provider-outbound-live.json was not attempted because the connector only exposes whole-file replacement and the large current file was returned in paged slices; unsafe reconstruction was avoided. Repair file preserves the two provider-verified events idempotently for Watchdog merge. No resend is authorized."
+}
