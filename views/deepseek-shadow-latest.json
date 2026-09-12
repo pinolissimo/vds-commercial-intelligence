@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-12T01:02:04Z",
+  "updated_at": "2026-09-12T01:59:37Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 346,
-    "agreement_count": 175,
-    "agreement_pct": 50.58,
+    "evaluated_total": 347,
+    "agreement_count": 176,
+    "agreement_pct": 50.72,
     "deepseek_promote": 23,
     "vds_promote": 132,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 145,
-    "cumulative_estimated_cost_usd": 0.072481,
-    "cost_per_evaluated_candidate_usd": 0.00020948,
-    "cost_per_deepseek_promote_usd": 0.00315133,
-    "cost_per_observed_ready_or_contacted_usd": 0.0362403,
-    "latest_request": null
+    "request_count": 146,
+    "cumulative_estimated_cost_usd": 0.072763,
+    "cost_per_evaluated_candidate_usd": 0.00020969,
+    "cost_per_deepseek_promote_usd": 0.00316362,
+    "cost_per_observed_ready_or_contacted_usd": 0.03638159,
+    "latest_request": {
+      "at": "2026-09-12T01:59:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 147,
+      "completion_tokens": 161,
+      "total_tokens": 692,
+      "estimated_cost_usd": 0.00028258
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "54384d3a7e043ebab72f741beb4209d3",
-      "evaluated_at": "2026-09-09T10:53:31Z",
-      "organization": "Docebo",
-      "title": "Technical Account Manager",
-      "location": "London, UK",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/docebo/technical-account-manager-london-110114",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Role is a Technical Account Manager at Docebo, focused on client relationship management and support, not web development. Only generic front-end keywords (CSS, HTML, JavaScript) appear, with no WordPress, WooCommerce, or web performance scope. Contractor/partner mentions are not evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "generic_keyword_only",
-        "contractor_mention_not_freelance"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00018989,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ec77304b33a10097c34dcaae70b9c148",
       "evaluated_at": "2026-09-09T11:47:25Z",
@@ -1457,10 +1441,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ef4de011540288a7b92b70f05e943b97",
+      "evaluated_at": "2026-09-12T01:59:35Z",
+      "organization": "",
+      "title": "SEO Expert (Multi-Client Agency, WordPress + Webflow)",
+      "location": "Pakistan",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title and matched keywords indicate WordPress/CMS, HTML/CSS and Core Web Vitals scope, which aligns with the target profile, but the role is framed as SEO Expert rather than web development, and the location is Pakistan with no explicit remote or freelance confirmation.",
+      "deepseek_risk_flags": [
+        "role framed as SEO rather than web development",
+        "location Pakistan with unverified remote status",
+        "no explicit contract type or freelance confirmation",
+        "Webflow component outside core WordPress stack"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00028258,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-12T01:02:03Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-12T01:59:33Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
