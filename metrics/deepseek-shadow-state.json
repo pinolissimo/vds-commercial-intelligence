@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 300,
+  "runs": 301,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -9476,6 +9476,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "aaeea394baee712191b468f372fb570f",
+      "evaluated_at": "2026-09-12T10:01:47Z",
+      "organization": "synnex",
+      "title": "Digital Marketing Intern",
+      "location": "Milano, Italy",
+      "opportunity_url": "https://synnex.wd5.myworkdayjobs.com/tdsynnexcareers/job/Milano-Italy/Digital-Marketing-Intern_R55755",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Digital Marketing Intern, not a web development freelance/contract opportunity; WordPress/CMS/HTML mentions are incidental to marketing duties and the position is on-site in Milan with no freelance compatibility.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "on_site_only",
+        "marketing_role_not_web_dev",
+        "keyword_mismatch"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00012126,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "df07011e97ffb6f6b508f4bfa0e8e7f2",
+      "evaluated_at": "2026-09-12T10:01:47Z",
+      "organization": "raisin",
+      "title": "Senior Software Engineer - US Payments and Partner Operations (m/f/d)",
+      "location": "Berlin, Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/raisin/senior-software-engineer-us-payments-and-partner-operations-berlin-berlin-455337",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 45,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Senior Software Engineer role focused on US Payments and Partner Operations; HTML/JavaScript mentions are incidental and the core scope is backend/fintech engineering, not WordPress/WooCommerce/frontend web work.",
+      "deepseek_risk_flags": [
+        "backend_engineering_core",
+        "no_wordpress_scope",
+        "senior_software_engineer_not_freelance_web",
+        "partner_keyword_false_positive"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00012126,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -11278,9 +11334,21 @@
       "completion_tokens": 185,
       "total_tokens": 776,
       "estimated_cost_usd": 0.00044971
+    },
+    {
+      "at": "2026-09-12T10:01:47Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 221,
+      "completion_tokens": 287,
+      "total_tokens": 1148,
+      "estimated_cost_usd": 0.00024252
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-12T08:55:07Z",
+  "updated_at": "2026-09-12T10:01:47Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
