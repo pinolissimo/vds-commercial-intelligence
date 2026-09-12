@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-12T19:02:59Z",
+  "updated_at": "2026-09-12T20:04:52Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 361,
-    "agreement_count": 187,
-    "agreement_pct": 51.8,
+    "evaluated_total": 362,
+    "agreement_count": 188,
+    "agreement_pct": 51.93,
     "deepseek_promote": 23,
     "vds_promote": 135,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 155,
-    "cumulative_estimated_cost_usd": 0.075862,
-    "cost_per_evaluated_candidate_usd": 0.00021014,
-    "cost_per_deepseek_promote_usd": 0.00329833,
-    "cost_per_observed_ready_or_contacted_usd": 0.03793082,
-    "latest_request": null
+    "request_count": 156,
+    "cumulative_estimated_cost_usd": 0.076029,
+    "cost_per_evaluated_candidate_usd": 0.00021003,
+    "cost_per_deepseek_promote_usd": 0.00330561,
+    "cost_per_observed_ready_or_contacted_usd": 0.03801455,
+    "latest_request": {
+      "at": "2026-09-12T20:04:50Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 203,
+      "completion_tokens": 182,
+      "total_tokens": 769,
+      "estimated_cost_usd": 0.00016747
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "0d7826a79047fde9bb9030bd95685fd4",
-      "evaluated_at": "2026-09-10T04:43:15Z",
-      "organization": "",
-      "title": "Senior Front-end Drupal Developer &ndash; REMOTE",
-      "location": "United States",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 83,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 52.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior front-end role with matching HTML/CSS/JS and maintenance keywords, but core stack is Drupal (PHP CMS) rather than WordPress/WooCommerce, and the posting is located in the United States, weakening geo and stack fit for a Spain/Italy-focused WordPress freelancer.",
-      "deepseek_risk_flags": [
-        "drupal_core_stack_not_wordpress",
-        "us_location_geo_mismatch",
-        "seniority_may_exceed_freelance_scope",
-        "no_explicit_freelance_or_contract_terms"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00020792,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "7e18698e1f0faad63dc5e1d10b0fd7e6",
       "evaluated_at": "2026-09-10T07:01:20Z",
@@ -1472,10 +1455,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "74d1f787ad1aa96efc666c3278ac0bbb",
+      "evaluated_at": "2026-09-12T20:04:50Z",
+      "organization": "Macadam",
+      "title": "SENIOR FRONTEND ENGINEER - REACT NATIVE",
+      "location": "Barcelona",
+      "opportunity_url": "https://careers.macadam.app/jobs/7362511-senior-frontend-engineer-react-native",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 46,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is Senior Frontend Engineer focused on React Native, a mobile framework outside the target WordPress/WooCommerce/custom HTML-CSS-JS web profile; only peripheral keyword overlaps (frontend, ui, ux, maintenance) and no explicit WordPress/WooCommerce or web-performance scope.",
+      "deepseek_risk_flags": [
+        "react_native_core_stack_mismatch",
+        "mobile_not_web_focus",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_signal",
+        "senior_full_time_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00016747,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-12T19:02:57Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-12T20:04:48Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
