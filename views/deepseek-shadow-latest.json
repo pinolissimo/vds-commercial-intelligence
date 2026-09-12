@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-12T04:49:29Z",
+  "updated_at": "2026-09-12T06:01:44Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 347,
+    "evaluated_total": 349,
     "agreement_count": 176,
-    "agreement_pct": 50.72,
+    "agreement_pct": 50.43,
     "deepseek_promote": 23,
-    "vds_promote": 132,
+    "vds_promote": 134,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 113
+    "deepseek_demoted_from_vds_promote": 115
   },
   "downstream_observation": {
     "deepseek_promote_hot": 4,
     "deepseek_promote_hot_rate_pct": 17.39,
     "vds_promote_hot": 2,
-    "vds_promote_hot_rate_pct": 1.52,
+    "vds_promote_hot_rate_pct": 1.49,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.7,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 146,
-    "cumulative_estimated_cost_usd": 0.072763,
-    "cost_per_evaluated_candidate_usd": 0.00020969,
-    "cost_per_deepseek_promote_usd": 0.00316362,
-    "cost_per_observed_ready_or_contacted_usd": 0.03638159,
-    "latest_request": null
+    "request_count": 147,
+    "cumulative_estimated_cost_usd": 0.073295,
+    "cost_per_evaluated_candidate_usd": 0.00021001,
+    "cost_per_deepseek_promote_usd": 0.00318673,
+    "cost_per_observed_ready_or_contacted_usd": 0.03664742,
+    "latest_request": {
+      "at": "2026-09-12T06:01:42Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 241,
+      "completion_tokens": 317,
+      "total_tokens": 1070,
+      "estimated_cost_usd": 0.00053165
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ec77304b33a10097c34dcaae70b9c148",
-      "evaluated_at": "2026-09-09T11:47:25Z",
-      "organization": "",
-      "title": "[Job-31322] Senior PHP Developer, Brazil",
-      "location": "Brazil",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Core role is PHP developer in Brazil, outside target geographies, with no evidence of WordPress/WooCommerce/frontend scope or freelance compatibility.",
-      "deepseek_risk_flags": [
-        "geo_mismatch",
-        "stack_mismatch",
-        "freelance_compatibility_unclear"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000154565,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "41e82306e18dbe317af624c882112d8c",
-      "evaluated_at": "2026-09-09T11:47:25Z",
-      "organization": "speechify",
-      "title": "Senior Software Engineer, Windows/Desktop Applications - Bordeaux, France",
-      "location": "Bordeaux",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/speechify/senior-software-engineer-windows-desktop-applications-bordeaux-france-337689",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Senior Windows/Desktop applications engineer role, no web/WordPress scope; only generic UI/UX and maintenance mentions, not freelance-compatible.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "role_mismatch",
-        "freelance_compatibility_low"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000154565,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "413dc326ac03ee0a63408f532cee18d0",
       "evaluated_at": "2026-09-09T14:21:15Z",
@@ -1458,10 +1415,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c2bdbac5f5127c843552bd69abe6e7e1",
+      "evaluated_at": "2026-09-12T06:01:42Z",
+      "organization": "",
+      "title": "Frontend Engineer",
+      "location": "Poland",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 86,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend Engineer role with matching frontend/HTML/CSS/UI/accessibility keywords, but no explicit WordPress/WooCommerce scope, no stated contract type, and location Poland with remote state unverified against Spain/Italy/EU-remote target.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "contract_type_unknown",
+        "geo_remote_unverified",
+        "generic_collaboration_keyword_only"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.000265825,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e4c4cd7239df52188c476c9a1bec4037",
+      "evaluated_at": "2026-09-12T06:01:42Z",
+      "organization": "",
+      "title": "Senior Frontend Engineer",
+      "location": "Argentina, Bolivia, Chile, Colombia, Dominican Republic, Ecuador, Egypt, Honduras, India, Jamaica, Mexico, Nicaragua, Paraguay, Peru, South Africa, Uruguay",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.65,
+      "deepseek_primary_reason": "Senior Frontend Engineer targeting a long list of non-EU countries (Argentina, India, Egypt, South Africa, etc.), which is incompatible with the Spain/Italy/EU-remote primary market; no WordPress/WooCommerce scope and no explicit freelance/contract terms.",
+      "deepseek_risk_flags": [
+        "geo_incompatible_non_eu_targets",
+        "no_wordpress_woocommerce_scope",
+        "contract_type_unknown",
+        "generic_collaboration_keyword_only"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000265825,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-12T04:49:27Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-12T06:01:41Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
