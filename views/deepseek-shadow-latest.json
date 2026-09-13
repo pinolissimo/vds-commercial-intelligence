@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-13T19:50:02Z",
+  "updated_at": "2026-09-13T21:01:34Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 374,
+    "evaluated_total": 376,
     "agreement_count": 197,
-    "agreement_pct": 52.67,
+    "agreement_pct": 52.39,
     "deepseek_promote": 25,
     "vds_promote": 139,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 163,
-    "cumulative_estimated_cost_usd": 0.078072,
-    "cost_per_evaluated_candidate_usd": 0.00020875,
-    "cost_per_deepseek_promote_usd": 0.00312287,
-    "cost_per_observed_ready_or_contacted_usd": 0.03903583,
-    "latest_request": null
+    "request_count": 164,
+    "cumulative_estimated_cost_usd": 0.078361,
+    "cost_per_evaluated_candidate_usd": 0.00020841,
+    "cost_per_deepseek_promote_usd": 0.00313443,
+    "cost_per_observed_ready_or_contacted_usd": 0.0391804,
+    "latest_request": {
+      "at": "2026-09-13T21:01:31Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 254,
+      "completion_tokens": 348,
+      "total_tokens": 1114,
+      "estimated_cost_usd": 0.00028914
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,63 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7a988e6630bdc750134fea3ca9d0eea0",
-      "evaluated_at": "2026-09-10T17:16:45Z",
-      "organization": "okta",
-      "title": "Senior Solutions Engineer,Auth0",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/okta/senior-solutions-engineerauth0-london-454160",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Solutions Engineer role at Okta/Auth0 in London is a pre-sales/technical sales engineering position centered on identity/authentication products, not a WordPress/WooCommerce/frontend web development role; matched keywords (frontend, html, php) are incidental and the 'partner' commercial keyword refers to channel/partner sales, not freelance collaboration.",
-      "deepseek_risk_flags": [
-        "role_is_solutions_engineering_not_web_development",
-        "identity_auth_domain_mismatch",
-        "on_site_london_not_spain_italy_or_eu_remote",
-        "no_freelance_or_contract_compatibility_evidence",
-        "keyword_matches_incidental"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00023256,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "943cafdb04bf458300f9084e54603002",
-      "evaluated_at": "2026-09-10T19:51:37Z",
-      "organization": "Athereon",
-      "title": "(Senior) Software Developer Frontend / React (m/w/d)",
-      "location": "Saarbrücken",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/athereon/senior-software-developer-frontend-react-saarbrucken-165730",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Core role is React frontend development, which is a stack mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; no WordPress, WooCommerce, or meaningful matching web scope present.",
-      "deepseek_risk_flags": [
-        "react_core_stack_mismatch",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "geo_unverified_non_target_market"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001978,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "cc3998fdf927963cf0eaa7eaf91b30a2",
       "evaluated_at": "2026-09-10T22:03:52Z",
@@ -1467,10 +1421,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d3879938a9170786e3208694eaa9018d",
+      "evaluated_at": "2026-09-13T21:01:31Z",
+      "organization": "Trueml",
+      "title": "Technical Support Engineer II",
+      "location": "Mexico",
+      "opportunity_url": "https://remotelanders.com/jobs/technical-support-engineer-ii-trueml-2q68if",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Technical Support Engineer II' role at Trueml located in Mexico with no evidence of WordPress/WooCommerce, frontend, web performance, or web-development scope; only a loose 'technical support' keyword match, and no explicit freelance/contract signal.",
+      "deepseek_risk_flags": [
+        "no_web_stack_evidence",
+        "geo_mismatch_mexico_not_spain_italy_or_eu_remote",
+        "no_freelance_or_contract_signal",
+        "generic_technical_support_role",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014457,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "aa26fb36683b5c8ff6240ae2d765dc60",
+      "evaluated_at": "2026-09-13T21:01:31Z",
+      "organization": "Trueml",
+      "title": "Technical Support Engineer I",
+      "location": "Mexico",
+      "opportunity_url": "https://remotelanders.com/jobs/technical-support-engineer-i-trueml-1vua0g",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Technical Support Engineer I' role at Trueml located in Mexico with no evidence of WordPress/WooCommerce, frontend, web performance, or web-development scope; only a loose 'technical support' keyword match, and no explicit freelance/contract signal.",
+      "deepseek_risk_flags": [
+        "no_web_stack_evidence",
+        "geo_mismatch_mexico_not_spain_italy_or_eu_remote",
+        "no_freelance_or_contract_signal",
+        "generic_technical_support_role",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014457,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-13T19:50:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-13T21:01:30Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
