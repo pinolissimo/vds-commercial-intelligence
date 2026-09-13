@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 327,
+  "runs": 328,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -9897,6 +9897,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "67cddd1b5a9d726be153d3188e4471a0",
+      "evaluated_at": "2026-09-13T11:59:13Z",
+      "organization": "Solactive",
+      "title": "Staff Engineer (m/f/d)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/solactive/staff-engineer-berlin-396577",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Staff Engineer role at Solactive is a senior-level engineering position with no explicit WordPress/WooCommerce or freelance/contract scope; matched keywords (frontend, maintenance, ux, website) are generic and appear incidental to a staff-level role, not evidence of target-profile fit.",
+      "deepseek_risk_flags": [
+        "seniority_mismatch_staff_level",
+        "no_explicit_freelance_or_contract_signal",
+        "generic_keyword_matches_only",
+        "no_wordpress_woocommerce_scope",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00016087,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -11807,9 +11836,21 @@
       "completion_tokens": 481,
       "total_tokens": 1535,
       "estimated_cost_usd": 0.00052208
+    },
+    {
+      "at": "2026-09-13T11:59:13Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 179,
+      "completion_tokens": 180,
+      "total_tokens": 743,
+      "estimated_cost_usd": 0.00016087
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-13T11:04:13Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-13T11:59:13Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
