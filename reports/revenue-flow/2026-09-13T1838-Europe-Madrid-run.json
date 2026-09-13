@@ -1,0 +1,74 @@
+{
+  "run_local_date": "2026-09-13",
+  "workstream": "VDS_REVENUE_FLOW",
+  "serious_candidates_evaluated": 22,
+  "direct_email_harvest_evaluated": 6,
+  "final_decisions": {
+    "SEND_NOW": 1,
+    "MANUAL_APPLY": 3,
+    "WAIT_RESEARCH": 5,
+    "REJECT": 13
+  },
+  "provider_verified_first_contact": 1,
+  "provider_verified_first_contact_uids": [509],
+  "duplicates": 3,
+  "route_failures": 1,
+  "duplicate_policy_violations": 1,
+  "duplicate_policy_violation_uids": [508],
+  "wait_research_by_blocker": {
+    "route_ambiguity_or_no_authoritative_application_route": 1,
+    "insufficient_current_external_capacity_signal": 3,
+    "authoritative_page_access_blocked": 1
+  },
+  "commercial_archetypes": {
+    "AGENCY_EXTERNAL_CAPACITY": 19,
+    "SME_WEB_IMPROVEMENT": 0,
+    "EU_DISSEMINATION_SPECIALIST": 3
+  },
+  "ab_attempts": {
+    "CREDENTIALS_CLASSIC": 0,
+    "VALUE_MICRO_COMMITMENT": 2
+  },
+  "ab_successful_first_contacts": {
+    "CREDENTIALS_CLASSIC": 0,
+    "VALUE_MICRO_COMMITMENT": 1
+  },
+  "new_downstream_outcomes": {
+    "reply": 0,
+    "qualified_positive_reply": 0,
+    "referral": 0,
+    "call_interview": 0,
+    "proposal": 0,
+    "won": 0,
+    "revenue": 0
+  },
+  "candidates": [
+    {"organization":"HELP EU","commercial_archetype":"EU_DISSEMINATION_SPECIALIST","result":"SEND_NOW","provider_uid":509,"commercial_variant":"VALUE_MICRO_COMMITMENT","micro_cta_type":"SEND_EU_WEB_DISSEMINATION_OUTLINE"},
+    {"organization":"2PDX Studio","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"DUPLICATE_PROVIDER_HISTORY_UID_182","erroneous_duplicate_send_uid":508},
+    {"organization":"WP-OK","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_OPEN_POSITION"},
+    {"organization":"OurWeb Italia","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"DUPLICATE_PROVIDER_UID_506"},
+    {"organization":"Studio Grafico Rosati","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"MANUAL_APPLY","reason":"FORM_APPLICATION_ROUTE"},
+    {"organization":"Crece Grow","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"MANUAL_APPLY","reason":"FORM_APPLICATION_ROUTE"},
+    {"organization":"Agencia SEO Uno","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"MANUAL_APPLY","reason":"FORM_APPLICATION_ROUTE"},
+    {"organization":"Prostudio66","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"WAIT_RESEARCH","reason":"ROUTE_AMBIGUITY"},
+    {"organization":"WIT Berry","commercial_archetype":"EU_DISSEMINATION_SPECIALIST","result":"WAIT_RESEARCH","reason":"INSUFFICIENT_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"Horizon Nua","commercial_archetype":"EU_DISSEMINATION_SPECIALIST","result":"WAIT_RESEARCH","reason":"INSUFFICIENT_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"DingoLab","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"DUPLICATE_PROVIDER_UID_261"},
+    {"organization":"Nabla","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"WAIT_RESEARCH","reason":"AUTHORITATIVE_PAGE_ACCESS_BLOCKED"},
+    {"organization":"HardGroup","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"WAIT_RESEARCH","reason":"INSUFFICIENT_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"Sabaweb","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"SELLER_NOT_BUYER_SIGNAL"},
+    {"organization":"Notelseit","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"LunaDevs","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"Agenzia P","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"AfterBit","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"Agencia NOMADS","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"EENDA","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"Agencia Quantum","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"},
+    {"organization":"agencySP","commercial_archetype":"AGENCY_EXTERNAL_CAPACITY","result":"REJECT","reason":"NO_CURRENT_EXTERNAL_CAPACITY_SIGNAL"}
+  ],
+  "notes": [
+    "Full five-page Hostinger Sent history was checked after UID 508 exposed a stale/incomplete dedup view. UID 508 is not counted as a successful outbound and must never be retried.",
+    "UID 509 HELP EU was verified in Hostinger Sent with correct recipient, subject and owner BCC; no immediate bounce was present in INBOX at final check.",
+    "Direct merge into state/provider-outbound-live.json was not attempted because the fetched large file content was truncated by the connector; a reconciliation sidecar was committed instead."
+  ]
+}
