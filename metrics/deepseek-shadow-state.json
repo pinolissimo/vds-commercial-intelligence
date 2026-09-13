@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 338,
+  "runs": 339,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -10122,6 +10122,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "84f2c322efeb83cb3f171649b43ca485",
+      "evaluated_at": "2026-09-13T22:59:41Z",
+      "organization": "PolicyMe",
+      "title": "Freelance Marketing Designer, Web",
+      "location": "Canada",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/freelance-marketing-designer-web-policyme",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Explicit freelance web/marketing designer role with matching frontend/CMS/UX keywords, but location is Canada and remote state is unverified, so geo compatibility for Spain/Italy/EU-remote is uncertain.",
+      "deepseek_risk_flags": [
+        "geo_mismatch_risk_canada",
+        "remote_state_unverified",
+        "marketing_designer_role_may_skew_non_technical",
+        "no_explicit_wordpress_or_woocommerce_mention"
+      ],
+      "deepseek_contract_compatibility": "HIGH",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015383,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -12092,9 +12120,21 @@
       "completion_tokens": 348,
       "total_tokens": 1114,
       "estimated_cost_usd": 0.00028914
+    },
+    {
+      "at": "2026-09-13T22:59:41Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 204,
+      "completion_tokens": 161,
+      "total_tokens": 749,
+      "estimated_cost_usd": 0.00015383
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-13T21:55:04Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-13T22:59:41Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
