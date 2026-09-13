@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-13T23:00:22+02:00",
+  "generated_at": "2026-09-13T23:01:57+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -60,7 +60,7 @@
       "territory": "UNRESOLVED",
       "score": 100.0,
       "mode": "HARVEST",
-      "harvest_cycles": 2,
+      "harvest_cycles": 3,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-14T11:37:12.545982Z",
       "heat_pct": 100.0
@@ -71,8 +71,8 @@
       "region": "Lazio",
       "territory": "Roma",
       "score": 49.16,
-      "mode": "COOLDOWN",
-      "harvest_cycles": 0,
+      "mode": "HARVEST",
+      "harvest_cycles": 1,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-14T13:50:02.739737Z",
       "heat_pct": 49.2
@@ -82,12 +82,12 @@
       "country": "Spain",
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
-      "score": 42.03,
+      "score": 41.83,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
       "low_yield_cycles": 0,
       "cooldown_until": null,
-      "heat_pct": 42.0
+      "heat_pct": 41.8
     },
     {
       "area": "Italy|Veneto|Venezia",
@@ -106,6 +106,18 @@
       "country": "Italy",
       "region": "Calabria",
       "territory": "Reggio Calabria",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Puglia|Bari",
+      "country": "Italy",
+      "region": "Puglia",
+      "territory": "Bari",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -138,22 +150,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Puglia|Bari",
+      "area": "Italy|Piemonte|Torino",
       "country": "Italy",
-      "region": "Puglia",
-      "territory": "Bari",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
-    },
-    {
-      "area": "Italy|Emilia-Romagna|Piacenza",
-      "country": "Italy",
-      "region": "Emilia-Romagna",
-      "territory": "Piacenza",
+      "region": "Piemonte",
+      "territory": "Torino",
       "score": 25.96,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -162,10 +162,10 @@
       "heat_pct": 26.0
     },
     {
-      "area": "Italy|Piemonte|Torino",
+      "area": "Italy|Emilia-Romagna|Piacenza",
       "country": "Italy",
-      "region": "Piemonte",
-      "territory": "Torino",
+      "region": "Emilia-Romagna",
+      "territory": "Piacenza",
       "score": 25.96,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -193,8 +193,8 @@
       "score": 17.49,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 362,
-      "cooldown_until": "2026-09-14T13:50:02.739737Z",
+      "low_yield_cycles": 363,
+      "cooldown_until": "2026-09-14T15:01:34.189141Z",
       "heat_pct": 17.5
     }
   ],
@@ -204,14 +204,14 @@
       "territories": 108,
       "average_score": 3.79,
       "best_score": 100.0,
-      "harvest_territories": 1,
+      "harvest_territories": 2,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
       "country": "Spain",
       "territories": 53,
-      "average_score": 4.17,
-      "best_score": 42.03,
+      "average_score": 4.16,
+      "best_score": 41.83,
       "harvest_territories": 0,
       "top_territory": "Spain|UNRESOLVED|UNRESOLVED"
     }
@@ -257,8 +257,8 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 2325,
-      "semantic_review": 50,
+      "semantic_reject": 2323,
+      "semantic_review": 52,
       "semantic_pass_to_executable_gap_proxy": 122,
       "legacy_ready_advisory_excluded": 21
     },
