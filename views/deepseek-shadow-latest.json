@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-13T14:01:36Z",
+  "updated_at": "2026-09-13T14:31:09Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 372,
-    "agreement_count": 195,
-    "agreement_pct": 52.42,
+    "evaluated_total": 373,
+    "agreement_count": 196,
+    "agreement_pct": 52.55,
     "deepseek_promote": 25,
     "vds_promote": 139,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 161,
-    "cumulative_estimated_cost_usd": 0.07771,
-    "cost_per_evaluated_candidate_usd": 0.0002089,
-    "cost_per_deepseek_promote_usd": 0.0031084,
-    "cost_per_observed_ready_or_contacted_usd": 0.03885496,
+    "request_count": 162,
+    "cumulative_estimated_cost_usd": 0.077924,
+    "cost_per_evaluated_candidate_usd": 0.00020891,
+    "cost_per_deepseek_promote_usd": 0.00311697,
+    "cost_per_observed_ready_or_contacted_usd": 0.03896211,
     "latest_request": {
-      "at": "2026-09-13T14:01:32Z",
+      "at": "2026-09-13T14:31:06Z",
       "model": "deepseek-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 896,
-      "prompt_cache_miss_tokens": 154,
-      "completion_tokens": 577,
-      "total_tokens": 1627,
-      "estimated_cost_usd": 0.00042097
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 451,
+      "completion_tokens": 173,
+      "total_tokens": 752,
+      "estimated_cost_usd": 0.0002143
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c9da2e6161cc5302be95e2818ea5fc96",
-      "evaluated_at": "2026-09-10T15:12:59Z",
-      "organization": "Real Digital",
-      "title": "Senior Full-Stack Engineer (all genders) | Backend or Frontend Focus",
-      "location": "Remote oder Köln / Darmstadt / Düsseldorf / Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/real-digital/remote-senior-full-stack-engineer-all-genders-backend-or-frontend-focus-382606",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 73,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior full-stack role with frontend and PHP mentions, but title emphasizes backend/frontend full-stack engineering rather than WordPress/WooCommerce or web-maintenance scope; stack fit is partial and unverified.",
-      "deepseek_risk_flags": [
-        "full-stack scope may be React/Node/Laravel-heavy",
-        "no explicit WordPress/WooCommerce evidence",
-        "employment type unknown",
-        "freelance compatibility unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00018305,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "8db66bf288642b064ff8a5c83d4b83f9",
       "evaluated_at": "2026-09-10T15:12:59Z",
@@ -1477,10 +1449,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a6efe65888f1dc32efe4c98c60abd171",
+      "evaluated_at": "2026-09-13T14:31:06Z",
+      "organization": "speechify",
+      "title": "Senior Software Engineer, Windows/Desktop Applications - Paris, France",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/speechify/senior-software-engineer-windows-desktop-applications-paris-france-177790",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Senior Software Engineer for Windows/Desktop Applications at Speechify, a native desktop application engineering position with no meaningful WordPress, WooCommerce, or web-development scope; matched keywords like frontend, ui, ux, and website appear incidental and do not reflect the core role.",
+      "deepseek_risk_flags": [
+        "core_role_stack_mismatch",
+        "native_desktop_not_web",
+        "keyword_matches_incidental",
+        "no_freelance_or_contract_signal",
+        "senior_full_time_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002143,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 3,
-  "source_semantic_updated_at": "2026-09-13T14:01:30Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-13T14:31:04Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
