@@ -1,0 +1,62 @@
+{
+  "run_at": "2026-09-13T01:05:00Z",
+  "workstream": "VDS_JOB_FLOW",
+  "send_window_open": false,
+  "provider": {
+    "mailbox": "info@visualdesignstudio.es",
+    "sent_message_count": 472,
+    "new_human_replies_since_previous_scan": 0,
+    "delivery_corrections": [
+      {
+        "provider_uid": 479,
+        "organization": "BulkForge",
+        "recipient": "careers@bulkforge.app",
+        "previously_counted_state": "VERIFIED_EMAIL_SENT",
+        "corrected_state": "DELIVERY_FAILED_TEMPORARY",
+        "evidence": "2026-09-12T22:42:55Z DSN: 421 Downstream server error; host bulkforge.app refused SMTP conversation",
+        "blind_retry": false
+      }
+    ]
+  },
+  "metrics": {
+    "serious_candidates": 15,
+    "direct_email_harvest": 10,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 2,
+    "wait_research": 4,
+    "reject": 9,
+    "duplicate_failures": 3,
+    "fit_failures": 4,
+    "route_failures": 2,
+    "ab_new_sends": {"CLASSIC_APPLICATION": 0, "EXTERNAL_CAPACITY_OFFER": 0},
+    "new_reply": 0,
+    "new_positive_reply": 0,
+    "new_interview_call": 0,
+    "new_proposal": 0,
+    "new_won": 0
+  },
+  "candidates": [
+    {"organization":"DesignBub","outcome":"WAIT_RESEARCH","route":"careers@designbub.com","reason":"Current employer-controlled careers page; WordPress/Webflow Developer is Project Based + Remote; no Hostinger Sent match and no canonical GitHub match. Timing prevents SEND_NOW."},
+    {"organization":"YESdesign","outcome":"WAIT_RESEARCH","route":"info@yesdesign.it","reason":"Current employer careers page allows spontaneous CV; no Hostinger Sent match; needs role-level fit/contract check before next-window send."},
+    {"organization":"WPXERO","outcome":"REJECT","route":"careers@wpxero.com","reason":"Employer careers page explicitly states no open roles right now."},
+    {"organization":"Idimad 360","outcome":"REJECT","reason":"Mandatory iOS/Android, deployment and Swift requirements create core mismatch."},
+    {"organization":"Agencia SEO Uno","outcome":"MANUAL_APPLY","reason":"WordPress profile relevant but employer-controlled application route is form."},
+    {"organization":"Sheedo Studio","outcome":"REJECT","reason":"Current route is a marketing internship requiring student/internship context, not VDS fit."},
+    {"organization":"Geolat","outcome":"REJECT","reason":"General CV form with no current VDS-relevant web vacancy identified."},
+    {"organization":"ACIDA Marketing","outcome":"REJECT","reason":"Relevant current WordPress route but known provider duplicate from prior canonical/provider evidence."},
+    {"organization":"Publydea","outcome":"REJECT","reason":"Current WordPress-specialist route but already professionally contacted; no resend."},
+    {"organization":"EuroAquaTours","outcome":"REJECT","reason":"Freelance collaboration route relevant but already professionally contacted; no resend."},
+    {"organization":"IOI Agency","outcome":"WAIT_RESEARCH","route":"info@ioiagency.it","reason":"Current role signal found on LinkedIn; exact route must be re-verified on employer-controlled source before automatic email."},
+    {"organization":"Talentform","outcome":"REJECT","reason":"On-site Rome junior web-marketing role is not a reasonable external VDS fit."},
+    {"organization":"Avante","outcome":"REJECT","reason":"Current freelance opening is content marketing; WordPress only a plus, not core production fit."},
+    {"organization":"Codelia Studio","outcome":"MANUAL_APPLY","reason":"Relevant web/landing/WordPress route but official application is form."},
+    {"organization":"iempresa","outcome":"WAIT_RESEARCH","route":"candidaturas@iempresa.net","reason":"Strong WordPress/WooCommerce fit but discovery source is LinkedIn; require employer-controlled confirmation and dedup before send."}
+  ],
+  "north_star": {
+    "highest_active_stage": "INTERVIEW_CALL",
+    "organization": "Teslhub",
+    "note": "No newer human funnel advancement detected in this scan."
+  },
+  "live_projection_note": "No new successful send in this run. BulkForge UID 479 correction recorded here; provider-outbound-live.json was not blindly overwritten without a safe latest-SHA full-file merge."
+}
