@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 332,
+  "runs": 333,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -10036,6 +10036,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "65c39eb21fc9bbb2f3ad1c858ffeb7d0",
+      "evaluated_at": "2026-09-13T17:04:28Z",
+      "organization": "Clay Labs",
+      "title": "Private Equity Partnerships (EMEA)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clay-labs/private-equity-partnerships-emea-london-174861",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Private Equity Partnerships (EMEA) business-development position at Clay Labs; the only profile overlap is the incidental word 'maintenance' and generic 'partner' commercial keyword, with no web development, WordPress, WooCommerce, frontend or performance scope.",
+      "deepseek_risk_flags": [
+        "no_web_development_scope",
+        "non_technical_business_role",
+        "keyword_only_match",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00014745,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -11982,9 +12010,21 @@
       "completion_tokens": 173,
       "total_tokens": 752,
       "estimated_cost_usd": 0.0002143
+    },
+    {
+      "at": "2026-09-13T17:04:28Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 178,
+      "completion_tokens": 160,
+      "total_tokens": 722,
+      "estimated_cost_usd": 0.00014745
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-13T16:00:57Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-13T17:04:28Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
