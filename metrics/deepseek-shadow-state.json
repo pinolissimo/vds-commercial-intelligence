@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 381,
+  "runs": 382,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -10780,6 +10780,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a99827b22b4b10408d95b1511f3f54cf",
+      "evaluated_at": "2026-09-14T23:01:03Z",
+      "organization": "",
+      "title": "Website Designer",
+      "location": "Colombia",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Website Designer' with strong stack alignment (WordPress, WooCommerce, HTML/CSS/JS, Core Web Vitals, UI/UX, maintenance) and explicit 'freelance'/'agency' intent signals, but location is Colombia and remote state is unverified, so geo compatibility for Spain/Italy/EU-remote is uncertain.",
+      "deepseek_risk_flags": [
+        "geo_compatibility_unverified",
+        "remote_state_unknown",
+        "no_published_date",
+        "no_employment_type",
+        "location_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015668,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "321874bd31b4839eddd9550ae571d5bb",
+      "evaluated_at": "2026-09-14T23:01:03Z",
+      "organization": "sonyinteractiveentertainmentglobal",
+      "title": "Senior Analytics Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/sonyinteractiveentertainmentglobal/senior-analytics-engineer-london-17331",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Senior Analytics Engineer role at Sony Interactive Entertainment is a data/analytics engineering position; only incidental HTML/CSS/JS keyword matches and generic 'partner'/'collaboration' text, with no meaningful WordPress, WooCommerce, frontend, or web-maintenance scope.",
+      "deepseek_risk_flags": [
+        "core_role_stack_mismatch",
+        "analytics_engineering_not_web_development",
+        "generic_collaboration_keyword_not_freelance_evidence",
+        "onsite_london_location"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015668,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -12810,9 +12867,21 @@
       "completion_tokens": 593,
       "total_tokens": 1943,
       "estimated_cost_usd": 0.000443
+    },
+    {
+      "at": "2026-09-14T23:01:03Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 165,
+      "completion_tokens": 413,
+      "total_tokens": 1218,
+      "estimated_cost_usd": 0.00031336
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-14T22:02:15Z",
+  "updated_at": "2026-09-14T23:01:03Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
