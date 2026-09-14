@@ -111,26 +111,55 @@ def geo_enrich(location, combined):
     return {"country": None, "region": None, "province": None, "resolution": "UNRESOLVED"}
 
 
+def source_text(signal):
+    fields = [
+        signal.get("title"), signal.get("organization"), signal.get("location"),
+        signal.get("description"), signal.get("snippet"), signal.get("summary"),
+        signal.get("text"), signal.get("content"), signal.get("role_description"),
+        " ".join(signal.get("matched_profile_keywords") or []),
+        " ".join(signal.get("matched_commercial_keywords") or []),
+    ]
+    return " ".join(str(x or "") for x in fields)
+
+
 def classify(signal, policy, now):
     title = signal.get("title") or ""
-    organization = signal.get("organization") or ""
     location = signal.get("location") or ""
-    desc_hits = signal.get("matched_profile_keywords") or []
-    combined = " ".join([title, organization, location, " ".join(desc_hits)])
+    combined = source_text(signal)
 
     role_hits = hits(title, policy["target_role_terms"])
     negative_hits = hits(title, policy["negative_title_terms"])
     mismatch_hits = hits(title, policy["stack_mismatch_terms"])
     skill_hits = hits(combined, policy["strong_skill_terms"])
     intent_hits = hits(combined, policy["commercial_intent_terms"])
+    project_hits = hits(combined, policy.get("project_scope_terms", []))
+    support_hits = hits(combined, policy.get("hard_non_project_support_terms", []))
+    binding_hits = hits(combined, policy.get("hard_time_binding_terms", []))
+    maintenance_project_hits = hits(combined, policy.get("project_maintenance_terms", []))
+    title_support_hits = hits(title, policy.get("hard_non_project_support_terms", []))
+    title_binding_hits = hits(title, policy.get("hard_time_binding_terms", []))
     geo_exclusions = hits(" ".join([location, title]), policy["hard_geo_exclusion_terms"])
     geo = geo_enrich(location, combined)
 
-    # Discovery should favor recall. Final quality remains enforced downstream.
+    # Support/ticketing availability is outside VDS's commercial model. A scoped
+    # evolutionary web-maintenance project is allowed only when no operational
+    # support/SLA/on-call obligation is present.
+    binding_support = bool(binding_hits or title_binding_hits)
+    support_role_title = bool(title_support_hits)
+    support_dominant = bool(support_hits) and (
+        support_role_title or binding_support or len(support_hits) >= 2 or not project_hits
+    )
+    scoped_web_maintenance = bool(maintenance_project_hits) and not binding_support and not support_role_title
+    non_project_support = (support_dominant or binding_support) and not scoped_web_maintenance
+    project_based_fit = bool(project_hits or role_hits or scoped_web_maintenance) and not non_project_support
+
+    # Discovery should favor recall for web-delivery projects, while support work
+    # is a deterministic exclusion rather than merely a score penalty.
     score = 10
     score += min(56, len(role_hits) * 28)
     score += min(25, len(skill_hits) * 5)
     score += min(15, len(intent_hits) * 5)
+    score += min(15, len(project_hits) * 3)
     if geo["country"] in ("Spain", "Italy"):
         score += 20
     elif geo["country"] in ("EU_REMOTE", "WORLDWIDE_REMOTE"):
@@ -139,6 +168,11 @@ def classify(signal, policy, now):
         score += 10
 
     reasons = []
+    if non_project_support:
+        score = 0
+        reasons.append("NON_PROJECT_SUPPORT_ROLE")
+    if binding_support:
+        reasons.append("TIME_BOUND_SUPPORT_OBLIGATION")
     if negative_hits:
         score -= 60
         reasons.append("NEGATIVE_ROLE_TITLE")
@@ -168,19 +202,20 @@ def classify(signal, policy, now):
         score = min(score, 49)
         reasons.append("INCIDENTAL_BODY_KEYWORDS_ONLY")
 
-    # A real target role with fresh evidence is review-worthy even when geography needs verification.
-    if role_hits and not negative_hits and not geo_exclusions and "STALE_OVER_MAX" not in reasons:
+    if role_hits and project_based_fit and not negative_hits and not geo_exclusions and "STALE_OVER_MAX" not in reasons:
         score = max(score, 54)
-    # A real target role plus Spain/Italy/EU-remote compatibility should reach promotion when fresh.
-    if role_hits and geo["country"] in ("Spain", "Italy", "EU_REMOTE", "WORLDWIDE_REMOTE") and not negative_hits and not geo_exclusions and "STALE_OVER_MAX" not in reasons:
+    if role_hits and project_based_fit and geo["country"] in ("Spain", "Italy", "EU_REMOTE", "WORLDWIDE_REMOTE") and not negative_hits and not geo_exclusions and "STALE_OVER_MAX" not in reasons:
         score = max(score, 74)
 
     score = max(0, min(100, round(score, 1)))
     thresholds = policy["thresholds"]
-    hard_block = any(r in reasons for r in ["NEGATIVE_ROLE_TITLE", "HARD_GEO_EXCLUSION", "STALE_OVER_MAX"])
-    if score >= thresholds["promote"] and not hard_block:
+    hard_block = any(r in reasons for r in [
+        "NON_PROJECT_SUPPORT_ROLE", "TIME_BOUND_SUPPORT_OBLIGATION",
+        "NEGATIVE_ROLE_TITLE", "HARD_GEO_EXCLUSION", "STALE_OVER_MAX"
+    ])
+    if score >= thresholds["promote"] and not hard_block and project_based_fit:
         state = "SEMANTIC_PASS"
-    elif score >= thresholds["review"] and not hard_block:
+    elif score >= thresholds["review"] and not hard_block and project_based_fit:
         state = "SEMANTIC_REVIEW"
     else:
         state = "SEMANTIC_REJECT"
@@ -193,6 +228,14 @@ def classify(signal, policy, now):
         "semantic_negative_hits": negative_hits,
         "semantic_stack_mismatch_hits": mismatch_hits,
         "semantic_intent_hits": intent_hits,
+        "project_scope_hits": project_hits,
+        "support_role_hits": support_hits,
+        "time_binding_hits": binding_hits,
+        "project_maintenance_hits": maintenance_project_hits,
+        "project_based_fit": project_based_fit,
+        "engagement_model": "PROJECT_BASED_WEB_DELIVERY" if project_based_fit else "NON_PROJECT_SUPPORT_OR_OTHER",
+        "final_decision_hint": "REJECT" if non_project_support or binding_support else None,
+        "final_blocker": "NON_PROJECT_SUPPORT_ROLE" if non_project_support or binding_support else None,
         "geo_enrichment": geo,
         "published_age_days": round(age_days, 1) if age_days is not None else None,
         "semantic_reasons": reasons
@@ -208,27 +251,37 @@ def main():
     promote = sorted([x for x in rows if x["semantic_state"] == "SEMANTIC_PASS"], key=lambda x: x["semantic_score"], reverse=True)
     review = sorted([x for x in rows if x["semantic_state"] == "SEMANTIC_REVIEW"], key=lambda x: x["semantic_score"], reverse=True)
     reject = sorted([x for x in rows if x["semantic_state"] == "SEMANTIC_REJECT"], key=lambda x: x["semantic_score"], reverse=True)
+    support_rejects = [x for x in reject if "NON_PROJECT_SUPPORT_ROLE" in (x.get("semantic_reasons") or []) or "TIME_BOUND_SUPPORT_OBLIGATION" in (x.get("semantic_reasons") or [])]
     stamp = now.replace(microsecond=0).isoformat().replace("+00:00", "Z")
     dump(OUT_PATH, {
-        "schema_version": "1.1",
+        "schema_version": "1.2",
         "updated_at": stamp,
         "input_signal_count": len(rows),
         "semantic_pass_count": len(promote),
         "semantic_review_count": len(review),
         "semantic_reject_count": len(reject),
+        "rejected_non_project_support_count": len(support_rejects),
         "semantic_pass": promote,
         "semantic_review": review[:300],
         "semantic_reject_sample": reject[:100]
     })
-    metrics = load(METRICS_PATH, {"schema_version": "1.1", "runs": 0, "total_input": 0, "total_pass": 0, "total_review": 0, "total_reject": 0})
+    metrics = load(METRICS_PATH, {
+        "schema_version": "1.2", "runs": 0, "total_input": 0, "total_pass": 0,
+        "total_review": 0, "total_reject": 0, "total_rejected_non_project_support": 0
+    })
     metrics.update({
+        "schema_version": "1.2",
         "updated_at": stamp,
         "runs": int(metrics.get("runs", 0)) + 1,
         "total_input": int(metrics.get("total_input", 0)) + len(rows),
         "total_pass": int(metrics.get("total_pass", 0)) + len(promote),
         "total_review": int(metrics.get("total_review", 0)) + len(review),
         "total_reject": int(metrics.get("total_reject", 0)) + len(reject),
-        "last_run": {"input": len(rows), "pass": len(promote), "review": len(review), "reject": len(reject)}
+        "total_rejected_non_project_support": int(metrics.get("total_rejected_non_project_support", 0)) + len(support_rejects),
+        "last_run": {
+            "input": len(rows), "pass": len(promote), "review": len(review),
+            "reject": len(reject), "rejected_non_project_support": len(support_rejects)
+        }
     })
     dump(METRICS_PATH, metrics)
     print(json.dumps(metrics["last_run"]))
