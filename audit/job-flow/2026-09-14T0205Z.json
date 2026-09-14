@@ -1,0 +1,116 @@
+{
+  "run_at": "2026-09-14T04:04:00+02:00",
+  "send_window_open": false,
+  "workstream": "VDS_JOB_FLOW",
+  "metrics": {
+    "serious_candidates": 12,
+    "direct_email_harvest": 8,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 2,
+    "wait_research": 2,
+    "reject": 8,
+    "duplicate_failures": 4,
+    "fit_failures": 2,
+    "route_failures": 2,
+    "ab_variant_sends": {
+      "CLASSIC_APPLICATION": 0,
+      "EXTERNAL_CAPACITY_OFFER": 0
+    }
+  },
+  "decisions": [
+    {
+      "organization": "CodeBiosis",
+      "outcome": "WAIT_RESEARCH",
+      "reason": "Authoritative current careers page lists WordPress/WooCommerce Developer (2+ years) and directs resumes to contact@codebiosis.com; fresh Hostinger Sent text search found no CodeBiosis history. Send window closed.",
+      "route": "contact@codebiosis.com",
+      "preferred_variant": "EXTERNAL_CAPACITY_OFFER"
+    },
+    {
+      "organization": "TerraViva Competitions",
+      "outcome": "WAIT_RESEARCH",
+      "reason": "Official Work With Us page shows Junior UX/UI WordPress Designer as Applications Open and requires email applications to jobs@terravivacompetitions.com; fresh Hostinger Sent text search found no TerraViva history. Send window closed.",
+      "route": "jobs@terravivacompetitions.com",
+      "preferred_variant": "CLASSIC_APPLICATION"
+    },
+    {
+      "organization": "Web Station",
+      "outcome": "REJECT",
+      "reason": "Current official careers page remains a strong WordPress/web-design fit, but fresh Hostinger Sent search found prior contact UID 360 on 2026-09-09.",
+      "route": "hr@wstation.it",
+      "failure": "DUPLICATE"
+    },
+    {
+      "organization": "Juno Lab",
+      "outcome": "REJECT",
+      "reason": "Official page currently seeks remote Web Designer for WordPress/performance/SEO, but organization already has provider-verified prior contact in canonical history.",
+      "route": "jobs@junolab.it",
+      "failure": "DUPLICATE"
+    },
+    {
+      "organization": "eFarm Group",
+      "outcome": "REJECT",
+      "reason": "Official page currently lists Programmatore web freelance with PHP/WordPress/Prestashop, but organization already has provider-verified prior contact in canonical history.",
+      "route": "jobs@efarmgroup.com",
+      "failure": "DUPLICATE"
+    },
+    {
+      "organization": "SO Design Online",
+      "outcome": "REJECT",
+      "reason": "Already contacted. Inbox contains a reply from support@sodesign.online confirming application/collaborator review and possible meeting if shortlisted.",
+      "route": "support@sodesign.online",
+      "failure": "DUPLICATE"
+    },
+    {
+      "organization": "Studio Liz",
+      "outcome": "REJECT",
+      "reason": "Official WordPress Developer role requires creating/modifying themes and plugins plus Ajax/MySQL as core competencies; do not overclaim fit.",
+      "route": "jobs@studioliz.org",
+      "failure": "FIT"
+    },
+    {
+      "organization": "BulkForge",
+      "outcome": "REJECT",
+      "reason": "Current careers page exposes careers@bulkforge.app but technical opening is Senior Full-Stack Engineer, outside truthful VDS fit.",
+      "route": "careers@bulkforge.app",
+      "failure": "FIT"
+    },
+    {
+      "organization": "WPXERO",
+      "outcome": "REJECT",
+      "reason": "Official careers page explicitly states no open roles right now despite accepting future resumes.",
+      "route": "careers@wpxero.com",
+      "failure": "CURRENT_NEED"
+    },
+    {
+      "organization": "WPsigner",
+      "outcome": "REJECT",
+      "reason": "Official careers page explicitly states no open positions right now.",
+      "failure": "CURRENT_NEED"
+    },
+    {
+      "organization": "CUENTO Marketing",
+      "outcome": "MANUAL_APPLY",
+      "reason": "Current part-time freelance remote WordPress Web Designer/Developer is a strong fit, but official application route is a form, not an exact application email."
+    },
+    {
+      "organization": "WebLime",
+      "outcome": "MANUAL_APPLY",
+      "reason": "Official careers page lists WordPress Developer/Web Developer and remote work, but no exact authoritative application email is exposed in the retrieved page."
+    }
+  ],
+  "funnel_updates": [
+    {
+      "organization": "SO Design Online",
+      "reply": true,
+      "qualified_positive_reply": false,
+      "micro_commitment_reply": false,
+      "interview_call": false,
+      "proposal": false,
+      "won": false,
+      "status": "APPLICATION_UNDER_REVIEW",
+      "evidence": "Inbox UID 1449: team thanked Giuseppe, said applications/potential collaborators are being reviewed, and will contact him to schedule a meeting if shortlisted."
+    }
+  ],
+  "notes": "No live send attempted because the authorized 09:00-19:00 Europe/Madrid send window was closed. No provider-outbound-live.json update required because there was no provider-verified send in this run."
+}
