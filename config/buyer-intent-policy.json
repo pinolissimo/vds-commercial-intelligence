@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-14T10:00:00Z",
+  "objective": "Prioritize opportunities most likely to progress to qualified reply, call, proposal and revenue without weakening route, fit, legal or dedup gates.",
+  "north_star_order": [
+    "WON_REVENUE",
+    "PROPOSAL",
+    "CALL_INTERVIEW",
+    "QUALIFIED_POSITIVE_REPLY_REFERRAL",
+    "MICRO_COMMITMENT_REPLY",
+    "PROVIDER_VERIFIED_FIRST_CONTACT"
+  ],
+  "archetype_priority": {
+    "AGENCY_EXTERNAL_CAPACITY": 1.0,
+    "EU_DISSEMINATION_SPECIALIST": 0.92,
+    "SME_WEB_IMPROVEMENT": 0.82,
+    "GENERIC_JOB_APPLICATION": 0.45
+  },
+  "positive_intent_terms": {
+    "agency_external_capacity": [
+      "freelance", "freelancer", "external collaborator", "collaborator", "collaboration",
+      "white label", "white-label", "overflow", "subcontractor", "subcontracting",
+      "partner", "project based", "project-based", "outsourcing", "external capacity",
+      "p.iva", "partita iva", "autónomo", "autonomo", "contractor"
+    ],
+    "eu_dissemination": [
+      "horizon", "prima", "european project", "eu project", "research project",
+      "dissemination", "communication", "exploitation", "deliverables", "publications",
+      "project website", "partners", "work package", "news and events"
+    ],
+    "sme_problem": [
+      "redesign", "website redesign", "performance", "core web vitals", "slow website",
+      "maintenance", "migration", "accessibility", "conversion", "seo", "wordpress",
+      "woocommerce", "website", "web development"
+    ]
+  },
+  "route_boost": {
+    "DIRECT_EMAIL_VERIFIED": 18,
+    "DIRECT_EMAIL_TO_VERIFY": 10,
+    "OFFICIAL_CONTACT_ROUTE": 8,
+    "ATS_OR_FORM": -8,
+    "UNKNOWN": -5
+  },
+  "freshness": {
+    "days_0_7": 18,
+    "days_8_21": 10,
+    "days_22_45": 3,
+    "older": -8
+  },
+  "job_application_penalty": 18,
+  "buyer_intent_thresholds": {
+    "VERY_HIGH": 78,
+    "HIGH": 64,
+    "MEDIUM": 48
+  },
+  "execution_policy": {
+    "prefer_high_intent_before_generic_backlog": true,
+    "minimum_exploration_share": 0.15,
+    "generic_job_application_share_cap": 0.25,
+    "target_high_intent_first_contacts_7d": 40,
+    "target_calls_7d": 3,
+    "target_proposals_7d": 2,
+    "target_wins_7d": 1,
+    "never_override_hard_gates": true,
+    "never_authorize_send": true
+  }
+}
