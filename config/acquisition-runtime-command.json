@@ -1,8 +1,24 @@
 {
-  "schema_version": "1.4",
-  "updated_at": "2026-09-14T09:03:40Z",
+  "schema_version": "1.5",
+  "updated_at": "2026-09-14T09:14:47Z",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
+  "commercial_strategy": {
+    "primary_objective": "CONVERT_BUYER_INTENT_TO_REVENUE",
+    "priority_order": [
+      "AGENCY_EXTERNAL_CAPACITY",
+      "EU_DISSEMINATION_SPECIALIST",
+      "SME_WEB_IMPROVEMENT",
+      "GENERIC_JOB_APPLICATION"
+    ],
+    "generic_job_application_share_cap": 0.25,
+    "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
+    "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
+    "target_high_intent_first_contacts_7d": 40,
+    "target_calls_7d": 3,
+    "target_proposals_7d": 2,
+    "target_wins_7d": 1
+  },
   "revenue_flow_preflight": {
     "required": true,
     "protocol": "project/REVENUE_FLOW_SELF_HEALING_PROTOCOL.md",
@@ -17,6 +33,7 @@
     "agency_radar_required": false,
     "cross_signal_required": false,
     "separate_ready_builder_required": false,
+    "buyer_intent_ranker_is_priority_advice_not_send_authorization": true,
     "legacy_cross_signal_and_ready_are_advisory_only": true
   },
   "operational_outcomes": [
@@ -26,28 +43,28 @@
     "REJECT"
   ],
   "capacity": {
-    "exploitation_pct": 85,
-    "exploration_pct": 10,
-    "strategic_reserve_pct": 5
+    "high_buyer_intent_pct": 50,
+    "qualified_backlog_pct": 35,
+    "exploration_pct": 15
   },
   "diagnosed_bottleneck": "RAW_SOURCE_PRECISION",
   "source_priority": {
     "joa_es_webdesigner_title": 1.52,
     "joa_it_webdev_title": 1.51,
-    "nomado_frontend": 1.46,
+    "nomado_frontend": 1.5,
     "joa_it_webdesigner_title": 1.36,
     "joa_es_frontend_title": 1.31,
     "joa_es_web_performance_body": 1.3,
     "joa_es_webdev_title": 1.22,
     "joa_it_frontend_title": 1.13,
     "remotejobs_contract_wordpress": 1.02,
-    "nomado_webdev": 0.98,
     "joa_it_web_performance_body": 0.97,
+    "nomado_webdev": 0.96,
     "joa_eu_remote_webdev": 0.96,
+    "remote_landers": 0.89,
     "jobicy_europe": 0.8,
     "joa_eu_remote_wordpress": 0.79,
     "remotive": 0.76,
-    "remote_landers": 0.74,
     "remotejobs_contract_webdev": 0.72,
     "joa_it_wordpress_body": 0.7,
     "joa_es_wordpress_title": 0.67,
@@ -72,25 +89,24 @@
     "joa_es_frontend_title",
     "joa_es_web_performance_body"
   ],
+  "buyer_intent": {
+    "very_high": 0,
+    "high": 0,
+    "high_total": 0,
+    "archetypes": {},
+    "priority_view": "views/buyer-intent-priority.json"
+  },
   "source_budget_policy": {
-    "objective": "Spend verification/LLM effort on measured semantic yield while preserving broad cheap discovery.",
+    "objective": "Spend verification effort on measured semantic and commercial yield while preserving exploration.",
     "exploration_floor_multiplier": 0.35,
-    "low_yield_min_sample": 40,
-    "low_yield_useful_rate_below": 0.03,
-    "low_yield_cap_multiplier": 0.45,
-    "weak_yield_min_sample": 20,
-    "weak_yield_useful_rate_below": 0.06,
-    "weak_yield_cap_multiplier": 0.7,
     "never_disable_source_from_semantic_yield_alone": true
   },
   "qualified_backlog_policy": {
-    "priority": "UNRESOLVED_SEMANTIC_PASS_BEFORE_BROAD_RAW_EXPANSION",
-    "semantic_pass_snapshot_proxy": 126,
-    "turbo_enable_threshold": 20,
-    "turbo_release_threshold": 8,
-    "hysteresis_enabled": true,
-    "minimum_exploration_pct_when_turbo": 10,
-    "target_serious_candidate_decisions_per_run": 40,
+    "priority": "HIGH_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
+    "semantic_pass_snapshot_proxy": 124,
+    "high_buyer_intent_snapshot": 0,
+    "target_serious_candidate_decisions_per_run": 60,
+    "target_high_intent_decisions_first": true,
     "continue_after_individual_blocker": true,
     "send_all_valid_send_now": true,
     "no_batch_minimum": true
@@ -101,34 +117,35 @@
   "explore_or_revisit_areas": [
     "Spain|Comunitat Valenciana|Castellón",
     "Italy|Calabria|Reggio Calabria",
-    "Italy|Puglia|Bari",
     "Italy|Veneto|Venezia",
+    "Italy|Puglia|Bari",
     "Spain|Aragón|Zaragoza",
-    "Italy|Piemonte|Torino",
     "Italy|Emilia-Romagna|Piacenza",
+    "Italy|Piemonte|Torino",
     "Spain|Castilla y León|Valladolid",
     "Spain|Galicia|A Coruña",
+    "Spain|Cataluña|Girona",
     "Italy|Sicilia|Agrigento",
-    "Spain|Asturias|Asturias",
-    "Spain|Cataluña|Girona"
+    "Spain|Asturias|Asturias"
   ],
   "turbo": {
     "enabled": true,
     "reason": "QUALIFIED_BACKLOG_PRESSURE",
     "quality_gates_unchanged": true,
-    "target_serious_candidate_decisions_per_run": 40,
+    "target_serious_candidate_decisions_per_run": 60,
     "same_run_qualification_and_send": true,
     "send_all_valid_send_now": true,
     "no_batch_minimum": true,
     "prefer_direct_authoritative_email_routes": true,
     "prefer_fresh_24h_then_7d": true,
+    "prefer_high_buyer_intent": true,
     "manual_route_preservation": true,
     "never_promote_from_deepseek_shadow": true,
-    "minimum_exploration_pct": 10
+    "minimum_exploration_pct": 15
   },
   "route_policy": {
     "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email.",
-    "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity proposal, when no application-only route is being bypassed and all legal, identity, fit, freshness and dedup gates pass."
+    "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity proposal when no application-only route is bypassed and all hard gates pass."
   },
-  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run the mandatory self-healing preflight first. When qualified backlog pressure enables TURBO, prioritize unresolved semantic-pass candidates and route closure before broad raw expansion while preserving at least 10% exploration. Consume fresh discovery plus unresolved strong backlog directly; qualify, decide and route in the same run. Do not require Agency Radar, cross-signal state or a separate READY queue. Process at least 40 serious candidates when supply/runtime permits and continue after individual blockers. Send every currently valid SEND_NOW identity with no batch minimum. Preserve absolute organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
+  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. Prioritize buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third, generic job applications last. Use the buyer-intent ranker only for ordering; it never authorizes sending. Cap generic job-application effort near 25 percent unless explicit freelance/external-capacity intent exists. Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. Measure and optimize for qualified reply, call, proposal and won revenue. Process at least 60 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
 }
