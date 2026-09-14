@@ -1,0 +1,126 @@
+{
+  "run_at": "2026-09-14T15:59:00+02:00",
+  "send_window_open": true,
+  "policy": "AUTONOMOUS_DIRECT_EMAIL_DISCOVERY_QUALIFY_DECIDE_SEND_ROUTE_PROJECT_BASED_WEB_ONLY",
+  "serious_candidates_evaluated": 10,
+  "direct_email_route_harvest_evaluated": 6,
+  "send_now": 2,
+  "provider_verified_first_contact": 2,
+  "manual_apply": 4,
+  "wait_research": 0,
+  "reject": 4,
+  "duplicates_provider_detected": 4,
+  "route_failures": 4,
+  "commercial_archetype_counts": {
+    "AGENCY_EXTERNAL_CAPACITY": 10,
+    "SME_WEB_IMPROVEMENT": 0,
+    "EU_DISSEMINATION_SPECIALIST": 0
+  },
+  "ab_variant_counts_sent": {
+    "CREDENTIALS_CLASSIC": 1,
+    "VALUE_MICRO_COMMITMENT": 1
+  },
+  "provider_verified_sends": [
+    {
+      "organization": "Studio Atelièr",
+      "canonical_identity_key": "org:studioatelier.it",
+      "recipient": "direzione@studioatelier.it",
+      "provider_uid": 519,
+      "sent_at": "2026-09-14T13:53:40Z",
+      "subject": "Capacità web esterna per progetti Studio Atelièr",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "OFFER_2_OVERFLOW_WORKLOAD_EXAMPLES",
+      "decision": "SEND_NOW",
+      "provider_verified": true
+    },
+    {
+      "organization": "BD & Partners",
+      "canonical_identity_key": "org:bdpartners.it",
+      "recipient": "info@bdpartners.it",
+      "provider_uid": 520,
+      "sent_at": "2026-09-14T13:56:16Z",
+      "subject": "Sviluppo web a progetto per la rete BD & Partners",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "commercial_variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "PORTFOLIO_AND_PROJECT_AVAILABILITY",
+      "decision": "SEND_NOW",
+      "provider_verified": true
+    }
+  ],
+  "manual_apply_decisions": [
+    {
+      "organization": "NoAgency",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "MANUAL_APPLY",
+      "reason": "Authoritative Lavora con NoA page exposes a dedicated freelancer/portfolio application form; generic info email is not used to bypass it."
+    },
+    {
+      "organization": "Mordan Marketing",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "MANUAL_APPLY",
+      "reason": "Freelancer network is relevant but the authoritative acquisition route is a form."
+    },
+    {
+      "organization": "Praxia Atelier",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "MANUAL_APPLY",
+      "reason": "Strong project-based freelance positioning, including project rather than hourly work, but registration is form-based."
+    },
+    {
+      "organization": "iDEA",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "decision": "MANUAL_APPLY",
+      "reason": "Relevant independent WordPress/UX/UI collaboration context; authoritative application flow is form-based."
+    }
+  ],
+  "reject_decisions": [
+    {"organization":"A10web","decision":"REJECT","reason":"Fresh provider history confirms prior first contact; same organization identity is deduplicated."},
+    {"organization":"TurboBit","decision":"REJECT","reason":"Fresh provider history confirms prior professional contact; do not re-contact via another lane."},
+    {"organization":"OneBit","decision":"REJECT","reason":"Fresh provider history confirms prior first contact."},
+    {"organization":"Graphalia","decision":"REJECT","reason":"Fresh provider history confirms prior first contact."}
+  ],
+  "downstream_outcomes_detected": {
+    "reply": 3,
+    "qualified_positive_reply": 1,
+    "referral": 0,
+    "call_interview": 1,
+    "proposal": 0,
+    "won": 0,
+    "revenue": 0,
+    "details": [
+      {
+        "organization": "Teslhub",
+        "provider_inbox_uid": 1462,
+        "state": "QUALIFIED_POSITIVE_REPLY_CALL_REQUESTED",
+        "next_action": "HUMAN_REVIEW_REQUIRED_BEFORE_REPLY"
+      },
+      {
+        "organization": "SIRUP",
+        "provider_inbox_uid": 1461,
+        "state": "NEGATIVE_REPLY",
+        "next_action": "CLOSE_NO_FOLLOWUP"
+      },
+      {
+        "organization": "OpenResearch",
+        "provider_inbox_uid": 1463,
+        "state": "REPLY_TALENT_POOL_NO_CURRENT_PROJECT",
+        "evidence": "OpenResearch will retain the application in its freelancer talent pool but explicitly states there is no current project aligned with the profile.",
+        "qualified_positive_reply": false,
+        "next_action": "NO_FOLLOWUP_WAIT_FOR_PROJECT"
+      }
+    ]
+  },
+  "support_scope_enforcement": {
+    "project_based_web_only": true,
+    "hourly_ticketing_phone_remote_support_excluded": true,
+    "maintenance_allowed_only_when_project_scoped_evolutionary": true
+  },
+  "provider_live_bridge": {
+    "state_file": "state/provider-outbound-live.json",
+    "provider_uids_added": [519, 520],
+    "latest_overlay_commit": "24a887732ab951de10d557f92cd8b1302b68fd21"
+  },
+  "health": "HEALTHY_PROVIDER_VERIFIED_SENDS",
+  "notes": "Independent route-first discovery produced two new project-based agency external-capacity identities with authoritative organization-owned email routes and clear provider/repository dedup state. Both were sent one-to-one during the Madrid live window, BCC owner, verified in Hostinger Sent, and persisted into the provider live bridge. Form-only opportunities were preserved as MANUAL_APPLY. Support/ticketing/hourly work was excluded."
+}
