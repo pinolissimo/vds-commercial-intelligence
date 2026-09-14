@@ -1,0 +1,79 @@
+{
+  "run_at": "2026-09-14T13:40:00+02:00",
+  "send_window_open": true,
+  "policy": "AUTONOMOUS_DIRECT_EMAIL_DISCOVERY_QUALIFY_DECIDE_SEND_ROUTE",
+  "serious_candidates_evaluated": 46,
+  "direct_email_route_harvest_evaluated": 34,
+  "send_now": 0,
+  "provider_verified_first_contact": 0,
+  "manual_apply": 8,
+  "wait_research": 5,
+  "reject": 23,
+  "duplicates_provider_detected": 10,
+  "route_failures": 5,
+  "commercial_archetype_counts": {
+    "AGENCY_EXTERNAL_CAPACITY": 35,
+    "SME_WEB_IMPROVEMENT": 4,
+    "EU_DISSEMINATION_SPECIALIST": 7
+  },
+  "ab_variant_counts_sent": {
+    "CREDENTIALS_CLASSIC": 0,
+    "VALUE_MICRO_COMMITMENT": 0
+  },
+  "provider_dedup_examples": [
+    {"organization":"Boneluv","recipient":"hola@boneluv.com","provider_uid":124,"decision":"REJECT","reason":"Prior first contact exists."},
+    {"organization":"Logorapid","recipient":"trabajo@logorapid.com","provider_uid":170,"decision":"REJECT","reason":"Prior first contact exists."},
+    {"organization":"Creativia Studio","recipient":"info@creativiastudio.com","provider_uid":495,"decision":"REJECT","reason":"Same organization already contacted; do not switch mailbox to bypass dedup."},
+    {"organization":"BBrothers Adv","recipient":"info@bbadv.it","provider_uid":386,"decision":"REJECT","reason":"Prior technical partnership first contact exists."},
+    {"organization":"Dream Big Design","recipient":"gaia@dreambigdesign.it","provider_uid":407,"decision":"REJECT","reason":"Prior first contact exists."},
+    {"organization":"Studio Mate","recipient":"info@studiomateweb.it","provider_uid":486,"decision":"REJECT","reason":"Prior first contact exists."},
+    {"organization":"ReMedia Italia","recipient":"rleonzi@remediagroup.it","provider_uid":357,"decision":"REJECT","reason":"Prior application exists."},
+    {"organization":"2PDX","recipient":"cv@2pdx.it","provider_uid":508,"decision":"REJECT","reason":"Recent prior contact exists; provider also shows an older duplicate UID 182."},
+    {"organization":"Agenzia Fiico","recipient":"info@agenziafiico.com","provider_uid":507,"decision":"REJECT","reason":"Recent prior first contact exists."},
+    {"organization":"OurWeb Italia","recipient":"info@ourwebitalia.it","provider_uid":506,"decision":"REJECT","reason":"Recent prior first contact exists."}
+  ],
+  "priority_route_decisions": [
+    {"organization":"Marketizados","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"MANUAL_APPLY","route":"official collaboration form","reason":"Official collaboration route is form-only; do not bypass with generic email."},
+    {"organization":"VueloIV","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"MANUAL_APPLY","route":"official application flow","reason":"Freelance WordPress need but no exact application email exposed."},
+    {"organization":"Alpacode","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"MANUAL_APPLY","route":"official application form","reason":"Project/task collaboration, form-only route."},
+    {"organization":"Intratto","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"MANUAL_APPLY","route":"official candidate form","reason":"Network of freelancers including WordPress/web designers; dedicated form must be used."},
+    {"organization":"as.u.ar","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"MANUAL_APPLY","route":"official candidate form","reason":"Web role exists but application is form-driven and includes in-presence/annual terms."},
+    {"organization":"TurboBit","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"MANUAL_APPLY","route":"official collaboration form","reason":"Project-based professional network but page directs proposals through form."},
+    {"organization":"e-leva","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"WAIT_RESEARCH","route":"info@e-leva.com is general mailbox","reason":"Current web/front-end/full-stack interest verified, but exact application email is not published; bounded verification found no dedicated email, so no send."},
+    {"organization":"Amalthea","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"WAIT_RESEARCH","reason":"Current freelance full-stack designer opportunity; authoritative email is protected/redacted and must not be guessed."},
+    {"organization":"UGECE Agency","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"REJECT","reason":"Explicit recurring hourly WordPress/SEO maintenance and incident support conflicts with project-only policy."},
+    {"organization":"NextGen Technologies Italia","archetype":"AGENCY_EXTERNAL_CAPACITY","decision":"REJECT","reason":"Remote L1 support/ticketing role is outside VDS project-based commercial scope."}
+  ],
+  "downstream_outcomes_detected": {
+    "reply": 2,
+    "qualified_positive_reply": 1,
+    "referral": 0,
+    "call_interview": 1,
+    "proposal": 0,
+    "won": 0,
+    "revenue": 0,
+    "details": [
+      {
+        "organization":"Teslhub",
+        "provider_inbox_uid":1462,
+        "state":"QUALIFIED_POSITIVE_REPLY_CALL_REQUESTED",
+        "evidence":"Recipient asks for an indicative price range and two or three availability options to schedule a call; also mentions post-launch evolutionary maintenance/new features and a possible mixed economic/promotion formula.",
+        "next_action":"HUMAN_REVIEW_REQUIRED_BEFORE_REPLY"
+      },
+      {
+        "organization":"SIRUP",
+        "provider_inbox_uid":1461,
+        "state":"NEGATIVE_REPLY",
+        "evidence":"SIRUP states it cannot offer a position at this point.",
+        "next_action":"CLOSE_NO_FOLLOWUP"
+      }
+    ]
+  },
+  "support_scope_enforcement": {
+    "project_based_web_only": true,
+    "hourly_ticketing_phone_remote_support_excluded": true,
+    "nextgen_l1_reply_excluded_from_commercial_funnel": true
+  },
+  "health": "HEALTHY_ZERO_SEND_DIRECT_EMAIL_HARVEST_PERFORMED",
+  "notes": "Live send window was open. No new SEND_NOW identity survived current-need, authoritative-route and fresh provider dedup gates. A meaningful fresh direct-email harvest was performed. No duplicate or ambiguous send was attempted. Teslhub is the strongest downstream commercial progression and requires user-approved reply before any continuation."
+}
