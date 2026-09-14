@@ -1,0 +1,132 @@
+{
+  "run_at_utc": "2026-09-14T19:06:00Z",
+  "workstream": "VDS_JOB_FLOW",
+  "send_window_open": false,
+  "provider_mailbox": "info@visualdesignstudio.es",
+  "summary": {
+    "serious_candidates": 18,
+    "direct_email_harvest": 8,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 2,
+    "wait_research": 3,
+    "reject": 13,
+    "duplicates": 4,
+    "fit_failures": 6,
+    "route_or_freshness_failures": 3,
+    "commercial_variant_A_sent": 0,
+    "commercial_variant_B_sent": 0,
+    "new_reply": 0,
+    "new_positive_reply": 0,
+    "new_interview_or_call": 0,
+    "new_proposal": 0,
+    "new_won": 0
+  },
+  "priority_candidates": [
+    {
+      "organization": "MediGrow",
+      "role": "WordPress / Web Developer",
+      "segment": "agency/employer web production",
+      "outcome": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "route": "hr@medigrow.ae",
+      "route_authority": "employer careers page",
+      "provider_dedup": "CLEAR",
+      "provider_sent_matches": 0,
+      "fit": "HIGH",
+      "contract": "Remote - Freelance",
+      "source": "https://medigrow.ae/career/",
+      "next_action": "Re-verify vacancy and provider dedup during next 09:00-19:00 Europe/Madrid send window; if unchanged, deterministic SEND_NOW."
+    },
+    {
+      "organization": "Frem Digital",
+      "role": "WordPress Developer - freelancer network",
+      "segment": "digital agency external capacity",
+      "outcome": "WAIT_RESEARCH",
+      "blocker": "AUTHORITATIVE_EMAIL_CLOUDFLARE_OBFUSCATED_IN_RETRIEVAL",
+      "route_authority": "employer careers page",
+      "fit": "HIGH",
+      "contract": "freelance/project-based, remote-first",
+      "source": "https://fremdigital.com/careers",
+      "next_action": "One bounded attempt to recover the exact employer-published application address; never substitute general contact email."
+    },
+    {
+      "organization": "FyerX",
+      "role": "Freelance Web Developer - WordPress",
+      "segment": "agency web production",
+      "outcome": "WAIT_RESEARCH",
+      "blocker": "AGGREGATOR_SIGNAL_NEEDS_EMPLOYER_ROUTE_VERIFICATION",
+      "fit": "HIGH",
+      "contract": "remote hourly freelance",
+      "source": "https://dailyremote.com/remote-job/freelance-web-developer-wordpress-5575760",
+      "next_action": "Verify current employer-controlled listing and exact candidacy route once; otherwise reject."
+    }
+  ],
+  "manual_apply": [
+    {
+      "organization": "AI Dev Expert",
+      "role": "WordPress Developer",
+      "reason": "specific role uses official application form; support@ is only open-application route",
+      "url": "https://aidevexpert.com/careers/"
+    },
+    {
+      "organization": "Lisit",
+      "role": "Especialista WordPress",
+      "reason": "current freelance role routes through Get on Board, not an employer exact application email",
+      "url": "https://www.getonbrd.world/jobs/programming/especialista-wordpress-lisit-remote"
+    }
+  ],
+  "notable_rejects": [
+    {
+      "organization": "RETURN Digital Agency",
+      "reason": "DUPLICATE_PROVIDER_VERIFIED",
+      "provider_uid": 338,
+      "recipient": "info@return.lv"
+    },
+    {
+      "organization": "GrandWorks",
+      "reason": "DUPLICATE_PROVIDER_VERIFIED",
+      "provider_uids": [327, 435],
+      "recipient": "hello@grandworks.co"
+    },
+    {
+      "organization": "So Design Online",
+      "reason": "DUPLICATE / existing reply thread in provider inbox",
+      "reply_uid": 1449
+    },
+    {
+      "organization": "Crednology Holding Corp.",
+      "reason": "MANDATORY_CORE_MISMATCH",
+      "details": "deep custom themes/plugins/Gutenberg blocks, WP-CLI, Composer, TypeScript and enterprise WordPress requirements"
+    },
+    {
+      "organization": "CallGear",
+      "reason": "CLOSED + mandatory Russian language",
+      "details": "listing no longer accepting applications"
+    },
+    {
+      "organization": "SayNine",
+      "reason": "NO_LONGER_ACCEPTING_APPLICATIONS"
+    },
+    {
+      "organization": "Maven Infotech",
+      "reason": "INTERNSHIP_MODEL_NOT_COMMERCIAL_FIT",
+      "provider_sent_matches": 0
+    },
+    {
+      "organization": "Jory&Co.",
+      "reason": "MANDATORY_CORE_MISMATCH",
+      "details": "6 years design/branding agency experience plus Adobe Suite-centric senior digital design profile"
+    }
+  ],
+  "provider_inbox_checkpoint": {
+    "latest_uid": 1464,
+    "latest_professional_message": "BD & Partners acknowledgement already known",
+    "new_professional_replies_since_previous_run": 0
+  },
+  "notes": [
+    "No live email was sent because the permitted 09:00-19:00 Europe/Madrid window was closed.",
+    "MediGrow is provider-clean and is the strongest deterministic candidate for the next open send window if the vacancy remains current.",
+    "No provider-outbound-live event was written because there was no new provider-verified outbound send in this run."
+  ]
+}
