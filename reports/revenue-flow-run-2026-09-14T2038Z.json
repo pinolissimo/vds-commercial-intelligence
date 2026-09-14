@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "run_at_utc": "2026-09-14T20:38:00Z",
+  "send_window": "CLOSED",
+  "send_window_rule": "09:00-19:00 Europe/Madrid",
+  "mode": "DIRECT_DISCOVERY_QUALIFY_DECIDE_NO_LIVE_SEND",
+  "provider_snapshot": {
+    "mailbox": "info@visualdesignstudio.es",
+    "sent_message_count": 517,
+    "inbox_message_count": 369,
+    "new_commercial_replies_since_prior_known_state": 0
+  },
+  "counts": {
+    "serious_candidates_evaluated": 28,
+    "direct_email_harvest_evaluated": 17,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 7,
+    "wait_research": 3,
+    "reject": 18,
+    "duplicates_provider_verified": 0,
+    "route_failures": 0
+  },
+  "commercial_archetypes": {
+    "AGENCY_EXTERNAL_CAPACITY": 21,
+    "SME_WEB_IMPROVEMENT": 2,
+    "EU_DISSEMINATION_SPECIALIST": 5
+  },
+  "ab_variants_reserved_for_next_send_window": {
+    "CREDENTIALS_CLASSIC": 1,
+    "VALUE_MICRO_COMMITMENT": 2
+  },
+  "qualified_waiting_send_window": [
+    {
+      "organization": "Karibu Agencia",
+      "canonical_identity_key": "karibuagencia.com",
+      "recipient": "hola@karibuagencia.com",
+      "result": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "planned_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "OFFER_PROJECT_EXAMPLES",
+      "provider_sent_dedup": "CLEAN",
+      "evidence": "Official site states a network of expert collaborators/providers and web/shop delivery."
+    },
+    {
+      "organization": "Helefante",
+      "canonical_identity_key": "helefante.com",
+      "recipient": "hola@helefante.com",
+      "result": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "planned_variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "DIRECT_FIT_CTA",
+      "provider_sent_dedup": "CLEAN",
+      "evidence": "Official collaboration/team invitation plus web-development activity."
+    },
+    {
+      "organization": "M3 Estrategia",
+      "canonical_identity_key": "m3estrategia.com",
+      "recipient": "info@m3estrategia.com",
+      "result": "WAIT_RESEARCH",
+      "blocker": "SEND_WINDOW_CLOSED",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "planned_variant": "VALUE_MICRO_COMMITMENT",
+      "micro_cta_type": "OFFER_OVERFLOW_CAPACITY_EXAMPLES",
+      "provider_sent_dedup": "CLEAN",
+      "evidence": "Official site explicitly invites project/collaboration ideas and provides web design/development services."
+    }
+  ],
+  "manual_apply_sample": [
+    {"organization":"Apiceweb","reason":"Dedicated freelance/position application flow; do not bypass with general sales email."},
+    {"organization":"Zaliza","reason":"Careers/professionals route presents a dedicated application action/form."},
+    {"organization":"Redman","reason":"Active WordPress web role uses an explicit application form."},
+    {"organization":"Nokeon","reason":"Development-web application route is form-based."},
+    {"organization":"Pululart","reason":"Programmer-web application is explicitly form-based."},
+    {"organization":"Xonex","reason":"Official careers page requires application form."},
+    {"organization":"N3xtwave","reason":"Freelance network onboarding is explicitly form-based."}
+  ],
+  "reject_sample": [
+    {"organization":"LumiaWeb","reason":"Published role is fixed-term transitioning to permanent employment, not project-based external delivery."},
+    {"organization":"Os2 Web Agency","reason":"Published WordPress role is full-time employment."},
+    {"organization":"La Agencia Plus","reason":"'Colabora con nosotros' evidence is primarily client-facing commercial language; no verified external-capacity need."},
+    {"organization":"Sabaweb","reason":"Primarily a competing solo/freelance supplier offering agency partnership rather than evidenced buyer demand."},
+    {"organization":"CP-PROMOTION","reason":"Partner program sells CP-PROMOTION capacity to agencies; no evidence it is buying external VDS capacity."},
+    {"organization":"WIT Berry","reason":"Strong EU dissemination fit but current public evidence describes supplier services, not a current external buyer need."},
+    {"organization":"Horizon Design","reason":"Strong EU dissemination overlap but no current external-capacity/collaborator route established in this run."}
+  ],
+  "downstream_outcomes": {
+    "teslhub": "QUALIFIED_POSITIVE_REPLY_CALL_REQUESTED",
+    "bd_partners": "REPLY_NO_CURRENT_NEED",
+    "openresearch": "REPLY_TALENT_POOL_NO_CURRENT_PROJECT",
+    "sirup": "NEGATIVE_REPLY",
+    "odda": "NEGATIVE_REPLY_NO_MATCHING_OPEN_POSITION"
+  },
+  "policy_checks": {
+    "project_based_only": true,
+    "ticketing_helpdesk_phone_remote_hourly_support_excluded": true,
+    "provider_is_authoritative_for_sent_dedup": true,
+    "no_email_guessed_or_derived": true,
+    "no_live_send_outside_window": true
+  }
+}
