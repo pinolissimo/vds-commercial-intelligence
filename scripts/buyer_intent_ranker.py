@@ -43,18 +43,44 @@ def hits(blob, terms):
 
 def classify_archetype(blob, policy):
     p = policy["positive_intent_terms"]
-    agency = hits(blob, p["agency_external_capacity"])
-    eu = hits(blob, p["eu_dissemination"])
-    sme = hits(blob, p["sme_problem"])
-    title = blob
-    generic_job = any(x in title for x in ["full time", "full-time", "employee", "permanent", "junior developer", "senior developer", "engineer"])
-    if agency:
-        return "AGENCY_EXTERNAL_CAPACITY", agency
-    if eu:
-        return "EU_DISSEMINATION_SPECIALIST", eu
+    agency_hits = hits(blob, p["agency_external_capacity"])
+    eu_hits = hits(blob, p["eu_dissemination"])
+    sme_hits = hits(blob, p["sme_problem"])
+
+    job_terms = [
+        "full time", "full-time", "employee", "permanent", "junior developer",
+        "senior developer", "engineer", "employment", "salary", "vacancy", "job"
+    ]
+    strong_external_terms = [
+        "freelance", "freelancer", "external collaborator", "white label", "white-label",
+        "overflow", "subcontractor", "subcontracting", "outsourcing", "external capacity",
+        "p.iva", "partita iva", "autónomo", "autonomo", "contractor", "project-based", "project based"
+    ]
+    agency_context_terms = [
+        "agency", "agenzia", "agencia", "studio", "marketing", "communication",
+        "comunicazione", "comunicación", "branding", "design studio", "web agency"
+    ]
+
+    generic_job = any(x in blob for x in job_terms)
+    strong_external = any(x in blob for x in strong_external_terms)
+    agency_context = any(x in blob for x in agency_context_terms)
+
+    # EU specialization is distinctive and should win when the source explicitly
+    # concerns funded/research-project communication or dissemination.
+    if eu_hits and any(x in blob for x in ["horizon", "prima", "eu project", "european project", "dissemination", "research project"]):
+        return "EU_DISSEMINATION_SPECIALIST", eu_hits
+
+    # Never promote a normal corporate vacancy to agency-capacity merely because
+    # generic prose contains words such as "partner" or "collaboration".
+    if strong_external and (agency_context or any(x in blob for x in ["white label", "white-label", "overflow", "subcontract", "external capacity"])):
+        return "AGENCY_EXTERNAL_CAPACITY", agency_hits
+
     if generic_job:
         return "GENERIC_JOB_APPLICATION", []
-    return "SME_WEB_IMPROVEMENT", sme
+
+    # Weak agency words without an explicit external-capacity signal are only an
+    # SME/commercial-improvement lead, not evidence of overflow demand.
+    return "SME_WEB_IMPROVEMENT", sme_hits
 
 
 def route_class(row):
@@ -148,7 +174,7 @@ def main():
         counts[r["buyer_intent_tier"]] = counts.get(r["buyer_intent_tier"], 0) + 1
         archetypes[r["commercial_archetype"]] = archetypes.get(r["commercial_archetype"], 0) + 1
     output = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "updated_at": now_utc(),
         "objective": policy.get("objective"),
         "north_star_order": policy.get("north_star_order", []),
@@ -156,7 +182,8 @@ def main():
             "ranking_only": True,
             "never_authorizes_send": True,
             "all_existing_hard_gates_required": True,
-            "generic_job_application_share_cap": policy.get("execution_policy", {}).get("generic_job_application_share_cap", 0.25)
+            "generic_job_application_share_cap": policy.get("execution_policy", {}).get("generic_job_application_share_cap", 0.25),
+            "generic_collaboration_words_do_not_prove_external_capacity": True
         },
         "counts_by_tier": counts,
         "counts_by_archetype": archetypes,
@@ -164,7 +191,7 @@ def main():
     }
     save(OUT, output)
     save(METRICS, {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "updated_at": output["updated_at"],
         "input_semantic_pass": len(seeds.get("semantic_pass", [])),
         "ranked": len(rows),
