@@ -1,23 +1,44 @@
 {
-  "schema_version": "1.5",
-  "updated_at": "2026-09-14T10:00:13Z",
-  "mode": "MIDDLE_FUNNEL_TURBO",
+  "schema_version": "1.6",
+  "updated_at": "2026-09-14T10:21:11Z",
+  "mode": "BUYER_INTENT_TURBO",
   "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
   "commercial_strategy": {
-    "primary_objective": "CONVERT_BUYER_INTENT_TO_REVENUE",
+    "primary_objective": "CONVERT_PROJECT_BASED_WEB_BUYER_INTENT_TO_REVENUE",
     "priority_order": [
       "AGENCY_EXTERNAL_CAPACITY",
       "EU_DISSEMINATION_SPECIALIST",
-      "SME_WEB_IMPROVEMENT",
-      "GENERIC_JOB_APPLICATION"
+      "SME_WEB_IMPROVEMENT"
     ],
-    "generic_job_application_share_cap": 0.25,
+    "required_engagement_model": "PROJECT_BASED_WEB_DELIVERY",
+    "generic_job_application_share_cap": 0.15,
     "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
     "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
     "target_high_intent_first_contacts_7d": 40,
     "target_calls_7d": 3,
     "target_proposals_7d": 2,
     "target_wins_7d": 1
+  },
+  "engagement_exclusion_policy": {
+    "hard_reject_non_project_support": true,
+    "excluded": [
+      "help desk",
+      "ticketing",
+      "technical support",
+      "telephone support",
+      "phone support",
+      "remote assistance",
+      "remote support",
+      "L1/L2 support",
+      "SLA coverage",
+      "on-call",
+      "shifts",
+      "managed services support",
+      "desktop/endpoint/user support",
+      "hourly support retainers"
+    ],
+    "maintenance_rule": "Allow only scoped evolutionary website maintenance/optimization with deliverables and no phone/ticket/SLA/on-call obligation.",
+    "mixed_role_rule": "If support availability is a material recurring duty, REJECT even when web development is also mentioned. Accept only when project deliverables clearly dominate and support is incidental handover."
   },
   "revenue_flow_preflight": {
     "required": true,
@@ -43,15 +64,15 @@
     "REJECT"
   ],
   "capacity": {
-    "high_buyer_intent_pct": 50,
-    "qualified_backlog_pct": 35,
+    "high_buyer_intent_project_pct": 70,
+    "qualified_project_backlog_pct": 15,
     "exploration_pct": 15
   },
-  "diagnosed_bottleneck": "RAW_SOURCE_PRECISION",
+  "diagnosed_bottleneck": "HIGH_INTENT_PROJECT_ROUTE_AND_CONVERSION_CLOSURE",
   "source_priority": {
     "joa_es_webdesigner_title": 1.52,
     "joa_it_webdev_title": 1.51,
-    "nomado_frontend": 1.5,
+    "nomado_frontend": 1.43,
     "joa_it_webdesigner_title": 1.36,
     "joa_es_frontend_title": 1.31,
     "joa_es_web_performance_body": 1.3,
@@ -59,12 +80,11 @@
     "joa_it_frontend_title": 1.13,
     "remotejobs_contract_wordpress": 1.02,
     "joa_it_web_performance_body": 0.97,
-    "nomado_webdev": 0.96,
     "joa_eu_remote_webdev": 0.96,
-    "jobicy_europe": 0.8,
+    "nomado_webdev": 0.93,
+    "jobicy_europe": 0.81,
     "joa_eu_remote_wordpress": 0.79,
     "remotive": 0.76,
-    "remote_landers": 0.74,
     "remotejobs_contract_webdev": 0.72,
     "joa_it_wordpress_body": 0.7,
     "joa_es_wordpress_title": 0.67,
@@ -73,6 +93,7 @@
     "nomado_wordpress": 0.63,
     "wwr_sysadmin": 0.63,
     "wwr_programming": 0.61,
+    "remote_landers": 0.6,
     "joa_es_woocommerce_body": 0.58,
     "joa_it_woocommerce_body": 0.58,
     "wwr_frontend": 0.53,
@@ -91,24 +112,27 @@
   ],
   "buyer_intent": {
     "very_high": 0,
-    "high": 4,
-    "high_total": 4,
+    "high": 8,
+    "high_total": 8,
+    "project_based_high_intent": 8,
     "archetypes": {
-      "SME_WEB_IMPROVEMENT": 54,
-      "AGENCY_EXTERNAL_CAPACITY": 3,
-      "GENERIC_JOB_APPLICATION": 68
+      "SME_WEB_IMPROVEMENT": 120,
+      "AGENCY_EXTERNAL_CAPACITY": 5
+    },
+    "engagement_models": {
+      "PROJECT_BASED_WEB_DELIVERY": 125
     },
     "priority_view": "views/buyer-intent-priority.json"
   },
   "source_budget_policy": {
-    "objective": "Spend verification effort on measured semantic and commercial yield while preserving exploration.",
+    "objective": "Spend verification effort on measured project-based semantic and commercial yield while preserving exploration.",
     "exploration_floor_multiplier": 0.35,
     "never_disable_source_from_semantic_yield_alone": true
   },
   "qualified_backlog_policy": {
-    "priority": "HIGH_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
+    "priority": "HIGH_PROJECT_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
     "semantic_pass_snapshot_proxy": 125,
-    "high_buyer_intent_snapshot": 4,
+    "project_based_high_intent_snapshot": 8,
     "target_serious_candidate_decisions_per_run": 60,
     "target_high_intent_decisions_first": true,
     "continue_after_individual_blocker": true,
@@ -119,22 +143,22 @@
     "Italy|Lazio|Roma"
   ],
   "explore_or_revisit_areas": [
-    "Italy|Puglia|Bari",
-    "Italy|Calabria|Reggio Calabria",
-    "Spain|Aragón|Zaragoza",
     "Spain|Comunitat Valenciana|Castellón",
+    "Italy|Calabria|Reggio Calabria",
     "Italy|Veneto|Venezia",
+    "Italy|Puglia|Bari",
+    "Spain|Aragón|Zaragoza",
     "Italy|Piemonte|Torino",
     "Italy|Emilia-Romagna|Piacenza",
     "Spain|Castilla y León|Valladolid",
     "Spain|Galicia|A Coruña",
-    "Spain|Cataluña|Girona",
     "Spain|Asturias|Asturias",
+    "Spain|Cataluña|Girona",
     "Italy|Sicilia|Agrigento"
   ],
   "turbo": {
     "enabled": true,
-    "reason": "QUALIFIED_BACKLOG_PRESSURE",
+    "reason": "HIGH_BUYER_INTENT_BACKLOG",
     "quality_gates_unchanged": true,
     "target_serious_candidate_decisions_per_run": 60,
     "same_run_qualification_and_send": true,
@@ -143,13 +167,14 @@
     "prefer_direct_authoritative_email_routes": true,
     "prefer_fresh_24h_then_7d": true,
     "prefer_high_buyer_intent": true,
+    "require_project_based_fit": true,
     "manual_route_preservation": true,
     "never_promote_from_deepseek_shadow": true,
     "minimum_exploration_pct": 15
   },
   "route_policy": {
-    "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email.",
-    "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity proposal when no application-only route is bypassed and all hard gates pass."
+    "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email. Job-style opportunities are commercially relevant only when the engagement can truthfully be proposed as project-based freelance/P.IVA web delivery.",
+    "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity website-project proposal when no application-only route is bypassed and all hard gates pass."
   },
-  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. Prioritize buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third, generic job applications last. Use the buyer-intent ranker only for ordering; it never authorizes sending. Cap generic job-application effort near 25 percent unless explicit freelance/external-capacity intent exists. Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. Measure and optimize for qualified reply, call, proposal and won revenue. Process at least 60 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
+  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. VDS ONLY WANTS PROJECT-BASED WEBSITE DEVELOPMENT WORK. Pursue websites, redesigns, landing pages, ecommerce, portals, WordPress/custom frontend, performance/WPO, migrations, scoped evolutionary web work and EU project/dissemination websites. HARD REJECT help desk, ticketing, technical support, telephone/phone support, remote assistance, user/desktop/endpoint support, managed-services support, SLA/on-call/shift coverage and hourly support retainers. Do not pursue roles that bind Giuseppe to recurring support hours. Maintenance is eligible only when it is a scoped website evolution/optimization project with deliverables and no ticket/phone/SLA/on-call availability obligation. If a mixed role contains material recurring support duties, REJECT it even if it also mentions WordPress or web development. Every prospect must use exactly one commercial archetype: AGENCY_EXTERNAL_CAPACITY, EU_DISSEMINATION_SPECIALIST, or SME_WEB_IMPROVEMENT. Engagement model is separate from archetype. Prioritize project-based buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third. Use the buyer-intent ranker only for ordering; it never authorizes sending. Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. Measure and optimize for qualified reply, call, proposal and won revenue. Process at least 60 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
 }
