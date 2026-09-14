@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-14T15:55:53Z",
+  "updated_at": "2026-09-14T16:14:02Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 395,
-    "agreement_count": 215,
-    "agreement_pct": 54.43,
+    "evaluated_total": 396,
+    "agreement_count": 216,
+    "agreement_pct": 54.55,
     "deepseek_promote": 25,
     "vds_promote": 139,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 167,
-    "cumulative_estimated_cost_usd": 0.080381,
+    "request_count": 168,
+    "cumulative_estimated_cost_usd": 0.080582,
     "cost_per_evaluated_candidate_usd": 0.00020349,
-    "cost_per_deepseek_promote_usd": 0.00321522,
-    "cost_per_observed_ready_or_contacted_usd": 0.04019026,
-    "latest_request": null
+    "cost_per_deepseek_promote_usd": 0.00322326,
+    "cost_per_observed_ready_or_contacted_usd": 0.0402908,
+    "latest_request": {
+      "at": "2026-09-14T16:14:00Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 436,
+      "completion_tokens": 158,
+      "total_tokens": 722,
+      "estimated_cost_usd": 0.0002011
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "29d868dda55acf6a8ab9efd51f9ece20",
-      "evaluated_at": "2026-09-12T00:04:46Z",
-      "organization": "Onapsis",
-      "title": "Marketing Associate (Contractor)",
-      "location": "London, England, United Kingdom",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/onapsis/marketing-associate-contractor-london-225096",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Role is a Marketing Associate (Contractor), not a web development role; matched keywords 'maintenance' and 'website' are incidental and do not indicate WordPress/WooCommerce/frontend scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch_marketing",
-        "keyword_only_match",
-        "no_web_dev_scope",
-        "location_london_not_target_geo"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00013975,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ef4de011540288a7b92b70f05e943b97",
       "evaluated_at": "2026-09-12T01:59:35Z",
@@ -1439,10 +1422,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ddcc3a9b2884de326a115b14f779c297",
+      "evaluated_at": "2026-09-14T16:14:00Z",
+      "organization": "Tether Operations Limited",
+      "title": "Technical Lead - GPU Infrastructure",
+      "location": "Remote job",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/tether-operations-limited/remote-technical-lead-gpu-infrastructure-london-173561",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Technical Lead for GPU Infrastructure, a deep infrastructure/ML-hardware leadership position with no meaningful WordPress, WooCommerce, or core web-development scope; matched keywords like frontend/javascript/website are incidental and do not reflect the actual role.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "senior_leadership_role",
+        "no_wordpress_scope",
+        "no_freelance_compatibility_evidence",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0002011,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-14T15:55:48Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-14T16:13:56Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
