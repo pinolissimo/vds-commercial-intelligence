@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "views/high-frequency-discovery-latest.json"
 SEM = ROOT / "views/high-frequency-discovery-qualified-seeds.json"
+BUYER = ROOT / "views/buyer-intent-priority.json"
 SOURCE = ROOT / "views/search-source-performance.json"
 TERRITORY = ROOT / "views/territory-yield-radar.json"
 CROSS = ROOT / "views/cross-signal-opportunities.json"
@@ -36,8 +37,10 @@ def save(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def choose_turbo(bottleneck, semantic_pass, previous_turbo=False):
-    """Stable backlog-pressure policy; quality/safety gates are deliberately out of scope."""
+def choose_turbo(bottleneck, semantic_pass, high_intent_count, previous_turbo=False):
+    """Backlog-pressure policy. Buyer intent raises priority but never changes hard gates."""
+    if high_intent_count >= 8:
+        return True, "HIGH_BUYER_INTENT_BACKLOG"
     if semantic_pass >= TURBO_ENABLE_SEMANTIC_PASS:
         return True, "QUALIFIED_BACKLOG_PRESSURE"
     if previous_turbo and semantic_pass >= TURBO_RELEASE_SEMANTIC_PASS:
@@ -48,7 +51,6 @@ def choose_turbo(bottleneck, semantic_pass, previous_turbo=False):
 
 
 def adjust_source_multiplier(raw_multiplier, semantic_useful_rate, sample_size):
-    """Reduce expensive downstream attention on noisy sources without ever deleting exploration."""
     semantic_factor = 0.55 + min(1.0, semantic_useful_rate) * 0.9
     candidate = min(1.8, round(float(raw_multiplier) * semantic_factor, 2))
     if sample_size >= LOW_YIELD_MIN_SAMPLE and semantic_useful_rate < LOW_YIELD_USEFUL_RATE:
@@ -61,12 +63,11 @@ def adjust_source_multiplier(raw_multiplier, semantic_useful_rate, sample_size):
 def main():
     raw = load(RAW, {"signals": []})
     sem = load(SEM, {"semantic_pass": [], "semantic_review": [], "semantic_reject_sample": []})
+    buyer = load(BUYER, {"opportunities": [], "counts_by_tier": {}, "counts_by_archetype": {}})
     source = load(SOURCE, {"ranking": []})
     territory = load(TERRITORY, {"areas": []})
     previous_runtime = load(CMD, {})
 
-    # Legacy cross-signal/READY products remain analytics-only. They are not
-    # prerequisites for the self-contained Revenue Flow and may be stale or absent.
     cross = load(CROSS, {"opportunities": []})
     ready = load(READY, {"queue": []})
 
@@ -94,10 +95,8 @@ def main():
             "raw_priority_multiplier": raw_multiplier,
             "recommended_multiplier": final_multiplier,
             "budget_class": (
-                "CONSTRAINED_NOISY"
-                if r >= LOW_YIELD_MIN_SAMPLE and semantic_useful_rate < LOW_YIELD_USEFUL_RATE
-                else "REDUCED_WEAK"
-                if r >= WEAK_YIELD_MIN_SAMPLE and semantic_useful_rate < WEAK_YIELD_USEFUL_RATE
+                "CONSTRAINED_NOISY" if r >= LOW_YIELD_MIN_SAMPLE and semantic_useful_rate < LOW_YIELD_USEFUL_RATE
+                else "REDUCED_WEAK" if r >= WEAK_YIELD_MIN_SAMPLE and semantic_useful_rate < WEAK_YIELD_USEFUL_RATE
                 else "NORMAL_OR_PROMOTED"
             ),
         })
@@ -118,10 +117,16 @@ def main():
     semantic_review = int(sem.get("semantic_review_count", len(sem.get("semantic_review", []))))
     semantic_reject = int(sem.get("semantic_reject_count", 0))
 
-    # Diagnosis and execution mode are intentionally decoupled. Raw precision may
-    # still be poor while a large qualified reservoir already deserves immediate
-    # closure effort.
-    if semantic_input and semantic_pass / max(1, semantic_input) < 0.15:
+    buyer_counts = buyer.get("counts_by_tier", {}) or {}
+    very_high_intent = int(buyer_counts.get("VERY_HIGH", 0))
+    high_intent = int(buyer_counts.get("HIGH", 0))
+    high_intent_count = very_high_intent + high_intent
+    buyer_archetypes = buyer.get("counts_by_archetype", {}) or {}
+    prioritized_buyer_sample = (buyer.get("opportunities") or [])[:20]
+
+    if high_intent_count >= 8:
+        bottleneck = "HIGH_INTENT_ROUTE_AND_CONVERSION_CLOSURE"
+    elif semantic_input and semantic_pass / max(1, semantic_input) < 0.15:
         bottleneck = "RAW_SOURCE_PRECISION"
     elif semantic_pass >= 10:
         bottleneck = "DIRECT_QUALIFICATION_ROUTE_CLOSURE"
@@ -134,24 +139,33 @@ def main():
     explore = [a for a in resolved_areas if a.get("mode") in {"REVISIT", "EXPLORATION"}][:20]
 
     previous_turbo = bool((previous_runtime.get("turbo") or {}).get("enabled"))
-    turbo, turbo_reason = choose_turbo(bottleneck, semantic_pass, previous_turbo)
-    capacity = (
-        {"exploitation_pct": 85, "exploration_pct": 10, "strategic_reserve_pct": 5}
-        if turbo
-        else {"exploitation_pct": 70, "exploration_pct": 20, "strategic_reserve_pct": 10}
-    )
+    turbo, turbo_reason = choose_turbo(bottleneck, semantic_pass, high_intent_count, previous_turbo)
+    if high_intent_count >= 8:
+        capacity = {"high_buyer_intent_pct": 70, "qualified_backlog_pct": 15, "exploration_pct": 15}
+    elif turbo:
+        capacity = {"high_buyer_intent_pct": 50, "qualified_backlog_pct": 35, "exploration_pct": 15}
+    else:
+        capacity = {"high_buyer_intent_pct": 45, "qualified_backlog_pct": 35, "exploration_pct": 20}
 
     output = {
-        "schema_version": "1.3",
+        "schema_version": "1.4",
         "updated_at": sem.get("updated_at") or raw.get("updated_at"),
-        "north_star": "PROVIDER_VERIFIED_FIRST_CONTACTS_AND_POSITIVE_OUTCOMES",
+        "north_star": "WON_REVENUE_THEN_PROPOSAL_CALL_QUALIFIED_REPLY_FIRST_CONTACT",
+        "north_star_order": [
+            "WON_REVENUE", "PROPOSAL", "CALL_INTERVIEW",
+            "QUALIFIED_POSITIVE_REPLY_REFERRAL", "MICRO_COMMITMENT_REPLY",
+            "PROVIDER_VERIFIED_FIRST_CONTACT"
+        ],
         "funnel_snapshot": {
             "raw": len(raw.get("signals", [])),
             "semantic_input": semantic_input,
             "semantic_pass": semantic_pass,
-            "semantic_pass_backlog_proxy": semantic_pass,
             "semantic_review": semantic_review,
             "semantic_reject": semantic_reject,
+            "buyer_intent_very_high": very_high_intent,
+            "buyer_intent_high": high_intent,
+            "buyer_intent_high_total": high_intent_count,
+            "buyer_archetypes": buyer_archetypes,
             "legacy_cross_signal_hot_plus_advisory": hot_plus,
             "legacy_cross_signal_hot_advisory": hot,
             "legacy_cross_signal_manual_advisory": manual,
@@ -160,8 +174,10 @@ def main():
             "legacy_ready_queue_advisory": ready_count,
         },
         "diagnosed_bottleneck": bottleneck,
-        "adaptive_mode": "MIDDLE_FUNNEL_TURBO" if turbo else "NORMAL_ADAPTIVE",
+        "adaptive_mode": "BUYER_INTENT_TURBO" if high_intent_count >= 8 else "MIDDLE_FUNNEL_TURBO" if turbo else "NORMAL_ADAPTIVE",
         "turbo_reason": turbo_reason,
+        "capacity": capacity,
+        "buyer_intent_priority_sample": prioritized_buyer_sample,
         "source_ranking": source_rows,
         "territory": {
             "resolved_area_count": len(resolved_areas),
@@ -171,21 +187,34 @@ def main():
             "rule": "Unresolved country-only buckets are enrichment demand, never HARVEST targets.",
         },
         "recommended_actions": [
-            "Drain unresolved semantic-pass candidates before spending most effort on additional raw expansion",
-            "Consume fresh high-frequency discovery and unresolved strong backlog directly",
-            "Resolve only canonical identity, freshness, truthful fit, authoritative route, dedup and channel compatibility",
-            "Use provider suppression/global sent/global organization/reservations before every provider call",
-            "Preserve manual application routes instead of substituting generic email",
-            "Never require cross-signal, Agency Radar or a separate READY builder as an operational prerequisite",
+            "Prioritize VERY_HIGH/HIGH buyer-intent opportunities before generic vacancy backlog",
+            "Prefer agency external-capacity buyers, then EU dissemination buyers, then SMEs with observable web problems",
+            "Cap generic job-application effort at 25 percent of serious candidate decisions unless explicit freelance/external-capacity intent exists",
+            "Use problem plus proof plus micro-commitment messaging; do not default to generic call requests",
+            "Measure progression to qualified reply, call, proposal and won revenue, not email volume alone",
+            "Resolve authoritative route and provider/organization dedup immediately before every send",
+            "Preserve application-only routes and all legal/channel constraints",
+            "DeepSeek remains shadow-only and cannot authorize or veto deterministic execution",
         ],
     }
     save(OUT, output)
 
     runtime = {
-        "schema_version": "1.4",
+        "schema_version": "1.5",
         "updated_at": output["updated_at"],
-        "mode": "MIDDLE_FUNNEL_TURBO" if turbo else "NORMAL_ADAPTIVE",
+        "mode": output["adaptive_mode"],
         "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
+        "commercial_strategy": {
+            "primary_objective": "CONVERT_BUYER_INTENT_TO_REVENUE",
+            "priority_order": ["AGENCY_EXTERNAL_CAPACITY", "EU_DISSEMINATION_SPECIALIST", "SME_WEB_IMPROVEMENT", "GENERIC_JOB_APPLICATION"],
+            "generic_job_application_share_cap": 0.25,
+            "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
+            "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
+            "target_high_intent_first_contacts_7d": 40,
+            "target_calls_7d": 3,
+            "target_proposals_7d": 2,
+            "target_wins_7d": 1,
+        },
         "revenue_flow_preflight": {
             "required": True,
             "protocol": "project/REVENUE_FLOW_SELF_HEALING_PROTOCOL.md",
@@ -200,6 +229,7 @@ def main():
             "agency_radar_required": False,
             "cross_signal_required": False,
             "separate_ready_builder_required": False,
+            "buyer_intent_ranker_is_priority_advice_not_send_authorization": True,
             "legacy_cross_signal_and_ready_are_advisory_only": True,
         },
         "operational_outcomes": ["SEND_NOW", "MANUAL_APPLY", "WAIT_RESEARCH", "REJECT"],
@@ -207,25 +237,24 @@ def main():
         "diagnosed_bottleneck": bottleneck,
         "source_priority": {r["source_id"]: r["recommended_multiplier"] for r in source_rows},
         "top_sources": [r["source_id"] for r in source_rows[:6]],
+        "buyer_intent": {
+            "very_high": very_high_intent,
+            "high": high_intent,
+            "high_total": high_intent_count,
+            "archetypes": buyer_archetypes,
+            "priority_view": "views/buyer-intent-priority.json"
+        },
         "source_budget_policy": {
-            "objective": "Spend verification/LLM effort on measured semantic yield while preserving broad cheap discovery.",
+            "objective": "Spend verification effort on measured semantic and commercial yield while preserving exploration.",
             "exploration_floor_multiplier": SOURCE_EXPLORATION_FLOOR,
-            "low_yield_min_sample": LOW_YIELD_MIN_SAMPLE,
-            "low_yield_useful_rate_below": LOW_YIELD_USEFUL_RATE,
-            "low_yield_cap_multiplier": LOW_YIELD_CAP,
-            "weak_yield_min_sample": WEAK_YIELD_MIN_SAMPLE,
-            "weak_yield_useful_rate_below": WEAK_YIELD_USEFUL_RATE,
-            "weak_yield_cap_multiplier": WEAK_YIELD_CAP,
             "never_disable_source_from_semantic_yield_alone": True,
         },
         "qualified_backlog_policy": {
-            "priority": "UNRESOLVED_SEMANTIC_PASS_BEFORE_BROAD_RAW_EXPANSION",
+            "priority": "HIGH_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
             "semantic_pass_snapshot_proxy": semantic_pass,
-            "turbo_enable_threshold": TURBO_ENABLE_SEMANTIC_PASS,
-            "turbo_release_threshold": TURBO_RELEASE_SEMANTIC_PASS,
-            "hysteresis_enabled": True,
-            "minimum_exploration_pct_when_turbo": 10,
-            "target_serious_candidate_decisions_per_run": 40,
+            "high_buyer_intent_snapshot": high_intent_count,
+            "target_serious_candidate_decisions_per_run": 60,
+            "target_high_intent_decisions_first": True,
             "continue_after_individual_blocker": True,
             "send_all_valid_send_now": True,
             "no_batch_minimum": True,
@@ -236,28 +265,30 @@ def main():
             "enabled": turbo,
             "reason": turbo_reason,
             "quality_gates_unchanged": True,
-            "target_serious_candidate_decisions_per_run": 40,
+            "target_serious_candidate_decisions_per_run": 60,
             "same_run_qualification_and_send": True,
             "send_all_valid_send_now": True,
             "no_batch_minimum": True,
             "prefer_direct_authoritative_email_routes": True,
             "prefer_fresh_24h_then_7d": True,
+            "prefer_high_buyer_intent": True,
             "manual_route_preservation": True,
             "never_promote_from_deepseek_shadow": True,
-            "minimum_exploration_pct": 10,
+            "minimum_exploration_pct": 15,
         },
         "route_policy": {
             "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email.",
-            "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity proposal, when no application-only route is being bypassed and all legal, identity, fit, freshness and dedup gates pass.",
+            "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity proposal when no application-only route is bypassed and all hard gates pass.",
         },
         "instruction": (
-            "SELF_CONTAINED_REVENUE_FLOW: run the mandatory self-healing preflight first. "
-            "When qualified backlog pressure enables TURBO, prioritize unresolved semantic-pass candidates and route closure before broad raw expansion while preserving at least 10% exploration. "
-            "Consume fresh discovery plus unresolved strong backlog directly; qualify, decide and route in the same run. "
-            "Do not require Agency Radar, cross-signal state or a separate READY queue. "
-            "Process at least 40 serious candidates when supply/runtime permits and continue after individual blockers. "
-            "Send every currently valid SEND_NOW identity with no batch minimum. "
-            "Preserve absolute organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. "
+            "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. "
+            "Prioritize buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third, generic job applications last. "
+            "Use the buyer-intent ranker only for ordering; it never authorizes sending. "
+            "Cap generic job-application effort near 25 percent unless explicit freelance/external-capacity intent exists. "
+            "Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. "
+            "Measure and optimize for qualified reply, call, proposal and won revenue. "
+            "Process at least 60 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. "
+            "Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. "
             "DeepSeek remains shadow-only."
         ),
     }
@@ -266,10 +297,9 @@ def main():
         "bottleneck": bottleneck,
         "mode": runtime["mode"],
         "turbo_reason": turbo_reason,
-        "sources": [r["source_id"] for r in source_rows[:6]],
         "semantic_pass": semantic_pass,
-        "legacy_hot_plus_advisory": hot_plus,
-        "legacy_hot_advisory": hot,
+        "buyer_intent_high_total": high_intent_count,
+        "buyer_archetypes": buyer_archetypes,
         "capacity": capacity,
         "self_contained": True,
         "preflight_required": True,
