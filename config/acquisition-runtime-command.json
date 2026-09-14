@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5",
-  "updated_at": "2026-09-14T09:14:47Z",
+  "updated_at": "2026-09-14T09:15:17Z",
   "mode": "MIDDLE_FUNNEL_TURBO",
   "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
   "commercial_strategy": {
@@ -91,9 +91,13 @@
   ],
   "buyer_intent": {
     "very_high": 0,
-    "high": 0,
-    "high_total": 0,
-    "archetypes": {},
+    "high": 3,
+    "high_total": 3,
+    "archetypes": {
+      "AGENCY_EXTERNAL_CAPACITY": 52,
+      "SME_WEB_IMPROVEMENT": 34,
+      "GENERIC_JOB_APPLICATION": 38
+    },
     "priority_view": "views/buyer-intent-priority.json"
   },
   "source_budget_policy": {
@@ -104,29 +108,27 @@
   "qualified_backlog_policy": {
     "priority": "HIGH_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
     "semantic_pass_snapshot_proxy": 124,
-    "high_buyer_intent_snapshot": 0,
+    "high_buyer_intent_snapshot": 3,
     "target_serious_candidate_decisions_per_run": 60,
     "target_high_intent_decisions_first": true,
     "continue_after_individual_blocker": true,
     "send_all_valid_send_now": true,
     "no_batch_minimum": true
   },
-  "harvest_areas": [
-    "Italy|Lazio|Roma"
-  ],
+  "harvest_areas": [],
   "explore_or_revisit_areas": [
-    "Spain|Comunitat Valenciana|Castellón",
     "Italy|Calabria|Reggio Calabria",
+    "Spain|Comunitat Valenciana|Castellón",
     "Italy|Veneto|Venezia",
     "Italy|Puglia|Bari",
     "Spain|Aragón|Zaragoza",
-    "Italy|Emilia-Romagna|Piacenza",
     "Italy|Piemonte|Torino",
+    "Italy|Emilia-Romagna|Piacenza",
     "Spain|Castilla y León|Valladolid",
     "Spain|Galicia|A Coruña",
-    "Spain|Cataluña|Girona",
+    "Spain|Asturias|Asturias",
     "Italy|Sicilia|Agrigento",
-    "Spain|Asturias|Asturias"
+    "Spain|Cataluña|Girona"
   ],
   "turbo": {
     "enabled": true,
