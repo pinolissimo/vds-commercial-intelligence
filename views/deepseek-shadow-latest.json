@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-15T12:55:18Z",
+  "updated_at": "2026-09-15T13:13:27Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 412,
+    "evaluated_total": 413,
     "agreement_count": 222,
-    "agreement_pct": 53.88,
+    "agreement_pct": 53.75,
     "deepseek_promote": 25,
-    "vds_promote": 144,
+    "vds_promote": 145,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 123
+    "deepseek_demoted_from_vds_promote": 124
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.78,
+    "vds_promote_hot_rate_pct": 2.76,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 174,
-    "cumulative_estimated_cost_usd": 0.084159,
-    "cost_per_evaluated_candidate_usd": 0.00020427,
-    "cost_per_deepseek_promote_usd": 0.00336634,
-    "cost_per_observed_ready_or_contacted_usd": 0.04207926,
-    "latest_request": null
+    "request_count": 175,
+    "cumulative_estimated_cost_usd": 0.084382,
+    "cost_per_evaluated_candidate_usd": 0.00020431,
+    "cost_per_deepseek_promote_usd": 0.00337527,
+    "cost_per_observed_ready_or_contacted_usd": 0.04219092,
+    "latest_request": {
+      "at": "2026-09-15T13:13:25Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 441,
+      "completion_tokens": 190,
+      "total_tokens": 759,
+      "estimated_cost_usd": 0.00022332
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "60bd11addbcf5af4ec93dc3307bd291c",
-      "evaluated_at": "2026-09-12T22:04:23Z",
-      "organization": "TransilvaniaHR",
-      "title": "Senior React Software Engineer (Romania, Remote)",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-react-software-engineer-romania-remote-transilvaniahr",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Core role is Senior React Software Engineer; React-heavy engineering is a stack mismatch for a WordPress/WooCommerce/frontend freelance profile, and the only matches are generic keywords (accessibility, frontend, javascript, ui, ux) with no WordPress, WooCommerce, or web-maintenance scope.",
-      "deepseek_risk_flags": [
-        "react_core_stack_mismatch",
-        "no_wordpress_woocommerce_scope",
-        "generic_keyword_matches_only",
-        "no_explicit_freelance_or_contract_evidence",
-        "geo_bucket_italy_but_role_is_romania_remote"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022464,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "2a561613f6d835c8ddf9021ce86510e0",
       "evaluated_at": "2026-09-13T00:23:30Z",
@@ -1436,10 +1418,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b58a1c89f5ca62d4c6c0e7c5654e8904",
+      "evaluated_at": "2026-09-15T13:13:25Z",
+      "organization": "K-tronik GmbH",
+      "title": "Frontend Developer (m/w/x)",
+      "location": "Nuremberg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/k-tronik-gmbh/frontend-developer-nuremberg-278828",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend Developer role in Nuremberg with only generic frontend/UI/UX keyword matches; no explicit WordPress, WooCommerce, or custom HTML/CSS/JS scope, no commercial/freelance signals, and geo (Germany) is outside primary Spain/Italy markets and not confirmed EU-remote.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_or_contract_signal",
+        "stack_scope_unclear",
+        "employment_type_unknown",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022332,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-15T12:55:16Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-15T13:13:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
