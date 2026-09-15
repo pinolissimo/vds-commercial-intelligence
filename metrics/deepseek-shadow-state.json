@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 400,
+  "runs": 401,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -11203,6 +11203,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d94dc8388b89e3c25cd28855afdada0b",
+      "evaluated_at": "2026-09-15T17:18:02Z",
+      "organization": "Procurify",
+      "title": "Senior Frontend Engineer",
+      "location": "Canada",
+      "opportunity_url": "https://remotelanders.com/jobs/senior-frontend-engineer-procurify-1vc4v0",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Frontend Engineer role at Procurify is a generic frontend title with no evidence of WordPress/WooCommerce, custom HTML/CSS/JS, web performance, maintenance, or UX/UI scope; only 'frontend' keyword matches, and the role is Canada-based with no confirmed freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "geo_mismatch_canada_not_spain_italy_or_eu_remote",
+        "generic_frontend_title_likely_react_or_spa_stack",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022398,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -13329,9 +13358,21 @@
       "completion_tokens": 175,
       "total_tokens": 740,
       "estimated_cost_usd": 0.00015801
+    },
+    {
+      "at": "2026-09-15T17:18:02Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 414,
+      "completion_tokens": 200,
+      "total_tokens": 742,
+      "estimated_cost_usd": 0.00022398
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-15T15:59:10Z",
+  "updated_at": "2026-09-15T17:18:02Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
