@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-15T18:04:29Z",
+  "updated_at": "2026-09-15T20:19:22Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 416,
+    "evaluated_total": 417,
     "agreement_count": 223,
-    "agreement_pct": 53.61,
+    "agreement_pct": 53.48,
     "deepseek_promote": 25,
-    "vds_promote": 146,
+    "vds_promote": 147,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 125
+    "deepseek_demoted_from_vds_promote": 126
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.74,
+    "vds_promote_hot_rate_pct": 2.72,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 178,
-    "cumulative_estimated_cost_usd": 0.084973,
-    "cost_per_evaluated_candidate_usd": 0.00020426,
-    "cost_per_deepseek_promote_usd": 0.00339892,
-    "cost_per_observed_ready_or_contacted_usd": 0.04248653,
-    "latest_request": null
+    "request_count": 179,
+    "cumulative_estimated_cost_usd": 0.085186,
+    "cost_per_evaluated_candidate_usd": 0.00020428,
+    "cost_per_deepseek_promote_usd": 0.00340743,
+    "cost_per_observed_ready_or_contacted_usd": 0.04259292,
+    "latest_request": {
+      "at": "2026-09-15T20:19:20Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 447,
+      "completion_tokens": 172,
+      "total_tokens": 747,
+      "estimated_cost_usd": 0.00021276
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "2123c4f2612b4fcf3424f7500276752d",
-      "evaluated_at": "2026-09-13T10:20:20Z",
-      "organization": "Gladia",
-      "title": "Design Engineer, Brand + Product",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/gladia/design-engineer-brand-product-paris-396746",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Design Engineer, Brand + Product at Gladia in Paris; matched keywords are generic (css, front-end, html, website) and role is design-focused rather than web development; no explicit WordPress/WooCommerce or freelance/contract demand.",
-      "deepseek_risk_flags": [
-        "design_role_not_web_dev",
-        "generic_keyword_matches",
-        "no_freelance_evidence",
-        "paris_location_not_primary_market"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001740267,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "60d1e1eb9d3110bb7b484955804ae3e3",
       "evaluated_at": "2026-09-13T10:20:20Z",
@@ -1441,10 +1424,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4d73a9e172fe15a0b2c6a38efaabaf4c",
+      "evaluated_at": "2026-09-15T20:19:20Z",
+      "organization": "knowmad mood",
+      "title": "Desarrollador/a Frontend SmartTV – React Native",
+      "location": "Madrid",
+      "opportunity_url": "https://knowmadmood.teamtailor.com/jobs/8384104-desarrollador-a-frontend-smarttv-react-native",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is React Native frontend development for SmartTV, a stack mismatch with the target WordPress/WooCommerce/custom HTML-CSS-JS profile; only generic 'frontend' and 'javascript' overlap, with no WordPress, WooCommerce, performance, or maintenance scope.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_react_native",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "mobile_tv_specialization"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00021276,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-15T18:04:25Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-15T20:19:18Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
