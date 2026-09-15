@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 384,
+  "runs": 385,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -10837,6 +10837,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3062ff01575b18ec142b023f01b79832",
+      "evaluated_at": "2026-09-15T01:50:58Z",
+      "organization": "",
+      "title": "Senior Manager, Digital Content Strategy & Operations * Work from home",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Senior Manager, Digital Content Strategy & Operations is a full-time in-house management role in the United States, not a freelance/contract web-development opportunity; matched keywords are generic content/CMS/UX terms without explicit WordPress, WooCommerce, or frontend build scope.",
+      "deepseek_risk_flags": [
+        "US-based location conflicts with Spain/Italy/EU-remote primary markets",
+        "senior management/operations role, not hands-on freelance web development",
+        "no explicit WordPress/WooCommerce/custom frontend demand",
+        "generic 'partner'/'agency' mentions do not establish freelance compatibility",
+        "no contract/freelance signals present"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00042903,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -12879,9 +12908,21 @@
       "completion_tokens": 413,
       "total_tokens": 1218,
       "estimated_cost_usd": 0.00031336
+    },
+    {
+      "at": "2026-09-15T01:50:58Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 398,
+      "completion_tokens": 191,
+      "total_tokens": 717,
+      "estimated_cost_usd": 0.00042903
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-15T00:04:21Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-15T01:50:58Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
