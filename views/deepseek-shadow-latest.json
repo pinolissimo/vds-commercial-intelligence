@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-15T14:06:51Z",
+  "updated_at": "2026-09-15T14:25:14Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 413,
+    "evaluated_total": 414,
     "agreement_count": 222,
-    "agreement_pct": 53.75,
+    "agreement_pct": 53.62,
     "deepseek_promote": 25,
     "vds_promote": 145,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 175,
-    "cumulative_estimated_cost_usd": 0.084382,
-    "cost_per_evaluated_candidate_usd": 0.00020431,
-    "cost_per_deepseek_promote_usd": 0.00337527,
-    "cost_per_observed_ready_or_contacted_usd": 0.04219092,
-    "latest_request": null
+    "request_count": 176,
+    "cumulative_estimated_cost_usd": 0.084591,
+    "cost_per_evaluated_candidate_usd": 0.00020433,
+    "cost_per_deepseek_promote_usd": 0.00338364,
+    "cost_per_observed_ready_or_contacted_usd": 0.04229554,
+    "latest_request": {
+      "at": "2026-09-15T14:25:12Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 437,
+      "completion_tokens": 170,
+      "total_tokens": 735,
+      "estimated_cost_usd": 0.00020924
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "2a561613f6d835c8ddf9021ce86510e0",
-      "evaluated_at": "2026-09-13T00:23:30Z",
-      "organization": "Genestack",
-      "title": "Website Developer",
-      "location": "Spain",
-      "opportunity_url": "https://genestack-ltd.breezy.hr/p/d4b8a102c332-website-developer",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 98,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "PROMOTE",
-      "deepseek_score": 90.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Contract, remote Website Developer role in Spain with explicit CMS, HTML/CSS/JS, PHP, Core Web Vitals, maintenance and UI keyword matches aligning closely with the target WordPress/frontend/performance profile.",
-      "deepseek_risk_flags": [
-        "freelance_compatibility_unverified",
-        "wordpress_not_explicitly_named",
-        "contract_terms_unknown"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00017612,
-      "observed_hot": true,
-      "observed_hot_score": 89.0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "d8c8e873728fef69a5f67f414b261dfd",
       "evaluated_at": "2026-09-13T00:23:30Z",
@@ -1437,10 +1421,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "faee94cce4aaa0844e7a4f5baec01c38",
+      "evaluated_at": "2026-09-15T14:25:12Z",
+      "organization": "Vibe",
+      "title": "Senior Full Stack Engineer - Frontend Architecture - AdManager",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/vibe/senior-full-stack-engineer-frontend-architecture-admanager-paris-371993",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Full Stack Engineer role focused on frontend architecture for an AdManager product; only generic 'frontend'/'ui' keyword overlap with no WordPress, WooCommerce, or web-maintenance scope, and no explicit freelance/contract signal.",
+      "deepseek_risk_flags": [
+        "full_stack_core_role",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_signal",
+        "generic_collaboration_keyword_only",
+        "location_paris_not_target_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020924,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-15T14:06:48Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-15T14:25:08Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
