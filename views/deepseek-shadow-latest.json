@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-15T09:03:42Z",
+  "updated_at": "2026-09-15T11:22:49Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 411,
+    "evaluated_total": 412,
     "agreement_count": 222,
-    "agreement_pct": 54.01,
+    "agreement_pct": 53.88,
     "deepseek_promote": 25,
     "vds_promote": 144,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 173,
-    "cumulative_estimated_cost_usd": 0.083957,
+    "request_count": 174,
+    "cumulative_estimated_cost_usd": 0.084159,
     "cost_per_evaluated_candidate_usd": 0.00020427,
-    "cost_per_deepseek_promote_usd": 0.00335827,
-    "cost_per_observed_ready_or_contacted_usd": 0.04197838,
+    "cost_per_deepseek_promote_usd": 0.00336634,
+    "cost_per_observed_ready_or_contacted_usd": 0.04207926,
     "latest_request": {
-      "at": "2026-09-15T09:03:37Z",
+      "at": "2026-09-15T11:22:47Z",
       "model": "deepseek-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 1152,
-      "prompt_cache_miss_tokens": 194,
-      "completion_tokens": 575,
-      "total_tokens": 1921,
-      "estimated_cost_usd": 0.00086049
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 445,
+      "completion_tokens": 156,
+      "total_tokens": 729,
+      "estimated_cost_usd": 0.00020176
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "74d1f787ad1aa96efc666c3278ac0bbb",
-      "evaluated_at": "2026-09-12T20:04:50Z",
-      "organization": "Macadam",
-      "title": "SENIOR FRONTEND ENGINEER - REACT NATIVE",
-      "location": "Barcelona",
-      "opportunity_url": "https://careers.macadam.app/jobs/7362511-senior-frontend-engineer-react-native",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 46,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Core role is Senior Frontend Engineer focused on React Native, a mobile framework outside the target WordPress/WooCommerce/custom HTML-CSS-JS web profile; only peripheral keyword overlaps (frontend, ui, ux, maintenance) and no explicit WordPress/WooCommerce or web-performance scope.",
-      "deepseek_risk_flags": [
-        "react_native_core_stack_mismatch",
-        "mobile_not_web_focus",
-        "no_wordpress_woocommerce_scope",
-        "no_explicit_freelance_or_contract_signal",
-        "senior_full_time_likely"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00016747,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "60bd11addbcf5af4ec93dc3307bd291c",
       "evaluated_at": "2026-09-12T22:04:23Z",
@@ -1448,10 +1419,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "1d5e8e8b3827fcf1fa2743fa135f61bc",
+      "evaluated_at": "2026-09-15T11:22:47Z",
+      "organization": "Athereon",
+      "title": "(Senior) Software Developer Frontend / React (m/w/d)",
+      "location": "Saarbrücken",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/athereon/senior-software-developer-frontend-react-saarbrucken-388515",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is React frontend software development, not WordPress/WooCommerce or custom HTML/CSS/JS web work; stack mismatch with target profile despite generic frontend/UI/UX keyword overlap.",
+      "deepseek_risk_flags": [
+        "react_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_unverified_non_target_market"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020176,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-09-15T09:03:33Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-15T11:22:44Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
