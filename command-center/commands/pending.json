@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "updated_at": "2026-09-07T17:15:36+02:00",
+  "updated_at": "2026-09-15T15:06:23+02:00",
   "policy": "Dashboard commands route only to the two active self-contained flows. Discovery and normal execution continue even if the bridge is unavailable.",
   "commands": [
     {
@@ -32,6 +32,43 @@
       "risk": "MEDIUM",
       "owner_confirmation_required": false,
       "answer": "Avvio l'invio del massimo numero di prime e-mail realmente idonee entro la finestra odierna; le 5 opportunità a percorso manuale restano manuali e ogni invio passa deduplica, verifica del bisogno, route, canale e provider.",
+      "production_core_modified": false,
+      "normal_cycle_must_continue": true,
+      "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
+      "status": "PENDING_TASK_BRIDGE"
+    },
+    {
+      "schema_version": "1.3",
+      "command_id": "CMD-WEB-20260915T130604-fa4cd473",
+      "created_at": "2026-09-15T15:06:23+02:00",
+      "expires_at": "2026-09-16T15:06:23+02:00",
+      "source": "VDS_COMMAND_CENTER_GITHUB_PAGES",
+      "model": "gpt-5.6-terra",
+      "owner_command": "il motoredice zero invii oggi, ma non é vero! controlla eventuali problemi e risolvili",
+      "command_class": "REFRESH",
+      "intent": "audit_reconcile_daily_send_reporting",
+      "summary": "Avvio verifica e riconciliazione del conteggio invii odierno: lo snapshot conferma attualmente 0 invii, ma mostra indici invio e overlay provider non aggiornati oggi.",
+      "parameters": {
+        "date": "2026-09-15",
+        "timezone": "Europe/Madrid",
+        "checks": [
+          "provider_sent_event_reconciliation",
+          "sent_index_freshness",
+          "daily_summary_generation",
+          "queue_and_send_preflight_health",
+          "reporting_projection_consistency"
+        ],
+        "repair_scope": "refresh_and_reconcile_only_no_synthetic_send_status"
+      },
+      "target_workers": [
+        "LINKEDIN_HUNTER",
+        "UNIFIED_LOOP"
+      ],
+      "requires_task_bridge": true,
+      "requires_existing_gates": true,
+      "risk": "MEDIUM",
+      "owner_confirmation_required": false,
+      "answer": "Verifico subito la catena di reporting e riconcilio gli eventi provider reali; non verranno creati invii o stati fittizi.",
       "production_core_modified": false,
       "normal_cycle_must_continue": true,
       "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
