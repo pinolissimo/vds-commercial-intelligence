@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 410,
+  "runs": 411,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -11462,6 +11462,37 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f238b349d0924d20b1d5b75a1d0396fe",
+      "evaluated_at": "2026-09-16T10:04:28Z",
+      "organization": "lodgify",
+      "title": "Senior Frontend Engineer",
+      "location": "Barcelona - Cataluña",
+      "opportunity_url": "https://jobs.lever.co/lodgify/8b72b391-a945-46c6-88b5-63ce6e34f60a/apply",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Engineer role at Lodgify in Barcelona (hybrid) with only 'frontend' keyword match; no evidence of WordPress/WooCommerce, custom HTML/CSS/JS, performance/Core Web Vitals, maintenance, or UX/UI scope, and no explicit freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_or_contract_signal",
+        "hybrid_onsite_requirement_in_barcelona",
+        "likely_react_or_framework_heavy_core_role",
+        "only_generic_frontend_keyword_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00017451,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": [
+        ""
+      ]
     }
   ],
   "requests": [
@@ -13648,9 +13679,21 @@
       "completion_tokens": 313,
       "total_tokens": 1158,
       "estimated_cost_usd": 0.00073043
+    },
+    {
+      "at": "2026-09-16T10:04:28Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 196,
+      "completion_tokens": 195,
+      "total_tokens": 775,
+      "estimated_cost_usd": 0.00017451
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-16T09:46:26Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-16T10:04:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
