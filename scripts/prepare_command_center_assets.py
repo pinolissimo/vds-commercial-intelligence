@@ -25,6 +25,7 @@ TOKEN_PERSISTENCE_MARKER = "assets/token-persistence.js"
 LIVE_EXPORT_MARKER = "assets/live-export.js"
 EXECUTABLE_READY_MARKER = "assets/executable-ready.js"
 EU_RADAR_MARKER = "assets/eu-radar.js"
+REPLY_LIVE_MARKER = "assets/reply-live.js"
 EXPORT_CSS_MARKER = "assets/export.css"
 
 
@@ -79,6 +80,8 @@ def inject_command_center_enhancements(root: Path) -> None:
         scripts += '<script type="module" src="assets/executable-ready.js"></script>'
     if EU_RADAR_MARKER not in html:
         scripts += '<script type="module" src="assets/eu-radar.js"></script>'
+    if REPLY_LIVE_MARKER not in html:
+        scripts += '<script type="module" src="assets/reply-live.js"></script>'
     if scripts:
         html = html.replace("</body>", scripts + "</body>")
     index.write_text(html, encoding="utf-8")
