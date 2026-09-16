@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "provider_of_record": "HOSTINGER_INBOX",
+  "updated_at": "2026-09-16T14:55:30+02:00",
+  "latest_checked_uid": 1475,
+  "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
+  "events": [
+    {
+      "provider_inbound_uid": 1473,
+      "received_at": "2026-09-16T10:17:24Z",
+      "canonical_identity_key": "org:teamsy.it",
+      "entity": "Teamsy",
+      "sender": "info@teamsy.it",
+      "subject": "Re: Capacità web esterna per i team Teamsy — WordPress / frontend",
+      "classification": "POSITIVE",
+      "subtype": "CALL_REQUEST",
+      "summary": "Propone due slot per una call; il confronto commerciale è avanzato a un incontro concreto.",
+      "count_as_reply": true
+    },
+    {
+      "provider_inbound_uid": 1472,
+      "received_at": "2026-09-16T09:22:22Z",
+      "canonical_identity_key": "org:lamaquina.io",
+      "entity": "LAMÁQUINA",
+      "sender": "admin@lamaquina.io",
+      "subject": "Re: Propuesta de colaboración — IoT, digital fabrication y desarrollo software",
+      "classification": "NEUTRAL",
+      "subtype": "ACK_ONLY",
+      "summary": "Nessuna posizione aperta al momento; conserveranno il contatto per eventuali opportunità future.",
+      "count_as_reply": true
+    },
+    {
+      "provider_inbound_uid": 1474,
+      "received_at": "2026-09-16T11:13:57Z",
+      "canonical_identity_key": "org:teamsy.it",
+      "entity": "Teamsy",
+      "sender": "danilo.zanghi@gmail.com",
+      "subject": "Invito: Call Teamsy Zanghi Allocca - mer 23 set 2026 10AM - 10:30AM (CEST)",
+      "classification": "SYSTEM_EVENT",
+      "subtype": "MEETING_INVITE",
+      "summary": "Invito calendario relativo alla call già conteggiata come risposta positiva Teamsy.",
+      "count_as_reply": false
+    },
+    {
+      "provider_inbound_uid": 1475,
+      "received_at": "2026-09-16T12:27:02Z",
+      "canonical_identity_key": "org:bef-de.org",
+      "entity": "LIFE MUMs",
+      "sender": "fee.widderich@bef-de.org",
+      "subject": "Re: LIFE MUMs — project website and digital communication support (automatische Antwort / automatic reply)",
+      "classification": "AUTO_REPLY",
+      "subtype": "AUTORESPONDER",
+      "summary": "Risposta automatica; esclusa dai KPI commerciali.",
+      "count_as_reply": false
+    }
+  ]
+}
