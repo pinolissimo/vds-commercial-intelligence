@@ -1,0 +1,76 @@
+name: VDS EU Project Outreach Cycle
+
+on:
+  schedule:
+    - cron: "7,17,27,37,47,57 * * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/eu-project-outreach-cycle.yml"
+      - "scripts/eu_project_cycle.py"
+      - "config/eu-project-outreach-policy.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vds-eu-project-outreach-cycle-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Run EU discovery, qualification and first-contact cycle
+        env:
+          CORDIS_API_KEY: ${{ secrets.CORDIS_API_KEY }}
+          VDS_SMTP_HOST: ${{ secrets.VDS_SMTP_HOST }}
+          VDS_SMTP_PORT: ${{ secrets.VDS_SMTP_PORT }}
+          VDS_SMTP_USER: ${{ secrets.VDS_SMTP_USER }}
+          VDS_SMTP_PASSWORD: ${{ secrets.VDS_SMTP_PASSWORD }}
+          VDS_SMTP_FROM: ${{ secrets.VDS_SMTP_FROM }}
+        run: python scripts/eu_project_cycle.py
+
+      - name: Persist EU radar state safely
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "vds-eu-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add api/v1/eu-project-radar.json \
+                  state/eu-project-outreach-state.json \
+                  outreach/eu-project-contact-queue.jsonl
+          if git diff --cached --quiet; then
+            echo "No EU radar changes"
+            exit 0
+          fi
+          git commit -m "data: refresh cyclic EU project radar"
+          for attempt in 1 2 3 4 5 6; do
+            if git push origin HEAD:main; then
+              echo "EU cycle persisted on attempt ${attempt}"
+              exit 0
+            fi
+            echo "Concurrent update detected; rebasing attempt ${attempt}"
+            git fetch origin main
+            git rebase origin/main || {
+              git rebase --abort 2>/dev/null || true
+              git reset --hard origin/main
+              python scripts/eu_project_cycle.py
+              git add api/v1/eu-project-radar.json state/eu-project-outreach-state.json outreach/eu-project-contact-queue.jsonl
+              git commit -m "data: refresh cyclic EU project radar" || exit 0
+            }
+            sleep $((attempt * 2))
+          done
+          echo "Unable to persist EU radar after retries" >&2
+          exit 1
