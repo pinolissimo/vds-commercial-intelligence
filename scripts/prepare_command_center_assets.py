@@ -50,6 +50,10 @@ def inject_command_center_enhancements(root: Path) -> None:
         "Permessi consigliati: repository singolo · Contents read-only · Actions read/write · Secrets read/write.",
     )
     html = html.replace(
+        "Permessi necessari per i comandi: repository singolo · Actions read/write.",
+        "Permessi necessari per i comandi: repository singolo · Actions read/write · Secrets read/write.",
+    )
+    html = html.replace(
         "Il token resta soltanto nella sessione di questo browser.",
         "Il token viene conservato in questo browser e riutilizzato ai successivi avvii finché non scegli di disconnettere GitHub.",
     )
