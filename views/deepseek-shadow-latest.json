@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T18:28:05Z",
+  "updated_at": "2026-09-16T19:08:25Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 431,
-    "agreement_count": 226,
-    "agreement_pct": 52.44,
+    "evaluated_total": 432,
+    "agreement_count": 227,
+    "agreement_pct": 52.55,
     "deepseek_promote": 25,
     "vds_promote": 152,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 187,
-    "cumulative_estimated_cost_usd": 0.088914,
-    "cost_per_evaluated_candidate_usd": 0.0002063,
-    "cost_per_deepseek_promote_usd": 0.00355655,
-    "cost_per_observed_ready_or_contacted_usd": 0.0444569,
-    "latest_request": null
+    "request_count": 188,
+    "cumulative_estimated_cost_usd": 0.089112,
+    "cost_per_evaluated_candidate_usd": 0.00020628,
+    "cost_per_deepseek_promote_usd": 0.00356447,
+    "cost_per_observed_ready_or_contacted_usd": 0.0445559,
+    "latest_request": {
+      "at": "2026-09-16T19:08:23Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 413,
+      "completion_tokens": 161,
+      "total_tokens": 702,
+      "estimated_cost_usd": 0.00019802
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4605c6290cae471a0f245f8d06d5d98f",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "Händlerbund Management AG",
-      "title": "Senior Fullstack Entwickler PHP/Laravel (m/w/d) - Remote, 4-Tage-Woche",
-      "location": "Leipzig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/handlerbund-management-ag/senior-fullstack-entwickler-php-laravel-remote-4-tage-woche-leipzig-121442",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 35.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Senior fullstack PHP/Laravel role with Laravel-heavy core stack; only peripheral CSS/frontend/UI/UX matches and 'partner'/'remote' keywords are generic, not proof of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "laravel_heavy_core",
-        "stack_mismatch",
-        "generic_commercial_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a242035d3ba5d9f0273d12b0a18fa349",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1454,10 +1438,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "34a3382afe04e7380c5bec216edc2b64",
+      "evaluated_at": "2026-09-16T19:08:23Z",
+      "organization": "Supabase",
+      "title": "Edge Functions Engineer",
+      "location": "Anywhere",
+      "opportunity_url": "https://jobicy.com/jobs/153452-edge-functions-engineer",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an Edge Functions Engineer at Supabase, a backend/serverless runtime engineering position; matched keywords (front-end, javascript, website) are incidental and do not indicate WordPress/WooCommerce, custom frontend, performance, maintenance, or UX/UI scope.",
+      "deepseek_risk_flags": [
+        "backend/serverless core role",
+        "no WordPress/WooCommerce scope",
+        "no explicit freelance/contract terms",
+        "generic 'collaboration'/'remote' keywords only"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00019802,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-16T18:28:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-16T19:08:20Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
