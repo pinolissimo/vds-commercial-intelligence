@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T12:35:34Z",
+  "updated_at": "2026-09-16T12:54:23Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 428,
+    "evaluated_total": 430,
     "agreement_count": 225,
-    "agreement_pct": 52.57,
+    "agreement_pct": 52.33,
     "deepseek_promote": 25,
-    "vds_promote": 150,
+    "vds_promote": 152,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 129
+    "deepseek_demoted_from_vds_promote": 131
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.67,
+    "vds_promote_hot_rate_pct": 2.63,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 185,
-    "cumulative_estimated_cost_usd": 0.088337,
-    "cost_per_evaluated_candidate_usd": 0.0002064,
-    "cost_per_deepseek_promote_usd": 0.00353349,
-    "cost_per_observed_ready_or_contacted_usd": 0.04416856,
-    "latest_request": null
+    "request_count": 186,
+    "cumulative_estimated_cost_usd": 0.088711,
+    "cost_per_evaluated_candidate_usd": 0.00020631,
+    "cost_per_deepseek_promote_usd": 0.00354845,
+    "cost_per_observed_ready_or_contacted_usd": 0.04435568,
+    "latest_request": {
+      "at": "2026-09-16T12:54:20Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 713,
+      "completion_tokens": 328,
+      "total_tokens": 1169,
+      "estimated_cost_usd": 0.00037424
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "f594d98a0547ef676d3408504f17d2fa",
-      "evaluated_at": "2026-09-14T07:06:54Z",
-      "organization": "speechify",
-      "title": "Senior Software Engineer, Windows/Desktop Applications - Hamburg, Germany",
-      "location": "Hamburg",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/speechify/senior-software-engineer-windows-desktop-applications-hamburg-germany-210998",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Duplicate of the same Windows/Desktop engineering role in Hamburg; no WordPress/WooCommerce/web-frontend core scope and Germany location is outside the target Spain/Italy market.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_native_desktop",
-        "geo_mismatch_germany",
-        "no_freelance_compatibility_evidence",
-        "keyword_noise"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022462,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "d9fb5738f539fbc101444de829624c18",
-      "evaluated_at": "2026-09-14T07:06:54Z",
-      "organization": "speechify",
-      "title": "Senior Software Engineer, Windows/Desktop Applications - Düsseldorf, Germany",
-      "location": "Düsseldorf",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/speechify/senior-software-engineer-windows-desktop-applications-dusseldorf-germany-350811",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Same Windows/Desktop engineering role in Düsseldorf; no truthful stack fit for a WordPress/web-performance freelancer and geo outside Spain/Italy primary markets.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_native_desktop",
-        "geo_mismatch_germany",
-        "no_freelance_compatibility_evidence",
-        "keyword_noise"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022462,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f2cde848af6ffa34285e23aaaffcc646",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1452,10 +1407,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "43052f85bdfef3c0664f22be9b423753",
+      "evaluated_at": "2026-09-16T12:54:20Z",
+      "organization": "Otto Group Solution Provider Spain Sl 1",
+      "title": "Senior Frontend Developer",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-developer-e34c1973fc",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Developer role at an EU/EMEA location with only 'frontend' keyword match; no explicit WordPress/WooCommerce/custom HTML-CSS-JS scope, no commercial/freelance signals, and employment type/remote state are unknown, so stack fit and contract compatibility cannot be confirmed.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "employment_type_unknown",
+        "remote_state_unknown",
+        "possible_react_angular_core_role"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018712,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8ecc832134ae60d9481d4ef63e858afe",
+      "evaluated_at": "2026-09-16T12:54:20Z",
+      "organization": "musixmatch",
+      "title": "Frontend Intern",
+      "location": "Bologna",
+      "opportunity_url": "https://jobs.lever.co/musixmatch/0f23c905-8595-4a2e-b33a-d79723b4b753/apply",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 83,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "On-site internship in Bologna, Italy; internships are not freelance/contract compatible and the role is on_site, with only a generic 'frontend' match and no WordPress/WooCommerce or commercial web scope.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "on_site_only",
+        "no_wordpress_woocommerce_scope",
+        "generic_frontend_only",
+        "commercial_keywords_are_unrelated_context"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018712,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-16T12:35:30Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-16T12:54:16Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
