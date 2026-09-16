@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T19:08:25Z",
+  "updated_at": "2026-09-16T21:01:57Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 432,
-    "agreement_count": 227,
-    "agreement_pct": 52.55,
+    "evaluated_total": 434,
+    "agreement_count": 228,
+    "agreement_pct": 52.53,
     "deepseek_promote": 25,
     "vds_promote": 152,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 188,
-    "cumulative_estimated_cost_usd": 0.089112,
-    "cost_per_evaluated_candidate_usd": 0.00020628,
-    "cost_per_deepseek_promote_usd": 0.00356447,
-    "cost_per_observed_ready_or_contacted_usd": 0.0445559,
+    "request_count": 189,
+    "cumulative_estimated_cost_usd": 0.089467,
+    "cost_per_evaluated_candidate_usd": 0.00020614,
+    "cost_per_deepseek_promote_usd": 0.00357868,
+    "cost_per_observed_ready_or_contacted_usd": 0.04473345,
     "latest_request": {
-      "at": "2026-09-16T19:08:23Z",
+      "at": "2026-09-16T21:01:55Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 413,
-      "completion_tokens": 161,
-      "total_tokens": 702,
-      "estimated_cost_usd": 0.00019802
+      "prompt_cache_miss_tokens": 635,
+      "completion_tokens": 325,
+      "total_tokens": 1088,
+      "estimated_cost_usd": 0.0003551
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a242035d3ba5d9f0273d12b0a18fa349",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "",
-      "title": "Sr. Manager, Marketing Programs and Communications",
-      "location": "United States",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Marketing programs/communications manager role in the US; WordPress/CMS mentions are incidental and commercial keywords are generic, not a web-development opportunity.",
-      "deepseek_risk_flags": [
-        "non_technical_role",
-        "us_location",
-        "generic_commercial_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "d2ff7e32d86d31399adcfc72f33adf98",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "",
-      "title": "Salesforce Pardot Consultant (Marketing Cloud Account Engagement)",
-      "location": "Philippines",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Salesforce Pardot/Marketing Cloud consultant role in the Philippines; HTML/CSS/JS mentions are incidental and not a WordPress/web-dev fit.",
-      "deepseek_risk_flags": [
-        "non_matching_stack",
-        "geo_mismatch",
-        "marketing_cloud_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "53b301f1726f1ae68cfa83b6623d4c15",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1466,10 +1412,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4a443e01ef99e1407ae0ff59aec69b05",
+      "evaluated_at": "2026-09-16T21:01:55Z",
+      "organization": "",
+      "title": "UI/UX Developer",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.5,
+      "deepseek_primary_reason": "UI/UX Developer role with strong frontend stack overlap (HTML, CSS, JavaScript, frontend, UI/UX, accessibility) matching the target profile, but location is United States and no explicit freelance/contract terms are stated, so geo and contract compatibility are uncertain.",
+      "deepseek_risk_flags": [
+        "us_location_geo_mismatch",
+        "no_explicit_freelance_terms",
+        "employment_type_unknown",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017755,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "25175ed0bd237e2cddd617c9be08486e",
+      "evaluated_at": "2026-09-16T21:01:55Z",
+      "organization": "onetrust",
+      "title": "Senior Solutions Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/onetrust/senior-solutions-engineer-london-433337",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Senior Solutions Engineer at OneTrust is a pre-sales/technical solutions role, not a web development role; matched keywords (css, html, javascript, ui, website) are incidental and the core scope is enterprise security/compliance solutions engineering, with no meaningful WordPress/WooCommerce/frontend build scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch_solutions_engineering",
+        "enterprise_presales_not_freelance_web",
+        "london_onsite_likely",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017755,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-16T19:08:20Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-16T21:01:53Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
