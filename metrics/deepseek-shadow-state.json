@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 418,
+  "runs": 419,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -11523,6 +11523,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c184950e1a522759d23793c35e54b4d4",
+      "evaluated_at": "2026-09-16T12:17:56Z",
+      "organization": "Koppla",
+      "title": "Product Engineer - Frontend (all genders)",
+      "location": "Berlin (hybrid)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/koppla/product-engineer-frontend-all-genders-berlin-hybrid-359575",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Product Engineer - Frontend' role in Berlin (hybrid) with no explicit WordPress/WooCommerce, web-performance, or maintenance scope; only a bare 'frontend' keyword match and generic 'collaboration/partner' text that does not evidence freelance compatibility.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "hybrid_onsite_berlin",
+        "generic_frontend_role",
+        "no_freelance_compatibility_evidence",
+        "geo_not_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00013831,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0187360d4f6b229938a802f54885c5da",
+      "evaluated_at": "2026-09-16T12:17:56Z",
+      "organization": "Händlerbund Management AG",
+      "title": "Senior Fullstack Entwickler PHP/Laravel (m/w/d) - Remote, 4-Tage-Woche",
+      "location": "Remote/Leipzig",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/handlerbund-management-ag/senior-fullstack-entwickler-php-laravel-remote-4-tage-woche-57424",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Fullstack PHP/Laravel role with Laravel as core stack; profile keywords (css/frontend/php/ui/ux) are incidental and there is no meaningful WordPress/WooCommerce or web-maintenance scope, so it is a stack-mismatch core role despite remote wording.",
+      "deepseek_risk_flags": [
+        "laravel_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "fullstack_not_freelance_web_scope",
+        "remote_claim_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00013831,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -13733,9 +13790,21 @@
       "completion_tokens": 202,
       "total_tokens": 719,
       "estimated_cost_usd": 0.0002198
+    },
+    {
+      "at": "2026-09-16T12:17:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 217,
+      "completion_tokens": 340,
+      "total_tokens": 1197,
+      "estimated_cost_usd": 0.00027662
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-16T11:59:22Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-16T12:17:56Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

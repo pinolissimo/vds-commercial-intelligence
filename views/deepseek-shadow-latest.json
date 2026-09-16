@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T11:59:22Z",
+  "updated_at": "2026-09-16T12:17:59Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 426,
-    "agreement_count": 224,
-    "agreement_pct": 52.58,
+    "evaluated_total": 428,
+    "agreement_count": 225,
+    "agreement_pct": 52.57,
     "deepseek_promote": 25,
     "vds_promote": 150,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 184,
-    "cumulative_estimated_cost_usd": 0.088061,
-    "cost_per_evaluated_candidate_usd": 0.00020671,
-    "cost_per_deepseek_promote_usd": 0.00352242,
-    "cost_per_observed_ready_or_contacted_usd": 0.04403025,
-    "latest_request": null
+    "request_count": 185,
+    "cumulative_estimated_cost_usd": 0.088337,
+    "cost_per_evaluated_candidate_usd": 0.0002064,
+    "cost_per_deepseek_promote_usd": 0.00353349,
+    "cost_per_observed_ready_or_contacted_usd": 0.04416856,
+    "latest_request": {
+      "at": "2026-09-16T12:17:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 217,
+      "completion_tokens": 340,
+      "total_tokens": 1197,
+      "estimated_cost_usd": 0.00027662
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "84f2c322efeb83cb3f171649b43ca485",
-      "evaluated_at": "2026-09-13T22:59:41Z",
-      "organization": "PolicyMe",
-      "title": "Freelance Marketing Designer, Web",
-      "location": "Canada",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/freelance-marketing-designer-web-policyme",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Explicit freelance web/marketing designer role with matching frontend/CMS/UX keywords, but location is Canada and remote state is unverified, so geo compatibility for Spain/Italy/EU-remote is uncertain.",
-      "deepseek_risk_flags": [
-        "geo_mismatch_risk_canada",
-        "remote_state_unverified",
-        "marketing_designer_role_may_skew_non_technical",
-        "no_explicit_wordpress_or_woocommerce_mention"
-      ],
-      "deepseek_contract_compatibility": "HIGH",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00015383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "adf20f887df4d6ce09f981ce29292aee",
-      "evaluated_at": "2026-09-14T07:06:54Z",
-      "organization": "speechify",
-      "title": "Senior Software Engineer, Windows/Desktop Applications - Munich, Germany",
-      "location": "Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/speechify/senior-software-engineer-windows-desktop-applications-munich-germany-51531",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is a Senior Software Engineer for Windows/Desktop applications, a native desktop engineering position with no meaningful WordPress, WooCommerce, or web-frontend scope; matched keywords are incidental and the location is Germany, outside the Spain/Italy primary market.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_native_desktop",
-        "geo_mismatch_germany",
-        "no_freelance_compatibility_evidence",
-        "keyword_noise"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022462,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f594d98a0547ef676d3408504f17d2fa",
       "evaluated_at": "2026-09-14T07:06:54Z",
@@ -1451,10 +1406,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c184950e1a522759d23793c35e54b4d4",
+      "evaluated_at": "2026-09-16T12:17:56Z",
+      "organization": "Koppla",
+      "title": "Product Engineer - Frontend (all genders)",
+      "location": "Berlin (hybrid)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/koppla/product-engineer-frontend-all-genders-berlin-hybrid-359575",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Product Engineer - Frontend' role in Berlin (hybrid) with no explicit WordPress/WooCommerce, web-performance, or maintenance scope; only a bare 'frontend' keyword match and generic 'collaboration/partner' text that does not evidence freelance compatibility.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "hybrid_onsite_berlin",
+        "generic_frontend_role",
+        "no_freelance_compatibility_evidence",
+        "geo_not_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00013831,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0187360d4f6b229938a802f54885c5da",
+      "evaluated_at": "2026-09-16T12:17:56Z",
+      "organization": "Händlerbund Management AG",
+      "title": "Senior Fullstack Entwickler PHP/Laravel (m/w/d) - Remote, 4-Tage-Woche",
+      "location": "Remote/Leipzig",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/handlerbund-management-ag/senior-fullstack-entwickler-php-laravel-remote-4-tage-woche-57424",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Fullstack PHP/Laravel role with Laravel as core stack; profile keywords (css/frontend/php/ui/ux) are incidental and there is no meaningful WordPress/WooCommerce or web-maintenance scope, so it is a stack-mismatch core role despite remote wording.",
+      "deepseek_risk_flags": [
+        "laravel_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "fullstack_not_freelance_web_scope",
+        "remote_claim_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00013831,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-16T11:59:18Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-16T12:17:52Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
