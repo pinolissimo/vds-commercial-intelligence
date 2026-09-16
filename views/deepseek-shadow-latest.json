@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T21:01:57Z",
+  "updated_at": "2026-09-16T22:12:00Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 434,
+    "evaluated_total": 436,
     "agreement_count": 228,
-    "agreement_pct": 52.53,
+    "agreement_pct": 52.29,
     "deepseek_promote": 25,
-    "vds_promote": 152,
+    "vds_promote": 153,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 131
+    "deepseek_demoted_from_vds_promote": 132
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.63,
+    "vds_promote_hot_rate_pct": 2.61,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 189,
-    "cumulative_estimated_cost_usd": 0.089467,
-    "cost_per_evaluated_candidate_usd": 0.00020614,
-    "cost_per_deepseek_promote_usd": 0.00357868,
-    "cost_per_observed_ready_or_contacted_usd": 0.04473345,
+    "request_count": 190,
+    "cumulative_estimated_cost_usd": 0.089807,
+    "cost_per_evaluated_candidate_usd": 0.00020598,
+    "cost_per_deepseek_promote_usd": 0.0035923,
+    "cost_per_observed_ready_or_contacted_usd": 0.04490375,
     "latest_request": {
-      "at": "2026-09-16T21:01:55Z",
+      "at": "2026-09-16T22:11:58Z",
       "model": "deepseek-flash",
       "candidate_count": 2,
       "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 635,
-      "completion_tokens": 325,
-      "total_tokens": 1088,
-      "estimated_cost_usd": 0.0003551
+      "prompt_cache_miss_tokens": 692,
+      "completion_tokens": 284,
+      "total_tokens": 1104,
+      "estimated_cost_usd": 0.00034058
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "53b301f1726f1ae68cfa83b6623d4c15",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "Doitintl",
-      "title": "Full Stack Engineer  - Cloud & SaaS Integrations",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/doitintl/full-stack-engineer-cloud-saas-integrations-423100",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Full stack cloud/SaaS integrations engineer role; only generic frontend/maintenance/UI keyword overlap, no WordPress or web-dev core scope.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "generic_keyword_overlap",
-        "contract_type_unknown"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "5fee5bcd86e91fc79c92bb9bd88351cc",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "Vmlenterprisesolutions",
-      "title": "Lead UI Designer",
-      "location": "London; Manchester",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/vmlenterprisesolutions/lead-ui-designer-london-manchester-399147",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Lead UI Designer role in UK; design-focused with only peripheral accessibility/UI/website overlap, not a WordPress/web-dev freelance fit.",
-      "deepseek_risk_flags": [
-        "design_role_not_dev",
-        "uk_location",
-        "generic_commercial_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c015dc0ace783f52ca134b7c3f7c21ed",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1468,10 +1414,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "69b787c55c3d5c66105d8b698c6d3259",
+      "evaluated_at": "2026-09-16T22:11:58Z",
+      "organization": "Researchgate",
+      "title": "Senior Frontend Engineer - React",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/researchgate/senior-frontend-engineer-react-berlin-139921",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior React-focused frontend engineering role at a Berlin product company; core stack is React-centric rather than WordPress/WooCommerce/custom web maintenance, and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "react_core_stack",
+        "no_freelance_signal",
+        "onsite_berlin_likely",
+        "senior_fulltime_orientation"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017029,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "45194186a9e2a43e90f963daef0495c3",
+      "evaluated_at": "2026-09-16T22:11:58Z",
+      "organization": "uvation",
+      "title": "Software Engineer Frontend - React",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/software-engineer-frontend-react-uvation",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 28.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "React frontend software engineering role; matched keywords are generic (frontend, javascript, maintenance) and 'collaboration/remote' are not proof of freelance compatibility. No WordPress/WooCommerce or web-maintenance-specific scope.",
+      "deepseek_risk_flags": [
+        "react_core_stack",
+        "generic_keyword_match",
+        "no_freelance_signal",
+        "remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00017029,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-09-16T21:01:53Z",
+  "source_semantic_updated_at": "2026-09-16T22:11:56Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
