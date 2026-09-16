@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T01:20:18Z",
+  "updated_at": "2026-09-16T06:15:57Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 421,
-    "agreement_count": 223,
-    "agreement_pct": 52.97,
+    "evaluated_total": 422,
+    "agreement_count": 224,
+    "agreement_pct": 53.08,
     "deepseek_promote": 25,
     "vds_promote": 147,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 180,
-    "cumulative_estimated_cost_usd": 0.086518,
-    "cost_per_evaluated_candidate_usd": 0.00020551,
-    "cost_per_deepseek_promote_usd": 0.00346071,
-    "cost_per_observed_ready_or_contacted_usd": 0.04325887,
+    "request_count": 181,
+    "cumulative_estimated_cost_usd": 0.086936,
+    "cost_per_evaluated_candidate_usd": 0.00020601,
+    "cost_per_deepseek_promote_usd": 0.00347743,
+    "cost_per_observed_ready_or_contacted_usd": 0.04346788,
     "latest_request": {
-      "at": "2026-09-16T01:20:14Z",
+      "at": "2026-09-16T06:15:54Z",
       "model": "deepseek-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 1199,
-      "completion_tokens": 608,
-      "total_tokens": 1935,
-      "estimated_cost_usd": 0.00133191
+      "prompt_cache_miss_tokens": 394,
+      "completion_tokens": 184,
+      "total_tokens": 706,
+      "estimated_cost_usd": 0.00041803
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "39ef988ea5ce6cc225574f3701e6db0f",
-      "evaluated_at": "2026-09-13T14:01:32Z",
-      "organization": "Senior Full-Stack Engineer - AI Cost Visibility - Greenhouse",
-      "title": "Full Stack Engineer  - Cloud & SaaS Integrations",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/senior-full-stack-engineer-ai-cost-visibility-greenhouse/full-stack-engineer-cloud-saas-integrations-423100",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 45,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Full Stack Engineer role focused on Cloud & SaaS Integrations and AI cost visibility; no WordPress, WooCommerce, or meaningful frontend web scope. Matched keywords are generic and the role is a stack mismatch for a WordPress/frontend web developer.",
-      "deepseek_risk_flags": [
-        "Core role is full-stack cloud/SaaS, not WordPress or web maintenance",
-        "AI cost visibility domain unrelated to target profile",
-        "Generic 'contractor' and 'partner' keywords do not prove freelance compatibility"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001403233,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a6efe65888f1dc32efe4c98c60abd171",
       "evaluated_at": "2026-09-13T14:31:06Z",
@@ -1457,10 +1430,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "fdfbede7dbbda6f07075ab72e587f622",
+      "evaluated_at": "2026-09-16T06:15:54Z",
+      "organization": "",
+      "title": "Senior React JS Developer",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is Senior React JS Developer, a React-heavy position that does not match the target WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; matched keywords are generic frontend terms and the location is United States, outside primary Spain/Italy/EU-remote markets.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_stack_mismatch",
+        "us_location_outside_primary_markets",
+        "generic_keyword_matches_only",
+        "no_explicit_freelance_or_contract_evidence",
+        "no_wordpress_or_woocommerce_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00041803,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-09-16T01:20:10Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-16T06:15:51Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
