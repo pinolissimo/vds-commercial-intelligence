@@ -24,6 +24,7 @@ TOKEN_HELPER_MARKER = "assets/github-token-helper.js"
 TOKEN_PERSISTENCE_MARKER = "assets/token-persistence.js"
 LIVE_EXPORT_MARKER = "assets/live-export.js"
 EXECUTABLE_READY_MARKER = "assets/executable-ready.js"
+EU_RADAR_MARKER = "assets/eu-radar.js"
 EXPORT_CSS_MARKER = "assets/export.css"
 
 
@@ -72,6 +73,8 @@ def inject_command_center_enhancements(root: Path) -> None:
         scripts += '<script type="module" src="assets/live-export.js"></script>'
     if EXECUTABLE_READY_MARKER not in html:
         scripts += '<script type="module" src="assets/executable-ready.js"></script>'
+    if EU_RADAR_MARKER not in html:
+        scripts += '<script type="module" src="assets/eu-radar.js"></script>'
     if scripts:
         html = html.replace("</body>", scripts + "</body>")
     index.write_text(html, encoding="utf-8")
