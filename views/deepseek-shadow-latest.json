@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T07:01:53Z",
+  "updated_at": "2026-09-16T08:31:06Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 422,
+    "evaluated_total": 424,
     "agreement_count": 224,
-    "agreement_pct": 53.08,
+    "agreement_pct": 52.83,
     "deepseek_promote": 25,
-    "vds_promote": 147,
+    "vds_promote": 149,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 126
+    "deepseek_demoted_from_vds_promote": 128
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.72,
+    "vds_promote_hot_rate_pct": 2.68,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 181,
-    "cumulative_estimated_cost_usd": 0.086936,
-    "cost_per_evaluated_candidate_usd": 0.00020601,
-    "cost_per_deepseek_promote_usd": 0.00347743,
-    "cost_per_observed_ready_or_contacted_usd": 0.04346788,
-    "latest_request": null
+    "request_count": 182,
+    "cumulative_estimated_cost_usd": 0.087666,
+    "cost_per_evaluated_candidate_usd": 0.00020676,
+    "cost_per_deepseek_promote_usd": 0.00350665,
+    "cost_per_observed_ready_or_contacted_usd": 0.0438331,
+    "latest_request": {
+      "at": "2026-09-16T08:31:03Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 717,
+      "completion_tokens": 313,
+      "total_tokens": 1158,
+      "estimated_cost_usd": 0.00073043
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,63 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a6efe65888f1dc32efe4c98c60abd171",
-      "evaluated_at": "2026-09-13T14:31:06Z",
-      "organization": "speechify",
-      "title": "Senior Software Engineer, Windows/Desktop Applications - Paris, France",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/speechify/senior-software-engineer-windows-desktop-applications-paris-france-177790",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is a Senior Software Engineer for Windows/Desktop Applications at Speechify, a native desktop application engineering position with no meaningful WordPress, WooCommerce, or web-development scope; matched keywords like frontend, ui, ux, and website appear incidental and do not reflect the core role.",
-      "deepseek_risk_flags": [
-        "core_role_stack_mismatch",
-        "native_desktop_not_web",
-        "keyword_matches_incidental",
-        "no_freelance_or_contract_signal",
-        "senior_full_time_likely"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002143,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "65c39eb21fc9bbb2f3ad1c858ffeb7d0",
-      "evaluated_at": "2026-09-13T17:04:28Z",
-      "organization": "Clay Labs",
-      "title": "Private Equity Partnerships (EMEA)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clay-labs/private-equity-partnerships-emea-london-174861",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is a Private Equity Partnerships (EMEA) business-development position at Clay Labs; the only profile overlap is the incidental word 'maintenance' and generic 'partner' commercial keyword, with no web development, WordPress, WooCommerce, frontend or performance scope.",
-      "deepseek_risk_flags": [
-        "no_web_development_scope",
-        "non_technical_business_role",
-        "keyword_only_match",
-        "no_freelance_compatibility_evidence"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00014745,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "d3879938a9170786e3208694eaa9018d",
       "evaluated_at": "2026-09-13T21:01:31Z",
@@ -1448,10 +1402,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "404a3c7f2e05fae18ed2f449d89ada69",
+      "evaluated_at": "2026-09-16T08:31:03Z",
+      "organization": "Pigment",
+      "title": "Senior Frontend Engineer (UK)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/pigment/senior-frontend-engineer-uk-london-269560",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Frontend Engineer role at Pigment in London with no explicit WordPress/WooCommerce or web-maintenance scope; matched keywords are generic frontend/UI terms and 'partner' is an unrelated intent hit, not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "generic_frontend_only",
+        "no_freelance_or_contract_evidence",
+        "location_london_uk_not_spain_italy",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000365215,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f351e545e898abdbdc39d557b1b530ea",
+      "evaluated_at": "2026-09-16T08:31:03Z",
+      "organization": "knowmadmood",
+      "title": "Desarrollador/a Frontend SmartTV – React Native",
+      "location": "Madrid, España, ES",
+      "opportunity_url": "https://knowmadmood.teamtailor.com/jobs/8384104-desarrollador-a-frontend-smarttv-react-native",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "React Native SmartTV frontend role in Madrid, on-site, with explicit stack mismatch (React Native) and no WordPress/WooCommerce, performance, maintenance or UX/UI web scope matching the target profile.",
+      "deepseek_risk_flags": [
+        "react_native_stack_mismatch",
+        "on_site_only",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000365215,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-16T07:01:50Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-16T08:31:00Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
