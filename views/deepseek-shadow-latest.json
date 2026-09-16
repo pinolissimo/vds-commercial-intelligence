@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T10:58:19Z",
+  "updated_at": "2026-09-16T11:16:10Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 425,
+    "evaluated_total": 426,
     "agreement_count": 224,
-    "agreement_pct": 52.71,
+    "agreement_pct": 52.58,
     "deepseek_promote": 25,
     "vds_promote": 150,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 183,
-    "cumulative_estimated_cost_usd": 0.087841,
-    "cost_per_evaluated_candidate_usd": 0.00020668,
-    "cost_per_deepseek_promote_usd": 0.00351363,
-    "cost_per_observed_ready_or_contacted_usd": 0.04392036,
-    "latest_request": null
+    "request_count": 184,
+    "cumulative_estimated_cost_usd": 0.088061,
+    "cost_per_evaluated_candidate_usd": 0.00020671,
+    "cost_per_deepseek_promote_usd": 0.00352242,
+    "cost_per_observed_ready_or_contacted_usd": 0.04403025,
+    "latest_request": {
+      "at": "2026-09-16T11:16:08Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 389,
+      "completion_tokens": 202,
+      "total_tokens": 719,
+      "estimated_cost_usd": 0.0002198
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "aa26fb36683b5c8ff6240ae2d765dc60",
-      "evaluated_at": "2026-09-13T21:01:31Z",
-      "organization": "Trueml",
-      "title": "Technical Support Engineer I",
-      "location": "Mexico",
-      "opportunity_url": "https://remotelanders.com/jobs/technical-support-engineer-i-trueml-1vua0g",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Generic 'Technical Support Engineer I' role at Trueml located in Mexico with no evidence of WordPress/WooCommerce, frontend, web performance, or web-development scope; only a loose 'technical support' keyword match, and no explicit freelance/contract signal.",
-      "deepseek_risk_flags": [
-        "no_web_stack_evidence",
-        "geo_mismatch_mexico_not_spain_italy_or_eu_remote",
-        "no_freelance_or_contract_signal",
-        "generic_technical_support_role",
-        "remote_state_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00014457,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "84f2c322efeb83cb3f171649b43ca485",
       "evaluated_at": "2026-09-13T22:59:41Z",
@@ -1450,10 +1432,40 @@
       "observed_downstream_statuses": [
         ""
       ]
+    },
+    {
+      "signal_key": "7b5c0a1ad778c536d3bef2a00161b0e8",
+      "evaluated_at": "2026-09-16T11:16:08Z",
+      "organization": "",
+      "title": "Website Software Engineer",
+      "location": "France",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.35,
+      "deepseek_primary_reason": "Title 'Website Software Engineer' with matched keywords cms, front-end, frontend, javascript, website suggests possible web/WordPress-adjacent scope, but no explicit WordPress/WooCommerce, no employment type, no remote state, and only generic 'partner'/'collaboration' commercial keywords provide no real freelance-compatibility proof.",
+      "deepseek_risk_flags": [
+        "no_explicit_wordpress_or_woocommerce_scope",
+        "generic_partner_collaboration_keywords_not_freelance_proof",
+        "missing_employment_type",
+        "missing_remote_state",
+        "missing_published_date",
+        "location_france_geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0002198,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-16T10:58:15Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-16T11:16:04Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
