@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-17T11:33:19Z",
+  "updated_at": "2026-09-17T11:51:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 442,
-    "agreement_count": 231,
-    "agreement_pct": 52.26,
+    "evaluated_total": 443,
+    "agreement_count": 232,
+    "agreement_pct": 52.37,
     "deepseek_promote": 25,
     "vds_promote": 156,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 194,
-    "cumulative_estimated_cost_usd": 0.091461,
-    "cost_per_evaluated_candidate_usd": 0.00020693,
-    "cost_per_deepseek_promote_usd": 0.00365845,
-    "cost_per_observed_ready_or_contacted_usd": 0.04573061,
-    "latest_request": null
+    "request_count": 195,
+    "cumulative_estimated_cost_usd": 0.091673,
+    "cost_per_evaluated_candidate_usd": 0.00020694,
+    "cost_per_deepseek_promote_usd": 0.00366691,
+    "cost_per_observed_ready_or_contacted_usd": 0.04583632,
+    "latest_request": {
+      "at": "2026-09-17T11:51:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 387,
+      "completion_tokens": 190,
+      "total_tokens": 705,
+      "estimated_cost_usd": 0.00021144
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "09901129851577c833efd4c43f70b8c8",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "Senior Full-Stack Engineer - AI Cost Visibility - Greenhouse",
-      "title": "Senior Full-Stack Engineer - AI Cost Visibility",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/senior-full-stack-engineer-ai-cost-visibility-greenhouse/senior-full-stack-engineer-ai-cost-visibility-56277",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Duplicate of the AI cost visibility full-stack role; same stack mismatch and no WordPress/web-dev core scope.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "duplicate_signal",
-        "generic_keyword_overlap"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "99a9a6f0f4f96d1a7f342687d4a7ebb7",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1471,10 +1455,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "51bf71ad14ee817daa298cedc0ee74b8",
+      "evaluated_at": "2026-09-17T11:51:18Z",
+      "organization": "",
+      "title": "Senior Implementation Consultant",
+      "location": "Spain",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Senior Implementation Consultant' role in Spain with only incidental matches to accessibility, html and website; no explicit WordPress/WooCommerce/frontend scope, no confirmed freelance or contract compatibility, and commercial keywords (collaboration/partner/remote) are generic and not evidence of external collaboration fit.",
+      "deepseek_risk_flags": [
+        "role_title_not_web_development",
+        "no_explicit_wordpress_or_woocommerce_scope",
+        "generic_collaboration_keywords",
+        "no_employment_type_or_remote_state",
+        "no_published_date_or_freshness_evidence",
+        "no_opportunity_url"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00021144,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-17T11:33:14Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-17T11:51:14Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
