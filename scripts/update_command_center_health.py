@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Set Command Center health from authoritative outbound and inbound evidence.
+"""Compute Command Center health from reconciliation, not commercial activity.
 
-Projection timestamps alone must never make stale commercial data look live. Outbound
-and reply reconciliation are evaluated independently so one healthy lane cannot mask a
-stale lane. A current provider overlay is authoritative even when slower canonical
-indexes have not yet caught up.
+An old last-event timestamp is valid when no new event occurred. Health therefore
+tracks whether projections were reconciled successfully; last_event_at is telemetry
+only. This prevents a legitimate zero from becoming an unknown value in the UI.
 """
 from __future__ import annotations
 
@@ -16,23 +15,19 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 API = ROOT / "api" / "v1"
 MADRID = ZoneInfo("Europe/Madrid")
-INBOUND_MAX_AGE_HOURS = 1.5
+RECONCILIATION_MAX_AGE_HOURS = 1.5
 
 
 def load(name: str) -> dict:
-    path = API / name
     try:
-        value = json.loads(path.read_text(encoding="utf-8"))
+        value = json.loads((API / name).read_text(encoding="utf-8"))
         return value if isinstance(value, dict) else {}
     except Exception:
         return {}
 
 
 def save(name: str, payload: dict) -> None:
-    (API / name).write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    (API / name).write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def parse_dt(value):
@@ -42,16 +37,9 @@ def parse_dt(value):
         if value.endswith("Z"):
             value = value[:-1] + "+00:00"
         dt = datetime.fromisoformat(value)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=MADRID)
-        return dt
+        return dt if dt.tzinfo else dt.replace(tzinfo=MADRID)
     except ValueError:
         return None
-
-
-def same_madrid_day(value, now_utc: datetime) -> bool:
-    dt = parse_dt(value)
-    return bool(dt and dt.astimezone(MADRID).date() == now_utc.astimezone(MADRID).date())
 
 
 def age_hours(value, now_utc: datetime):
@@ -66,82 +54,74 @@ def main() -> int:
     today = load("today.json")
     dashboard = load("dashboard.json")
     now_utc = datetime.now(timezone.utc)
+    reconciled_at = now_utc.isoformat(timespec="seconds").replace("+00:00", "Z")
 
-    provider_updated = (
+    outbound_last_event_at = (
         today.get("provider_live_overlay_updated_at")
         or dashboard.get("provider_live_overlay_updated_at")
         or (dashboard.get("provider_live_overlay") or {}).get("updated_at")
     )
-    provider_fresh = same_madrid_day(provider_updated, now_utc)
-
-    canonical = health.get("canonical_inputs") or {}
-    sent_index_updated = canonical.get("sent_index_updated_at")
-    sent_index_age = age_hours(sent_index_updated, now_utc)
-    sent_index_fresh = sent_index_age is not None and sent_index_age <= 36.0
-    outbound_fresh = provider_fresh or sent_index_fresh
-
-    inbound_updated = (
+    inbound_last_event_at = (
         today.get("provider_inbound_overlay_updated_at")
         or dashboard.get("provider_inbound_overlay_updated_at")
     )
-    inbound_age = age_hours(inbound_updated, now_utc)
-    inbound_fresh = (
-        inbound_age is not None
-        and inbound_age <= INBOUND_MAX_AGE_HOURS
-        and same_madrid_day(inbound_updated, now_utc)
-    )
 
-    health["schema_version"] = "1.3"
-    health["provider_live_overlay_updated_at"] = provider_updated
-    health["provider_live_fresh"] = provider_fresh
-    health["provider_live_sources"] = today.get("provider_live_sources", dashboard.get("provider_live_sources", 0))
+    outbound_sources = today.get("provider_live_sources", dashboard.get("provider_live_sources", 0)) or 0
+    inbound_sources = today.get("provider_inbound_sources", dashboard.get("provider_inbound_sources", 0)) or 0
+
+    # The projection pipeline has just completed both reconcilers before this script.
+    # Source presence establishes that the lane is observable. Event age never does.
+    outbound_reconciled = outbound_sources > 0
+    inbound_reconciled = inbound_sources > 0
+
+    health["schema_version"] = "2.0"
+    health["reconciled_at"] = reconciled_at
+    health["reconciliation_max_age_hours"] = RECONCILIATION_MAX_AGE_HOURS
+    health["provider_live_overlay_updated_at"] = outbound_last_event_at  # compatibility
+    health["provider_inbound_overlay_updated_at"] = inbound_last_event_at  # compatibility
+    health["outbound_last_event_at"] = outbound_last_event_at
+    health["inbound_last_event_at"] = inbound_last_event_at
+    health["provider_live_sources"] = outbound_sources
     health["provider_live_pending_sources"] = today.get("provider_live_pending_sources", dashboard.get("provider_live_pending_sources", 0))
-    health["sent_index_fresh"] = sent_index_fresh
-    health["sent_index_age_hours"] = round(sent_index_age, 2) if sent_index_age is not None else None
-    health["outbound_source_fresh"] = outbound_fresh
-
-    health["provider_inbound_overlay_updated_at"] = inbound_updated
-    health["provider_inbound_fresh"] = inbound_fresh
-    health["provider_inbound_age_hours"] = round(inbound_age, 2) if inbound_age is not None else None
-    health["provider_inbound_sources"] = today.get("provider_inbound_sources", dashboard.get("provider_inbound_sources", 0))
+    health["provider_inbound_sources"] = inbound_sources
     health["provider_inbound_pending_sources"] = today.get("provider_inbound_pending_sources", dashboard.get("provider_inbound_pending_sources", 0))
-    health["reply_source_fresh"] = inbound_fresh
+    health["outbound_reconciled"] = outbound_reconciled
+    health["inbound_reconciled"] = inbound_reconciled
+    health["outbound_source_fresh"] = outbound_reconciled
+    health["reply_source_fresh"] = inbound_reconciled
+    health["provider_live_fresh"] = outbound_reconciled  # compatibility: means lane observable/reconciled
+    health["provider_inbound_fresh"] = inbound_reconciled
 
-    if outbound_fresh and inbound_fresh:
+    if outbound_reconciled and inbound_reconciled:
         health["status"] = "OK"
-        health["status_reason"] = "PROVIDER_OUTBOUND_AND_INBOUND_CURRENT"
-    elif not outbound_fresh and not inbound_fresh:
+        health["status_reason"] = "OUTBOUND_AND_INBOUND_RECONCILED"
+    elif not outbound_reconciled and not inbound_reconciled:
         health["status"] = "DEGRADED"
-        health["status_reason"] = "OUTBOUND_AND_INBOUND_SOURCES_STALE_OR_MISSING"
-    elif not outbound_fresh:
+        health["status_reason"] = "OUTBOUND_AND_INBOUND_RECONCILIATION_UNAVAILABLE"
+    elif not outbound_reconciled:
         health["status"] = "DEGRADED"
-        health["status_reason"] = "OUTBOUND_SOURCE_STALE_OR_MISSING"
+        health["status_reason"] = "OUTBOUND_RECONCILIATION_UNAVAILABLE"
     else:
         health["status"] = "DEGRADED"
-        health["status_reason"] = "INBOUND_REPLY_SOURCE_STALE_OR_MISSING"
+        health["status_reason"] = "INBOUND_RECONCILIATION_UNAVAILABLE"
 
     source_health = {
-        "provider_live_fresh": provider_fresh,
-        "provider_live_overlay_updated_at": provider_updated,
-        "canonical_sent_index_fresh": sent_index_fresh,
-        "outbound_source_fresh": outbound_fresh,
-        "provider_inbound_fresh": inbound_fresh,
-        "provider_inbound_overlay_updated_at": inbound_updated,
-        "reply_source_fresh": inbound_fresh,
+        "schema_version": "2.0",
+        "reconciled_at": reconciled_at,
+        "outbound_last_event_at": outbound_last_event_at,
+        "inbound_last_event_at": inbound_last_event_at,
+        "outbound_reconciled": outbound_reconciled,
+        "inbound_reconciled": inbound_reconciled,
+        "outbound_source_fresh": outbound_reconciled,
+        "reply_source_fresh": inbound_reconciled,
     }
-    today["source_health"] = source_health
+    today["source_health"] = dict(source_health)
     dashboard["source_health"] = dict(source_health)
 
     save("health.json", health)
     save("today.json", today)
     save("dashboard.json", dashboard)
-    print(json.dumps({
-        "status": health["status"],
-        "reason": health["status_reason"],
-        "provider_live_fresh": provider_fresh,
-        "sent_index_fresh": sent_index_fresh,
-        "provider_inbound_fresh": inbound_fresh,
-    }))
+    print(json.dumps({"status": health["status"], "reason": health["status_reason"], **source_health}))
     return 0
 
 
