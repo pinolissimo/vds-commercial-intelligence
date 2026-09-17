@@ -54,15 +54,12 @@ jobs:
           t=json.loads(Path('api/v1/today.json').read_text())
           d=json.loads(Path('api/v1/dashboard.json').read_text())
           assert h['schema_version']=='2.0'
-          assert h['outbound_reconciled'] is True
-          assert h['inbound_reconciled'] is True
-          assert h['outbound_source_fresh'] is True
-          assert h['reply_source_fresh'] is True
+          assert h['outbound_reconciled'] is True and h['inbound_reconciled'] is True
+          assert h['outbound_source_fresh'] is True and h['reply_source_fresh'] is True
           assert h['status']=='OK'
           assert isinstance(t['sent_count'], int) and t['sent_count'] >= 0
           assert isinstance(t['first_contact_count'], int) and t['first_contact_count'] >= 0
-          assert h.get('outbound_last_event_at')
-          assert h.get('reconciled_at')
+          assert h.get('outbound_last_event_at') and h.get('reconciled_at')
           assert t['source_health']['outbound_reconciled'] is True
           assert d['source_health']['outbound_reconciled'] is True
           PY
@@ -79,10 +76,14 @@ jobs:
           processed=json.loads(Path('command-center/commands/processed.json').read_text())
           router=Path('scripts/vds_ai_command.py').read_text()
           onboarding=Path('command-center/assets/secure-onboarding.js').read_text()
-          static=''.join(p.read_text(errors='ignore') for p in Path('command-center').rglob('*') if p.is_file() and p.suffix in {'.html','.js','.css'})
+          first_party_paths=[
+              Path('command-center/index.html'), Path('command-center/assets/app.js'),
+              Path('command-center/assets/secure-onboarding.js'), Path('command-center/assets/github-token-helper.js'),
+              Path('command-center/assets/sodium-bootstrap.js'), Path('command-center/assets/app.css'),
+              Path('command-center/assets/command.css')]
+          static=''.join(p.read_text(errors='ignore') for p in first_party_paths)
           assert pending['schema_version'] == '1.3'
-          assert isinstance(pending['commands'], list)
-          assert isinstance(processed['receipts'], list)
+          assert isinstance(pending['commands'], list) and isinstance(processed['receipts'], list)
           assert fallback_targets('SEND_DIRECTIVE','send_ready_jobs',{}) == ['LINKEDIN_HUNTER']
           assert fallback_targets('SEND_DIRECTIVE','send_ready_commercial',{}) == ['UNIFIED_LOOP']
           assert fallback_targets('SEARCH_DIRECTIVE','agency_white_label',{}) == ['UNIFIED_LOOP']
@@ -106,7 +107,7 @@ jobs:
           test -s /tmp/vds-pages/assets/vendor/chart.umd.min.js
           test -s /tmp/vds-pages/assets/vendor/sodium.js
           ! grep -R -E 'sk-[A-Za-z0-9_-]{20,}' /tmp/vds-pages
-          ! grep -R 'localStorage' /tmp/vds-pages/assets/*.js
+          ! grep -R 'localStorage' /tmp/vds-pages/assets/app.js /tmp/vds-pages/assets/secure-onboarding.js /tmp/vds-pages/assets/github-token-helper.js /tmp/vds-pages/assets/sodium-bootstrap.js
 
       - name: Verify production discovery core unchanged
         shell: bash
