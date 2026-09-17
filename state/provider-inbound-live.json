@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-09-16T21:58:31Z",
-  "latest_checked_uid": 1475,
+  "updated_at": "2026-09-17T07:59:30Z",
+  "latest_checked_uid": 1476,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -52,6 +52,18 @@
       "subtype": "AUTORESPONDER_ROUTE_REFERRAL",
       "summary": "Autoresponder di assenza; contiene contatti alternativi per il progetto ma non rappresenta una risposta commerciale umana.",
       "count_as_reply": false
+    },
+    {
+      "provider_inbound_uid": 1476,
+      "received_at": "2026-09-17T07:20:43Z",
+      "canonical_identity_key": "org:food.dtu.dk",
+      "entity": "MICROSUNSET / Technical University of Denmark",
+      "sender": "jeja@food.dtu.dk",
+      "subject": "RE: MICROSUNSET – project website and digital dissemination support",
+      "classification": "NEUTRAL",
+      "subtype": "ACK_ONLY",
+      "summary": "Jette Jakobsen ringrazia per le informazioni senza indicare interesse, referral o un prossimo passo concreto.",
+      "count_as_reply": true
     }
   ]
 }
