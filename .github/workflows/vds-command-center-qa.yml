@@ -30,12 +30,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Python syntax
+      - name: Syntax checks
         run: |
-          python3 -m py_compile scripts/build_command_center_api.py scripts/vds_ai_command.py scripts/prepare_command_center_assets.py scripts/test_command_center.py scripts/overlay_provider_live_dashboard.py scripts/overlay_provider_live_replies.py scripts/update_command_center_health.py
-
-      - name: JavaScript syntax
-        run: |
+          python3 -m py_compile scripts/build_command_center_api.py scripts/vds_ai_command.py scripts/prepare_command_center_assets.py scripts/overlay_provider_live_dashboard.py scripts/overlay_provider_live_replies.py scripts/update_command_center_health.py
           node --check command-center/assets/app.js
           node --check command-center/assets/sodium-bootstrap.js
           node --check command-center/assets/secure-onboarding.js
@@ -62,42 +59,50 @@ jobs:
           assert h['outbound_source_fresh'] is True
           assert h['reply_source_fresh'] is True
           assert h['status']=='OK'
-          assert isinstance(t['sent_count'], int)
-          assert isinstance(t['first_contact_count'], int)
-          # Critical regression: old last commercial event must not invalidate a known zero.
+          assert isinstance(t['sent_count'], int) and t['sent_count'] >= 0
+          assert isinstance(t['first_contact_count'], int) and t['first_contact_count'] >= 0
           assert h.get('outbound_last_event_at')
+          assert h.get('reconciled_at')
           assert t['source_health']['outbound_reconciled'] is True
           assert d['source_health']['outbound_reconciled'] is True
           PY
 
-      - name: Static security and architecture QA
-        run: python3 scripts/test_command_center.py
-
-      - name: Validate command bridge schema and routing
+      - name: Current architecture and security invariants
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import json
+          import json, re
           from pathlib import Path
           from scripts.vds_ai_command import fallback_targets
           pending=json.loads(Path('command-center/commands/pending.json').read_text())
           processed=json.loads(Path('command-center/commands/processed.json').read_text())
-          assert pending['schema_version'] == '1.2'
+          router=Path('scripts/vds_ai_command.py').read_text()
+          onboarding=Path('command-center/assets/secure-onboarding.js').read_text()
+          static=''.join(p.read_text(errors='ignore') for p in Path('command-center').rglob('*') if p.is_file() and p.suffix in {'.html','.js','.css'})
+          assert pending['schema_version'] == '1.3'
           assert isinstance(pending['commands'], list)
           assert isinstance(processed['receipts'], list)
           assert fallback_targets('SEND_DIRECTIVE','send_ready_jobs',{}) == ['LINKEDIN_HUNTER']
           assert fallback_targets('SEND_DIRECTIVE','send_ready_commercial',{}) == ['UNIFIED_LOOP']
-          assert fallback_targets('SEARCH_DIRECTIVE','agency_white_label',{}) == ['AGENCY_RADAR']
-          assert fallback_targets('direct_job_wordpress','direct_job_wordpress',{}) if False else True
+          assert fallback_targets('SEARCH_DIRECTIVE','agency_white_label',{}) == ['UNIFIED_LOOP']
+          assert fallback_targets('SEARCH_DIRECTIVE','direct_job_wordpress',{}) == ['LINKEDIN_HUNTER']
+          assert fallback_targets('PRIORITY_DIRECTIVE','prioritize_north_italy',{}) == ['LINKEDIN_HUNTER','UNIFIED_LOOP']
+          assert 'WORKERS = {"LINKEDIN_HUNTER", "UNIFIED_LOOP"}' in router
+          assert 'normal_cycle_must_continue' in router and 'expires_at' in router
+          assert 'crypto_box_seal' in onboarding and 'actions/secrets/public-key' in onboarding
+          assert '/actions/secrets/${provider.secret}' in onboarding
+          assert 'localStorage' not in static
+          assert not re.search(r'sk-[A-Za-z0-9_-]{20,}', static)
           PY
 
-      - name: Test local assets and secure onboarding
+      - name: Test vendored assets
         run: |
           rm -rf /tmp/vds-pages && mkdir -p /tmp/vds-pages
           cp -R command-center/. /tmp/vds-pages/
           python3 scripts/prepare_command_center_assets.py /tmp/vds-pages
           test -s /tmp/vds-pages/assets/fonts/dm-sans.woff2
+          test -s /tmp/vds-pages/assets/fonts/material-symbols-rounded.woff2
           test -s /tmp/vds-pages/assets/vendor/chart.umd.min.js
           test -s /tmp/vds-pages/assets/vendor/sodium.js
           ! grep -R -E 'sk-[A-Za-z0-9_-]{20,}' /tmp/vds-pages
