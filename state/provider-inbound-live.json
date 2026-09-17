@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-09-17T07:59:30Z",
-  "latest_checked_uid": 1476,
+  "updated_at": "2026-09-17T08:59:42Z",
+  "latest_checked_uid": 1478,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -63,6 +63,30 @@
       "classification": "NEUTRAL",
       "subtype": "ACK_ONLY",
       "summary": "Jette Jakobsen ringrazia per le informazioni senza indicare interesse, referral o un prossimo passo concreto.",
+      "count_as_reply": true
+    },
+    {
+      "provider_inbound_uid": 1477,
+      "received_at": "2026-09-17T08:39:06Z",
+      "canonical_identity_key": "noncommercial:360imprimir",
+      "entity": "360imprimir",
+      "sender": "campaigns@mail.360imprimir.es",
+      "subject": "Solo hasta el domingo - 20% de Descuento Inmediato + 30% en tu Cuenta de Cliente",
+      "classification": "NEUTRAL",
+      "subtype": "NEWSLETTER",
+      "summary": "Messaggio promozionale non commerciale rispetto alla pipeline VDS; audit-only.",
+      "count_as_reply": false
+    },
+    {
+      "provider_inbound_uid": 1478,
+      "received_at": "2026-09-17T08:46:55Z",
+      "canonical_identity_key": "org:artemis-horizon.eu",
+      "entity": "ARTEMis Horizon Europe",
+      "sender": "ft@eycon.eu",
+      "subject": "RE: [ARTEMis Info] Web & dissemination support for ARTEMis",
+      "classification": "NEUTRAL",
+      "subtype": "ACK_ONLY",
+      "summary": "Frosso Tagkouli ringrazia per l'interesse, comunica che conserveranno i contatti e informeranno VDS di eventuali opportunità future; nessun prossimo passo commerciale concreto.",
       "count_as_reply": true
     }
   ]
