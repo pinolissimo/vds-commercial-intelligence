@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 463,
+  "runs": 464,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12095,6 +12095,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6dd2b1e8320cee0403e33a75a922d04a",
+      "evaluated_at": "2026-09-17T14:14:40Z",
+      "organization": "Human Made",
+      "title": "Freelance Scrum Master - APAC",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/freelance-scrum-master-apac-human-made",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Freelance Scrum Master, not a web-development role; the WordPress/CSS/HTML/JS keywords are incidental agency-context matches, not the actual scope of work.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_technical_role",
+        "keyword_noise",
+        "geo_uncertain_apac"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019186,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": [
+        "REVIEW_REQUIRED_TRUTHFUL_FIT_SENIORITY"
+      ]
     }
   ],
   "requests": [
@@ -14473,9 +14503,21 @@
       "completion_tokens": 167,
       "total_tokens": 717,
       "estimated_cost_usd": 0.00020396
+    },
+    {
+      "at": "2026-09-17T14:14:40Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 454,
+      "completion_tokens": 138,
+      "total_tokens": 720,
+      "estimated_cost_usd": 0.00019186
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-17T13:56:38Z",
+  "updated_at": "2026-09-17T14:14:40Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
