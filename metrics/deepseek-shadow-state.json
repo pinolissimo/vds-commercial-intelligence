@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 446,
+  "runs": 447,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -11892,6 +11892,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5f029b60be45b5909af541f50a095be4",
+      "evaluated_at": "2026-09-17T08:01:00Z",
+      "organization": "Contabo",
+      "title": "Senior Frontend Developer (all genders)",
+      "location": "Remote (Germany)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/contabo/remote-senior-frontend-developer-all-genders-267880",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Developer role at Contabo is remote and frontend-focused, matching frontend/UI/UX keywords, but the posting shows no WordPress/WooCommerce or explicit freelance/contract scope, and 'Senior Frontend Developer' at a hosting company often implies React/Vue-heavy product work rather than the target WordPress/custom web maintenance profile.",
+      "deepseek_risk_flags": [
+        "no_wordpress_or_woocommerce_scope",
+        "likely_react_or_spa_stack_mismatch",
+        "employment_type_unknown",
+        "freelance_compatibility_unverified",
+        "remote_geo_scope_unclear"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000294425,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d1d6b58b017a597f3863674a72a49a88",
+      "evaluated_at": "2026-09-17T08:01:00Z",
+      "organization": "",
+      "title": "SEO Specialist",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "SEO Specialist role is a marketing/SEO function, not web development; WordPress/CMS mentions are incidental to SEO work, and the location is United States with no evidence of Spain/Italy/EU-remote or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_is_seo_not_development",
+        "us_location_outside_target_markets",
+        "no_freelance_or_contract_evidence",
+        "partner_mention_is_not_freelance_proof",
+        "no_opportunity_url"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000294425,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -14198,9 +14256,21 @@
       "completion_tokens": 192,
       "total_tokens": 753,
       "estimated_cost_usd": 0.00022288
+    },
+    {
+      "at": "2026-09-17T08:01:00Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 269,
+      "completion_tokens": 351,
+      "total_tokens": 1132,
+      "estimated_cost_usd": 0.00058885
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-17T05:26:50Z",
+  "updated_at": "2026-09-17T08:01:00Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

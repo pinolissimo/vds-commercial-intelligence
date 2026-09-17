@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-17T05:26:52Z",
+  "updated_at": "2026-09-17T08:01:03Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 439,
-    "agreement_count": 229,
-    "agreement_pct": 52.16,
+    "evaluated_total": 441,
+    "agreement_count": 230,
+    "agreement_pct": 52.15,
     "deepseek_promote": 25,
-    "vds_promote": 155,
+    "vds_promote": 156,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 134
+    "deepseek_demoted_from_vds_promote": 135
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.58,
+    "vds_promote_hot_rate_pct": 2.56,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 192,
-    "cumulative_estimated_cost_usd": 0.090413,
-    "cost_per_evaluated_candidate_usd": 0.00020595,
-    "cost_per_deepseek_promote_usd": 0.0036165,
-    "cost_per_observed_ready_or_contacted_usd": 0.04520627,
+    "request_count": 193,
+    "cumulative_estimated_cost_usd": 0.091001,
+    "cost_per_evaluated_candidate_usd": 0.00020635,
+    "cost_per_deepseek_promote_usd": 0.00364006,
+    "cost_per_observed_ready_or_contacted_usd": 0.04550069,
     "latest_request": {
-      "at": "2026-09-17T05:26:50Z",
+      "at": "2026-09-17T08:01:00Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 433,
-      "completion_tokens": 192,
-      "total_tokens": 753,
-      "estimated_cost_usd": 0.00022288
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 269,
+      "completion_tokens": 351,
+      "total_tokens": 1132,
+      "estimated_cost_usd": 0.00058885
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "fc41f2baf2e0da2cc46c4bc67b96335e",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "Towa",
-      "title": "Senior Consultant Search, Content & AI Visibility (SEO/GEO) (m/w/d), München",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/towa/senior-consultant-search-content-ai-visibility-seo-geo-munchen-302864",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 28.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "SEO/GEO consultant role in Munich; CMS/Core Web Vitals/migration overlap is peripheral and the role is consultancy, not web development.",
-      "deepseek_risk_flags": [
-        "seo_consultant_role",
-        "geo_mismatch",
-        "generic_commercial_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "8941c4cbd76a4ee98658624494604718",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "Towa",
-      "title": "Senior Consultant Search, Content & AI Visibility (SEO/GEO) (m/w/d), Düsseldorf",
-      "location": "Düsseldorf",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/towa/senior-consultant-search-content-ai-visibility-seo-geo-dusseldorf-150159",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 28.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Duplicate SEO/GEO consultant role in Düsseldorf; peripheral CMS/Core Web Vitals overlap, not a web-dev opportunity.",
-      "deepseek_risk_flags": [
-        "seo_consultant_role",
-        "geo_mismatch",
-        "duplicate_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1564e40faccceefaceb70c316efe5437",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1476,10 +1422,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5f029b60be45b5909af541f50a095be4",
+      "evaluated_at": "2026-09-17T08:01:00Z",
+      "organization": "Contabo",
+      "title": "Senior Frontend Developer (all genders)",
+      "location": "Remote (Germany)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/contabo/remote-senior-frontend-developer-all-genders-267880",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Developer role at Contabo is remote and frontend-focused, matching frontend/UI/UX keywords, but the posting shows no WordPress/WooCommerce or explicit freelance/contract scope, and 'Senior Frontend Developer' at a hosting company often implies React/Vue-heavy product work rather than the target WordPress/custom web maintenance profile.",
+      "deepseek_risk_flags": [
+        "no_wordpress_or_woocommerce_scope",
+        "likely_react_or_spa_stack_mismatch",
+        "employment_type_unknown",
+        "freelance_compatibility_unverified",
+        "remote_geo_scope_unclear"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000294425,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d1d6b58b017a597f3863674a72a49a88",
+      "evaluated_at": "2026-09-17T08:01:00Z",
+      "organization": "",
+      "title": "SEO Specialist",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "SEO Specialist role is a marketing/SEO function, not web development; WordPress/CMS mentions are incidental to SEO work, and the location is United States with no evidence of Spain/Italy/EU-remote or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_is_seo_not_development",
+        "us_location_outside_target_markets",
+        "no_freelance_or_contract_evidence",
+        "partner_mention_is_not_freelance_proof",
+        "no_opportunity_url"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000294425,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-17T05:26:46Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-17T08:00:56Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
