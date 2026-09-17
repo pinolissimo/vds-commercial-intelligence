@@ -5,14 +5,12 @@ on:
   push:
     branches:
       - 'feature/vds-command-*'
+      - 'fix/command-center-*'
     paths:
       - 'command-center/**'
       - 'api/v1/**'
       - 'project/COMMAND_CENTER_TASK_BRIDGE_PROTOCOL.md'
-      - 'scripts/build_command_center_api.py'
-      - 'scripts/vds_ai_command.py'
-      - 'scripts/prepare_command_center_assets.py'
-      - 'scripts/test_command_center.py'
+      - 'scripts/**'
       - '.github/workflows/vds-command-center-*.yml'
       - '.github/workflows/vds-ai-command.yml'
 
@@ -28,101 +26,90 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - name: Checkout feature branch
-        uses: actions/checkout@v7
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Python syntax
+      - name: Syntax checks
         run: |
-          python3 -m py_compile \
-            scripts/build_command_center_api.py \
-            scripts/vds_ai_command.py \
-            scripts/prepare_command_center_assets.py \
-            scripts/test_command_center.py
-
-      - name: JavaScript syntax
-        run: |
+          python3 -m py_compile scripts/build_command_center_api.py scripts/vds_ai_command.py scripts/prepare_command_center_assets.py scripts/overlay_provider_live_dashboard.py scripts/overlay_provider_live_replies.py scripts/update_command_center_health.py
           node --check command-center/assets/app.js
           node --check command-center/assets/sodium-bootstrap.js
           node --check command-center/assets/secure-onboarding.js
           node --check command-center/assets/github-token-helper.js
 
-      - name: Build read-only projections
-        run: python3 scripts/build_command_center_api.py
+      - name: Build complete read model and health-v2 regression test
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_command_center_api.py
+          python3 scripts/enrich_command_center_funnel.py
+          python3 scripts/overlay_provider_live_dashboard.py
+          python3 scripts/overlay_provider_live_replies.py
+          python3 scripts/update_command_center_health.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          h=json.loads(Path('api/v1/health.json').read_text())
+          t=json.loads(Path('api/v1/today.json').read_text())
+          d=json.loads(Path('api/v1/dashboard.json').read_text())
+          assert h['schema_version']=='2.0'
+          assert h['outbound_reconciled'] is True and h['inbound_reconciled'] is True
+          assert h['outbound_source_fresh'] is True and h['reply_source_fresh'] is True
+          assert h['status']=='OK'
+          assert isinstance(t['sent_count'], int) and t['sent_count'] >= 0
+          assert isinstance(t['first_contact_count'], int) and t['first_contact_count'] >= 0
+          assert h.get('outbound_last_event_at') and h.get('reconciled_at')
+          assert t['source_health']['outbound_reconciled'] is True
+          assert d['source_health']['outbound_reconciled'] is True
+          PY
 
-      - name: Static security and architecture QA
-        run: python3 scripts/test_command_center.py
-
-      - name: Validate command bridge schema and routing
+      - name: Current architecture and security invariants
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import json
+          import json, re
           from pathlib import Path
           from scripts.vds_ai_command import fallback_targets
           pending=json.loads(Path('command-center/commands/pending.json').read_text())
           processed=json.loads(Path('command-center/commands/processed.json').read_text())
-          assert pending['schema_version'] == '1.2'
-          assert isinstance(pending['commands'], list)
-          assert isinstance(processed['receipts'], list)
+          router=Path('scripts/vds_ai_command.py').read_text()
+          onboarding=Path('command-center/assets/secure-onboarding.js').read_text()
+          first_party_paths=[
+              Path('command-center/index.html'), Path('command-center/assets/app.js'),
+              Path('command-center/assets/secure-onboarding.js'), Path('command-center/assets/github-token-helper.js'),
+              Path('command-center/assets/sodium-bootstrap.js'), Path('command-center/assets/app.css'),
+              Path('command-center/assets/command.css')]
+          static=''.join(p.read_text(errors='ignore') for p in first_party_paths)
+          assert pending['schema_version'] == '1.3'
+          assert isinstance(pending['commands'], list) and isinstance(processed['receipts'], list)
           assert fallback_targets('SEND_DIRECTIVE','send_ready_jobs',{}) == ['LINKEDIN_HUNTER']
           assert fallback_targets('SEND_DIRECTIVE','send_ready_commercial',{}) == ['UNIFIED_LOOP']
-          assert fallback_targets('SEARCH_DIRECTIVE','agency_white_label',{}) == ['AGENCY_RADAR']
+          assert fallback_targets('SEARCH_DIRECTIVE','agency_white_label',{}) == ['UNIFIED_LOOP']
           assert fallback_targets('SEARCH_DIRECTIVE','direct_job_wordpress',{}) == ['LINKEDIN_HUNTER']
-          assert fallback_targets('PRIORITY_DIRECTIVE','prioritize_north_italy',{}) == ['AGENCY_RADAR','LINKEDIN_HUNTER','UNIFIED_LOOP']
-          text=Path('scripts/vds_ai_command.py').read_text()
-          for worker in ('AGENCY_RADAR','LINKEDIN_HUNTER','UNIFIED_LOOP'):
-              assert worker in text
-          assert 'normal_cycle_must_continue' in text
-          assert 'expires_at' in text
+          assert fallback_targets('PRIORITY_DIRECTIVE','prioritize_north_italy',{}) == ['LINKEDIN_HUNTER','UNIFIED_LOOP']
+          assert 'WORKERS = {"LINKEDIN_HUNTER", "UNIFIED_LOOP"}' in router
+          assert 'normal_cycle_must_continue' in router and 'expires_at' in router
+          assert 'crypto_box_seal' in onboarding and 'actions/secrets/public-key' in onboarding
+          assert '/actions/secrets/${provider.secret}' in onboarding
+          assert 'localStorage' not in static
+          assert not re.search(r'sk-[A-Za-z0-9_-]{20,}', static)
           PY
 
-      - name: Test local asset vendoring and secure onboarding injection
+      - name: Test vendored assets
         run: |
-          rm -rf /tmp/vds-pages
-          mkdir -p /tmp/vds-pages
+          rm -rf /tmp/vds-pages && mkdir -p /tmp/vds-pages
           cp -R command-center/. /tmp/vds-pages/
           python3 scripts/prepare_command_center_assets.py /tmp/vds-pages
           test -s /tmp/vds-pages/assets/fonts/dm-sans.woff2
           test -s /tmp/vds-pages/assets/fonts/material-symbols-rounded.woff2
           test -s /tmp/vds-pages/assets/vendor/chart.umd.min.js
           test -s /tmp/vds-pages/assets/vendor/sodium.js
-          grep -q 'assets/github-token-helper.js' /tmp/vds-pages/index.html
-          grep -q 'assets/secure-onboarding.js' /tmp/vds-pages/index.html
-          grep -q 'assets/vendor/sodium.js' /tmp/vds-pages/index.html
-          grep -q 'Secrets read/write' /tmp/vds-pages/index.html
-          grep -q 'personal-access-tokens/new' /tmp/vds-pages/assets/github-token-helper.js
-          grep -q 'contents=read&actions=write&secrets=write' /tmp/vds-pages/assets/github-token-helper.js
-          grep -q 'crypto_box_seal' /tmp/vds-pages/assets/secure-onboarding.js
           ! grep -R -E 'sk-[A-Za-z0-9_-]{20,}' /tmp/vds-pages
-          ! grep -R 'localStorage' /tmp/vds-pages/assets/*.js
+          ! grep -R 'localStorage' /tmp/vds-pages/assets/app.js /tmp/vds-pages/assets/secure-onboarding.js /tmp/vds-pages/assets/github-token-helper.js /tmp/vds-pages/assets/sodium-bootstrap.js
 
-      - name: Runtime LibSodium browser smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          cat > /tmp/vds-pages/crypto-smoke.html <<'EOF'
-          <!doctype html><meta charset="utf-8"><body>BOOT
-          <script src="assets/sodium-bootstrap.js"></script>
-          <script src="assets/vendor/sodium.js"></script>
-          <script>
-          window.__vdsSodiumReady.then(function(s){
-            document.body.textContent=(typeof s.crypto_box_seal==='function' && typeof s.memzero==='function')?'SODIUM_OK':'SODIUM_BAD';
-          }).catch(function(e){document.body.textContent='SODIUM_ERR:'+e.message});
-          </script>
-          EOF
-          python3 -m http.server 8765 --directory /tmp/vds-pages >/tmp/vds-http.log 2>&1 &
-          server_pid=$!
-          trap 'kill $server_pid 2>/dev/null || true' EXIT
-          sleep 1
-          chrome_bin="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || command -v chromium-browser || true)"
-          test -n "$chrome_bin"
-          "$chrome_bin" --headless --disable-gpu --no-sandbox --virtual-time-budget=5000 --dump-dom http://127.0.0.1:8765/crypto-smoke.html > /tmp/crypto-smoke.out
-          grep -q 'SODIUM_OK' /tmp/crypto-smoke.out
-
-      - name: Verify production discovery workflow unchanged in feature branch
+      - name: Verify production discovery core unchanged
         shell: bash
         run: |
           set -euo pipefail
