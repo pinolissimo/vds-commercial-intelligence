@@ -2,6 +2,8 @@ name: VDS Command Center — Projections
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
   workflow_run:
     workflows: ["VDS High-Frequency Discovery Fanout"]
     types: [completed]
@@ -53,13 +55,31 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build disposable API projections
+      - name: Build and validate disposable API projections
+        shell: bash
         run: |
+          set -euo pipefail
           python3 scripts/build_command_center_api.py
           python3 scripts/enrich_command_center_funnel.py
           python3 scripts/overlay_provider_live_dashboard.py
           python3 scripts/overlay_provider_live_replies.py
           python3 scripts/update_command_center_health.py
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          health=json.loads(Path('api/v1/health.json').read_text())
+          today=json.loads(Path('api/v1/today.json').read_text())
+          dashboard=json.loads(Path('api/v1/dashboard.json').read_text())
+          assert health['schema_version'] == '2.0'
+          assert isinstance(today.get('sent_count'), int) and today['sent_count'] >= 0
+          assert isinstance(today.get('first_contact_count'), int) and today['first_contact_count'] >= 0
+          assert health.get('reconciled_at')
+          assert 'outbound_last_event_at' in health
+          assert 'inbound_last_event_at' in health
+          assert isinstance(health.get('outbound_reconciled'), bool)
+          assert isinstance(health.get('inbound_reconciled'), bool)
+          assert (dashboard.get('source_health') or {}).get('reconciled_at') == health['reconciled_at']
+          PY
 
       - name: Commit projection delta only
         shell: bash
@@ -74,11 +94,8 @@ jobs:
           fi
           git commit -m "dashboard: refresh command center projections"
           for attempt in 1 2 3 4 5; do
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            echo "Push raced with another worker; refreshing canonical state (attempt $attempt)"
-            git rebase --abort 2>/dev/null || true
+            if git push origin HEAD:main; then exit 0; fi
+            echo "Push raced with another worker; rebuilding from canonical main (attempt $attempt)"
             git fetch origin main
             git reset --hard origin/main
             python3 scripts/build_command_center_api.py
@@ -87,10 +104,7 @@ jobs:
             python3 scripts/overlay_provider_live_replies.py
             python3 scripts/update_command_center_health.py
             git add api/v1
-            if git diff --cached --quiet; then
-              echo "Latest main already contains equivalent projections"
-              exit 0
-            fi
+            if git diff --cached --quiet; then exit 0; fi
             git commit -m "dashboard: refresh command center projections"
             sleep $((attempt * 2))
           done
