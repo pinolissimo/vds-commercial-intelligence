@@ -36,6 +36,7 @@ on:
       - 'scripts/overlay_provider_live_dashboard.py'
       - 'scripts/overlay_provider_live_replies.py'
       - 'scripts/update_command_center_health.py'
+      - 'scripts/validate_command_center_invariants.py'
       - '.github/workflows/vds-command-center-projections.yml'
 
 permissions:
@@ -62,18 +63,7 @@ jobs:
           python3 scripts/overlay_provider_live_dashboard.py
           python3 scripts/overlay_provider_live_replies.py
           python3 scripts/update_command_center_health.py
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-          h=json.loads(Path('api/v1/health.json').read_text()); t=json.loads(Path('api/v1/today.json').read_text()); d=json.loads(Path('api/v1/dashboard.json').read_text())
-          assert h['schema_version']=='2.1'
-          assert isinstance(t.get('sent_count'),int) and t['sent_count']>=0
-          assert isinstance(t.get('first_contact_count'),int) and t['first_contact_count']>=0
-          assert h.get('reconciled_at') and h.get('provider_observed_at')
-          assert isinstance(h.get('provider_observation_fresh'),bool)
-          assert isinstance(h.get('outbound_reconciled'),bool) and isinstance(h.get('inbound_reconciled'),bool)
-          assert (d.get('source_health') or {}).get('provider_observed_at')==h['provider_observed_at']
-          PY
+          python3 scripts/validate_command_center_invariants.py
       - name: Commit projection delta only
         shell: bash
         run: |
@@ -91,6 +81,7 @@ jobs:
             python3 scripts/overlay_provider_live_dashboard.py
             python3 scripts/overlay_provider_live_replies.py
             python3 scripts/update_command_center_health.py
+            python3 scripts/validate_command_center_invariants.py
             git add api/v1
             if git diff --cached --quiet; then exit 0; fi
             git commit -m "dashboard: refresh command center projections"
