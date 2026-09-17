@@ -20,6 +20,7 @@ on:
       - 'reports/**'
       - 'runtime/**'
       - 'config/**'
+      - 'state/provider-observation.json'
       - 'state/provider-outbound-live.json'
       - 'state/provider-outbound-live-pending-*.json'
       - 'state/provider-outbound-live-pending/**'
@@ -39,11 +40,9 @@ on:
 
 permissions:
   contents: write
-
 concurrency:
   group: vds-command-center-projections
   cancel-in-progress: true
-
 jobs:
   build-read-model:
     if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
@@ -54,7 +53,6 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
-
       - name: Build and validate disposable API projections
         shell: bash
         run: |
@@ -67,20 +65,15 @@ jobs:
           python3 - <<'PY'
           import json
           from pathlib import Path
-          health=json.loads(Path('api/v1/health.json').read_text())
-          today=json.loads(Path('api/v1/today.json').read_text())
-          dashboard=json.loads(Path('api/v1/dashboard.json').read_text())
-          assert health['schema_version'] == '2.0'
-          assert isinstance(today.get('sent_count'), int) and today['sent_count'] >= 0
-          assert isinstance(today.get('first_contact_count'), int) and today['first_contact_count'] >= 0
-          assert health.get('reconciled_at')
-          assert 'outbound_last_event_at' in health
-          assert 'inbound_last_event_at' in health
-          assert isinstance(health.get('outbound_reconciled'), bool)
-          assert isinstance(health.get('inbound_reconciled'), bool)
-          assert (dashboard.get('source_health') or {}).get('reconciled_at') == health['reconciled_at']
+          h=json.loads(Path('api/v1/health.json').read_text()); t=json.loads(Path('api/v1/today.json').read_text()); d=json.loads(Path('api/v1/dashboard.json').read_text())
+          assert h['schema_version']=='2.1'
+          assert isinstance(t.get('sent_count'),int) and t['sent_count']>=0
+          assert isinstance(t.get('first_contact_count'),int) and t['first_contact_count']>=0
+          assert h.get('reconciled_at') and h.get('provider_observed_at')
+          assert isinstance(h.get('provider_observation_fresh'),bool)
+          assert isinstance(h.get('outbound_reconciled'),bool) and isinstance(h.get('inbound_reconciled'),bool)
+          assert (d.get('source_health') or {}).get('provider_observed_at')==h['provider_observed_at']
           PY
-
       - name: Commit projection delta only
         shell: bash
         run: |
@@ -88,16 +81,11 @@ jobs:
           git config user.name "vds-command-center-bot"
           git config user.email "35764978+pinolissimo@users.noreply.github.com"
           git add api/v1
-          if git diff --cached --quiet; then
-            echo "No projection changes"
-            exit 0
-          fi
+          if git diff --cached --quiet; then echo "No projection changes"; exit 0; fi
           git commit -m "dashboard: refresh command center projections"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
-            echo "Push raced with another worker; rebuilding from canonical main (attempt $attempt)"
-            git fetch origin main
-            git reset --hard origin/main
+            git fetch origin main; git reset --hard origin/main
             python3 scripts/build_command_center_api.py
             python3 scripts/enrich_command_center_funnel.py
             python3 scripts/overlay_provider_live_dashboard.py
@@ -108,5 +96,4 @@ jobs:
             git commit -m "dashboard: refresh command center projections"
             sleep $((attempt * 2))
           done
-          echo "Unable to commit projections after retries" >&2
           exit 1
