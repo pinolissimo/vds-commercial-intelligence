@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-17T15:09:01Z",
+  "updated_at": "2026-09-17T15:26:53Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 447,
-    "agreement_count": 235,
-    "agreement_pct": 52.57,
+    "evaluated_total": 448,
+    "agreement_count": 236,
+    "agreement_pct": 52.68,
     "deepseek_promote": 25,
     "vds_promote": 157,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 199,
-    "cumulative_estimated_cost_usd": 0.092492,
-    "cost_per_evaluated_candidate_usd": 0.00020692,
-    "cost_per_deepseek_promote_usd": 0.00369966,
-    "cost_per_observed_ready_or_contacted_usd": 0.04624578,
-    "latest_request": null
+    "request_count": 200,
+    "cumulative_estimated_cost_usd": 0.092715,
+    "cost_per_evaluated_candidate_usd": 0.00020695,
+    "cost_per_deepseek_promote_usd": 0.0037086,
+    "cost_per_observed_ready_or_contacted_usd": 0.04635756,
+    "latest_request": {
+      "at": "2026-09-17T15:26:51Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 442,
+      "completion_tokens": 190,
+      "total_tokens": 760,
+      "estimated_cost_usd": 0.00022354
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "90357320d4af16db482fe3e7cc00cb48",
-      "evaluated_at": "2026-09-14T22:02:15Z",
-      "organization": "KoBold Metals",
-      "title": "Frontend Software Engineer ",
-      "location": "Worldwide",
-      "opportunity_url": "https://remotelanders.com/jobs/frontend-software-engineer-kobold-metals-1j5ryg",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Worldwide-remote Frontend Software Engineer with only a generic 'frontend' keyword match; no WordPress/WooCommerce, no commercial/freelance signals, and 'Software Engineer' framing suggests a product-engineering role rather than freelance web work.",
-      "deepseek_risk_flags": [
-        "thin_keyword_match",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "likely_full_time_engineering_role"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00011075,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1c1bf59ad3d63d72be8a1e4830b63237",
       "evaluated_at": "2026-09-14T22:02:15Z",
@@ -1479,10 +1462,39 @@
       "observed_downstream_statuses": [
         "REVIEW_REQUIRED_TRUTHFUL_FIT_SENIORITY"
       ]
+    },
+    {
+      "signal_key": "56455970efbe1b2523082ff36a3137df",
+      "evaluated_at": "2026-09-17T15:26:51Z",
+      "organization": "epilot GmbH",
+      "title": "Senior/Staff Product Engineer (Frontend) (m/f/d)",
+      "location": "Remote job",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/epilot-gmbh/remote-senior-staff-product-engineer-frontend-koln-341906",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend-focused senior/staff product engineer role with matched keywords (css, html, javascript, frontend, ux) and remote listing, but title seniority and 'Product Engineer' framing suggest a full-time product role rather than freelance/contract web work; no explicit WordPress/WooCommerce or maintenance scope, and geo/contract compatibility unverified.",
+      "deepseek_risk_flags": [
+        "senior_staff_level_likely_full_time",
+        "no_wordpress_woocommerce_scope",
+        "contract_type_unknown",
+        "geo_remote_to_verify",
+        "possible_react_or_framework_heavy_stack_unconfirmed"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00022354,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-17T15:08:57Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-17T15:26:48Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
