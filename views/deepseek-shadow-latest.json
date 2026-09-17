@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-17T12:09:10Z",
+  "updated_at": "2026-09-17T12:27:06Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 443,
+    "evaluated_total": 444,
     "agreement_count": 232,
-    "agreement_pct": 52.37,
+    "agreement_pct": 52.25,
     "deepseek_promote": 25,
-    "vds_promote": 156,
+    "vds_promote": 157,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 135
+    "deepseek_demoted_from_vds_promote": 136
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
-    "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.56,
+    "vds_promote_hot": 5,
+    "vds_promote_hot_rate_pct": 3.18,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 195,
-    "cumulative_estimated_cost_usd": 0.091673,
-    "cost_per_evaluated_candidate_usd": 0.00020694,
-    "cost_per_deepseek_promote_usd": 0.00366691,
-    "cost_per_observed_ready_or_contacted_usd": 0.04583632,
-    "latest_request": null
+    "request_count": 196,
+    "cumulative_estimated_cost_usd": 0.091895,
+    "cost_per_evaluated_candidate_usd": 0.00020697,
+    "cost_per_deepseek_promote_usd": 0.00367579,
+    "cost_per_observed_ready_or_contacted_usd": 0.04594744,
+    "latest_request": {
+      "at": "2026-09-17T12:27:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 442,
+      "completion_tokens": 188,
+      "total_tokens": 758,
+      "estimated_cost_usd": 0.00022222
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "99a9a6f0f4f96d1a7f342687d4a7ebb7",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "myDartpfeil",
-      "title": "Growth & Marketing Manager E-Commerce (m/w/d)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/mydartpfeil/growth-marketing-manager-e-commerce-berlin-421742",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Growth & marketing manager e-commerce role in Berlin; CSS/HTML/JS mentions are incidental and freelance keywords are generic.",
-      "deepseek_risk_flags": [
-        "non_technical_role",
-        "geo_mismatch",
-        "generic_commercial_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c7bd4619963d0384e6afca83defc4ab6",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1474,10 +1458,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f74fe04f96e97a4f1204e781d9cc4f6c",
+      "evaluated_at": "2026-09-17T12:27:04Z",
+      "organization": "Jobgether",
+      "title": "Frontend React Developer - iGaming",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/frontend-react-developer-igaming-1e01ae62a9",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is React frontend developer in iGaming; the only matched profile keyword is generic 'frontend' with no WordPress, WooCommerce, custom HTML/CSS/JS, performance, maintenance or UX/UI scope, so truthful stack fit is weak and the role is React-heavy.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_stack",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "igaming_domain_may_require_employment",
+        "geo_only_EU_EMEA_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00022222,
+      "observed_hot": true,
+      "observed_hot_score": 90.0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-17T12:09:05Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-17T12:27:01Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

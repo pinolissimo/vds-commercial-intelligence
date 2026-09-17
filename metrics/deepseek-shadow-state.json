@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 457,
+  "runs": 458,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12009,6 +12009,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f74fe04f96e97a4f1204e781d9cc4f6c",
+      "evaluated_at": "2026-09-17T12:27:04Z",
+      "organization": "Jobgether",
+      "title": "Frontend React Developer - iGaming",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/frontend-react-developer-igaming-1e01ae62a9",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is React frontend developer in iGaming; the only matched profile keyword is generic 'frontend' with no WordPress, WooCommerce, custom HTML/CSS/JS, performance, maintenance or UX/UI scope, so truthful stack fit is weak and the role is React-heavy.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_stack",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "igaming_domain_may_require_employment",
+        "geo_only_EU_EMEA_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00022222,
+      "observed_hot": true,
+      "observed_hot_score": 90.0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -14351,9 +14380,21 @@
       "completion_tokens": 190,
       "total_tokens": 705,
       "estimated_cost_usd": 0.00021144
+    },
+    {
+      "at": "2026-09-17T12:27:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 442,
+      "completion_tokens": 188,
+      "total_tokens": 758,
+      "estimated_cost_usd": 0.00022222
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-17T12:09:09Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-17T12:27:04Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
