@@ -17,7 +17,7 @@ explicitly excluded are counted.
 from __future__ import annotations
 
 import json
-from datetime import datetime
+from datetime import datetime, time
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -70,6 +70,15 @@ def is_success(event):
         and event.get("count_as_successful_outbound") is not False
         and event_id(event) is not None
     )
+
+
+def in_active_window(event, date_str):
+    """Count throughput only inside the declared 09:00–19:00 Europe/Madrid window."""
+    dt = parse_dt(event.get("sent_at_local") or event.get("sent_at"))
+    if not dt:
+        return False
+    local = dt.astimezone(MADRID)
+    return str(local.date()) == date_str and time(9, 0) <= local.time().replace(tzinfo=None) < time(19, 0)
 
 
 def source_paths():
@@ -194,14 +203,18 @@ def main():
 
     today_messages.sort(key=lambda x: x.get("sent_at", ""), reverse=True)
     first_contacts = [m for m in today_messages if m.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"]
+    active_window_messages = [m for m in today_messages if in_active_window(m, date_str)]
+    active_window_first_contacts = [m for m in first_contacts if in_active_window(m, date_str)]
 
     elapsed = ((dashboard.get("today") or {}).get("active_window_elapsed_hours") or 0)
-    messages_per_hour = round(len(today_messages) / elapsed, 2) if elapsed else 0.0
-    first_contacts_per_hour = round(len(first_contacts) / elapsed, 2) if elapsed else 0.0
+    messages_per_hour = round(len(active_window_messages) / elapsed, 2) if elapsed else 0.0
+    first_contacts_per_hour = round(len(active_window_first_contacts) / elapsed, 2) if elapsed else 0.0
     overlay_updated_at = live.get("updated_at")
 
     today_api["sent_count"] = len(today_messages)
     today_api["first_contact_count"] = len(first_contacts)
+    today_api["active_window_sent_count"] = len(active_window_messages)
+    today_api["active_window_first_contact_count"] = len(active_window_first_contacts)
     today_api["messages_per_active_hour"] = messages_per_hour
     today_api["first_contacts_per_active_hour"] = first_contacts_per_hour
     today_api["sent"] = today_messages
@@ -212,6 +225,8 @@ def main():
     dash_today = dashboard.setdefault("today", {})
     dash_today["sent"] = len(today_messages)
     dash_today["first_contacts_sent"] = len(first_contacts)
+    dash_today["active_window_sent_count"] = len(active_window_messages)
+    dash_today["active_window_first_contact_count"] = len(active_window_first_contacts)
     dash_today["messages_per_active_hour"] = messages_per_hour
     dash_today["first_contacts_per_active_hour"] = first_contacts_per_hour
     dashboard.setdefault("headline", {})["sent_today"] = len(today_messages)
@@ -222,6 +237,8 @@ def main():
     outbound["messages"] = messages
     outbound["today_count"] = len(today_messages)
     outbound["today_first_contact_count"] = len(first_contacts)
+    outbound["active_window_sent_count"] = len(active_window_messages)
+    outbound["active_window_first_contact_count"] = len(active_window_first_contacts)
     outbound["messages_per_active_hour"] = messages_per_hour
     outbound["provider_live_overlay_updated_at"] = overlay_updated_at
     outbound["provider_live_sources"] = live.get("loaded_sources", 0)
@@ -234,6 +251,7 @@ def main():
         "Outbound live overlay: "
         f"{len(today_messages)} successful outbound today, "
         f"{len(first_contacts)} first contacts, "
+        f"{len(active_window_messages)} inside active window, "
         f"{live.get('pending_sources', 0)} pending sources reconciled"
     )
     return 0
