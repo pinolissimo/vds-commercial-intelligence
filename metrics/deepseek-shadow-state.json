@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 445,
+  "runs": 446,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -11863,6 +11863,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "874069f6d55d79b3cd1d49d64684e481",
+      "evaluated_at": "2026-09-17T05:26:50Z",
+      "organization": "Spotify",
+      "title": "Fullstack Engineer - Subscriptions",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/spotify/fullstack-engineer-subscriptions-london-184497",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Fullstack Engineer role at Spotify in London is a large-company product engineering position with no evidence of WordPress/WooCommerce, freelance/contract compatibility, or Spain/Italy geo fit; matched keywords (css, frontend, ui) are generic and the 'partner'/'collaboration' hits are unrelated boilerplate.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "fullstack_core_role_likely_react_node",
+        "on_site_london_not_target_geo",
+        "no_freelance_or_contract_signal",
+        "generic_keyword_matches_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022288,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -14157,9 +14186,21 @@
       "completion_tokens": 338,
       "total_tokens": 1185,
       "estimated_cost_usd": 0.00038216
+    },
+    {
+      "at": "2026-09-17T05:26:50Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 433,
+      "completion_tokens": 192,
+      "total_tokens": 753,
+      "estimated_cost_usd": 0.00022288
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-17T03:58:34Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-17T05:26:50Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

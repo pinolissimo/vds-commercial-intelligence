@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-17T03:58:35Z",
+  "updated_at": "2026-09-17T05:26:52Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 438,
-    "agreement_count": 228,
-    "agreement_pct": 52.05,
+    "evaluated_total": 439,
+    "agreement_count": 229,
+    "agreement_pct": 52.16,
     "deepseek_promote": 25,
     "vds_promote": 155,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 191,
-    "cumulative_estimated_cost_usd": 0.09019,
-    "cost_per_evaluated_candidate_usd": 0.00020591,
-    "cost_per_deepseek_promote_usd": 0.00360759,
-    "cost_per_observed_ready_or_contacted_usd": 0.04509482,
-    "latest_request": null
+    "request_count": 192,
+    "cumulative_estimated_cost_usd": 0.090413,
+    "cost_per_evaluated_candidate_usd": 0.00020595,
+    "cost_per_deepseek_promote_usd": 0.0036165,
+    "cost_per_observed_ready_or_contacted_usd": 0.04520627,
+    "latest_request": {
+      "at": "2026-09-17T05:26:50Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 433,
+      "completion_tokens": 192,
+      "total_tokens": 753,
+      "estimated_cost_usd": 0.00022288
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "3638eaaa8012136592092db2bfd60e08",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "",
-      "title": "Graphic Designer",
-      "location": "",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Graphic designer role; UI/website/redesign overlap is peripheral and design-focused, not a WordPress/web-dev fit.",
-      "deepseek_risk_flags": [
-        "design_role_not_dev",
-        "generic_commercial_keywords",
-        "location_unknown"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "fc41f2baf2e0da2cc46c4bc67b96335e",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1463,10 +1447,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "874069f6d55d79b3cd1d49d64684e481",
+      "evaluated_at": "2026-09-17T05:26:50Z",
+      "organization": "Spotify",
+      "title": "Fullstack Engineer - Subscriptions",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/spotify/fullstack-engineer-subscriptions-london-184497",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Fullstack Engineer role at Spotify in London is a large-company product engineering position with no evidence of WordPress/WooCommerce, freelance/contract compatibility, or Spain/Italy geo fit; matched keywords (css, frontend, ui) are generic and the 'partner'/'collaboration' hits are unrelated boilerplate.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "fullstack_core_role_likely_react_node",
+        "on_site_london_not_target_geo",
+        "no_freelance_or_contract_signal",
+        "generic_keyword_matches_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022288,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-17T03:58:32Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-17T05:26:46Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
