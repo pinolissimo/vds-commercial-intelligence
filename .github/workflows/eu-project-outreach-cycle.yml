@@ -40,7 +40,20 @@ jobs:
           VDS_SMTP_USER: ${{ secrets.VDS_SMTP_USER }}
           VDS_SMTP_PASSWORD: ${{ secrets.VDS_SMTP_PASSWORD }}
           VDS_SMTP_FROM: ${{ secrets.VDS_SMTP_FROM }}
-        run: python scripts/eu_project_cycle.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Provider-adjacent hard gate. Discovery/qualification continue 24/7,
+          # but SMTP credentials are removed outside 09:00-19:00 Europe/Madrid.
+          MADRID_HOUR=$(TZ=Europe/Madrid date +%H)
+          MADRID_HOUR=$((10#$MADRID_HOUR))
+          if (( MADRID_HOUR < 9 || MADRID_HOUR >= 19 )); then
+            echo "BLOCKED_OUTSIDE_SEND_WINDOW: Madrid hour=${MADRID_HOUR}; discovery remains enabled"
+            unset VDS_SMTP_HOST VDS_SMTP_PORT VDS_SMTP_USER VDS_SMTP_PASSWORD VDS_SMTP_FROM
+          else
+            echo "SEND_WINDOW_OPEN: Madrid hour=${MADRID_HOUR}"
+          fi
+          python scripts/eu_project_cycle.py
 
       - name: Persist EU radar state safely
         shell: bash
@@ -66,6 +79,9 @@ jobs:
             git rebase origin/main || {
               git rebase --abort 2>/dev/null || true
               git reset --hard origin/main
+              # Re-run with SMTP forcibly disabled: persistence conflict recovery
+              # must never create a second professional outbound.
+              unset VDS_SMTP_HOST VDS_SMTP_PORT VDS_SMTP_USER VDS_SMTP_PASSWORD VDS_SMTP_FROM
               python scripts/eu_project_cycle.py
               git add api/v1/eu-project-radar.json state/eu-project-outreach-state.json outreach/eu-project-contact-queue.jsonl
               git commit -m "data: refresh cyclic EU project radar" || exit 0
