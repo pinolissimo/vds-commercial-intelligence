@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-16T22:12:00Z",
+  "updated_at": "2026-09-17T00:35:23Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 436,
+    "evaluated_total": 438,
     "agreement_count": 228,
-    "agreement_pct": 52.29,
+    "agreement_pct": 52.05,
     "deepseek_promote": 25,
-    "vds_promote": 153,
+    "vds_promote": 155,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 132
+    "deepseek_demoted_from_vds_promote": 134
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 4,
-    "vds_promote_hot_rate_pct": 2.61,
+    "vds_promote_hot_rate_pct": 2.58,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 190,
-    "cumulative_estimated_cost_usd": 0.089807,
-    "cost_per_evaluated_candidate_usd": 0.00020598,
-    "cost_per_deepseek_promote_usd": 0.0035923,
-    "cost_per_observed_ready_or_contacted_usd": 0.04490375,
+    "request_count": 191,
+    "cumulative_estimated_cost_usd": 0.09019,
+    "cost_per_evaluated_candidate_usd": 0.00020591,
+    "cost_per_deepseek_promote_usd": 0.00360759,
+    "cost_per_observed_ready_or_contacted_usd": 0.04509482,
     "latest_request": {
-      "at": "2026-09-16T22:11:58Z",
+      "at": "2026-09-17T00:35:20Z",
       "model": "deepseek-flash",
       "candidate_count": 2,
       "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 692,
-      "completion_tokens": 284,
-      "total_tokens": 1104,
-      "estimated_cost_usd": 0.00034058
+      "prompt_cache_miss_tokens": 719,
+      "completion_tokens": 338,
+      "total_tokens": 1185,
+      "estimated_cost_usd": 0.00038216
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c015dc0ace783f52ca134b7c3f7c21ed",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "",
-      "title": "Fullstack Developer - Retail",
-      "location": "Romania",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Fullstack retail developer role in Romania; only generic frontend/JS overlap and no WordPress/web-dev core scope.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "geo_mismatch",
-        "generic_commercial_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "66bd13d456661ab95742f2206667b1f8",
-      "evaluated_at": "2026-09-14T10:21:14Z",
-      "organization": "Dedale Intelligence",
-      "title": "Content & Growth Marketing Specialist",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/dedale-intelligence/content-growth-marketing-specialist-paris-70774",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Content & growth marketing specialist role in Paris; CMS/website mentions are incidental, not a web-development opportunity.",
-      "deepseek_risk_flags": [
-        "non_technical_role",
-        "geo_mismatch",
-        "generic_commercial_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 7.9468e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "3638eaaa8012136592092db2bfd60e08",
       "evaluated_at": "2026-09-14T10:21:14Z",
@@ -1470,10 +1416,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "580c32b05089d5c34ba8b13efc920077",
+      "evaluated_at": "2026-09-17T00:35:20Z",
+      "organization": "Quantum",
+      "title": "Senior Frontend Engineer (Web & App)",
+      "location": "Maidstone",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/quantum/senior-frontend-engineer-web-app-maidstone-193856",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Engineer role in Maidstone (UK) with only generic frontend/UX/website keyword matches; no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo is outside primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_scope",
+        "freelance_compatibility_unverified",
+        "generic_keyword_matches_only",
+        "partner_mention_not_proof_of_freelance"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019108,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d6a56b7df7d65e216de60ac37e11db06",
+      "evaluated_at": "2026-09-17T00:35:20Z",
+      "organization": "Quantum-Systems GmbH",
+      "title": "(Senior) Frontend Engineer – Cloud Solutions (m/f/d)",
+      "location": "Gilching, Bayern, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/quantum-systems-gmbh/senior-frontend-engineer-cloud-solutions-gilching-250205",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 86,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 48.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend Engineer role at Quantum-Systems GmbH in Gilching, Germany; matches frontend/UI/maintenance keywords but core stack appears cloud-solutions oriented with no explicit WordPress/WooCommerce or freelance/contract evidence, and geo is outside primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_scope",
+        "freelance_compatibility_unverified",
+        "cloud_solutions_stack_uncertain",
+        "maintenance_keyword_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019108,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-09-16T22:11:56Z",
+  "source_semantic_updated_at": "2026-09-17T00:35:16Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
