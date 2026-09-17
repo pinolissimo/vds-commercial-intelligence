@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 470,
+  "runs": 471,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12154,6 +12154,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6b1401567bcfe218ab46ce7cad8ec657",
+      "evaluated_at": "2026-09-17T16:03:30Z",
+      "organization": "Preply",
+      "title": "Senior Full-stack Engineer (frontend-heavy)",
+      "location": "Barcelona",
+      "opportunity_url": "https://jobs.ashbyhq.com/preply/bc9fa0e3-a6cd-4ec1-9c2d-a912cc14695f/application",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 93,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior full-stack role at Preply in Barcelona is frontend-heavy and lists css/frontend/php/ux, but it is a full-time hybrid position with no explicit freelance/contract compatibility; 'partner'/'collaboration' appear as generic commercial keywords rather than proof of external collaboration.",
+      "deepseek_risk_flags": [
+        "full-time employment type",
+        "hybrid on-site in Barcelona",
+        "no explicit freelance/contract signal",
+        "generic collaboration/partner keywords",
+        "full-stack scope may exceed WordPress/WooCommerce focus"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00018316,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e30b978070812bc6b7c0f8aadb59ee20",
+      "evaluated_at": "2026-09-17T16:03:30Z",
+      "organization": "",
+      "title": "Software Engineer",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Generic 'Software Engineer' posting with no organization, no location country, no publication date, no employment type and no remote state; keyword matches are broad and the role has no confirmed stack fit or explicit demand for the target profile.",
+      "deepseek_risk_flags": [
+        "missing organization",
+        "missing location/country",
+        "missing publication date",
+        "missing employment type",
+        "missing remote state",
+        "no opportunity URL",
+        "unverified raw public signal",
+        "generic software engineer title"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00018316,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -14556,9 +14617,21 @@
       "completion_tokens": 190,
       "total_tokens": 760,
       "estimated_cost_usd": 0.00022354
+    },
+    {
+      "at": "2026-09-17T16:03:30Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 692,
+      "completion_tokens": 323,
+      "total_tokens": 1143,
+      "estimated_cost_usd": 0.00036632
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-17T15:44:42Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-17T16:03:30Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
