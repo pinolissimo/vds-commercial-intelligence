@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-17T15:39:11+02:00",
+  "generated_at": "2026-09-17T15:57:05+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -12,15 +12,15 @@
     "replies_negative": 0,
     "replies_neutral": 2,
     "hard_bounces": 0,
-    "messages_per_active_hour": 1.65,
-    "first_contacts_per_active_hour": 1.65,
-    "active_window_elapsed_hours": 6.65,
+    "messages_per_active_hour": 1.58,
+    "first_contacts_per_active_hour": 1.58,
+    "active_window_elapsed_hours": 6.95,
     "sending_window": "09:00-19:00 Europe/Madrid"
   },
   "headline": {
-    "semantic_input_last_run": 2519,
-    "semantic_pass_last_run": 136,
-    "semantic_pass_rate_pct": 5.4,
+    "semantic_input_last_run": 2500,
+    "semantic_pass_last_run": 130,
+    "semantic_pass_rate_pct": 5.2,
     "active_opportunities": 53,
     "ready": 4,
     "manual_action": 5,
@@ -32,7 +32,7 @@
     "ready_legacy_compat_previous_value": 25,
     "executable_ready_now": 4,
     "legacy_ready_advisory": 21,
-    "semantic_pass_backlog_proxy": 136
+    "semantic_pass_backlog_proxy": 130
   },
   "status_counts": {
     "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
@@ -59,8 +59,8 @@
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
       "score": 100.0,
-      "mode": "COOLDOWN",
-      "harvest_cycles": 0,
+      "mode": "HARVEST",
+      "harvest_cycles": 1,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-18T07:38:51.475460Z",
       "heat_pct": 100.0
@@ -72,7 +72,7 @@
       "territory": "Roma",
       "score": 49.16,
       "mode": "HARVEST",
-      "harvest_cycles": 2,
+      "harvest_cycles": 3,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-18T07:03:01.829147Z",
       "heat_pct": 49.2
@@ -90,10 +90,10 @@
       "heat_pct": 40.5
     },
     {
-      "area": "Spain|Aragón|Zaragoza",
-      "country": "Spain",
-      "region": "Aragón",
-      "territory": "Zaragoza",
+      "area": "Italy|Puglia|Bari",
+      "country": "Italy",
+      "region": "Puglia",
+      "territory": "Bari",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -114,10 +114,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Puglia|Bari",
-      "country": "Italy",
-      "region": "Puglia",
-      "territory": "Bari",
+      "area": "Spain|Aragón|Zaragoza",
+      "country": "Spain",
+      "region": "Aragón",
+      "territory": "Zaragoza",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -150,10 +150,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Piemonte|Torino",
+      "area": "Italy|Emilia-Romagna|Piacenza",
       "country": "Italy",
-      "region": "Piemonte",
-      "territory": "Torino",
+      "region": "Emilia-Romagna",
+      "territory": "Piacenza",
       "score": 25.96,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -162,10 +162,10 @@
       "heat_pct": 26.0
     },
     {
-      "area": "Italy|Emilia-Romagna|Piacenza",
+      "area": "Italy|Piemonte|Torino",
       "country": "Italy",
-      "region": "Emilia-Romagna",
-      "territory": "Piacenza",
+      "region": "Piemonte",
+      "territory": "Torino",
       "score": 25.96,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -193,8 +193,8 @@
       "score": 17.49,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 488,
-      "cooldown_until": "2026-09-18T07:38:51.475460Z",
+      "low_yield_cycles": 489,
+      "cooldown_until": "2026-09-18T07:56:40.782542Z",
       "heat_pct": 17.5
     }
   ],
@@ -204,7 +204,7 @@
       "territories": 108,
       "average_score": 3.78,
       "best_score": 100.0,
-      "harvest_territories": 1,
+      "harvest_territories": 2,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
@@ -238,9 +238,9 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 2519,
-      "semantic_input": 2519,
-      "semantic_pass": 136,
+      "raw_signals": 2500,
+      "semantic_input": 2500,
+      "semantic_pass": 130,
       "company_verified": null,
       "route_found": null,
       "dedup_ok": null,
@@ -257,9 +257,9 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 2332,
-      "semantic_review": 51,
-      "semantic_pass_to_executable_gap_proxy": 132,
+      "semantic_reject": 2320,
+      "semantic_review": 50,
+      "semantic_pass_to_executable_gap_proxy": 126,
       "legacy_ready_advisory_excluded": 21
     },
     "status_classes": {
@@ -279,9 +279,9 @@
       "CONTACTED_PENDING_CANONICAL_RECONCILIATION": 1
     },
     "pressure": {
-      "qualified_backlog_proxy": 136,
+      "qualified_backlog_proxy": 130,
       "executable_ready_now": 4,
-      "conversion_pressure_ratio": 34.0,
+      "conversion_pressure_ratio": 32.5,
       "turbo_enabled": true,
       "turbo_reason": "QUALIFIED_BACKLOG_PRESSURE"
     }
@@ -309,14 +309,14 @@
   "provider_inbound_pending_sources": 0,
   "source_health": {
     "schema_version": "2.1",
-    "reconciled_at": "2026-09-17T13:39:12Z",
+    "reconciled_at": "2026-09-17T13:57:05Z",
     "provider_observed_at": "2026-09-17T12:14:00Z",
-    "provider_observation_fresh": true,
+    "provider_observation_fresh": false,
     "outbound_last_event_at": "2026-09-17T13:34:01Z",
     "inbound_last_event_at": "2026-09-17T13:01:06Z",
-    "outbound_reconciled": true,
-    "inbound_reconciled": true,
-    "outbound_source_fresh": true,
-    "reply_source_fresh": true
+    "outbound_reconciled": false,
+    "inbound_reconciled": false,
+    "outbound_source_fresh": false,
+    "reply_source_fresh": false
   }
 }
