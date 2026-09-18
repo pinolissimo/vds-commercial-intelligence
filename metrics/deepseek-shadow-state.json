@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 497,
+  "runs": 498,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12668,6 +12668,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "23cf80bf618e74d01532335eddb6593c",
+      "evaluated_at": "2026-09-18T13:10:34Z",
+      "organization": "",
+      "title": "Sanctuary Computer: Senior Shopify Developer",
+      "location": "",
+      "opportunity_url": "https://weworkremotely.com/remote-jobs/sanctuary-computer-senior-shopify-developer",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Shopify Developer role with frontend/CSS/Core Web Vitals/accessibility/CMS overlap, but core stack is Shopify/Liquid rather than WordPress/WooCommerce, so stack fit is partial and role seniority/employment type is unclear.",
+      "deepseek_risk_flags": [
+        "shopify_not_wordpress",
+        "senior_level_may_exclude_freelance",
+        "employment_type_unknown",
+        "remote_geo_unverified",
+        "no_explicit_freelance_or_contract_terms"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020704,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -15214,9 +15243,21 @@
       "completion_tokens": 316,
       "total_tokens": 1183,
       "estimated_cost_usd": 0.00037204
+    },
+    {
+      "at": "2026-09-18T13:10:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 439,
+      "completion_tokens": 166,
+      "total_tokens": 733,
+      "estimated_cost_usd": 0.00020704
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-18T12:52:50Z",
+  "updated_at": "2026-09-18T13:10:34Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T12:52:53Z",
+  "updated_at": "2026-09-18T13:10:36Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 466,
+    "evaluated_total": 467,
     "agreement_count": 240,
-    "agreement_pct": 51.5,
+    "agreement_pct": 51.39,
     "deepseek_promote": 25,
     "vds_promote": 167,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 212,
-    "cumulative_estimated_cost_usd": 0.0966,
+    "request_count": 213,
+    "cumulative_estimated_cost_usd": 0.096807,
     "cost_per_evaluated_candidate_usd": 0.0002073,
-    "cost_per_deepseek_promote_usd": 0.003864,
-    "cost_per_observed_ready_or_contacted_usd": 0.04829995,
+    "cost_per_deepseek_promote_usd": 0.00387228,
+    "cost_per_observed_ready_or_contacted_usd": 0.04840346,
     "latest_request": {
-      "at": "2026-09-18T12:52:50Z",
+      "at": "2026-09-18T13:10:34Z",
       "model": "deepseek-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 2,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 739,
-      "completion_tokens": 316,
-      "total_tokens": 1183,
-      "estimated_cost_usd": 0.00037204
+      "prompt_cache_miss_tokens": 439,
+      "completion_tokens": 166,
+      "total_tokens": 733,
+      "estimated_cost_usd": 0.00020704
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4d73a9e172fe15a0b2c6a38efaabaf4c",
-      "evaluated_at": "2026-09-15T20:19:20Z",
-      "organization": "knowmad mood",
-      "title": "Desarrollador/a Frontend SmartTV – React Native",
-      "location": "Madrid",
-      "opportunity_url": "https://knowmadmood.teamtailor.com/jobs/8384104-desarrollador-a-frontend-smarttv-react-native",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Core role is React Native frontend development for SmartTV, a stack mismatch with the target WordPress/WooCommerce/custom HTML-CSS-JS profile; only generic 'frontend' and 'javascript' overlap, with no WordPress, WooCommerce, performance, or maintenance scope.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_react_native",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "mobile_tv_specialization"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00021276,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f6021a3adcadb3f7eba2cf4c6a4cc9f2",
       "evaluated_at": "2026-09-16T01:20:14Z",
@@ -1497,10 +1469,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "23cf80bf618e74d01532335eddb6593c",
+      "evaluated_at": "2026-09-18T13:10:34Z",
+      "organization": "",
+      "title": "Sanctuary Computer: Senior Shopify Developer",
+      "location": "",
+      "opportunity_url": "https://weworkremotely.com/remote-jobs/sanctuary-computer-senior-shopify-developer",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Shopify Developer role with frontend/CSS/Core Web Vitals/accessibility/CMS overlap, but core stack is Shopify/Liquid rather than WordPress/WooCommerce, so stack fit is partial and role seniority/employment type is unclear.",
+      "deepseek_risk_flags": [
+        "shopify_not_wordpress",
+        "senior_level_may_exclude_freelance",
+        "employment_type_unknown",
+        "remote_geo_unverified",
+        "no_explicit_freelance_or_contract_terms"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020704,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-09-18T12:52:46Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-18T13:10:30Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
