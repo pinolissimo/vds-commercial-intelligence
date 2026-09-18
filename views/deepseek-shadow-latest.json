@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T00:19:50Z",
+  "updated_at": "2026-09-18T01:03:36Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 456,
+    "evaluated_total": 457,
     "agreement_count": 239,
-    "agreement_pct": 52.41,
+    "agreement_pct": 52.3,
     "deepseek_promote": 25,
-    "vds_promote": 160,
+    "vds_promote": 161,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 139
+    "deepseek_demoted_from_vds_promote": 140
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 3.12,
+    "vds_promote_hot_rate_pct": 3.11,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 204,
-    "cumulative_estimated_cost_usd": 0.094074,
-    "cost_per_evaluated_candidate_usd": 0.0002063,
-    "cost_per_deepseek_promote_usd": 0.00376297,
-    "cost_per_observed_ready_or_contacted_usd": 0.04703708,
-    "latest_request": null
+    "request_count": 205,
+    "cumulative_estimated_cost_usd": 0.094424,
+    "cost_per_evaluated_candidate_usd": 0.00020662,
+    "cost_per_deepseek_promote_usd": 0.00377698,
+    "cost_per_observed_ready_or_contacted_usd": 0.04721225,
+    "latest_request": {
+      "at": "2026-09-18T01:03:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 181,
+      "completion_tokens": 201,
+      "total_tokens": 766,
+      "estimated_cost_usd": 0.00035034
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "3d37bd9ab79a03e9dbc53e4e079cc64e",
-      "evaluated_at": "2026-09-15T07:00:41Z",
-      "organization": "capco",
-      "title": "Lead Product Designer (UI & Design Systems) - Product & Experience",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/capco/lead-product-designer-ui-design-systems-product-experience-261587",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Lead Product Designer role is a design/UX position, not a web development role; matched keywords are incidental and 'partner' is generic collaboration language.",
-      "deepseek_risk_flags": [
-        "design_role_not_development",
-        "generic_partner_mention_not_freelance_proof",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_compatibility_evidence"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0003323175,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "93a814072fec75ae54142cecb769bad9",
       "evaluated_at": "2026-09-15T09:03:37Z",
@@ -1484,10 +1467,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3ba2edf9a3aa1939263acdd1dae3249b",
+      "evaluated_at": "2026-09-18T01:03:34Z",
+      "organization": "Patrianna",
+      "title": "Lead Frontend Engineer",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/lead-frontend-engineer-6a081e15da",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Lead Frontend Engineer' at EU/EMEA remote indicates frontend relevance, but no evidence of WordPress/WooCommerce, custom HTML/CSS/JS, performance, or maintenance scope; 'Lead' seniority and generic frontend framing suggest a framework-heavy core engineering role rather than freelance web-dev fit.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "likely_framework_heavy_core_role",
+        "senior_lead_seniority_may_exclude_freelance",
+        "employment_type_unknown",
+        "remote_state_unverified",
+        "no_explicit_freelance_or_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00035034,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-18T00:19:46Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-18T01:03:30Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

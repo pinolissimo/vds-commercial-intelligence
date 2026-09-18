@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 475,
+  "runs": 476,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12384,6 +12384,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3ba2edf9a3aa1939263acdd1dae3249b",
+      "evaluated_at": "2026-09-18T01:03:34Z",
+      "organization": "Patrianna",
+      "title": "Lead Frontend Engineer",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/lead-frontend-engineer-6a081e15da",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Lead Frontend Engineer' at EU/EMEA remote indicates frontend relevance, but no evidence of WordPress/WooCommerce, custom HTML/CSS/JS, performance, or maintenance scope; 'Lead' seniority and generic frontend framing suggest a framework-heavy core engineering role rather than freelance web-dev fit.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "likely_framework_heavy_core_role",
+        "senior_lead_seniority_may_exclude_freelance",
+        "employment_type_unknown",
+        "remote_state_unverified",
+        "no_explicit_freelance_or_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00035034,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -14834,9 +14864,21 @@
       "completion_tokens": 167,
       "total_tokens": 746,
       "estimated_cost_usd": 0.00015581
+    },
+    {
+      "at": "2026-09-18T01:03:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 181,
+      "completion_tokens": 201,
+      "total_tokens": 766,
+      "estimated_cost_usd": 0.00035034
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-18T00:19:50Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-18T01:03:34Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
