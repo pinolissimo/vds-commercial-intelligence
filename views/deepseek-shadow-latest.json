@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T13:52:09Z",
+  "updated_at": "2026-09-18T14:04:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 467,
-    "agreement_count": 240,
-    "agreement_pct": 51.39,
+    "evaluated_total": 468,
+    "agreement_count": 241,
+    "agreement_pct": 51.5,
     "deepseek_promote": 25,
     "vds_promote": 167,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 213,
-    "cumulative_estimated_cost_usd": 0.096807,
-    "cost_per_evaluated_candidate_usd": 0.0002073,
-    "cost_per_deepseek_promote_usd": 0.00387228,
-    "cost_per_observed_ready_or_contacted_usd": 0.04840346,
-    "latest_request": null
+    "request_count": 214,
+    "cumulative_estimated_cost_usd": 0.096952,
+    "cost_per_evaluated_candidate_usd": 0.00020716,
+    "cost_per_deepseek_promote_usd": 0.00387806,
+    "cost_per_observed_ready_or_contacted_usd": 0.04847576,
+    "latest_request": {
+      "at": "2026-09-18T14:04:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 198,
+      "completion_tokens": 149,
+      "total_tokens": 731,
+      "estimated_cost_usd": 0.00014459
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "f6021a3adcadb3f7eba2cf4c6a4cc9f2",
-      "evaluated_at": "2026-09-16T01:20:14Z",
-      "organization": "Init Ag",
-      "title": "Senior Frontend Angular Developer (all genders)",
-      "location": "Hamburg",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-frontend-angular-developer-all-genders-hamburg-173823",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Frontend Angular Developer role in Hamburg; core stack is Angular, which is a framework-heavy mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS freelance profile, and no explicit freelance/contract signal is present.",
-      "deepseek_risk_flags": [
-        "angular_core_stack_mismatch",
-        "no_freelance_signal",
-        "onsite_location_hamburg",
-        "no_wordpress_woocommerce_scope",
-        "senior_employment_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0003329775,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c5223cabf6f820bc9b5f40cd5b8735ad",
       "evaluated_at": "2026-09-16T01:20:14Z",
@@ -1487,10 +1469,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "79887654c33f9ec82d2dda0c0e6c0edb",
+      "evaluated_at": "2026-09-18T14:04:18Z",
+      "organization": "Sanctuary Computer",
+      "title": "Senior Shopify Developer",
+      "location": "Anywhere in the World",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-shopify-developer-sanctuary-computer",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 38.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Shopify Developer role at an agency; core stack is Shopify/Liquid, not WordPress/WooCommerce, so truthful stack fit is weak despite overlapping frontend/CWV/accessibility keywords.",
+      "deepseek_risk_flags": [
+        "shopify_not_wordpress",
+        "senior_level_agency_role",
+        "no_explicit_freelance_or_contract_terms",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00014459,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-18T13:52:05Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-18T14:04:14Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
