@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 491,
+  "runs": 492,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12529,6 +12529,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "29a896e4346990cec619a4fb29eb841a",
+      "evaluated_at": "2026-09-18T10:00:31Z",
+      "organization": "Bunch",
+      "title": "(Senior) Full-Stack Engineer | Frontend-leaning | Platform Team | Remote Portugal",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-full-stack-engineer-frontend-leaning-platform-team-re-54aa0bd874",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full-stack role with only 'frontend' as a matched keyword; no explicit WordPress/WooCommerce or web-performance scope, and stack fit is unverified.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_risk",
+        "full_stack_scope_unclear",
+        "no_wordpress_evidence",
+        "freelance_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00013853,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a9157ac66d275dec4a746d7685b7bd6e",
+      "evaluated_at": "2026-09-18T10:00:31Z",
+      "organization": "celonis",
+      "title": "Senior Design Engineer, Design Operations: AI-Powered Design Platform",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/celonis/senior-design-engineer-design-operations-ai-powered-design-platform-munich-226003",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Design-engineering role at an enterprise AI platform; keyword matches are generic (css, html, javascript, ux) and the 'partner' intent hit is not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "enterprise_in_house_role",
+        "no_wordpress_scope",
+        "generic_keyword_matches",
+        "freelance_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00013853,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -15039,9 +15095,21 @@
       "completion_tokens": 190,
       "total_tokens": 777,
       "estimated_cost_usd": 0.00045455
+    },
+    {
+      "at": "2026-09-18T10:00:31Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 210,
+      "completion_tokens": 343,
+      "total_tokens": 1193,
+      "estimated_cost_usd": 0.00027706
     }
   ],
-  "last_run_status": "SHADOW_API_ERROR_FAIL_OPEN",
-  "updated_at": "2026-09-18T09:37:05Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-18T10:00:31Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
