@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 482,
+  "runs": 483,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12472,6 +12472,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "fa93fafd2a31de7a35c9205b705f50e7",
+      "evaluated_at": "2026-09-18T06:13:39Z",
+      "organization": "Emidat GmbH",
+      "title": "Senior Frontend Engineer",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/emidat-gmbh/senior-frontend-engineer-munich-120556",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Engineer role at Emidat GmbH in Munich with matched keywords frontend/ui/ux/web development, but no explicit WordPress/WooCommerce or custom HTML/CSS/JS scope, no confirmed freelance/contract compatibility, and geo bucket ITALY_OR_INCLUDES_ITALY is unverified against a Munich-based posting.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_mismatch_risk_munich_vs_italy_bucket",
+        "seniority_may_imply_full_time_employment",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00047039,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -14958,9 +14987,21 @@
       "completion_tokens": 202,
       "total_tokens": 783,
       "estimated_cost_usd": 0.00023388
+    },
+    {
+      "at": "2026-09-18T06:13:39Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 447,
+      "completion_tokens": 206,
+      "total_tokens": 781,
+      "estimated_cost_usd": 0.00047039
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-18T05:55:38Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-18T06:13:39Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
