@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T04:01:27Z",
+  "updated_at": "2026-09-18T04:56:12Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 458,
+    "evaluated_total": 459,
     "agreement_count": 239,
-    "agreement_pct": 52.18,
+    "agreement_pct": 52.07,
     "deepseek_promote": 25,
     "vds_promote": 162,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 206,
-    "cumulative_estimated_cost_usd": 0.094583,
-    "cost_per_evaluated_candidate_usd": 0.00020651,
-    "cost_per_deepseek_promote_usd": 0.0037833,
-    "cost_per_observed_ready_or_contacted_usd": 0.04729125,
+    "request_count": 207,
+    "cumulative_estimated_cost_usd": 0.094816,
+    "cost_per_evaluated_candidate_usd": 0.00020657,
+    "cost_per_deepseek_promote_usd": 0.00379266,
+    "cost_per_observed_ready_or_contacted_usd": 0.0474082,
     "latest_request": {
-      "at": "2026-09-18T04:01:25Z",
+      "at": "2026-09-18T04:56:10Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 384,
-      "prompt_cache_miss_tokens": 181,
-      "completion_tokens": 175,
-      "total_tokens": 740,
-      "estimated_cost_usd": 0.00015801
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 453,
+      "completion_tokens": 202,
+      "total_tokens": 783,
+      "estimated_cost_usd": 0.00023388
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ebde799e4ea7759d6b57ff60a2b54318",
-      "evaluated_at": "2026-09-15T09:03:37Z",
-      "organization": "",
-      "title": "Intellectsoft: Senior Shopify Full-stack Developer (IR-471)",
-      "location": "",
-      "opportunity_url": "https://weworkremotely.com/remote-jobs/intellectsoft-senior-shopify-full-stack-developer-ir-471",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 38.0,
-      "deepseek_confidence": 0.65,
-      "deepseek_primary_reason": "Senior Shopify full-stack role; Shopify is adjacent but not core WordPress/WooCommerce, and 'partner' keyword is generic commercial text rather than proof of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "shopify_not_core_stack",
-        "full_stack_seniority_mismatch",
-        "partner_keyword_not_freelance_proof",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0002151225,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "33e0442fb8bdf721432c40fda14a6a04",
       "evaluated_at": "2026-09-15T09:03:37Z",
@@ -1499,10 +1471,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b795ec455d7364984a96d9d2b03ca5c9",
+      "evaluated_at": "2026-09-18T04:56:10Z",
+      "organization": "Vmlenterprisesolutions",
+      "title": "Senior UX/UI Designer (CRO)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/vmlenterprisesolutions/senior-ux-ui-designer-cro-london-380148",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior UX/UI Designer (CRO) role in London with matched profile keywords (accessibility, css, front-end, html, javascript, ui, ux, website) indicating partial stack overlap, but no explicit WordPress/WooCommerce scope and no confirmed freelance/contract compatibility; geo is London-based, not clearly Spain/Italy/EU-remote.",
+      "deepseek_risk_flags": [
+        "no_explicit_wordpress_or_woocommerce_scope",
+        "location_london_not_primary_market",
+        "employment_type_unspecified",
+        "freelance_compatibility_unverified",
+        "cro_focus_may_shift_away_from_hands_on_frontend"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00023388,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-18T04:01:22Z",
+  "source_semantic_updated_at": "2026-09-18T04:56:07Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
