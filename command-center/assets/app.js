@@ -128,6 +128,12 @@ function outboundFresh(){
   return sameMadridDay(providerStamp());
 }
 
+function outboundAvailable(){
+  if(typeof state.health?.outbound_data_available==='boolean')return state.health.outbound_data_available;
+  if(typeof state.today?.source_health?.outbound_data_available==='boolean')return state.today.source_health.outbound_data_available;
+  return state.today?.sent_count!=null || state.dashboard?.today?.sent!=null || Array.isArray(state.today?.sent);
+}
+
 function setAuthUI(){
   const icon=$('authButton')?.querySelector('.material-symbols');
   if(icon)icon.textContent=state.token?'lock_open':'lock';
@@ -219,14 +225,16 @@ function renderHeader(){
 function renderToday(){
   const t=state.dashboard?.today||state.today||{};
   const fresh=outboundFresh();
-  setText('todaySent',fresh?num(t.sent??state.today?.sent_count):'—');
-  setText('todayFirstContacts',fresh?num(t.first_contacts_sent??state.today?.first_contact_count):'—');
+  const available=outboundAvailable();
+  setText('todaySent',available?num(t.sent??state.today?.sent_count):'—');
+  setText('todayFirstContacts',available?num(t.first_contacts_sent??state.today?.first_contact_count):'—');
   setText('todayPositive',num(t.replies_positive??state.today?.replies?.positive));
   setText('todayNegative',num(t.replies_negative??state.today?.replies?.negative));
   const rate=t.messages_per_active_hour??state.today?.messages_per_active_hour;
-  setText('todayRate',fresh&&rate!=null?Number(rate).toLocaleString('it-IT',{maximumFractionDigits:2}):'—');
+  setText('todayRate',available&&rate!=null?Number(rate).toLocaleString('it-IT',{maximumFractionDigits:2}):'—');
   setText('companiesIndexed',num(state.dashboard?.headline?.companies_indexed??state.companies.length));
-  setText('sendingWindow',fresh?(t.sending_window||'09:00–19:00 Europe/Madrid'):'Outbound provider non sincronizzato');
+  const windowLabel=t.sending_window||'09:00–19:00 Europe/Madrid';
+  setText('sendingWindow',available?(fresh?windowLabel:`${windowLabel} · sync da aggiornare`):'Outbound non disponibile');
 }
 
 function renderEngine(){
@@ -325,14 +333,14 @@ function renderOpportunities(){
 
 function renderOutbound(){
   const box=$('outboundTimeline');
-  if(!outboundFresh()){
+  if(!outboundAvailable()){
     setText('outboundCount','—');
-    if(box)box.innerHTML='<div class="empty-state">Dati provider di oggi non sincronizzati. Nessuno zero viene assunto.</div>';
+    if(box)box.innerHTML='<div class="empty-state">Dati outbound non disponibili.</div>';
     return;
   }
   const items=state.today?.sent||[];
   setText('outboundCount',num(items.length));
-  if(box)box.innerHTML=items.length?items.slice(0,10).map(m=>`<div class="timeline-item"><div class="timeline-time">${safe(formatTime(m.sent_at_local||m.sent_at))}</div><div class="timeline-copy"><strong>${safe(m.organization||m.recipient||'Invio')}</strong><span>${safe(m.subject||m.recipient||'')}</span></div></div>`).join(''):'<div class="empty-state">Nessun invio provider verificato oggi.</div>';
+  if(box)box.innerHTML=items.length?items.slice(0,10).map(m=>`<div class="timeline-item"><div class="timeline-time">${safe(formatTime(m.sent_at_local||m.sent_at))}</div><div class="timeline-copy"><strong>${safe(m.organization||m.recipient||'Invio')}</strong><span>${safe(m.subject||m.recipient||'')}</span></div></div>`).join(''):`<div class="empty-state">${outboundFresh()?'Nessun invio provider verificato oggi.':'Nessun invio nell’ultima sincronizzazione · sync da aggiornare.'}</div>`;
 }
 
 function renderReplies(){
@@ -348,7 +356,7 @@ function renderReplies(){
 function renderHourlyChart(){
   if(!window.Chart)return;
   window.vdsHourlyChart?.destroy();
-  if(!outboundFresh())return;
+  if(!outboundAvailable())return;
   const bins={};
   for(let h=9;h<=19;h++)bins[h]=0;
   for(const m of state.today?.sent||[]){
