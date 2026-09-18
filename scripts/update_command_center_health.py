@@ -58,11 +58,15 @@ def main()->int:
 
     projection_outbound_ok=outbound_sources>0
     projection_inbound_ok=inbound_sources>0
-    outbound_ok=observation_fresh and sent_observed and projection_outbound_ok
-    inbound_ok=observation_fresh and inbox_observed and projection_inbound_ok
+    outbound_data_available=sent_observed and projection_outbound_ok
+    inbound_data_available=inbox_observed and projection_inbound_ok
+    outbound_reconciled=outbound_data_available
+    inbound_reconciled=inbound_data_available
+    outbound_ok=observation_fresh and outbound_data_available
+    inbound_ok=observation_fresh and inbound_data_available
 
     health.update({
-      'schema_version':'2.1','reconciled_at':reconciled_at,
+      'schema_version':'2.2','reconciled_at':reconciled_at,
       'provider_observed_at':observed_at,'provider_observation_age_hours':round(observed_age,2) if observed_age is not None else None,
       'provider_observation_max_age_hours':PROVIDER_OBSERVATION_MAX_AGE_HOURS,'provider_observation_fresh':observation_fresh,
       'latest_provider_sent_uid':observation.get('latest_sent_uid'),'provider_live_overlay_updated_at':outbound_last,
@@ -70,7 +74,9 @@ def main()->int:
       'provider_live_sources':outbound_sources,'provider_inbound_sources':inbound_sources,
       'provider_live_pending_sources':today.get('provider_live_pending_sources',dashboard.get('provider_live_pending_sources',0)),
       'provider_inbound_pending_sources':today.get('provider_inbound_pending_sources',dashboard.get('provider_inbound_pending_sources',0)),
-      'outbound_reconciled':outbound_ok,'inbound_reconciled':inbound_ok,'outbound_source_fresh':outbound_ok,'reply_source_fresh':inbound_ok,
+      'outbound_data_available':outbound_data_available,'inbound_data_available':inbound_data_available,
+      'outbound_reconciled':outbound_reconciled,'inbound_reconciled':inbound_reconciled,
+      'outbound_source_fresh':outbound_ok,'reply_source_fresh':inbound_ok,
       'provider_live_fresh':outbound_ok,'provider_inbound_fresh':inbound_ok})
     if outbound_ok and inbound_ok:
         health['status']='OK'; health['status_reason']='PROVIDER_OBSERVED_AND_PROJECTIONS_RECONCILED'
@@ -82,9 +88,11 @@ def main()->int:
         health['status']='DEGRADED'; health['status_reason']='OUTBOUND_RECONCILIATION_UNAVAILABLE'
     else:
         health['status']='DEGRADED'; health['status_reason']='INBOUND_RECONCILIATION_UNAVAILABLE'
-    source_health={'schema_version':'2.1','reconciled_at':reconciled_at,'provider_observed_at':observed_at,
+    source_health={'schema_version':'2.2','reconciled_at':reconciled_at,'provider_observed_at':observed_at,
       'provider_observation_fresh':observation_fresh,'outbound_last_event_at':outbound_last,'inbound_last_event_at':inbound_last,
-      'outbound_reconciled':outbound_ok,'inbound_reconciled':inbound_ok,'outbound_source_fresh':outbound_ok,'reply_source_fresh':inbound_ok}
+      'outbound_data_available':outbound_data_available,'inbound_data_available':inbound_data_available,
+      'outbound_reconciled':outbound_reconciled,'inbound_reconciled':inbound_reconciled,
+      'outbound_source_fresh':outbound_ok,'reply_source_fresh':inbound_ok}
     today['source_health']=dict(source_health); dashboard['source_health']=dict(source_health)
     save('health.json',health); save('today.json',today); save('dashboard.json',dashboard)
     print(json.dumps({'status':health['status'],'reason':health['status_reason'],**source_health}))
