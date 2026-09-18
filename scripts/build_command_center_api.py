@@ -450,13 +450,21 @@ def main() -> int:
     today_messages.sort(key=lambda x: x.get("sent_at", ""), reverse=True)
     today_first_contacts = [m for m in today_messages if m.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"]
 
-    # Throughput is normalized to the active 09:00–19:00 local sending window.
+    # Throughput uses only messages actually sent inside the declared 09:00–19:00 local window.
     window_start = datetime.combine(today, time(9, 0), tzinfo=MADRID)
     window_end = datetime.combine(today, time(19, 0), tzinfo=MADRID)
     elapsed_end = min(max(now_local, window_start), window_end)
     elapsed_hours = max((elapsed_end - window_start).total_seconds() / 3600.0, 0.0)
-    sent_per_hour = round(len(today_messages) / elapsed_hours, 2) if elapsed_hours > 0 else 0.0
-    first_contacts_per_hour = round(len(today_first_contacts) / elapsed_hours, 2) if elapsed_hours > 0 else 0.0
+    active_window_messages = [
+        m for m in today_messages
+        if (dt := parse_dt(m.get("sent_at"))) is not None and window_start <= dt.astimezone(MADRID) < window_end
+    ]
+    active_window_first_contacts = [
+        m for m in today_first_contacts
+        if (dt := parse_dt(m.get("sent_at"))) is not None and window_start <= dt.astimezone(MADRID) < window_end
+    ]
+    sent_per_hour = round(len(active_window_messages) / elapsed_hours, 2) if elapsed_hours > 0 else 0.0
+    first_contacts_per_hour = round(len(active_window_first_contacts) / elapsed_hours, 2) if elapsed_hours > 0 else 0.0
 
     reply_scan = scan_today_replies(today)
     summary_outcomes = daily_summary.get("outcomes") if isinstance(daily_summary.get("outcomes"), dict) else {}
@@ -573,6 +581,8 @@ def main() -> int:
         "first_contact_count": len(today_first_contacts),
         "messages_per_active_hour": sent_per_hour,
         "first_contacts_per_active_hour": first_contacts_per_hour,
+        "active_window_sent_count": len(active_window_messages),
+        "active_window_first_contact_count": len(active_window_first_contacts),
         "replies": {
             "total": total_replies,
             "positive": positive_replies,
