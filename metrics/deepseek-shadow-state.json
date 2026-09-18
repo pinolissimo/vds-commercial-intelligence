@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 509,
+  "runs": 510,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12864,6 +12864,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "95fa34d9b103adaf2652f91d46085d93",
+      "evaluated_at": "2026-09-18T19:56:32Z",
+      "organization": "Phrase",
+      "title": "Senior Web Developer, Marketing",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/phrase/senior-web-developer-marketing-united-kingdom-174791",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Web Developer, Marketing role at Phrase shows strong stack alignment (WordPress, CMS, Core Web Vitals, accessibility, migration) but is a UK-based senior in-house marketing web developer position with no explicit freelance/contract signal; 'collaboration'/'partner'/'remote' are generic commercial keywords, not proof of external collaboration compatibility.",
+      "deepseek_risk_flags": [
+        "uk_location_geo_mismatch",
+        "no_explicit_freelance_or_contract_terms",
+        "in_house_marketing_role_likely_full_time",
+        "remote_state_unverified",
+        "generic_collaboration_keywords"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022838,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -15458,9 +15487,21 @@
       "completion_tokens": 429,
       "total_tokens": 1516,
       "estimated_cost_usd": 0.00049502
+    },
+    {
+      "at": "2026-09-18T19:56:32Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 452,
+      "completion_tokens": 194,
+      "total_tokens": 774,
+      "estimated_cost_usd": 0.00022838
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-18T18:57:33Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-18T19:56:32Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
