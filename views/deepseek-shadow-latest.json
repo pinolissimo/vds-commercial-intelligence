@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T07:07:04Z",
+  "updated_at": "2026-09-18T07:25:15Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 460,
+    "evaluated_total": 461,
     "agreement_count": 239,
-    "agreement_pct": 51.96,
+    "agreement_pct": 51.84,
     "deepseek_promote": 25,
-    "vds_promote": 163,
+    "vds_promote": 164,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 142
+    "deepseek_demoted_from_vds_promote": 143
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 3.07,
+    "vds_promote_hot_rate_pct": 3.05,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 208,
-    "cumulative_estimated_cost_usd": 0.095287,
-    "cost_per_evaluated_candidate_usd": 0.00020715,
-    "cost_per_deepseek_promote_usd": 0.00381147,
-    "cost_per_observed_ready_or_contacted_usd": 0.04764339,
-    "latest_request": null
+    "request_count": 209,
+    "cumulative_estimated_cost_usd": 0.095741,
+    "cost_per_evaluated_candidate_usd": 0.00020768,
+    "cost_per_deepseek_promote_usd": 0.00382965,
+    "cost_per_observed_ready_or_contacted_usd": 0.04787066,
+    "latest_request": {
+      "at": "2026-09-18T07:25:13Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 459,
+      "completion_tokens": 190,
+      "total_tokens": 777,
+      "estimated_cost_usd": 0.00045455
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "767026091c07970e24ff406710bd4769",
-      "evaluated_at": "2026-09-15T09:03:37Z",
-      "organization": "Fueled",
-      "title": "Lead UX Designer — EMEA",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/lead-ux-designer-emea-fueled",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Lead UX Designer EMEA remote with WordPress/CMS/UX keyword overlap and explicit contractor/agency language; UX/UI is in profile scope but role is design-leadership rather than web development, so fit is partial.",
-      "deepseek_risk_flags": [
-        "design_leadership_not_dev",
-        "wordpress_mention_may_be_incidental",
-        "contractor_terms_unverified"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0002151225,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1d5e8e8b3827fcf1fa2743fa135f61bc",
       "evaluated_at": "2026-09-15T11:22:47Z",
@@ -1490,10 +1474,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c8a34fc067eca051117b361f1d4b52ed",
+      "evaluated_at": "2026-09-18T07:25:13Z",
+      "organization": "Perk",
+      "title": "Front-End Web Specialist (12-month fixed term contract)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/perk/front-end-web-specialist-12-month-fixed-term-contract-london-100854",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Front-end web specialist role with matching stack keywords (HTML, CSS, front-end, CMS, Core Web Vitals, UX) and an explicit 12-month fixed-term contract, but it is London-based with no stated remote option and the target geo bucket is WORLDWIDE_REMOTE, creating geo uncertainty for a Spain/Italy-based freelancer.",
+      "deepseek_risk_flags": [
+        "location_london_no_remote_confirmed",
+        "fixed_term_employment_not_freelance",
+        "geo_mismatch_with_primary_markets",
+        "partner_keyword_unrelated_to_freelance_compatibility"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00045455,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-18T07:07:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-18T07:25:09Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

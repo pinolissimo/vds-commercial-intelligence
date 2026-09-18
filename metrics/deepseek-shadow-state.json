@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 486,
+  "runs": 487,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12501,6 +12501,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c8a34fc067eca051117b361f1d4b52ed",
+      "evaluated_at": "2026-09-18T07:25:13Z",
+      "organization": "Perk",
+      "title": "Front-End Web Specialist (12-month fixed term contract)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/perk/front-end-web-specialist-12-month-fixed-term-contract-london-100854",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Front-end web specialist role with matching stack keywords (HTML, CSS, front-end, CMS, Core Web Vitals, UX) and an explicit 12-month fixed-term contract, but it is London-based with no stated remote option and the target geo bucket is WORLDWIDE_REMOTE, creating geo uncertainty for a Spain/Italy-based freelancer.",
+      "deepseek_risk_flags": [
+        "location_london_no_remote_confirmed",
+        "fixed_term_employment_not_freelance",
+        "geo_mismatch_with_primary_markets",
+        "partner_keyword_unrelated_to_freelance_compatibility"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00045455,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -14999,9 +15027,21 @@
       "completion_tokens": 206,
       "total_tokens": 781,
       "estimated_cost_usd": 0.00047039
+    },
+    {
+      "at": "2026-09-18T07:25:13Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 459,
+      "completion_tokens": 190,
+      "total_tokens": 777,
+      "estimated_cost_usd": 0.00045455
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-18T07:07:03Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-18T07:25:13Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
