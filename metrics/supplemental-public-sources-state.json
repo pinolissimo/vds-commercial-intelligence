@@ -2,32 +2,33 @@
   "schema_version": "1.0",
   "sources": {
     "remote_landers": {
-      "last_poll_at": "2026-09-18T15:15:22Z",
-      "last_count": 3,
-      "last_error": null,
+      "last_poll_at": "2026-09-18T17:01:58Z",
+      "last_count": 0,
+      "last_error": "URLError: <urlopen error [Errno 104] Connection reset by peer>",
       "min_poll_minutes": 15
     },
     "jobicy_europe": {
-      "last_poll_at": "2026-09-18T15:15:22Z",
+      "last_poll_at": "2026-09-18T17:01:58Z",
       "last_count": 92,
       "last_error": null,
       "min_poll_minutes": 60
     }
   },
-  "runs": 523,
-  "updated_at": "2026-09-18T15:15:22Z",
+  "runs": 524,
+  "updated_at": "2026-09-18T17:01:58Z",
   "last_run": {
     "polled": [
-      {
-        "source_id": "remote_landers",
-        "signals": 3
-      },
       {
         "source_id": "jobicy_europe",
         "signals": 92
       }
     ],
-    "new_signals": 9,
-    "errors": []
+    "new_signals": 3,
+    "errors": [
+      {
+        "source_id": "remote_landers",
+        "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+      }
+    ]
   }
 }

@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 506,
+  "runs": 507,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12725,6 +12725,61 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3e3388ad14239b1287160e71a44c2330",
+      "evaluated_at": "2026-09-18T17:02:31Z",
+      "organization": "",
+      "title": "Frontend Developer",
+      "location": "India",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend Developer role with matching keywords (CSS, JS, PHP, UI/UX) but located in India, which is outside the primary Spain/Italy/EU-remote target markets; no explicit freelance/contract compatibility evidence.",
+      "deepseek_risk_flags": [
+        "location_outside_target_markets",
+        "no_contract_type_specified",
+        "no_remote_state_confirmed",
+        "commercial_keyword_collaboration_is_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019724,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7f35fc75dcdfeaebd69a7ece68e7e228",
+      "evaluated_at": "2026-09-18T17:02:31Z",
+      "organization": "ITFS",
+      "title": "Frontend & CLI Product Engineer (AI UX Specialist) (Remote)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/frontend-cli-product-engineer-ai-ux-specialist-remote-08947454ef",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.5,
+      "deepseek_primary_reason": "Frontend & CLI Product Engineer (AI UX Specialist) remote role in EU/EMEA with frontend and UX keyword matches, but title emphasizes CLI/AI product engineering rather than WordPress/WooCommerce or core web maintenance scope; contract type unconfirmed.",
+      "deepseek_risk_flags": [
+        "stack_scope_partial_match",
+        "no_contract_type_specified",
+        "ai_cli_focus_may_dilute_web_dev_fit"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00019724,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -15295,9 +15350,21 @@
       "completion_tokens": 149,
       "total_tokens": 731,
       "estimated_cost_usd": 0.00014459
+    },
+    {
+      "at": "2026-09-18T17:02:31Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 658,
+      "completion_tokens": 377,
+      "total_tokens": 1163,
+      "estimated_cost_usd": 0.00039448
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-18T15:15:56Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-18T17:02:31Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

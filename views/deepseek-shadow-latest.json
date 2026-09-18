@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T15:15:56Z",
+  "updated_at": "2026-09-18T17:02:33Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 468,
+    "evaluated_total": 470,
     "agreement_count": 241,
-    "agreement_pct": 51.5,
+    "agreement_pct": 51.28,
     "deepseek_promote": 25,
-    "vds_promote": 167,
+    "vds_promote": 169,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 146
+    "deepseek_demoted_from_vds_promote": 148
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.99,
+    "vds_promote_hot_rate_pct": 2.96,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 214,
-    "cumulative_estimated_cost_usd": 0.096952,
-    "cost_per_evaluated_candidate_usd": 0.00020716,
-    "cost_per_deepseek_promote_usd": 0.00387806,
-    "cost_per_observed_ready_or_contacted_usd": 0.04847576,
-    "latest_request": null
+    "request_count": 215,
+    "cumulative_estimated_cost_usd": 0.097346,
+    "cost_per_evaluated_candidate_usd": 0.00020712,
+    "cost_per_deepseek_promote_usd": 0.00389384,
+    "cost_per_observed_ready_or_contacted_usd": 0.048673,
+    "latest_request": {
+      "at": "2026-09-18T17:02:31Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 658,
+      "completion_tokens": 377,
+      "total_tokens": 1163,
+      "estimated_cost_usd": 0.00039448
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c5223cabf6f820bc9b5f40cd5b8735ad",
-      "evaluated_at": "2026-09-16T01:20:14Z",
-      "organization": "Init Ag",
-      "title": "Senior Frontend Angular Developer (all genders)",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-frontend-angular-developer-all-genders-munchen-135073",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Frontend Angular Developer role in München; Angular-centric core scope does not match the target WordPress/WooCommerce/frontend-maintenance profile, and no explicit external-collaboration or freelance terms are evidenced.",
-      "deepseek_risk_flags": [
-        "angular_core_stack_mismatch",
-        "no_freelance_signal",
-        "onsite_location_munchen",
-        "no_wordpress_woocommerce_scope",
-        "senior_employment_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0003329775,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "dc82043f74d1a66d9324241bb8226542",
-      "evaluated_at": "2026-09-16T01:20:14Z",
-      "organization": "Init Ag",
-      "title": "Senior Frontend Angular Developer (all genders)",
-      "location": "Mainz",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-frontend-angular-developer-all-genders-mainz-139592",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Frontend Angular Developer role in Mainz; Angular-heavy core role without meaningful WordPress/WooCommerce or web-maintenance scope, and no explicit freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "angular_core_stack_mismatch",
-        "no_freelance_signal",
-        "onsite_location_mainz",
-        "no_wordpress_woocommerce_scope",
-        "senior_employment_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0003329775,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b19d9e1a32c2c537a68874fa3b54e332",
       "evaluated_at": "2026-09-16T01:20:14Z",
@@ -1486,10 +1439,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3e3388ad14239b1287160e71a44c2330",
+      "evaluated_at": "2026-09-18T17:02:31Z",
+      "organization": "",
+      "title": "Frontend Developer",
+      "location": "India",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend Developer role with matching keywords (CSS, JS, PHP, UI/UX) but located in India, which is outside the primary Spain/Italy/EU-remote target markets; no explicit freelance/contract compatibility evidence.",
+      "deepseek_risk_flags": [
+        "location_outside_target_markets",
+        "no_contract_type_specified",
+        "no_remote_state_confirmed",
+        "commercial_keyword_collaboration_is_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019724,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7f35fc75dcdfeaebd69a7ece68e7e228",
+      "evaluated_at": "2026-09-18T17:02:31Z",
+      "organization": "ITFS",
+      "title": "Frontend & CLI Product Engineer (AI UX Specialist) (Remote)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/frontend-cli-product-engineer-ai-ux-specialist-remote-08947454ef",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.5,
+      "deepseek_primary_reason": "Frontend & CLI Product Engineer (AI UX Specialist) remote role in EU/EMEA with frontend and UX keyword matches, but title emphasizes CLI/AI product engineering rather than WordPress/WooCommerce or core web maintenance scope; contract type unconfirmed.",
+      "deepseek_risk_flags": [
+        "stack_scope_partial_match",
+        "no_contract_type_specified",
+        "ai_cli_focus_may_dilute_web_dev_fit"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00019724,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-18T15:15:53Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-18T17:02:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
