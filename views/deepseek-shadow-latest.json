@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T12:34:41Z",
+  "updated_at": "2026-09-18T12:52:53Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 464,
+    "evaluated_total": 466,
     "agreement_count": 240,
-    "agreement_pct": 51.72,
+    "agreement_pct": 51.5,
     "deepseek_promote": 25,
-    "vds_promote": 165,
+    "vds_promote": 167,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 144
+    "deepseek_demoted_from_vds_promote": 146
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 3.03,
+    "vds_promote_hot_rate_pct": 2.99,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 211,
-    "cumulative_estimated_cost_usd": 0.096228,
-    "cost_per_evaluated_candidate_usd": 0.00020739,
-    "cost_per_deepseek_promote_usd": 0.00384911,
-    "cost_per_observed_ready_or_contacted_usd": 0.04811393,
-    "latest_request": null
+    "request_count": 212,
+    "cumulative_estimated_cost_usd": 0.0966,
+    "cost_per_evaluated_candidate_usd": 0.0002073,
+    "cost_per_deepseek_promote_usd": 0.003864,
+    "cost_per_observed_ready_or_contacted_usd": 0.04829995,
+    "latest_request": {
+      "at": "2026-09-18T12:52:50Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 739,
+      "completion_tokens": 316,
+      "total_tokens": 1183,
+      "estimated_cost_usd": 0.00037204
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,63 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "d12a8baa99f9f8b459a1288cae6c196b",
-      "evaluated_at": "2026-09-15T15:59:10Z",
-      "organization": "Valkyrie Aero",
-      "title": "Software Engineer, Frontend (HMI)",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/software-engineer-frontend-hmi-valkyrie-aero",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 52.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Frontend role with matching HTML/CSS/JS keywords and remote location, but title indicates HMI (human-machine interface) engineering at an aerospace company, suggesting embedded/industrial UI work rather than WordPress/WooCommerce or typical web frontend; stack fit and freelance compatibility are uncertain.",
-      "deepseek_risk_flags": [
-        "HMI/aerospace domain may require embedded or specialized UI skills",
-        "no explicit WordPress/WooCommerce scope",
-        "employment_type and remote_state unspecified",
-        "freelance/contract compatibility unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00015801,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "d94dc8388b89e3c25cd28855afdada0b",
-      "evaluated_at": "2026-09-15T17:18:02Z",
-      "organization": "Procurify",
-      "title": "Senior Frontend Engineer",
-      "location": "Canada",
-      "opportunity_url": "https://remotelanders.com/jobs/senior-frontend-engineer-procurify-1vc4v0",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 81,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Senior Frontend Engineer role at Procurify is a generic frontend title with no evidence of WordPress/WooCommerce, custom HTML/CSS/JS, web performance, maintenance, or UX/UI scope; only 'frontend' keyword matches, and the role is Canada-based with no confirmed freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_evidence",
-        "geo_mismatch_canada_not_spain_italy_or_eu_remote",
-        "generic_frontend_title_likely_react_or_spa_stack",
-        "remote_state_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022398,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "4d73a9e172fe15a0b2c6a38efaabaf4c",
       "evaluated_at": "2026-09-15T20:19:20Z",
@@ -1489,10 +1443,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "eb189b9e3996fc6b991b963b62404495",
+      "evaluated_at": "2026-09-18T12:52:50Z",
+      "organization": "Bunch",
+      "title": "(Senior) Full-Stack Engineer | Frontend-leaning | Platform Team | Remote Portugal",
+      "location": "Spain",
+      "opportunity_url": "https://jobs.ashbyhq.com/bunch/a33ff608-5fe0-4b99-9679-74d9a1126ea4/application",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full-stack frontend-leaning platform role in Spain/remote; only frontend/UI/UX keywords match, no WordPress/WooCommerce or web-performance evidence, and full-stack platform scope suggests React/Node core rather than freelance web work.",
+      "deepseek_risk_flags": [
+        "full-stack core role likely beyond WordPress/frontend web scope",
+        "no explicit WordPress/WooCommerce/performance stack evidence",
+        "freelance/contract compatibility unverified (ATS apply)"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00018602,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6c811482c8068b8d58889c3b774923c0",
+      "evaluated_at": "2026-09-18T12:52:50Z",
+      "organization": "Bunch",
+      "title": "(Senior) Full-Stack Engineer | Frontend-leaning | Platform Team | Remote Spain",
+      "location": "Spain",
+      "opportunity_url": "https://jobs.ashbyhq.com/bunch/e52a2e4d-ad51-4966-ab41-606ec8090752/application",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Duplicate of the same Bunch full-stack frontend-leaning platform role targeting Remote Spain; matches only frontend/UI/UX keywords with no WordPress/WooCommerce or maintenance scope, so stack fit is partial and contract type unknown.",
+      "deepseek_risk_flags": [
+        "full-stack core role likely beyond WordPress/frontend web scope",
+        "no explicit WordPress/WooCommerce/performance stack evidence",
+        "freelance/contract compatibility unverified (ATS apply)"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00018602,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-18T12:34:36Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-18T12:52:46Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
