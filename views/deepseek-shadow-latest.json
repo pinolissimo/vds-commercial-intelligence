@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T01:03:36Z",
+  "updated_at": "2026-09-18T04:01:27Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 457,
+    "evaluated_total": 458,
     "agreement_count": 239,
-    "agreement_pct": 52.3,
+    "agreement_pct": 52.18,
     "deepseek_promote": 25,
-    "vds_promote": 161,
+    "vds_promote": 162,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 140
+    "deepseek_demoted_from_vds_promote": 141
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 3.11,
+    "vds_promote_hot_rate_pct": 3.09,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 205,
-    "cumulative_estimated_cost_usd": 0.094424,
-    "cost_per_evaluated_candidate_usd": 0.00020662,
-    "cost_per_deepseek_promote_usd": 0.00377698,
-    "cost_per_observed_ready_or_contacted_usd": 0.04721225,
+    "request_count": 206,
+    "cumulative_estimated_cost_usd": 0.094583,
+    "cost_per_evaluated_candidate_usd": 0.00020651,
+    "cost_per_deepseek_promote_usd": 0.0037833,
+    "cost_per_observed_ready_or_contacted_usd": 0.04729125,
     "latest_request": {
-      "at": "2026-09-18T01:03:34Z",
+      "at": "2026-09-18T04:01:25Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
-      "billing_band": "peak",
+      "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 384,
       "prompt_cache_miss_tokens": 181,
-      "completion_tokens": 201,
-      "total_tokens": 766,
-      "estimated_cost_usd": 0.00035034
+      "completion_tokens": 175,
+      "total_tokens": 740,
+      "estimated_cost_usd": 0.00015801
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "93a814072fec75ae54142cecb769bad9",
-      "evaluated_at": "2026-09-15T09:03:37Z",
-      "organization": "Projektron GmbH",
-      "title": "Web-Administration / Webmaster TYPO3",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/projektron-gmbh/web-administration-webmaster-typo3-berlin-329337",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 58.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Webmaster/web-administration role with HTML/CSS/JS and website maintenance scope aligns with profile, but core stack is TYPO3 (not WordPress/WooCommerce) and location is Berlin (not Spain/Italy), so geo and stack fit are uncertain.",
-      "deepseek_risk_flags": [
-        "typo3_not_wordpress",
-        "onsite_berlin_geo_mismatch",
-        "no_explicit_freelance_or_contract_terms"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002151225,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ebde799e4ea7759d6b57ff60a2b54318",
       "evaluated_at": "2026-09-15T09:03:37Z",
@@ -1497,10 +1470,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0681962a2537b17ccc4d92bde2c0454a",
+      "evaluated_at": "2026-09-18T04:01:25Z",
+      "organization": "Qonto",
+      "title": "Senior/Staff Frontend Engineer (React) - Remote Friendly",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/qonto/senior-staff-frontend-engineer-react-remote-friendly-paris-473326",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior/Staff React frontend role at Qonto; core stack is React-heavy with no WordPress/WooCommerce or custom HTML/CSS/JS maintenance scope, and 'Remote Friendly' is unverified and likely France-anchored rather than EU-remote freelance.",
+      "deepseek_risk_flags": [
+        "react_core_stack_mismatch",
+        "senior_staff_level_likely_full_time",
+        "remote_scope_unverified",
+        "geo_anchor_paris_france",
+        "no_freelance_or_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015801,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-18T01:03:30Z",
+  "source_semantic_updated_at": "2026-09-18T04:01:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
