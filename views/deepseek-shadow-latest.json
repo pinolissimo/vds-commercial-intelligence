@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-17T22:07:06Z",
+  "updated_at": "2026-09-18T00:02:17Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 455,
-    "agreement_count": 238,
-    "agreement_pct": 52.31,
+    "evaluated_total": 456,
+    "agreement_count": 239,
+    "agreement_pct": 52.41,
     "deepseek_promote": 25,
     "vds_promote": 160,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 203,
-    "cumulative_estimated_cost_usd": 0.093918,
-    "cost_per_evaluated_candidate_usd": 0.00020641,
-    "cost_per_deepseek_promote_usd": 0.00375673,
-    "cost_per_observed_ready_or_contacted_usd": 0.04695917,
+    "request_count": 204,
+    "cumulative_estimated_cost_usd": 0.094074,
+    "cost_per_evaluated_candidate_usd": 0.0002063,
+    "cost_per_deepseek_promote_usd": 0.00376297,
+    "cost_per_observed_ready_or_contacted_usd": 0.04703708,
     "latest_request": {
-      "at": "2026-09-17T22:07:02Z",
+      "at": "2026-09-18T00:02:15Z",
       "model": "deepseek-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 1171,
-      "completion_tokens": 558,
-      "total_tokens": 1857,
-      "estimated_cost_usd": 0.0006268
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 195,
+      "completion_tokens": 167,
+      "total_tokens": 746,
+      "estimated_cost_usd": 0.00015581
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "edcfc07d3ba539909743f26391795c74",
-      "evaluated_at": "2026-09-15T07:00:41Z",
-      "organization": "Real Digital",
-      "title": "Senior Full-Stack Engineer (all genders) | Backend or Frontend Focus",
-      "location": "Remote oder Köln / Darmstadt / Düsseldorf / Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/real-digital/remote-senior-full-stack-engineer-all-genders-backend-or-frontend-focus-38682",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 73,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 52.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Full-stack role with frontend and PHP mentions offers partial stack overlap, but 'partner' is generic job-text collaboration language and does not establish freelance compatibility; scope and seniority unclear.",
-      "deepseek_risk_flags": [
-        "generic_partner_mention_not_freelance_proof",
-        "fullstack_backend_focus_risk",
-        "no_explicit_wordpress_woocommerce_scope",
-        "geo_bucket_uncertain"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0003323175,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "3d37bd9ab79a03e9dbc53e4e079cc64e",
       "evaluated_at": "2026-09-15T07:00:41Z",
@@ -1494,10 +1466,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "745b310170531b370c3e57d493ed3525",
+      "evaluated_at": "2026-09-18T00:02:15Z",
+      "organization": "Wundermanthompson",
+      "title": "Senior UX/UI Designer (CRO)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wundermanthompson/senior-ux-ui-designer-cro-london-118606",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior UX/UI Designer (CRO) role at a large agency in London; keyword overlap is generic design/frontend vocabulary, not evidence of WordPress/WooCommerce or freelance web-dev demand, and no explicit contract/freelance signal exists.",
+      "deepseek_risk_flags": [
+        "agency_full_time_likely",
+        "no_freelance_signal",
+        "no_wordpress_woocommerce_scope",
+        "onsite_london_not_spain_italy",
+        "generic_keyword_overlap"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015581,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-09-17T22:06:58Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-18T00:02:11Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
