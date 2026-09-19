@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-19T00:35:38Z",
+  "updated_at": "2026-09-19T02:04:34Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 476,
+    "evaluated_total": 477,
     "agreement_count": 244,
-    "agreement_pct": 51.26,
+    "agreement_pct": 51.15,
     "deepseek_promote": 25,
-    "vds_promote": 171,
+    "vds_promote": 172,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 150
+    "deepseek_demoted_from_vds_promote": 151
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.92,
+    "vds_promote_hot_rate_pct": 2.91,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 218,
-    "cumulative_estimated_cost_usd": 0.098439,
-    "cost_per_evaluated_candidate_usd": 0.00020681,
-    "cost_per_deepseek_promote_usd": 0.00393758,
-    "cost_per_observed_ready_or_contacted_usd": 0.04921973,
-    "latest_request": null
+    "request_count": 219,
+    "cumulative_estimated_cost_usd": 0.098768,
+    "cost_per_evaluated_candidate_usd": 0.00020706,
+    "cost_per_deepseek_promote_usd": 0.00395071,
+    "cost_per_observed_ready_or_contacted_usd": 0.0493839,
+    "latest_request": {
+      "at": "2026-09-19T02:04:32Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 182,
+      "completion_tokens": 184,
+      "total_tokens": 750,
+      "estimated_cost_usd": 0.00032834
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c184950e1a522759d23793c35e54b4d4",
-      "evaluated_at": "2026-09-16T12:17:56Z",
-      "organization": "Koppla",
-      "title": "Product Engineer - Frontend (all genders)",
-      "location": "Berlin (hybrid)",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/koppla/product-engineer-frontend-all-genders-berlin-hybrid-359575",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Generic 'Product Engineer - Frontend' role in Berlin (hybrid) with no explicit WordPress/WooCommerce, web-performance, or maintenance scope; only a bare 'frontend' keyword match and generic 'collaboration/partner' text that does not evidence freelance compatibility.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_scope",
-        "hybrid_onsite_berlin",
-        "generic_frontend_role",
-        "no_freelance_compatibility_evidence",
-        "geo_not_spain_italy"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00013831,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "0187360d4f6b229938a802f54885c5da",
       "evaluated_at": "2026-09-16T12:17:56Z",
@@ -1478,10 +1460,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "95dc4f3e17947ac8f0ceee90ae72fce6",
+      "evaluated_at": "2026-09-19T02:04:32Z",
+      "organization": "wppmedia",
+      "title": "Front-end Engineer",
+      "location": "Manchester",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wppmedia/front-end-engineer-manchester-66098",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Front-end Engineer role at WPP Media in Manchester with matching frontend stack keywords (HTML, CSS, JavaScript, Core Web Vitals, accessibility), but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo is UK (Manchester) rather than primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_scope",
+        "freelance_compatibility_unverified",
+        "employment_type_unknown",
+        "remote_state_unknown",
+        "commercial_keywords_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00032834,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-19T00:35:34Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-19T02:04:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 512,
+  "runs": 513,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12951,6 +12951,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "95dc4f3e17947ac8f0ceee90ae72fce6",
+      "evaluated_at": "2026-09-19T02:04:32Z",
+      "organization": "wppmedia",
+      "title": "Front-end Engineer",
+      "location": "Manchester",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wppmedia/front-end-engineer-manchester-66098",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Front-end Engineer role at WPP Media in Manchester with matching frontend stack keywords (HTML, CSS, JavaScript, Core Web Vitals, accessibility), but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo is UK (Manchester) rather than primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_scope",
+        "freelance_compatibility_unverified",
+        "employment_type_unknown",
+        "remote_state_unknown",
+        "commercial_keywords_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00032834,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -15569,9 +15599,21 @@
       "completion_tokens": 322,
       "total_tokens": 1162,
       "estimated_cost_usd": 0.00037006
+    },
+    {
+      "at": "2026-09-19T02:04:32Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 182,
+      "completion_tokens": 184,
+      "total_tokens": 750,
+      "estimated_cost_usd": 0.00032834
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-19T00:35:38Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-19T02:04:32Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
