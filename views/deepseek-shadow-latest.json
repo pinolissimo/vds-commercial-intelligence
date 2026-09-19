@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-19T05:06:27Z",
+  "updated_at": "2026-09-19T08:02:03Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 477,
-    "agreement_count": 244,
+    "evaluated_total": 479,
+    "agreement_count": 245,
     "agreement_pct": 51.15,
     "deepseek_promote": 25,
-    "vds_promote": 172,
+    "vds_promote": 173,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 151
+    "deepseek_demoted_from_vds_promote": 152
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.91,
+    "vds_promote_hot_rate_pct": 2.89,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 219,
-    "cumulative_estimated_cost_usd": 0.098768,
-    "cost_per_evaluated_candidate_usd": 0.00020706,
-    "cost_per_deepseek_promote_usd": 0.00395071,
-    "cost_per_observed_ready_or_contacted_usd": 0.0493839,
-    "latest_request": null
+    "request_count": 220,
+    "cumulative_estimated_cost_usd": 0.099277,
+    "cost_per_evaluated_candidate_usd": 0.00020726,
+    "cost_per_deepseek_promote_usd": 0.0039711,
+    "cost_per_observed_ready_or_contacted_usd": 0.04963874,
+    "latest_request": {
+      "at": "2026-09-19T08:02:00Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 193,
+      "completion_tokens": 315,
+      "total_tokens": 1148,
+      "estimated_cost_usd": 0.00050968
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,63 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "0187360d4f6b229938a802f54885c5da",
-      "evaluated_at": "2026-09-16T12:17:56Z",
-      "organization": "Händlerbund Management AG",
-      "title": "Senior Fullstack Entwickler PHP/Laravel (m/w/d) - Remote, 4-Tage-Woche",
-      "location": "Remote/Leipzig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/handlerbund-management-ag/senior-fullstack-entwickler-php-laravel-remote-4-tage-woche-57424",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Senior Fullstack PHP/Laravel role with Laravel as core stack; profile keywords (css/frontend/php/ui/ux) are incidental and there is no meaningful WordPress/WooCommerce or web-maintenance scope, so it is a stack-mismatch core role despite remote wording.",
-      "deepseek_risk_flags": [
-        "laravel_core_stack_mismatch",
-        "no_wordpress_woocommerce_scope",
-        "fullstack_not_freelance_web_scope",
-        "remote_claim_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00013831,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "43052f85bdfef3c0664f22be9b423753",
-      "evaluated_at": "2026-09-16T12:54:20Z",
-      "organization": "Otto Group Solution Provider Spain Sl 1",
-      "title": "Senior Frontend Developer",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-developer-e34c1973fc",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Senior Frontend Developer role at an EU/EMEA location with only 'frontend' keyword match; no explicit WordPress/WooCommerce/custom HTML-CSS-JS scope, no commercial/freelance signals, and employment type/remote state are unknown, so stack fit and contract compatibility cannot be confirmed.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "employment_type_unknown",
-        "remote_state_unknown",
-        "possible_react_angular_core_role"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00018712,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "8ecc832134ae60d9481d4ef63e858afe",
       "evaluated_at": "2026-09-16T12:54:20Z",
@@ -1479,10 +1433,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "729dc6362a7df02c1ec3fc3197000aee",
+      "evaluated_at": "2026-09-19T08:02:00Z",
+      "organization": "Qonto",
+      "title": "Senior Frontend Engineer (React) - Remote friendly",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/qonto/senior-frontend-engineer-react-remote-friendly-berlin-484204",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior Frontend Engineer (React) role at Qonto is React-centric core engineering, not matching the WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; React-heavy core roles without meaningful matching web/WordPress scope should be downgraded.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "no_wordpress_woocommerce_scope",
+        "likely_full_time_employment_not_freelance",
+        "location_berlin_not_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00025484,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "168244de20c801a220f2414377f0219e",
+      "evaluated_at": "2026-09-19T08:02:00Z",
+      "organization": "MEEO s.r.l.",
+      "title": "Frontend Developer",
+      "location": "Ferrara (Italy)",
+      "opportunity_url": "https://www.meeo.it/jobs/frontend-developer/",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 61,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Frontend Developer role at MEEO s.r.l. is nearly 5.4 years old (1955 days), so demand is not current; stale posting cannot represent active opportunity despite Italy geo and frontend keyword matches.",
+      "deepseek_risk_flags": [
+        "stale_posting_over_5_years_old",
+        "no_explicit_freelance_or_contract_signal",
+        "no_wordpress_woocommerce_scope_confirmed"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00025484,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-19T05:06:24Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-19T08:01:57Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

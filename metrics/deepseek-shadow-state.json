@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 514,
+  "runs": 515,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -12981,6 +12981,61 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "729dc6362a7df02c1ec3fc3197000aee",
+      "evaluated_at": "2026-09-19T08:02:00Z",
+      "organization": "Qonto",
+      "title": "Senior Frontend Engineer (React) - Remote friendly",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/qonto/senior-frontend-engineer-react-remote-friendly-berlin-484204",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior Frontend Engineer (React) role at Qonto is React-centric core engineering, not matching the WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; React-heavy core roles without meaningful matching web/WordPress scope should be downgraded.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "no_wordpress_woocommerce_scope",
+        "likely_full_time_employment_not_freelance",
+        "location_berlin_not_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00025484,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "168244de20c801a220f2414377f0219e",
+      "evaluated_at": "2026-09-19T08:02:00Z",
+      "organization": "MEEO s.r.l.",
+      "title": "Frontend Developer",
+      "location": "Ferrara (Italy)",
+      "opportunity_url": "https://www.meeo.it/jobs/frontend-developer/",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 61,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Frontend Developer role at MEEO s.r.l. is nearly 5.4 years old (1955 days), so demand is not current; stale posting cannot represent active opportunity despite Italy geo and frontend keyword matches.",
+      "deepseek_risk_flags": [
+        "stale_posting_over_5_years_old",
+        "no_explicit_freelance_or_contract_signal",
+        "no_wordpress_woocommerce_scope_confirmed"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00025484,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -15611,9 +15666,21 @@
       "completion_tokens": 184,
       "total_tokens": 750,
       "estimated_cost_usd": 0.00032834
+    },
+    {
+      "at": "2026-09-19T08:02:00Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 193,
+      "completion_tokens": 315,
+      "total_tokens": 1148,
+      "estimated_cost_usd": 0.00050968
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-19T05:06:27Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-19T08:02:00Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
