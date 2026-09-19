@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-19T13:22:44Z",
+  "updated_at": "2026-09-19T14:02:14Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 481,
-    "agreement_count": 246,
-    "agreement_pct": 51.14,
+    "evaluated_total": 482,
+    "agreement_count": 247,
+    "agreement_pct": 51.24,
     "deepseek_promote": 25,
     "vds_promote": 173,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 222,
-    "cumulative_estimated_cost_usd": 0.099948,
-    "cost_per_evaluated_candidate_usd": 0.00020779,
-    "cost_per_deepseek_promote_usd": 0.00399792,
-    "cost_per_observed_ready_or_contacted_usd": 0.04997405,
+    "request_count": 223,
+    "cumulative_estimated_cost_usd": 0.100108,
+    "cost_per_evaluated_candidate_usd": 0.00020769,
+    "cost_per_deepseek_promote_usd": 0.00400432,
+    "cost_per_observed_ready_or_contacted_usd": 0.05005404,
     "latest_request": {
-      "at": "2026-09-19T13:22:42Z",
+      "at": "2026-09-19T14:02:12Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 434,
-      "completion_tokens": 176,
-      "total_tokens": 738,
-      "estimated_cost_usd": 0.00021254
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 184,
+      "completion_tokens": 177,
+      "total_tokens": 745,
+      "estimated_cost_usd": 0.00015999
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "34a3382afe04e7380c5bec216edc2b64",
-      "evaluated_at": "2026-09-16T19:08:23Z",
-      "organization": "Supabase",
-      "title": "Edge Functions Engineer",
-      "location": "Anywhere",
-      "opportunity_url": "https://jobicy.com/jobs/153452-edge-functions-engineer",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Role is an Edge Functions Engineer at Supabase, a backend/serverless runtime engineering position; matched keywords (front-end, javascript, website) are incidental and do not indicate WordPress/WooCommerce, custom frontend, performance, maintenance, or UX/UI scope.",
-      "deepseek_risk_flags": [
-        "backend/serverless core role",
-        "no WordPress/WooCommerce scope",
-        "no explicit freelance/contract terms",
-        "generic 'collaboration'/'remote' keywords only"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00019802,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "4a443e01ef99e1407ae0ff59aec69b05",
       "evaluated_at": "2026-09-16T21:01:55Z",
@@ -1491,10 +1463,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4da2a30b804bc21448431425e709a595",
+      "evaluated_at": "2026-09-19T14:02:12Z",
+      "organization": "Sanctuary Computer",
+      "title": "Senior Shopify Developer",
+      "location": "",
+      "opportunity_url": "https://remoteOK.com/remote-jobs/remote-senior-shopify-developer-sanctuary-computer-1137405",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Role is a Senior Shopify Developer position, which is a platform-specific e-commerce stack (Shopify/Liquid) rather than the target profile's core WordPress/WooCommerce strength; keyword matches like 'css', 'frontend', 'core web vitals' and 'maintenance' are generic web terms that do not establish truthful stack fit.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_shopify_vs_wordpress",
+        "generic_keyword_overlap",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00015999,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-19T13:22:38Z",
+  "source_semantic_updated_at": "2026-09-19T14:02:08Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
