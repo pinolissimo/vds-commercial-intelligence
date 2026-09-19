@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-19T18:57:08Z",
+  "updated_at": "2026-09-19T21:25:35Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 482,
-    "agreement_count": 247,
-    "agreement_pct": 51.24,
+    "evaluated_total": 483,
+    "agreement_count": 248,
+    "agreement_pct": 51.35,
     "deepseek_promote": 25,
     "vds_promote": 173,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 223,
-    "cumulative_estimated_cost_usd": 0.100108,
-    "cost_per_evaluated_candidate_usd": 0.00020769,
-    "cost_per_deepseek_promote_usd": 0.00400432,
-    "cost_per_observed_ready_or_contacted_usd": 0.05005404,
-    "latest_request": null
+    "request_count": 224,
+    "cumulative_estimated_cost_usd": 0.100336,
+    "cost_per_evaluated_candidate_usd": 0.00020774,
+    "cost_per_deepseek_promote_usd": 0.00401344,
+    "cost_per_observed_ready_or_contacted_usd": 0.05016801,
+    "latest_request": {
+      "at": "2026-09-19T21:25:33Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 462,
+      "completion_tokens": 190,
+      "total_tokens": 780,
+      "estimated_cost_usd": 0.00022794
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4a443e01ef99e1407ae0ff59aec69b05",
-      "evaluated_at": "2026-09-16T21:01:55Z",
-      "organization": "",
-      "title": "UI/UX Developer",
-      "location": "United States",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.5,
-      "deepseek_primary_reason": "UI/UX Developer role with strong frontend stack overlap (HTML, CSS, JavaScript, frontend, UI/UX, accessibility) matching the target profile, but location is United States and no explicit freelance/contract terms are stated, so geo and contract compatibility are uncertain.",
-      "deepseek_risk_flags": [
-        "us_location_geo_mismatch",
-        "no_explicit_freelance_terms",
-        "employment_type_unknown",
-        "remote_state_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00017755,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "25175ed0bd237e2cddd617c9be08486e",
       "evaluated_at": "2026-09-16T21:01:55Z",
@@ -1480,10 +1463,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "00f4a022f40024a7a0b715203fad4f31",
+      "evaluated_at": "2026-09-19T21:25:33Z",
+      "organization": "Doctolib",
+      "title": "Stage - Junior Website Manager (x/f/m) - janvier 2027",
+      "location": "Paris, Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/doctolib/stage-junior-website-manager-janvier-2027-paris-paris-445443",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Internship ('Stage - Junior') based in Paris, France, outside the primary Spain/Italy/EU-remote target markets, and it is an entry-level internship rather than a freelance/contract engagement; the WordPress/CMS/HTML/CSS keyword matches reflect a junior website-management role, not a freelance web-development opportunity.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "junior_entry_level",
+        "geo_mismatch_france_onsite",
+        "no_remote_signal",
+        "commercial_keywords_are_generic_collaboration_partner_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022794,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-19T18:57:05Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-19T21:25:29Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
