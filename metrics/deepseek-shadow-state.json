@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 518,
+  "runs": 519,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -13066,6 +13066,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2cb9f5e9eac6427a9ce434d027f7eb02",
+      "evaluated_at": "2026-09-19T13:22:42Z",
+      "organization": "ai-coustics",
+      "title": "Junior Growth Marketer",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/ai-coustics/junior-growth-marketer-berlin-211095",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is Junior Growth Marketer, a marketing position with no web development, WordPress, WooCommerce, frontend or maintenance scope; matched keywords 'cms' and 'website' are incidental and commercial keywords 'agency','collaboration','partner' appear in generic job text rather than as evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "role_stack_mismatch",
+        "marketing_not_development",
+        "generic_collaboration_mention",
+        "no_freelance_evidence",
+        "junior_level"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00021254,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -15720,9 +15749,21 @@
       "completion_tokens": 195,
       "total_tokens": 775,
       "estimated_cost_usd": 0.00045807
+    },
+    {
+      "at": "2026-09-19T13:22:42Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 434,
+      "completion_tokens": 176,
+      "total_tokens": 738,
+      "estimated_cost_usd": 0.00021254
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-19T13:03:07Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-19T13:22:42Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
