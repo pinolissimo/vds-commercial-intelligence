@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 540,
+  "runs": 541,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -13579,6 +13579,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f00ede6978000d5a67d4df0004429232",
+      "evaluated_at": "2026-09-20T15:04:22Z",
+      "organization": "saas.group",
+      "title": "Staff Software Engineer",
+      "location": "EMEA",
+      "opportunity_url": "https://jobicy.com/jobs/153697-staff-software-engineer-6",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Staff Software Engineer role at a SaaS group; matched keywords (html, javascript, web performance, website) are incidental and the title indicates a senior/staff engineering position, not freelance WordPress/WooCommerce web work.",
+      "deepseek_risk_flags": [
+        "senior_staff_level_role",
+        "no_explicit_freelance_or_contract_terms",
+        "generic_keyword_matches_only",
+        "no_wordpress_woocommerce_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00011521,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "82903d5b6a5ad770b79743c045850850",
+      "evaluated_at": "2026-09-20T15:04:22Z",
+      "organization": "Datadog",
+      "title": "Manager I, Engineering - Security Libraries",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/datadog/manager-i-engineering-security-libraries-paris-386579",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Engineering Manager role for Security Libraries at Datadog; matched keywords (accessibility, frontend, php, website) are peripheral and the position is a full-time management role unrelated to freelance web development.",
+      "deepseek_risk_flags": [
+        "management_role",
+        "security_libraries_domain",
+        "no_freelance_compatibility",
+        "keyword_matches_incidental"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00011521,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -16365,9 +16421,21 @@
       "completion_tokens": 340,
       "total_tokens": 1163,
       "estimated_cost_usd": 0.0003782
+    },
+    {
+      "at": "2026-09-20T15:04:22Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 163,
+      "completion_tokens": 288,
+      "total_tokens": 1091,
+      "estimated_cost_usd": 0.00023042
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-20T14:00:35Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-20T15:04:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

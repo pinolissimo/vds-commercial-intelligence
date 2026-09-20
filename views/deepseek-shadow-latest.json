@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-20T14:00:35Z",
+  "updated_at": "2026-09-20T15:04:25Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 498,
-    "agreement_count": 254,
-    "agreement_pct": 51.0,
+    "evaluated_total": 500,
+    "agreement_count": 256,
+    "agreement_pct": 51.2,
     "deepseek_promote": 25,
     "vds_promote": 175,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 232,
-    "cumulative_estimated_cost_usd": 0.103166,
-    "cost_per_evaluated_candidate_usd": 0.00020716,
-    "cost_per_deepseek_promote_usd": 0.00412664,
-    "cost_per_observed_ready_or_contacted_usd": 0.05158306,
-    "latest_request": null
+    "request_count": 233,
+    "cumulative_estimated_cost_usd": 0.103397,
+    "cost_per_evaluated_candidate_usd": 0.00020679,
+    "cost_per_deepseek_promote_usd": 0.00413586,
+    "cost_per_observed_ready_or_contacted_usd": 0.05169827,
+    "latest_request": {
+      "at": "2026-09-20T15:04:22Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 163,
+      "completion_tokens": 288,
+      "total_tokens": 1091,
+      "estimated_cost_usd": 0.00023042
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,67 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6b1401567bcfe218ab46ce7cad8ec657",
-      "evaluated_at": "2026-09-17T16:03:30Z",
-      "organization": "Preply",
-      "title": "Senior Full-stack Engineer (frontend-heavy)",
-      "location": "Barcelona",
-      "opportunity_url": "https://jobs.ashbyhq.com/preply/bc9fa0e3-a6cd-4ec1-9c2d-a912cc14695f/application",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 93,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior full-stack role at Preply in Barcelona is frontend-heavy and lists css/frontend/php/ux, but it is a full-time hybrid position with no explicit freelance/contract compatibility; 'partner'/'collaboration' appear as generic commercial keywords rather than proof of external collaboration.",
-      "deepseek_risk_flags": [
-        "full-time employment type",
-        "hybrid on-site in Barcelona",
-        "no explicit freelance/contract signal",
-        "generic collaboration/partner keywords",
-        "full-stack scope may exceed WordPress/WooCommerce focus"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00018316,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "e30b978070812bc6b7c0f8aadb59ee20",
-      "evaluated_at": "2026-09-17T16:03:30Z",
-      "organization": "",
-      "title": "Software Engineer",
-      "location": "United States",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Generic 'Software Engineer' posting with no organization, no location country, no publication date, no employment type and no remote state; keyword matches are broad and the role has no confirmed stack fit or explicit demand for the target profile.",
-      "deepseek_risk_flags": [
-        "missing organization",
-        "missing location/country",
-        "missing publication date",
-        "missing employment type",
-        "missing remote state",
-        "no opportunity URL",
-        "unverified raw public signal",
-        "generic software engineer title"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00018316,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c22c760f62699b1f9dee6b33e09c0480",
       "evaluated_at": "2026-09-17T19:02:53Z",
@@ -1475,10 +1425,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f00ede6978000d5a67d4df0004429232",
+      "evaluated_at": "2026-09-20T15:04:22Z",
+      "organization": "saas.group",
+      "title": "Staff Software Engineer",
+      "location": "EMEA",
+      "opportunity_url": "https://jobicy.com/jobs/153697-staff-software-engineer-6",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Staff Software Engineer role at a SaaS group; matched keywords (html, javascript, web performance, website) are incidental and the title indicates a senior/staff engineering position, not freelance WordPress/WooCommerce web work.",
+      "deepseek_risk_flags": [
+        "senior_staff_level_role",
+        "no_explicit_freelance_or_contract_terms",
+        "generic_keyword_matches_only",
+        "no_wordpress_woocommerce_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00011521,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "82903d5b6a5ad770b79743c045850850",
+      "evaluated_at": "2026-09-20T15:04:22Z",
+      "organization": "Datadog",
+      "title": "Manager I, Engineering - Security Libraries",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/datadog/manager-i-engineering-security-libraries-paris-386579",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Engineering Manager role for Security Libraries at Datadog; matched keywords (accessibility, frontend, php, website) are peripheral and the position is a full-time management role unrelated to freelance web development.",
+      "deepseek_risk_flags": [
+        "management_role",
+        "security_libraries_domain",
+        "no_freelance_compatibility",
+        "keyword_matches_incidental"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00011521,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-20T14:00:31Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-20T15:04:18Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
