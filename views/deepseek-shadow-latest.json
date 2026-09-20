@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-20T17:03:50Z",
+  "updated_at": "2026-09-20T18:55:37Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 500,
-    "agreement_count": 256,
-    "agreement_pct": 51.2,
+    "evaluated_total": 501,
+    "agreement_count": 257,
+    "agreement_pct": 51.3,
     "deepseek_promote": 25,
     "vds_promote": 175,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 233,
-    "cumulative_estimated_cost_usd": 0.103397,
-    "cost_per_evaluated_candidate_usd": 0.00020679,
-    "cost_per_deepseek_promote_usd": 0.00413586,
-    "cost_per_observed_ready_or_contacted_usd": 0.05169827,
-    "latest_request": null
+    "request_count": 234,
+    "cumulative_estimated_cost_usd": 0.103617,
+    "cost_per_evaluated_candidate_usd": 0.00020682,
+    "cost_per_deepseek_promote_usd": 0.0041447,
+    "cost_per_observed_ready_or_contacted_usd": 0.05180872,
+    "latest_request": {
+      "at": "2026-09-20T18:55:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 469,
+      "completion_tokens": 177,
+      "total_tokens": 774,
+      "estimated_cost_usd": 0.0002209
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c22c760f62699b1f9dee6b33e09c0480",
-      "evaluated_at": "2026-09-17T19:02:53Z",
-      "organization": "Rakuten",
-      "title": "Digital Marketing Graduate",
-      "location": "Barcelona, Spain",
-      "opportunity_url": "https://rakuten.wd1.myworkdayjobs.com/rakutentv/job/Barcelona-Spain/Digital-Marketing-Graduate_1037890",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Role is a Digital Marketing Graduate position at Rakuten, not a web development role; matched keywords (cms, html, website, wordpress) appear incidental and no semantic role hits confirm web/WordPress development scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch_marketing_not_webdev",
-        "graduate_entry_level_not_freelance",
-        "on_site_full_time",
-        "keyword_matches_incidental",
-        "no_semantic_role_hits"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00021012,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "9b7a99bca8d619911fbc30eefceef703",
       "evaluated_at": "2026-09-17T22:07:02Z",
@@ -1470,10 +1452,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "aa6895e7606cc067ecfa9d498de4673c",
+      "evaluated_at": "2026-09-20T18:55:34Z",
+      "organization": "Trbo",
+      "title": "AI Transformation & Enablement Specialist (m/w/d) - Freelancer/Interimsmanager",
+      "location": "München",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/trbo/ai-transformation-enablement-specialist-freelancer-interimsmanager-munchen-420916",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an AI Transformation & Enablement Specialist / interim manager, not a web-development role; matched keywords (css, frontend, html, javascript) are incidental and the core scope is AI transformation consulting, which does not fit the target WordPress/WooCommerce/frontend web profile.",
+      "deepseek_risk_flags": [
+        "role_mismatch_ai_transformation",
+        "keyword_matches_incidental",
+        "no_wordpress_woocommerce_scope",
+        "location_munich_not_spain_italy",
+        "geo_bucket_mismatch"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002209,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-20T17:03:45Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-20T18:55:30Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
