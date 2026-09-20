@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-20T04:58:52Z",
+  "updated_at": "2026-09-20T06:57:42Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 489,
+    "evaluated_total": 490,
     "agreement_count": 251,
-    "agreement_pct": 51.33,
+    "agreement_pct": 51.22,
     "deepseek_promote": 25,
     "vds_promote": 173,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 227,
-    "cumulative_estimated_cost_usd": 0.101135,
-    "cost_per_evaluated_candidate_usd": 0.00020682,
-    "cost_per_deepseek_promote_usd": 0.00404538,
-    "cost_per_observed_ready_or_contacted_usd": 0.0505673,
+    "request_count": 228,
+    "cumulative_estimated_cost_usd": 0.101546,
+    "cost_per_evaluated_candidate_usd": 0.00020724,
+    "cost_per_deepseek_promote_usd": 0.00406182,
+    "cost_per_observed_ready_or_contacted_usd": 0.0507728,
     "latest_request": {
-      "at": "2026-09-20T04:58:50Z",
+      "at": "2026-09-20T06:57:40Z",
       "model": "deepseek-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 2,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 640,
-      "prompt_cache_miss_tokens": 174,
-      "completion_tokens": 272,
-      "total_tokens": 1086,
-      "estimated_cost_usd": 0.00022228
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 441,
+      "completion_tokens": 163,
+      "total_tokens": 732,
+      "estimated_cost_usd": 0.00041099
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "5f029b60be45b5909af541f50a095be4",
-      "evaluated_at": "2026-09-17T08:01:00Z",
-      "organization": "Contabo",
-      "title": "Senior Frontend Developer (all genders)",
-      "location": "Remote (Germany)",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/contabo/remote-senior-frontend-developer-all-genders-267880",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 58.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Senior Frontend Developer role at Contabo is remote and frontend-focused, matching frontend/UI/UX keywords, but the posting shows no WordPress/WooCommerce or explicit freelance/contract scope, and 'Senior Frontend Developer' at a hosting company often implies React/Vue-heavy product work rather than the target WordPress/custom web maintenance profile.",
-      "deepseek_risk_flags": [
-        "no_wordpress_or_woocommerce_scope",
-        "likely_react_or_spa_stack_mismatch",
-        "employment_type_unknown",
-        "freelance_compatibility_unverified",
-        "remote_geo_scope_unclear"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.000294425,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "d1d6b58b017a597f3863674a72a49a88",
       "evaluated_at": "2026-09-17T08:01:00Z",
@@ -1493,10 +1464,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "82ced7dccf409c80295cdf560274d78e",
+      "evaluated_at": "2026-09-20T06:57:40Z",
+      "organization": "Doctolib",
+      "title": "Implementation Specialist -AI Phone Assistant (x/f/m)",
+      "location": "Berlin, Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/doctolib/implementation-specialist-ai-phone-assistant-berlin-berlin-374630",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is an AI Phone Assistant implementation specialist at Doctolib in Berlin; matched keywords are only generic 'javascript' and 'migration', with no WordPress, WooCommerce, frontend, performance, or web-maintenance scope, and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "no_wordpress_scope",
+        "no_freelance_evidence",
+        "geo_unverified_non_target_market",
+        "generic_keyword_match"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00041099,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-09-20T04:58:46Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-20T06:57:37Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
