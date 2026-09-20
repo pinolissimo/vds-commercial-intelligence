@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-20T21:27:19Z",
+  "updated_at": "2026-09-20T23:27:37Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 501,
+    "evaluated_total": 502,
     "agreement_count": 257,
-    "agreement_pct": 51.3,
+    "agreement_pct": 51.2,
     "deepseek_promote": 25,
-    "vds_promote": 175,
+    "vds_promote": 176,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 154
+    "deepseek_demoted_from_vds_promote": 155
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.86,
+    "vds_promote_hot_rate_pct": 2.84,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 234,
-    "cumulative_estimated_cost_usd": 0.103617,
-    "cost_per_evaluated_candidate_usd": 0.00020682,
-    "cost_per_deepseek_promote_usd": 0.0041447,
-    "cost_per_observed_ready_or_contacted_usd": 0.05180872,
-    "latest_request": null
+    "request_count": 235,
+    "cumulative_estimated_cost_usd": 0.103818,
+    "cost_per_evaluated_candidate_usd": 0.00020681,
+    "cost_per_deepseek_promote_usd": 0.00415272,
+    "cost_per_observed_ready_or_contacted_usd": 0.05190894,
+    "latest_request": {
+      "at": "2026-09-20T23:27:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 439,
+      "completion_tokens": 156,
+      "total_tokens": 723,
+      "estimated_cost_usd": 0.00020044
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "9b7a99bca8d619911fbc30eefceef703",
-      "evaluated_at": "2026-09-17T22:07:02Z",
-      "organization": "Beacon Biosignals",
-      "title": "Senior Front-end Engineer",
-      "location": "Worldwide",
-      "opportunity_url": "https://remotelanders.com/jobs/senior-front-end-engineer-beacon-biosignals-17b10w",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Senior Front-end Engineer role at a bioinformatics company; only matched keyword is generic 'front-end' with no evidence of WordPress, WooCommerce, or web-performance scope, and no explicit freelance/contract signal.",
-      "deepseek_risk_flags": [
-        "generic_frontend_only",
-        "no_wordpress_scope",
-        "no_freelance_signal",
-        "likely_full_time_employment"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001567,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c87b074d0f26e50e1052b178ea8f0276",
       "evaluated_at": "2026-09-17T22:07:02Z",
@@ -1470,10 +1453,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9b91d3060362af6b916383e62e8dd605",
+      "evaluated_at": "2026-09-20T23:27:35Z",
+      "organization": "Huzzle",
+      "title": "Full Stack Developer (WordPress, Shopify, CRM)",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/full-stack-developer-wordpress-shopify-crm-huzzle",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title and matched keywords indicate WordPress and Shopify scope with contractor/remote signals, but the 'Full Stack Developer' framing and CRM mention leave the true core stack and freelance compatibility unverified from the supplied evidence.",
+      "deepseek_risk_flags": [
+        "full_stack_scope_ambiguous",
+        "crm_scope_unclear",
+        "freelance_compatibility_unverified",
+        "geo_bucket_eu_remote_to_verify",
+        "no_employment_type_field"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00020044,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-20T21:27:16Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-20T23:27:33Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

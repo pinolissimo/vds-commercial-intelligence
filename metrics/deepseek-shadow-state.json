@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 546,
+  "runs": 547,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -13664,6 +13664,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9b91d3060362af6b916383e62e8dd605",
+      "evaluated_at": "2026-09-20T23:27:35Z",
+      "organization": "Huzzle",
+      "title": "Full Stack Developer (WordPress, Shopify, CRM)",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/full-stack-developer-wordpress-shopify-crm-huzzle",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title and matched keywords indicate WordPress and Shopify scope with contractor/remote signals, but the 'Full Stack Developer' framing and CRM mention leave the true core stack and freelance compatibility unverified from the supplied evidence.",
+      "deepseek_risk_flags": [
+        "full_stack_scope_ambiguous",
+        "crm_scope_unclear",
+        "freelance_compatibility_unverified",
+        "geo_bucket_eu_remote_to_verify",
+        "no_employment_type_field"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00020044,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -16474,9 +16503,21 @@
       "completion_tokens": 177,
       "total_tokens": 774,
       "estimated_cost_usd": 0.0002209
+    },
+    {
+      "at": "2026-09-20T23:27:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 439,
+      "completion_tokens": 156,
+      "total_tokens": 723,
+      "estimated_cost_usd": 0.00020044
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-20T21:27:19Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-20T23:27:35Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
