@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-20T09:03:22Z",
+  "updated_at": "2026-09-20T10:00:11Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 492,
+    "evaluated_total": 493,
     "agreement_count": 251,
-    "agreement_pct": 51.02,
+    "agreement_pct": 50.91,
     "deepseek_promote": 25,
     "vds_promote": 174,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 229,
-    "cumulative_estimated_cost_usd": 0.102128,
-    "cost_per_evaluated_candidate_usd": 0.00020758,
-    "cost_per_deepseek_promote_usd": 0.00408511,
-    "cost_per_observed_ready_or_contacted_usd": 0.05106393,
-    "latest_request": null
+    "request_count": 230,
+    "cumulative_estimated_cost_usd": 0.102285,
+    "cost_per_evaluated_candidate_usd": 0.00020747,
+    "cost_per_deepseek_promote_usd": 0.0040914,
+    "cost_per_observed_ready_or_contacted_usd": 0.05114249,
+    "latest_request": {
+      "at": "2026-09-20T10:00:09Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 189,
+      "completion_tokens": 171,
+      "total_tokens": 744,
+      "estimated_cost_usd": 0.00015713
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,36 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "51bf71ad14ee817daa298cedc0ee74b8",
-      "evaluated_at": "2026-09-17T11:51:18Z",
-      "organization": "",
-      "title": "Senior Implementation Consultant",
-      "location": "Spain",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Generic 'Senior Implementation Consultant' role in Spain with only incidental matches to accessibility, html and website; no explicit WordPress/WooCommerce/frontend scope, no confirmed freelance or contract compatibility, and commercial keywords (collaboration/partner/remote) are generic and not evidence of external collaboration fit.",
-      "deepseek_risk_flags": [
-        "role_title_not_web_development",
-        "no_explicit_wordpress_or_woocommerce_scope",
-        "generic_collaboration_keywords",
-        "no_employment_type_or_remote_state",
-        "no_published_date_or_freshness_evidence",
-        "no_opportunity_url"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00021144,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f74fe04f96e97a4f1204e781d9cc4f6c",
       "evaluated_at": "2026-09-17T12:27:04Z",
@@ -1482,10 +1463,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "413ecb5573233b4d2062987134098429",
+      "evaluated_at": "2026-09-20T10:00:09Z",
+      "organization": "grafanalabs",
+      "title": "Senior Engineering Manager, Grafana Frontend | Germany | Remote",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/grafanalabs/senior-engineering-manager-grafana-frontend-germany-remote-269820",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Engineering Manager role for Grafana Frontend is a full-time leadership/management position, not a freelance web-development opportunity; core scope is managing a frontend engineering org, not WordPress/WooCommerce/custom web build or maintenance work.",
+      "deepseek_risk_flags": [
+        "senior_management_role_not_freelance",
+        "full_time_employment_likely",
+        "stack_mismatch_grafana_frontend_platform",
+        "no_wordpress_woocommerce_scope",
+        "generic_collaboration_keywords_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00015713,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-20T09:03:17Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-20T10:00:05Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
