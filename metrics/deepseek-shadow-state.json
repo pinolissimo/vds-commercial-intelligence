@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 531,
+  "runs": 532,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -13353,6 +13353,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b934254d37b7b0696b0bee8fdf658519",
+      "evaluated_at": "2026-09-20T07:01:53Z",
+      "organization": "",
+      "title": "Web Developer",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 87,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Generic 'Web Developer' role with strong stack overlap (HTML/CSS/JS, CMS, Core Web Vitals, maintenance, accessibility) but no explicit WordPress/WooCommerce scope, no contract type, and US location with only unverified worldwide-remote routing; commercial keywords are generic and do not establish freelance compatibility.",
+      "deepseek_risk_flags": [
+        "no_explicit_wordpress_or_woocommerce_scope",
+        "employment_type_unknown",
+        "remote_state_unverified",
+        "geo_mismatch_risk_us_vs_spain_italy_eu",
+        "freelance_compatibility_unproven"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000291125,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "101b8995be90b5336df370614ea99464",
+      "evaluated_at": "2026-09-20T07:01:53Z",
+      "organization": "",
+      "title": "Senior Engineering Manager, Grafana Frontend | United Kingdom | Remote",
+      "location": "United Kingdom",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior Engineering Manager role for Grafana Frontend is a leadership/management position, not a hands-on freelance web-development engagement; only incidental keyword overlap (frontend, accessibility, migration) and no WordPress/WooCommerce, maintenance, or web-performance scope.",
+      "deepseek_risk_flags": [
+        "management_not_hands_on_ic",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "uk_geo_not_primary_market",
+        "stack_mismatch_grafana_frontend_platform"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000291125,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -16091,9 +16149,21 @@
       "completion_tokens": 163,
       "total_tokens": 732,
       "estimated_cost_usd": 0.00041099
+    },
+    {
+      "at": "2026-09-20T07:01:53Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 239,
+      "completion_tokens": 356,
+      "total_tokens": 1107,
+      "estimated_cost_usd": 0.00058225
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-20T06:57:40Z",
+  "updated_at": "2026-09-20T07:01:53Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
