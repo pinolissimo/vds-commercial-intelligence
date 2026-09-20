@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-20T12:03:52Z",
+  "updated_at": "2026-09-20T12:14:10Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 496,
-    "agreement_count": 253,
-    "agreement_pct": 51.01,
+    "evaluated_total": 498,
+    "agreement_count": 254,
+    "agreement_pct": 51.0,
     "deepseek_promote": 25,
-    "vds_promote": 174,
+    "vds_promote": 175,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 153
+    "deepseek_demoted_from_vds_promote": 154
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.87,
+    "vds_promote_hot_rate_pct": 2.86,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 231,
-    "cumulative_estimated_cost_usd": 0.102788,
-    "cost_per_evaluated_candidate_usd": 0.00020723,
-    "cost_per_deepseek_promote_usd": 0.00411152,
-    "cost_per_observed_ready_or_contacted_usd": 0.05139396,
-    "latest_request": null
+    "request_count": 232,
+    "cumulative_estimated_cost_usd": 0.103166,
+    "cost_per_evaluated_candidate_usd": 0.00020716,
+    "cost_per_deepseek_promote_usd": 0.00412664,
+    "cost_per_observed_ready_or_contacted_usd": 0.05158306,
+    "latest_request": {
+      "at": "2026-09-20T12:14:07Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 695,
+      "completion_tokens": 340,
+      "total_tokens": 1163,
+      "estimated_cost_usd": 0.0003782
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,65 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6dd2b1e8320cee0403e33a75a922d04a",
-      "evaluated_at": "2026-09-17T14:14:40Z",
-      "organization": "Human Made",
-      "title": "Freelance Scrum Master - APAC",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/freelance-scrum-master-apac-human-made",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is a Freelance Scrum Master, not a web-development role; the WordPress/CSS/HTML/JS keywords are incidental agency-context matches, not the actual scope of work.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "non_technical_role",
-        "keyword_noise",
-        "geo_uncertain_apac"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00019186,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": [
-        "REVIEW_REQUIRED_TRUTHFUL_FIT_SENIORITY"
-      ]
-    },
-    {
-      "signal_key": "56455970efbe1b2523082ff36a3137df",
-      "evaluated_at": "2026-09-17T15:26:51Z",
-      "organization": "epilot GmbH",
-      "title": "Senior/Staff Product Engineer (Frontend) (m/f/d)",
-      "location": "Remote job",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/epilot-gmbh/remote-senior-staff-product-engineer-frontend-koln-341906",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Frontend-focused senior/staff product engineer role with matched keywords (css, html, javascript, frontend, ux) and remote listing, but title seniority and 'Product Engineer' framing suggest a full-time product role rather than freelance/contract web work; no explicit WordPress/WooCommerce or maintenance scope, and geo/contract compatibility unverified.",
-      "deepseek_risk_flags": [
-        "senior_staff_level_likely_full_time",
-        "no_wordpress_woocommerce_scope",
-        "contract_type_unknown",
-        "geo_remote_to_verify",
-        "possible_react_or_framework_heavy_stack_unconfirmed"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00022354,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6b1401567bcfe218ab46ce7cad8ec657",
       "evaluated_at": "2026-09-17T16:03:30Z",
@@ -1476,10 +1428,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4c9b7e2777b35981656ce48cf10f8fd1",
+      "evaluated_at": "2026-09-20T12:14:07Z",
+      "organization": "Abcinc",
+      "title": "Senior Frontend Engineer",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/abcinc/senior-frontend-engineer-126048",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.5,
+      "deepseek_primary_reason": "Senior Frontend Engineer role with matched keywords core web vitals, frontend, javascript aligns with profile's frontend/performance strengths, but no explicit WordPress/WooCommerce scope, no location/geo data, and 'collaboration/partner/remote' matches are generic commercial keywords rather than proof of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "no_geo_data",
+        "no_employment_type",
+        "freelance_compatibility_unproven",
+        "no_wordpress_woocommerce_scope",
+        "generic_commercial_keyword_matches"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001891,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "db4e5aeef9af5be682fec29a8a95669e",
+      "evaluated_at": "2026-09-20T12:14:07Z",
+      "organization": "appinio",
+      "title": "Senior Backend Engineer",
+      "location": "Hamburg, Hamburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/appinio/senior-backend-engineer-hamburg-hamburg-182193",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Senior Backend Engineer role is a backend core position; matched profile keywords (front-end, frontend, website) and commercial keywords (partner, remote) appear incidental and do not indicate meaningful frontend/WordPress scope. Location Hamburg does not match primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "backend_core_role",
+        "stack_mismatch",
+        "incidental_keyword_matches",
+        "geo_mismatch_hamburg",
+        "freelance_compatibility_unproven"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001891,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-20T12:03:48Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-20T12:14:03Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
