@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-21T13:50:25Z",
+  "updated_at": "2026-09-21T14:08:36Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 510,
-    "agreement_count": 259,
+    "evaluated_total": 512,
+    "agreement_count": 260,
     "agreement_pct": 50.78,
     "deepseek_promote": 25,
-    "vds_promote": 181,
+    "vds_promote": 182,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 160
+    "deepseek_demoted_from_vds_promote": 161
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.76,
+    "vds_promote_hot_rate_pct": 2.75,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 241,
-    "cumulative_estimated_cost_usd": 0.105916,
-    "cost_per_evaluated_candidate_usd": 0.00020768,
-    "cost_per_deepseek_promote_usd": 0.00423665,
-    "cost_per_observed_ready_or_contacted_usd": 0.05295816,
-    "latest_request": null
+    "request_count": 242,
+    "cumulative_estimated_cost_usd": 0.106303,
+    "cost_per_evaluated_candidate_usd": 0.00020762,
+    "cost_per_deepseek_promote_usd": 0.00425212,
+    "cost_per_observed_ready_or_contacted_usd": 0.05315144,
+    "latest_request": {
+      "at": "2026-09-21T14:08:33Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 709,
+      "completion_tokens": 348,
+      "total_tokens": 1185,
+      "estimated_cost_usd": 0.00038656
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c8a34fc067eca051117b361f1d4b52ed",
-      "evaluated_at": "2026-09-18T07:25:13Z",
-      "organization": "Perk",
-      "title": "Front-End Web Specialist (12-month fixed term contract)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/perk/front-end-web-specialist-12-month-fixed-term-contract-london-100854",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 62.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Front-end web specialist role with matching stack keywords (HTML, CSS, front-end, CMS, Core Web Vitals, UX) and an explicit 12-month fixed-term contract, but it is London-based with no stated remote option and the target geo bucket is WORLDWIDE_REMOTE, creating geo uncertainty for a Spain/Italy-based freelancer.",
-      "deepseek_risk_flags": [
-        "location_london_no_remote_confirmed",
-        "fixed_term_employment_not_freelance",
-        "geo_mismatch_with_primary_markets",
-        "partner_keyword_unrelated_to_freelance_compatibility"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00045455,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "29a896e4346990cec619a4fb29eb841a",
-      "evaluated_at": "2026-09-18T10:00:31Z",
-      "organization": "Bunch",
-      "title": "(Senior) Full-Stack Engineer | Frontend-leaning | Platform Team | Remote Portugal",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-full-stack-engineer-frontend-leaning-platform-team-re-54aa0bd874",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Full-stack role with only 'frontend' as a matched keyword; no explicit WordPress/WooCommerce or web-performance scope, and stack fit is unverified.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_risk",
-        "full_stack_scope_unclear",
-        "no_wordpress_evidence",
-        "freelance_compatibility_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00013853,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a9157ac66d275dec4a746d7685b7bd6e",
       "evaluated_at": "2026-09-18T10:00:31Z",
@@ -1470,10 +1425,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "bb1ce93ef67bf6f55a80ab632c9d1c2a",
+      "evaluated_at": "2026-09-21T14:08:33Z",
+      "organization": "mercor",
+      "title": "Frontend Developer - Fully Remote | Upto $85/hr",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/frontend-developer-fully-remote-upto-85hr-mercor-himala",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 86,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend developer role with remote and hourly-rate framing matches frontend/JS/UI/accessibility profile keywords, but the organization (Mercor) is an AI data/talent marketplace and the posting lacks explicit WordPress/WooCommerce, maintenance, or freelance/contract scope, so stack fit and true contract nature are unverified.",
+      "deepseek_risk_flags": [
+        "marketplace_or_staffing_intermediary",
+        "no_wordpress_woocommerce_scope",
+        "contract_type_unverified",
+        "geo_eligibility_unverified",
+        "possible_ai_training_data_work"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00019328,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8f4b5dc4922d3bdcc3d97b75a4f8aaee",
+      "evaluated_at": "2026-09-21T14:08:33Z",
+      "organization": "Curotec",
+      "title": "Senior Full-Stack Engineer (Laravel/VueJS)",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-full-stack-engineer-laravelvuejs-curotec",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior full-stack role centered on Laravel and VueJS, which is a core backend/framework mismatch for a WordPress/WooCommerce/frontend profile; PHP and website mentions are incidental and do not establish meaningful matching web scope.",
+      "deepseek_risk_flags": [
+        "laravel_core_stack_mismatch",
+        "vuejs_framework_heavy",
+        "senior_full_stack_scope",
+        "no_wordpress_woocommerce_scope",
+        "geo_eligibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00019328,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-21T13:50:22Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-21T14:08:30Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
