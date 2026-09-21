@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-21T02:59:41Z",
+  "updated_at": "2026-09-21T03:59:38Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 505,
+    "evaluated_total": 506,
     "agreement_count": 258,
-    "agreement_pct": 51.09,
+    "agreement_pct": 50.99,
     "deepseek_promote": 25,
-    "vds_promote": 178,
+    "vds_promote": 179,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 157
+    "deepseek_demoted_from_vds_promote": 158
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 24.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.81,
+    "vds_promote_hot_rate_pct": 2.79,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 8.0,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 236,
-    "cumulative_estimated_cost_usd": 0.104484,
-    "cost_per_evaluated_candidate_usd": 0.0002069,
-    "cost_per_deepseek_promote_usd": 0.00417935,
-    "cost_per_observed_ready_or_contacted_usd": 0.05224191,
-    "latest_request": null
+    "request_count": 237,
+    "cumulative_estimated_cost_usd": 0.104829,
+    "cost_per_evaluated_candidate_usd": 0.00020717,
+    "cost_per_deepseek_promote_usd": 0.00419317,
+    "cost_per_observed_ready_or_contacted_usd": 0.05241466,
+    "latest_request": {
+      "at": "2026-09-21T03:59:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 191,
+      "completion_tokens": 194,
+      "total_tokens": 769,
+      "estimated_cost_usd": 0.0003455
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "745b310170531b370c3e57d493ed3525",
-      "evaluated_at": "2026-09-18T00:02:15Z",
-      "organization": "Wundermanthompson",
-      "title": "Senior UX/UI Designer (CRO)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wundermanthompson/senior-ux-ui-designer-cro-london-118606",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Senior UX/UI Designer (CRO) role at a large agency in London; keyword overlap is generic design/frontend vocabulary, not evidence of WordPress/WooCommerce or freelance web-dev demand, and no explicit contract/freelance signal exists.",
-      "deepseek_risk_flags": [
-        "agency_full_time_likely",
-        "no_freelance_signal",
-        "no_wordpress_woocommerce_scope",
-        "onsite_london_not_spain_italy",
-        "generic_keyword_overlap"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00015581,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "3ba2edf9a3aa1939263acdd1dae3249b",
       "evaluated_at": "2026-09-18T01:03:34Z",
@@ -1472,10 +1454,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5979a26811a56d1bf6914070738cb000",
+      "evaluated_at": "2026-09-21T03:59:35Z",
+      "organization": "Wemolo",
+      "title": "Senior Frontend Software Engineer (all genders)",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/wemolo/senior-frontend-software-engineer-all-genders-munchen-303753",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 79,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Software Engineer role at Wemolo in Munich with matched keywords for frontend, accessibility, core web vitals and web performance, but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo bucket ITALY_OR_INCLUDES_ITALY is unverified against a Munich-based on-site-leaning role.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "employment_type_unknown",
+        "remote_state_unknown",
+        "geo_mismatch_risk_munich_vs_italy",
+        "senior_software_engineer_likely_full_time"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003455,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-21T02:59:37Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-21T03:59:31Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

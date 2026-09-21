@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 550,
+  "runs": 551,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -13777,6 +13777,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5979a26811a56d1bf6914070738cb000",
+      "evaluated_at": "2026-09-21T03:59:35Z",
+      "organization": "Wemolo",
+      "title": "Senior Frontend Software Engineer (all genders)",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/wemolo/senior-frontend-software-engineer-all-genders-munchen-303753",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 79,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Frontend Software Engineer role at Wemolo in Munich with matched keywords for frontend, accessibility, core web vitals and web performance, but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo bucket ITALY_OR_INCLUDES_ITALY is unverified against a Munich-based on-site-leaning role.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "employment_type_unknown",
+        "remote_state_unknown",
+        "geo_mismatch_risk_munich_vs_italy",
+        "senior_software_engineer_likely_full_time"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003455,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -16611,9 +16640,21 @@
       "completion_tokens": 423,
       "total_tokens": 1535,
       "estimated_cost_usd": 0.00066594
+    },
+    {
+      "at": "2026-09-21T03:59:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 191,
+      "completion_tokens": 194,
+      "total_tokens": 769,
+      "estimated_cost_usd": 0.0003455
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-21T02:59:40Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-21T03:59:35Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
