@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 562,
+  "runs": 563,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -13892,6 +13892,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6d389ecf6f09156945b578180f42add4",
+      "evaluated_at": "2026-09-21T12:20:59Z",
+      "organization": "TecFox GmbH",
+      "title": "Frontend Softwareentwickler (m/w/d)",
+      "location": "Braunschweig",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tecfox-gmbh/frontend-softwareentwickler-braunschweig-275925",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 42.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend role with UI/UX keyword overlap, but no explicit WordPress/WooCommerce, performance, or maintenance scope; location Braunschweig (Germany) is outside primary Spain/Italy markets and remote status is unverified.",
+      "deepseek_risk_flags": [
+        "geo_mismatch_germany",
+        "remote_unverified",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_compatibility_evidence",
+        "stack_scope_ambiguous"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020308,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -16774,9 +16803,21 @@
       "completion_tokens": 152,
       "total_tokens": 739,
       "estimated_cost_usd": 0.00014767
+    },
+    {
+      "at": "2026-09-21T12:20:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 442,
+      "completion_tokens": 159,
+      "total_tokens": 729,
+      "estimated_cost_usd": 0.00020308
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-21T12:02:54Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-21T12:20:59Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
