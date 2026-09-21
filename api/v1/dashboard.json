@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-21T17:39:46+02:00",
+  "generated_at": "2026-09-21T17:57:38+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -14,15 +14,15 @@
     "hard_bounces": 0,
     "messages_per_active_hour": 0.0,
     "first_contacts_per_active_hour": 0.0,
-    "active_window_elapsed_hours": 8.66,
+    "active_window_elapsed_hours": 8.96,
     "sending_window": "09:00-19:00 Europe/Madrid",
     "active_window_sent_count": 0,
     "active_window_first_contact_count": 0
   },
   "headline": {
-    "semantic_input_last_run": 2500,
-    "semantic_pass_last_run": 111,
-    "semantic_pass_rate_pct": 4.44,
+    "semantic_input_last_run": 2515,
+    "semantic_pass_last_run": 115,
+    "semantic_pass_rate_pct": 4.57,
     "active_opportunities": 53,
     "ready": 4,
     "manual_action": 5,
@@ -34,7 +34,7 @@
     "ready_legacy_compat_previous_value": 25,
     "executable_ready_now": 4,
     "legacy_ready_advisory": 21,
-    "semantic_pass_backlog_proxy": 111
+    "semantic_pass_backlog_proxy": 115
   },
   "status_counts": {
     "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
@@ -62,7 +62,7 @@
       "territory": "UNRESOLVED",
       "score": 100.0,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-22T09:20:33.770700Z",
       "heat_pct": 100.0
@@ -73,10 +73,10 @@
       "region": "Lazio",
       "territory": "Roma",
       "score": 49.16,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-22T08:46:17.258548Z",
+      "cooldown_until": "2026-09-22T09:57:15.153761Z",
       "heat_pct": 49.2
     },
     {
@@ -92,34 +92,34 @@
       "heat_pct": 44.5
     },
     {
-      "area": "Italy|Veneto|Venezia",
-      "country": "Italy",
-      "region": "Veneto",
-      "territory": "Venezia",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
-    },
-    {
-      "area": "Spain|Comunitat Valenciana|Castellón",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "territory": "Castellón",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
-    },
-    {
       "area": "Spain|Aragón|Zaragoza",
       "country": "Spain",
       "region": "Aragón",
       "territory": "Zaragoza",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Calabria|Reggio Calabria",
+      "country": "Italy",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Veneto|Venezia",
+      "country": "Italy",
+      "region": "Veneto",
+      "territory": "Venezia",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -140,10 +140,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Calabria|Reggio Calabria",
-      "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
+      "area": "Spain|Comunitat Valenciana|Castellón",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "territory": "Castellón",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -195,8 +195,8 @@
       "score": 16.95,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 601,
-      "cooldown_until": "2026-09-22T09:39:20.200669Z",
+      "low_yield_cycles": 602,
+      "cooldown_until": "2026-09-22T09:57:15.153761Z",
       "heat_pct": 16.9
     }
   ],
@@ -206,7 +206,7 @@
       "territories": 108,
       "average_score": 4.0,
       "best_score": 100.0,
-      "harvest_territories": 2,
+      "harvest_territories": 1,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
@@ -240,9 +240,9 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 2500,
-      "semantic_input": 2500,
-      "semantic_pass": 111,
+      "raw_signals": 2515,
+      "semantic_input": 2515,
+      "semantic_pass": 115,
       "company_verified": null,
       "route_found": null,
       "dedup_ok": null,
@@ -259,9 +259,9 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 2330,
-      "semantic_review": 59,
-      "semantic_pass_to_executable_gap_proxy": 107,
+      "semantic_reject": 2340,
+      "semantic_review": 60,
+      "semantic_pass_to_executable_gap_proxy": 111,
       "legacy_ready_advisory_excluded": 21
     },
     "status_classes": {
@@ -281,9 +281,9 @@
       "CONTACTED_PENDING_CANONICAL_RECONCILIATION": 1
     },
     "pressure": {
-      "qualified_backlog_proxy": 111,
+      "qualified_backlog_proxy": 115,
       "executable_ready_now": 4,
-      "conversion_pressure_ratio": 27.75,
+      "conversion_pressure_ratio": 28.75,
       "turbo_enabled": true,
       "turbo_reason": "HIGH_BUYER_INTENT_BACKLOG"
     }
@@ -311,7 +311,7 @@
   "provider_inbound_pending_sources": 0,
   "source_health": {
     "schema_version": "2.2",
-    "reconciled_at": "2026-09-21T15:39:46Z",
+    "reconciled_at": "2026-09-21T15:57:38Z",
     "provider_observed_at": "2026-09-18T11:43:06Z",
     "provider_observation_fresh": false,
     "outbound_last_event_at": "2026-09-18T11:43:06Z",
