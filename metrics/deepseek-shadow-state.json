@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 581,
+  "runs": 582,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -13979,6 +13979,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "1f4ca474bb36f92e0baa7b179ea71670",
+      "evaluated_at": "2026-09-22T01:17:17Z",
+      "organization": "Tablemedia",
+      "title": "Full Stack Product Developer (m/w/d)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tablemedia/full-stack-product-developer-berlin-465738",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 38.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full Stack Product Developer role in Berlin with only generic keyword overlap (cms, css, frontend, html, javascript, php); no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo bucket unverified for a Spain/Italy/EU-remote target.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "full_stack_generalist_scope",
+        "geo_unverified_berlin_onsite_likely",
+        "freelance_compatibility_unproven",
+        "partner_keyword_is_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00043431,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -16885,9 +16914,21 @@
       "completion_tokens": 348,
       "total_tokens": 1185,
       "estimated_cost_usd": 0.00038656
+    },
+    {
+      "at": "2026-09-22T01:17:17Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 434,
+      "completion_tokens": 183,
+      "total_tokens": 745,
+      "estimated_cost_usd": 0.00043431
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-21T22:47:33Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-22T01:17:17Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

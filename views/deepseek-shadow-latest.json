@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-21T22:47:34Z",
+  "updated_at": "2026-09-22T01:17:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 512,
-    "agreement_count": 260,
-    "agreement_pct": 50.78,
+    "evaluated_total": 513,
+    "agreement_count": 261,
+    "agreement_pct": 50.88,
     "deepseek_promote": 25,
     "vds_promote": 182,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 242,
-    "cumulative_estimated_cost_usd": 0.106303,
-    "cost_per_evaluated_candidate_usd": 0.00020762,
-    "cost_per_deepseek_promote_usd": 0.00425212,
-    "cost_per_observed_ready_or_contacted_usd": 0.05315144,
-    "latest_request": null
+    "request_count": 243,
+    "cumulative_estimated_cost_usd": 0.106737,
+    "cost_per_evaluated_candidate_usd": 0.00020806,
+    "cost_per_deepseek_promote_usd": 0.00426949,
+    "cost_per_observed_ready_or_contacted_usd": 0.05336859,
+    "latest_request": {
+      "at": "2026-09-22T01:17:17Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 434,
+      "completion_tokens": 183,
+      "total_tokens": 745,
+      "estimated_cost_usd": 0.00043431
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a9157ac66d275dec4a746d7685b7bd6e",
-      "evaluated_at": "2026-09-18T10:00:31Z",
-      "organization": "celonis",
-      "title": "Senior Design Engineer, Design Operations: AI-Powered Design Platform",
-      "location": "Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/celonis/senior-design-engineer-design-operations-ai-powered-design-platform-munich-226003",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Design-engineering role at an enterprise AI platform; keyword matches are generic (css, html, javascript, ux) and the 'partner' intent hit is not evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "enterprise_in_house_role",
-        "no_wordpress_scope",
-        "generic_keyword_matches",
-        "freelance_compatibility_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00013853,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6872fec42c45bc196a2428dea06d0948",
       "evaluated_at": "2026-09-18T11:41:08Z",
@@ -1472,10 +1455,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "1f4ca474bb36f92e0baa7b179ea71670",
+      "evaluated_at": "2026-09-22T01:17:17Z",
+      "organization": "Tablemedia",
+      "title": "Full Stack Product Developer (m/w/d)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tablemedia/full-stack-product-developer-berlin-465738",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 38.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full Stack Product Developer role in Berlin with only generic keyword overlap (cms, css, frontend, html, javascript, php); no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo bucket unverified for a Spain/Italy/EU-remote target.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "full_stack_generalist_scope",
+        "geo_unverified_berlin_onsite_likely",
+        "freelance_compatibility_unproven",
+        "partner_keyword_is_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00043431,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-21T22:47:29Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-22T01:17:13Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
