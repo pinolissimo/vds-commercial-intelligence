@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-22T13:08:37Z",
+  "updated_at": "2026-09-22T13:26:31Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 521,
+    "evaluated_total": 523,
     "agreement_count": 265,
-    "agreement_pct": 50.86,
+    "agreement_pct": 50.67,
     "deepseek_promote": 27,
-    "vds_promote": 187,
+    "vds_promote": 189,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 164
+    "deepseek_demoted_from_vds_promote": 166
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.67,
+    "vds_promote_hot_rate_pct": 2.65,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 7.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 248,
-    "cumulative_estimated_cost_usd": 0.108681,
-    "cost_per_evaluated_candidate_usd": 0.0002086,
-    "cost_per_deepseek_promote_usd": 0.00402523,
-    "cost_per_observed_ready_or_contacted_usd": 0.05434058,
-    "latest_request": null
+    "request_count": 249,
+    "cumulative_estimated_cost_usd": 0.109051,
+    "cost_per_evaluated_candidate_usd": 0.00020851,
+    "cost_per_deepseek_promote_usd": 0.00403892,
+    "cost_per_observed_ready_or_contacted_usd": 0.05452539,
+    "latest_request": {
+      "at": "2026-09-22T13:26:29Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 707,
+      "completion_tokens": 323,
+      "total_tokens": 1158,
+      "estimated_cost_usd": 0.00036962
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "43d820fe6ada1d08d1ecfd5e00730a37",
-      "evaluated_at": "2026-09-18T17:27:28Z",
-      "organization": "Verifone",
-      "title": "Marketing Manager",
-      "location": "Boulogne-Billancourt, Hauts-de-Seine",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/verifone/marketing-manager-boulogne-billancourt-hauts-de-seine-460623",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Marketing Manager role; matched keywords (html, maintenance, website) are incidental to a non-technical marketing position, not evidence of web-development demand.",
-      "deepseek_risk_flags": [
-        "non_technical_role",
-        "keyword_noise",
-        "no_web_development_scope",
-        "no_freelance_compatibility_evidence"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001650067,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "65c5321818521a55ec10ac37909f37b0",
-      "evaluated_at": "2026-09-18T17:27:28Z",
-      "organization": "Malt",
-      "title": "Head of Experience Systems & AI",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/malt/head-of-experience-systems-ai-paris-1873",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.88,
-      "deepseek_primary_reason": "Head of Experience Systems & AI is a senior leadership/strategy role; frontend/UI/accessibility mentions are peripheral and freelance/partner keywords appear in unrelated job text, not as contract terms.",
-      "deepseek_risk_flags": [
-        "leadership_role_not_hands_on",
-        "keyword_noise",
-        "no_wordpress_woocommerce_scope",
-        "freelance_mention_not_contract_evidence"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001650067,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "95fa34d9b103adaf2652f91d46085d93",
       "evaluated_at": "2026-09-18T19:56:32Z",
@@ -1478,10 +1433,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "70d6879f1f7a4ec54729f5e28edbb5db",
+      "evaluated_at": "2026-09-22T13:26:29Z",
+      "organization": "Reactive Markets",
+      "title": "Lead Frontend Engineer",
+      "location": "Remote, UK",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/reactive-markets/lead-frontend-engineer-united-kingdom-99754",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend role with JS/UI/maintenance keyword overlap, but no explicit WordPress/WooCommerce scope, no stated freelance/contract compatibility, and geo is UK-remote which is outside primary Spain/Italy/EU-remote target.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_evidence",
+        "freelance_compatibility_unverified",
+        "partner_keyword_is_generic",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018481,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "773c7b9864478a1fea468379c89c7132",
+      "evaluated_at": "2026-09-22T13:26:29Z",
+      "organization": "Reactive Markets",
+      "title": "Senior Frontend Engineer",
+      "location": "Remote, UK",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/reactive-markets/senior-frontend-engineer-united-kingdom-233025",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior frontend role with JS/UI/maintenance keyword overlap, but no explicit WordPress/WooCommerce scope, no stated freelance/contract compatibility, and geo is UK-remote which is outside primary Spain/Italy/EU-remote target.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_evidence",
+        "freelance_compatibility_unverified",
+        "partner_keyword_is_generic",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018481,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-22T13:08:33Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-22T13:26:25Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
