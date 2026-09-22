@@ -230,8 +230,8 @@ def main():
             "target_high_intent_first_contacts_7d": 120,
             "target_first_contacts_per_business_day": 20,
             "soft_daily_first_contact_ceiling": 25,
-            "target_calls_7d": 3,
-            "target_proposals_7d": 2,
+            "target_calls_7d": 5,
+            "target_proposals_7d": 3,
             "target_wins_7d": 1
         },
         "engagement_exclusion_policy": {
@@ -296,7 +296,7 @@ def main():
             "enabled": turbo,
             "reason": turbo_reason,
             "quality_gates_unchanged": True,
-            "target_serious_candidate_decisions_per_run": 60,
+            "target_serious_candidate_decisions_per_run": 120,
             "same_run_qualification_and_send": True,
             "send_all_valid_send_now": True,
             "no_batch_minimum": True,
