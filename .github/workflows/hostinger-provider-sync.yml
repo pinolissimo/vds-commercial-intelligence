@@ -1,0 +1,64 @@
+name: VDS Hostinger Provider Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vds-hostinger-provider-sync
+  cancel-in-progress: true
+
+jobs:
+  sync-provider:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HOSTINGER_EMAIL_API_TOKEN: ${{ secrets.HOSTINGER_EMAIL_API_TOKEN }}
+      HOSTINGER_MAILBOX: info@visualdesignstudio.es
+      VDS_OWNER_BCC: allocca.pino@gmail.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Verify Hostinger secret
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${HOSTINGER_EMAIL_API_TOKEN:-}" ]; then
+            echo "::error::Missing HOSTINGER_EMAIL_API_TOKEN repository secret"
+            exit 2
+          fi
+
+      - name: Synchronize Hostinger Sent and Inbox
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m py_compile scripts/sync_hostinger_mail.py
+          python3 scripts/sync_hostinger_mail.py
+
+      - name: Commit provider state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "vds-provider-sync-bot"
+          git config user.email "35764978+pinolissimo@users.noreply.github.com"
+          git add state/provider-observation.json state/provider-outbound-live.json state/provider-inbound-live.json
+          if git diff --cached --quiet; then
+            echo "Provider state already current"
+            exit 0
+          fi
+          git commit -m "provider: sync Hostinger mailbox state"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            git pull --rebase origin main
+            sleep $((attempt * 2))
+          done
+          exit 1
