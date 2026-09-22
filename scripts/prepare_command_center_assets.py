@@ -6,6 +6,8 @@ assets during the Pages build and publishes them under command-center/assets/.
 """
 from __future__ import annotations
 
+import json
+import os
 import re
 import sys
 import urllib.request
@@ -27,6 +29,8 @@ EXECUTABLE_READY_MARKER = "assets/executable-ready.js"
 EU_RADAR_MARKER = "assets/eu-radar.js"
 REPLY_LIVE_MARKER = "assets/reply-live.js"
 EXPORT_CSS_MARKER = "assets/export.css"
+BUILD_ID = (os.environ.get("GITHUB_SHA") or "dev")[:12]
+BUILD_CHECK_MARKER = "assets/build-check.js"
 
 
 def fetch(url: str) -> bytes:
@@ -42,6 +46,45 @@ def font_url(css_url: str) -> str:
         raise RuntimeError(f"No WOFF2 found in {css_url}")
     return urls[-1]
 
+
+def install_build_guard(root: Path, build_id: str) -> None:
+    """Publish a build id and a runtime stale-build detector."""
+    (root / "build-version.json").write_text(
+        json.dumps({"build_id": build_id}, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
+    guard = root / "assets" / "build-check.js"
+    guard.write_text(
+        "const VDS_BUILD_ID=" + json.dumps(build_id) + ";\n"
+        "const VDS_BUILD_RELOAD_PREFIX='vds_cc_build_reload_';\n"
+        "(async()=>{\n"
+        "  try{\n"
+        "    const response=await fetch('./build-version.json?t='+Date.now(),{cache:'no-store'});\n"
+        "    if(!response.ok)return;\n"
+        "    const remote=await response.json();\n"
+        "    const active=String((remote&&remote.build_id)||'');\n"
+        "    if(!active||active===VDS_BUILD_ID)return;\n"
+        "    const guardKey=VDS_BUILD_RELOAD_PREFIX+active;\n"
+        "    if(sessionStorage.getItem(guardKey)==='1')return;\n"
+        "    sessionStorage.setItem(guardKey,'1');\n"
+        "    const url=new URL(window.location.href);\n"
+        "    url.searchParams.set('_vds_build',active);\n"
+        "    window.location.replace(url.toString());\n"
+        "  }catch(_){ }\n"
+        "})();\n",
+        encoding="utf-8",
+    )
+
+
+def version_static_asset_urls(html: str, build_id: str) -> str:
+    """Cache-bust every local runtime asset with the deploy commit id."""
+    pattern = re.compile(
+        r'(?P<attr>src|href)="(?P<url>(?:assets/[^"?]+|manifest\.webmanifest))(?:\?[^\"]*)?"'
+    )
+    return pattern.sub(
+        lambda m: f'{m.group("attr")}="{m.group("url")}?v={build_id}"',
+        html,
+    )
 
 def inject_command_center_enhancements(root: Path) -> None:
     index = root / "index.html"
@@ -84,6 +127,9 @@ def inject_command_center_enhancements(root: Path) -> None:
         scripts += '<script type="module" src="assets/reply-live.js"></script>'
     if scripts:
         html = html.replace("</body>", scripts + "</body>")
+    if BUILD_CHECK_MARKER not in html:
+        html = html.replace("</body>", '<script src="assets/build-check.js"></script></body>')
+    html = version_static_asset_urls(html, BUILD_ID)
     index.write_text(html, encoding="utf-8")
 
 
@@ -110,7 +156,9 @@ def main() -> int:
         path.write_bytes(data)
         print(f"asset {path}: {len(data)} bytes")
 
+    install_build_guard(root, BUILD_ID)
     inject_command_center_enhancements(root)
+    print(f"build {BUILD_ID}: cache-busted assets + runtime stale-build guard")
     return 0
 
 
