@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-22T13:45:28Z",
+  "updated_at": "2026-09-22T14:03:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 523,
-    "agreement_count": 265,
-    "agreement_pct": 50.67,
+    "evaluated_total": 524,
+    "agreement_count": 266,
+    "agreement_pct": 50.76,
     "deepseek_promote": 27,
     "vds_promote": 189,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 249,
-    "cumulative_estimated_cost_usd": 0.109051,
-    "cost_per_evaluated_candidate_usd": 0.00020851,
-    "cost_per_deepseek_promote_usd": 0.00403892,
-    "cost_per_observed_ready_or_contacted_usd": 0.05452539,
-    "latest_request": null
+    "request_count": 250,
+    "cumulative_estimated_cost_usd": 0.109246,
+    "cost_per_evaluated_candidate_usd": 0.00020849,
+    "cost_per_deepseek_promote_usd": 0.00404616,
+    "cost_per_observed_ready_or_contacted_usd": 0.05462319,
+    "latest_request": {
+      "at": "2026-09-22T14:03:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 390,
+      "completion_tokens": 165,
+      "total_tokens": 683,
+      "estimated_cost_usd": 0.0001956
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "95fa34d9b103adaf2652f91d46085d93",
-      "evaluated_at": "2026-09-18T19:56:32Z",
-      "organization": "Phrase",
-      "title": "Senior Web Developer, Marketing",
-      "location": "United Kingdom",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/phrase/senior-web-developer-marketing-united-kingdom-174791",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 62.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Senior Web Developer, Marketing role at Phrase shows strong stack alignment (WordPress, CMS, Core Web Vitals, accessibility, migration) but is a UK-based senior in-house marketing web developer position with no explicit freelance/contract signal; 'collaboration'/'partner'/'remote' are generic commercial keywords, not proof of external collaboration compatibility.",
-      "deepseek_risk_flags": [
-        "uk_location_geo_mismatch",
-        "no_explicit_freelance_or_contract_terms",
-        "in_house_marketing_role_likely_full_time",
-        "remote_state_unverified",
-        "generic_collaboration_keywords"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022838,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "3f4e58487c9da12feb72d9165403c4f2",
       "evaluated_at": "2026-09-18T22:30:10Z",
@@ -1480,10 +1462,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "bb66ff5a3576f89a5b921da61808cb34",
+      "evaluated_at": "2026-09-22T14:03:18Z",
+      "organization": "",
+      "title": "Fullstack Devleoper (PL)",
+      "location": "Poland",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Fullstack Developer' role in Poland with only incidental frontend/JavaScript keyword matches and no explicit WordPress, WooCommerce, or web-performance scope; 'contractor/partner' terms appear as generic commercial keywords rather than evidence of freelance-compatible engagement.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_risk",
+        "no_wordpress_scope",
+        "no_explicit_freelance_evidence",
+        "geo_outside_primary_markets",
+        "vague_role_title"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001956,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-22T13:45:23Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-22T14:03:14Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
