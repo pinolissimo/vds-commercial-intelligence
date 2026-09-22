@@ -92,7 +92,16 @@ jobs:
           }
 
           stage_and_commit() {
-            git add               state/provider-observation.json               state/provider-outbound-live.json               state/provider-inbound-live.json               state/provider-sync-status.json               api/v1
+            git add \
+              state/provider-observation.json \
+              state/provider-outbound-live.json \
+              state/provider-inbound-live.json \
+              state/provider-sync-status.json \
+              data/global-sent-email-ledger.jsonl \
+              views/provider-contact-suppression-index.json \
+              views/global-sent-email-index.json \
+              views/global-organization-index.json \
+              api/v1
             if git diff --cached --quiet; then
               return 1
             fi
