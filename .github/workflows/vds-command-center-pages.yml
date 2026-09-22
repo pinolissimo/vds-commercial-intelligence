@@ -88,6 +88,8 @@ jobs:
           grep -q "Secrets read/write" .pages/index.html
           grep -q "crypto_box_seal" .pages/assets/secure-onboarding.js
           grep -q "DEEPSEEK_API_KEY" .pages/assets/secure-onboarding.js
+          grep -q "HOSTINGER_EMAIL_API_TOKEN" .pages/assets/secure-onboarding.js
+          grep -q "hostinger-provider-sync.yml" .pages/assets/live-export.js
           grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
           node --check .pages/assets/app.js
           node --check .pages/assets/token-persistence.js
