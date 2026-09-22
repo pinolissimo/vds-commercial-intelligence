@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-22T14:03:20Z",
+  "updated_at": "2026-09-22T14:21:35Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 524,
-    "agreement_count": 266,
+    "evaluated_total": 526,
+    "agreement_count": 267,
     "agreement_pct": 50.76,
     "deepseek_promote": 27,
-    "vds_promote": 189,
+    "vds_promote": 190,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 166
+    "deepseek_demoted_from_vds_promote": 167
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.65,
+    "vds_promote_hot_rate_pct": 2.63,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 7.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 250,
-    "cumulative_estimated_cost_usd": 0.109246,
-    "cost_per_evaluated_candidate_usd": 0.00020849,
-    "cost_per_deepseek_promote_usd": 0.00404616,
-    "cost_per_observed_ready_or_contacted_usd": 0.05462319,
+    "request_count": 251,
+    "cumulative_estimated_cost_usd": 0.109617,
+    "cost_per_evaluated_candidate_usd": 0.0002084,
+    "cost_per_deepseek_promote_usd": 0.00405988,
+    "cost_per_observed_ready_or_contacted_usd": 0.05480833,
     "latest_request": {
-      "at": "2026-09-22T14:03:18Z",
+      "at": "2026-09-22T14:21:33Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 390,
-      "completion_tokens": 165,
-      "total_tokens": 683,
-      "estimated_cost_usd": 0.0001956
+      "prompt_cache_miss_tokens": 689,
+      "completion_tokens": 330,
+      "total_tokens": 1147,
+      "estimated_cost_usd": 0.00037028
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "3f4e58487c9da12feb72d9165403c4f2",
-      "evaluated_at": "2026-09-18T22:30:10Z",
-      "organization": "grafanalabs",
-      "title": "Senior Engineering Manager, Grafana Frontend | United Kingdom | Remote",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/grafanalabs/senior-engineering-manager-grafana-frontend-united-kingdom-remote-318498",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Engineering Manager role at Grafana Labs is a people/engineering leadership position, not a hands-on freelance web-development opportunity; frontend keyword match is incidental and the role is a full-time senior management job incompatible with freelance acquisition.",
-      "deepseek_risk_flags": [
-        "senior_management_role",
-        "not_freelance_compatible",
-        "full_time_employment_likely",
-        "keyword_only_frontend_match",
-        "no_wordpress_woocommerce_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00018503,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "331caa511e513548ef21967d14d911ef",
-      "evaluated_at": "2026-09-18T22:30:10Z",
-      "organization": "Datadog",
-      "title": "Partner Solutions Architect (EMEA)",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/datadog/remote-partner-solutions-architect-emea-389722",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Partner Solutions Architect at Datadog is a pre-sales/partner-facing technical role centered on Datadog's observability platform, not WordPress/WooCommerce/custom web development; matched keywords (php, javascript, website, migration) are generic and do not reflect the actual role scope.",
-      "deepseek_risk_flags": [
-        "not_web_development_scope",
-        "vendor_platform_specific",
-        "pre_sales_role",
-        "keyword_only_matches",
-        "no_wordpress_woocommerce_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00018503,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "95dc4f3e17947ac8f0ceee90ae72fce6",
       "evaluated_at": "2026-09-19T02:04:32Z",
@@ -1491,10 +1433,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d910a5267b6e945cf4da98aa83398bab",
+      "evaluated_at": "2026-09-22T14:21:33Z",
+      "organization": "Vexcash AG",
+      "title": "Frontend Developer (all genders)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/vexcash-ag/frontend-developer-all-genders-berlin-80341",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 94,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend Developer role with matching frontend/JS/UI/UX/accessibility keywords, but no explicit WordPress/WooCommerce scope, no commercial/freelance signals, and location is Berlin (not Spain/Italy) with geo bucket unverified.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_freelance_or_contract_signal",
+        "no_wordpress_woocommerce_scope",
+        "employment_type_unknown",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018514,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e112429179c7834d9272f7036fcc9443",
+      "evaluated_at": "2026-09-22T14:21:33Z",
+      "organization": "Nabla",
+      "title": "Full-Stack Engineer",
+      "location": "Paris office",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/nabla/full-stack-engineer-paris-397317",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Full-Stack Engineer role in Paris with only incidental frontend/CSS keyword overlap; 'partner'/'collaboration'/'remote' appear as generic job text, not evidence of freelance compatibility, and no WordPress/WooCommerce or Spain/Italy alignment.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_full_stack_core",
+        "geo_outside_primary_markets",
+        "generic_collaboration_terms_not_freelance_proof",
+        "no_wordpress_woocommerce_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018514,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-22T14:03:14Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-22T14:21:29Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
