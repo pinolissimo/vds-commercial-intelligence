@@ -10,6 +10,7 @@ const VDS_PROVIDERS={
   hostinger:{label:'Hostinger Mail',secret:'HOSTINGER_EMAIL_API_TOKEN',placeholder:'Incolla il token Hostinger Mail API',purpose:'Sincronizzazione automatica Sent/Inbox ogni 10 minuti'}
 };
 const providerState={openai:false,deepseek:false,hostinger:false};
+let hostingerAuthStatus='UNKNOWN';
 let selectedProvider='openai';
 
 const token=()=>sessionStorage.getItem(VDS_TOKEN_KEY)||'';
@@ -54,6 +55,40 @@ async function gh(path,options={}){
     headers:{...ghHeaders(),...(options.headers||{})},
     cache:'no-store'
   });
+}
+
+async function fetchHostingerAuthStatus(){
+  try{
+    const response=await fetch(`https://raw.githubusercontent.com/${VDS_OWNER}/${VDS_REPO}/main/state/provider-sync-status.json?v=${Date.now()}`,{cache:'no-store'});
+    if(!response.ok)return 'UNKNOWN';
+    const payload=await response.json();
+    return String(payload?.auth_status||'UNKNOWN').toUpperCase();
+  }catch(_){
+    return 'UNKNOWN';
+  }
+}
+
+async function triggerHostingerVerification(){
+  const response=await gh(`/repos/${VDS_OWNER}/${VDS_REPO}/actions/workflows/hostinger-provider-sync.yml/dispatches`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({ref:'main'})
+  });
+  if(response.status===403)throw new Error('ACTION_PERMISSION');
+  if(![204].includes(response.status))throw new Error(`HOSTINGER_VERIFY_${response.status}`);
+}
+
+async function waitForHostingerVerification(previous=''){
+  for(let attempt=0;attempt<12;attempt++){
+    await new Promise(resolve=>setTimeout(resolve,2500));
+    const status=await fetchHostingerAuthStatus();
+    if(status&&status!=='UNKNOWN'&&(status!==previous||attempt>2)){
+      hostingerAuthStatus=status;
+      updateProviderRows();
+      return status;
+    }
+  }
+  return hostingerAuthStatus;
 }
 
 async function secretExists(secretName){
@@ -169,9 +204,19 @@ function updateProviderRows(){
     const status=overlay.querySelector(`[data-provider-status="${key}"]`);
     const button=overlay.querySelector(`[data-configure-provider="${key}"]`);
     const card=overlay.querySelector(`[data-provider-card="${key}"]`);
-    if(status){status.textContent=providerState[key]?'Configurata':'Da configurare';status.classList.toggle('is-ready',providerState[key])}
+    if(status){
+      let label=providerState[key]?'Configurata':'Da configurare';
+      let ready=providerState[key];
+      if(key==='hostinger'&&providerState[key]){
+        if(hostingerAuthStatus==='VALID'){label='Connessa';ready=true}
+        else if(hostingerAuthStatus==='INVALID'){label='Token presente · autenticazione fallita';ready=false}
+        else {label='Token presente · verifica in corso';ready=false}
+      }
+      status.textContent=label;
+      status.classList.toggle('is-ready',ready);
+    }
     if(button)button.textContent=providerState[key]?'Sostituisci':'Aggiungi API';
-    card?.classList.toggle('is-ready',providerState[key]);
+    card?.classList.toggle('is-ready',key==='hostinger'?providerState[key]&&hostingerAuthStatus==='VALID':providerState[key]);
   }
 }
 
@@ -261,7 +306,18 @@ async function configureSelectedSecret(){
     updateProviderRows();
     syncCommandStatus();
     toast(`${provider.label} configurata in GitHub Actions Secrets`);
+    const savedProvider=selectedProvider;
     hideSecretForm();
+    if(savedProvider==='hostinger'){
+      const previous=hostingerAuthStatus;
+      hostingerAuthStatus='UNKNOWN';
+      updateProviderRows();
+      toast('Hostinger Mail: verifica connessione avviata');
+      await triggerHostingerVerification();
+      const verified=await waitForHostingerVerification(previous);
+      if(verified==='VALID')toast('Hostinger Mail connessa');
+      else if(verified==='INVALID')toast('Hostinger Mail: token rifiutato dall’API');
+    }
     sessionStorage.removeItem(VDS_API_DISMISSED_KEY);
   }catch(err){
     const permission=err.message==='SECRETS_PERMISSION';
@@ -291,6 +347,7 @@ async function refreshProviderState(){
   providerState.openai=openai;
   providerState.deepseek=deepseek;
   providerState.hostinger=hostinger;
+  hostingerAuthStatus=hostinger?await fetchHostingerAuthStatus():'UNKNOWN';
   updateProviderRows();
   syncCommandStatus();
 }
