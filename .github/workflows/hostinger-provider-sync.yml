@@ -53,7 +53,19 @@ jobs:
           python3 -m py_compile scripts/sync_hostinger_mail.py
           python3 scripts/sync_hostinger_mail.py
 
-      - name: Commit provider state
+      - name: Rebuild Command Center projections
+        if: steps.hostinger-secret.outputs.configured == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_command_center_api.py
+          python3 scripts/enrich_command_center_funnel.py
+          python3 scripts/overlay_provider_live_dashboard.py
+          python3 scripts/overlay_provider_live_replies.py
+          python3 scripts/update_command_center_health.py
+          python3 scripts/validate_command_center_invariants.py
+
+      - name: Commit provider state and dashboard projections
         if: steps.hostinger-secret.outputs.configured == 'true'
         shell: bash
         run: |
@@ -61,17 +73,27 @@ jobs:
           git config user.name "vds-provider-sync-bot"
           git config user.email "35764978+pinolissimo@users.noreply.github.com"
 
+          rebuild_all() {
+            python3 scripts/sync_hostinger_mail.py
+            python3 scripts/build_command_center_api.py
+            python3 scripts/enrich_command_center_funnel.py
+            python3 scripts/overlay_provider_live_dashboard.py
+            python3 scripts/overlay_provider_live_replies.py
+            python3 scripts/update_command_center_health.py
+            python3 scripts/validate_command_center_invariants.py
+          }
+
           stage_and_commit() {
-            git add state/provider-observation.json state/provider-outbound-live.json state/provider-inbound-live.json state/provider-sync-status.json
+            git add               state/provider-observation.json               state/provider-outbound-live.json               state/provider-inbound-live.json               state/provider-sync-status.json               api/v1
             if git diff --cached --quiet; then
               return 1
             fi
-            git commit -m "provider: sync Hostinger mailbox state"
+            git commit -m "provider: sync Hostinger and refresh dashboard"
             return 0
           }
 
           if ! stage_and_commit; then
-            echo "Provider state already current"
+            echo "Provider state and projections already current"
             exit 0
           fi
 
@@ -80,13 +102,13 @@ jobs:
               exit 0
             fi
 
-            echo "Concurrent main update detected; rebuilding provider state on latest main (attempt $attempt)"
+            echo "Concurrent main update detected; rebuilding sync + projections on latest main (attempt $attempt)"
             git fetch origin main
             git reset --hard origin/main
-            python3 scripts/sync_hostinger_mail.py
+            rebuild_all
 
             if ! stage_and_commit; then
-              echo "Provider state became current after refresh"
+              echo "Provider state and projections became current after refresh"
               exit 0
             fi
 
