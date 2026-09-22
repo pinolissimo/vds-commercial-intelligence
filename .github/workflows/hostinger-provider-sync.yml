@@ -60,7 +60,7 @@ jobs:
           set -euo pipefail
           git config user.name "vds-provider-sync-bot"
           git config user.email "35764978+pinolissimo@users.noreply.github.com"
-          git add state/provider-observation.json state/provider-outbound-live.json state/provider-inbound-live.json
+          git add state/provider-observation.json state/provider-outbound-live.json state/provider-inbound-live.json state/provider-sync-status.json
           if git diff --cached --quiet; then
             echo "Provider state already current"
             exit 0
