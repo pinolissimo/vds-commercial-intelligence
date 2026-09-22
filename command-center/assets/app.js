@@ -134,6 +134,18 @@ function outboundAvailable(){
   return state.today?.sent_count!=null || state.dashboard?.today?.sent!=null || Array.isArray(state.today?.sent);
 }
 
+function repliesFresh(){
+  if(typeof state.health?.reply_source_fresh==='boolean')return state.health.reply_source_fresh;
+  if(typeof state.today?.source_health?.reply_source_fresh==='boolean')return state.today.source_health.reply_source_fresh;
+  return false;
+}
+
+function repliesAvailable(){
+  if(typeof state.health?.inbound_data_available==='boolean')return state.health.inbound_data_available;
+  if(typeof state.today?.source_health?.inbound_data_available==='boolean')return state.today.source_health.inbound_data_available;
+  return state.today?.replies!=null;
+}
+
 function setAuthUI(){
   const icon=$('authButton')?.querySelector('.material-symbols');
   if(icon)icon.textContent=state.token?'lock_open':'lock';
@@ -226,15 +238,17 @@ function renderToday(){
   const t=state.dashboard?.today||state.today||{};
   const fresh=outboundFresh();
   const available=outboundAvailable();
-  setText('todaySent',available?num(t.sent??state.today?.sent_count):'—');
-  setText('todayFirstContacts',available?num(t.first_contacts_sent??state.today?.first_contact_count):'—');
-  setText('todayPositive',num(t.replies_positive??state.today?.replies?.positive));
-  setText('todayNegative',num(t.replies_negative??state.today?.replies?.negative));
+  const outboundTrusted=available&&fresh;
+  const inboundTrusted=repliesAvailable()&&repliesFresh();
+  setText('todaySent',outboundTrusted?num(t.sent??state.today?.sent_count):'—');
+  setText('todayFirstContacts',outboundTrusted?num(t.first_contacts_sent??state.today?.first_contact_count):'—');
+  setText('todayPositive',inboundTrusted?num(t.replies_positive??state.today?.replies?.positive):'—');
+  setText('todayNegative',inboundTrusted?num(t.replies_negative??state.today?.replies?.negative):'—');
   const rate=t.messages_per_active_hour??state.today?.messages_per_active_hour;
-  setText('todayRate',available&&rate!=null?Number(rate).toLocaleString('it-IT',{maximumFractionDigits:2}):'—');
+  setText('todayRate',outboundTrusted&&rate!=null?Number(rate).toLocaleString('it-IT',{maximumFractionDigits:2}):'—');
   setText('companiesIndexed',num(state.dashboard?.headline?.companies_indexed??state.companies.length));
   const windowLabel=t.sending_window||'09:00–19:00 Europe/Madrid';
-  setText('sendingWindow',available?(fresh?windowLabel:`${windowLabel} · sync da aggiornare`):'Outbound non disponibile');
+  setText('sendingWindow',outboundTrusted?windowLabel:(available?`${windowLabel} · sincronizzazione provider in corso`:'Outbound non disponibile'));
 }
 
 function renderEngine(){
