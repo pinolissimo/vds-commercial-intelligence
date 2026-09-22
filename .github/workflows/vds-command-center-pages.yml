@@ -47,6 +47,8 @@ jobs:
           test -s .pages/assets/command.css
           test -s .pages/assets/export.css
           test -s .pages/assets/app.js
+          test -s .pages/assets/build-check.js
+          test -s .pages/build-version.json
           test -s .pages/assets/token-persistence.js
           test -s .pages/assets/live-export.js
           test -s .pages/assets/executable-ready.js
@@ -65,6 +67,10 @@ jobs:
           grep -q "sessionStorage" .pages/assets/app.js
           grep -q "localStorage" .pages/assets/token-persistence.js
           grep -q "assets/token-persistence.js" .pages/index.html
+          grep -q "assets/build-check.js?v=" .pages/index.html
+          grep -q "_vds_build" .pages/assets/build-check.js
+          grep -q '"build_id"' .pages/build-version.json
+          grep -q "?v=" .pages/index.html
           grep -q "AUTO_SYNC_FOREGROUND_MS=5000" .pages/assets/live-export.js
           grep -q "DISCOVERY_STALE_MS=17\*60\*1000" .pages/assets/live-export.js
           grep -q "deepseek-shadow.json" .pages/assets/live-export.js
