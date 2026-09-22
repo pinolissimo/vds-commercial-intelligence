@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-09-22T15:32:21Z",
-  "latest_checked_uid": 1505,
+  "updated_at": "2026-09-22T15:47:38Z",
+  "latest_checked_uid": 1506,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -172,6 +172,21 @@
       "subtype": "ACK_ONLY",
       "summary": "Camino Fabregas ringrazia e indica che terranno in considerazione VDS per occasioni future; nessun prossimo passo concreto.",
       "count_as_reply": true
+    },
+    {
+      "provider_inbound_uid": 1506,
+      "received_at": "2026-09-22T15:42:39Z",
+      "canonical_identity_key": "org:email.bambulab.com",
+      "entity": "email.bambulab.com",
+      "sender": "hello@email.bambulab.com",
+      "subject": "Introducing Bambu Lab R1.",
+      "message_id": "<01M34WENMYCH9QJEQ2T2AE8ZA7@klaviyomail.com>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
     }
   ]
 }
