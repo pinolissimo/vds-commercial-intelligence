@@ -64,11 +64,20 @@ def event_id(event):
     return None
 
 
-def is_success(event):
+def is_delivered(event):
+    """Any provider-verified sent email counts in the UI total, including replies."""
     return (
         event.get("state") == "VERIFIED_EMAIL_SENT"
-        and event.get("count_as_successful_outbound") is not False
         and event_id(event) is not None
+    )
+
+
+def is_first_contact(event):
+    """First-contact KPI remains stricter and excludes non-commercial/reply events."""
+    return (
+        is_delivered(event)
+        and event.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"
+        and event.get("count_as_successful_outbound") is not False
     )
 
 
@@ -192,7 +201,7 @@ def main():
     )
     today_messages = []
     for item in messages:
-        if not is_success(item):
+        if not is_delivered(item):
             continue
         dt = parse_dt(item.get("sent_at"))
         if not dt or str(dt.astimezone(MADRID).date()) != date_str:
@@ -202,7 +211,7 @@ def main():
         today_messages.append(row)
 
     today_messages.sort(key=lambda x: x.get("sent_at", ""), reverse=True)
-    first_contacts = [m for m in today_messages if m.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"]
+    first_contacts = [m for m in today_messages if is_first_contact(m)]
     active_window_messages = [m for m in today_messages if in_active_window(m, date_str)]
     active_window_first_contacts = [m for m in first_contacts if in_active_window(m, date_str)]
 
@@ -249,7 +258,7 @@ def main():
     save(API / "outbound.json", outbound)
     print(
         "Outbound live overlay: "
-        f"{len(today_messages)} successful outbound today, "
+        f"{len(today_messages)} provider-verified sent emails today, "
         f"{len(first_contacts)} first contacts, "
         f"{len(active_window_messages)} inside active window, "
         f"{live.get('pending_sources', 0)} pending sources reconciled"
