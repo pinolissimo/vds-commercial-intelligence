@@ -6,9 +6,10 @@ const VDS_API_VERSION='2022-11-28';
 const VDS_API_DISMISSED_KEY='vds_cc_api_prompt_dismissed';
 const VDS_PROVIDERS={
   openai:{label:'OpenAI',secret:'OPENAI_API_KEY',placeholder:'sk-…',purpose:'Command Center, escalation e analisi avanzata'},
-  deepseek:{label:'DeepSeek',secret:'DEEPSEEK_API_KEY',placeholder:'Incolla la DeepSeek API key',purpose:'Semantic intelligence ad alto volume e classificazione'}
+  deepseek:{label:'DeepSeek',secret:'DEEPSEEK_API_KEY',placeholder:'Incolla la DeepSeek API key',purpose:'Semantic intelligence ad alto volume e classificazione'},
+  hostinger:{label:'Hostinger Mail',secret:'HOSTINGER_EMAIL_API_TOKEN',placeholder:'Incolla il token Hostinger Mail API',purpose:'Sincronizzazione automatica Sent/Inbox ogni 10 minuti'}
 };
-const providerState={openai:false,deepseek:false};
+const providerState={openai:false,deepseek:false,hostinger:false};
 let selectedProvider='openai';
 
 const token=()=>sessionStorage.getItem(VDS_TOKEN_KEY)||'';
@@ -101,6 +102,10 @@ function setupMarkup(){
       <article class="api-provider" data-provider-card="deepseek" role="listitem">
         <div><strong>DeepSeek</strong><span>${VDS_PROVIDERS.deepseek.purpose}</span></div>
         <div class="api-provider-actions"><em data-provider-status="deepseek">Verifica…</em><button class="text-button" type="button" data-configure-provider="deepseek">Aggiungi API</button></div>
+      </article>
+      <article class="api-provider" data-provider-card="hostinger" role="listitem">
+        <div><strong>Hostinger Mail</strong><span>${VDS_PROVIDERS.hostinger.purpose}</span></div>
+        <div class="api-provider-actions"><em data-provider-status="hostinger">Verifica…</em><button class="text-button" type="button" data-configure-provider="hostinger">Aggiungi token</button></div>
       </article>
     </div>
     <section id="apiSecretForm" class="api-secret-form" hidden>
@@ -278,12 +283,14 @@ async function configureSelectedSecret(){
 }
 
 async function refreshProviderState(){
-  const [openai,deepseek]=await Promise.all([
+  const [openai,deepseek,hostinger]=await Promise.all([
     secretExists(VDS_PROVIDERS.openai.secret),
-    secretExists(VDS_PROVIDERS.deepseek.secret)
+    secretExists(VDS_PROVIDERS.deepseek.secret),
+    secretExists(VDS_PROVIDERS.hostinger.secret)
   ]);
   providerState.openai=openai;
   providerState.deepseek=deepseek;
+  providerState.hostinger=hostinger;
   updateProviderRows();
   syncCommandStatus();
 }
@@ -298,6 +305,8 @@ async function runSecureOnboarding(){
       openApiManager('openai');
     }else if(!providerState.deepseek){
       openApiManager('deepseek');
+    }else if(!providerState.hostinger){
+      openApiManager('hostinger');
     }
   }catch(err){
     if(err.message==='SECRETS_PERMISSION'){
