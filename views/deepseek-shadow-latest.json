@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-22T17:07:24Z",
+  "updated_at": "2026-09-22T17:25:36Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 526,
+    "evaluated_total": 527,
     "agreement_count": 267,
-    "agreement_pct": 50.76,
+    "agreement_pct": 50.66,
     "deepseek_promote": 27,
-    "vds_promote": 190,
+    "vds_promote": 191,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 167
+    "deepseek_demoted_from_vds_promote": 168
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.63,
+    "vds_promote_hot_rate_pct": 2.62,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 7.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 251,
-    "cumulative_estimated_cost_usd": 0.109617,
-    "cost_per_evaluated_candidate_usd": 0.0002084,
-    "cost_per_deepseek_promote_usd": 0.00405988,
-    "cost_per_observed_ready_or_contacted_usd": 0.05480833,
-    "latest_request": null
+    "request_count": 252,
+    "cumulative_estimated_cost_usd": 0.109823,
+    "cost_per_evaluated_candidate_usd": 0.00020839,
+    "cost_per_deepseek_promote_usd": 0.00406751,
+    "cost_per_observed_ready_or_contacted_usd": 0.05491141,
+    "latest_request": {
+      "at": "2026-09-22T17:25:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 429,
+      "completion_tokens": 168,
+      "total_tokens": 725,
+      "estimated_cost_usd": 0.00020616
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,36 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "95dc4f3e17947ac8f0ceee90ae72fce6",
-      "evaluated_at": "2026-09-19T02:04:32Z",
-      "organization": "wppmedia",
-      "title": "Front-end Engineer",
-      "location": "Manchester",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wppmedia/front-end-engineer-manchester-66098",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 81,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 52.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Front-end Engineer role at WPP Media in Manchester with matching frontend stack keywords (HTML, CSS, JavaScript, Core Web Vitals, accessibility), but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo is UK (Manchester) rather than primary Spain/Italy markets.",
-      "deepseek_risk_flags": [
-        "geo_outside_primary_markets",
-        "no_wordpress_woocommerce_scope",
-        "freelance_compatibility_unverified",
-        "employment_type_unknown",
-        "remote_state_unknown",
-        "commercial_keywords_generic"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00032834,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "729dc6362a7df02c1ec3fc3197000aee",
       "evaluated_at": "2026-09-19T08:02:00Z",
@@ -1479,10 +1460,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e1f693f8158844bdadaaf9340b41e4c1",
+      "evaluated_at": "2026-09-22T17:25:34Z",
+      "organization": "Phantom",
+      "title": "Software Engineer, Frontend / Full Stack (Identity Platform)",
+      "location": "Anywhere",
+      "opportunity_url": "https://jobicy.com/jobs/153865-software-engineer-frontend-full-stack-identity-platform",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 42.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title indicates a Frontend/Full Stack Software Engineer role on an Identity Platform; only 'frontend' matches the target profile, with no evidence of WordPress, WooCommerce, or web-performance scope, and 'partner'/'remote' are generic commercial keywords rather than proof of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_risk",
+        "no_wordpress_woocommerce_scope",
+        "generic_partner_keyword",
+        "employment_type_unknown",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00020616,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-22T17:07:19Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-22T17:25:31Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
