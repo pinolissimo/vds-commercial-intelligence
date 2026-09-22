@@ -75,7 +75,7 @@ def main():
     valid_modes = {"HARVEST", "REVISIT", "EXPLORATION"}
     areas = [a for a in radar.get("areas", []) if a.get("mode") in valid_modes and a.get("region") not in {None, "UNRESOLVED"} and a.get("province") not in {None, "UNRESOLVED"}]
     area_by_key = {a.get("area_key"): a for a in areas}
-    slot = int(now.timestamp() // 600)
+    slot = int(now.timestamp() // 300)
 
     selected = []
     seen = set()
@@ -134,7 +134,7 @@ def main():
     output = {
         "schema_version": "1.3",
         "updated_at": now.replace(microsecond=0).isoformat().replace("+00:00", "Z"),
-        "cycle_minutes": 10,
+        "cycle_minutes": 5,
         "diagnosed_bottleneck": cmd.get("diagnosed_bottleneck"),
         "capacity": cmd.get("capacity", {"exploitation_pct": 70, "exploration_pct": 20, "strategic_reserve_pct": 10}),
         "selected_areas": [{"area_key": a.get("area_key"), "mode": a.get("mode"), "score": a.get("score")} for a in selected],
@@ -142,7 +142,7 @@ def main():
         "country_counts": {"Spain": sum(1 for a in selected if a.get("country") == "Spain"), "Italy": sum(1 for a in selected if a.get("country") == "Italy")},
         "strategy": "LEARNED_YIELD_PLUS_STRATEGIC_DENSITY_PLUS_NATIONWIDE_ROTATION_ALL_INTENTS",
         "multi_engine_router": "views/multi-engine-search-missions.json",
-        "instruction": "Execute highest-value missions every 10 minutes. Discovery-capable tasks MUST also consume views/multi-engine-search-missions.json and fan out its highest-priority variants across independent search engines/search backends when available. Search snippets are discovery only: verify current authoritative demand, exact route, truthful fit and global provider suppression before promotion or execution. Quality gates never weaken."
+        "instruction": "Execute highest-value missions every 5 minutes. Discovery-capable tasks MUST also consume views/multi-engine-search-missions.json and fan out its highest-priority variants across independent search engines/search backends when available. Search snippets are discovery only: verify current authoritative demand, exact route, truthful fit and global provider suppression before promotion or execution. Quality gates never weaken."
     }
     save(OUT, output)
     print(json.dumps({"selected_areas": len(selected), "missions": len(missions), "countries": output["country_counts"], "bottleneck": output["diagnosed_bottleneck"]}))
