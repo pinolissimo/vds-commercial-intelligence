@@ -25,6 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "state"
 SYNC_STATUS_PATH = STATE / "provider-sync-status.json"
+GLOBAL_LEDGER = ROOT / "data/global-sent-email-ledger.jsonl"
 BASE = "https://api.mail.hostinger.com"
 def normalize_token(raw: str) -> tuple[str, dict]:
     """Accept common paste formats without ever logging the credential itself."""
@@ -353,6 +354,76 @@ def merge_inbound(messages: list[dict], checked_at: str) -> int:
     return added
 
 
+
+def load_jsonl(path: Path) -> list[dict]:
+    rows: list[dict] = []
+    try:
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            raw = raw.strip()
+            if not raw:
+                continue
+            value = json.loads(raw)
+            if isinstance(value, dict):
+                rows.append(value)
+    except FileNotFoundError:
+        pass
+    return rows
+
+
+def reconcile_global_first_contact_ledger() -> int:
+    """Append missing provider-verified FIRST_CONTACT events to the durable global ledger."""
+    provider = load(STATE / "provider-outbound-live.json", {})
+    events = [e for e in (provider.get("events") or []) if isinstance(e, dict)]
+    ledger = load_jsonl(GLOBAL_LEDGER)
+    known = {
+        int(e["provider_uid"])
+        for e in ledger
+        if isinstance(e.get("provider_uid"), int)
+    }
+
+    missing = []
+    for event in events:
+        uid = event.get("provider_uid")
+        if not isinstance(uid, int) or uid in known:
+            continue
+        if event.get("state") != "VERIFIED_EMAIL_SENT":
+            continue
+        if event.get("action_type", "FIRST_CONTACT") != "FIRST_CONTACT":
+            continue
+        if event.get("count_as_successful_outbound") is False:
+            continue
+        recipient = str(event.get("recipient") or "").strip().lower()
+        if not recipient or "@" not in recipient:
+            continue
+        row = {
+            "schema_version": "1.0",
+            "event_type": "VERIFIED_EMAIL_SENT",
+            "action_type": "FIRST_CONTACT",
+            "provider": "HOSTINGER",
+            "provider_uid": uid,
+            "sent_at": event.get("sent_at"),
+            "canonical_identity_key": event.get("canonical_identity_key") or f"org:{domain_of(recipient)}",
+            "organization": event.get("organization") or domain_of(recipient),
+            "recipient": recipient,
+            "subject": event.get("subject") or "",
+            "workstream": event.get("workstream") or "VDS_PROVIDER_SYNC",
+            "state": "VERIFIED_EMAIL_SENT",
+            "attachments": int(event.get("attachments") or 0),
+            "bcc_owner": bool(event.get("bcc_owner")),
+        }
+        missing.append(row)
+
+    if not missing:
+        return 0
+
+    missing.sort(key=lambda x: x["provider_uid"])
+    GLOBAL_LEDGER.parent.mkdir(parents=True, exist_ok=True)
+    with GLOBAL_LEDGER.open("a", encoding="utf-8", newline="\n") as fh:
+        for row in missing:
+            fh.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
+    return len(missing)
+
+
 def main() -> int:
     if not TOKEN:
         print("::error::HOSTINGER_EMAIL_API_TOKEN is empty after normalization", file=sys.stderr)
@@ -415,6 +486,8 @@ def main() -> int:
         "checked_at": checked_at,
     }
     save(observation_path, observation)
+
+    ledger_added = reconcile_global_first_contact_ledger()
     write_sync_status(
         "OK",
         auth_status="VALID",
@@ -424,6 +497,7 @@ def main() -> int:
         latest_inbox_uid=observation.get("latest_inbox_uid"),
         new_sent_events=added_sent,
         new_inbox_events=added_inbox,
+        global_ledger_first_contacts_added=ledger_added,
     )
 
     print(json.dumps({
@@ -432,6 +506,7 @@ def main() -> int:
         "mailbox": MAILBOX_ADDRESS,
         "new_sent_events": added_sent,
         "new_inbox_events": added_inbox,
+        "global_ledger_first_contacts_added": ledger_added,
         "latest_sent_uid": observation.get("latest_sent_uid"),
         "latest_inbox_uid": observation.get("latest_inbox_uid"),
     }))
