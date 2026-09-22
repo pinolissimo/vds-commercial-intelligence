@@ -25,7 +25,42 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "state"
 BASE = "https://api.mail.hostinger.com"
-TOKEN = os.environ.get("HOSTINGER_EMAIL_API_TOKEN", "").strip()
+def normalize_token(raw: str) -> tuple[str, dict]:
+    """Accept common paste formats without ever logging the credential itself."""
+    original = str(raw or "")
+    value = original.replace("\ufeff", "").replace("\u200b", "").replace("\u200c", "").replace("\u200d", "").strip()
+    diagnostics = {
+        "had_outer_quotes": False,
+        "had_bearer_prefix": False,
+        "had_assignment_prefix": False,
+        "had_embedded_whitespace": False,
+    }
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+        diagnostics["had_outer_quotes"] = True
+        value = value[1:-1].strip()
+    lower = value.lower()
+    for prefix in (
+        "hostinger_email_api_token=",
+        "hostinger_api_key=",
+        "mail_api_key=",
+        "api_key=",
+        "authorization:",
+    ):
+        if lower.startswith(prefix):
+            diagnostics["had_assignment_prefix"] = True
+            value = value[len(prefix):].strip()
+            lower = value.lower()
+            break
+    if lower.startswith("bearer "):
+        diagnostics["had_bearer_prefix"] = True
+        value = value[7:].strip()
+    if any(ch.isspace() for ch in value):
+        diagnostics["had_embedded_whitespace"] = True
+        value = "".join(value.split())
+    return value, diagnostics
+
+
+TOKEN, TOKEN_DIAGNOSTICS = normalize_token(os.environ.get("HOSTINGER_EMAIL_API_TOKEN", ""))
 MAILBOX_ADDRESS = os.environ.get("HOSTINGER_MAILBOX", "info@visualdesignstudio.es").strip().lower()
 OWNER_BCC = os.environ.get("VDS_OWNER_BCC", "allocca.pino@gmail.com").strip().lower()
 MAX_PAGES = 20
@@ -73,6 +108,12 @@ def api(method: str, path: str, *, query=None, body=None):
             return json.loads(raw.decode("utf-8")) if raw else {}
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", "replace")[:1000]
+        if exc.code == 401:
+            flags = ",".join(k for k, v in TOKEN_DIAGNOSTICS.items() if v) or "none"
+            raise RuntimeError(
+                f"Hostinger API HTTP 401: credential rejected after normalization "
+                f"(normalizations={flags}). {detail}"
+            ) from exc
         raise RuntimeError(f"Hostinger API HTTP {exc.code}: {detail}") from exc
 
 
@@ -299,7 +340,10 @@ def merge_inbound(messages: list[dict], checked_at: str) -> int:
 
 def main() -> int:
     if not TOKEN:
-        print("::error::HOSTINGER_EMAIL_API_TOKEN is missing from repository secrets", file=sys.stderr)
+        print("::error::HOSTINGER_EMAIL_API_TOKEN is empty after normalization", file=sys.stderr)
+        return 2
+    if len(TOKEN) < 16:
+        print("::error::HOSTINGER_EMAIL_API_TOKEN is implausibly short after normalization", file=sys.stderr)
         return 2
 
     observation_path = STATE / "provider-observation.json"
