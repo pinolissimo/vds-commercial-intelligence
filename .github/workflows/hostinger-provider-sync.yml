@@ -2,6 +2,11 @@ name: VDS Hostinger Provider Sync
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync_hostinger_mail.py'
+      - '.github/workflows/hostinger-provider-sync.yml'
   schedule:
     - cron: '*/10 * * * *'
 
@@ -27,15 +32,19 @@ jobs:
           fetch-depth: 0
 
       - name: Verify Hostinger secret
+        id: hostinger-secret
         shell: bash
         run: |
           set -euo pipefail
           if [ -z "${HOSTINGER_EMAIL_API_TOKEN:-}" ]; then
-            echo "::error::Missing HOSTINGER_EMAIL_API_TOKEN repository secret"
-            exit 2
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::HOSTINGER_EMAIL_API_TOKEN is not configured yet; automatic provider sync is waiting for one-time setup."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Synchronize Hostinger Sent and Inbox
+        if: steps.hostinger-secret.outputs.configured == 'true'
         shell: bash
         run: |
           set -euo pipefail
@@ -43,6 +52,7 @@ jobs:
           python3 scripts/sync_hostinger_mail.py
 
       - name: Commit provider state
+        if: steps.hostinger-secret.outputs.configured == 'true'
         shell: bash
         run: |
           set -euo pipefail
