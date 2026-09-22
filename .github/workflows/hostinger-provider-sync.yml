@@ -53,6 +53,13 @@ jobs:
           python3 -m py_compile scripts/sync_hostinger_mail.py
           python3 scripts/sync_hostinger_mail.py
 
+      - name: Reconcile global dedup caches
+        if: steps.hostinger-secret.outputs.configured == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/revenue_flow_preflight.py --repair
+
       - name: Rebuild Command Center projections
         if: steps.hostinger-secret.outputs.configured == 'true'
         shell: bash
@@ -75,6 +82,7 @@ jobs:
 
           rebuild_all() {
             python3 scripts/sync_hostinger_mail.py
+            python3 scripts/revenue_flow_preflight.py --repair
             python3 scripts/build_command_center_api.py
             python3 scripts/enrich_command_center_funnel.py
             python3 scripts/overlay_provider_live_dashboard.py
