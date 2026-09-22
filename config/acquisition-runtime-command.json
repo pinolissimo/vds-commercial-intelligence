@@ -1,6 +1,6 @@
 {
   "schema_version": "1.6",
-  "updated_at": "2026-09-22T15:15:20Z",
+  "updated_at": "2026-09-22T15:28:31Z",
   "mode": "BUYER_INTENT_TURBO",
   "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
   "commercial_strategy": {
@@ -14,9 +14,11 @@
     "generic_job_application_share_cap": 0.15,
     "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
     "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
-    "target_high_intent_first_contacts_7d": 40,
-    "target_calls_7d": 3,
-    "target_proposals_7d": 2,
+    "target_high_intent_first_contacts_7d": 120,
+    "target_first_contacts_per_business_day": 20,
+    "soft_daily_first_contact_ceiling": 25,
+    "target_calls_7d": 5,
+    "target_proposals_7d": 3,
     "target_wins_7d": 1
   },
   "engagement_exclusion_policy": {
@@ -76,28 +78,27 @@
     "joa_es_frontend_title": 1.28,
     "joa_it_frontend_title": 1.2,
     "joa_it_webdesigner_title": 1.16,
+    "nomado_frontend": 1.08,
     "remotejobs_contract_wordpress": 1.07,
     "joa_es_webdev_title": 1.04,
-    "nomado_frontend": 1.01,
     "joa_eu_remote_webdev": 0.97,
     "joa_it_web_performance_body": 0.94,
     "remotive": 0.84,
     "jobicy_europe": 0.8,
     "joa_eu_remote_wordpress": 0.79,
-    "remotejobs_contract_webdev": 0.74,
+    "remotejobs_contract_webdev": 0.73,
     "wwr_design": 0.71,
-    "himalayas": 0.7,
     "joa_it_wordpress_body": 0.7,
+    "himalayas": 0.69,
     "wwr_sysadmin": 0.69,
     "remoteok": 0.68,
-    "remotejobs_contract_frontend": 0.67,
     "joa_es_wordpress_title": 0.67,
-    "remote_landers": 0.67,
-    "nomado_wordpress": 0.63,
+    "remotejobs_contract_frontend": 0.64,
+    "nomado_wordpress": 0.64,
+    "nomado_webdev": 0.62,
     "joa_es_woocommerce_body": 0.58,
     "joa_it_woocommerce_body": 0.58,
     "wwr_frontend": 0.57,
-    "nomado_webdev": 0.56,
     "arbeitnow_eu": 0.45,
     "joa_es_wordpress_body": 0.45,
     "wwr_programming": 0.45
@@ -116,11 +117,11 @@
     "high_total": 10,
     "project_based_high_intent": 10,
     "archetypes": {
-      "SME_WEB_IMPROVEMENT": 105,
+      "SME_WEB_IMPROVEMENT": 113,
       "AGENCY_EXTERNAL_CAPACITY": 2
     },
     "engagement_models": {
-      "PROJECT_BASED_WEB_DELIVERY": 107
+      "PROJECT_BASED_WEB_DELIVERY": 115
     },
     "priority_view": "views/buyer-intent-priority.json"
   },
@@ -131,9 +132,9 @@
   },
   "qualified_backlog_policy": {
     "priority": "HIGH_PROJECT_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
-    "semantic_pass_snapshot_proxy": 107,
+    "semantic_pass_snapshot_proxy": 115,
     "project_based_high_intent_snapshot": 10,
-    "target_serious_candidate_decisions_per_run": 60,
+    "target_serious_candidate_decisions_per_run": 120,
     "target_high_intent_decisions_first": true,
     "continue_after_individual_blocker": true,
     "send_all_valid_send_now": true,
@@ -143,24 +144,24 @@
     "Italy|Lazio|Roma"
   ],
   "explore_or_revisit_areas": [
-    "Italy|Veneto|Venezia",
-    "Spain|Comunitat Valenciana|Castellón",
     "Italy|Puglia|Bari",
     "Italy|Calabria|Reggio Calabria",
+    "Spain|Comunitat Valenciana|Castellón",
     "Spain|Aragón|Zaragoza",
+    "Italy|Veneto|Venezia",
     "Italy|Emilia-Romagna|Piacenza",
     "Italy|Piemonte|Torino",
     "Spain|Castilla y León|Valladolid",
     "Spain|Galicia|A Coruña",
     "Italy|Sicilia|Agrigento",
-    "Spain|Cataluña|Girona",
-    "Italy|Lazio|Frosinone"
+    "Italy|Lazio|Frosinone",
+    "Italy|Emilia-Romagna|Ferrara"
   ],
   "turbo": {
     "enabled": true,
     "reason": "HIGH_BUYER_INTENT_BACKLOG",
     "quality_gates_unchanged": true,
-    "target_serious_candidate_decisions_per_run": 60,
+    "target_serious_candidate_decisions_per_run": 120,
     "same_run_qualification_and_send": true,
     "send_all_valid_send_now": true,
     "no_batch_minimum": true,
@@ -170,11 +171,11 @@
     "require_project_based_fit": true,
     "manual_route_preservation": true,
     "never_promote_from_deepseek_shadow": true,
-    "minimum_exploration_pct": 15
+    "minimum_exploration_pct": 25
   },
   "route_policy": {
     "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email. Job-style opportunities are commercially relevant only when the engagement can truthfully be proposed as project-based freelance/P.IVA web delivery.",
     "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity website-project proposal when no application-only route is bypassed and all hard gates pass."
   },
-  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. VDS ONLY WANTS PROJECT-BASED WEBSITE DEVELOPMENT WORK. Pursue websites, redesigns, landing pages, ecommerce, portals, WordPress/custom frontend, performance/WPO, migrations, scoped evolutionary web work and EU project/dissemination websites. HARD REJECT help desk, ticketing, technical support, telephone/phone support, remote assistance, user/desktop/endpoint support, managed-services support, SLA/on-call/shift coverage and hourly support retainers. Do not pursue roles that bind Giuseppe to recurring support hours. Maintenance is eligible only when it is a scoped website evolution/optimization project with deliverables and no ticket/phone/SLA/on-call availability obligation. If a mixed role contains material recurring support duties, REJECT it even if it also mentions WordPress or web development. Every prospect must use exactly one commercial archetype: AGENCY_EXTERNAL_CAPACITY, EU_DISSEMINATION_SPECIALIST, or SME_WEB_IMPROVEMENT. Engagement model is separate from archetype. Prioritize project-based buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third. Use the buyer-intent ranker only for ordering; it never authorizes sending. Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. Measure and optimize for qualified reply, call, proposal and won revenue. Process at least 60 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
+  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. VDS ONLY WANTS PROJECT-BASED WEBSITE DEVELOPMENT WORK. Pursue websites, redesigns, landing pages, ecommerce, portals, WordPress/custom frontend, performance/WPO, migrations, scoped evolutionary web work and EU project/dissemination websites. HARD REJECT help desk, ticketing, technical support, telephone/phone support, remote assistance, user/desktop/endpoint support, managed-services support, SLA/on-call/shift coverage and hourly support retainers. Do not pursue roles that bind Giuseppe to recurring support hours. Maintenance is eligible only when it is a scoped website evolution/optimization project with deliverables and no ticket/phone/SLA/on-call availability obligation. If a mixed role contains material recurring support duties, REJECT it even if it also mentions WordPress or web development. Every prospect must use exactly one commercial archetype: AGENCY_EXTERNAL_CAPACITY, EU_DISSEMINATION_SPECIALIST, or SME_WEB_IMPROVEMENT. Engagement model is separate from archetype. Prioritize project-based buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third. Use the buyer-intent ranker only for ordering; it never authorizes sending. Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. Measure and optimize for qualified reply, call, proposal and won revenue. Process at least 120 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Target 20 qualified first contacts per business day, with a soft ceiling of 25 to protect sender reputation; never lower dedup, route, truthful-fit or legal/channel gates to hit volume. Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
 }
