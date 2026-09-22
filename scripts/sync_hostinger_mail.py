@@ -24,6 +24,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 STATE = ROOT / "state"
+SYNC_STATUS_PATH = STATE / "provider-sync-status.json"
 BASE = "https://api.mail.hostinger.com"
 def normalize_token(raw: str) -> tuple[str, dict]:
     """Accept common paste formats without ever logging the credential itself."""
@@ -82,6 +83,20 @@ def save(path: Path, payload) -> None:
 
 def now_z() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+
+
+def write_sync_status(status: str, *, auth_status: str, detail: str = "", **extra) -> None:
+    payload = {
+        "schema_version": "1.0",
+        "provider": "HOSTINGER_MAIL",
+        "status": status,
+        "auth_status": auth_status,
+        "checked_at": now_z(),
+        "mailbox": MAILBOX_ADDRESS,
+        "detail": detail,
+        **extra,
+    }
+    save(SYNC_STATUS_PATH, payload)
 
 
 def api(method: str, path: str, *, query=None, body=None):
@@ -351,8 +366,26 @@ def main() -> int:
     last_sent_uid = int(observation.get("latest_sent_uid") or 0)
     last_inbox_uid = int(observation.get("latest_inbox_uid") or observation.get("latest_checked_uid") or 0)
 
-    mailbox_id = get_mailbox()
-    sent_folder, inbox_folder = get_folders(mailbox_id)
+    try:
+        mailbox_id = get_mailbox()
+    except RuntimeError as exc:
+        message = str(exc)
+        if "HTTP 401" in message:
+            write_sync_status(
+                "DEGRADED",
+                auth_status="INVALID",
+                detail="Hostinger Mail API rejected the configured repository secret with HTTP 401.",
+            )
+            print("::warning::Hostinger Mail authentication failed (HTTP 401). Provider state was not advanced.")
+            return 0
+        write_sync_status("ERROR", auth_status="UNKNOWN", detail=message[:500])
+        raise
+
+    try:
+        sent_folder, inbox_folder = get_folders(mailbox_id)
+    except Exception as exc:
+        write_sync_status("ERROR", auth_status="VALID", detail=str(exc)[:500])
+        raise
     sent_new, sent_latest = collect_new(mailbox_id, sent_folder, last_sent_uid)
     inbox_new, inbox_latest = collect_new(mailbox_id, inbox_folder, last_inbox_uid)
 
@@ -382,6 +415,16 @@ def main() -> int:
         "checked_at": checked_at,
     }
     save(observation_path, observation)
+    write_sync_status(
+        "OK",
+        auth_status="VALID",
+        detail="Hostinger Sent and Inbox synchronized successfully.",
+        mailbox_resource_id=mailbox_id,
+        latest_sent_uid=observation.get("latest_sent_uid"),
+        latest_inbox_uid=observation.get("latest_inbox_uid"),
+        new_sent_events=added_sent,
+        new_inbox_events=added_inbox,
+    )
 
     print(json.dumps({
         "status": "OK",
