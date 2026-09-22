@@ -227,7 +227,9 @@ def main():
             "generic_job_application_share_cap": 0.15,
             "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
             "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
-            "target_high_intent_first_contacts_7d": 40,
+            "target_high_intent_first_contacts_7d": 120,
+            "target_first_contacts_per_business_day": 20,
+            "soft_daily_first_contact_ceiling": 25,
             "target_calls_7d": 3,
             "target_proposals_7d": 2,
             "target_wins_7d": 1
@@ -282,7 +284,7 @@ def main():
             "priority": "HIGH_PROJECT_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
             "semantic_pass_snapshot_proxy": semantic_pass,
             "project_based_high_intent_snapshot": project_high_intent,
-            "target_serious_candidate_decisions_per_run": 60,
+            "target_serious_candidate_decisions_per_run": 120,
             "target_high_intent_decisions_first": True,
             "continue_after_individual_blocker": True,
             "send_all_valid_send_now": True,
@@ -304,7 +306,7 @@ def main():
             "require_project_based_fit": True,
             "manual_route_preservation": True,
             "never_promote_from_deepseek_shadow": True,
-            "minimum_exploration_pct": 15
+            "minimum_exploration_pct": 25
         },
         "route_policy": {
             "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email. Job-style opportunities are commercially relevant only when the engagement can truthfully be proposed as project-based freelance/P.IVA web delivery.",
@@ -320,7 +322,7 @@ def main():
             "Use the buyer-intent ranker only for ordering; it never authorizes sending. "
             "Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. "
             "Measure and optimize for qualified reply, call, proposal and won revenue. "
-            "Process at least 60 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. "
+            "Process at least 120 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Target 20 qualified first contacts per business day, with a soft ceiling of 25 to protect sender reputation; never lower dedup, route, truthful-fit or legal/channel gates to hit volume. "
             "Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
         )
     }
