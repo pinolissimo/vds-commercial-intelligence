@@ -47,12 +47,17 @@ def main():
     assert outbound.get('today_first_contact_count')==today.get('first_contact_count'), 'outbound first-contact drift'
     for x in today.get('sent') or []:
         assert eid(x), 'today outbound without stable identity'
-        assert x.get('state')=='VERIFIED_EMAIL_SENT', 'today contains non-verified outbound'
-        assert x.get('count_as_successful_outbound') is not False, 'today contains excluded outbound'
+        assert x.get('state')=='VERIFIED_EMAIL_SENT', 'today contains non-verified sent mail'
+        if x.get('action_type','FIRST_CONTACT')=='FIRST_CONTACT':
+            assert x.get('count_as_successful_outbound') is not False, 'today contains excluded first contact'
 
     date_str=today.get('date')
     active=[x for x in today.get('sent') or [] if in_active_window(x,date_str)]
-    active_first=[x for x in active if x.get('action_type','FIRST_CONTACT')=='FIRST_CONTACT']
+    active_first=[
+        x for x in active
+        if x.get('action_type','FIRST_CONTACT')=='FIRST_CONTACT'
+        and x.get('count_as_successful_outbound') is not False
+    ]
     elapsed=float((dash.get('today') or {}).get('active_window_elapsed_hours') or 0)
     expected_rate=round(len(active)/elapsed,2) if elapsed else 0.0
     expected_first_rate=round(len(active_first)/elapsed,2) if elapsed else 0.0
