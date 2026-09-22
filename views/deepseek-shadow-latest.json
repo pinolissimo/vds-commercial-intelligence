@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-22T06:04:01Z",
+  "updated_at": "2026-09-22T06:23:25Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 517,
+    "evaluated_total": 518,
     "agreement_count": 264,
-    "agreement_pct": 51.06,
+    "agreement_pct": 50.97,
     "deepseek_promote": 27,
-    "vds_promote": 184,
+    "vds_promote": 185,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 161
+    "deepseek_demoted_from_vds_promote": 162
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.72,
+    "vds_promote_hot_rate_pct": 2.7,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 7.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 244,
-    "cumulative_estimated_cost_usd": 0.1076,
-    "cost_per_evaluated_candidate_usd": 0.00020812,
-    "cost_per_deepseek_promote_usd": 0.0039852,
-    "cost_per_observed_ready_or_contacted_usd": 0.05380016,
+    "request_count": 245,
+    "cumulative_estimated_cost_usd": 0.108002,
+    "cost_per_evaluated_candidate_usd": 0.0002085,
+    "cost_per_deepseek_promote_usd": 0.00400008,
+    "cost_per_observed_ready_or_contacted_usd": 0.05400104,
     "latest_request": {
-      "at": "2026-09-22T06:03:57Z",
+      "at": "2026-09-22T06:23:22Z",
       "model": "deepseek-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 1152,
-      "prompt_cache_miss_tokens": 221,
-      "completion_tokens": 568,
-      "total_tokens": 1941,
-      "estimated_cost_usd": 0.00086313
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 405,
+      "completion_tokens": 168,
+      "total_tokens": 701,
+      "estimated_cost_usd": 0.00040175
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "79887654c33f9ec82d2dda0c0e6c0edb",
-      "evaluated_at": "2026-09-18T14:04:18Z",
-      "organization": "Sanctuary Computer",
-      "title": "Senior Shopify Developer",
-      "location": "Anywhere in the World",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-shopify-developer-sanctuary-computer",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 38.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Senior Shopify Developer role at an agency; core stack is Shopify/Liquid, not WordPress/WooCommerce, so truthful stack fit is weak despite overlapping frontend/CWV/accessibility keywords.",
-      "deepseek_risk_flags": [
-        "shopify_not_wordpress",
-        "senior_level_agency_role",
-        "no_explicit_freelance_or_contract_terms",
-        "employment_type_unspecified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00014459,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "3e3388ad14239b1287160e71a44c2330",
       "evaluated_at": "2026-09-18T17:02:31Z",
@@ -1485,10 +1457,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c96ebcd71826e660ccbf5d10ef7d6b04",
+      "evaluated_at": "2026-09-22T06:23:22Z",
+      "organization": "",
+      "title": "Senior CMS (WordPress/Shopify) Developer",
+      "location": "Argentina",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 76,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 68.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title and matched keywords indicate a WordPress/Shopify CMS role with HTML/CSS/JS, PHP, WooCommerce and maintenance scope, which aligns well with the target profile; however the location is Argentina with no remote state or employment type confirmed, so freelance/contract compatibility and geo eligibility are unverified.",
+      "deepseek_risk_flags": [
+        "geo_eligibility_unverified",
+        "remote_state_unknown",
+        "employment_type_unknown",
+        "shopify_scope_beyond_core_wordpress_focus"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00040175,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-09-22T06:03:53Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-22T06:23:18Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
