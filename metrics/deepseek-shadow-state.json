@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 586,
+  "runs": 587,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14149,6 +14149,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "78b13cdb5f5eb342700be2b1b4db1050",
+      "evaluated_at": "2026-09-22T08:59:18Z",
+      "organization": "Unitedmedia",
+      "title": "Wordpress Web Developer at United Media",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/unitedmedia/wordpress-web-developer-at-united-media-london-125764",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 86,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title explicitly names WordPress Web Developer, matching the target profile's core stack, but the posting is a London-based role with no confirmed remote arrangement, no employment type, and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "location_london_not_target_market",
+        "remote_state_unverified",
+        "employment_type_unspecified",
+        "no_freelance_or_contract_evidence",
+        "single_source_aggregator"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00028962,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -17091,9 +17120,21 @@
       "completion_tokens": 168,
       "total_tokens": 701,
       "estimated_cost_usd": 0.00040175
+    },
+    {
+      "at": "2026-09-22T08:59:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 178,
+      "completion_tokens": 156,
+      "total_tokens": 718,
+      "estimated_cost_usd": 0.00028962
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-22T07:01:25Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-22T08:59:18Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

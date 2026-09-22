@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-22T07:01:25Z",
+  "updated_at": "2026-09-22T08:59:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 518,
+    "evaluated_total": 519,
     "agreement_count": 264,
-    "agreement_pct": 50.97,
+    "agreement_pct": 50.87,
     "deepseek_promote": 27,
-    "vds_promote": 185,
+    "vds_promote": 186,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 162
+    "deepseek_demoted_from_vds_promote": 163
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.7,
+    "vds_promote_hot_rate_pct": 2.69,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 7.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 245,
-    "cumulative_estimated_cost_usd": 0.108002,
-    "cost_per_evaluated_candidate_usd": 0.0002085,
-    "cost_per_deepseek_promote_usd": 0.00400008,
-    "cost_per_observed_ready_or_contacted_usd": 0.05400104,
-    "latest_request": null
+    "request_count": 246,
+    "cumulative_estimated_cost_usd": 0.108292,
+    "cost_per_evaluated_candidate_usd": 0.00020865,
+    "cost_per_deepseek_promote_usd": 0.0040108,
+    "cost_per_observed_ready_or_contacted_usd": 0.05414584,
+    "latest_request": {
+      "at": "2026-09-22T08:59:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 178,
+      "completion_tokens": 156,
+      "total_tokens": 718,
+      "estimated_cost_usd": 0.00028962
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "3e3388ad14239b1287160e71a44c2330",
-      "evaluated_at": "2026-09-18T17:02:31Z",
-      "organization": "",
-      "title": "Frontend Developer",
-      "location": "India",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Frontend Developer role with matching keywords (CSS, JS, PHP, UI/UX) but located in India, which is outside the primary Spain/Italy/EU-remote target markets; no explicit freelance/contract compatibility evidence.",
-      "deepseek_risk_flags": [
-        "location_outside_target_markets",
-        "no_contract_type_specified",
-        "no_remote_state_confirmed",
-        "commercial_keyword_collaboration_is_generic"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00019724,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "7f35fc75dcdfeaebd69a7ece68e7e228",
       "evaluated_at": "2026-09-18T17:02:31Z",
@@ -1474,10 +1457,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "78b13cdb5f5eb342700be2b1b4db1050",
+      "evaluated_at": "2026-09-22T08:59:18Z",
+      "organization": "Unitedmedia",
+      "title": "Wordpress Web Developer at United Media",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/unitedmedia/wordpress-web-developer-at-united-media-london-125764",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 86,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title explicitly names WordPress Web Developer, matching the target profile's core stack, but the posting is a London-based role with no confirmed remote arrangement, no employment type, and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "location_london_not_target_market",
+        "remote_state_unverified",
+        "employment_type_unspecified",
+        "no_freelance_or_contract_evidence",
+        "single_source_aggregator"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00028962,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-22T07:01:20Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-22T08:59:15Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
