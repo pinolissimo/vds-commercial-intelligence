@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-23T04:39:07Z",
+  "updated_at": "2026-09-23T05:59:12Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 531,
+    "evaluated_total": 532,
     "agreement_count": 268,
-    "agreement_pct": 50.47,
+    "agreement_pct": 50.38,
     "deepseek_promote": 27,
-    "vds_promote": 194,
+    "vds_promote": 195,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 171
+    "deepseek_demoted_from_vds_promote": 172
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.58,
+    "vds_promote_hot_rate_pct": 2.56,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 7.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 254,
-    "cumulative_estimated_cost_usd": 0.110748,
-    "cost_per_evaluated_candidate_usd": 0.00020857,
-    "cost_per_deepseek_promote_usd": 0.00410179,
-    "cost_per_observed_ready_or_contacted_usd": 0.05537416,
-    "latest_request": null
+    "request_count": 255,
+    "cumulative_estimated_cost_usd": 0.110899,
+    "cost_per_evaluated_candidate_usd": 0.00020846,
+    "cost_per_deepseek_promote_usd": 0.00410737,
+    "cost_per_observed_ready_or_contacted_usd": 0.05544954,
+    "latest_request": {
+      "at": "2026-09-23T05:59:10Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 193,
+      "completion_tokens": 160,
+      "total_tokens": 737,
+      "estimated_cost_usd": 0.00015075
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4da2a30b804bc21448431425e709a595",
-      "evaluated_at": "2026-09-19T14:02:12Z",
-      "organization": "Sanctuary Computer",
-      "title": "Senior Shopify Developer",
-      "location": "",
-      "opportunity_url": "https://remoteOK.com/remote-jobs/remote-senior-shopify-developer-sanctuary-computer-1137405",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.78,
-      "deepseek_primary_reason": "Role is a Senior Shopify Developer position, which is a platform-specific e-commerce stack (Shopify/Liquid) rather than the target profile's core WordPress/WooCommerce strength; keyword matches like 'css', 'frontend', 'core web vitals' and 'maintenance' are generic web terms that do not establish truthful stack fit.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_shopify_vs_wordpress",
-        "generic_keyword_overlap",
-        "no_explicit_freelance_or_contract_terms",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00015999,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "00f4a022f40024a7a0b715203fad4f31",
       "evaluated_at": "2026-09-19T21:25:33Z",
@@ -1478,10 +1461,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d5cc94e397967558ace882dc8af7dcb9",
+      "evaluated_at": "2026-09-23T05:59:10Z",
+      "organization": "knowmadmood",
+      "title": "Desarrollador/a Frontend SmartTV – React Native",
+      "location": "Madrid, España, ES",
+      "opportunity_url": "https://knowmadmood.teamtailor.com/jobs/8435792-desarrollador-a-frontend-smarttv-react-native",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.86,
+      "deepseek_primary_reason": "Core role is React Native frontend development for SmartTV, an on-site position in Madrid; the stack is React Native rather than WordPress/WooCommerce/custom HTML-CSS-JS, and there is no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "react_native_core_stack_mismatch",
+        "on_site_only",
+        "no_freelance_or_contract_signal",
+        "no_wordpress_woocommerce_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00015075,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-23T04:39:02Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-23T05:59:08Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
