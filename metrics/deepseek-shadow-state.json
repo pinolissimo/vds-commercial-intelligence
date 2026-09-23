@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 644,
+  "runs": 645,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14666,6 +14666,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f97b797621fd2fe924024aa2537bd423",
+      "evaluated_at": "2026-09-23T12:31:58Z",
+      "organization": "Visual Components",
+      "title": "Senior Frontend Software Developer",
+      "location": "Germany only",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-software-developer-29284d4e30",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Frontend Software Developer at Visual Components is a generic frontend engineering role with no evidence of WordPress/WooCommerce, custom HTML/CSS/JS web work, or freelance/contract compatibility; only a single 'frontend' keyword match and no commercial or intent signals.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "location_restricted_germany_only",
+        "likely_product_engineering_role_not_web_maintenance",
+        "single_generic_keyword_match"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021122,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -17764,9 +17793,21 @@
       "completion_tokens": 191,
       "total_tokens": 753,
       "estimated_cost_usd": 0.00022244
+    },
+    {
+      "at": "2026-09-23T12:31:58Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 425,
+      "completion_tokens": 177,
+      "total_tokens": 730,
+      "estimated_cost_usd": 0.00021122
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-23T12:13:54Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-23T12:31:58Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
