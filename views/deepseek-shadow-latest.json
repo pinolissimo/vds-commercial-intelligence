@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-23T05:59:12Z",
+  "updated_at": "2026-09-23T07:04:52Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 532,
-    "agreement_count": 268,
-    "agreement_pct": 50.38,
+    "evaluated_total": 533,
+    "agreement_count": 269,
+    "agreement_pct": 50.47,
     "deepseek_promote": 27,
     "vds_promote": 195,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 255,
-    "cumulative_estimated_cost_usd": 0.110899,
-    "cost_per_evaluated_candidate_usd": 0.00020846,
-    "cost_per_deepseek_promote_usd": 0.00410737,
-    "cost_per_observed_ready_or_contacted_usd": 0.05544954,
+    "request_count": 256,
+    "cumulative_estimated_cost_usd": 0.111307,
+    "cost_per_evaluated_candidate_usd": 0.00020883,
+    "cost_per_deepseek_promote_usd": 0.00412246,
+    "cost_per_observed_ready_or_contacted_usd": 0.05565327,
     "latest_request": {
-      "at": "2026-09-23T05:59:10Z",
+      "at": "2026-09-23T07:04:50Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 384,
-      "prompt_cache_miss_tokens": 193,
-      "completion_tokens": 160,
-      "total_tokens": 737,
-      "estimated_cost_usd": 0.00015075
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 430,
+      "completion_tokens": 164,
+      "total_tokens": 722,
+      "estimated_cost_usd": 0.00040747
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "00f4a022f40024a7a0b715203fad4f31",
-      "evaluated_at": "2026-09-19T21:25:33Z",
-      "organization": "Doctolib",
-      "title": "Stage - Junior Website Manager (x/f/m) - janvier 2027",
-      "location": "Paris, Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/doctolib/stage-junior-website-manager-janvier-2027-paris-paris-445443",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Internship ('Stage - Junior') based in Paris, France, outside the primary Spain/Italy/EU-remote target markets, and it is an entry-level internship rather than a freelance/contract engagement; the WordPress/CMS/HTML/CSS keyword matches reflect a junior website-management role, not a freelance web-development opportunity.",
-      "deepseek_risk_flags": [
-        "internship_not_freelance",
-        "junior_entry_level",
-        "geo_mismatch_france_onsite",
-        "no_remote_signal",
-        "commercial_keywords_are_generic_collaboration_partner_noise"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022794,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "9d161b73efadab81ab223e4f2ed06b3c",
       "evaluated_at": "2026-09-19T22:00:01Z",
@@ -1489,10 +1460,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "22dbe2354866bb6e1ef02543137955b5",
+      "evaluated_at": "2026-09-23T07:04:50Z",
+      "organization": "Optimum7",
+      "title": "AI SEO Specialist Zen Media",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/ai-seo-specialist-zen-media-optimum7",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an AI SEO Specialist position, not a web development role; matched keywords (css/html/javascript/website) are incidental and the core scope is SEO/AI content work, not WordPress, WooCommerce, frontend or web performance delivery.",
+      "deepseek_risk_flags": [
+        "role_mismatch_seo_not_webdev",
+        "keyword_match_incidental",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_terms"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00040747,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-23T05:59:08Z",
+  "source_semantic_updated_at": "2026-09-23T07:04:46Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
