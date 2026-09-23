@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 653,
+  "runs": 654,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14724,6 +14724,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5df9885c774a278c471c205713411bd1",
+      "evaluated_at": "2026-09-23T16:02:41Z",
+      "organization": "Bunch",
+      "title": "Staff Frontend Engineer",
+      "location": "Spain",
+      "opportunity_url": "https://jobs.ashbyhq.com/bunch/27056107-4602-4f63-8c91-af2ffe88eb04/application",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Staff Frontend Engineer role at Bunch in Spain (remote) with frontend/UI/UX/accessibility/migration keywords, but no explicit WordPress, WooCommerce, or custom HTML/CSS/JS scope and no evidence of freelance/contract compatibility; 'Staff' seniority and ATS apply route suggest a full-time employment role rather than external collaboration.",
+      "deepseek_risk_flags": [
+        "no_wordpress_or_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "staff_level_seniority_likely_full_time",
+        "only_generic_collaboration_keyword",
+        "stack_fit_unclear_beyond_frontend"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00017847,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -17846,9 +17875,21 @@
       "completion_tokens": 182,
       "total_tokens": 743,
       "estimated_cost_usd": 0.00021628
+    },
+    {
+      "at": "2026-09-23T16:02:41Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 196,
+      "completion_tokens": 201,
+      "total_tokens": 781,
+      "estimated_cost_usd": 0.00017847
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-23T15:33:10Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-23T16:02:41Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

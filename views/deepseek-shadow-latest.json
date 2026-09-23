@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-23T15:33:10Z",
+  "updated_at": "2026-09-23T16:02:44Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 538,
+    "evaluated_total": 539,
     "agreement_count": 270,
-    "agreement_pct": 50.19,
+    "agreement_pct": 50.09,
     "deepseek_promote": 27,
-    "vds_promote": 197,
+    "vds_promote": 198,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 174
+    "deepseek_demoted_from_vds_promote": 175
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 22.22,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.54,
+    "vds_promote_hot_rate_pct": 2.53,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 7.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 260,
-    "cumulative_estimated_cost_usd": 0.11245,
-    "cost_per_evaluated_candidate_usd": 0.00020901,
-    "cost_per_deepseek_promote_usd": 0.00416481,
-    "cost_per_observed_ready_or_contacted_usd": 0.05622494,
-    "latest_request": null
+    "request_count": 261,
+    "cumulative_estimated_cost_usd": 0.112628,
+    "cost_per_evaluated_candidate_usd": 0.00020896,
+    "cost_per_deepseek_promote_usd": 0.00417142,
+    "cost_per_observed_ready_or_contacted_usd": 0.05631418,
+    "latest_request": {
+      "at": "2026-09-23T16:02:41Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 196,
+      "completion_tokens": 201,
+      "total_tokens": 781,
+      "estimated_cost_usd": 0.00017847
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "13ce421f89d28f21956003826081d7f0",
-      "evaluated_at": "2026-09-20T04:58:50Z",
-      "organization": "Retailinsights",
-      "title": "Webpage Lead - Wordpress at Retail Insights",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/retailinsights/webpage-lead-wordpress-at-retail-insights-london-136312",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.4,
-      "deepseek_primary_reason": "Near-duplicate of the WordPress website lead posting at same org/location; WordPress stack fit present but London-based and no verified remote or freelance compatibility.",
-      "deepseek_risk_flags": [
-        "non_target_geo_london",
-        "remote_unverified",
-        "employment_type_unknown",
-        "likely_duplicate_of_a84820125b41203b943a12eeda7f045b"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00011114,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "82ced7dccf409c80295cdf560274d78e",
       "evaluated_at": "2026-09-20T06:57:40Z",
@@ -1478,10 +1461,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5df9885c774a278c471c205713411bd1",
+      "evaluated_at": "2026-09-23T16:02:41Z",
+      "organization": "Bunch",
+      "title": "Staff Frontend Engineer",
+      "location": "Spain",
+      "opportunity_url": "https://jobs.ashbyhq.com/bunch/27056107-4602-4f63-8c91-af2ffe88eb04/application",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Staff Frontend Engineer role at Bunch in Spain (remote) with frontend/UI/UX/accessibility/migration keywords, but no explicit WordPress, WooCommerce, or custom HTML/CSS/JS scope and no evidence of freelance/contract compatibility; 'Staff' seniority and ATS apply route suggest a full-time employment role rather than external collaboration.",
+      "deepseek_risk_flags": [
+        "no_wordpress_or_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "staff_level_seniority_likely_full_time",
+        "only_generic_collaboration_keyword",
+        "stack_fit_unclear_beyond_frontend"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00017847,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-23T15:33:07Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-23T16:02:37Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
