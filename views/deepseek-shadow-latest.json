@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-23T10:07:45Z",
+  "updated_at": "2026-09-23T10:25:28Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 535,
+    "evaluated_total": 536,
     "agreement_count": 269,
-    "agreement_pct": 50.28,
+    "agreement_pct": 50.19,
     "deepseek_promote": 27,
     "vds_promote": 197,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 257,
-    "cumulative_estimated_cost_usd": 0.1118,
-    "cost_per_evaluated_candidate_usd": 0.00020897,
-    "cost_per_deepseek_promote_usd": 0.00414074,
-    "cost_per_observed_ready_or_contacted_usd": 0.05589997,
-    "latest_request": null
+    "request_count": 258,
+    "cumulative_estimated_cost_usd": 0.112022,
+    "cost_per_evaluated_candidate_usd": 0.000209,
+    "cost_per_deepseek_promote_usd": 0.00414898,
+    "cost_per_observed_ready_or_contacted_usd": 0.05601119,
+    "latest_request": {
+      "at": "2026-09-23T10:25:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 434,
+      "completion_tokens": 191,
+      "total_tokens": 753,
+      "estimated_cost_usd": 0.00022244
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ac791274f6bef2104d3d9e4a20ca864e",
-      "evaluated_at": "2026-09-19T22:00:01Z",
-      "organization": "Brafton",
-      "title": "Remote Full Stack Developer (Frontend-Focused) - Brazil",
-      "location": "Brazil",
-      "opportunity_url": "https://remotelanders.com/jobs/remote-full-stack-developer-frontend-focused-brazil-brafton-1rge92",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Full Stack Developer role located in Brazil with only generic 'frontend' keyword match; no WordPress/WooCommerce or matching web scope evidence, and geo is outside Spain/Italy/EU-remote target.",
-      "deepseek_risk_flags": [
-        "geo_mismatch_brazil",
-        "full_stack_scope_unclear",
-        "no_wordpress_evidence",
-        "no_freelance_compatibility_evidence",
-        "generic_keyword_match_only"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00011561,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "712e308a91a32adc09940ce779b6f31a",
       "evaluated_at": "2026-09-19T23:28:22Z",
@@ -1477,10 +1459,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "49f7ce491a7c4f9123f7a0cd8751a706",
+      "evaluated_at": "2026-09-23T10:25:26Z",
+      "organization": "Mimica",
+      "title": "Staff/Lead Front-end Engineer",
+      "location": "UK",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/mimica/staff-lead-front-end-engineer-london-349285",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Staff/Lead Front-end Engineer role at a UK company with only generic 'front-end' keyword match; no evidence of WordPress, WooCommerce, custom HTML/CSS/JS, performance, maintenance, or UX/UI scope, and a staff/lead seniority level is a poor fit for freelance web-development acquisition.",
+      "deepseek_risk_flags": [
+        "seniority_mismatch_staff_lead",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "geo_uk_not_spain_italy",
+        "generic_keyword_only_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022244,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-23T10:07:41Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-23T10:25:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
