@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-23T13:08:03Z",
+  "updated_at": "2026-09-23T13:26:01Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 537,
-    "agreement_count": 269,
-    "agreement_pct": 50.09,
+    "evaluated_total": 538,
+    "agreement_count": 270,
+    "agreement_pct": 50.19,
     "deepseek_promote": 27,
     "vds_promote": 197,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 259,
-    "cumulative_estimated_cost_usd": 0.112234,
-    "cost_per_evaluated_candidate_usd": 0.000209,
-    "cost_per_deepseek_promote_usd": 0.0041568,
-    "cost_per_observed_ready_or_contacted_usd": 0.0561168,
-    "latest_request": null
+    "request_count": 260,
+    "cumulative_estimated_cost_usd": 0.11245,
+    "cost_per_evaluated_candidate_usd": 0.00020901,
+    "cost_per_deepseek_promote_usd": 0.00416481,
+    "cost_per_observed_ready_or_contacted_usd": 0.05622494,
+    "latest_request": {
+      "at": "2026-09-23T13:25:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 433,
+      "completion_tokens": 182,
+      "total_tokens": 743,
+      "estimated_cost_usd": 0.00021628
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a84820125b41203b943a12eeda7f045b",
-      "evaluated_at": "2026-09-20T04:58:50Z",
-      "organization": "Retailinsights",
-      "title": "Website lead - wordpress at Retail Insights",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/retailinsights/website-lead-wordpress-at-retail-insights-london-28820",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.4,
-      "deepseek_primary_reason": "Title indicates a WordPress website lead role, matching core stack, but location is London (non-target geo) and no explicit freelance/contract signal; remote state unverified.",
-      "deepseek_risk_flags": [
-        "non_target_geo_london",
-        "remote_unverified",
-        "employment_type_unknown",
-        "no_explicit_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00011114,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "13ce421f89d28f21956003826081d7f0",
       "evaluated_at": "2026-09-20T04:58:50Z",
@@ -1477,10 +1460,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0378beb32abc20be82fb3e16391c1064",
+      "evaluated_at": "2026-09-23T13:25:59Z",
+      "organization": "Elastic",
+      "title": "Software Engineer II - Full Stack - Web Engineering",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/elastic/software-engineer-ii-full-stack-web-engineering-365481",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full-stack software engineering role at Elastic with only generic web/frontend keyword overlap (core web vitals, frontend); no explicit WordPress/WooCommerce, maintenance, or freelance/contract scope, and location/remote/employment type are unverified.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "full_stack_engineering_role_likely_react_or_backend_heavy",
+        "location_and_remote_state_unknown",
+        "employment_type_unspecified",
+        "partner_keyword_is_generic_not_freelance_proof"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00021628,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-23T13:07:58Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-23T13:25:55Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

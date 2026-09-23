@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 647,
+  "runs": 648,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14695,6 +14695,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0378beb32abc20be82fb3e16391c1064",
+      "evaluated_at": "2026-09-23T13:25:59Z",
+      "organization": "Elastic",
+      "title": "Software Engineer II - Full Stack - Web Engineering",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/elastic/software-engineer-ii-full-stack-web-engineering-365481",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full-stack software engineering role at Elastic with only generic web/frontend keyword overlap (core web vitals, frontend); no explicit WordPress/WooCommerce, maintenance, or freelance/contract scope, and location/remote/employment type are unverified.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "full_stack_engineering_role_likely_react_or_backend_heavy",
+        "location_and_remote_state_unknown",
+        "employment_type_unspecified",
+        "partner_keyword_is_generic_not_freelance_proof"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00021628,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -17805,9 +17834,21 @@
       "completion_tokens": 177,
       "total_tokens": 730,
       "estimated_cost_usd": 0.00021122
+    },
+    {
+      "at": "2026-09-23T13:25:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 433,
+      "completion_tokens": 182,
+      "total_tokens": 743,
+      "estimated_cost_usd": 0.00021628
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-23T13:08:02Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-23T13:25:59Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
