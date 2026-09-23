@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 659,
+  "runs": 660,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14783,6 +14783,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "fb3c754423d68f3124a47740e4b09161",
+      "evaluated_at": "2026-09-23T18:59:26Z",
+      "organization": "",
+      "title": "Senior Product Engineer",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior Product Engineer role located in the United States with no explicit freelance/contract compatibility and no confirmed WordPress/WooCommerce scope; matched keywords are generic web terms and 'partner'/'collaboration' appear only as incidental job-text mentions, not proof of external collaboration.",
+      "deepseek_risk_flags": [
+        "us_location_outside_primary_markets",
+        "no_explicit_freelance_or_contract_signal",
+        "generic_keyword_matches_only",
+        "no_wordpress_woocommerce_evidence",
+        "product_engineer_role_likely_full_time"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015405,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -17929,9 +17958,21 @@
       "completion_tokens": 180,
       "total_tokens": 741,
       "estimated_cost_usd": 0.00021496
+    },
+    {
+      "at": "2026-09-23T18:59:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 145,
+      "completion_tokens": 181,
+      "total_tokens": 710,
+      "estimated_cost_usd": 0.00015405
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-23T18:28:31Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-23T18:59:26Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
