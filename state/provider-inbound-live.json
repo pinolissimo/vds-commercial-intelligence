@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-09-23T09:26:11Z",
-  "latest_checked_uid": 1506,
+  "updated_at": "2026-09-23T09:41:32Z",
+  "latest_checked_uid": 1507,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -186,6 +186,21 @@
       "subtype": "SYSTEM_OR_UNCORRELATED",
       "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1507,
+      "received_at": "2026-09-23T09:38:33Z",
+      "canonical_identity_key": "org:danieledebernardis.it",
+      "entity": "danieledebernardis.it",
+      "sender": "info@danieledebernardis.it",
+      "subject": "Re: Collaborazione tecnica web per referral e subappalti",
+      "message_id": "<D097B3CE-B43E-7441-B05D-1D2E0183C5A5@hxcore.ol>",
+      "in_reply_to": "<1790156109191932982.1790156109@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
   ]
