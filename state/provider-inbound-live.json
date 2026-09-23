@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-09-23T13:39:19Z",
-  "latest_checked_uid": 1510,
+  "updated_at": "2026-09-23T13:55:13Z",
+  "latest_checked_uid": 1511,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -246,6 +246,21 @@
       "subtype": "REJECTION",
       "summary": "Elisa Sambuchi comunica che, dopo valutazione del profilo, Brown Media ha deciso di non procedere per questo progetto; conserveranno il contatto per eventuali opportunità future. Nessun prossimo passo concreto.",
       "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1511,
+      "received_at": "2026-09-23T13:51:57Z",
+      "canonical_identity_key": "org:malt.com",
+      "entity": "malt.com",
+      "sender": "mailer@malt.com",
+      "subject": "Giuseppe, tus estadísticas en Malt",
+      "message_id": "<7422897.20260923135157.6ab3d97d9ca242.46868239@mail145-7.atl61.mandrillapp.com>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
   ]
