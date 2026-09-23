@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-09-23T12:05:37Z",
-  "latest_checked_uid": 1509,
+  "updated_at": "2026-09-23T12:21:23Z",
+  "latest_checked_uid": 1510,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -231,6 +231,21 @@
       "subtype": "HARD_BOUNCE",
       "summary": "Provider delivery failure.",
       "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1510,
+      "received_at": "2026-09-23T12:14:44Z",
+      "canonical_identity_key": "org:giuseppecastagna.it",
+      "entity": "giuseppecastagna.it",
+      "sender": "elisa@giuseppecastagna.it",
+      "subject": "Re: Web Developer / Designer freelance — Brown Media",
+      "message_id": "<CACzjFs7RdYeEASVXjUO7eEpmqcPUg66b10QLhHU9tfJwo-qZfA@mail.gmail.com>",
+      "in_reply_to": "<1788529842070023930.1788529842@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
   ]
