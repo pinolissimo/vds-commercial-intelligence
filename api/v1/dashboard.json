@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-24T21:57:46+02:00",
+  "generated_at": "2026-09-24T22:05:44+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -20,9 +20,9 @@
     "active_window_first_contact_count": 21
   },
   "headline": {
-    "semantic_input_last_run": 2500,
-    "semantic_pass_last_run": 109,
-    "semantic_pass_rate_pct": 4.36,
+    "semantic_input_last_run": 2541,
+    "semantic_pass_last_run": 116,
+    "semantic_pass_rate_pct": 4.57,
     "active_opportunities": 53,
     "ready": 4,
     "manual_action": 5,
@@ -34,7 +34,7 @@
     "ready_legacy_compat_previous_value": 25,
     "executable_ready_now": 4,
     "legacy_ready_advisory": 21,
-    "semantic_pass_backlog_proxy": 109
+    "semantic_pass_backlog_proxy": 116
   },
   "status_counts": {
     "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
@@ -62,7 +62,7 @@
       "territory": "UNRESOLVED",
       "score": 100.0,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-25T13:28:41.854404Z",
       "heat_pct": 100.0
@@ -73,10 +73,10 @@
       "region": "Lazio",
       "territory": "Roma",
       "score": 49.16,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-25T12:52:54.314979Z",
+      "cooldown_until": "2026-09-25T14:05:16.876150Z",
       "heat_pct": 49.2
     },
     {
@@ -84,18 +84,18 @@
       "country": "Spain",
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
-      "score": 49.14,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "score": 48.37,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-25T12:52:54.314979Z",
-      "heat_pct": 49.1
+      "cooldown_until": "2026-09-25T14:05:16.876150Z",
+      "heat_pct": 48.4
     },
     {
-      "area": "Italy|Puglia|Bari",
+      "area": "Italy|Calabria|Reggio Calabria",
       "country": "Italy",
-      "region": "Puglia",
-      "territory": "Bari",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -104,10 +104,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Calabria|Reggio Calabria",
-      "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
+      "area": "Spain|Comunitat Valenciana|Castellón",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "territory": "Castellón",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -128,10 +128,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Spain|Comunitat Valenciana|Castellón",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "territory": "Castellón",
+      "area": "Italy|Puglia|Bari",
+      "country": "Italy",
+      "region": "Puglia",
+      "territory": "Bari",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -183,8 +183,8 @@
       "score": 16.95,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 733,
-      "cooldown_until": "2026-09-25T13:47:00.713035Z",
+      "low_yield_cycles": 734,
+      "cooldown_until": "2026-09-25T14:05:16.876150Z",
       "heat_pct": 16.9
     },
     {
@@ -195,8 +195,8 @@
       "score": 15.95,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 60,
-      "cooldown_until": "2026-09-25T13:47:00.713035Z",
+      "low_yield_cycles": 61,
+      "cooldown_until": "2026-09-25T14:05:16.876150Z",
       "heat_pct": 16.0
     }
   ],
@@ -206,15 +206,15 @@
       "territories": 108,
       "average_score": 4.0,
       "best_score": 100.0,
-      "harvest_territories": 2,
+      "harvest_territories": 1,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
       "country": "Spain",
       "territories": 53,
-      "average_score": 3.99,
-      "best_score": 49.14,
-      "harvest_territories": 1,
+      "average_score": 3.97,
+      "best_score": 48.37,
+      "harvest_territories": 0,
       "top_territory": "Spain|UNRESOLVED|UNRESOLVED"
     }
   ],
@@ -240,9 +240,9 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 2500,
-      "semantic_input": 2500,
-      "semantic_pass": 109,
+      "raw_signals": 2541,
+      "semantic_input": 2541,
+      "semantic_pass": 116,
       "company_verified": null,
       "route_found": null,
       "dedup_ok": null,
@@ -259,9 +259,9 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 2331,
-      "semantic_review": 60,
-      "semantic_pass_to_executable_gap_proxy": 105,
+      "semantic_reject": 2362,
+      "semantic_review": 63,
+      "semantic_pass_to_executable_gap_proxy": 112,
       "legacy_ready_advisory_excluded": 21
     },
     "status_classes": {
@@ -281,9 +281,9 @@
       "CONTACTED_PENDING_CANONICAL_RECONCILIATION": 1
     },
     "pressure": {
-      "qualified_backlog_proxy": 109,
+      "qualified_backlog_proxy": 116,
       "executable_ready_now": 4,
-      "conversion_pressure_ratio": 27.25,
+      "conversion_pressure_ratio": 29.0,
       "turbo_enabled": true,
       "turbo_reason": "HIGH_BUYER_INTENT_BACKLOG"
     }
@@ -311,7 +311,7 @@
   "provider_inbound_pending_sources": 0,
   "source_health": {
     "schema_version": "2.3",
-    "reconciled_at": "2026-09-24T19:57:46Z",
+    "reconciled_at": "2026-09-24T20:05:44Z",
     "provider_observed_at": "2026-09-24T19:57:46Z",
     "provider_observation_fresh": true,
     "outbound_last_event_at": "2026-09-24T15:33:34Z",
