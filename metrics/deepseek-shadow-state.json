@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 665,
+  "runs": 666,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14924,6 +14924,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "eb41bcafefeb77c4f8098e4a4d285da9",
+      "evaluated_at": "2026-09-24T04:01:07Z",
+      "organization": "",
+      "title": "Développeur(se) Front-End Vue.js (H/F)",
+      "location": "France",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Front-end Vue.js role in France with some matching frontend/JS/UI/accessibility keywords, but Vue.js is not a core target stack (WordPress/WooCommerce/custom HTML-CSS-JS) and the location is France, outside the primary Spain/Italy markets with only unverified remote compatibility.",
+      "deepseek_risk_flags": [
+        "vuejs_stack_mismatch",
+        "geo_outside_primary_markets",
+        "remote_status_unverified",
+        "no_wordpress_woocommerce_scope",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015251,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -18094,9 +18123,21 @@
       "completion_tokens": 528,
       "total_tokens": 1821,
       "estimated_cost_usd": 0.00077513
+    },
+    {
+      "at": "2026-09-24T04:01:07Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 144,
+      "completion_tokens": 179,
+      "total_tokens": 707,
+      "estimated_cost_usd": 0.00015251
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-24T03:03:33Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-24T04:01:07Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
