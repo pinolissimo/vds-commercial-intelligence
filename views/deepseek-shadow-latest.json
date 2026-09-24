@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-24T11:25:32Z",
+  "updated_at": "2026-09-24T11:43:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 549,
+    "evaluated_total": 550,
     "agreement_count": 276,
-    "agreement_pct": 50.27,
+    "agreement_pct": 50.18,
     "deepseek_promote": 30,
-    "vds_promote": 204,
+    "vds_promote": 205,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 178
+    "deepseek_demoted_from_vds_promote": 179
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 20.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.45,
+    "vds_promote_hot_rate_pct": 2.44,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.67,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 267,
-    "cumulative_estimated_cost_usd": 0.11459,
-    "cost_per_evaluated_candidate_usd": 0.00020873,
-    "cost_per_deepseek_promote_usd": 0.00381968,
-    "cost_per_observed_ready_or_contacted_usd": 0.0572952,
-    "latest_request": null
+    "request_count": 268,
+    "cumulative_estimated_cost_usd": 0.114807,
+    "cost_per_evaluated_candidate_usd": 0.00020874,
+    "cost_per_deepseek_promote_usd": 0.0038269,
+    "cost_per_observed_ready_or_contacted_usd": 0.05740356,
+    "latest_request": {
+      "at": "2026-09-24T11:43:17Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 411,
+      "completion_tokens": 190,
+      "total_tokens": 729,
+      "estimated_cost_usd": 0.00021672
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "82903d5b6a5ad770b79743c045850850",
-      "evaluated_at": "2026-09-20T15:04:22Z",
-      "organization": "Datadog",
-      "title": "Manager I, Engineering - Security Libraries",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/datadog/manager-i-engineering-security-libraries-paris-386579",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.78,
-      "deepseek_primary_reason": "Engineering Manager role for Security Libraries at Datadog; matched keywords (accessibility, frontend, php, website) are peripheral and the position is a full-time management role unrelated to freelance web development.",
-      "deepseek_risk_flags": [
-        "management_role",
-        "security_libraries_domain",
-        "no_freelance_compatibility",
-        "keyword_matches_incidental"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00011521,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "aa6895e7606cc067ecfa9d498de4673c",
       "evaluated_at": "2026-09-20T18:55:34Z",
@@ -1480,10 +1463,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5802ae31874c2cd1a1869a350b541615",
+      "evaluated_at": "2026-09-24T11:43:17Z",
+      "organization": "",
+      "title": "Web Designer",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Web Designer' with matched keywords spanning WordPress, CMS, HTML/CSS/JS, frontend, UI and maintenance aligns well with the target profile, and the text contains explicit freelance/contractor intent signals. However, the location is United States with no remote flag confirmed, and the target geo bucket is REMOTE_TO_VERIFY, so Spain/Italy/EU-remote compatibility is unproven.",
+      "deepseek_risk_flags": [
+        "geo_unverified_us_location",
+        "remote_status_unknown",
+        "no_organization_or_publish_date",
+        "freelance_intent_not_confirmed_in_scope"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021672,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-24T11:25:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-24T11:43:13Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
