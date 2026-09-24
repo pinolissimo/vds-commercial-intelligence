@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 695,
+  "runs": 696,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -15122,6 +15122,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7418f0d4f074e03424e340fc1c29b76f",
+      "evaluated_at": "2026-09-24T16:39:48Z",
+      "organization": "Elevenlabs",
+      "title": "Full-Stack Engineer (Front-End Leaning)",
+      "location": "Bulgaria,  Ireland,  Netherlands,  Poland,  Portugal,  Sweden,  UK,  USA",
+      "opportunity_url": "https://jobicy.com/jobs/154020-full-stack-engineer-front-end-leaning",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full-stack front-end-leaning role at ElevenLabs with generic front-end/UI/UX/web-development keyword matches, but no explicit WordPress/WooCommerce/custom HTML-CSS-JS or maintenance scope; geo list does not include Spain or Italy, only EU-remote-adjacent countries.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_signal",
+        "geo_list_excludes_spain_and_italy",
+        "full_stack_role_may_skew_react_or_backend"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019746,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "86de0fabe26dfe4fee0e869b423cbb13",
+      "evaluated_at": "2026-09-24T16:39:48Z",
+      "organization": "Elevenlabs",
+      "title": "Full-Stack Engineer",
+      "location": "Bulgaria,  Germany,  Ireland,  Netherlands,  Poland,  Spain,  UK,  USA",
+      "opportunity_url": "https://jobicy.com/jobs/154022-full-stack-engineer-2",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full-stack engineer role at ElevenLabs with only generic front-end/UX/web-development keyword overlap and a 'partner' commercial keyword that is not evidence of freelance compatibility; no WordPress/WooCommerce/custom web scope and no explicit contract/freelance terms.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "partner_keyword_not_freelance_evidence",
+        "full_stack_role_likely_react_or_backend_heavy",
+        "no_explicit_contract_or_freelance_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00019746,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -18352,9 +18408,21 @@
       "completion_tokens": 320,
       "total_tokens": 1143,
       "estimated_cost_usd": 0.000365
+    },
+    {
+      "at": "2026-09-24T16:39:48Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 717,
+      "completion_tokens": 358,
+      "total_tokens": 1203,
+      "estimated_cost_usd": 0.00039492
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-24T16:21:50Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-24T16:39:48Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
