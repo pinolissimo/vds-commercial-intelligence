@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 709,
+  "runs": 710,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -15207,6 +15207,89 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "82048923b7d42708c4eeee4022ea02dc",
+      "evaluated_at": "2026-09-24T23:52:11Z",
+      "organization": "bunch",
+      "title": "Staff Frontend Engineer (f/m/d)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bunch/staff-frontend-engineer-berlin-308345",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Staff Frontend Engineer role in Berlin is a senior full-time product engineering position; no WordPress/WooCommerce scope, no explicit freelance/contract signal, and 'partner'/'collaboration' are generic text not proof of external collaboration compatibility.",
+      "deepseek_risk_flags": [
+        "senior_full_time_role",
+        "no_wordpress_woocommerce_scope",
+        "generic_collaboration_keyword",
+        "geo_unverified_berlin_onsite_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001689667,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7eb3c136151cb5b6ca99f90fbaaf87e9",
+      "evaluated_at": "2026-09-24T23:52:11Z",
+      "organization": "Mozilla",
+      "title": "Contract Staff Front End Engineer (Web Conference/Screen Sharing)",
+      "location": "Canada",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/contract-staff-front-end-engineer-web-conferencescreen-sharing-mozilla",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 88,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Explicit 'Contract' Staff Front End Engineer role with HTML/CSS/JS/accessibility/UI/UX matches core frontend skills, but it is a senior staff-level Mozilla product role (web conferencing) rather than WordPress/WooCommerce freelance web work, and geo is Canada-based.",
+      "deepseek_risk_flags": [
+        "senior_staff_level",
+        "non_wordpress_stack",
+        "geo_canada_not_spain_italy",
+        "contract_type_unverified"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001689667,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "de22621b133d559ba452961ba6689f6d",
+      "evaluated_at": "2026-09-24T23:52:11Z",
+      "organization": "Bakerhicks",
+      "title": "Principal Designer - CDM",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/bakerhicks/principal-designer-cdm-113228",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Principal Designer - CDM is a construction/design-management role; matched keywords (front-end, maintenance, website) are incidental and there is no genuine web-development or WordPress scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch_design_construction",
+        "incidental_keyword_matches",
+        "no_web_dev_scope"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001689667,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -18461,9 +18544,21 @@
       "completion_tokens": 181,
       "total_tokens": 735,
       "estimated_cost_usd": 0.00021408
+    },
+    {
+      "at": "2026-09-24T23:52:11Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 965,
+      "completion_tokens": 445,
+      "total_tokens": 1538,
+      "estimated_cost_usd": 0.0005069
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-24T21:05:51Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-24T23:52:11Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
