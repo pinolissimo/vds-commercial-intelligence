@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-09-24T15:37:28+02:00",
+  "generated_at": "2026-09-24T15:38:27+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -12,9 +12,9 @@
     "replies_negative": 0,
     "replies_neutral": 0,
     "hard_bounces": 0,
-    "messages_per_active_hour": 2.27,
-    "first_contacts_per_active_hour": 2.27,
-    "active_window_elapsed_hours": 6.62,
+    "messages_per_active_hour": 2.26,
+    "first_contacts_per_active_hour": 2.26,
+    "active_window_elapsed_hours": 6.64,
     "sending_window": "09:00-19:00 Europe/Madrid",
     "active_window_sent_count": 15,
     "active_window_first_contact_count": 15
@@ -61,10 +61,10 @@
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
       "score": 100.0,
-      "mode": "HARVEST",
-      "harvest_cycles": 3,
+      "mode": "COOLDOWN",
+      "harvest_cycles": 0,
       "low_yield_cycles": 0,
-      "cooldown_until": "2026-09-25T06:55:53.949676Z",
+      "cooldown_until": "2026-09-25T07:37:55.689620Z",
       "heat_pct": 100.0
     },
     {
@@ -72,12 +72,12 @@
       "country": "Spain",
       "region": "UNRESOLVED",
       "territory": "UNRESOLVED",
-      "score": 49.16,
+      "score": 49.36,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-25T07:19:15.288098Z",
-      "heat_pct": 49.2
+      "heat_pct": 49.4
     },
     {
       "area": "Italy|Lazio|Roma",
@@ -86,16 +86,28 @@
       "territory": "Roma",
       "score": 49.16,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-09-25T07:19:15.288098Z",
       "heat_pct": 49.2
     },
     {
-      "area": "Italy|Calabria|Reggio Calabria",
+      "area": "Italy|Puglia|Bari",
       "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
+      "region": "Puglia",
+      "territory": "Bari",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 32.6
+    },
+    {
+      "area": "Italy|Veneto|Venezia",
+      "country": "Italy",
+      "region": "Veneto",
+      "territory": "Venezia",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -128,22 +140,10 @@
       "heat_pct": 32.6
     },
     {
-      "area": "Italy|Veneto|Venezia",
+      "area": "Italy|Calabria|Reggio Calabria",
       "country": "Italy",
-      "region": "Veneto",
-      "territory": "Venezia",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 32.6
-    },
-    {
-      "area": "Italy|Puglia|Bari",
-      "country": "Italy",
-      "region": "Puglia",
-      "territory": "Bari",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -183,8 +183,8 @@
       "score": 16.95,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 711,
-      "cooldown_until": "2026-09-25T07:37:02.373086Z",
+      "low_yield_cycles": 712,
+      "cooldown_until": "2026-09-25T07:37:55.689620Z",
       "heat_pct": 16.9
     },
     {
@@ -195,8 +195,8 @@
       "score": 15.95,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 38,
-      "cooldown_until": "2026-09-25T07:37:02.373086Z",
+      "low_yield_cycles": 39,
+      "cooldown_until": "2026-09-25T07:37:55.689620Z",
       "heat_pct": 16.0
     }
   ],
@@ -206,14 +206,14 @@
       "territories": 108,
       "average_score": 4.0,
       "best_score": 100.0,
-      "harvest_territories": 2,
+      "harvest_territories": 1,
       "top_territory": "Italy|UNRESOLVED|UNRESOLVED"
     },
     {
       "country": "Spain",
       "territories": 53,
-      "average_score": 3.98,
-      "best_score": 49.16,
+      "average_score": 3.99,
+      "best_score": 49.36,
       "harvest_territories": 1,
       "top_territory": "Spain|UNRESOLVED|UNRESOLVED"
     }
@@ -259,8 +259,8 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 2328,
-      "semantic_review": 59,
+      "semantic_reject": 2327,
+      "semantic_review": 60,
       "semantic_pass_to_executable_gap_proxy": 109,
       "legacy_ready_advisory_excluded": 21
     },
@@ -311,7 +311,7 @@
   "provider_inbound_pending_sources": 0,
   "source_health": {
     "schema_version": "2.3",
-    "reconciled_at": "2026-09-24T13:37:28Z",
+    "reconciled_at": "2026-09-24T13:38:27Z",
     "provider_observed_at": "2026-09-24T13:24:59Z",
     "provider_observation_fresh": true,
     "outbound_last_event_at": "2026-09-24T13:07:23Z",
