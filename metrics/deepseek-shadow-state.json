@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 673,
+  "runs": 674,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14982,6 +14982,61 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "bd27ec62b85e2a3d949917d6addffbba",
+      "evaluated_at": "2026-09-24T10:31:34Z",
+      "organization": "Retailinsights",
+      "title": "Wordpress Web Developer at Retail Insights",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/retailinsights/wordpress-web-developer-at-retail-insights-london-24049",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "PROMOTE",
+      "deepseek_score": 88.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Explicit WordPress web developer role with remote commercial keyword, matching core profile stack and freelance-compatible web scope.",
+      "deepseek_risk_flags": [
+        "location London may not be EU-remote compatible",
+        "freelance/contract compatibility not explicitly stated",
+        "geo bucket EU_REMOTE_TO_VERIFY unconfirmed"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00010938,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2d9f51be576b7eb838e65e492cb9ef4e",
+      "evaluated_at": "2026-09-24T10:31:34Z",
+      "organization": "P.A.C. GmbH",
+      "title": "Front End Developer (m/w/d)",
+      "location": "Schweinfurt",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/pac-gmbh/front-end-developer-schweinfurt-447000",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend role with UI/UX overlap but no WordPress/WooCommerce scope; 'partner' keyword is generic and not proof of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "no WordPress/WooCommerce scope",
+        "generic partner mention not evidence of external collaboration",
+        "on-site Schweinfurt location, geo unverified",
+        "stack details unknown"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00010938,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -18176,9 +18231,21 @@
       "completion_tokens": 193,
       "total_tokens": 753,
       "estimated_cost_usd": 0.00044663
+    },
+    {
+      "at": "2026-09-24T10:31:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 185,
+      "completion_tokens": 263,
+      "total_tokens": 1088,
+      "estimated_cost_usd": 0.00021876
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-24T10:13:16Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-24T10:31:34Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
