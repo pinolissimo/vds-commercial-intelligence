@@ -1,7 +1,7 @@
 {
   "schema_version": "1.6",
-  "updated_at": "2026-09-24T20:05:13Z",
-  "mode": "BUYER_INTENT_TURBO",
+  "updated_at": "2026-09-24T21:05:48Z",
+  "mode": "MIDDLE_FUNNEL_TURBO",
   "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
   "commercial_strategy": {
     "primary_objective": "CONVERT_PROJECT_BASED_WEB_BUYER_INTENT_TO_REVENUE",
@@ -66,11 +66,11 @@
     "REJECT"
   ],
   "capacity": {
-    "high_buyer_intent_project_pct": 70,
-    "qualified_project_backlog_pct": 15,
+    "high_buyer_intent_project_pct": 50,
+    "qualified_project_backlog_pct": 35,
     "exploration_pct": 15
   },
-  "diagnosed_bottleneck": "HIGH_INTENT_PROJECT_ROUTE_AND_CONVERSION_CLOSURE",
+  "diagnosed_bottleneck": "RAW_SOURCE_PRECISION",
   "source_priority": {
     "joa_es_webdesigner_title": 1.52,
     "joa_it_webdev_title": 1.51,
@@ -84,9 +84,9 @@
     "joa_eu_remote_webdev": 0.97,
     "joa_it_web_performance_body": 0.94,
     "remotive": 0.83,
-    "jobicy_europe": 0.81,
     "nomado_wordpress": 0.81,
     "joa_eu_remote_wordpress": 0.79,
+    "jobicy_europe": 0.78,
     "remoteok": 0.77,
     "nomado_webdev": 0.73,
     "wwr_design": 0.71,
@@ -113,9 +113,9 @@
   ],
   "buyer_intent": {
     "very_high": 1,
-    "high": 8,
-    "high_total": 9,
-    "project_based_high_intent": 9,
+    "high": 6,
+    "high_total": 7,
+    "project_based_high_intent": 7,
     "archetypes": {
       "SME_WEB_IMPROVEMENT": 114,
       "AGENCY_EXTERNAL_CAPACITY": 2
@@ -133,31 +133,33 @@
   "qualified_backlog_policy": {
     "priority": "HIGH_PROJECT_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
     "semantic_pass_snapshot_proxy": 116,
-    "project_based_high_intent_snapshot": 9,
+    "project_based_high_intent_snapshot": 7,
     "target_serious_candidate_decisions_per_run": 120,
     "target_high_intent_decisions_first": true,
     "continue_after_individual_blocker": true,
     "send_all_valid_send_now": true,
     "no_batch_minimum": true
   },
-  "harvest_areas": [],
+  "harvest_areas": [
+    "Italy|Lazio|Roma"
+  ],
   "explore_or_revisit_areas": [
-    "Italy|Calabria|Reggio Calabria",
-    "Spain|Comunitat Valenciana|Castellón",
-    "Spain|Aragón|Zaragoza",
-    "Italy|Puglia|Bari",
     "Italy|Veneto|Venezia",
-    "Italy|Piemonte|Torino",
+    "Italy|Calabria|Reggio Calabria",
+    "Spain|Aragón|Zaragoza",
+    "Spain|Comunitat Valenciana|Castellón",
+    "Italy|Puglia|Bari",
     "Italy|Emilia-Romagna|Piacenza",
+    "Italy|Piemonte|Torino",
     "Spain|Castilla y León|Valladolid",
     "Spain|Galicia|A Coruña",
-    "Italy|Lazio|Frosinone",
     "Italy|Emilia-Romagna|Ferrara",
-    "Italy|Sicilia|Agrigento"
+    "Italy|Sicilia|Agrigento",
+    "Spain|Cataluña|Girona"
   ],
   "turbo": {
     "enabled": true,
-    "reason": "HIGH_BUYER_INTENT_BACKLOG",
+    "reason": "QUALIFIED_BACKLOG_PRESSURE",
     "quality_gates_unchanged": true,
     "target_serious_candidate_decisions_per_run": 120,
     "same_run_qualification_and_send": true,
