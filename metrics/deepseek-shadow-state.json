@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 666,
+  "runs": 667,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -14953,6 +14953,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "08be05214d65c0ff427027ad82b796bc",
+      "evaluated_at": "2026-09-24T08:23:05Z",
+      "organization": "Coreweaveu",
+      "title": "Staff Frontend Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/coreweaveu/staff-frontend-engineer-london-24873",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Staff Frontend Engineer at CoreWeave is a senior full-time product-engineering role in London, not a freelance/contract WordPress or web-maintenance opportunity; only generic 'frontend' and 'agency/collaboration' keywords match, with no WordPress, WooCommerce, or web-performance scope and no evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "senior_full_time_role",
+        "no_wordpress_or_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "geo_mismatch_london_not_spain_italy_or_eu_remote",
+        "generic_keyword_only_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00044663,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -18135,9 +18164,21 @@
       "completion_tokens": 179,
       "total_tokens": 707,
       "estimated_cost_usd": 0.00015251
+    },
+    {
+      "at": "2026-09-24T08:23:05Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 432,
+      "completion_tokens": 193,
+      "total_tokens": 753,
+      "estimated_cost_usd": 0.00044663
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-09-24T04:01:07Z",
+  "updated_at": "2026-09-24T08:23:05Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
