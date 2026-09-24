@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-24T12:01:28Z",
+  "updated_at": "2026-09-24T12:19:36Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,8 +14,8 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 550,
-    "agreement_count": 276,
+    "evaluated_total": 552,
+    "agreement_count": 277,
     "agreement_pct": 50.18,
     "deepseek_promote": 30,
     "vds_promote": 205,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 268,
-    "cumulative_estimated_cost_usd": 0.114807,
-    "cost_per_evaluated_candidate_usd": 0.00020874,
-    "cost_per_deepseek_promote_usd": 0.0038269,
-    "cost_per_observed_ready_or_contacted_usd": 0.05740356,
-    "latest_request": null
+    "request_count": 269,
+    "cumulative_estimated_cost_usd": 0.115172,
+    "cost_per_evaluated_candidate_usd": 0.00020865,
+    "cost_per_deepseek_promote_usd": 0.00383907,
+    "cost_per_observed_ready_or_contacted_usd": 0.05758605,
+    "latest_request": {
+      "at": "2026-09-24T12:19:32Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 695,
+      "completion_tokens": 320,
+      "total_tokens": 1143,
+      "estimated_cost_usd": 0.000365
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "aa6895e7606cc067ecfa9d498de4673c",
-      "evaluated_at": "2026-09-20T18:55:34Z",
-      "organization": "Trbo",
-      "title": "AI Transformation & Enablement Specialist (m/w/d) - Freelancer/Interimsmanager",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/trbo/ai-transformation-enablement-specialist-freelancer-interimsmanager-munchen-420916",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Role is an AI Transformation & Enablement Specialist / interim manager, not a web-development role; matched keywords (css, frontend, html, javascript) are incidental and the core scope is AI transformation consulting, which does not fit the target WordPress/WooCommerce/frontend web profile.",
-      "deepseek_risk_flags": [
-        "role_mismatch_ai_transformation",
-        "keyword_matches_incidental",
-        "no_wordpress_woocommerce_scope",
-        "location_munich_not_spain_italy",
-        "geo_bucket_mismatch"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002209,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "9b91d3060362af6b916383e62e8dd605",
-      "evaluated_at": "2026-09-20T23:27:35Z",
-      "organization": "Huzzle",
-      "title": "Full Stack Developer (WordPress, Shopify, CRM)",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/full-stack-developer-wordpress-shopify-crm-huzzle",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 78,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 62.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Title and matched keywords indicate WordPress and Shopify scope with contractor/remote signals, but the 'Full Stack Developer' framing and CRM mention leave the true core stack and freelance compatibility unverified from the supplied evidence.",
-      "deepseek_risk_flags": [
-        "full_stack_scope_ambiguous",
-        "crm_scope_unclear",
-        "freelance_compatibility_unverified",
-        "geo_bucket_eu_remote_to_verify",
-        "no_employment_type_field"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00020044,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "cd3ab862d0ff8ba99c099968e3ad390a",
       "evaluated_at": "2026-09-21T01:03:46Z",
@@ -1480,10 +1433,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6a4b77393d774fbae7e99a8b06c66721",
+      "evaluated_at": "2026-09-24T12:19:32Z",
+      "organization": "Allgeier Inovar Gmbh",
+      "title": "Softwareentwickler Frontend / Angular (m/w/d)",
+      "location": "Nürnberg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/allgeier-inovar-gmbh/softwareentwickler-frontend-angular-nurnberg-347852",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Angular-focused frontend developer role in Nürnberg, Germany; core stack is Angular, not WordPress/WooCommerce/custom HTML-CSS-JS, and no evidence of freelance/contract compatibility or Spain/Italy/EU-remote fit.",
+      "deepseek_risk_flags": [
+        "angular_core_stack_mismatch",
+        "onsite_germany_location",
+        "no_freelance_compatibility_evidence",
+        "no_geo_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001825,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "78f64d673d5baa6d55df5b6902a3744b",
+      "evaluated_at": "2026-09-24T12:19:32Z",
+      "organization": "Bookboost",
+      "title": "Full Stack Developer",
+      "location": "Germany - Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-62198",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Generic Full Stack Developer role in Munich, Germany with only incidental PHP/JS/frontend keyword overlap; no explicit WordPress/WooCommerce scope, no confirmed freelance/contract structure, and geo bucket is unverified despite Spain-related tag.",
+      "deepseek_risk_flags": [
+        "generic_full_stack_scope",
+        "no_wordpress_woocommerce_evidence",
+        "onsite_germany_location",
+        "geo_bucket_unverified",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001825,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-24T12:01:24Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-24T12:19:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
