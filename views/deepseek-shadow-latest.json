@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-25T17:34:57Z",
+  "updated_at": "2026-09-25T20:44:24Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 569,
+    "evaluated_total": 571,
     "agreement_count": 286,
-    "agreement_pct": 50.26,
+    "agreement_pct": 50.09,
     "deepseek_promote": 31,
-    "vds_promote": 212,
+    "vds_promote": 214,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 185
+    "deepseek_demoted_from_vds_promote": 187
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 19.35,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.83,
+    "vds_promote_hot_rate_pct": 2.8,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.45,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 276,
-    "cumulative_estimated_cost_usd": 0.118567,
-    "cost_per_evaluated_candidate_usd": 0.00020838,
-    "cost_per_deepseek_promote_usd": 0.00382473,
-    "cost_per_observed_ready_or_contacted_usd": 0.05928339,
-    "latest_request": null
+    "request_count": 277,
+    "cumulative_estimated_cost_usd": 0.118928,
+    "cost_per_evaluated_candidate_usd": 0.00020828,
+    "cost_per_deepseek_promote_usd": 0.00383638,
+    "cost_per_observed_ready_or_contacted_usd": 0.0594639,
+    "latest_request": {
+      "at": "2026-09-25T20:44:20Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 692,
+      "completion_tokens": 315,
+      "total_tokens": 1135,
+      "estimated_cost_usd": 0.00036104
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "cb75570ac4b6e7e020bdab55bededfd4",
-      "evaluated_at": "2026-09-22T10:02:37Z",
-      "organization": "Lorenz & Fuchs GbR",
-      "title": "Freelance SEO/GEO Consultant (m/w/d) für 3 Monate",
-      "location": "Kiel",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/lorenz-fuchs-gbr/freelance-seo-geo-consultant-fur-3-monate-kiel-312538",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Role is a Freelance SEO/GEO Consultant, not a web-development engagement; matched keywords (html, wordpress, website, migration) appear incidental and the core scope is SEO/geo consulting rather than WordPress/WooCommerce/frontend build or maintenance work.",
-      "deepseek_risk_flags": [
-        "role_scope_mismatch",
-        "seo_consulting_not_webdev",
-        "keyword_only_stack_match",
-        "location_kiel_onsite_risk",
-        "remote_state_unverified"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016043,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "9ca03f82b91f02af8e41072f0514fcfe",
-      "evaluated_at": "2026-09-22T10:22:34Z",
-      "organization": "Rhebo GmbH",
-      "title": "Senior Frontend Developer (f/m/d) - Angular 13",
-      "location": "Leipzig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/rhebo-gmbh/senior-frontend-developer-angular-13-leipzig-475527",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Core role is Senior Frontend Developer with explicit Angular 13 stack, which is a React/Angular-heavy core position lacking meaningful WordPress/WooCommerce or custom HTML/CSS/JS web scope; only generic 'frontend', 'maintenance', 'ux' and 'partner' keyword matches, with no evidence of freelance/contract compatibility or Spain/Italy/EU-remote fit.",
-      "deepseek_risk_flags": [
-        "angular_core_stack_mismatch",
-        "no_wordpress_woocommerce_scope",
-        "generic_keyword_matches_only",
-        "no_freelance_compatibility_evidence",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00022904,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "70d6879f1f7a4ec54729f5e28edbb5db",
       "evaluated_at": "2026-09-22T13:26:29Z",
@@ -1467,10 +1420,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ec1fc2b15ca8406800f3926cecd8bea5",
+      "evaluated_at": "2026-09-25T20:44:20Z",
+      "organization": "Smallpdf",
+      "title": "Senior Frontend Engineer",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-44bb80d0fc",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 86,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior Frontend Engineer at Smallpdf in EU/EMEA remote; frontend scope matches profile, but no explicit WordPress/WooCommerce, freelance/contract, or commercial intent evidence, and stack specifics are unknown.",
+      "deepseek_risk_flags": [
+        "no_explicit_freelance_or_contract_signal",
+        "no_wordpress_woocommerce_evidence",
+        "stack_unspecified",
+        "employment_type_unknown",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018052,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "47dd4c62c52ae03c026bfb8fd76162b1",
+      "evaluated_at": "2026-09-25T20:44:20Z",
+      "organization": "SIXT",
+      "title": "Frontend Software Engineer - React (m/f/d)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/frontend-software-engineer-react-mfd-2791ece147",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Frontend Software Engineer - React at SIXT is a React-centric core engineering role with no WordPress/WooCommerce or web-maintenance scope, and no freelance/contract evidence; React-heavy core roles without matching web scope should be downgraded.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "employment_type_unknown",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018052,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-25T17:34:53Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-25T20:44:16Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
