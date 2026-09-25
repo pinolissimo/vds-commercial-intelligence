@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-25T01:59:08Z",
+  "updated_at": "2026-09-25T07:15:10Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 559,
+    "evaluated_total": 561,
     "agreement_count": 281,
-    "agreement_pct": 50.27,
+    "agreement_pct": 50.09,
     "deepseek_promote": 30,
-    "vds_promote": 207,
+    "vds_promote": 209,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 181
+    "deepseek_demoted_from_vds_promote": 183
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 20.0,
     "vds_promote_hot": 5,
-    "vds_promote_hot_rate_pct": 2.42,
+    "vds_promote_hot_rate_pct": 2.39,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.67,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 273,
-    "cumulative_estimated_cost_usd": 0.116701,
-    "cost_per_evaluated_candidate_usd": 0.00020877,
-    "cost_per_deepseek_promote_usd": 0.00389004,
-    "cost_per_observed_ready_or_contacted_usd": 0.0583506,
+    "request_count": 274,
+    "cumulative_estimated_cost_usd": 0.11744,
+    "cost_per_evaluated_candidate_usd": 0.00020934,
+    "cost_per_deepseek_promote_usd": 0.00391468,
+    "cost_per_observed_ready_or_contacted_usd": 0.05872021,
     "latest_request": {
-      "at": "2026-09-25T01:59:05Z",
+      "at": "2026-09-25T07:15:06Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 434,
-      "completion_tokens": 167,
-      "total_tokens": 729,
-      "estimated_cost_usd": 0.00041319
+      "prompt_cache_miss_tokens": 704,
+      "completion_tokens": 324,
+      "total_tokens": 1156,
+      "estimated_cost_usd": 0.00073923
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6d389ecf6f09156945b578180f42add4",
-      "evaluated_at": "2026-09-21T12:20:59Z",
-      "organization": "TecFox GmbH",
-      "title": "Frontend Softwareentwickler (m/w/d)",
-      "location": "Braunschweig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tecfox-gmbh/frontend-softwareentwickler-braunschweig-275925",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 42.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Frontend role with UI/UX keyword overlap, but no explicit WordPress/WooCommerce, performance, or maintenance scope; location Braunschweig (Germany) is outside primary Spain/Italy markets and remote status is unverified.",
-      "deepseek_risk_flags": [
-        "geo_mismatch_germany",
-        "remote_unverified",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_compatibility_evidence",
-        "stack_scope_ambiguous"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00020308,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "bb1ce93ef67bf6f55a80ab632c9d1c2a",
-      "evaluated_at": "2026-09-21T14:08:33Z",
-      "organization": "mercor",
-      "title": "Frontend Developer - Fully Remote | Upto $85/hr",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/frontend-developer-fully-remote-upto-85hr-mercor-himala",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 86,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 58.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Frontend developer role with remote and hourly-rate framing matches frontend/JS/UI/accessibility profile keywords, but the organization (Mercor) is an AI data/talent marketplace and the posting lacks explicit WordPress/WooCommerce, maintenance, or freelance/contract scope, so stack fit and true contract nature are unverified.",
-      "deepseek_risk_flags": [
-        "marketplace_or_staffing_intermediary",
-        "no_wordpress_woocommerce_scope",
-        "contract_type_unverified",
-        "geo_eligibility_unverified",
-        "possible_ai_training_data_work"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00019328,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "8f4b5dc4922d3bdcc3d97b75a4f8aaee",
       "evaluated_at": "2026-09-21T14:08:33Z",
@@ -1488,10 +1430,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "303b86d7c3e64ddb714816f582cf46ee",
+      "evaluated_at": "2026-09-25T07:15:06Z",
+      "organization": "Researchgate",
+      "title": "Senior Frontend Engineer - React",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/researchgate/senior-frontend-engineer-react-berlin-53197",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Frontend Engineer - React at Researchgate is a React-centric core engineering role; matched keywords (css, frontend, javascript, php, ux) are generic and do not establish WordPress/WooCommerce or freelance web-dev scope, and no explicit freelance/contract signal is present.",
+      "deepseek_risk_flags": [
+        "react_core_stack_mismatch",
+        "no_freelance_or_contract_signal",
+        "onsite_berlin_not_target_geo",
+        "generic_keyword_overlap_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000369615,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c0c995a84a844074f10fbc378aaef30b",
+      "evaluated_at": "2026-09-25T07:15:06Z",
+      "organization": "Distribusion Technologies",
+      "title": "Senior Frontend Engineer (all genders)",
+      "location": "Remote job",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/distribusion-technologies/remote-senior-frontend-engineer-all-genders-berlin-421093",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Senior Frontend Engineer (all genders) at Distribusion is a generic senior frontend role; 'partner' and 'maintenance' matches are incidental text, not evidence of freelance/external collaboration, and no WordPress/WooCommerce or Spain/Italy scope is shown.",
+      "deepseek_risk_flags": [
+        "generic_frontend_role",
+        "partner_keyword_false_positive",
+        "no_explicit_freelance_signal",
+        "geo_unverified_eu_remote"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000369615,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-25T01:59:01Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-25T07:15:02Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
