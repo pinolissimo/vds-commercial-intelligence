@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-09-25T10:26:01Z",
-  "latest_checked_uid": 1516,
+  "updated_at": "2026-09-25T15:24:08Z",
+  "latest_checked_uid": 1517,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -322,6 +322,21 @@
       "subtype": "SYSTEM_OR_UNCORRELATED",
       "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1517,
+      "received_at": "2026-09-25T10:51:55Z",
+      "canonical_identity_key": "org:reliving-mi.com",
+      "entity": "reliving-mi.com",
+      "sender": "digitalmarketing@reliving-mi.com",
+      "subject": "Re: MRKG LAB — collaborazione Web Design / WordPress",
+      "message_id": "<14E8FCF1-B739-4682-80D2-81A8C75C7130@reliving-mi.com>",
+      "in_reply_to": "<1790076433041057679.1790076433@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
   ]
