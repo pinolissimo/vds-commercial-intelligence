@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-26T06:58:41Z",
+  "updated_at": "2026-09-26T07:47:17Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 576,
+    "evaluated_total": 577,
     "agreement_count": 286,
-    "agreement_pct": 49.65,
+    "agreement_pct": 49.57,
     "deepseek_promote": 31,
-    "vds_promote": 215,
+    "vds_promote": 216,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 188
+    "deepseek_demoted_from_vds_promote": 189
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 19.35,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.79,
+    "vds_promote_hot_rate_pct": 2.78,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.45,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 279,
-    "cumulative_estimated_cost_usd": 0.120196,
-    "cost_per_evaluated_candidate_usd": 0.00020867,
-    "cost_per_deepseek_promote_usd": 0.0038773,
-    "cost_per_observed_ready_or_contacted_usd": 0.06009819,
+    "request_count": 280,
+    "cumulative_estimated_cost_usd": 0.120545,
+    "cost_per_evaluated_candidate_usd": 0.00020892,
+    "cost_per_deepseek_promote_usd": 0.00388856,
+    "cost_per_observed_ready_or_contacted_usd": 0.0602727,
     "latest_request": {
-      "at": "2026-09-26T06:58:37Z",
+      "at": "2026-09-26T07:47:14Z",
       "model": "deepseek-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 2,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 725,
-      "completion_tokens": 350,
-      "total_tokens": 1203,
-      "estimated_cost_usd": 0.00078279
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 190,
+      "completion_tokens": 197,
+      "total_tokens": 771,
+      "estimated_cost_usd": 0.00034902
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "e1f693f8158844bdadaaf9340b41e4c1",
-      "evaluated_at": "2026-09-22T17:25:34Z",
-      "organization": "Phantom",
-      "title": "Software Engineer, Frontend / Full Stack (Identity Platform)",
-      "location": "Anywhere",
-      "opportunity_url": "https://jobicy.com/jobs/153865-software-engineer-frontend-full-stack-identity-platform",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 42.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Title indicates a Frontend/Full Stack Software Engineer role on an Identity Platform; only 'frontend' matches the target profile, with no evidence of WordPress, WooCommerce, or web-performance scope, and 'partner'/'remote' are generic commercial keywords rather than proof of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_risk",
-        "no_wordpress_woocommerce_scope",
-        "generic_partner_keyword",
-        "employment_type_unknown",
-        "remote_state_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00020616,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "69c2780c2f0a900e2b8e999ac7c2bf03",
       "evaluated_at": "2026-09-22T21:59:23Z",
@@ -1479,10 +1450,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "960a77e2e32dcb36383a9116868189b5",
+      "evaluated_at": "2026-09-26T07:47:14Z",
+      "organization": "ionq",
+      "title": "Senior Front-End Engineer, Quantum Tools",
+      "location": "Oxford",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/ionq/senior-front-end-engineer-quantum-tools-oxford-116704",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 83,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior front-end role at a quantum computing company with matched keywords (HTML, CSS, front-end, UI/UX, accessibility) but no evidence of WordPress/WooCommerce scope, no explicit freelance/contract signal, and location Oxford (UK) which is outside the primary Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_signal",
+        "geo_outside_primary_markets_uk_onsite",
+        "likely_full_time_employment",
+        "seniority_may_imply_full_time_engineering_role"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00034902,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-09-26T06:58:32Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-26T07:47:11Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
