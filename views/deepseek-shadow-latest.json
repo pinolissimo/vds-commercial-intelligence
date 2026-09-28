@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T21:55:33Z",
+  "updated_at": "2026-09-28T22:13:41Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 627,
-    "agreement_count": 325,
-    "agreement_pct": 51.83,
+    "evaluated_total": 628,
+    "agreement_count": 326,
+    "agreement_pct": 51.91,
     "deepseek_promote": 32,
     "vds_promote": 226,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 300,
-    "cumulative_estimated_cost_usd": 0.129199,
-    "cost_per_evaluated_candidate_usd": 0.00020606,
-    "cost_per_deepseek_promote_usd": 0.00403746,
-    "cost_per_observed_ready_or_contacted_usd": 0.0645994,
-    "latest_request": null
+    "request_count": 301,
+    "cumulative_estimated_cost_usd": 0.129401,
+    "cost_per_evaluated_candidate_usd": 0.00020605,
+    "cost_per_deepseek_promote_usd": 0.00404378,
+    "cost_per_observed_ready_or_contacted_usd": 0.06470049,
+    "latest_request": {
+      "at": "2026-09-28T22:13:38Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 435,
+      "completion_tokens": 160,
+      "total_tokens": 723,
+      "estimated_cost_usd": 0.0002022
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "e13fc271c605900ccb6502c5b3665eb0",
-      "evaluated_at": "2026-09-26T12:06:41Z",
-      "organization": "Tablemedia",
-      "title": "Full Stack Product Developer (m/w/d)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tablemedia/full-stack-product-developer-berlin-401516",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Full Stack Product Developer role in Berlin with no explicit WordPress/WooCommerce scope; matched keywords are generic web terms and 'partner' is not evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_scope",
-        "full_stack_generalist_role",
-        "geo_unverified_non_target_market",
-        "freelance_compatibility_unproven"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00019054,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1917c4da3f5b182bcf498ad592cab7c5",
       "evaluated_at": "2026-09-26T16:18:08Z",
@@ -1449,10 +1432,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e5721f7512875b82ade693ae6e053ec3",
+      "evaluated_at": "2026-09-28T22:13:38Z",
+      "organization": "",
+      "title": "Air Apps: Framer Website Designer",
+      "location": "",
+      "opportunity_url": "https://weworkremotely.com/remote-jobs/air-apps-framer-website-designer-1",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is a Framer website designer position, not WordPress/WooCommerce or custom HTML/CSS/JS development; Framer is a no-code design tool that does not match the target stack despite generic web design keyword overlap.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_framer_no_code",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_contract_terms",
+        "generic_collaboration_keywords_only"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0002022,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-28T21:55:29Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-28T22:13:35Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
