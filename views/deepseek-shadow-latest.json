@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T06:36:37Z",
+  "updated_at": "2026-09-28T06:54:58Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 616,
-    "agreement_count": 317,
-    "agreement_pct": 51.46,
+    "evaluated_total": 617,
+    "agreement_count": 318,
+    "agreement_pct": 51.54,
     "deepseek_promote": 32,
     "vds_promote": 224,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 291,
-    "cumulative_estimated_cost_usd": 0.126325,
-    "cost_per_evaluated_candidate_usd": 0.00020507,
-    "cost_per_deepseek_promote_usd": 0.00394767,
-    "cost_per_observed_ready_or_contacted_usd": 0.06316269,
-    "latest_request": null
+    "request_count": 292,
+    "cumulative_estimated_cost_usd": 0.126725,
+    "cost_per_evaluated_candidate_usd": 0.00020539,
+    "cost_per_deepseek_promote_usd": 0.00396015,
+    "cost_per_observed_ready_or_contacted_usd": 0.06336247,
+    "latest_request": {
+      "at": "2026-09-28T06:54:55Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 448,
+      "completion_tokens": 152,
+      "total_tokens": 728,
+      "estimated_cost_usd": 0.00039955
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "cb3ac9942ac1d87039730c5deeb041fe",
-      "evaluated_at": "2026-09-25T17:05:22Z",
-      "organization": "Zoe",
-      "title": "Full Stack Engineer (Front-end Focus)",
-      "location": "Germany only",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/full-stack-engineer-front-end-focus-671f1939d1",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 48.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Front-end focus matches partially, but full-stack framing and Germany-only location limit fit; no WordPress/WooCommerce or freelance signals.",
-      "deepseek_risk_flags": [
-        "geo_restricted_germany_only",
-        "full_stack_scope_beyond_profile",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 8.919e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b299e40a68acc5665a21b9a0f14451da",
       "evaluated_at": "2026-09-25T17:05:22Z",
@@ -1445,10 +1429,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "804896e4d4d20286a51a83fdcba4f3f3",
+      "evaluated_at": "2026-09-28T06:54:55Z",
+      "organization": "Bloomreach",
+      "title": "Business Consultant (6 months contract with possible extension)",
+      "location": "Czechia,  Slovakia",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/business-consultant-6-months-contract-with-possible-extension-bloomreach",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Business Consultant position at Bloomreach, not a web development role; matched keywords (html, javascript, migration, website) are incidental and the core scope is business consulting, not WordPress/WooCommerce/frontend web work.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_technical_core_scope",
+        "keyword_noise",
+        "no_web_development_scope"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00039955,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-28T06:36:32Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-28T06:54:51Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
