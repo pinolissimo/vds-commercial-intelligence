@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T09:00:38Z",
+  "updated_at": "2026-09-28T09:18:47Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 618,
-    "agreement_count": 319,
-    "agreement_pct": 51.62,
+    "evaluated_total": 619,
+    "agreement_count": 320,
+    "agreement_pct": 51.7,
     "deepseek_promote": 32,
     "vds_promote": 224,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 293,
-    "cumulative_estimated_cost_usd": 0.127169,
-    "cost_per_evaluated_candidate_usd": 0.00020577,
-    "cost_per_deepseek_promote_usd": 0.00397403,
-    "cost_per_observed_ready_or_contacted_usd": 0.06358446,
-    "latest_request": null
+    "request_count": 294,
+    "cumulative_estimated_cost_usd": 0.127594,
+    "cost_per_evaluated_candidate_usd": 0.00020613,
+    "cost_per_deepseek_promote_usd": 0.00398733,
+    "cost_per_observed_ready_or_contacted_usd": 0.06379722,
+    "latest_request": {
+      "at": "2026-09-28T09:18:44Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 453,
+      "completion_tokens": 170,
+      "total_tokens": 751,
+      "estimated_cost_usd": 0.00042551
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "62b25b91ec52438dfdbe54a8c9f99645",
-      "evaluated_at": "2026-09-25T17:05:22Z",
-      "organization": "Kodland",
-      "title": "Italy Tutor | Roblox Video",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/italy-tutor-roblox-video-kodland",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Tutoring role for Roblox video, not web development; keyword matches are incidental and no real WordPress/frontend scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch_tutoring",
-        "incidental_keyword_matches",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 8.919e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ec1fc2b15ca8406800f3926cecd8bea5",
       "evaluated_at": "2026-09-25T20:44:20Z",
@@ -1449,10 +1433,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6413cee3ce02ababc4d3f7594f78020a",
+      "evaluated_at": "2026-09-28T09:18:44Z",
+      "organization": "OPTITOOL GmbH",
+      "title": "OT-DW Web-Entwickler / Web Developer (m/w/d) in Vollzeit",
+      "location": "Regensburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/optitool-gmbh/ot-dw-web-entwickler-web-developer-in-vollzeit-regensburg-297350",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full-time on-site Web Developer role in Regensburg, Germany with generic frontend/UI/web developer keywords but no explicit WordPress/WooCommerce or freelance/contract signals; geo outside primary Spain/Italy markets and employment type appears permanent full-time.",
+      "deepseek_risk_flags": [
+        "on-site location (Regensburg)",
+        "full-time permanent employment (Vollzeit)",
+        "geo outside primary Spain/Italy markets",
+        "no explicit WordPress/WooCommerce stack evidence",
+        "no freelance/contract compatibility evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00042551,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-28T09:00:35Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-28T09:18:41Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
