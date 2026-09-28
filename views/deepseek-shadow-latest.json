@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T10:12:25Z",
+  "updated_at": "2026-09-28T10:30:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 619,
-    "agreement_count": 320,
-    "agreement_pct": 51.7,
+    "evaluated_total": 620,
+    "agreement_count": 321,
+    "agreement_pct": 51.77,
     "deepseek_promote": 32,
     "vds_promote": 224,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 294,
-    "cumulative_estimated_cost_usd": 0.127594,
+    "request_count": 295,
+    "cumulative_estimated_cost_usd": 0.127801,
     "cost_per_evaluated_candidate_usd": 0.00020613,
-    "cost_per_deepseek_promote_usd": 0.00398733,
-    "cost_per_observed_ready_or_contacted_usd": 0.06379722,
-    "latest_request": null
+    "cost_per_deepseek_promote_usd": 0.0039938,
+    "cost_per_observed_ready_or_contacted_usd": 0.06390074,
+    "latest_request": {
+      "at": "2026-09-28T10:30:17Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 427,
+      "completion_tokens": 170,
+      "total_tokens": 725,
+      "estimated_cost_usd": 0.00020704
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ec1fc2b15ca8406800f3926cecd8bea5",
-      "evaluated_at": "2026-09-25T20:44:20Z",
-      "organization": "Smallpdf",
-      "title": "Senior Frontend Engineer",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-44bb80d0fc",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 86,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior Frontend Engineer at Smallpdf in EU/EMEA remote; frontend scope matches profile, but no explicit WordPress/WooCommerce, freelance/contract, or commercial intent evidence, and stack specifics are unknown.",
-      "deepseek_risk_flags": [
-        "no_explicit_freelance_or_contract_signal",
-        "no_wordpress_woocommerce_evidence",
-        "stack_unspecified",
-        "employment_type_unknown",
-        "remote_state_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00018052,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "47dd4c62c52ae03c026bfb8fd76162b1",
       "evaluated_at": "2026-09-25T20:44:20Z",
@@ -1451,10 +1433,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4414e09a3347e7b8c323aabe40cee979",
+      "evaluated_at": "2026-09-28T10:30:17Z",
+      "organization": "Transreport Limited",
+      "title": "Digital Marketing Executive",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/transreport-limited/digital-marketing-executive-london-137013",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Digital Marketing Executive position, not a web development role; WordPress/CMS mentions are incidental marketing-tool references rather than development scope, and no explicit freelance/contract demand is present.",
+      "deepseek_risk_flags": [
+        "role_mismatch_marketing_not_development",
+        "wordpress_mention_incidental",
+        "no_explicit_freelance_or_contract_signal",
+        "onsite_london_not_target_geo",
+        "generic_partner_mention_not_freelance_proof"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020704,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-28T10:12:20Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-28T10:30:13Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
