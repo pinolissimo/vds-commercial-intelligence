@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T06:54:58Z",
+  "updated_at": "2026-09-28T07:13:07Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 617,
-    "agreement_count": 318,
-    "agreement_pct": 51.54,
+    "evaluated_total": 618,
+    "agreement_count": 319,
+    "agreement_pct": 51.62,
     "deepseek_promote": 32,
     "vds_promote": 224,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 292,
-    "cumulative_estimated_cost_usd": 0.126725,
-    "cost_per_evaluated_candidate_usd": 0.00020539,
-    "cost_per_deepseek_promote_usd": 0.00396015,
-    "cost_per_observed_ready_or_contacted_usd": 0.06336247,
+    "request_count": 293,
+    "cumulative_estimated_cost_usd": 0.127169,
+    "cost_per_evaluated_candidate_usd": 0.00020577,
+    "cost_per_deepseek_promote_usd": 0.00397403,
+    "cost_per_observed_ready_or_contacted_usd": 0.06358446,
     "latest_request": {
-      "at": "2026-09-28T06:54:55Z",
+      "at": "2026-09-28T07:13:03Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 448,
-      "completion_tokens": 152,
-      "total_tokens": 728,
-      "estimated_cost_usd": 0.00039955
+      "prompt_cache_miss_tokens": 429,
+      "completion_tokens": 192,
+      "total_tokens": 749,
+      "estimated_cost_usd": 0.00044399
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b299e40a68acc5665a21b9a0f14451da",
-      "evaluated_at": "2026-09-25T17:05:22Z",
-      "organization": "taskrabbit",
-      "title": "Senior Localization Specialist, Italian",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/taskrabbit/senior-localization-specialist-italian-london-245586",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 55,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Localization specialist role unrelated to web development; only tangential UX keyword and generic contractor/partner mentions, not freelance web work.",
-      "deepseek_risk_flags": [
-        "role_mismatch_localization",
-        "generic_collaboration_terms",
-        "london_location"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 8.919e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "62b25b91ec52438dfdbe54a8c9f99645",
       "evaluated_at": "2026-09-25T17:05:22Z",
@@ -1457,10 +1430,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e09fce3893d050de8a1b9a55076d5c6d",
+      "evaluated_at": "2026-09-28T07:13:03Z",
+      "organization": "Autodesk",
+      "title": "Software Architect",
+      "location": "EMEA,  UK",
+      "opportunity_url": "https://jobicy.com/jobs/150381-software-architect",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Software Architect role at Autodesk is a senior architecture position with no evidence of WordPress, WooCommerce, custom HTML/CSS/JS, frontend, or web-performance scope; matched keywords (maintenance, migration, contractor, partner) are generic and do not establish truthful stack fit or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_title_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "no_frontend_web_scope",
+        "generic_keyword_matches",
+        "enterprise_architect_role_likely_full_time",
+        "freelance_compatibility_unproven"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00044399,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-28T06:54:51Z",
+  "source_semantic_updated_at": "2026-09-28T07:12:59Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
