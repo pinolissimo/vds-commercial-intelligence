@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T16:15:03Z",
+  "updated_at": "2026-09-28T16:33:07Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 621,
+    "evaluated_total": 623,
     "agreement_count": 322,
-    "agreement_pct": 51.85,
+    "agreement_pct": 51.69,
     "deepseek_promote": 32,
-    "vds_promote": 224,
+    "vds_promote": 226,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 196
+    "deepseek_demoted_from_vds_promote": 198
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.68,
+    "vds_promote_hot_rate_pct": 2.65,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 296,
-    "cumulative_estimated_cost_usd": 0.12801,
-    "cost_per_evaluated_candidate_usd": 0.00020613,
-    "cost_per_deepseek_promote_usd": 0.00400031,
-    "cost_per_observed_ready_or_contacted_usd": 0.06400491,
-    "latest_request": null
+    "request_count": 297,
+    "cumulative_estimated_cost_usd": 0.128384,
+    "cost_per_evaluated_candidate_usd": 0.00020607,
+    "cost_per_deepseek_promote_usd": 0.004012,
+    "cost_per_observed_ready_or_contacted_usd": 0.06419203,
+    "latest_request": {
+      "at": "2026-09-28T16:33:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 698,
+      "completion_tokens": 333,
+      "total_tokens": 1159,
+      "estimated_cost_usd": 0.00037424
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a571f920d9c5c2ee905dcba48875bc2b",
-      "evaluated_at": "2026-09-25T23:36:02Z",
-      "organization": "appsolutsgmbh",
-      "title": "Mobile & Web Developer (m/w/d) - Schwerpunkt Kotlin Multiplatform",
-      "location": "Düsseldorf, Germany",
-      "opportunity_url": "https://join.com/companies/appsolutsgmbh/jobs/16749855-mobile-und-web-developer-m-w-d-schwerpunkt-kotlin-multiplatform",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Core role is Kotlin Multiplatform mobile development with only a generic 'web developer' title match; no WordPress/WooCommerce/custom web scope and full-time hybrid in Germany, not freelance-compatible.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_kotlin",
-        "full_time_employment",
-        "hybrid_onsite_germany",
-        "no_freelance_signal",
-        "generic_title_match_only"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001619267,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "35592ae5e08197e6cc4b7c8ecde4ec1b",
-      "evaluated_at": "2026-09-25T23:36:02Z",
-      "organization": "Affirm",
-      "title": "Staff Software Engineer, Frontend (App Experience)",
-      "location": "Canada",
-      "opportunity_url": "https://remotelanders.com/jobs/staff-software-engineer-frontend-app-experience-affirm-1urf8e",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Staff-level frontend engineering role at a fintech, Canada-based, no WordPress/WooCommerce or freelance/contract signal; seniority and stack profile mismatch.",
-      "deepseek_risk_flags": [
-        "senior_staff_level",
-        "canada_geo",
-        "no_wordpress_scope",
-        "no_freelance_signal",
-        "fintech_enterprise_stack"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001619267,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a4066fd7a4dd9500cd7b034fd89fd4a1",
       "evaluated_at": "2026-09-25T23:36:02Z",
@@ -1450,10 +1403,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9b32675d92b52332eef468c64dcd19f1",
+      "evaluated_at": "2026-09-28T16:33:04Z",
+      "organization": "SIXT",
+      "title": "Senior Frontend Engineer (m/f/d)",
+      "location": "Germany only",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-mfd-272ee9fc91",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Frontend Engineer at SIXT is a large-company product role with no evidence of WordPress/WooCommerce, custom HTML/CSS/JS freelance scope, or contract/external-collaboration compatibility; 'Germany only' location further limits Spain/Italy/EU-remote fit.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_restricted_germany_only",
+        "enterprise_fulltime_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018712,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6d2309676c2de895a1aa8fc9fd1fef81",
+      "evaluated_at": "2026-09-28T16:33:04Z",
+      "organization": "Primer",
+      "title": "Software Engineer III, Frontend - Account Experience",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/software-engineer-iii-frontend-account-experience-49643457a0",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Software Engineer III, Frontend at Primer is a product-engineering role with no WordPress/WooCommerce or maintenance/support scope and no explicit freelance/contract signal; EU/EMEA remote is compatible but the role type is not a strong freelance web-dev opportunity.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "enterprise_fulltime_likely",
+        "react_heavy_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018712,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-28T16:15:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-28T16:33:02Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
