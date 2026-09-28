@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T05:13:27Z",
+  "updated_at": "2026-09-28T05:31:34Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 612,
-    "agreement_count": 313,
-    "agreement_pct": 51.14,
+    "evaluated_total": 614,
+    "agreement_count": 315,
+    "agreement_pct": 51.3,
     "deepseek_promote": 32,
     "vds_promote": 224,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 288,
-    "cumulative_estimated_cost_usd": 0.125404,
-    "cost_per_evaluated_candidate_usd": 0.00020491,
-    "cost_per_deepseek_promote_usd": 0.00391887,
-    "cost_per_observed_ready_or_contacted_usd": 0.06270186,
+    "request_count": 289,
+    "cumulative_estimated_cost_usd": 0.125734,
+    "cost_per_evaluated_candidate_usd": 0.00020478,
+    "cost_per_deepseek_promote_usd": 0.0039292,
+    "cost_per_observed_ready_or_contacted_usd": 0.0628672,
     "latest_request": {
-      "at": "2026-09-28T05:13:22Z",
+      "at": "2026-09-28T05:31:30Z",
       "model": "deepseek-flash",
-      "candidate_count": 5,
-      "valid_evaluation_count": 5,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 1451,
-      "completion_tokens": 612,
-      "total_tokens": 2191,
-      "estimated_cost_usd": 0.00072404
+      "prompt_cache_miss_tokens": 701,
+      "completion_tokens": 266,
+      "total_tokens": 1095,
+      "estimated_cost_usd": 0.00033068
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "646bb3351b12cf58e03bad66b8b7e55a",
-      "evaluated_at": "2026-09-25T12:48:15Z",
-      "organization": "Jobgether",
-      "title": "Senior Web Developer (AI-Augmented)",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-web-developer-ai-augmented-cc781c1cdd",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 58.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Title 'Senior Web Developer (AI-Augmented)' is semantically aligned with web development and EU/EMEA remote, but the posting provides no explicit WordPress/WooCommerce, performance, or freelance/contract evidence. Needs verification of stack and engagement type.",
-      "deepseek_risk_flags": [
-        "stack_unverified",
-        "contract_type_unverified",
-        "aggregator_source_authority_limited",
-        "ai_augmented_framing_may_indicate_non_target_scope"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.000192395,
-      "observed_hot": true,
-      "observed_hot_score": 90.0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "1ffe1640bf95f490acbf5b9d6cbb8cc7",
-      "evaluated_at": "2026-09-25T12:48:15Z",
-      "organization": "_app:soluts/* GmbH",
-      "title": "Mobile & Web Developer (m/w/d) - Schwerpunkt Kotlin Multiplatform",
-      "location": "Düsseldorf",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/appsoluts-gmbh/mobile-web-developer-schwerpunkt-kotlin-multiplatform-dusseldorf-184064",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 28.0,
-      "deepseek_confidence": 0.78,
-      "deepseek_primary_reason": "Role is centered on Kotlin Multiplatform mobile development with only incidental web scope; on-site in Düsseldorf and stack mismatch with the WordPress/frontend profile.",
-      "deepseek_risk_flags": [
-        "kotlin_multiplatform_core_stack",
-        "mobile_first_role",
-        "on_site_duesseldorf",
-        "no_wordpress_woocommerce_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000192395,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "179cade0f106d500dbc6770c29ac86e3",
       "evaluated_at": "2026-09-25T12:48:15Z",
@@ -1454,10 +1398,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4796995c0ae5b0863516fc8bc3591d8b",
+      "evaluated_at": "2026-09-28T05:31:30Z",
+      "organization": "Anybotics",
+      "title": "PCB Layout Designer / ECAD Engineer",
+      "location": "Zurich, Switzerland",
+      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/anybotics/pcb-layout-designer-ecad-engineer-zurich-switzerland-401087",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 5.0,
+      "deepseek_confidence": 0.95,
+      "deepseek_primary_reason": "Role is PCB Layout Designer / ECAD Engineer, a hardware/electronics engineering position with no WordPress, WooCommerce, frontend, or web-development scope; matched keywords are incidental boilerplate.",
+      "deepseek_risk_flags": [
+        "hardware_engineering_role",
+        "no_web_stack_fit",
+        "keyword_noise",
+        "non_target_geo_switzerland"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016534,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7cf6770aefea9b84c458559f3480456e",
+      "evaluated_at": "2026-09-28T05:31:30Z",
+      "organization": "planetlabs",
+      "title": "Senior Engineering Program Manager",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/planetlabs/senior-engineering-program-manager-berlin-167852",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 5.0,
+      "deepseek_confidence": 0.95,
+      "deepseek_primary_reason": "Role is Senior Engineering Program Manager, a management/PM position with no web development, WordPress, or frontend scope; matched keywords are generic boilerplate.",
+      "deepseek_risk_flags": [
+        "non_technical_web_role",
+        "no_web_stack_fit",
+        "keyword_noise",
+        "non_target_geo_germany"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016534,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 5,
-  "source_semantic_updated_at": "2026-09-28T05:13:18Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-09-28T05:31:26Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
