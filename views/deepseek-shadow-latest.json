@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-29T22:58:16Z",
+  "updated_at": "2026-09-29T23:16:19Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 644,
-    "agreement_count": 332,
-    "agreement_pct": 51.55,
+    "evaluated_total": 645,
+    "agreement_count": 333,
+    "agreement_pct": 51.63,
     "deepseek_promote": 32,
     "vds_promote": 234,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 310,
-    "cumulative_estimated_cost_usd": 0.133026,
-    "cost_per_evaluated_candidate_usd": 0.00020656,
-    "cost_per_deepseek_promote_usd": 0.00415705,
-    "cost_per_observed_ready_or_contacted_usd": 0.06651287,
-    "latest_request": null
+    "request_count": 311,
+    "cumulative_estimated_cost_usd": 0.133203,
+    "cost_per_evaluated_candidate_usd": 0.00020652,
+    "cost_per_deepseek_promote_usd": 0.0041626,
+    "cost_per_observed_ready_or_contacted_usd": 0.06660154,
+    "latest_request": {
+      "at": "2026-09-29T23:16:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 409,
+      "completion_tokens": 131,
+      "total_tokens": 668,
+      "estimated_cost_usd": 0.00017734
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "d6635c338a522d6c1e9dc559b001973c",
-      "evaluated_at": "2026-09-28T00:28:02Z",
-      "organization": "Booming Games",
-      "title": "Senior HTML5 Game Developer",
-      "location": "Pressig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/booming-games/senior-html5-game-developer-pressig-200487",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.78,
-      "deepseek_primary_reason": "Senior HTML5 Game Developer at Booming Games; frontend/javascript matches but core scope is HTML5 game development, not WordPress/WooCommerce or general web-dev; freelance/contractor keywords are generic.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "game_dev_not_web_dev",
-        "keyword_only_match"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001469314,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "5bd735bb6e4c554500ae44b429993338",
       "evaluated_at": "2026-09-28T00:28:02Z",
@@ -1455,10 +1439,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "553e4fbdfd5fd2ce7b93ba152abd3cc6",
+      "evaluated_at": "2026-09-29T23:16:16Z",
+      "organization": "SpecterOps",
+      "title": "Web Developer-Contract ",
+      "location": "United States",
+      "opportunity_url": "https://remotelanders.com/jobs/web-developer-contract-specterops-hwgm37",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 42.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Explicit contract web developer role, but location is United States with no remote confirmation and no evidence of WordPress/WooCommerce or Spain/Italy/EU-remote compatibility.",
+      "deepseek_risk_flags": [
+        "geo_mismatch_risk",
+        "remote_unverified",
+        "stack_unspecified",
+        "us_only_location"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017734,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-29T22:58:12Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-29T23:16:12Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
