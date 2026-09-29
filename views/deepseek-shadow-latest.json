@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-29T19:02:42Z",
+  "updated_at": "2026-09-29T19:21:19Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 642,
+    "evaluated_total": 643,
     "agreement_count": 332,
-    "agreement_pct": 51.71,
+    "agreement_pct": 51.63,
     "deepseek_promote": 32,
-    "vds_promote": 232,
+    "vds_promote": 233,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 204
+    "deepseek_demoted_from_vds_promote": 205
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.59,
+    "vds_promote_hot_rate_pct": 2.58,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 308,
-    "cumulative_estimated_cost_usd": 0.132573,
-    "cost_per_evaluated_candidate_usd": 0.0002065,
-    "cost_per_deepseek_promote_usd": 0.0041429,
-    "cost_per_observed_ready_or_contacted_usd": 0.06628647,
-    "latest_request": null
+    "request_count": 309,
+    "cumulative_estimated_cost_usd": 0.132795,
+    "cost_per_evaluated_candidate_usd": 0.00020652,
+    "cost_per_deepseek_promote_usd": 0.00414985,
+    "cost_per_observed_ready_or_contacted_usd": 0.06639758,
+    "latest_request": {
+      "at": "2026-09-29T19:21:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 454,
+      "completion_tokens": 184,
+      "total_tokens": 766,
+      "estimated_cost_usd": 0.00022222
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "0a99c1dd903adac865731eb5425481b5",
-      "evaluated_at": "2026-09-28T00:28:02Z",
-      "organization": "Wearebeyondsports",
-      "title": "Senior Software Engineer (Contractor)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wearebeyondsports/senior-software-engineer-contractor-london-234775",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 42.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Senior Software Engineer (Contractor) with frontend/html/css/javascript matches and explicit contractor signal; however 'Senior Software Engineer' title suggests broader stack than WordPress/frontend web-dev, and London-based geo is outside primary Spain/Italy markets.",
-      "deepseek_risk_flags": [
-        "title_ambiguity",
-        "geo_outside_primary_markets",
-        "stack_scope_unclear"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001469314,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "9cf15129f0b600e3fc4b41fb8c216e09",
       "evaluated_at": "2026-09-28T00:28:02Z",
@@ -1451,10 +1435,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2b794c3e655b3348e2d366e1a89cb73e",
+      "evaluated_at": "2026-09-29T19:21:16Z",
+      "organization": "",
+      "title": "HR Plus: Web Developer (Fresh graduate welcome, WFH policy, on-job-training)",
+      "location": "",
+      "opportunity_url": "https://weworkremotely.com/remote-jobs/hr-plus-web-developer-fresh-graduate-welcome-wfh-policy-on-job-training",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 76,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title and matched keywords indicate a web developer role with WordPress, HTML/CSS/JS, PHP and UX scope, which aligns with the target profile, but the posting is a fresh-graduate-friendly WFH listing with no explicit contract type, no location, and no confirmed freelance/external-collaboration compatibility.",
+      "deepseek_risk_flags": [
+        "employment_type_unspecified",
+        "fresh_graduate_role_may_indicate_junior_full_time",
+        "remote_scope_unverified",
+        "no_explicit_freelance_or_contract_language",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00022222,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-29T19:02:40Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-29T19:21:12Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
