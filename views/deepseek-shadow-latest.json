@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-29T12:38:56Z",
+  "updated_at": "2026-09-29T12:57:08Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 634,
+    "evaluated_total": 635,
     "agreement_count": 329,
-    "agreement_pct": 51.89,
+    "agreement_pct": 51.81,
     "deepseek_promote": 32,
-    "vds_promote": 227,
+    "vds_promote": 228,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 199
+    "deepseek_demoted_from_vds_promote": 200
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.64,
+    "vds_promote_hot_rate_pct": 2.63,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 306,
-    "cumulative_estimated_cost_usd": 0.131186,
-    "cost_per_evaluated_candidate_usd": 0.00020692,
-    "cost_per_deepseek_promote_usd": 0.00409957,
-    "cost_per_observed_ready_or_contacted_usd": 0.06559313,
-    "latest_request": null
+    "request_count": 307,
+    "cumulative_estimated_cost_usd": 0.131438,
+    "cost_per_evaluated_candidate_usd": 0.00020699,
+    "cost_per_deepseek_promote_usd": 0.00410745,
+    "cost_per_observed_ready_or_contacted_usd": 0.06571919,
+    "latest_request": {
+      "at": "2026-09-29T12:57:05Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 449,
+      "completion_tokens": 231,
+      "total_tokens": 808,
+      "estimated_cost_usd": 0.00025214
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4f75429545887de2ed9bc907b13c7e6a",
-      "evaluated_at": "2026-09-27T15:18:14Z",
-      "organization": "Speechmatics",
-      "title": "Senior Software Engineer – Front-End",
-      "location": "Cambridge",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/speechmatics/senior-software-engineer-front-end-cambridge-223050",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 88,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 60.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior Front-End role at Speechmatics in Cambridge with strong stack match (HTML, CSS, JavaScript, UI/UX) and worldwide remote tag, but no WordPress/WooCommerce scope and location is Cambridge (not primary market Spain/Italy).",
-      "deepseek_risk_flags": [
-        "location_not_primary_market",
-        "no_wordpress_scope",
-        "employment_type_unknown",
-        "remote_state_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001718857,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ba48f556d26458a671b455f71e31ace0",
       "evaluated_at": "2026-09-27T15:18:14Z",
@@ -1450,10 +1433,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7a076a431f0b80b59387dacdc4afa9b3",
+      "evaluated_at": "2026-09-29T12:57:05Z",
+      "organization": "DataDome",
+      "title": "Senior Frontend Engineer (Full Stack growth path)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-full-stack-growth-path-0817ba4b49",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title indicates a Senior Frontend Engineer role with a full-stack growth path at DataDome, an EU/EMEA remote posting. Only 'frontend' matches the target profile; no evidence of WordPress, WooCommerce, custom HTML/CSS/JS, performance/Core Web Vitals, maintenance, or UX/UI scope. Full-stack growth path likely implies React/Node or similar modern JS stack, which is a partial mismatch. Freelance/contract compatibility is unstated.",
+      "deepseek_risk_flags": [
+        "no_wordpress_or_woocommerce_scope",
+        "likely_react_or_modern_js_stack",
+        "full_stack_growth_path_ambiguous",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_bucket_eu_remote_to_verify"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00025214,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-29T12:38:52Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-29T12:57:01Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

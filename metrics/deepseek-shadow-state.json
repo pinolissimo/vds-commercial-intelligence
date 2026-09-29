@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 803,
+  "runs": 804,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -17426,6 +17426,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7a076a431f0b80b59387dacdc4afa9b3",
+      "evaluated_at": "2026-09-29T12:57:05Z",
+      "organization": "DataDome",
+      "title": "Senior Frontend Engineer (Full Stack growth path)",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-full-stack-growth-path-0817ba4b49",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title indicates a Senior Frontend Engineer role with a full-stack growth path at DataDome, an EU/EMEA remote posting. Only 'frontend' matches the target profile; no evidence of WordPress, WooCommerce, custom HTML/CSS/JS, performance/Core Web Vitals, maintenance, or UX/UI scope. Full-stack growth path likely implies React/Node or similar modern JS stack, which is a partial mismatch. Freelance/contract compatibility is unstated.",
+      "deepseek_risk_flags": [
+        "no_wordpress_or_woocommerce_scope",
+        "likely_react_or_modern_js_stack",
+        "full_stack_growth_path_ambiguous",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_bucket_eu_remote_to_verify"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00025214,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -21100,9 +21129,21 @@
       "completion_tokens": 177,
       "total_tokens": 740,
       "estimated_cost_usd": 0.00015889
+    },
+    {
+      "at": "2026-09-29T12:57:05Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 449,
+      "completion_tokens": 231,
+      "total_tokens": 808,
+      "estimated_cost_usd": 0.00025214
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-29T12:38:55Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-29T12:57:05Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
