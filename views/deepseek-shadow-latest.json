@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-28T23:53:29Z",
+  "updated_at": "2026-09-29T02:49:00Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 628,
-    "agreement_count": 326,
-    "agreement_pct": 51.91,
+    "evaluated_total": 629,
+    "agreement_count": 327,
+    "agreement_pct": 51.99,
     "deepseek_promote": 32,
     "vds_promote": 226,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 301,
-    "cumulative_estimated_cost_usd": 0.129401,
-    "cost_per_evaluated_candidate_usd": 0.00020605,
-    "cost_per_deepseek_promote_usd": 0.00404378,
-    "cost_per_observed_ready_or_contacted_usd": 0.06470049,
-    "latest_request": null
+    "request_count": 302,
+    "cumulative_estimated_cost_usd": 0.129881,
+    "cost_per_evaluated_candidate_usd": 0.00020649,
+    "cost_per_deepseek_promote_usd": 0.00405878,
+    "cost_per_observed_ready_or_contacted_usd": 0.06494053,
+    "latest_request": {
+      "at": "2026-09-29T02:48:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 460,
+      "completion_tokens": 209,
+      "total_tokens": 797,
+      "estimated_cost_usd": 0.00048007
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "1917c4da3f5b182bcf498ad592cab7c5",
-      "evaluated_at": "2026-09-26T16:18:08Z",
-      "organization": "Setsales",
-      "title": "Wordpress Web Developer at SetSales",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/setsales/wordpress-web-developer-at-setsales-london-26996",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "PROMOTE",
-      "deepseek_score": 88.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Explicit WordPress web developer role with matching core stack keywords (web developer, wordpress, website) and a remote commercial signal, aligning with the target profile's WordPress specialization.",
-      "deepseek_risk_flags": [
-        "location listed as London (non-primary market)",
-        "remote_state unverified",
-        "employment_type unspecified",
-        "freelance/contract compatibility not confirmed"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00017359,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a2e9bdcb784ba6dd601999c23e20ecbe",
       "evaluated_at": "2026-09-26T16:18:08Z",
@@ -1449,10 +1432,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "265ba633421fa166df67915aaf45ef07",
+      "evaluated_at": "2026-09-29T02:48:56Z",
+      "organization": "Packmatic",
+      "title": "(Senior) Product Designer - Systems & AI (m/w/d) - B2B SaaS | Berlin (hybrid)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/packmatic/senior-product-designer-systems-ai-b2b-saas-berlin-hybrid-129379",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a (Senior) Product Designer for Systems & AI at a B2B SaaS company, not a web-development/WordPress/frontend engineering position; matched keywords (css, frontend, html, ui, ux) reflect design-adjacent vocabulary rather than actual web dev scope, and 'collaboration/partner' are generic job-text mentions, not freelance-compatibility proof.",
+      "deepseek_risk_flags": [
+        "role_mismatch_product_design",
+        "no_wordpress_woocommerce_scope",
+        "no_custom_web_dev_scope",
+        "generic_collaboration_mention",
+        "hybrid_berlin_onsite_bias",
+        "ai_systems_focus_not_web_stack"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00048007,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-28T23:53:24Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-29T02:48:53Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

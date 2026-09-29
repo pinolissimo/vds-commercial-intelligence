@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 793,
+  "runs": 794,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -17254,6 +17254,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "265ba633421fa166df67915aaf45ef07",
+      "evaluated_at": "2026-09-29T02:48:56Z",
+      "organization": "Packmatic",
+      "title": "(Senior) Product Designer - Systems & AI (m/w/d) - B2B SaaS | Berlin (hybrid)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/packmatic/senior-product-designer-systems-ai-b2b-saas-berlin-hybrid-129379",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a (Senior) Product Designer for Systems & AI at a B2B SaaS company, not a web-development/WordPress/frontend engineering position; matched keywords (css, frontend, html, ui, ux) reflect design-adjacent vocabulary rather than actual web dev scope, and 'collaboration/partner' are generic job-text mentions, not freelance-compatibility proof.",
+      "deepseek_risk_flags": [
+        "role_mismatch_product_design",
+        "no_wordpress_woocommerce_scope",
+        "no_custom_web_dev_scope",
+        "generic_collaboration_mention",
+        "hybrid_berlin_onsite_bias",
+        "ai_systems_focus_not_web_stack"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00048007,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -20868,9 +20898,21 @@
       "completion_tokens": 160,
       "total_tokens": 723,
       "estimated_cost_usd": 0.0002022
+    },
+    {
+      "at": "2026-09-29T02:48:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 460,
+      "completion_tokens": 209,
+      "total_tokens": 797,
+      "estimated_cost_usd": 0.00048007
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-28T23:53:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-29T02:48:56Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
