@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 801,
+  "runs": 802,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -17396,6 +17396,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c3dd061908e28d437b7cdce3c07ae297",
+      "evaluated_at": "2026-09-29T12:20:51Z",
+      "organization": "Neuverge Tron",
+      "title": "Web Developer (m/f/d)",
+      "location": "Munich, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/neuverge-tron/web-developer-munich-15138",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.45,
+      "deepseek_primary_reason": "Title and matched keywords indicate a web developer role with frontend/JavaScript scope, which is broadly compatible with the target profile, but the posting lacks explicit WordPress/WooCommerce, maintenance, performance, or UX/UI detail and provides no employment type, remote state, or contract information.",
+      "deepseek_risk_flags": [
+        "no_employment_type",
+        "no_remote_state",
+        "no_contract_clarity",
+        "location_munich_germany_not_primary_market",
+        "stack_depth_unknown",
+        "no_wordpress_woocommerce_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015889,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -21058,9 +21088,21 @@
       "completion_tokens": 175,
       "total_tokens": 745,
       "estimated_cost_usd": 0.00021364
+    },
+    {
+      "at": "2026-09-29T12:20:51Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 179,
+      "completion_tokens": 177,
+      "total_tokens": 740,
+      "estimated_cost_usd": 0.00015889
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-29T12:01:46Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-29T12:20:51Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
