@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-29T10:30:43Z",
+  "updated_at": "2026-09-29T10:48:40Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 632,
+    "evaluated_total": 633,
     "agreement_count": 328,
-    "agreement_pct": 51.9,
+    "agreement_pct": 51.82,
     "deepseek_promote": 32,
     "vds_promote": 227,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 304,
-    "cumulative_estimated_cost_usd": 0.130814,
-    "cost_per_evaluated_candidate_usd": 0.00020698,
-    "cost_per_deepseek_promote_usd": 0.00408793,
-    "cost_per_observed_ready_or_contacted_usd": 0.06540686,
+    "request_count": 305,
+    "cumulative_estimated_cost_usd": 0.131027,
+    "cost_per_evaluated_candidate_usd": 0.00020699,
+    "cost_per_deepseek_promote_usd": 0.00409461,
+    "cost_per_observed_ready_or_contacted_usd": 0.06551368,
     "latest_request": {
-      "at": "2026-09-29T10:30:40Z",
+      "at": "2026-09-29T10:48:37Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 384,
-      "prompt_cache_miss_tokens": 202,
-      "completion_tokens": 209,
-      "total_tokens": 795,
-      "estimated_cost_usd": 0.00018507
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 442,
+      "completion_tokens": 175,
+      "total_tokens": 745,
+      "estimated_cost_usd": 0.00021364
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "e58f5184c65af0200d7d9582cc173c13",
-      "evaluated_at": "2026-09-27T15:18:14Z",
-      "organization": "Mubi",
-      "title": "Senior Frontend Engineer",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/mubi/senior-frontend-engineer-london-272986",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior Frontend Engineer role at Mubi in London with matched keywords for frontend, UI/UX, web performance, and Core Web Vitals, but no explicit WordPress/WooCommerce scope and location is London (not primary market Spain/Italy).",
-      "deepseek_risk_flags": [
-        "location_not_primary_market",
-        "no_wordpress_scope",
-        "employment_type_unknown",
-        "remote_state_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001718857,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "4aa8b599abd946eb5a99356d05fd8b25",
       "evaluated_at": "2026-09-27T15:18:14Z",
@@ -1459,10 +1431,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "02fbbdaa30788f70f9f129f5ed8537fe",
+      "evaluated_at": "2026-09-29T10:48:37Z",
+      "organization": "Trading212",
+      "title": "Senior Frontend Engineer (Kotlin) - Frontend Core",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/trading212/senior-frontend-engineer-kotlin-frontend-core-berlin-319795",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Frontend Engineer role centered on Kotlin, a stack mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; only generic 'frontend' keyword matches, with no WordPress, WooCommerce, or web-maintenance scope and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_kotlin",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_compatibility_evidence",
+        "senior_full_time_onsite_berlin"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021364,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-29T10:30:36Z",
+  "source_semantic_updated_at": "2026-09-29T10:48:33Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
