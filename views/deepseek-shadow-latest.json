@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-29T09:07:21Z",
+  "updated_at": "2026-09-29T10:30:43Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 631,
+    "evaluated_total": 632,
     "agreement_count": 328,
-    "agreement_pct": 51.98,
+    "agreement_pct": 51.9,
     "deepseek_promote": 32,
     "vds_promote": 227,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 303,
-    "cumulative_estimated_cost_usd": 0.130629,
-    "cost_per_evaluated_candidate_usd": 0.00020702,
-    "cost_per_deepseek_promote_usd": 0.00408215,
-    "cost_per_observed_ready_or_contacted_usd": 0.06531433,
+    "request_count": 304,
+    "cumulative_estimated_cost_usd": 0.130814,
+    "cost_per_evaluated_candidate_usd": 0.00020698,
+    "cost_per_deepseek_promote_usd": 0.00408793,
+    "cost_per_observed_ready_or_contacted_usd": 0.06540686,
     "latest_request": {
-      "at": "2026-09-29T09:07:17Z",
+      "at": "2026-09-29T10:30:40Z",
       "model": "deepseek-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 2,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 735,
-      "completion_tokens": 320,
-      "total_tokens": 1183,
-      "estimated_cost_usd": 0.00074759
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 202,
+      "completion_tokens": 209,
+      "total_tokens": 795,
+      "estimated_cost_usd": 0.00018507
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "1065badb1b21e34105a5cd426747ec81",
-      "evaluated_at": "2026-09-27T10:40:12Z",
-      "organization": "Bjak",
-      "title": "Frontend Engineer",
-      "location": "Zurich, Switzerland",
-      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/bjak/frontend-engineer-zurich-481678",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.5,
-      "deepseek_primary_reason": "Frontend Engineer role in Zurich with matched keywords (accessibility, css, frontend, html, ui) indicating plausible stack fit, but no explicit WordPress/WooCommerce scope, no stated freelance/contract compatibility, and geo is Switzerland (outside primary Spain/Italy markets) with remote state unverified.",
-      "deepseek_risk_flags": [
-        "geo_outside_primary_markets",
-        "remote_state_unverified",
-        "no_explicit_freelance_or_contract_signal",
-        "no_wordpress_woocommerce_scope",
-        "employment_type_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002132,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "e58f5184c65af0200d7d9582cc173c13",
       "evaluated_at": "2026-09-27T15:18:14Z",
@@ -1460,10 +1431,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "94cb9c60cf53fbf258964c2af9363473",
+      "evaluated_at": "2026-09-29T10:30:40Z",
+      "organization": "Innocraft",
+      "title": "Full Stack Product Engineer (100% Remote - Germany | UK | Ireland)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/innocraft/full-stack-product-engineer-100-remote-germany-uk-ireland-berlin-280945",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full Stack Product Engineer role at Innocraft (Matomo) with matched keywords frontend, javascript, maintenance, migration, php, ux, website; remote across Germany/UK/Ireland. Stack overlap is partial (PHP, frontend, JS) but the role is a full-stack product engineering position, not a WordPress/WooCommerce-focused freelance web role, and no explicit freelance/contract terms are stated.",
+      "deepseek_risk_flags": [
+        "full_stack_product_engineer_not_wordpress_specialist",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_scope_germany_uk_ireland_not_spain_italy",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018507,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-09-29T09:07:13Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-29T10:30:36Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
