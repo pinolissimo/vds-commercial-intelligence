@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T12:35:47Z",
+  "updated_at": "2026-09-30T12:54:24Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 654,
+    "evaluated_total": 655,
     "agreement_count": 337,
-    "agreement_pct": 51.53,
+    "agreement_pct": 51.45,
     "deepseek_promote": 32,
-    "vds_promote": 237,
+    "vds_promote": 238,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 209
+    "deepseek_demoted_from_vds_promote": 210
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.53,
+    "vds_promote_hot_rate_pct": 2.52,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 316,
-    "cumulative_estimated_cost_usd": 0.135714,
-    "cost_per_evaluated_candidate_usd": 0.00020751,
-    "cost_per_deepseek_promote_usd": 0.00424107,
-    "cost_per_observed_ready_or_contacted_usd": 0.06785705,
-    "latest_request": null
+    "request_count": 317,
+    "cumulative_estimated_cost_usd": 0.135879,
+    "cost_per_evaluated_candidate_usd": 0.00020745,
+    "cost_per_deepseek_promote_usd": 0.00424621,
+    "cost_per_observed_ready_or_contacted_usd": 0.06793936,
+    "latest_request": {
+      "at": "2026-09-30T12:54:22Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 178,
+      "completion_tokens": 186,
+      "total_tokens": 748,
+      "estimated_cost_usd": 0.00016461
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "87cc026fe72abc3627eabae312bdd6ac",
-      "evaluated_at": "2026-09-28T04:55:16Z",
-      "organization": "Trainline",
-      "title": "Market Research and AI Transformation Lead - 6 Month Fixed Term Contract",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/trainline/market-research-and-ai-transformation-lead-6-month-fixed-term-contract-london-260063",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.78,
-      "deepseek_primary_reason": "Market Research/AI Transformation Lead fixed-term contract in London; ux/website keywords incidental, no web-development scope.",
-      "deepseek_risk_flags": [
-        "research_role",
-        "onsite_london",
-        "keyword_only_match",
-        "non_web_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 8.48936e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "9ce5122527b41fdb2f5e8416e506d726",
       "evaluated_at": "2026-09-28T04:55:16Z",
@@ -1466,10 +1449,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "49adf2abb2e11b83387355e50702d4f6",
+      "evaluated_at": "2026-09-30T12:54:22Z",
+      "organization": "Swissquote",
+      "title": "Senior Frontend Software Engineer",
+      "location": "EU/EMEA",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-software-engineer-a5262d3e80",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Frontend Software Engineer at a fintech (Swissquote) with only a generic 'frontend' keyword match; no evidence of WordPress, WooCommerce, custom HTML/CSS/JS, performance/Core Web Vitals, maintenance, or UX/UI scope, and no explicit freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_signal",
+        "senior_employee_role_likely_full_time",
+        "stack_scope_unverified",
+        "geo_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00016461,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-30T12:35:43Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-30T12:54:19Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
