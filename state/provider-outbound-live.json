@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-09-28T10:47:22Z",
+  "updated_at": "2026-09-30T14:57:10Z",
   "provider_of_record": "HOSTINGER_SENT",
   "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced/duplicate-policy-violation attempts remain audit-only and are never counted as successful first-contact outbound.",
   "events": [
@@ -2327,8 +2327,29 @@
       "external_id": "<1790592433445934495.1790592433@visualdesignstudio.es>",
       "count_as_first_contact": false,
       "commercial_outcome": "PROPOSAL"
+    },
+    {
+      "provider_uid": 711,
+      "sent_at": "2026-09-30T14:55:36Z",
+      "canonical_identity_key": "org:mycomp.it",
+      "organization": "MyCompany",
+      "recipient": "jobs@mycomp.it",
+      "subject": "WEB CONTENT EDITOR — collaborazione freelance WordPress",
+      "workstream": "VDS_JOB_FLOW",
+      "state": "VERIFIED_EMAIL_SENT",
+      "action_type": "FIRST_CONTACT",
+      "attachments": 0,
+      "bcc_owner": true,
+      "source": "HOSTINGER_SENT",
+      "external_id": "<1790780135602060326.1790780135@visualdesignstudio.es>",
+      "count_as_successful_outbound": true,
+      "count_as_first_contact": true,
+      "commercial_variant": "EXTERNAL_CAPACITY_OFFER",
+      "commercial_archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "segment": "AGENCY_EXTERNAL_CAPACITY",
+      "micro_cta_type": "SEND_2_RELEVANT_EXAMPLES"
     }
   ],
-  "last_sync_reason": "Hostinger Sent live reconciliation",
-  "last_provider_poll_at": "2026-09-30T14:45:10Z"
+  "last_sync_reason": "Watchdog Hostinger Sent live reconciliation",
+  "last_provider_poll_at": "2026-09-30T14:57:10Z"
 }
