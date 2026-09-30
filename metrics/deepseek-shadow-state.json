@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 883,
+  "runs": 884,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -18194,6 +18194,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "1c3e8205e13ae83c7a023793afee4d04",
+      "evaluated_at": "2026-09-30T21:22:26Z",
+      "organization": "Tablemedia",
+      "title": "Full Stack Product Developer (m/w/d)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tablemedia/full-stack-product-developer-berlin-143442",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full Stack Product Developer role in Berlin with only generic keyword overlap (cms, css, frontend, html, javascript, php); no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo is Germany-based rather than the primary Spain/Italy/EU-remote target.",
+      "deepseek_risk_flags": [
+        "geo_mismatch_germany",
+        "no_wordpress_woocommerce_evidence",
+        "freelance_compatibility_unverified",
+        "generic_keyword_overlap_only",
+        "full_stack_scope_broader_than_target_profile"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021738,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -22072,9 +22101,21 @@
       "completion_tokens": 192,
       "total_tokens": 770,
       "estimated_cost_usd": 0.00022662
+    },
+    {
+      "at": "2026-09-30T21:22:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 435,
+      "completion_tokens": 183,
+      "total_tokens": 746,
+      "estimated_cost_usd": 0.00021738
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-30T21:04:17Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-30T21:22:26Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
