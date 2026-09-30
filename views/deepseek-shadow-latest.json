@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T16:00:19Z",
+  "updated_at": "2026-09-30T16:18:34Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 657,
+    "evaluated_total": 658,
     "agreement_count": 337,
-    "agreement_pct": 51.29,
+    "agreement_pct": 51.22,
     "deepseek_promote": 32,
-    "vds_promote": 239,
+    "vds_promote": 240,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 211
+    "deepseek_demoted_from_vds_promote": 212
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.51,
+    "vds_promote_hot_rate_pct": 2.5,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 319,
-    "cumulative_estimated_cost_usd": 0.136324,
-    "cost_per_evaluated_candidate_usd": 0.0002075,
-    "cost_per_deepseek_promote_usd": 0.00426014,
-    "cost_per_observed_ready_or_contacted_usd": 0.06816224,
-    "latest_request": null
+    "request_count": 320,
+    "cumulative_estimated_cost_usd": 0.136539,
+    "cost_per_evaluated_candidate_usd": 0.00020751,
+    "cost_per_deepseek_promote_usd": 0.00426686,
+    "cost_per_observed_ready_or_contacted_usd": 0.06826971,
+    "latest_request": {
+      "at": "2026-09-30T16:18:32Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 460,
+      "completion_tokens": 171,
+      "total_tokens": 759,
+      "estimated_cost_usd": 0.00021496
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "58b0cebc8568665dddb35d373de47e33",
-      "evaluated_at": "2026-09-28T05:13:22Z",
-      "organization": "contentful",
-      "title": "Senior Solution Engineer (f/m/d)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/contentful/senior-solution-engineer-london-132797",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Solution Engineer at Contentful is a pre-sales/technical sales role, not a freelance web development opportunity; CMS/JavaScript mentions are incidental to a SaaS platform sales function.",
-      "deepseek_risk_flags": [
-        "sales_role_not_web_dev",
-        "no_freelance_compatibility",
-        "geo_unverified_london"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000144808,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b09b19d80f799204cfa1e2511cd6ad46",
       "evaluated_at": "2026-09-28T05:13:22Z",
@@ -1468,10 +1452,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e8e08912857331d8dc76afc737bc8253",
+      "evaluated_at": "2026-09-30T16:18:32Z",
+      "organization": "1St%20Formations",
+      "title": "Front End Web Developer - 3 month Contract",
+      "location": "Covent Garden - Hybrid",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/1st20formations/front-end-web-developer-3-month-contract-london-5317",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Explicit 3-month front-end web developer contract with matching keywords (front-end, HTML, JavaScript, CMS, maintenance, UX, web developer), but location is Covent Garden hybrid (London, UK), which is outside the primary Spain/Italy/EU-remote target markets and geo compatibility is unverified.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "uk_location_hybrid",
+        "geo_bucket_unverified",
+        "no_remote_state_confirmed",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "HIGH",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021496,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-30T16:00:15Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-30T16:18:29Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

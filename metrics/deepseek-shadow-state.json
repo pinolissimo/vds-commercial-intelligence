@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 866,
+  "runs": 867,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -18079,6 +18079,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e8e08912857331d8dc76afc737bc8253",
+      "evaluated_at": "2026-09-30T16:18:32Z",
+      "organization": "1St%20Formations",
+      "title": "Front End Web Developer - 3 month Contract",
+      "location": "Covent Garden - Hybrid",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/1st20formations/front-end-web-developer-3-month-contract-london-5317",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Explicit 3-month front-end web developer contract with matching keywords (front-end, HTML, JavaScript, CMS, maintenance, UX, web developer), but location is Covent Garden hybrid (London, UK), which is outside the primary Spain/Italy/EU-remote target markets and geo compatibility is unverified.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "uk_location_hybrid",
+        "geo_bucket_unverified",
+        "no_remote_state_confirmed",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "HIGH",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021496,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -21909,9 +21938,21 @@
       "completion_tokens": 203,
       "total_tokens": 780,
       "estimated_cost_usd": 0.00023366
+    },
+    {
+      "at": "2026-09-30T16:18:32Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 460,
+      "completion_tokens": 171,
+      "total_tokens": 759,
+      "estimated_cost_usd": 0.00021496
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-30T16:00:19Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-30T16:18:32Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
