@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T11:58:34Z",
+  "updated_at": "2026-09-30T12:17:52Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 653,
+    "evaluated_total": 654,
     "agreement_count": 337,
-    "agreement_pct": 51.61,
+    "agreement_pct": 51.53,
     "deepseek_promote": 32,
-    "vds_promote": 236,
+    "vds_promote": 237,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 208
+    "deepseek_demoted_from_vds_promote": 209
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.54,
+    "vds_promote_hot_rate_pct": 2.53,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 315,
-    "cumulative_estimated_cost_usd": 0.13551,
-    "cost_per_evaluated_candidate_usd": 0.00020752,
-    "cost_per_deepseek_promote_usd": 0.00423469,
-    "cost_per_observed_ready_or_contacted_usd": 0.06775507,
-    "latest_request": null
+    "request_count": 316,
+    "cumulative_estimated_cost_usd": 0.135714,
+    "cost_per_evaluated_candidate_usd": 0.00020751,
+    "cost_per_deepseek_promote_usd": 0.00424107,
+    "cost_per_observed_ready_or_contacted_usd": 0.06785705,
+    "latest_request": {
+      "at": "2026-09-30T12:17:49Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 434,
+      "completion_tokens": 163,
+      "total_tokens": 725,
+      "estimated_cost_usd": 0.00020396
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b27e93b1d5e73fc2df69ce210a7258f7",
-      "evaluated_at": "2026-09-28T04:55:16Z",
-      "organization": "Taxfix",
-      "title": "Content Engineer (d/f/m)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/taxfix/content-engineer-berlin-53504",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 28.0,
-      "deepseek_confidence": 0.68,
-      "deepseek_primary_reason": "Content Engineer at Taxfix (Berlin); cms/javascript overlap is generic and the role is content-focused, not WordPress/frontend delivery.",
-      "deepseek_risk_flags": [
-        "content_role_not_dev",
-        "onsite_berlin",
-        "keyword_only_match"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 8.48936e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "87cc026fe72abc3627eabae312bdd6ac",
       "evaluated_at": "2026-09-28T04:55:16Z",
@@ -1464,10 +1448,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a0399acc9e5d098abf2c8e08447d7222",
+      "evaluated_at": "2026-09-30T12:17:49Z",
+      "organization": "AMBOSS",
+      "title": "Senior Frontend Engineer",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/amboss/senior-frontend-engineer-berlin-398750",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Senior Frontend Engineer role at AMBOSS in Berlin with frontend/JavaScript/accessibility/maintenance keyword overlap, but no explicit WordPress/WooCommerce or freelance/contract evidence and no confirmed remote or geo compatibility.",
+      "deepseek_risk_flags": [
+        "no_explicit_freelance_or_contract_signal",
+        "no_wordpress_woocommerce_scope",
+        "location_berlin_geo_unclear",
+        "remote_state_unknown",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020396,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-30T11:58:29Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-30T12:17:44Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
