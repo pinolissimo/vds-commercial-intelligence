@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T13:48:19Z",
+  "updated_at": "2026-09-30T14:06:29Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 656,
+    "evaluated_total": 657,
     "agreement_count": 337,
-    "agreement_pct": 51.37,
+    "agreement_pct": 51.29,
     "deepseek_promote": 32,
-    "vds_promote": 238,
+    "vds_promote": 239,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 210
+    "deepseek_demoted_from_vds_promote": 211
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.52,
+    "vds_promote_hot_rate_pct": 2.51,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 318,
-    "cumulative_estimated_cost_usd": 0.136091,
-    "cost_per_evaluated_candidate_usd": 0.00020746,
-    "cost_per_deepseek_promote_usd": 0.00425284,
-    "cost_per_observed_ready_or_contacted_usd": 0.06804541,
-    "latest_request": null
+    "request_count": 319,
+    "cumulative_estimated_cost_usd": 0.136324,
+    "cost_per_evaluated_candidate_usd": 0.0002075,
+    "cost_per_deepseek_promote_usd": 0.00426014,
+    "cost_per_observed_ready_or_contacted_usd": 0.06816224,
+    "latest_request": {
+      "at": "2026-09-30T14:06:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 449,
+      "completion_tokens": 203,
+      "total_tokens": 780,
+      "estimated_cost_usd": 0.00023366
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a35f751f977203cd1056b4f706f996ea",
-      "evaluated_at": "2026-09-28T04:55:16Z",
-      "organization": "contentful",
-      "title": "Senior Solution Engineer (f/m/d)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/contentful/senior-solution-engineer-london-299377",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 32.0,
-      "deepseek_confidence": 0.65,
-      "deepseek_primary_reason": "Contentful Senior Solution Engineer (London); CMS/javascript/website overlap is real but the role is a pre-sales/solutions engineering position, not freelance WordPress/frontend delivery.",
-      "deepseek_risk_flags": [
-        "solutions_engineering_role",
-        "onsite_london",
-        "no_freelance_signal",
-        "enterprise_cms_not_wordpress"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 8.48936e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "58b0cebc8568665dddb35d373de47e33",
       "evaluated_at": "2026-09-28T05:13:22Z",
@@ -1468,10 +1451,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "481f2a2ff7aad4bf14c32338d3d1125a",
+      "evaluated_at": "2026-09-30T14:06:26Z",
+      "organization": "Restless",
+      "title": "Senior Data Scraping / Web Developer — Part-time Contract (EU)",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-data-scraping-web-developer-part-time-contract-eu-restless",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title combines 'Senior Data Scraping' with 'Web Developer' on a part-time EU contract, but the primary role emphasis appears to be data scraping rather than WordPress/WooCommerce/frontend web work; stack fit is uncertain and only generic 'web developer'/'website' keywords match the target profile.",
+      "deepseek_risk_flags": [
+        "scraping-centric role may not match WordPress/frontend profile",
+        "no explicit WordPress/WooCommerce/CSS/JS stack evidence",
+        "geo bucket REMOTE_TO_VERIFY with no confirmed Spain/Italy/EU-remote eligibility",
+        "contract compatibility unverified (ATS_APPLY_TO_VERIFY)"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00023366,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-30T13:48:15Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-30T14:06:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
