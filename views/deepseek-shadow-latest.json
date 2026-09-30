@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T18:08:41Z",
+  "updated_at": "2026-09-30T18:26:50Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 660,
+    "evaluated_total": 661,
     "agreement_count": 338,
-    "agreement_pct": 51.21,
+    "agreement_pct": 51.13,
     "deepseek_promote": 32,
     "vds_promote": 241,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 322,
-    "cumulative_estimated_cost_usd": 0.136959,
-    "cost_per_evaluated_candidate_usd": 0.00020751,
-    "cost_per_deepseek_promote_usd": 0.00427996,
-    "cost_per_observed_ready_or_contacted_usd": 0.06847929,
-    "latest_request": null
+    "request_count": 323,
+    "cumulative_estimated_cost_usd": 0.137185,
+    "cost_per_evaluated_candidate_usd": 0.00020754,
+    "cost_per_deepseek_promote_usd": 0.00428704,
+    "cost_per_observed_ready_or_contacted_usd": 0.0685926,
+    "latest_request": {
+      "at": "2026-09-30T18:26:48Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 450,
+      "completion_tokens": 192,
+      "total_tokens": 770,
+      "estimated_cost_usd": 0.00022662
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7bab97ac10ce7b39f011336c3ebd14a2",
-      "evaluated_at": "2026-09-28T05:13:22Z",
-      "organization": "Grape Health",
-      "title": "Brand Designer",
-      "location": "Zürich",
-      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/grape-health/brand-designer-zurich-282394",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Brand Designer role is design-focused, not web development; freelance/collaboration keywords appear in generic job text and do not establish web-dev freelance compatibility.",
-      "deepseek_risk_flags": [
-        "design_role_not_web_dev",
-        "generic_freelance_keywords",
-        "geo_switzerland_not_primary_market"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000144808,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "64e9e9d7601984ace94dadc94b90d190",
       "evaluated_at": "2026-09-28T05:13:22Z",
@@ -1473,10 +1457,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8139f956cf42564a7c33f4eeef609c0e",
+      "evaluated_at": "2026-09-30T18:26:48Z",
+      "organization": "Prenode",
+      "title": "Software Engineer: Full-Stack, Backend, Frontend (m/w/d)",
+      "location": "Karlsruhe",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/prenode/software-engineer-full-stack-backend-frontend-karlsruhe-328003",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic full-stack software engineer role in Karlsruhe with only incidental frontend/JS/UI keyword overlap; no WordPress, WooCommerce, or web-performance scope and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "on-site role in Karlsruhe (Germany), outside primary Spain/Italy markets",
+        "no WordPress/WooCommerce or Core Web Vitals scope",
+        "full-stack/backend emphasis likely React/Node/Laravel-style core engineering",
+        "'partner' and 'remote' are generic commercial keywords, not proof of freelance compatibility",
+        "employment_type and remote_state unspecified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022662,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-30T18:08:36Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-30T18:26:45Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
