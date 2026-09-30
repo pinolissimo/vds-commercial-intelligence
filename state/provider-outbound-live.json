@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-09-28T10:47:22Z",
+  "updated_at": "2026-09-30T03:03:36Z",
   "provider_of_record": "HOSTINGER_SENT",
   "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced/duplicate-policy-violation attempts remain audit-only and are never counted as successful first-contact outbound.",
   "events": [
@@ -2303,11 +2303,13 @@
       "subject": "Seconda Fattura SHADES",
       "workstream": "VDS_PROVIDER_SYNC",
       "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
+      "action_type": "INVOICE",
       "attachments": 2,
       "bcc_owner": true,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1790592100380568566.1790592100@visualdesignstudio.es>"
+      "external_id": "<1790592100380568566.1790592100@visualdesignstudio.es>",
+      "count_as_first_contact": false,
+      "commercial_outcome": "REVENUE_BILLING"
     },
     {
       "provider_uid": 710,
@@ -2318,11 +2320,13 @@
       "subject": "Preventivo ottimizzazione performance sito Creativelement",
       "workstream": "VDS_PROVIDER_SYNC",
       "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
+      "action_type": "PROPOSAL",
       "attachments": 1,
       "bcc_owner": true,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1790592433445934495.1790592433@visualdesignstudio.es>"
+      "external_id": "<1790592433445934495.1790592433@visualdesignstudio.es>",
+      "count_as_first_contact": false,
+      "commercial_outcome": "PROPOSAL"
     }
   ],
   "last_sync_reason": "Hostinger Sent live reconciliation",
