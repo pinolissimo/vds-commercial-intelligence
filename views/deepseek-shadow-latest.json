@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T00:03:01Z",
+  "updated_at": "2026-09-30T00:21:20Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 645,
-    "agreement_count": 333,
-    "agreement_pct": 51.63,
+    "evaluated_total": 646,
+    "agreement_count": 334,
+    "agreement_pct": 51.7,
     "deepseek_promote": 32,
     "vds_promote": 234,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 311,
-    "cumulative_estimated_cost_usd": 0.133203,
-    "cost_per_evaluated_candidate_usd": 0.00020652,
-    "cost_per_deepseek_promote_usd": 0.0041626,
-    "cost_per_observed_ready_or_contacted_usd": 0.06660154,
-    "latest_request": null
+    "request_count": 312,
+    "cumulative_estimated_cost_usd": 0.133429,
+    "cost_per_evaluated_candidate_usd": 0.00020655,
+    "cost_per_deepseek_promote_usd": 0.00416965,
+    "cost_per_observed_ready_or_contacted_usd": 0.06671441,
+    "latest_request": {
+      "at": "2026-09-30T00:21:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 470,
+      "completion_tokens": 184,
+      "total_tokens": 782,
+      "estimated_cost_usd": 0.00022574
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "5bd735bb6e4c554500ae44b429993338",
-      "evaluated_at": "2026-09-28T00:28:02Z",
-      "organization": "Towa",
-      "title": "Senior Consultant Search, Content & AI Visibility (SEO/GEO) (m/w/d), München",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/towa/senior-consultant-search-content-ai-visibility-seo-geo-munchen-414147",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior Consultant SEO/GEO at Towa; cms/core web vitals/migration matches are tangential; role is SEO/AI-visibility consulting, not WordPress/frontend freelance development.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "seo_consulting_not_dev",
-        "keyword_only_match"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001469314,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "14d90bdb0df0f942682c4b7a7d02ae85",
       "evaluated_at": "2026-09-28T04:55:16Z",
@@ -1456,10 +1440,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "46c42bae4984b3ec39905134b07a017e",
+      "evaluated_at": "2026-09-30T00:21:18Z",
+      "organization": "Händlerbund Management AG",
+      "title": "Senior Fullstack Entwickler PHP/Laravel (m/w/d) - Remote, 4-Tage-Woche",
+      "location": "Remote/Leipzig",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/handlerbund-management-ag/senior-fullstack-entwickler-php-laravel-remote-4-tage-woche-435519",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior fullstack PHP/Laravel role with core stack mismatch; matched keywords (css, frontend, ui, ux) are peripheral to a Laravel-centric fullstack position, and no meaningful WordPress/WooCommerce or dedicated frontend/performance scope is evidenced.",
+      "deepseek_risk_flags": [
+        "laravel_heavy_core_stack",
+        "fullstack_not_freelance_specific",
+        "no_wordpress_woocommerce_scope",
+        "geo_bucket_italy_but_location_remote_leipzig_germany",
+        "freelance_compatibility_unproven"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022574,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-30T00:02:58Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-30T00:21:13Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
