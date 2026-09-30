@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T22:16:29Z",
+  "updated_at": "2026-09-30T23:46:50Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 662,
+    "evaluated_total": 663,
     "agreement_count": 339,
-    "agreement_pct": 51.21,
+    "agreement_pct": 51.13,
     "deepseek_promote": 32,
     "vds_promote": 241,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 324,
-    "cumulative_estimated_cost_usd": 0.137403,
-    "cost_per_evaluated_candidate_usd": 0.00020756,
-    "cost_per_deepseek_promote_usd": 0.00429383,
-    "cost_per_observed_ready_or_contacted_usd": 0.06870129,
-    "latest_request": null
+    "request_count": 325,
+    "cumulative_estimated_cost_usd": 0.137622,
+    "cost_per_evaluated_candidate_usd": 0.00020757,
+    "cost_per_deepseek_promote_usd": 0.00430069,
+    "cost_per_observed_ready_or_contacted_usd": 0.06881107,
+    "latest_request": {
+      "at": "2026-09-30T23:46:47Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 448,
+      "completion_tokens": 182,
+      "total_tokens": 758,
+      "estimated_cost_usd": 0.00021958
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4796995c0ae5b0863516fc8bc3591d8b",
-      "evaluated_at": "2026-09-28T05:31:30Z",
-      "organization": "Anybotics",
-      "title": "PCB Layout Designer / ECAD Engineer",
-      "location": "Zurich, Switzerland",
-      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/anybotics/pcb-layout-designer-ecad-engineer-zurich-switzerland-401087",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Role is PCB Layout Designer / ECAD Engineer, a hardware/electronics engineering position with no WordPress, WooCommerce, frontend, or web-development scope; matched keywords are incidental boilerplate.",
-      "deepseek_risk_flags": [
-        "hardware_engineering_role",
-        "no_web_stack_fit",
-        "keyword_noise",
-        "non_target_geo_switzerland"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016534,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "7cf6770aefea9b84c458559f3480456e",
       "evaluated_at": "2026-09-28T05:31:30Z",
@@ -1477,10 +1460,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6bc071a18cdc9cb7c143baf6a475b4c5",
+      "evaluated_at": "2026-09-30T23:46:47Z",
+      "organization": "Jack Morton Worldwide",
+      "title": "Freelance- Lead Developer- Technical Lead",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/jack-morton-worldwide/freelance-lead-developer-technical-lead-181763",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.4,
+      "deepseek_primary_reason": "Title indicates a Lead Developer / Technical Lead freelance role with matched keywords css, front-end, ux, website and explicit 'freelance' intent, but no semantic role hits confirm WordPress/WooCommerce or frontend web scope, and the lead/technical-lead framing suggests a broader engineering leadership role rather than hands-on web development.",
+      "deepseek_risk_flags": [
+        "lead_developer_scope_unclear",
+        "no_wordpress_woocommerce_evidence",
+        "no_semantic_role_hits",
+        "geo_unknown",
+        "contract_type_unverified"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00021958,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-09-30T22:16:24Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-09-30T23:46:43Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

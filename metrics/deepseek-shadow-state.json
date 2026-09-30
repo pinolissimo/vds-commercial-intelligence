@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 887,
+  "runs": 888,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -18223,6 +18223,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6bc071a18cdc9cb7c143baf6a475b4c5",
+      "evaluated_at": "2026-09-30T23:46:47Z",
+      "organization": "Jack Morton Worldwide",
+      "title": "Freelance- Lead Developer- Technical Lead",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/jack-morton-worldwide/freelance-lead-developer-technical-lead-181763",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.4,
+      "deepseek_primary_reason": "Title indicates a Lead Developer / Technical Lead freelance role with matched keywords css, front-end, ux, website and explicit 'freelance' intent, but no semantic role hits confirm WordPress/WooCommerce or frontend web scope, and the lead/technical-lead framing suggests a broader engineering leadership role rather than hands-on web development.",
+      "deepseek_risk_flags": [
+        "lead_developer_scope_unclear",
+        "no_wordpress_woocommerce_evidence",
+        "no_semantic_role_hits",
+        "geo_unknown",
+        "contract_type_unverified"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00021958,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -22113,9 +22142,21 @@
       "completion_tokens": 183,
       "total_tokens": 746,
       "estimated_cost_usd": 0.00021738
+    },
+    {
+      "at": "2026-09-30T23:46:47Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 448,
+      "completion_tokens": 182,
+      "total_tokens": 758,
+      "estimated_cost_usd": 0.00021958
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-30T22:16:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-30T23:46:47Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
