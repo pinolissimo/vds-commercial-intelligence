@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 856,
+  "runs": 857,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -18022,6 +18022,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "df7b6719eba0876209be4eb5c931b625",
+      "evaluated_at": "2026-09-30T13:30:28Z",
+      "organization": "Primer.io",
+      "title": "Staff Engineer, Frontend",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/primerio/staff-engineer-frontend-united-kingdom-177220",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Staff Engineer, Frontend role at Primer.io is a senior full-time frontend engineering position in the UK, not a freelance/contract web-development opportunity; no WordPress, WooCommerce, or maintenance scope, and 'partner'/'remote' matches are incidental rather than evidence of external collaboration compatibility.",
+      "deepseek_risk_flags": [
+        "senior_full_time_role",
+        "no_wordpress_woocommerce_scope",
+        "uk_location_not_spain_italy",
+        "freelance_compatibility_unproven",
+        "incidental_partner_keyword_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002121,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -21828,9 +21857,21 @@
       "completion_tokens": 186,
       "total_tokens": 748,
       "estimated_cost_usd": 0.00016461
+    },
+    {
+      "at": "2026-09-30T13:30:28Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 432,
+      "completion_tokens": 176,
+      "total_tokens": 736,
+      "estimated_cost_usd": 0.0002121
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-09-30T13:12:20Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-09-30T13:30:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
