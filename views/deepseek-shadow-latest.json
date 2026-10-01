@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-01T10:12:57Z",
+  "updated_at": "2026-10-01T10:31:38Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 670,
+    "evaluated_total": 671,
     "agreement_count": 345,
-    "agreement_pct": 51.49,
+    "agreement_pct": 51.42,
     "deepseek_promote": 32,
     "vds_promote": 242,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 327,
-    "cumulative_estimated_cost_usd": 0.139851,
-    "cost_per_evaluated_candidate_usd": 0.00020873,
-    "cost_per_deepseek_promote_usd": 0.00437035,
-    "cost_per_observed_ready_or_contacted_usd": 0.06992563,
-    "latest_request": null
+    "request_count": 328,
+    "cumulative_estimated_cost_usd": 0.140005,
+    "cost_per_evaluated_candidate_usd": 0.00020865,
+    "cost_per_deepseek_promote_usd": 0.00437516,
+    "cost_per_observed_ready_or_contacted_usd": 0.07000254,
+    "latest_request": {
+      "at": "2026-10-01T10:31:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 204,
+      "completion_tokens": 161,
+      "total_tokens": 749,
+      "estimated_cost_usd": 0.00015383
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4cb6376ed35cfb18afacafab319d959e",
-      "evaluated_at": "2026-09-28T15:20:28Z",
-      "organization": "ecosio",
-      "title": "Full Stack Developer - Java & React (f/m/d)",
-      "location": "Austria, Spain, UK, Italy, Hungary, Portugal, Croatia, Poland - Remote",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/ecosio/remote-full-stack-developer-java-react-410879",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Core role is Full Stack Java & React, a stack mismatch for a WordPress/WooCommerce/frontend-focused freelance profile; matched keywords (frontend, javascript, ui, maintenance) are generic and do not indicate meaningful WordPress or web-performance scope.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_java_react",
-        "generic_keyword_matches",
-        "no_wordpress_woocommerce_scope",
-        "no_explicit_freelance_or_contract_signal"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.00020836,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "9b32675d92b52332eef468c64dcd19f1",
       "evaluated_at": "2026-09-28T16:33:04Z",
@@ -1472,10 +1455,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "20bc22e894f9add8a894423a6c6ac869",
+      "evaluated_at": "2026-10-01T10:31:35Z",
+      "organization": "Airteam Aerial Intelligence GmbH",
+      "title": "Full Stack Software Engineer (Front-end focus) (m/f/d) | Berlin, Hybrid",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/airteam-aerial-intelligence-gmbh/full-stack-software-engineer-front-end-focus-berlin-hybrid-458079",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Full Stack Software Engineer role with only a front-end focus; no evidence of WordPress, WooCommerce, or freelance/contract compatibility, and it is a Berlin hybrid position outside the primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "full_stack_core_role",
+        "no_wordpress_woocommerce_scope",
+        "hybrid_onsite_berlin",
+        "no_freelance_compatibility_evidence",
+        "geo_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00015383,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-01T10:12:53Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-01T10:31:31Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
