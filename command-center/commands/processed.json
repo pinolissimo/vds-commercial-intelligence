@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-09-06T01:38:14+02:00",
+  "updated_at": "2026-10-01T12:36:00+02:00",
   "policy": "Idempotent receipts for dashboard commands. A receipt proves that a worker consumed a command; it never proves or authorizes an external send. Existing production gates and provider verification remain authoritative.",
   "receipts": [
     {
@@ -86,6 +86,17 @@
       "consumed_at": "2026-09-06T01:38:14+02:00",
       "result": "APPLIED_PRIORITY_OVERLAY_NO_LIVE_SEND_OUTSIDE_WINDOW",
       "summary": "Applied high-throughput priority without weakening any hard gate. Fresh discovery and strong unresolved backlog remain available for qualification; manual form/platform opportunities are preserved rather than discarded. No Hostinger provider call was made because the authorized live-send window is closed.",
+      "external_send_count": 0,
+      "provider_uids": [],
+      "normal_cycle_completed": true,
+      "existing_gates_preserved": true
+    },
+    {
+      "command_id": "CMD-RECOVERY-20261001-1210",
+      "worker_id": "UNIFIED_LOOP",
+      "consumed_at": "2026-10-01T12:36:00+02:00",
+      "result": "APPLIED",
+      "summary": "Completed Revenue Flow recovery/health pass with outreach explicitly disabled. High-frequency discovery and Command Center projections are healthy and current; provider Sent/Inbox synchronization is fresh and reconciled, with Hostinger auth valid. Legacy action/fast-revenue/global-sent views remain dated but current canonical provider overlays and regenerated opportunities/health projections supersede them. No deterministic safety-critical state repair was required; dedup/suppression/reservation and all existing gates were preserved.",
       "external_send_count": 0,
       "provider_uids": [],
       "normal_cycle_completed": true,
