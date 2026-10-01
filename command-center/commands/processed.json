@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-10-01T12:36:00+02:00",
+  "updated_at": "2026-10-01T12:37:00+02:00",
   "policy": "Idempotent receipts for dashboard commands. A receipt proves that a worker consumed a command; it never proves or authorizes an external send. Existing production gates and provider verification remain authoritative.",
   "receipts": [
     {
@@ -97,6 +97,17 @@
       "consumed_at": "2026-10-01T12:36:00+02:00",
       "result": "APPLIED",
       "summary": "Completed Revenue Flow recovery/health pass with outreach explicitly disabled. High-frequency discovery and Command Center projections are healthy and current; provider Sent/Inbox synchronization is fresh and reconciled, with Hostinger auth valid. Legacy action/fast-revenue/global-sent views remain dated but current canonical provider overlays and regenerated opportunities/health projections supersede them. No deterministic safety-critical state repair was required; dedup/suppression/reservation and all existing gates were preserved.",
+      "external_send_count": 0,
+      "provider_uids": [],
+      "normal_cycle_completed": true,
+      "existing_gates_preserved": true
+    },
+    {
+      "command_id": "CMD-RECOVERY-20261001-1210",
+      "worker_id": "LINKEDIN_HUNTER",
+      "consumed_at": "2026-10-01T12:37:00+02:00",
+      "result": "APPLIED",
+      "summary": "Job Flow health pass completed with external outreach disabled. Discovery is fresh and operational; latest discovery and projection workflows succeeded; provider reconciliation is current through Sent UID 712 and provider authentication is valid. Current opportunity projections were regenerated at 12:36 Europe/Madrid. Older legacy indexes remain dated but current provider overlays and regenerated projections supersede them. No safety-critical repair or gate change was required; dedup and suppression protections were preserved.",
       "external_send_count": 0,
       "provider_uids": [],
       "normal_cycle_completed": true,
