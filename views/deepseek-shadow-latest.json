@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-01T21:16:18Z",
+  "updated_at": "2026-10-01T21:33:50Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 676,
-    "agreement_count": 349,
-    "agreement_pct": 51.63,
+    "evaluated_total": 678,
+    "agreement_count": 351,
+    "agreement_pct": 51.77,
     "deepseek_promote": 32,
     "vds_promote": 243,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 331,
-    "cumulative_estimated_cost_usd": 0.141031,
-    "cost_per_evaluated_candidate_usd": 0.00020863,
-    "cost_per_deepseek_promote_usd": 0.0044072,
-    "cost_per_observed_ready_or_contacted_usd": 0.07051528,
-    "latest_request": null
+    "request_count": 332,
+    "cumulative_estimated_cost_usd": 0.141407,
+    "cost_per_evaluated_candidate_usd": 0.00020856,
+    "cost_per_deepseek_promote_usd": 0.00441897,
+    "cost_per_observed_ready_or_contacted_usd": 0.0707035,
+    "latest_request": {
+      "at": "2026-10-01T21:33:46Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 711,
+      "completion_tokens": 332,
+      "total_tokens": 1171,
+      "estimated_cost_usd": 0.00037644
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c9ffa1be4ad7a616470df4742e7360dd",
-      "evaluated_at": "2026-09-28T21:17:40Z",
-      "organization": "Bookboost",
-      "title": "Full Stack Developer",
-      "location": "Germany - Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-230556",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Generic 'Full Stack Developer' role at Bookboost (Munich, Germany) with only incidental keyword overlap (frontend, javascript, migration, php); no explicit WordPress/WooCommerce, Core Web Vitals, or freelance/contract scope, and the title implies a broad full-stack engineering position rather than the target freelance web-development profile.",
-      "deepseek_risk_flags": [
-        "full_stack_generalist_role",
-        "no_wordpress_woocommerce_evidence",
-        "no_freelance_or_contract_signal",
-        "location_germany_not_spain_italy",
-        "remote_state_unverified",
-        "employment_type_unspecified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022442,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "e5721f7512875b82ade693ae6e053ec3",
-      "evaluated_at": "2026-09-28T22:13:38Z",
-      "organization": "",
-      "title": "Air Apps: Framer Website Designer",
-      "location": "",
-      "opportunity_url": "https://weworkremotely.com/remote-jobs/air-apps-framer-website-designer-1",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Role is a Framer website designer position, not WordPress/WooCommerce or custom HTML/CSS/JS development; Framer is a no-code design tool that does not match the target stack despite generic web design keyword overlap.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_framer_no_code",
-        "no_wordpress_woocommerce_scope",
-        "no_explicit_freelance_contract_terms",
-        "generic_collaboration_keywords_only"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0002022,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "265ba633421fa166df67915aaf45ef07",
       "evaluated_at": "2026-09-29T02:48:56Z",
@@ -1474,10 +1427,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c1994eee41b020adf442c013f4f6471e",
+      "evaluated_at": "2026-10-01T21:33:46Z",
+      "organization": "Flagstone",
+      "title": "Digital Experience & Website Lead – 12 month FTC",
+      "location": "London Office",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/flagstone/digital-experience-website-lead-12-month-ftc-london-119674",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "12-month fixed-term contract in London for a Digital Experience & Website Lead role; on-site UK location and FTC employment type are incompatible with the target freelance profile and Spain/Italy/EU-remote markets, and the role is a senior in-house lead rather than freelance web development.",
+      "deepseek_risk_flags": [
+        "on-site London role",
+        "fixed-term contract (FTC), not freelance",
+        "senior in-house lead scope",
+        "no explicit WordPress/WooCommerce stack evidence",
+        "geo mismatch with Spain/Italy primary markets"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018822,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2bd9e3a746c01c9b638120f44688d4bf",
+      "evaluated_at": "2026-10-01T21:33:46Z",
+      "organization": "Vogel",
+      "title": "(Junior) Creative Director – Design & Brand (m/w/d)",
+      "location": "München",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/vogel/junior-creative-director-design-brand-munchen-493447",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Junior Creative Director – Design & Brand role in Munich; core scope is brand/creative direction, not WordPress/WooCommerce or web development, and the on-site German location does not match the Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "on-site Munich role",
+        "creative/brand direction, not web development",
+        "no WordPress/WooCommerce scope",
+        "geo mismatch with Spain/Italy primary markets",
+        "freelance keyword appears incidental, not contract evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018822,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "SHADOW_API_ERROR_FAIL_OPEN",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-01T21:15:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-01T21:33:42Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
