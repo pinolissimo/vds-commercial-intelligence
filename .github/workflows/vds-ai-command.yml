@@ -81,28 +81,48 @@ jobs:
           print(f'Provider-live invariant OK: today.sent_count={actual}, provider-live={expected}')
           PY
 
-      - name: Commit command record and projection delta
+      - name: Commit durable command record only
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "vds-command-center-bot"
           git config user.email "35764978+pinolissimo@users.noreply.github.com"
-          git add api/v1 command-center/commands/pending.json || true
+
+          # The refreshed api/v1 read model is disposable and is owned by the
+          # projections workflow. Persist only the AI command artifacts here.
+          git add api/v1/ai-command/latest.json api/v1/ai-command/history command-center/commands/pending.json || true
+
           if git diff --cached --quiet; then
             echo "Nothing to commit"
-          else
-            git commit -m "command-center: record AI owner directive"
-            for attempt in 1 2 3; do
-              if git push origin HEAD:main; then
-                break
-              fi
-              echo "Push raced with another worker; rebasing (attempt $attempt)"
-              git pull --rebase origin main
-              if [ "$attempt" -eq 3 ]; then
-                git push origin HEAD:main
-              fi
-            done
+            exit 0
           fi
+
+          git commit -m "command-center: record AI owner directive"
+
+          # Discard uncommitted disposable projection changes before rebasing.
+          # This prevents concurrent dashboard refreshes from creating conflicts
+          # in api/v1/*.json while preserving the durable command commit above.
+          git reset --hard HEAD
+
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "Push raced with another worker; rebasing durable command only (attempt $attempt)"
+            git fetch origin main
+
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "Durable AI command files conflicted with another writer; refusing to overwrite." >&2
+              exit 1
+            fi
+
+            sleep $((attempt * 2))
+          done
+
+          echo "Unable to publish AI command after 5 race-safe attempts." >&2
+          exit 1
 
       - name: Immediate safe discovery kick for REFRESH health commands
         env:
