@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-01T17:08:15Z",
+  "updated_at": "2026-10-01T17:26:38Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 675,
-    "agreement_count": 348,
-    "agreement_pct": 51.56,
+    "evaluated_total": 676,
+    "agreement_count": 349,
+    "agreement_pct": 51.63,
     "deepseek_promote": 32,
     "vds_promote": 243,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 330,
-    "cumulative_estimated_cost_usd": 0.140824,
+    "request_count": 331,
+    "cumulative_estimated_cost_usd": 0.141031,
     "cost_per_evaluated_candidate_usd": 0.00020863,
-    "cost_per_deepseek_promote_usd": 0.00440074,
-    "cost_per_observed_ready_or_contacted_usd": 0.07041187,
-    "latest_request": null
+    "cost_per_deepseek_promote_usd": 0.0044072,
+    "cost_per_observed_ready_or_contacted_usd": 0.07051528,
+    "latest_request": {
+      "at": "2026-10-01T17:26:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 441,
+      "completion_tokens": 165,
+      "total_tokens": 734,
+      "estimated_cost_usd": 0.00020682
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7e6f99e95962fed95a051c0385c18280",
-      "evaluated_at": "2026-09-28T19:16:02Z",
-      "organization": "Ashby",
-      "title": "Staff Software Engineer, Product Engineering, EU",
-      "location": "Europe",
-      "opportunity_url": "https://jobicy.com/jobs/142467-staff-software-engineer-product-engineering-eu",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Staff product-engineering role at a tech company (Ashby); only generic 'frontend'/'ui' keyword overlap with no WordPress, WooCommerce, or web-maintenance scope, and no evidence of freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "generic_keyword_match_only",
-        "no_wordpress_woocommerce_scope",
-        "staff_fulltime_product_engineering_role",
-        "freelance_compatibility_unverified",
-        "commercial_keywords_likely_boilerplate"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00018701,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c9ffa1be4ad7a616470df4742e7360dd",
       "evaluated_at": "2026-09-28T21:17:40Z",
@@ -1474,10 +1456,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "eb9845eb6997e4a5d70170792e345766",
+      "evaluated_at": "2026-10-01T17:26:35Z",
+      "organization": "mirakllabs",
+      "title": "Software Engineer Intern",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/mirakllabs/software-engineer-intern-paris-183656",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Internship role in Paris with no evidence of freelance/contract compatibility and no explicit WordPress/WooCommerce or web-performance scope; keyword matches are generic frontend/UI terms, and 'collaboration' is not proof of external freelance fit.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_matches",
+        "geo_mismatch_paris_france",
+        "no_explicit_contract_type"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020682,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-01T17:08:10Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-01T17:26:33Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-01T17:08:19Z",
-  "source_plan_updated_at": "2026-10-01T17:08:19Z",
+  "updated_at": "2026-10-01T17:26:41Z",
+  "source_plan_updated_at": "2026-10-01T17:26:41Z",
   "engine_order": [
     "google",
     "bing",
@@ -9,14 +9,62 @@
     "duckduckgo"
   ],
   "quality_gates_unchanged": true,
-  "missions_count": 25,
-  "query_variants_count": 160,
+  "missions_count": 30,
+  "query_variants_count": 192,
   "missions": [
     {
-      "mission_id": "5969581-0-0",
+      "mission_id": "5969585-0-0",
       "country": "Spain",
-      "region": "Andalucía",
-      "province": "Málaga",
+      "region": "Cataluña",
+      "province": "Tarragona",
+      "segment": "AGENCY_WHITE_LABEL",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"colaboradores freelance\" agencia web Tarragona Cataluña -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"colaboradores freelance\" agencia web Tarragona Cataluña) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 99
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"colaboradores freelance\" agencia web Tarragona Cataluña after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "exact_route_terms",
+          "query": "(\"colaboradores freelance\" agencia web Tarragona Cataluña) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"colaboradores freelance\" agencia web Tarragona Cataluña after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"colaboradores freelance\" agencia web Tarragona Cataluña after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-0-1",
+      "country": "Spain",
+      "region": "Cataluña",
+      "province": "Tarragona",
       "segment": "DIRECT_BUYER_WEB_NEED",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -29,42 +77,244 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Málaga Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Tarragona Cataluña -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "fresh_1d",
-          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Málaga Andalucía after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Tarragona Cataluña after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "fresh_7d",
-          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Málaga Andalucía after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Tarragona Cataluña after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "official_site",
-          "query": "(\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Málaga Andalucía) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Tarragona Cataluña) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "procurement_pdf",
-          "query": "(\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Málaga Andalucía) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
+          "query": "(\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Tarragona Cataluña) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
           "priority": 92
         },
         {
           "variant": "fresh_30d",
-          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Málaga Andalucía after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Tarragona Cataluña after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-0-1",
+      "mission_id": "5969585-0-2",
       "country": "Spain",
-      "region": "Andalucía",
-      "province": "Málaga",
+      "region": "Cataluña",
+      "province": "Tarragona",
+      "segment": "EU_PROJECT",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "Horizon project \"communication and dissemination\" Spain website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "eu_official",
+          "query": "(Horizon project \"communication and dissemination\" Spain website 2026) (site:europa.eu OR site:ec.europa.eu OR site:cordis.europa.eu) after:2026-08-02",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "Horizon project \"communication and dissemination\" Spain website 2026 after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "pdf_evidence",
+          "query": "(Horizon project \"communication and dissemination\" Spain website 2026) filetype:pdf (communication OR dissemination OR website OR digital platform) after:2026-07-03",
+          "priority": 97
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "Horizon project \"communication and dissemination\" Spain website 2026 after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "partner_site",
+          "query": "(Horizon project \"communication and dissemination\" Spain website 2026) (kickoff OR consortium OR partner OR work package OR dissemination) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "Horizon project \"communication and dissemination\" Spain website 2026 after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-0-3",
+      "country": "Spain",
+      "region": "Cataluña",
+      "province": "Tarragona",
+      "segment": "WPO_MAINTENANCE",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"mantenimiento wordpress\" freelance agencia Tarragona Cataluña -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"mantenimiento wordpress\" freelance agencia Tarragona Cataluña after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "exact_route_terms",
+          "query": "(\"mantenimiento wordpress\" freelance agencia Tarragona Cataluña) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"mantenimiento wordpress\" freelance agencia Tarragona Cataluña after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"mantenimiento wordpress\" freelance agencia Tarragona Cataluña) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"mantenimiento wordpress\" freelance agencia Tarragona Cataluña after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-0-4",
+      "country": "Spain",
+      "region": "Cataluña",
+      "province": "Tarragona",
+      "segment": "DIRECT_JOB",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"envía tu CV\" wordpress freelance Tarragona Cataluña -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "ats_scoped",
+          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (\"envía tu CV\" wordpress freelance Tarragona Cataluña) Tarragona Cataluña Spain after:2026-09-01",
+          "priority": 99
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"envía tu CV\" wordpress freelance Tarragona Cataluña after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "official_careers",
+          "query": "(\"envía tu CV\" wordpress freelance Tarragona Cataluña) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Tarragona Cataluña Spain -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 97
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"envía tu CV\" wordpress freelance Tarragona Cataluña after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "linkedin_indexed",
+          "query": "site:linkedin.com/jobs/view (\"envía tu CV\" wordpress freelance Tarragona Cataluña) Tarragona Cataluña Spain after:2026-09-01",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"envía tu CV\" wordpress freelance Tarragona Cataluña after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-1-0",
+      "country": "Spain",
+      "region": "Castilla y León",
+      "province": "Soria",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Soria Castilla y León -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Soria Castilla y León after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Soria Castilla y León after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Soria Castilla y León) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "procurement_pdf",
+          "query": "(\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Soria Castilla y León) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
+          "priority": 92
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Soria Castilla y León after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-1-1",
+      "country": "Spain",
+      "region": "Castilla y León",
+      "province": "Soria",
       "segment": "EU_PROJECT",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -114,10 +364,10 @@
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-0-2",
+      "mission_id": "5969585-1-2",
       "country": "Spain",
-      "region": "Andalucía",
-      "province": "Málaga",
+      "region": "Castilla y León",
+      "province": "Soria",
       "segment": "WPO_MAINTENANCE",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -130,42 +380,42 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"migración wordpress\" freelance agencia Málaga Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Soria Castilla y León -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "fresh_1d",
-          "query": "\"migración wordpress\" freelance agencia Málaga Andalucía after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Soria Castilla y León after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "exact_route_terms",
-          "query": "(\"migración wordpress\" freelance agencia Málaga Andalucía) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"mantenimiento wordpress\" freelance agencia Soria Castilla y León) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "fresh_7d",
-          "query": "\"migración wordpress\" freelance agencia Málaga Andalucía after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Soria Castilla y León after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "official_site",
-          "query": "(\"migración wordpress\" freelance agencia Málaga Andalucía) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"mantenimiento wordpress\" freelance agencia Soria Castilla y León) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 94
         },
         {
           "variant": "fresh_30d",
-          "query": "\"migración wordpress\" freelance agencia Málaga Andalucía after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Soria Castilla y León after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-0-3",
+      "mission_id": "5969585-1-3",
       "country": "Spain",
-      "region": "Andalucía",
-      "province": "Málaga",
+      "region": "Castilla y León",
+      "province": "Soria",
       "segment": "DIRECT_JOB",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -178,47 +428,47 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "wordpress developer freelance remoto España Málaga Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "frontend developer freelance remoto España Soria Castilla y León -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "ats_scoped",
-          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (wordpress developer freelance remoto España Málaga Andalucía) Málaga Andalucía Spain after:2026-09-01",
+          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (frontend developer freelance remoto España Soria Castilla y León) Soria Castilla y León Spain after:2026-09-01",
           "priority": 99
         },
         {
           "variant": "fresh_1d",
-          "query": "wordpress developer freelance remoto España Málaga Andalucía after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "frontend developer freelance remoto España Soria Castilla y León after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "official_careers",
-          "query": "(wordpress developer freelance remoto España Málaga Andalucía) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Málaga Andalucía Spain -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(frontend developer freelance remoto España Soria Castilla y León) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Soria Castilla y León Spain -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 97
         },
         {
           "variant": "fresh_7d",
-          "query": "wordpress developer freelance remoto España Málaga Andalucía after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "frontend developer freelance remoto España Soria Castilla y León after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "linkedin_indexed",
-          "query": "site:linkedin.com/jobs/view (wordpress developer freelance remoto España Málaga Andalucía) Málaga Andalucía Spain after:2026-09-01",
+          "query": "site:linkedin.com/jobs/view (frontend developer freelance remoto España Soria Castilla y León) Soria Castilla y León Spain after:2026-09-01",
           "priority": 94
         },
         {
           "variant": "fresh_30d",
-          "query": "wordpress developer freelance remoto España Málaga Andalucía after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "frontend developer freelance remoto España Soria Castilla y León after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-0-4",
+      "mission_id": "5969585-1-4",
       "country": "Spain",
-      "region": "Andalucía",
-      "province": "Málaga",
+      "region": "Castilla y León",
+      "province": "Soria",
       "segment": "AGENCY_WHITE_LABEL",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -231,486 +481,39 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"colaboradores freelance\" agencia web Málaga Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"trabaja con nosotros\" freelance wordpress Soria Castilla y León -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "official_site",
-          "query": "(\"colaboradores freelance\" agencia web Málaga Andalucía) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"trabaja con nosotros\" freelance wordpress Soria Castilla y León) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 99
         },
         {
           "variant": "fresh_1d",
-          "query": "\"colaboradores freelance\" agencia web Málaga Andalucía after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"trabaja con nosotros\" freelance wordpress Soria Castilla y León after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "exact_route_terms",
-          "query": "(\"colaboradores freelance\" agencia web Málaga Andalucía) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"trabaja con nosotros\" freelance wordpress Soria Castilla y León) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "fresh_7d",
-          "query": "\"colaboradores freelance\" agencia web Málaga Andalucía after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"trabaja con nosotros\" freelance wordpress Soria Castilla y León after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "fresh_30d",
-          "query": "\"colaboradores freelance\" agencia web Málaga Andalucía after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"trabaja con nosotros\" freelance wordpress Soria Castilla y León after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-1-0",
-      "country": "Spain",
-      "region": "Galicia",
-      "province": "Pontevedra",
-      "segment": "EU_PROJECT",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "site:europa.eu project dissemination website Spain kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "eu_official",
-          "query": "(site:europa.eu project dissemination website Spain kickoff 2026) (site:europa.eu OR site:ec.europa.eu OR site:cordis.europa.eu) after:2026-08-02",
-          "priority": 100
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "site:europa.eu project dissemination website Spain kickoff 2026 after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "pdf_evidence",
-          "query": "(site:europa.eu project dissemination website Spain kickoff 2026) filetype:pdf (communication OR dissemination OR website OR digital platform) after:2026-07-03",
-          "priority": 97
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "site:europa.eu project dissemination website Spain kickoff 2026 after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "partner_site",
-          "query": "(site:europa.eu project dissemination website Spain kickoff 2026) (kickoff OR consortium OR partner OR work package OR dissemination) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 94
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "site:europa.eu project dissemination website Spain kickoff 2026 after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-1-1",
-      "country": "Spain",
-      "region": "Galicia",
-      "province": "Pontevedra",
-      "segment": "WPO_MAINTENANCE",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"migración wordpress\" freelance agencia Pontevedra Galicia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"migración wordpress\" freelance agencia Pontevedra Galicia after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "exact_route_terms",
-          "query": "(\"migración wordpress\" freelance agencia Pontevedra Galicia) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"migración wordpress\" freelance agencia Pontevedra Galicia after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "official_site",
-          "query": "(\"migración wordpress\" freelance agencia Pontevedra Galicia) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 94
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"migración wordpress\" freelance agencia Pontevedra Galicia after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-1-2",
-      "country": "Spain",
-      "region": "Galicia",
-      "province": "Pontevedra",
-      "segment": "DIRECT_JOB",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"send cv\" wordpress Spain remote -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "ats_scoped",
-          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (\"send cv\" wordpress Spain remote) Pontevedra Galicia Spain after:2026-09-01",
-          "priority": 99
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"send cv\" wordpress Spain remote after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "official_careers",
-          "query": "(\"send cv\" wordpress Spain remote) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Pontevedra Galicia Spain -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 97
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"send cv\" wordpress Spain remote after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "linkedin_indexed",
-          "query": "site:linkedin.com/jobs/view (\"send cv\" wordpress Spain remote) Pontevedra Galicia Spain after:2026-09-01",
-          "priority": 94
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"send cv\" wordpress Spain remote after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-1-3",
-      "country": "Spain",
-      "region": "Galicia",
-      "province": "Pontevedra",
-      "segment": "AGENCY_WHITE_LABEL",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"white label\" agencia web freelance España Pontevedra Galicia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "official_site",
-          "query": "(\"white label\" agencia web freelance España Pontevedra Galicia) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 99
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"white label\" agencia web freelance España Pontevedra Galicia after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "exact_route_terms",
-          "query": "(\"white label\" agencia web freelance España Pontevedra Galicia) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"white label\" agencia web freelance España Pontevedra Galicia after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"white label\" agencia web freelance España Pontevedra Galicia after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-1-4",
-      "country": "Spain",
-      "region": "Galicia",
-      "province": "Pontevedra",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Pontevedra Galicia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Pontevedra Galicia after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Pontevedra Galicia after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "official_site",
-          "query": "(\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Pontevedra Galicia) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "procurement_pdf",
-          "query": "(\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Pontevedra Galicia) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
-          "priority": 92
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Pontevedra Galicia after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-2-0",
-      "country": "Spain",
-      "region": "País Vasco",
-      "province": "Bizkaia",
-      "segment": "WPO_MAINTENANCE",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"migración wordpress\" freelance agencia Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"migración wordpress\" freelance agencia Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "exact_route_terms",
-          "query": "(\"migración wordpress\" freelance agencia Bizkaia País Vasco) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"migración wordpress\" freelance agencia Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "official_site",
-          "query": "(\"migración wordpress\" freelance agencia Bizkaia País Vasco) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 94
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"migración wordpress\" freelance agencia Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-2-1",
-      "country": "Spain",
-      "region": "País Vasco",
-      "province": "Bizkaia",
-      "segment": "DIRECT_JOB",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "wordpress developer freelance remoto España Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "ats_scoped",
-          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (wordpress developer freelance remoto España Bizkaia País Vasco) Bizkaia País Vasco Spain after:2026-09-01",
-          "priority": 99
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "wordpress developer freelance remoto España Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "official_careers",
-          "query": "(wordpress developer freelance remoto España Bizkaia País Vasco) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Bizkaia País Vasco Spain -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 97
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "wordpress developer freelance remoto España Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "linkedin_indexed",
-          "query": "site:linkedin.com/jobs/view (wordpress developer freelance remoto España Bizkaia País Vasco) Bizkaia País Vasco Spain after:2026-09-01",
-          "priority": 94
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "wordpress developer freelance remoto España Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-2-2",
-      "country": "Spain",
-      "region": "País Vasco",
-      "province": "Bizkaia",
-      "segment": "AGENCY_WHITE_LABEL",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"colaboradores freelance\" agencia web Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "official_site",
-          "query": "(\"colaboradores freelance\" agencia web Bizkaia País Vasco) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 99
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"colaboradores freelance\" agencia web Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "exact_route_terms",
-          "query": "(\"colaboradores freelance\" agencia web Bizkaia País Vasco) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"colaboradores freelance\" agencia web Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"colaboradores freelance\" agencia web Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-2-3",
-      "country": "Spain",
-      "region": "País Vasco",
-      "province": "Bizkaia",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "territory_mode": "EXPLORATION",
-      "territory_score": 0.66,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "official_site",
-          "query": "(\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Bizkaia País Vasco) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "procurement_pdf",
-          "query": "(\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Bizkaia País Vasco) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
-          "priority": 92
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-2-4",
+      "mission_id": "5969585-2-0",
       "country": "Spain",
       "region": "País Vasco",
       "province": "Bizkaia",
@@ -763,13 +566,13 @@
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-3-0",
-      "country": "Italy",
-      "region": "Lazio",
-      "province": "Roma",
-      "segment": "DIRECT_JOB",
-      "territory_mode": "HARVEST",
-      "territory_score": 69.85,
+      "mission_id": "5969585-2-1",
+      "country": "Spain",
+      "region": "País Vasco",
+      "province": "Bizkaia",
+      "segment": "WPO_MAINTENANCE",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
       "engine_order": [
         "google",
         "bing",
@@ -779,146 +582,45 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"invia CV\" wordpress freelance Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
-          "variant": "ats_scoped",
-          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (\"invia CV\" wordpress freelance Roma Lazio) Roma Lazio Italy after:2026-09-01",
-          "priority": 99
-        },
-        {
           "variant": "fresh_1d",
-          "query": "\"invia CV\" wordpress freelance Roma Lazio after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "official_careers",
-          "query": "(\"invia CV\" wordpress freelance Roma Lazio) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Roma Lazio Italy -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 97
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"invia CV\" wordpress freelance Roma Lazio after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "linkedin_indexed",
-          "query": "site:linkedin.com/jobs/view (\"invia CV\" wordpress freelance Roma Lazio) Roma Lazio Italy after:2026-09-01",
-          "priority": 94
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"invia CV\" wordpress freelance Roma Lazio after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-3-1",
-      "country": "Italy",
-      "region": "Lazio",
-      "province": "Roma",
-      "segment": "AGENCY_WHITE_LABEL",
-      "territory_mode": "HARVEST",
-      "territory_score": 69.85,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"partita IVA\" wordpress web agency Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "official_site",
-          "query": "(\"partita IVA\" wordpress web agency Roma Lazio) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 99
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"partita IVA\" wordpress web agency Roma Lazio after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "exact_route_terms",
-          "query": "(\"partita IVA\" wordpress web agency Roma Lazio) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"mantenimiento wordpress\" freelance agencia Bizkaia País Vasco) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "fresh_7d",
-          "query": "\"partita IVA\" wordpress web agency Roma Lazio after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "fresh_30d",
-          "query": "\"partita IVA\" wordpress web agency Roma Lazio after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 90
-        }
-      ],
-      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
-    },
-    {
-      "mission_id": "5969581-3-2",
-      "country": "Italy",
-      "region": "Lazio",
-      "province": "Roma",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "territory_mode": "HARVEST",
-      "territory_score": 69.85,
-      "engine_order": [
-        "google",
-        "bing",
-        "brave",
-        "duckduckgo"
-      ],
-      "search_variants": [
-        {
-          "variant": "base_precision",
-          "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 100
-        },
-        {
-          "variant": "fresh_1d",
-          "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Roma Lazio after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 98
-        },
-        {
-          "variant": "fresh_7d",
-          "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Roma Lazio after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "official_site",
-          "query": "(\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Roma Lazio) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-          "priority": 96
-        },
-        {
-          "variant": "procurement_pdf",
-          "query": "(\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Roma Lazio) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
-          "priority": 92
+          "query": "(\"mantenimiento wordpress\" freelance agencia Bizkaia País Vasco) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 94
         },
         {
           "variant": "fresh_30d",
-          "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Roma Lazio after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"mantenimiento wordpress\" freelance agencia Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-3-3",
-      "country": "Italy",
-      "region": "Lazio",
-      "province": "Roma",
-      "segment": "EU_PROJECT",
-      "territory_mode": "HARVEST",
-      "territory_score": 69.85,
+      "mission_id": "5969585-2-2",
+      "country": "Spain",
+      "region": "País Vasco",
+      "province": "Bizkaia",
+      "segment": "DIRECT_JOB",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
       "engine_order": [
         "google",
         "bing",
@@ -928,44 +630,140 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "Horizon project \"communication and dissemination\" Italy website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"envía tu CV\" wordpress freelance Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
-          "variant": "eu_official",
-          "query": "(Horizon project \"communication and dissemination\" Italy website 2026) (site:europa.eu OR site:ec.europa.eu OR site:cordis.europa.eu) after:2026-08-02",
-          "priority": 100
+          "variant": "ats_scoped",
+          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (\"envía tu CV\" wordpress freelance Bizkaia País Vasco) Bizkaia País Vasco Spain after:2026-09-01",
+          "priority": 99
         },
         {
           "variant": "fresh_1d",
-          "query": "Horizon project \"communication and dissemination\" Italy website 2026 after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"envía tu CV\" wordpress freelance Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
-          "variant": "pdf_evidence",
-          "query": "(Horizon project \"communication and dissemination\" Italy website 2026) filetype:pdf (communication OR dissemination OR website OR digital platform) after:2026-07-03",
+          "variant": "official_careers",
+          "query": "(\"envía tu CV\" wordpress freelance Bizkaia País Vasco) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Bizkaia País Vasco Spain -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 97
         },
         {
           "variant": "fresh_7d",
-          "query": "Horizon project \"communication and dissemination\" Italy website 2026 after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"envía tu CV\" wordpress freelance Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
-          "variant": "partner_site",
-          "query": "(Horizon project \"communication and dissemination\" Italy website 2026) (kickoff OR consortium OR partner OR work package OR dissemination) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "variant": "linkedin_indexed",
+          "query": "site:linkedin.com/jobs/view (\"envía tu CV\" wordpress freelance Bizkaia País Vasco) Bizkaia País Vasco Spain after:2026-09-01",
           "priority": 94
         },
         {
           "variant": "fresh_30d",
-          "query": "Horizon project \"communication and dissemination\" Italy website 2026 after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"envía tu CV\" wordpress freelance Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-3-4",
+      "mission_id": "5969585-2-3",
+      "country": "Spain",
+      "region": "País Vasco",
+      "province": "Bizkaia",
+      "segment": "AGENCY_WHITE_LABEL",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"partner\" \"desarrollo web\" agencia freelance Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"partner\" \"desarrollo web\" agencia freelance Bizkaia País Vasco) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 99
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"partner\" \"desarrollo web\" agencia freelance Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "exact_route_terms",
+          "query": "(\"partner\" \"desarrollo web\" agencia freelance Bizkaia País Vasco) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"partner\" \"desarrollo web\" agencia freelance Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"partner\" \"desarrollo web\" agencia freelance Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-2-4",
+      "country": "Spain",
+      "region": "País Vasco",
+      "province": "Bizkaia",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Bizkaia País Vasco after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Bizkaia País Vasco after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Bizkaia País Vasco) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "procurement_pdf",
+          "query": "(\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Bizkaia País Vasco) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
+          "priority": 92
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Bizkaia País Vasco after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-3-0",
       "country": "Italy",
       "region": "Lazio",
       "province": "Roma",
@@ -1013,10 +811,265 @@
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-4-0",
+      "mission_id": "5969585-3-1",
       "country": "Italy",
-      "region": "Marche",
-      "province": "Ascoli Piceno",
+      "region": "Lazio",
+      "province": "Roma",
+      "segment": "DIRECT_JOB",
+      "territory_mode": "HARVEST",
+      "territory_score": 69.85,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "sviluppatore wordpress freelance remoto Italia Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "ats_scoped",
+          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (sviluppatore wordpress freelance remoto Italia Roma Lazio) Roma Lazio Italy after:2026-09-01",
+          "priority": 99
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "sviluppatore wordpress freelance remoto Italia Roma Lazio after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "official_careers",
+          "query": "(sviluppatore wordpress freelance remoto Italia Roma Lazio) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Roma Lazio Italy -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 97
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "sviluppatore wordpress freelance remoto Italia Roma Lazio after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "linkedin_indexed",
+          "query": "site:linkedin.com/jobs/view (sviluppatore wordpress freelance remoto Italia Roma Lazio) Roma Lazio Italy after:2026-09-01",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "sviluppatore wordpress freelance remoto Italia Roma Lazio after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-3-2",
+      "country": "Italy",
+      "region": "Lazio",
+      "province": "Roma",
+      "segment": "AGENCY_WHITE_LABEL",
+      "territory_mode": "HARVEST",
+      "territory_score": 69.85,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"lavora con noi\" freelance wordpress Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"lavora con noi\" freelance wordpress Roma Lazio) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 99
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"lavora con noi\" freelance wordpress Roma Lazio after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "exact_route_terms",
+          "query": "(\"lavora con noi\" freelance wordpress Roma Lazio) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"lavora con noi\" freelance wordpress Roma Lazio after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"lavora con noi\" freelance wordpress Roma Lazio after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-3-3",
+      "country": "Italy",
+      "region": "Lazio",
+      "province": "Roma",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "territory_mode": "HARVEST",
+      "territory_score": 69.85,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Roma Lazio after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Roma Lazio after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Roma Lazio) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "procurement_pdf",
+          "query": "(\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Roma Lazio) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
+          "priority": 92
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Roma Lazio after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-3-4",
+      "country": "Italy",
+      "region": "Lazio",
+      "province": "Roma",
+      "segment": "EU_PROJECT",
+      "territory_mode": "HARVEST",
+      "territory_score": 69.85,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "site:europa.eu project dissemination website Italy kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "eu_official",
+          "query": "(site:europa.eu project dissemination website Italy kickoff 2026) (site:europa.eu OR site:ec.europa.eu OR site:cordis.europa.eu) after:2026-08-02",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "site:europa.eu project dissemination website Italy kickoff 2026 after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "pdf_evidence",
+          "query": "(site:europa.eu project dissemination website Italy kickoff 2026) filetype:pdf (communication OR dissemination OR website OR digital platform) after:2026-07-03",
+          "priority": 97
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "site:europa.eu project dissemination website Italy kickoff 2026 after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "partner_site",
+          "query": "(site:europa.eu project dissemination website Italy kickoff 2026) (kickoff OR consortium OR partner OR work package OR dissemination) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "site:europa.eu project dissemination website Italy kickoff 2026 after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-4-0",
+      "country": "Italy",
+      "region": "Campania",
+      "province": "Napoli",
+      "segment": "DIRECT_JOB",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"candidatura\" \"partita IVA\" wordpress Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "ats_scoped",
+          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (\"candidatura\" \"partita IVA\" wordpress Napoli Campania) Napoli Campania Italy after:2026-09-01",
+          "priority": 99
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"candidatura\" \"partita IVA\" wordpress Napoli Campania after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "official_careers",
+          "query": "(\"candidatura\" \"partita IVA\" wordpress Napoli Campania) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Napoli Campania Italy -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 97
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"candidatura\" \"partita IVA\" wordpress Napoli Campania after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "linkedin_indexed",
+          "query": "site:linkedin.com/jobs/view (\"candidatura\" \"partita IVA\" wordpress Napoli Campania) Napoli Campania Italy after:2026-09-01",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"candidatura\" \"partita IVA\" wordpress Napoli Campania after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-4-1",
+      "country": "Italy",
+      "region": "Campania",
+      "province": "Napoli",
       "segment": "AGENCY_WHITE_LABEL",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -1029,42 +1082,42 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"collaboratori freelance\" web agency Ascoli Piceno Marche -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"collaborazione continuativa\" freelance wordpress Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "official_site",
-          "query": "(\"collaboratori freelance\" web agency Ascoli Piceno Marche) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"collaborazione continuativa\" freelance wordpress Napoli Campania) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 99
         },
         {
           "variant": "fresh_1d",
-          "query": "\"collaboratori freelance\" web agency Ascoli Piceno Marche after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"collaborazione continuativa\" freelance wordpress Napoli Campania after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "exact_route_terms",
-          "query": "(\"collaboratori freelance\" web agency Ascoli Piceno Marche) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"collaborazione continuativa\" freelance wordpress Napoli Campania) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "fresh_7d",
-          "query": "\"collaboratori freelance\" web agency Ascoli Piceno Marche after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"collaborazione continuativa\" freelance wordpress Napoli Campania after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "fresh_30d",
-          "query": "\"collaboratori freelance\" web agency Ascoli Piceno Marche after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"collaborazione continuativa\" freelance wordpress Napoli Campania after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-4-1",
+      "mission_id": "5969585-4-2",
       "country": "Italy",
-      "region": "Marche",
-      "province": "Ascoli Piceno",
+      "region": "Campania",
+      "province": "Napoli",
       "segment": "DIRECT_BUYER_WEB_NEED",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -1077,42 +1130,239 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Ascoli Piceno Marche -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "fresh_1d",
-          "query": "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Ascoli Piceno Marche after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "fresh_7d",
-          "query": "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Ascoli Piceno Marche after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "official_site",
-          "query": "(\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Ascoli Piceno Marche) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "procurement_pdf",
-          "query": "(\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Ascoli Piceno Marche) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
+          "query": "(\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
           "priority": 92
         },
         {
           "variant": "fresh_30d",
-          "query": "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Ascoli Piceno Marche after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-4-2",
+      "mission_id": "5969585-4-3",
       "country": "Italy",
-      "region": "Marche",
-      "province": "Ascoli Piceno",
+      "region": "Campania",
+      "province": "Napoli",
+      "segment": "EU_PROJECT",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "Horizon project \"communication and dissemination\" Italy website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "eu_official",
+          "query": "(Horizon project \"communication and dissemination\" Italy website 2026) (site:europa.eu OR site:ec.europa.eu OR site:cordis.europa.eu) after:2026-08-02",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "Horizon project \"communication and dissemination\" Italy website 2026 after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "pdf_evidence",
+          "query": "(Horizon project \"communication and dissemination\" Italy website 2026) filetype:pdf (communication OR dissemination OR website OR digital platform) after:2026-07-03",
+          "priority": 97
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "Horizon project \"communication and dissemination\" Italy website 2026 after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "partner_site",
+          "query": "(Horizon project \"communication and dissemination\" Italy website 2026) (kickoff OR consortium OR partner OR work package OR dissemination) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "Horizon project \"communication and dissemination\" Italy website 2026 after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-4-4",
+      "country": "Italy",
+      "region": "Campania",
+      "province": "Napoli",
+      "segment": "WPO_MAINTENANCE",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"core web vitals\" freelance Italia Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"core web vitals\" freelance Italia Napoli Campania after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "exact_route_terms",
+          "query": "(\"core web vitals\" freelance Italia Napoli Campania) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"core web vitals\" freelance Italia Napoli Campania after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"core web vitals\" freelance Italia Napoli Campania) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 94
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"core web vitals\" freelance Italia Napoli Campania after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-5-0",
+      "country": "Italy",
+      "region": "Piemonte",
+      "province": "Novara",
+      "segment": "AGENCY_WHITE_LABEL",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"lavora con noi\" freelance wordpress Novara Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"lavora con noi\" freelance wordpress Novara Piemonte) (inurl:careers OR inurl:jobs OR inurl:lavora-con-noi OR inurl:trabaja-con-nosotros OR inurl:collabora) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 99
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"lavora con noi\" freelance wordpress Novara Piemonte after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "exact_route_terms",
+          "query": "(\"lavora con noi\" freelance wordpress Novara Piemonte) (\"invia CV\" OR \"envía tu CV\" OR \"send CV\" OR \"collaboratori freelance\" OR \"colaboradores freelance\") -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"lavora con noi\" freelance wordpress Novara Piemonte after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"lavora con noi\" freelance wordpress Novara Piemonte after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-5-1",
+      "country": "Italy",
+      "region": "Piemonte",
+      "province": "Novara",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "territory_mode": "EXPLORATION",
+      "territory_score": 0.66,
+      "engine_order": [
+        "google",
+        "bing",
+        "brave",
+        "duckduckgo"
+      ],
+      "search_variants": [
+        {
+          "variant": "base_precision",
+          "query": "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Novara Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 100
+        },
+        {
+          "variant": "fresh_1d",
+          "query": "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Novara Piemonte after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 98
+        },
+        {
+          "variant": "fresh_7d",
+          "query": "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Novara Piemonte after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "official_site",
+          "query": "(\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Novara Piemonte) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 96
+        },
+        {
+          "variant": "procurement_pdf",
+          "query": "(\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Novara Piemonte) filetype:pdf (RFP OR RFQ OR bando OR gara OR licitación OR presupuesto) after:2026-09-01",
+          "priority": 92
+        },
+        {
+          "variant": "fresh_30d",
+          "query": "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Novara Piemonte after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "priority": 90
+        }
+      ],
+      "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
+    },
+    {
+      "mission_id": "5969585-5-2",
+      "country": "Italy",
+      "region": "Piemonte",
+      "province": "Novara",
       "segment": "EU_PROJECT",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -1162,10 +1412,10 @@
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-4-3",
+      "mission_id": "5969585-5-3",
       "country": "Italy",
-      "region": "Marche",
-      "province": "Ascoli Piceno",
+      "region": "Piemonte",
+      "province": "Novara",
       "segment": "WPO_MAINTENANCE",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -1178,42 +1428,42 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"manutenzione wordpress\" freelance agenzia Ascoli Piceno Marche -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"core web vitals\" freelance Italia Novara Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "fresh_1d",
-          "query": "\"manutenzione wordpress\" freelance agenzia Ascoli Piceno Marche after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"core web vitals\" freelance Italia Novara Piemonte after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "exact_route_terms",
-          "query": "(\"manutenzione wordpress\" freelance agenzia Ascoli Piceno Marche) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"core web vitals\" freelance Italia Novara Piemonte) (freelance OR autonomo OR autónomo OR contractor OR collaborazione OR colaboración) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "fresh_7d",
-          "query": "\"manutenzione wordpress\" freelance agenzia Ascoli Piceno Marche after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"core web vitals\" freelance Italia Novara Piemonte after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "official_site",
-          "query": "(\"manutenzione wordpress\" freelance agenzia Ascoli Piceno Marche) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(\"core web vitals\" freelance Italia Novara Piemonte) (site:.it OR site:.es OR site:.eu) -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 94
         },
         {
           "variant": "fresh_30d",
-          "query": "\"manutenzione wordpress\" freelance agenzia Ascoli Piceno Marche after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "\"core web vitals\" freelance Italia Novara Piemonte after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
       "verification_rule": "SEARCH_RESULT_IS_DISCOVERY_ONLY_VERIFY_CURRENT_AUTHORITATIVE_SOURCE_BEFORE_PROMOTION"
     },
     {
-      "mission_id": "5969581-4-4",
+      "mission_id": "5969585-5-4",
       "country": "Italy",
-      "region": "Marche",
-      "province": "Ascoli Piceno",
+      "region": "Piemonte",
+      "province": "Novara",
       "segment": "DIRECT_JOB",
       "territory_mode": "EXPLORATION",
       "territory_score": 0.66,
@@ -1226,37 +1476,37 @@
       "search_variants": [
         {
           "variant": "base_precision",
-          "query": "\"candidatura\" \"partita IVA\" wordpress Ascoli Piceno Marche -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "site:linkedin.com/jobs/view wordpress freelance Italy remote -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 100
         },
         {
           "variant": "ats_scoped",
-          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (\"candidatura\" \"partita IVA\" wordpress Ascoli Piceno Marche) Ascoli Piceno Marche Italy after:2026-09-01",
+          "query": "(site:jobs.lever.co OR site:boards.greenhouse.io OR site:jobs.ashbyhq.com OR site:apply.workable.com OR site:careers-page.com OR site:teamtailor.com OR site:personio.com OR site:recruitee.com OR site:jobs.smartrecruiters.com OR site:jobs.jobvite.com OR site:careers.icims.com OR site:myworkdayjobs.com) (site:linkedin.com/jobs/view wordpress freelance Italy remote) Novara Piemonte Italy after:2026-09-01",
           "priority": 99
         },
         {
           "variant": "fresh_1d",
-          "query": "\"candidatura\" \"partita IVA\" wordpress Ascoli Piceno Marche after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "site:linkedin.com/jobs/view wordpress freelance Italy remote after:2026-09-30 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 98
         },
         {
           "variant": "official_careers",
-          "query": "(\"candidatura\" \"partita IVA\" wordpress Ascoli Piceno Marche) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Ascoli Piceno Marche Italy -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "(site:linkedin.com/jobs/view wordpress freelance Italy remote) (careers OR jobs OR \"lavora con noi\" OR \"trabaja con nosotros\") Novara Piemonte Italy -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 97
         },
         {
           "variant": "fresh_7d",
-          "query": "\"candidatura\" \"partita IVA\" wordpress Ascoli Piceno Marche after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "site:linkedin.com/jobs/view wordpress freelance Italy remote after:2026-09-24 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 96
         },
         {
           "variant": "linkedin_indexed",
-          "query": "site:linkedin.com/jobs/view (\"candidatura\" \"partita IVA\" wordpress Ascoli Piceno Marche) Ascoli Piceno Marche Italy after:2026-09-01",
+          "query": "site:linkedin.com/jobs/view (site:linkedin.com/jobs/view wordpress freelance Italy remote) Novara Piemonte Italy after:2026-09-01",
           "priority": 94
         },
         {
           "variant": "fresh_30d",
-          "query": "\"candidatura\" \"partita IVA\" wordpress Ascoli Piceno Marche after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+          "query": "site:linkedin.com/jobs/view wordpress freelance Italy remote after:2026-09-01 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
           "priority": 90
         }
       ],
