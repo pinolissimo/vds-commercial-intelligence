@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-30T23:46:50Z",
+  "updated_at": "2026-10-01T02:29:33Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 663,
-    "agreement_count": 339,
-    "agreement_pct": 51.13,
+    "evaluated_total": 664,
+    "agreement_count": 340,
+    "agreement_pct": 51.2,
     "deepseek_promote": 32,
     "vds_promote": 241,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 325,
-    "cumulative_estimated_cost_usd": 0.137622,
-    "cost_per_evaluated_candidate_usd": 0.00020757,
-    "cost_per_deepseek_promote_usd": 0.00430069,
-    "cost_per_observed_ready_or_contacted_usd": 0.06881107,
+    "request_count": 326,
+    "cumulative_estimated_cost_usd": 0.138042,
+    "cost_per_evaluated_candidate_usd": 0.00020789,
+    "cost_per_deepseek_promote_usd": 0.0043138,
+    "cost_per_observed_ready_or_contacted_usd": 0.06902075,
     "latest_request": {
-      "at": "2026-09-30T23:46:47Z",
+      "at": "2026-10-01T02:29:31Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
-      "billing_band": "off_peak",
+      "billing_band": "peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 448,
-      "completion_tokens": 182,
-      "total_tokens": 758,
-      "estimated_cost_usd": 0.00021958
+      "prompt_cache_miss_tokens": 424,
+      "completion_tokens": 175,
+      "total_tokens": 727,
+      "estimated_cost_usd": 0.00041935
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7cf6770aefea9b84c458559f3480456e",
-      "evaluated_at": "2026-09-28T05:31:30Z",
-      "organization": "planetlabs",
-      "title": "Senior Engineering Program Manager",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/planetlabs/senior-engineering-program-manager-berlin-167852",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Role is Senior Engineering Program Manager, a management/PM position with no web development, WordPress, or frontend scope; matched keywords are generic boilerplate.",
-      "deepseek_risk_flags": [
-        "non_technical_web_role",
-        "no_web_stack_fit",
-        "keyword_noise",
-        "non_target_geo_germany"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016534,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "fe743f12fbb77378978712dfdbd301e0",
       "evaluated_at": "2026-09-28T05:42:06Z",
@@ -1489,10 +1461,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7e33e31730069f256b89176fd945a35e",
+      "evaluated_at": "2026-10-01T02:29:31Z",
+      "organization": "Wheely",
+      "title": "Full-Stack Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wheely/full-stack-engineer-london-337967",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Full-Stack Engineer role at Wheely (London) with only generic frontend keyword overlap (css, html, javascript, ui); no explicit WordPress/WooCommerce or web-maintenance scope, and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "full_stack_role_likely_broader_than_web_scope",
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_or_contract_signal",
+        "location_london_not_spain_italy",
+        "remote_status_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00041935,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-09-30T23:46:43Z",
+  "source_semantic_updated_at": "2026-10-01T02:29:27Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
