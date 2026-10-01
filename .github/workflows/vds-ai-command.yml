@@ -188,8 +188,8 @@ jobs:
           print(d.get('intent',''))
           PY
           )"
-          if [ "$CLASS" = "REFRESH" ] && [ "$INTENT" = "verify_and_remediate_operational_blocks" ]; then
-            echo "Owner requested operational verification; dispatching existing discovery workflow without changing policy or gates."
+          if [ "$CLASS" = "REFRESH" ]; then
+            echo "Owner requested REFRESH; dispatching existing discovery workflow without changing policy or gates."
             gh api --method POST \
               "repos/${GITHUB_REPOSITORY}/actions/workflows/high-frequency-discovery.yml/dispatches" \
               -f ref=main
