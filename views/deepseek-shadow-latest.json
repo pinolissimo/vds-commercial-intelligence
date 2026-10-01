@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-01T16:02:10Z",
+  "updated_at": "2026-10-01T16:20:14Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 673,
-    "agreement_count": 346,
-    "agreement_pct": 51.41,
+    "evaluated_total": 675,
+    "agreement_count": 348,
+    "agreement_pct": 51.56,
     "deepseek_promote": 32,
     "vds_promote": 243,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 329,
-    "cumulative_estimated_cost_usd": 0.140444,
-    "cost_per_evaluated_candidate_usd": 0.00020868,
-    "cost_per_deepseek_promote_usd": 0.00438888,
-    "cost_per_observed_ready_or_contacted_usd": 0.070222,
-    "latest_request": null
+    "request_count": 330,
+    "cumulative_estimated_cost_usd": 0.140824,
+    "cost_per_evaluated_candidate_usd": 0.00020863,
+    "cost_per_deepseek_promote_usd": 0.00440074,
+    "cost_per_observed_ready_or_contacted_usd": 0.07041187,
+    "latest_request": {
+      "at": "2026-10-01T16:20:10Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 702,
+      "completion_tokens": 340,
+      "total_tokens": 1170,
+      "estimated_cost_usd": 0.00037974
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6edf1f66af47e9c6a5f8aaf1651fc495",
-      "evaluated_at": "2026-09-28T18:22:07Z",
-      "organization": "Allgeier Inovar Gmbh",
-      "title": "Softwareentwickler Frontend / Angular (m/w/d)",
-      "location": "Nürnberg",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/allgeier-inovar-gmbh/softwareentwickler-frontend-angular-nurnberg-340182",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Angular-centric frontend developer role at a German IT services firm; core stack is Angular, not WordPress/WooCommerce/custom HTML-CSS-JS, and no evidence of freelance/contract compatibility or Spain/Italy/EU-remote fit.",
-      "deepseek_risk_flags": [
-        "angular_core_stack_mismatch",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "geo_unverified_non_target_market",
-        "on_site_nuremberg_likely"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00021628,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "b588a9fa9d67c22c5fb5ec13e1f3e3dc",
-      "evaluated_at": "2026-09-28T19:16:02Z",
-      "organization": "Ashby",
-      "title": "Senior Software Engineer, Product Engineering, EU",
-      "location": "Europe",
-      "opportunity_url": "https://jobicy.com/jobs/142468-senior-software-engineer-product-engineering-eu",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Senior/Staff product-engineering role at a tech company (Ashby); only generic 'frontend'/'ui' keyword overlap with no WordPress, WooCommerce, or web-maintenance scope, and no evidence of freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "generic_keyword_match_only",
-        "no_wordpress_woocommerce_scope",
-        "senior_fulltime_product_engineering_role",
-        "freelance_compatibility_unverified",
-        "commercial_keywords_likely_boilerplate"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00018701,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "7e6f99e95962fed95a051c0385c18280",
       "evaluated_at": "2026-09-28T19:16:02Z",
@@ -1474,10 +1427,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d9d6995ce147b3704abd9ec6cf393352",
+      "evaluated_at": "2026-10-01T16:20:10Z",
+      "organization": "CONROO GmbH",
+      "title": "Web Developer | Full Time (m/w/d)",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/conroo-gmbh/web-developer-full-time-munich-243414",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 66,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Explicit 'Web Developer' role with CSS and web development keyword matches, but the posting is a full-time on-site position in Munich with no evidence of freelance/contract compatibility or Spain/Italy/EU-remote geo fit; 'partner' and 'remote' matches are weak commercial signals.",
+      "deepseek_risk_flags": [
+        "on-site Munich location outside primary markets",
+        "full-time employment, not freelance/contract",
+        "no explicit WordPress/WooCommerce scope",
+        "remote status unverified",
+        "commercial keyword matches may be incidental"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018987,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3823b4ce72c227d5c5fd7d17f918e7ce",
+      "evaluated_at": "2026-10-01T16:20:10Z",
+      "organization": "Mirakl - Labs",
+      "title": "Software Engineer Intern",
+      "location": "Paris, France",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/mirakl-labs/software-engineer-intern-paris-320391",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Internship role in Paris, not a freelance/contract opportunity; frontend/JS/UI-UX keyword matches are generic and the 'collaboration/collaborator' commercial hits are incidental, with no WordPress, WooCommerce, or maintenance scope and no Spain/Italy/EU-remote geo fit.",
+      "deepseek_risk_flags": [
+        "internship, not freelance/contract",
+        "Paris location outside primary markets",
+        "generic frontend keyword matches",
+        "commercial keyword matches incidental",
+        "no WordPress/WooCommerce scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018987,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-01T16:02:05Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-01T16:20:06Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
