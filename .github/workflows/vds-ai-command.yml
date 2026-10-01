@@ -11,6 +11,10 @@ on:
         description: 'Client-generated command correlation id'
         required: false
         type: string
+  push:
+    branches: [main]
+    paths:
+      - 'command-center/commands/trigger.json'
 
 permissions:
   contents: write
@@ -30,6 +34,45 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Resolve owner command
+        shell: bash
+        env:
+          INPUT_COMMAND: ${{ inputs.command }}
+          INPUT_REQUEST_ID: ${{ inputs.request_id }}
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_dispatch" ]; then
+            COMMAND="${INPUT_COMMAND}"
+            REQUEST_ID="${INPUT_REQUEST_ID}"
+          else
+            COMMAND="$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('command-center/commands/trigger.json').read_text())
+          print(str(d.get('command') or '').strip())
+          PY
+          )"
+            REQUEST_ID="$(python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('command-center/commands/trigger.json').read_text())
+          print(str(d.get('request_id') or '').strip())
+          PY
+          )"
+          fi
+
+          if [ -z "${COMMAND}" ]; then
+            echo "Resolved VDS command is empty" >&2
+            exit 2
+          fi
+
+          {
+            echo "VDS_COMMAND<<__VDS_COMMAND__"
+            echo "${COMMAND}"
+            echo "__VDS_COMMAND__"
+            echo "VDS_REQUEST_ID=${REQUEST_ID}"
+          } >> "${GITHUB_ENV}"
+
       - name: Refresh complete read model before interpretation
         run: |
           python3 scripts/build_command_center_api.py
@@ -40,8 +83,6 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.6-terra' }}
-          VDS_COMMAND: ${{ inputs.command }}
-          VDS_REQUEST_ID: ${{ inputs.request_id }}
         shell: bash
         run: |
           set -euo pipefail
