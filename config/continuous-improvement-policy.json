@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-10-02T14:15:00+02:00",
+  "mode": "CONTINUOUS_IMPROVEMENT_REVENUE_EMERGENCY",
+  "general_rule": "Every optimization cycle must measure actual commercial outcomes, identify the dominant bottleneck, apply a bounded testable improvement, verify the result, and retain improvements that increase real funnel progress.",
+  "immutable_owner_directives": {
+    "revenue_emergency_mode": true,
+    "target_first_contacts_per_business_day": 150,
+    "target_range_first_contacts_per_business_day": [
+      100,
+      200
+    ],
+    "maximum_first_contacts_per_business_day": 300,
+    "sender_reputation_throttle": false,
+    "zero_duplicate_first_contact": true,
+    "dedup_fail_closed": true,
+    "never_guess_email": true,
+    "followup_requires_owner_approval": true
+  },
+  "optimization_order": [
+    "WON_REVENUE",
+    "PROPOSAL",
+    "CALL_INTERVIEW",
+    "QUALIFIED_POSITIVE_REPLY_REFERRAL",
+    "PROVIDER_VERIFIED_FIRST_CONTACT",
+    "CONTACTABLE_PROSPECTS",
+    "QUALIFIED_PROSPECTS",
+    "RAW_DISCOVERY"
+  ],
+  "optimization_scope": [
+    "commercial_stream_allocation",
+    "source_priority",
+    "territory_priority",
+    "query_patterns",
+    "first_party_enrichment",
+    "contactable_conversion",
+    "dashboard_observability",
+    "workflow_stability"
+  ],
+  "immutable_gates": [
+    "GLOBAL_EXACT_EMAIL_DEDUP",
+    "GLOBAL_CORPORATE_DOMAIN_DEDUP",
+    "GLOBAL_CANONICAL_ORGANIZATION_DEDUP",
+    "LIVE_HOSTINGER_SENT_DEDUP",
+    "LIVE_GMAIL_SENT_DEDUP",
+    "NO_GUESSED_RECIPIENT",
+    "TRUTHFUL_VDS_FIT",
+    "FOLLOWUP_OWNER_APPROVAL"
+  ],
+  "anti_regression": {
+    "enabled": true,
+    "rule": "Generated runtime configuration may not lower or remove immutable owner directives.",
+    "protected_fields": [
+      "mode",
+      "commercial_strategy.target_first_contacts_per_business_day",
+      "commercial_strategy.soft_daily_first_contact_ceiling",
+      "global_contact_dedup",
+      "continuous_improvement"
+    ]
+  }
+}
