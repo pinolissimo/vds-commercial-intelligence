@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5",
-  "updated_at": "2026-10-02T18:22:42Z",
+  "updated_at": "2026-10-02T18:40:16Z",
   "north_star": "WON_REVENUE_THEN_PROPOSAL_CALL_QUALIFIED_REPLY_FIRST_CONTACT",
   "north_star_order": [
     "WON_REVENUE",
@@ -24,22 +24,22 @@
     "HOURLY_SUPPORT_RETAINER"
   ],
   "funnel_snapshot": {
-    "raw": 2552,
-    "semantic_input": 2552,
-    "semantic_pass": 109,
-    "semantic_review": 74,
-    "semantic_reject": 2369,
-    "rejected_non_project_support": 104,
+    "raw": 2500,
+    "semantic_input": 2500,
+    "semantic_pass": 96,
+    "semantic_review": 68,
+    "semantic_reject": 2336,
+    "rejected_non_project_support": 101,
     "buyer_intent_very_high": 0,
     "buyer_intent_high": 7,
     "buyer_intent_high_total": 7,
     "project_based_high_intent": 7,
     "buyer_archetypes": {
-      "SME_WEB_IMPROVEMENT": 106,
+      "SME_WEB_IMPROVEMENT": 93,
       "AGENCY_EXTERNAL_CAPACITY": 3
     },
     "engagement_models": {
-      "PROJECT_BASED_WEB_DELIVERY": 109
+      "PROJECT_BASED_WEB_DELIVERY": 96
     },
     "legacy_cross_signal_hot_plus_advisory": 27,
     "legacy_cross_signal_hot_advisory": 13,
@@ -100,7 +100,7 @@
       "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/zoe/full-stack-engineer-front-end-focus-uk-64580",
       "authoritative_apply_url": null,
       "published_at": "2026-09-29T12:40:03Z",
-      "published_age_days": 3.2,
+      "published_age_days": 3.3,
       "commercial_archetype": "SME_WEB_IMPROVEMENT",
       "engagement_model": "PROJECT_BASED_WEB_DELIVERY",
       "project_based_fit": true,
@@ -202,7 +202,7 @@
       "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/mubi/senior-frontend-engineer-london-272986",
       "authoritative_apply_url": null,
       "published_at": "2026-09-27T12:40:05Z",
-      "published_age_days": 5.2,
+      "published_age_days": 5.3,
       "commercial_archetype": "SME_WEB_IMPROVEMENT",
       "engagement_model": "PROJECT_BASED_WEB_DELIVERY",
       "project_based_fit": true,
@@ -255,9 +255,9 @@
         "wordpress"
       ],
       "route_class": "UNKNOWN",
-      "buyer_intent_score": 68.3,
+      "buyer_intent_score": 64.9,
       "buyer_intent_tier": "HIGH",
-      "semantic_score": 91,
+      "semantic_score": 81,
       "raw_fit_score": 95,
       "target_geo_bucket": "EU_REMOTE_TO_VERIFY",
       "source_id": "arbeitnow_eu",
@@ -469,7 +469,7 @@
       "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/plentific/senior-frontend-engineer-london-299931",
       "authoritative_apply_url": null,
       "published_at": "2026-10-01T12:40:07Z",
-      "published_age_days": 1.2,
+      "published_age_days": 1.3,
       "commercial_archetype": "SME_WEB_IMPROVEMENT",
       "engagement_model": "PROJECT_BASED_WEB_DELIVERY",
       "project_based_fit": true,
@@ -744,6 +744,30 @@
       "rank": 3
     },
     {
+      "source_id": "nomado_frontend",
+      "raw_signals": 1,
+      "semantic_pass": 1,
+      "semantic_review": 0,
+      "semantic_pass_rate": 1.0,
+      "semantic_useful_rate": 1.0,
+      "raw_priority_multiplier": 1.0,
+      "recommended_multiplier": 1.45,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 4
+    },
+    {
+      "source_id": "remotejobs_contract_wordpress",
+      "raw_signals": 14,
+      "semantic_pass": 2,
+      "semantic_review": 2,
+      "semantic_pass_rate": 0.1429,
+      "semantic_useful_rate": 0.1929,
+      "raw_priority_multiplier": 1.51,
+      "recommended_multiplier": 1.09,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 5
+    },
+    {
       "source_id": "wwr_frontend",
       "raw_signals": 7,
       "semantic_pass": 2,
@@ -753,43 +777,31 @@
       "raw_priority_multiplier": 1.34,
       "recommended_multiplier": 1.08,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 4
-    },
-    {
-      "source_id": "nomado_frontend",
-      "raw_signals": 14,
-      "semantic_pass": 8,
-      "semantic_review": 3,
-      "semantic_pass_rate": 0.5714,
-      "semantic_useful_rate": 0.6464,
-      "raw_priority_multiplier": 0.94,
-      "recommended_multiplier": 1.06,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 5
-    },
-    {
-      "source_id": "remotejobs_contract_wordpress",
-      "raw_signals": 16,
-      "semantic_pass": 2,
-      "semantic_review": 2,
-      "semantic_pass_rate": 0.125,
-      "semantic_useful_rate": 0.1688,
-      "raw_priority_multiplier": 1.47,
-      "recommended_multiplier": 1.03,
-      "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 6
     },
     {
       "source_id": "nomado_webdev",
-      "raw_signals": 20,
-      "semantic_pass": 8,
-      "semantic_review": 2,
-      "semantic_pass_rate": 0.4,
-      "semantic_useful_rate": 0.435,
-      "raw_priority_multiplier": 0.93,
-      "recommended_multiplier": 0.88,
+      "raw_signals": 6,
+      "semantic_pass": 2,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.3333,
+      "semantic_useful_rate": 0.3333,
+      "raw_priority_multiplier": 1.06,
+      "recommended_multiplier": 0.9,
       "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 7
+    },
+    {
+      "source_id": "remotejobs_contract_webdev",
+      "raw_signals": 54,
+      "semantic_pass": 7,
+      "semantic_review": 2,
+      "semantic_pass_rate": 0.1296,
+      "semantic_useful_rate": 0.1426,
+      "raw_priority_multiplier": 1.31,
+      "recommended_multiplier": 0.89,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 8
     },
     {
       "source_id": "remoteok",
@@ -800,18 +812,6 @@
       "semantic_useful_rate": 0.25,
       "raw_priority_multiplier": 1.14,
       "recommended_multiplier": 0.88,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 8
-    },
-    {
-      "source_id": "remotejobs_contract_webdev",
-      "raw_signals": 58,
-      "semantic_pass": 7,
-      "semantic_review": 2,
-      "semantic_pass_rate": 0.1207,
-      "semantic_useful_rate": 0.1328,
-      "raw_priority_multiplier": 1.28,
-      "recommended_multiplier": 0.86,
       "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 9
     },
@@ -901,15 +901,27 @@
     },
     {
       "source_id": "remotejobs_contract_frontend",
-      "raw_signals": 33,
+      "raw_signals": 19,
       "semantic_pass": 0,
-      "semantic_review": 4,
+      "semantic_review": 3,
       "semantic_pass_rate": 0.0,
-      "semantic_useful_rate": 0.0424,
-      "raw_priority_multiplier": 1.04,
-      "recommended_multiplier": 0.61,
-      "budget_class": "REDUCED_WEAK",
+      "semantic_useful_rate": 0.0553,
+      "raw_priority_multiplier": 1.11,
+      "recommended_multiplier": 0.67,
+      "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 17
+    },
+    {
+      "source_id": "nomado_wordpress",
+      "raw_signals": 4,
+      "semantic_pass": 0,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.0,
+      "semantic_useful_rate": 0.0,
+      "raw_priority_multiplier": 1.08,
+      "recommended_multiplier": 0.59,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 18
     },
     {
       "source_id": "remote_landers",
@@ -921,7 +933,7 @@
       "raw_priority_multiplier": 0.65,
       "recommended_multiplier": 0.55,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 18
+      "rank": 19
     },
     {
       "source_id": "joa_es_wordpress_body",
@@ -933,7 +945,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 0.55,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 19
+      "rank": 20
     },
     {
       "source_id": "joa_it_wordpress_body",
@@ -945,7 +957,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 0.55,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 20
+      "rank": 21
     },
     {
       "source_id": "joa_es_web_performance_body",
@@ -957,36 +969,23 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 0.55,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 21
-    },
-    {
-      "source_id": "nomado_wordpress",
-      "raw_signals": 9,
-      "semantic_pass": 0,
-      "semantic_review": 0,
-      "semantic_pass_rate": 0.0,
-      "semantic_useful_rate": 0.0,
-      "raw_priority_multiplier": 0.96,
-      "recommended_multiplier": 0.53,
-      "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 22
     }
   ],
   "territory": {
     "resolved_area_count": 159,
     "unresolved_bucket_count": 2,
-    "harvest_now": [],
-    "explore_or_revisit": [
+    "harvest_now": [
       {
         "area_key": "Italy|Lazio|Roma",
         "country": "Italy",
         "region": "Lazio",
         "province": "Roma",
         "score": 69.85,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
+        "mode": "HARVEST",
+        "harvest_cycles": 1,
         "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
+        "cooldown_until": "2026-10-03T12:22:47.518649Z",
         "metrics": {
           "signals": 0,
           "verified": 2,
@@ -1001,12 +1000,14 @@
         },
         "rank": 1,
         "sample_status": "INSUFFICIENT_SAMPLE"
-      },
+      }
+    ],
+    "explore_or_revisit": [
       {
-        "area_key": "Spain|Aragón|Zaragoza",
+        "area_key": "Spain|Comunitat Valenciana|Castellón",
         "country": "Spain",
-        "region": "Aragón",
-        "province": "Zaragoza",
+        "region": "Comunitat Valenciana",
+        "province": "Castellón",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1053,10 +1054,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Veneto|Venezia",
-        "country": "Italy",
-        "region": "Veneto",
-        "province": "Venezia",
+        "area_key": "Spain|Aragón|Zaragoza",
+        "country": "Spain",
+        "region": "Aragón",
+        "province": "Zaragoza",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1103,10 +1104,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Comunitat Valenciana|Castellón",
-        "country": "Spain",
-        "region": "Comunitat Valenciana",
-        "province": "Castellón",
+        "area_key": "Italy|Veneto|Venezia",
+        "country": "Italy",
+        "region": "Veneto",
+        "province": "Venezia",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1135,7 +1136,7 @@
         "score": 29.09,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 508,
+        "consecutive_low_yield_cycles": 507,
         "cooldown_until": null,
         "metrics": {
           "signals": 3,
@@ -1153,10 +1154,10 @@
         "sample_status": "MEANINGFUL"
       },
       {
-        "area_key": "Italy|Emilia-Romagna|Piacenza",
+        "area_key": "Italy|Piemonte|Torino",
         "country": "Italy",
-        "region": "Emilia-Romagna",
-        "province": "Piacenza",
+        "region": "Piemonte",
+        "province": "Torino",
         "score": 25.96,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1178,10 +1179,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Piemonte|Torino",
+        "area_key": "Italy|Emilia-Romagna|Piacenza",
         "country": "Italy",
-        "region": "Piemonte",
-        "province": "Torino",
+        "region": "Emilia-Romagna",
+        "province": "Piacenza",
         "score": 25.96,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1303,10 +1304,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Aragón|Teruel",
-        "country": "Spain",
-        "region": "Aragón",
-        "province": "Teruel",
+        "area_key": "Italy|Piemonte|Novara",
+        "country": "Italy",
+        "region": "Piemonte",
+        "province": "Novara",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1328,10 +1329,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Piemonte|Alessandria",
-        "country": "Italy",
-        "region": "Piemonte",
-        "province": "Alessandria",
+        "area_key": "Spain|Asturias|Asturias",
+        "country": "Spain",
+        "region": "Asturias",
+        "province": "Asturias",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1353,10 +1354,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Lombardia|Brescia",
+        "area_key": "Italy|Marche|Ancona",
         "country": "Italy",
-        "region": "Lombardia",
-        "province": "Brescia",
+        "region": "Marche",
+        "province": "Ancona",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1375,6 +1376,106 @@
           "rejected": 0
         },
         "rank": 16,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Campania|Caserta",
+        "country": "Italy",
+        "region": "Campania",
+        "province": "Caserta",
+        "score": 0.66,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
+        "rank": 17,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Spain|Castilla y León|Soria",
+        "country": "Spain",
+        "region": "Castilla y León",
+        "province": "Soria",
+        "score": 0.66,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
+        "rank": 18,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Spain|Castilla-La Mancha|Toledo",
+        "country": "Spain",
+        "region": "Castilla-La Mancha",
+        "province": "Toledo",
+        "score": 0.66,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
+        "rank": 19,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Umbria|Perugia",
+        "country": "Italy",
+        "region": "Umbria",
+        "province": "Perugia",
+        "score": 0.66,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
+        "rank": 20,
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
@@ -1399,82 +1500,7 @@
           "stale": 0,
           "rejected": 0
         },
-        "rank": 17,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
-        "area_key": "Spain|Galicia|A Coruña",
-        "country": "Spain",
-        "region": "Galicia",
-        "province": "A Coruña",
-        "score": 0.66,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 18,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
-        "area_key": "Italy|Friuli-Venezia Giulia|Pordenone",
-        "country": "Italy",
-        "region": "Friuli-Venezia Giulia",
-        "province": "Pordenone",
-        "score": 0.66,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 19,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
-        "area_key": "Italy|Toscana|Prato",
-        "country": "Italy",
-        "region": "Toscana",
-        "province": "Prato",
-        "score": 0.66,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 20,
+        "rank": 21,
         "sample_status": "INSUFFICIENT_SAMPLE"
       }
     ],
