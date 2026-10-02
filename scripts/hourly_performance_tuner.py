@@ -35,6 +35,8 @@ def main():
     health=load("api/v1/health.json",{})
     source=load("views/search-source-performance.json",{})
     today=load("api/v1/today.json",{})
+    previous=load("config/hourly-optimization-runtime.json",{})
+    ci_policy=load("config/continuous-improvement-policy.json",{})
 
     bsum=buyer.get("summary") or buyer.get("counts") or {}
     archetypes=buyer.get("counts_by_archetype") or buyer.get("archetypes") or bsum.get("archetypes") or {}
@@ -87,6 +89,18 @@ def main():
     drift=100-sum(normalized.values())
     normalized["AGENCY_WHITE_LABEL"]+=drift
 
+    # Anti-oscillation: cap lane movement against the previous hourly allocation.
+    prev_alloc=previous.get("allocation_pct") or {}
+    max_shift=int(((ci_policy.get("anti_regression") or {}).get("max_hourly_lane_shift_pct")) or 20)
+    if prev_alloc:
+        bounded={}
+        for k,v in normalized.items():
+            pv=int(prev_alloc.get(k,v))
+            bounded[k]=clamp(v,pv-max_shift,pv+max_shift)
+        total=sum(bounded.values()) or 100
+        normalized={k:round(v*100/total) for k,v in bounded.items()}
+        normalized["AGENCY_WHITE_LABEL"]+=100-sum(normalized.values())
+
     ranking=source.get("ranking") or []
     enabled_top=[
         {"source_id":r.get("source_id"),"quality":r.get("quality_score_0_100"),"multiplier":r.get("priority_multiplier")}
@@ -96,7 +110,7 @@ def main():
     report={
       "schema_version":"1.0",
       "updated_at":now,
-      "mode":"BOUNDED_CONTINUOUS_IMPROVEMENT",
+      "mode":"CONTINUOUS_IMPROVEMENT_REVENUE_EMERGENCY" if (ci_policy.get("immutable_owner_directives") or {}).get("revenue_emergency_mode") else "BOUNDED_CONTINUOUS_IMPROVEMENT",
       "hourly_metrics":{
         "active_opportunities":active_count,
         "ready_opportunities":ready,
@@ -115,14 +129,15 @@ def main():
         "authoritative_route_gate":"IMMUTABLE",
         "provider_verification_gate":"IMMUTABLE",
         "follow_up_owner_approval":"IMMUTABLE",
-        "max_hourly_lane_shift_pct":20
+        "max_hourly_lane_shift_pct":max_shift
       }
     }
     runtime={
       "schema_version":"1.0","updated_at":now,
       "allocation_pct":normalized,
       "reason_codes":report["adjustment_reasons"],
-      "rule":"Search capacity may self-adjust hourly; safety/contact gates never self-weaken."
+      "rule":"Measure -> diagnose bottleneck -> apply bounded improvement -> verify -> retain gains. Search capacity may self-adjust hourly; duplicate/contact safety gates never self-weaken.",
+      "continuous_improvement_policy":"config/continuous-improvement-policy.json"
     }
     save(OUT,report); save(RUNTIME,runtime)
     print(json.dumps({"updated_at":now,"allocation_pct":normalized,"reasons":report["adjustment_reasons"]}))
