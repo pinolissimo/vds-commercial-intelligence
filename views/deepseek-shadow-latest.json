@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-02T16:22:38Z",
+  "updated_at": "2026-10-02T16:40:42Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 689,
-    "agreement_count": 354,
-    "agreement_pct": 51.38,
+    "evaluated_total": 691,
+    "agreement_count": 355,
+    "agreement_pct": 51.37,
     "deepseek_promote": 32,
     "vds_promote": 250,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 340,
-    "cumulative_estimated_cost_usd": 0.143608,
-    "cost_per_evaluated_candidate_usd": 0.00020843,
-    "cost_per_deepseek_promote_usd": 0.00448776,
-    "cost_per_observed_ready_or_contacted_usd": 0.07180411,
-    "latest_request": null
+    "request_count": 341,
+    "cumulative_estimated_cost_usd": 0.143951,
+    "cost_per_evaluated_candidate_usd": 0.00020832,
+    "cost_per_deepseek_promote_usd": 0.00449847,
+    "cost_per_observed_ready_or_contacted_usd": 0.0719755,
+    "latest_request": {
+      "at": "2026-10-02T16:40:38Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 693,
+      "completion_tokens": 287,
+      "total_tokens": 1108,
+      "estimated_cost_usd": 0.00034278
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7ba431c58c715e7e11a2d2960550c588",
-      "evaluated_at": "2026-09-29T13:33:09Z",
-      "organization": "Plentific",
-      "title": "Senior Backend Engineer",
-      "location": "London Office",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/plentific/senior-backend-engineer-london-80845",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior Backend Engineer role; backend core with no frontend/WordPress scope, keyword matches are incidental (frontend, maintenance) and commercial keyword hits (contractor, partner) are generic job-text noise, not freelance compatibility.",
-      "deepseek_risk_flags": [
-        "backend_core_role",
-        "no_frontend_wordpress_scope",
-        "generic_contractor_partner_mentions",
-        "london_office_location"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016208,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "545f791b63508786c25460f1976d16e4",
-      "evaluated_at": "2026-09-29T13:33:09Z",
-      "organization": "Plentific",
-      "title": "Service Delivery Lead",
-      "location": "London Office",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/plentific/service-delivery-lead-london-188755",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Service Delivery Lead role; non-engineering delivery/management scope, keyword matches (maintenance, migration) are incidental and commercial keyword hits are generic, not evidence of freelance web-dev compatibility.",
-      "deepseek_risk_flags": [
-        "non_engineering_role",
-        "no_frontend_wordpress_scope",
-        "generic_contractor_partner_mentions",
-        "london_office_location"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016208,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "01b4a0aae621a649a1f4f5ff7d2bb869",
       "evaluated_at": "2026-09-29T13:33:09Z",
@@ -1477,10 +1432,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "86606392e145314be7c91a525aaa812c",
+      "evaluated_at": "2026-10-02T16:40:38Z",
+      "organization": "Hostinger",
+      "title": "PHP Developer | Email Team | Based in Lithuania",
+      "location": "Check country restrictions",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/php-developer-email-team-based-in-lithuania-9ebaef2030",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 42.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "PHP developer role at Hostinger with remote signal, but no explicit WordPress/WooCommerce or frontend web scope; stack fit is partial and contract compatibility is unverified.",
+      "deepseek_risk_flags": [
+        "no_wordpress_or_woocommerce_scope",
+        "contract_type_unclear",
+        "geo_restrictions_unverified",
+        "email_team_specialization_may_be_backend_only"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00017139,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "61897e3ef42d92d76d2204aea9fd5f84",
+      "evaluated_at": "2026-10-02T16:40:38Z",
+      "organization": "Mindera",
+      "title": "Staff Frontend Software Engineer - React and Next.js",
+      "location": "Portugal",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/staff-frontend-software-engineer-react-and-nextjs-91c65a45c8",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Staff-level React/Next.js engineering role is a core framework-heavy position with no meaningful WordPress, WooCommerce, or general web-maintenance scope; poor fit for the target freelance profile.",
+      "deepseek_risk_flags": [
+        "react_nextjs_core_stack_mismatch",
+        "staff_seniority_likely_full_time",
+        "no_wordpress_scope",
+        "no_freelance_compatibility_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00017139,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-02T16:22:33Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-02T16:40:34Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
