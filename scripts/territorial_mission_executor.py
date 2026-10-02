@@ -136,6 +136,14 @@ def execute_mission(worker_id,m,run_id,total_missions):
     finally:
         time.sleep(DELAY_SECONDS)
 
+def execute_worker(worker_id,missions,run_id,total_missions):
+    out=[]
+    for m in missions:
+        item=execute_mission(worker_id,m,run_id,total_missions)
+        if item: out.append(item)
+    update_worker(worker_id,run_id,total_missions,state="IDLE")
+    return out
+
 def main():
     src=load(MISSIONS,{})
     missions=src.get("missions") or []
@@ -149,20 +157,23 @@ def main():
         _WORKER_STATE[wid]={"worker_id":wid,"state":"IDLE","updated_at":now()}
     _write_telemetry(run_id,len(selected))
 
+    shards=[[] for _ in range(WORKERS)]
+    for i,m in enumerate(selected):
+        shards[i%WORKERS].append(m)
+
     results=[]
     with ThreadPoolExecutor(max_workers=WORKERS,thread_name_prefix="vds-search") as pool:
-        future_map={}
-        for i,m in enumerate(selected):
-            worker_id=(i%WORKERS)+1
-            future_map[pool.submit(execute_mission,worker_id,m,run_id,len(selected))]=(worker_id,m)
+        future_map={
+          pool.submit(execute_worker,wid+1,shards[wid],run_id,len(selected)):wid+1
+          for wid in range(WORKERS) if shards[wid]
+        }
         for fut in as_completed(future_map):
+            wid=future_map[fut]
             try:
-                item=fut.result()
-                if item: results.append(item)
+                results.extend(fut.result())
             except Exception as exc:
-                wid,m=future_map[fut]
-                results.append({"worker_id":wid,"mission_id":m.get("mission_id"),"state":"FAILED",
-                                "result_count":0,"error":f"WorkerCrash:{type(exc).__name__}:{exc}"[:500]})
+                results.append({"worker_id":wid,"state":"FAILED","result_count":0,
+                                "error":f"WorkerCrash:{type(exc).__name__}:{exc}"[:500]})
 
     # Canonical result merge: one organic URL record per domain+URL, independent of worker.
     merged={}
@@ -194,8 +205,6 @@ def main():
       "missions":results
     }
     save(OUT,payload)
-    for wid in range(1,WORKERS+1):
-        update_worker(wid,run_id,len(selected),state="IDLE")
     print(json.dumps({k:payload[k] for k in ("run_id","worker_count","missions_attempted","missions_completed","missions_failed","result_count","unique_domains")}))
 if __name__=="__main__":
     raise SystemExit(main())
