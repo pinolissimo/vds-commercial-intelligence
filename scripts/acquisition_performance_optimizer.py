@@ -38,7 +38,7 @@ def save(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def choose_turbo(bottleneck, semantic_pass, high_intent_count, previous_turbo=False):
+def choose_turbo(bottleneck, semantic_pass, previous_turbo=False, high_intent_count=0):
     """Backlog-pressure policy. Buyer intent raises priority but never changes hard gates."""
     if high_intent_count >= 8:
         return True, "HIGH_BUYER_INTENT_BACKLOG"
@@ -148,7 +148,7 @@ def main():
     explore = [a for a in resolved_areas if a.get("mode") in {"REVISIT", "EXPLORATION"}][:20]
 
     previous_turbo = bool((previous_runtime.get("turbo") or {}).get("enabled"))
-    turbo, turbo_reason = choose_turbo(bottleneck, semantic_pass, project_high_intent, previous_turbo)
+    turbo, turbo_reason = choose_turbo(bottleneck, semantic_pass, previous_turbo, project_high_intent)
     if project_high_intent >= 8:
         capacity = {"high_buyer_intent_project_pct": 70, "qualified_project_backlog_pct": 15, "exploration_pct": 15}
     elif turbo:
