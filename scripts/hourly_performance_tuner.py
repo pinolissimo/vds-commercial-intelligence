@@ -37,7 +37,7 @@ def main():
     today=load("api/v1/today.json",{})
 
     bsum=buyer.get("summary") or buyer.get("counts") or {}
-    archetypes=buyer.get("archetypes") or bsum.get("archetypes") or {}
+    archetypes=buyer.get("counts_by_archetype") or buyer.get("archetypes") or bsum.get("archetypes") or {}
     agency=int(archetypes.get("AGENCY_EXTERNAL_CAPACITY") or 0)
     eu_ready=int((eu.get("summary") or {}).get("ready_contact") or 0)
     eu_qualified=int((eu.get("summary") or {}).get("qualified") or 0)
