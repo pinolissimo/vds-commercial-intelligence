@@ -8,6 +8,7 @@ RADAR = ROOT / "views/territory-yield-radar.json"
 CMD = ROOT / "config/acquisition-runtime-command.json"
 PLAY = ROOT / "config/territorial-intent-query-playbook.json"
 OUT = ROOT / "views/search-mission-plan.json"
+HOURLY = ROOT / "config/hourly-optimization-runtime.json"
 
 STRATEGIC_PRIOR = {
     "Spain": [
@@ -67,11 +68,27 @@ def add_unique(selected, seen, area):
         seen.add(area.get("area_key"))
 
 
+def allocation_slots(allocation, slots=5):
+    lanes=["AGENCY_WHITE_LABEL","EU_PROJECT","DIRECT_BUYER_WEB_NEED"]
+    raw={k:max(0,float(allocation.get(k,0)))*slots/100.0 for k in lanes}
+    counts={k:int(raw[k]) for k in lanes}
+    remainder=slots-sum(counts.values())
+    for k in sorted(lanes,key=lambda x:(raw[x]-counts[x],allocation.get(x,0)),reverse=True)[:remainder]: counts[k]+=1
+    plan=[]
+    while len(plan)<slots:
+        for k in sorted(lanes,key=lambda x:allocation.get(x,0),reverse=True):
+            if counts[k]>0:
+                plan.append(k); counts[k]-=1
+                if len(plan)>=slots: break
+    return plan
+
+
 def main():
     now = dt.datetime.now(dt.timezone.utc)
     radar = load(RADAR, {"areas": []})
     cmd = load(CMD, {})
     play = load(PLAY, {"segments": {}})
+    hourly = load(HOURLY, {"allocation_pct":{"AGENCY_WHITE_LABEL":40,"EU_PROJECT":40,"DIRECT_BUYER_WEB_NEED":20}})
     valid_modes = {"HARVEST", "REVISIT", "EXPLORATION"}
     areas = [a for a in radar.get("areas", []) if a.get("mode") in valid_modes and a.get("region") not in {None, "UNRESOLVED"} and a.get("province") not in {None, "UNRESOLVED"}]
     area_by_key = {a.get("area_key"): a for a in areas}
@@ -109,13 +126,8 @@ def main():
     # 40% agency/white-label, 40% EU-project, 20% direct buyer.
     # This replaces the former near-uniform segment rotation, which diluted the
     # two highest-conversion VDS channels despite their higher configured weights.
-    lane_plan = [
-        "AGENCY_WHITE_LABEL",
-        "EU_PROJECT",
-        "AGENCY_WHITE_LABEL",
-        "EU_PROJECT",
-        "DIRECT_BUYER_WEB_NEED",
-    ]
+    allocation=hourly.get("allocation_pct") or {"AGENCY_WHITE_LABEL":40,"EU_PROJECT":40,"DIRECT_BUYER_WEB_NEED":20}
+    lane_plan = allocation_slots(allocation,5)
     missions = []
     for ai, area in enumerate(selected):
         country = area.get("country")
@@ -153,7 +165,9 @@ def main():
         "selected_areas": [{"area_key": a.get("area_key"), "mode": a.get("mode"), "score": a.get("score")} for a in selected],
         "missions": missions,
         "country_counts": {"Spain": sum(1 for a in selected if a.get("country") == "Spain"), "Italy": sum(1 for a in selected if a.get("country") == "Italy")},
-        "strategy": "RED_REVENUE_PRIORITY_40_AGENCY_40_EU_20_DIRECT_BUYER",
+        "strategy": "ADAPTIVE_RED_REVENUE_PRIORITY",
+        "allocation_pct": allocation,
+        "hourly_optimizer_updated_at": hourly.get("updated_at"),
         "multi_engine_router": "views/multi-engine-search-missions.json",
         "instruction": "Execute highest-value missions every 5 minutes. Discovery-capable tasks MUST also consume views/multi-engine-search-missions.json and fan out its highest-priority variants across independent search engines/search backends when available. Search snippets are discovery only: verify current authoritative demand, exact route, truthful fit and global provider suppression before promotion or execution. Quality gates never weaken."
     }
