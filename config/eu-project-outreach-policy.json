@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "cycle_minutes": 10,
   "programmes": [
     "Horizon Europe",
@@ -13,8 +13,8 @@
     "Creative Europe"
   ],
   "cordis_bulk_url": "https://cordis.europa.eu/data/cordis-HORIZONprojects-csv.zip",
-  "lookback_days": 240,
-  "lookahead_days": 180,
+  "lookback_days": 120,
+  "lookahead_days": 120,
   "high_priority_min_score": 8,
   "auto_first_contact": true,
   "auto_follow_up": false,
@@ -34,5 +34,8 @@
     "news",
     "publications",
     "results repository"
-  ]
+  ],
+  "global_dedup_required": true,
+  "emergency_priority": "PROJECTS_STARTING_WITHIN_60_DAYS_AND_WITHOUT_PUBLIC_WEBSITE",
+  "contact_strategy": "Coordinator first; if communication/dissemination WP leader is identified, route there. Require organization-level dedup across all VDS workstreams."
 }
