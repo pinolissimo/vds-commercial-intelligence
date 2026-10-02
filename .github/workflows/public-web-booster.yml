@@ -18,7 +18,7 @@ permissions:
 
 concurrency:
   group: vds-public-web-booster
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   crawl:
@@ -34,14 +34,14 @@ jobs:
 
       - name: Install public-web crawler
         run: |
-          python -m pip install --disable-pip-version-check -r requirements-search-booster.txt
-          python -m playwright install --with-deps chromium
+          python -m pip install --disable-pip-version-check scrapy
 
       - name: Run compliant public-web booster
         run: |
-          python -m py_compile scripts/public_web_booster.py scripts/booster_seed_bridge.py
+          python -m py_compile scripts/public_web_booster.py scripts/booster_seed_bridge.py scripts/first_party_route_enricher.py
           python scripts/public_web_booster.py
           python scripts/booster_seed_bridge.py
+          python scripts/first_party_route_enricher.py
 
       - name: Persist booster-owned intelligence safely
         shell: bash
@@ -53,10 +53,11 @@ jobs:
           rebuild() {
             python scripts/public_web_booster.py
             python scripts/booster_seed_bridge.py
+            python scripts/first_party_route_enricher.py
           }
 
           stage() {
-            git add views/public-web-booster.json views/public-web-qualified-seeds.json
+            git add views/public-web-booster.json views/public-web-qualified-seeds.json views/public-web-enriched-routes.json
           }
 
           stage
