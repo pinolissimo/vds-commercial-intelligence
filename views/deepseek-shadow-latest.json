@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-02T12:36:35Z",
+  "updated_at": "2026-10-02T12:50:07Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 687,
+    "evaluated_total": 688,
     "agreement_count": 354,
-    "agreement_pct": 51.53,
+    "agreement_pct": 51.45,
     "deepseek_promote": 32,
-    "vds_promote": 248,
+    "vds_promote": 249,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 220
+    "deepseek_demoted_from_vds_promote": 221
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.42,
+    "vds_promote_hot_rate_pct": 2.41,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 338,
-    "cumulative_estimated_cost_usd": 0.143228,
-    "cost_per_evaluated_candidate_usd": 0.00020848,
-    "cost_per_deepseek_promote_usd": 0.00447589,
-    "cost_per_observed_ready_or_contacted_usd": 0.07161421,
-    "latest_request": null
+    "request_count": 339,
+    "cumulative_estimated_cost_usd": 0.143444,
+    "cost_per_evaluated_candidate_usd": 0.00020849,
+    "cost_per_deepseek_promote_usd": 0.00448264,
+    "cost_per_observed_ready_or_contacted_usd": 0.07172225,
+    "latest_request": {
+      "at": "2026-10-02T12:50:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 438,
+      "completion_tokens": 180,
+      "total_tokens": 746,
+      "estimated_cost_usd": 0.00021606
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "303351822cbb2ffd5089e8c74422c570",
-      "evaluated_at": "2026-09-29T13:33:09Z",
-      "organization": "Grafana Labs",
-      "title": "Staff Frontend Engineer - Grafana DataViz | US | Remote",
-      "location": "United States",
-      "opportunity_url": "https://remotelanders.com/jobs/staff-frontend-engineer-grafana-dataviz-us-remote-grafana-labs-1s0ovl",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 81,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Staff Frontend Engineer at Grafana Labs, US-remote; only generic frontend keyword match, no WordPress/WooCommerce/custom web scope, no freelance signal, and geo is US-remote not Spain/Italy/EU-compatible.",
-      "deepseek_risk_flags": [
-        "us_only_remote",
-        "no_wordpress_woocommerce_scope",
-        "staff_level_full_time_role",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016208,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a0132831740e36f9be331c566c461475",
       "evaluated_at": "2026-09-29T13:33:09Z",
@@ -1476,10 +1459,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d5eb3b9eab4ec8bc85c251af2ebff2bc",
+      "evaluated_at": "2026-10-02T12:50:04Z",
+      "organization": "Hostinger",
+      "title": "Web Designer | Based in Europe",
+      "location": "Spain",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/web-designer-based-in-europe-b1a6d43e94",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Web Designer | Based in Europe' at Hostinger, located in Spain, matches web design keywords and remote commercial signal, but the posting lacks explicit stack details (WordPress/WooCommerce/HTML/CSS/JS), employment type, and contract nature, so freelance/contract compatibility cannot be confirmed.",
+      "deepseek_risk_flags": [
+        "no_explicit_stack_details",
+        "employment_type_unknown",
+        "contract_nature_unclear",
+        "design_role_may_skew_visual_not_development",
+        "hostinger_is_product_company_not_agency"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00021606,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-02T12:36:32Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-02T12:50:00Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

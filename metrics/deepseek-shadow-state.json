@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 955,
+  "runs": 956,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -18937,6 +18937,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d5eb3b9eab4ec8bc85c251af2ebff2bc",
+      "evaluated_at": "2026-10-02T12:50:04Z",
+      "organization": "Hostinger",
+      "title": "Web Designer | Based in Europe",
+      "location": "Spain",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/web-designer-based-in-europe-b1a6d43e94",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Web Designer | Based in Europe' at Hostinger, located in Spain, matches web design keywords and remote commercial signal, but the posting lacks explicit stack details (WordPress/WooCommerce/HTML/CSS/JS), employment type, and contract nature, so freelance/contract compatibility cannot be confirmed.",
+      "deepseek_risk_flags": [
+        "no_explicit_stack_details",
+        "employment_type_unknown",
+        "contract_nature_unclear",
+        "design_role_may_skew_visual_not_development",
+        "hostinger_is_product_company_not_agency"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "HIGH",
+      "estimated_cost_usd": 0.00021606,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -22995,9 +23024,21 @@
       "completion_tokens": 185,
       "total_tokens": 745,
       "estimated_cost_usd": 0.00016351
+    },
+    {
+      "at": "2026-10-02T12:50:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 438,
+      "completion_tokens": 180,
+      "total_tokens": 746,
+      "estimated_cost_usd": 0.00021606
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-02T12:36:34Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-02T12:50:04Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
