@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.1",
-  "updated_at": "2026-09-04T06:59:00Z",
+  "schema_version": "1.2",
+  "updated_at": "2026-10-02T08:25:00Z",
   "principle": "Search first for explicit current professional demand and collaboration routes; add a controlled direct-buyer lane for organizations showing a concrete current website/performance/maintenance/rebuild need. Generic directories alone never justify outreach.",
   "segments": {
     "AGENCY_WHITE_LABEL": {
-      "weight": 1.8,
+      "weight": 3,
       "spain": [
         "\"colaborador freelance\" (wordpress OR frontend OR \"desarrollo web\") {territory}",
         "\"colaboradores freelance\" agencia web {territory}",
@@ -13,7 +13,10 @@
         "\"colaboración freelance\" \"diseño web\" {territory}",
         "\"white label\" agencia web freelance España {territory}",
         "\"partner\" \"desarrollo web\" agencia freelance {territory}",
-        "\"autónomo\" wordpress agencia {territory}"
+        "\"autónomo\" wordpress agencia {territory}",
+        "\"capacidad externa\" wordpress agencia {territory}",
+        "\"subcontratación\" desarrollo web agencia {territory}",
+        "\"overflow\" wordpress agency Spain {territory}"
       ],
       "italy": [
         "\"collaboratore freelance\" (wordpress OR frontend OR \"sviluppo web\") {territory}",
@@ -23,11 +26,14 @@
         "\"collaborazione freelance\" \"web designer\" {territory}",
         "\"partita IVA\" wordpress web agency {territory}",
         "\"collaborazione continuativa\" freelance wordpress {territory}",
-        "\"subfornitura\" sviluppo web agenzia {territory}"
+        "\"subfornitura\" sviluppo web agenzia {territory}",
+        "\"capacità esterna\" wordpress agenzia {territory}",
+        "\"subappalto\" sviluppo web agenzia {territory}",
+        "\"overflow\" wordpress agency Italy {territory}"
       ]
     },
     "DIRECT_BUYER_WEB_NEED": {
-      "weight": 1.55,
+      "weight": 1.7,
       "spain": [
         "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") {territory}",
         "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") {territory}",
@@ -46,7 +52,7 @@
       ]
     },
     "DIRECT_JOB": {
-      "weight": 1.0,
+      "weight": 0.4,
       "spain": [
         "wordpress developer freelance remoto España {territory}",
         "frontend developer freelance remoto España {territory}",
@@ -69,20 +75,26 @@
       ]
     },
     "EU_PROJECT": {
-      "weight": 1.5,
+      "weight": 3,
       "spain": [
         "site:europa.eu project dissemination website Spain kickoff 2026",
         "Horizon project \"communication and dissemination\" Spain website 2026",
-        "Interreg project Spain \"website\" dissemination 2026"
+        "Interreg project Spain \"website\" dissemination 2026",
+        "site:cordis.europa.eu/project \"Start date\" 2026 Spain Horizon \"communication\"",
+        "\"Horizon Europe\" kickoff 2026 Spain \"project website\"",
+        "\"communication dissemination\" consortium Spain \"website\" Horizon"
       ],
       "italy": [
         "site:europa.eu project dissemination website Italy kickoff 2026",
         "Horizon project \"communication and dissemination\" Italy website 2026",
-        "Interreg project Italy \"website\" dissemination 2026"
+        "Interreg project Italy \"website\" dissemination 2026",
+        "site:cordis.europa.eu/project \"Start date\" 2026 Italy Horizon \"communication\"",
+        "\"Horizon Europe\" kickoff 2026 Italy \"project website\"",
+        "\"communication dissemination\" consortium Italy \"website\" Horizon"
       ]
     },
     "WPO_MAINTENANCE": {
-      "weight": 1.2,
+      "weight": 0.7,
       "spain": [
         "\"mantenimiento wordpress\" freelance agencia {territory}",
         "\"core web vitals\" freelance España {territory}",
@@ -114,5 +126,13 @@
     "US-only/UK-only geo exclusions",
     "stack-specific roles materially outside truthful VDS capability",
     "stale/closed listings"
-  ]
+  ],
+  "operating_mode": "RED_REVENUE_PRIORITY",
+  "priority_allocation": {
+    "AGENCY_WHITE_LABEL": 40,
+    "EU_PROJECT": 40,
+    "DIRECT_BUYER_WEB_NEED": 20,
+    "WPO_MAINTENANCE": 0,
+    "DIRECT_JOB": 0
+  }
 }
