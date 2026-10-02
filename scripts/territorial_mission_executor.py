@@ -78,15 +78,19 @@ def main():
         started=time.time()
         try:
             region="es-es" if m.get("country")=="Spain" else "it-it" if m.get("country")=="Italy" else "us-en"
-            found=list(ddgs.text(query,max_results=MAX_RESULTS,backend="auto",region=region))
+            found=list(ddgs.text(query,max_results=MAX_RESULTS,backend="duckduckgo",region=region))
             clean=[]
             for x in found:
-                href=x.get("href") or x.get("url") or ""
+                if not isinstance(x,dict):
+                    continue
+                href=x.get("href") or x.get("url") or x.get("link") or ""
+                if not isinstance(href,str) or not href.startswith(("http://","https://")):
+                    continue
                 clean.append({
-                  "title":x.get("title") or "",
+                  "title":x.get("title") or x.get("heading") or "",
                   "url":href,
                   "domain":domain(href),
-                  "body":x.get("body") or x.get("description") or ""
+                  "body":x.get("body") or x.get("description") or x.get("snippet") or ""
                 })
             elapsed=round(time.time()-started,2)
             results.append({**hb_base,"state":"COMPLETED","elapsed_seconds":elapsed,"result_count":len(clean),"results":clean})
