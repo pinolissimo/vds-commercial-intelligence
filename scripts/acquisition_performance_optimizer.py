@@ -13,6 +13,7 @@ CROSS = ROOT / "views/cross-signal-opportunities.json"
 READY = ROOT / "views/it-es-partner-apply-ready-queue.json"
 OUT = ROOT / "views/acquisition-performance.json"
 CMD = ROOT / "config/acquisition-runtime-command.json"
+CI_POLICY = ROOT / "config/continuous-improvement-policy.json"
 
 TURBO_ENABLE_SEMANTIC_PASS = 20
 TURBO_RELEASE_SEMANTIC_PASS = 8
@@ -67,6 +68,8 @@ def main():
     source = load(SOURCE, {"ranking": []})
     territory = load(TERRITORY, {"areas": []})
     previous_runtime = load(CMD, {})
+    ci_policy = load(CI_POLICY, {})
+    owner = ci_policy.get("immutable_owner_directives", {}) or {}
 
     cross = load(CROSS, {"opportunities": []})
     ready = load(READY, {"queue": []})
@@ -216,9 +219,9 @@ def main():
     save(OUT, output)
 
     runtime = {
-        "schema_version": "1.6",
+        "schema_version": "1.8",
         "updated_at": output["updated_at"],
-        "mode": output["adaptive_mode"],
+        "mode": "REVENUE_EMERGENCY" if owner.get("revenue_emergency_mode") else output["adaptive_mode"],
         "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
         "commercial_strategy": {
             "primary_objective": "CONVERT_PROJECT_BASED_WEB_BUYER_INTENT_TO_REVENUE",
@@ -227,9 +230,11 @@ def main():
             "generic_job_application_share_cap": 0.15,
             "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
             "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
-            "target_high_intent_first_contacts_7d": 120,
-            "target_first_contacts_per_business_day": 20,
-            "soft_daily_first_contact_ceiling": 25,
+            "target_high_intent_first_contacts_7d": 750 if owner.get("revenue_emergency_mode") else 120,
+            "target_first_contacts_per_business_day": int(owner.get("target_first_contacts_per_business_day") or 20),
+            "soft_daily_first_contact_ceiling": int(owner.get("maximum_first_contacts_per_business_day") or 25),
+            "target_range_first_contacts_per_business_day": owner.get("target_range_first_contacts_per_business_day") or [20,25],
+            "sender_reputation_throttle": bool(owner.get("sender_reputation_throttle", True)),
             "target_calls_7d": 5,
             "target_proposals_7d": 3,
             "target_wins_7d": 1
@@ -284,7 +289,7 @@ def main():
             "priority": "HIGH_PROJECT_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
             "semantic_pass_snapshot_proxy": semantic_pass,
             "project_based_high_intent_snapshot": project_high_intent,
-            "target_serious_candidate_decisions_per_run": 120,
+            "target_serious_candidate_decisions_per_run": 500 if owner.get("revenue_emergency_mode") else 120,
             "target_high_intent_decisions_first": True,
             "continue_after_individual_blocker": True,
             "send_all_valid_send_now": True,
@@ -296,7 +301,7 @@ def main():
             "enabled": turbo,
             "reason": turbo_reason,
             "quality_gates_unchanged": True,
-            "target_serious_candidate_decisions_per_run": 120,
+            "target_serious_candidate_decisions_per_run": 500 if owner.get("revenue_emergency_mode") else 120,
             "same_run_qualification_and_send": True,
             "send_all_valid_send_now": True,
             "no_batch_minimum": True,
@@ -307,6 +312,36 @@ def main():
             "manual_route_preservation": True,
             "never_promote_from_deepseek_shadow": True,
             "minimum_exploration_pct": 25
+        },
+        "continuous_improvement": {
+            "enabled": True,
+            "policy_file": "config/continuous-improvement-policy.json",
+            "general_rule": ci_policy.get("general_rule"),
+            "anti_regression": ci_policy.get("anti_regression", {}),
+            "optimization_scope": ci_policy.get("optimization_scope", []),
+        },
+        "global_contact_dedup": {
+            "required": True,
+            "absolute_priority": True,
+            "fail_closed": bool(owner.get("dedup_fail_closed", True)),
+            "hard_block_on": [
+                "EXACT_EMAIL_ALREADY_CONTACTED",
+                "ORGANIZATION_ALREADY_CONTACTED",
+                "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+                "HOSTINGER_SENT_MATCH",
+                "GMAIL_SENT_MATCH"
+            ],
+            "pre_send_sequence": [
+                "CHECK_GLOBAL_LEDGER_EXACT_EMAIL",
+                "CHECK_GLOBAL_LEDGER_CORPORATE_DOMAIN",
+                "CHECK_GLOBAL_LEDGER_CANONICAL_ORGANIZATION",
+                "CHECK_HOSTINGER_SENT_EXACT_EMAIL",
+                "CHECK_HOSTINGER_SENT_DOMAIN",
+                "CHECK_GMAIL_SENT_EXACT_EMAIL",
+                "CHECK_GMAIL_SENT_DOMAIN"
+            ],
+            "fail_policy": "If any dedup source is unavailable, ambiguous or stale at execution time, DO NOT SEND.",
+            "follow_up_rule": "Any continuation after FIRST_CONTACT requires owner authorization."
         },
         "route_policy": {
             "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email. Job-style opportunities are commercially relevant only when the engagement can truthfully be proposed as project-based freelance/P.IVA web delivery.",
@@ -322,7 +357,9 @@ def main():
             "Use the buyer-intent ranker only for ordering; it never authorizes sending. "
             "Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. "
             "Measure and optimize for qualified reply, call, proposal and won revenue. "
-            "Process at least 120 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Target 20 qualified first contacts per business day, with a soft ceiling of 25 to protect sender reputation; never lower dedup, route, truthful-fit or legal/channel gates to hit volume. "
+            "CONTINUOUS IMPROVEMENT is the general rule: measure actual outcomes, identify the dominant bottleneck, apply a bounded testable improvement, verify it and preserve gains without weakening immutable gates. "
+            "REVENUE EMERGENCY MODE: process at least 500 serious candidates when supply/runtime permits, continue after blockers, and send every valid unique SEND_NOW identity with no batch minimum. Target 100-200 qualified first contacts per business day and allow up to 300 when valid supply exists; do not throttle for sender reputation. "
+            "ZERO DUPLICATES is absolute: exact email, corporate domain, canonical organization, live Hostinger Sent and live Gmail Sent must all be clear before every FIRST_CONTACT; any ambiguity fails closed. "
             "Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
         )
     }
