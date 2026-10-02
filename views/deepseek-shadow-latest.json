@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-02T06:20:38Z",
+  "updated_at": "2026-10-02T08:28:36Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 682,
-    "agreement_count": 351,
-    "agreement_pct": 51.47,
+    "evaluated_total": 684,
+    "agreement_count": 352,
+    "agreement_pct": 51.46,
     "deepseek_promote": 32,
-    "vds_promote": 247,
+    "vds_promote": 248,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 219
+    "deepseek_demoted_from_vds_promote": 220
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.43,
+    "vds_promote_hot_rate_pct": 2.42,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 334,
-    "cumulative_estimated_cost_usd": 0.14216,
-    "cost_per_evaluated_candidate_usd": 0.00020845,
-    "cost_per_deepseek_promote_usd": 0.0044425,
-    "cost_per_observed_ready_or_contacted_usd": 0.07107993,
+    "request_count": 335,
+    "cumulative_estimated_cost_usd": 0.142658,
+    "cost_per_evaluated_candidate_usd": 0.00020856,
+    "cost_per_deepseek_promote_usd": 0.00445805,
+    "cost_per_observed_ready_or_contacted_usd": 0.07132883,
     "latest_request": {
-      "at": "2026-10-02T06:20:34Z",
+      "at": "2026-10-02T08:28:32Z",
       "model": "deepseek-flash",
       "candidate_count": 2,
       "valid_evaluation_count": 2,
       "billing_band": "peak",
       "prompt_cache_hit_tokens": 640,
-      "prompt_cache_miss_tokens": 187,
-      "completion_tokens": 314,
-      "total_tokens": 1141,
-      "estimated_cost_usd": 0.00050572
+      "prompt_cache_miss_tokens": 199,
+      "completion_tokens": 304,
+      "total_tokens": 1143,
+      "estimated_cost_usd": 0.0004978
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "02fbbdaa30788f70f9f129f5ed8537fe",
-      "evaluated_at": "2026-09-29T10:48:37Z",
-      "organization": "Trading212",
-      "title": "Senior Frontend Engineer (Kotlin) - Frontend Core",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/trading212/senior-frontend-engineer-kotlin-frontend-core-berlin-319795",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 71,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Frontend Engineer role centered on Kotlin, a stack mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; only generic 'frontend' keyword matches, with no WordPress, WooCommerce, or web-maintenance scope and no evidence of freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_kotlin",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_compatibility_evidence",
-        "senior_full_time_onsite_berlin"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00021364,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "c3dd061908e28d437b7cdce3c07ae297",
-      "evaluated_at": "2026-09-29T12:20:51Z",
-      "organization": "Neuverge Tron",
-      "title": "Web Developer (m/f/d)",
-      "location": "Munich, Germany",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/neuverge-tron/web-developer-munich-15138",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 71,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.45,
-      "deepseek_primary_reason": "Title and matched keywords indicate a web developer role with frontend/JavaScript scope, which is broadly compatible with the target profile, but the posting lacks explicit WordPress/WooCommerce, maintenance, performance, or UX/UI detail and provides no employment type, remote state, or contract information.",
-      "deepseek_risk_flags": [
-        "no_employment_type",
-        "no_remote_state",
-        "no_contract_clarity",
-        "location_munich_germany_not_primary_market",
-        "stack_depth_unknown",
-        "no_wordpress_woocommerce_evidence"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00015889,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "7a076a431f0b80b59387dacdc4afa9b3",
       "evaluated_at": "2026-09-29T12:57:05Z",
@@ -1488,10 +1430,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "053d33efbb2c75e0cdfff56c49db9d91",
+      "evaluated_at": "2026-10-02T08:28:32Z",
+      "organization": "AGROB BUCHTAL Solar Ceramics GmbH",
+      "title": "Web Developer (m/w/d)",
+      "location": "Schwarzenfeld",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/agrob-buchtal-solar-ceramics-gmbh/web-developer-schwarzenfeld-404901",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Explicit web developer role with matching stack keywords (HTML, CSS, JavaScript, PHP, CMS) but location is Schwarzenfeld, Germany, outside primary Spain/Italy markets and geo compatibility unverified; 'partner' commercial keyword is weak and not proof of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "freelance_compatibility_unverified",
+        "commercial_signal_weak"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002489,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "553b2db494231cdb16a3f0c7bb2e83c5",
+      "evaluated_at": "2026-10-02T08:28:32Z",
+      "organization": "intercom",
+      "title": "Senior Web Designer, Growth",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/intercom/senior-web-designer-growth-london-221089",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 54,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 48.0,
+      "deepseek_confidence": 0.5,
+      "deepseek_primary_reason": "Web designer role with accessibility/web design overlap but located in London, outside primary Spain/Italy markets; 'collaboration' keyword is generic and not evidence of freelance compatibility, and design-focused scope only partially matches the developer profile.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "freelance_compatibility_unverified",
+        "partial_role_fit",
+        "generic_collaboration_keyword"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002489,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-10-02T06:20:30Z",
+  "source_semantic_updated_at": "2026-10-02T08:28:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
