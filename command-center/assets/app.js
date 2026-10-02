@@ -451,10 +451,22 @@ function renderCommercialStreams(){
 
 function renderCommercialMap(){
   const geo=state.geography||{};
-  const focus=geo.current_focus;
-  setText('scannerLocation',focus?`${focus.locality} · ${focus.region}`:'—');
-  setText('scannerSegment',focus?.segment||'—');
-  setText('scannerQuery',focus?.query||'—');
+  const scans=geo.scan_path||[];
+  const cycleSeconds=Number(geo.cycle_seconds||300);
+  const stepSeconds=scans.length?Math.max(6,cycleSeconds/scans.length):12;
+  const planEpoch=geo.plan_updated_at?new Date(geo.plan_updated_at).getTime():Date.now();
+  const activeScanIndex=()=>{
+    if(!scans.length)return -1;
+    const elapsed=Math.max(0,(Date.now()-planEpoch)/1000);
+    return Math.floor(elapsed/stepSeconds)%scans.length;
+  };
+  let focus=scans[activeScanIndex()]||geo.current_focus||null;
+  const paintScannerText=()=>{
+    setText('scannerLocation',focus?`${focus.locality} · ${focus.region}`:'—');
+    setText('scannerSegment',focus?.segment||'—');
+    setText('scannerQuery',focus?.query||'—');
+  };
+  paintScannerText();
   setText('mappedContacts',geo.summary?.mapped_contacted??0);
   setText('mappedTerritories',geo.summary?.mapped_territories??0);
   setText('scanPoints',geo.summary?.scan_points??0);
@@ -464,6 +476,7 @@ function renderCommercialMap(){
   if(!el||!window.L)return;
   if(state.map){
     if(state.map._vdsRefocusTimer)clearTimeout(state.map._vdsRefocusTimer);
+    if(state.map._vdsScanTimer)clearInterval(state.map._vdsScanTimer);
     state.map.remove();
     state.map=null;
   }
@@ -526,7 +539,6 @@ function renderCommercialMap(){
       .bindPopup(`<strong>${safe(g.locality)}</strong><br><small>${count} attività contattate</small><div class="map-popup-list">${names}</div>`);
   });
 
-  const scans=geo.scan_path||[];
   if(scans.length){
     L.polyline(scans.map(x=>[x.lat,x.lon]),{weight:2,opacity:.25,dashArray:'5 8'}).addTo(map);
     scans.slice(1).forEach(s=>{
@@ -535,13 +547,27 @@ function renderCommercialMap(){
     });
   }
 
+  let radarMarker=null;
   if(focus){
-    const icon=L.divIcon({className:'vds-map-icon radar-wrap',html:'<span class="radar-pulse"><i></i></span>',iconSize:[46,46],iconAnchor:[23,23]});
-    L.marker([focus.lat,focus.lon],{icon,zIndexOffset:1000})
+    const radarIcon=L.divIcon({className:'vds-map-icon radar-wrap',html:'<span class="radar-pulse"><i></i></span>',iconSize:[46,46],iconAnchor:[23,23]});
+    radarMarker=L.marker([focus.lat,focus.lon],{icon:radarIcon,zIndexOffset:1000})
       .addTo(map)
       .bindTooltip(`Ricerca attuale: ${safe(focus.locality)} · ${safe(focus.segment||'')}`,{permanent:false,direction:'top',offset:[0,-18]})
       .bindPopup(`<strong>Scanner VDS</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
     setTimeout(()=>focusCurrent(false),90);
+
+    let lastIndex=activeScanIndex();
+    map._vdsScanTimer=setInterval(()=>{
+      const idx=activeScanIndex();
+      if(idx<0||idx===lastIndex)return;
+      lastIndex=idx;
+      focus=scans[idx];
+      paintScannerText();
+      radarMarker.setLatLng([focus.lat,focus.lon]);
+      radarMarker.setTooltipContent(`Ricerca attuale: ${safe(focus.locality)} · ${safe(focus.segment||'')}`);
+      radarMarker.setPopupContent(`<strong>Scanner VDS</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
+      if(!map._vdsRefocusTimer)focusCurrent(true);
+    },1000);
   }else{
     map.fitBounds([[35.5,-10.2],[47.4,18.8]],{padding:[8,8]});
   }
