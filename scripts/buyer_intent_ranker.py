@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SEEDS = ROOT / "views/high-frequency-discovery-qualified-seeds.json"
+BOOSTER_SEEDS = ROOT / "views/public-web-qualified-seeds.json"
 POLICY = ROOT / "config/buyer-intent-policy.json"
 OUT = ROOT / "views/buyer-intent-priority.json"
 METRICS = ROOT / "metrics/buyer-intent-state.json"
@@ -161,12 +162,14 @@ def tier(score, thresholds):
 
 def main():
     seeds = load(SEEDS, {"semantic_pass": []})
+    booster = load(BOOSTER_SEEDS, {"semantic_pass": []})
+    merged_pass=list(seeds.get("semantic_pass", [])) + list(booster.get("semantic_pass", []))
     policy = load(POLICY, {})
     rows = []
     rejected_support = 0
     project_high_intent = 0
 
-    for row in seeds.get("semantic_pass", []):
+    for row in merged_pass:
         blob = text_blob(row)
         archetype, intent_hits = classify_archetype(blob, policy)
         engagement = engagement_model(blob, row, policy)
@@ -242,7 +245,7 @@ def main():
         engagements[r["engagement_model"]] = engagements.get(r["engagement_model"], 0) + 1
 
     output = {
-        "schema_version": "1.2",
+        "schema_version": "1.3",
         "updated_at": now_utc(),
         "objective": policy.get("objective"),
         "north_star_order": policy.get("north_star_order", []),
@@ -262,13 +265,16 @@ def main():
         "counts_by_engagement_model": engagements,
         "rejected_non_project_support": rejected_support,
         "project_based_high_intent": project_high_intent,
+        "input_breakdown": {"core_semantic_pass": len(seeds.get("semantic_pass", [])), "public_web_booster": len(booster.get("semantic_pass", []))},
         "opportunities": rows
     }
     save(OUT, output)
     save(METRICS, {
-        "schema_version": "1.2",
+        "schema_version": "1.3",
         "updated_at": output["updated_at"],
-        "input_semantic_pass": len(seeds.get("semantic_pass", [])),
+        "input_semantic_pass": len(merged_pass),
+        "input_core_semantic_pass": len(seeds.get("semantic_pass", [])),
+        "input_public_web_booster": len(booster.get("semantic_pass", [])),
         "ranked": len(rows),
         "very_high": counts.get("VERY_HIGH", 0),
         "high": counts.get("HIGH", 0),
