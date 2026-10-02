@@ -48,7 +48,7 @@ class ExecutorContractTests(unittest.TestCase):
         self.assertIn('"es-es"',src)
         self.assertIn('"it-it"',src)
         self.assertIn("backend_pairs",src)
-        self.assertIn('"bing","brave"',src)
+        self.assertIn('"brave","bing"',src)
         self.assertIn('"google","duckduckgo"',src)
         self.assertIn('"provider":"ddgs_multi_engine"',src)
         self.assertIn('"bing.com","google.com","brave.com","duckduckgo.com","yahoo.com"',src)
