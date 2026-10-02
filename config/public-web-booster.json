@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "enabled": true,
   "max_domains_per_run": 30,
   "max_pages_per_domain": 6,
   "request_delay_seconds": 2,
-  "dynamic_browser_fallback": true,
+  "dynamic_browser_fallback": false,
   "playwright_browser": "chromium",
   "respect_robots_txt": true,
   "same_origin_only": true,
@@ -77,5 +77,6 @@
   ],
   "policy": "Public first-party company/project websites only. No login automation, CAPTCHA bypass, stealth/fingerprint evasion, access-control circumvention or residential-proxy rotation. Job boards/social networks are excluded from browser crawling.",
   "max_signal_records": 120,
-  "min_signal_terms": 2
+  "min_signal_terms": 2,
+  "deep_browser_fallback_mode": "SEPARATE_ON_DEMAND_OR_LOW_YIELD"
 }
