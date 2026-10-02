@@ -16,6 +16,7 @@ ROOT=Path(__file__).resolve().parents[1]
 MISSIONS=ROOT/"views/multi-engine-search-missions.json"
 HEARTBEAT=ROOT/"state/mission-execution-heartbeat.json"
 OUT=ROOT/"views/territorial-public-search-results.json"
+CURSOR=ROOT/"state/territorial-executor-cursor.json"
 
 MAX_MISSIONS=8
 MAX_RESULTS=8
@@ -55,7 +56,9 @@ def domain(url):
 def main():
     src=load(MISSIONS,{})
     missions=src.get("missions") or []
-    selected=missions[:MAX_MISSIONS]
+    cursor=load(CURSOR,{})
+    start=int(cursor.get("next_index") or 0) % max(1,len(missions))
+    selected=[missions[(start+i)%len(missions)] for i in range(min(MAX_MISSIONS,len(missions)))] if missions else []
     run_id=f"territorial-{int(time.time())}"
     results=[]
     write_hb(state="RUN_STARTED",run_id=run_id,total_missions=len(selected),completed_missions=0)
@@ -92,8 +95,12 @@ def main():
             results.append({**hb_base,"state":"FAILED","elapsed_seconds":elapsed,"result_count":0,"error":f"{type(exc).__name__}: {exc}"[:500]})
             write_hb(state="MISSION_FAILED",completed_missions=idx,error=f"{type(exc).__name__}: {exc}"[:500],elapsed_seconds=elapsed,**hb_base)
         time.sleep(DELAY_SECONDS)
+    next_index=(start+len(selected))%max(1,len(missions)) if missions else 0
+    save(CURSOR,{"schema_version":"1.0","updated_at":now(),"next_index":next_index,"mission_count":len(missions),"last_run_id":run_id})
+    last=results[-1] if results else {}
     payload={
-      "schema_version":"1.0","updated_at":now(),"run_id":run_id,
+      "schema_version":"1.1","updated_at":now(),"run_id":run_id,
+      "cursor_start_index":start,"cursor_next_index":next_index,
       "source_plan_updated_at":src.get("source_plan_updated_at"),
       "provider":"duckduckgo_via_ddgs","missions_attempted":len(selected),
       "missions_completed":sum(1 for x in results if x.get("state")=="COMPLETED"),
@@ -103,7 +110,14 @@ def main():
       "missions":results
     }
     save(OUT,payload)
-    write_hb(state="RUN_COMPLETED",run_id=run_id,total_missions=len(selected),completed_missions=payload["missions_completed"],result_count=payload["result_count"])
+    write_hb(
+      state="RUN_COMPLETED",run_id=run_id,total_missions=len(selected),
+      completed_missions=payload["missions_completed"],result_count=payload["result_count"],
+      mission_id=last.get("mission_id"),country=last.get("country"),region=last.get("region"),
+      locality=last.get("locality"),segment=last.get("segment"),query=last.get("query"),
+      variant=last.get("variant"),last_mission_state=last.get("state"),
+      cursor_next_index=next_index
+    )
     print(json.dumps({k:payload[k] for k in ("run_id","missions_attempted","missions_completed","missions_failed","result_count")}))
 if __name__=="__main__":
     raise SystemExit(main())
