@@ -15,6 +15,10 @@ CITY={
  ("Spain","Castilla y León","Valladolid"):(41.6523,-4.7245),
  ("Spain","Madrid","Madrid"):(40.4168,-3.7038),
  ("Spain","Andalucía","Sevilla"):(37.3891,-5.9845),
+ ("Spain","Andalucía","Málaga"):(36.7213,-4.4214),
+ ("Spain","Castilla y León","Zamora"):(41.5033,-5.7446),
+ ("Spain","País Vasco","Bizkaia"):(43.2630,-2.9350),
+ ("Spain","País Vasco","Bilbao"):(43.2630,-2.9350),
  ("Spain","Galicia","Lugo"):(43.0121,-7.5559),
  ("Spain","Murcia","Murcia"):(37.9922,-1.1307),
  ("Spain","Asturias","Oviedo"):(43.3619,-5.8494),
@@ -101,7 +105,8 @@ def main():
     now=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
     companies=load("api/v1/companies.json",{}).get("companies",[])
     territory=load("views/territory-yield-radar.json",{})
-    missions=load("views/search-mission-plan.json",{}).get("missions",[])
+    mission_plan=load("views/search-mission-plan.json",{})
+    missions=mission_plan.get("missions",[])
     points=[]
     for c in companies:
         if not c.get("contacted"):continue
@@ -157,7 +162,7 @@ def main():
     for key,meta in stream_meta.items():
         d=streams.get(key,{"indexed":0,"contacted":0,"latest_contact":None})
         stream_rows.append({"stream":key,**meta,**d})
-    payload={"schema_version":"1.0","generated_at":now,"contacted_points":points,"territories":territories,"scan_path":scans,"current_focus":scans[0] if scans else None,"commercial_streams":stream_rows,"summary":{"mapped_contacted":len(points),"mapped_territories":len(territories),"scan_points":len(scans)}}
+    payload={"schema_version":"1.1","generated_at":now,"plan_updated_at":mission_plan.get("updated_at"),"cycle_seconds":300,"contacted_points":points,"territories":territories,"scan_path":scans,"current_focus":scans[0] if scans else None,"commercial_streams":stream_rows,"summary":{"mapped_contacted":len(points),"mapped_territories":len(territories),"scan_points":len(scans)}}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(payload["summary"]))
