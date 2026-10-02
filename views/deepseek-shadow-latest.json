@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-02T11:52:31Z",
+  "updated_at": "2026-10-02T12:13:50Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 686,
-    "agreement_count": 353,
-    "agreement_pct": 51.46,
+    "evaluated_total": 687,
+    "agreement_count": 354,
+    "agreement_pct": 51.53,
     "deepseek_promote": 32,
     "vds_promote": 248,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 337,
-    "cumulative_estimated_cost_usd": 0.143065,
-    "cost_per_evaluated_candidate_usd": 0.00020855,
-    "cost_per_deepseek_promote_usd": 0.00447078,
-    "cost_per_observed_ready_or_contacted_usd": 0.07153246,
-    "latest_request": null
+    "request_count": 338,
+    "cumulative_estimated_cost_usd": 0.143228,
+    "cost_per_evaluated_candidate_usd": 0.00020848,
+    "cost_per_deepseek_promote_usd": 0.00447589,
+    "cost_per_observed_ready_or_contacted_usd": 0.07161421,
+    "latest_request": {
+      "at": "2026-10-02T12:13:47Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 176,
+      "completion_tokens": 185,
+      "total_tokens": 745,
+      "estimated_cost_usd": 0.00016351
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "cebca8dec222b560f5192290508fa449",
-      "evaluated_at": "2026-09-29T13:33:09Z",
-      "organization": "Zoe",
-      "title": "Full Stack Engineer (Front-end Focus)",
-      "location": "UK",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/zoe/full-stack-engineer-front-end-focus-uk-64580",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 62.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Full Stack Engineer (Front-end Focus) with strong keyword overlap (cms, web performance, ux, web design, accessibility) and commercial keywords collaboration/partner/remote, but location is UK and geo bucket is Spain-inclusive; no explicit WordPress/WooCommerce or freelance contract evidence.",
-      "deepseek_risk_flags": [
-        "uk_location_vs_spain_bucket",
-        "no_explicit_wordpress_woocommerce",
-        "partner_mention_not_proof_of_freelance",
-        "full_stack_scope_may_exceed_profile"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016208,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "303351822cbb2ffd5089e8c74422c570",
       "evaluated_at": "2026-09-29T13:33:09Z",
@@ -1475,10 +1458,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e76a861b804f07a8f216592c9c212ce5",
+      "evaluated_at": "2026-10-02T12:13:47Z",
+      "organization": "Cision",
+      "title": "Director of Web Platform & Engineering",
+      "location": "UK",
+      "opportunity_url": "https://jobicy.com/jobs/154400-director-of-web-platform-engineering",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Director-level web platform engineering leadership role at Cision (UK) — a senior full-time management position, not a freelance/contract web-development opportunity; keyword overlap (WordPress, CMS, front-end, web performance) reflects stack adjacency but the role scope and seniority are incompatible with freelance acquisition.",
+      "deepseek_risk_flags": [
+        "director-level seniority",
+        "likely full-time employment",
+        "UK-based location unclear for EU-remote freelance",
+        "no explicit freelance/contract signal",
+        "commercial keyword 'partner'/'collaboration' is generic, not proof of external collaboration"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016351,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-02T11:52:26Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-02T12:13:42Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
