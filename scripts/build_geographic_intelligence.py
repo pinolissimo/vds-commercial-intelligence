@@ -117,7 +117,19 @@ def main():
           "company_key":c.get("key")
         })
     territories=[]
-    for a in territory.get("areas") or territory.get("ranking") or []:
+    raw_areas=territory.get("areas") or territory.get("ranking") or []
+    if isinstance(raw_areas,dict):
+        area_rows=[]
+        for key,val in raw_areas.items():
+            if not isinstance(val,dict): continue
+            row=dict(val)
+            parts=str(key).split("|")
+            if len(parts)>=3:
+                row.setdefault("country",parts[0]); row.setdefault("region",parts[1]); row.setdefault("province",parts[2])
+            area_rows.append(row)
+    else:
+        area_rows=[x for x in raw_areas if isinstance(x,dict)]
+    for a in area_rows:
         country=a.get("country");region=a.get("region");place=a.get("province") or a.get("territory")
         xy=coords(country,region,place) if country and region and place else None
         if xy:
