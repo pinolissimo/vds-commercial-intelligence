@@ -452,6 +452,9 @@ function renderCommercialStreams(){
 function renderCommercialMap(){
   const geo=state.geography||{};
   const scans=geo.scan_path||[];
+  const actual=geo.actual_execution_focus||null;
+  const actualAgeMs=actual?.updated_at?Math.max(0,Date.now()-new Date(actual.updated_at).getTime()):Infinity;
+  const actualFresh=Boolean(actual?.execution_is_real)&&Number.isFinite(actualAgeMs)&&actualAgeMs<=8*60*1000;
   const cycleSeconds=Number(geo.cycle_seconds||300);
   const stepSeconds=scans.length?Math.max(6,cycleSeconds/scans.length):12;
   const planEpoch=geo.plan_updated_at?new Date(geo.plan_updated_at).getTime():Date.now();
@@ -460,10 +463,10 @@ function renderCommercialMap(){
     const elapsed=Math.max(0,(Date.now()-planEpoch)/1000);
     return Math.floor(elapsed/stepSeconds)%scans.length;
   };
-  let focus=scans[activeScanIndex()]||geo.current_focus||null;
+  let focus=actualFresh?actual:(scans[activeScanIndex()]||geo.current_focus||null);
   const paintScannerText=()=>{
     setText('scannerLocation',focus?`${focus.locality} · ${focus.region}`:'—');
-    setText('scannerSegment',focus?.segment||'—');
+    setText('scannerSegment',focus?`${focus.segment||'—'} · ${actualFresh?'REAL EXECUTION':'SCAN PLAN'}`:'—');
     setText('scannerQuery',focus?.query||'—');
   };
   paintScannerText();
@@ -558,6 +561,7 @@ function renderCommercialMap(){
 
     let lastIndex=activeScanIndex();
     map._vdsScanTimer=setInterval(()=>{
+      if(actualFresh)return;
       const idx=activeScanIndex();
       if(idx<0||idx===lastIndex)return;
       lastIndex=idx;
