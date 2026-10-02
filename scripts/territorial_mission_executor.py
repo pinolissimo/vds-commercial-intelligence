@@ -20,6 +20,7 @@ CURSOR=ROOT/"state/territorial-executor-cursor.json"
 
 MAX_MISSIONS=6
 MAX_RESULTS=6
+FETCH_RESULTS=12
 DELAY_SECONDS=1.0
 
 def now():
@@ -41,7 +42,7 @@ def write_hb(**kw):
       "schema_version":"1.0",
       "updated_at":now(),
       "executor":"territorial_mission_executor",
-      "provider":"duckduckgo_via_ddgs",
+      "provider":"ddgs_multi_engine",
       "execution_is_real":True,
       "search_results_are_discovery_only":True,
       "anti_evasion":"NO_PROXY_NO_STEALTH_NO_CAPTCHA_BYPASS",
@@ -78,12 +79,12 @@ def main():
         started=time.time()
         try:
             region="es-es" if m.get("country")=="Spain" else "it-it" if m.get("country")=="Italy" else "us-en"
-            backend_pairs=[("bing","brave"),("google","duckduckgo"),("brave","bing")]
+            backend_pairs=[("brave","bing"),("google","duckduckgo"),("brave","bing")]
             selected_backends=backend_pairs[(idx-1)%len(backend_pairs)]
             clean=[]; backend_used=None; backend_errors=[]
             for backend in selected_backends:
                 try:
-                    found=list(ddgs.text(query,max_results=MAX_RESULTS,backend=backend,region=region))
+                    found=list(ddgs.text(query,max_results=FETCH_RESULTS,backend=backend,region=region))
                 except Exception as backend_exc:
                     backend_errors.append(f"{backend}:{type(backend_exc).__name__}")
                     continue
@@ -93,12 +94,17 @@ def main():
                     href=x.get("href") or x.get("url") or x.get("link") or ""
                     if not isinstance(href,str) or not href.startswith(("http://","https://")):
                         continue
+                    h=domain(href)
+                    if h in {"bing.com","google.com","brave.com","duckduckgo.com","yahoo.com"}:
+                        continue
                     clean.append({
                       "title":x.get("title") or x.get("heading") or "",
                       "url":href,
-                      "domain":domain(href),
+                      "domain":h,
                       "body":x.get("body") or x.get("description") or x.get("snippet") or ""
                     })
+                    if len(clean)>=MAX_RESULTS:
+                        break
                 if clean:
                     backend_used=backend
                     break
@@ -119,7 +125,7 @@ def main():
       "schema_version":"1.1","updated_at":now(),"run_id":run_id,
       "cursor_start_index":start,"cursor_next_index":next_index,
       "source_plan_updated_at":src.get("source_plan_updated_at"),
-      "provider":"duckduckgo_via_ddgs","missions_attempted":len(selected),
+      "provider":"ddgs_multi_engine","missions_attempted":len(selected),
       "missions_completed":sum(1 for x in results if x.get("state")=="COMPLETED"),
       "missions_failed":sum(1 for x in results if x.get("state")=="FAILED"),
       "result_count":sum(int(x.get("result_count") or 0) for x in results),
