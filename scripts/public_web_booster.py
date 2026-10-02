@@ -1,0 +1,134 @@
+#!/usr/bin/env python3
+"""Public-web intelligence booster for VDS.
+
+Uses Scrapy for ordinary public pages and Playwright as a JS-rendering fallback.
+Explicitly excludes social platforms whose terms prohibit automated scraping.
+No login automation, stealth plugins, proxy rotation or access-control bypass.
+"""
+from __future__ import annotations
+import json, re, subprocess, sys
+from datetime import datetime, timezone
+from pathlib import Path
+from urllib.parse import urlparse
+
+ROOT=Path(__file__).resolve().parents[1]
+CFG=ROOT/"config/public-web-booster.json"
+OUT=ROOT/"views/public-web-booster.json"
+SEEDS=ROOT/"views/buyer-intent-priority.json"
+
+def load(path,default):
+    try:
+        v=json.loads(path.read_text(encoding="utf-8")); return v if isinstance(v,dict) else default
+    except Exception: return default
+
+def host(url):
+    try:return (urlparse(url).hostname or "").lower()
+    except Exception:return ""
+
+def collect_seeds(limit):
+    data=load(SEEDS,{})
+    rows=data.get("ranking") or data.get("opportunities") or data.get("items") or []
+    urls=[]
+    def walk(v):
+        if isinstance(v,str) and v.startswith(("http://","https://")): urls.append(v)
+        elif isinstance(v,list):
+            for x in v: walk(x)
+        elif isinstance(v,dict):
+            for x in v.values(): walk(x)
+    for row in rows[:300]: walk(row)
+    seen=set(); out=[]
+    for u in urls:
+        h=host(u)
+        if not h or h in seen: continue
+        seen.add(h); out.append(u)
+        if len(out)>=limit: break
+    return out
+
+def main():
+    cfg=load(CFG,{})
+    blocked=set(cfg.get("blocked_domains") or [])
+    seeds=[u for u in collect_seeds(int(cfg.get("max_domains_per_run",30))) if host(u) not in blocked]
+    now=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+    # The actual crawler is generated as a tiny Scrapy process so the booster remains isolated
+    # from the revenue engine. Playwright is imported only as a fallback.
+    results=[]
+    signal_terms=[x.lower() for x in cfg.get("signal_terms",[])]
+    path_terms=[x.lower() for x in cfg.get("interesting_path_terms",[])]
+    max_pages=int(cfg.get("max_pages_per_domain",8))
+
+    try:
+        import scrapy
+        from scrapy.crawler import CrawlerProcess
+        from scrapy.spiders import Spider
+    except Exception as exc:
+        OUT.write_text(json.dumps({"schema_version":"1.0","updated_at":now,"status":"DEPENDENCY_MISSING","error":str(exc),"signals":[]},indent=2)+"\n")
+        return 0
+
+    class BoosterSpider(Spider):
+        name="vds_public_booster"
+        custom_settings={
+          "ROBOTSTXT_OBEY":bool(cfg.get("respect_robots_txt",True)),
+          "DOWNLOAD_DELAY":float(cfg.get("request_delay_seconds",2.0)),
+          "CONCURRENT_REQUESTS_PER_DOMAIN":1,
+          "LOG_LEVEL":"ERROR",
+          "USER_AGENT":"VDS-Commercial-Research/1.0 (+https://www.visualdesignstudio.es/)"
+        }
+        start_urls=seeds
+        def __init__(self,*a,**kw):
+            super().__init__(*a,**kw); self.counts={}
+        def parse(self,response):
+            h=host(response.url); self.counts[h]=self.counts.get(h,0)+1
+            text=" ".join(response.css("body *::text").getall())
+            compact=re.sub(r"\s+"," ",text).strip()
+            matched=sorted({t for t in signal_terms if t in compact.lower()})
+            emails=sorted(set(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",compact,re.I)))[:10]
+            if matched or emails:
+                results.append({"url":response.url,"domain":h,"matched_terms":matched,"emails":emails,"text_sample":compact[:900],"render":"SCRAPY"})
+            if self.counts[h]>=max_pages:return
+            for href in response.css("a::attr(href)").getall():
+                absolute=response.urljoin(href); ah=host(absolute)
+                if ah!=h:return_or_none=None
+                if ah==h and any(t in absolute.lower() for t in path_terms):
+                    yield response.follow(href,self.parse)
+
+    process=CrawlerProcess()
+    process.crawl(BoosterSpider)
+    process.start()
+
+    # Playwright fallback only for seed domains with no useful Scrapy result.
+    if cfg.get("dynamic_browser_fallback",True):
+        hit_domains={r["domain"] for r in results}
+        missing=[u for u in seeds if host(u) not in hit_domains][:8]
+        if missing:
+            try:
+                from playwright.sync_api import sync_playwright
+                with sync_playwright() as p:
+                    browser=p.chromium.launch(headless=True)
+                    for u in missing:
+                        try:
+                            page=browser.new_page()
+                            page.goto(u,wait_until="domcontentloaded",timeout=20000)
+                            compact=re.sub(r"\s+"," ",page.locator("body").inner_text(timeout=5000)).strip()
+                            matched=sorted({t for t in signal_terms if t in compact.lower()})
+                            emails=sorted(set(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",compact,re.I)))[:10]
+                            if matched or emails: results.append({"url":u,"domain":host(u),"matched_terms":matched,"emails":emails,"text_sample":compact[:900],"render":"PLAYWRIGHT"})
+                            page.close()
+                        except Exception: pass
+                    browser.close()
+            except Exception: pass
+
+    dedup={}
+    for r in results:
+        key=(r["domain"],r["url"])
+        if key not in dedup or len(r["matched_terms"])>len(dedup[key]["matched_terms"]): dedup[key]=r
+    payload={
+      "schema_version":"1.0","updated_at":now,"status":"OK",
+      "policy":"PUBLIC_WEB_ONLY_NO_EVASION",
+      "domains_attempted":len({host(u) for u in seeds}),
+      "signals":list(dedup.values())
+    }
+    OUT.parent.mkdir(parents=True,exist_ok=True)
+    OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
+    print(json.dumps({"status":"OK","domains":payload["domains_attempted"],"signals":len(payload["signals"])}))
+    return 0
+if __name__=="__main__": raise SystemExit(main())
