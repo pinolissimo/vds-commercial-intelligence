@@ -139,6 +139,7 @@ def main():
     mission_plan=load("views/search-mission-plan.json",{})
     missions=mission_plan.get("missions",[])
     execution=load("state/mission-execution-heartbeat.json",{})
+    execution_multi=load("state/mission-execution-heartbeats.json",{})
     execution_results=load("views/territorial-public-search-results.json",{})
     points=[]
     for c in companies:
@@ -195,8 +196,22 @@ def main():
     for key,meta in stream_meta.items():
         d=streams.get(key,{"indexed":0,"contacted":0,"latest_contact":None})
         stream_rows.append({"stream":key,**meta,**d})
-    actual_focus=None
-    if execution.get("locality") and execution.get("state") in {"MISSION_STARTED","MISSION_COMPLETED","MISSION_FAILED","RUN_COMPLETED"}:
+    actual_foci=[]
+    for worker in execution_multi.get("workers") or []:
+        if not isinstance(worker,dict) or not worker.get("locality"): continue
+        xy=coords(worker.get("country"),worker.get("region"),worker.get("locality"))
+        if not xy: continue
+        actual_foci.append({
+          "worker_id":worker.get("worker_id"),"lat":xy[0],"lon":xy[1],
+          "country":worker.get("country"),"region":worker.get("region"),"locality":worker.get("locality"),
+          "segment":worker.get("segment"),"query":worker.get("query"),"mission_id":worker.get("mission_id"),
+          "state":worker.get("state"),"provider":execution_multi.get("provider") or execution.get("provider"),
+          "updated_at":worker.get("updated_at"),"result_count":worker.get("result_count"),
+          "backend_used":worker.get("backend_used"),"execution_is_real":bool(execution_multi.get("execution_is_real"))
+        })
+    actual_foci.sort(key=lambda x:(x.get("updated_at") or ""),reverse=True)
+    actual_focus=actual_foci[0] if actual_foci else None
+    if actual_focus is None and execution.get("locality") and execution.get("state") in {"MISSION_STARTED","MISSION_COMPLETED","MISSION_FAILED","RUN_COMPLETED"}:
         xy=coords(execution.get("country"),execution.get("region"),execution.get("locality"))
         if xy:
             actual_focus={
@@ -210,9 +225,13 @@ def main():
       "contacted_points":points,"territories":territories,"scan_path":scans,
       "current_focus":actual_focus or (scans[0] if scans else None),
       "actual_execution_focus":actual_focus,
+      "actual_execution_foci":actual_foci,
       "execution_summary":{
         "heartbeat_state":execution.get("state"),"heartbeat_updated_at":execution.get("updated_at"),
-        "provider":execution.get("provider"),"execution_is_real":execution.get("execution_is_real",False),
+        "provider":execution_multi.get("provider") or execution.get("provider"),
+        "execution_is_real":execution_multi.get("execution_is_real",execution.get("execution_is_real",False)),
+        "parallel":execution_multi.get("parallel",False),"worker_count":execution_multi.get("worker_count",1),
+        "active_workers":execution_multi.get("active_workers",0),
         "last_run_id":execution_results.get("run_id"),"missions_attempted":execution_results.get("missions_attempted"),
         "missions_completed":execution_results.get("missions_completed"),"missions_failed":execution_results.get("missions_failed"),
         "result_count":execution_results.get("result_count")
