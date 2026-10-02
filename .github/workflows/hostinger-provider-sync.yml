@@ -8,6 +8,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/sync_hostinger_mail.py'
+      - 'scripts/global_contact_ledger.py'
+      - 'data/gmail-sent-contact-snapshot.json'
       - '.github/workflows/hostinger-provider-sync.yml'
   schedule:
     - cron: '*/10 * * * *'
@@ -53,6 +55,13 @@ jobs:
           python3 -m py_compile scripts/sync_hostinger_mail.py
           python3 scripts/sync_hostinger_mail.py
 
+      - name: Build unified global contact ledger
+        if: steps.hostinger-secret.outputs.configured == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/global_contact_ledger.py --build
+
       - name: Reconcile global dedup caches
         if: steps.hostinger-secret.outputs.configured == 'true'
         shell: bash
@@ -82,6 +91,7 @@ jobs:
 
           rebuild_all() {
             python3 scripts/sync_hostinger_mail.py
+            python3 scripts/global_contact_ledger.py --build
             python3 scripts/revenue_flow_preflight.py --repair
             python3 scripts/build_command_center_api.py
             python3 scripts/enrich_command_center_funnel.py
@@ -101,6 +111,7 @@ jobs:
               views/provider-contact-suppression-index.json \
               views/global-sent-email-index.json \
               views/global-organization-index.json \
+              views/global-contact-ledger.json \
               api/v1
             if git diff --cached --quiet; then
               return 1
