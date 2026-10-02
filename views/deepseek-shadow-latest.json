@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-02T13:13:10Z",
+  "updated_at": "2026-10-02T14:15:46Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 688,
+    "evaluated_total": 689,
     "agreement_count": 354,
-    "agreement_pct": 51.45,
+    "agreement_pct": 51.38,
     "deepseek_promote": 32,
-    "vds_promote": 249,
+    "vds_promote": 250,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 221
+    "deepseek_demoted_from_vds_promote": 222
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.41,
+    "vds_promote_hot_rate_pct": 2.4,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 339,
-    "cumulative_estimated_cost_usd": 0.143444,
-    "cost_per_evaluated_candidate_usd": 0.00020849,
-    "cost_per_deepseek_promote_usd": 0.00448264,
-    "cost_per_observed_ready_or_contacted_usd": 0.07172225,
-    "latest_request": null
+    "request_count": 340,
+    "cumulative_estimated_cost_usd": 0.143608,
+    "cost_per_evaluated_candidate_usd": 0.00020843,
+    "cost_per_deepseek_promote_usd": 0.00448776,
+    "cost_per_observed_ready_or_contacted_usd": 0.07180411,
+    "latest_request": {
+      "at": "2026-10-02T14:15:43Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 177,
+      "completion_tokens": 185,
+      "total_tokens": 746,
+      "estimated_cost_usd": 0.00016373
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a0132831740e36f9be331c566c461475",
-      "evaluated_at": "2026-09-29T13:33:09Z",
-      "organization": "Grafana Labs",
-      "title": "Staff Frontend Engineer - Grafana DataViz | Canada | Remote",
-      "location": "Canada",
-      "opportunity_url": "https://remotelanders.com/jobs/staff-frontend-engineer-grafana-dataviz-canada-remote-grafana-labs-1shqi0",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 81,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Staff Frontend Engineer at Grafana Labs, Canada-remote; only generic frontend keyword match, no WordPress/WooCommerce/custom web scope, no freelance signal, and geo is Canada-remote not Spain/Italy/EU-compatible.",
-      "deepseek_risk_flags": [
-        "canada_only_remote",
-        "no_wordpress_woocommerce_scope",
-        "staff_level_full_time_role",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016208,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "7ba431c58c715e7e11a2d2960550c588",
       "evaluated_at": "2026-09-29T13:33:09Z",
@@ -1477,10 +1460,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "87a80f2c7fe8418e1624e606babbfddd",
+      "evaluated_at": "2026-10-02T14:15:43Z",
+      "organization": "Qonto",
+      "title": "Senior Web Engineer (React) - Remote Friendly",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/qonto/senior-web-engineer-react-remote-friendly-paris-445363",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 73,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Title explicitly frames the role as React-centric ('Senior Web Engineer (React)'), which is a core stack mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS freelance profile; matched keywords (css, frontend, html, ui) are generic and do not establish meaningful WordPress or web-performance scope.",
+      "deepseek_risk_flags": [
+        "react_core_stack_mismatch",
+        "no_wordpress_or_woocommerce_scope",
+        "no_explicit_freelance_or_contract_signal",
+        "geo_uncertain_paris_based_remote_friendly"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00016373,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-02T13:13:05Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-02T14:15:39Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
