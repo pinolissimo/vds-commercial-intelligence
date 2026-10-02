@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 948,
+  "runs": 949,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -18880,6 +18880,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "aeec9d5b04885c47823f5690ff31dce6",
+      "evaluated_at": "2026-10-02T11:16:46Z",
+      "organization": "Lemon.io",
+      "title": "Senior back-end Engineer",
+      "location": "Europe, USA, UK, Canada, Australia, Ireland, Switzerland, Singapore, Mexico, Iceland, Norway",
+      "opportunity_url": "https://remotive.com/remote-jobs/software-development/senior-back-end-engineer-2091132",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is a Senior back-end Engineer position; despite matched keywords (javascript, php, ui, ux, wordpress), the core role is backend engineering, not a WordPress/frontend web-development scope, so truthful stack fit is weak and the title signals a backend-heavy core role.",
+      "deepseek_risk_flags": [
+        "backend_core_role",
+        "keyword_mismatch_risk",
+        "no_explicit_freelance_contract_evidence",
+        "geo_bucket_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00020572,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -22914,9 +22942,21 @@
       "completion_tokens": 152,
       "total_tokens": 736,
       "estimated_cost_usd": 0.00020154
+    },
+    {
+      "at": "2026-10-02T11:16:46Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 436,
+      "completion_tokens": 165,
+      "total_tokens": 729,
+      "estimated_cost_usd": 0.00020572
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-02T10:58:19Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-02T11:16:46Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
