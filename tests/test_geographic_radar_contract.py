@@ -13,9 +13,8 @@ class GeographicRadarContractTests(unittest.TestCase):
         self.assertEqual(geo.coords("Spain","Castilla y León","Zamora"), (41.5033,-5.7446))
         self.assertEqual(geo.coords("Spain","País Vasco","Bizkaia"), (43.2630,-2.9350))
 
-    def test_unknown_locality_can_fall_back_only_inside_same_region(self):
-        xy=geo.coords("Italy","Lazio","Unknown")
-        self.assertEqual(xy, geo.coords("Italy","Lazio","Roma"))
+    def test_unknown_locality_is_not_silently_mapped_to_regional_capital(self):
+        self.assertIsNone(geo.coords("Italy","Lazio","Unknown"))
         self.assertIsNone(geo.coords("Spain","Unknown","Nowhere"))
 
     def test_execution_state_contract_accepts_completed_run_focus(self):
