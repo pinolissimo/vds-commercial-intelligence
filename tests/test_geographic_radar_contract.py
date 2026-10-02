@@ -50,6 +50,8 @@ class ExecutorContractTests(unittest.TestCase):
         self.assertIn("backend_pairs",src)
         self.assertIn('"bing","brave"',src)
         self.assertIn('"google","duckduckgo"',src)
+        self.assertIn('"provider":"ddgs_multi_engine"',src)
+        self.assertIn('"bing.com","google.com","brave.com","duckduckgo.com","yahoo.com"',src)
         self.assertIn("NO_PROXY_NO_STEALTH_NO_CAPTCHA_BYPASS",src)
         self.assertIn("search_results_are_discovery_only",src)
         self.assertIn('state="RUN_COMPLETED"',src)
