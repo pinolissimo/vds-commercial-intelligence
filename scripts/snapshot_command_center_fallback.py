@@ -14,7 +14,7 @@ API=ROOT/"api/v1"
 OUT=ROOT/"command-center/fallback"
 FILES=[
  "dashboard.json","today.json","companies.json","territory-productivity.json",
- "opportunities.json","sources.json","health.json","eu-project-radar.json"
+ "opportunities.json","sources.json","health.json","eu-project-radar.json","geography.json"
 ]
 
 def main():
