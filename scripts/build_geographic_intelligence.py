@@ -107,6 +107,8 @@ def main():
     territory=load("views/territory-yield-radar.json",{})
     mission_plan=load("views/search-mission-plan.json",{})
     missions=mission_plan.get("missions",[])
+    execution=load("state/mission-execution-heartbeat.json",{})
+    execution_results=load("views/territorial-public-search-results.json",{})
     points=[]
     for c in companies:
         if not c.get("contacted"):continue
@@ -162,7 +164,30 @@ def main():
     for key,meta in stream_meta.items():
         d=streams.get(key,{"indexed":0,"contacted":0,"latest_contact":None})
         stream_rows.append({"stream":key,**meta,**d})
-    payload={"schema_version":"1.1","generated_at":now,"plan_updated_at":mission_plan.get("updated_at"),"cycle_seconds":300,"contacted_points":points,"territories":territories,"scan_path":scans,"current_focus":scans[0] if scans else None,"commercial_streams":stream_rows,"summary":{"mapped_contacted":len(points),"mapped_territories":len(territories),"scan_points":len(scans)}}
+    actual_focus=None
+    if execution.get("locality") and execution.get("state") in {"MISSION_STARTED","MISSION_COMPLETED","MISSION_FAILED"}:
+        xy=coords(execution.get("country"),execution.get("region"),execution.get("locality"))
+        if xy:
+            actual_focus={
+              "lat":xy[0],"lon":xy[1],"country":execution.get("country"),"region":execution.get("region"),
+              "locality":execution.get("locality"),"segment":execution.get("segment"),"query":execution.get("query"),
+              "mission_id":execution.get("mission_id"),"state":execution.get("state"),"provider":execution.get("provider"),
+              "updated_at":execution.get("updated_at"),"result_count":execution.get("result_count"),
+              "execution_is_real":bool(execution.get("execution_is_real"))
+            }
+    payload={"schema_version":"1.2","generated_at":now,"plan_updated_at":mission_plan.get("updated_at"),"cycle_seconds":300,
+      "contacted_points":points,"territories":territories,"scan_path":scans,
+      "current_focus":actual_focus or (scans[0] if scans else None),
+      "actual_execution_focus":actual_focus,
+      "execution_summary":{
+        "heartbeat_state":execution.get("state"),"heartbeat_updated_at":execution.get("updated_at"),
+        "provider":execution.get("provider"),"execution_is_real":execution.get("execution_is_real",False),
+        "last_run_id":execution_results.get("run_id"),"missions_attempted":execution_results.get("missions_attempted"),
+        "missions_completed":execution_results.get("missions_completed"),"missions_failed":execution_results.get("missions_failed"),
+        "result_count":execution_results.get("result_count")
+      },
+      "commercial_streams":stream_rows,
+      "summary":{"mapped_contacted":len(points),"mapped_territories":len(territories),"scan_points":len(scans)}}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(payload["summary"]))
