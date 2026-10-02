@@ -60,18 +60,28 @@ async function fetchGithubFile(url,withAuth){
   return fetch(url,{headers:withAuth?authHeaders():publicHeaders(),cache:'no-store'});
 }
 
+async function staticFallback(path){
+  if(!path.startsWith('api/v1/'))throw new Error('NO_STATIC_FALLBACK');
+  const name=path.split('/').pop();
+  const r=await fetch(`fallback/${name}?v=${Date.now()}`,{cache:'no-store'});
+  if(!r.ok)throw new Error(`fallback/${name}: HTTP ${r.status}`);
+  const data=await r.json();
+  data._vds_data_mode='LAST_KNOWN_GOOD';
+  return data;
+}
+
 async function ghFile(path){
   const url=`${GH}/repos/${OWNER}/${REPO}/contents/${path}?ref=${encodeURIComponent(REF)}&v=${Date.now()}`;
-  let r=await fetchGithubFile(url,Boolean(state.token));
-  if(state.token&&(r.status===401||r.status===403)){
-    r=await fetchGithubFile(url,false);
+  try{
+    let r=await fetchGithubFile(url,Boolean(state.token));
+    if(state.token&&(r.status===401||r.status===403))r=await fetchGithubFile(url,false);
+    if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);
+    const data=await r.json();
+    if(data&&data.encoding==='base64'&&data.content)return JSON.parse(decode64Utf8(data.content));
+    throw new Error(`${path}: formato inatteso`);
+  }catch(err){
+    try{return await staticFallback(path)}catch(_){throw err}
   }
-  if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);
-  const data=await r.json();
-  if(data&&data.encoding==='base64'&&data.content){
-    return JSON.parse(decode64Utf8(data.content));
-  }
-  throw new Error(`${path}: formato inatteso`);
 }
 
 async function validateToken(token){
