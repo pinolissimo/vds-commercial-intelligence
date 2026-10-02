@@ -1,7 +1,7 @@
 {
-  "schema_version": "1.6",
-  "updated_at": "2026-10-02T12:31:29Z",
-  "mode": "MIDDLE_FUNNEL_TURBO",
+  "schema_version": "1.8",
+  "updated_at": "2026-10-02T12:35:40Z",
+  "mode": "REVENUE_EMERGENCY",
   "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
   "commercial_strategy": {
     "primary_objective": "CONVERT_PROJECT_BASED_WEB_BUYER_INTENT_TO_REVENUE",
@@ -14,9 +14,14 @@
     "generic_job_application_share_cap": 0.15,
     "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
     "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
-    "target_high_intent_first_contacts_7d": 120,
-    "target_first_contacts_per_business_day": 20,
-    "soft_daily_first_contact_ceiling": 25,
+    "target_high_intent_first_contacts_7d": 750,
+    "target_first_contacts_per_business_day": 150,
+    "soft_daily_first_contact_ceiling": 300,
+    "target_range_first_contacts_per_business_day": [
+      100,
+      200
+    ],
+    "sender_reputation_throttle": false,
     "target_calls_7d": 5,
     "target_proposals_7d": 3,
     "target_wins_7d": 1
@@ -77,11 +82,11 @@
     "joa_it_webdesigner_title": 1.45,
     "nomado_frontend": 1.45,
     "remotejobs_contract_wordpress": 1.09,
-    "remoteok": 0.94,
     "wwr_frontend": 0.91,
     "remotejobs_contract_webdev": 0.89,
     "joa_eu_remote_webdev": 0.86,
     "jobicy_europe": 0.83,
+    "remoteok": 0.83,
     "remotive": 0.8,
     "nomado_webdev": 0.76,
     "arbeitnow_eu": 0.7,
@@ -90,10 +95,11 @@
     "wwr_sysadmin": 0.68,
     "remotejobs_contract_frontend": 0.67,
     "nomado_wordpress": 0.59,
-    "remote_landers": 0.55,
     "joa_es_wordpress_body": 0.55,
     "joa_it_wordpress_body": 0.55,
-    "joa_es_web_performance_body": 0.55
+    "himalayas": 0.55,
+    "joa_es_web_performance_body": 0.55,
+    "remote_landers": 0.47
   },
   "top_sources": [
     "joa_es_frontend_title",
@@ -101,7 +107,7 @@
     "joa_it_webdesigner_title",
     "nomado_frontend",
     "remotejobs_contract_wordpress",
-    "remoteok"
+    "wwr_frontend"
   ],
   "buyer_intent": {
     "very_high": 0,
@@ -109,11 +115,11 @@
     "high_total": 7,
     "project_based_high_intent": 7,
     "archetypes": {
-      "SME_WEB_IMPROVEMENT": 90,
+      "SME_WEB_IMPROVEMENT": 88,
       "AGENCY_EXTERNAL_CAPACITY": 3
     },
     "engagement_models": {
-      "PROJECT_BASED_WEB_DELIVERY": 93
+      "PROJECT_BASED_WEB_DELIVERY": 91
     },
     "priority_view": "views/buyer-intent-priority.json"
   },
@@ -124,9 +130,9 @@
   },
   "qualified_backlog_policy": {
     "priority": "HIGH_PROJECT_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
-    "semantic_pass_snapshot_proxy": 93,
+    "semantic_pass_snapshot_proxy": 91,
     "project_based_high_intent_snapshot": 7,
-    "target_serious_candidate_decisions_per_run": 120,
+    "target_serious_candidate_decisions_per_run": 500,
     "target_high_intent_decisions_first": true,
     "continue_after_individual_blocker": true,
     "send_all_valid_send_now": true,
@@ -138,12 +144,12 @@
   "explore_or_revisit_areas": [
     "Italy|Puglia|Bari",
     "Spain|Aragón|Zaragoza",
-    "Spain|Comunitat Valenciana|Castellón",
     "Italy|Calabria|Reggio Calabria",
     "Italy|Veneto|Venezia",
+    "Spain|Comunitat Valenciana|Castellón",
     "Italy|Lombardia|Milano",
-    "Italy|Piemonte|Torino",
     "Italy|Emilia-Romagna|Piacenza",
+    "Italy|Piemonte|Torino",
     "Spain|Castilla y León|Valladolid",
     "Italy|Lazio|Frosinone",
     "Italy|Emilia-Romagna|Bologna",
@@ -153,7 +159,7 @@
     "enabled": true,
     "reason": "QUALIFIED_BACKLOG_PRESSURE",
     "quality_gates_unchanged": true,
-    "target_serious_candidate_decisions_per_run": 120,
+    "target_serious_candidate_decisions_per_run": 500,
     "same_run_qualification_and_send": true,
     "send_all_valid_send_now": true,
     "no_batch_minimum": true,
@@ -165,9 +171,58 @@
     "never_promote_from_deepseek_shadow": true,
     "minimum_exploration_pct": 25
   },
+  "continuous_improvement": {
+    "enabled": true,
+    "policy_file": "config/continuous-improvement-policy.json",
+    "general_rule": "Every optimization cycle must measure actual commercial outcomes, identify the dominant bottleneck, apply a bounded testable improvement, verify the result, and retain improvements that increase real funnel progress.",
+    "anti_regression": {
+      "enabled": true,
+      "rule": "Generated runtime configuration may not lower or remove immutable owner directives.",
+      "protected_fields": [
+        "mode",
+        "commercial_strategy.target_first_contacts_per_business_day",
+        "commercial_strategy.soft_daily_first_contact_ceiling",
+        "global_contact_dedup",
+        "continuous_improvement"
+      ]
+    },
+    "optimization_scope": [
+      "commercial_stream_allocation",
+      "source_priority",
+      "territory_priority",
+      "query_patterns",
+      "first_party_enrichment",
+      "contactable_conversion",
+      "dashboard_observability",
+      "workflow_stability"
+    ]
+  },
+  "global_contact_dedup": {
+    "required": true,
+    "absolute_priority": true,
+    "fail_closed": true,
+    "hard_block_on": [
+      "EXACT_EMAIL_ALREADY_CONTACTED",
+      "ORGANIZATION_ALREADY_CONTACTED",
+      "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+      "HOSTINGER_SENT_MATCH",
+      "GMAIL_SENT_MATCH"
+    ],
+    "pre_send_sequence": [
+      "CHECK_GLOBAL_LEDGER_EXACT_EMAIL",
+      "CHECK_GLOBAL_LEDGER_CORPORATE_DOMAIN",
+      "CHECK_GLOBAL_LEDGER_CANONICAL_ORGANIZATION",
+      "CHECK_HOSTINGER_SENT_EXACT_EMAIL",
+      "CHECK_HOSTINGER_SENT_DOMAIN",
+      "CHECK_GMAIL_SENT_EXACT_EMAIL",
+      "CHECK_GMAIL_SENT_DOMAIN"
+    ],
+    "fail_policy": "If any dedup source is unavailable, ambiguous or stale at execution time, DO NOT SEND.",
+    "follow_up_rule": "Any continuation after FIRST_CONTACT requires owner authorization."
+  },
   "route_policy": {
     "job_or_application_lane": "Require the exact authoritative application/collaboration route; never replace an official form/platform with a generic email. Job-style opportunities are commercially relevant only when the engagement can truthfully be proposed as project-based freelance/P.IVA web delivery.",
     "b2b_agency_commercial_lane": "An official public company partnership/contact/hello email may be used as the authoritative B2B commercial route only for a genuine agency/white-label/external-capacity website-project proposal when no application-only route is bypassed and all hard gates pass."
   },
-  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. VDS ONLY WANTS PROJECT-BASED WEBSITE DEVELOPMENT WORK. Pursue websites, redesigns, landing pages, ecommerce, portals, WordPress/custom frontend, performance/WPO, migrations, scoped evolutionary web work and EU project/dissemination websites. HARD REJECT help desk, ticketing, technical support, telephone/phone support, remote assistance, user/desktop/endpoint support, managed-services support, SLA/on-call/shift coverage and hourly support retainers. Do not pursue roles that bind Giuseppe to recurring support hours. Maintenance is eligible only when it is a scoped website evolution/optimization project with deliverables and no ticket/phone/SLA/on-call availability obligation. If a mixed role contains material recurring support duties, REJECT it even if it also mentions WordPress or web development. Every prospect must use exactly one commercial archetype: AGENCY_EXTERNAL_CAPACITY, EU_DISSEMINATION_SPECIALIST, or SME_WEB_IMPROVEMENT. Engagement model is separate from archetype. Prioritize project-based buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third. Use the buyer-intent ranker only for ordering; it never authorizes sending. Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. Measure and optimize for qualified reply, call, proposal and won revenue. Process at least 120 serious candidates when supply/runtime permits, continue after blockers, and send every currently valid SEND_NOW identity with no batch minimum. Target 20 qualified first contacts per business day, with a soft ceiling of 25 to protect sender reputation; never lower dedup, route, truthful-fit or legal/channel gates to hit volume. Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
+  "instruction": "SELF_CONTAINED_REVENUE_FLOW: run self-healing preflight first. VDS ONLY WANTS PROJECT-BASED WEBSITE DEVELOPMENT WORK. Pursue websites, redesigns, landing pages, ecommerce, portals, WordPress/custom frontend, performance/WPO, migrations, scoped evolutionary web work and EU project/dissemination websites. HARD REJECT help desk, ticketing, technical support, telephone/phone support, remote assistance, user/desktop/endpoint support, managed-services support, SLA/on-call/shift coverage and hourly support retainers. Do not pursue roles that bind Giuseppe to recurring support hours. Maintenance is eligible only when it is a scoped website evolution/optimization project with deliverables and no ticket/phone/SLA/on-call availability obligation. If a mixed role contains material recurring support duties, REJECT it even if it also mentions WordPress or web development. Every prospect must use exactly one commercial archetype: AGENCY_EXTERNAL_CAPACITY, EU_DISSEMINATION_SPECIALIST, or SME_WEB_IMPROVEMENT. Engagement model is separate from archetype. Prioritize project-based buyer intent over raw vacancy volume: AGENCY_EXTERNAL_CAPACITY first, EU_DISSEMINATION_SPECIALIST second, SME_WEB_IMPROVEMENT third. Use the buyer-intent ranker only for ordering; it never authorizes sending. Use PROBLEM + PROOF + MICRO-COMMITMENT messaging by default and mention VDS Engine only through buyer outcomes. Measure and optimize for qualified reply, call, proposal and won revenue. CONTINUOUS IMPROVEMENT is the general rule: measure actual outcomes, identify the dominant bottleneck, apply a bounded testable improvement, verify it and preserve gains without weakening immutable gates. REVENUE EMERGENCY MODE: process at least 500 serious candidates when supply/runtime permits, continue after blockers, and send every valid unique SEND_NOW identity with no batch minimum. Target 100-200 qualified first contacts per business day and allow up to 300 when valid supply exists; do not throttle for sender reputation. ZERO DUPLICATES is absolute: exact email, corporate domain, canonical organization, live Hostinger Sent and live Gmail Sent must all be clear before every FIRST_CONTACT; any ambiguity fails closed. Preserve organization-level dedup, authoritative-route integrity, current need, truthful fit, legal/channel gates, provider verification and the live-send window. DeepSeek remains shadow-only."
 }
