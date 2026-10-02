@@ -420,6 +420,9 @@ def main() -> int:
     fast_queue = load("views/fast-revenue-queue.json", {})
     direct_pipeline = load("views/direct-commercial-pipeline.json", {})
     daily_summary = load(f"metrics/daily/{today}-summary.json", {})
+    hourly_perf = load("views/hourly-performance.json", {})
+    booster = load("views/public-web-booster.json", {})
+    contact_ledger = load("views/global-contact-ledger.json", {})
 
     opps = opportunities.get("opportunities") or []
     status_counts = Counter(str(o.get("status", "UNKNOWN")) for o in opps)
@@ -562,6 +565,18 @@ def main() -> int:
             "fast_revenue_queue_updated_at": fast_queue.get("updated_at"),
             "direct_pipeline_updated_at": direct_pipeline.get("updated_at"),
         },
+        "optimization": {
+            "updated_at": hourly_perf.get("updated_at"),
+            "mode": hourly_perf.get("mode"),
+            "allocation_pct": hourly_perf.get("allocation_pct") or {},
+            "adjustment_reasons": hourly_perf.get("adjustment_reasons") or [],
+            "public_web_booster_status": booster.get("status"),
+            "public_web_booster_updated_at": booster.get("updated_at"),
+            "public_web_booster_signals": len(booster.get("signals") or []),
+            "dedup_exact_emails": (contact_ledger.get("counts") or {}).get("exact_emails"),
+            "dedup_corporate_domains": (contact_ledger.get("counts") or {}).get("corporate_domains"),
+            "dedup_organizations": (contact_ledger.get("counts") or {}).get("organizations"),
+        },
         "safety": {
             "duplicate_first_contact_tolerance": 0,
             "global_duplicate_hard_gate": True,
@@ -621,6 +636,18 @@ def main() -> int:
     })
     write("territory-productivity.json", territory)
     write("sources.json", source_payload)
+    write("performance.json", {
+        "schema_version": "1.0",
+        "generated_at": generated,
+        "hourly_optimizer": hourly_perf,
+        "public_web_booster": {
+            "status": booster.get("status"),
+            "updated_at": booster.get("updated_at"),
+            "domains_attempted": booster.get("domains_attempted"),
+            "signal_count": len(booster.get("signals") or []),
+        },
+        "dedup_ledger": contact_ledger.get("counts") or {},
+    })
     write("health.json", {
         "schema_version": "1.1",
         "generated_at": generated,
