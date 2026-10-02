@@ -39,6 +39,34 @@ CITY={
  ("Italy","Sicilia","Palermo"):(38.1157,13.3615),
  ("Italy","Basilicata","Potenza"):(40.6404,15.8056),
  ("Italy","Trentino-Alto Adige","Trento"):(46.0748,11.1217),
+
+ ("Spain","Comunidad de Madrid","Madrid"):(40.4168,-3.7038),
+ ("Spain","Comunitat Valenciana","Valencia"):(39.4699,-0.3763),
+ ("Spain","Cataluña","Tarragona"):(41.1189,1.2445),
+ ("Spain","Galicia","A Coruña"):(43.3623,-8.4115),
+ ("Spain","Castilla y León","León"):(42.5987,-5.5671),
+ ("Spain","Castilla y León","Segovia"):(40.9429,-4.1088),
+ ("Spain","Castilla y León","Burgos"):(42.3439,-3.6969),
+ ("Spain","Galicia","Pontevedra"):(42.4310,-8.6444),
+ ("Spain","Galicia","Ourense"):(42.3358,-7.8639),
+ ("Italy","Puglia","Foggia"):(41.4622,15.5446),
+ ("Italy","Piemonte","Novara"):(45.4450,8.6222),
+ ("Italy","Toscana","Livorno"):(43.5485,10.3106),
+ ("Italy","Puglia","Taranto"):(40.4644,17.2470),
+ ("Italy","Emilia-Romagna","Modena"):(44.6471,10.9252),
+ ("Italy","Lazio","Latina"):(41.4676,12.9037),
+ ("Italy","Puglia","Lecce"):(40.3515,18.1750),
+ ("Italy","Lombardia","Cremona"):(45.1332,10.0227),
+ ("Italy","Puglia","Barletta-Andria-Trani"):(41.2275,16.2951),
+ ("Italy","Sicilia","Trapani"):(38.0176,12.5372),
+ ("Italy","Calabria","Crotone"):(39.0808,17.1271),
+ ("Italy","Calabria","Vibo Valentia"):(38.6762,16.1016),
+ ("Italy","Veneto","Treviso"):(45.6669,12.2430),
+ ("Italy","Lombardia","Varese"):(45.8206,8.8251),
+ ("Italy","Veneto","Padova"):(45.4064,11.8768),
+ ("Italy","Veneto","Verona"):(45.4384,10.9916),
+ ("Italy","Lombardia","Bergamo"):(45.6983,9.6773),
+ ("Italy","Lombardia","Brescia"):(45.5416,10.2118),
 }
 CODE={
  "ES-CAT-BCN":("Spain","Cataluña","Barcelona"),
@@ -75,10 +103,11 @@ def load(rel,default):
     try:return json.loads((ROOT/rel).read_text(encoding="utf-8"))
     except Exception:return default
 
-def coords(country,region,place):
+def coords(country,region,place,allow_region_fallback=False):
     if (country,region,place) in CITY:return CITY[(country,region,place)]
-    for (c,r,p),xy in CITY.items():
-        if c==country and r==region:return xy
+    if allow_region_fallback:
+        for (c,r,p),xy in CITY.items():
+            if c==country and r==region:return xy
     return None
 
 def infer_company_geo(company):
