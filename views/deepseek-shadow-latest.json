@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-02T10:04:28Z",
+  "updated_at": "2026-10-02T10:22:29Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 684,
+    "evaluated_total": 685,
     "agreement_count": 352,
-    "agreement_pct": 51.46,
+    "agreement_pct": 51.39,
     "deepseek_promote": 32,
     "vds_promote": 248,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 335,
-    "cumulative_estimated_cost_usd": 0.142658,
-    "cost_per_evaluated_candidate_usd": 0.00020856,
-    "cost_per_deepseek_promote_usd": 0.00445805,
-    "cost_per_observed_ready_or_contacted_usd": 0.07132883,
-    "latest_request": null
+    "request_count": 336,
+    "cumulative_estimated_cost_usd": 0.142859,
+    "cost_per_evaluated_candidate_usd": 0.00020855,
+    "cost_per_deepseek_promote_usd": 0.00446435,
+    "cost_per_observed_ready_or_contacted_usd": 0.0714296,
+    "latest_request": {
+      "at": "2026-10-02T10:22:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 456,
+      "completion_tokens": 152,
+      "total_tokens": 736,
+      "estimated_cost_usd": 0.00020154
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7a076a431f0b80b59387dacdc4afa9b3",
-      "evaluated_at": "2026-09-29T12:57:05Z",
-      "organization": "DataDome",
-      "title": "Senior Frontend Engineer (Full Stack growth path)",
-      "location": "EU/EMEA",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-engineer-full-stack-growth-path-0817ba4b49",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Title indicates a Senior Frontend Engineer role with a full-stack growth path at DataDome, an EU/EMEA remote posting. Only 'frontend' matches the target profile; no evidence of WordPress, WooCommerce, custom HTML/CSS/JS, performance/Core Web Vitals, maintenance, or UX/UI scope. Full-stack growth path likely implies React/Node or similar modern JS stack, which is a partial mismatch. Freelance/contract compatibility is unstated.",
-      "deepseek_risk_flags": [
-        "no_wordpress_or_woocommerce_scope",
-        "likely_react_or_modern_js_stack",
-        "full_stack_growth_path_ambiguous",
-        "no_explicit_freelance_or_contract_terms",
-        "geo_bucket_eu_remote_to_verify"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00025214,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1e5e5e23699e3740c71a6a87d23d64b6",
       "evaluated_at": "2026-09-29T13:33:09Z",
@@ -1474,10 +1456,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "342778598d5c235800287f7ff8d5a5bc",
+      "evaluated_at": "2026-10-02T10:22:26Z",
+      "organization": "Silvernova GmbH",
+      "title": "Fullstack Developer: Frontend, UX, Mobile - Legal AI (m/w/d)",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/silvernova-gmbh/fullstack-developer-frontend-ux-mobile-legal-ai-munich-163261",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Fullstack Developer role for a Legal AI product in Munich; core scope is fullstack/mobile/AI, not WordPress/WooCommerce or web maintenance, and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "fullstack_core_role",
+        "mobile_scope",
+        "ai_product_focus",
+        "no_freelance_evidence",
+        "onsite_munich_likely",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020154,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-02T10:04:25Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-02T10:22:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
