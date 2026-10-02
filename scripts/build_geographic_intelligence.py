@@ -165,7 +165,7 @@ def main():
         d=streams.get(key,{"indexed":0,"contacted":0,"latest_contact":None})
         stream_rows.append({"stream":key,**meta,**d})
     actual_focus=None
-    if execution.get("locality") and execution.get("state") in {"MISSION_STARTED","MISSION_COMPLETED","MISSION_FAILED"}:
+    if execution.get("locality") and execution.get("state") in {"MISSION_STARTED","MISSION_COMPLETED","MISSION_FAILED","RUN_COMPLETED"}:
         xy=coords(execution.get("country"),execution.get("region"),execution.get("locality"))
         if xy:
             actual_focus={
