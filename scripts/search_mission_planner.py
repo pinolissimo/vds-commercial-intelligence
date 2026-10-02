@@ -104,19 +104,32 @@ def main():
                     add_unique(selected, seen, a)
                     break
 
-    segments = sorted(play.get("segments", {}).items(), key=lambda kv: float(kv[1].get("weight", 1)), reverse=True)
+    segments = play.get("segments", {})
+    # RED_REVENUE_PRIORITY: every selected territory receives exactly five missions.
+    # 40% agency/white-label, 40% EU-project, 20% direct buyer.
+    # This replaces the former near-uniform segment rotation, which diluted the
+    # two highest-conversion VDS channels despite their higher configured weights.
+    lane_plan = [
+        "AGENCY_WHITE_LABEL",
+        "EU_PROJECT",
+        "AGENCY_WHITE_LABEL",
+        "EU_PROJECT",
+        "DIRECT_BUYER_WEB_NEED",
+    ]
     missions = []
     for ai, area in enumerate(selected):
         country = area.get("country")
         lang = "spain" if country == "Spain" else "italy"
         label = territory_label(area)
         mode = area.get("mode")
-        for offset in range(len(segments)):
-            seg_name, seg = segments[(slot + ai + offset) % len(segments)]
+        for offset, seg_name in enumerate(lane_plan):
+            seg = segments.get(seg_name, {})
             templates = seg.get(lang, [])
             if not templates:
                 continue
-            template = templates[(slot + ai * len(segments) + offset) % len(templates)]
+            # The second mission for the same lane intentionally selects another
+            # template, increasing coverage without wasting capacity on low-value lanes.
+            template = templates[(slot + ai * len(lane_plan) + offset) % len(templates)]
             missions.append({
                 "mission_id": f"{slot}-{ai}-{offset}",
                 "country": country,
@@ -132,7 +145,7 @@ def main():
             })
 
     output = {
-        "schema_version": "1.3",
+        "schema_version": "1.4",
         "updated_at": now.replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "cycle_minutes": 5,
         "diagnosed_bottleneck": cmd.get("diagnosed_bottleneck"),
@@ -140,7 +153,7 @@ def main():
         "selected_areas": [{"area_key": a.get("area_key"), "mode": a.get("mode"), "score": a.get("score")} for a in selected],
         "missions": missions,
         "country_counts": {"Spain": sum(1 for a in selected if a.get("country") == "Spain"), "Italy": sum(1 for a in selected if a.get("country") == "Italy")},
-        "strategy": "LEARNED_YIELD_PLUS_STRATEGIC_DENSITY_PLUS_NATIONWIDE_ROTATION_ALL_INTENTS",
+        "strategy": "RED_REVENUE_PRIORITY_40_AGENCY_40_EU_20_DIRECT_BUYER",
         "multi_engine_router": "views/multi-engine-search-missions.json",
         "instruction": "Execute highest-value missions every 5 minutes. Discovery-capable tasks MUST also consume views/multi-engine-search-missions.json and fan out its highest-priority variants across independent search engines/search backends when available. Search snippets are discovery only: verify current authoritative demand, exact route, truthful fit and global provider suppression before promotion or execution. Quality gates never weaken."
     }
