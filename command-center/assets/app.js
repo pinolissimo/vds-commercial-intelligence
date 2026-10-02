@@ -462,21 +462,51 @@ function renderCommercialMap(){
 
   const el=$('commercialMap');
   if(!el||!window.L)return;
-  if(state.map){state.map.remove();state.map=null;}
-  const map=L.map(el,{zoomControl:true,attributionControl:true,minZoom:4,maxZoom:13,preferCanvas:true});
+  if(state.map){
+    if(state.map._vdsRefocusTimer)clearTimeout(state.map._vdsRefocusTimer);
+    state.map.remove();
+    state.map=null;
+  }
+
+  const map=L.map(el,{zoomControl:true,attributionControl:true,minZoom:4,maxZoom:16,preferCanvas:true});
   state.map=map;
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
     maxZoom:19,
     attribution:'&copy; OpenStreetMap contributors'
   }).addTo(map);
-  map.fitBounds([[35.5,-10.2],[47.4,18.8]],{padding:[8,8]});
+
+  const FOCUS_ZOOM=11;
+  const REFOCUS_DELAY=5000;
+  let programmaticMove=false;
+
+  const focusCurrent=(animate=true)=>{
+    if(!focus)return;
+    programmaticMove=true;
+    map.flyTo([focus.lat,focus.lon],FOCUS_ZOOM,{animate,duration:animate?1.05:0});
+    setTimeout(()=>{programmaticMove=false;},animate?1200:80);
+  };
+
+  const scheduleRefocus=()=>{
+    if(!focus)return;
+    if(map._vdsRefocusTimer)clearTimeout(map._vdsRefocusTimer);
+    map._vdsRefocusTimer=setTimeout(()=>focusCurrent(true),REFOCUS_DELAY);
+  };
+
+  const noteManualInteraction=()=>{
+    if(programmaticMove)return;
+    scheduleRefocus();
+  };
+
+  map.on('dragstart zoomstart',noteManualInteraction);
+  map.on('dragend zoomend',noteManualInteraction);
+  map.on('mousedown touchstart wheel',noteManualInteraction);
 
   (geo.territories||[]).forEach(t=>{
     const mode=String(t.mode||'').toUpperCase();
     const cls=mode==='HARVEST'?'territory-harvest':mode==='ROTATE_OUT'?'territory-rotate':'territory-explore';
     const icon=L.divIcon({className:'vds-map-icon',html:`<span class="territory-dot ${cls}"></span>`,iconSize:[18,18],iconAnchor:[9,9]});
     L.marker([t.lat,t.lon],{icon,interactive:true}).addTo(map)
-      .bindTooltip(`<b>${safe(t.locality)}</b><br>${safe(t.region)} · ${safe(t.mode||'')}`);
+      .bindTooltip(`<b>${safe(t.locality)}</b><br>${safe(t.region)} · ${safe(t.mode||'')}`,{direction:'top',offset:[0,-5]});
   });
 
   const grouped=new Map();
@@ -489,21 +519,33 @@ function renderCommercialMap(){
     const count=g.items.length;
     const icon=L.divIcon({className:'vds-map-icon',html:`<span class="contact-check">✓<em>${count>1?count:''}</em></span>`,iconSize:[34,34],iconAnchor:[17,17]});
     const names=g.items.slice(0,8).map(x=>safe(x.organization||x.domain)).join('<br>');
-    L.marker([g.lat,g.lon],{icon}).addTo(map).bindPopup(`<strong>${safe(g.locality)}</strong><br><small>${count} attività contattate</small><div class="map-popup-list">${names}</div>`);
+    const primaryName=safe(g.items[0]?.organization||g.items[0]?.domain||'Attività contattata');
+    L.marker([g.lat,g.lon],{icon})
+      .addTo(map)
+      .bindTooltip(count>1?`${primaryName} +${count-1}`:primaryName,{direction:'top',offset:[0,-13],opacity:.95})
+      .bindPopup(`<strong>${safe(g.locality)}</strong><br><small>${count} attività contattate</small><div class="map-popup-list">${names}</div>`);
   });
 
   const scans=geo.scan_path||[];
   if(scans.length){
     L.polyline(scans.map(x=>[x.lat,x.lon]),{weight:2,opacity:.25,dashArray:'5 8'}).addTo(map);
     scans.slice(1).forEach(s=>{
-      L.circleMarker([s.lat,s.lon],{radius:3,weight:1,opacity:.4,fillOpacity:.18}).addTo(map);
+      L.circleMarker([s.lat,s.lon],{radius:3,weight:1,opacity:.4,fillOpacity:.18}).addTo(map)
+        .bindTooltip(`${safe(s.locality)} · ${safe(s.segment||'')}`,{direction:'top'});
     });
   }
+
   if(focus){
     const icon=L.divIcon({className:'vds-map-icon radar-wrap',html:'<span class="radar-pulse"><i></i></span>',iconSize:[46,46],iconAnchor:[23,23]});
-    L.marker([focus.lat,focus.lon],{icon,zIndexOffset:1000}).addTo(map)
+    L.marker([focus.lat,focus.lon],{icon,zIndexOffset:1000})
+      .addTo(map)
+      .bindTooltip(`Ricerca attuale: ${safe(focus.locality)} · ${safe(focus.segment||'')}`,{permanent:false,direction:'top',offset:[0,-18]})
       .bindPopup(`<strong>Scanner VDS</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
+    setTimeout(()=>focusCurrent(false),90);
+  }else{
+    map.fitBounds([[35.5,-10.2],[47.4,18.8]],{padding:[8,8]});
   }
+
   setTimeout(()=>map.invalidateSize(),80);
 }
 
