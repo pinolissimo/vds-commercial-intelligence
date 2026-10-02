@@ -62,7 +62,7 @@ def main():
     run_id=f"territorial-{int(time.time())}"
     results=[]
     write_hb(state="RUN_STARTED",run_id=run_id,total_missions=len(selected),completed_missions=0)
-    ddgs=DDGS(timeout=6)
+    ddgs=DDGS(timeout=4)
     for idx,m in enumerate(selected,1):
         variants=m.get("search_variants") or []
         chosen=next((v for v in variants if v.get("variant") in {"official_site","eu_official","base_precision"}),variants[0] if variants else None)
@@ -78,23 +78,35 @@ def main():
         started=time.time()
         try:
             region="es-es" if m.get("country")=="Spain" else "it-it" if m.get("country")=="Italy" else "us-en"
-            found=list(ddgs.text(query,max_results=MAX_RESULTS,backend="duckduckgo",region=region))
-            clean=[]
-            for x in found:
-                if not isinstance(x,dict):
+            backend_pairs=[("bing","brave"),("google","duckduckgo"),("brave","bing")]
+            selected_backends=backend_pairs[(idx-1)%len(backend_pairs)]
+            clean=[]; backend_used=None; backend_errors=[]
+            for backend in selected_backends:
+                try:
+                    found=list(ddgs.text(query,max_results=MAX_RESULTS,backend=backend,region=region))
+                except Exception as backend_exc:
+                    backend_errors.append(f"{backend}:{type(backend_exc).__name__}")
                     continue
-                href=x.get("href") or x.get("url") or x.get("link") or ""
-                if not isinstance(href,str) or not href.startswith(("http://","https://")):
-                    continue
-                clean.append({
-                  "title":x.get("title") or x.get("heading") or "",
-                  "url":href,
-                  "domain":domain(href),
-                  "body":x.get("body") or x.get("description") or x.get("snippet") or ""
-                })
+                for x in found:
+                    if not isinstance(x,dict):
+                        continue
+                    href=x.get("href") or x.get("url") or x.get("link") or ""
+                    if not isinstance(href,str) or not href.startswith(("http://","https://")):
+                        continue
+                    clean.append({
+                      "title":x.get("title") or x.get("heading") or "",
+                      "url":href,
+                      "domain":domain(href),
+                      "body":x.get("body") or x.get("description") or x.get("snippet") or ""
+                    })
+                if clean:
+                    backend_used=backend
+                    break
+            if not clean:
+                raise RuntimeError("No usable URL results; "+",".join(backend_errors))
             elapsed=round(time.time()-started,2)
-            results.append({**hb_base,"state":"COMPLETED","elapsed_seconds":elapsed,"result_count":len(clean),"results":clean})
-            write_hb(state="MISSION_COMPLETED",completed_missions=idx,result_count=len(clean),elapsed_seconds=elapsed,**hb_base)
+            results.append({**hb_base,"state":"COMPLETED","elapsed_seconds":elapsed,"result_count":len(clean),"backend_used":backend_used,"results":clean})
+            write_hb(state="MISSION_COMPLETED",completed_missions=idx,result_count=len(clean),elapsed_seconds=elapsed,backend_used=backend_used,**hb_base)
         except Exception as exc:
             elapsed=round(time.time()-started,2)
             results.append({**hb_base,"state":"FAILED","elapsed_seconds":elapsed,"result_count":0,"error":f"{type(exc).__name__}: {exc}"[:500]})
