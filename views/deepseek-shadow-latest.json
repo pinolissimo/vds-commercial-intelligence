@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-01T22:10:03Z",
+  "updated_at": "2026-10-02T00:50:45Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 678,
+    "evaluated_total": 680,
     "agreement_count": 351,
-    "agreement_pct": 51.77,
+    "agreement_pct": 51.62,
     "deepseek_promote": 32,
-    "vds_promote": 243,
+    "vds_promote": 245,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 215
+    "deepseek_demoted_from_vds_promote": 217
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.47,
+    "vds_promote_hot_rate_pct": 2.45,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 332,
-    "cumulative_estimated_cost_usd": 0.141407,
-    "cost_per_evaluated_candidate_usd": 0.00020856,
-    "cost_per_deepseek_promote_usd": 0.00441897,
-    "cost_per_observed_ready_or_contacted_usd": 0.0707035,
-    "latest_request": null
+    "request_count": 333,
+    "cumulative_estimated_cost_usd": 0.141654,
+    "cost_per_evaluated_candidate_usd": 0.00020831,
+    "cost_per_deepseek_promote_usd": 0.00442669,
+    "cost_per_observed_ready_or_contacted_usd": 0.07082707,
+    "latest_request": {
+      "at": "2026-10-02T00:50:42Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 155,
+      "completion_tokens": 316,
+      "total_tokens": 1111,
+      "estimated_cost_usd": 0.00024714
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "265ba633421fa166df67915aaf45ef07",
-      "evaluated_at": "2026-09-29T02:48:56Z",
-      "organization": "Packmatic",
-      "title": "(Senior) Product Designer - Systems & AI (m/w/d) - B2B SaaS | Berlin (hybrid)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/packmatic/senior-product-designer-systems-ai-b2b-saas-berlin-hybrid-129379",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Role is a (Senior) Product Designer for Systems & AI at a B2B SaaS company, not a web-development/WordPress/frontend engineering position; matched keywords (css, frontend, html, ui, ux) reflect design-adjacent vocabulary rather than actual web dev scope, and 'collaboration/partner' are generic job-text mentions, not freelance-compatibility proof.",
-      "deepseek_risk_flags": [
-        "role_mismatch_product_design",
-        "no_wordpress_woocommerce_scope",
-        "no_custom_web_dev_scope",
-        "generic_collaboration_mention",
-        "hybrid_berlin_onsite_bias",
-        "ai_systems_focus_not_web_stack"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00048007,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "e8bb24b3657f5ca29f231a550e6c4439",
-      "evaluated_at": "2026-09-29T09:07:17Z",
-      "organization": "FastRocket GmbH",
-      "title": "Web-Entwickler (m/w/d) Wordpress, PHP, Hosting in Teilzeit",
-      "location": "Regen",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/fastrocket-gmbh/web-entwickler-wordpress-php-hosting-in-teilzeit-regen-164909",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 76,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 62.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Explicit WordPress/PHP/HTML/CSS/JS web-developer role with part-time (Teilzeit) framing, matching the target stack; however location is Regen, Germany (outside primary Spain/Italy markets) and remote status is unverified, so geo and contract compatibility remain uncertain.",
-      "deepseek_risk_flags": [
-        "geo_outside_primary_markets",
-        "remote_status_unverified",
-        "employment_type_unspecified",
-        "part_time_may_not_be_freelance_contract"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000373795,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1dcd485216fc0b3c4afcaf8b655dc76f",
       "evaluated_at": "2026-09-29T09:07:17Z",
@@ -1474,10 +1427,69 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "763396f1ffcfd2a347e422c9d3d27826",
+      "evaluated_at": "2026-10-02T00:50:42Z",
+      "organization": "Nex",
+      "title": "Frontend Engineer - Marketing & Digital Experience (Contract)",
+      "location": "United States",
+      "opportunity_url": "https://remotelanders.com/jobs/frontend-engineer-marketing-digital-experience-contract-nex-1gjrdf",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 86,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Contract frontend role in marketing/digital experience with explicit contract intent, but no evidence of WordPress/WooCommerce or custom HTML/CSS/JS scope, and US location with unverified remote eligibility for Spain/Italy.",
+      "deepseek_risk_flags": [
+        "no_wordpress_scope_evidence",
+        "no_woocommerce_scope_evidence",
+        "us_location_geo_mismatch",
+        "remote_eligibility_unverified",
+        "stack_scope_unspecified"
+      ],
+      "deepseek_contract_compatibility": "HIGH",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012357,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d0ea769f6bdae5c1ff1f87528429c4ca",
+      "evaluated_at": "2026-10-02T00:50:42Z",
+      "organization": "Nex",
+      "title": "Frontend Engineer - Marketing & Digital Experience",
+      "location": "United States",
+      "opportunity_url": "https://remotelanders.com/jobs/frontend-engineer-marketing-digital-experience-nex-89ddyr",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 50.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend marketing/digital experience role with no explicit contract intent and no WordPress/WooCommerce or custom HTML/CSS/JS scope evidence; US location with unverified remote eligibility for target markets.",
+      "deepseek_risk_flags": [
+        "no_contract_intent",
+        "no_wordpress_scope_evidence",
+        "no_woocommerce_scope_evidence",
+        "us_location_geo_mismatch",
+        "remote_eligibility_unverified",
+        "stack_scope_unspecified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012357,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-01T22:10:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-02T00:50:39Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
