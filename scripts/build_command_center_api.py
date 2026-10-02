@@ -424,6 +424,7 @@ def main() -> int:
     daily_summary = load(f"metrics/daily/{today}-summary.json", {})
     hourly_perf = load("views/hourly-performance.json", {})
     booster = load("views/public-web-booster.json", {})
+    enriched_routes = load("views/public-web-enriched-routes.json", {})
     contact_ledger = load("views/global-contact-ledger.json", {})
 
     opps = opportunities.get("opportunities") or []
@@ -575,6 +576,12 @@ def main() -> int:
             "public_web_booster_status": booster.get("status"),
             "public_web_booster_updated_at": booster.get("updated_at"),
             "public_web_booster_signals": len(booster.get("signals") or []),
+            "first_party_enriched": enriched_routes.get("count", 0),
+            "first_party_contactable": enriched_routes.get("contactable", 0),
+            "first_party_blocked_duplicate": enriched_routes.get("blocked_duplicate", 0),
+            "first_party_with_public_email": sum(1 for x in (enriched_routes.get("items") or []) if x.get("public_emails")),
+            "first_party_with_decision_maker": sum(1 for x in (enriched_routes.get("items") or []) if x.get("decision_makers")),
+            "first_party_with_supplier_route": sum(1 for x in (enriched_routes.get("items") or []) if x.get("supplier_routes")),
             "dedup_exact_emails": (contact_ledger.get("counts") or {}).get("exact_emails"),
             "dedup_corporate_domains": (contact_ledger.get("counts") or {}).get("corporate_domains"),
             "dedup_organizations": (contact_ledger.get("counts") or {}).get("organizations"),
@@ -649,6 +656,14 @@ def main() -> int:
             "signal_count": len(booster.get("signals") or []),
         },
         "dedup_ledger": contact_ledger.get("counts") or {},
+        "first_party_enrichment": {
+            "count": enriched_routes.get("count", 0),
+            "contactable": enriched_routes.get("contactable", 0),
+            "blocked_duplicate": enriched_routes.get("blocked_duplicate", 0),
+            "with_public_email": sum(1 for x in (enriched_routes.get("items") or []) if x.get("public_emails")),
+            "with_decision_maker": sum(1 for x in (enriched_routes.get("items") or []) if x.get("decision_makers")),
+            "with_supplier_route": sum(1 for x in (enriched_routes.get("items") or []) if x.get("supplier_routes")),
+        },
     })
     write("health.json", {
         "schema_version": "1.1",
