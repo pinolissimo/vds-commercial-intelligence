@@ -12,6 +12,8 @@ on:
       - 'scripts/search_source_optimizer.py'
       - 'scripts/snapshot_command_center_fallback.py'
       - 'config/hourly-optimization-runtime.json'
+      - 'config/continuous-improvement-policy.json'
+      - 'scripts/build_geographic_intelligence.py'
       - 'views/global-contact-ledger.json'
       - '.github/workflows/hourly-revenue-optimizer.yml'
 
@@ -39,7 +41,7 @@ jobs:
 
       - name: Compile optimizer and safety scripts
         run: |
-          python -m py_compile             scripts/hourly_performance_tuner.py             scripts/search_source_optimizer.py             scripts/search_mission_planner.py             scripts/global_contact_ledger.py             scripts/snapshot_command_center_fallback.py
+          python -m py_compile             scripts/hourly_performance_tuner.py             scripts/search_source_optimizer.py             scripts/search_mission_planner.py             scripts/global_contact_ledger.py             scripts/snapshot_command_center_fallback.py             scripts/build_geographic_intelligence.py
 
       - name: Rebuild hard dedup ledger and preflight
         run: |
@@ -55,6 +57,7 @@ jobs:
       - name: Rebuild Command Center projections
         run: |
           python scripts/build_command_center_api.py
+          python scripts/build_geographic_intelligence.py
           python scripts/enrich_command_center_funnel.py
           python scripts/overlay_provider_live_dashboard.py
           python scripts/overlay_provider_live_replies.py
@@ -76,6 +79,7 @@ jobs:
             python scripts/hourly_performance_tuner.py
             python scripts/search_mission_planner.py
             python scripts/build_command_center_api.py
+            python scripts/build_geographic_intelligence.py
             python scripts/enrich_command_center_funnel.py
             python scripts/overlay_provider_live_dashboard.py
             python scripts/overlay_provider_live_replies.py
