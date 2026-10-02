@@ -10,6 +10,9 @@ LATEST = ROOT / "views/high-frequency-discovery-latest.json"
 STATE = ROOT / "metrics/high-frequency-discovery-state.json"
 OUT = ROOT / "views/search-source-performance.json"
 RUNTIME = ROOT / "config/adaptive-search-runtime.json"
+DIRECT_CFG = ROOT / "config/direct-employer-bulk-sources.json"
+HF_CFG = ROOT / "config/high-frequency-discovery-sources.json"
+SUP_CFG = ROOT / "config/supplemental-public-sources.json"
 
 
 def load(path, default):
@@ -28,13 +31,33 @@ def now_utc():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def configured_disabled_sources():
+    disabled=set()
+    for path in (DIRECT_CFG,HF_CFG,SUP_CFG):
+        cfg=load(path,{})
+        candidates=[]
+        for key in ("sources","source_registry","items"):
+            if isinstance(cfg.get(key),list): candidates.extend(cfg.get(key))
+        if isinstance(cfg.get("sources"),dict):
+            candidates.extend([dict(v,source_id=k) if isinstance(v,dict) else {"source_id":k,"enabled":bool(v)} for k,v in cfg["sources"].items()])
+        for item in candidates:
+            if isinstance(item,dict) and item.get("enabled") is False:
+                sid=item.get("source_id") or item.get("id") or item.get("name")
+                if sid: disabled.add(str(sid))
+    return disabled
+
+
 def main():
     latest = load(LATEST, {"signals": []})
     state = load(STATE, {})
     rows = latest.get("signals", [])
+    disabled=configured_disabled_sources()
     grouped = defaultdict(list)
     for r in rows:
-        grouped[r.get("source_id", "unknown")].append(r)
+        sid=r.get("source_id","unknown")
+        if sid in disabled:
+            continue
+        grouped[sid].append(r)
     errors = Counter(e.get("source_id", "unknown") for e in state.get("errors", []))
 
     ranked = []
@@ -81,6 +104,7 @@ def main():
         "schema_version": "1.0",
         "updated_at": now_utc(),
         "principle": "Keep broad public-source coverage, but spend human/LLM verification effort preferentially on sources with high target-geo and high-fit yield. Low-yield sources retain a minimum exploration floor.",
+        "disabled_sources_excluded": sorted(disabled),
         "ranking": ranked
     }
     runtime = {
