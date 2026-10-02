@@ -87,7 +87,7 @@ def infer_company_geo(company):
 
 def classify_stream(company):
     types={str(x.get("type","")).upper() for x in company.get("opportunities",[])}
-    subjects=" ".join([company.get("last_subject") or ""]+[x.get("title","") for x in company.get("opportunities",[])]).lower()
+    subjects=" ".join([company.get("last_subject") or ""]+[(x.get("title") or "") for x in company.get("opportunities",[])]).lower()
     if any(x in types for x in {"WHITE_LABEL","OUTSOURCING","STRUCTURAL_PARTNERSHIP","ACTIVE_FREELANCE_COLLABORATION","RECURRING_FREELANCE_COLLABORATION"}):
         return "AGENCY_WHITE_LABEL"
     if any(k in subjects for k in ("horizon","prima","dissemination","eu project","progetto europeo")):
