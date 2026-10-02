@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f5f5f7">
   <meta name="color-scheme" content="light dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com; connect-src 'self' https://api.github.com; img-src 'self' data: https://tile.openstreetmap.org; font-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
   <title>VDS Commercial Intelligence — Command Center</title>
   <meta name="description" content="Command center operativo VDS: risultati di oggi, aziende e contatti, opportunità, outbound e produttività geografica.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="assets/app.css">
   <link rel="stylesheet" href="assets/command.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Vai ai contenuti</a>
@@ -29,6 +30,21 @@
 
     <section class="glass-panel territory-panel" aria-labelledby="territoryTitle"><div class="panel-head stack-on-mobile"><div><p class="eyebrow">Geographic intelligence</p><h2 id="territoryTitle">Produttività per territorio</h2></div><div class="segmented" role="group" aria-label="Visualizzazione produttività"><button class="segment active" type="button" data-territory-view="territories" aria-pressed="true">Territori</button><button class="segment" type="button" data-territory-view="countries" aria-pressed="false">Paesi</button></div></div><p class="panel-description">Heatmap ordinata sullo score adattivo già calcolato dal motore. Più la barra è intensa, maggiore è il rendimento corrente.</p><div id="territoryHeatmap" class="heatmap" aria-live="polite"></div></section>
 
+    <section class="geo-grid" aria-label="Geographic commercial intelligence">
+      <article class="glass-panel geo-map-panel">
+        <div class="panel-head stack-on-mobile"><div><p class="eyebrow">Geographic memory</p><h2>Mappa commerciale Italia + Spagna</h2></div><div class="map-legend"><span><i class="legend-contacted"></i>Contattata</span><span><i class="legend-scan"></i>Scanner</span><span><i class="legend-territory"></i>Territorio</span></div></div>
+        <p class="panel-description">Storico visuale dei territori esplorati e delle attività contattate. Il radar indica il focus geografico corrente del planner.</p>
+        <div class="scanner-strip"><div><span class="scanner-dot"></span><small>Scanner live</small><strong id="scannerLocation">—</strong></div><div><small>Filone</small><strong id="scannerSegment">—</strong></div><div class="scanner-query"><small>Query corrente</small><strong id="scannerQuery">—</strong></div></div>
+        <div id="commercialMap" class="commercial-map" aria-label="Mappa commerciale Italia e Spagna"></div>
+        <div class="map-stats"><span><b id="mappedContacts">—</b> contatti mappati</span><span><b id="mappedTerritories">—</b> territori storici</span><span><b id="scanPoints">—</b> punti scanner</span></div>
+      </article>
+      <article class="glass-panel stream-panel">
+        <div class="panel-head"><div><p class="eyebrow">Commercial lanes</p><h2>Filoni commerciali</h2></div><span class="status-chip">inventario operativo</span></div>
+        <p class="panel-description">Una schermata sintetica per capire dove stiamo investendo ricerca e quali filoni richiedono accelerazione.</p>
+        <div id="commercialStreams" class="stream-list"></div>
+      </article>
+    </section>
+
     <section class="glass-panel explorer-panel" aria-labelledby="companiesTitle"><div class="panel-head stack-on-mobile"><div><p class="eyebrow">Company intelligence</p><h2 id="companiesTitle">Aziende e contatti</h2></div><span class="status-chip" id="companyResultCount">—</span></div><div class="search-toolbar" role="search"><label class="search-field"><span class="material-symbols" aria-hidden="true">search</span><span class="sr-only">Cerca aziende e contatti</span><input id="companySearch" type="search" autocomplete="off" placeholder="Cerca azienda, dominio, email, paese…"></label><select id="companyCountry" aria-label="Filtra per paese"><option value="">Tutti i paesi</option></select><select id="companyContacted" aria-label="Filtra per stato contatto"><option value="">Tutti gli stati</option><option value="contacted">Contattate</option><option value="not-contacted">Non contattate</option></select><button class="text-button" id="resetCompanyFilters" type="button">Azzera filtri</button></div><div class="table-shell" tabindex="0" aria-label="Elenco aziende scorrevole"><table class="data-table"><thead><tr><th>Azienda</th><th>Paese</th><th>Contatti</th><th>Opportunità</th><th>Priorità</th><th>Stato</th></tr></thead><tbody id="companyRows"></tbody></table></div><div id="companyEmpty" class="empty-state" hidden>Nessuna azienda corrisponde ai filtri selezionati.</div><div class="pagination-row"><span id="companyPaginationInfo">—</span><div><button id="companyPrev" class="icon-button small" type="button" aria-label="Pagina precedente"><span class="material-symbols">chevron_left</span></button><button id="companyNext" class="icon-button small" type="button" aria-label="Pagina successiva"><span class="material-symbols">chevron_right</span></button></div></div></section>
 
     <section class="two-column"><article class="glass-panel" aria-labelledby="outboundTitle"><div class="panel-head"><div><p class="eyebrow">Outbound</p><h2 id="outboundTitle">Invii di oggi</h2></div><span class="status-chip" id="outboundCount">—</span></div><div id="outboundTimeline" class="timeline"></div></article><article class="glass-panel" aria-labelledby="replyTitle"><div class="panel-head"><div><p class="eyebrow">Reply intelligence</p><h2 id="replyTitle">Risposte di oggi</h2></div><span class="status-chip" id="replyCount">—</span></div><div id="replyTimeline" class="timeline"></div></article></section>
@@ -40,6 +56,6 @@
 
   <div id="authOverlay" class="auth-overlay" hidden><section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="auth-icon"><span class="material-symbols" aria-hidden="true">shield_lock</span></div><p class="eyebrow">AI command access</p><h2 id="authTitle">Abilita i comandi GitHub</h2><p>La dashboard legge i dati senza token. Inserisci un fine-grained token solo per inviare disposizioni tramite GitHub Actions. Il token resta soltanto nella sessione di questo browser.</p><label class="token-field"><span>GitHub token</span><input id="githubToken" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…"></label><div id="authError" class="auth-error" hidden></div><div class="auth-actions"><button id="authCancel" class="text-button" type="button">Annulla</button><button id="authConnect" class="primary-button" type="button"><span class="material-symbols" aria-hidden="true">lock_open</span><span>Connetti comandi AI</span></button></div><small>Permessi necessari per i comandi: repository singolo · Actions read/write.</small></section></div>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div><script src="assets/vendor/chart.umd.min.js"></script><script type="module" src="assets/app.js"></script>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><script src="assets/vendor/chart.umd.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script type="module" src="assets/app.js"></script>
 </body>
 </html>
