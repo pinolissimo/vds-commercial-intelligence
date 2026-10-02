@@ -21,6 +21,8 @@ RADAR = ROOT / "api/v1/eu-project-radar.json"
 STATE = ROOT / "state/eu-project-outreach-state.json"
 QUEUE = ROOT / "outreach/eu-project-contact-queue.jsonl"
 COMPANIES = ROOT / "api/v1/companies.json"
+GLOBAL_SENT_INDEX = ROOT / "views/global-sent-email-index.json"
+GLOBAL_ORG_INDEX = ROOT / "views/global-organization-index.json"
 USER_AGENT = "VDS-EU-Project-Outreach/1.0 (+https://www.visualdesignstudio.es/)"
 
 
@@ -102,8 +104,12 @@ def score_project(project: dict, policy: dict, today: dt.date) -> int:
     text = " ".join([project.get("title", ""), project.get("objective", ""), project.get("topics", "")]).lower()
     hits = sum(1 for term in policy.get("communication_terms", []) if term.lower() in text)
     score += min(3, hits)
+    # A newly funded project without a public website is a stronger timing signal:
+    # consortium communication infrastructure is commonly established early.
     if project.get("project_url"):
-        score -= 1
+        score -= 2
+    else:
+        score += 3
     return max(0, score)
 
 
@@ -211,6 +217,42 @@ def company_contact(coordinator: str):
     return None
 
 
+def global_dedup_sets():
+    sent = load_json(GLOBAL_SENT_INDEX, {})
+    orgs = load_json(GLOBAL_ORG_INDEX, {})
+    recipients = set()
+    organizations = set()
+    for item in sent.get("messages", []) if isinstance(sent, dict) else []:
+        if not isinstance(item, dict):
+            continue
+        recipient = str(item.get("recipient") or "").strip().lower()
+        if recipient:
+            recipients.add(recipient)
+        organization = norm(str(item.get("organization") or ""))
+        if organization:
+            organizations.add(organization)
+    for item in orgs.get("contacted", []) if isinstance(orgs, dict) else []:
+        if not isinstance(item, dict):
+            continue
+        organization = norm(str(item.get("organization") or item.get("canonical_identity_key") or ""))
+        if organization:
+            organizations.add(organization)
+        recipient = str(item.get("recipient") or "").strip().lower()
+        if recipient:
+            recipients.add(recipient)
+    return recipients, organizations
+
+
+def globally_contacted(recipient: str, coordinator: str, recipients: set[str], organizations: set[str]) -> bool:
+    email = str(recipient or "").strip().lower()
+    if email and email in recipients:
+        return True
+    org = norm(coordinator)
+    if org and any(org == known or org in known or known in org for known in organizations if len(known) >= 5):
+        return True
+    return False
+
+
 def smtp_ready() -> bool:
     return all(os.getenv(k) for k in ("VDS_SMTP_HOST", "VDS_SMTP_USER", "VDS_SMTP_PASSWORD"))
 
@@ -289,6 +331,7 @@ def main():
 
     contacted_ids = set(str(x) for x in state.get("contacted_project_ids", []))
     contacted_recipients = set(str(x).lower() for x in state.get("contacted_recipients", []))
+    global_recipients, global_organizations = global_dedup_sets()
     queue_rows = []
     sent_now = 0
     qualified_now = 0
@@ -309,14 +352,22 @@ def main():
         recipient = previous.get("contact_email") or company_contact(p.get("coordinator", ""))
         if status != "CONTACTED" and priority in {"HIGH", "MEDIUM"}:
             qualified_now += 1
-            if recipient and recipient.lower() not in contacted_recipients and smtp_ready() and policy.get("auto_first_contact", True):
+            if recipient and globally_contacted(recipient, p.get("coordinator", ""), global_recipients, global_organizations):
+                status = "CONTACTED"
+                contacted_ids.add(pid)
+                contacted_recipients.add(recipient.lower())
+                reason = "Global dedup gate: organization or recipient already contacted in another VDS workstream"
+            elif recipient and recipient.lower() not in contacted_recipients and smtp_ready() and policy.get("auto_first_contact", True):
                 try:
                     send_first_contact(p, recipient, policy)
                     status = "CONTACTED"
                     sent_now += 1
                     contacted_ids.add(pid)
                     contacted_recipients.add(recipient.lower())
-                    reason = "First contact sent automatically by EU Project Outreach Engine"
+                    global_recipients.add(recipient.lower())
+                    if p.get("coordinator"):
+                        global_organizations.add(norm(p.get("coordinator", "")))
+                    reason = "First contact sent automatically by EU Project Outreach Engine after global dedup gate"
                 except Exception as exc:
                     status = "READY_CONTACT"
                     reason = f"Contact found; SMTP send failed: {type(exc).__name__}"
