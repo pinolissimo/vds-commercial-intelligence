@@ -453,8 +453,13 @@ function renderCommercialMap(){
   const geo=state.geography||{};
   const scans=geo.scan_path||[];
   const actual=geo.actual_execution_focus||null;
+  const actualFoci=(geo.actual_execution_foci||[]).filter(x=>x&&x.execution_is_real);
   const actualAgeMs=actual?.updated_at?Math.max(0,Date.now()-new Date(actual.updated_at).getTime()):Infinity;
   const actualFresh=Boolean(actual?.execution_is_real)&&Number.isFinite(actualAgeMs)&&actualAgeMs<=8*60*1000;
+  const freshWorkers=actualFoci.filter(x=>{
+    const age=x?.updated_at?Math.max(0,Date.now()-new Date(x.updated_at).getTime()):Infinity;
+    return Number.isFinite(age)&&age<=8*60*1000;
+  });
   const cycleSeconds=Number(geo.cycle_seconds||300);
   const stepSeconds=scans.length?Math.max(6,cycleSeconds/scans.length):12;
   const planEpoch=geo.plan_updated_at?new Date(geo.plan_updated_at).getTime():Date.now();
@@ -466,7 +471,8 @@ function renderCommercialMap(){
   let focus=actualFresh?actual:(scans[activeScanIndex()]||geo.current_focus||null);
   const paintScannerText=()=>{
     setText('scannerLocation',focus?`${focus.locality} · ${focus.region}`:'—');
-    setText('scannerSegment',focus?`${focus.segment||'—'} · ${actualFresh?'REAL EXECUTION':'SCAN PLAN'}`:'—');
+    const workerLabel=actualFresh?`REAL EXECUTION · ${freshWorkers.length||1} WORKER${(freshWorkers.length||1)>1?'S':''}`:'SCAN PLAN';
+    setText('scannerSegment',focus?`${focus.segment||'—'} · ${workerLabel}`:'—');
     setText('scannerQuery',focus?.query||'—');
   };
   paintScannerText();
@@ -551,25 +557,37 @@ function renderCommercialMap(){
   }
 
   let radarMarker=null;
-  if(focus){
+  const workerMarkers=[];
+  if(actualFresh&&freshWorkers.length){
+    freshWorkers.forEach((w,i)=>{
+      const wid=w.worker_id||i+1;
+      const icon=L.divIcon({className:'vds-map-icon radar-wrap',html:`<span class="radar-pulse radar-worker"><b>${wid}</b><i></i></span>`,iconSize:[46,46],iconAnchor:[23,23]});
+      const marker=L.marker([w.lat,w.lon],{icon,zIndexOffset:1000+i})
+        .addTo(map)
+        .bindTooltip(`Worker ${wid}: ${safe(w.locality)} · ${safe(w.segment||'')}`,{direction:'top',offset:[0,-18]})
+        .bindPopup(`<strong>Scanner VDS · Worker ${wid}</strong><br>${safe(w.locality)} · ${safe(w.region)}<br><small>${safe(w.segment||'')}</small><br><small>${safe(w.backend_used||w.state||'')}</small>`);
+      workerMarkers.push(marker);
+    });
+    radarMarker=workerMarkers[0]||null;
+    setTimeout(()=>focusCurrent(false),90);
+  }else if(focus){
     const radarIcon=L.divIcon({className:'vds-map-icon radar-wrap',html:'<span class="radar-pulse"><i></i></span>',iconSize:[46,46],iconAnchor:[23,23]});
     radarMarker=L.marker([focus.lat,focus.lon],{icon:radarIcon,zIndexOffset:1000})
       .addTo(map)
-      .bindTooltip(`Ricerca attuale: ${safe(focus.locality)} · ${safe(focus.segment||'')}`,{permanent:false,direction:'top',offset:[0,-18]})
-      .bindPopup(`<strong>Scanner VDS</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
+      .bindTooltip(`Ricerca pianificata: ${safe(focus.locality)} · ${safe(focus.segment||'')}`,{permanent:false,direction:'top',offset:[0,-18]})
+      .bindPopup(`<strong>Scanner VDS · Scan plan</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
     setTimeout(()=>focusCurrent(false),90);
 
     let lastIndex=activeScanIndex();
     map._vdsScanTimer=setInterval(()=>{
-      if(actualFresh)return;
       const idx=activeScanIndex();
       if(idx<0||idx===lastIndex)return;
       lastIndex=idx;
       focus=scans[idx];
       paintScannerText();
       radarMarker.setLatLng([focus.lat,focus.lon]);
-      radarMarker.setTooltipContent(`Ricerca attuale: ${safe(focus.locality)} · ${safe(focus.segment||'')}`);
-      radarMarker.setPopupContent(`<strong>Scanner VDS</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
+      radarMarker.setTooltipContent(`Ricerca pianificata: ${safe(focus.locality)} · ${safe(focus.segment||'')}`);
+      radarMarker.setPopupContent(`<strong>Scanner VDS · Scan plan</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
       if(!map._vdsRefocusTimer)focusCurrent(true);
     },1000);
   }else{
