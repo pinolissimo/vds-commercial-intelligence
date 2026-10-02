@@ -43,7 +43,8 @@ def main():
     eu_qualified=int((eu.get("summary") or {}).get("qualified") or 0)
 
     opps=active.get("opportunities") or []
-    ready=sum(1 for x in opps if str(x.get("status","")).startswith("READY"))
+    executable_statuses={"AUTO_EMAIL_NOW","EXECUTABLE_READY","QUEUE_FOR_SEND_WINDOW","READY_TO_CONTACT","SEND_NOW"}
+    ready=sum(1 for x in opps if str(x.get("status","")).upper() in executable_statuses)
     active_count=len(opps)
     sent=int(today.get("first_contact_count") or 0)
     replies=(today.get("replies") or {})
