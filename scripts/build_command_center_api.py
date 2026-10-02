@@ -201,6 +201,8 @@ def build_territory_productivity() -> dict:
     country_acc = defaultdict(list)
     for area, meta in (radar.get("areas") or {}).items():
         parts = area.split("|")
+        if len(parts) < 3 or parts[1] in {"UNRESOLVED","UNKNOWN",""} or parts[2] in {"UNRESOLVED","UNKNOWN",""}:
+            continue
         country = parts[0] if len(parts) > 0 else "UNRESOLVED"
         region = parts[1] if len(parts) > 1 else "UNRESOLVED"
         territory = parts[2] if len(parts) > 2 else "UNRESOLVED"
