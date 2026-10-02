@@ -13,6 +13,8 @@ const state={
   opportunities:[],
   sources:null,
   health:null,
+  geography:null,
+  map:null,
   companyPage:1,
   companyPageSize:18,
   territoryView:'territories',
@@ -418,11 +420,99 @@ function renderHourlyChart(){
   });
 }
 
+
+function renderCommercialStreams(){
+  const root=$('commercialStreams');
+  if(!root)return;
+  const rows=state.geography?.commercial_streams||[];
+  const alloc=state.dashboard?.optimization?.allocation_pct||{};
+  const allocationFor=(stream)=>{
+    if(stream==='AGENCY_WHITE_LABEL')return alloc.AGENCY_WHITE_LABEL;
+    if(stream==='EU_PROJECT')return alloc.EU_PROJECT;
+    if(stream==='DIRECT_BUYER_WEB_NEED')return alloc.DIRECT_BUYER_WEB_NEED;
+    return null;
+  };
+  const actionFor=(row)=>{
+    if(row.stream==='AGENCY_WHITE_LABEL')return 'ACCELERA';
+    if(row.stream==='EU_PROJECT')return 'RIPARA + ESPANDI';
+    if(row.stream==='DIRECT_BUYER_WEB_NEED')return 'SCALA';
+    if(row.stream==='JOB_APPLICATION')return 'SECONDARIO';
+    return 'ESPLORA';
+  };
+  root.innerHTML=rows.map(row=>{
+    const a=allocationFor(row.stream);
+    return `<div class="stream-row">
+      <div class="stream-main"><strong>${safe(row.label)}</strong><span>${safe(row.objective)}</span></div>
+      <div class="stream-metrics"><span><b>${num(row.indexed)}</b> indicizzate</span><span><b>${num(row.contacted)}</b> contattate</span>${a!=null?`<span><b>${a}%</b> capacità</span>`:''}</div>
+      <span class="stream-action ${norm(actionFor(row)).replace(/\s+/g,'-')}">${safe(actionFor(row))}</span>
+    </div>`;
+  }).join('')||'<div class="empty-state">Inventario filoni non ancora disponibile.</div>';
+}
+
+function renderCommercialMap(){
+  const geo=state.geography||{};
+  const focus=geo.current_focus;
+  setText('scannerLocation',focus?`${focus.locality} · ${focus.region}`:'—');
+  setText('scannerSegment',focus?.segment||'—');
+  setText('scannerQuery',focus?.query||'—');
+  setText('mappedContacts',geo.summary?.mapped_contacted??0);
+  setText('mappedTerritories',geo.summary?.mapped_territories??0);
+  setText('scanPoints',geo.summary?.scan_points??0);
+  renderCommercialStreams();
+
+  const el=$('commercialMap');
+  if(!el||!window.L)return;
+  if(state.map){state.map.remove();state.map=null;}
+  const map=L.map(el,{zoomControl:true,attributionControl:true,minZoom:4,maxZoom:13,preferCanvas:true});
+  state.map=map;
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:19,
+    attribution:'&copy; OpenStreetMap contributors'
+  }).addTo(map);
+  map.fitBounds([[35.5,-10.2],[47.4,18.8]],{padding:[8,8]});
+
+  (geo.territories||[]).forEach(t=>{
+    const mode=String(t.mode||'').toUpperCase();
+    const cls=mode==='HARVEST'?'territory-harvest':mode==='ROTATE_OUT'?'territory-rotate':'territory-explore';
+    const icon=L.divIcon({className:'vds-map-icon',html:`<span class="territory-dot ${cls}"></span>`,iconSize:[18,18],iconAnchor:[9,9]});
+    L.marker([t.lat,t.lon],{icon,interactive:true}).addTo(map)
+      .bindTooltip(`<b>${safe(t.locality)}</b><br>${safe(t.region)} · ${safe(t.mode||'')}`);
+  });
+
+  const grouped=new Map();
+  (geo.contacted_points||[]).forEach(p=>{
+    const k=`${Number(p.lat).toFixed(4)}|${Number(p.lon).toFixed(4)}`;
+    if(!grouped.has(k))grouped.set(k,{...p,items:[]});
+    grouped.get(k).items.push(p);
+  });
+  grouped.forEach(g=>{
+    const count=g.items.length;
+    const icon=L.divIcon({className:'vds-map-icon',html:`<span class="contact-check">✓<em>${count>1?count:''}</em></span>`,iconSize:[34,34],iconAnchor:[17,17]});
+    const names=g.items.slice(0,8).map(x=>safe(x.organization||x.domain)).join('<br>');
+    L.marker([g.lat,g.lon],{icon}).addTo(map).bindPopup(`<strong>${safe(g.locality)}</strong><br><small>${count} attività contattate</small><div class="map-popup-list">${names}</div>`);
+  });
+
+  const scans=geo.scan_path||[];
+  if(scans.length){
+    L.polyline(scans.map(x=>[x.lat,x.lon]),{weight:2,opacity:.25,dashArray:'5 8'}).addTo(map);
+    scans.slice(1).forEach(s=>{
+      L.circleMarker([s.lat,s.lon],{radius:3,weight:1,opacity:.4,fillOpacity:.18}).addTo(map);
+    });
+  }
+  if(focus){
+    const icon=L.divIcon({className:'vds-map-icon radar-wrap',html:'<span class="radar-pulse"><i></i></span>',iconSize:[46,46],iconAnchor:[23,23]});
+    L.marker([focus.lat,focus.lon],{icon,zIndexOffset:1000}).addTo(map)
+      .bindPopup(`<strong>Scanner VDS</strong><br>${safe(focus.locality)} · ${safe(focus.region)}<br><small>${safe(focus.segment||'')}</small>`);
+  }
+  setTimeout(()=>map.invalidateSize(),80);
+}
+
 function renderAll(){
   renderHeader();
   renderToday();
   renderEngine();
   renderTerritory();
+  renderCommercialMap();
   populateCompanyCountries();
   renderCompanies();
   populateOpportunityStatus();
@@ -433,7 +523,7 @@ function renderAll(){
 }
 
 async function load(){
-  const files=['dashboard.json','today.json','companies.json','territory-productivity.json','opportunities.json','sources.json','health.json'];
+  const files=['dashboard.json','today.json','companies.json','territory-productivity.json','opportunities.json','sources.json','health.json','geography.json'];
   const results=await Promise.allSettled(files.map(f=>ghFile(`api/v1/${f}`)));
   const data={};
   results.forEach((r,i)=>{if(r.status==='fulfilled')data[files[i]]=r.value;});
@@ -444,6 +534,7 @@ async function load(){
   state.opportunities=data['opportunities.json']?.opportunities||[];
   state.sources=data['sources.json']||{};
   state.health=data['health.json']||{};
+  state.geography=data['geography.json']||{};
   renderAll();
   const failed=results.filter(r=>r.status==='rejected').length;
   if(failed)toast(`${failed} proiezioni non disponibili`);
