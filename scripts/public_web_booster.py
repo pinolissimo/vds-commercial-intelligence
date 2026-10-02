@@ -15,6 +15,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CFG=ROOT/"config/public-web-booster.json"
 OUT=ROOT/"views/public-web-booster.json"
 SEEDS=ROOT/"views/buyer-intent-priority.json"
+TERRITORIAL=ROOT/"views/territorial-public-search-results.json"
 
 def load(path,default):
     try:
@@ -27,8 +28,14 @@ def host(url):
 
 def collect_seeds(limit):
     data=load(SEEDS,{})
+    territorial=load(TERRITORIAL,{})
     rows=data.get("ranking") or data.get("opportunities") or data.get("items") or []
     urls=[]
+    # Fresh territorial search results get first chance at first-party verification.
+    for mission in territorial.get("missions") or []:
+        for result in mission.get("results") or []:
+            u=result.get("url")
+            if isinstance(u,str) and u.startswith(("http://","https://")): urls.append(u)
     def walk(v):
         if isinstance(v,str) and v.startswith(("http://","https://")): urls.append(v)
         elif isinstance(v,list):
