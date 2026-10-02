@@ -26,6 +26,7 @@ on:
       - "scripts/multi_engine_query_router.py"
       - "scripts/territorial_mission_executor.py"
       - "requirements-territorial-search.txt"
+      - "tests/test_geographic_radar_contract.py"
       - "config/high-frequency-discovery-sources.json"
       - "config/supplemental-public-sources.json"
       - "config/direct-employer-bulk-sources.json"
@@ -64,6 +65,11 @@ jobs:
 
       - name: Install territorial search executor
         run: python -m pip install --disable-pip-version-check -r requirements-territorial-search.txt
+
+      - name: Validate territorial radar contracts
+        run: |
+          python -m py_compile scripts/territorial_mission_executor.py scripts/build_geographic_intelligence.py
+          python -m unittest tests/test_geographic_radar_contract.py -v
 
       - name: Run core public-source fanout
         continue-on-error: true
