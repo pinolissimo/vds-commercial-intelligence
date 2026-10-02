@@ -41,9 +41,12 @@ class DashboardRadarSourceContractTests(unittest.TestCase):
 class ExecutorContractTests(unittest.TestCase):
     def test_executor_is_bounded_rotating_and_no_evasion(self):
         src=Path("scripts/territorial_mission_executor.py").read_text(encoding="utf-8")
-        self.assertIn("MAX_MISSIONS=8",src)
+        self.assertIn("MAX_MISSIONS=6",src)
         self.assertIn("CURSOR=",src)
         self.assertIn("next_index",src)
+        self.assertIn("DDGS(timeout=6)",src)
+        self.assertIn('"es-es"',src)
+        self.assertIn('"it-it"',src)
         self.assertIn("NO_PROXY_NO_STEALTH_NO_CAPTCHA_BYPASS",src)
         self.assertIn("search_results_are_discovery_only",src)
         self.assertIn('state="RUN_COMPLETED"',src)
