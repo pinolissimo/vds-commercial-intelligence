@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-02T15:17:57Z",
-  "latest_checked_uid": 1541,
+  "updated_at": "2026-10-02T15:33:42Z",
+  "latest_checked_uid": 1543,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -682,6 +682,21 @@
       "subtype": "SYSTEM_OR_UNCORRELATED",
       "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1543,
+      "received_at": "2026-10-02T15:19:31Z",
+      "canonical_identity_key": "org:upm.es",
+      "entity": "upm.es",
+      "sender": "bgv.etsiaab@upm.es",
+      "subject": "Re: A practical digital idea for Banco de Germoplasma Vegetal de la UPM \"CésarGómez Campo\"",
+      "message_id": "<6c6c6d59f2dba524684c802984a42f8f@upm.es>",
+      "in_reply_to": "<178822430361.24128.18142691747952669855@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
   ]
