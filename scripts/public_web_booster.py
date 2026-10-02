@@ -78,12 +78,19 @@ def main():
             super().__init__(*a,**kw); self.counts={}
         def parse(self,response):
             h=host(response.url); self.counts[h]=self.counts.get(h,0)+1
+            if self.counts[h] > max_pages: return
+            ctype=(response.headers.get("Content-Type") or b"").decode(errors="ignore").lower()
+            if "html" not in ctype and "xhtml" not in ctype: return
             text=" ".join(response.css("body *::text").getall())
             compact=re.sub(r"\s+"," ",text).strip()
             matched=sorted({t for t in signal_terms if t in compact.lower()})
             emails=sorted(set(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",compact,re.I)))[:10]
-            if matched or emails:
-                results.append({"url":response.url,"domain":h,"matched_terms":matched,"emails":emails,"text_sample":compact[:900],"render":"SCRAPY"})
+            min_terms=int(cfg.get("min_signal_terms",2))
+            path_l=response.url.lower()
+            route_hint=any(t in path_l for t in path_terms)
+            score=len(matched)*4 + min(len(emails),2)*3 + (5 if route_hint else 0)
+            if len(matched)>=min_terms or (matched and emails):
+                results.append({"url":response.url,"domain":h,"matched_terms":matched,"emails":emails,"text_sample":compact[:900],"render":"SCRAPY","signal_score":score,"route_hint":route_hint})
             if self.counts[h]>=max_pages:return
             for href in response.css("a::attr(href)").getall():
                 absolute=response.urljoin(href); ah=host(absolute)
@@ -111,7 +118,8 @@ def main():
                             compact=re.sub(r"\s+"," ",page.locator("body").inner_text(timeout=5000)).strip()
                             matched=sorted({t for t in signal_terms if t in compact.lower()})
                             emails=sorted(set(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",compact,re.I)))[:10]
-                            if matched or emails: results.append({"url":u,"domain":host(u),"matched_terms":matched,"emails":emails,"text_sample":compact[:900],"render":"PLAYWRIGHT"})
+                            route_hint=any(t in u.lower() for t in path_terms); score=len(matched)*4+min(len(emails),2)*3+(5 if route_hint else 0)
+                            if len(matched)>=int(cfg.get("min_signal_terms",2)) or (matched and emails): results.append({"url":u,"domain":host(u),"matched_terms":matched,"emails":emails,"text_sample":compact[:900],"render":"PLAYWRIGHT","signal_score":score,"route_hint":route_hint})
                             page.close()
                         except Exception: pass
                     browser.close()
@@ -120,12 +128,14 @@ def main():
     dedup={}
     for r in results:
         key=(r["domain"],r["url"])
-        if key not in dedup or len(r["matched_terms"])>len(dedup[key]["matched_terms"]): dedup[key]=r
+        if key not in dedup or int(r.get("signal_score",0))>int(dedup[key].get("signal_score",0)): dedup[key]=r
+    ranked=sorted(dedup.values(),key=lambda x:(int(x.get("signal_score",0)),bool(x.get("route_hint")),len(x.get("emails") or [])),reverse=True)
+    ranked=ranked[:int(cfg.get("max_signal_records",120))]
     payload={
       "schema_version":"1.0","updated_at":now,"status":"OK",
       "policy":"PUBLIC_WEB_ONLY_NO_EVASION",
       "domains_attempted":len({host(u) for u in seeds}),
-      "signals":list(dedup.values())
+      "signals":ranked
     }
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
