@@ -18,9 +18,9 @@ HEARTBEAT=ROOT/"state/mission-execution-heartbeat.json"
 OUT=ROOT/"views/territorial-public-search-results.json"
 CURSOR=ROOT/"state/territorial-executor-cursor.json"
 
-MAX_MISSIONS=8
-MAX_RESULTS=8
-DELAY_SECONDS=2.0
+MAX_MISSIONS=6
+MAX_RESULTS=6
+DELAY_SECONDS=1.0
 
 def now():
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
@@ -62,7 +62,7 @@ def main():
     run_id=f"territorial-{int(time.time())}"
     results=[]
     write_hb(state="RUN_STARTED",run_id=run_id,total_missions=len(selected),completed_missions=0)
-    ddgs=DDGS()
+    ddgs=DDGS(timeout=6)
     for idx,m in enumerate(selected,1):
         variants=m.get("search_variants") or []
         chosen=next((v for v in variants if v.get("variant") in {"official_site","eu_official","base_precision"}),variants[0] if variants else None)
@@ -77,7 +77,8 @@ def main():
         write_hb(state="MISSION_STARTED",completed_missions=idx-1,**hb_base)
         started=time.time()
         try:
-            found=list(ddgs.text(query,max_results=MAX_RESULTS,backend="auto"))
+            region="es-es" if m.get("country")=="Spain" else "it-it" if m.get("country")=="Italy" else "us-en"
+            found=list(ddgs.text(query,max_results=MAX_RESULTS,backend="auto",region=region))
             clean=[]
             for x in found:
                 href=x.get("href") or x.get("url") or ""
