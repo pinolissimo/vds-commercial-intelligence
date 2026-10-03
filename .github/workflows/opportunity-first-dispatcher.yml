@@ -34,7 +34,8 @@ jobs:
       VDS_SMTP_PASSWORD: ${{ secrets.VDS_SMTP_PASSWORD }}
       VDS_SMTP_FROM: ${{ secrets.VDS_SMTP_FROM }}
       VDS_OWNER_BCC: allocca.pino@gmail.com
-      VDS_DISPATCH_MAX_BATCH: '5'
+      VDS_DISPATCH_MAX_BATCH: '25'
+      VDS_DISPATCH_DRY_RUN: '1'
     steps:
       - uses: actions/checkout@v7
         with:
@@ -72,34 +73,19 @@ jobs:
           python3 scripts/global_contact_ledger.py --build
           python3 scripts/revenue_flow_preflight.py --repair
 
-      - name: Execute bounded unique first-contact batch
+      - name: Build bounded verified READY_TO_SEND batch
         if: steps.window.outputs.open == 'true'
         shell: bash
         run: |
           set -euo pipefail
           python3 scripts/opportunity_first_dispatcher.py
 
-      - name: Verify provider Sent and refresh dedup immediately
+      - name: Refresh dedup after READY_TO_SEND build
         if: steps.window.outputs.open == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          sleep 2
-          python3 scripts/sync_hostinger_mail.py
           python3 scripts/global_contact_ledger.py --build
-          python3 scripts/revenue_flow_preflight.py --repair
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-          run=json.loads(Path('state/opportunity-first-dispatch-latest.json').read_text())
-          ledger=json.loads(Path('views/global-contact-ledger.json').read_text())
-          exact=ledger.get('exact_email_index') or {}
-          accepted=[x for x in run.get('results',[]) if x.get('state')=='SMTP_ACCEPTED']
-          missing=[x.get('email') for x in accepted if x.get('email') not in exact]
-          if missing:
-              raise SystemExit(f'Provider verification/dedup refresh failed for: {missing}')
-          print(f'VERIFIED {len(accepted)} accepted messages in global ledger')
-          PY
 
       - name: Persist dispatcher and provider truth safely
         if: steps.window.outputs.open == 'true'
@@ -113,7 +99,7 @@ jobs:
             echo "No dispatcher/provider changes"
             exit 0
           fi
-          git commit -m "outreach: persist verified opportunity-first dispatch"
+          git commit -m "outreach: persist verified opportunity-first ready queue"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
             git fetch origin main
