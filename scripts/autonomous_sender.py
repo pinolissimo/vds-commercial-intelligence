@@ -3,10 +3,11 @@
 """Autonomous VDS sender.
 
 No ChatGPT dependency. Sends only queue records explicitly marked APPROVED_TO_SEND
-and carrying an allowed eligibility basis. Uses fail-closed dedup and Hostinger SMTP.
+and carrying an allowed eligibility basis. Uses fail-closed dedup and Hostinger API/SMTP transport.
 """
 from __future__ import annotations
 import json, os, smtplib, ssl, time, hashlib, urllib.parse
+from zoneinfo import ZoneInfo
 import sync_hostinger_mail as hostinger
 from datetime import datetime, timezone
 from email.message import EmailMessage
@@ -61,7 +62,7 @@ def idem_key(item):
     ])
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
-def send(host,port,user,password,from_addr,to_addr,subject,text,bcc=None):
+def send(host,port,user,password,from_addr,to_addr,subject,text,bcc=None,timeout=25):
     msg=EmailMessage()
     msg["From"]=from_addr
     msg["To"]=to_addr
@@ -71,10 +72,10 @@ def send(host,port,user,password,from_addr,to_addr,subject,text,bcc=None):
     ctx=ssl.create_default_context()
     p=int(port)
     if p==465:
-        with smtplib.SMTP_SSL(host,p,context=ctx,timeout=25) as s:
+        with smtplib.SMTP_SSL(host,p,context=ctx,timeout=timeout) as s:
             s.login(user,password); s.send_message(msg)
     else:
-        with smtplib.SMTP(host,p,timeout=25) as s:
+        with smtplib.SMTP(host,p,timeout=timeout) as s:
             s.ehlo(); s.starttls(context=ctx); s.ehlo(); s.login(user,password); s.send_message(msg)
 
 def main():
@@ -85,6 +86,18 @@ def main():
     if mode != "LIVE":
         print(json.dumps({"mode":mode,"provider":provider,"state":"DRY_RUN_NO_SEND"}))
         return 0
+
+    schedule=settings.get("schedule") or {}
+    if schedule.get("enabled",True):
+        tz=ZoneInfo(str(schedule.get("timezone") or "Europe/Madrid"))
+        local=datetime.now(tz)
+        hours=schedule.get("allowed_hours") or {}
+        start=str(hours.get("start") or "09:00")
+        end=str(hours.get("end") or "19:00")
+        hhmm=local.strftime("%H:%M")
+        if not (start <= hhmm < end):
+            print(json.dumps({"mode":mode,"provider":provider,"state":"SEND_WINDOW_CLOSED","local_time":hhmm}))
+            return 0
 
     if provider=="HOSTINGER_API":
         if not hostinger.TOKEN:
@@ -97,13 +110,21 @@ def main():
             raise SystemExit("Missing SMTP configuration: "+",".join(missing))
 
     queue=load_jsonl(QUEUE)
+    safety=settings.get("safety") or {}
+    if safety.get("fail_closed_on_missing_ledger",True) and not LEDGER.exists():
+        raise SystemExit("Missing global contact ledger")
     ledger=load_json(LEDGER,{})
     state=load_json(STATE,{"sent_idempotency_keys":[]})
     sent_keys=set(state.get("sent_idempotency_keys") or [])
     exact=set((ledger.get("exact_email_index") or {}).keys())
     domains=set((ledger.get("corporate_domain_index") or {}).keys())
 
-    max_batch=max(1,min(int((settings.get("delivery") or {}).get("max_batch") or os.getenv("VDS_AUTONOMOUS_MAX_BATCH","10")),25))
+    delivery=settings.get("delivery") or {}
+    max_batch=max(1,min(int(delivery.get("max_batch") or os.getenv("VDS_AUTONOMOUS_MAX_BATCH","10")),500))
+    delay_seconds=max(0.0,float(delivery.get("delay_seconds",os.getenv("VDS_AUTONOMOUS_SEND_DELAY_SECONDS","2"))))
+    timeout_seconds=max(5,int(delivery.get("timeout_seconds",25)))
+    dedup_enabled=bool(safety.get("dedup_enabled",True))
+    idempotency_enabled=bool(safety.get("idempotency_enabled",True))
     candidates=[]
     rejected=[]
     for item in queue:
@@ -119,10 +140,10 @@ def main():
             rejected.append({"queue_id":item.get("queue_id"),"reason":"INVALID_RECIPIENT"})
             continue
         key=idem_key(item)
-        if key in sent_keys:
+        if idempotency_enabled and key in sent_keys:
             rejected.append({"queue_id":item.get("queue_id"),"reason":"IDEMPOTENT_ALREADY_SENT"})
             continue
-        if item.get("action_type","FIRST_CONTACT")=="FIRST_CONTACT" and (recipient in exact or domain in domains):
+        if dedup_enabled and item.get("action_type","FIRST_CONTACT")=="FIRST_CONTACT" and (recipient in exact or domain in domains):
             rejected.append({"queue_id":item.get("queue_id"),"reason":"GLOBAL_DEDUP_BLOCK"})
             continue
         if not item.get("subject") or not item.get("text"):
@@ -135,7 +156,8 @@ def main():
         host=os.environ["VDS_SMTP_HOST"];port=os.environ["VDS_SMTP_PORT"]
         user=os.environ["VDS_SMTP_USER"];password=os.environ["VDS_SMTP_PASSWORD"]
         from_addr=os.environ["VDS_SMTP_FROM"]
-    bcc=os.getenv("VDS_OWNER_BCC")
+    message_cfg=settings.get("message") or {}
+    bcc=os.getenv(str(message_cfg.get("owner_bcc_env") or "VDS_OWNER_BCC")) if message_cfg.get("owner_bcc_enabled",True) else None
     results=[]
     for item,key,domain in candidates:
         try:
@@ -144,15 +166,15 @@ def main():
                 if bcc: payload["bcc"]=[bcc]
                 hostinger.api("POST",f"/api/v1/mailboxes/{urllib.parse.quote(mailbox_id,safe='')}/send",body=payload)
             else:
-                send(host,port,user,password,from_addr,item["recipient"],item["subject"],item["text"],bcc)
+                send(host,port,user,password,from_addr,item["recipient"],item["subject"],item["text"],bcc,timeout_seconds)
             sent_keys.add(key)
             exact.add(item["recipient"].lower()); domains.add(domain)
             results.append({
                 "queue_id":item.get("queue_id"),"recipient":item["recipient"].lower(),
-                "organization":item.get("organization"),"state":"SMTP_ACCEPTED",
+                "organization":item.get("organization"),"state":"DELIVERY_ACCEPTED",
                 "accepted_at":nowz(),"idempotency_key":key
             })
-            time.sleep(float(os.getenv("VDS_AUTONOMOUS_SEND_DELAY_SECONDS","2")))
+            time.sleep(delay_seconds)
         except Exception as exc:
             results.append({
                 "queue_id":item.get("queue_id"),"recipient":item.get("recipient"),
@@ -162,7 +184,8 @@ def main():
     payload={
         "schema_version":"1.1","updated_at":nowz(),"provider":provider,"queue_records":len(queue),
         "eligible_candidates":len(candidates),"batch_limit":max_batch,
-        "smtp_accepted":sum(1 for x in results if x["state"]=="SMTP_ACCEPTED"),
+        "delivery_accepted":sum(1 for x in results if x["state"]=="DELIVERY_ACCEPTED"),
+        "smtp_accepted":sum(1 for x in results if x["state"]=="DELIVERY_ACCEPTED"),
         "failed":sum(1 for x in results if x["state"]=="SEND_FAILED"),
         "rejected_count":len(rejected),"results":results,"rejected":rejected[:100],
         "sent_idempotency_keys":sorted(sent_keys),
@@ -170,7 +193,7 @@ def main():
     save_json(STATE,payload)
     AUDIT.mkdir(parents=True,exist_ok=True)
     save_json(AUDIT/(payload["updated_at"].replace(":","-")+".json"),payload)
-    print(json.dumps({k:payload[k] for k in ("queue_records","eligible_candidates","smtp_accepted","failed","rejected_count")}))
+    print(json.dumps({k:payload[k] for k in ("queue_records","eligible_candidates","delivery_accepted","smtp_accepted","failed","rejected_count")}))
     return 0
 
 if __name__=="__main__":
