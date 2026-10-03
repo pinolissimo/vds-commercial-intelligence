@@ -84,6 +84,9 @@ def main():
     mode=str(settings.get("mode") or "DRY_RUN").upper()
 
     if mode != "LIVE":
+        previous=load_json(STATE,{"sent_idempotency_keys":[]})
+        payload={"schema_version":"1.2","updated_at":nowz(),"provider":provider,"run_state":"DRY_RUN_NO_SEND","queue_records":0,"eligible_candidates":0,"batch_limit":0,"delivery_accepted":0,"smtp_accepted":0,"failed":0,"rejected_count":0,"results":[],"rejected":[],"sent_idempotency_keys":previous.get("sent_idempotency_keys") or []}
+        save_json(STATE,payload)
         print(json.dumps({"mode":mode,"provider":provider,"state":"DRY_RUN_NO_SEND"}))
         return 0
 
@@ -96,6 +99,9 @@ def main():
         end=str(hours.get("end") or "19:00")
         hhmm=local.strftime("%H:%M")
         if not (start <= hhmm < end):
+            previous=load_json(STATE,{"sent_idempotency_keys":[]})
+            payload={"schema_version":"1.2","updated_at":nowz(),"provider":provider,"run_state":"SEND_WINDOW_CLOSED","local_time":hhmm,"queue_records":0,"eligible_candidates":0,"batch_limit":0,"delivery_accepted":0,"smtp_accepted":0,"failed":0,"rejected_count":0,"results":[],"rejected":[],"sent_idempotency_keys":previous.get("sent_idempotency_keys") or []}
+            save_json(STATE,payload)
             print(json.dumps({"mode":mode,"provider":provider,"state":"SEND_WINDOW_CLOSED","local_time":hhmm}))
             return 0
 
@@ -182,7 +188,7 @@ def main():
             })
 
     payload={
-        "schema_version":"1.1","updated_at":nowz(),"provider":provider,"queue_records":len(queue),
+        "schema_version":"1.2","updated_at":nowz(),"provider":provider,"run_state":"COMPLETED","queue_records":len(queue),
         "eligible_candidates":len(candidates),"batch_limit":max_batch,
         "delivery_accepted":sum(1 for x in results if x["state"]=="DELIVERY_ACCEPTED"),
         "smtp_accepted":sum(1 for x in results if x["state"]=="DELIVERY_ACCEPTED"),
