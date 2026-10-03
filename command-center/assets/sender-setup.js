@@ -70,13 +70,18 @@ async function ghConfigPut(config,sha){
   return r.json();
 }
 function ensureSenderButton(){
-  if(document.getElementById('senderSetupButton'))return;
-  const actions=document.querySelector('.header-actions'); if(!actions)return;
-  const btn=document.createElement('button');
-  btn.id='senderSetupButton'; btn.className='icon-button'; btn.type='button'; btn.title='Sender Setup'; btn.setAttribute('aria-label','Configura VDS Sender');
-  btn.innerHTML='<span class="material-symbols" aria-hidden="true">tune</span>';
-  actions.insertBefore(btn,document.getElementById('authButton')||null);
-  btn.addEventListener('click',openSenderSetup);
+  let btn=document.getElementById('senderSetupButton');
+  if(!btn){
+    const actions=document.querySelector('.header-actions'); if(!actions)return;
+    btn=document.createElement('button');
+    btn.id='senderSetupButton'; btn.className='icon-button'; btn.type='button'; btn.title='Sender Setup'; btn.setAttribute('aria-label','Configura VDS Sender');
+    btn.innerHTML='<span class="material-symbols" aria-hidden="true">tune</span>';
+    actions.insertBefore(btn,document.getElementById('authButton')||null);
+  }
+  if(btn.dataset.senderSetupBound!=='1'){
+    btn.addEventListener('click',openSenderSetup);
+    btn.dataset.senderSetupBound='1';
+  }
 }
 function senderModalMarkup(){
   const overlay=document.createElement('div');
