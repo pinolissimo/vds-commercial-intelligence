@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-03T08:35:01Z",
-  "latest_checked_uid": 1544,
+  "updated_at": "2026-10-03T08:47:22Z",
+  "latest_checked_uid": 1545,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -712,6 +712,21 @@
       "subtype": "HUMAN_REPLY_UNCLASSIFIED",
       "summary": "Human reply detected; semantic classification pending.",
       "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1545,
+      "received_at": "2026-10-03T08:35:05Z",
+      "canonical_identity_key": "org:newsletter.anycubic.com",
+      "entity": "newsletter.anycubic.com",
+      "sender": "marketing@newsletter.anycubic.com",
+      "subject": "⚡ Vuelven las ofertas de aniversario",
+      "message_id": "<01M40DJ49V05EH05Q00ZG1KQBX@klaviyomail.com>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
   ]
