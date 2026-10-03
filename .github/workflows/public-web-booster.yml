@@ -3,7 +3,7 @@ name: VDS Public Web Intelligence Booster
 on:
   workflow_dispatch:
   schedule:
-    - cron: '29 */6 * * *'
+    - cron: '*/30 * * * *'
   push:
     branches: [main]
     paths:
@@ -24,7 +24,7 @@ concurrency:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v7
         with:
@@ -41,8 +41,12 @@ jobs:
         run: |
           python -m py_compile scripts/public_web_booster.py scripts/booster_seed_bridge.py scripts/first_party_route_enricher.py
           python scripts/public_web_booster.py
-          python scripts/booster_seed_bridge.py
-          python scripts/first_party_route_enricher.py
+          python scripts/booster_seed_bridge.py &
+          p1=$!
+          python scripts/first_party_route_enricher.py &
+          p2=$!
+          wait $p1
+          wait $p2
 
       - name: Persist booster-owned intelligence safely
         shell: bash
@@ -53,8 +57,12 @@ jobs:
 
           rebuild() {
             python scripts/public_web_booster.py
-            python scripts/booster_seed_bridge.py
-            python scripts/first_party_route_enricher.py
+            python scripts/booster_seed_bridge.py &
+            p1=$!
+            python scripts/first_party_route_enricher.py &
+            p2=$!
+            wait $p1
+            wait $p2
           }
 
           stage() {
