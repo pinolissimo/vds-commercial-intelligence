@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1012,
+  "runs": 1013,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -26839,6 +26839,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a12b9380f01249d8e0a09369d5bd200d",
+      "evaluated_at": "2026-10-03T16:44:19Z",
+      "organization": "Monterail",
+      "title": "Monterail Tech Network",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/monterail-tech-network-monterail",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Tech Network' talent-pool posting from Monterail with only a 'frontend' keyword match and no explicit WordPress/WooCommerce, maintenance, or web-performance scope; commercial keywords appear as boilerplate rather than a concrete freelance engagement.",
+      "deepseek_risk_flags": [
+        "talent_pool_not_a_role",
+        "no_explicit_stack_scope",
+        "no_contract_terms",
+        "geo_unverified",
+        "keyword_only_match"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00019956,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -31185,9 +31214,21 @@
       "completion_tokens": 156,
       "total_tokens": 702,
       "estimated_cost_usd": 0.00019582
+    },
+    {
+      "at": "2026-10-03T16:44:19Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 435,
+      "completion_tokens": 156,
+      "total_tokens": 719,
+      "estimated_cost_usd": 0.00019956
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-03T16:27:14Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-03T16:44:19Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
