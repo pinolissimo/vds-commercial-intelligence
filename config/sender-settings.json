@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.0",
+  "mode": "DRY_RUN",
+  "provider": "SMTP",
+  "queue_file": "outreach/autonomous-send-queue.jsonl",
+  "state_file": "state/autonomous-sender-state.json",
+  "audit_dir": "data/autonomous-sender-runs",
+  "policy_adapter": "config/sender-policy.json",
+  "delivery": {
+    "max_batch": 10,
+    "delay_seconds": 2,
+    "max_attempts": 3,
+    "retry_backoff_seconds": 5,
+    "timeout_seconds": 25,
+    "verify_provider_after_batch": true
+  },
+  "schedule": {
+    "enabled": true,
+    "timezone": "Europe/Madrid",
+    "allowed_hours": {"start": "09:00", "end": "19:00"}
+  },
+  "safety": {
+    "dedup_enabled": true,
+    "idempotency_enabled": true,
+    "single_writer_lock": true,
+    "fail_closed_on_missing_ledger": true
+  },
+  "message": {
+    "owner_bcc_enabled": true,
+    "owner_bcc_env": "VDS_OWNER_BCC"
+  },
+  "smtp": {
+    "host_env": "VDS_SMTP_HOST",
+    "port_env": "VDS_SMTP_PORT",
+    "user_env": "VDS_SMTP_USER",
+    "password_env": "VDS_SMTP_PASSWORD",
+    "from_env": "VDS_SMTP_FROM"
+  }
+}
