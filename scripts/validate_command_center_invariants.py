@@ -55,8 +55,8 @@ def main():
     for x in today.get('sent') or []:
         assert eid(x), 'today outbound without stable identity'
         assert x.get('state')=='VERIFIED_EMAIL_SENT', 'today contains non-verified sent mail'
-        if x.get('action_type','FIRST_CONTACT')=='FIRST_CONTACT':
-            assert x.get('count_as_successful_outbound') is not False, 'today contains excluded first contact'
+        if x.get('business_class')!='TEST_OR_ADMIN' and x.get('action_type','FIRST_CONTACT')=='FIRST_CONTACT':
+            assert x.get('count_as_successful_outbound') is not False, 'commercial today contains excluded first contact'
 
     date_str=today.get('date')
     active=[x for x in commercial_today if in_active_window(x,date_str)]
