@@ -12,14 +12,27 @@ function qaEscape(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<
 function qaToast(m){const e=q('toast');if(!e)return;e.textContent=m;e.classList.add('show');clearTimeout(qaToast.t);qaToast.t=setTimeout(()=>e.classList.remove('show'),2500);}
 
 async function qaRead(){
-  if(!qaToken())throw new Error('Inserisci prima il token GitHub dal pulsante lucchetto.');
-  const r=await fetch(`${QA_GH}/repos/${QA_OWNER}/${QA_REPO}/contents/${QA_PATH}?ref=${QA_REF}&v=${Date.now()}`,{headers:qaHeaders(),cache:'no-store'});
-  if(!r.ok)throw new Error(`QUEUE_READ_${r.status}`);
-  const d=await r.json();qaSha=d.sha;
-  qaRows=qaDecode(d.content).split(/\r?\n/).filter(Boolean).map(x=>JSON.parse(x));
+  const publicRead=await fetch(QA_PATH+`?v=${Date.now()}`,{cache:'no-store'});
+  if(publicRead.ok){
+    qaRows=(await publicRead.text()).split(/\r?\n/).filter(Boolean).map(x=>JSON.parse(x));
+  }else{
+    throw new Error(`QUEUE_PUBLIC_READ_${publicRead.status}`);
+  }
+  if(qaToken()){
+    const meta=await fetch(`${QA_GH}/repos/${QA_OWNER}/${QA_REPO}/contents/${QA_PATH}?ref=${QA_REF}`,{headers:qaHeaders(),cache:'no-store'});
+    if(meta.ok){const d=await meta.json();qaSha=d.sha;}
+    else if(meta.status===401||meta.status===403){qaSha=null;}
+  }
   return qaRows;
 }
 async function qaWrite(message){
+  if(!qaToken())throw new Error('Connetti GitHub prima di approvare.');
+  if(!qaSha){
+    const latest=await fetch(`${QA_GH}/repos/${QA_OWNER}/${QA_REPO}/contents/${QA_PATH}?ref=${QA_REF}`,{headers:qaHeaders(),cache:'no-store'});
+    if(latest.status===401||latest.status===403)throw new Error('Token GitHub senza accesso Contents. Serve Contents: Read and write.');
+    if(!latest.ok)throw new Error(`QUEUE_META_${latest.status}`);
+    qaSha=(await latest.json()).sha;
+  }
   const content=qaRows.map(x=>JSON.stringify(x)).join('\n')+'\n';
   const body={message,content:qaEncode(content),branch:QA_REF,sha:qaSha};
   const r=await fetch(`${QA_GH}/repos/${QA_OWNER}/${QA_REPO}/contents/${QA_PATH}`,{method:'PUT',headers:{...qaHeaders(),'Content-Type':'application/json'},body:JSON.stringify(body)});
@@ -81,5 +94,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     const a=e.target.closest('.qa-approve'),r=e.target.closest('.qa-reject');if(!a&&!r)return;
     try{await qaChange([(a||r).dataset.id],a?'APPROVED_TO_SEND':'CANCELLED');}catch(err){q('approvalStatus').textContent=err.message;}
   });
-  if(qaToken())qaRefresh(); else q('approvalStatus').textContent='Connetti GitHub con il pulsante lucchetto per gestire le approvazioni.';
+  qaRefresh();
 });
