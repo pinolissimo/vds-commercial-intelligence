@@ -63,6 +63,14 @@ def classify_archetype(blob, policy):
     ]
     strong_external = any(x in blob for x in strong_external_terms)
     agency_context = any(x in blob for x in agency_context_terms)
+    web_delivery_context = any(x in blob for x in [
+        "wordpress", "web development", "website development", "frontend", "website",
+        "woocommerce", "ecommerce", "landing page", "microsite", "cms", "digital production"
+    ])
+    capacity_context = any(x in blob for x in [
+        "hiring", "careers", "join our team", "open positions", "vacancy", "growing team",
+        "partners", "partner network", "supplier", "collaborators"
+    ])
 
     if eu_hits and any(x in blob for x in [
         "horizon", "prima", "eu project", "european project", "dissemination", "research project"
@@ -72,6 +80,12 @@ def classify_archetype(blob, policy):
         "white label", "white-label", "overflow", "subcontract", "external capacity"
     ])):
         return "AGENCY_EXTERNAL_CAPACITY", agency_hits
+    if agency_context and web_delivery_context:
+        inferred = list(agency_hits)
+        inferred.append("AGENCY_WEB_CAPACITY_INFERRED")
+        if capacity_context:
+            inferred.append("CAPACITY_SIGNAL_INFERRED")
+        return "AGENCY_EXTERNAL_CAPACITY", sorted(set(inferred))
     return "SME_WEB_IMPROVEMENT", sme_hits
 
 
