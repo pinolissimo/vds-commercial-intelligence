@@ -14,6 +14,9 @@ READY = ROOT / "views/it-es-partner-apply-ready-queue.json"
 OUT = ROOT / "views/acquisition-performance.json"
 CMD = ROOT / "config/acquisition-runtime-command.json"
 CI_POLICY = ROOT / "config/continuous-improvement-policy.json"
+OPP_FIRST = ROOT / "views/opportunity-first-optimizer.json"
+SECOND_CHANCE = ROOT / "views/second-chance-queue.json"
+DM_QUEUE = ROOT / "views/decision-maker-enrichment-queue.json"
 
 TURBO_ENABLE_SEMANTIC_PASS = 20
 TURBO_RELEASE_SEMANTIC_PASS = 8
@@ -70,6 +73,9 @@ def main():
     previous_runtime = load(CMD, {})
     ci_policy = load(CI_POLICY, {})
     owner = ci_policy.get("immutable_owner_directives", {}) or {}
+    opp_first = load(OPP_FIRST, {"opportunities": [], "high_priority_count": 0})
+    second_chance = load(SECOND_CHANCE, {"queue": []})
+    dm_queue = load(DM_QUEUE, {"queue": []})
 
     cross = load(CROSS, {"opportunities": []})
     ready = load(READY, {"queue": []})
@@ -125,6 +131,9 @@ def main():
     very_high_intent = int(buyer_counts.get("VERY_HIGH", 0))
     high_intent = int(buyer_counts.get("HIGH", 0))
     high_intent_count = very_high_intent + high_intent
+    opportunity_first_high = int(opp_first.get("high_priority_count", 0))
+    second_chance_count = len(second_chance.get("queue", []))
+    decision_maker_queue_count = len(dm_queue.get("queue", []))
     buyer_archetypes = buyer.get("counts_by_archetype", {}) or {}
     engagement_models = buyer.get("counts_by_engagement_model", {}) or {}
     project_high_intent = int(buyer.get("project_based_high_intent", 0))
@@ -181,6 +190,9 @@ def main():
             "buyer_intent_high": high_intent,
             "buyer_intent_high_total": high_intent_count,
             "project_based_high_intent": project_high_intent,
+            "opportunity_first_high_priority": opportunity_first_high,
+            "second_chance_queue": second_chance_count,
+            "decision_maker_enrichment_queue": decision_maker_queue_count,
             "buyer_archetypes": buyer_archetypes,
             "engagement_models": engagement_models,
             "legacy_cross_signal_hot_plus_advisory": hot_plus,
@@ -213,7 +225,10 @@ def main():
             "Measure progression to qualified reply, call, proposal and won revenue, not email volume alone",
             "Resolve authoritative route and provider/organization dedup immediately before every send",
             "Preserve application-only routes and all legal/channel constraints",
-            "DeepSeek remains shadow-only and cannot authorize or veto deterministic execution"
+            "DeepSeek remains shadow-only and cannot authorize or veto deterministic execution",
+            "Exploit opportunity-first timing and cross-signal scoring before generic backlog",
+            "Retry ambiguous but plausible leads through the second-chance queue instead of discarding them",
+            "Prefer decision-maker enrichment when it can improve route quality without guessing addresses"
         ]
     }
     save(OUT, output)
@@ -229,6 +244,10 @@ def main():
             "required_engagement_model": "PROJECT_BASED_WEB_DELIVERY",
             "generic_job_application_share_cap": 0.15,
             "message_default": "PROBLEM_PROOF_MICRO_COMMITMENT",
+            "opportunity_first_optimizer_enabled": True,
+            "opportunity_first_high_priority": opportunity_first_high,
+            "second_chance_queue_size": second_chance_count,
+            "decision_maker_enrichment_queue_size": decision_maker_queue_count,
             "vds_engine_positioning": "BENEFIT_LEVEL_ONLY",
             "target_high_intent_first_contacts_7d": 750 if owner.get("revenue_emergency_mode") else 120,
             "target_first_contacts_per_business_day": int(owner.get("target_first_contacts_per_business_day") or 20),
