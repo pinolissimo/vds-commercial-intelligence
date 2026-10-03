@@ -118,6 +118,8 @@ jobs:
           ! grep -q 'style="' .pages/assets/eu-radar.js
           node --check .pages/assets/sender-setup.js
           node --check .pages/assets/approval-queue.js
+          ! grep -q '/contents/api/v1/' .pages/assets/app.js
+          ! grep -q '/contents/api/v1/' .pages/assets/eu-radar.js
           node --check .pages/assets/token-persistence.js
           node --check .pages/assets/live-export.js
           node --check .pages/assets/executable-ready.js
