@@ -40,6 +40,8 @@ jobs:
           mkdir -p .pages
           cp -R command-center/. .pages/
           python3 scripts/prepare_command_center_assets.py .pages
+          mkdir -p .pages/outreach
+          cp outreach/autonomous-send-queue.jsonl .pages/outreach/autonomous-send-queue.jsonl
 
       - name: Security and static smoke test
         shell: bash
@@ -56,6 +58,8 @@ jobs:
           test -s .pages/assets/approval-queue.css
           test -s .pages/assets/build-check.js
           test -s .pages/build-version.json
+          test -s .pages/outreach/autonomous-send-queue.jsonl
+          grep -q '"action_type":"FIRST_CONTACT"' .pages/outreach/autonomous-send-queue.jsonl || grep -q '"action_type": "FIRST_CONTACT"' .pages/outreach/autonomous-send-queue.jsonl
           test -s .pages/assets/token-persistence.js
           test -s .pages/assets/live-export.js
           test -s .pages/assets/executable-ready.js
