@@ -40,6 +40,13 @@ def main():
     ids=[eid(x) for x in msgs if eid(x)]
     assert len(ids)==len(set(ids)), 'duplicate outbound event identity'
     assert today.get('sent_count',0)>=today.get('first_contact_count',0)>=0
+    provider_today=[x for x in today.get('sent') or [] if x.get('state')=='VERIFIED_EMAIL_SENT']
+    commercial_today=[x for x in provider_today if x.get('business_class')!='TEST_OR_ADMIN' and x.get('count_as_commercial_outbound') is not False]
+    test_admin_today=[x for x in provider_today if x.get('business_class')=='TEST_OR_ADMIN' or x.get('count_as_commercial_outbound') is False]
+    assert today.get('sent_count')==len(commercial_today), 'commercial sent KPI includes non-commercial traffic'
+    assert today.get('provider_sent_count')==len(provider_today), 'provider sent evidence count drift'
+    assert today.get('test_admin_sent_count')==len(test_admin_today), 'test/admin sent count drift'
+    assert not [x for x in commercial_today if x.get('action_type')=='TEST_OR_ADMIN'], 'TEST_OR_ADMIN leaked into commercial KPI'
     assert (dash.get('today') or {}).get('sent')==today.get('sent_count'), 'dashboard/today sent drift'
     assert (dash.get('today') or {}).get('first_contacts_sent')==today.get('first_contact_count'), 'dashboard/today first-contact drift'
     assert (dash.get('headline') or {}).get('sent_today')==today.get('sent_count'), 'headline sent drift'
@@ -52,7 +59,7 @@ def main():
             assert x.get('count_as_successful_outbound') is not False, 'today contains excluded first contact'
 
     date_str=today.get('date')
-    active=[x for x in today.get('sent') or [] if in_active_window(x,date_str)]
+    active=[x for x in commercial_today if in_active_window(x,date_str)]
     active_first=[
         x for x in active
         if x.get('action_type','FIRST_CONTACT')=='FIRST_CONTACT'
