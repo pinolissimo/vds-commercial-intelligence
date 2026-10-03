@@ -132,12 +132,25 @@ def classify(company):
 def infer_geo(company):
     country = company.get("country") or "Unknown"
     region = company.get("region")
-    cid = str(company.get("company_id") or "").upper()
+    cid = str(company.get("company_id") or company.get("key") or "").upper()
+    opp_ids = " ".join(str(x.get("id") or "") for x in company.get("opportunities") or []).upper()
+    geo_blob = cid + " " + opp_ids
     if not region:
         for prefix, value in sorted(REGION_HINTS.items(), key=lambda x: len(x[0]), reverse=True):
-            if prefix in cid:
+            if prefix in geo_blob:
                 country, region = value
                 break
+    if country in {"Unknown", "EU", "Remote"}:
+        if re.search(r"(^|[-_ ])IT([-_ ]|$)", geo_blob) or str(company.get("domain") or "").lower().endswith(".it"):
+            country = "Italy"
+        elif re.search(r"(^|[-_ ])ES([-_ ]|$)", geo_blob) or str(company.get("domain") or "").lower().endswith(".es"):
+            country = "Spain"
+        elif re.search(r"(^|[-_ ])DE([-_ ]|$)", geo_blob) or str(company.get("domain") or "").lower().endswith(".de"):
+            country = "Germany"
+        elif re.search(r"(^|[-_ ])FR([-_ ]|$)", geo_blob) or str(company.get("domain") or "").lower().endswith(".fr"):
+            country = "France"
+        elif re.search(r"(^|[-_ ])AT([-_ ]|$)", geo_blob) or str(company.get("domain") or "").lower().endswith(".at"):
+            country = "Austria"
     return country or "Unknown", region or "Unresolved"
 
 def dedup_state(company, ledger):
