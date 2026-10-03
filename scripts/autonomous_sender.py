@@ -6,7 +6,7 @@ No ChatGPT dependency. Sends only queue records explicitly marked APPROVED_TO_SE
 and carrying an allowed eligibility basis. Uses fail-closed dedup and Hostinger SMTP.
 """
 from __future__ import annotations
-import json, os, smtplib, ssl, time, hashlib
+import json, os, smtplib, ssl, time, hashlib, urllib.parse
 from datetime import datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
@@ -16,6 +16,7 @@ QUEUE=ROOT/"outreach/autonomous-send-queue.jsonl"
 LEDGER=ROOT/"views/global-contact-ledger.json"
 STATE=ROOT/"state/autonomous-sender-state.json"
 AUDIT=ROOT/"data/autonomous-sender-runs"
+SETTINGS=ROOT/"config/sender-settings.json"
 ALLOWED_BASES={
     "CONSENT",
     "REQUESTED_CONTACT",
@@ -76,10 +77,22 @@ def send(host,port,user,password,from_addr,to_addr,subject,text,bcc=None):
             s.ehlo(); s.starttls(context=ctx); s.ehlo(); s.login(user,password); s.send_message(msg)
 
 def main():
-    required=["VDS_SMTP_HOST","VDS_SMTP_PORT","VDS_SMTP_USER","VDS_SMTP_PASSWORD","VDS_SMTP_FROM"]
-    missing=[k for k in required if not os.getenv(k)]
-    if missing:
-        raise SystemExit("Missing SMTP configuration: "+",".join(missing))
+    settings=load_json(SETTINGS,{})
+    provider=str(settings.get("provider") or "SMTP").upper()
+    mode=str(settings.get("mode") or "DRY_RUN").upper()
+    if mode != "LIVE":
+        print(json.dumps({"mode":mode,"provider":provider,"state":"DRY_RUN_NO_SEND"}))
+        return 0
+    if provider=="HOSTINGER_API":
+        from scripts import sync_hostinger_mail as hostinger
+        if not hostinger.TOKEN:
+            raise SystemExit("Missing HOSTINGER_EMAIL_API_TOKEN")
+        mailbox_id=hostinger.get_mailbox()
+    else:
+        required=["VDS_SMTP_HOST","VDS_SMTP_PORT","VDS_SMTP_USER","VDS_SMTP_PASSWORD","VDS_SMTP_FROM"]
+        missing=[k for k in required if not os.getenv(k)]
+        if missing:
+            raise SystemExit("Missing SMTP configuration: "+",".join(missing))
 
     queue=load_jsonl(QUEUE)
     ledger=load_json(LEDGER,{})
@@ -88,7 +101,7 @@ def main():
     exact=set((ledger.get("exact_email_index") or {}).keys())
     domains=set((ledger.get("corporate_domain_index") or {}).keys())
 
-    max_batch=max(1,min(int(os.getenv("VDS_AUTONOMOUS_MAX_BATCH","10")),25))
+    max_batch=max(1,min(int((settings.get("delivery") or {}).get("max_batch") or os.getenv("VDS_AUTONOMOUS_MAX_BATCH","10")),25))
     candidates=[]
     rejected=[]
     for item in queue:
@@ -116,13 +129,20 @@ def main():
         candidates.append((item,key,domain))
         if len(candidates)>=max_batch: break
 
-    host=os.environ["VDS_SMTP_HOST"];port=os.environ["VDS_SMTP_PORT"]
-    user=os.environ["VDS_SMTP_USER"];password=os.environ["VDS_SMTP_PASSWORD"]
-    from_addr=os.environ["VDS_SMTP_FROM"];bcc=os.getenv("VDS_OWNER_BCC")
+    if provider!="HOSTINGER_API":
+        host=os.environ["VDS_SMTP_HOST"];port=os.environ["VDS_SMTP_PORT"]
+        user=os.environ["VDS_SMTP_USER"];password=os.environ["VDS_SMTP_PASSWORD"]
+        from_addr=os.environ["VDS_SMTP_FROM"]
+    bcc=os.getenv("VDS_OWNER_BCC")
     results=[]
     for item,key,domain in candidates:
         try:
-            send(host,port,user,password,from_addr,item["recipient"],item["subject"],item["text"],bcc)
+            if provider=="HOSTINGER_API":
+                payload={"to":[item["recipient"]],"subject":item["subject"],"text":item["text"],"displayName":"Giuseppe Allocca — Visual Design Studio"}
+                if bcc: payload["bcc"]=[bcc]
+                hostinger.api("POST",f"/api/v1/mailboxes/{urllib.parse.quote(mailbox_id,safe='')}/send",body=payload)
+            else:
+                send(host,port,user,password,from_addr,item["recipient"],item["subject"],item["text"],bcc)
             sent_keys.add(key)
             exact.add(item["recipient"].lower()); domains.add(domain)
             results.append({
@@ -138,7 +158,7 @@ def main():
             })
 
     payload={
-        "schema_version":"1.0","updated_at":nowz(),"queue_records":len(queue),
+        "schema_version":"1.1","updated_at":nowz(),"provider":provider,"queue_records":len(queue),
         "eligible_candidates":len(candidates),"batch_limit":max_batch,
         "smtp_accepted":sum(1 for x in results if x["state"]=="SMTP_ACCEPTED"),
         "failed":sum(1 for x in results if x["state"]=="SEND_FAILED"),
