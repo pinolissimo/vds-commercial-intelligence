@@ -48,6 +48,8 @@ jobs:
           test -s .pages/assets/command.css
           test -s .pages/assets/export.css
           test -s .pages/assets/app.js
+          test -s .pages/assets/sender-setup.js
+          test -s .pages/assets/sender-setup.css
           test -s .pages/assets/build-check.js
           test -s .pages/build-version.json
           test -s .pages/assets/token-persistence.js
@@ -74,6 +76,9 @@ jobs:
           grep -q "fallback/" .pages/assets/live-export.js
           grep -q "localStorage" .pages/assets/token-persistence.js
           grep -q "assets/token-persistence.js" .pages/index.html
+          grep -q 'id="senderSetupButton"' .pages/index.html
+          grep -q "assets/sender-setup.js" .pages/index.html
+          grep -q "assets/sender-setup.css" .pages/index.html
           grep -q "assets/build-check.js?v=" .pages/index.html
           grep -q "_vds_build" .pages/assets/build-check.js
           grep -q '"build_id"' .pages/build-version.json
@@ -99,6 +104,7 @@ jobs:
           grep -q "hostinger-provider-sync.yml" .pages/assets/live-export.js
           grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
           node --check .pages/assets/app.js
+          node --check .pages/assets/sender-setup.js
           python3 -m unittest tests/test_geographic_radar_contract.py -v
           node --check .pages/assets/token-persistence.js
           node --check .pages/assets/live-export.js
