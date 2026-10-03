@@ -10,7 +10,7 @@
   <meta name="description" content="Command center operativo VDS: risultati di oggi, aziende e contatti, opportunità, outbound e produttività geografica.">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="assets/app.css">
-  <link rel="stylesheet" href="assets/command.css">
+  <link rel="stylesheet" href="assets/command.css">\n  <link rel="stylesheet" href="assets/sender-setup.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
@@ -58,6 +58,6 @@
 
   <div id="authOverlay" class="auth-overlay" hidden><section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="auth-icon"><span class="material-symbols" aria-hidden="true">shield_lock</span></div><p class="eyebrow">AI command access</p><h2 id="authTitle">Abilita i comandi GitHub</h2><p>La dashboard legge i dati senza token. Inserisci un fine-grained token solo per inviare disposizioni tramite GitHub Actions. Il token resta soltanto nella sessione di questo browser.</p><label class="token-field"><span>GitHub token</span><input id="githubToken" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…"></label><div id="authError" class="auth-error" hidden></div><div class="auth-actions"><button id="authCancel" class="text-button" type="button">Annulla</button><button id="authConnect" class="primary-button" type="button"><span class="material-symbols" aria-hidden="true">lock_open</span><span>Connetti comandi AI</span></button></div><small>Permessi necessari per i comandi: repository singolo · Actions read/write.</small></section></div>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div><script src="assets/vendor/chart.umd.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script type="module" src="assets/app.js"></script>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><script src="assets/vendor/chart.umd.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script type="module" src="assets/app.js"></script><script type="module" src="assets/sender-setup.js"></script>
 </body>
 </html>
