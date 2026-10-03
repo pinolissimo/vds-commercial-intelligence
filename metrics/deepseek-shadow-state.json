@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 984,
+  "runs": 985,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -19165,6 +19165,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "56c38d313ed2dbb352e3b34fc7632d6a",
+      "evaluated_at": "2026-10-03T06:55:45Z",
+      "organization": "Qonto",
+      "title": "Senior Web Engineer (React) - Remote friendly",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/qonto/senior-web-engineer-react-remote-friendly-berlin-251026",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 73,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Title explicitly indicates a React-focused Senior Web Engineer role; React-heavy core roles without meaningful WordPress/WooCommerce scope are downgraded per target profile, and no explicit freelance/contract compatibility is evidenced.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_compatibility",
+        "geo_uncertain_for_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000239,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d81fa13ecd99343085637c640e5f5b80",
+      "evaluated_at": "2026-10-03T06:55:45Z",
+      "organization": "Bookboost",
+      "title": "Full Stack Developer",
+      "location": "Germany - Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-434686",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Generic Full Stack Developer role with no explicit WordPress/WooCommerce or web-performance scope; stack signals (javascript, php, migration) are too generic and do not establish truthful fit with the target freelance profile.",
+      "deepseek_risk_flags": [
+        "generic_full_stack_role",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_compatibility",
+        "location_germany_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000239,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -23295,9 +23351,21 @@
       "completion_tokens": 318,
       "total_tokens": 1153,
       "estimated_cost_usd": 0.00051452
+    },
+    {
+      "at": "2026-10-03T06:55:45Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 169,
+      "completion_tokens": 299,
+      "total_tokens": 1108,
+      "estimated_cost_usd": 0.000478
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-03T06:27:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-03T06:55:45Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

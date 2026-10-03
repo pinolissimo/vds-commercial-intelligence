@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-03T06:27:01Z",
+  "updated_at": "2026-10-03T06:55:49Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 695,
-    "agreement_count": 357,
-    "agreement_pct": 51.37,
+    "evaluated_total": 697,
+    "agreement_count": 358,
+    "agreement_pct": 51.36,
     "deepseek_promote": 32,
-    "vds_promote": 252,
+    "vds_promote": 253,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 224
+    "deepseek_demoted_from_vds_promote": 225
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.38,
+    "vds_promote_hot_rate_pct": 2.37,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 344,
-    "cumulative_estimated_cost_usd": 0.145138,
-    "cost_per_evaluated_candidate_usd": 0.00020883,
-    "cost_per_deepseek_promote_usd": 0.00453556,
-    "cost_per_observed_ready_or_contacted_usd": 0.07256894,
-    "latest_request": null
+    "request_count": 345,
+    "cumulative_estimated_cost_usd": 0.145616,
+    "cost_per_evaluated_candidate_usd": 0.00020892,
+    "cost_per_deepseek_promote_usd": 0.0045505,
+    "cost_per_observed_ready_or_contacted_usd": 0.07280794,
+    "latest_request": {
+      "at": "2026-10-03T06:55:45Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 169,
+      "completion_tokens": 299,
+      "total_tokens": 1108,
+      "estimated_cost_usd": 0.000478
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "46c42bae4984b3ec39905134b07a017e",
-      "evaluated_at": "2026-09-30T00:21:18Z",
-      "organization": "Händlerbund Management AG",
-      "title": "Senior Fullstack Entwickler PHP/Laravel (m/w/d) - Remote, 4-Tage-Woche",
-      "location": "Remote/Leipzig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/handlerbund-management-ag/senior-fullstack-entwickler-php-laravel-remote-4-tage-woche-435519",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 49,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior fullstack PHP/Laravel role with core stack mismatch; matched keywords (css, frontend, ui, ux) are peripheral to a Laravel-centric fullstack position, and no meaningful WordPress/WooCommerce or dedicated frontend/performance scope is evidenced.",
-      "deepseek_risk_flags": [
-        "laravel_heavy_core_stack",
-        "fullstack_not_freelance_specific",
-        "no_wordpress_woocommerce_scope",
-        "geo_bucket_italy_but_location_remote_leipzig_germany",
-        "freelance_compatibility_unproven"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00022574,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "0d2df42d817eda9889035a151f3ce049",
-      "evaluated_at": "2026-09-30T02:26:42Z",
-      "organization": "Checkout.com",
-      "title": "Senior Front end Engineer I",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/checkoutcom/senior-front-end-engineer-i-london-474903",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 54,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Senior front-end engineer role at a fintech payments company in London; matched keywords are generic (frontend/ui/ux) and there is no evidence of WordPress, WooCommerce, or freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "no_wordpress_scope",
-        "likely_react_or_spa_stack",
-        "onsite_london_not_target_geo",
-        "no_freelance_compatibility_evidence",
-        "senior_fulltime_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0003314767,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "2a110dd282ccd70f0afa80c4d8ed2365",
       "evaluated_at": "2026-09-30T02:26:42Z",
@@ -1478,10 +1431,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "56c38d313ed2dbb352e3b34fc7632d6a",
+      "evaluated_at": "2026-10-03T06:55:45Z",
+      "organization": "Qonto",
+      "title": "Senior Web Engineer (React) - Remote friendly",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/qonto/senior-web-engineer-react-remote-friendly-berlin-251026",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 73,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Title explicitly indicates a React-focused Senior Web Engineer role; React-heavy core roles without meaningful WordPress/WooCommerce scope are downgraded per target profile, and no explicit freelance/contract compatibility is evidenced.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_compatibility",
+        "geo_uncertain_for_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000239,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d81fa13ecd99343085637c640e5f5b80",
+      "evaluated_at": "2026-10-03T06:55:45Z",
+      "organization": "Bookboost",
+      "title": "Full Stack Developer",
+      "location": "Germany - Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-434686",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 49,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Generic Full Stack Developer role with no explicit WordPress/WooCommerce or web-performance scope; stack signals (javascript, php, migration) are too generic and do not establish truthful fit with the target freelance profile.",
+      "deepseek_risk_flags": [
+        "generic_full_stack_role",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_compatibility",
+        "location_germany_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000239,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-03T06:26:56Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-03T06:55:41Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
