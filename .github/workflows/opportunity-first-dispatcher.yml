@@ -1,4 +1,4 @@
-name: VDS Opportunity-First Dispatcher
+name: VDS Opportunity Queue Builder
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: vds-global-first-contact-dispatch
+  group: vds-opportunity-queue-builder
   cancel-in-progress: false
 
 jobs:
@@ -28,13 +28,7 @@ jobs:
     env:
       HOSTINGER_EMAIL_API_TOKEN: ${{ secrets.HOSTINGER_EMAIL_API_TOKEN }}
       HOSTINGER_MAILBOX: info@visualdesignstudio.es
-      VDS_SMTP_HOST: ${{ secrets.VDS_SMTP_HOST }}
-      VDS_SMTP_PORT: ${{ secrets.VDS_SMTP_PORT }}
-      VDS_SMTP_USER: ${{ secrets.VDS_SMTP_USER }}
-      VDS_SMTP_PASSWORD: ${{ secrets.VDS_SMTP_PASSWORD }}
-      VDS_SMTP_FROM: ${{ secrets.VDS_SMTP_FROM }}
-      VDS_OWNER_BCC: allocca.pino@gmail.com
-      VDS_DISPATCH_MAX_BATCH: '25'
+      VDS_DISPATCH_MAX_BATCH: '100'
       VDS_DISPATCH_DRY_RUN: '1'
     steps:
       - uses: actions/checkout@v7
@@ -63,7 +57,7 @@ jobs:
             echo "SEND_WINDOW_CLOSED hour=$H"
           fi
 
-      - name: Pre-send provider synchronization and fail-closed dedup rebuild
+      - name: Refresh provider truth and fail-closed dedup
         if: steps.window.outputs.open == 'true'
         shell: bash
         run: |
@@ -87,19 +81,19 @@ jobs:
           set -euo pipefail
           python3 scripts/global_contact_ledger.py --build
 
-      - name: Persist dispatcher and provider truth safely
+      - name: Persist queue-builder and provider truth safely
         if: steps.window.outputs.open == 'true'
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "vds-opportunity-dispatcher"
+          git config user.name "vds-opportunity-queue-builder"
           git config user.email "35764978+pinolissimo@users.noreply.github.com"
           git add state/opportunity-first-dispatch-latest.json data/opportunity-first-dispatch-runs state/provider-observation.json state/provider-outbound-live.json state/provider-inbound-live.json state/provider-sync-status.json data/global-sent-email-ledger.jsonl views/provider-contact-suppression-index.json views/global-sent-email-index.json views/global-organization-index.json views/global-contact-ledger.json
           if git diff --cached --quiet; then
             echo "No dispatcher/provider changes"
             exit 0
           fi
-          git commit -m "outreach: persist verified opportunity-first ready queue"
+          git commit -m "outreach: persist opportunity ready queue"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
             git fetch origin main
