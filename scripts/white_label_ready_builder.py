@@ -35,6 +35,35 @@ def main():
             cur=signal_by_domain.get(d)
             if not cur or score>cur["agency_score"]: signal_by_domain[d]={"agency_score":score,"signal":s}
     ready=[]; seen=set()
+
+    # Fast lane: same-domain public email + agency/web signal on the same
+    # first-party page is sufficient for READY_TO_SEND preparation.
+    for d, pack in signal_by_domain.items():
+        if not d or d in seen or d in domains: continue
+        sig=pack["signal"]
+        emails=[str(e).lower() for e in (sig.get("emails") or []) if valid(e,d) and str(e).lower() not in exact]
+        if not emails: continue
+        if pack["agency_score"] < 2: continue
+        matched=[str(x).lower() for x in (sig.get("matched_terms") or [])]
+        strong=any(x in matched for x in ("white label","white-label","outsourcing","wordpress","woocommerce","web development","sviluppo web","desarrollo web"))
+        if not strong and not sig.get("route_hint"): continue
+        priority=min(100,55+pack["agency_score"]*7+(10 if sig.get("route_hint") else 0))
+        ready.append({
+          "organization":d,
+          "domain":d,
+          "email":emails[0],
+          "priority":priority,
+          "agency_signal_score":pack["agency_score"],
+          "source_url":sig.get("url"),
+          "supplier_routes":[sig.get("url")] if sig.get("route_hint") else [],
+          "evidence_pages":[sig.get("url")] if sig.get("url") else [],
+          "state":"READY_TO_SEND",
+          "dedup_verified":True,
+          "evidence_mode":"FIRST_PARTY_SAME_PAGE_SIGNAL_AND_EMAIL",
+          "message_strategy":"TECHNICAL_WHITE_LABEL_PARTNER"
+        }); seen.add(d)
+
+    # Deep lane: richer route/decision-maker evidence from the dedicated enricher.
     for r in routes.get("items") or []:
         d=str(r.get("domain") or "").lower().removeprefix("www.")
         if not d or d in seen or d in domains: continue
