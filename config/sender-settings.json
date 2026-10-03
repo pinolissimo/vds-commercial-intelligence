@@ -1,7 +1,7 @@
 {
   "schema_version": "2.0",
-  "mode": "DRY_RUN",
-  "provider": "SMTP",
+  "mode": "LIVE",
+  "provider": "HOSTINGER_API",
   "queue_file": "outreach/autonomous-send-queue.jsonl",
   "state_file": "state/autonomous-sender-state.json",
   "audit_dir": "data/autonomous-sender-runs",
@@ -17,7 +17,10 @@
   "schedule": {
     "enabled": true,
     "timezone": "Europe/Madrid",
-    "allowed_hours": {"start": "09:00", "end": "19:00"}
+    "allowed_hours": {
+      "start": "09:00",
+      "end": "19:00"
+    }
   },
   "safety": {
     "dedup_enabled": true,
