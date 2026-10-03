@@ -3,7 +3,7 @@ name: VDS Public Web Intelligence Booster
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/15 * * * *'
   push:
     branches: [main]
     paths:
@@ -39,7 +39,7 @@ jobs:
 
       - name: Run compliant public-web booster
         run: |
-          python -m py_compile scripts/public_web_booster.py scripts/booster_seed_bridge.py scripts/first_party_route_enricher.py
+          python -m py_compile scripts/public_web_booster.py scripts/booster_seed_bridge.py scripts/first_party_route_enricher.py scripts/white_label_ready_builder.py
           python scripts/public_web_booster.py
           python scripts/booster_seed_bridge.py &
           p1=$!
@@ -47,6 +47,7 @@ jobs:
           p2=$!
           wait $p1
           wait $p2
+          python scripts/white_label_ready_builder.py
 
       - name: Persist booster-owned intelligence safely
         shell: bash
@@ -63,10 +64,11 @@ jobs:
             p2=$!
             wait $p1
             wait $p2
+            python scripts/white_label_ready_builder.py
           }
 
           stage() {
-            git add views/public-web-booster.json views/public-web-qualified-seeds.json views/public-web-enriched-routes.json
+            git add views/public-web-booster.json views/public-web-qualified-seeds.json views/public-web-enriched-routes.json views/white-label-ready-to-send.json
           }
 
           stage
