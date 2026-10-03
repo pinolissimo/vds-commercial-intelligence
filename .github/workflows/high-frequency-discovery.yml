@@ -89,27 +89,31 @@ jobs:
         continue-on-error: true
         run: python scripts/opportunity_semantic_gate.py
 
-      - name: DeepSeek semantic shadow evaluation
+      - name: Parallel semantic downstream analysis
         continue-on-error: true
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: python scripts/deepseek_shadow_semantic.py
-
-      - name: Rank source performance
-        continue-on-error: true
-        run: python scripts/search_source_optimizer.py
-
-      - name: Update territory yield radar
-        continue-on-error: true
-        run: python scripts/territory_yield_radar.py
+        shell: bash
+        run: |
+          set +e
+          python scripts/deepseek_shadow_semantic.py &
+          p1=$!
+          python scripts/search_source_optimizer.py &
+          p2=$!
+          python scripts/territory_yield_radar.py &
+          p3=$!
+          python scripts/buyer_intent_ranker.py &
+          p4=$!
+          wait $p1; e1=$?
+          wait $p2; e2=$?
+          wait $p3; e3=$?
+          wait $p4; e4=$?
+          echo "parallel-analysis exits: deepseek=$e1 source=$e2 territory=$e3 buyer=$e4"
+          exit 0
 
       - name: Guard unresolved territories and build enrichment queue
         continue-on-error: true
         run: python scripts/territory_radar_guard.py
-
-      - name: Rank qualified opportunities by buyer intent
-        continue-on-error: true
-        run: python scripts/buyer_intent_ranker.py
 
       - name: Build opportunity-first commercial intelligence
         continue-on-error: true
