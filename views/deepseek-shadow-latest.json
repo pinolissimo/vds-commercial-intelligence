@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-03T12:47:31Z",
+  "updated_at": "2026-10-03T12:58:50Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 975,
-    "agreement_count": 470,
-    "agreement_pct": 48.21,
+    "evaluated_total": 977,
+    "agreement_count": 472,
+    "agreement_pct": 48.31,
     "deepseek_promote": 32,
     "vds_promote": 259,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 358,
-    "cumulative_estimated_cost_usd": 0.189284,
-    "cost_per_evaluated_candidate_usd": 0.00019414,
-    "cost_per_deepseek_promote_usd": 0.00591514,
-    "cost_per_observed_ready_or_contacted_usd": 0.09464222,
-    "latest_request": null
+    "request_count": 359,
+    "cumulative_estimated_cost_usd": 0.189519,
+    "cost_per_evaluated_candidate_usd": 0.00019398,
+    "cost_per_deepseek_promote_usd": 0.00592246,
+    "cost_per_observed_ready_or_contacted_usd": 0.09475929,
+    "latest_request": {
+      "at": "2026-10-03T12:58:46Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 162,
+      "completion_tokens": 294,
+      "total_tokens": 1096,
+      "estimated_cost_usd": 0.00023416
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,59 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "5a60fccef3aa38b81a52067d35887fb8",
-      "evaluated_at": "2026-10-03T11:44:35Z",
-      "organization": "ionq",
-      "title": "Senior Quantum Scientist",
-      "location": "Oxford",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/ionq/senior-quantum-scientist-oxford-354633",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 2.0,
-      "deepseek_confidence": 0.97,
-      "deepseek_primary_reason": "Senior Quantum Scientist; completely unrelated field.",
-      "deepseek_risk_flags": [
-        "quantum research",
-        "no web scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001222383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "1efd0aba6d1a087bfc85fb1d081265f9",
-      "evaluated_at": "2026-10-03T11:44:35Z",
-      "organization": "Adclear",
-      "title": "Senior Product Engineer",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/adclear/senior-product-engineer-london-87046",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Product Engineer at Adclear; product engineering role, not WordPress/frontend web freelance scope.",
-      "deepseek_risk_flags": [
-        "product engineering",
-        "stack unclear",
-        "not freelance"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001222383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "4cb063fd8ebc16aa08127ee81627faa9",
       "evaluated_at": "2026-10-03T11:44:35Z",
@@ -1399,10 +1357,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9430265fbc84b4d0ce64ed6bbe12932f",
+      "evaluated_at": "2026-10-03T12:58:46Z",
+      "organization": "Cfoinsights",
+      "title": "UX designer at CFO Insights",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/cfoinsights/ux-designer-at-cfo-insights-london-261812",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "UX designer role in London with matched keywords css/html/ux/website and 'agency' intent, but no explicit freelance/contract signal, no remote state, and geo is London (outside primary Spain/Italy markets) requiring verification.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_remote_state",
+        "no_employment_type",
+        "ux_role_not_core_web_dev"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00011708,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "32c41c4e53129ff587eb17791ebfcfa4",
+      "evaluated_at": "2026-10-03T12:58:46Z",
+      "organization": "Hrtechx",
+      "title": "UX designer at HRtechX",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/hrtechx/ux-designer-at-hrtechx-london-157600",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "UX designer role in London with matched keywords css/html/ux/website and 'agency' intent, but no explicit freelance/contract signal, no remote state, and geo is London (outside primary Spain/Italy markets) requiring verification.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_remote_state",
+        "no_employment_type",
+        "ux_role_not_core_web_dev"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00011708,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-03T12:47:25Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-03T12:58:41Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
