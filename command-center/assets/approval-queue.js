@@ -24,6 +24,7 @@ async function qaWrite(message){
   const body={message,content:qaEncode(content),branch:QA_REF,sha:qaSha};
   const r=await fetch(`${QA_GH}/repos/${QA_OWNER}/${QA_REPO}/contents/${QA_PATH}`,{method:'PUT',headers:{...qaHeaders(),'Content-Type':'application/json'},body:JSON.stringify(body)});
   if(r.status===409)throw new Error('La queue è cambiata: ricarico i dati, ripeti l’azione.');
+  if(r.status===401||r.status===403)throw new Error('Il token GitHub deve avere Contents: Read and write sul repository.');
   if(!r.ok)throw new Error(`QUEUE_WRITE_${r.status}`);
   const d=await r.json();qaSha=d.content?.sha||qaSha;
 }
