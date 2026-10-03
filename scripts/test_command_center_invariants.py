@@ -38,6 +38,8 @@ if not errors:
     index=(PAGES/"index.html").read_text(encoding="utf-8")
     if "/contents/api/v1/" in app or "/contents/api/v1/" in radar: errors.append("authenticated API polling regression")
     if "QA_PATH='outreach/autonomous-send-queue.jsonl'" not in approval: errors.append("approval queue path contract missing")
+    read_block=approval.split("async function qaRead(){",1)[1].split("async function qaWrite",1)[0] if "async function qaRead(){" in approval and "async function qaWrite" in approval else ""
+    if "api.github.com" in read_block or "QA_GH" in read_block: errors.append("approval queue read must be API-free")
     if "APPROVED_TO_SEND" not in approval or "OWNER_APPROVED_ONE_TO_ONE" not in approval: errors.append("approval transition contract missing")
     if 'id="approvalRows"' not in index: errors.append("approval UI missing")
     if "frame-ancestors" in index: errors.append("invalid meta CSP frame-ancestors regression")
