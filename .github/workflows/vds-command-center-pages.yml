@@ -75,6 +75,9 @@ jobs:
           test -s .pages/fallback/manifest.json
           test ! -d .pages/api
           grep -q "api.github.com" .pages/index.html
+          grep -q "wasm-unsafe-eval" .pages/index.html
+          grep -q "raw.githubusercontent.com" .pages/index.html
+          ! grep -q "frame-ancestors" .pages/index.html
           grep -q "sessionStorage" .pages/assets/app.js
           grep -q "LAST_KNOWN_GOOD" .pages/assets/app.js
           grep -q "fallback/" .pages/assets/live-export.js
