@@ -1,0 +1,93 @@
+name: VDS Autonomous Approved Sender
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '2,7,12,17,22,27,32,37,42,47,52,57 * * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/autonomous_sender.py'
+      - 'outreach/autonomous-send-queue.jsonl'
+      - '.github/workflows/autonomous-approved-sender.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vds-autonomous-approved-sender
+  cancel-in-progress: false
+
+jobs:
+  send-approved:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      HOSTINGER_EMAIL_API_TOKEN: ${{ secrets.HOSTINGER_EMAIL_API_TOKEN }}
+      HOSTINGER_MAILBOX: info@visualdesignstudio.es
+      VDS_SMTP_HOST: ${{ secrets.VDS_SMTP_HOST }}
+      VDS_SMTP_PORT: ${{ secrets.VDS_SMTP_PORT }}
+      VDS_SMTP_USER: ${{ secrets.VDS_SMTP_USER }}
+      VDS_SMTP_PASSWORD: ${{ secrets.VDS_SMTP_PASSWORD }}
+      VDS_SMTP_FROM: ${{ secrets.VDS_SMTP_FROM }}
+      VDS_OWNER_BCC: allocca.pino@gmail.com
+      VDS_AUTONOMOUS_MAX_BATCH: '10'
+      VDS_AUTONOMOUS_SEND_DELAY_SECONDS: '2'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Compile sender and safety scripts
+        run: |
+          python3 -m py_compile scripts/autonomous_sender.py scripts/sync_hostinger_mail.py scripts/global_contact_ledger.py scripts/revenue_flow_preflight.py
+
+      - name: Synchronize provider and rebuild fail-closed dedup
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${HOSTINGER_EMAIL_API_TOKEN:-}"
+          python3 scripts/sync_hostinger_mail.py
+          python3 scripts/global_contact_ledger.py --build
+          python3 scripts/revenue_flow_preflight.py --repair
+
+      - name: Run autonomous approved sender
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/autonomous_sender.py
+
+      - name: Verify Hostinger Sent and refresh ledger
+        shell: bash
+        run: |
+          set -euo pipefail
+          sleep 2
+          python3 scripts/sync_hostinger_mail.py
+          python3 scripts/global_contact_ledger.py --build
+          python3 scripts/revenue_flow_preflight.py --repair
+
+      - name: Persist sender and provider state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "vds-autonomous-sender"
+          git config user.email "35764978+pinolissimo@users.noreply.github.com"
+          git add             state/autonomous-sender-state.json             data/autonomous-sender-runs             state/provider-observation.json             state/provider-outbound-live.json             state/provider-inbound-live.json             state/provider-sync-status.json             data/global-sent-email-ledger.jsonl             views/provider-contact-suppression-index.json             views/global-sent-email-index.json             views/global-organization-index.json             views/global-contact-ledger.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "delivery: persist autonomous sender state"
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch origin main
+            if git rebase origin/main; then
+              sleep $((attempt * 2))
+              continue
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "Sender state persistence conflict; refusing to rerun provider send." >&2
+            exit 1
+          done
+          exit 1
