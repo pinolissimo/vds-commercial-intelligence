@@ -64,6 +64,56 @@ def event_id(event):
     return None
 
 
+def load_queue_records():
+    path = ROOT / "outreach" / "autonomous-send-queue.jsonl"
+    rows = []
+    try:
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                rows.append(json.loads(line))
+    except (FileNotFoundError, json.JSONDecodeError):
+        pass
+    return rows
+
+
+def queue_context():
+    by_recipient_subject = {}
+    for row in load_queue_records():
+        key = (str(row.get("recipient") or "").strip().lower(), str(row.get("subject") or "").strip())
+        if key[0] and key[1]:
+            by_recipient_subject[key] = row
+    return by_recipient_subject
+
+
+def enrich_business_semantics(events):
+    q = queue_context()
+    owner_recipients = {"allocca.pino@gmail.com", "info@visualdesignstudio.es", "noreply@visualdesignstudio.es"}
+    enriched = []
+    for raw in events:
+        event = dict(raw)
+        key = (str(event.get("recipient") or "").strip().lower(), str(event.get("subject") or "").strip())
+        row = q.get(key)
+        if row:
+            event["action_type"] = row.get("action_type") or event.get("action_type")
+            event["queue_id"] = row.get("queue_id")
+            event["eligibility_basis"] = row.get("eligibility_basis")
+        subject = str(event.get("subject") or "").lower()
+        recipient = key[0]
+        is_test = (
+            (row and row.get("action_type") == "TEST_OR_ADMIN")
+            or recipient in owner_recipients
+            or "test operativo" in subject
+            or "end-to-end test" in subject
+            or subject == "no_send"
+        )
+        event["business_class"] = "TEST_OR_ADMIN" if is_test else "COMMERCIAL"
+        event["count_as_commercial_outbound"] = not is_test
+        if is_test:
+            event["count_as_successful_outbound"] = False
+        enriched.append(event)
+    return enriched
+
+
 def is_delivered(event):
     """Any provider-verified sent email counts in the UI total, including replies."""
     return (
@@ -72,10 +122,14 @@ def is_delivered(event):
     )
 
 
+def is_commercial(event):
+    return is_delivered(event) and event.get("count_as_commercial_outbound") is not False and event.get("business_class") != "TEST_OR_ADMIN"
+
+
 def is_first_contact(event):
-    """First-contact KPI remains stricter and excludes non-commercial/reply events."""
+    """Commercial first-contact KPI; test/admin traffic is never revenue throughput."""
     return (
-        is_delivered(event)
+        is_commercial(event)
         and event.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"
         and event.get("count_as_successful_outbound") is not False
     )
@@ -196,7 +250,7 @@ def main():
             merged[identity] = {**merged.get(identity, {}), **event}
 
     messages = sorted(
-        merged.values(),
+        enrich_business_semantics(merged.values()),
         key=lambda x: (parse_dt(x.get("sent_at")) or datetime.min.replace(tzinfo=MADRID)).timestamp(),
     )
     today_messages = []
@@ -211,8 +265,10 @@ def main():
         today_messages.append(row)
 
     today_messages.sort(key=lambda x: x.get("sent_at", ""), reverse=True)
-    first_contacts = [m for m in today_messages if is_first_contact(m)]
-    active_window_messages = [m for m in today_messages if in_active_window(m, date_str)]
+    commercial_messages = [m for m in today_messages if is_commercial(m)]
+    test_admin_messages = [m for m in today_messages if not is_commercial(m)]
+    first_contacts = [m for m in commercial_messages if is_first_contact(m)]
+    active_window_messages = [m for m in commercial_messages if in_active_window(m, date_str)]
     active_window_first_contacts = [m for m in first_contacts if in_active_window(m, date_str)]
 
     elapsed = ((dashboard.get("today") or {}).get("active_window_elapsed_hours") or 0)
@@ -220,7 +276,9 @@ def main():
     first_contacts_per_hour = round(len(active_window_first_contacts) / elapsed, 2) if elapsed else 0.0
     overlay_updated_at = live.get("updated_at")
 
-    today_api["sent_count"] = len(today_messages)
+    today_api["sent_count"] = len(commercial_messages)
+    today_api["provider_sent_count"] = len(today_messages)
+    today_api["test_admin_sent_count"] = len(test_admin_messages)
     today_api["first_contact_count"] = len(first_contacts)
     today_api["active_window_sent_count"] = len(active_window_messages)
     today_api["active_window_first_contact_count"] = len(active_window_first_contacts)
@@ -232,19 +290,23 @@ def main():
     today_api["provider_live_pending_sources"] = live.get("pending_sources", 0)
 
     dash_today = dashboard.setdefault("today", {})
-    dash_today["sent"] = len(today_messages)
+    dash_today["sent"] = len(commercial_messages)
+    dash_today["provider_sent"] = len(today_messages)
+    dash_today["test_admin_sent"] = len(test_admin_messages)
     dash_today["first_contacts_sent"] = len(first_contacts)
     dash_today["active_window_sent_count"] = len(active_window_messages)
     dash_today["active_window_first_contact_count"] = len(active_window_first_contacts)
     dash_today["messages_per_active_hour"] = messages_per_hour
     dash_today["first_contacts_per_active_hour"] = first_contacts_per_hour
-    dashboard.setdefault("headline", {})["sent_today"] = len(today_messages)
+    dashboard.setdefault("headline", {})["sent_today"] = len(commercial_messages)
     dashboard["provider_live_overlay_updated_at"] = overlay_updated_at
     dashboard["provider_live_sources"] = live.get("loaded_sources", 0)
     dashboard["provider_live_pending_sources"] = live.get("pending_sources", 0)
 
     outbound["messages"] = messages
-    outbound["today_count"] = len(today_messages)
+    outbound["today_count"] = len(commercial_messages)
+    outbound["provider_today_count"] = len(today_messages)
+    outbound["test_admin_today_count"] = len(test_admin_messages)
     outbound["today_first_contact_count"] = len(first_contacts)
     outbound["active_window_sent_count"] = len(active_window_messages)
     outbound["active_window_first_contact_count"] = len(active_window_first_contacts)
@@ -259,7 +321,8 @@ def main():
     print(
         "Outbound live overlay: "
         f"{len(today_messages)} provider-verified sent emails today, "
-        f"{len(first_contacts)} first contacts, "
+        f"{len(commercial_messages)} commercial, {len(test_admin_messages)} test/admin, "
+        f"{len(first_contacts)} commercial first contacts, "
         f"{len(active_window_messages)} inside active window, "
         f"{live.get('pending_sources', 0)} pending sources reconciled"
     )
