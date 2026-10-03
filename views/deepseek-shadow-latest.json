@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-03T18:28:13Z",
+  "updated_at": "2026-10-03T18:42:31Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 983,
-    "agreement_count": 474,
-    "agreement_pct": 48.22,
+    "evaluated_total": 984,
+    "agreement_count": 475,
+    "agreement_pct": 48.27,
     "deepseek_promote": 32,
     "vds_promote": 262,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 364,
-    "cumulative_estimated_cost_usd": 0.190615,
-    "cost_per_evaluated_candidate_usd": 0.00019391,
-    "cost_per_deepseek_promote_usd": 0.00595671,
-    "cost_per_observed_ready_or_contacted_usd": 0.0953074,
+    "request_count": 365,
+    "cumulative_estimated_cost_usd": 0.190798,
+    "cost_per_evaluated_candidate_usd": 0.0001939,
+    "cost_per_deepseek_promote_usd": 0.00596244,
+    "cost_per_observed_ready_or_contacted_usd": 0.09539903,
     "latest_request": {
-      "at": "2026-10-03T18:28:09Z",
+      "at": "2026-10-03T18:42:27Z",
       "model": "deepseek-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 2,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 640,
-      "prompt_cache_miss_tokens": 189,
-      "completion_tokens": 337,
-      "total_tokens": 1166,
-      "estimated_cost_usd": 0.00026848
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 382,
+      "completion_tokens": 149,
+      "total_tokens": 659,
+      "estimated_cost_usd": 0.00018328
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ba64e30daec8869f61ca4cc39f41bdc5",
-      "evaluated_at": "2026-10-03T11:44:35Z",
-      "organization": "The Flex",
-      "title": "Senior Full-Stack Product Engineer",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/the-flex/senior-full-stack-product-engineer-paris-446978",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 59,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior Full-Stack Product Engineer at The Flex; product engineering, not WordPress/frontend web freelance scope.",
-      "deepseek_risk_flags": [
-        "product engineering",
-        "stack mismatch likely",
-        "not freelance"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001222383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "124a73ec656ea03efadc511e29f0c624",
       "evaluated_at": "2026-10-03T11:44:35Z",
@@ -1424,10 +1397,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "870006cc29897c35a64b1c55ffa6d6fc",
+      "evaluated_at": "2026-10-03T18:42:27Z",
+      "organization": "",
+      "title": "SAP CPI Integration Developer (Remote, RO)",
+      "location": "Romania",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "SAP CPI integration developer role with no WordPress, WooCommerce, frontend, or web-performance scope; only incidental keyword matches ('migration', 'partner', 'remote') and no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "enterprise_integration_role",
+        "no_freelance_signal",
+        "geo_mismatch_romania"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018328,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-10-03T18:28:04Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-03T18:42:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
