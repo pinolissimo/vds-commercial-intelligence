@@ -48,12 +48,12 @@ permissions:
 
 concurrency:
   group: vds-high-frequency-discovery-v2-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 18
     steps:
       - name: Checkout
         uses: actions/checkout@v7
