@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VDS Autonomous Send Queue Record",
+  "type": "object",
+  "required": ["queue_id","status","action_type","recipient","subject","text","approved_at"],
+  "properties": {
+    "schema_version": {"type":"string"},
+    "queue_id": {"type":"string","minLength":1},
+    "status": {"enum":["DRAFT","APPROVED_TO_SEND","SENT","FAILED","CANCELLED"]},
+    "eligibility_basis": {"type":"string"},
+    "action_type": {"enum":["FIRST_CONTACT","FOLLOWUP_1","REPLY_CONTINUATION","OWNER_AUTHORIZED_CONTINUATION","TEST_OR_ADMIN"]},
+    "organization": {"type":"string"},
+    "recipient": {"type":"string","format":"email"},
+    "subject": {"type":"string","minLength":1},
+    "text": {"type":"string","minLength":1},
+    "approved_at": {"type":"string"},
+    "metadata": {"type":"object"}
+  },
+  "additionalProperties": true
+}
