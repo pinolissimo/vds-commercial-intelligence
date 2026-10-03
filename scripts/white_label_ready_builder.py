@@ -12,7 +12,7 @@ BOOST=ROOT/"views/public-web-booster.json"
 LEDGER=ROOT/"views/global-contact-ledger.json"
 OUT=ROOT/"views/white-label-ready-to-send.json"
 PLACEHOLDERS=("example.com","company.com","your@email","test@","noreply@","no-reply@")
-AGENCY_TERMS=("white label","white-label","outsourcing","partner","wordpress","woocommerce","web development","sviluppo web","desarrollo web","frontend","ecommerce","agency","agenzia","agencia")
+AGENCY_TERMS=("white label","white-label","outsourcing","wordpress","woocommerce","web development","sviluppo web","desarrollo web","frontend","ecommerce","web agency","agenzia web","agencia web")
 
 def load(p,d):
     try:return json.loads(p.read_text(encoding="utf-8"))
@@ -68,7 +68,10 @@ def main():
         d=str(r.get("domain") or "").lower().removeprefix("www.")
         if not d or d in seen or d in domains: continue
         sig=signal_by_domain.get(d)
-        if not sig: continue
+        if not sig or sig["agency_score"] < 2: continue
+        matched=[str(x).lower() for x in ((sig.get("signal") or {}).get("matched_terms") or [])]
+        strong=any(x in matched for x in ("white label","white-label","outsourcing","wordpress","woocommerce","web development","sviluppo web","desarrollo web","web agency","agenzia web","agencia web"))
+        if not strong: continue
         emails=[str(e).lower() for e in (r.get("public_emails") or []) if valid(e,d) and str(e).lower() not in exact]
         if not emails: continue
         if int(r.get("contactability_score") or 0)<55: continue
