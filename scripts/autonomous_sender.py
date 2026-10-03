@@ -80,13 +80,19 @@ def send(host,port,user,password,from_addr,to_addr,subject,text,bcc=None,timeout
 
 def main():
     settings=load_json(SETTINGS,{})
+    queue_path=ROOT/str(settings.get("queue_file") or "outreach/autonomous-send-queue.jsonl")
+    state_path=ROOT/str(settings.get("state_file") or "state/autonomous-sender-state.json")
+    audit_dir=ROOT/str(settings.get("audit_dir") or "data/autonomous-sender-runs")
+    policy=load_json(ROOT/str(settings.get("policy_adapter") or "config/sender-policy.json"),{})
+    accepted_statuses=set(policy.get("accepted_statuses") or ["APPROVED_TO_SEND"])
+    allowed_actions=set(policy.get("allowed_action_types") or ["FIRST_CONTACT","FOLLOWUP_1","REPLY_CONTINUATION","OWNER_AUTHORIZED_CONTINUATION","TEST_OR_ADMIN"])
     provider=str(settings.get("provider") or "SMTP").upper()
     mode=str(settings.get("mode") or "DRY_RUN").upper()
 
     if mode != "LIVE":
-        previous=load_json(STATE,{"sent_idempotency_keys":[]})
+        previous=load_json(state_path,{"sent_idempotency_keys":[]})
         payload={"schema_version":"1.2","updated_at":nowz(),"provider":provider,"run_state":"DRY_RUN_NO_SEND","queue_records":0,"eligible_candidates":0,"batch_limit":0,"delivery_accepted":0,"smtp_accepted":0,"failed":0,"rejected_count":0,"results":[],"rejected":[],"sent_idempotency_keys":previous.get("sent_idempotency_keys") or []}
-        save_json(STATE,payload)
+        save_json(state_path,payload)
         print(json.dumps({"mode":mode,"provider":provider,"state":"DRY_RUN_NO_SEND"}))
         return 0
 
@@ -115,12 +121,12 @@ def main():
         if missing:
             raise SystemExit("Missing SMTP configuration: "+",".join(missing))
 
-    queue=load_jsonl(QUEUE)
+    queue=load_jsonl(queue_path)
     safety=settings.get("safety") or {}
     if safety.get("fail_closed_on_missing_ledger",True) and not LEDGER.exists():
         raise SystemExit("Missing global contact ledger")
     ledger=load_json(LEDGER,{})
-    state=load_json(STATE,{"sent_idempotency_keys":[]})
+    state=load_json(state_path,{"sent_idempotency_keys":[]})
     sent_keys=set(state.get("sent_idempotency_keys") or [])
     exact=set((ledger.get("exact_email_index") or {}).keys())
     domains=set((ledger.get("corporate_domain_index") or {}).keys())
@@ -134,7 +140,10 @@ def main():
     candidates=[]
     rejected=[]
     for item in queue:
-        if item.get("status")!="APPROVED_TO_SEND":
+        if item.get("status") not in accepted_statuses:
+            continue
+        if item.get("action_type","FIRST_CONTACT") not in allowed_actions:
+            rejected.append({"queue_id":item.get("queue_id"),"reason":"ACTION_TYPE_NOT_ALLOWED"})
             continue
         basis=str(item.get("eligibility_basis") or "")
         if basis not in ALLOWED_BASES:
@@ -196,9 +205,9 @@ def main():
         "rejected_count":len(rejected),"results":results,"rejected":rejected[:100],
         "sent_idempotency_keys":sorted(sent_keys),
     }
-    save_json(STATE,payload)
-    AUDIT.mkdir(parents=True,exist_ok=True)
-    save_json(AUDIT/(payload["updated_at"].replace(":","-")+".json"),payload)
+    save_json(state_path,payload)
+    audit_dir.mkdir(parents=True,exist_ok=True)
+    save_json(audit_dir/(payload["updated_at"].replace(":","-")+".json"),payload)
     print(json.dumps({k:payload[k] for k in ("queue_records","eligible_candidates","delivery_accepted","smtp_accepted","failed","rejected_count")}))
     return 0
 
