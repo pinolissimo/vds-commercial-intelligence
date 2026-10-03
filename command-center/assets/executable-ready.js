@@ -7,13 +7,10 @@ const VDS_EXEC_GH='https://api.github.com';
 function vdsExecToken(){return sessionStorage.getItem(VDS_EXEC_TOKEN_KEY)||''}
 function vdsDecode64(value){const bytes=Uint8Array.from(atob(String(value||'').replace(/\n/g,'')),c=>c.charCodeAt(0));return new TextDecoder().decode(bytes)}
 async function vdsFetchJson(path){
-  const token=vdsExecToken();
-  if(!token)throw new Error('AUTH_REQUIRED');
-  const r=await fetch(`${VDS_EXEC_GH}/repos/${VDS_EXEC_OWNER}/${VDS_EXEC_REPO}/contents/${path}?ref=${encodeURIComponent(VDS_EXEC_REF)}&v=${Date.now()}`,{headers:{'Accept':'application/vnd.github+json','Authorization':`Bearer ${token}`,'X-GitHub-Api-Version':'2022-11-28'},cache:'no-store'});
+  const publicPath=path.startsWith('views/')?`api/v1/${path.split('/').pop()}`:path;
+  const r=await fetch(publicPath+`?v=${Date.now()}`,{cache:'no-store'});
   if(!r.ok)throw new Error(`HTTP_${r.status}`);
-  const data=await r.json();
-  if(data?.encoding==='base64'&&data.content)return JSON.parse(vdsDecode64(data.content));
-  throw new Error('BAD_FORMAT');
+  return r.json();
 }
 function vdsSetWidth(el,value,max){if(!el)return;const p=max>0?Math.min(100,Math.max(0,(Number(value||0)/max)*100)):0;el.style.width=`${p}%`}
 async function refreshExecutableReady(){
