@@ -426,6 +426,11 @@ def main() -> int:
     booster = load("views/public-web-booster.json", {})
     enriched_routes = load("views/public-web-enriched-routes.json", {})
     contact_ledger = load("views/global-contact-ledger.json", {})
+    opportunity_first = load("views/opportunity-first-optimizer.json", {})
+    second_chance = load("views/second-chance-queue.json", {})
+    decision_maker_queue = load("views/decision-maker-enrichment-queue.json", {})
+    message_strategy = load("views/message-strategy.json", {})
+    adaptive_learning = load("views/adaptive-commercial-learning.json", {})
 
     opps = opportunities.get("opportunities") or []
     status_counts = Counter(str(o.get("status", "UNKNOWN")) for o in opps)
@@ -558,6 +563,9 @@ def main() -> int:
             "success_index_pct": (success.get("success_index") or {}).get("value_pct"),
             "new_client_probability_proxy_pct": (success.get("new_client_probability_proxy") or {}).get("display_pct"),
             "companies_indexed": len(companies),
+            "opportunity_first_high_priority": opportunity_first.get("high_priority_count", 0),
+            "second_chance_queue": second_chance.get("count", 0),
+            "decision_maker_enrichment_queue": decision_maker_queue.get("count", 0),
         },
         "status_counts": dict(status_counts),
         "type_counts": dict(type_counts),
@@ -585,6 +593,11 @@ def main() -> int:
             "dedup_exact_emails": (contact_ledger.get("counts") or {}).get("exact_emails"),
             "dedup_corporate_domains": (contact_ledger.get("counts") or {}).get("corporate_domains"),
             "dedup_organizations": (contact_ledger.get("counts") or {}).get("organizations"),
+            "opportunity_first_ranked": opportunity_first.get("count", 0),
+            "opportunity_first_high_priority": opportunity_first.get("high_priority_count", 0),
+            "second_chance_queue": second_chance.get("count", 0),
+            "decision_maker_enrichment_queue": decision_maker_queue.get("count", 0),
+            "message_strategies": message_strategy.get("count", 0),
         },
         "safety": {
             "duplicate_first_contact_tolerance": 0,
@@ -656,6 +669,14 @@ def main() -> int:
             "signal_count": len(booster.get("signals") or []),
         },
         "dedup_ledger": contact_ledger.get("counts") or {},
+        "opportunity_first": {
+            "ranked": opportunity_first.get("count", 0),
+            "high_priority": opportunity_first.get("high_priority_count", 0),
+            "second_chance": second_chance.get("count", 0),
+            "decision_maker_enrichment": decision_maker_queue.get("count", 0),
+            "message_strategies": message_strategy.get("count", 0),
+            "learning_mode": adaptive_learning.get("mode"),
+        },
         "first_party_enrichment": {
             "count": enriched_routes.get("count", 0),
             "contactable": enriched_routes.get("contactable", 0),
