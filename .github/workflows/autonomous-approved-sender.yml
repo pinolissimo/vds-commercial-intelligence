@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: vds-autonomous-approved-sender
+  group: vds-global-first-contact-dispatch
   cancel-in-progress: false
 
 jobs:
@@ -55,6 +55,17 @@ jobs:
           python3 scripts/global_contact_ledger.py --build
           python3 scripts/revenue_flow_preflight.py --repair
 
+      - name: Capture provider checkpoint
+        shell: bash
+        run: |
+          python3 - <<'PY' >> "$GITHUB_ENV"
+          import json
+          from pathlib import Path
+          p=Path("state/provider-observation.json")
+          d=json.loads(p.read_text()) if p.exists() else {}
+          print("VDS_PRE_SEND_UID="+str(int(d.get("latest_sent_uid") or 0)))
+          PY
+
       - name: Run autonomous approved sender
         shell: bash
         run: |
@@ -69,6 +80,18 @@ jobs:
           python3 scripts/sync_hostinger_mail.py
           python3 scripts/global_contact_ledger.py --build
           python3 scripts/revenue_flow_preflight.py --repair
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          run=json.loads(Path("state/autonomous-sender-state.json").read_text())
+          obs=json.loads(Path("state/provider-observation.json").read_text())
+          accepted=int(run.get("smtp_accepted") or 0)
+          before=int(os.environ.get("VDS_PRE_SEND_UID") or 0)
+          after=int(obs.get("latest_sent_uid") or 0)
+          if accepted and after <= before:
+              raise SystemExit(f"SMTP accepted {accepted} message(s) but Hostinger Sent UID did not advance: {before}->{after}")
+          print(f"provider verification OK: accepted={accepted}, sent_uid={before}->{after}")
+          PY
 
       - name: Persist sender and provider state
         shell: bash
