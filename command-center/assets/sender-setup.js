@@ -9,7 +9,7 @@ const VDS_SENDER_CONFIG_PATH='config/sender-settings.json';
 const senderDefaults={
   schema_version:'2.0',
   mode:'DRY_RUN',
-  provider:'SMTP',
+  provider:'HOSTINGER_API',
   queue_file:'outreach/autonomous-send-queue.jsonl',
   state_file:'state/autonomous-sender-state.json',
   audit_dir:'data/autonomous-sender-runs',
@@ -93,7 +93,7 @@ function senderModalMarkup(){
     <form id="senderSetupForm" class="sender-setup-form">
       <fieldset><legend>Modalità</legend><div class="sender-grid cols-3">
         <label><span>Mode</span><select id="ssMode"><option value="DRY_RUN">DRY_RUN</option><option value="LIVE">LIVE</option></select></label>
-        <label><span>Provider</span><select id="ssProvider"><option value="SMTP">SMTP</option></select></label>
+        <label><span>Provider</span><select id="ssProvider"><option value="HOSTINGER_API">HOSTINGER_API</option><option value="SMTP">SMTP</option></select></label>
         <label><span>Queue file</span><input id="ssQueue" type="text"></label>
       </div></fieldset>
       <fieldset><legend>Delivery</legend><div class="sender-grid cols-5">
@@ -173,7 +173,8 @@ function validateSenderConfig(c){
   if(!Number.isFinite(c.delivery.max_batch)||c.delivery.max_batch<1)throw new Error('Batch non valido');
   if(!c.schedule.timezone)throw new Error('Timezone obbligatoria');
   if(!c.schedule.allowed_hours.start||!c.schedule.allowed_hours.end)throw new Error('Finestra oraria incompleta');
-  for(const [k,v] of Object.entries(c.smtp)) if(!v)throw new Error(`Mapping SMTP mancante: ${k}`);
+  if(!['HOSTINGER_API','SMTP'].includes(c.provider))throw new Error('Provider non valido');
+  if(c.provider==='SMTP') for(const [k,v] of Object.entries(c.smtp)) if(!v)throw new Error(`Mapping SMTP mancante: ${k}`);
 }
 async function loadSenderSetup(){
   const status=document.getElementById('senderSetupStatus'),error=document.getElementById('senderSetupError');
