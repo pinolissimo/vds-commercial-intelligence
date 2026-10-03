@@ -16,17 +16,10 @@ function decode64Utf8(value){
 }
 
 async function jsonFile(name){
-  const url=`${GH}/repos/${OWNER}/${REPO}/contents/api/v1/${name}?ref=${encodeURIComponent(REF)}&v=${Date.now()}`;
-  const response=await fetch(url,{
-    headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
-    cache:'no-store'
-  });
+  const response=await fetch(`api/v1/${name}?v=${Date.now()}`,{cache:'no-store'});
   if(!response.ok)throw new Error(`${name}: HTTP ${response.status}`);
-  const payload=await response.json();
-  if(payload?.encoding!=='base64'||!payload?.content)throw new Error(`${name}: formato inatteso`);
-  return JSON.parse(decode64Utf8(payload.content));
+  return response.json();
 }
-
 function replyFresh(health,today){
   if(typeof health?.reply_source_fresh==='boolean')return health.reply_source_fresh;
   if(typeof today?.source_health?.reply_source_fresh==='boolean')return today.source_health.reply_source_fresh;
