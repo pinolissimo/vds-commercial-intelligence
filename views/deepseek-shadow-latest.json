@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-03T14:47:30Z",
+  "updated_at": "2026-10-03T15:05:09Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 979,
-    "agreement_count": 472,
-    "agreement_pct": 48.21,
+    "evaluated_total": 980,
+    "agreement_count": 473,
+    "agreement_pct": 48.27,
     "deepseek_promote": 32,
     "vds_promote": 260,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 361,
-    "cumulative_estimated_cost_usd": 0.189951,
+    "request_count": 362,
+    "cumulative_estimated_cost_usd": 0.190147,
     "cost_per_evaluated_candidate_usd": 0.00019403,
-    "cost_per_deepseek_promote_usd": 0.00593597,
-    "cost_per_observed_ready_or_contacted_usd": 0.09497546,
+    "cost_per_deepseek_promote_usd": 0.00594209,
+    "cost_per_observed_ready_or_contacted_usd": 0.09507338,
     "latest_request": {
-      "at": "2026-10-03T14:47:26Z",
+      "at": "2026-10-03T15:05:06Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 427,
-      "completion_tokens": 165,
-      "total_tokens": 720,
-      "estimated_cost_usd": 0.00020374
+      "prompt_cache_miss_tokens": 418,
+      "completion_tokens": 156,
+      "total_tokens": 702,
+      "estimated_cost_usd": 0.00019582
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "30fb7335694134f8384500bd0cdf7d89",
-      "evaluated_at": "2026-10-03T11:44:35Z",
-      "organization": "Langdock",
-      "title": "(Senior) Platform Engineer - m/f/d",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/langdock/senior-platform-engineer-berlin-481653",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 59,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Platform Engineer at Langdock; platform/backend engineering, not WordPress/frontend web scope.",
-      "deepseek_risk_flags": [
-        "platform engineering",
-        "stack mismatch",
-        "not freelance"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001222383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "db9daf1a62649782ea60640097f000c1",
       "evaluated_at": "2026-10-03T11:44:35Z",
@@ -1417,10 +1390,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "90caf6e97719e445d8dee39c253de966",
+      "evaluated_at": "2026-10-03T15:05:06Z",
+      "organization": "Playson",
+      "title": "Senior Software Engineer (Game Engine)",
+      "location": "Europe",
+      "opportunity_url": "https://jobicy.com/jobs/146058-senior-software-engineer-game-engine",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Senior game-engine software engineering role; only tangential 'frontend' keyword match and no WordPress/WooCommerce/custom web scope, so it is not a truthful stack fit for the target freelance web-developer profile.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "game_engine_domain",
+        "no_wordpress_woocommerce_scope",
+        "generic_partner_keyword",
+        "no_explicit_freelance_compatibility"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00019582,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-03T14:47:23Z",
+  "source_semantic_updated_at": "2026-10-03T15:05:02Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
