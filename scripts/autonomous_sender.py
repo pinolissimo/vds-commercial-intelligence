@@ -174,6 +174,7 @@ def main():
     message_cfg=settings.get("message") or {}
     bcc=os.getenv(str(message_cfg.get("owner_bcc_env") or "VDS_OWNER_BCC")) if message_cfg.get("owner_bcc_enabled",True) else None
     results=[]
+    delivered_ids=set()
     for item,key,domain in candidates:
         try:
             if provider=="HOSTINGER_API":
@@ -183,6 +184,7 @@ def main():
             else:
                 send(host,port,user,password,from_addr,item["recipient"],item["subject"],item["text"],bcc,timeout_seconds)
             sent_keys.add(key)
+            delivered_ids.add(str(item.get("queue_id") or ""))
             exact.add(item["recipient"].lower()); domains.add(domain)
             results.append({
                 "queue_id":item.get("queue_id"),"recipient":item["recipient"].lower(),
@@ -195,6 +197,17 @@ def main():
                 "queue_id":item.get("queue_id"),"recipient":item.get("recipient"),
                 "state":"SEND_FAILED","error":f"{type(exc).__name__}: {exc}"[:500]
             })
+
+    if delivered_ids:
+        changed=False
+        for item in queue:
+            if str(item.get("queue_id") or "") in delivered_ids:
+                item["status"]="SENT"
+                item["sent_at"]=nowz()
+                item["provider"]=provider
+                changed=True
+        if changed:
+            queue_path.write_text("\n".join(json.dumps(x,ensure_ascii=False,separators=(",",":")) for x in queue)+"\n",encoding="utf-8")
 
     payload={
         "schema_version":"1.2","updated_at":nowz(),"provider":provider,"run_state":"COMPLETED","queue_records":len(queue),
