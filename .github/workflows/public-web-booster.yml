@@ -11,6 +11,7 @@ on:
       - 'scripts/booster_seed_bridge.py'
       - 'scripts/first_party_route_enricher.py'
       - 'scripts/white_label_ready_builder.py'
+      - 'scripts/ready_queue_bridge.py'
       - 'requirements-search-booster.txt'
       - 'config/public-web-booster.json'
       - '.github/workflows/public-web-booster.yml'
@@ -40,7 +41,7 @@ jobs:
 
       - name: Run compliant public-web booster
         run: |
-          python -m py_compile scripts/public_web_booster.py scripts/booster_seed_bridge.py scripts/first_party_route_enricher.py scripts/white_label_ready_builder.py
+          python -m py_compile scripts/public_web_booster.py scripts/booster_seed_bridge.py scripts/first_party_route_enricher.py scripts/white_label_ready_builder.py scripts/ready_queue_bridge.py
           python scripts/public_web_booster.py
           python scripts/booster_seed_bridge.py &
           p1=$!
@@ -49,6 +50,7 @@ jobs:
           wait $p1
           wait $p2
           python scripts/white_label_ready_builder.py
+          python scripts/ready_queue_bridge.py
 
       - name: Persist booster-owned intelligence safely
         shell: bash
@@ -66,10 +68,11 @@ jobs:
             wait $p1
             wait $p2
             python scripts/white_label_ready_builder.py
+            python scripts/ready_queue_bridge.py
           }
 
           stage() {
-            git add views/public-web-booster.json views/public-web-qualified-seeds.json views/public-web-enriched-routes.json views/white-label-ready-to-send.json
+            git add views/public-web-booster.json views/public-web-qualified-seeds.json views/public-web-enriched-routes.json views/white-label-ready-to-send.json outreach/autonomous-send-queue.jsonl
           }
 
           stage
