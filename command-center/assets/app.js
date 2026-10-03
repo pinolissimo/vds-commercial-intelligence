@@ -1,3 +1,4 @@
+// Visual Design Studio — 2026
 const OWNER='pinolissimo';
 const REPO='vds-commercial-intelligence';
 const REF='main';
@@ -73,19 +74,19 @@ async function staticFallback(path){
 }
 
 async function ghFile(path){
-  const url=`${GH}/repos/${OWNER}/${REPO}/contents/${path}?ref=${encodeURIComponent(REF)}&v=${Date.now()}`;
-  try{
-    let r=await fetchGithubFile(url,Boolean(state.token));
-    if(state.token&&(r.status===401||r.status===403))r=await fetchGithubFile(url,false);
-    if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);
-    const data=await r.json();
-    if(data&&data.encoding==='base64'&&data.content)return JSON.parse(decode64Utf8(data.content));
-    throw new Error(`${path}: formato inatteso`);
-  }catch(err){
-    try{return await staticFallback(path)}catch(_){throw err}
+  if(path.startsWith('api/v1/')){
+    const relative=path.slice('api/v1/'.length);
+    const r=await fetch(`api/v1/${relative}?v=${Date.now()}`,{cache:'no-store'});
+    if(r.ok)return r.json();
+    return staticFallback(path);
   }
+  const url=`${GH}/repos/${OWNER}/${REPO}/contents/${path}?ref=${encodeURIComponent(REF)}&v=${Date.now()}`;
+  const r=await fetchGithubFile(url,false);
+  if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);
+  const data=await r.json();
+  if(data&&data.encoding==='base64'&&data.content)return JSON.parse(decode64Utf8(data.content));
+  throw new Error(`${path}: formato inatteso`);
 }
-
 async function validateToken(token){
   const r=await fetch(`${GH}/repos/${OWNER}/${REPO}`,{
     headers:authHeaders(token),
