@@ -1,6 +1,6 @@
 {
   "schema_version": "1.8",
-  "updated_at": "2026-10-03T01:08:44Z",
+  "updated_at": "2026-10-03T06:03:32Z",
   "mode": "REVENUE_EMERGENCY",
   "worker_contract": "SELF_CONTAINED_VDS_REVENUE_FLOW",
   "commercial_strategy": {
@@ -71,11 +71,11 @@
     "REJECT"
   ],
   "capacity": {
-    "high_buyer_intent_project_pct": 50,
-    "qualified_project_backlog_pct": 35,
+    "high_buyer_intent_project_pct": 70,
+    "qualified_project_backlog_pct": 15,
     "exploration_pct": 15
   },
-  "diagnosed_bottleneck": "RAW_SOURCE_PRECISION",
+  "diagnosed_bottleneck": "HIGH_INTENT_PROJECT_ROUTE_AND_CONVERSION_CLOSURE",
   "source_priority": {
     "joa_es_frontend_title": 1.45,
     "joa_it_frontend_title": 1.45,
@@ -84,9 +84,9 @@
     "nomado_frontend": 1.06,
     "remotejobs_contract_wordpress": 1.03,
     "nomado_webdev": 0.89,
-    "remotejobs_contract_webdev": 0.86,
+    "remoteok": 0.88,
     "joa_eu_remote_webdev": 0.86,
-    "remoteok": 0.83,
+    "remotejobs_contract_webdev": 0.85,
     "jobicy_europe": 0.82,
     "remotive": 0.8,
     "arbeitnow_eu": 0.7,
@@ -109,16 +109,17 @@
     "remotejobs_contract_wordpress"
   ],
   "buyer_intent": {
-    "very_high": 0,
-    "high": 7,
-    "high_total": 7,
-    "project_based_high_intent": 7,
+    "very_high": 1,
+    "high": 24,
+    "high_total": 25,
+    "project_based_high_intent": 25,
     "archetypes": {
-      "SME_WEB_IMPROVEMENT": 105,
-      "AGENCY_EXTERNAL_CAPACITY": 3
+      "AGENCY_EXTERNAL_CAPACITY": 25,
+      "SME_WEB_IMPROVEMENT": 126
     },
     "engagement_models": {
-      "PROJECT_BASED_WEB_DELIVERY": 108
+      "PROJECT_BASED_WEB_DELIVERY": 150,
+      "PROJECT_MODEL_TO_VERIFY": 1
     },
     "priority_view": "views/buyer-intent-priority.json"
   },
@@ -129,8 +130,8 @@
   },
   "qualified_backlog_policy": {
     "priority": "HIGH_PROJECT_BUYER_INTENT_THEN_UNRESOLVED_SEMANTIC_PASS",
-    "semantic_pass_snapshot_proxy": 108,
-    "project_based_high_intent_snapshot": 7,
+    "semantic_pass_snapshot_proxy": 109,
+    "project_based_high_intent_snapshot": 25,
     "target_serious_candidate_decisions_per_run": 500,
     "target_high_intent_decisions_first": true,
     "continue_after_individual_blocker": true,
@@ -141,14 +142,14 @@
     "Italy|Lazio|Roma"
   ],
   "explore_or_revisit_areas": [
-    "Italy|Veneto|Venezia",
-    "Italy|Calabria|Reggio Calabria",
     "Italy|Puglia|Bari",
+    "Italy|Veneto|Venezia",
     "Spain|Aragón|Zaragoza",
     "Spain|Comunitat Valenciana|Castellón",
+    "Italy|Calabria|Reggio Calabria",
     "Italy|Lombardia|Milano",
-    "Italy|Emilia-Romagna|Piacenza",
     "Italy|Piemonte|Torino",
+    "Italy|Emilia-Romagna|Piacenza",
     "Spain|Castilla y León|Valladolid",
     "Italy|Lazio|Frosinone",
     "Italy|Emilia-Romagna|Bologna",
@@ -156,7 +157,7 @@
   ],
   "turbo": {
     "enabled": true,
-    "reason": "QUALIFIED_BACKLOG_PRESSURE",
+    "reason": "HIGH_BUYER_INTENT_BACKLOG",
     "quality_gates_unchanged": true,
     "target_serious_candidate_decisions_per_run": 500,
     "same_run_qualification_and_send": true,
