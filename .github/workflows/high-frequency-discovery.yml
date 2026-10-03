@@ -22,6 +22,8 @@ on:
       - "scripts/territory_radar_guard.py"
       - "scripts/buyer_intent_ranker.py"
       - "scripts/acquisition_performance_optimizer.py"
+      - "scripts/opportunity_first_optimizer.py"
+      - "config/opportunity-first-optimizer.json"
       - "scripts/search_mission_planner.py"
       - "scripts/multi_engine_query_router.py"
       - "scripts/territorial_mission_executor.py"
@@ -109,6 +111,10 @@ jobs:
         continue-on-error: true
         run: python scripts/buyer_intent_ranker.py
 
+      - name: Build opportunity-first commercial intelligence
+        continue-on-error: true
+        run: python scripts/opportunity_first_optimizer.py
+
       - name: Optimize downstream acquisition capacity
         continue-on-error: true
         run: python scripts/acquisition_performance_optimizer.py
@@ -146,6 +152,7 @@ jobs:
             python scripts/territory_yield_radar.py || echo "WARN territory radar failed"
             python scripts/territory_radar_guard.py || echo "WARN territory guard failed"
             python scripts/buyer_intent_ranker.py || echo "WARN buyer-intent ranker failed; preserve last good ranking"
+            python scripts/opportunity_first_optimizer.py || echo "WARN opportunity-first optimizer failed"
             python scripts/acquisition_performance_optimizer.py || echo "WARN acquisition optimizer failed"
             python scripts/search_mission_planner.py || echo "WARN mission planner failed"
             python scripts/multi_engine_query_router.py || echo "WARN multi-engine router failed"
@@ -174,6 +181,11 @@ jobs:
                     views/territory-yield-radar.json \
                     views/territory-enrichment-queue.json \
                     views/buyer-intent-priority.json \
+                    views/opportunity-first-optimizer.json \
+                    views/second-chance-queue.json \
+                    views/decision-maker-enrichment-queue.json \
+                    views/message-strategy.json \
+                    views/adaptive-commercial-learning.json \
                     views/acquisition-performance.json \
                     views/search-mission-plan.json \
                     views/multi-engine-search-missions.json \
