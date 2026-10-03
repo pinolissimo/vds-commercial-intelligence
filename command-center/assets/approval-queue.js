@@ -18,11 +18,7 @@ async function qaRead(){
   }else{
     throw new Error(`QUEUE_PUBLIC_READ_${publicRead.status}`);
   }
-  if(qaToken()){
-    const meta=await fetch(`${QA_GH}/repos/${QA_OWNER}/${QA_REPO}/contents/${QA_PATH}?ref=${QA_REF}`,{headers:qaHeaders(),cache:'no-store'});
-    if(meta.ok){const d=await meta.json();qaSha=d.sha;}
-    else if(meta.status===401||meta.status===403){qaSha=null;}
-  }
+  qaSha=null;
   return qaRows;
 }
 async function qaWrite(message){
