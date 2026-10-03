@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "purpose": "Deterministic recovery trigger for VDS High-Frequency Discovery Fanout. Updating this file triggers the existing discovery workflow without changing search logic or quality gates.",
-  "updated_at": "2026-10-02T05:01:20+02:00",
-  "reason": "DISCOVERY_FRESHNESS_RECOVERY",
-  "requested_by": "VDS_PERFORMANCE_REPLY_WATCHDOG",
-  "command_id": "WATCHDOG-RECOVERY-20261002-0501",
-  "invariants": {
-    "production_architecture_unchanged": true,
-    "quality_gates_unchanged": true,
-    "global_dedup_unchanged": true,
-    "send_policy_unchanged": true
-  }
+  "requested_at": "2026-10-03T07:22:30Z",
+  "reason": "ACTIVATE_OPPORTUNITY_FIRST_FULL_OPTIMIZER_NOW",
+  "requested_components": [
+    "timing_intent_scoring",
+    "cross_signal_correlation",
+    "message_strategy",
+    "adaptive_learning",
+    "decision_maker_enrichment",
+    "second_chance_queue"
+  ],
+  "immutable_hard_gate": "ZERO_DUPLICATE_FIRST_CONTACT"
 }
