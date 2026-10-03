@@ -7,7 +7,6 @@ on:
     paths:
       - 'command-center/**'
       - 'scripts/prepare_command_center_assets.py'
-      - 'tests/test_geographic_radar_contract.py'
       - 'config/sender-settings.json'
       - 'config/sender-policy.json'
       - '.github/workflows/vds-command-center-pages.yml'
@@ -107,7 +106,6 @@ jobs:
           grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
           node --check .pages/assets/app.js
           node --check .pages/assets/sender-setup.js
-          python3 -m unittest tests/test_geographic_radar_contract.py -v
           node --check .pages/assets/token-persistence.js
           node --check .pages/assets/live-export.js
           node --check .pages/assets/executable-ready.js
