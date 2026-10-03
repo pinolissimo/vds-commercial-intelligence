@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-03T12:11:31Z",
+  "updated_at": "2026-10-03T12:29:13Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 973,
+    "evaluated_total": 975,
     "agreement_count": 470,
-    "agreement_pct": 48.3,
+    "agreement_pct": 48.21,
     "deepseek_promote": 32,
     "vds_promote": 259,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 357,
-    "cumulative_estimated_cost_usd": 0.188926,
-    "cost_per_evaluated_candidate_usd": 0.00019417,
-    "cost_per_deepseek_promote_usd": 0.00590395,
-    "cost_per_observed_ready_or_contacted_usd": 0.09446324,
+    "request_count": 358,
+    "cumulative_estimated_cost_usd": 0.189284,
+    "cost_per_evaluated_candidate_usd": 0.00019414,
+    "cost_per_deepseek_promote_usd": 0.00591514,
+    "cost_per_observed_ready_or_contacted_usd": 0.09464222,
     "latest_request": {
-      "at": "2026-10-03T12:11:22Z",
+      "at": "2026-10-03T12:29:09Z",
       "model": "deepseek-flash",
-      "candidate_count": 12,
-      "valid_evaluation_count": 12,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 3185,
-      "completion_tokens": 1594,
-      "total_tokens": 4907,
-      "estimated_cost_usd": 0.00175364
+      "prompt_cache_miss_tokens": 669,
+      "completion_tokens": 318,
+      "total_tokens": 1115,
+      "estimated_cost_usd": 0.00035796
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,59 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "fb64fa30401d667c4cac8bd38bf17b53",
-      "evaluated_at": "2026-10-03T11:44:35Z",
-      "organization": "isento GmbH",
-      "title": "Software Developer (m/w/d) - Schwerpunkt Angular",
-      "location": "Nuremberg",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/isento-gmbh/software-developer-schwerpunkt-angular-nuremberg-53024",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Angular-focused software developer role; core stack mismatch with WordPress/custom HTML/CSS/JS profile.",
-      "deepseek_risk_flags": [
-        "Angular core stack",
-        "not WordPress",
-        "on-site Nuremberg"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001222383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "ce03218b35887c14ed968cede4d5b403",
-      "evaluated_at": "2026-10-03T11:44:35Z",
-      "organization": "Sezzle",
-      "title": "Principal Infrastructure Engineer",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/sezzle/remote-principal-infrastructure-engineer-320329",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Principal Infrastructure Engineer; infrastructure/DevOps, unrelated to web development profile.",
-      "deepseek_risk_flags": [
-        "infrastructure role",
-        "no web scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001222383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "5a60fccef3aa38b81a52067d35887fb8",
       "evaluated_at": "2026-10-03T11:44:35Z",
@@ -1407,10 +1354,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6b432bbc5ccc299eb92b84ce56333a3e",
+      "evaluated_at": "2026-10-03T12:29:09Z",
+      "organization": "Retailinsights",
+      "title": "UX designer at Retail Insights",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/retailinsights/ux-designer-at-retail-insights-london-208448",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is a UX designer position in London, not a freelance web-development opportunity; matched keywords are generic (css/html/ux/website) and there is no explicit demand for WordPress, WooCommerce, custom frontend build, performance, or maintenance work.",
+      "deepseek_risk_flags": [
+        "role_mismatch_ux_designer",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets",
+        "generic_keyword_matches_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017898,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "feb78dddd2ac557edd143b1868ce62bc",
+      "evaluated_at": "2026-10-03T12:29:09Z",
+      "organization": "Unitedmedia",
+      "title": "UX Designer at United Media",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/unitedmedia/ux-designer-at-united-media-london-142470",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is a UX designer position in London, not a freelance web-development opportunity; matched keywords are generic (css/html/ux/website) and there is no explicit demand for WordPress, WooCommerce, custom frontend build, performance, or maintenance work.",
+      "deepseek_risk_flags": [
+        "role_mismatch_ux_designer",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets",
+        "generic_keyword_matches_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017898,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 12,
-  "source_semantic_updated_at": "2026-10-03T12:11:17Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-03T12:29:04Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
