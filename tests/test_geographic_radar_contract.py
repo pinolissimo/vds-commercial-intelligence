@@ -44,7 +44,7 @@ class DashboardRadarSourceContractTests(unittest.TestCase):
 class ExecutorContractTests(unittest.TestCase):
     def test_executor_is_bounded_rotating_and_no_evasion(self):
         src=Path("scripts/territorial_mission_executor.py").read_text(encoding="utf-8")
-        self.assertIn("WORKERS=6",src)
+        self.assertIn("WORKERS=10",src)
         self.assertIn("MISSIONS_PER_RUN=18",src)
         self.assertIn("ThreadPoolExecutor",src)
         self.assertIn("max_workers=WORKERS",src)
