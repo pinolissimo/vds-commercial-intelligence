@@ -136,6 +136,8 @@ def classify(signal, policy, now):
     support_hits = hits(combined, policy.get("hard_non_project_support_terms", []))
     binding_hits = hits(combined, policy.get("hard_time_binding_terms", []))
     maintenance_project_hits = hits(combined, policy.get("project_maintenance_terms", []))
+    opportunity_context_hits = hits(combined, policy.get("opportunity_context_terms", []))
+    observable_need_hits = hits(combined, policy.get("observable_need_terms", []))
     title_support_hits = hits(title, policy.get("hard_non_project_support_terms", []))
     title_binding_hits = hits(title, policy.get("hard_time_binding_terms", []))
     geo_exclusions = hits(" ".join([location, title]), policy["hard_geo_exclusion_terms"])
@@ -151,7 +153,9 @@ def classify(signal, policy, now):
     )
     scoped_web_maintenance = bool(maintenance_project_hits) and not binding_support and not support_role_title
     non_project_support = (support_dominant or binding_support) and not scoped_web_maintenance
-    project_based_fit = bool(project_hits or role_hits or scoped_web_maintenance) and not non_project_support
+    contextual_web_opportunity = bool(skill_hits) and bool(project_hits or opportunity_context_hits or observable_need_hits)
+    inferred_capacity_signal = bool(intent_hits) and bool(opportunity_context_hits) and bool(skill_hits)
+    project_based_fit = bool(project_hits or role_hits or scoped_web_maintenance or contextual_web_opportunity or inferred_capacity_signal) and not non_project_support
 
     # Discovery should favor recall for web-delivery projects, while support work
     # is a deterministic exclusion rather than merely a score penalty.
@@ -160,6 +164,12 @@ def classify(signal, policy, now):
     score += min(25, len(skill_hits) * 5)
     score += min(15, len(intent_hits) * 5)
     score += min(15, len(project_hits) * 3)
+    score += min(12, len(opportunity_context_hits) * 2)
+    score += min(12, len(observable_need_hits) * 3)
+    if inferred_capacity_signal:
+        score += 14
+    elif contextual_web_opportunity:
+        score += 8
     if geo["country"] in ("Spain", "Italy"):
         score += 20
     elif geo["country"] in ("EU_REMOTE", "WORLDWIDE_REMOTE"):
@@ -197,10 +207,14 @@ def classify(signal, policy, now):
         elif age_days <= limits["preferred"]:
             score += 10
 
-    incidental_only = not role_hits and bool(skill_hits)
+    incidental_only = not role_hits and bool(skill_hits) and not contextual_web_opportunity and not inferred_capacity_signal
     if incidental_only:
         score = min(score, 49)
         reasons.append("INCIDENTAL_BODY_KEYWORDS_ONLY")
+    elif inferred_capacity_signal:
+        reasons.append("INFERRED_COMMERCIAL_CAPACITY_SIGNAL")
+    elif contextual_web_opportunity and not role_hits:
+        reasons.append("CONTEXTUAL_WEB_OPPORTUNITY")
 
     if role_hits and project_based_fit and not negative_hits and not geo_exclusions and "STALE_OVER_MAX" not in reasons:
         score = max(score, 54)
@@ -232,6 +246,10 @@ def classify(signal, policy, now):
         "support_role_hits": support_hits,
         "time_binding_hits": binding_hits,
         "project_maintenance_hits": maintenance_project_hits,
+        "opportunity_context_hits": opportunity_context_hits,
+        "observable_need_hits": observable_need_hits,
+        "inferred_capacity_signal": inferred_capacity_signal,
+        "contextual_web_opportunity": contextual_web_opportunity,
         "project_based_fit": project_based_fit,
         "engagement_model": "PROJECT_BASED_WEB_DELIVERY" if project_based_fit else "NON_PROJECT_SUPPORT_OR_OTHER",
         "final_decision_hint": "REJECT" if non_project_support or binding_support else None,
