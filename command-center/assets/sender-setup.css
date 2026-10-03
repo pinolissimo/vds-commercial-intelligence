@@ -1,0 +1,16 @@
+/* Visual Design Studio — 2026 */
+.sender-setup-card{width:min(1040px,calc(100vw - 32px));max-height:min(880px,calc(100vh - 32px));overflow:auto}
+.sender-setup-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.sender-setup-head h2{margin:2px 0 8px}.sender-setup-head p{margin:0}
+.sender-setup-status{margin:18px 0 12px;padding:10px 12px;border:1px solid var(--border);border-radius:12px;font-size:13px;color:var(--muted);background:var(--surface-soft)}
+.sender-setup-form{display:grid;gap:14px}
+.sender-setup-form fieldset{border:1px solid var(--border);border-radius:16px;padding:16px;margin:0}
+.sender-setup-form legend{padding:0 8px;font-weight:800;font-size:13px}
+.sender-grid{display:grid;gap:12px}.sender-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.sender-grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.sender-grid.cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.sender-grid label{display:grid;gap:6px}.sender-grid label>span{font-size:12px;font-weight:700;color:var(--muted)}
+.sender-grid input,.sender-grid select{width:100%;min-height:42px;border:1px solid var(--border);border-radius:10px;padding:9px 11px;background:var(--surface);color:var(--text);font:inherit}
+.sender-check-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sender-check{display:flex!important;align-items:center;gap:9px;font-size:13px;font-weight:650}.sender-check input{width:17px;height:17px}
+.sender-setup-actions{display:flex;justify-content:flex-end;align-items:center;gap:10px;position:sticky;bottom:0;padding:12px 0 2px;background:linear-gradient(180deg,transparent,var(--surface) 22%)}
+@media(max-width:900px){.sender-grid.cols-5{grid-template-columns:repeat(2,minmax(0,1fr))}.sender-grid.cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}.sender-check-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.sender-setup-card{width:calc(100vw - 18px);max-height:calc(100vh - 18px)}.sender-grid.cols-2,.sender-grid.cols-3,.sender-grid.cols-5,.sender-check-grid{grid-template-columns:1fr}.sender-setup-actions{flex-wrap:wrap}.sender-setup-actions .primary-button{width:100%}}
