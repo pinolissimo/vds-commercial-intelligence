@@ -7,6 +7,7 @@ and carrying an allowed eligibility basis. Uses fail-closed dedup and Hostinger 
 """
 from __future__ import annotations
 import json, os, smtplib, ssl, time, hashlib, urllib.parse
+import sync_hostinger_mail as hostinger
 from datetime import datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
@@ -80,11 +81,12 @@ def main():
     settings=load_json(SETTINGS,{})
     provider=str(settings.get("provider") or "SMTP").upper()
     mode=str(settings.get("mode") or "DRY_RUN").upper()
+
     if mode != "LIVE":
         print(json.dumps({"mode":mode,"provider":provider,"state":"DRY_RUN_NO_SEND"}))
         return 0
+
     if provider=="HOSTINGER_API":
-        from scripts import sync_hostinger_mail as hostinger
         if not hostinger.TOKEN:
             raise SystemExit("Missing HOSTINGER_EMAIL_API_TOKEN")
         mailbox_id=hostinger.get_mailbox()
