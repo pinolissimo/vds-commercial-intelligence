@@ -105,9 +105,9 @@ def main():
         end=str(hours.get("end") or "19:00")
         hhmm=local.strftime("%H:%M")
         if not (start <= hhmm < end):
-            previous=load_json(STATE,{"sent_idempotency_keys":[]})
+            previous=load_json(state_path,{"sent_idempotency_keys":[]})
             payload={"schema_version":"1.2","updated_at":nowz(),"provider":provider,"run_state":"SEND_WINDOW_CLOSED","local_time":hhmm,"queue_records":0,"eligible_candidates":0,"batch_limit":0,"delivery_accepted":0,"smtp_accepted":0,"failed":0,"rejected_count":0,"results":[],"rejected":[],"sent_idempotency_keys":previous.get("sent_idempotency_keys") or []}
-            save_json(STATE,payload)
+            save_json(state_path,payload)
             print(json.dumps({"mode":mode,"provider":provider,"state":"SEND_WINDOW_CLOSED","local_time":hhmm}))
             return 0
 
