@@ -33,6 +33,7 @@ on:
       - 'state/provider-inbound-live-pending/**'
       - 'command-center/commands/**'
       - 'scripts/build_command_center_api.py'
+      - 'scripts/build_commercial_database.py'
       - 'scripts/build_geographic_intelligence.py'
       - 'views/territorial-public-search-results.json'
       - 'state/mission-execution-heartbeat.json'
@@ -64,6 +65,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/build_command_center_api.py
+          python3 scripts/build_commercial_database.py
           python3 scripts/build_geographic_intelligence.py
           python3 scripts/enrich_command_center_funnel.py
           python3 scripts/overlay_provider_live_dashboard.py
@@ -83,6 +85,7 @@ jobs:
             if git push origin HEAD:main; then exit 0; fi
             git fetch origin main; git reset --hard origin/main
             python3 scripts/build_command_center_api.py
+            python3 scripts/build_commercial_database.py
             python3 scripts/build_geographic_intelligence.py
             python3 scripts/enrich_command_center_funnel.py
             python3 scripts/overlay_provider_live_dashboard.py
