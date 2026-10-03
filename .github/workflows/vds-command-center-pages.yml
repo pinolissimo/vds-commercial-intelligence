@@ -41,7 +41,9 @@ jobs:
           mkdir -p .pages
           cp -R command-center/. .pages/
           python3 scripts/prepare_command_center_assets.py .pages
-          mkdir -p .pages/outreach
+          mkdir -p .pages/api/v1 .pages/outreach
+          cp -R api/v1/. .pages/api/v1/
+          cp views/acquisition-performance.json .pages/api/v1/acquisition-performance.json
           cp outreach/autonomous-send-queue.jsonl .pages/outreach/autonomous-send-queue.jsonl
 
       - name: Security and static smoke test
@@ -78,7 +80,16 @@ jobs:
           test -s .pages/fallback/today.json
           test -s .pages/fallback/health.json
           test -s .pages/fallback/manifest.json
-          test ! -d .pages/api
+          test -s .pages/api/v1/dashboard.json
+          test -s .pages/api/v1/today.json
+          test -s .pages/api/v1/health.json
+          test -s .pages/api/v1/companies.json
+          test -s .pages/api/v1/opportunities.json
+          test -s .pages/api/v1/sources.json
+          test -s .pages/api/v1/territory-productivity.json
+          test -s .pages/api/v1/geography.json
+          test -s .pages/api/v1/eu-project-radar.json
+          test -s .pages/api/v1/acquisition-performance.json
           grep -q "api.github.com" .pages/index.html
           grep -q "wasm-unsafe-eval" .pages/index.html
           grep -q "raw.githubusercontent.com" .pages/index.html
@@ -125,6 +136,7 @@ jobs:
           node --check .pages/assets/approval-queue.js
           ! grep -q '/contents/api/v1/' .pages/assets/app.js
           ! grep -q '/contents/api/v1/' .pages/assets/eu-radar.js
+          ! grep -R -q '/contents/api/v1/' .pages/assets/*.js
           node --check .pages/assets/token-persistence.js
           node --check .pages/assets/live-export.js
           node --check .pages/assets/executable-ready.js
