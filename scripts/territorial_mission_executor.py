@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Parallel territorial mission executor with truthful per-worker telemetry.
 
-Six bounded workers execute independent search missions concurrently. Results are
+Ten bounded workers execute independent search missions concurrently. Results are
 discovery-only and must pass first-party verification and global dedup before any
 commercial action. No proxy rotation, stealth, CAPTCHA bypass or login automation.
 """
@@ -20,11 +20,12 @@ HEARTBEATS=ROOT/"state/mission-execution-heartbeats.json"
 OUT=ROOT/"views/territorial-public-search-results.json"
 CURSOR=ROOT/"state/territorial-executor-cursor.json"
 
-WORKERS=6
-MISSIONS_PER_RUN=18
+WORKERS=10
+MISSIONS_PER_RUN=30
 MAX_RESULTS=6
-FETCH_RESULTS=12
-DELAY_SECONDS=0.35
+FETCH_RESULTS=10
+DELAY_SECONDS=0.20
+SEARCH_TIMEOUT_SECONDS=3
 
 _LOCK=threading.Lock()
 _WORKER_STATE={}
@@ -99,7 +100,7 @@ def execute_mission(worker_id,m,run_id,total_missions):
         pairs=[("brave","bing"),("google","duckduckgo"),("bing","brave"),("duckduckgo","google")]
         selected=pairs[(worker_id-1)%len(pairs)]
         clean=[]; backend_used=None; errors=[]
-        ddgs=DDGS(timeout=4)
+        ddgs=DDGS(timeout=SEARCH_TIMEOUT_SECONDS)
         for backend in selected:
             try:
                 found=list(ddgs.text(query,max_results=FETCH_RESULTS,backend=backend,region=region))
