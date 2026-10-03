@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-03T13:34:29Z",
+  "updated_at": "2026-10-03T13:52:18Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 977,
+    "evaluated_total": 978,
     "agreement_count": 472,
-    "agreement_pct": 48.31,
+    "agreement_pct": 48.26,
     "deepseek_promote": 32,
-    "vds_promote": 259,
+    "vds_promote": 260,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 231
+    "deepseek_demoted_from_vds_promote": 232
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.32,
+    "vds_promote_hot_rate_pct": 2.31,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 359,
-    "cumulative_estimated_cost_usd": 0.189519,
-    "cost_per_evaluated_candidate_usd": 0.00019398,
-    "cost_per_deepseek_promote_usd": 0.00592246,
-    "cost_per_observed_ready_or_contacted_usd": 0.09475929,
-    "latest_request": null
+    "request_count": 360,
+    "cumulative_estimated_cost_usd": 0.189747,
+    "cost_per_evaluated_candidate_usd": 0.00019402,
+    "cost_per_deepseek_promote_usd": 0.0059296,
+    "cost_per_observed_ready_or_contacted_usd": 0.0948736,
+    "latest_request": {
+      "at": "2026-10-03T13:52:14Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 432,
+      "completion_tokens": 201,
+      "total_tokens": 761,
+      "estimated_cost_usd": 0.0002286
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4cb063fd8ebc16aa08127ee81627faa9",
-      "evaluated_at": "2026-10-03T11:44:35Z",
-      "organization": "Worldly",
-      "title": "Growth Marketer (6-Month Contract)",
-      "location": "USA",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/growth-marketer-6-month-contract-worldly",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 60,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "6-month contract Growth Marketer with WordPress/website mentions; contract structure is compatible but role is marketing-led, not dev delivery.",
-      "deepseek_risk_flags": [
-        "marketing role",
-        "US-based",
-        "dev scope unclear"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001222383,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "cc7ea539291f47ca0b934c68941c9dae",
       "evaluated_at": "2026-10-03T11:44:35Z",
@@ -1402,10 +1386,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3718fd06ad87d5dd927a6deff2e5b658",
+      "evaluated_at": "2026-10-03T13:52:14Z",
+      "organization": "Twilio",
+      "title": "Senior Solutions Engineer",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/twilio/senior-solutions-engineer-317888",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 83,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Solutions Engineer at Twilio is a pre-sales/technical sales engineering role, not a freelance web-development opportunity; matched keywords (css, html, javascript, php, web development) are generic and the only commercial hit is the ambiguous word 'partner', which does not establish freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "role_is_solutions_engineering_not_web_development",
+        "keyword_matches_generic_and_likely_incidental",
+        "no_explicit_freelance_or_contract_signal",
+        "no_geo_or_remote_evidence_in_posting",
+        "enterprise_sales_engineering_scope_mismatch"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0002286,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-03T13:34:23Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-03T13:52:09Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

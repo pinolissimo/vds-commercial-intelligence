@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1002,
+  "runs": 1003,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -26752,6 +26752,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3718fd06ad87d5dd927a6deff2e5b658",
+      "evaluated_at": "2026-10-03T13:52:14Z",
+      "organization": "Twilio",
+      "title": "Senior Solutions Engineer",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/twilio/senior-solutions-engineer-317888",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 83,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Solutions Engineer at Twilio is a pre-sales/technical sales engineering role, not a freelance web-development opportunity; matched keywords (css, html, javascript, php, web development) are generic and the only commercial hit is the ambiguous word 'partner', which does not establish freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "role_is_solutions_engineering_not_web_development",
+        "keyword_matches_generic_and_likely_incidental",
+        "no_explicit_freelance_or_contract_signal",
+        "no_geo_or_remote_evidence_in_posting",
+        "enterprise_sales_engineering_scope_mismatch"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0002286,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -31062,9 +31091,21 @@
       "completion_tokens": 294,
       "total_tokens": 1096,
       "estimated_cost_usd": 0.00023416
+    },
+    {
+      "at": "2026-10-03T13:52:14Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 432,
+      "completion_tokens": 201,
+      "total_tokens": 761,
+      "estimated_cost_usd": 0.0002286
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-03T13:34:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-03T13:52:14Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
