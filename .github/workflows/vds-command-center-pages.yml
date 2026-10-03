@@ -7,6 +7,7 @@ on:
     paths:
       - 'command-center/**'
       - 'scripts/prepare_command_center_assets.py'
+      - 'scripts/test_command_center_invariants.py'
       - 'config/sender-settings.json'
       - 'config/sender-policy.json'
       - 'outreach/autonomous-send-queue.jsonl'
@@ -134,6 +135,7 @@ jobs:
           # Persistent browser storage is allowed only in the dedicated GitHub-token bootstrap.
           test "$(grep -R -l "localStorage" .pages/assets/*.js | wc -l)" -eq 1
           grep -R -l "localStorage" .pages/assets/*.js | grep -q "token-persistence.js"
+          python3 scripts/test_command_center_invariants.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v6
