@@ -28,6 +28,12 @@ if not errors:
         if x.get("queue_id") not in pub_by: errors.append(f"approval draft not published: {x.get('queue_id')}")
     app=(PAGES/"assets/app.js").read_text(encoding="utf-8")
     radar=(PAGES/"assets/eu-radar.js").read_text(encoding="utf-8")
+    for required in ["dashboard.json","today.json","health.json","companies.json","opportunities.json","sources.json","territory-productivity.json","geography.json","eu-project-radar.json","acquisition-performance.json"]:
+        p=PAGES/"api/v1"/required
+        if not p.exists() or not p.stat().st_size: errors.append(f"missing public projection: {required}")
+    for js in (PAGES/"assets").glob("*.js"):
+        body=js.read_text(encoding="utf-8",errors="ignore")
+        if "/contents/api/v1/" in body: errors.append(f"legacy Contents polling in {js.name}")
     approval=(PAGES/"assets/approval-queue.js").read_text(encoding="utf-8")
     index=(PAGES/"index.html").read_text(encoding="utf-8")
     if "/contents/api/v1/" in app or "/contents/api/v1/" in radar: errors.append("authenticated API polling regression")
