@@ -11,12 +11,16 @@ Evidence rules:
 """
 from __future__ import annotations
 import json,re,html
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from datetime import datetime,timezone
 from urllib.parse import urlparse,urljoin
 from urllib.request import Request,urlopen
 
 ROOT=Path(__file__).resolve().parents[1]
+WORKERS=12
+PAGE_LIMIT_PER_SIGNAL=7
+FETCH_TIMEOUT_SECONDS=8
 SRC=ROOT/"views/public-web-booster.json"
 OUT=ROOT/"views/public-web-enriched-routes.json"
 LEDGER=ROOT/"views/global-contact-ledger.json"
@@ -38,7 +42,7 @@ def domain(url):
     try:return (urlparse(url).hostname or "").lower().removeprefix("www.")
     except Exception:return ""
 
-def fetch(url,timeout=12):
+def fetch(url,timeout=FETCH_TIMEOUT_SECONDS):
     req=Request(url,headers={"User-Agent":"VDS-Commercial-Research/1.0 (+https://www.visualdesignstudio.es/)"})
     with urlopen(req,timeout=timeout) as r:
         ctype=(r.headers.get("Content-Type") or "").lower()
@@ -80,65 +84,74 @@ def extract_people(text):
         seen.add(k);dedup.append(p)
     return dedup[:8]
 
+def process_signal(sig, exact, domains):
+    url=sig.get("url"); d=(sig.get("domain") or domain(url)).removeprefix("www.")
+    if not url or not d:return None
+    pages=[url]
+    raw0=None
+    try:raw0=fetch(url)
+    except Exception:pass
+    if raw0:
+        pages += [x for x in extract_links(raw0,url,d) if x not in pages][:6]
+    emails=set(sig.get("emails") or [])
+    routes=[]; people=[]; evidence_pages=[]
+    for purl in pages[:PAGE_LIMIT_PER_SIGNAL]:
+        try:raw=raw0 if purl==url and raw0 else fetch(purl)
+        except Exception:continue
+        if not raw:continue
+        txt=textify(raw)
+        evidence_pages.append(purl)
+        for e in EMAIL_RE.findall(txt):
+            if e.lower().endswith("@"+d): emails.add(e.lower())
+        for mm in re.finditer(r'''(?is)href\s*=\s*["']mailto:([^?"']+)''',raw):
+            e=mm.group(1).strip().lower()
+            if e.endswith("@"+d):emails.add(e)
+        if any(t in purl.lower() or t in txt.lower()[:6000] for t in ROUTE_TERMS):
+            routes.append(purl)
+        people.extend(extract_people(txt))
+    emails=sorted(emails)
+    route_candidates=sorted(set(routes))
+    dm=[p for p in people if p.get("role")][:8]
+    exact_block=[e for e in emails if e in exact]
+    domain_block=d in domains
+    confidence=0
+    if emails:confidence+=35
+    if route_candidates:confidence+=30
+    if dm:confidence+=20
+    if sig.get("route_hint"):confidence+=10
+    if int(sig.get("signal_score") or 0)>=15:confidence+=5
+    return {
+      "domain":d,"source_url":url,"signal_score":sig.get("signal_score",0),
+      "decision_makers":dm,"public_emails":emails,
+      "supplier_routes":route_candidates[:8],"evidence_pages":sorted(set(evidence_pages)),
+      "dedup":{"exact_email_blocks":exact_block,"domain_already_contacted":domain_block},
+      "contactability_score":min(100,confidence),
+      "state":"BLOCKED_DUPLICATE" if domain_block or exact_block else ("CONTACTABLE_EVIDENCE" if emails and route_candidates else "ENRICHMENT_PARTIAL"),
+      "send_authorized":False
+    }
+
 def main():
     src=load(SRC,{})
     ledger=load(LEDGER,{})
     exact=ledger.get("exact_email_index") or {}
     domains=ledger.get("corporate_domain_index") or {}
+    signals=list(src.get("signals") or [])
     rows=[]
-    for sig in src.get("signals") or []:
-        url=sig.get("url"); d=(sig.get("domain") or domain(url)).removeprefix("www.")
-        if not url or not d:continue
-        pages=[url]
-        raw0=None
-        try:raw0=fetch(url)
-        except Exception:pass
-        if raw0:
-            pages += [x for x in extract_links(raw0,url,d) if x not in pages][:6]
-        emails=set(sig.get("emails") or [])
-        routes=[]
-        people=[]
-        evidence_pages=[]
-        for purl in pages[:7]:
-            try:raw=raw0 if purl==url and raw0 else fetch(purl)
-            except Exception:continue
-            if not raw:continue
-            txt=textify(raw)
-            evidence_pages.append(purl)
-            for e in EMAIL_RE.findall(txt):
-                if e.lower().endswith("@"+d): emails.add(e.lower())
-            for mm in re.finditer(r'''(?is)href\s*=\s*["']mailto:([^?"']+)''',raw):
-                e=mm.group(1).strip().lower()
-                if e.endswith("@"+d):emails.add(e)
-            if any(t in purl.lower() or t in txt.lower()[:6000] for t in ROUTE_TERMS):
-                routes.append(purl)
-            people.extend(extract_people(txt))
-        emails=sorted(emails)
-        route_candidates=sorted(set(routes))
-        dm=[p for p in people if p.get("role")][:8]
-        exact_block=[e for e in emails if e in exact]
-        domain_block=d in domains
-        confidence=0
-        if emails:confidence+=35
-        if route_candidates:confidence+=30
-        if dm:confidence+=20
-        if sig.get("route_hint"):confidence+=10
-        if int(sig.get("signal_score") or 0)>=15:confidence+=5
-        rows.append({
-          "domain":d,"source_url":url,"signal_score":sig.get("signal_score",0),
-          "decision_makers":dm,"public_emails":emails,
-          "supplier_routes":route_candidates[:8],"evidence_pages":sorted(set(evidence_pages)),
-          "dedup":{"exact_email_blocks":exact_block,"domain_already_contacted":domain_block},
-          "contactability_score":min(100,confidence),
-          "state":"BLOCKED_DUPLICATE" if domain_block or exact_block else ("CONTACTABLE_EVIDENCE" if emails and route_candidates else "ENRICHMENT_PARTIAL"),
-          "send_authorized":False
-        })
+    with ThreadPoolExecutor(max_workers=min(WORKERS,max(1,len(signals))),thread_name_prefix="vds-enrich") as pool:
+        future_map={pool.submit(process_signal,sig,exact,domains):sig for sig in signals}
+        for fut in as_completed(future_map):
+            try:
+                row=fut.result()
+                if row: rows.append(row)
+            except Exception:
+                continue
     rows.sort(key=lambda x:(x["state"]=="CONTACTABLE_EVIDENCE",x["contactability_score"],x["signal_score"]),reverse=True)
-    payload={"schema_version":"1.0","updated_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z"),
-      "policy":"FIRST_PARTY_EVIDENCE_ONLY_NO_EMAIL_GUESSING","count":len(rows),
+    payload={"schema_version":"1.1","updated_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z"),
+      "policy":"FIRST_PARTY_EVIDENCE_ONLY_NO_EMAIL_GUESSING","parallel":True,"worker_count":WORKERS,
+      "count":len(rows),
       "contactable":sum(1 for x in rows if x["state"]=="CONTACTABLE_EVIDENCE"),
       "blocked_duplicate":sum(1 for x in rows if x["state"]=="BLOCKED_DUPLICATE"),
       "items":rows}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"count":payload["count"],"contactable":payload["contactable"],"blocked_duplicate":payload["blocked_duplicate"]}))
+    print(json.dumps({"count":payload["count"],"contactable":payload["contactable"],"blocked_duplicate":payload["blocked_duplicate"],"workers":WORKERS}))
 if __name__=="__main__": raise SystemExit(main())
