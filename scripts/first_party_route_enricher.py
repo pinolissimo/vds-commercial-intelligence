@@ -30,7 +30,8 @@ ROLE_PATTERNS=[
  r"(?:Founder|Co-Founder|CEO|CTO|COO|Owner|Managing Director|Amministratore|Titolare|Fundador|Directora|Director)"
 ]
 ROUTE_TERMS=("partner","supplier","provider","vendor","procurement","freelance","collabor","outsourc","white-label","white label","lavora","trabaja","contact")
-EMAIL_RE=re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",re.I)
+EMAIL_RE=re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}",re.I)
+PLACEHOLDER_EMAIL_TOKENS=("example.com","company.com","your@email","test@","noreply@","no-reply@")
 TAG_RE=re.compile(r"<[^>]+>")
 
 def load(path,default):
@@ -84,6 +85,12 @@ def extract_people(text):
         seen.add(k);dedup.append(p)
     return dedup[:8]
 
+def valid_public_email(email, root_domain):
+    e=str(email or "").strip().lower()
+    if not EMAIL_RE.fullmatch(e): return False
+    if any(tok in e for tok in PLACEHOLDER_EMAIL_TOKENS): return False
+    return e.endswith("@"+root_domain)
+
 def process_signal(sig, exact, domains):
     url=sig.get("url"); d=(sig.get("domain") or domain(url)).removeprefix("www.")
     if not url or not d:return None
@@ -93,7 +100,7 @@ def process_signal(sig, exact, domains):
     except Exception:pass
     if raw0:
         pages += [x for x in extract_links(raw0,url,d) if x not in pages][:6]
-    emails=set(sig.get("emails") or [])
+    emails={str(e).lower() for e in (sig.get("emails") or []) if valid_public_email(e,d)}
     routes=[]; people=[]; evidence_pages=[]
     for purl in pages[:PAGE_LIMIT_PER_SIGNAL]:
         try:raw=raw0 if purl==url and raw0 else fetch(purl)
@@ -102,7 +109,7 @@ def process_signal(sig, exact, domains):
         txt=textify(raw)
         evidence_pages.append(purl)
         for e in EMAIL_RE.findall(txt):
-            if e.lower().endswith("@"+d): emails.add(e.lower())
+            if valid_public_email(e,d): emails.add(e.lower())
         for mm in re.finditer(r'''(?is)href\s*=\s*["']mailto:([^?"']+)''',raw):
             e=mm.group(1).strip().lower()
             if e.endswith("@"+d):emails.add(e)
