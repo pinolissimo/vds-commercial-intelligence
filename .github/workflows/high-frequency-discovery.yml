@@ -23,6 +23,7 @@ on:
       - "scripts/buyer_intent_ranker.py"
       - "scripts/acquisition_performance_optimizer.py"
       - "scripts/opportunity_first_optimizer.py"
+      - "scripts/white_label_ready_builder.py"
       - "config/opportunity-first-optimizer.json"
       - "scripts/search_mission_planner.py"
       - "scripts/multi_engine_query_router.py"
@@ -123,6 +124,10 @@ jobs:
         continue-on-error: true
         run: python scripts/acquisition_performance_optimizer.py
 
+      - name: Refresh white-label READY_TO_SEND queue
+        continue-on-error: true
+        run: python scripts/white_label_ready_builder.py
+
       - name: Build territorial high-intent search missions
         continue-on-error: true
         run: python scripts/search_mission_planner.py
@@ -190,6 +195,7 @@ jobs:
                     views/decision-maker-enrichment-queue.json \
                     views/message-strategy.json \
                     views/adaptive-commercial-learning.json \
+                    views/white-label-ready-to-send.json \
                     views/acquisition-performance.json \
                     views/search-mission-plan.json \
                     views/multi-engine-search-missions.json \
