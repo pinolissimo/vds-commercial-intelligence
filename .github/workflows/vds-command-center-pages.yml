@@ -114,6 +114,8 @@ jobs:
           grep -q "hostinger-provider-sync.yml" .pages/assets/live-export.js
           grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
           node --check .pages/assets/app.js
+          node --check .pages/assets/eu-radar.js
+          ! grep -q 'style="' .pages/assets/eu-radar.js
           node --check .pages/assets/sender-setup.js
           node --check .pages/assets/approval-queue.js
           node --check .pages/assets/token-persistence.js
