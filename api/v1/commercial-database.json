@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-03T09:12:09+02:00",
+  "generated_at": "2026-10-03T09:13:39+02:00",
   "purpose": "Commercial prospect database organized by potential-customer type, country and region, including contacts, opportunities and anti-duplication state.",
   "anti_duplication_policy": {
     "rule": "NO_DUPLICATION",
@@ -107,35 +107,72 @@
   "summary_by_country": [
     {
       "country": "Unknown",
-      "count": 202
+      "count": 124
     },
     {
       "country": "Italy",
-      "count": 21
+      "count": 74
     },
     {
       "country": "Spain",
-      "count": 15
+      "count": 36
     },
     {
       "country": "EU",
       "count": 3
+    },
+    {
+      "country": "Germany",
+      "count": 2
     },
     {
       "country": "Remote",
       "count": 2
+    },
+    {
+      "country": "Austria",
+      "count": 1
+    },
+    {
+      "country": "France",
+      "count": 1
     }
   ],
   "summary_by_region": [
+    {
+      "country": "Austria",
+      "region": "Unresolved",
+      "count": 1
+    },
     {
       "country": "EU",
       "region": "Unresolved",
       "count": 3
     },
     {
+      "country": "France",
+      "region": "Unresolved",
+      "count": 1
+    },
+    {
+      "country": "Germany",
+      "region": "Unresolved",
+      "count": 2
+    },
+    {
       "country": "Italy",
       "region": "Unresolved",
-      "count": 4
+      "count": 53
+    },
+    {
+      "country": "Italy",
+      "region": "Lazio",
+      "count": 3
+    },
+    {
+      "country": "Italy",
+      "region": "Lombardia",
+      "count": 3
     },
     {
       "country": "Italy",
@@ -149,18 +186,18 @@
     },
     {
       "country": "Italy",
-      "region": "Lazio",
-      "count": 2
-    },
-    {
-      "country": "Italy",
-      "region": "Lombardia",
-      "count": 2
-    },
-    {
-      "country": "Italy",
       "region": "Toscana",
       "count": 2
+    },
+    {
+      "country": "Italy",
+      "region": "Veneto",
+      "count": 2
+    },
+    {
+      "country": "Italy",
+      "region": "Calabria",
+      "count": 1
     },
     {
       "country": "Italy",
@@ -188,11 +225,6 @@
       "count": 1
     },
     {
-      "country": "Italy",
-      "region": "Veneto",
-      "count": 1
-    },
-    {
       "country": "Remote",
       "region": "Unresolved",
       "count": 2
@@ -200,22 +232,22 @@
     {
       "country": "Spain",
       "region": "Unresolved",
-      "count": 6
+      "count": 25
+    },
+    {
+      "country": "Spain",
+      "region": "Comunidad de Madrid",
+      "count": 3
+    },
+    {
+      "country": "Spain",
+      "region": "Cantabria",
+      "count": 2
     },
     {
       "country": "Spain",
       "region": "Cataluña",
       "count": 2
-    },
-    {
-      "country": "Spain",
-      "region": "Comunidad de Madrid",
-      "count": 2
-    },
-    {
-      "country": "Spain",
-      "region": "Cantabria",
-      "count": 1
     },
     {
       "country": "Spain",
@@ -240,7 +272,7 @@
     {
       "country": "Unknown",
       "region": "Unresolved",
-      "count": 202
+      "count": 124
     }
   ],
   "indexes": {
@@ -516,10 +548,20 @@
       ]
     },
     "by_country": {
+      "Austria": [
+        "opportunity:OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026"
+      ],
       "EU": [
         "opportunity:OPP-EU-BEYOND-BARRIERS-WEB",
         "contact-org:national-technical-university-of-athens",
         "contact-org:university-of-oslo"
+      ],
+      "France": [
+        "opportunity:OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026"
+      ],
+      "Germany": [
+        "org:elia-digital.de",
+        "opportunity:OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026"
       ],
       "Italy": [
         "LEAD-IT-TAA-TN-PUMP-COMMUNICATION",
@@ -527,6 +569,54 @@
         "LEAD-IT-CAM-SA-GLOBALSERVICE-IMPRESA",
         "LEAD-IT-LAZ-RM-REMEDIA",
         "LEAD-IT-BAS-PZ-DEBERNARDIS",
+        "org:junolab.it",
+        "org:ieros.it",
+        "org:heritage-srl.it",
+        "org:avangarde.it",
+        "org:alpacode.it",
+        "org:giuseppecastagna.it",
+        "org:violettocommunication.it",
+        "org:2next.it",
+        "org:witapp.it",
+        "org:indaweb.it",
+        "org:turbobit.it",
+        "org:lucasweb.it",
+        "org:mszlab.it",
+        "org:sembox.it",
+        "org:globomarketing.it",
+        "org:playmore.it",
+        "org:os2.it",
+        "org:echopress.it",
+        "org:goalnet.it",
+        "org:mycomp.it",
+        "org:dsidesign.it",
+        "org:teamsy.it",
+        "org:neiko.it",
+        "org:digitalpa.it",
+        "org:kioskdigital.it",
+        "org:innovativewebagency.it",
+        "org:studioatelier.it",
+        "org:bdpartners.it",
+        "org:gritlab.it",
+        "org:mediaimmagine.it",
+        "org:introvertical.it",
+        "org:sitowebsubito.it",
+        "org:hardgroup.it",
+        "org:e-sintesi.it",
+        "org:trizero.it",
+        "org:americomunicazione.it",
+        "org:methlab.it",
+        "org:doagency.it",
+        "org:enco-consulting.it",
+        "org:creative.it",
+        "org:azionedigital.it",
+        "org:wmr.it",
+        "org:infoconnect.it",
+        "org:kurema.it",
+        "org:blazemedia.it",
+        "org:profisnet.it",
+        "org:ebridgegroup.it",
+        "org:serendipitysrl.it",
         "LEAD-IT-ABR-PE-ODDA",
         "LEAD-IT-UMB-PG-EVOSISTEMI",
         "LEAD-ES-IB-ABAQUA",
@@ -536,10 +626,15 @@
         "LEAD-IT-VEN-VR-DATO-DIGITALE",
         "LEAD-IT-LOM-MI-WALKSTONE",
         "LEAD-IT-LAZ-RM-GROWNNECTIA",
+        "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
         "LEAD-IT-CAM-NA-DNAAGENCY",
+        "opportunity:OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
         "LEAD-IT-EMR-PC-STUDIART",
         "LEAD-IT-SIC-PA-VISIONI",
+        "opportunity:OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
         "LEAD-IT-FVG-TS-MEDIAIMMAGINE",
+        "opportunity:OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
+        "opportunity:OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026",
         "IT-TOS-FI-NEXIBO",
         "LEAD-IT-LOM-MI-DREAMBIG",
         "LEAD-IT-PIE-TO-MAIA-MANAGEMENT"
@@ -551,6 +646,17 @@
       "Spain": [
         "LEAD-ES-CYL-VA-SUMMUM",
         "LEAD-ES-GAL-LU-VAIVEN",
+        "org:enigmia.es",
+        "org:sixtema.es",
+        "org:snsmarketing.es",
+        "org:elementsdigital.es",
+        "org:ludusmagnus.es",
+        "org:kapak.es",
+        "org:brantadesarrollo.es",
+        "org:zabala.es",
+        "org:kromagency.es",
+        "org:zudro.es",
+        "org:umangroup.es",
         "LEAD-ES-CV-ELCHE-VIRTUAL-MARKETING-SPAIN",
         "LEAD-ES-AN-AUTORIDAD-PORTUARIA-SEVILLA",
         "LEAD-ES-CN-LOS-REALEJOS-WEB-TENDER",
@@ -562,42 +668,37 @@
         "LEAD-ES-REMOTE-MINDRIFT",
         "LEAD-ES-MD-HAYS-FULLSTACK-FREELANCE",
         "opportunity:OPP-REMOTE-WORKANA-BILINGUAL-WEBMASTER-2026",
+        "opportunity:OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
+        "opportunity:OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026",
+        "opportunity:OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026",
+        "opportunity:OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
+        "opportunity:OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
+        "opportunity:OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
         "LEAD-ES-MUR-MUR-MOBYLESHOP",
+        "opportunity:OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026",
+        "opportunity:OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
+        "opportunity:OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
+        "opportunity:OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026",
         "LEAD-ES-CAT-BCN-IBERICA-STUDIO"
       ],
       "Unknown": [
-        "org:junolab.it",
         "org:adalop.com",
         "org:paginaswebvalencia.eu",
         "org:thevisualcorner.net",
-        "org:ieros.it",
-        "org:heritage-srl.it",
-        "org:avangarde.it",
-        "org:alpacode.it",
-        "org:giuseppecastagna.it",
         "org:publydea.com",
         "org:tif.agency",
         "org:argobs.com",
-        "org:violettocommunication.it",
         "org:3dwasp.com",
         "org:lamaquina.io",
         "org:mutart.eu",
-        "org:2next.it",
-        "org:witapp.it",
         "org:wpxero.com",
         "org:expand-raise.com",
         "org:devxpire.com",
-        "org:indaweb.it",
-        "org:enigmia.es",
-        "org:turbobit.it",
         "org:concorsiletterari.net",
-        "org:lucasweb.it",
-        "org:mszlab.it",
         "org:euroaquatours.com",
         "org:lirink.com",
         "org:nexuswebsoftware.com",
         "org:grandworks.co",
-        "org:sembox.it",
         "org:herdl.com",
         "org:muzastudio.com",
         "org:andd.one",
@@ -610,78 +711,51 @@
         "org:studiomagnani.eu",
         "org:nevassistance.com",
         "org:wpelitehub.com",
-        "org:globomarketing.it",
         "org:createx.bg",
         "org:madeomedia.com",
         "org:seoboss.org",
         "org:agomir.com",
         "org:nitanet.net",
         "org:theworkers.net",
-        "org:playmore.it",
-        "org:os2.it",
         "org:openresearch.com",
         "org:baveon.com",
         "org:digitalrootsmedia.com",
-        "org:echopress.it",
-        "org:goalnet.it",
         "org:mcandersoninstitute.tech",
         "org:retorica.net",
         "org:innovio.co.uk",
         "org:creativekollective.agency",
-        "org:mycomp.it",
-        "org:sixtema.es",
         "org:outpaceseo.com",
         "org:pladinum.com",
         "org:pearlpointdesign.com",
         "org:diwarmarketing.com",
         "org:solbyte.com",
-        "org:dsidesign.it",
         "org:sparkexp.com",
         "org:lefarweb.be",
         "org:joryand.co",
-        "org:teamsy.it",
-        "org:neiko.it",
         "org:ingeniovirtual.com",
         "org:alteregoweb.com",
-        "org:digitalpa.it",
-        "org:kioskdigital.it",
         "org:xtechai.eu",
         "org:cloverlabs.io",
         "org:xhecom.com",
         "org:cosmotech.no",
-        "org:elia-digital.de",
         "org:codebiosis.com",
         "org:terravivacompetitions.com",
-        "org:innovativewebagency.it",
         "org:digitally.lt",
-        "org:snsmarketing.es",
         "org:salentofactory.com",
-        "org:studioatelier.it",
-        "org:bdpartners.it",
         "org:raincross.com",
-        "org:gritlab.it",
         "org:literal.studio",
-        "org:mediaimmagine.it",
         "org:zentacommunication.com",
         "org:globalskillsnetwork.com",
-        "org:introvertical.it",
         "org:webbaysolutions.com",
         "org:sustainableinnovations.eu",
         "org:moverim.eu",
-        "org:sitowebsubito.it",
-        "org:hardgroup.it",
         "org:acentocomunicacion.com",
         "org:boscolohotelmarketing.com",
         "org:cartabianca.com",
-        "org:e-sintesi.it",
         "org:gmail.com",
         "org:launchko.com",
         "org:easylink.gr",
-        "org:trizero.it",
         "org:eclettica.me",
-        "org:elementsdigital.es",
-        "org:ludusmagnus.es",
-        "org:kapak.es",
         "org:digitechinfosys.com",
         "org:aida.com.gr",
         "org:europeanproject.eu",
@@ -704,77 +778,54 @@
         "org:evolix.io",
         "org:limeup.eu",
         "org:develops.ar",
-        "org:americomunicazione.it",
-        "org:methlab.it",
         "org:newwaysoft.com",
         "org:dblshot.co",
         "org:horizon-design.eu",
-        "org:doagency.it",
         "org:windy.agency",
         "org:medheave.com",
         "org:witberry.lv",
         "org:marketburner.com",
         "org:qpquality.com",
-        "org:brantadesarrollo.es",
-        "org:zabala.es",
-        "org:enco-consulting.it",
-        "org:creative.it",
         "org:webgenova.net",
-        "org:kromagency.es",
-        "org:azionedigital.it",
-        "org:wmr.it",
-        "org:zudro.es",
-        "org:umangroup.es",
-        "org:infoconnect.it",
-        "org:kurema.it",
-        "org:blazemedia.it",
-        "org:profisnet.it",
-        "org:ebridgegroup.it",
-        "org:serendipitysrl.it",
         "opportunity:OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026",
         "opportunity:OPP-WW-PANGOLIN-MARKETING-SENIOR-WORDPRESS-2026",
-        "opportunity:OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
         "opportunity:OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026",
         "opportunity:OPP-EU-MORPHUSE-WORDPRESS-SUBCONTRACTOR-2026",
         "opportunity:OPP-EU-KODA-NORTH-WORDPRESS-DEVELOPER-2026",
-        "opportunity:OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026",
         "opportunity:OPP-WW-AJAX-CREATIVE-FREELANCE-WEB-DESIGNER-2026",
-        "opportunity:OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026",
-        "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
         "opportunity:OPP-EU-TECHBIZ-GLOBAL-FREELANCE-WORDPRESS-2026",
         "opportunity:OPP-WW-HUMAN-MADE-FREELANCE-WORDPRESS-2026",
         "opportunity:OPP-WW-ALGERT-FRONT-END-WORDPRESS-WEBFLOW-2026",
         "opportunity:OPP-WW-ONE-THING-MARKETING-WORDPRESS-AVADA-2026",
-        "opportunity:OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026",
-        "opportunity:OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026",
-        "opportunity:OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
-        "opportunity:OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
-        "opportunity:OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
-        "opportunity:OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
         "opportunity:OPP-WW-BOSUN-FREELANCE-WORDPRESS-DEVELOPER-2026",
         "opportunity:OPP-WW-BRUNTWORK-WORDPRESS-MARKETPLACE-2026",
-        "opportunity:OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
         "opportunity:OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026",
-        "opportunity:OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
-        "opportunity:OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026",
-        "opportunity:OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026",
-        "opportunity:OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
-        "opportunity:OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
-        "opportunity:OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026",
         "opportunity:OPP-EU-HR-AFTERNOW-VISUAL-WEB-DESIGN-FREELANCE-2026",
         "opportunity:OPP-WW-HOLLYMINDS-WORDPRESS-ELEMENTOR-50P-2026",
         "opportunity:OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026",
         "opportunity:OPP-WW-CAYENNE-GLOBAL-WORDPRESS-B2B-REDESIGN-2026",
         "opportunity:OPP-EU-WORDUNE-FIGMA-WORDPRESS-DESIGNER-2026",
-        "opportunity:OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
         "opportunity:OPP-US-MADEO-WORDPRESS-CONTRACT-2026"
       ]
     },
     "by_country_region": {
+      "Austria|Unresolved": [
+        "opportunity:OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026"
+      ],
       "EU|Unresolved": [
         "opportunity:OPP-EU-BEYOND-BARRIERS-WEB",
         "contact-org:national-technical-university-of-athens",
         "contact-org:university-of-oslo"
+      ],
+      "France|Unresolved": [
+        "opportunity:OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026"
+      ],
+      "Germany|Unresolved": [
+        "org:elia-digital.de",
+        "opportunity:OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026"
+      ],
+      "Italy|Calabria": [
+        "opportunity:OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026"
       ],
       "Italy|Campania": [
         "LEAD-IT-CAM-SA-GLOBALSERVICE-IMPRESA",
@@ -788,10 +839,12 @@
       ],
       "Italy|Lazio": [
         "LEAD-IT-LAZ-RM-REMEDIA",
-        "LEAD-IT-LAZ-RM-GROWNNECTIA"
+        "LEAD-IT-LAZ-RM-GROWNNECTIA",
+        "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026"
       ],
       "Italy|Lombardia": [
         "LEAD-IT-LOM-MI-WALKSTONE",
+        "opportunity:OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
         "LEAD-IT-LOM-MI-DREAMBIG"
       ],
       "Italy|Piemonte": [
@@ -814,19 +867,70 @@
       ],
       "Italy|Unresolved": [
         "LEAD-IT-BAS-PZ-DEBERNARDIS",
+        "org:junolab.it",
+        "org:ieros.it",
+        "org:heritage-srl.it",
+        "org:avangarde.it",
+        "org:alpacode.it",
+        "org:giuseppecastagna.it",
+        "org:violettocommunication.it",
+        "org:2next.it",
+        "org:witapp.it",
+        "org:indaweb.it",
+        "org:turbobit.it",
+        "org:lucasweb.it",
+        "org:mszlab.it",
+        "org:sembox.it",
+        "org:globomarketing.it",
+        "org:playmore.it",
+        "org:os2.it",
+        "org:echopress.it",
+        "org:goalnet.it",
+        "org:mycomp.it",
+        "org:dsidesign.it",
+        "org:teamsy.it",
+        "org:neiko.it",
+        "org:digitalpa.it",
+        "org:kioskdigital.it",
+        "org:innovativewebagency.it",
+        "org:studioatelier.it",
+        "org:bdpartners.it",
+        "org:gritlab.it",
+        "org:mediaimmagine.it",
+        "org:introvertical.it",
+        "org:sitowebsubito.it",
+        "org:hardgroup.it",
+        "org:e-sintesi.it",
+        "org:trizero.it",
+        "org:americomunicazione.it",
+        "org:methlab.it",
+        "org:doagency.it",
+        "org:enco-consulting.it",
+        "org:creative.it",
+        "org:azionedigital.it",
+        "org:wmr.it",
+        "org:infoconnect.it",
+        "org:kurema.it",
+        "org:blazemedia.it",
+        "org:profisnet.it",
+        "org:ebridgegroup.it",
+        "org:serendipitysrl.it",
         "LEAD-IT-ABR-PE-ODDA",
         "LEAD-IT-UMB-PG-EVOSISTEMI",
-        "LEAD-ES-IB-ABAQUA"
+        "LEAD-ES-IB-ABAQUA",
+        "opportunity:OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026"
       ],
       "Italy|Veneto": [
-        "LEAD-IT-VEN-VR-DATO-DIGITALE"
+        "LEAD-IT-VEN-VR-DATO-DIGITALE",
+        "opportunity:OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026"
       ],
       "Remote|Unresolved": [
         "LEAD-REMOTE-MUCUI",
         "LEAD-REMOTE-US-IL-CYBEROPTIK"
       ],
       "Spain|Cantabria": [
-        "LEAD-ES-CAN-CANT-CANTABRIA-WEB-DESIGN"
+        "LEAD-ES-CAN-CANT-CANTABRIA-WEB-DESIGN",
+        "opportunity:OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026"
       ],
       "Spain|Castilla y León": [
         "LEAD-ES-CYL-VA-SUMMUM"
@@ -837,7 +941,8 @@
       ],
       "Spain|Comunidad de Madrid": [
         "LEAD-ES-MD-ADEREN-WORDPRESS-FREELANCE",
-        "LEAD-ES-MD-HAYS-FULLSTACK-FREELANCE"
+        "LEAD-ES-MD-HAYS-FULLSTACK-FREELANCE",
+        "opportunity:OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026"
       ],
       "Spain|Comunitat Valenciana": [
         "LEAD-ES-CV-ELCHE-VIRTUAL-MARKETING-SPAIN"
@@ -849,46 +954,50 @@
         "LEAD-ES-MUR-MUR-MOBYLESHOP"
       ],
       "Spain|Unresolved": [
+        "org:enigmia.es",
+        "org:sixtema.es",
+        "org:snsmarketing.es",
+        "org:elementsdigital.es",
+        "org:ludusmagnus.es",
+        "org:kapak.es",
+        "org:brantadesarrollo.es",
+        "org:zabala.es",
+        "org:kromagency.es",
+        "org:zudro.es",
+        "org:umangroup.es",
         "LEAD-ES-AN-AUTORIDAD-PORTUARIA-SEVILLA",
         "LEAD-ES-CN-LOS-REALEJOS-WEB-TENDER",
         "LEAD-ES-CL-PROBURGOS-WEB-TENDER",
         "LEAD-ES-CT-DIPUTACIO-BARCELONA",
         "LEAD-ES-REMOTE-MINDRIFT",
-        "opportunity:OPP-REMOTE-WORKANA-BILINGUAL-WEBMASTER-2026"
+        "opportunity:OPP-REMOTE-WORKANA-BILINGUAL-WEBMASTER-2026",
+        "opportunity:OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
+        "opportunity:OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026",
+        "opportunity:OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
+        "opportunity:OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
+        "opportunity:OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
+        "opportunity:OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
+        "opportunity:OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
+        "opportunity:OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026"
       ],
       "Unknown|Unresolved": [
-        "org:junolab.it",
         "org:adalop.com",
         "org:paginaswebvalencia.eu",
         "org:thevisualcorner.net",
-        "org:ieros.it",
-        "org:heritage-srl.it",
-        "org:avangarde.it",
-        "org:alpacode.it",
-        "org:giuseppecastagna.it",
         "org:publydea.com",
         "org:tif.agency",
         "org:argobs.com",
-        "org:violettocommunication.it",
         "org:3dwasp.com",
         "org:lamaquina.io",
         "org:mutart.eu",
-        "org:2next.it",
-        "org:witapp.it",
         "org:wpxero.com",
         "org:expand-raise.com",
         "org:devxpire.com",
-        "org:indaweb.it",
-        "org:enigmia.es",
-        "org:turbobit.it",
         "org:concorsiletterari.net",
-        "org:lucasweb.it",
-        "org:mszlab.it",
         "org:euroaquatours.com",
         "org:lirink.com",
         "org:nexuswebsoftware.com",
         "org:grandworks.co",
-        "org:sembox.it",
         "org:herdl.com",
         "org:muzastudio.com",
         "org:andd.one",
@@ -901,78 +1010,51 @@
         "org:studiomagnani.eu",
         "org:nevassistance.com",
         "org:wpelitehub.com",
-        "org:globomarketing.it",
         "org:createx.bg",
         "org:madeomedia.com",
         "org:seoboss.org",
         "org:agomir.com",
         "org:nitanet.net",
         "org:theworkers.net",
-        "org:playmore.it",
-        "org:os2.it",
         "org:openresearch.com",
         "org:baveon.com",
         "org:digitalrootsmedia.com",
-        "org:echopress.it",
-        "org:goalnet.it",
         "org:mcandersoninstitute.tech",
         "org:retorica.net",
         "org:innovio.co.uk",
         "org:creativekollective.agency",
-        "org:mycomp.it",
-        "org:sixtema.es",
         "org:outpaceseo.com",
         "org:pladinum.com",
         "org:pearlpointdesign.com",
         "org:diwarmarketing.com",
         "org:solbyte.com",
-        "org:dsidesign.it",
         "org:sparkexp.com",
         "org:lefarweb.be",
         "org:joryand.co",
-        "org:teamsy.it",
-        "org:neiko.it",
         "org:ingeniovirtual.com",
         "org:alteregoweb.com",
-        "org:digitalpa.it",
-        "org:kioskdigital.it",
         "org:xtechai.eu",
         "org:cloverlabs.io",
         "org:xhecom.com",
         "org:cosmotech.no",
-        "org:elia-digital.de",
         "org:codebiosis.com",
         "org:terravivacompetitions.com",
-        "org:innovativewebagency.it",
         "org:digitally.lt",
-        "org:snsmarketing.es",
         "org:salentofactory.com",
-        "org:studioatelier.it",
-        "org:bdpartners.it",
         "org:raincross.com",
-        "org:gritlab.it",
         "org:literal.studio",
-        "org:mediaimmagine.it",
         "org:zentacommunication.com",
         "org:globalskillsnetwork.com",
-        "org:introvertical.it",
         "org:webbaysolutions.com",
         "org:sustainableinnovations.eu",
         "org:moverim.eu",
-        "org:sitowebsubito.it",
-        "org:hardgroup.it",
         "org:acentocomunicacion.com",
         "org:boscolohotelmarketing.com",
         "org:cartabianca.com",
-        "org:e-sintesi.it",
         "org:gmail.com",
         "org:launchko.com",
         "org:easylink.gr",
-        "org:trizero.it",
         "org:eclettica.me",
-        "org:elementsdigital.es",
-        "org:ludusmagnus.es",
-        "org:kapak.es",
         "org:digitechinfosys.com",
         "org:aida.com.gr",
         "org:europeanproject.eu",
@@ -995,69 +1077,33 @@
         "org:evolix.io",
         "org:limeup.eu",
         "org:develops.ar",
-        "org:americomunicazione.it",
-        "org:methlab.it",
         "org:newwaysoft.com",
         "org:dblshot.co",
         "org:horizon-design.eu",
-        "org:doagency.it",
         "org:windy.agency",
         "org:medheave.com",
         "org:witberry.lv",
         "org:marketburner.com",
         "org:qpquality.com",
-        "org:brantadesarrollo.es",
-        "org:zabala.es",
-        "org:enco-consulting.it",
-        "org:creative.it",
         "org:webgenova.net",
-        "org:kromagency.es",
-        "org:azionedigital.it",
-        "org:wmr.it",
-        "org:zudro.es",
-        "org:umangroup.es",
-        "org:infoconnect.it",
-        "org:kurema.it",
-        "org:blazemedia.it",
-        "org:profisnet.it",
-        "org:ebridgegroup.it",
-        "org:serendipitysrl.it",
         "opportunity:OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026",
         "opportunity:OPP-WW-PANGOLIN-MARKETING-SENIOR-WORDPRESS-2026",
-        "opportunity:OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
         "opportunity:OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026",
         "opportunity:OPP-EU-MORPHUSE-WORDPRESS-SUBCONTRACTOR-2026",
         "opportunity:OPP-EU-KODA-NORTH-WORDPRESS-DEVELOPER-2026",
-        "opportunity:OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026",
         "opportunity:OPP-WW-AJAX-CREATIVE-FREELANCE-WEB-DESIGNER-2026",
-        "opportunity:OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026",
-        "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
         "opportunity:OPP-EU-TECHBIZ-GLOBAL-FREELANCE-WORDPRESS-2026",
         "opportunity:OPP-WW-HUMAN-MADE-FREELANCE-WORDPRESS-2026",
         "opportunity:OPP-WW-ALGERT-FRONT-END-WORDPRESS-WEBFLOW-2026",
         "opportunity:OPP-WW-ONE-THING-MARKETING-WORDPRESS-AVADA-2026",
-        "opportunity:OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026",
-        "opportunity:OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026",
-        "opportunity:OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
-        "opportunity:OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
-        "opportunity:OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
-        "opportunity:OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
         "opportunity:OPP-WW-BOSUN-FREELANCE-WORDPRESS-DEVELOPER-2026",
         "opportunity:OPP-WW-BRUNTWORK-WORDPRESS-MARKETPLACE-2026",
-        "opportunity:OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
         "opportunity:OPP-WW-DIGITAL-ROCKET-WORDPRESS-CONTRACTOR-2026",
-        "opportunity:OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
-        "opportunity:OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026",
-        "opportunity:OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026",
-        "opportunity:OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
-        "opportunity:OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
-        "opportunity:OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026",
         "opportunity:OPP-EU-HR-AFTERNOW-VISUAL-WEB-DESIGN-FREELANCE-2026",
         "opportunity:OPP-WW-HOLLYMINDS-WORDPRESS-ELEMENTOR-50P-2026",
         "opportunity:OPP-REMOTE-SO-DESIGN-ONLINE-WORDPRESS-BUILDER-2026",
         "opportunity:OPP-WW-CAYENNE-GLOBAL-WORDPRESS-B2B-REDESIGN-2026",
         "opportunity:OPP-EU-WORDUNE-FIGMA-WORDPRESS-DESIGNER-2026",
-        "opportunity:OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
         "opportunity:OPP-US-MADEO-WORDPRESS-CONTRACT-2026"
       ]
     }
@@ -1774,6 +1820,41 @@
       }
     },
     {
+      "id": "org:innovativewebagency.it",
+      "organization": "Innovative Web Agency",
+      "customer_type": "WEB_DIGITAL_AGENCY",
+      "customer_type_label": "Web / Digital Agency",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "innovativewebagency.it",
+      "emails": [
+        "lavora.con.noi@innovativewebagency.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-14T07:16:03Z",
+      "last_subject": "Web Designer WordPress — collaborazione esterna / P.IVA",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
       "id": "LEAD-IT-BAS-PZ-DEBERNARDIS",
       "organization": "danieledebernardis.it",
       "customer_type": "WEB_DIGITAL_AGENCY",
@@ -2344,41 +2425,6 @@
       }
     },
     {
-      "id": "org:innovativewebagency.it",
-      "organization": "Innovative Web Agency",
-      "customer_type": "WEB_DIGITAL_AGENCY",
-      "customer_type_label": "Web / Digital Agency",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "innovativewebagency.it",
-      "emails": [
-        "lavora.con.noi@innovativewebagency.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-14T07:16:03Z",
-      "last_subject": "Web Designer WordPress — collaborazione esterna / P.IVA",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:lirink.com",
       "organization": "Lirink Digital Agency",
       "customer_type": "WEB_DIGITAL_AGENCY",
@@ -2774,6 +2820,48 @@
       }
     },
     {
+      "id": "opportunity:OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
+      "organization": "Sapres Technologies GmbH",
+      "customer_type": "SOFTWARE_HOUSE_TECH_COMPANY",
+      "customer_type_label": "Software House / Tech Company",
+      "country": "Germany",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
+          "title": null,
+          "status": "VERIFIED_FORM_PLATFORM",
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_FORM_PLATFORM",
+          "route_url": "https://www.freelancermap.de/projekt/wordpress-developer-gesucht"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
       "id": "opportunity:OPP-WW-AJAX-CREATIVE-FREELANCE-WEB-DESIGNER-2026",
       "organization": "Ajax Creative",
       "customer_type": "SOFTWARE_HOUSE_TECH_COMPANY",
@@ -2900,48 +2988,6 @@
       }
     },
     {
-      "id": "opportunity:OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
-      "organization": "Sapres Technologies GmbH",
-      "customer_type": "SOFTWARE_HOUSE_TECH_COMPANY",
-      "customer_type_label": "Software House / Tech Company",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-EU-DE-SAPRES-WORDPRESS-DEVELOPER-2026",
-          "title": null,
-          "status": "VERIFIED_FORM_PLATFORM",
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_FORM_PLATFORM",
-          "route_url": "https://www.freelancermap.de/projekt/wordpress-developer-gesucht"
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
       "id": "org:horizon-design.eu",
       "organization": "horizon-design.eu",
       "customer_type": "EU_PROJECT_RESEARCH_ORGANIZATION",
@@ -2974,6 +3020,216 @@
           "EXACT_EMAIL_ALREADY_CONTACTED",
           "ORGANIZATION_ALREADY_CONTACTED"
         ]
+      }
+    },
+    {
+      "id": "opportunity:OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026",
+      "organization": "BSC Webdesign",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Austria",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_FORM_PLATFORM",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026",
+      "organization": "Group easyweb",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "France",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026",
+          "title": null,
+          "status": "HOLD_GEO_FISCAL_ELIGIBILITY",
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_FORM_PLATFORM_HOLD",
+          "route_url": "https://www.simplyhired.fr/job/puFeo-HQs3d0rl0AfFqnnhKt92mMhR560Y6zaK_qhpZK9cphPx-Inw"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
+      "organization": "IOCOS di G.C.",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Italy",
+      "region": "Calabria",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_FORM_PLATFORM",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
+      "organization": "ReMedia Italia SRL",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Italy",
+      "region": "Lazio",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_DIRECT_EMAIL",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
+      "organization": "LIVEAT SRL",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Italy",
+      "region": "Lombardia",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
+          "title": null,
+          "status": "REVIEW_REQUIRED_GEO_FISCAL_ELIGIBILITY",
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "PLATFORM_APPLICATION_REVIEW",
+          "route_url": "https://it.indeed.com/q-wordpress-l-da-remoto-offerte-lavoro.html"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
       }
     },
     {
@@ -3061,6 +3317,132 @@
         "https://el-vinculo.com/licitacion/servicio-de-soporte-al-mantenimiento-de-los-equipos-informaticos-de-la-agencia-b-5673487",
         "https://www.licitron.com/licitaciones/illes-balears/se202611servicio-de-soporte-al-mantenimiento-de-1dafe8a8"
       ],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
+      "organization": "Expansionet",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_FORM_PLATFORM",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026",
+      "organization": "Adviva Srl [WMR]",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Italy",
+      "region": "Veneto",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026",
+          "title": null,
+          "status": "REVIEW_REQUIRED_GEO_REMOTE",
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_FORM_PLATFORM",
+          "route_url": "https://www.adviva.it/job/candidatura-spontanea/"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026",
+      "organization": "Visible Comunicación Estratégica",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Spain",
+      "region": "Cantabria",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026",
+          "title": null,
+          "status": "HOLD_EMPLOYMENT_MODEL",
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_DIRECT_EMAIL_BUT_HOLD",
+          "route_url": "https://es.linkedin.com/jobs/view/programador-wordpress-at-visible-comunicaci%C3%B3n-estrat%C3%A9gica-4461200052"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
       "anti_duplication": {
         "first_contact_allowed": true,
         "decision": "CLEAR_FOR_NEXT_GATES",
@@ -3161,11 +3543,11 @@
       }
     },
     {
-      "id": "opportunity:OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026",
-      "organization": "Adviva Srl [WMR]",
+      "id": "opportunity:OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026",
+      "organization": "Agencia Reinicia",
       "customer_type": "SME_DIRECT_BUYER",
       "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
+      "country": "Spain",
       "region": "Unresolved",
       "territory": null,
       "website": null,
@@ -3174,9 +3556,93 @@
       "contacts": [],
       "opportunities": [
         {
-          "id": "OPP-IT-VEN-VE-ADVIVA-WORDPRESS-EXTERNAL-COLLAB-2026",
+          "id": "OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026",
           "title": null,
-          "status": "REVIEW_REQUIRED_GEO_REMOTE",
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "OFFICIAL_FREELANCE_FORM",
+          "route_url": "https://forms.agenciareinicia.com/"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
+      "organization": "Boneluv",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_DIRECT_EMAIL",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
+      "organization": "DataSystem / miwebmadrid.es",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
+          "title": null,
+          "status": null,
           "type": null,
           "campaign_id": null,
           "detected_at": null,
@@ -3185,7 +3651,175 @@
           "fit": null,
           "freshness": null,
           "route_type": "VERIFIED_FORM_PLATFORM",
-          "route_url": "https://www.adviva.it/job/candidatura-spontanea/"
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
+      "organization": "Diwar Marketing SL",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_DIRECT_EMAIL",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
+      "organization": "LocalStack",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "REVIEW_REQUIRED",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
+      "organization": "Lodgify",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "REVIEW_REQUIRED",
+          "route_url": null
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "opportunity:OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
+      "organization": "Mindrift",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": null,
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
+          "title": null,
+          "status": null,
+          "type": null,
+          "campaign_id": null,
+          "detected_at": null,
+          "last_verified_at": null,
+          "priority": null,
+          "fit": null,
+          "freshness": null,
+          "route_type": "VERIFIED_FORM_PLATFORM",
+          "route_url": null
         }
       ],
       "opportunity_count": 1,
@@ -3245,48 +3879,6 @@
       }
     },
     {
-      "id": "opportunity:OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026",
-      "organization": "Agencia Reinicia",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-ES-AGENCIA-REINICIA-FREELANCE-NETWORK-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "OFFICIAL_FREELANCE_FORM",
-          "route_url": "https://forms.agenciareinicia.com/"
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
       "id": "opportunity:OPP-WW-ALGERT-FRONT-END-WORDPRESS-WEBFLOW-2026",
       "organization": "Algert, Inc.",
       "customer_type": "SME_DIRECT_BUYER",
@@ -3311,90 +3903,6 @@
           "fit": null,
           "freshness": null,
           "route_type": null,
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026",
-      "organization": "BSC Webdesign",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-EU-AT-BSC-WEBDESIGN-REMOTE-CONTRACTOR-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_FORM_PLATFORM",
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
-      "organization": "Boneluv",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-ES-BONELUV-WORDPRESS-FREELANCE-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_DIRECT_EMAIL",
           "route_url": null
         }
       ],
@@ -3480,174 +3988,6 @@
           "freshness": null,
           "route_type": "VERIFIED_FORM_PLATFORM",
           "route_url": "https://bruntworkcareers.co/jobs/61017485491"
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
-      "organization": "DataSystem / miwebmadrid.es",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_FORM_PLATFORM",
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
-      "organization": "Diwar Marketing SL",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-ES-DIWAR-WEB-DESIGN-FREELANCE-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_DIRECT_EMAIL",
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
-      "organization": "Expansionet",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-IT-EXPANSIONET-WEBDEV-FREELANCE-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_FORM_PLATFORM",
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026",
-      "organization": "Group easyweb",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-FR-NICE-GROUP-EASYWEB-WORDPRESS-ELEMENTOR-FREELANCE-2026",
-          "title": null,
-          "status": "HOLD_GEO_FISCAL_ELIGIBILITY",
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_FORM_PLATFORM_HOLD",
-          "route_url": "https://www.simplyhired.fr/job/puFeo-HQs3d0rl0AfFqnnhKt92mMhR560Y6zaK_qhpZK9cphPx-Inw"
         }
       ],
       "opportunity_count": 1,
@@ -3791,48 +4131,6 @@
       }
     },
     {
-      "id": "opportunity:OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
-      "organization": "IOCOS di G.C.",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_FORM_PLATFORM",
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
       "id": "opportunity:OPP-EU-KODA-NORTH-WORDPRESS-DEVELOPER-2026",
       "organization": "Koda North",
       "customer_type": "SME_DIRECT_BUYER",
@@ -3847,132 +4145,6 @@
       "opportunities": [
         {
           "id": "OPP-EU-KODA-NORTH-WORDPRESS-DEVELOPER-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "REVIEW_REQUIRED",
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
-      "organization": "LIVEAT SRL",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-IT-LOM-MI-LIVEAT-WORDPRESS-ELEMENTOR-FREELANCE-2026",
-          "title": null,
-          "status": "REVIEW_REQUIRED_GEO_FISCAL_ELIGIBILITY",
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "PLATFORM_APPLICATION_REVIEW",
-          "route_url": "https://it.indeed.com/q-wordpress-l-da-remoto-offerte-lavoro.html"
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
-      "organization": "LocalStack",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-ES-LOCALSTACK-WEB-DEVELOPER-CONTRACT-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "REVIEW_REQUIRED",
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
-      "organization": "Lodgify",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-EU-ES-LODGIFY-CREATIVE-DESIGNER-2026",
           "title": null,
           "status": null,
           "type": null,
@@ -4026,48 +4198,6 @@
           "freshness": null,
           "route_type": "OFFICIAL_APPLICATION_FORM",
           "route_url": "https://madeostudio.com/careers/web-developer/"
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
-      "organization": "Mindrift",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-ES-MINDRIFT-FREELANCE-WEB-DESIGNER-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_FORM_PLATFORM",
-          "route_url": null
         }
       ],
       "opportunity_count": 1,
@@ -4151,48 +4281,6 @@
           "fit": null,
           "freshness": null,
           "route_type": null,
-          "route_url": null
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
-      "id": "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
-      "organization": "ReMedia Italia SRL",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
-          "title": null,
-          "status": null,
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_DIRECT_EMAIL",
           "route_url": null
         }
       ],
@@ -4337,48 +4425,6 @@
       }
     },
     {
-      "id": "opportunity:OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026",
-      "organization": "Visible Comunicación Estratégica",
-      "customer_type": "SME_DIRECT_BUYER",
-      "customer_type_label": "SME / Direct Buyer",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": null,
-      "emails": [],
-      "contacts": [],
-      "opportunities": [
-        {
-          "id": "OPP-ES-CAN-LPA-VISIBLE-WORDPRESS-SUBSTITUTION-2026",
-          "title": null,
-          "status": "HOLD_EMPLOYMENT_MODEL",
-          "type": null,
-          "campaign_id": null,
-          "detected_at": null,
-          "last_verified_at": null,
-          "priority": null,
-          "fit": null,
-          "freshness": null,
-          "route_type": "VERIFIED_DIRECT_EMAIL_BUT_HOLD",
-          "route_url": "https://es.linkedin.com/jobs/view/programador-wordpress-at-visible-comunicaci%C3%B3n-estrat%C3%A9gica-4461200052"
-        }
-      ],
-      "opportunity_count": 1,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": false,
-      "last_outbound_at": null,
-      "last_subject": null,
-      "workstreams": [],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": true,
-        "decision": "CLEAR_FOR_NEXT_GATES",
-        "reasons": []
-      }
-    },
-    {
       "id": "opportunity:OPP-EU-WORDUNE-FIGMA-WORDPRESS-DESIGNER-2026",
       "organization": "Wordune",
       "customer_type": "SME_DIRECT_BUYER",
@@ -4425,7 +4471,7 @@
       "organization": "Mobyleshop",
       "customer_type": "ECOMMERCE_RETAIL",
       "customer_type_label": "E-commerce / Retail",
-      "country": "Unknown",
+      "country": "Spain",
       "region": "Unresolved",
       "territory": null,
       "website": null,
@@ -4502,7 +4548,7 @@
       "organization": "enco-consulting.it",
       "customer_type": "PROFESSIONAL_SERVICES",
       "customer_type_label": "Professional Services",
-      "country": "Unknown",
+      "country": "Italy",
       "region": "Unresolved",
       "territory": null,
       "website": null,
@@ -4706,8 +4752,8 @@
       "organization": "Talentchef",
       "customer_type": "RECRUITER_INTERMEDIARY",
       "customer_type_label": "Recruiter / Intermediary",
-      "country": "Unknown",
-      "region": "Unresolved",
+      "country": "Spain",
+      "region": "Comunidad de Madrid",
       "territory": null,
       "website": null,
       "domain": null,
@@ -4840,11 +4886,46 @@
       }
     },
     {
+      "id": "org:elia-digital.de",
+      "organization": "Elia Digital & AI Solutions",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Germany",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "elia-digital.de",
+      "emails": [
+        "info@elia-digital.de"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-12T09:08:16Z",
+      "last_subject": "External WordPress capacity — freelance collaboration",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
       "id": "org:2next.it",
       "organization": "2Next Srl",
       "customer_type": "OTHER",
       "customer_type_label": "Other",
-      "country": "Unknown",
+      "country": "Italy",
       "region": "Unresolved",
       "territory": null,
       "website": null,
@@ -4862,6 +4943,1965 @@
       "last_subject": "Candidatura / collaborazione P.IVA — Web & Design",
       "workstreams": [
         "VDS_UNIFIED_ACQUISITION"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:alpacode.it",
+      "organization": "Alpacode",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "alpacode.it",
+      "emails": [
+        "info@alpacode.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-04T09:30:56Z",
+      "last_subject": "Collaborazione continuativa P.IVA — WordPress / Front-End / Performance | disponibilità immediata",
+      "workstreams": [
+        "OWNER_APPROVED_HUMAN_REVIEW_OUTREACH"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:avangarde.it",
+      "organization": "Avangarde",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "avangarde.it",
+      "emails": [
+        "info@avangarde.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-04T09:24:05Z",
+      "last_subject": "Candidatura / collaborazione P.IVA — Web Developer Front-End JavaScript | WordPress | Web Performance",
+      "workstreams": [
+        "OWNER_APPROVED_HUMAN_REVIEW_OUTREACH"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:bdpartners.it",
+      "organization": "BD & Partners",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "bdpartners.it",
+      "emails": [
+        "info@bdpartners.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-14T13:56:16Z",
+      "last_subject": "Sviluppo web a progetto per la rete BD & Partners",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:giuseppecastagna.it",
+      "organization": "Brown Media / Giuseppe Castagna context",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "giuseppecastagna.it",
+      "emails": [
+        "elisa@giuseppecastagna.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-04T13:50:43Z",
+      "last_subject": "Re: Web Developer / Designer freelance — Brown Media",
+      "workstreams": [
+        "RECONCILED_PROVIDER_CONTINUATION"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:dsidesign.it",
+      "organization": "D-Sign",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "dsidesign.it",
+      "emails": [
+        "info@dsidesign.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-09T16:02:49Z",
+      "last_subject": "Candidatura Sviluppatore Front-End — collaborazione P.IVA",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:digitalpa.it",
+      "organization": "DigitalPA",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "digitalpa.it",
+      "emails": [
+        "curricula@digitalpa.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-11T07:03:37Z",
+      "last_subject": "PHP / WordPress-WooCommerce — candidatura freelance P.IVA",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:echopress.it",
+      "organization": "EchoPress",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "echopress.it",
+      "emails": [
+        "info@echopress.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-09T12:34:48Z",
+      "last_subject": "Candidatura Web Developer — collaborazione freelance P.IVA",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:globomarketing.it",
+      "organization": "Globo Marketing",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "globomarketing.it",
+      "emails": [
+        "job@globomarketing.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-08T16:36:48Z",
+      "last_subject": "Collaborazione freelance/P.IVA — Web design, WordPress e sviluppo frontend",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:goalnet.it",
+      "organization": "Goalnet",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "goalnet.it",
+      "emails": [
+        "info@goalnet.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-09T12:34:57Z",
+      "last_subject": "Collaborazione Web Designer / Developer freelance",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:gritlab.it",
+      "organization": "Gritlab",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "gritlab.it",
+      "emails": [
+        "info@gritlab.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-14T14:40:51Z",
+      "last_subject": "Capacità web esterna per partnership white-label",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:heritage-srl.it",
+      "organization": "Heritage S.r.l.",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "heritage-srl.it",
+      "emails": [
+        "careers@heritage-srl.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-04T08:42:36Z",
+      "last_subject": "Candidatura — Web Graphic Designer | collaborazione P.IVA",
+      "workstreams": [
+        "VDS_LINKEDIN_JOB_HUNTER"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:ieros.it",
+      "organization": "Ieros",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "ieros.it",
+      "emails": [
+        "info@ieros.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-04T08:15:48Z",
+      "last_subject": "Collaborazione freelance web — sviluppo, performance e supporto tecnico",
+      "workstreams": [
+        "VDS_UNIFIED_ACQUISITION"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:indaweb.it",
+      "organization": "Indaweb S.R.L.",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "indaweb.it",
+      "emails": [
+        "info@indaweb.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-07T14:42:28Z",
+      "last_subject": "Web Developer / Digital Technical Specialist — proposta collaborazione P.IVA",
+      "workstreams": [
+        "VDS_REVENUE_FLOW_RECOVERY"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:junolab.it",
+      "organization": "Juno Lab SRL",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "junolab.it",
+      "emails": [
+        "jobs@junolab.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-02T06:58:10Z",
+      "last_subject": "Web Designer",
+      "workstreams": [
+        "RECONCILED_HISTORICAL_PROVIDER_EVENT"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:kioskdigital.it",
+      "organization": "Kiosk Digital",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "kioskdigital.it",
+      "emails": [
+        "info@kioskdigital.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-11T07:03:47Z",
+      "last_subject": "Collaborazione esterna web / WordPress — Visual Design Studio",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:lucasweb.it",
+      "organization": "Lucasweb",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "lucasweb.it",
+      "emails": [
+        "job@lucasweb.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-08T07:37:02Z",
+      "last_subject": "Web Designer senior — collaborazione freelance esterna",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:mediaimmagine.it",
+      "organization": "MEDIAIMMAGINE",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "mediaimmagine.it",
+      "emails": [
+        "frontoffice@mediaimmagine.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-14T15:37:57Z",
+      "last_subject": "Capacità web esterna per i vostri progetti WordPress",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:mszlab.it",
+      "organization": "MSZLAB",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "mszlab.it",
+      "emails": [
+        "jobs@mszlab.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-08T08:07:15Z",
+      "last_subject": "Candidatura WordPress Developer — collaborazione freelance/P.IVA",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:mycomp.it",
+      "organization": "MyCompany",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "mycomp.it",
+      "emails": [
+        "jobs@mycomp.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-30T14:55:36Z",
+      "last_subject": "WEB CONTENT EDITOR — collaborazione freelance WordPress",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:os2.it",
+      "organization": "OS2",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "os2.it",
+      "emails": [
+        "jobs@os2.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-09T10:07:30Z",
+      "last_subject": "Candidatura PHP / WordPress — proposta collaborazione freelance P.IVA",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:playmore.it",
+      "organization": "PlayMore",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "playmore.it",
+      "emails": [
+        "jobs@playmore.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-09T10:07:07Z",
+      "last_subject": "Candidatura — Grafico / Web Developer | collaborazione P.IVA",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:sembox.it",
+      "organization": "Sembox",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "sembox.it",
+      "emails": [
+        "info@sembox.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-08T09:35:52Z",
+      "last_subject": "Candidatura PHP Web Developer — collaborazione freelance / P.IVA",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:studioatelier.it",
+      "organization": "Studio Atelièr",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "studioatelier.it",
+      "emails": [
+        "direzione@studioatelier.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-14T13:53:40Z",
+      "last_subject": "Capacità web esterna per progetti Studio Atelièr",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:teamsy.it",
+      "organization": "Teamsy",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "teamsy.it",
+      "emails": [
+        "info@teamsy.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-10T15:35:36Z",
+      "last_subject": "Capacità web esterna per i team Teamsy — WordPress / frontend",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:turbobit.it",
+      "organization": "TurboBit IT Solutions",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "turbobit.it",
+      "emails": [
+        "info@turbobit.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-07T15:34:13Z",
+      "last_subject": "Collaborazione P.IVA — Web Developer WordPress / frontend",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:violettocommunication.it",
+      "organization": "Violetto Communication",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "violettocommunication.it",
+      "emails": [
+        "amministrazione@violettocommunication.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-04T16:42:27Z",
+      "last_subject": "Candidatura freelance — Web Developer WordPress / WooCommerce",
+      "workstreams": [
+        "VDS_UNIFIED_ACQUISITION"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:witapp.it",
+      "organization": "Witapp SRL",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "witapp.it",
+      "emails": [
+        "candidature@witapp.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-05T10:09:09Z",
+      "last_subject": "Candidatura — Web Specialist",
+      "workstreams": [
+        "VDS_LINKEDIN_JOB_HUNTER"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:americomunicazione.it",
+      "organization": "americomunicazione.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "americomunicazione.it",
+      "emails": [
+        "info@americomunicazione.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-24T09:34:41Z",
+      "last_subject": "Supporto web specialistico per progetti Horizon Europe",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:azionedigital.it",
+      "organization": "azionedigital.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "azionedigital.it",
+      "emails": [
+        "info@azionedigital.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T11:57:38Z",
+      "last_subject": "Collaborazione freelance / partner esterno web development",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:blazemedia.it",
+      "organization": "blazemedia.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "blazemedia.it",
+      "emails": [
+        "jobs@blazemedia.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T17:52:06Z",
+      "last_subject": "Candidatura spontanea — collaborazione freelance WordPress / web",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:creative.it",
+      "organization": "creative.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "creative.it",
+      "emails": [
+        "francesco.pizzi@creative.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-28T10:47:22Z",
+      "last_subject": "Preventivo ottimizzazione performance sito Creativelement",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:doagency.it",
+      "organization": "doagency.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "doagency.it",
+      "emails": [
+        "info@doagency.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-24T12:32:27Z",
+      "last_subject": "Capacità web esterna per picchi di sviluppo WordPress",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:e-sintesi.it",
+      "organization": "e-sintesi.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "e-sintesi.it",
+      "emails": [
+        "info@e-sintesi.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-22T16:04:13Z",
+      "last_subject": "Candidatura area ICT / progetti europei — collaborazione esterna",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:ebridgegroup.it",
+      "organization": "ebridgegroup.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "ebridgegroup.it",
+      "emails": [
+        "info@ebridgegroup.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T17:55:22Z",
+      "last_subject": "Proposta di collaborazione tecnica web — freelance / partner",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:hardgroup.it",
+      "organization": "hardgroup.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "hardgroup.it",
+      "emails": [
+        "info@hardgroup.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-22T12:37:14Z",
+      "last_subject": "Capacità web esterna per picchi di progetto WordPress",
+      "workstreams": [
+        "VDS_LIVE_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:infoconnect.it",
+      "organization": "infoconnect.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "infoconnect.it",
+      "emails": [
+        "hr@infoconnect.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T17:51:58Z",
+      "last_subject": "Collaborazione freelance web / WordPress — Visual Design Studio",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:introvertical.it",
+      "organization": "introvertical.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "introvertical.it",
+      "emails": [
+        "info@introvertical.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-22T07:34:12Z",
+      "last_subject": "Supporto web specialistico per progetti europei",
+      "workstreams": [
+        "VDS_LIVE_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:kurema.it",
+      "organization": "kurema.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "kurema.it",
+      "emails": [
+        "hello@kurema.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T17:52:02Z",
+      "last_subject": "Collaborazione tecnica esterna web — WordPress / frontend / performance",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:methlab.it",
+      "organization": "methlab.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "methlab.it",
+      "emails": [
+        "info@methlab.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-24T09:35:00Z",
+      "last_subject": "Capacità web esterna per picchi di progetto",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:neiko.it",
+      "organization": "neiko.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "neiko.it",
+      "emails": [
+        "job@neiko.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-22T07:02:35Z",
+      "last_subject": "Web Developer Senior — collaborazione esterna WordPress",
+      "workstreams": [
+        "VDS_JOB_FLOW",
+        "VDS_LIVE_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:profisnet.it",
+      "organization": "profisnet.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "profisnet.it",
+      "emails": [
+        "info@profisnet.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T17:55:18Z",
+      "last_subject": "Collaborazione professionale web / WordPress — Visual Design Studio",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:serendipitysrl.it",
+      "organization": "serendipitysrl.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "serendipitysrl.it",
+      "emails": [
+        "info@serendipitysrl.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T17:55:26Z",
+      "last_subject": "Collaborazione web da remoto — Visual Design Studio",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:sitowebsubito.it",
+      "organization": "sitowebsubito.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "sitowebsubito.it",
+      "emails": [
+        "info@sitowebsubito.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-22T11:34:03Z",
+      "last_subject": "Collaborazione esterna WordPress / web production",
+      "workstreams": [
+        "VDS_LIVE_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:trizero.it",
+      "organization": "trizero.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "trizero.it",
+      "emails": [
+        "job@trizero.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-23T07:06:44Z",
+      "last_subject": "WordPress Developer — capacità tecnica esterna per Trizero",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:wmr.it",
+      "organization": "wmr.it",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Italy",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "wmr.it",
+      "emails": [
+        "adviva@wmr.it"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T11:57:40Z",
+      "last_subject": "Collaborazione freelance WordPress frontend/backend — Visual Design Studio",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:enigmia.es",
+      "organization": "Enigmia",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "enigmia.es",
+      "emails": [
+        "info@enigmia.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-07T14:59:32Z",
+      "last_subject": "Colaboración freelance — desarrollo web, frontend e rendimento",
+      "workstreams": [
+        "VDS_REVENUE_FLOW_CORRECTED_ROUTE"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:snsmarketing.es",
+      "organization": "SER o no SER",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "snsmarketing.es",
+      "emails": [
+        "cv@snsmarketing.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-14T07:37:23Z",
+      "last_subject": "Capacidad externa WordPress / frontend para SER o no SER",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:sixtema.es",
+      "organization": "Sixtema",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "sixtema.es",
+      "emails": [
+        "rrhh@sixtema.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-09T14:34:52Z",
+      "last_subject": "Candidatura spontanea — Web Developer / colaboración freelance externa",
+      "workstreams": [
+        "VDS_REVENUE_FLOW"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:brantadesarrollo.es",
+      "organization": "brantadesarrollo.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "brantadesarrollo.es",
+      "emails": [
+        "info@brantadesarrollo.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-24T15:33:25Z",
+      "last_subject": "Capacidad web para proyectos Erasmus+ y Horizon",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:elementsdigital.es",
+      "organization": "elementsdigital.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "elementsdigital.es",
+      "emails": [
+        "hola@elementsdigital.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-23T07:32:25Z",
+      "last_subject": "Capacidad web externa para proyectos europeos",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:kapak.es",
+      "organization": "kapak.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "kapak.es",
+      "emails": [
+        "info@kapak.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-23T07:33:17Z",
+      "last_subject": "Apoyo web especializado para proyectos PRIMA / UE",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:kromagency.es",
+      "organization": "kromagency.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "kromagency.es",
+      "emails": [
+        "postulantes@kromagency.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T11:57:35Z",
+      "last_subject": "Colaboración freelance web / WordPress — Visual Design Studio",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:ludusmagnus.es",
+      "organization": "ludusmagnus.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "ludusmagnus.es",
+      "emails": [
+        "info@ludusmagnus.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-23T07:32:45Z",
+      "last_subject": "Web especializado para vuestros proyectos europeos",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:umangroup.es",
+      "organization": "umangroup.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "umangroup.es",
+      "emails": [
+        "contacto@umangroup.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T11:57:45Z",
+      "last_subject": "Colaboración freelance web — Barcelona / Visual Design Studio",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:zabala.es",
+      "organization": "zabala.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "zabala.es",
+      "emails": [
+        "info@zabala.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-09-24T15:33:34Z",
+      "last_subject": "External web capacity for European R&D projects",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "org:zudro.es",
+      "organization": "zudro.es",
+      "customer_type": "OTHER",
+      "customer_type_label": "Other",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": null,
+      "domain": "zudro.es",
+      "emails": [
+        "hola@zudro.es"
+      ],
+      "contacts": [],
+      "opportunities": [],
+      "opportunity_count": 0,
+      "max_priority": null,
+      "max_freshness": null,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T11:57:43Z",
+      "last_subject": "Colaboración técnica externa — WordPress / frontend / performance",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
       ],
       "source_urls": [],
       "anti_duplication": {
@@ -4945,41 +6985,6 @@
       }
     },
     {
-      "id": "org:alpacode.it",
-      "organization": "Alpacode",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "alpacode.it",
-      "emails": [
-        "info@alpacode.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-04T09:30:56Z",
-      "last_subject": "Collaborazione continuativa P.IVA — WordPress / Front-End / Performance | disponibilità immediata",
-      "workstreams": [
-        "OWNER_APPROVED_HUMAN_REVIEW_OUTREACH"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:alteregoweb.com",
       "organization": "Alterego Web",
       "customer_type": "OTHER",
@@ -5002,41 +7007,6 @@
       "last_subject": "Colaboración externa web — WordPress / front-end / rendimento",
       "workstreams": [
         "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:avangarde.it",
-      "organization": "Avangarde",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "avangarde.it",
-      "emails": [
-        "info@avangarde.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-04T09:24:05Z",
-      "last_subject": "Candidatura / collaborazione P.IVA — Web Developer Front-End JavaScript | WordPress | Web Performance",
-      "workstreams": [
-        "OWNER_APPROVED_HUMAN_REVIEW_OUTREACH"
       ],
       "source_urls": [],
       "anti_duplication": {
@@ -5081,74 +7051,6 @@
           "CORPORATE_DOMAIN_ALREADY_CONTACTED",
           "EXACT_EMAIL_ALREADY_CONTACTED",
           "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:bdpartners.it",
-      "organization": "BD & Partners",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "bdpartners.it",
-      "emails": [
-        "info@bdpartners.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-14T13:56:16Z",
-      "last_subject": "Sviluppo web a progetto per la rete BD & Partners",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:giuseppecastagna.it",
-      "organization": "Brown Media / Giuseppe Castagna context",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "giuseppecastagna.it",
-      "emails": [
-        "elisa@giuseppecastagna.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-04T13:50:43Z",
-      "last_subject": "Re: Web Developer / Designer freelance — Brown Media",
-      "workstreams": [
-        "RECONCILED_PROVIDER_CONTINUATION"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED"
         ]
       }
     },
@@ -5363,41 +7265,6 @@
       }
     },
     {
-      "id": "org:dsidesign.it",
-      "organization": "D-Sign",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "dsidesign.it",
-      "emails": [
-        "info@dsidesign.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-09T16:02:49Z",
-      "last_subject": "Candidatura Sviluppatore Front-End — collaborazione P.IVA",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:devxpire.com",
       "organization": "DevXpire",
       "customer_type": "OTHER",
@@ -5502,41 +7369,6 @@
       }
     },
     {
-      "id": "org:digitalpa.it",
-      "organization": "DigitalPA",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "digitalpa.it",
-      "emails": [
-        "curricula@digitalpa.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-11T07:03:37Z",
-      "last_subject": "PHP / WordPress-WooCommerce — candidatura freelance P.IVA",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:digitally.lt",
       "organization": "Digitally.lt",
       "customer_type": "OTHER",
@@ -5594,111 +7426,6 @@
       "last_subject": "Colaboración diseño web freelance — WordPress / UX-UI",
       "workstreams": [
         "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:echopress.it",
-      "organization": "EchoPress",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "echopress.it",
-      "emails": [
-        "info@echopress.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-09T12:34:48Z",
-      "last_subject": "Candidatura Web Developer — collaborazione freelance P.IVA",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:elia-digital.de",
-      "organization": "Elia Digital & AI Solutions",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "elia-digital.de",
-      "emails": [
-        "info@elia-digital.de"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-12T09:08:16Z",
-      "last_subject": "External WordPress capacity — freelance collaboration",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:enigmia.es",
-      "organization": "Enigmia",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "enigmia.es",
-      "emails": [
-        "info@enigmia.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-07T14:59:32Z",
-      "last_subject": "Colaboración freelance — desarrollo web, frontend e rendimento",
-      "workstreams": [
-        "VDS_REVENUE_FLOW_CORRECTED_ROUTE"
       ],
       "source_urls": [],
       "anti_duplication": {
@@ -5817,76 +7544,6 @@
       }
     },
     {
-      "id": "org:globomarketing.it",
-      "organization": "Globo Marketing",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "globomarketing.it",
-      "emails": [
-        "job@globomarketing.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-08T16:36:48Z",
-      "last_subject": "Collaborazione freelance/P.IVA — Web design, WordPress e sviluppo frontend",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:goalnet.it",
-      "organization": "Goalnet",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "goalnet.it",
-      "emails": [
-        "info@goalnet.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-09T12:34:57Z",
-      "last_subject": "Collaborazione Web Designer / Developer freelance",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:grandworks.co",
       "organization": "GrandWorks",
       "customer_type": "OTHER",
@@ -5922,41 +7579,6 @@
       }
     },
     {
-      "id": "org:gritlab.it",
-      "organization": "Gritlab",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "gritlab.it",
-      "emails": [
-        "info@gritlab.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-14T14:40:51Z",
-      "last_subject": "Capacità web esterna per partnership white-label",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:herdl.com",
       "organization": "Herdl",
       "customer_type": "OTHER",
@@ -5979,111 +7601,6 @@
       "last_subject": "Application — WordPress Developer | external freelance collaboration",
       "workstreams": [
         "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:heritage-srl.it",
-      "organization": "Heritage S.r.l.",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "heritage-srl.it",
-      "emails": [
-        "careers@heritage-srl.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-04T08:42:36Z",
-      "last_subject": "Candidatura — Web Graphic Designer | collaborazione P.IVA",
-      "workstreams": [
-        "VDS_LINKEDIN_JOB_HUNTER"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:ieros.it",
-      "organization": "Ieros",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "ieros.it",
-      "emails": [
-        "info@ieros.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-04T08:15:48Z",
-      "last_subject": "Collaborazione freelance web — sviluppo, performance e supporto tecnico",
-      "workstreams": [
-        "VDS_UNIFIED_ACQUISITION"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:indaweb.it",
-      "organization": "Indaweb S.R.L.",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "indaweb.it",
-      "emails": [
-        "info@indaweb.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-07T14:42:28Z",
-      "last_subject": "Web Developer / Digital Technical Specialist — proposta collaborazione P.IVA",
-      "workstreams": [
-        "VDS_REVENUE_FLOW_RECOVERY"
       ],
       "source_urls": [],
       "anti_duplication": {
@@ -6202,76 +7719,6 @@
       }
     },
     {
-      "id": "org:junolab.it",
-      "organization": "Juno Lab SRL",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "junolab.it",
-      "emails": [
-        "jobs@junolab.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-02T06:58:10Z",
-      "last_subject": "Web Designer",
-      "workstreams": [
-        "RECONCILED_HISTORICAL_PROVIDER_EVENT"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:kioskdigital.it",
-      "organization": "Kiosk Digital",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "kioskdigital.it",
-      "emails": [
-        "info@kioskdigital.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-11T07:03:47Z",
-      "last_subject": "Collaborazione esterna web / WordPress — Visual Design Studio",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:lefarweb.be",
       "organization": "Le Farweb",
       "customer_type": "OTHER",
@@ -6329,111 +7776,6 @@
       "last_subject": "Colaboración externa para proyectos WordPress / frontend",
       "workstreams": [
         "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:lucasweb.it",
-      "organization": "Lucasweb",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "lucasweb.it",
-      "emails": [
-        "job@lucasweb.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-08T07:37:02Z",
-      "last_subject": "Web Designer senior — collaborazione freelance esterna",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:mediaimmagine.it",
-      "organization": "MEDIAIMMAGINE",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "mediaimmagine.it",
-      "emails": [
-        "frontoffice@mediaimmagine.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-14T15:37:57Z",
-      "last_subject": "Capacità web esterna per i vostri progetti WordPress",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:mszlab.it",
-      "organization": "MSZLAB",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "mszlab.it",
-      "emails": [
-        "jobs@mszlab.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-08T08:07:15Z",
-      "last_subject": "Candidatura WordPress Developer — collaborazione freelance/P.IVA",
-      "workstreams": [
-        "VDS_JOB_FLOW"
       ],
       "source_urls": [],
       "anti_duplication": {
@@ -6622,41 +7964,6 @@
       }
     },
     {
-      "id": "org:mycomp.it",
-      "organization": "MyCompany",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "mycomp.it",
-      "emails": [
-        "jobs@mycomp.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-30T14:55:36Z",
-      "last_subject": "WEB CONTENT EDITOR — collaborazione freelance WordPress",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:nevassistance.com",
       "organization": "NEV Assistance",
       "customer_type": "OTHER",
@@ -6747,41 +8054,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-08T09:05:12Z",
       "last_subject": "Application — Web Developer / WordPress — freelance collaboration",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:os2.it",
-      "organization": "OS2",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "os2.it",
-      "emails": [
-        "jobs@os2.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-09T10:07:30Z",
-      "last_subject": "Candidatura PHP / WordPress — proposta collaborazione freelance P.IVA",
       "workstreams": [
         "VDS_JOB_FLOW"
       ],
@@ -6922,41 +8194,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-09T15:05:42Z",
       "last_subject": "Application — Support Engineer | WordPress / hosting / DNS",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:playmore.it",
-      "organization": "PlayMore",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "playmore.it",
-      "emails": [
-        "jobs@playmore.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-09T10:07:07Z",
-      "last_subject": "Candidatura — Grafico / Web Developer | collaborazione P.IVA",
       "workstreams": [
         "VDS_JOB_FLOW"
       ],
@@ -7147,41 +8384,6 @@
       }
     },
     {
-      "id": "org:snsmarketing.es",
-      "organization": "SER o no SER",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "snsmarketing.es",
-      "emails": [
-        "cv@snsmarketing.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-14T07:37:23Z",
-      "last_subject": "Capacidad externa WordPress / frontend para SER o no SER",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:salentofactory.com",
       "organization": "Salento Factory",
       "customer_type": "OTHER",
@@ -7217,41 +8419,6 @@
       }
     },
     {
-      "id": "org:sembox.it",
-      "organization": "Sembox",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "sembox.it",
-      "emails": [
-        "info@sembox.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-08T09:35:52Z",
-      "last_subject": "Candidatura PHP Web Developer — collaborazione freelance / P.IVA",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:service-lab.com",
       "organization": "Service Lab",
       "customer_type": "OTHER",
@@ -7272,41 +8439,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-08T11:33:34Z",
       "last_subject": "Collaborazione freelance — web design, WordPress e sviluppo web",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:sixtema.es",
-      "organization": "Sixtema",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "sixtema.es",
-      "emails": [
-        "rrhh@sixtema.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-09T14:34:52Z",
-      "last_subject": "Candidatura spontanea — Web Developer / colaboración freelance externa",
       "workstreams": [
         "VDS_REVENUE_FLOW"
       ],
@@ -7392,41 +8524,6 @@
       }
     },
     {
-      "id": "org:studioatelier.it",
-      "organization": "Studio Atelièr",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "studioatelier.it",
-      "emails": [
-        "direzione@studioatelier.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-14T13:53:40Z",
-      "last_subject": "Capacità web esterna per progetti Studio Atelièr",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:studiomagnani.eu",
       "organization": "Studio Magnani",
       "customer_type": "OTHER",
@@ -7486,41 +8583,6 @@
       "workstreams": [
         "VDS_UNIFIED_ACQUISITION",
         "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:teamsy.it",
-      "organization": "Teamsy",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "teamsy.it",
-      "emails": [
-        "info@teamsy.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-10T15:35:36Z",
-      "last_subject": "Capacità web esterna per i team Teamsy — WordPress / frontend",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
       ],
       "source_urls": [],
       "anti_duplication": {
@@ -7639,76 +8701,6 @@
       }
     },
     {
-      "id": "org:turbobit.it",
-      "organization": "TurboBit IT Solutions",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "turbobit.it",
-      "emails": [
-        "info@turbobit.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-07T15:34:13Z",
-      "last_subject": "Collaborazione P.IVA — Web Developer WordPress / frontend",
-      "workstreams": [
-        "VDS_REVENUE_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:violettocommunication.it",
-      "organization": "Violetto Communication",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "violettocommunication.it",
-      "emails": [
-        "amministrazione@violettocommunication.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-04T16:42:27Z",
-      "last_subject": "Candidatura freelance — Web Developer WordPress / WooCommerce",
-      "workstreams": [
-        "VDS_UNIFIED_ACQUISITION"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:wpxero.com",
       "organization": "WPXERO",
       "customer_type": "OTHER",
@@ -7765,41 +8757,6 @@
       "last_subject": "Collaborazione freelance/P.IVA — Web Designer WordPress / WooCommerce",
       "workstreams": [
         "VDS_UNIFIED_ACQUISITION"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:witapp.it",
-      "organization": "Witapp SRL",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "witapp.it",
-      "emails": [
-        "candidature@witapp.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-05T10:09:09Z",
-      "last_subject": "Candidatura — Web Specialist",
-      "workstreams": [
-        "VDS_LINKEDIN_JOB_HUNTER"
       ],
       "source_urls": [],
       "anti_duplication": {
@@ -8023,41 +8980,6 @@
       }
     },
     {
-      "id": "org:americomunicazione.it",
-      "organization": "americomunicazione.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "americomunicazione.it",
-      "emails": [
-        "info@americomunicazione.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-24T09:34:41Z",
-      "last_subject": "Supporto web specialistico per progetti Horizon Europe",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:andd.one",
       "organization": "andd.one",
       "customer_type": "OTHER",
@@ -8093,41 +9015,6 @@
       }
     },
     {
-      "id": "org:azionedigital.it",
-      "organization": "azionedigital.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "azionedigital.it",
-      "emails": [
-        "info@azionedigital.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T11:57:38Z",
-      "last_subject": "Collaborazione freelance / partner esterno web development",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:beingdigitals.com",
       "organization": "beingdigitals.com",
       "customer_type": "OTHER",
@@ -8148,76 +9035,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-23T10:06:42Z",
       "last_subject": "WordPress Developer — external production capacity",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:blazemedia.it",
-      "organization": "blazemedia.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "blazemedia.it",
-      "emails": [
-        "jobs@blazemedia.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T17:52:06Z",
-      "last_subject": "Candidatura spontanea — collaborazione freelance WordPress / web",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:brantadesarrollo.es",
-      "organization": "brantadesarrollo.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "brantadesarrollo.es",
-      "emails": [
-        "info@brantadesarrollo.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-24T15:33:25Z",
-      "last_subject": "Capacidad web para proyectos Erasmus+ y Horizon",
       "workstreams": [
         "VDS_PROVIDER_SYNC"
       ],
@@ -8288,41 +9105,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-22T14:35:34Z",
       "last_subject": "Capacità web esterna WordPress / JavaScript per i vostri progetti",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:creative.it",
-      "organization": "creative.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "creative.it",
-      "emails": [
-        "francesco.pizzi@creative.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-28T10:47:22Z",
-      "last_subject": "Preventivo ottimizzazione performance sito Creativelement",
       "workstreams": [
         "VDS_PROVIDER_SYNC"
       ],
@@ -8478,76 +9260,6 @@
       }
     },
     {
-      "id": "org:doagency.it",
-      "organization": "doagency.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "doagency.it",
-      "emails": [
-        "info@doagency.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-24T12:32:27Z",
-      "last_subject": "Capacità web esterna per picchi di sviluppo WordPress",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:e-sintesi.it",
-      "organization": "e-sintesi.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "e-sintesi.it",
-      "emails": [
-        "info@e-sintesi.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-22T16:04:13Z",
-      "last_subject": "Candidatura area ICT / progetti europei — collaborazione esterna",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:easylink.gr",
       "organization": "easylink.gr",
       "customer_type": "OTHER",
@@ -8568,41 +9280,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-23T07:06:34Z",
       "last_subject": "WordPress Developer — remote external collaboration",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:ebridgegroup.it",
-      "organization": "ebridgegroup.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "ebridgegroup.it",
-      "emails": [
-        "info@ebridgegroup.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T17:55:22Z",
-      "last_subject": "Proposta di collaborazione tecnica web — freelance / partner",
       "workstreams": [
         "VDS_PROVIDER_SYNC"
       ],
@@ -8673,41 +9350,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-23T14:35:14Z",
       "last_subject": "External web production capacity for EU project work packages",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:elementsdigital.es",
-      "organization": "elementsdigital.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "elementsdigital.es",
-      "emails": [
-        "hola@elementsdigital.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-23T07:32:25Z",
-      "last_subject": "Capacidad web externa para proyectos europeos",
       "workstreams": [
         "VDS_PROVIDER_SYNC"
       ],
@@ -8897,216 +9539,6 @@
       }
     },
     {
-      "id": "org:hardgroup.it",
-      "organization": "hardgroup.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "hardgroup.it",
-      "emails": [
-        "info@hardgroup.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-22T12:37:14Z",
-      "last_subject": "Capacità web esterna per picchi di progetto WordPress",
-      "workstreams": [
-        "VDS_LIVE_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:infoconnect.it",
-      "organization": "infoconnect.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "infoconnect.it",
-      "emails": [
-        "hr@infoconnect.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T17:51:58Z",
-      "last_subject": "Collaborazione freelance web / WordPress — Visual Design Studio",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:introvertical.it",
-      "organization": "introvertical.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "introvertical.it",
-      "emails": [
-        "info@introvertical.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-22T07:34:12Z",
-      "last_subject": "Supporto web specialistico per progetti europei",
-      "workstreams": [
-        "VDS_LIVE_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:kapak.es",
-      "organization": "kapak.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "kapak.es",
-      "emails": [
-        "info@kapak.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-23T07:33:17Z",
-      "last_subject": "Apoyo web especializado para proyectos PRIMA / UE",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:kromagency.es",
-      "organization": "kromagency.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "kromagency.es",
-      "emails": [
-        "postulantes@kromagency.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T11:57:35Z",
-      "last_subject": "Colaboración freelance web / WordPress — Visual Design Studio",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:kurema.it",
-      "organization": "kurema.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "kurema.it",
-      "emails": [
-        "hello@kurema.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T17:52:02Z",
-      "last_subject": "Collaborazione tecnica esterna web — WordPress / frontend / performance",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:lamaquina.io",
       "organization": "lamaquina.io",
       "customer_type": "OTHER",
@@ -9212,41 +9644,6 @@
       }
     },
     {
-      "id": "org:ludusmagnus.es",
-      "organization": "ludusmagnus.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "ludusmagnus.es",
-      "emails": [
-        "info@ludusmagnus.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-23T07:32:45Z",
-      "last_subject": "Web especializado para vuestros proyectos europeos",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:marketburner.com",
       "organization": "marketburner.com",
       "customer_type": "OTHER",
@@ -9317,41 +9714,6 @@
       }
     },
     {
-      "id": "org:methlab.it",
-      "organization": "methlab.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "methlab.it",
-      "emails": [
-        "info@methlab.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-24T09:35:00Z",
-      "last_subject": "Capacità web esterna per picchi di progetto",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:moverim.eu",
       "organization": "moverim.eu",
       "customer_type": "OTHER",
@@ -9373,42 +9735,6 @@
       "last_outbound_at": "2026-09-22T10:32:55Z",
       "last_subject": "Capacità web specialistica per progetti europei",
       "workstreams": [
-        "VDS_LIVE_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:neiko.it",
-      "organization": "neiko.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "neiko.it",
-      "emails": [
-        "job@neiko.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-22T07:02:35Z",
-      "last_subject": "Web Developer Senior — collaborazione esterna WordPress",
-      "workstreams": [
-        "VDS_JOB_FLOW",
         "VDS_LIVE_PROVIDER_SYNC"
       ],
       "source_urls": [],
@@ -9563,41 +9889,6 @@
       }
     },
     {
-      "id": "org:profisnet.it",
-      "organization": "profisnet.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "profisnet.it",
-      "emails": [
-        "info@profisnet.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T17:55:18Z",
-      "last_subject": "Collaborazione professionale web / WordPress — Visual Design Studio",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:qpquality.com",
       "organization": "qpquality.com",
       "customer_type": "OTHER",
@@ -9703,76 +9994,6 @@
       }
     },
     {
-      "id": "org:serendipitysrl.it",
-      "organization": "serendipitysrl.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "serendipitysrl.it",
-      "emails": [
-        "info@serendipitysrl.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T17:55:26Z",
-      "last_subject": "Collaborazione web da remoto — Visual Design Studio",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:sitowebsubito.it",
-      "organization": "sitowebsubito.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "sitowebsubito.it",
-      "emails": [
-        "info@sitowebsubito.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-22T11:34:03Z",
-      "last_subject": "Collaborazione esterna WordPress / web production",
-      "workstreams": [
-        "VDS_LIVE_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:sustainableinnovations.eu",
       "organization": "sustainableinnovations.eu",
       "customer_type": "OTHER",
@@ -9863,76 +10084,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-23T12:05:47Z",
       "last_subject": "WordPress Developer Application — external collaboration option",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:trizero.it",
-      "organization": "trizero.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "trizero.it",
-      "emails": [
-        "job@trizero.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-23T07:06:44Z",
-      "last_subject": "WordPress Developer — capacità tecnica esterna per Trizero",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:umangroup.es",
-      "organization": "umangroup.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "umangroup.es",
-      "emails": [
-        "contacto@umangroup.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T11:57:45Z",
-      "last_subject": "Colaboración freelance web — Barcelona / Visual Design Studio",
       "workstreams": [
         "VDS_PROVIDER_SYNC"
       ],
@@ -10123,41 +10274,6 @@
       }
     },
     {
-      "id": "org:wmr.it",
-      "organization": "wmr.it",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "wmr.it",
-      "emails": [
-        "adviva@wmr.it"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T11:57:40Z",
-      "last_subject": "Collaborazione freelance WordPress frontend/backend — Visual Design Studio",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
       "id": "org:wpelitehub.com",
       "organization": "wpelitehub.com",
       "customer_type": "OTHER",
@@ -10214,76 +10330,6 @@
       "contacted": true,
       "last_outbound_at": "2026-09-23T09:07:12Z",
       "last_subject": "WordPress Developer — remote collaboration",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:zabala.es",
-      "organization": "zabala.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "zabala.es",
-      "emails": [
-        "info@zabala.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-09-24T15:33:34Z",
-      "last_subject": "External web capacity for European R&D projects",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:zudro.es",
-      "organization": "zudro.es",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "zudro.es",
-      "emails": [
-        "hola@zudro.es"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T11:57:43Z",
-      "last_subject": "Colaboración técnica externa — WordPress / frontend / performance",
       "workstreams": [
         "VDS_PROVIDER_SYNC"
       ],
