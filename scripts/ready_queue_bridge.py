@@ -20,6 +20,7 @@ LEDGER=ROOT/"views/global-contact-ledger.json"
 SITE="https://www.visualdesignstudio.es/"
 AUTO_BASIS="AUTONOMOUS_FIRST_CONTACT"
 AUTO_SOURCE="white-label-ready-to-send"
+LEGACY_PRIORITY_MIN=65
 
 def load_json(path,default):
     try:return json.loads(path.read_text(encoding="utf-8"))
@@ -35,6 +36,28 @@ def load_queue():
 
 def domain_of_email(email):
     return str(email or "").strip().lower().rsplit("@",1)[-1] if "@" in str(email or "") else ""
+
+def persisted_qualification_is_valid(row, metadata):
+    """Accept a previously qualified bridge-owned DRAFT even if the volatile READY view was rebuilt.
+
+    This does not bypass dedup. It only preserves qualification evidence already
+    stored on the queue record so a transient/empty derived view cannot strand
+    a valid FIRST_CONTACT forever.
+    """
+    try:
+        priority=float(metadata.get("priority") or 0)
+    except (TypeError, ValueError):
+        priority=0
+    source_url=str(metadata.get("source_url") or "").strip().lower()
+    strategy=str(metadata.get("message_strategy") or "").strip()
+    recipient=str(row.get("recipient") or "").strip().lower()
+    return (
+        metadata.get("source")==AUTO_SOURCE
+        and priority >= LEGACY_PRIORITY_MIN
+        and source_url.startswith(("http://","https://"))
+        and bool(strategy)
+        and "@" in recipient
+    )
 
 def message(org,domain):
     if domain.endswith(".it"):
@@ -120,12 +143,19 @@ def main():
             row["metadata"]={**metadata,"suppressed_at":stamp,"suppression_reason":"GLOBAL_DEDUP_BLOCK"}
             suppressed+=1
             continue
-        if email not in ready_by_email:
+        in_current_ready=email in ready_by_email
+        persisted_valid=persisted_qualification_is_valid(row,metadata)
+        if not in_current_ready and not persisted_valid:
             continue
         row["status"]="APPROVED_TO_SEND"
         row["eligibility_basis"]=AUTO_BASIS
         row["approved_at"]=stamp
-        row["metadata"]={**metadata,"approved_via":"AUTOMATED_FIRST_CONTACT_POLICY","approved_at":stamp}
+        row["metadata"]={
+            **metadata,
+            "approved_via":"AUTOMATED_FIRST_CONTACT_POLICY",
+            "approval_basis":"CURRENT_READY_VIEW" if in_current_ready else "PERSISTED_QUALIFICATION_SNAPSHOT",
+            "approved_at":stamp
+        }
         promoted+=1
 
     existing={(str(x.get("recipient") or "").lower(),str(x.get("action_type") or "")) for x in rows}
