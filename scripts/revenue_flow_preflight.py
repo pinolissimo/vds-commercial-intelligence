@@ -17,6 +17,7 @@ import json
 import os
 import sys
 import tempfile
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Tuple
 
@@ -27,6 +28,10 @@ SENT_INDEX = Path("views/global-sent-email-index.json")
 ORG_INDEX = Path("views/global-organization-index.json")
 RESERVATIONS = Path("governance/global-contact-reservations.json")
 DISCOVERY = Path("views/high-frequency-discovery-latest.json")
+PROVIDER_OUTBOUND = Path("state/provider-outbound-live.json")
+PROVIDER_OBSERVATION = Path("state/provider-observation.json")
+PROVIDER_SYNC_STATUS = Path("state/provider-sync-status.json")
+PROVIDER_FRESHNESS_SECONDS = 15 * 60
 
 
 class PreflightError(RuntimeError):
@@ -214,6 +219,96 @@ def reconcile(
     return suppression, sent_index, org_index, changes
 
 
+def _parse_time(value: Any) -> datetime:
+    if not isinstance(value, str) or not value.strip():
+        raise PreflightError("missing provider observation timestamp")
+    raw = value.strip().replace("Z", "+00:00")
+    try:
+        dt = datetime.fromisoformat(raw)
+    except ValueError as exc:
+        raise PreflightError(f"invalid provider timestamp: {value!r}") from exc
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
+def provider_snapshot_health(
+    outbound: Dict[str, Any],
+    observation: Dict[str, Any],
+    sync_status: Dict[str, Any],
+    *,
+    now: datetime | None = None,
+    max_age_seconds: int = PROVIDER_FRESHNESS_SECONDS,
+) -> Dict[str, Any]:
+    """Validate the automatic Hostinger Sent mirror before it is used for dedup.
+
+    The mirror is never an independent authority: it is acceptable only when the
+    Hostinger sync reports VALID auth, both Sent/Inbox were observed, the provider
+    UID watermarks agree, and the heartbeat is recent. Any ambiguity fails closed.
+    """
+    if sync_status.get("status") != "OK" or sync_status.get("auth_status") != "VALID":
+        raise PreflightError("Hostinger provider sync is not authenticated and healthy")
+    if not observation.get("sent_observed") or not observation.get("inbox_observed"):
+        raise PreflightError("Hostinger provider observation is incomplete")
+
+    obs_uid = int(observation.get("latest_sent_uid") or 0)
+    sync_uid = int(sync_status.get("latest_sent_uid") or 0)
+    events = [e for e in outbound.get("events", []) if isinstance(e, dict)]
+    mirror_uid = max((int(e.get("provider_uid") or 0) for e in events), default=0)
+    if not obs_uid or obs_uid != sync_uid or mirror_uid < obs_uid:
+        raise PreflightError(
+            f"Hostinger Sent mirror watermark mismatch: observation={obs_uid}, "
+            f"sync={sync_uid}, mirror={mirror_uid}"
+        )
+
+    checked = _parse_time(observation.get("observed_at"))
+    sync_checked = _parse_time(sync_status.get("checked_at"))
+    reference = (now or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    age = max((reference - checked).total_seconds(), (reference - sync_checked).total_seconds())
+    if age < -60 or age > max_age_seconds:
+        raise PreflightError(f"Hostinger Sent mirror is stale or clock-skewed: age={age:.0f}s")
+
+    return {
+        "status": "HEALTHY",
+        "auth_status": "VALID",
+        "latest_sent_uid": obs_uid,
+        "mirror_max_uid": mirror_uid,
+        "age_seconds": int(max(age, 0)),
+        "max_age_seconds": max_age_seconds,
+        "source": "HOSTINGER_EMAIL_API_AUTOMATIC",
+    }
+
+
+def provider_sent_matches(
+    outbound: Dict[str, Any],
+    *,
+    recipient: str,
+    canonical_organization_key: str | None = None,
+    corporate_domain: str | None = None,
+) -> Dict[str, Any]:
+    """Return exact-recipient and organization/domain evidence from verified Sent."""
+    recipient_l = str(recipient or "").strip().lower()
+    domain_l = str(corporate_domain or "").strip().lower()
+    org_key_l = str(canonical_organization_key or "").strip().lower()
+    exact, organization = [], []
+    for event in outbound.get("events", []):
+        if not isinstance(event, dict) or event.get("state") != "VERIFIED_EMAIL_SENT":
+            continue
+        event_recipient = str(event.get("recipient") or "").strip().lower()
+        event_key = str(event.get("canonical_identity_key") or "").strip().lower()
+        event_domain = canonical_domain(event) or ""
+        if recipient_l and event_recipient == recipient_l:
+            exact.append(event)
+        if (org_key_l and event_key == org_key_l) or (domain_l and event_domain == domain_l):
+            organization.append(event)
+    return {
+        "exact_recipient_match": bool(exact),
+        "organization_or_domain_match": bool(organization),
+        "exact_provider_uids": sorted({int(e["provider_uid"]) for e in exact if isinstance(e.get("provider_uid"), int)}),
+        "organization_provider_uids": sorted({int(e["provider_uid"]) for e in organization if isinstance(e.get("provider_uid"), int)}),
+    }
+
+
 def discovery_health(path: Path) -> Dict[str, Any]:
     try:
         byte_size = path.stat().st_size
@@ -260,6 +355,12 @@ def main() -> int:
     org_index = load_json(root / ORG_INDEX)
     reservations = load_json(root / RESERVATIONS)
     discovery = discovery_health(root / DISCOVERY)
+    provider_outbound = load_json(root / PROVIDER_OUTBOUND)
+    provider_observation = load_json(root / PROVIDER_OBSERVATION)
+    provider_sync_status = load_json(root / PROVIDER_SYNC_STATUS)
+    provider_snapshot = provider_snapshot_health(
+        provider_outbound, provider_observation, provider_sync_status
+    )
 
     suppression, sent_index, org_index, changes = reconcile(contacts, suppression, sent_index, org_index)
 
@@ -277,6 +378,7 @@ def main() -> int:
         "changes": changes,
         "reservations_file_valid": isinstance(reservations, dict),
         "discovery": discovery,
+        "provider_snapshot": provider_snapshot,
         "invariant": "derived caches cover every durable provider-verified FIRST_CONTACT",
     }
     print(json.dumps(report, ensure_ascii=False, indent=2))
