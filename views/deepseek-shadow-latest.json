@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-04T10:00:15Z",
+  "updated_at": "2026-10-04T11:19:00Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 993,
+    "evaluated_total": 994,
     "agreement_count": 476,
-    "agreement_pct": 47.94,
+    "agreement_pct": 47.89,
     "deepseek_promote": 32,
     "vds_promote": 263,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 367,
-    "cumulative_estimated_cost_usd": 0.191975,
-    "cost_per_evaluated_candidate_usd": 0.00019333,
-    "cost_per_deepseek_promote_usd": 0.00599922,
-    "cost_per_observed_ready_or_contacted_usd": 0.09598751,
+    "request_count": 368,
+    "cumulative_estimated_cost_usd": 0.192198,
+    "cost_per_evaluated_candidate_usd": 0.00019336,
+    "cost_per_deepseek_promote_usd": 0.00600619,
+    "cost_per_observed_ready_or_contacted_usd": 0.09609906,
     "latest_request": {
-      "at": "2026-10-04T10:00:09Z",
+      "at": "2026-10-04T11:18:56Z",
       "model": "deepseek-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1152,
-      "prompt_cache_miss_tokens": 200,
-      "completion_tokens": 564,
-      "total_tokens": 1916,
-      "estimated_cost_usd": 0.0004243
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 428,
+      "completion_tokens": 194,
+      "total_tokens": 750,
+      "estimated_cost_usd": 0.0002231
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,32 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7fe2c492395a5be616ac6020523b7bc3",
-      "evaluated_at": "2026-10-03T11:53:23Z",
-      "organization": "Acadia Job Listings",
-      "title": "Senior Manager/Associate Director, Commercial Operations, Germany",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/acadia-job-listings/senior-manager-associate-director-commercial-operations-germany-918",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Commercial operations leadership role; no web development relevance.",
-      "deepseek_risk_flags": [
-        "non_technical_role",
-        "senior_management"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001213125,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "9cbf4259027be327736b129f1f6ab109",
       "evaluated_at": "2026-10-03T11:53:23Z",
@@ -1433,10 +1407,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5ccac8cf1140a90538c2279f223d1174",
+      "evaluated_at": "2026-10-04T11:18:56Z",
+      "organization": "Lemon.io",
+      "title": "Senior React Full-stack Developer",
+      "location": "Europe, USA, Canada, APAC",
+      "opportunity_url": "https://remotive.com/remote-jobs/software-development/senior-react-full-stack-developer-2091133",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is Senior React Full-stack Developer; React-heavy full-stack scope is a stack mismatch for a WordPress/WooCommerce/frontend-performance freelance profile, despite incidental keyword matches (javascript, php, ui, ux, wordpress) that likely reflect generic tag noise rather than actual role scope.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_stack",
+        "full_stack_scope_beyond_web_maintenance",
+        "keyword_matches_likely_tag_noise",
+        "no_explicit_freelance_or_contract_terms",
+        "no_explicit_geo_evidence_for_spain_or_italy"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0002231,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-10-04T10:00:04Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-04T11:18:54Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
