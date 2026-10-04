@@ -2,6 +2,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 
 
@@ -88,6 +89,91 @@ class RevenueFlowPreflightTests(unittest.TestCase):
             path.write_bytes(b"")
             with self.assertRaises(rf.PreflightError):
                 rf.discovery_health(path)
+
+
+    def test_fresh_provider_mirror_is_accepted_and_searchable(self):
+        outbound = {"events": [{
+            "provider_uid": 736,
+            "state": "VERIFIED_EMAIL_SENT",
+            "recipient": "hello@example.com",
+            "canonical_identity_key": "org:example.com",
+        }]}
+        observation = {
+            "sent_observed": True,
+            "inbox_observed": True,
+            "latest_sent_uid": 736,
+            "observed_at": "2026-10-04T14:34:49Z",
+        }
+        status = {
+            "status": "OK",
+            "auth_status": "VALID",
+            "latest_sent_uid": 736,
+            "checked_at": "2026-10-04T14:34:49Z",
+        }
+        health = rf.provider_snapshot_health(
+            outbound, observation, status,
+            now=datetime(2026, 10, 4, 14, 40, tzinfo=timezone.utc),
+        )
+        self.assertEqual("HEALTHY", health["status"])
+        matches = rf.provider_sent_matches(
+            outbound,
+            recipient="hello@example.com",
+            canonical_organization_key="org:example.com",
+            corporate_domain="example.com",
+        )
+        self.assertTrue(matches["exact_recipient_match"])
+        self.assertTrue(matches["organization_or_domain_match"])
+        self.assertEqual([736], matches["exact_provider_uids"])
+
+    def test_stale_provider_mirror_fails_closed(self):
+        outbound = {"events": [{
+            "provider_uid": 736,
+            "state": "VERIFIED_EMAIL_SENT",
+            "recipient": "hello@example.com",
+            "canonical_identity_key": "org:example.com",
+        }]}
+        observation = {
+            "sent_observed": True,
+            "inbox_observed": True,
+            "latest_sent_uid": 736,
+            "observed_at": "2026-10-04T14:00:00Z",
+        }
+        status = {
+            "status": "OK",
+            "auth_status": "VALID",
+            "latest_sent_uid": 736,
+            "checked_at": "2026-10-04T14:00:00Z",
+        }
+        with self.assertRaises(rf.PreflightError):
+            rf.provider_snapshot_health(
+                outbound, observation, status,
+                now=datetime(2026, 10, 4, 14, 40, tzinfo=timezone.utc),
+            )
+
+    def test_provider_watermark_mismatch_fails_closed(self):
+        outbound = {"events": [{
+            "provider_uid": 735,
+            "state": "VERIFIED_EMAIL_SENT",
+            "recipient": "hello@example.com",
+            "canonical_identity_key": "org:example.com",
+        }]}
+        observation = {
+            "sent_observed": True,
+            "inbox_observed": True,
+            "latest_sent_uid": 736,
+            "observed_at": "2026-10-04T14:34:49Z",
+        }
+        status = {
+            "status": "OK",
+            "auth_status": "VALID",
+            "latest_sent_uid": 736,
+            "checked_at": "2026-10-04T14:34:49Z",
+        }
+        with self.assertRaises(rf.PreflightError):
+            rf.provider_snapshot_health(
+                outbound, observation, status,
+                now=datetime(2026, 10, 4, 14, 40, tzinfo=timezone.utc),
+            )
 
 
 if __name__ == "__main__":
