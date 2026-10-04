@@ -2,8 +2,11 @@
 # Visual Design Studio — 2026
 """Bridge qualified commercial routes into the autonomous sender queue.
 
-This stage is deterministic and idempotent. It prepares complete queue records
-without changing the approval state chosen by the operator/policy layer.
+FIRST_CONTACT policy:
+- qualified first-party commercial routes may be auto-approved;
+- global email/domain dedup remains fail-closed;
+- only FIRST_CONTACT records owned by this bridge are auto-promoted;
+- follow-ups/replies remain outside this automatic approval path.
 """
 from __future__ import annotations
 import hashlib, json
@@ -15,6 +18,8 @@ READY=ROOT/"views/white-label-ready-to-send.json"
 QUEUE=ROOT/"outreach/autonomous-send-queue.jsonl"
 LEDGER=ROOT/"views/global-contact-ledger.json"
 SITE="https://www.visualdesignstudio.es/"
+AUTO_BASIS="AUTONOMOUS_FIRST_CONTACT"
+AUTO_SOURCE="white-label-ready-to-send"
 
 def load_json(path,default):
     try:return json.loads(path.read_text(encoding="utf-8"))
@@ -27,6 +32,9 @@ def load_queue():
             if line.strip(): rows.append(json.loads(line))
     except FileNotFoundError: pass
     return rows
+
+def domain_of_email(email):
+    return str(email or "").strip().lower().rsplit("@",1)[-1] if "@" in str(email or "") else ""
 
 def message(org,domain):
     if domain.endswith(".it"):
@@ -86,29 +94,69 @@ def main():
     exact=set((ledger.get("exact_email_index") or {}).keys())
     domains=set((ledger.get("corporate_domain_index") or {}).keys())
     rows=load_queue()
-    existing={(str(x.get("recipient") or "").lower(),str(x.get("action_type") or "")) for x in rows}
-    added=0
     stamp=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z")
+
+    ready_by_email={}
     for item in ready.get("items") or []:
         email=str(item.get("email") or "").strip().lower()
         domain=str(item.get("domain") or "").strip().lower()
-        if not email or not domain or email in exact or domain in domains: continue
+        if not email or not domain: continue
+        if item.get("state")!="READY_TO_SEND" or not item.get("dedup_verified"): continue
+        if email in exact or domain in domains: continue
+        ready_by_email[email]=item
+
+    promoted=0
+    suppressed=0
+    for row in rows:
+        if row.get("action_type")!="FIRST_CONTACT" or row.get("status")!="DRAFT":
+            continue
+        metadata=row.get("metadata") or {}
+        if metadata.get("source")!=AUTO_SOURCE:
+            continue
+        email=str(row.get("recipient") or "").strip().lower()
+        domain=domain_of_email(email)
+        if email in exact or domain in domains:
+            row["status"]="CANCELLED"
+            row["metadata"]={**metadata,"suppressed_at":stamp,"suppression_reason":"GLOBAL_DEDUP_BLOCK"}
+            suppressed+=1
+            continue
+        if email not in ready_by_email:
+            continue
+        row["status"]="APPROVED_TO_SEND"
+        row["eligibility_basis"]=AUTO_BASIS
+        row["approved_at"]=stamp
+        row["metadata"]={**metadata,"approved_via":"AUTOMATED_FIRST_CONTACT_POLICY","approved_at":stamp}
+        promoted+=1
+
+    existing={(str(x.get("recipient") or "").lower(),str(x.get("action_type") or "")) for x in rows}
+    added=0
+    for email,item in ready_by_email.items():
+        domain=str(item.get("domain") or "").strip().lower()
         if (email,"FIRST_CONTACT") in existing: continue
         org=str(item.get("organization") or domain)
         subject,text=message(org,domain)
         key=hashlib.sha256((domain+"|"+email).encode()).hexdigest()[:16]
         rows.append({
-          "schema_version":"1.0","queue_id":"commercial-"+key,
-          "status":"DRAFT","action_type":"FIRST_CONTACT",
+          "schema_version":"1.1","queue_id":"commercial-"+key,
+          "status":"APPROVED_TO_SEND","action_type":"FIRST_CONTACT",
+          "eligibility_basis":AUTO_BASIS,
           "organization":org,"recipient":email,"subject":subject,"text":text,
-          "approved_at":"","metadata":{"prepared_at":stamp,"source":"white-label-ready-to-send",
+          "approved_at":stamp,"metadata":{"prepared_at":stamp,"source":AUTO_SOURCE,
           "priority":item.get("priority"),"source_url":item.get("source_url"),
-          "message_strategy":item.get("message_strategy")}
+          "message_strategy":item.get("message_strategy"),
+          "approved_via":"AUTOMATED_FIRST_CONTACT_POLICY","approved_at":stamp}
         })
         existing.add((email,"FIRST_CONTACT")); added+=1
+
     QUEUE.parent.mkdir(parents=True,exist_ok=True)
     QUEUE.write_text("\n".join(json.dumps(x,ensure_ascii=False,separators=(",",":")) for x in rows)+"\n",encoding="utf-8")
-    print(json.dumps({"ready":len(ready.get("items") or []),"queue_records":len(rows),"drafts_added":added}))
+    print(json.dumps({
+        "ready":len(ready_by_email),
+        "queue_records":len(rows),
+        "auto_approved_added":added,
+        "legacy_drafts_promoted":promoted,
+        "duplicates_suppressed":suppressed
+    }))
     return 0
 
 if __name__=="__main__": raise SystemExit(main())
