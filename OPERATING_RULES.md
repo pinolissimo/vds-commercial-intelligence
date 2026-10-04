@@ -33,7 +33,7 @@ Un lead diventa `READY_TO_CONTACT` solo con dominio verificato, attività pertin
 6. Ricerca esplorativa.
 
 ## Outreach
-Messaggi one-to-one e personalizzati, nella lingua del destinatario quando possibile, con riferimento a un bisogno/modello verificato e CTA a bassa frizione. Nessun doppio contatto senza controllo della timeline. Invio automatico solo quando il canale invita esplicitamente candidature/collaborazioni; gli altri casi richiedono approvazione.
+Messaggi one-to-one e personalizzati, nella lingua del destinatario quando possibile, con riferimento a un bisogno/modello verificato e CTA a bassa frizione. Nessun doppio contatto senza controllo della timeline. Il FIRST_CONTACT può essere inviato automaticamente quando il lead è qualificato, il canale business è verificato, il messaggio è completo e il dedup globale su email e organizzazione è superato immediatamente prima dell'invio. Follow-up, continuazioni di thread e risposte positive/ambigue richiedono autorizzazione o revisione umana secondo il lifecycle; il dedup resta sempre fail-closed.
 
 ## Document QA gate — mandatory before every send
 Nessun CV, portfolio, PDF, DOCX, proposta, lettera o altro allegato professionale può essere inviato senza un controllo finale completo sul file esatto che verrà allegato.
