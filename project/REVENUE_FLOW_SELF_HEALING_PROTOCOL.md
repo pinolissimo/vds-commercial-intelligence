@@ -63,6 +63,21 @@ The send-window gate is run-level execution policy, not a fifth candidate classi
 
 `WAIT_RESEARCH` is used only when one real hard SEND_NOW fact remains unresolved and cannot be closed in the current run; store exactly one blocker and one next lookup.
 
+## Fresh Hostinger Sent dedup read path
+
+The ordinary FIRST_CONTACT gate MUST NOT depend on an interactive connector call being available in the worker runtime.
+
+The production read path is:
+
+1. `hostinger-provider-sync.yml` polls the official Hostinger Email API every 10 minutes and resolves the mailbox and `\\Sent` folder dynamically.
+2. `state/provider-outbound-live.json` is a provider mirror only when `state/provider-sync-status.json` reports `status=OK`, `auth_status=VALID`, Sent+Inbox were observed, provider UID watermarks agree, and the heartbeat is no older than 15 minutes.
+3. Exact-recipient and canonical organization/domain matching is then performed deterministically against that verified mirror.
+4. If any freshness/auth/watermark condition fails, FIRST_CONTACT fails closed until provider sync recovers. Discovery and non-provider work continue.
+5. An interactive Hostinger Sent search may be used as an additional authoritative check, but its unavailability is not itself a blocker while the verified automatic mirror satisfies the conditions above.
+6. Immediately before a send, the worker must still re-read the current verified mirror plus durable ledger, organization index, suppression and reservations. After a send, provider verification and durable persistence remain mandatory.
+
+This removes connector/runtime coupling without weakening provider authority or duplicate prevention.
+
 ## Provider action invariant
 
 Immediately before EACH Hostinger provider call:
