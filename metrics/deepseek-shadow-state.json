@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1020,
+  "runs": 1021,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -27232,6 +27232,118 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cd298595b8e30709a44acfebb6869f62",
+      "evaluated_at": "2026-10-04T15:50:43Z",
+      "organization": "High Tide",
+      "title": "Graphic Designer",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/graphic-designer-high-tide",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 76,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 48.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Graphic Designer role with matched keywords web design, website, wordpress and commercial terms contractor/partner/remote, but the title is a design role rather than a web-development role, so stack fit is only partial and the WordPress/web-dev scope is unverified.",
+      "deepseek_risk_flags": [
+        "role_title_is_graphic_design_not_web_development",
+        "wordpress_scope_unverified",
+        "contractor_partner_terms_may_be_generic",
+        "geo_bucket_eu_remote_to_verify"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00016858,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "35996cdb6ccf3ee770d75678d2e2ff77",
+      "evaluated_at": "2026-10-04T15:50:43Z",
+      "organization": "21Shares",
+      "title": "Front-Office Data Support Analyst",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/21shares/front-office-data-support-analyst-london-301027",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Front-Office Data Support Analyst at a finance firm in London; matched keywords css/maintenance/website are incidental and the role is data/finance support, not web development, with no meaningful WordPress or frontend scope.",
+      "deepseek_risk_flags": [
+        "role_is_data_finance_support_not_web_dev",
+        "keyword_matches_incidental",
+        "location_london_not_primary_market",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016858,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "60aed3baa89f9f07ada2ea20b180319d",
+      "evaluated_at": "2026-10-04T15:50:43Z",
+      "organization": "Apheris",
+      "title": "Working Student – Brand & Visual Design",
+      "location": "Germany - Remote",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/apheris/remote-working-student-brand-visual-design-133957",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Working Student Brand & Visual Design role; it is a student position focused on brand/visual design, not freelance web development, and the only profile keyword match is the generic term website.",
+      "deepseek_risk_flags": [
+        "student_position_not_freelance",
+        "brand_visual_design_not_web_dev",
+        "single_generic_keyword_match",
+        "freelance_term_likely_generic"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00016858,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3041cb1b9b968fdb96430c0f9e0f450b",
+      "evaluated_at": "2026-10-04T15:50:43Z",
+      "organization": "Microsoftcorporation",
+      "title": "Principal AI Evaluations Platform Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/microsoftcorporation/principal-ai-evaluations-platform-engineer-london-380877",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Principal AI Evaluations Platform Engineer at Microsoft in London; this is a senior AI/platform engineering role with no WordPress, WooCommerce or frontend web scope, and matched keywords accessibility/html/migration are incidental.",
+      "deepseek_risk_flags": [
+        "role_is_ai_platform_engineering",
+        "no_wordpress_or_frontend_web_scope",
+        "senior_corporate_role_not_freelance",
+        "location_london_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016858,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -31650,9 +31762,21 @@
       "completion_tokens": 194,
       "total_tokens": 750,
       "estimated_cost_usd": 0.0002231
+    },
+    {
+      "at": "2026-10-04T15:50:43Z",
+      "model": "deepseek-flash",
+      "candidate_count": 4,
+      "valid_evaluation_count": 4,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1189,
+      "completion_tokens": 624,
+      "total_tokens": 1941,
+      "estimated_cost_usd": 0.00067432
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-04T11:18:56Z",
+  "updated_at": "2026-10-04T15:50:43Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
