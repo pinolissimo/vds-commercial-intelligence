@@ -1,0 +1,134 @@
+# Visual Design Studio — 2026
+name: VDS Pages Integrity Guard
+
+on:
+  workflow_run:
+    workflows: ["VDS Command Center — Pages"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: vds-pages-integrity-guard
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout current main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Read expected dashboard state
+        id: expected
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          data=json.loads(Path('api/v1/dashboard.json').read_text(encoding='utf-8'))
+          print(f"sent={int((data.get('today') or {}).get('sent') or 0)}")
+          print(f"generated_at={data.get('generated_at') or ''}")
+          PY
+
+      - name: Verify public Pages projection
+        id: verify
+        if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+        shell: bash
+        env:
+          EXPECTED_SENT: ${{ steps.expected.outputs.sent }}
+          EXPECTED_GENERATED_AT: ${{ steps.expected.outputs.generated_at }}
+        run: |
+          set -euo pipefail
+          ok=0
+          for attempt in $(seq 1 12); do
+            url="https://pinolissimo.github.io/vds-commercial-intelligence/api/v1/dashboard.json?guard=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${attempt}"
+            if curl -fsSL --connect-timeout 10 --max-time 20 "$url" -o /tmp/public-dashboard.json; then
+              if python3 - <<'PY'
+          import json, os
+          from datetime import datetime
+          from pathlib import Path
+
+          def dt(v):
+              if not v:
+                  return None
+              return datetime.fromisoformat(v.replace('Z','+00:00'))
+
+          public=json.loads(Path('/tmp/public-dashboard.json').read_text(encoding='utf-8'))
+          expected_sent=int(os.environ['EXPECTED_SENT'])
+          expected_generated=dt(os.environ['EXPECTED_GENERATED_AT'])
+          public_sent=int((public.get('today') or {}).get('sent') or 0)
+          public_generated=dt(public.get('generated_at'))
+          same_day=(public.get('today') or {}).get('date') == datetime.now().astimezone().date().isoformat() or public_sent >= expected_sent
+          fresh=(public_generated is not None and expected_generated is not None and public_generated >= expected_generated)
+          raise SystemExit(0 if same_day and public_sent >= expected_sent and fresh else 1)
+          PY
+              then
+                ok=1
+                break
+              fi
+            fi
+            sleep 5
+          done
+          if [ "$ok" -eq 1 ]; then
+            echo "healthy=true" >> "$GITHUB_OUTPUT"
+            echo "repair_needed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "healthy=false" >> "$GITHUB_OUTPUT"
+            echo "repair_needed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Decide whether repair is required
+        id: repair
+        shell: bash
+        env:
+          SOURCE_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          VERIFY_REPAIR: ${{ steps.verify.outputs.repair_needed }}
+        run: |
+          set -euo pipefail
+          needed=false
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_run" ] && [ "${SOURCE_CONCLUSION:-}" != "success" ]; then
+            needed=true
+          fi
+          if [ "${VERIFY_REPAIR:-false}" = "true" ]; then
+            needed=true
+          fi
+          echo "needed=$needed" >> "$GITHUB_OUTPUT"
+
+      - name: Self-heal with a fresh Pages run
+        if: ${{ steps.repair.outputs.needed == 'true' }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cutoff=$(date -u -d '15 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
+          runs=$(curl -fsSL \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/vds-command-center-pages.yml/runs?per_page=30")
+          repairs=$(printf '%s' "$runs" | jq --arg cutoff "$cutoff" '[.workflow_runs[] | select(.event == "workflow_dispatch" and .created_at >= $cutoff)] | length')
+          if [ "$repairs" -ge 2 ]; then
+            echo "Circuit breaker: ${repairs} repair dispatches in the last 15 minutes." >&2
+            exit 1
+          fi
+          curl -fsSL -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/workflows/vds-command-center-pages.yml/dispatches" \
+            -d '{"ref":"main"}'
+          echo "Fresh Pages repair run dispatched."
+
+      - name: Report healthy projection
+        if: ${{ steps.repair.outputs.needed != 'true' }}
+        run: echo "Pages projection matches current api/v1/dashboard.json."
