@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-05T11:51:21Z",
-  "latest_checked_uid": 1554,
+  "updated_at": "2026-10-05T11:52:31Z",
+  "latest_checked_uid": 1555,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -861,6 +861,21 @@
       "classification": "NEUTRAL",
       "subtype": "SYSTEM_OR_UNCORRELATED",
       "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1555,
+      "received_at": "2026-10-05T11:50:51Z",
+      "canonical_identity_key": "org:mailchannels.net",
+      "entity": "mailchannels.net",
+      "sender": "mailer-daemon@mailchannels.net",
+      "subject": "Undelivered Mail Returned to Sender",
+      "message_id": "<20261005115051.7E3019423EF@relay.mailchannels.net>",
+      "in_reply_to": null,
+      "classification": "BOUNCE",
+      "subtype": "HARD_BOUNCE",
+      "summary": "Provider delivery failure.",
       "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
