@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1039,
+  "runs": 1040,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -27820,6 +27820,90 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ee2ed363dd6f1c83c19c487959d2b7df",
+      "evaluated_at": "2026-10-05T12:59:05Z",
+      "organization": "Fact Finder",
+      "title": "Staff Frontend Engineer / Frontend Architect (m/f/d)",
+      "location": "Germany",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/staff-frontend-engineer-frontend-architect-mfd-8e93173389",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Staff Frontend Engineer / Frontend Architect role in Germany with only 'frontend' keyword match; no WordPress/WooCommerce/custom web scope, no explicit freelance/contract signal, and seniority/architecture focus suggests full-time employment rather than freelance web work.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "senior_staff_architect_role_likely_full_time",
+        "geo_remote_to_verify"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001785733,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c63b2a8e28dcef162cf6ac8d6f297866",
+      "evaluated_at": "2026-10-05T12:59:05Z",
+      "organization": "plancraft",
+      "title": "Staff Engineer (f/m/d) AI",
+      "location": "Remote (within Germany)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/plancraft/remote-staff-engineer-ai-92320",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Staff Engineer AI role with no frontend/web/WordPress role hits; only generic 'frontend' keyword and commercial keywords 'collaboration','contractor','remote' which are not proof of freelance compatibility. Core scope is AI engineering, not matching web development profile.",
+      "deepseek_risk_flags": [
+        "ai_engineering_core_scope",
+        "no_wordpress_woocommerce_scope",
+        "generic_contractor_keyword_not_proof",
+        "remote_within_germany_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001785733,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b0fcdd7f2c7f88c8a5eafdaae4ae4ceb",
+      "evaluated_at": "2026-10-05T12:59:05Z",
+      "organization": "isento GmbH",
+      "title": "Software Developer (m/w/d) - Schwerpunkt Angular",
+      "location": "Nuremberg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/isento-gmbh/software-developer-schwerpunkt-angular-nuremberg-56674",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Angular-focused software developer role in Nuremberg; Angular-heavy core stack mismatches WordPress/custom HTML-CSS-JS profile. 'partner' keyword is generic and not evidence of freelance compatibility. On-site Germany location.",
+      "deepseek_risk_flags": [
+        "angular_heavy_core_stack",
+        "no_wordpress_woocommerce_scope",
+        "onsite_germany",
+        "generic_partner_keyword_not_proof"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001785733,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -32346,9 +32430,21 @@
       "completion_tokens": 401,
       "total_tokens": 1259,
       "estimated_cost_usd": 0.00042616
+    },
+    {
+      "at": "2026-10-05T12:59:05Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 967,
+      "completion_tokens": 488,
+      "total_tokens": 1583,
+      "estimated_cost_usd": 0.00053572
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-05T12:41:02Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-05T12:59:05Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
