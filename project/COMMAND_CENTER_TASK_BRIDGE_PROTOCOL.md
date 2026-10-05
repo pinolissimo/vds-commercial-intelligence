@@ -1,6 +1,7 @@
+# Visual Design Studio — 2026
 # VDS Command Center Task Bridge Protocol
 
-Version: 1.1
+Version: 1.2
 Status: production invariant
 
 ## Purpose
@@ -95,6 +96,36 @@ No dashboard command may override:
 - ambiguous-delivery no-blind-resend rule.
 
 Missing nonessential metadata, lack of explicit freelance wording, or obsolete internal intermediate-state labels are NOT independent hard blockers.
+
+## Owner-copy prohibition — hard outbound invariant
+
+Automated VDS acquisition messages MUST NOT create owner copies by BCC or CC.
+
+For every automated `FIRST_CONTACT`, application, commercial outreach or other acquisition send:
+
+- `bcc` MUST be empty;
+- `cc` MUST be empty unless the owner explicitly authorizes a specific business recipient for that individual message;
+- NEVER BCC or CC `allocca.pino@gmail.com`;
+- NEVER BCC or CC `info@visualdesignstudio.es` back to itself;
+- do not substitute another VDS/owner mailbox as a monitoring copy;
+- provider verification MUST rely on authoritative Hostinger Sent + provider UID, not on a Gmail/VDS inbox copy;
+- audit/state fields such as `bcc_owner` MUST be `null`, `false` or empty for automated acquisition sends;
+- any automated send payload containing either owner address in BCC/CC is a hard pre-send failure and MUST NOT be submitted until the copy recipient is removed.
+
+This invariant applies equally to `LINKEDIN_HUNTER`, `UNIFIED_LOOP`, GitHub Actions senders and any future VDS automated outbound path. It does not prevent a manually composed email from using CC/BCC when the owner explicitly requests it for that specific message.
+
+## Duplicate protection — hard outbound invariant
+
+Before every automated `FIRST_CONTACT`, duplicate protection applies both across history and inside the current execution batch/run:
+
+- exact recipient email;
+- canonical organization identity;
+- corporate domain (except shared/free-mail domains, where organization/exact-address evidence is required);
+- fresh Hostinger Sent evidence;
+- fresh Gmail Sent evidence when available;
+- in-memory/current-run exact email and canonical organization/domain reservations.
+
+A positive or ambiguous match blocks a new first contact. Provider Sent evidence remains authoritative. A persistence failure after a provider-verified send MUST NEVER cause a resend.
 
 ## Availability invariant
 
