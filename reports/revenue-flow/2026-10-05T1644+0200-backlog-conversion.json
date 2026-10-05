@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "worker_id": "UNIFIED_LOOP",
+  "run_at": "2026-10-05T16:44:30+02:00",
+  "verification_date": "2026-10-05",
+  "status": "COMPLETED_WITH_PROVIDER_VERIFIED_FIRST_CONTACTS",
+  "run_type": "INCREMENTAL_BACKLOG_CONVERSION",
+  "summary": {
+    "serious_candidates_evaluated": 4,
+    "direct_email_harvested": 4,
+    "send_now": 2,
+    "provider_verified_first_contacts": 2,
+    "manual_apply": 0,
+    "wait_research": 0,
+    "reject": 1,
+    "duplicates": 1,
+    "route_failures": 0,
+    "provider_uids": [
+      761,
+      762
+    ]
+  },
+  "archetype_counts": {
+    "AGENCY_EXTERNAL_CAPACITY": 2,
+    "EU_DISSEMINATION_SPECIALIST": 0,
+    "SME_WEB_IMPROVEMENT": 0
+  },
+  "ab_variant_counts": {
+    "VALUE_MICRO_COMMITMENT": 1,
+    "CREDENTIALS_CLASSIC": 1
+  },
+  "downstream_outcomes": {
+    "new_human_replies_observed": 1,
+    "qualified_positive": 0,
+    "referrals": 0,
+    "calls_or_interviews": 0,
+    "proposals": 0,
+    "won": 0,
+    "revenue_eur": 0
+  },
+  "command_bridge": {
+    "unexpired_commands_consumed": 0,
+    "receipt_written": false,
+    "note": "All pending bridge commands expired; existing recovery receipt remains authoritative."
+  },
+  "canonical_updates": [
+    {
+      "opportunity_id": "OPP-ES-KABUKU-AGENCY-WEB-CAPACITY-2026",
+      "organization_id": "ORG-ES-KABUKU",
+      "organization": "Kabuku",
+      "country": "Spain",
+      "source_url": "https://kabuku.es/contacto/",
+      "verified_on": "2026-10-05",
+      "fit_score": 90,
+      "fit_reasons": [
+        "Explicit outsourcing/white-label agency route",
+        "Website conversion limitations are recognized in Kabuku's own campaign methodology",
+        "VDS WordPress/landing/WPO capability is complementary"
+      ],
+      "material_gaps": [
+        "No explicit current request for external web developers"
+      ],
+      "contact": "info@kabuku.es",
+      "manual_application_required": false,
+      "deadline": null,
+      "budget": null,
+      "next_action": "Wait for reply; if positive send one-page capacity fit and two examples",
+      "current_state": "PROVIDER_VERIFIED_FIRST_CONTACT",
+      "provider_uid": 761,
+      "variant": "VALUE_MICRO_COMMITMENT",
+      "novelty_state": "KNOWN_BACKLOG_CONVERTED_NOT_NEW_DISCOVERY"
+    },
+    {
+      "opportunity_id": "OPP-ES-DEADWOOD-COMPLEMENTARY-WEB-CAPACITY-2026",
+      "organization_id": "ORG-ES-DEADWOOD-STUDIO",
+      "organization": "Deadwood Studio",
+      "country": "Spain",
+      "source_url": "https://deadwood.es/partner-tecnico-agencias",
+      "verified_on": "2026-10-05",
+      "fit_score": 84,
+      "fit_reasons": [
+        "Explicit white-label/NDA agency collaboration",
+        "Custom software/backend/AI work complements VDS WordPress/front-end/WPO",
+        "Official direct collaboration email"
+      ],
+      "material_gaps": [
+        "Independent supplier rather than an evidenced buyer with active demand"
+      ],
+      "contact": "david@deadwood.es",
+      "manual_application_required": false,
+      "deadline": null,
+      "budget": null,
+      "next_action": "Wait for reply; if positive send two complementary references and availability",
+      "current_state": "PROVIDER_VERIFIED_FIRST_CONTACT",
+      "provider_uid": 762,
+      "variant": "CREDENTIALS_CLASSIC",
+      "novelty_state": "KNOWN_BACKLOG_CONVERTED_NOT_NEW_DISCOVERY"
+    }
+  ],
+  "decisions": [
+    {
+      "organization": "Doozy",
+      "domain": "doozy.it",
+      "outcome": "REJECT",
+      "reason": "Duplicate identity: Hostinger Sent already contains first contact UID 181 dated 2026-09-02. No resend."
+    },
+    {
+      "organization": "MameTech",
+      "domain": "mametech.com",
+      "outcome": "REJECT",
+      "reason": "Current official signal is supplier-side availability (10 days/month) rather than buyer-side demand; not suitable for another external-capacity pitch in this bounded cycle."
+    }
+  ],
+  "reply_monitoring": {
+    "entity": "alessandromatta.it",
+    "sender": "ale@alessandromatta.it",
+    "provider_inbound_uid": 1557,
+    "subject": "Re: Collaborazione tecnica web — Visual Design Studio",
+    "classification": "HUMAN_REPLY_UNCLASSIFIED",
+    "action_taken": "NONE",
+    "reason": "Reply body was no longer retrievable from the live mailbox by UID; no automatic follow-up or speculative classification."
+  },
+  "persistence": {
+    "provider_live_updated": true,
+    "global_ledger_updated": true,
+    "canonical_opportunities_created": 2,
+    "active_opportunity_view_merged": true,
+    "dashboard_refresh_triggered": true
+  }
+}
