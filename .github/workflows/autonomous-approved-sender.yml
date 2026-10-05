@@ -4,6 +4,9 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '2,7,12,17,22,27,32,37,42,47,52,57 * * * *'
+  workflow_run:
+    workflows: ["VDS Opportunity Queue Builder"]
+    types: [completed]
   push:
     branches: [main]
     paths:
@@ -22,6 +25,7 @@ concurrency:
 
 jobs:
   send-approved:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 8
     env:
@@ -38,6 +42,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
+          ref: main
           fetch-depth: 0
 
       - uses: actions/setup-python@v7
