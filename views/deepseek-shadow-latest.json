@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-05T14:23:49Z",
+  "updated_at": "2026-10-05T14:29:06Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1018,
+    "evaluated_total": 1019,
     "agreement_count": 487,
-    "agreement_pct": 47.84,
+    "agreement_pct": 47.79,
     "deepseek_promote": 32,
-    "vds_promote": 270,
+    "vds_promote": 271,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 242
+    "deepseek_demoted_from_vds_promote": 243
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.75,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.22,
+    "vds_promote_hot_rate_pct": 2.21,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.25,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 378,
-    "cumulative_estimated_cost_usd": 0.196747,
-    "cost_per_evaluated_candidate_usd": 0.00019327,
-    "cost_per_deepseek_promote_usd": 0.00614834,
-    "cost_per_observed_ready_or_contacted_usd": 0.09837343,
-    "latest_request": null
+    "request_count": 379,
+    "cumulative_estimated_cost_usd": 0.19695,
+    "cost_per_evaluated_candidate_usd": 0.00019328,
+    "cost_per_deepseek_promote_usd": 0.00615469,
+    "cost_per_observed_ready_or_contacted_usd": 0.09847497,
+    "latest_request": {
+      "at": "2026-10-05T14:29:03Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 403,
+      "completion_tokens": 172,
+      "total_tokens": 703,
+      "estimated_cost_usd": 0.00020308
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "98a84f10e934d74c86b4ee4acbd902a0",
-      "evaluated_at": "2026-10-03T12:11:22Z",
-      "organization": "Photoroom",
-      "title": "Senior Backend Engineer",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/photoroom/senior-backend-engineer-paris-30009",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Senior Backend Engineer at Photoroom, Paris; backend-focused role with only incidental frontend/migration keyword matches, no WordPress scope, and France-based location.",
-      "deepseek_risk_flags": [
-        "backend_core_role",
-        "geo_mismatch_france",
-        "no_wordpress_scope",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001461367,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "4d609ed7b80096b71368353fe96acd82",
       "evaluated_at": "2026-10-03T12:11:22Z",
@@ -1453,10 +1436,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "af51204ca21ae7579fb023c8c0f6be6c",
+      "evaluated_at": "2026-10-05T14:29:03Z",
+      "organization": "",
+      "title": "Senior Frontend Developer",
+      "location": "Malta",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.4,
+      "deepseek_primary_reason": "Senior Frontend Developer role with matched keywords (core web vitals, CSS, JS, UI/UX) and contract/contractor/partner intent hits, but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract terms, and location Malta with remote state unverified.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "employment_type_unspecified",
+        "remote_state_unverified",
+        "geo_malta_not_primary_market",
+        "contract_intent_terms_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020308,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-05T14:23:45Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-05T14:29:00Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
