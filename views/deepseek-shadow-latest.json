@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-05T16:13:50Z",
+  "updated_at": "2026-10-05T16:31:29Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1020,
-    "agreement_count": 487,
-    "agreement_pct": 47.75,
+    "evaluated_total": 1021,
+    "agreement_count": 488,
+    "agreement_pct": 47.8,
     "deepseek_promote": 32,
     "vds_promote": 271,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 380,
-    "cumulative_estimated_cost_usd": 0.197161,
+    "request_count": 381,
+    "cumulative_estimated_cost_usd": 0.197361,
     "cost_per_evaluated_candidate_usd": 0.0001933,
-    "cost_per_deepseek_promote_usd": 0.00616129,
-    "cost_per_observed_ready_or_contacted_usd": 0.09858058,
-    "latest_request": null
+    "cost_per_deepseek_promote_usd": 0.00616754,
+    "cost_per_observed_ready_or_contacted_usd": 0.09868069,
+    "latest_request": {
+      "at": "2026-10-05T16:31:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 423,
+      "completion_tokens": 161,
+      "total_tokens": 712,
+      "estimated_cost_usd": 0.00020022
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b5b1d57b66a5417988acb81f7e43958f",
-      "evaluated_at": "2026-10-03T12:11:22Z",
-      "organization": "Nous",
-      "title": "Product Engineer (all levels)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/nous/product-engineer-all-levels-london-351310",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.65,
-      "deepseek_primary_reason": "Product Engineer at Nous, London; only generic UX/website keyword matches, no WordPress/WooCommerce or explicit freelance scope, and UK geo mismatch.",
-      "deepseek_risk_flags": [
-        "geo_mismatch_uk",
-        "no_wordpress_scope",
-        "no_freelance_signal",
-        "generic_keyword_match"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001461367,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "24a61a92efaf0038dba2d0a85f029f8e",
       "evaluated_at": "2026-10-03T12:11:22Z",
@@ -1455,10 +1438,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "843b999b923405576af40b6092ee0b40",
+      "evaluated_at": "2026-10-05T16:31:26Z",
+      "organization": "Zeit Ai",
+      "title": "Growth Marketing Manager",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/zeit-ai/growth-marketing-manager-munich-407336",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is Growth Marketing Manager, a marketing function with no explicit web-development, WordPress, WooCommerce, or frontend scope; matched keywords (maintenance, ux, website) are incidental and do not indicate a web-dev opportunity.",
+      "deepseek_risk_flags": [
+        "role_function_mismatch",
+        "marketing_not_webdev",
+        "keyword_matches_incidental",
+        "no_explicit_freelance_signal",
+        "location_munich_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020022,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-05T16:13:45Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-05T16:31:23Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

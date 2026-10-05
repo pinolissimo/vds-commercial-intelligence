@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1052,
+  "runs": 1053,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -27961,6 +27961,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "843b999b923405576af40b6092ee0b40",
+      "evaluated_at": "2026-10-05T16:31:26Z",
+      "organization": "Zeit Ai",
+      "title": "Growth Marketing Manager",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/zeit-ai/growth-marketing-manager-munich-407336",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is Growth Marketing Manager, a marketing function with no explicit web-development, WordPress, WooCommerce, or frontend scope; matched keywords (maintenance, ux, website) are incidental and do not indicate a web-dev opportunity.",
+      "deepseek_risk_flags": [
+        "role_function_mismatch",
+        "marketing_not_webdev",
+        "keyword_matches_incidental",
+        "no_explicit_freelance_signal",
+        "location_munich_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020022,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -32523,9 +32552,21 @@
       "completion_tokens": 178,
       "total_tokens": 728,
       "estimated_cost_usd": 0.00021122
+    },
+    {
+      "at": "2026-10-05T16:31:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 423,
+      "completion_tokens": 161,
+      "total_tokens": 712,
+      "estimated_cost_usd": 0.00020022
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-05T16:13:48Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-05T16:31:26Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
