@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1062,
+  "runs": 1063,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -28131,6 +28131,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d3e619888b3630a00e6701cce1ad1efd",
+      "evaluated_at": "2026-10-05T23:01:18Z",
+      "organization": "Liftoff",
+      "title": "Staff Software Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/liftoff/staff-software-engineer-london-478724",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Staff Software Engineer role at Liftoff is a senior full-stack/software engineering position, not a freelance WordPress/WooCommerce/frontend web opportunity; only incidental CSS/JavaScript keyword matches and generic 'agency/collaboration/remote' terms appear, with no explicit freelance or contract demand.",
+      "deepseek_risk_flags": [
+        "senior full-time staff role, not freelance/contract",
+        "no WordPress/WooCommerce scope",
+        "keyword-only stack match (css, javascript)",
+        "generic collaboration/agency terms not proof of freelance compatibility",
+        "geo unverified (London, not Spain/Italy/EU-remote confirmed)"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00016901,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -32741,9 +32770,21 @@
       "completion_tokens": 221,
       "total_tokens": 785,
       "estimated_cost_usd": 0.00024268
+    },
+    {
+      "at": "2026-10-05T23:01:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 171,
+      "completion_tokens": 195,
+      "total_tokens": 750,
+      "estimated_cost_usd": 0.00016901
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-05T21:35:40Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-05T23:01:18Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
