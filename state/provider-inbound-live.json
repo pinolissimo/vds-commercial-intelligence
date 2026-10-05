@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-05T13:32:53Z",
-  "latest_checked_uid": 1560,
+  "updated_at": "2026-10-05T13:48:56Z",
+  "latest_checked_uid": 1561,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -936,6 +936,21 @@
       "classification": "BOUNCE",
       "subtype": "HARD_BOUNCE",
       "summary": "Provider delivery failure.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1561,
+      "received_at": "2026-10-05T13:40:05Z",
+      "canonical_identity_key": "org:mails.aklever.co",
+      "entity": "mails.aklever.co",
+      "sender": "support@mails.aklever.co",
+      "subject": "High DR Guest Post Websites at Affordable Prices",
+      "message_id": "<c722.469123a7-2861-431b-b7f8-50ec49952f3a@mails.aklever.co>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
