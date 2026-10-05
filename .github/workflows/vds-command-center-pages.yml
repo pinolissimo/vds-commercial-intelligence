@@ -1,3 +1,4 @@
+# Visual Design Studio — 2026
 name: VDS Command Center — Pages
 
 on:
@@ -35,6 +36,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -163,8 +166,15 @@ jobs:
       - name: Upload VDS Command Center shell
         uses: actions/upload-pages-artifact@v5
         with:
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
           path: .pages
+
+      - name: Allow Pages artifact metadata to settle
+        shell: bash
+        run: sleep 5
 
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
