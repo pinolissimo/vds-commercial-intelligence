@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-05T16:20:24+02:00",
+  "generated_at": "2026-10-05T16:22:45+02:00",
   "purpose": "Commercial prospect database organized by potential-customer type, country and region, including contacts, opportunities and anti-duplication state.",
   "anti_duplication_policy": {
     "rule": "NO_DUPLICATION",
@@ -10,7 +10,7 @@
     "canonical_organization": "HARD_BLOCK",
     "volume_can_never_bypass_dedup": true
   },
-  "count": 279,
+  "count": 280,
   "summary_by_type": [
     {
       "type": "WEB_DIGITAL_AGENCY",
@@ -50,9 +50,9 @@
     {
       "type": "SME_DIRECT_BUYER",
       "label": "SME / Direct Buyer",
-      "count": 34,
+      "count": 35,
       "contacted": 0,
-      "clear_for_first_contact": 34
+      "clear_for_first_contact": 35
     },
     {
       "type": "ECOMMERCE_RETAIL",
@@ -111,7 +111,7 @@
     },
     {
       "country": "Italy",
-      "count": 84
+      "count": 85
     },
     {
       "country": "Spain",
@@ -186,6 +186,11 @@
     },
     {
       "country": "Italy",
+      "region": "Sicilia",
+      "count": 2
+    },
+    {
+      "country": "Italy",
       "region": "Toscana",
       "count": 2
     },
@@ -212,11 +217,6 @@
     {
       "country": "Italy",
       "region": "Puglia",
-      "count": 1
-    },
-    {
-      "country": "Italy",
-      "region": "Sicilia",
       "count": 1
     },
     {
@@ -508,6 +508,7 @@
         "LEAD-ES-AN-AUTORIDAD-PORTUARIA-SEVILLA",
         "LEAD-ES-IB-ABAQUA",
         "LEAD-ES-CT-DIPUTACIO-BARCELONA",
+        "IT-SIC-CT-THE-WAVE",
         "opportunity:OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026",
         "opportunity:OPP-ES-DATASYSTEM-ELEMENTOR-FREELANCE-REMOTE-2026",
         "opportunity:OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026",
@@ -672,6 +673,7 @@
         "LEAD-IT-PIE-CN-DIGITYZE",
         "LEAD-IT-VEN-VR-DATO-DIGITALE",
         "LEAD-IT-LOM-MI-WALKSTONE",
+        "IT-SIC-CT-THE-WAVE",
         "LEAD-IT-LAZ-RM-GROWNNECTIA",
         "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026",
         "LEAD-IT-CAM-NA-DNAAGENCY",
@@ -929,6 +931,7 @@
         "LEAD-IT-PUG-BA-ROBERT-HALF-CONTRACTING"
       ],
       "Italy|Sicilia": [
+        "IT-SIC-CT-THE-WAVE",
         "LEAD-IT-SIC-PA-VISIONI"
       ],
       "Italy|Toscana": [
@@ -1973,7 +1976,9 @@
         "first_contact_allowed": false,
         "decision": "HARD_BLOCK_DUPLICATE",
         "reasons": [
-          "CONTACTED_STATE_FROM_COMPANY_PROJECTION"
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
         ]
       }
     },
@@ -2629,7 +2634,9 @@
         "first_contact_allowed": false,
         "decision": "HARD_BLOCK_DUPLICATE",
         "reasons": [
-          "CONTACTED_STATE_FROM_COMPANY_PROJECTION"
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
         ]
       }
     },
@@ -2680,7 +2687,9 @@
         "first_contact_allowed": false,
         "decision": "HARD_BLOCK_DUPLICATE",
         "reasons": [
-          "CONTACTED_STATE_FROM_COMPANY_PROJECTION"
+          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
         ]
       }
     },
@@ -3575,6 +3584,50 @@
       "source_urls": [
         "https://it.linkedin.com/jobs/view/senior-developer-freelance-remoto-non-esclusivo-at-maia-management-4414399787",
         "https://maiamanagement.it/"
+      ],
+      "anti_duplication": {
+        "first_contact_allowed": true,
+        "decision": "CLEAR_FOR_NEXT_GATES",
+        "reasons": []
+      }
+    },
+    {
+      "id": "IT-SIC-CT-THE-WAVE",
+      "organization": "The Wave",
+      "customer_type": "SME_DIRECT_BUYER",
+      "customer_type_label": "SME / Direct Buyer",
+      "country": "Italy",
+      "region": "Sicilia",
+      "territory": null,
+      "website": "https://www.thewavestudio.it/careers/wordpress-web-developer",
+      "domain": "thewavestudio.it",
+      "emails": [],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-IT-SIC-CT-THEWAVE-WORDPRESS-WEB-DEVELOPER-2026",
+          "title": "WordPress Web Developer — custom themes, UI and animation",
+          "status": "READY_TO_CONTACT_MANUAL_ROUTE",
+          "type": "ACTIVE_JOB_OR_STRUCTURAL_COLLABORATION",
+          "campaign_id": "VDS-JOB-FLOW-IT",
+          "detected_at": "2026-10-05T16:06:00+02:00",
+          "last_verified_at": "2026-10-05T16:20:32+02:00",
+          "priority": 92,
+          "fit": 92,
+          "freshness": 100,
+          "route_type": "DIRECT_EMAIL_WITH_REQUIRED_ATTACHMENTS",
+          "route_url": "mailto:careers@thewavestudio.it"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": 92,
+      "max_freshness": 100,
+      "contacted": false,
+      "last_outbound_at": null,
+      "last_subject": null,
+      "workstreams": [],
+      "source_urls": [
+        "https://www.thewavestudio.it/careers/wordpress-web-developer"
       ],
       "anti_duplication": {
         "first_contact_allowed": true,
