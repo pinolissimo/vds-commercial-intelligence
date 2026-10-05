@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-10-05T14:43:20Z",
+  "updated_at": "2026-10-05T14:50:00Z",
   "provider_of_record": "HOSTINGER_SENT",
   "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced/duplicate-policy-violation attempts remain audit-only and are never counted as successful first-contact outbound.",
   "events": [
@@ -3090,11 +3090,14 @@
       "subject": "re-invio email implementazioni.",
       "workstream": "VDS_PROVIDER_SYNC",
       "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
+      "action_type": "OPERATIONAL_RESEND",
       "attachments": 1,
       "bcc_owner": true,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1791211120962512868.1791211120@visualdesignstudio.es>"
+      "external_id": "<1791211120962512868.1791211120@visualdesignstudio.es>",
+      "count_as_successful_outbound": true,
+      "classification_basis": "SUBJECT_REINVIO_PLUS_EXISTING_IMPLEMENTATION_CONTEXT",
+      "classification_corrected_at": "2026-10-05T14:50:00Z"
     },
     {
       "provider_uid": 761,
@@ -3119,16 +3122,22 @@
       "provider_uid": 762,
       "sent_at": "2026-10-05T14:43:20Z",
       "canonical_identity_key": "org:deadwood.es",
-      "organization": "deadwood.es",
+      "organization": "Deadwood Studio",
       "recipient": "david@deadwood.es",
       "subject": "Colaboración complementaria web/WordPress en marca blanca",
-      "workstream": "VDS_PROVIDER_SYNC",
+      "workstream": "UNIFIED_LOOP",
       "state": "VERIFIED_EMAIL_SENT",
       "action_type": "FIRST_CONTACT",
       "attachments": 0,
-      "bcc_owner": false,
+      "bcc_owner": true,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1791211398683820529.1791211398@visualdesignstudio.es>"
+      "external_id": "<1791211398683820529.1791211398@visualdesignstudio.es>",
+      "canonical_organization_id": "ORG-ES-DEADWOOD-STUDIO",
+      "corporate_domain": "deadwood.es",
+      "archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "variant": "CREDENTIALS_CLASSIC",
+      "micro_cta_type": "SEND_TWO_REFERENCES_AND_AVAILABILITY",
+      "count_as_successful_outbound": true
     }
   ],
   "last_sync_reason": "UNIFIED_LOOP_PROVIDER_VERIFIED_SEND",
