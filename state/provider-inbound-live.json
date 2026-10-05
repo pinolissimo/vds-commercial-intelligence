@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-05T11:52:31Z",
-  "latest_checked_uid": 1555,
+  "updated_at": "2026-10-05T12:07:59Z",
+  "latest_checked_uid": 1556,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -877,6 +877,21 @@
       "subtype": "HARD_BOUNCE",
       "summary": "Provider delivery failure.",
       "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1556,
+      "received_at": "2026-10-05T12:07:02Z",
+      "canonical_identity_key": "org:homeofbranding.com",
+      "entity": "homeofbranding.com",
+      "sender": "admin@homeofbranding.com",
+      "subject": "Re: External web development capacity — Visual Design Studio",
+      "message_id": "<CAGsqVT4HjcUNvZg85XWL4_9xx2UftvMq3tWDN+vPnQ0qXAg9nA@mail.gmail.com>",
+      "in_reply_to": "<1791201055679273648.1791201055@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
   ]
