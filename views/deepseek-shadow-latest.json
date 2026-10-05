@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-05T15:42:31Z",
+  "updated_at": "2026-10-05T16:00:57Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1019,
+    "evaluated_total": 1020,
     "agreement_count": 487,
-    "agreement_pct": 47.79,
+    "agreement_pct": 47.75,
     "deepseek_promote": 32,
     "vds_promote": 271,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 379,
-    "cumulative_estimated_cost_usd": 0.19695,
-    "cost_per_evaluated_candidate_usd": 0.00019328,
-    "cost_per_deepseek_promote_usd": 0.00615469,
-    "cost_per_observed_ready_or_contacted_usd": 0.09847497,
-    "latest_request": null
+    "request_count": 380,
+    "cumulative_estimated_cost_usd": 0.197161,
+    "cost_per_evaluated_candidate_usd": 0.0001933,
+    "cost_per_deepseek_promote_usd": 0.00616129,
+    "cost_per_observed_ready_or_contacted_usd": 0.09858058,
+    "latest_request": {
+      "at": "2026-10-05T16:00:52Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 422,
+      "completion_tokens": 178,
+      "total_tokens": 728,
+      "estimated_cost_usd": 0.00021122
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4d609ed7b80096b71368353fe96acd82",
-      "evaluated_at": "2026-10-03T12:11:22Z",
-      "organization": "Bloomreach",
-      "title": "Demo Engineer",
-      "location": "Slovakia",
-      "opportunity_url": "https://jobicy.com/jobs/151773-demo-engineer-2",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 48.0,
-      "deepseek_confidence": 0.5,
-      "deepseek_primary_reason": "Demo Engineer at Bloomreach, Slovakia remote; JavaScript/UX/website keywords and remote/agency/partner commercial terms suggest possible external collaboration, but no explicit WordPress/WooCommerce scope or confirmed freelance contract.",
-      "deepseek_risk_flags": [
-        "no_wordpress_scope",
-        "freelance_compatibility_unverified",
-        "geo_to_verify"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001461367,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b5b1d57b66a5417988acb81f7e43958f",
       "evaluated_at": "2026-10-03T12:11:22Z",
@@ -1454,10 +1438,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d274ff9362b0756850930a48691c0a84",
+      "evaluated_at": "2026-10-05T16:00:52Z",
+      "organization": "Sanovio",
+      "title": "Founding Engineer",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/sanovio/founding-engineer-munich-68321",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.62,
+      "deepseek_primary_reason": "'Founding Engineer' at a Munich startup is a broad early-stage engineering role, not a freelance web-development opportunity; matched keywords (frontend, ux) are generic and the 'agency/collaboration' commercial hits are not evidence of external freelance compatibility.",
+      "deepseek_risk_flags": [
+        "founding_engineer_likely_full_time_equity_role",
+        "no_explicit_freelance_or_contract_terms",
+        "stack_fit_unverified",
+        "geo_bucket_EU_REMOTE_TO_VERIFY_unconfirmed"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00021122,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-05T15:42:25Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-05T16:00:47Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
