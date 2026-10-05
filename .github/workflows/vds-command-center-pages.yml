@@ -2,10 +2,15 @@ name: VDS Command Center — Pages
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["VDS Command Center — Projections"]
+    types: [completed]
   push:
     branches: [main]
     paths:
       - 'command-center/**'
+      - 'api/v1/**'
+      - 'views/acquisition-performance.json'
       - 'scripts/prepare_command_center_assets.py'
       - 'scripts/test_command_center_invariants.py'
       - 'config/sender-settings.json'
@@ -24,6 +29,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -32,6 +38,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          ref: main
 
       - name: Stage static VDS shell only
         shell: bash
