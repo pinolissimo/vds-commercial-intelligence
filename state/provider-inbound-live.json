@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-05T13:30:48Z",
-  "latest_checked_uid": 1558,
+  "updated_at": "2026-10-05T13:32:53Z",
+  "latest_checked_uid": 1560,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -922,6 +922,21 @@
       "subtype": "HUMAN_REPLY_UNCLASSIFIED",
       "summary": "Human reply detected; semantic classification pending.",
       "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1560,
+      "received_at": "2026-10-05T13:32:18Z",
+      "canonical_identity_key": "org:googlemail.com",
+      "entity": "googlemail.com",
+      "sender": "mailer-daemon@googlemail.com",
+      "subject": "Delivery Status Notification (Failure)",
+      "message_id": "<6ac3a6e2.cf488394.229ac7.92a0.GMR@mx.google.com>",
+      "in_reply_to": "<1791207120895289353.1791207120@visualdesignstudio.es>",
+      "classification": "BOUNCE",
+      "subtype": "HARD_BOUNCE",
+      "summary": "Provider delivery failure.",
+      "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
   ]
