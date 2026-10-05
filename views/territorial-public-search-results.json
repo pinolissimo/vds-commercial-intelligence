@@ -1,18 +1,18 @@
 {
   "schema_version": "2.0",
-  "updated_at": "2026-10-05T16:10:18Z",
-  "run_id": "territorial-par-1791216600",
+  "updated_at": "2026-10-05T16:14:02Z",
+  "run_id": "territorial-par-1791216832",
   "parallel": true,
   "worker_count": 10,
   "cursor_start_index": 10,
   "cursor_next_index": 10,
-  "source_plan_updated_at": "2026-10-05T16:10:00Z",
+  "source_plan_updated_at": "2026-10-05T16:13:52Z",
   "provider": "ddgs_multi_engine",
   "missions_attempted": 30,
   "missions_completed": 4,
   "missions_failed": 26,
-  "result_count": 20,
-  "unique_domains": 14,
+  "result_count": 21,
+  "unique_domains": 18,
   "policy": "PARALLEL_DISCOVERY_ONLY_FIRST_PARTY_VERIFICATION_REQUIRED",
   "missions": [
     {
@@ -25,9 +25,9 @@
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 5.44,
+      "elapsed_seconds": 2.53,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:TimeoutException",
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
@@ -40,24 +40,24 @@
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 5.29,
+      "elapsed_seconds": 2.78,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:TimeoutException",
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
       "mission_id": "5970722-4-0",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
+      "region": "Marche",
+      "locality": "Macerata",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"outsourcing sviluppo web\" agenzia Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"outsourcing sviluppo web\" agenzia Macerata Marche -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 4.52,
+      "elapsed_seconds": 2.42,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:TimeoutException",
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
@@ -70,7 +70,7 @@
       "variant": "base_precision",
       "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 3.38,
+      "elapsed_seconds": 0.67,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -85,7 +85,7 @@
       "variant": "base_precision",
       "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 3.48,
+      "elapsed_seconds": 0.78,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -93,14 +93,14 @@
     {
       "mission_id": "5970722-4-1",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
+      "region": "Marche",
+      "locality": "Macerata",
       "segment": "EU_PROJECT",
       "query": "\"communication dissemination\" consortium Italy \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 3.47,
+      "elapsed_seconds": 0.49,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -114,24 +114,11 @@
       "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Sevilla Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 3,
-      "state": "COMPLETED",
-      "elapsed_seconds": 1.68,
-      "result_count": 2,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "WebProveedorWeb - Carrefour",
-          "url": "https://proveedores.es.carrefour.com/ProveedoresSFWeb/PORTAL/web/jsp/home.jsp",
-          "domain": "proveedores.es.carrefour.com",
-          "body": "The Carrefour WebProveedorWeb platform provides a dedicated portal for suppliers to access essential tools and resources for managing their partnership with Carrefour."
-        },
-        {
-          "title": "Saber hosting de una web - dónde está alojado un sitio web ...",
-          "url": "https://es.hostadvice.com/tools/whois/",
-          "domain": "es.hostadvice.com",
-          "body": "Are you interested in detailed ownership and hosting information about a website? Our WhoIs web hosting checker tool will grant it to you fast and for free!"
-        }
-      ]
+      "state": "FAILED",
+      "elapsed_seconds": 4.86,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
+      "results": []
     },
     {
       "mission_id": "5970722-2-2",
@@ -142,25 +129,62 @@
       "query": "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 3,
-      "state": "FAILED",
-      "elapsed_seconds": 4.51,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:TimeoutException,brave:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.43,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Directorio o listado de empresas de Bilbao - Vizcaya - eInforma",
+          "url": "https://www.einforma.com/informes-empresas/VIZCAYA/Bilbao.html",
+          "domain": "einforma.com",
+          "body": "Acceda al directorio de empresas de Bilbao - Vizcaya y consulte informes de la empresas presentes, datos de contacto, informes financieros, comerciales."
+        },
+        {
+          "title": "Diseño web en Bilbao y Bizkaia para pymes | Efecto Viva",
+          "url": "https://efectoviva.com/",
+          "domain": "efectoviva.com",
+          "body": "Diseñamos webs rápidas, claras y orientadas a conseguir contactos para autónomos y pymes de Bilbao y Bizkaia. Desde 500 € + IVA."
+        },
+        {
+          "title": "Ranking de Empresas en Bizkaia | Ranking Empresas",
+          "url": "https://ranking-empresas.eleconomista.es/empresas-VIZCAYA.html",
+          "domain": "ranking-empresas.eleconomista.es",
+          "body": "Descubra el Ranking de empresas de Bizkaia por facturación. Conozca el Ranking de las mejores empresas españolas en Ranking Empresas."
+        },
+        {
+          "title": "Cámarabilbao | Cámara de Comercio de Bilbao",
+          "url": "https://www.camarabilbao.com/",
+          "domain": "camarabilbao.com",
+          "body": "Sep 21, 2026 · Acompañamos a las empresas de Bizkaia en la implementación de estrategias sostenibles que impulsen su crecimiento y competitividad a través de la innovación, generando empleo, bienestar y, en definitiva, creando valor para la sociedad."
+        },
+        {
+          "title": "Ranking de empresas | Crónica Vasca",
+          "url": "https://cronicavasca.elespanol.com/ranking-empresas/",
+          "domain": "cronicavasca.elespanol.com",
+          "body": "LAS 1.500 PRINCIPALES EMPRESAS DEL PAÍS VASCO Ranking de sociedades con los principales datos *Clasificación obtenida de datos oficiales de los registros mercantiles"
+        },
+        {
+          "title": "Listado de empresas en Bilbao - Informa",
+          "url": "https://www.informa.es/directorio-empresas/Localidad_VIZCAYA.html",
+          "domain": "informa.es",
+          "body": "Accede al listado de empresas más amplio de Bilbao y consulta su situación mercantil, financiera o sus datos de contacto."
+        }
+      ]
     },
     {
       "mission_id": "5970722-4-2",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
+      "region": "Marche",
+      "locality": "Macerata",
       "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Macerata Marche -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 3,
       "state": "FAILED",
-      "elapsed_seconds": 4.74,
+      "elapsed_seconds": 2.41,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:TimeoutException,brave:DDGSException",
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
       "results": []
     },
     {
@@ -173,7 +197,7 @@
       "variant": "base_precision",
       "worker_id": 4,
       "state": "FAILED",
-      "elapsed_seconds": 3.34,
+      "elapsed_seconds": 0.6,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
@@ -187,23 +211,48 @@
       "query": "\"subcontratación\" desarrollo web agencia Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 4,
-      "state": "FAILED",
-      "elapsed_seconds": 3.36,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.0,
+      "result_count": 4,
+      "backend_used": "duckduckgo",
+      "results": [
+        {
+          "title": "Las mejores 100 empresas para la subcontratación de servicios de ...",
+          "url": "https://www.q2bstudio.com/nuestro-blog/279277/descubre-las-mejores-empresas-de-programacion-en-bilbao",
+          "domain": "q2bstudio.com",
+          "body": "Bilbao se ha convertido en un polo clave para la subcontratación de servicios de programación, donde empresas locales e internacionales contribuyen a la excelencia operativa y a la innovación digital. Presentamos un directorio extenso con las mejores 100 empresas para la subcontratación de servicios de programación en Bilbao, agrupando desde consultoras globales hasta estudios ..."
+        },
+        {
+          "title": "Subcontratación | Bilbao Exhibition Centre | BEC",
+          "url": "https://subcontratacion.bilbaoexhibitioncentre.com/",
+          "domain": "subcontratacion.bilbaoexhibitioncentre.com",
+          "body": "Subcontratación es la feria Internacional de procesos y equipos para la fabricación, que tiene lugar en BEC bilbao."
+        },
+        {
+          "title": "Subcontratación. Feria Internacional de los Procesos y Suministros ...",
+          "url": "https://www.linkedin.com/showcase/subcontratación",
+          "domain": "linkedin.com",
+          "body": "Subcontratación 2027 está organizado por Bilbao Exhibition Centre y cuenta con Diputación Foral de Bizkaia y SPRI - Gobierno Vasco como partners institucionales."
+        },
+        {
+          "title": "Empresas de Agencias de subcontratación en Bizkaia / Vizcaya ...",
+          "url": "https://es.kompass.com/a/agencias-de-subcontratacion/80980/d/bizkaia-vizcaya/es_16_48/",
+          "domain": "es.kompass.com",
+          "body": "Accesos rápidos: Proveedores globales Importadores Exportadores Fabricante Distribuidor Proveedor de servicios Refinar mi búsqueda: Volver Lista de resultados para : Bizkaia / Vizcaya Busca un producto Proveedores certificados Ver los productos premium Conoce a nuestras Empresas certificadas Internacionales Búsqueda Avanzada 2 Empresas Obtener lista completa Descubre nuestras Empresas de ..."
+        }
+      ]
     },
     {
       "mission_id": "5970722-4-3",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
+      "region": "Marche",
+      "locality": "Macerata",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"collaboratori freelance\" web agency Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"collaboratori freelance\" web agency Macerata Marche -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 4,
       "state": "FAILED",
-      "elapsed_seconds": 3.28,
+      "elapsed_seconds": 0.43,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
@@ -218,16 +267,10 @@
       "variant": "base_precision",
       "worker_id": 5,
       "state": "COMPLETED",
-      "elapsed_seconds": 1.67,
-      "result_count": 6,
+      "elapsed_seconds": 2.12,
+      "result_count": 5,
       "backend_used": "bing",
       "results": [
-        {
-          "title": "SEED Project Presented at the Erasmus+ Project Dissemination ...",
-          "url": "https://epale.ec.europa.eu/en/content/seed-project-presented-erasmus-project-dissemination-day-2026-vitoria-gasteiz",
-          "domain": "epale.ec.europa.eu",
-          "body": "May 8, 2026 · During the dissemination sessions, more than 55 Erasmus+ initiatives from the Basque VET network were presented, creating an inspiring environment for collaboration, networking and the exchange of good practices."
-        },
         {
           "title": "Projects - Erasmus+",
           "url": "https://erasmus-plus.ec.europa.eu/projects",
@@ -241,22 +284,22 @@
           "body": "Today, the European Commission allocated an additional €500 million to Horizon Europe, the EU's flagship research and innovation programme, for 2026 and 2027. With this additional amount, the total budget reaches now around €14.8 billion for the two years."
         },
         {
-          "title": "Dissemination Spain | European School Education Platform",
-          "url": "https://school-education.ec.europa.eu/en/etwinning/projects/ar-li-artificial-intelligence-literacy/twinspace/pages/dissemination-spain",
-          "domain": "school-education.ec.europa.eu",
-          "body": "Dissemination Spain Created by José Manuel Pulido Last updated by José Manuel Pulido 1 week 1 day ago"
-        },
-        {
           "title": "2026 annual work programme for the implementation ... - Erasmus+",
           "url": "https://erasmus-plus.ec.europa.eu/resources-and-tools/documents-and-guidelines/2026-annual-work-programme-for-the-implementation-of-erasmus-the-union-programme-for-education-training-youth-and-sport",
           "domain": "erasmus-plus.ec.europa.eu",
           "body": "Nov 10, 2025 · 2026 annual work programme for the implementation of Erasmus+: the Union Programme for Education, Training, Youth and Sport Published alongside the Implementing Decision."
         },
         {
-          "title": "Dissemination and exploitation of research results",
-          "url": "https://research-and-innovation.ec.europa.eu/strategy/dissemination-and-exploitation-research-results_en",
-          "domain": "research-and-innovation.ec.europa.eu",
-          "body": "To help you effectively share and utilize your project results in line with the dissemination and exploitation strategy, the European Commission provides two distinct, specialized platforms tailored to the specific nature of your results:"
+          "title": "Find EU funded projects in education - European Commission",
+          "url": "https://commission.europa.eu/education/set-projects-education-and-training/find-funded-projects_en",
+          "domain": "commission.europa.eu",
+          "body": "Erasmus+ Project Results Platform is a database which gives you access to descriptions, results and contact information of all projects funded under the Erasmus+ programme and some of the projects funded under its predecessor programmes in the field of education, training, youth and sports."
+        },
+        {
+          "title": "CORDIS | European Commission",
+          "url": "https://cordis.europa.eu/",
+          "domain": "cordis.europa.eu",
+          "body": "CORDIS belongs to the Research and Innovation community platform of the European Commission and complements the Funding and tender opportunities website, where you can apply for funding and search for partners."
         }
       ]
     },
@@ -270,62 +313,25 @@
       "variant": "base_precision",
       "worker_id": 5,
       "state": "FAILED",
-      "elapsed_seconds": 4.65,
+      "elapsed_seconds": 2.7,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:TimeoutException",
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
       "mission_id": "5970722-4-4",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
+      "region": "Marche",
+      "locality": "Macerata",
       "segment": "EU_PROJECT",
       "query": "Interreg project Italy \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 5,
-      "state": "COMPLETED",
-      "elapsed_seconds": 1.57,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Italy | Interreg Europe",
-          "url": "https://www.interregeurope.eu/italy",
-          "domain": "interregeurope.eu",
-          "body": "This page contains information about the country's involvement in the programme and project control system in Italy. You may also speak directly with the Interreg Europe representatives in Italy. Discover the latest news and upcoming events from Italy."
-        },
-        {
-          "title": "From dialogue to action: the 2nd Interreg Euro-MED Italy ...",
-          "url": "https://natural-heritage.interreg-euro-med.eu/2026/06/22/from-dialogue-to-action-the-2nd-interreg-euro-med-italy-forum-sets-a-clear-path-forward/",
-          "domain": "natural-heritage.interreg-euro-med.eu",
-          "body": "Jun 22, 2026 · The 2nd Interreg Euro-MED Italy Forum successfully concluded on Friday, May 15, 2026, in Rome at the FH55 Grand Hotel Palatino."
-        },
-        {
-          "title": "Home - Interreg EU",
-          "url": "https://interreg.eu/?s=2026",
-          "domain": "interreg.eu",
-          "body": "Stay informed about the latest Interreg developments across Europe and beyond. Explore news, success stories and opportunities that support collaboration and innovation."
-        },
-        {
-          "title": "News Interreg IT-AT Projects of the 3rd call selected ...",
-          "url": "https://interreg.net/en/news-italy-austria/projects-of-the-3rd-call-selected/",
-          "domain": "interreg.net",
-          "body": "The Steering Committee, which met on 28 and 29 January 2026 in Neustift, agreed to finance 26 cross-border cooperation projects. Within the framework of the 3rd and final call for project proposals, open from 25 March to 1 July 2025, a total of 52 projects were submitted."
-        },
-        {
-          "title": "SIRM | SIRM - Dissemination Event (Italy) | Interreg Europe",
-          "url": "https://www.interregeurope.eu/sirm/news-and-events/news/sirm-dissemination-event-italy",
-          "domain": "interregeurope.eu",
-          "body": "On 20 February 2026, the Municipality of Brindisi organized a dissemination and communication event within the framework of the SIRM Project, focused on raising awareness on migrant inclusion and strengthening local capacities to develop more effective and inclusive educational policies."
-        },
-        {
-          "title": "Homepage | Interreg IPA South Adriatic",
-          "url": "https://southadriatic.eu/",
-          "domain": "southadriatic.eu",
-          "body": "Sep 21, 2026 · This website has been co-funded by the European Union through Interreg IPA South Adriatic Programme. Its content is the sole responsibility of the Interreg IPA South Adriatic Programme and can under no circumstances be regarded as reflecting the position of the European Commission."
-        }
-      ]
+      "state": "FAILED",
+      "elapsed_seconds": 2.37,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "results": []
     },
     {
       "mission_id": "5970722-1-0",
@@ -337,7 +343,7 @@
       "variant": "base_precision",
       "worker_id": 6,
       "state": "FAILED",
-      "elapsed_seconds": 3.42,
+      "elapsed_seconds": 0.63,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -345,14 +351,14 @@
     {
       "mission_id": "5970722-3-0",
       "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
+      "region": "Piemonte",
+      "locality": "Torino",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "web agency wordpress ecommerce Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "web agency wordpress ecommerce Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 6,
       "state": "FAILED",
-      "elapsed_seconds": 3.34,
+      "elapsed_seconds": 1.03,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -360,14 +366,14 @@
     {
       "mission_id": "5970722-5-0",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Novara",
+      "region": "Lombardia",
+      "locality": "Milano",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"lavora con noi\" \"sviluppatore web\" freelance Novara Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"lavora con noi\" \"sviluppatore web\" freelance Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 6,
       "state": "FAILED",
-      "elapsed_seconds": 3.48,
+      "elapsed_seconds": 0.56,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -381,77 +387,77 @@
       "query": "Interreg project Spain \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 7,
-      "state": "COMPLETED",
-      "elapsed_seconds": 4.03,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Spain | Interreg Europe",
-          "url": "https://www.interregeurope.eu/spain",
-          "domain": "interregeurope.eu",
-          "body": "This page contains information about the country's involvement in the programme and about the project control system in Spain. You may also speak directly with the Interreg Europe representatives in Spain. Discover the latest news and upcoming events from Spain."
-        },
-        {
-          "title": "Project communication | Interreg Europe",
-          "url": "https://www.interregeurope.eu/help-centre/implement-your-project/project-communication",
-          "domain": "interregeurope.eu",
-          "body": "Your project's news and events are, by default, published on your project website. But you can ask the joint secretariat to promote your content on the programme homepage to make it more visible."
-        },
-        {
-          "title": "Home - Interreg EU",
-          "url": "https://interreg.eu/",
-          "domain": "interreg.eu",
-          "body": "Stay informed about the latest Interreg developments across Europe and beyond. Explore news, success stories and opportunities that support collaboration and innovation."
-        },
-        {
-          "title": "I-ReWater enters its final year of implementation in 2026 ...",
-          "url": "https://interreg-sudoe.eu/en/noticia-proyecto/i-rewater-enters-its-final-year-of-implementation-in-2026-with-an-extensive-international-events-agenda/",
-          "domain": "interreg-sudoe.eu",
-          "body": "Jan 21, 2026 · The I-ReWater project enters its final year of implementation in 2026 with an agenda marked by international congresses, strategic meetings and dissemination activities in Spain, Portugal and France."
-        },
-        {
-          "title": "Guide for programmes 2026 - presidencia.gva.es",
-          "url": "https://presidencia.gva.es/documents/90598251/372597693/Interreg+Cooperation+Day+Guide+2026.pdf/5d52a08f-4830-977b-75b2-45daff3b745e?t=1779172420681",
-          "domain": "presidencia.gva.es",
-          "body": "reg Cooperation Day 2026. Everything you need to plan, promote and deliver a meaningful event is here: from creative inspiration and planning tips to communication too."
-        },
-        {
-          "title": "Calls for Projects - Interreg EU",
-          "url": "https://interreg.eu/calls-for-projects/",
-          "domain": "interreg.eu",
-          "body": "3 days ago · Interreg projects follow a clear application process, from idea to submitting a proposal through an open call. While programmes define their own rules, the steps below show what is common across Interreg."
-        }
-      ]
+      "state": "FAILED",
+      "elapsed_seconds": 2.14,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
+      "results": []
     },
     {
       "mission_id": "5970722-3-1",
       "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
+      "region": "Piemonte",
+      "locality": "Torino",
       "segment": "EU_PROJECT",
       "query": "site:europa.eu project dissemination website Italy kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 7,
-      "state": "FAILED",
-      "elapsed_seconds": 4.61,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:TimeoutException,brave:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.48,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Projects & results | CORDIS | European Commission",
+          "url": "https://cordis.europa.eu/projects",
+          "domain": "cordis.europa.eu",
+          "body": "Access detailed information about all these projects, download entire framework programmes' data as open data, read articles highlighting key projects, and explore interactive maps showing project connections and advanced dashboards for deeper analysis."
+        },
+        {
+          "title": "Dissemination and exploitation - European Research Executive ...",
+          "url": "https://rea.ec.europa.eu/dissemination-and-exploitation_en",
+          "domain": "rea.ec.europa.eu",
+          "body": "Check out our Guide on communication, dissemination and exploitation to better understand the differences between these three concepts and get acquainted with the different European Commission tools that can support your project."
+        },
+        {
+          "title": "Dissemination and exploitation of research results",
+          "url": "https://research-and-innovation.ec.europa.eu/strategy/dissemination-and-exploitation-research-results_en",
+          "domain": "research-and-innovation.ec.europa.eu",
+          "body": "To help you effectively share and utilize your project results in line with the dissemination and exploitation strategy, the European Commission provides two distinct, specialized platforms tailored to the specific nature of your results:"
+        },
+        {
+          "title": "SEED Project Presented at the Erasmus+ Project Dissemination ...",
+          "url": "https://epale.ec.europa.eu/en/content/seed-project-presented-erasmus-project-dissemination-day-2026-vitoria-gasteiz",
+          "domain": "epale.ec.europa.eu",
+          "body": "May 8, 2026 · During the dissemination sessions, more than 55 Erasmus+ initiatives from the Basque VET network were presented, creating an inspiring environment for collaboration, networking and the exchange of good practices."
+        },
+        {
+          "title": "Project dissemination | IHI Innovative Health Initiative",
+          "url": "https://www.ihi.europa.eu/resources-projects/project-dissemination",
+          "domain": "ihi.europa.eu",
+          "body": "These provide an overview of the rules related to the dissemination of results that apply to each programme, together with tips and links to help you prepare and report on dissemination activities."
+        },
+        {
+          "title": "International Conference on Research Infrastructures (ICRI ...",
+          "url": "https://cordis.europa.eu/project/id/101261024",
+          "domain": "cordis.europa.eu",
+          "body": "Nov 29, 2025 · Led by the Consiglio Nazionale delle Ricerche (CNR), the largest public research institution in Italy, the event will collaborate with Italy’s Ministry of University and Research and the European Commission."
+        }
+      ]
     },
     {
       "mission_id": "5970722-5-1",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Novara",
+      "region": "Lombardia",
+      "locality": "Milano",
       "segment": "EU_PROJECT",
       "query": "\"Horizon Europe\" kickoff 2026 Italy \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 7,
       "state": "FAILED",
-      "elapsed_seconds": 5.04,
+      "elapsed_seconds": 1.79,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:TimeoutException,brave:DDGSException",
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
       "results": []
     },
     {
@@ -464,7 +470,7 @@
       "variant": "base_precision",
       "worker_id": 8,
       "state": "FAILED",
-      "elapsed_seconds": 3.39,
+      "elapsed_seconds": 0.54,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
@@ -472,29 +478,29 @@
     {
       "mission_id": "5970722-3-2",
       "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
+      "region": "Piemonte",
+      "locality": "Torino",
       "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 8,
       "state": "FAILED",
-      "elapsed_seconds": 3.42,
+      "elapsed_seconds": 1.33,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "error": "RuntimeError: No usable URL results; google:DDGSException",
       "results": []
     },
     {
       "mission_id": "5970722-5-2",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Novara",
+      "region": "Lombardia",
+      "locality": "Milano",
       "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Novara Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 8,
       "state": "FAILED",
-      "elapsed_seconds": 3.51,
+      "elapsed_seconds": 0.56,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
@@ -509,39 +515,39 @@
       "variant": "base_precision",
       "worker_id": 9,
       "state": "FAILED",
-      "elapsed_seconds": 7.23,
+      "elapsed_seconds": 2.46,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:TimeoutException",
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
       "mission_id": "5970722-3-3",
       "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
+      "region": "Piemonte",
+      "locality": "Torino",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"sviluppo web per agenzie\" Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"sviluppo web per agenzie\" Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 9,
       "state": "FAILED",
-      "elapsed_seconds": 4.96,
+      "elapsed_seconds": 2.6,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:TimeoutException",
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
       "mission_id": "5970722-5-3",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Novara",
+      "region": "Lombardia",
+      "locality": "Milano",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"collaborazione continuativa\" freelance wordpress Novara Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"collaborazione continuativa\" freelance wordpress Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 9,
       "state": "FAILED",
-      "elapsed_seconds": 5.15,
+      "elapsed_seconds": 2.28,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:TimeoutException",
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
@@ -554,7 +560,7 @@
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
-      "elapsed_seconds": 3.4,
+      "elapsed_seconds": 0.62,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -562,14 +568,14 @@
     {
       "mission_id": "5970722-3-4",
       "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
+      "region": "Piemonte",
+      "locality": "Torino",
       "segment": "EU_PROJECT",
       "query": "site:cordis.europa.eu/project \"Start date\" 2026 Italy Horizon \"communication\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
-      "elapsed_seconds": 3.54,
+      "elapsed_seconds": 0.82,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
@@ -577,14 +583,14 @@
     {
       "mission_id": "5970722-5-4",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Novara",
+      "region": "Lombardia",
+      "locality": "Milano",
       "segment": "EU_PROJECT",
       "query": "Horizon project \"communication and dissemination\" Italy website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
-      "elapsed_seconds": 3.41,
+      "elapsed_seconds": 0.49,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
