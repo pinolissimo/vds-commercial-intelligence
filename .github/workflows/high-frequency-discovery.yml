@@ -1,4 +1,5 @@
 name: VDS High-Frequency Discovery Fanout
+# Visual Design Studio — 2026
 
 on:
   schedule:
@@ -163,6 +164,7 @@ jobs:
             python scripts/buyer_intent_ranker.py || echo "WARN buyer-intent ranker failed; preserve last good ranking"
             python scripts/opportunity_first_optimizer.py || echo "WARN opportunity-first optimizer failed"
             python scripts/acquisition_performance_optimizer.py || echo "WARN acquisition optimizer failed"
+            python scripts/white_label_ready_builder.py || echo "WARN white-label queue refresh failed"
             python scripts/search_mission_planner.py || echo "WARN mission planner failed"
             python scripts/multi_engine_query_router.py || echo "WARN multi-engine router failed"
             python scripts/territorial_mission_executor.py || echo "WARN territorial executor failed"
