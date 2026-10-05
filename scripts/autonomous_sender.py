@@ -140,6 +140,8 @@ def main():
     idempotency_enabled=bool(safety.get("idempotency_enabled",True))
     candidates=[]
     rejected=[]
+    batch_exact=set()
+    batch_domains=set()
     for item in queue:
         if item.get("status") not in accepted_statuses:
             continue
@@ -162,10 +164,16 @@ def main():
         if dedup_enabled and item.get("action_type","FIRST_CONTACT")=="FIRST_CONTACT" and (recipient in exact or domain in domains):
             rejected.append({"queue_id":item.get("queue_id"),"reason":"GLOBAL_DEDUP_BLOCK"})
             continue
+        if dedup_enabled and item.get("action_type","FIRST_CONTACT")=="FIRST_CONTACT" and (recipient in batch_exact or domain in batch_domains):
+            rejected.append({"queue_id":item.get("queue_id"),"reason":"BATCH_DEDUP_BLOCK"})
+            continue
         if not item.get("subject") or not item.get("text"):
             rejected.append({"queue_id":item.get("queue_id"),"reason":"MISSING_MESSAGE"})
             continue
         candidates.append((item,key,domain))
+        if item.get("action_type","FIRST_CONTACT")=="FIRST_CONTACT":
+            batch_exact.add(recipient)
+            batch_domains.add(domain)
         if len(candidates)>=max_batch: break
 
     if provider!="HOSTINGER_API":
@@ -173,7 +181,7 @@ def main():
         user=os.environ["VDS_SMTP_USER"];password=os.environ["VDS_SMTP_PASSWORD"]
         from_addr=os.environ["VDS_SMTP_FROM"]
     message_cfg=settings.get("message") or {}
-    bcc=os.getenv(str(message_cfg.get("owner_bcc_env") or "VDS_OWNER_BCC")) if message_cfg.get("owner_bcc_enabled",True) else None
+    bcc=os.getenv(str(message_cfg.get("owner_bcc_env") or "VDS_OWNER_BCC")) if message_cfg.get("owner_bcc_enabled",False) else None
     results=[]
     delivered_ids=set()
     for item,key,domain in candidates:
