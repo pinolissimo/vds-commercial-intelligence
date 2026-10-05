@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-05T11:05:02Z",
-  "latest_checked_uid": 1553,
+  "updated_at": "2026-10-05T11:21:15Z",
+  "latest_checked_uid": 1554,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -847,6 +847,21 @@
       "subtype": "HUMAN_REPLY_UNCLASSIFIED",
       "summary": "Human reply detected; semantic classification pending.",
       "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1554,
+      "received_at": "2026-10-05T11:15:20Z",
+      "canonical_identity_key": "org:email.bambulab.com",
+      "entity": "email.bambulab.com",
+      "sender": "hello@email.bambulab.com",
+      "subject": "MakerWorld Crowdfunding | October Picks",
+      "message_id": "<01M45VH50QBSZBVQVE2KEK14R7@klaviyomail.com>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
   ]
