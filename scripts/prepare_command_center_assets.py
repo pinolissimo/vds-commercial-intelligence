@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
+# Visual Design Studio — 2026
 """Download pinned/local runtime assets for the VDS Command Center build.
 
 Nothing is loaded from Google/CDNs at browser runtime. GitHub Actions downloads these
 assets during the Pages build and publishes them under command-center/assets/.
+
+The generated Pages shell is deliberately decoupled from Pages data freshness: API
+read-models under api/v1 are read live from the repository's main branch first, with
+the deployed Pages copy and then the packaged fallback used only as failover layers.
 """
 from __future__ import annotations
 
@@ -76,6 +81,24 @@ def install_build_guard(root: Path, build_id: str) -> None:
     )
 
 
+def install_live_repository_data_source(root: Path) -> None:
+    """Make api/v1 reads independent from GitHub Pages deployment freshness.
+
+    The shell always asks raw.githubusercontent.com/main first. If that live read is
+    unavailable, it falls back to the JSON bundled in the current Pages deployment,
+    and finally to the packaged last-known-good snapshot.
+    """
+    app = root / "assets" / "app.js"
+    source = app.read_text(encoding="utf-8")
+    old = """  if(path.startsWith('api/v1/')){\n    const relative=path.slice('api/v1/'.length);\n    const r=await fetch(`api/v1/${relative}?v=${Date.now()}`,{cache:'no-store'});\n    if(r.ok)return r.json();\n    return staticFallback(path);\n  }\n"""
+    new = """  if(path.startsWith('api/v1/')){\n    const relative=path.slice('api/v1/'.length);\n    const cacheBust=Date.now();\n    const liveUrl=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${REF}/api/v1/${relative}?v=${cacheBust}`;\n    try{\n      const live=await fetch(liveUrl,{cache:'no-store'});\n      if(live.ok){\n        const data=await live.json();\n        data._vds_data_mode='GITHUB_MAIN_LIVE';\n        return data;\n      }\n    }catch(_){ }\n    try{\n      const local=await fetch(`api/v1/${relative}?v=${cacheBust}`,{cache:'no-store'});\n      if(local.ok){\n        const data=await local.json();\n        data._vds_data_mode='PAGES_LOCAL_FALLBACK';\n        return data;\n      }\n    }catch(_){ }\n    return staticFallback(path);\n  }\n"""
+    if old not in source:
+        if "_vds_data_mode='GITHUB_MAIN_LIVE'" in source:
+            return
+        raise RuntimeError("Unable to install live repository data source: ghFile block changed")
+    app.write_text(source.replace(old, new, 1), encoding="utf-8")
+
+
 def version_static_asset_urls(html: str, build_id: str) -> str:
     """Cache-bust every local runtime asset with the deploy commit id."""
     pattern = re.compile(
@@ -85,6 +108,7 @@ def version_static_asset_urls(html: str, build_id: str) -> str:
         lambda m: f'{m.group("attr")}="{m.group("url")}?v={build_id}"',
         html,
     )
+
 
 def inject_command_center_enhancements(root: Path) -> None:
     index = root / "index.html"
@@ -157,8 +181,9 @@ def main() -> int:
         print(f"asset {path}: {len(data)} bytes")
 
     install_build_guard(root, BUILD_ID)
+    install_live_repository_data_source(root)
     inject_command_center_enhancements(root)
-    print(f"build {BUILD_ID}: cache-busted assets + runtime stale-build guard")
+    print(f"build {BUILD_ID}: live main data + cache-busted assets + runtime stale-build guard")
     return 0
 
 
