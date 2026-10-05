@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1060,
+  "runs": 1061,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -28102,6 +28102,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "09dc5fd3319ad749098ebcac2e0c6b31",
+      "evaluated_at": "2026-10-05T18:57:09Z",
+      "organization": "Ashby",
+      "title": "Senior Software Engineer, Product Engineering - UK",
+      "location": "UK",
+      "opportunity_url": "https://jobicy.com/jobs/151860-senior-software-engineer-product-engineering-uk",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Software Engineer role at a product company with only generic 'frontend'/'ui' keyword matches and no evidence of WordPress, WooCommerce, or freelance/contract compatibility; the 'agency/collaboration/partner' hits appear to be boilerplate rather than genuine external-collaboration signals.",
+      "deepseek_risk_flags": [
+        "generic_keyword_matches_only",
+        "no_wordpress_or_woocommerce_scope",
+        "senior_full_time_product_role_likely",
+        "freelance_compatibility_unproven",
+        "geo_remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00024268,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -32700,9 +32729,21 @@
       "completion_tokens": 255,
       "total_tokens": 1088,
       "estimated_cost_usd": 0.00021524
+    },
+    {
+      "at": "2026-10-05T18:57:09Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 436,
+      "completion_tokens": 221,
+      "total_tokens": 785,
+      "estimated_cost_usd": 0.00024268
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-05T18:38:59Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-05T18:57:09Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
