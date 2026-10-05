@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-05T16:31:29Z",
+  "updated_at": "2026-10-05T16:49:31Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1021,
-    "agreement_count": 488,
+    "evaluated_total": 1023,
+    "agreement_count": 489,
     "agreement_pct": 47.8,
     "deepseek_promote": 32,
-    "vds_promote": 271,
+    "vds_promote": 272,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 243
+    "deepseek_demoted_from_vds_promote": 244
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 381,
-    "cumulative_estimated_cost_usd": 0.197361,
-    "cost_per_evaluated_candidate_usd": 0.0001933,
-    "cost_per_deepseek_promote_usd": 0.00616754,
-    "cost_per_observed_ready_or_contacted_usd": 0.09868069,
+    "request_count": 382,
+    "cumulative_estimated_cost_usd": 0.197706,
+    "cost_per_evaluated_candidate_usd": 0.00019326,
+    "cost_per_deepseek_promote_usd": 0.0061783,
+    "cost_per_observed_ready_or_contacted_usd": 0.09885285,
     "latest_request": {
-      "at": "2026-10-05T16:31:26Z",
+      "at": "2026-10-05T16:49:26Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 423,
-      "completion_tokens": 161,
-      "total_tokens": 712,
-      "estimated_cost_usd": 0.00020022
+      "prompt_cache_miss_tokens": 679,
+      "completion_tokens": 294,
+      "total_tokens": 1101,
+      "estimated_cost_usd": 0.00034432
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "24a61a92efaf0038dba2d0a85f029f8e",
-      "evaluated_at": "2026-10-03T12:11:22Z",
-      "organization": "Setsales",
-      "title": "UX designer at SetSales",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/setsales/ux-designer-at-setsales-london-85093",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 32.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "UX Designer at SetSales, London; HTML/CSS/UX/website keywords partially match profile but role is design-focused, no WordPress/WooCommerce scope, no freelance signal, and UK geo mismatch.",
-      "deepseek_risk_flags": [
-        "geo_mismatch_uk",
-        "design_role_not_dev",
-        "no_wordpress_scope",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001461367,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "5df62f633e5203a2d1ca7bc1c7af1acb",
-      "evaluated_at": "2026-10-03T12:11:22Z",
-      "organization": "Healf",
-      "title": "Product Designer",
-      "location": "London Office",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/healf/product-designer-london-50005",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Product Designer at Healf, London office; UI/UX/website keywords but design role without WordPress/WooCommerce development scope, no freelance signal, and UK office location.",
-      "deepseek_risk_flags": [
-        "geo_mismatch_uk",
-        "design_role_not_dev",
-        "no_wordpress_scope",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001461367,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6b432bbc5ccc299eb92b84ce56333a3e",
       "evaluated_at": "2026-10-03T12:29:09Z",
@@ -1467,10 +1411,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9f879e896f77fd08ede93707a87f9aa9",
+      "evaluated_at": "2026-10-05T16:49:26Z",
+      "organization": "Box",
+      "title": "Drupal Frontend Developer (with React)",
+      "location": "Poland",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/drupal-frontend-developer-with-react-78915632c8",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Core role is Drupal frontend development with React, not WordPress/WooCommerce or the target freelance web stack; only generic 'frontend' keyword matches, and no explicit freelance/contract compatibility is evidenced.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_drupal_react",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_compatibility_evidence",
+        "geo_remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00017216,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "92078f2794ca410965acfbecc7115cfa",
+      "evaluated_at": "2026-10-05T16:49:26Z",
+      "organization": "Wundermanthompson",
+      "title": "Principal Solutions Architect",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wundermanthompson/principal-solutions-architect-london-413236",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Principal Solutions Architect is a senior architecture role with no matching web/WordPress/frontend scope; 'partner' and 'collaboration' mentions are generic and do not establish freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_architecture",
+        "no_web_stack_scope",
+        "generic_collaboration_not_freelance_proof",
+        "geo_london_not_target_market"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017216,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-05T16:31:23Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-05T16:49:21Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
