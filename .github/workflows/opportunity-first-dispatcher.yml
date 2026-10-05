@@ -28,8 +28,7 @@ jobs:
     env:
       HOSTINGER_EMAIL_API_TOKEN: ${{ secrets.HOSTINGER_EMAIL_API_TOKEN }}
       HOSTINGER_MAILBOX: info@visualdesignstudio.es
-      VDS_DISPATCH_MAX_BATCH: '100'
-      VDS_DISPATCH_DRY_RUN: '1'
+      VDS_DISPATCH_MAX_BATCH: '10'
     steps:
       - uses: actions/checkout@v7
         with:
@@ -39,7 +38,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Compile dispatcher and safety layer
+      - name: Compile queue builder and safety layer
         run: |
           python3 -m py_compile scripts/opportunity_first_dispatcher.py scripts/sync_hostinger_mail.py scripts/global_contact_ledger.py scripts/revenue_flow_preflight.py
 
@@ -67,14 +66,14 @@ jobs:
           python3 scripts/global_contact_ledger.py --build
           python3 scripts/revenue_flow_preflight.py --repair
 
-      - name: Build bounded verified READY_TO_SEND batch
+      - name: Build verified autonomous first-contact queue
         if: steps.window.outputs.open == 'true'
         shell: bash
         run: |
           set -euo pipefail
           python3 scripts/opportunity_first_dispatcher.py
 
-      - name: Refresh dedup after READY_TO_SEND build
+      - name: Refresh dedup after queue build
         if: steps.window.outputs.open == 'true'
         shell: bash
         run: |
@@ -88,12 +87,24 @@ jobs:
           set -euo pipefail
           git config user.name "vds-opportunity-queue-builder"
           git config user.email "35764978+pinolissimo@users.noreply.github.com"
-          git add state/opportunity-first-dispatch-latest.json data/opportunity-first-dispatch-runs state/provider-observation.json state/provider-outbound-live.json state/provider-inbound-live.json state/provider-sync-status.json data/global-sent-email-ledger.jsonl views/provider-contact-suppression-index.json views/global-sent-email-index.json views/global-organization-index.json views/global-contact-ledger.json
+          git add \
+            outreach/autonomous-send-queue.jsonl \
+            state/opportunity-first-dispatch-latest.json \
+            data/opportunity-first-dispatch-runs \
+            state/provider-observation.json \
+            state/provider-outbound-live.json \
+            state/provider-inbound-live.json \
+            state/provider-sync-status.json \
+            data/global-sent-email-ledger.jsonl \
+            views/provider-contact-suppression-index.json \
+            views/global-sent-email-index.json \
+            views/global-organization-index.json \
+            views/global-contact-ledger.json
           if git diff --cached --quiet; then
-            echo "No dispatcher/provider changes"
+            echo "No queue-builder/provider changes"
             exit 0
           fi
-          git commit -m "outreach: persist opportunity ready queue"
+          git commit -m "outreach: persist verified autonomous first-contact queue"
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then exit 0; fi
             git fetch origin main
@@ -102,7 +113,7 @@ jobs:
               continue
             fi
             git rebase --abort 2>/dev/null || true
-            echo "Persistence race: provider sends already occurred; refusing to rerun sender." >&2
+            echo "Persistence race: refusing to rebuild or send until next scheduled cycle." >&2
             exit 1
           done
           exit 1
