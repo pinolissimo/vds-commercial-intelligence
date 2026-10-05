@@ -6,6 +6,10 @@ on:
     workflows: ["VDS Command Center — Pages"]
     types: [completed]
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/vds-pages-integrity-guard.yml'
 
 permissions:
   contents: read
@@ -36,22 +40,27 @@ jobs:
           from pathlib import Path
           data=json.loads(Path('api/v1/dashboard.json').read_text(encoding='utf-8'))
           print(f"sent={int((data.get('today') or {}).get('sent') or 0)}")
+          print(f"date={(data.get('today') or {}).get('date') or ''}")
           print(f"generated_at={data.get('generated_at') or ''}")
           PY
 
-      - name: Verify public Pages projection
+      - name: Verify public Pages projection and live-data shell
         id: verify
-        if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+        if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
         shell: bash
         env:
           EXPECTED_SENT: ${{ steps.expected.outputs.sent }}
+          EXPECTED_DATE: ${{ steps.expected.outputs.date }}
           EXPECTED_GENERATED_AT: ${{ steps.expected.outputs.generated_at }}
         run: |
           set -euo pipefail
           ok=0
           for attempt in $(seq 1 12); do
-            url="https://pinolissimo.github.io/vds-commercial-intelligence/api/v1/dashboard.json?guard=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${attempt}"
-            if curl -fsSL --connect-timeout 10 --max-time 20 "$url" -o /tmp/public-dashboard.json; then
+            dashboard_url="https://pinolissimo.github.io/vds-commercial-intelligence/api/v1/dashboard.json?guard=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${attempt}"
+            app_url="https://pinolissimo.github.io/vds-commercial-intelligence/assets/app.js?guard=${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${attempt}"
+            if curl -fsSL --connect-timeout 10 --max-time 20 "$dashboard_url" -o /tmp/public-dashboard.json \
+              && curl -fsSL --connect-timeout 10 --max-time 20 "$app_url" -o /tmp/public-app.js \
+              && grep -q "GITHUB_MAIN_LIVE" /tmp/public-app.js; then
               if python3 - <<'PY'
           import json, os
           from datetime import datetime
@@ -64,10 +73,13 @@ jobs:
 
           public=json.loads(Path('/tmp/public-dashboard.json').read_text(encoding='utf-8'))
           expected_sent=int(os.environ['EXPECTED_SENT'])
+          expected_date=os.environ['EXPECTED_DATE']
           expected_generated=dt(os.environ['EXPECTED_GENERATED_AT'])
-          public_sent=int((public.get('today') or {}).get('sent') or 0)
+          public_today=public.get('today') or {}
+          public_sent=int(public_today.get('sent') or 0)
+          public_date=public_today.get('date') or ''
           public_generated=dt(public.get('generated_at'))
-          same_day=(public.get('today') or {}).get('date') == datetime.now().astimezone().date().isoformat() or public_sent >= expected_sent
+          same_day=(public_date == expected_date)
           fresh=(public_generated is not None and expected_generated is not None and public_generated >= expected_generated)
           raise SystemExit(0 if same_day and public_sent >= expected_sent and fresh else 1)
           PY
@@ -131,4 +143,4 @@ jobs:
 
       - name: Report healthy projection
         if: ${{ steps.repair.outputs.needed != 'true' }}
-        run: echo "Pages projection matches current api/v1/dashboard.json."
+        run: echo "Pages projection and live-data shell match current main."
