@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '17 * * * *'
   workflow_run:
-    workflows: ["VDS High-Frequency Discovery Fanout"]
+    workflows: ["VDS High-Frequency Discovery Fanout", "VDS Autonomous Approved Sender"]
     types: [completed]
   push:
     branches: [main]
