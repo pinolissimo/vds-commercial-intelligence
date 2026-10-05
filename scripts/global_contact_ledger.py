@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Visual Design Studio — 2026
 """Build and query the VDS global contact dedup ledger.
 
 Sources:
@@ -78,7 +79,7 @@ def domain_of(email: str | None) -> str | None:
     email = normalize_email(email)
     if not email:
         return None
-    return email.rsplit("@", 1)[1].lower().lstrip("www.")
+    return email.rsplit("@", 1)[1].lower().removeprefix("www.")
 
 
 def canonical_org_key(value: str | None, fallback_domain: str | None = None) -> str | None:
@@ -229,7 +230,7 @@ def build() -> dict[str, Any]:
     for domain in (suppression.get("contacted_domains") or []):
         if not isinstance(domain, str):
             continue
-        d = domain.strip().lower().lstrip("www.")
+        d = domain.strip().lower().removeprefix("www.")
         if not d or d in SHARED_MAIL_DOMAINS:
             continue
         corporate_domains.setdefault(d, {
