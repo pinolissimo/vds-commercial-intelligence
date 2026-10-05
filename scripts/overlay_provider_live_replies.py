@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Visual Design Studio — 2026
 """Merge low-latency Hostinger Inbox evidence into Command Center reply KPIs.
 
 This postprocessor is deliberately independent from outbound reconciliation. It counts
@@ -134,9 +135,10 @@ def main() -> int:
 
     live = live_evidence()
     for event in live["events"]:
-        # Audit-only provider events stay in state/provider-inbound-live.json but do not
-        # enter commercial reply projections.
-        if event.get("count_as_reply") is False:
+        # Audit-only provider events stay out of commercial reply totals, but delivery
+        # failures must still enter the separate hard-bounce KPI.
+        classification = normalized_classification(event)
+        if event.get("count_as_reply") is False and classification != "BOUNCE":
             continue
         dt = parse_dt(event.get("received_at") or event.get("at"))
         if not dt or str(dt.astimezone(MADRID).date()) != date_str:
@@ -144,7 +146,7 @@ def main() -> int:
         row = {
             "at": dt.astimezone(MADRID).isoformat(timespec="seconds"),
             "entity": event.get("entity") or event.get("canonical_identity_key") or event.get("sender") or "Risposta",
-            "classification": normalized_classification(event),
+            "classification": classification,
             "subtype": event.get("subtype"),
             "summary": event.get("summary"),
             "sender": event.get("sender"),
