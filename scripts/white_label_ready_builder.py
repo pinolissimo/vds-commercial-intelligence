@@ -26,6 +26,7 @@ def main():
     routes=load(ROUTES,{"items":[]}); boost=load(BOOST,{"signals":[]}); ledger=load(LEDGER,{})
     exact=set((ledger.get("exact_email_index") or {}).keys())
     domains=set((ledger.get("corporate_domain_index") or {}).keys())
+    organizations=set((ledger.get("organization_index") or {}).keys())
     signal_by_domain={}
     for s in boost.get("signals") or []:
         d=str(s.get("domain") or "").lower().removeprefix("www.")
@@ -39,7 +40,7 @@ def main():
     # Fast lane: same-domain public email + agency/web signal on the same
     # first-party page is sufficient for READY_TO_SEND preparation.
     for d, pack in signal_by_domain.items():
-        if not d or d in seen or d in domains: continue
+        if not d or d in seen or d in domains or f"org:{d}" in organizations: continue
         sig=pack["signal"]
         emails=[str(e).lower() for e in (sig.get("emails") or []) if valid(e,d) and str(e).lower() not in exact]
         if not emails: continue
@@ -66,7 +67,7 @@ def main():
     # Deep lane: richer route/decision-maker evidence from the dedicated enricher.
     for r in routes.get("items") or []:
         d=str(r.get("domain") or "").lower().removeprefix("www.")
-        if not d or d in seen or d in domains: continue
+        if not d or d in seen or d in domains or f"org:{d}" in organizations: continue
         sig=signal_by_domain.get(d)
         if not sig or sig["agency_score"] < 2: continue
         matched=[str(x).lower() for x in ((sig.get("signal") or {}).get("matched_terms") or [])]
