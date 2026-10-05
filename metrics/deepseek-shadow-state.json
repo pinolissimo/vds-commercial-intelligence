@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1023,
+  "runs": 1024,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -27456,6 +27456,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "83ad63203296f0bf0789f47ed0db695b",
+      "evaluated_at": "2026-10-05T00:34:13Z",
+      "organization": "Cloudnonic Corp",
+      "title": "Semi-Senior QA Engineer (Manual & Automation)",
+      "location": "Remote",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/semi-senior-qa-engineer-manual-automation-cloudnonic-corp",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 69,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a QA Engineer (manual & automation) position, not a web development role; the only profile overlap is incidental keyword matches ('javascript', 'web development') with no WordPress, WooCommerce, frontend, or web-performance scope.",
+      "deepseek_risk_flags": [
+        "role_family_mismatch",
+        "keyword_only_match",
+        "no_wordpress_scope",
+        "no_frontend_scope",
+        "contract_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001989,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -31910,9 +31939,21 @@
       "completion_tokens": 188,
       "total_tokens": 773,
       "estimated_cost_usd": 0.00022552
+    },
+    {
+      "at": "2026-10-05T00:34:13Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 444,
+      "completion_tokens": 152,
+      "total_tokens": 724,
+      "estimated_cost_usd": 0.0001989
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-04T21:59:54Z",
+  "updated_at": "2026-10-05T00:34:13Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
