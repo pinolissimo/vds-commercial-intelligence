@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T18:36:00Z",
+  "updated_at": "2026-10-06T18:54:01Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1055,
+    "evaluated_total": 1057,
     "agreement_count": 498,
-    "agreement_pct": 47.2,
+    "agreement_pct": 47.11,
     "deepseek_promote": 33,
     "vds_promote": 277,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 395,
-    "cumulative_estimated_cost_usd": 0.203493,
-    "cost_per_evaluated_candidate_usd": 0.00019288,
-    "cost_per_deepseek_promote_usd": 0.00616646,
-    "cost_per_observed_ready_or_contacted_usd": 0.10174667,
+    "request_count": 396,
+    "cumulative_estimated_cost_usd": 0.203865,
+    "cost_per_evaluated_candidate_usd": 0.00019287,
+    "cost_per_deepseek_promote_usd": 0.00617771,
+    "cost_per_observed_ready_or_contacted_usd": 0.10193225,
     "latest_request": {
-      "at": "2026-10-06T18:35:57Z",
+      "at": "2026-10-06T18:53:57Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 422,
-      "completion_tokens": 170,
-      "total_tokens": 720,
-      "estimated_cost_usd": 0.00020594
+      "prompt_cache_miss_tokens": 738,
+      "completion_tokens": 315,
+      "total_tokens": 1181,
+      "estimated_cost_usd": 0.00037116
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "10bfc155251b9208c11a7b7bc5590ae4",
-      "evaluated_at": "2026-10-05T04:49:18Z",
-      "organization": "Prenode",
-      "title": "Software Engineer: Full-Stack, Backend, Frontend (m/w/d)",
-      "location": "Karlsruhe",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/prenode/software-engineer-full-stack-backend-frontend-karlsruhe-141332",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 79,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Generic full-stack role in Karlsruhe with only frontend/javascript/ui keyword matches; no explicit WordPress/WooCommerce or freelance scope, and 'partner'/'remote' are generic commercial mentions rather than proof of external collaboration.",
-      "deepseek_risk_flags": [
-        "generic_full_stack_role",
-        "no_wordpress_woocommerce_scope",
-        "freelance_compatibility_unproven",
-        "geo_unverified_non_target_market"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00011539,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "7b2fb0373df8eed93711af56d271456d",
-      "evaluated_at": "2026-10-05T04:49:18Z",
-      "organization": "Valuenet Group",
-      "title": "Senior Odoo Engineer ERP & E-Commerce (all genders)",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/valuenet-group/senior-odoo-engineer-erp-e-commerce-all-genders-munchen-427454",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 72,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Odoo ERP engineering role with no meaningful WordPress/WooCommerce or frontend web scope; keyword matches (migration, website) are incidental and stack is ERP-centric, not aligned with target profile.",
-      "deepseek_risk_flags": [
-        "erp_stack_mismatch",
-        "no_wordpress_woocommerce_scope",
-        "freelance_compatibility_unproven",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00011539,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "cc500a8925cae30c990eb751372daa4b",
       "evaluated_at": "2026-10-05T04:49:18Z",
@@ -1466,10 +1410,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "13569f460a68fa0abf8f02958b03d1ea",
+      "evaluated_at": "2026-10-06T18:53:57Z",
+      "organization": "Hirschen Group GmbH",
+      "title": "TYPO3 Developer - Senior & Mid-Level (w/m/d)",
+      "location": "Dresden, Altmarkt 21/22",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/hirschen-group-gmbh/typo3-developer-senior-mid-level-dresden-altmarkt-21-22-38644",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 66,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "TYPO3 CMS developer role in Dresden, Germany; TYPO3 is not part of the target WordPress/WooCommerce stack, and the role is a permanent on-site position outside the Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_typo3_not_wordpress",
+        "geo_mismatch_germany_onsite",
+        "no_freelance_compatibility_evidence",
+        "permanent_employment_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018558,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f6e1e670daae81dba3f1b6805c05965d",
+      "evaluated_at": "2026-10-06T18:53:57Z",
+      "organization": "Hirschen Group GmbH",
+      "title": "Client Service Director-Public Sector (w/m/d)",
+      "location": "Dresden, Altmarkt 21/22",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/hirschen-group-gmbh/client-service-director-public-sector-dresden-altmarkt-21-22-379945",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Client Service Director (Public Sector) is a client/account management leadership role, not a web development role; keyword matches (cms, ui, ux, website) are incidental and do not reflect actual technical scope.",
+      "deepseek_risk_flags": [
+        "non_technical_role",
+        "keyword_match_incidental",
+        "geo_mismatch_germany_onsite",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018558,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-06T18:35:54Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-06T18:53:52Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
