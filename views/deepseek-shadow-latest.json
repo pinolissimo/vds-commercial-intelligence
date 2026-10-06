@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T18:18:16Z",
+  "updated_at": "2026-10-06T18:36:00Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1054,
+    "evaluated_total": 1055,
     "agreement_count": 498,
-    "agreement_pct": 47.25,
+    "agreement_pct": 47.2,
     "deepseek_promote": 33,
     "vds_promote": 277,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 394,
-    "cumulative_estimated_cost_usd": 0.203287,
-    "cost_per_evaluated_candidate_usd": 0.00019287,
-    "cost_per_deepseek_promote_usd": 0.00616022,
-    "cost_per_observed_ready_or_contacted_usd": 0.1016437,
-    "latest_request": null
+    "request_count": 395,
+    "cumulative_estimated_cost_usd": 0.203493,
+    "cost_per_evaluated_candidate_usd": 0.00019288,
+    "cost_per_deepseek_promote_usd": 0.00616646,
+    "cost_per_observed_ready_or_contacted_usd": 0.10174667,
+    "latest_request": {
+      "at": "2026-10-06T18:35:57Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 422,
+      "completion_tokens": 170,
+      "total_tokens": 720,
+      "estimated_cost_usd": 0.00020594
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4cab1f42d6e25dcf14d44b6d12153886",
-      "evaluated_at": "2026-10-05T02:59:04Z",
-      "organization": "Lovable",
-      "title": "Staff / Principal Design Engineer, Web",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/lovable/staff-principal-design-engineer-web-london-377094",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Staff/Principal Design Engineer, Web at Lovable is a senior product-design-engineering role in London, not a WordPress/WooCommerce/freelance web-dev opportunity; 'collaboration' is generic and does not evidence freelance compatibility, and location is London (non-target geo).",
-      "deepseek_risk_flags": [
-        "non_target_geo_london",
-        "senior_product_design_engineering_not_freelance_web",
-        "generic_collaboration_keyword",
-        "no_wordpress_woocommerce_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00027574,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "10bfc155251b9208c11a7b7bc5590ae4",
       "evaluated_at": "2026-10-05T04:49:18Z",
@@ -1454,10 +1437,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c3debe37d2bc8323e83a3fc015ee3e30",
+      "evaluated_at": "2026-10-06T18:35:57Z",
+      "organization": "Realchemistry",
+      "title": "Senior Account Manager",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/realchemistry/senior-account-manager-149606",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is Senior Account Manager at an agency; no evidence of web development, WordPress, WooCommerce, frontend, or technical web scope. Only incidental keyword 'website' and generic agency/collaboration/remote terms, which do not establish truthful stack fit or freelance web-dev demand.",
+      "deepseek_risk_flags": [
+        "non_technical_role",
+        "no_stack_fit",
+        "keyword_only_match",
+        "generic_remote_agency_terms",
+        "no_explicit_freelance_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020594,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-06T18:18:11Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-06T18:35:54Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

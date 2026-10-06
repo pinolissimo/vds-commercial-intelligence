@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1102,
+  "runs": 1103,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -28916,6 +28916,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c3debe37d2bc8323e83a3fc015ee3e30",
+      "evaluated_at": "2026-10-06T18:35:57Z",
+      "organization": "Realchemistry",
+      "title": "Senior Account Manager",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/realchemistry/senior-account-manager-149606",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is Senior Account Manager at an agency; no evidence of web development, WordPress, WooCommerce, frontend, or technical web scope. Only incidental keyword 'website' and generic agency/collaboration/remote terms, which do not establish truthful stack fit or freelance web-dev demand.",
+      "deepseek_risk_flags": [
+        "non_technical_role",
+        "no_stack_fit",
+        "keyword_only_match",
+        "generic_remote_agency_terms",
+        "no_explicit_freelance_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020594,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -33646,9 +33675,21 @@
       "completion_tokens": 191,
       "total_tokens": 796,
       "estimated_cost_usd": 0.0002319
+    },
+    {
+      "at": "2026-10-06T18:35:57Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 422,
+      "completion_tokens": 170,
+      "total_tokens": 720,
+      "estimated_cost_usd": 0.00020594
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-06T18:18:15Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-06T18:35:57Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
