@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T22:06:48Z",
+  "updated_at": "2026-10-06T23:52:01Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1065,
-    "agreement_count": 498,
-    "agreement_pct": 46.76,
+    "evaluated_total": 1066,
+    "agreement_count": 499,
+    "agreement_pct": 46.81,
     "deepseek_promote": 33,
     "vds_promote": 279,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 399,
-    "cumulative_estimated_cost_usd": 0.205113,
-    "cost_per_evaluated_candidate_usd": 0.00019259,
-    "cost_per_deepseek_promote_usd": 0.00621556,
-    "cost_per_observed_ready_or_contacted_usd": 0.1025567,
+    "request_count": 400,
+    "cumulative_estimated_cost_usd": 0.205336,
+    "cost_per_evaluated_candidate_usd": 0.00019262,
+    "cost_per_deepseek_promote_usd": 0.00622229,
+    "cost_per_observed_ready_or_contacted_usd": 0.10266781,
     "latest_request": {
-      "at": "2026-10-06T22:06:41Z",
+      "at": "2026-10-06T23:51:56Z",
       "model": "deepseek-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1152,
-      "prompt_cache_miss_tokens": 212,
-      "completion_tokens": 756,
-      "total_tokens": 2120,
-      "estimated_cost_usd": 0.00055366
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 436,
+      "completion_tokens": 190,
+      "total_tokens": 754,
+      "estimated_cost_usd": 0.00022222
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ee2ed363dd6f1c83c19c487959d2b7df",
-      "evaluated_at": "2026-10-05T12:59:05Z",
-      "organization": "Fact Finder",
-      "title": "Staff Frontend Engineer / Frontend Architect (m/f/d)",
-      "location": "Germany",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/staff-frontend-engineer-frontend-architect-mfd-8e93173389",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Staff Frontend Engineer / Frontend Architect role in Germany with only 'frontend' keyword match; no WordPress/WooCommerce/custom web scope, no explicit freelance/contract signal, and seniority/architecture focus suggests full-time employment rather than freelance web work.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "senior_staff_architect_role_likely_full_time",
-        "geo_remote_to_verify"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001785733,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c63b2a8e28dcef162cf6ac8d6f297866",
       "evaluated_at": "2026-10-05T12:59:05Z",
@@ -1466,10 +1438,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d945365928fb1e5533266bb1789fda9c",
+      "evaluated_at": "2026-10-06T23:51:56Z",
+      "organization": "Front",
+      "title": "Senior Design Engineer",
+      "location": "Paris, France",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/front/senior-design-engineer-paris-332941",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 67,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Design Engineer role at Front in Paris with matched keywords for frontend, HTML, UI/UX, accessibility and maintenance, but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo bucket is EU_REMOTE_TO_VERIFY rather than confirmed Spain/Italy or EU-remote.",
+      "deepseek_risk_flags": [
+        "no_explicit_wordpress_or_woocommerce_scope",
+        "employment_type_unknown",
+        "remote_state_unverified",
+        "geo_compatibility_unconfirmed",
+        "design_engineer_role_may_be_product_design_heavy_not_freelance_web_dev"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00022222,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-10-06T22:06:36Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-06T23:51:51Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
