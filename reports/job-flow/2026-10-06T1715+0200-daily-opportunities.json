@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "run_id": "VDS-JOB-FLOW-2026-10-06T1715+0200",
+  "worker_id": "LINKEDIN_HUNTER",
+  "started_at": "2026-10-06T17:06:10+02:00",
+  "completed_at": "2026-10-06T17:15:00+02:00",
+  "send_window_open": true,
+  "command_bridge": {
+    "eligible_commands": 0,
+    "consumed_commands": 0,
+    "external_send_count": 1,
+    "provider_uids": [
+      771
+    ],
+    "normal_cycle_completed": true,
+    "existing_gates_preserved": true
+  },
+  "metrics": {
+    "serious_candidates": 10,
+    "direct_email_harvest_count": 7,
+    "send_now": 1,
+    "provider_verified_first_contact": 1,
+    "manual_apply": 1,
+    "wait_research": 0,
+    "reject": 8,
+    "duplicate_failures": 6,
+    "fit_failures": 1,
+    "route_failures": 1,
+    "downstream_outcomes": {
+      "qualified_positive_reply": 0,
+      "interview_call": 0,
+      "proposal": 0,
+      "won_revenue": 0
+    }
+  },
+  "decisions": [
+    {
+      "opportunity_id": "OPP-ES-MTS23TALENT-WEB-DEVELOPER-2026",
+      "organization_id": "ES-CLM-AB-MTS23TALENT",
+      "organization": "23Talent",
+      "outcome": "SEND_NOW",
+      "external_send": true,
+      "provider_uid": 771,
+      "reason_code": "CURRENT_EMPLOYER_ROUTE_AND_CLEAN_DEDUP",
+      "evidence": "Current employer-controlled listing and corporate HR email; strong web/UX/ecommerce/performance fit. Hostinger Sent UID 771 verified after all canonical, ledger, reservation, Hostinger Sent and Gmail Sent gates were clear."
+    },
+    {
+      "organization": "Parrotto Web Solution",
+      "organization_id": "IT-PUG-LE-PARROTTO-WEB-SOLUTION",
+      "outcome": "MANUAL_APPLY",
+      "external_send": false,
+      "owner_worker": "REVENUE_FLOW",
+      "reason_code": "OFFICIAL_FORM_AGENCY_OWNER_BOUNDARY",
+      "evidence": "Current official careers page lists Web Developer Full Stack with WordPress/WooCommerce/PHP/HTML/CSS/JavaScript and an official CV form. This agency record is supplied only as a Revenue Flow canonical delta; LINKEDIN_HUNTER did not acquire ownership."
+    },
+    {
+      "organization": "Web Station",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "evidence": "Current official WordPress role has hr@wstation.it, but Hostinger Sent contains prior first contacts UID 607 (2026-09-19) and UID 360 (2026-09-09)."
+    },
+    {
+      "organization": "City-Com",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "evidence": "Official role has a direct candidacy email, but canonical/pending global identity history already exists for city-com.it."
+    },
+    {
+      "organization": "Broovera",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "evidence": "Official WordPress Developer Freelance route jobs@broovera.com is explicitly suppressed as FIRST_CONTACT_ALREADY_SENT on 2026-08-28."
+    },
+    {
+      "organization": "Muza Studio",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "evidence": "Hostinger Sent exact recipient evidence UID 330 dated 2026-09-08 blocks the current WordPress Developer route."
+    },
+    {
+      "organization": "Solbyte",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "evidence": "Current official web/WordPress jobs route rrhh@solbyte.com is already contacted in Hostinger Sent UID 375 dated 2026-09-09."
+    },
+    {
+      "organization": "Varadero Software Factory",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "evidence": "Current official WordPress Developer route rrhh@vsf.es is present in the corporate-domain suppression index."
+    },
+    {
+      "organization": "Ruk Lab",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "NO_CURRENT_OPENING",
+      "evidence": "Official careers page states there are currently no open positions; evergreen talent form was not represented as an active opportunity."
+    },
+    {
+      "organization": "Novicrea",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "MANDATORY_CORE_FIT_MISMATCH",
+      "evidence": "Official freelance opening is centered on PHP/Laravel/MySQL rather than the requested WordPress/frontend/WPO core."
+    }
+  ],
+  "harvested_routes": [
+    {
+      "organization": "23Talent",
+      "route": "rrhh@mts23talent.com",
+      "authority": "CURRENT_EMPLOYER_CONTROLLED_JOB_LISTING",
+      "result": "PROVIDER_VERIFIED_FIRST_CONTACT_UID_771"
+    },
+    {
+      "organization": "Web Station",
+      "route": "hr@wstation.it",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "BLOCKED_DUPLICATE_UIDS_607_360"
+    },
+    {
+      "organization": "City-Com",
+      "route": "info@city-com.it",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "BLOCKED_CANONICAL_HISTORY"
+    },
+    {
+      "organization": "Broovera",
+      "route": "jobs@broovera.com",
+      "authority": "CURRENT_OFFICIAL_FREELANCE_JOB_LISTING",
+      "result": "BLOCKED_SUPPRESSION_HISTORY"
+    },
+    {
+      "organization": "Muza Studio",
+      "route": "job@muzastudio.com",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "BLOCKED_DUPLICATE_UID_330"
+    },
+    {
+      "organization": "Solbyte",
+      "route": "rrhh@solbyte.com",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "BLOCKED_DUPLICATE_UID_375"
+    },
+    {
+      "organization": "Varadero Software Factory",
+      "route": "rrhh@vsf.es",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "BLOCKED_CORPORATE_DOMAIN_HISTORY"
+    },
+    {
+      "organization": "Parrotto Web Solution",
+      "route": "https://parrotto-websolution.it/lavora-con-noi/",
+      "authority": "CURRENT_OFFICIAL_APPLICATION_FORM",
+      "result": "MANUAL_APPLY_REVENUE_FLOW_OWNER"
+    }
+  ],
+  "updates": [
+    {
+      "opportunity_id": "OPP-ES-MTS23TALENT-WEB-DEVELOPER-2026",
+      "from": null,
+      "to": "FIRST_CONTACT_SENT",
+      "provider_uid": 771
+    },
+    {
+      "organization_id": "IT-PUG-LE-PARROTTO-WEB-SOLUTION",
+      "from": null,
+      "to": "REVENUE_FLOW_CANONICAL_DELTA_ONLY"
+    }
+  ],
+  "notes": [
+    "Zero-duplicate gates were preserved. Provider Sent evidence overrode otherwise attractive current vacancies.",
+    "The 23Talent message transparently proposed external freelance/P.IVA collaboration for a full-time vacancy and used portfolio/project links plus LinkedIn as the professional profile.",
+    "No CC or BCC was used. No automatic follow-up is authorized.",
+    "Parrotto Web Solution was not added as a LINKEDIN_HUNTER-owned opportunity because agency/white-label ownership belongs to Revenue Flow.",
+    "Ruk Lab's evergreen candidature form was not presented as an open role because the official page states there are no current openings."
+  ]
+}
