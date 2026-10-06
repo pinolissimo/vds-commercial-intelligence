@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T14:32:12Z",
+  "updated_at": "2026-10-06T14:50:04Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1051,
-    "agreement_count": 496,
-    "agreement_pct": 47.19,
+    "evaluated_total": 1052,
+    "agreement_count": 497,
+    "agreement_pct": 47.24,
     "deepseek_promote": 33,
     "vds_promote": 277,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 391,
-    "cumulative_estimated_cost_usd": 0.202625,
-    "cost_per_evaluated_candidate_usd": 0.00019279,
-    "cost_per_deepseek_promote_usd": 0.00614016,
-    "cost_per_observed_ready_or_contacted_usd": 0.10131257,
-    "latest_request": null
+    "request_count": 392,
+    "cumulative_estimated_cost_usd": 0.202841,
+    "cost_per_evaluated_candidate_usd": 0.00019282,
+    "cost_per_deepseek_promote_usd": 0.00614671,
+    "cost_per_observed_ready_or_contacted_usd": 0.10142071,
+    "latest_request": {
+      "at": "2026-10-06T14:49:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 430,
+      "completion_tokens": 183,
+      "total_tokens": 741,
+      "estimated_cost_usd": 0.00021628
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "cb71cc64e97510d9b6b6aed090ef1b1a",
-      "evaluated_at": "2026-10-04T21:59:54Z",
-      "organization": "gitlab",
-      "title": "Senior Frontend Engineer (Vue), Create:  Repository Management",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-senior-frontend-engineer-vue-create-repository-management-62771",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Frontend Engineer role at GitLab centered on Vue and repository management; core stack is Vue/JavaScript engineering, not WordPress/WooCommerce or the target freelance web-dev profile, and it is a full-time product-engineering position rather than freelance/contract web work.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_vue_core",
-        "not_wordpress_woocommerce",
-        "full_time_product_role_not_freelance",
-        "no_explicit_freelance_or_contract_terms",
-        "generic_collaboration_keyword_not_freelance_proof"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00022552,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "83ad63203296f0bf0789f47ed0db695b",
       "evaluated_at": "2026-10-05T00:34:13Z",
@@ -1451,10 +1433,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e4db1d957cae8ea37964b419f1af9047",
+      "evaluated_at": "2026-10-06T14:49:59Z",
+      "organization": "Wayve",
+      "title": "IT & Security Manager",
+      "location": "London, United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wayve/it-security-manager-london-united-kingdom-460825",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is an IT & Security Manager position at Wayve in London, not a freelance web-development opportunity; matched keywords (migration, collaboration, partner, remote) are generic and do not indicate WordPress/WooCommerce/frontend web scope or genuine freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_it_security",
+        "no_web_development_scope",
+        "no_wordpress_woocommerce_frontend_fit",
+        "generic_keyword_matches",
+        "onsite_london_not_target_geo",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021628,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "SHADOW_API_ERROR_FAIL_OPEN",
+  "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-06T14:32:05Z",
+  "source_semantic_updated_at": "2026-10-06T14:49:54Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

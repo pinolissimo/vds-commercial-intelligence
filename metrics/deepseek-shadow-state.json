@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1089,
+  "runs": 1090,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -28828,6 +28828,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e4db1d957cae8ea37964b419f1af9047",
+      "evaluated_at": "2026-10-06T14:49:59Z",
+      "organization": "Wayve",
+      "title": "IT & Security Manager",
+      "location": "London, United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wayve/it-security-manager-london-united-kingdom-460825",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is an IT & Security Manager position at Wayve in London, not a freelance web-development opportunity; matched keywords (migration, collaboration, partner, remote) are generic and do not indicate WordPress/WooCommerce/frontend web scope or genuine freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_it_security",
+        "no_web_development_scope",
+        "no_wordpress_woocommerce_frontend_fit",
+        "generic_keyword_matches",
+        "onsite_london_not_target_geo",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021628,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -33522,9 +33552,21 @@
       "completion_tokens": 1314,
       "total_tokens": 4546,
       "estimated_cost_usd": 0.00155102
+    },
+    {
+      "at": "2026-10-06T14:49:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 430,
+      "completion_tokens": 183,
+      "total_tokens": 741,
+      "estimated_cost_usd": 0.00021628
     }
   ],
-  "last_run_status": "SHADOW_API_ERROR_FAIL_OPEN",
-  "updated_at": "2026-10-06T14:32:10Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-06T14:49:59Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
