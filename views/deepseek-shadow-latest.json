@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T20:09:46Z",
+  "updated_at": "2026-10-06T20:16:04Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1059,
+    "evaluated_total": 1061,
     "agreement_count": 498,
-    "agreement_pct": 47.03,
+    "agreement_pct": 46.94,
     "deepseek_promote": 33,
     "vds_promote": 278,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 397,
-    "cumulative_estimated_cost_usd": 0.204233,
-    "cost_per_evaluated_candidate_usd": 0.00019285,
-    "cost_per_deepseek_promote_usd": 0.00618889,
-    "cost_per_observed_ready_or_contacted_usd": 0.10211662,
-    "latest_request": null
+    "request_count": 398,
+    "cumulative_estimated_cost_usd": 0.20456,
+    "cost_per_evaluated_candidate_usd": 0.0001928,
+    "cost_per_deepseek_promote_usd": 0.00619878,
+    "cost_per_observed_ready_or_contacted_usd": 0.10227987,
+    "latest_request": {
+      "at": "2026-10-06T20:15:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 676,
+      "completion_tokens": 268,
+      "total_tokens": 1072,
+      "estimated_cost_usd": 0.0003265
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,61 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "dc5028852668e82d9a62202953213d95",
-      "evaluated_at": "2026-10-05T09:05:53Z",
-      "organization": "Testlio",
-      "title": "Freelance Software Tester With Smart TVs (Remote in Austria)",
-      "location": "Austria",
-      "opportunity_url": "https://jobicy.com/jobs/154529-freelance-software-tester-with-smart-tvs-remote-in-austria",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Freelance software tester role for Smart TVs; freelance and remote signals are present but the work is QA/testing, not web development, WordPress, or frontend, so stack fit is absent.",
-      "deepseek_risk_flags": [
-        "role_mismatch_qa_testing",
-        "no_web_development_scope",
-        "geo_austria_not_target_market"
-      ],
-      "deepseek_contract_compatibility": "HIGH",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00028006,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "737f1f9b19a66a4f47a0093a4120ce52",
-      "evaluated_at": "2026-10-05T09:05:53Z",
-      "organization": "Lpe Immobilien Management Gmbh",
-      "title": "Product Designer (m/w/d)",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/lpe-immobilien-management-gmbh/product-designer-munchen-422369",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Product Designer role in Munich with matched keywords css, frontend, html, javascript, ui, ux; however it is a product design position, not a web development/WordPress role, and there is no evidence of freelance or contract compatibility.",
-      "deepseek_risk_flags": [
-        "role_mismatch_product_design",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_compatibility_evidence",
-        "geo_germany_not_target_market"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00028006,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "fc0a83c38ef8784d277f143fc99f24bc",
       "evaluated_at": "2026-10-05T10:01:57Z",
@@ -1455,10 +1411,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f629923595b86687683d62f06457cb51",
+      "evaluated_at": "2026-10-06T20:15:59Z",
+      "organization": "Transparent Hiring",
+      "title": "Human Resources Assistant Intern",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/transparent-hiring/human-resources-assistant-intern-munich-200346",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Human Resources Assistant Intern, not a web development role; only tangential keyword match ('javascript') and generic commercial terms, with no web/WordPress scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "internship_not_freelance",
+        "keyword_only_match",
+        "no_web_stack_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00016325,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3ebcb39733e3c6f3866995f74efd5ff4",
+      "evaluated_at": "2026-10-06T20:15:59Z",
+      "organization": "Sanovio",
+      "title": "Software Engineering Intern (Full-Stack)",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/sanovio/software-engineering-intern-full-stack-munich-266338",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Software Engineering Intern (Full-Stack) is an internship with generic full-stack scope; no explicit WordPress/WooCommerce or web-performance demand, and internship format is incompatible with freelance acquisition.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "generic_fullstack_scope",
+        "no_wordpress_evidence",
+        "no_explicit_web_demand"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00016325,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-06T20:09:38Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-06T20:15:54Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
