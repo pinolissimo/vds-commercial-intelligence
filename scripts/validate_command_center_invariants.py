@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Visual Design Studio — 2026
 """Fail closed when Command Center projections violate core invariants."""
 import json
 from datetime import datetime, time
@@ -50,6 +51,7 @@ def main():
     assert (dash.get('today') or {}).get('sent')==today.get('sent_count'), 'dashboard/today sent drift'
     assert (dash.get('today') or {}).get('first_contacts_sent')==today.get('first_contact_count'), 'dashboard/today first-contact drift'
     assert (dash.get('headline') or {}).get('sent_today')==today.get('sent_count'), 'headline sent drift'
+    assert ((dash.get('operational_funnel') or {}).get('stages') or {}).get('provider_verified_first_contacts_today')==today.get('first_contact_count'), 'operational funnel first-contact drift'
     assert outbound.get('today_count')==today.get('sent_count'), 'outbound/today count drift'
     assert outbound.get('today_first_contact_count')==today.get('first_contact_count'), 'outbound first-contact drift'
     for x in today.get('sent') or []:
