@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T10:54:59Z",
+  "updated_at": "2026-10-06T11:13:15Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1038,
-    "agreement_count": 494,
-    "agreement_pct": 47.59,
+    "evaluated_total": 1039,
+    "agreement_count": 495,
+    "agreement_pct": 47.64,
     "deepseek_promote": 33,
     "vds_promote": 274,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 388,
-    "cumulative_estimated_cost_usd": 0.200715,
-    "cost_per_evaluated_candidate_usd": 0.00019337,
-    "cost_per_deepseek_promote_usd": 0.00608226,
-    "cost_per_observed_ready_or_contacted_usd": 0.10035729,
-    "latest_request": null
+    "request_count": 389,
+    "cumulative_estimated_cost_usd": 0.200939,
+    "cost_per_evaluated_candidate_usd": 0.0001934,
+    "cost_per_deepseek_promote_usd": 0.00608905,
+    "cost_per_observed_ready_or_contacted_usd": 0.10046927,
+    "latest_request": {
+      "at": "2026-10-06T11:13:10Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 456,
+      "completion_tokens": 186,
+      "total_tokens": 770,
+      "estimated_cost_usd": 0.00022398
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6c67e65d6c9611375564a4fafd2f0864",
-      "evaluated_at": "2026-10-03T21:47:04Z",
-      "organization": "Init Ag",
-      "title": "Senior New Business Manager Public Sector Communications (all genders)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-new-business-manager-public-sector-communications-all-genders-berlin-373886",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior New Business Manager, Public Sector Communications; sales/BD role with no web development scope. 'cms' and 'website' matches are incidental; 'partner' is generic.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "sales_role",
-        "generic_keyword_match",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000150528,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "547664465b2f5cc634dd14b3406c165b",
       "evaluated_at": "2026-10-04T10:00:09Z",
@@ -1449,10 +1432,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f68bc5d2ff0a4d9aba6b1c4af33eee18",
+      "evaluated_at": "2026-10-06T11:13:10Z",
+      "organization": "CodeForAI",
+      "title": "Software Engineer / AI Code Trainer (Python, Web, Full Stack)",
+      "location": "USA, UK, India, Australia, Ireland, New Zealand, Philippines, Pakistan, Singapore, Mexico",
+      "opportunity_url": "https://remotive.com/remote-jobs/software-development/software-engineer-ai-code-trainer-python-web-full-stack-2091149",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is an AI code-training/data-annotation position (Python, full stack) rather than a WordPress/WooCommerce/frontend web-development engagement; matched keywords are incidental and the core scope is AI model training, not client web work.",
+      "deepseek_risk_flags": [
+        "core_role_is_ai_code_training_not_web_dev",
+        "python_full_stack_focus",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_bucket_remote_to_verify",
+        "no_verified_contract_type"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00022398,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-06T10:54:52Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-06T11:13:05Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
