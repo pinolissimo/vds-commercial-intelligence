@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T07:53:20Z",
+  "updated_at": "2026-10-06T08:11:49Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1034,
+    "evaluated_total": 1036,
     "agreement_count": 494,
-    "agreement_pct": 47.78,
+    "agreement_pct": 47.68,
     "deepseek_promote": 33,
     "vds_promote": 274,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 386,
-    "cumulative_estimated_cost_usd": 0.199908,
-    "cost_per_evaluated_candidate_usd": 0.00019333,
-    "cost_per_deepseek_promote_usd": 0.00605781,
-    "cost_per_observed_ready_or_contacted_usd": 0.09995393,
-    "latest_request": null
+    "request_count": 387,
+    "cumulative_estimated_cost_usd": 0.200371,
+    "cost_per_evaluated_candidate_usd": 0.00019341,
+    "cost_per_deepseek_promote_usd": 0.00607185,
+    "cost_per_observed_ready_or_contacted_usd": 0.10018546,
+    "latest_request": {
+      "at": "2026-10-06T08:11:45Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 246,
+      "completion_tokens": 262,
+      "total_tokens": 1148,
+      "estimated_cost_usd": 0.00046304
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "3660bf51758f48396f7c7ce99eb297c6",
-      "evaluated_at": "2026-10-03T21:47:04Z",
-      "organization": "Kraken",
-      "title": "Client Enablement & Coaching Lead (F/H/X)",
-      "location": "Paris, France",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/kraken/client-enablement-coaching-lead-paris-401186",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Client Enablement & Coaching Lead role at Kraken; no web development, WordPress, WooCommerce, or frontend scope. Matched keywords 'migration' and 'website' are incidental and 'collaboration'/'partner' are generic, not evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "non_technical_role",
-        "generic_keyword_match",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000150528,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "b66fd3c46a072fde1ec2e3b8b50f2dc6",
-      "evaluated_at": "2026-10-03T21:47:04Z",
-      "organization": "Kraken",
-      "title": "Client Enablement & Coaching Lead (f/m/d)",
-      "location": "Berlin, Germany",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kraken/client-enablement-coaching-lead-berlin-340773",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Duplicate of Client Enablement & Coaching Lead role (Berlin variant); no web/WordPress/frontend scope. Keyword matches are incidental and commercial keywords are generic.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "non_technical_role",
-        "generic_keyword_match",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000150528,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1f9c53852c0019d07a9a2eee7090d86a",
       "evaluated_at": "2026-10-03T21:47:04Z",
@@ -1447,10 +1402,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "66b3c98db61ffd315a7ccf90d6ce0954",
+      "evaluated_at": "2026-10-06T08:11:45Z",
+      "organization": "LiveEO GmbH",
+      "title": "Senior Marketing Manager - Government Solutions (f/m/x)",
+      "location": "LiveEO GmbH Berlin (Onsite)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/liveeo-gmbh/senior-marketing-manager-government-solutions-liveeo-gmbh-berlin-onsite-204027",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Senior Marketing Manager position, not a web development role; only tangential keyword 'website' matched and no web/WordPress/WooCommerce/frontend scope is present.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "marketing_not_webdev",
+        "onsite_only",
+        "no_stack_fit",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00023152,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ecee7339fce4746c1a02dd52ad61b75c",
+      "evaluated_at": "2026-10-06T08:11:45Z",
+      "organization": "LiveEO GmbH",
+      "title": "Senior Marketing Manager - Government Solutions (f/m/x)",
+      "location": "LiveEO GmbH Berlin (Onsite)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/liveeo-gmbh/senior-marketing-manager-government-solutions-liveeo-gmbh-berlin-onsite-160791",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Duplicate Senior Marketing Manager posting with no web development scope; matched keywords are generic commercial terms unrelated to the target freelance web-dev profile.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "marketing_not_webdev",
+        "onsite_only",
+        "no_stack_fit",
+        "duplicate_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00023152,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-06T07:53:13Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-06T08:11:40Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

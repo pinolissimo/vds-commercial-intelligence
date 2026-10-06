@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1066,
+  "runs": 1067,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -28349,6 +28349,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "66b3c98db61ffd315a7ccf90d6ce0954",
+      "evaluated_at": "2026-10-06T08:11:45Z",
+      "organization": "LiveEO GmbH",
+      "title": "Senior Marketing Manager - Government Solutions (f/m/x)",
+      "location": "LiveEO GmbH Berlin (Onsite)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/liveeo-gmbh/senior-marketing-manager-government-solutions-liveeo-gmbh-berlin-onsite-204027",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Senior Marketing Manager position, not a web development role; only tangential keyword 'website' matched and no web/WordPress/WooCommerce/frontend scope is present.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "marketing_not_webdev",
+        "onsite_only",
+        "no_stack_fit",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00023152,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ecee7339fce4746c1a02dd52ad61b75c",
+      "evaluated_at": "2026-10-06T08:11:45Z",
+      "organization": "LiveEO GmbH",
+      "title": "Senior Marketing Manager - Government Solutions (f/m/x)",
+      "location": "LiveEO GmbH Berlin (Onsite)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/liveeo-gmbh/senior-marketing-manager-government-solutions-liveeo-gmbh-berlin-onsite-160791",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Duplicate Senior Marketing Manager posting with no web development scope; matched keywords are generic commercial terms unrelated to the target freelance web-dev profile.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "marketing_not_webdev",
+        "onsite_only",
+        "no_stack_fit",
+        "duplicate_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00023152,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -32983,9 +33041,21 @@
       "completion_tokens": 1109,
       "total_tokens": 3221,
       "estimated_cost_usd": 0.00157524
+    },
+    {
+      "at": "2026-10-06T08:11:45Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 246,
+      "completion_tokens": 262,
+      "total_tokens": 1148,
+      "estimated_cost_usd": 0.00046304
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-06T07:53:18Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-06T08:11:45Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
