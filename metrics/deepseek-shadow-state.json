@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1097,
+  "runs": 1098,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -28887,6 +28887,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2d1cd7ece4a3c77ac45719fb06264612",
+      "evaluated_at": "2026-10-06T16:58:59Z",
+      "organization": "TenMedia GmbH",
+      "title": "Traumpraktikum mit Perspektive: Werde Fachinformatiker für Anwendungsentwicklung (m/w/d) bei uns in Berlin!",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tenmedia-gmbh/traumpraktikum-mit-perspektive-werde-fachinformatiker-fur-anwendungsentwicklung-bei-uns-in-berlin-397765",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 62,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "This is a German apprenticeship/internship (Ausbildung/Praktikum) for Fachinformatiker für Anwendungsentwicklung, not a freelance or contract web-development opportunity; it is a full-time employment/training position in Berlin, outside the Spain/Italy/EU-remote freelance target and incompatible with freelance acquisition.",
+      "deepseek_risk_flags": [
+        "apprenticeship_not_freelance",
+        "on_site_berlin_germany",
+        "employment_type_not_contract",
+        "no_explicit_freelance_or_external_collaboration",
+        "geo_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002319,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -33605,9 +33634,21 @@
       "completion_tokens": 174,
       "total_tokens": 749,
       "estimated_cost_usd": 0.00021408
+    },
+    {
+      "at": "2026-10-06T16:58:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 477,
+      "completion_tokens": 191,
+      "total_tokens": 796,
+      "estimated_cost_usd": 0.0002319
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-06T16:41:01Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-06T16:58:59Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
