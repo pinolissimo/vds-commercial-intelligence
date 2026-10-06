@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T09:43:08Z",
+  "updated_at": "2026-10-06T10:00:54Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1036,
+    "evaluated_total": 1038,
     "agreement_count": 494,
-    "agreement_pct": 47.68,
+    "agreement_pct": 47.59,
     "deepseek_promote": 33,
     "vds_promote": 274,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 387,
-    "cumulative_estimated_cost_usd": 0.200371,
-    "cost_per_evaluated_candidate_usd": 0.00019341,
-    "cost_per_deepseek_promote_usd": 0.00607185,
-    "cost_per_observed_ready_or_contacted_usd": 0.10018546,
-    "latest_request": null
+    "request_count": 388,
+    "cumulative_estimated_cost_usd": 0.200715,
+    "cost_per_evaluated_candidate_usd": 0.00019337,
+    "cost_per_deepseek_promote_usd": 0.00608226,
+    "cost_per_observed_ready_or_contacted_usd": 0.10035729,
+    "latest_request": {
+      "at": "2026-10-06T10:00:49Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 724,
+      "completion_tokens": 278,
+      "total_tokens": 1130,
+      "estimated_cost_usd": 0.00034366
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "1f9c53852c0019d07a9a2eee7090d86a",
-      "evaluated_at": "2026-10-03T21:47:04Z",
-      "organization": "Kraken",
-      "title": "Human Design Program Lead (F/H/X)",
-      "location": "Paris, France",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/kraken/human-design-program-lead-paris-74225",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.88,
-      "deepseek_primary_reason": "Human Design Program Lead role; entirely unrelated to web development stack. Matched keywords are incidental and provide no truthful stack fit.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "non_technical_role",
-        "generic_keyword_match",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000150528,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "769dfc2dab9b8824dc4749748ec2451d",
-      "evaluated_at": "2026-10-03T21:47:04Z",
-      "organization": "Kraken",
-      "title": "Technical Program Lead (F/H/X)",
-      "location": "Paris, France",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/kraken/technical-program-lead-paris-304328",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 10.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Technical Program Lead role; program management, not hands-on web development. No WordPress/WooCommerce/frontend scope; keyword matches incidental.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "non_hands_on_role",
-        "generic_keyword_match",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000150528,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6c67e65d6c9611375564a4fafd2f0864",
       "evaluated_at": "2026-10-03T21:47:04Z",
@@ -1449,10 +1404,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "af9aff7466d8fdb805dd719780a22f61",
+      "evaluated_at": "2026-10-06T10:00:49Z",
+      "organization": "Niboline Gmbh",
+      "title": "Working Student – Graphic Design E-Commerce (all genders)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/niboline-gmbh/working-student-graphic-design-e-commerce-all-genders-berlin-499458",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Working Student Graphic Design E-Commerce position, not a freelance web-development opportunity; only tangential 'website' keyword match and no WordPress/WooCommerce/frontend dev scope.",
+      "deepseek_risk_flags": [
+        "student_role_not_freelance",
+        "graphic_design_not_web_dev",
+        "no_stack_fit",
+        "employment_type_unclear"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00017183,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e2e9feb851e076e36595f32daba7e2fa",
+      "evaluated_at": "2026-10-06T10:00:49Z",
+      "organization": "primion Technology GmbH",
+      "title": "Fullstack Developer (m/f/d) System Modernization & Strategic Delivery",
+      "location": "Remote job",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/primion-technology-gmbh/remote-fullstack-developer-system-modernization-strategic-delivery-420550",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Fullstack System Modernization role with generic frontend/UI/UX keyword overlap but no WordPress/WooCommerce or web-performance focus; 'collaborator' intent is not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "fullstack_not_web_focus",
+        "no_wordpress_scope",
+        "generic_collaboration_keyword",
+        "likely_employment_role"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00017183,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-06T09:43:01Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-06T10:00:44Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
