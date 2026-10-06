@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-06T07:53:44Z",
-  "latest_checked_uid": 1566,
+  "updated_at": "2026-10-06T08:09:43Z",
+  "latest_checked_uid": 1567,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1038,6 +1038,21 @@
       "automatic_followup_allowed": false,
       "classification_verified_at": "2026-10-05T18:00:00Z",
       "classification_basis": "HOSTINGER_INBOX_UID_1566_TEXT"
+    },
+    {
+      "provider_inbound_uid": 1567,
+      "received_at": "2026-10-06T08:09:30Z",
+      "canonical_identity_key": "org:mail.360imprimir.es",
+      "entity": "mail.360imprimir.es",
+      "sender": "campaigns@mail.360imprimir.es",
+      "subject": "DÍAS 360 🤩 20% de descuento en toda la web",
+      "message_id": "<d260d2ec-120f-44d5-b360-7a836e2c8707@dfw1s10mta2002.xt.local>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
     }
   ],
   "last_sync_reason": "Hostinger Inbox poll successful; no new messages."
