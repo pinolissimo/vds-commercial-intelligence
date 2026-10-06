@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Visual Design Studio — 2026
 """Enrich Command Center dashboard with operational funnel semantics.
 
 This is a read-model postprocessor only. It never authorizes outreach.
@@ -97,12 +98,21 @@ def merge_live_provider_outbound(dashboard: dict) -> dict:
     for event in live.get("events") or []:
         if not isinstance(event, dict):
             continue
-        if event.get("state") != "VERIFIED_EMAIL_SENT":
-            continue
         uid = event.get("provider_uid")
         if uid is None:
             continue
-        by_uid[str(uid)] = dict(event)
+        key = str(uid)
+        # The live provider overlay is authoritative for reclassification. An
+        # admin report, reply, bounce or explicitly excluded event must remove
+        # any stale FIRST_CONTACT projection built from raw Sent evidence.
+        if (
+            event.get("state") != "VERIFIED_EMAIL_SENT"
+            or event.get("count_as_successful_outbound") is False
+            or event.get("action_type") in {"ADMIN_REPORT", "TEST_OR_ADMIN", "REPLY"}
+        ):
+            by_uid.pop(key, None)
+            continue
+        by_uid[key] = dict(event)
 
     messages = list(by_uid.values())
     messages.sort(key=lambda m: (m.get("sent_at") or "", int(m.get("provider_uid") or 0)), reverse=True)
@@ -117,7 +127,11 @@ def merge_live_provider_outbound(dashboard: dict) -> dict:
             item["sent_at_local"] = dt.astimezone(MADRID).isoformat(timespec="seconds")
             today_messages.append(item)
     today_messages.sort(key=lambda m: m.get("sent_at", ""), reverse=True)
-    first_contacts = [m for m in today_messages if m.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"]
+    first_contacts = [
+        m for m in today_messages
+        if m.get("action_type", "FIRST_CONTACT") == "FIRST_CONTACT"
+        and m.get("count_as_successful_outbound") is not False
+    ]
 
     window_start = datetime.combine(local_date, time(9, 0), tzinfo=MADRID)
     window_end = datetime.combine(local_date, time(19, 0), tzinfo=MADRID)
