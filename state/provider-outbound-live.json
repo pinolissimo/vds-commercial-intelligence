@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-10-06T20:08:57Z",
+  "updated_at": "2026-10-06T20:34:00Z",
   "provider_of_record": "HOSTINGER_SENT",
   "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced/duplicate-policy-violation attempts remain audit-only and are never counted as successful first-contact outbound.",
   "events": [
@@ -3382,17 +3382,21 @@
     {
       "provider_uid": 777,
       "sent_at": "2026-10-06T20:08:57Z",
-      "canonical_identity_key": "org:gmail.com",
-      "organization": "gmail.com",
+      "canonical_identity_key": "admin:daily-report",
+      "organization": "Visual Design Studio owner report",
       "recipient": "allocca.pino@gmail.com",
       "subject": "VDS — Report giornaliero performance e opportunità — 6 ottobre 2026",
-      "workstream": "VDS_PROVIDER_SYNC",
-      "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
+      "workstream": "VDS_ADMIN_REPORT",
+      "state": "VERIFIED_ADMIN_REPORT_SENT",
+      "action_type": "ADMIN_REPORT",
       "attachments": 0,
       "bcc_owner": false,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1791317336455872391.1791317336@visualdesignstudio.es>"
+      "external_id": "<1791317336455872391.1791317336@visualdesignstudio.es>",
+      "count_as_successful_outbound": false,
+      "archetype": null,
+      "variant": null,
+      "micro_cta_type": null
     }
   ],
   "last_sync_reason": "Provider-verified FIRST_CONTACT appended immediately after send.",
