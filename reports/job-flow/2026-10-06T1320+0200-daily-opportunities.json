@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "run_id": "VDS-JOB-FLOW-2026-10-06T1320+0200",
+  "worker_id": "LINKEDIN_HUNTER",
+  "started_at": "2026-10-06T13:01:58+02:00",
+  "completed_at": "2026-10-06T13:20:00+02:00",
+  "send_window_open": true,
+  "command_bridge": {
+    "eligible_commands": 0,
+    "consumed_commands": 0,
+    "external_send_count": 0,
+    "provider_uids": [],
+    "normal_cycle_completed": true,
+    "existing_gates_preserved": true
+  },
+  "metrics": {
+    "serious_candidates": 5,
+    "direct_email_harvest_count": 3,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 2,
+    "wait_research": 0,
+    "reject": 3,
+    "duplicate_failures": 1,
+    "fit_failures": 2,
+    "route_failures": 2,
+    "downstream_outcomes": {
+      "qualified_positive_reply": 0,
+      "interview_call": 0,
+      "proposal": 0,
+      "won_revenue": 0
+    }
+  },
+  "decisions": [
+    {
+      "opportunity_id": "OPP-IT-INTERNETIMAGE-STRUCTURED-PIVA-WEB-PARTNER-2026",
+      "organization_id": "IT-VEN-PD-INTERNETIMAGE",
+      "outcome": "MANUAL_APPLY",
+      "external_send": false,
+      "reason_code": "OFFICIAL_FORM_ROUTE",
+      "evidence": "Official open P.IVA partner call explicitly requests recurring remote WordPress/PHP, UX and internal overflow collaboration; clean canonical, provider and mailbox dedup."
+    },
+    {
+      "opportunity_id": "OPP-IT-JAMPAA-WORDPRESS-MCP-AI-FREELANCE-2026",
+      "organization_id": "IT-VEN-PD-JAMPAA",
+      "outcome": "MANUAL_APPLY",
+      "external_send": false,
+      "reason_code": "OFFICIAL_FORM_ROUTE",
+      "evidence": "Official current Senior WordPress/MCP/AI project preferably for freelance P.IVA; clean canonical, provider and mailbox dedup."
+    },
+    {
+      "organization": "Bellop",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "evidence": "Fresh Hostinger Sent organization/domain evidence: UID 441 dated 2026-09-11, subject WordPress / Front-End — external production capacity."
+    },
+    {
+      "organization": "Dacor Studio",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "MANDATORY_ONSITE",
+      "evidence": "Current official employer post requires 100% onsite work in Jerez."
+    },
+    {
+      "organization": "M2 Informatica",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "MANDATORY_ONSITE_AND_CORE_FIT",
+      "evidence": "Official role is onsite only and centered on communications/marketing rather than VDS core technical delivery."
+    }
+  ],
+  "harvested_routes": [
+    {
+      "organization": "Bellop",
+      "route": "team@bellop.io",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "BLOCKED_DUPLICATE_UID_441"
+    },
+    {
+      "organization": "Dacor Studio",
+      "route": "info@dacorstudio.com",
+      "authority": "CURRENT_EMPLOYER_JOB_POST",
+      "result": "BLOCKED_MANDATORY_ONSITE"
+    },
+    {
+      "organization": "M2 Informatica",
+      "route": "EXACT_OFFICIAL_APPLICATION_EMAIL",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "BLOCKED_ONSITE_AND_FIT"
+    },
+    {
+      "organization": "Internetimage.it S.r.l.",
+      "route": "OFFICIAL_APPLICATION_FORM",
+      "authority": "CURRENT_OFFICIAL_PIVA_PARTNER_CALL",
+      "result": "MANUAL_APPLY"
+    },
+    {
+      "organization": "Jampaa S.r.l.",
+      "route": "OFFICIAL_APPLICATION_FORM",
+      "authority": "CURRENT_OFFICIAL_FREELANCE_JOB_LISTING",
+      "result": "MANUAL_APPLY"
+    }
+  ],
+  "updates": [
+    {
+      "opportunity_id": "OPP-IT-INTERNETIMAGE-STRUCTURED-PIVA-WEB-PARTNER-2026",
+      "from": null,
+      "to": "MANUAL_APPLY"
+    },
+    {
+      "opportunity_id": "OPP-IT-JAMPAA-WORDPRESS-MCP-AI-FREELANCE-2026",
+      "from": null,
+      "to": "MANUAL_APPLY"
+    }
+  ],
+  "notes": [
+    "Zero-duplicate gates were preserved. Repository identities, global ledgers, reservations, all 760 Hostinger Sent messages and fresh Gmail Sent checks were clear for both new manual opportunities.",
+    "No email or form submission was made; both qualified routes require user-supplied CV/profile evidence and form answers.",
+    "Internetimage's separate employee WordPress role was verified as full-time onsite and was not conflated with its distinct open P.IVA partner call.",
+    "The cycle harvested three exact direct-email routes despite zero safe first-contact sends."
+  ]
+}
