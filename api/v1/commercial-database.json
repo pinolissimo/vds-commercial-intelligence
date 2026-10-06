@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-06T10:32:12+02:00",
+  "generated_at": "2026-10-06T10:36:48+02:00",
   "purpose": "Commercial prospect database organized by potential-customer type, country and region, including contacts, opportunities and anti-duplication state.",
   "anti_duplication_policy": {
     "rule": "NO_DUPLICATION",
@@ -15,8 +15,8 @@
     {
       "type": "WEB_DIGITAL_AGENCY",
       "label": "Web / Digital Agency",
-      "count": 45,
-      "contacted": 15,
+      "count": 46,
+      "contacted": 16,
       "clear_for_first_contact": 20
     },
     {
@@ -99,19 +99,19 @@
     {
       "type": "OTHER",
       "label": "Other",
-      "count": 191,
-      "contacted": 189,
+      "count": 190,
+      "contacted": 188,
       "clear_for_first_contact": 2
     }
   ],
   "summary_by_country": [
     {
       "country": "Unknown",
-      "count": 145
+      "count": 144
     },
     {
       "country": "Italy",
-      "count": 96
+      "count": 97
     },
     {
       "country": "Spain",
@@ -216,6 +216,11 @@
     },
     {
       "country": "Italy",
+      "region": "Liguria",
+      "count": 1
+    },
+    {
+      "country": "Italy",
       "region": "Puglia",
       "count": 1
     },
@@ -277,7 +282,7 @@
     {
       "country": "Unknown",
       "region": "Unresolved",
-      "count": 145
+      "count": 144
     }
   ],
   "indexes": {
@@ -453,7 +458,6 @@
         "org:zabala.es",
         "org:creative.it",
         "org:understack.it",
-        "org:webgenova.net",
         "org:kromagency.es",
         "org:azionedigital.it",
         "org:wmr.it",
@@ -566,6 +570,7 @@
         "LEAD-IT-LAZ-RM-REMEDIA",
         "LEAD-IT-BAS-PZ-DEBERNARDIS",
         "LEAD-ES-GAL-LU-VAIVEN",
+        "IT-LIG-GE-WEBGENOVA",
         "ORG-ES-FACTOR-IDEAS",
         "ORG-ES-GIRA180",
         "ORG-ES-DEADWOOD-STUDIO",
@@ -631,6 +636,7 @@
         "LEAD-IT-CAM-SA-GLOBALSERVICE-IMPRESA",
         "LEAD-IT-LAZ-RM-REMEDIA",
         "LEAD-IT-BAS-PZ-DEBERNARDIS",
+        "IT-LIG-GE-WEBGENOVA",
         "IT-LAZ-RM-ALMA-CREATIVE",
         "ORG-IT-LEOMAT",
         "org:junolab.it",
@@ -882,7 +888,6 @@
         "org:witberry.lv",
         "org:marketburner.com",
         "org:qpquality.com",
-        "org:webgenova.net",
         "org:worldmetrics.org",
         "org:themelocation.com",
         "org:goodfirms.co",
@@ -960,6 +965,9 @@
         "IT-LAZ-RM-ALMA-CREATIVE",
         "LEAD-IT-LAZ-RM-GROWNNECTIA",
         "opportunity:OPP-IT-LAZ-RM-REMEDIA-UIUX-FREELANCE-2026"
+      ],
+      "Italy|Liguria": [
+        "IT-LIG-GE-WEBGENOVA"
       ],
       "Italy|Lombardia": [
         "LEAD-IT-LOM-MI-WALKSTONE",
@@ -1238,7 +1246,6 @@
         "org:witberry.lv",
         "org:marketburner.com",
         "org:qpquality.com",
-        "org:webgenova.net",
         "org:worldmetrics.org",
         "org:themelocation.com",
         "org:goodfirms.co",
@@ -1611,6 +1618,57 @@
         "decision": "HARD_BLOCK_DUPLICATE",
         "reasons": [
           "CORPORATE_DOMAIN_ALREADY_CONTACTED",
+          "EXACT_EMAIL_ALREADY_CONTACTED",
+          "ORGANIZATION_ALREADY_CONTACTED"
+        ]
+      }
+    },
+    {
+      "id": "IT-LIG-GE-WEBGENOVA",
+      "organization": "webgenova.net",
+      "customer_type": "WEB_DIGITAL_AGENCY",
+      "customer_type_label": "Web / Digital Agency",
+      "country": "Italy",
+      "region": "Liguria",
+      "territory": null,
+      "website": "https://www.webgenova.net/lavora-con-noi",
+      "domain": "webgenova.net",
+      "emails": [
+        "info@webgenova.net"
+      ],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-IT-WEBGENOVA-OUTSOURCING",
+          "title": "Web Genova — rete Comunicando Solutions / outsourcing WordPress",
+          "status": "CONTACTED",
+          "type": "OUTSOURCING",
+          "campaign_id": "AGENCY-OUTSOURCING-IT",
+          "detected_at": "2026-08-28",
+          "last_verified_at": "2026-10-06T10:34:00+02:00",
+          "priority": null,
+          "fit": null,
+          "freshness": 98,
+          "route_type": "AUTHORITATIVE_APPLICATION_EMAIL",
+          "route_url": "https://www.webgenova.net/lavora-con-noi"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": 98,
+      "contacted": true,
+      "last_outbound_at": "2026-10-02T08:59:57Z",
+      "last_subject": "Collaborazione rete Comunicando Solutions — WordPress / frontend / performance",
+      "workstreams": [
+        "VDS_PROVIDER_SYNC"
+      ],
+      "source_urls": [
+        "https://www.webgenova.net/lavora-con-noi"
+      ],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
           "EXACT_EMAIL_ALREADY_CONTACTED",
           "ORGANIZATION_ALREADY_CONTACTED"
         ]
@@ -2005,11 +2063,11 @@
         {
           "id": "OPP-IT-NEXIBO-COLLAB",
           "title": "External freelance web / UX collaborator",
-          "status": "ALREADY_CONTACTED",
+          "status": "CONTACTED",
           "type": "STRUCTURAL_PARTNERSHIP",
           "campaign_id": "AGENCY-OUTSOURCING-IT",
           "detected_at": "2026-08-28",
-          "last_verified_at": "2026-09-02",
+          "last_verified_at": "2026-10-06T10:34:00+02:00",
           "priority": null,
           "fit": null,
           "freshness": 95,
@@ -2851,16 +2909,16 @@
         {
           "id": "OPP-ES-VAIVEN-WEB-FREELANCE",
           "title": "Freelance programmer for WordPress web projects",
-          "status": "READY_TO_CONTACT",
+          "status": "CONTACTED",
           "type": "ACTIVE_FREELANCE_COLLABORATION",
           "campaign_id": "AGENCY-OUTSOURCING-ES",
           "detected_at": "2026-08-28",
-          "last_verified_at": "2026-08-28",
+          "last_verified_at": "2026-10-06T10:34:00+02:00",
           "priority": null,
           "fit": null,
           "freshness": 88,
-          "route_type": null,
-          "route_url": null
+          "route_type": "LINKEDIN_PRIVATE_MESSAGE_OR_PORTFOLIO_SUBMISSION",
+          "route_url": "https://es.linkedin.com/in/julia-saavedra-gayoso"
         }
       ],
       "opportunity_count": 1,
@@ -3497,16 +3555,16 @@
         {
           "id": "OPP-IT-STUDIART-WEB-FREELANCE",
           "title": "Web Designer / Web Developer collaboration",
-          "status": "READY_TO_CONTACT",
+          "status": "CONTACTED",
           "type": "ACTIVE_JOB_OR_STRUCTURAL_COLLABORATION",
           "campaign_id": "AGENCY-OUTSOURCING-IT",
           "detected_at": "2026-08-28",
-          "last_verified_at": "2026-08-28",
+          "last_verified_at": "2026-10-06T10:34:00+02:00",
           "priority": null,
           "fit": null,
           "freshness": 95,
-          "route_type": null,
-          "route_url": null
+          "route_type": "OFFICIAL_APPLICATION_FORM",
+          "route_url": "https://www.studiart.it/entra-a-far-parte-della-nostra-agenzia-di-comunicazione-piacenza/"
         }
       ],
       "opportunity_count": 1,
@@ -12460,40 +12518,6 @@
       "last_subject": "External web capacity for EU-funded project delivery",
       "workstreams": [
         "VDS_LIVE_PROVIDER_SYNC"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
-      }
-    },
-    {
-      "id": "org:webgenova.net",
-      "organization": "webgenova.net",
-      "customer_type": "OTHER",
-      "customer_type_label": "Other",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "webgenova.net",
-      "emails": [
-        "info@webgenova.net"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-02T08:59:57Z",
-      "last_subject": "Collaborazione rete Comunicando Solutions — WordPress / frontend / performance",
-      "workstreams": [
-        "VDS_PROVIDER_SYNC"
       ],
       "source_urls": [],
       "anti_duplication": {
