@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-06T17:14:13+02:00",
+  "generated_at": "2026-10-06T17:16:17+02:00",
   "purpose": "Commercial prospect database organized by potential-customer type, country and region, including contacts, opportunities and anti-duplication state.",
   "anti_duplication_policy": {
     "rule": "NO_DUPLICATION",
@@ -57,8 +57,8 @@
     {
       "type": "ECOMMERCE_RETAIL",
       "label": "E-commerce / Retail",
-      "count": 2,
-      "contacted": 1,
+      "count": 3,
+      "contacted": 2,
       "clear_for_first_contact": 1
     },
     {
@@ -92,8 +92,8 @@
     {
       "type": "RECRUITER_INTERMEDIARY",
       "label": "Recruiter / Intermediary",
-      "count": 2,
-      "contacted": 1,
+      "count": 1,
+      "contacted": 0,
       "clear_for_first_contact": 1
     },
     {
@@ -107,7 +107,7 @@
   "summary_by_country": [
     {
       "country": "Unknown",
-      "count": 146
+      "count": 145
     },
     {
       "country": "Italy",
@@ -115,7 +115,7 @@
     },
     {
       "country": "Spain",
-      "count": 49
+      "count": 50
     },
     {
       "country": "EU",
@@ -237,7 +237,7 @@
     {
       "country": "Spain",
       "region": "Unresolved",
-      "count": 36
+      "count": 37
     },
     {
       "country": "Spain",
@@ -282,7 +282,7 @@
     {
       "country": "Unknown",
       "region": "Unresolved",
-      "count": 146
+      "count": 145
     }
   ],
   "indexes": {
@@ -292,6 +292,7 @@
         "LEAD-REMOTE-MUCUI"
       ],
       "ECOMMERCE_RETAIL": [
+        "ES-CLM-AB-MTS23TALENT",
         "org:glitch-shop.com",
         "opportunity:OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026"
       ],
@@ -515,7 +516,6 @@
         "org:boscolohotelmarketing.com"
       ],
       "RECRUITER_INTERMEDIARY": [
-        "org:mts23talent.com",
         "opportunity:OPP-ES-MAD-TALENTCHEF-WORDPRESS-FREELANCE-2026"
       ],
       "SME_DIRECT_BUYER": [
@@ -749,6 +749,7 @@
         "ORG-ES-GIRA180",
         "ORG-ES-DEADWOOD-STUDIO",
         "ORG-ES-IQVMEDIA",
+        "ES-CLM-AB-MTS23TALENT",
         "org:enigmia.es",
         "org:sixtema.es",
         "org:snsmarketing.es",
@@ -920,7 +921,6 @@
         "org:elestudiodecoco.com",
         "org:accelopment.com",
         "org:enecworld.com",
-        "org:mts23talent.com",
         "opportunity:OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026",
         "opportunity:OPP-WW-PANGOLIN-MARKETING-SENIOR-WORDPRESS-2026",
         "opportunity:OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026",
@@ -1125,6 +1125,7 @@
         "ORG-ES-GIRA180",
         "ORG-ES-DEADWOOD-STUDIO",
         "ORG-ES-IQVMEDIA",
+        "ES-CLM-AB-MTS23TALENT",
         "org:enigmia.es",
         "org:sixtema.es",
         "org:snsmarketing.es",
@@ -1285,7 +1286,6 @@
         "org:elestudiodecoco.com",
         "org:accelopment.com",
         "org:enecworld.com",
-        "org:mts23talent.com",
         "opportunity:OPP-EU-DK-HJEMMESIDEROGMARKETING-COLLAB-2026",
         "opportunity:OPP-WW-PANGOLIN-MARKETING-SENIOR-WORDPRESS-2026",
         "opportunity:OPP-WW-SITEMILE-WOOCOMMERCE-SPECIALIST-2026",
@@ -5950,6 +5950,58 @@
       }
     },
     {
+      "id": "ES-CLM-AB-MTS23TALENT",
+      "organization": "23Talent",
+      "customer_type": "ECOMMERCE_RETAIL",
+      "customer_type_label": "E-commerce / Retail",
+      "country": "Spain",
+      "region": "Unresolved",
+      "territory": null,
+      "website": "https://mts23talent.com/",
+      "domain": "mts23talent.com",
+      "emails": [
+        "rrhh@mts23talent.com"
+      ],
+      "contacts": [],
+      "opportunities": [
+        {
+          "id": "OPP-ES-MTS23TALENT-WEB-DEVELOPER-2026",
+          "title": "23Talent — desarrollador/a web, UX, ecommerce y rendimiento",
+          "status": "CONTACTED",
+          "type": "ACTIVE_JOB_OR_STRUCTURAL_COLLABORATION",
+          "campaign_id": "VDS-JOB-FLOW-2026",
+          "detected_at": "2026-10-06T17:09:00+02:00",
+          "last_verified_at": "2026-10-06T17:13:05+02:00",
+          "priority": null,
+          "fit": null,
+          "freshness": 99,
+          "route_type": "EMPLOYER_CONTROLLED_JOB_APPLICATION_EMAIL",
+          "route_url": "https://es.linkedin.com/jobs/view/desarrollador-web-at-23talent-4470427036"
+        }
+      ],
+      "opportunity_count": 1,
+      "max_priority": null,
+      "max_freshness": 99,
+      "contacted": true,
+      "last_outbound_at": "2026-10-06T15:13:00Z",
+      "last_subject": "Desarrollador web — propuesta de colaboración freelance/P.IVA",
+      "workstreams": [
+        "VDS_JOB_FLOW"
+      ],
+      "source_urls": [
+        "https://es.linkedin.com/jobs/view/desarrollador-web-at-23talent-4470427036",
+        "https://es.linkedin.com/company/23talent",
+        "https://mts23talent.com/"
+      ],
+      "anti_duplication": {
+        "first_contact_allowed": false,
+        "decision": "HARD_BLOCK_DUPLICATE",
+        "reasons": [
+          "CONTACTED_STATE_FROM_COMPANY_PROJECTION"
+        ]
+      }
+    },
+    {
       "id": "opportunity:OPP-ES-MOBYLESHOP-WPO-FREELANCE-2026",
       "organization": "Mobyleshop",
       "customer_type": "ECOMMERCE_RETAIL",
@@ -6271,41 +6323,6 @@
         "first_contact_allowed": true,
         "decision": "CLEAR_FOR_NEXT_GATES",
         "reasons": []
-      }
-    },
-    {
-      "id": "org:mts23talent.com",
-      "organization": "23Talent",
-      "customer_type": "RECRUITER_INTERMEDIARY",
-      "customer_type_label": "Recruiter / Intermediary",
-      "country": "Unknown",
-      "region": "Unresolved",
-      "territory": null,
-      "website": null,
-      "domain": "mts23talent.com",
-      "emails": [
-        "rrhh@mts23talent.com"
-      ],
-      "contacts": [],
-      "opportunities": [],
-      "opportunity_count": 0,
-      "max_priority": null,
-      "max_freshness": null,
-      "contacted": true,
-      "last_outbound_at": "2026-10-06T15:13:00Z",
-      "last_subject": "Desarrollador web — propuesta de colaboración freelance/P.IVA",
-      "workstreams": [
-        "VDS_JOB_FLOW"
-      ],
-      "source_urls": [],
-      "anti_duplication": {
-        "first_contact_allowed": false,
-        "decision": "HARD_BLOCK_DUPLICATE",
-        "reasons": [
-          "CORPORATE_DOMAIN_ALREADY_CONTACTED",
-          "EXACT_EMAIL_ALREADY_CONTACTED",
-          "ORGANIZATION_ALREADY_CONTACTED"
-        ]
       }
     },
     {
