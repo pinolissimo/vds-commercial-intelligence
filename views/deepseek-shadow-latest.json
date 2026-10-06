@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T12:07:23Z",
+  "updated_at": "2026-10-06T12:25:46Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1039,
+    "evaluated_total": 1040,
     "agreement_count": 495,
-    "agreement_pct": 47.64,
+    "agreement_pct": 47.6,
     "deepseek_promote": 33,
     "vds_promote": 274,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 389,
-    "cumulative_estimated_cost_usd": 0.200939,
-    "cost_per_evaluated_candidate_usd": 0.0001934,
-    "cost_per_deepseek_promote_usd": 0.00608905,
-    "cost_per_observed_ready_or_contacted_usd": 0.10046927,
-    "latest_request": null
+    "request_count": 390,
+    "cumulative_estimated_cost_usd": 0.201074,
+    "cost_per_evaluated_candidate_usd": 0.00019334,
+    "cost_per_deepseek_promote_usd": 0.00609316,
+    "cost_per_observed_ready_or_contacted_usd": 0.10053706,
+    "latest_request": {
+      "at": "2026-10-06T12:25:41Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 166,
+      "completion_tokens": 146,
+      "total_tokens": 696,
+      "estimated_cost_usd": 0.00013557
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "547664465b2f5cc634dd14b3406c165b",
-      "evaluated_at": "2026-10-04T10:00:09Z",
-      "organization": "Researchgate",
-      "title": "Senior Frontend Engineer - React",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/researchgate/senior-frontend-engineer-react-berlin-438870",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior Frontend Engineer - React role at Researchgate is React-centric and does not match the target profile's WordPress/WooCommerce/custom web scope; no explicit freelance/contract compatibility and Berlin location is not a primary market.",
-      "deepseek_risk_flags": [
-        "react_core_stack",
-        "no_wordpress_scope",
-        "no_freelance_signal",
-        "geo_mismatch_berlin"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000106075,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f41379d14ecd2a0397cb933a008abb93",
       "evaluated_at": "2026-10-04T10:00:09Z",
@@ -1451,10 +1434,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "dded39f7ca834888a97bf31f63307752",
+      "evaluated_at": "2026-10-06T12:25:41Z",
+      "organization": "Realchemistry",
+      "title": "Senior Account Associate - Medical",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/realchemistry/senior-account-associate-medical-329275",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Senior Account Associate in medical/healthcare communications, not a web development role; only incidental keyword 'website' matched and no WordPress, WooCommerce, frontend, or web-performance scope is present.",
+      "deepseek_risk_flags": [
+        "non-technical role",
+        "no web development scope",
+        "keyword-only match",
+        "agency/collaboration terms are generic and not proof of freelance compatibility"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00013557,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-06T12:07:17Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-06T12:25:37Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
