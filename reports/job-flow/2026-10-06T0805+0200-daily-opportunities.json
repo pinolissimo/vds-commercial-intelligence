@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "id": "JOB-FLOW-DAILY-2026-10-06T0805+0200",
+  "worker_id": "LINKEDIN_HUNTER",
+  "generated_at": "2026-10-06T08:05:00+02:00",
+  "verification_date": "2026-10-06",
+  "timezone": "Europe/Madrid",
+  "external_send_count": 0,
+  "provider_uids": [],
+  "send_window_state": "CLOSED",
+  "command_bridge": {
+    "eligible_unconsumed_commands": 0,
+    "note": "All PENDING_TASK_BRIDGE commands targeting LINKEDIN_HUNTER are expired or already receipted."
+  },
+  "cycle_metrics": {
+    "serious_candidates": 3,
+    "direct_email_harvest_count": 1,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 0,
+    "wait_research": 1,
+    "reject": 2,
+    "duplicate_failures": 0,
+    "fit_failures": 1,
+    "route_failures": 1,
+    "downstream_outcomes": {
+      "new_relevant_replies": 0,
+      "qualified_positive_replies": 0,
+      "interviews_or_calls": 0,
+      "proposals": 0,
+      "won_or_revenue": 0
+    }
+  },
+  "new_opportunities": [
+    {
+      "opportunity_id": "OPP-IT-WHITE-PAPER-AI-FIRST-FREELANCE-DEVELOPER-2026",
+      "organization_id": "IT-EMR-PC-WHITE-PAPER",
+      "organization": "White Paper S.r.l.",
+      "country": "Italy",
+      "source_url": "https://it.indeed.com/viewjob?jk=a339471ac9d43bb9",
+      "verification_date": "2026-10-06",
+      "fit_score": 94,
+      "fit_reasons": [
+        "Explicit freelance/P.IVA collaboration, remote work and project-based continuity",
+        "Direct match on PHP/WordPress, JavaScript, CMS/e-commerce integration and web maintenance",
+        "Daily AI-assisted development with Codex or similar tools is central to the role",
+        "API, webhook, automation and multi-client agency experience are valued"
+      ],
+      "material_gaps": [
+        "The closing sentence mentions complex Claude Code experience specifically; VDS can evidence Codex, Kilo Code and DeepSeek workflows but must not claim Claude Code experience without proof",
+        "React, Node.js, Python and headless/Next.js appear as example or nice-to-have technologies and should not be overstated",
+        "The listing displays a nominal €1/year platform value that is inconsistent with the text saying compensation is negotiable, so no budget is certified"
+      ],
+      "verified_contact_or_channel": "info@wpaper.it — explicitly named in the current job listing and confirmed as a corporate address on the official site",
+      "manual_application_required": false,
+      "manual_application_url": null,
+      "required_materials": [
+        "CV or portfolio",
+        "Concise AI-assisted project example",
+        "Required subject line"
+      ],
+      "deadline": null,
+      "budget": null,
+      "next_action": "At or after 09:00, rerun every provider and canonical dedup gate; if still clear, send one truthful external-partner application.",
+      "factual_state": "WAIT_RESEARCH_SEND_WINDOW"
+    }
+  ],
+  "updates": [],
+  "evaluated_not_new": [
+    {
+      "organization": "SecretKey",
+      "outcome": "REJECT",
+      "reason": "Current frontend opening explicitly excludes freelance collaboration."
+    },
+    {
+      "organization": "Dacor Studio",
+      "outcome": "REJECT",
+      "reason": "One bounded verification attempt found no employer-controlled vacancy page; the general corporate email is not accepted as a substitute application route."
+    }
+  ],
+  "provider_reconciliation": {
+    "latest_hostinger_inbox_uid": 1566,
+    "new_relevant_replies": 0,
+    "hostinger_sent_messages_checked": 756
+  },
+  "novelty_and_dedup_verification": {
+    "canonical_opportunity_history": "CLEAR",
+    "global_contact_ledger_email_domain_organization": "CLEAR",
+    "dispatch_lease_or_active_reservation": "CLEAR_COMPLETED_HISTORICAL_LEASE_NO_MATCH",
+    "hostinger_sent_recipient_domain_organization": "CLEAR_756_MESSAGES_CHECKED",
+    "gmail_sent_exact_recipient_domain": "CLEAR",
+    "reporting_novelty": "CERTIFIED_NEW"
+  },
+  "safety": {
+    "zero_duplicate_invariant_preserved": true,
+    "no_external_send": true,
+    "send_window_preserved": true
+  }
+}
