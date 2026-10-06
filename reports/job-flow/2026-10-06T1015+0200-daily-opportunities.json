@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "run_id": "VDS-JOB-FLOW-2026-10-06T1015+0200",
+  "worker_id": "LINKEDIN_HUNTER",
+  "started_at": "2026-10-06T10:04:22+02:00",
+  "completed_at": "2026-10-06T10:15:00+02:00",
+  "send_window_open": true,
+  "command_bridge": {
+    "eligible_commands": 0,
+    "consumed_commands": 0,
+    "external_send_count": 0,
+    "provider_uids": [],
+    "normal_cycle_completed": true,
+    "existing_gates_preserved": true
+  },
+  "metrics": {
+    "serious_candidates": 5,
+    "direct_email_harvest_count": 3,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 1,
+    "wait_research": 0,
+    "reject": 3,
+    "duplicate_failures": 1,
+    "fit_failures": 2,
+    "route_failures": 0,
+    "downstream_outcomes": {
+      "qualified_positive_reply": 0,
+      "interview_call": 0,
+      "proposal": 0,
+      "won_revenue": 0
+    }
+  },
+  "decisions": [
+    {
+      "opportunity_id": "OPP-IT-WHITE-PAPER-AI-FIRST-FREELANCE-DEVELOPER-2026",
+      "organization_id": "IT-EMR-PC-WHITE-PAPER",
+      "outcome": "REJECT",
+      "reason_code": "MANDATORY_CORE_SKILL_MISMATCH",
+      "external_send": false,
+      "evidence": "Current listing explicitly excludes candidates without complex-project Claude Code experience; VDS has no documented proof of that experience."
+    },
+    {
+      "organization": "MSZLAB",
+      "canonical_identity_key": "org:mszlab.it",
+      "outcome": "REJECT",
+      "reason_code": "DUPLICATE_ORGANIZATION",
+      "external_send": false,
+      "evidence": "Global ledger and provider live record Hostinger Sent UID 322 to jobs@mszlab.it on 2026-09-08."
+    },
+    {
+      "opportunity_id": "OPP-ES-PUTPUT-WORDPRESS-2026",
+      "organization_id": "ES-CAT-BCN-PUTPUT",
+      "outcome": "MANUAL_APPLY",
+      "external_send": false,
+      "evidence": "Official careers form is the authorized route; WordPress role current and canonical/provider/Gmail checks clear."
+    },
+    {
+      "organization": "Soluciones Web 365 S.L.",
+      "outcome": "REJECT",
+      "reason_code": "MANDATORY_ONSITE_FULL_TIME",
+      "external_send": false,
+      "evidence": "Official role requires on-site Valencia, full-time, indefinite employment."
+    },
+    {
+      "organization": "Atomic Consulting S.R.L.",
+      "outcome": "REJECT",
+      "reason_code": "MANDATORY_HYBRID_ONSITE",
+      "external_send": false,
+      "evidence": "Official WordPress role requires two days on-site in Rome and three remote."
+    }
+  ],
+  "harvested_routes": [
+    {
+      "organization": "White Paper S.r.l.",
+      "route": "info@wpaper.it",
+      "authority": "CURRENT_JOB_LISTING",
+      "result": "BLOCKED_FIT"
+    },
+    {
+      "organization": "MSZLAB",
+      "route": "jobs@mszlab.it",
+      "authority": "OFFICIAL_CAREERS_PAGE",
+      "result": "BLOCKED_DUPLICATE_UID_322"
+    },
+    {
+      "organization": "Atomic Consulting S.R.L.",
+      "route": "info@atomicastudio.com",
+      "authority": "OFFICIAL_CAREERS_PAGE",
+      "result": "BLOCKED_ONSITE"
+    }
+  ],
+  "updates": [
+    {
+      "opportunity_id": "OPP-IT-WHITE-PAPER-AI-FIRST-FREELANCE-DEVELOPER-2026",
+      "from": "WAIT_RESEARCH",
+      "to": "REJECT"
+    },
+    {
+      "opportunity_id": "OPP-ES-PUTPUT-WORDPRESS-2026",
+      "from": null,
+      "to": "MANUAL_APPLY"
+    }
+  ],
+  "notes": [
+    "Zero-duplicate gates were preserved.",
+    "All 756 Hostinger Sent messages and fresh Gmail Sent queries were available for the relevant decisions.",
+    "No email was sent because no candidate cleared every fit, identity, route and provider gate."
+  ]
+}
