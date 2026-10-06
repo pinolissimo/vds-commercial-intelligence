@@ -11,10 +11,10 @@
   "type": "ACTIVE_JOB_OR_STRUCTURAL_COLLABORATION",
   "campaign_id": "VDS-JOB-FLOW-2026",
   "owner_worker": "LINKEDIN_HUNTER",
-  "status": "WAIT_RESEARCH_SEND_WINDOW",
-  "state": "WAIT_RESEARCH",
+  "status": "REJECTED",
+  "state": "REJECT",
   "detected_at": "2026-10-06T08:05:00+02:00",
-  "last_verified_at": "2026-10-06T08:05:00+02:00",
+  "last_verified_at": "2026-10-06T10:12:00+02:00",
   "verification_date": "2026-10-06",
   "source_urls": [
     "https://it.indeed.com/viewjob?jk=a339471ac9d43bb9",
@@ -86,24 +86,25 @@
     "territory": "Piacenza / Remote"
   },
   "next_action": {
-    "action": "REVERIFY_AND_SEND_IN_WINDOW",
-    "reason": "All current novelty and route checks are clear, but the authorized email window has not opened. Re-run fresh Hostinger/Gmail/ledger/reservation checks after 09:00 before any first contact.",
-    "due_at": "2026-10-06T09:00:00+02:00",
+    "action": "DO_NOT_CONTACT",
+    "reason": "The current listing explicitly states that candidates without experience on complex Claude Code projects are not suitable. That experience is not documented for VDS.",
+    "due_at": null,
     "owner": "LINKEDIN_HUNTER",
-    "priority": "HIGH",
-    "expected_commercial_impact": "HIGH",
+    "priority": "NONE",
+    "expected_commercial_impact": "NONE",
     "confidence": "HIGH"
   },
   "outcome": {
-    "closed_at": null,
-    "result": "OPEN",
-    "reason_code": "SEND_WINDOW_CLOSED",
-    "learning_note": null,
-    "evidence": "Current job listing verified 2026-10-06; corporate address confirmed on wpaper.it. No match in canonical repository, global ledger, completed dispatch lease, all 756 Hostinger Sent messages or exact Gmail Sent recipient/domain history."
+    "closed_at": "2026-10-06T10:12:00+02:00",
+    "result": "REJECT",
+    "reason_code": "MANDATORY_CORE_SKILL_MISMATCH",
+    "learning_note": "Do not treat experience with Codex, Kilo Code or DeepSeek as proof of complex-project Claude Code experience.",
+    "evidence": "Indeed listing reverified 2026-10-06 explicitly states that the role is not suitable without experience on complex Claude Code projects. Zero external send."
   },
   "notes": [
     "Fit 94/100 is an assessment, not a win probability.",
     "The corporate email is used because the current job listing explicitly instructs candidates to apply there; it is not a guessed substitute.",
-    "No email was sent outside the authorized window."
+    "Reclassified from WAIT_RESEARCH to REJECT after final pre-send re-verification exposed an explicit mandatory Claude Code requirement.",
+    "No email was sent."
   ]
 }
