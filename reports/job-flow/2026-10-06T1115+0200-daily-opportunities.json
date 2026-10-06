@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "run_id": "VDS-JOB-FLOW-2026-10-06T1115+0200",
+  "worker_id": "LINKEDIN_HUNTER",
+  "started_at": "2026-10-06T11:05:21+02:00",
+  "completed_at": "2026-10-06T11:15:00+02:00",
+  "send_window_open": true,
+  "command_bridge": {
+    "eligible_commands": 0,
+    "consumed_commands": 0,
+    "external_send_count": 1,
+    "provider_uids": [
+      770
+    ],
+    "normal_cycle_completed": true,
+    "existing_gates_preserved": true
+  },
+  "metrics": {
+    "serious_candidates": 4,
+    "direct_email_harvest_count": 3,
+    "send_now": 1,
+    "provider_verified_first_contact": 1,
+    "manual_apply": 1,
+    "wait_research": 0,
+    "reject": 2,
+    "duplicate_failures": 0,
+    "fit_failures": 2,
+    "route_failures": 1,
+    "downstream_outcomes": {
+      "qualified_positive_reply": 0,
+      "interview_call": 0,
+      "proposal": 0,
+      "won_revenue": 0
+    }
+  },
+  "decisions": [
+    {
+      "opportunity_id": "OPP-AR-QKSTUDIO-SENIOR-WORDPRESS-REMOTE-2026",
+      "organization_id": "AR-BUE-QKSTUDIO",
+      "outcome": "SEND_NOW",
+      "external_send": true,
+      "provider_uid": 770,
+      "evidence": "Official current remote WordPress role and exact application email; all canonical, ledger, reservation, Hostinger Sent and Gmail Sent gates clear immediately before send; Hostinger Sent verified after send."
+    },
+    {
+      "organization": "Estudio Ayllón",
+      "outcome": "MANUAL_APPLY",
+      "external_send": false,
+      "reason_code": "OFFICIAL_FORM_ROUTE",
+      "evidence": "Official employment form is the applicable route; no developer-specific application email was authorized."
+    },
+    {
+      "organization": "Muza Studio",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "MANDATORY_ONSITE",
+      "evidence": "Current role requires on-site work."
+    },
+    {
+      "organization": "Salta",
+      "outcome": "REJECT",
+      "external_send": false,
+      "reason_code": "MANDATORY_ONSITE",
+      "evidence": "Current role requires on-site work."
+    }
+  ],
+  "harvested_routes": [
+    {
+      "organization": "QKStudio",
+      "route": "rrhh@qkstudio.com",
+      "authority": "CURRENT_OFFICIAL_JOB_LISTING",
+      "result": "PROVIDER_VERIFIED_SENT_UID_770"
+    },
+    {
+      "organization": "Estudio Ayllón",
+      "route": "OFFICIAL_APPLICATION_FORM",
+      "authority": "OFFICIAL_CAREERS_PAGE",
+      "result": "MANUAL_APPLY"
+    },
+    {
+      "organization": "Muza Studio",
+      "route": "OFFICIAL_JOB_ROUTE",
+      "authority": "CURRENT_JOB_LISTING",
+      "result": "BLOCKED_ONSITE"
+    }
+  ],
+  "updates": [
+    {
+      "opportunity_id": "OPP-AR-QKSTUDIO-SENIOR-WORDPRESS-REMOTE-2026",
+      "from": null,
+      "to": "FIRST_CONTACT_SENT"
+    }
+  ],
+  "notes": [
+    "Zero-duplicate gates were preserved and re-read immediately before the send.",
+    "All 759 pre-send Hostinger Sent messages and fresh Gmail Sent exact-recipient and domain queries were clear for QKStudio.",
+    "Hostinger Sent UID 770 was verified; provider live state, global contact ledger and global sent-email index were updated immediately.",
+    "No CC or BCC was used; no automatic follow-up is scheduled."
+  ]
+}
