@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T18:35:40Z",
+  "updated_at": "2026-10-07T18:54:10Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1083,
-    "agreement_count": 501,
-    "agreement_pct": 46.26,
+    "evaluated_total": 1085,
+    "agreement_count": 502,
+    "agreement_pct": 46.27,
     "deepseek_promote": 33,
     "vds_promote": 285,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 411,
-    "cumulative_estimated_cost_usd": 0.208824,
-    "cost_per_evaluated_candidate_usd": 0.00019282,
-    "cost_per_deepseek_promote_usd": 0.00632799,
-    "cost_per_observed_ready_or_contacted_usd": 0.10441185,
-    "latest_request": null
+    "request_count": 412,
+    "cumulative_estimated_cost_usd": 0.20916,
+    "cost_per_evaluated_candidate_usd": 0.00019277,
+    "cost_per_deepseek_promote_usd": 0.00633817,
+    "cost_per_observed_ready_or_contacted_usd": 0.10457983,
+    "latest_request": {
+      "at": "2026-10-07T18:54:05Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 680,
+      "completion_tokens": 281,
+      "total_tokens": 1089,
+      "estimated_cost_usd": 0.00033596
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b788ecab8b867b20c91d82187c538300",
-      "evaluated_at": "2026-10-06T06:01:25Z",
-      "organization": "Pigment",
-      "title": "Solutions Architect Conso - Paris",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/pigment/solutions-architect-conso-paris-494898",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Solutions Architect role with only 'migration' keyword match; 'partner'/'remote' are generic. No WordPress/web development scope; Paris-based, unclear freelance compatibility.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "generic_keyword_noise",
-        "geo_verification_needed"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002250343,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "66b3c98db61ffd315a7ccf90d6ce0954",
-      "evaluated_at": "2026-10-06T08:11:45Z",
-      "organization": "LiveEO GmbH",
-      "title": "Senior Marketing Manager - Government Solutions (f/m/x)",
-      "location": "LiveEO GmbH Berlin (Onsite)",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/liveeo-gmbh/senior-marketing-manager-government-solutions-liveeo-gmbh-berlin-onsite-204027",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is a Senior Marketing Manager position, not a web development role; only tangential keyword 'website' matched and no web/WordPress/WooCommerce/frontend scope is present.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "marketing_not_webdev",
-        "onsite_only",
-        "no_stack_fit",
-        "keyword_noise"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00023152,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ecee7339fce4746c1a02dd52ad61b75c",
       "evaluated_at": "2026-10-06T08:11:45Z",
@@ -1466,10 +1421,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5dc8ed0408c7c3aaeec56108afddf0ea",
+      "evaluated_at": "2026-10-07T18:54:05Z",
+      "organization": "Bookboost",
+      "title": "Full Stack Developer",
+      "location": "Germany - Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-93633",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full Stack Developer role with some frontend/JS/PHP overlap, but no explicit WordPress/WooCommerce scope and location is Germany-Munich, not a primary market; freelance compatibility unstated.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "geo_not_primary_market",
+        "contract_type_unknown",
+        "full_stack_scope_may_skew_backend"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016798,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9cec7ba174ac05bd5bfbace5a34a49b6",
+      "evaluated_at": "2026-10-07T18:54:05Z",
+      "organization": "Kittl",
+      "title": "Brand & Social Lead (Berlin, hybrid)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kittl/brand-social-lead-berlin-hybrid-217270",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Brand & Social Lead is a marketing/creative role, not web development; only incidental 'website' keyword match and no relevant technical stack.",
+      "deepseek_risk_flags": [
+        "role_mismatch_marketing",
+        "no_web_dev_scope",
+        "hybrid_berlin_not_primary_market",
+        "keyword_only_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016798,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-07T18:35:35Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-07T18:54:00Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

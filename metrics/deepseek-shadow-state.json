@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1145,
+  "runs": 1146,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29738,6 +29738,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5dc8ed0408c7c3aaeec56108afddf0ea",
+      "evaluated_at": "2026-10-07T18:54:05Z",
+      "organization": "Bookboost",
+      "title": "Full Stack Developer",
+      "location": "Germany - Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-93633",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full Stack Developer role with some frontend/JS/PHP overlap, but no explicit WordPress/WooCommerce scope and location is Germany-Munich, not a primary market; freelance compatibility unstated.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "geo_not_primary_market",
+        "contract_type_unknown",
+        "full_stack_scope_may_skew_backend"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016798,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9cec7ba174ac05bd5bfbace5a34a49b6",
+      "evaluated_at": "2026-10-07T18:54:05Z",
+      "organization": "Kittl",
+      "title": "Brand & Social Lead (Berlin, hybrid)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kittl/brand-social-lead-berlin-hybrid-217270",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Brand & Social Lead is a marketing/creative role, not web development; only incidental 'website' keyword match and no relevant technical stack.",
+      "deepseek_risk_flags": [
+        "role_mismatch_marketing",
+        "no_web_dev_scope",
+        "hybrid_berlin_not_primary_market",
+        "keyword_only_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016798,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34672,9 +34728,21 @@
       "completion_tokens": 174,
       "total_tokens": 744,
       "estimated_cost_usd": 0.00021298
+    },
+    {
+      "at": "2026-10-07T18:54:05Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 680,
+      "completion_tokens": 281,
+      "total_tokens": 1089,
+      "estimated_cost_usd": 0.00033596
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-07T18:35:39Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-07T18:54:05Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
