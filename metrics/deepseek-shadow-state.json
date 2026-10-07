@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1113,
+  "runs": 1114,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29254,6 +29254,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7c4e018f082be5d73ac8bdeef58a5f7d",
+      "evaluated_at": "2026-10-07T02:08:19Z",
+      "organization": "wppmedia",
+      "title": "Front End Engineer",
+      "location": "Manchester",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wppmedia/front-end-engineer-manchester-157713",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 95,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.4,
+      "deepseek_primary_reason": "Front End Engineer role at WPP Media in Manchester with matched keywords for frontend stack (HTML, CSS, JavaScript, Core Web Vitals, accessibility), but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo is Manchester (UK) which is outside primary Spain/Italy/EU-remote markets.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_evidence",
+        "freelance_compatibility_unverified",
+        "employment_type_unknown",
+        "remote_state_unknown",
+        "commercial_keywords_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00034022,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34056,9 +34086,21 @@
       "completion_tokens": 190,
       "total_tokens": 754,
       "estimated_cost_usd": 0.00022222
+    },
+    {
+      "at": "2026-10-07T02:08:19Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 185,
+      "completion_tokens": 192,
+      "total_tokens": 761,
+      "estimated_cost_usd": 0.00034022
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-06T23:51:56Z",
+  "updated_at": "2026-10-07T02:08:19Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

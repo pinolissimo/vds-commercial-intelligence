@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-06T23:52:01Z",
+  "updated_at": "2026-10-07T02:08:23Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1066,
+    "evaluated_total": 1067,
     "agreement_count": 499,
-    "agreement_pct": 46.81,
+    "agreement_pct": 46.77,
     "deepseek_promote": 33,
-    "vds_promote": 279,
+    "vds_promote": 280,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 250
+    "deepseek_demoted_from_vds_promote": 251
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.18,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.15,
+    "vds_promote_hot_rate_pct": 2.14,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.06,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 400,
-    "cumulative_estimated_cost_usd": 0.205336,
-    "cost_per_evaluated_candidate_usd": 0.00019262,
-    "cost_per_deepseek_promote_usd": 0.00622229,
-    "cost_per_observed_ready_or_contacted_usd": 0.10266781,
+    "request_count": 401,
+    "cumulative_estimated_cost_usd": 0.205676,
+    "cost_per_evaluated_candidate_usd": 0.00019276,
+    "cost_per_deepseek_promote_usd": 0.0062326,
+    "cost_per_observed_ready_or_contacted_usd": 0.10283792,
     "latest_request": {
-      "at": "2026-10-06T23:51:56Z",
+      "at": "2026-10-07T02:08:19Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 436,
-      "completion_tokens": 190,
-      "total_tokens": 754,
-      "estimated_cost_usd": 0.00022222
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 185,
+      "completion_tokens": 192,
+      "total_tokens": 761,
+      "estimated_cost_usd": 0.00034022
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c63b2a8e28dcef162cf6ac8d6f297866",
-      "evaluated_at": "2026-10-05T12:59:05Z",
-      "organization": "plancraft",
-      "title": "Staff Engineer (f/m/d) AI",
-      "location": "Remote (within Germany)",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/plancraft/remote-staff-engineer-ai-92320",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Staff Engineer AI role with no frontend/web/WordPress role hits; only generic 'frontend' keyword and commercial keywords 'collaboration','contractor','remote' which are not proof of freelance compatibility. Core scope is AI engineering, not matching web development profile.",
-      "deepseek_risk_flags": [
-        "ai_engineering_core_scope",
-        "no_wordpress_woocommerce_scope",
-        "generic_contractor_keyword_not_proof",
-        "remote_within_germany_only"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001785733,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b0fcdd7f2c7f88c8a5eafdaae4ae4ceb",
       "evaluated_at": "2026-10-05T12:59:05Z",
@@ -1467,10 +1439,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7c4e018f082be5d73ac8bdeef58a5f7d",
+      "evaluated_at": "2026-10-07T02:08:19Z",
+      "organization": "wppmedia",
+      "title": "Front End Engineer",
+      "location": "Manchester",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wppmedia/front-end-engineer-manchester-157713",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 95,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.4,
+      "deepseek_primary_reason": "Front End Engineer role at WPP Media in Manchester with matched keywords for frontend stack (HTML, CSS, JavaScript, Core Web Vitals, accessibility), but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and geo is Manchester (UK) which is outside primary Spain/Italy/EU-remote markets.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_wordpress_woocommerce_evidence",
+        "freelance_compatibility_unverified",
+        "employment_type_unknown",
+        "remote_state_unknown",
+        "commercial_keywords_generic"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00034022,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-06T23:51:51Z",
+  "source_semantic_updated_at": "2026-10-07T02:08:15Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
