@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-10-07T08:57:07+02:00",
+  "generated_at": "2026-10-07T08:58:38+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -22,9 +22,9 @@
     "active_window_first_contact_count": 0
   },
   "headline": {
-    "semantic_input_last_run": 2559,
+    "semantic_input_last_run": 2565,
     "semantic_pass_last_run": 198,
-    "semantic_pass_rate_pct": 7.74,
+    "semantic_pass_rate_pct": 7.72,
     "active_opportunities": 80,
     "ready": 0,
     "manual_action": 18,
@@ -33,9 +33,9 @@
     "success_index_pct": 68,
     "new_client_probability_proxy_pct": 88,
     "companies_indexed": 311,
-    "opportunity_first_high_priority": 171,
-    "second_chance_queue": 364,
-    "decision_maker_enrichment_queue": 260,
+    "opportunity_first_high_priority": 168,
+    "second_chance_queue": 361,
+    "decision_maker_enrichment_queue": 257,
     "ready_legacy_compat_previous_value": 21,
     "executable_ready_now": 0,
     "legacy_ready_advisory": 21,
@@ -68,10 +68,22 @@
       "territory": "Roma",
       "score": 69.85,
       "mode": "HARVEST",
-      "harvest_cycles": 1,
+      "harvest_cycles": 2,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-10-07T21:58:27.556727Z",
       "heat_pct": 100.0
+    },
+    {
+      "area": "Italy|Calabria|Reggio Calabria",
+      "country": "Italy",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
+      "score": 32.56,
+      "mode": "EXPLORATION",
+      "harvest_cycles": 0,
+      "low_yield_cycles": 0,
+      "cooldown_until": null,
+      "heat_pct": 46.6
     },
     {
       "area": "Spain|Comunitat Valenciana|Castellón",
@@ -90,18 +102,6 @@
       "country": "Italy",
       "region": "Veneto",
       "territory": "Venezia",
-      "score": 32.56,
-      "mode": "EXPLORATION",
-      "harvest_cycles": 0,
-      "low_yield_cycles": 0,
-      "cooldown_until": null,
-      "heat_pct": 46.6
-    },
-    {
-      "area": "Italy|Calabria|Reggio Calabria",
-      "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -141,7 +141,7 @@
       "score": 29.09,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
-      "low_yield_cycles": 367,
+      "low_yield_cycles": 366,
       "cooldown_until": null,
       "heat_pct": 41.6
     },
@@ -177,8 +177,8 @@
       "score": 15.95,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 470,
-      "cooldown_until": "2026-10-07T23:02:03.857491Z",
+      "low_yield_cycles": 471,
+      "cooldown_until": "2026-10-08T00:57:44.466784Z",
       "heat_pct": 22.8
     },
     {
@@ -189,8 +189,8 @@
       "score": 12.53,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 1143,
-      "cooldown_until": "2026-10-07T23:02:03.857491Z",
+      "low_yield_cycles": 1144,
+      "cooldown_until": "2026-10-08T00:57:44.466784Z",
       "heat_pct": 17.9
     },
     {
@@ -201,8 +201,8 @@
       "score": 4.65,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 1135,
-      "cooldown_until": "2026-10-07T23:02:03.857491Z",
+      "low_yield_cycles": 1136,
+      "cooldown_until": "2026-10-08T00:57:44.466784Z",
       "heat_pct": 6.7
     }
   ],
@@ -252,11 +252,11 @@
     "dedup_exact_emails": 228,
     "dedup_corporate_domains": 379,
     "dedup_organizations": 221,
-    "opportunity_first_ranked": 419,
-    "opportunity_first_high_priority": 171,
-    "second_chance_queue": 364,
-    "decision_maker_enrichment_queue": 260,
-    "message_strategies": 419
+    "opportunity_first_ranked": 416,
+    "opportunity_first_high_priority": 168,
+    "second_chance_queue": 361,
+    "decision_maker_enrichment_queue": 257,
+    "message_strategies": 416
   },
   "safety": {
     "duplicate_first_contact_tolerance": 0,
@@ -275,8 +275,8 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 2559,
-      "semantic_input": 2559,
+      "raw_signals": 2565,
+      "semantic_input": 2565,
       "semantic_pass": 198,
       "company_verified": null,
       "route_found": null,
@@ -294,8 +294,8 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 1792,
-      "semantic_review": 569,
+      "semantic_reject": 1800,
+      "semantic_review": 567,
       "semantic_pass_to_executable_gap_proxy": 198,
       "legacy_ready_advisory_excluded": 21
     },
@@ -345,7 +345,7 @@
   "provider_inbound_pending_sources": 0,
   "source_health": {
     "schema_version": "2.3",
-    "reconciled_at": "2026-10-07T06:57:07Z",
+    "reconciled_at": "2026-10-07T06:58:38Z",
     "provider_observed_at": "2026-10-07T06:11:18Z",
     "provider_observation_fresh": true,
     "outbound_last_event_at": "2026-10-06T20:08:57Z",
