@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T09:20:09Z",
+  "updated_at": "2026-10-07T10:57:59Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1072,
+    "evaluated_total": 1074,
     "agreement_count": 500,
-    "agreement_pct": 46.64,
+    "agreement_pct": 46.55,
     "deepseek_promote": 33,
-    "vds_promote": 281,
+    "vds_promote": 283,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 252
+    "deepseek_demoted_from_vds_promote": 254
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.18,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.14,
+    "vds_promote_hot_rate_pct": 2.12,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.06,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 404,
-    "cumulative_estimated_cost_usd": 0.206879,
-    "cost_per_evaluated_candidate_usd": 0.00019298,
-    "cost_per_deepseek_promote_usd": 0.00626905,
-    "cost_per_observed_ready_or_contacted_usd": 0.10343933,
+    "request_count": 405,
+    "cumulative_estimated_cost_usd": 0.207168,
+    "cost_per_evaluated_candidate_usd": 0.00019289,
+    "cost_per_deepseek_promote_usd": 0.00627782,
+    "cost_per_observed_ready_or_contacted_usd": 0.10358402,
     "latest_request": {
-      "at": "2026-10-07T09:20:04Z",
+      "at": "2026-10-07T10:57:53Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 435,
-      "completion_tokens": 174,
-      "total_tokens": 737,
-      "estimated_cost_usd": 0.00042287
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 188,
+      "completion_tokens": 369,
+      "total_tokens": 1197,
+      "estimated_cost_usd": 0.00028938
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "92078f2794ca410965acfbecc7115cfa",
-      "evaluated_at": "2026-10-05T16:49:26Z",
-      "organization": "Wundermanthompson",
-      "title": "Principal Solutions Architect",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wundermanthompson/principal-solutions-architect-london-413236",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Principal Solutions Architect is a senior architecture role with no matching web/WordPress/frontend scope; 'partner' and 'collaboration' mentions are generic and do not establish freelance compatibility.",
-      "deepseek_risk_flags": [
-        "role_mismatch_architecture",
-        "no_web_stack_scope",
-        "generic_collaboration_not_freelance_proof",
-        "geo_london_not_target_market"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00017216,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "6ca58c57773b052d0468ec03ddb18460",
-      "evaluated_at": "2026-10-05T17:26:31Z",
-      "organization": "Testlio",
-      "title": "Freelance Software Tester With Smart TVs (Remote in Germany)",
-      "location": "Germany",
-      "opportunity_url": "https://jobicy.com/jobs/154591-freelance-software-tester-with-smart-tvs-remote-in-germany",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is freelance software testing for smart TVs, not web development; only tangential 'website' keyword match and no WordPress/WooCommerce/frontend/performance scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "no_web_dev_scope",
-        "keyword_only_match",
-        "geo_remote_to_verify"
-      ],
-      "deepseek_contract_compatibility": "HIGH",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00010762,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c0bf5023ac64ac8ae848e15c59073a1b",
       "evaluated_at": "2026-10-05T17:26:31Z",
@@ -1468,10 +1412,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "94dd4c3f5195c21054339f80c478206c",
+      "evaluated_at": "2026-10-07T10:57:53Z",
+      "organization": "Turbalance",
+      "title": "Frontend Engineer — AI Infrastructure Platform",
+      "location": "Heidelberg, GER",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/turbalance/frontend-engineer-ai-infrastructure-platform-heidelberg-ger-191481",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Frontend Engineer role at an AI infrastructure platform in Heidelberg; matched keywords are generic (frontend, javascript, ui, accessibility) with no WordPress/WooCommerce/CMS or web-maintenance scope, and the only commercial keyword is an unverified 'partner' mention. No evidence of freelance/contract compatibility or Spain/Italy/EU-remote geo fit.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "ai_infrastructure_stack_likely_react_or_ml_tooling",
+        "onsite_germany_location",
+        "no_freelance_compatibility_evidence",
+        "generic_keyword_match"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014469,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "953aa4606559fc0b7e9ea3a85130b245",
+      "evaluated_at": "2026-10-07T10:57:53Z",
+      "organization": "Liqid Lig",
+      "title": "Product Builder Intern - Growth",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/liqid-lig/product-builder-intern-growth-berlin-338212",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 81,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Internship ('Product Builder Intern - Growth') in Berlin, not a freelance/contract opportunity; matched keywords (cms, core web vitals, javascript, website) are incidental and the role is growth/product oriented rather than WordPress/WooCommerce development. No Spain/Italy geo fit and no genuine external-collaboration signal.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "growth_role_not_web_dev",
+        "onsite_berlin",
+        "no_wordpress_woocommerce_scope",
+        "incidental_keyword_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014469,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-07T09:20:00Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-07T10:57:48Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
