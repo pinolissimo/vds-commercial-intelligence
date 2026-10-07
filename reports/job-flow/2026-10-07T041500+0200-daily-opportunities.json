@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "report_type": "LINKEDIN_HUNTER_DAILY_OPPORTUNITY_DELTA",
-  "generated_at": "2026-10-07T11:13:00+02:00",
+  "generated_at": "2026-10-07T11:14:00+02:00",
   "verification_date": "2026-10-07",
   "worker_id": "LINKEDIN_HUNTER",
   "send_window_open": true,
@@ -452,7 +452,13 @@
   ],
   "dashboard": {
     "mutated": true,
-    "reason": "A verified LINKEDIN_HUNTER opportunity was written to the canonical opportunities directory and merged into views/active-freelance-opportunities.json. API projection freshness is being verified separately; no disposable api/v1 file was edited directly.",
+    "verified": true,
+    "canonical_opportunity_sha": "68c3a17b383496ee23f24f3e510578ec0dddfc64",
+    "active_view_sha": "e957cbc1cdf676f13eee80173cb62180786ab7d3",
+    "opportunities_projection_sha": "9586971773930823b68b1cf8372404c34f0c801e",
+    "dashboard_projection_sha": "7f79b8c0a17a36e2fd698b8f5672315bc08a6549",
+    "projection_generated_at": "2026-10-07T11:12:43+02:00",
+    "reason": "Dinamiza was persisted in the canonical opportunities directory, merged into the active opportunity view, and confirmed present in the api/v1 opportunities projection consumed by Command Center. Dashboard projection freshness was verified after the canonical commit.",
     "data_loader_contract": "command-center/assets/app.js loads api/v1/dashboard.json, today.json, companies.json, territory-productivity.json, opportunities.json, sources.json, health.json and geography.json"
   },
   "normal_cycle_completed": true,
