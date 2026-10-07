@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T17:40:33Z",
+  "updated_at": "2026-10-07T17:59:43Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1082,
+    "evaluated_total": 1083,
     "agreement_count": 501,
-    "agreement_pct": 46.3,
+    "agreement_pct": 46.26,
     "deepseek_promote": 33,
-    "vds_promote": 284,
+    "vds_promote": 285,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 255
+    "deepseek_demoted_from_vds_promote": 256
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 410,
-    "cumulative_estimated_cost_usd": 0.208611,
-    "cost_per_evaluated_candidate_usd": 0.0001928,
-    "cost_per_deepseek_promote_usd": 0.00632154,
-    "cost_per_observed_ready_or_contacted_usd": 0.10430536,
-    "latest_request": null
+    "request_count": 411,
+    "cumulative_estimated_cost_usd": 0.208824,
+    "cost_per_evaluated_candidate_usd": 0.00019282,
+    "cost_per_deepseek_promote_usd": 0.00632799,
+    "cost_per_observed_ready_or_contacted_usd": 0.10441185,
+    "latest_request": {
+      "at": "2026-10-07T17:59:39Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 442,
+      "completion_tokens": 174,
+      "total_tokens": 744,
+      "estimated_cost_usd": 0.00021298
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ec5ab3bcb20d9d21510d6c425482350f",
-      "evaluated_at": "2026-10-06T06:01:25Z",
-      "organization": "LiveEO GmbH",
-      "title": "Senior Marketing Manager - Government Solutions (f/m/x)",
-      "location": "LiveEO GmbH Berlin (Onsite)",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/liveeo-gmbh/senior-marketing-manager-government-solutions-liveeo-gmbh-berlin-onsite-367541",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Marketing Manager role, not web development. Only 'website' keyword match; 'freelance'/'agency'/'partner' are generic job-text mentions. Onsite Berlin, no relevant dev scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "generic_freelance_mention",
-        "onsite_germany"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002250343,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b788ecab8b867b20c91d82187c538300",
       "evaluated_at": "2026-10-06T06:01:25Z",
@@ -1464,10 +1448,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4012839bd6ded4ffb9fe4c0011b151d3",
+      "evaluated_at": "2026-10-07T17:59:39Z",
+      "organization": "Kittl",
+      "title": "Senior SEO Manager",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kittl/senior-seo-manager-berlin-335678",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 79,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Senior SEO Manager position, not a web-development role; matched keywords (cms, core web vitals) are incidental and the freelance/agency terms appear only as generic job-text mentions, not as evidence of external collaboration compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_seo_not_webdev",
+        "keyword_only_stack_match",
+        "freelance_terms_not_contract_evidence",
+        "no_wordpress_woocommerce_scope",
+        "no_frontend_or_performance_engineering_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00021298,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-07T17:40:27Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-07T17:59:36Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
