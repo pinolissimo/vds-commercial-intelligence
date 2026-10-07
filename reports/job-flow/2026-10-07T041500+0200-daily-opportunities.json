@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "report_type": "LINKEDIN_HUNTER_DAILY_OPPORTUNITY_DELTA",
-  "generated_at": "2026-10-07T12:04:00+02:00",
+  "generated_at": "2026-10-07T12:05:00+02:00",
   "verification_date": "2026-10-07",
   "worker_id": "LINKEDIN_HUNTER",
   "send_window_open": true,
@@ -539,8 +539,13 @@
   ],
   "dashboard": {
     "mutated": true,
-    "verified": false,
-    "reason": "Producción Online was persisted canonically and merged into the active opportunity view. API projection freshness will be verified after the generator processes the canonical commit.",
+    "verified": true,
+    "canonical_opportunity_sha": "dbf49a15a9bd64e490d82476bd012f6696c277d9",
+    "active_view_sha": "df5dd260c80369976184c188278e0ae31adb7993",
+    "opportunities_projection_sha": "7d927a320603904b8ec01ebcc737c558b7f4f6b7",
+    "dashboard_projection_sha": "ef966490cce60136b0a0f25b70bd29fc5c80a950",
+    "projection_generated_at": "2026-10-07T12:02:58+02:00",
+    "reason": "Producción Online is persisted in the canonical opportunity directory, active opportunity view and api/v1 opportunities projection consumed by Command Center. Dashboard freshness was verified after the canonical commit.",
     "data_loader_contract": "command-center/assets/app.js loads api/v1/dashboard.json, today.json, companies.json, territory-productivity.json, opportunities.json, sources.json, health.json and geography.json"
   },
   "normal_cycle_completed": true,
