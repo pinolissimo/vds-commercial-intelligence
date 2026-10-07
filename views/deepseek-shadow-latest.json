@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T06:57:44Z",
+  "updated_at": "2026-10-07T09:20:09Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1071,
+    "evaluated_total": 1072,
     "agreement_count": 500,
-    "agreement_pct": 46.69,
+    "agreement_pct": 46.64,
     "deepseek_promote": 33,
-    "vds_promote": 280,
+    "vds_promote": 281,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 251
+    "deepseek_demoted_from_vds_promote": 252
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 403,
-    "cumulative_estimated_cost_usd": 0.206456,
-    "cost_per_evaluated_candidate_usd": 0.00019277,
-    "cost_per_deepseek_promote_usd": 0.00625624,
-    "cost_per_observed_ready_or_contacted_usd": 0.1032279,
+    "request_count": 404,
+    "cumulative_estimated_cost_usd": 0.206879,
+    "cost_per_evaluated_candidate_usd": 0.00019298,
+    "cost_per_deepseek_promote_usd": 0.00626905,
+    "cost_per_observed_ready_or_contacted_usd": 0.10343933,
     "latest_request": {
-      "at": "2026-10-07T06:57:39Z",
+      "at": "2026-10-07T09:20:04Z",
       "model": "deepseek-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 896,
-      "prompt_cache_miss_tokens": 187,
-      "completion_tokens": 406,
-      "total_tokens": 1489,
-      "estimated_cost_usd": 0.00063074
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 435,
+      "completion_tokens": 174,
+      "total_tokens": 737,
+      "estimated_cost_usd": 0.00042287
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "9f879e896f77fd08ede93707a87f9aa9",
-      "evaluated_at": "2026-10-05T16:49:26Z",
-      "organization": "Box",
-      "title": "Drupal Frontend Developer (with React)",
-      "location": "Poland",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/drupal-frontend-developer-with-react-78915632c8",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 91,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.78,
-      "deepseek_primary_reason": "Core role is Drupal frontend development with React, not WordPress/WooCommerce or the target freelance web stack; only generic 'frontend' keyword matches, and no explicit freelance/contract compatibility is evidenced.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_drupal_react",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_compatibility_evidence",
-        "geo_remote_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00017216,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "92078f2794ca410965acfbecc7115cfa",
       "evaluated_at": "2026-10-05T16:49:26Z",
@@ -1467,10 +1439,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e8aa236016f6643b351cc1d0d1dab333",
+      "evaluated_at": "2026-10-07T09:20:04Z",
+      "organization": "Hire Feed",
+      "title": "Javascript Frontend Developer",
+      "location": "Italy",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/javascript-frontend-developer-63bac88166",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.4,
+      "deepseek_primary_reason": "Title indicates a JavaScript frontend developer role in Italy with remote mention, which partially aligns with the target profile's frontend/JS skills, but the posting lacks explicit WordPress/WooCommerce scope, contract type, and detailed requirements, so stack fit and freelance compatibility cannot be confirmed.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "no_contract_type_specified",
+        "no_remote_state_confirmed",
+        "generic_aggregator_listing",
+        "insufficient_detail_to_verify_stack_fit"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00042287,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 3,
-  "source_semantic_updated_at": "2026-10-07T06:57:36Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-07T09:20:00Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
