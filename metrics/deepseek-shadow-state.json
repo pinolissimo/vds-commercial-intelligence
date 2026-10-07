@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1140,
+  "runs": 1141,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29680,6 +29680,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5de8c387e854efb09ab3e0eb0dd0d1e0",
+      "evaluated_at": "2026-10-07T17:22:16Z",
+      "organization": "Doo",
+      "title": "Werkstudent*in im Projektmanagement",
+      "location": "München",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/doo/werkstudentin-im-projektmanagement-munchen-209420",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a working-student project management position in Munich; matched keywords (css, html, javascript, website) appear incidental and the role is not a web-development freelance opportunity.",
+      "deepseek_risk_flags": [
+        "non-freelance_employment_type",
+        "student_role",
+        "role_mismatch_project_management",
+        "keyword_match_likely_incidental",
+        "onsite_munich_germany_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014745,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34590,9 +34619,21 @@
       "completion_tokens": 197,
       "total_tokens": 758,
       "estimated_cost_usd": 0.00022618
+    },
+    {
+      "at": "2026-10-07T17:22:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 175,
+      "completion_tokens": 161,
+      "total_tokens": 720,
+      "estimated_cost_usd": 0.00014745
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-07T17:03:48Z",
+  "updated_at": "2026-10-07T17:22:16Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

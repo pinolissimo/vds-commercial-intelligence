@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T17:03:54Z",
+  "updated_at": "2026-10-07T17:22:21Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1081,
-    "agreement_count": 500,
-    "agreement_pct": 46.25,
+    "evaluated_total": 1082,
+    "agreement_count": 501,
+    "agreement_pct": 46.3,
     "deepseek_promote": 33,
     "vds_promote": 284,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 409,
-    "cumulative_estimated_cost_usd": 0.208463,
-    "cost_per_evaluated_candidate_usd": 0.00019284,
-    "cost_per_deepseek_promote_usd": 0.00631707,
-    "cost_per_observed_ready_or_contacted_usd": 0.10423163,
+    "request_count": 410,
+    "cumulative_estimated_cost_usd": 0.208611,
+    "cost_per_evaluated_candidate_usd": 0.0001928,
+    "cost_per_deepseek_promote_usd": 0.00632154,
+    "cost_per_observed_ready_or_contacted_usd": 0.10430536,
     "latest_request": {
-      "at": "2026-10-07T17:03:48Z",
+      "at": "2026-10-07T17:22:16Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 433,
-      "completion_tokens": 197,
-      "total_tokens": 758,
-      "estimated_cost_usd": 0.00022618
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 175,
+      "completion_tokens": 161,
+      "total_tokens": 720,
+      "estimated_cost_usd": 0.00014745
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ff82d83afe09918b6329e213005b09aa",
-      "evaluated_at": "2026-10-06T06:01:25Z",
-      "organization": "Ashby",
-      "title": "Staff Software Engineer, Product Engineering - UK",
-      "location": "UK",
-      "opportunity_url": "https://jobicy.com/jobs/151859-staff-software-engineer-product-engineering-uk",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Staff Software Engineer product engineering role; only 'frontend'/'ui' tangential matches. 'agency'/'collaborator'/'partner' are generic job-text terms, not freelance evidence. Senior full-time product role, not web/WordPress freelance scope.",
-      "deepseek_risk_flags": [
-        "core_role_mismatch",
-        "generic_collaboration_mention",
-        "senior_fulltime_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002250343,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ec5ab3bcb20d9d21510d6c425482350f",
       "evaluated_at": "2026-10-06T06:01:25Z",
@@ -1473,10 +1446,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5de8c387e854efb09ab3e0eb0dd0d1e0",
+      "evaluated_at": "2026-10-07T17:22:16Z",
+      "organization": "Doo",
+      "title": "Werkstudent*in im Projektmanagement",
+      "location": "München",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/doo/werkstudentin-im-projektmanagement-munchen-209420",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a working-student project management position in Munich; matched keywords (css, html, javascript, website) appear incidental and the role is not a web-development freelance opportunity.",
+      "deepseek_risk_flags": [
+        "non-freelance_employment_type",
+        "student_role",
+        "role_mismatch_project_management",
+        "keyword_match_likely_incidental",
+        "onsite_munich_germany_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014745,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-07T17:03:43Z",
+  "source_semantic_updated_at": "2026-10-07T17:22:11Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
