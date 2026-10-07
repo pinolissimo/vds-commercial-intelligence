@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T22:28:24Z",
+  "updated_at": "2026-10-07T22:47:08Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1088,
+    "evaluated_total": 1089,
     "agreement_count": 503,
-    "agreement_pct": 46.23,
+    "agreement_pct": 46.19,
     "deepseek_promote": 33,
     "vds_promote": 286,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 413,
-    "cumulative_estimated_cost_usd": 0.209647,
-    "cost_per_evaluated_candidate_usd": 0.00019269,
-    "cost_per_deepseek_promote_usd": 0.00635295,
-    "cost_per_observed_ready_or_contacted_usd": 0.1048236,
-    "latest_request": null
+    "request_count": 414,
+    "cumulative_estimated_cost_usd": 0.209869,
+    "cost_per_evaluated_candidate_usd": 0.00019272,
+    "cost_per_deepseek_promote_usd": 0.00635967,
+    "cost_per_observed_ready_or_contacted_usd": 0.1049346,
+    "latest_request": {
+      "at": "2026-10-07T22:47:02Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 426,
+      "completion_tokens": 193,
+      "total_tokens": 747,
+      "estimated_cost_usd": 0.000222
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,36 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "f68bc5d2ff0a4d9aba6b1c4af33eee18",
-      "evaluated_at": "2026-10-06T11:13:10Z",
-      "organization": "CodeForAI",
-      "title": "Software Engineer / AI Code Trainer (Python, Web, Full Stack)",
-      "location": "USA, UK, India, Australia, Ireland, New Zealand, Philippines, Pakistan, Singapore, Mexico",
-      "opportunity_url": "https://remotive.com/remote-jobs/software-development/software-engineer-ai-code-trainer-python-web-full-stack-2091149",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Role is an AI code-training/data-annotation position (Python, full stack) rather than a WordPress/WooCommerce/frontend web-development engagement; matched keywords are incidental and the core scope is AI model training, not client web work.",
-      "deepseek_risk_flags": [
-        "core_role_is_ai_code_training_not_web_dev",
-        "python_full_stack_focus",
-        "no_wordpress_woocommerce_scope",
-        "no_explicit_freelance_or_contract_terms",
-        "geo_bucket_remote_to_verify",
-        "no_verified_contract_type"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00022398,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "dded39f7ca834888a97bf31f63307752",
       "evaluated_at": "2026-10-06T12:25:41Z",
@@ -1465,10 +1446,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6bf46186972d914366ce5c4fc71aa347",
+      "evaluated_at": "2026-10-07T22:47:02Z",
+      "organization": "Gocardless",
+      "title": "Engineering Manager II",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/gocardless/engineering-manager-ii-london-463324",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Engineering Manager II at Gocardless is a full-time leadership/management role, not a freelance web-development opportunity; matched keywords (frontend, javascript) are incidental and the commercial keywords (agency, collaboration, partner) appear to be generic job-text noise rather than evidence of external freelance compatibility.",
+      "deepseek_risk_flags": [
+        "senior_management_role_not_freelance",
+        "no_wordpress_woocommerce_scope",
+        "stack_mismatch_likely_react_or_platform_engineering",
+        "generic_collaboration_keywords_not_freelance_proof",
+        "onsite_london_not_target_geo"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000222,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-07T22:28:18Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-07T22:46:57Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

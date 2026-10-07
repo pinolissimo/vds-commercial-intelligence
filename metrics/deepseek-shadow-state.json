@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1158,
+  "runs": 1159,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29878,6 +29878,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6bf46186972d914366ce5c4fc71aa347",
+      "evaluated_at": "2026-10-07T22:47:02Z",
+      "organization": "Gocardless",
+      "title": "Engineering Manager II",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/gocardless/engineering-manager-ii-london-463324",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Engineering Manager II at Gocardless is a full-time leadership/management role, not a freelance web-development opportunity; matched keywords (frontend, javascript) are incidental and the commercial keywords (agency, collaboration, partner) appear to be generic job-text noise rather than evidence of external freelance compatibility.",
+      "deepseek_risk_flags": [
+        "senior_management_role_not_freelance",
+        "no_wordpress_woocommerce_scope",
+        "stack_mismatch_likely_react_or_platform_engineering",
+        "generic_collaboration_keywords_not_freelance_proof",
+        "onsite_london_not_target_geo"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000222,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34836,9 +34865,21 @@
       "completion_tokens": 418,
       "total_tokens": 1504,
       "estimated_cost_usd": 0.00048754
+    },
+    {
+      "at": "2026-10-07T22:47:02Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 426,
+      "completion_tokens": 193,
+      "total_tokens": 747,
+      "estimated_cost_usd": 0.000222
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-07T22:28:22Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-07T22:47:02Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
