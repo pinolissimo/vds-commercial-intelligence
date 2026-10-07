@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T16:39:35Z",
+  "updated_at": "2026-10-07T17:03:54Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1080,
+    "evaluated_total": 1081,
     "agreement_count": 500,
-    "agreement_pct": 46.3,
+    "agreement_pct": 46.25,
     "deepseek_promote": 33,
     "vds_promote": 284,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 408,
-    "cumulative_estimated_cost_usd": 0.208237,
-    "cost_per_evaluated_candidate_usd": 0.00019281,
-    "cost_per_deepseek_promote_usd": 0.00631021,
-    "cost_per_observed_ready_or_contacted_usd": 0.10411854,
-    "latest_request": null
+    "request_count": 409,
+    "cumulative_estimated_cost_usd": 0.208463,
+    "cost_per_evaluated_candidate_usd": 0.00019284,
+    "cost_per_deepseek_promote_usd": 0.00631707,
+    "cost_per_observed_ready_or_contacted_usd": 0.10423163,
+    "latest_request": {
+      "at": "2026-10-07T17:03:48Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 433,
+      "completion_tokens": 197,
+      "total_tokens": 758,
+      "estimated_cost_usd": 0.00022618
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "029f899d92aa1c75dbbfb0a33ed408f9",
-      "evaluated_at": "2026-10-06T06:01:25Z",
-      "organization": "Obsidian Group",
-      "title": "(Senior) SEO Specialist (m/w/d)",
-      "location": "Leipzig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/obsidian-group/senior-seo-specialist-leipzig-458756",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "SEO Specialist role, not a web development role. HTML/CSS/JS mentions are incidental; 'partner' is generic. No meaningful WordPress/WooCommerce/frontend development scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "generic_keyword_noise",
-        "onsite_germany"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002250343,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ff82d83afe09918b6329e213005b09aa",
       "evaluated_at": "2026-10-06T06:01:25Z",
@@ -1460,10 +1444,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b8fe59e6874e597bb88e2c25758c15ff",
+      "evaluated_at": "2026-10-07T17:03:48Z",
+      "organization": "Pleo",
+      "title": "Staff Engineer - Business Spend",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/pleo/staff-engineer-business-spend-united-kingdom-387649",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Staff Engineer role at Pleo is a senior full-time product-engineering position (Business Spend domain), not a freelance/contract web-development opportunity; matched keywords (accessibility, frontend, migration, website) are incidental and the only commercial keyword 'partner' appears as generic job text, not proof of external collaboration compatibility.",
+      "deepseek_risk_flags": [
+        "senior_full_time_role",
+        "no_freelance_or_contract_signal",
+        "stack_scope_unclear_but_likely_product_engineering",
+        "geo_unverified_uk_not_primary_market",
+        "generic_partner_mention_not_collaboration_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022618,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-07T16:39:31Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-07T17:03:43Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

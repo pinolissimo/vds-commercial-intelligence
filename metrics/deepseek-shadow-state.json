@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1139,
+  "runs": 1140,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29651,6 +29651,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b8fe59e6874e597bb88e2c25758c15ff",
+      "evaluated_at": "2026-10-07T17:03:48Z",
+      "organization": "Pleo",
+      "title": "Staff Engineer - Business Spend",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/pleo/staff-engineer-business-spend-united-kingdom-387649",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Staff Engineer role at Pleo is a senior full-time product-engineering position (Business Spend domain), not a freelance/contract web-development opportunity; matched keywords (accessibility, frontend, migration, website) are incidental and the only commercial keyword 'partner' appears as generic job text, not proof of external collaboration compatibility.",
+      "deepseek_risk_flags": [
+        "senior_full_time_role",
+        "no_freelance_or_contract_signal",
+        "stack_scope_unclear_but_likely_product_engineering",
+        "geo_unverified_uk_not_primary_market",
+        "generic_partner_mention_not_collaboration_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022618,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34549,9 +34578,21 @@
       "completion_tokens": 179,
       "total_tokens": 745,
       "estimated_cost_usd": 0.0002154
+    },
+    {
+      "at": "2026-10-07T17:03:48Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 433,
+      "completion_tokens": 197,
+      "total_tokens": 758,
+      "estimated_cost_usd": 0.00022618
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-07T16:39:34Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-07T17:03:48Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
