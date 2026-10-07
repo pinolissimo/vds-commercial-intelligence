@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T13:40:37Z",
+  "updated_at": "2026-10-07T13:58:26Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1079,
+    "evaluated_total": 1080,
     "agreement_count": 500,
-    "agreement_pct": 46.34,
+    "agreement_pct": 46.3,
     "deepseek_promote": 33,
     "vds_promote": 284,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 407,
-    "cumulative_estimated_cost_usd": 0.208022,
-    "cost_per_evaluated_candidate_usd": 0.00019279,
-    "cost_per_deepseek_promote_usd": 0.00630369,
-    "cost_per_observed_ready_or_contacted_usd": 0.10401084,
-    "latest_request": null
+    "request_count": 408,
+    "cumulative_estimated_cost_usd": 0.208237,
+    "cost_per_evaluated_candidate_usd": 0.00019281,
+    "cost_per_deepseek_promote_usd": 0.00631021,
+    "cost_per_observed_ready_or_contacted_usd": 0.10411854,
+    "latest_request": {
+      "at": "2026-10-07T13:58:22Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 438,
+      "completion_tokens": 179,
+      "total_tokens": 745,
+      "estimated_cost_usd": 0.0002154
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7a9f94563592c7e741f69f7ae3390515",
-      "evaluated_at": "2026-10-06T06:01:25Z",
-      "organization": "iwoca",
-      "title": "Backend Engineer - Repeats",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/iwoca/backend-engineer-repeats-london-228278",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Backend Engineer role with only tangential frontend keyword match; 'collaboration'/'partner' are generic job-text mentions, not evidence of freelance compatibility. Core stack is backend, not WordPress/web.",
-      "deepseek_risk_flags": [
-        "core_role_mismatch",
-        "generic_collaboration_mention",
-        "backend_focus"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002250343,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "029f899d92aa1c75dbbfb0a33ed408f9",
       "evaluated_at": "2026-10-06T06:01:25Z",
@@ -1459,10 +1443,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0e1cb15020f2906714914aaea5ab5992",
+      "evaluated_at": "2026-10-07T13:58:22Z",
+      "organization": "Datadog",
+      "title": "Senior Public Relations Manager (EMEA)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/datadog/senior-public-relations-manager-emea-london-97470",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.93,
+      "deepseek_primary_reason": "Role is a Senior Public Relations Manager (EMEA) at Datadog, a marketing/communications position with no web development, WordPress, WooCommerce, frontend, or web performance scope; matched keywords 'accessibility' and 'website' are incidental and commercial keywords 'agency/collaboration/partner' reflect PR/agency context, not freelance web-dev compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_non_technical",
+        "keyword_false_positive",
+        "no_stack_fit",
+        "no_freelance_web_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0002154,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-07T13:40:32Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-07T13:58:18Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

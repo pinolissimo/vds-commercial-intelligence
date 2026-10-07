@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1129,
+  "runs": 1130,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29623,6 +29623,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0e1cb15020f2906714914aaea5ab5992",
+      "evaluated_at": "2026-10-07T13:58:22Z",
+      "organization": "Datadog",
+      "title": "Senior Public Relations Manager (EMEA)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/datadog/senior-public-relations-manager-emea-london-97470",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.93,
+      "deepseek_primary_reason": "Role is a Senior Public Relations Manager (EMEA) at Datadog, a marketing/communications position with no web development, WordPress, WooCommerce, frontend, or web performance scope; matched keywords 'accessibility' and 'website' are incidental and commercial keywords 'agency/collaboration/partner' reflect PR/agency context, not freelance web-dev compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_non_technical",
+        "keyword_false_positive",
+        "no_stack_fit",
+        "no_freelance_web_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0002154,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34509,9 +34537,21 @@
       "completion_tokens": 586,
       "total_tokens": 1925,
       "estimated_cost_usd": 0.00065408
+    },
+    {
+      "at": "2026-10-07T13:58:22Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 438,
+      "completion_tokens": 179,
+      "total_tokens": 745,
+      "estimated_cost_usd": 0.0002154
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-07T13:40:36Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-07T13:58:22Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
