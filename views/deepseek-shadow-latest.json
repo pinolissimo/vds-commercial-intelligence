@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T03:58:27Z",
+  "updated_at": "2026-10-07T05:02:03Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1067,
+    "evaluated_total": 1068,
     "agreement_count": 499,
-    "agreement_pct": 46.77,
+    "agreement_pct": 46.72,
     "deepseek_promote": 33,
     "vds_promote": 280,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 401,
-    "cumulative_estimated_cost_usd": 0.205676,
-    "cost_per_evaluated_candidate_usd": 0.00019276,
-    "cost_per_deepseek_promote_usd": 0.0062326,
-    "cost_per_observed_ready_or_contacted_usd": 0.10283792,
-    "latest_request": null
+    "request_count": 402,
+    "cumulative_estimated_cost_usd": 0.205825,
+    "cost_per_evaluated_candidate_usd": 0.00019272,
+    "cost_per_deepseek_promote_usd": 0.00623712,
+    "cost_per_observed_ready_or_contacted_usd": 0.10291253,
+    "latest_request": {
+      "at": "2026-10-07T05:01:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 168,
+      "completion_tokens": 166,
+      "total_tokens": 718,
+      "estimated_cost_usd": 0.00014921
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b0fcdd7f2c7f88c8a5eafdaae4ae4ceb",
-      "evaluated_at": "2026-10-05T12:59:05Z",
-      "organization": "isento GmbH",
-      "title": "Software Developer (m/w/d) - Schwerpunkt Angular",
-      "location": "Nuremberg",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/isento-gmbh/software-developer-schwerpunkt-angular-nuremberg-56674",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Angular-focused software developer role in Nuremberg; Angular-heavy core stack mismatches WordPress/custom HTML-CSS-JS profile. 'partner' keyword is generic and not evidence of freelance compatibility. On-site Germany location.",
-      "deepseek_risk_flags": [
-        "angular_heavy_core_stack",
-        "no_wordpress_woocommerce_scope",
-        "onsite_germany",
-        "generic_partner_keyword_not_proof"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001785733,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "af51204ca21ae7579fb023c8c0f6be6c",
       "evaluated_at": "2026-10-05T14:29:03Z",
@@ -1458,10 +1441,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f3b9583e89ebf6c083e21bec132f80e2",
+      "evaluated_at": "2026-10-07T05:01:59Z",
+      "organization": "Kraken",
+      "title": "Global Practice Lead",
+      "location": "London, UK",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/kraken/global-practice-lead-london-69043",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Title 'Global Practice Lead' at Kraken is a senior leadership/consulting role with no evidence of WordPress, WooCommerce, custom frontend, or web-performance scope; only generic keyword matches ('migration','website','partner') and no semantic role or stack hits.",
+      "deepseek_risk_flags": [
+        "no_stack_fit",
+        "senior_leadership_role",
+        "generic_keyword_matches_only",
+        "no_freelance_compatibility_evidence",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00014921,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-07T03:58:20Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-07T05:01:56Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

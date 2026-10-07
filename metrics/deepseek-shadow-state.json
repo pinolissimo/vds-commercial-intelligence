@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1116,
+  "runs": 1117,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29284,6 +29284,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f3b9583e89ebf6c083e21bec132f80e2",
+      "evaluated_at": "2026-10-07T05:01:59Z",
+      "organization": "Kraken",
+      "title": "Global Practice Lead",
+      "location": "London, UK",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/kraken/global-practice-lead-london-69043",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Title 'Global Practice Lead' at Kraken is a senior leadership/consulting role with no evidence of WordPress, WooCommerce, custom frontend, or web-performance scope; only generic keyword matches ('migration','website','partner') and no semantic role or stack hits.",
+      "deepseek_risk_flags": [
+        "no_stack_fit",
+        "senior_leadership_role",
+        "generic_keyword_matches_only",
+        "no_freelance_compatibility_evidence",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00014921,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34098,9 +34127,21 @@
       "completion_tokens": 192,
       "total_tokens": 761,
       "estimated_cost_usd": 0.00034022
+    },
+    {
+      "at": "2026-10-07T05:01:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 168,
+      "completion_tokens": 166,
+      "total_tokens": 718,
+      "estimated_cost_usd": 0.00014921
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-07T03:58:25Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-07T05:01:59Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
