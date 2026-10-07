@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "report_type": "LINKEDIN_HUNTER_DAILY_OPPORTUNITY_DELTA",
-  "generated_at": "2026-10-07T12:05:00+02:00",
+  "generated_at": "2026-10-07T16:06:00+02:00",
   "verification_date": "2026-10-07",
   "worker_id": "LINKEDIN_HUNTER",
   "send_window_open": true,
@@ -11,32 +11,75 @@
     "expired_pending_commands": 3
   },
   "provider_observation": {
-    "hostinger_sent_total": 773,
-    "latest_hostinger_sent_uid": 783,
-    "latest_commercial_inbox_uid": 1571,
+    "hostinger_sent_total": 782,
+    "latest_hostinger_sent_uid": 792,
+    "latest_commercial_inbox_uid": 1574,
     "gmail_sent_checked": true,
     "external_send_count": 0,
     "provider_uids": [],
     "newly_observed_provider_uids": [
-      783
+      784,
+      785,
+      786,
+      787,
+      788,
+      789,
+      790,
+      791,
+      792
     ],
-    "note": "Hostinger UID 783 to info@costacx.com was provider-verified and already reconciled into provider-live state. LINKEDIN_HUNTER initiated no send in this cycle."
+    "note": "Nine additional provider-verified commercial FIRST_CONTACT events were observed after the previous cycle and are already reconciled into provider-live/global ledger state. LINKEDIN_HUNTER initiated no send. No new qualified reply was observed."
   },
   "summary": {
-    "serious_candidates": 33,
-    "direct_email_harvest": 16,
+    "serious_candidates": 35,
+    "direct_email_harvest": 18,
     "send_now": 0,
     "provider_verified_first_contact": 0,
     "manual_apply_owned": 3,
     "revenue_flow_reference_handoffs": 7,
-    "wait_research": 3,
+    "wait_research": 4,
     "reject": 7,
-    "duplicate_failures": 13,
+    "duplicate_failures": 14,
     "fit_failures": 3,
     "route_failures": 0,
     "downstream_outcomes": 0
   },
   "qualified_owned_opportunities": [
+    {
+      "canonical_opportunity_id": "OPP-IT-EMR-CES-FTECH-WORDPRESS-PIVA-REMOTE-2026",
+      "canonical_organization_id": "IT-EMR-FC-CESENA-FTECHNOLOGY",
+      "ownership": "LINKEDIN_HUNTER",
+      "organization": "F.technology / Technology Made Easy Srl",
+      "project_or_need": "Remote PHP WordPress Developer for custom themes/plugins, ACF/Gutenberg and maintenance",
+      "country": "Italy",
+      "source_url": "https://f.technology/lavora-con-noi/",
+      "verified_at": "2026-10-07T16:04:00+02:00",
+      "fit_score": 89,
+      "fit_reasons": [
+        "WordPress core role",
+        "remote work",
+        "partita IVA accepted",
+        "custom themes/plugins and maintenance fit VDS"
+      ],
+      "material_gaps": [
+        "deep PHP/PHP-FIG evidence",
+        "3+ years professional development evidence",
+        "SQL, Docker, Composer, REST and testing evidence",
+        "CV and cover letter required"
+      ],
+      "verified_channel": "hr@f.technology on official careers page",
+      "manual_application_required": false,
+      "application_url": "mailto:hr@f.technology",
+      "required_materials": [
+        "CV",
+        "cover letter",
+        "evidence of PHP/WordPress, SQL, Docker, Composer and Git experience"
+      ],
+      "deadline": null,
+      "budget": null,
+      "next_action": "Verify mandatory-skill evidence and reconcile the canonical dispatch lease; then repeat every JIT dedup check before any send.",
+      "factual_state": "NEW_WAIT_RESEARCH; provider and repository dedup are clear, but mandatory-skill evidence and dispatch-lease reconciliation block first contact."
+    },
     {
       "canonical_opportunity_id": "OPP-ES-REDMAN-WORDPRESS-ELEMENTOR-2026",
       "canonical_organization_id": "ORG-ES-REDMAN-TH",
@@ -539,13 +582,13 @@
   ],
   "dashboard": {
     "mutated": true,
-    "verified": true,
-    "canonical_opportunity_sha": "dbf49a15a9bd64e490d82476bd012f6696c277d9",
-    "active_view_sha": "df5dd260c80369976184c188278e0ae31adb7993",
-    "opportunities_projection_sha": "7d927a320603904b8ec01ebcc737c558b7f4f6b7",
-    "dashboard_projection_sha": "ef966490cce60136b0a0f25b70bd29fc5c80a950",
-    "projection_generated_at": "2026-10-07T12:02:58+02:00",
-    "reason": "Producción Online is persisted in the canonical opportunity directory, active opportunity view and api/v1 opportunities projection consumed by Command Center. Dashboard freshness was verified after the canonical commit.",
+    "verified": false,
+    "canonical_opportunity_sha": "pending_refetch",
+    "active_view_sha": "9ce87b1628b827f963f544dd4fb7f8a1b1481293",
+    "opportunities_projection_sha": null,
+    "dashboard_projection_sha": null,
+    "projection_generated_at": null,
+    "reason": "F.technology persisted canonically and in the active view; scheduled projection refresh pending verification.",
     "data_loader_contract": "command-center/assets/app.js loads api/v1/dashboard.json, today.json, companies.json, territory-productivity.json, opportunities.json, sources.json, health.json and geography.json"
   },
   "normal_cycle_completed": true,
@@ -595,20 +638,20 @@
     }
   ],
   "latest_cycle": {
-    "completed_at": "2026-10-07T12:04:00+02:00",
-    "serious_candidates": 8,
-    "direct_email_harvest": 4,
+    "completed_at": "2026-10-07T16:06:00+02:00",
+    "serious_candidates": 2,
+    "direct_email_harvest": 2,
     "send_now": 0,
     "provider_verified_first_contact": 0,
-    "manual_apply": 2,
+    "manual_apply": 0,
     "wait_research": 1,
-    "reject": 2,
-    "duplicate_failures": 3,
-    "fit_failures": 2,
+    "reject": 0,
+    "duplicate_failures": 1,
+    "fit_failures": 0,
     "route_failures": 0,
     "downstream_outcomes": 0,
     "external_send_count": 0,
     "provider_uids": [],
-    "note": "No send: three exact/domain provider duplicates and one mandatory-core mismatch exhausted the direct-email routes; the global dispatch lease remains stale/IDLE despite fresh external sends. Producción Online is a new verified manual application; Soluciones Web 365 is a Revenue Flow reference."
+    "note": "No send: Muza Studio is blocked by Hostinger Sent UID 330. F.technology is a new authoritative direct-email opportunity but remains WAIT_RESEARCH for mandatory PHP/SQL/Docker/Composer evidence and because recent provider sends occurred while the canonical dispatch lease still shows a stale IDLE checkpoint through UID 286."
   }
 }
