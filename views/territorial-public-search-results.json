@@ -1,341 +1,514 @@
 {
   "schema_version": "2.0",
-  "updated_at": "2026-10-07T22:09:53Z",
-  "run_id": "territorial-par-1791410986",
+  "updated_at": "2026-10-07T22:28:36Z",
+  "run_id": "territorial-par-1791412108",
   "parallel": true,
   "worker_count": 10,
   "cursor_start_index": 10,
   "cursor_next_index": 10,
-  "source_plan_updated_at": "2026-10-07T22:09:46Z",
+  "source_plan_updated_at": "2026-10-07T22:28:28Z",
   "provider": "ddgs_multi_engine",
-  "missions_attempted": 25,
-  "missions_completed": 4,
-  "missions_failed": 21,
-  "result_count": 20,
-  "unique_domains": 18,
+  "missions_attempted": 30,
+  "missions_completed": 11,
+  "missions_failed": 19,
+  "result_count": 55,
+  "unique_domains": 43,
   "policy": "PARALLEL_DISCOVERY_ONLY_FIRST_PARTY_VERIFICATION_REQUIRED",
   "missions": [
     {
-      "mission_id": "5971369-1-0",
+      "mission_id": "5971373-0-0",
       "country": "Spain",
-      "region": "Canarias",
-      "locality": "Santa Cruz de Tenerife",
+      "region": "Aragón",
+      "locality": "Zaragoza",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"colaborador freelance\" (wordpress OR frontend OR \"desarrollo web\") Santa Cruz de Tenerife Canarias -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"partner tecnológico\" agencia wordpress Zaragoza Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 1.93,
+      "elapsed_seconds": 2.34,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5971369-2-0",
+      "mission_id": "5971373-2-0",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"white label\" agencia web freelance España Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"subcontratación\" desarrollo web agencia Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
-      "state": "FAILED",
-      "elapsed_seconds": 1.97,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.3,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Top 5 expertos en subcontratación de desarrollo de software ...",
+          "url": "https://q2bstudio.com/en/our-blog/1824581/descubre-los-5-mejores-expertos-en-subcontratacion-de-desarrollo-de-software-personalizado-en-valencia",
+          "domain": "q2bstudio.com",
+          "body": "Descubre los 5 principales expertos en subcontratación de desarrollo de software personalizado en Valencia. La experiencia en subcontratación de desarrollo de software a medida es esencial para las organizaciones que buscan optimizar sus operaciones y aumentar la productividad."
+        },
+        {
+          "title": "Top 20 empresas para servicios de desarrollo de software...",
+          "url": "https://www.q2bstudio.com/nuestro-blog/1206122/principales-empresas-desarrollo-software-subcontratado-valencia",
+          "domain": "q2bstudio.com",
+          "body": "Principales empresas de desarrollo de software subcontratado en Valencia. Encuentra aquí a los mejores proveedores de servicios de desarrollo de software en la región valenciana."
+        },
+        {
+          "title": "Top 22 agencias Desarrollo web en Valencia - Comparativa (2026)",
+          "url": "https://www.lafabriquedunet.es/agencias/pages/agencias-desarrollo-web-valencia",
+          "domain": "lafabriquedunet.es",
+          "body": "4 days ago · Compara las 22 mejores agencias Desarrollo web en Valencia. Tarifas y portfolio para elegir tu proveedor."
+        },
+        {
+          "title": "Top agencias de desarrollo web en Valencia",
+          "url": "https://www.sortlist.es/desarrollo-web/valencia-es",
+          "domain": "sortlist.es",
+          "body": "Una agencia de desarrollo web en Valencia crea sitios, ecommerce o aplicaciones web adaptadas a objetivos de negocio locales, combinando diseño, desarrollo, UX, SEO técnico y mantenimiento. El factor decisivo no es solo el portfolio: conviene comparar método, claridad del alcance, reseñas y capacidad para convertir el briefing en una web sostenible."
+        },
+        {
+          "title": "Las mejores agencias Desarrollo web en Comunidad Valenciana",
+          "url": "https://www.lafabriquedunet.es/agencias/pages/agencias-desarrollo-web-comunidad-valenciana",
+          "domain": "lafabriquedunet.es",
+          "body": "Sep 8, 2026 · Compara las 27 mejores agencias Desarrollo web en Comunidad Valenciana. Tarifas y portfolio para elegir tu proveedor."
+        },
+        {
+          "title": "163 empleos de «Desarrollo Web» en Valencia/València, Comunidad...",
+          "url": "https://es.linkedin.com/jobs/desarrollo-web-empleos-valencia-valència",
+          "domain": "es.linkedin.com",
+          "body": "Los 163 empleos más populares de «Desarrollo Web» en Valencia/València, Comunidad Valenciana / Comunitat Valenciana, España hoy. Sácale el máximo partido a tu red profesional y consigue que te contraten. Se añaden nuevos empleos para Desarrollo Web a diario."
+        }
+      ]
     },
     {
-      "mission_id": "5971369-4-0",
+      "mission_id": "5971373-4-0",
       "country": "Italy",
-      "region": "Toscana",
-      "locality": "Livorno",
+      "region": "Campania",
+      "locality": "Napoli",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"white label wordpress\" Italia Livorno Toscana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"collaboratori freelance\" web agency Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 1.77,
+      "elapsed_seconds": 2.27,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5971369-1-1",
+      "mission_id": "5971373-0-1",
       "country": "Spain",
-      "region": "Canarias",
-      "locality": "Santa Cruz de Tenerife",
-      "segment": "EU_PROJECT",
-      "query": "Horizon project \"communication and dissemination\" Spain website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 2,
-      "state": "FAILED",
-      "elapsed_seconds": 0.27,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-2-1",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "locality": "Valencia",
+      "region": "Aragón",
+      "locality": "Zaragoza",
       "segment": "EU_PROJECT",
       "query": "site:europa.eu project dissemination website Spain kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 0.67,
+      "elapsed_seconds": 0.54,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5971369-4-1",
-      "country": "Italy",
-      "region": "Toscana",
-      "locality": "Livorno",
-      "segment": "EU_PROJECT",
-      "query": "\"Horizon Europe\" kickoff 2026 Italy \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 2,
-      "state": "FAILED",
-      "elapsed_seconds": 0.41,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-1-2",
-      "country": "Spain",
-      "region": "Canarias",
-      "locality": "Santa Cruz de Tenerife",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Santa Cruz de Tenerife Canarias -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 3,
-      "state": "COMPLETED",
-      "elapsed_seconds": 2.04,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Tablón de anuncios - Cámara de Comercio de Santa Cruz de Tenerife",
-          "url": "https://camaratenerife.com/tablon-de-anuncios/",
-          "domain": "camaratenerife.com",
-          "body": "El tablón de anuncios de La Cámara de Comercio, Industria, Servicios y Navegación de Santa Cruz de Tenerife es una plataforma informativa donde se publican las vacantes de contratación y oportunidades laborales disponibles en la región. Este espacio facilita el acceso a información sobre ofertas de empleo, así como convocatorias y procesos de selección de personal, contribuyendo al ..."
-        },
-        {
-          "title": "Listado de empresas en Santa Cruz De Tenerife - Informa",
-          "url": "https://www.informa.es/directorio-empresas/Provincia_SANTA-CRUZ-TENERIFE.html",
-          "domain": "informa.es",
-          "body": "Accede al listado de empresas más amplio de Santa Cruz De Tenerife y consulta su situación mercantil, financiera o sus datos de contacto."
-        },
-        {
-          "title": "Listado de Empresas de Santa Cruz De Tenerife | Empresite",
-          "url": "https://empresite.eleconomista.es/provincia/SANTA-CRUZ-TENERIFE/",
-          "domain": "empresite.eleconomista.es",
-          "body": "Listado de Empresas de Santa Cruz De Tenerife. Obtén información de empresas y autónomos ubicados en Santa Cruz De Tenerife. 1200 resultados."
-        },
-        {
-          "title": "Ofertas de empleo en Santa Cruz De Tenerife - Eurofirms",
-          "url": "https://jobs.eurofirms.com/es/es/trabajo/santa-cruz-de-tenerife",
-          "domain": "jobs.eurofirms.com",
-          "body": "2 days ago · Aux. Admin el paso, santa cruz de tenerife Empresa dedicada a la venta y alquiler de maquinaria industrial necesita la incorporación de un/a Auxiliar Administrativo en la isla de La Palma. Las tareas a desempeñar son las siguientes:"
-        },
-        {
-          "title": "Trabajo en Santa Cruz de Tenerife: 10.901 Ofertas de Empleo ...",
-          "url": "https://es.jobsora.com/empleos-santa-cruz-de-tenerife",
-          "domain": "es.jobsora.com",
-          "body": "¡Encuentra más de 1000 trabajos en Santa Cruz de Tenerife y solicita la vacante en cuestión de segundos con Jobsora! ¡Comienza tu nueva carrera con nosotros hoy mismo!"
-        },
-        {
-          "title": "(581 vacantes) empleos de Trabajo en Santa Cruz de Tenerife ...",
-          "url": "https://es.linkedin.com/jobs/trabajo-empleos-santa-cruz-de-tenerife",
-          "domain": "es.linkedin.com",
-          "body": "581 empleos de Trabajo populares en Santa Cruz de Tenerife, Canarias, España hoy. Saca partido a tu red profesional y consigue que te contraten. Cada día salen nuevos empleos de Trabajo."
-        }
-      ]
-    },
-    {
-      "mission_id": "5971369-2-2",
+      "mission_id": "5971373-2-1",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 3,
-      "state": "COMPLETED",
-      "elapsed_seconds": 2.06,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Diseño Web Valencia | Agencia WordPress | Generacionweb",
-          "url": "https://www.generacionweb.es/",
-          "domain": "generacionweb.es",
-          "body": "2 days ago · También hacemos rediseño de páginas web, posicionamiento SEO en Valencia y mantenimiento web para que la que tienes rinda más. Trabajamos cerca de nuestros clientes: nos reunimos en persona, conocemos tu negocio y te acompañamos después de publicar la web."
-        },
-        {
-          "title": "Sils Media Group: Agencia de Marketing Digital en Valencia",
-          "url": "https://silsmediagroup.com/",
-          "domain": "silsmediagroup.com",
-          "body": "Soluciones Diseño web Social Media Posicionamiento SEO Creatividad Digital Mantenimiento web Agencia Proyectos Contacto Conócenos Reúnete Blog Únete Soporte"
-        },
-        {
-          "title": "Leyma Marketing Digital - Agencia de Marketing Digital Valencia",
-          "url": "https://www.leymamarketingdigital.com/",
-          "domain": "leymamarketingdigital.com",
-          "body": "Mantenimiento Mantenimiento web, seguridad y soporte técnico. La tranquilidad visual que necesita tu negocio para conectar con el cliente potencial."
-        },
-        {
-          "title": "Agencia de Marketing Digital en Valencia - Quois Development",
-          "url": "https://www.quois.com/",
-          "domain": "quois.com",
-          "body": "Jul 15, 2026 · Agencia Diseño Web Agencia Desarrollo Web Diseño Ecommerce Diseño Gráfico Hosting y Dominios Mantenimiento Web Kit Digital"
-        },
-        {
-          "title": "Agencia de marketing online en Valencia - B2B Activa",
-          "url": "https://b2bactiva.com/",
-          "domain": "b2bactiva.com",
-          "body": "Lo que sabemos hacer Diseño Web y Tiendas Online Creamos páginas web y tiendas online completas, bien diseñadas, rápidas y fáciles de gestionar. Además incluimos Hosting Dominio Copias de seguridad Mantenimiento web Optimización de velocidad."
-        },
-        {
-          "title": "Xatcom - Agencia Digital València | LinkedIn",
-          "url": "https://cl.linkedin.com/company/xatcom",
-          "domain": "cl.linkedin.com",
-          "body": "Sede Valencia, Valencian Community Tipo De financiación privada Fundación 2002 Especialidades Diseño web, Marketing online, Consultoría web, Redes sociales, Marketing de contenidos,..."
-        }
-      ]
-    },
-    {
-      "mission_id": "5971369-4-2",
-      "country": "Italy",
-      "region": "Toscana",
-      "locality": "Livorno",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Livorno Toscana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 3,
-      "state": "FAILED",
-      "elapsed_seconds": 1.85,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-1-3",
-      "country": "Spain",
-      "region": "Canarias",
-      "locality": "Santa Cruz de Tenerife",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"trabaja con nosotros\" \"desarrollador web\" freelance Santa Cruz de Tenerife Canarias -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 4,
-      "state": "FAILED",
-      "elapsed_seconds": 0.42,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-2-3",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "locality": "Valencia",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"capacidad externa\" wordpress agencia Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 4,
-      "state": "FAILED",
-      "elapsed_seconds": 0.75,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-4-3",
-      "country": "Italy",
-      "region": "Toscana",
-      "locality": "Livorno",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"collaboratore freelance\" (wordpress OR frontend OR \"sviluppo web\") Livorno Toscana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 4,
-      "state": "FAILED",
-      "elapsed_seconds": 0.35,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-1-4",
-      "country": "Spain",
-      "region": "Canarias",
-      "locality": "Santa Cruz de Tenerife",
       "segment": "EU_PROJECT",
       "query": "\"Horizon Europe\" kickoff 2026 Spain \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 5,
+      "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 1.78,
+      "elapsed_seconds": 0.57,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5971369-2-4",
+      "mission_id": "5971373-4-1",
+      "country": "Italy",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "EU_PROJECT",
+      "query": "Interreg project Italy \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 2,
+      "state": "FAILED",
+      "elapsed_seconds": 0.52,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-0-2",
+      "country": "Spain",
+      "region": "Aragón",
+      "locality": "Zaragoza",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Zaragoza Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 3,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.42,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "13 Common Causes Behind Itchy Legs (and How to ... - wikiHow",
+          "url": "https://www.wikihow.com/What-Causes-Itchy-Legs",
+          "domain": "wikihow.com",
+          "body": "Apr 9, 2026 · Treating your itchy legs is much easier once you know why they’re itching, but it can be hard to figure that out right away. In this article, we’ve detailed some of the most common causes of itchy legs and just how you can treat each one of them to get some relief."
+        },
+        {
+          "title": "Why Do My Legs Itch? 18 Possible Causes of Itchy Legs - WebMD",
+          "url": "https://www.webmd.com/skin-problems-and-treatments/why-legs-itch",
+          "domain": "webmd.com",
+          "body": "Apr 28, 2025 · Itchy legs? The cause could be as minor as dry skin or as serious as kidney disease from diabetes. Here’s what else could cause it, plus tips for relief."
+        },
+        {
+          "title": "Why Your Lower Legs Might Feel Itchy and How to Stop It",
+          "url": "https://www.verywellhealth.com/itchy-lower-legs-5217281",
+          "domain": "verywellhealth.com",
+          "body": "Jun 19, 2026 · Oatmeal baths, topical antihistamine or steroidal creams, and moisturizers may help stop itchiness. If at-home remedies don’t work, talk to your healthcare provider about your itchy legs and any other accompanying symptoms. Itchy lower legs are often caused by dry skin, allergies, or insect bites."
+        },
+        {
+          "title": "Itchy Lower Legs: Causes and Treatment - Healthline",
+          "url": "https://www.healthline.com/health/itchy-lower-legs",
+          "domain": "healthline.com",
+          "body": "May 19, 2023 · If you’re looking for information about why your legs itch and what to do about it, this article reviews seven reasons that you could be experiencing uncomfortable and annoying lower leg..."
+        },
+        {
+          "title": "Top Causes of Itchy Legs and Easy Relief Tips - Verywell Health",
+          "url": "https://www.verywellhealth.com/itchy-legs-causes-and-treatment-5215446",
+          "domain": "verywellhealth.com",
+          "body": "May 25, 2026 · To treat itchy legs, apply moisturizer twice daily and try home remedies like a cold compress. If home treatments don't help, or you have other symptoms like a rash, see a healthcare provider to check for more serious causes."
+        },
+        {
+          "title": "Itchy Legs: Causes, Symptoms, Treatments, and Home Remedies",
+          "url": "https://www.healthline.com/health/beauty-skin-care/itchy-legs",
+          "domain": "healthline.com",
+          "body": "Jan 23, 2026 · Relief depends on the cause and may include moisturizing often, using anti-itch products containing ingredients like hydrocortisone or calamine, or taking an oral antihistamine for allergies...."
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-2-2",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"mejora web\" empresa (wordpress OR rendimiento OR conversión) Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 3,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.17,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Operación Puerto - Wikipedia, la enciclopedia libre",
+          "url": "https://es.wikipedia.org/wiki/Operación_Puerto",
+          "domain": "es.wikipedia.org",
+          "body": "Fuga de patrocinadores Los dos equipos más afectados e implicados en la Operación Puerto, el Liberty Seguros (de categoría ProTour) y el Comunitat Valenciana (de categoría Profesional Continental), perdieron a sus patrocinadores principales como consecuencia del escándalo."
+        },
+        {
+          "title": "Optimización web: qué es, cómo hacerla y qué herramientas ...",
+          "url": "https://blog.hubspot.es/website/optimizacion-web",
+          "domain": "blog.hubspot.es",
+          "body": "Para atraer el interés y aumentar la conversión de ventas, los usuarios deben encontrar rápida y fácilmente tu sitio web. Si no, no importa cuánto tiempo y esfuerzo inviertas en aumentar el rendimiento de tus páginas y en crear contenido de calidad."
+        },
+        {
+          "title": "Lanzadera - Centro de Alto Rendimiento para Startups",
+          "url": "https://lanzadera.es/",
+          "domain": "lanzadera.es",
+          "body": "Aceleradora de empresas valenciana que apoya a emprendedores para que puedan transformar sus proyectos en empresas como Hundred, Flamingueo o Sepiia."
+        },
+        {
+          "title": "Precios del Alojamiento Administrado para WordPress - Kinsta",
+          "url": "https://kinsta.com/es/precios/",
+          "domain": "kinsta.com",
+          "body": "Todos los planes incluyen migraciones ilimitadas y gratuitas de sitios de WordPress, gestionadas por nuestro equipo de expertos. Trasladaremos tu/s sitio/s sin tiempo de inactividad ni costes ocultos."
+        },
+        {
+          "title": "Expertos en Crecimiento Digital y Estrategia | viva!",
+          "url": "https://vivaconversion.com/",
+          "domain": "vivaconversion.com",
+          "body": "Transformamos tu presencia online en resultados medibles. Estrategia, analítica y marketing digital con enfoque 100% a rendimiento."
+        },
+        {
+          "title": "Premios extraordinarios y menciones honoríficas - Ordenación ...",
+          "url": "https://ceice.gva.es/es/web/ordenacion-academica/primaria/premios-extraordinarios",
+          "domain": "ceice.gva.es",
+          "body": "Orden 59/2010 de 2 de junio de la Consellería de Educación, por la cual es regula la mención honorífica y la convocatoria de los premios extraordinarios al rendimiento académico de Educación Primaria de la Comunidad Valenciana a partir del curso 2009-2010."
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-4-2",
+      "country": "Italy",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 3,
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.08,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Thinking about getting a Tacoma, what are the Pros and Cons?",
+          "url": "https://www.reddit.com/r/ToyotaTacoma/comments/oh22ds/thinking_about_getting_a_tacoma_what_are_the_pros/",
+          "domain": "reddit.com",
+          "body": "Jul 9, 2021 · Tacoma and the tundra are both good trucks .. both will be reliable for a long time .. I just sold my 2021 trd off road and bought a tundra.. so far I love the drive .. power and handling of the truck .. but I also liked the Tacoma’s as well .. just wanted more room in the cab and power ."
+        },
+        {
+          "title": "The truth regarding the 4th gen : r/ToyotaTacoma - Reddit",
+          "url": "https://www.reddit.com/r/ToyotaTacoma/comments/1de8qhe/the_truth_regarding_the_4th_gen/",
+          "domain": "reddit.com",
+          "body": "The Tacoma engine: It’s a fact, the smaller the displacement, the less reliable when boosted. This can be engineered around, and works well in cars because they aren’t towing anything."
+        },
+        {
+          "title": "Toyota Tacoma Catalytic Converter Problems - Edmunds",
+          "url": "https://forums.edmunds.com/discussion/7409/toyota/tacoma/toyota-tacoma-catalytic-converter-problems",
+          "domain": "forums.edmunds.com",
+          "body": "hi folks. my question is pre-tacoma, but i don't see another truck forum. my 94 toyota pickup (six cyl, standard cab, 4-wheel drive, man tran) failed the NOX portion of the california smog test. it is a california model. the tech says my original-equipment converter is probably to blame. i've never done anything more complicated than change a fuel filter. is replacing the converter a repair i ..."
+        },
+        {
+          "title": "2024 Ford Ranger vs. Toyota Tacoma Comparison (MotorTrend)",
+          "url": "https://www.reddit.com/r/cars/comments/1bvql2b/2024_ford_ranger_vs_toyota_tacoma_comparison/",
+          "domain": "reddit.com",
+          "body": "Apr 4, 2024 · A pro for the Tacoma is that there’s an option for a smaller display. This review really is just a head-to-head between two specific trims of the Ranger and Tacoma, and not that great as a comparison between the two trucks overall."
+        },
+        {
+          "title": "Ram 1500 vs Tacoma OPINIONS? : r/ram_trucks - Reddit",
+          "url": "https://www.reddit.com/r/ram_trucks/comments/1dbe3cu/ram_1500_vs_tacoma_opinions/",
+          "domain": "reddit.com",
+          "body": "If you want rock solid reliability and don't care about anything else, Tacoma. With that being said, I've owned 5 RAM trucks and had two issues that resulted in a shop visit, one of which was a DEF system that was replaced under warranty. I've got a top trim 4Runner and it doesn't come anywhere close to the road trip comfort of my Laramie."
+        },
+        {
+          "title": "Performance modding a 2.7L Tacoma : r/Toyota - Reddit",
+          "url": "https://www.reddit.com/r/Toyota/comments/54cftm/performance_modding_a_27l_tacoma/",
+          "domain": "reddit.com",
+          "body": "Sep 24, 2016 · Performance modding a 2.7L Tacoma I have a 2012 2WD Tacoma with a stock 2TR-FE 2.7L engine in it. It's pretty quick as is, but as light as my truck is, and as large (for a 4cyl) as the engine is, I think I could get more out of it. I don't want to turn it into a street racer or anything, but a little more power would be nice."
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-0-3",
+      "country": "Spain",
+      "region": "Aragón",
+      "locality": "Zaragoza",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"trabaja con nosotros\" freelance wordpress Zaragoza Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 4,
+      "state": "FAILED",
+      "elapsed_seconds": 0.6,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-2-3",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "locality": "Valencia",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "agencia digital wordpress woocommerce Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 4,
+      "state": "FAILED",
+      "elapsed_seconds": 0.59,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-4-3",
+      "country": "Italy",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"collaborazione freelance\" \"web designer\" Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 4,
+      "state": "FAILED",
+      "elapsed_seconds": 0.47,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-0-4",
+      "country": "Spain",
+      "region": "Aragón",
+      "locality": "Zaragoza",
       "segment": "EU_PROJECT",
       "query": "site:cordis.europa.eu/project \"Start date\" 2026 Spain Horizon \"communication\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 5,
-      "state": "FAILED",
-      "elapsed_seconds": 1.97,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.5,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Start Menu | Microsoft Windows",
+          "url": "https://www.microsoft.com/en-us/windows/tips/start-menu",
+          "domain": "microsoft.com",
+          "body": "Get the most out of your Windows 11 experience with the Start menu. With the Start menu, you can save time, and find it faster with enhanced search. Find apps, settings, recommended files, and more."
+        },
+        {
+          "title": "Skills and Training to Achieve Readiness for Tomorrow (START)",
+          "url": "https://dpss.lacounty.gov/en/jobs/start.html",
+          "domain": "dpss.lacounty.gov",
+          "body": "We are excited to announce that GROW Program has been renamed to Skills and Training to Achieve Readiness for Tomorrow Program (START)! START provides employment and training services to help customers obtain training, education, and job opportunities. You will be assigned to a START Worker who will help you to achieve your employment goals. While participating in START you will be assigned to ..."
+        },
+        {
+          "title": "START Definition & Meaning - Merriam-Webster",
+          "url": "https://www.merriam-webster.com/dictionary/start",
+          "domain": "merriam-webster.com",
+          "body": "5 days ago · The meaning of START is to come into being, activity, or operation. How to use start in a sentence. Synonym Discussion of Start."
+        },
+        {
+          "title": "Startpage.com",
+          "url": "https://www.startpage.com/",
+          "domain": "startpage.com",
+          "body": "Startpage is a private search engine that protects your personal data and ensures browsing without tracking or targeting."
+        },
+        {
+          "title": "START | English meaning - Cambridge Dictionary",
+          "url": "https://dictionary.cambridge.org/dictionary/english/start",
+          "domain": "dictionary.cambridge.org",
+          "body": "START definition: 1. to begin doing something: 2. If a business or other organization starts, or if someone starts…. Learn more."
+        },
+        {
+          "title": "Start - definition of start by The Free Dictionary",
+          "url": "https://www.thefreedictionary.com/start",
+          "domain": "thefreedictionary.com",
+          "body": "Define start. start synonyms, start pronunciation, start translation, English dictionary definition of start. v. start·ed , start·ing , starts v. intr. 1. a. To ..."
+        }
+      ]
     },
     {
-      "mission_id": "5971369-4-4",
-      "country": "Italy",
-      "region": "Toscana",
-      "locality": "Livorno",
+      "mission_id": "5971373-2-4",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "locality": "Valencia",
       "segment": "EU_PROJECT",
-      "query": "Horizon project \"communication and dissemination\" Italy website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "Horizon project \"communication and dissemination\" Spain website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 5,
-      "state": "FAILED",
-      "elapsed_seconds": 1.35,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 0.97,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "EU Project Communication in Horizon Europe: 2026 Guide",
+          "url": "https://nexuswelt.com/eu-project-communication-guide/",
+          "domain": "nexuswelt.com",
+          "body": "Mar 15, 2026 · Communication means explaining the project and its value to broad audiences, including non-specialists. Dissemination means sharing project results with audiences that can use them, such as researchers, industry, policymakers or practitioners."
+        },
+        {
+          "title": "Spanish science communication agency offers specialized ...",
+          "url": "https://een.ec.europa.eu/partnering-opportunities/spanish-science-communication-agency-offers-specialized-services-eu-funded",
+          "domain": "een.ec.europa.eu",
+          "body": "Mar 10, 2026 · Spanish creative agency specialized in science communication offers strategic support for EU-funded projects (Horizon Europe, EIC, MSCA). The agency provides comprehensive partnership for consortia, leading the Communication, Dissemination, and Exploitation (C&D&E) work packages."
+        },
+        {
+          "title": "Dissemination and exploitation - European Research Executive ...",
+          "url": "https://rea.ec.europa.eu/dissemination-and-exploitation_en",
+          "domain": "rea.ec.europa.eu",
+          "body": "Check out our Guide on communication, dissemination and exploitation to better understand the differences between these three concepts and get acquainted with the different European Commission tools that can support your project."
+        },
+        {
+          "title": "Communication, Dissemination and Exploitation in Horizon ...",
+          "url": "https://euro-funding.com/en/blog/communication-dissemination-and-exploitation-in-horizon-europe/",
+          "domain": "euro-funding.com",
+          "body": "Aug 13, 2026 · A Horizon Europe project must deliver more than technical results. It must show that those results were communicated, disseminated, protected where necessary and connected to credible routes for use."
+        },
+        {
+          "title": "Communication & Dissemination in EU project proposals",
+          "url": "https://www.zabala.eu/publications/how-to-write-communication-dissemination-eu-proposal/",
+          "domain": "zabala.eu",
+          "body": "This guide helps you understand what evaluators really expect from Communication and Dissemination activities in Horizon Europe proposals. Discover the most common mistakes, practical tips to strengthen your Impact section, and real examples from successful European projects."
+        },
+        {
+          "title": "Communication, Dissemination, and Exploitation in European ...",
+          "url": "https://www.r2msolution.es/en/blog/communication-dissemination-and-exploitation-in-european-projects-three-different-concepts-with-the-same-goal/",
+          "domain": "r2msolution.es",
+          "body": "Jul 28, 2026 · If you lead a research project or a technology consortium and want to ensure your results don’t stay trapped in the lab, R2M Spain has the methodology and technical expertise to maximize your commercial, scientific, and social impact."
+        }
+      ]
     },
     {
-      "mission_id": "5971369-0-0",
+      "mission_id": "5971373-4-4",
+      "country": "Italy",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "EU_PROJECT",
+      "query": "\"communication dissemination\" consortium Italy \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 5,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.71,
+      "result_count": 4,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "HiDALGO2 Project (Horizon Europe) – Communication ...",
+          "url": "https://pavloszafiropoulos.wordpress.com/2026/02/27/hidalgo2-project-communication-dissemination-lead/",
+          "domain": "pavloszafiropoulos.wordpress.com",
+          "body": "Feb 27, 2026 · My Role: As Dissemination and Communication Manager, I managed the project’s website and social media accounts, authored project deliverables, and produced regular newsletters, press releases, and articles (see an example)."
+        },
+        {
+          "title": "Horizon Europe Communication & Dissemination Partner | KOM Agency",
+          "url": "https://kom-fr.com/horizon-europe/",
+          "domain": "kom-fr.com",
+          "body": "Strategic Horizon Europe communication partner for MSCA & Health consortia. We deliver high-impact WP CDE strategies from proposal to final EC report."
+        },
+        {
+          "title": "EU project communication and dissemination partner | WIT Berry",
+          "url": "https://witberry.eu/",
+          "domain": "witberry.eu",
+          "body": "Our team has successfully led communication and dissemination activities across multiple Horizon Europe projects. We’d be delighted to join your initiative — ensuring strong visibility, effective outreach, and maximum impact."
+        },
+        {
+          "title": "Report on communication & dissemination actions",
+          "url": "https://www.innonext-project.eu/public/file/allegati/fileImg-20-03-2026-12-57-18-D4.2---Report-on-communication---dissemination-actions.pdf",
+          "domain": "innonext-project.eu",
+          "body": "It outlines how the strategy presented in the Communication & Dissemination Plan (D4.1) was implemented in practice, describes the tools and channels activated, presents key results and engagement data, and highlights both the challenges encountered, and the lessons learned."
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-1-0",
       "country": "Spain",
-      "region": "País Vasco",
-      "locality": "Bizkaia",
+      "region": "Ceuta",
+      "locality": "Ceuta",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"servicios para agencias\" desarrollo web Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"colaboración freelance\" \"diseño web\" Ceuta -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 6,
       "state": "FAILED",
-      "elapsed_seconds": 0.41,
+      "elapsed_seconds": 0.52,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5971369-3-0",
+      "mission_id": "5971373-3-0",
       "country": "Italy",
       "region": "Lazio",
       "locality": "Roma",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"overflow\" wordpress agency Italy Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"sviluppo web per agenzie\" Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 6,
       "state": "FAILED",
@@ -345,167 +518,286 @@
       "results": []
     },
     {
-      "mission_id": "5971369-0-1",
-      "country": "Spain",
-      "region": "País Vasco",
-      "locality": "Bizkaia",
-      "segment": "EU_PROJECT",
-      "query": "Interreg project Spain \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 7,
-      "state": "COMPLETED",
-      "elapsed_seconds": 1.55,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Spain | Interreg Europe",
-          "url": "https://www.interregeurope.eu/spain",
-          "domain": "interregeurope.eu",
-          "body": "This page contains information about the country's involvement in the programme and about the project control system in Spain. You may also speak directly with the Interreg Europe representatives in Spain. Discover the latest news and upcoming events from Spain."
-        },
-        {
-          "title": "Project communication | Interreg Europe",
-          "url": "https://www.interregeurope.eu/help-centre/implement-your-project/project-communication",
-          "domain": "interregeurope.eu",
-          "body": "Your project's news and events are, by default, published on your project website. But you can ask the joint secretariat to promote your content on the programme homepage to make it more visible."
-        },
-        {
-          "title": "Home - Interreg EU",
-          "url": "https://interreg.eu/",
-          "domain": "interreg.eu",
-          "body": "Stay informed about the latest Interreg developments across Europe and beyond. Explore news, success stories and opportunities that support collaboration and innovation."
-        },
-        {
-          "title": "I-ReWater enters its final year of implementation in 2026 ...",
-          "url": "https://interreg-sudoe.eu/en/noticia-proyecto/i-rewater-enters-its-final-year-of-implementation-in-2026-with-an-extensive-international-events-agenda/",
-          "domain": "interreg-sudoe.eu",
-          "body": "Jan 21, 2026 · The I-ReWater project enters its final year of implementation in 2026 with an agenda marked by international congresses, strategic meetings and dissemination activities in Spain, Portugal and France."
-        },
-        {
-          "title": "Guide for programmes 2026 - presidencia.gva.es",
-          "url": "https://presidencia.gva.es/documents/90598251/372597693/Interreg+Cooperation+Day+Guide+2026.pdf/5d52a08f-4830-977b-75b2-45daff3b745e?t=1779172420681",
-          "domain": "presidencia.gva.es",
-          "body": "reg Cooperation Day 2026. Everything you need to plan, promote and deliver a meaningful event is here: from creative inspiration and planning tips to communication too."
-        },
-        {
-          "title": "Calls for Projects - Interreg EU",
-          "url": "https://interreg.eu/calls-for-projects/",
-          "domain": "interreg.eu",
-          "body": "Interreg projects follow a clear application process, from idea to submitting a proposal through an open call. While programmes define their own rules, the steps below show what is common across Interreg."
-        }
-      ]
-    },
-    {
-      "mission_id": "5971369-3-1",
+      "mission_id": "5971373-5-0",
       "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "EU_PROJECT",
-      "query": "\"communication dissemination\" consortium Italy \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 7,
-      "state": "FAILED",
-      "elapsed_seconds": 2.07,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-0-2",
-      "country": "Spain",
-      "region": "País Vasco",
-      "locality": "Bizkaia",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"solicitud de presupuesto\" (web OR wordpress OR ecommerce) Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 8,
-      "state": "FAILED",
-      "elapsed_seconds": 0.5,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-3-2",
-      "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 8,
-      "state": "FAILED",
-      "elapsed_seconds": 1.1,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-0-3",
-      "country": "Spain",
-      "region": "País Vasco",
-      "locality": "Bizkaia",
+      "region": "Friuli-Venezia Giulia",
+      "locality": "Gorizia",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"outsourcing desarrollo web\" agencia Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"collaborazione continuativa\" freelance wordpress Gorizia Friuli-Venezia Giulia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 9,
+      "worker_id": 6,
       "state": "FAILED",
-      "elapsed_seconds": 1.64,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5971369-3-3",
-      "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"servizi per agenzie\" sviluppo web Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 9,
-      "state": "COMPLETED",
-      "elapsed_seconds": 2.14,
-      "result_count": 2,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Web Agency a Roma | Siti web e SEO - shm.studio",
-          "url": "https://shm.studio/web-agency/lazio/roma/",
-          "domain": "shm.studio",
-          "body": "Web agency a Roma: siti web ed e-commerce, SEO locale e campagne per far crescere la tua impresa online. Richiedi una consulenza gratuita."
-        },
-        {
-          "title": "Servizi per agenzie immobiliari — idealista, N.1 in Italia",
-          "url": "https://www.idealista.it/nuovo-professionale",
-          "domain": "idealista.it",
-          "body": "Servizi offerti da idealista alle agenzie immobiliari e ai costruttori per promuovere immobili in vendita o in affitto. Scopri i nostri programmi di gestione immobiliare."
-        }
-      ]
-    },
-    {
-      "mission_id": "5971369-0-4",
-      "country": "Spain",
-      "region": "País Vasco",
-      "locality": "Bizkaia",
-      "segment": "EU_PROJECT",
-      "query": "\"communication dissemination\" consortium Spain \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 10,
-      "state": "FAILED",
-      "elapsed_seconds": 0.47,
+      "elapsed_seconds": 0.43,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5971369-3-4",
+      "mission_id": "5971373-1-1",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "EU_PROJECT",
+      "query": "\"communication dissemination\" consortium Spain \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 7,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.15,
+      "result_count": 1,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Your Horizon Europe Communication & Dissemination Partner",
+          "url": "https://www.taskscape.org.uk/horizon-europe-dissemination-partner/",
+          "domain": "taskscape.org.uk",
+          "body": "We join Horizon Europe consortia as a CDE partner, leading or supporting communication, dissemination and exploitation. We help deliver the strategy, storytelling and knowledge systems that turn research and regeneration projects into engagement with lasting stakeholder value."
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-3-1",
       "country": "Italy",
       "region": "Lazio",
       "locality": "Roma",
       "segment": "EU_PROJECT",
-      "query": "Interreg project Italy \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "site:cordis.europa.eu/project \"Start date\" 2026 Italy Horizon \"communication\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 7,
+      "state": "FAILED",
+      "elapsed_seconds": 2.72,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-5-1",
+      "country": "Italy",
+      "region": "Friuli-Venezia Giulia",
+      "locality": "Gorizia",
+      "segment": "EU_PROJECT",
+      "query": "Horizon project \"communication and dissemination\" Italy website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 7,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.15,
+      "result_count": 2,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "APRE Courses 2026: “Communication & Dissemination in Writing ...",
+          "url": "https://research.unisi.it/calendar/apre-course-communication-dissemination-in-writing-and-managing-a-horizon-europe-project/",
+          "domain": "research.unisi.it",
+          "body": "Participants will learn how to efficiently plan and tailor communication strategies from the proposal writing stage (specifically Section 2.2) to project management, utilizing effective models and channels for different target audiences."
+        },
+        {
+          "title": "Communication & Dissemination nella scrittura e gestione di ...",
+          "url": "https://www.uniroma1.it/it/node/537037",
+          "domain": "uniroma1.it",
+          "body": "Oct 9, 2025 · L’evento è finalizzato ad offrire una panoramica sul ruolo della Comunicazione e Disseminazione nei progetti Horizon Europe, partendo dalla fase di scrittura del Work Package dedicato per arrivare all’implementazione delle attività."
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-1-2",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Ceuta -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 8,
+      "state": "FAILED",
+      "elapsed_seconds": 0.55,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-3-2",
+      "country": "Italy",
+      "region": "Lazio",
+      "locality": "Roma",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 8,
+      "state": "FAILED",
+      "elapsed_seconds": 0.58,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-5-2",
+      "country": "Italy",
+      "region": "Friuli-Venezia Giulia",
+      "locality": "Gorizia",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"necessitiamo\" (\"nuovo sito\" OR \"rifacimento sito\" OR \"migrazione wordpress\") azienda Gorizia Friuli-Venezia Giulia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 8,
+      "state": "FAILED",
+      "elapsed_seconds": 0.44,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-1-3",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"autónomo\" wordpress agencia Ceuta -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 9,
+      "state": "FAILED",
+      "elapsed_seconds": 2.4,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-3-3",
+      "country": "Italy",
+      "region": "Lazio",
+      "locality": "Roma",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"partner tecnologico\" agenzia wordpress Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 9,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.1,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Partner (2007 film) - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Partner_(2007_film)",
+          "domain": "en.wikipedia.org",
+          "body": "Partner is a 2007 Indian Hindi -language romantic comedy film directed by David Dhawan and produced by Sohail Khan and Parag Sanghvi. The story of the film was inspired by the 2005 American film Hitch. [2]"
+        },
+        {
+          "title": "PARTNER Definition & Meaning - Merriam-Webster",
+          "url": "https://www.merriam-webster.com/dictionary/partner",
+          "domain": "merriam-webster.com",
+          "body": "6 days ago · The meaning of PARTNER is one associated with another especially in an action : associate, colleague. How to use partner in a sentence."
+        },
+        {
+          "title": "PARTNER | English meaning - Cambridge Dictionary",
+          "url": "https://dictionary.cambridge.org/dictionary/english/partner",
+          "domain": "dictionary.cambridge.org",
+          "body": "PARTNER definition: 1. a person or organization you are closely involved with in some way: 2. one of the owners of a…. Learn more."
+        },
+        {
+          "title": "PARTNER Definition & Meaning | Dictionary.com",
+          "url": "https://www.dictionary.com/browse/partner",
+          "domain": "dictionary.com",
+          "body": "PARTNER definition: a person who shares or is associated with another in some action or endeavor; sharer; associate. See examples of partner used in a sentence."
+        },
+        {
+          "title": "PARTNER | definition in the Cambridge English Dictionary",
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/partner",
+          "domain": "dictionary.cambridge.org",
+          "body": "PARTNER meaning: 1. a person or organization you are closely involved with in some way: 2. one of the owners of a…. Learn more."
+        },
+        {
+          "title": "Partner.Co™",
+          "url": "https://partner.co/en-us",
+          "domain": "partner.co",
+          "body": "Optimize your well-being with your wellness, business and lifestyle partner."
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-5-3",
+      "country": "Italy",
+      "region": "Friuli-Venezia Giulia",
+      "locality": "Gorizia",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"subappalto\" sviluppo web agenzia Gorizia Friuli-Venezia Giulia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 9,
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.03,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Proportional vs. Non-Proportional Relationships: A Visual Guide",
+          "url": "https://completeera.com/proportional-vs-non-proportional-relationships-a-visual-guide/",
+          "domain": "completeera.com",
+          "body": "Notice how proportional examples feel “fair” and predictable, while non-proportional ones introduce complexity—like taxes or growth patterns. Recognizing these helps in budgeting, science, or even cooking!"
+        },
+        {
+          "title": "Proportional vs Nonproportional Relationships",
+          "url": "https://proportionalrelationship.com/blog/proportional-vs-nonproportional-relationships",
+          "domain": "proportionalrelationship.com",
+          "body": "Compare proportional and nonproportional relationships using graphs, tables, equations, and real-world examples with clear side-by-side comparisons."
+        },
+        {
+          "title": "Proportional and non-proportional relationships | Khan Academy",
+          "url": "https://www.khanacademy.org/math/grade-8-math-tx/x42e41b058fcf4059:untitled-102/x42e41b058fcf4059:solving-problems-with-direct-variation",
+          "domain": "khanacademy.org",
+          "body": "Discover how to identify, analyze, and graph proportional and non-proportional relationships through everyday examples like groceries and movie tickets. Learn to write equations and solve real-life problems with these essential math skills."
+        },
+        {
+          "title": "Non-Proportional Relationships Notes and Practice - TPT",
+          "url": "https://www.teacherspayteachers.com/Product/Non-Proportional-Relationships-Notes-and-Practice-11895936",
+          "domain": "teacherspayteachers.com",
+          "body": "Non-Proportional Relationships Notes - Fill in the blank notes going over how to identify non-proportional relationships in tables and graphs. 2 examples scenarios are given on non-proportional relationships."
+        },
+        {
+          "title": "Proportional Non-proportional Notes Teaching Resources | TpT",
+          "url": "https://www.teacherspayteachers.com/browse/Search:proportional+non-proportional+notes",
+          "domain": "teacherspayteachers.com",
+          "body": "These guided notes support teaching students how to distinguish between proportional and non-proportional relationships - including several different representations of the relationships (tables, graphs, descriptions, and equations)."
+        },
+        {
+          "title": "Proportional vs. Non-Proportional Relationships",
+          "url": "https://www.effortlessmath.com/wp-content/uploads/2026/05/Grade7-Math-Proportional-vs-Non-Proportional-Relationships-missouri.pdf",
+          "domain": "effortlessmath.com",
+          "body": "Study Tips ☞ The fastest check: does the table include the point (0, 0)? A proportional relationship must pass through the origin. ☞ A flat fee, starting balance, or one-time charge is a dead giveaway for a non-proportional relationship. ame constant k — you only need to fin"
+        }
+      ]
+    },
+    {
+      "mission_id": "5971373-1-4",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "EU_PROJECT",
+      "query": "Interreg project Spain \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 10,
+      "state": "FAILED",
+      "elapsed_seconds": 0.48,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-3-4",
+      "country": "Italy",
+      "region": "Lazio",
+      "locality": "Roma",
+      "segment": "EU_PROJECT",
+      "query": "site:europa.eu project dissemination website Italy kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 10,
+      "state": "FAILED",
+      "elapsed_seconds": 0.72,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5971373-5-4",
+      "country": "Italy",
+      "region": "Friuli-Venezia Giulia",
+      "locality": "Gorizia",
+      "segment": "EU_PROJECT",
+      "query": "\"Horizon Europe\" kickoff 2026 Italy \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
