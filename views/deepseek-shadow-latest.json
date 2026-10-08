@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-08T00:35:48Z",
+  "updated_at": "2026-10-08T00:54:05Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1090,
+    "evaluated_total": 1092,
     "agreement_count": 503,
-    "agreement_pct": 46.15,
+    "agreement_pct": 46.06,
     "deepseek_promote": 33,
-    "vds_promote": 287,
+    "vds_promote": 288,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 258
+    "deepseek_demoted_from_vds_promote": 259
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.18,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.09,
+    "vds_promote_hot_rate_pct": 2.08,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.06,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 415,
-    "cumulative_estimated_cost_usd": 0.210064,
-    "cost_per_evaluated_candidate_usd": 0.00019272,
-    "cost_per_deepseek_promote_usd": 0.00636557,
-    "cost_per_observed_ready_or_contacted_usd": 0.10503195,
-    "latest_request": null
+    "request_count": 416,
+    "cumulative_estimated_cost_usd": 0.210425,
+    "cost_per_evaluated_candidate_usd": 0.0001927,
+    "cost_per_deepseek_promote_usd": 0.0063765,
+    "cost_per_observed_ready_or_contacted_usd": 0.10521226,
+    "latest_request": {
+      "at": "2026-10-08T00:54:00Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 705,
+      "completion_tokens": 310,
+      "total_tokens": 1143,
+      "estimated_cost_usd": 0.0003606
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "bfe38d5a60bde5b2a6259ac8ea9ee180",
-      "evaluated_at": "2026-10-06T13:01:32Z",
-      "organization": "Kijimea",
-      "title": "Werkstudent Content Management",
-      "location": "Gräfelfing/Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kijimea/werkstudent-content-management-grafelfing-354977",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 80,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Werkstudent (working student) content management role in Germany; student employment, not freelance/contract, and geo outside Spain/Italy/EU-remote target.",
-      "deepseek_risk_flags": [
-        "student_role",
-        "onsite_germany",
-        "no_freelance_signal",
-        "geo_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001410018,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "f929ff6b5b265edb41b1c2a6f2fed889",
-      "evaluated_at": "2026-10-06T13:01:32Z",
-      "organization": "Kijimea",
-      "title": "Trainee Web Development",
-      "location": "Gräfelfing/Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kijimea/trainee-web-development-grafelfing-69781",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 78,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Trainee web development position in Germany; trainee/employment role, not freelance, and geo outside target markets.",
-      "deepseek_risk_flags": [
-        "trainee_role",
-        "onsite_germany",
-        "no_freelance_signal",
-        "geo_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001410018,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "821bc0cc5d33824e65917808a787f819",
       "evaluated_at": "2026-10-06T13:01:32Z",
@@ -1464,10 +1419,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "103d5bb87d1f51af58974f69bf49e76b",
+      "evaluated_at": "2026-10-08T00:54:00Z",
+      "organization": "INSIDE M2M GmbH",
+      "title": "Frontend Engineer, Developer (M/W/D)",
+      "location": "Garbsen, Niedersachsen, Deutschland",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/inside-m2m-gmbh/frontend-engineer-developer-garbsen-390451",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.5,
+      "deepseek_primary_reason": "Frontend Engineer role with HTML/CSS/frontend keyword matches, but no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and location Garbsen, Germany is outside primary Spain/Italy markets with geo compatibility unverified.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "freelance_compatibility_unverified",
+        "no_wordpress_woocommerce_scope",
+        "employment_type_unknown",
+        "remote_state_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001803,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "354adeb3fd0cb8574d752af7cbe22ce4",
+      "evaluated_at": "2026-10-08T00:54:00Z",
+      "organization": "Raysono",
+      "title": "Senior Architect (all genders)",
+      "location": "München",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/raysono/senior-architect-all-genders-munchen-226781",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 20.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Architect role is not a web-development role; only tangential cms/frontend keyword matches and generic partner/collaboration mentions, which do not establish truthful stack fit or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_architect",
+        "generic_collaboration_mention",
+        "no_wordpress_woocommerce_scope",
+        "freelance_compatibility_unverified",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001803,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-08T00:35:41Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-08T00:53:57Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
