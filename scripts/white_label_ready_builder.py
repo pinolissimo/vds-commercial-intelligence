@@ -22,6 +22,17 @@ def domain_of_email(e):
 def valid(e,d):
     e=str(e or "").strip().lower()
     return bool(re.fullmatch(r"[^\s@]+@[^\s@]+\.[^\s@]+",e)) and domain_of_email(e)==d and not any(x in e for x in PLACEHOLDERS)
+def clean_valid_emails(values,d,exact):
+    candidates=sorted({str(e).strip().lower() for e in (values or []) if valid(e,d) and str(e).strip().lower() not in exact})
+    return [
+      email for email in candidates
+      if not any(
+        other_domain==domain and other_local!=local and other_local.endswith(local)
+        for other in candidates
+        for local,domain in [email.rsplit("@",1)]
+        for other_local,other_domain in [other.rsplit("@",1)]
+      )
+    ]
 def main():
     routes=load(ROUTES,{"items":[]}); boost=load(BOOST,{"signals":[]}); ledger=load(LEDGER,{})
     exact=set((ledger.get("exact_email_index") or {}).keys())
@@ -42,7 +53,7 @@ def main():
     for d, pack in signal_by_domain.items():
         if not d or d in seen or d in domains or f"org:{d}" in organizations: continue
         sig=pack["signal"]
-        emails=[str(e).lower() for e in (sig.get("emails") or []) if valid(e,d) and str(e).lower() not in exact]
+        emails=clean_valid_emails(sig.get("emails"),d,exact)
         if not emails: continue
         if pack["agency_score"] < 2: continue
         matched=[str(x).lower() for x in (sig.get("matched_terms") or [])]
@@ -73,7 +84,7 @@ def main():
         matched=[str(x).lower() for x in ((sig.get("signal") or {}).get("matched_terms") or [])]
         strong=any(x in matched for x in ("white label","white-label","outsourcing","wordpress","woocommerce","web development","sviluppo web","desarrollo web","web agency","agenzia web","agencia web"))
         if not strong: continue
-        emails=[str(e).lower() for e in (r.get("public_emails") or []) if valid(e,d) and str(e).lower() not in exact]
+        emails=clean_valid_emails(r.get("public_emails"),d,exact)
         if not emails: continue
         if int(r.get("contactability_score") or 0)<55: continue
         routes_ok=r.get("supplier_routes") or []
