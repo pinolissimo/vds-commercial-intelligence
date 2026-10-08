@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5",
-  "updated_at": "2026-10-08T00:53:57Z",
+  "updated_at": "2026-10-08T01:12:07Z",
   "north_star": "WON_REVENUE_THEN_PROPOSAL_CALL_QUALIFIED_REPLY_FIRST_CONTACT",
   "north_star_order": [
     "WON_REVENUE",
@@ -24,26 +24,26 @@
     "HOURLY_SUPPORT_RETAINER"
   ],
   "funnel_snapshot": {
-    "raw": 2565,
-    "semantic_input": 2565,
-    "semantic_pass": 196,
-    "semantic_review": 566,
-    "semantic_reject": 1803,
-    "rejected_non_project_support": 113,
+    "raw": 2500,
+    "semantic_input": 2500,
+    "semantic_pass": 180,
+    "semantic_review": 559,
+    "semantic_reject": 1761,
+    "rejected_non_project_support": 110,
     "buyer_intent_very_high": 63,
     "buyer_intent_high": 118,
     "buyer_intent_high_total": 181,
     "project_based_high_intent": 181,
     "opportunity_first_high_priority": 208,
-    "second_chance_queue": 412,
+    "second_chance_queue": 403,
     "decision_maker_enrichment_queue": 311,
     "buyer_archetypes": {
       "AGENCY_EXTERNAL_CAPACITY": 169,
       "EU_DISSEMINATION_SPECIALIST": 32,
-      "SME_WEB_IMPROVEMENT": 280
+      "SME_WEB_IMPROVEMENT": 264
     },
     "engagement_models": {
-      "PROJECT_BASED_WEB_DELIVERY": 447,
+      "PROJECT_BASED_WEB_DELIVERY": 431,
       "PROJECT_MODEL_TO_VERIFY": 15,
       "NON_PROJECT_SUPPORT": 19
     },
@@ -846,6 +846,30 @@
   ],
   "source_ranking": [
     {
+      "source_id": "remotejobs_contract_wordpress",
+      "raw_signals": 12,
+      "semantic_pass": 7,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.5833,
+      "semantic_useful_rate": 0.5833,
+      "raw_priority_multiplier": 1.44,
+      "recommended_multiplier": 1.55,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 1
+    },
+    {
+      "source_id": "nomado_frontend",
+      "raw_signals": 2,
+      "semantic_pass": 2,
+      "semantic_review": 0,
+      "semantic_pass_rate": 1.0,
+      "semantic_useful_rate": 1.0,
+      "raw_priority_multiplier": 1.04,
+      "recommended_multiplier": 1.51,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 2
+    },
+    {
       "source_id": "joa_es_frontend_title",
       "raw_signals": 11,
       "semantic_pass": 11,
@@ -855,7 +879,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.45,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 1
+      "rank": 3
     },
     {
       "source_id": "joa_it_frontend_title",
@@ -867,7 +891,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.45,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 2
+      "rank": 4
     },
     {
       "source_id": "joa_it_webdesigner_title",
@@ -879,19 +903,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.45,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 3
-    },
-    {
-      "source_id": "remotejobs_contract_wordpress",
-      "raw_signals": 15,
-      "semantic_pass": 7,
-      "semantic_review": 1,
-      "semantic_pass_rate": 0.4667,
-      "semantic_useful_rate": 0.49,
-      "raw_priority_multiplier": 1.37,
-      "recommended_multiplier": 1.36,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 4
+      "rank": 5
     },
     {
       "source_id": "wwr_frontend",
@@ -903,31 +915,43 @@
       "raw_priority_multiplier": 1.36,
       "recommended_multiplier": 1.36,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 5
-    },
-    {
-      "source_id": "remoteok",
-      "raw_signals": 5,
-      "semantic_pass": 3,
-      "semantic_review": 0,
-      "semantic_pass_rate": 0.6,
-      "semantic_useful_rate": 0.6,
-      "raw_priority_multiplier": 1.22,
-      "recommended_multiplier": 1.33,
-      "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 6
     },
     {
-      "source_id": "nomado_frontend",
-      "raw_signals": 13,
-      "semantic_pass": 10,
-      "semantic_review": 0,
-      "semantic_pass_rate": 0.7692,
-      "semantic_useful_rate": 0.7692,
-      "raw_priority_multiplier": 0.93,
-      "recommended_multiplier": 1.16,
+      "source_id": "jobicy_europe",
+      "raw_signals": 91,
+      "semantic_pass": 22,
+      "semantic_review": 11,
+      "semantic_pass_rate": 0.2418,
+      "semantic_useful_rate": 0.2841,
+      "raw_priority_multiplier": 1.3,
+      "recommended_multiplier": 1.05,
       "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 7
+    },
+    {
+      "source_id": "remotejobs_contract_webdev",
+      "raw_signals": 55,
+      "semantic_pass": 11,
+      "semantic_review": 11,
+      "semantic_pass_rate": 0.2,
+      "semantic_useful_rate": 0.27,
+      "raw_priority_multiplier": 1.32,
+      "recommended_multiplier": 1.05,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 8
+    },
+    {
+      "source_id": "remoteok",
+      "raw_signals": 9,
+      "semantic_pass": 3,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.3333,
+      "semantic_useful_rate": 0.3333,
+      "raw_priority_multiplier": 1.23,
+      "recommended_multiplier": 1.05,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 9
     },
     {
       "source_id": "joa_it_wordpress_body",
@@ -939,7 +963,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.04,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 8
+      "rank": 10
     },
     {
       "source_id": "remotive",
@@ -951,19 +975,19 @@
       "raw_priority_multiplier": 1.43,
       "recommended_multiplier": 1.01,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 9
+      "rank": 11
     },
     {
-      "source_id": "jobicy_europe",
-      "raw_signals": 103,
-      "semantic_pass": 23,
-      "semantic_review": 11,
-      "semantic_pass_rate": 0.2233,
-      "semantic_useful_rate": 0.2607,
-      "raw_priority_multiplier": 1.28,
+      "source_id": "nomado_webdev",
+      "raw_signals": 5,
+      "semantic_pass": 2,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.4,
+      "semantic_useful_rate": 0.4,
+      "raw_priority_multiplier": 1.1,
       "recommended_multiplier": 1.0,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 10
+      "rank": 12
     },
     {
       "source_id": "joa_es_wordpress_body",
@@ -975,19 +999,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 0.98,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 11
-    },
-    {
-      "source_id": "remotejobs_contract_webdev",
-      "raw_signals": 65,
-      "semantic_pass": 12,
-      "semantic_review": 11,
-      "semantic_pass_rate": 0.1846,
-      "semantic_useful_rate": 0.2438,
-      "raw_priority_multiplier": 1.26,
-      "recommended_multiplier": 0.97,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 12
+      "rank": 13
     },
     {
       "source_id": "joa_eu_remote_webdev",
@@ -999,31 +1011,31 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 0.86,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 13
-    },
-    {
-      "source_id": "nomado_webdev",
-      "raw_signals": 20,
-      "semantic_pass": 7,
-      "semantic_review": 2,
-      "semantic_pass_rate": 0.35,
-      "semantic_useful_rate": 0.385,
-      "raw_priority_multiplier": 0.89,
-      "recommended_multiplier": 0.8,
-      "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 14
     },
     {
       "source_id": "arbeitnow_eu",
       "raw_signals": 2201,
       "semantic_pass": 110,
-      "semantic_review": 261,
+      "semantic_review": 264,
       "semantic_pass_rate": 0.05,
-      "semantic_useful_rate": 0.0915,
+      "semantic_useful_rate": 0.092,
       "raw_priority_multiplier": 1.21,
       "recommended_multiplier": 0.77,
       "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 15
+    },
+    {
+      "source_id": "himalayas",
+      "raw_signals": 2,
+      "semantic_pass": 0,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.0,
+      "semantic_useful_rate": 0.0,
+      "raw_priority_multiplier": 1.38,
+      "recommended_multiplier": 0.76,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 16
     },
     {
       "source_id": "wwr_sysadmin",
@@ -1035,7 +1047,7 @@
       "raw_priority_multiplier": 1.24,
       "recommended_multiplier": 0.73,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 16
+      "rank": 17
     },
     {
       "source_id": "wwr_programming",
@@ -1047,7 +1059,7 @@
       "raw_priority_multiplier": 1.33,
       "recommended_multiplier": 0.7,
       "budget_class": "REDUCED_WEAK",
-      "rank": 17
+      "rank": 18
     },
     {
       "source_id": "wwr_design",
@@ -1059,19 +1071,31 @@
       "raw_priority_multiplier": 1.24,
       "recommended_multiplier": 0.7,
       "budget_class": "REDUCED_WEAK",
-      "rank": 18
+      "rank": 19
     },
     {
       "source_id": "remotejobs_contract_frontend",
-      "raw_signals": 26,
-      "semantic_pass": 1,
+      "raw_signals": 12,
+      "semantic_pass": 0,
       "semantic_review": 3,
-      "semantic_pass_rate": 0.0385,
-      "semantic_useful_rate": 0.0788,
-      "raw_priority_multiplier": 1.0,
-      "recommended_multiplier": 0.62,
+      "semantic_pass_rate": 0.0,
+      "semantic_useful_rate": 0.0875,
+      "raw_priority_multiplier": 1.05,
+      "recommended_multiplier": 0.66,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 19
+      "rank": 20
+    },
+    {
+      "source_id": "nomado_wordpress",
+      "raw_signals": 3,
+      "semantic_pass": 0,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.0,
+      "semantic_useful_rate": 0.0,
+      "raw_priority_multiplier": 1.06,
+      "recommended_multiplier": 0.58,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 21
     },
     {
       "source_id": "remote_landers",
@@ -1083,7 +1107,7 @@
       "raw_priority_multiplier": 0.66,
       "recommended_multiplier": 0.56,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 20
+      "rank": 22
     },
     {
       "source_id": "joa_es_web_performance_body",
@@ -1095,19 +1119,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 0.55,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 21
-    },
-    {
-      "source_id": "nomado_wordpress",
-      "raw_signals": 9,
-      "semantic_pass": 0,
-      "semantic_review": 0,
-      "semantic_pass_rate": 0.0,
-      "semantic_useful_rate": 0.0,
-      "raw_priority_multiplier": 0.96,
-      "recommended_multiplier": 0.53,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 22
+      "rank": 23
     }
   ],
   "territory": {
@@ -1121,7 +1133,7 @@
         "province": "Roma",
         "score": 69.85,
         "mode": "HARVEST",
-        "harvest_cycles": 2,
+        "harvest_cycles": 3,
         "consecutive_low_yield_cycles": 0,
         "cooldown_until": "2026-10-08T18:17:36.627615Z",
         "metrics": {
@@ -1141,31 +1153,6 @@
       }
     ],
     "explore_or_revisit": [
-      {
-        "area_key": "Spain|Comunitat Valenciana|Castellón",
-        "country": "Spain",
-        "region": "Comunitat Valenciana",
-        "province": "Castellón",
-        "score": 32.56,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 1,
-          "high_fit": 1,
-          "hot": 1,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 2,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
       {
         "area_key": "Spain|Aragón|Zaragoza",
         "country": "Spain",
@@ -1188,7 +1175,7 @@
           "stale": 0,
           "rejected": 0
         },
-        "rank": 3,
+        "rank": 2,
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
@@ -1213,14 +1200,39 @@
           "stale": 0,
           "rejected": 0
         },
+        "rank": 3,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Puglia|Bari",
+        "country": "Italy",
+        "region": "Puglia",
+        "province": "Bari",
+        "score": 32.56,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 1,
+          "high_fit": 1,
+          "hot": 1,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
         "rank": 4,
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Calabria|Reggio Calabria",
-        "country": "Italy",
-        "region": "Calabria",
-        "province": "Reggio Calabria",
+        "area_key": "Spain|Comunitat Valenciana|Castellón",
+        "country": "Spain",
+        "region": "Comunitat Valenciana",
+        "province": "Castellón",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1242,10 +1254,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Puglia|Bari",
+        "area_key": "Italy|Calabria|Reggio Calabria",
         "country": "Italy",
-        "region": "Puglia",
-        "province": "Bari",
+        "region": "Calabria",
+        "province": "Reggio Calabria",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1274,7 +1286,7 @@
         "score": 29.09,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 318,
+        "consecutive_low_yield_cycles": 317,
         "cooldown_until": null,
         "metrics": {
           "signals": 3,
@@ -1492,10 +1504,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Castilla y León|Soria",
-        "country": "Spain",
-        "region": "Castilla y León",
-        "province": "Soria",
+        "area_key": "Italy|Lombardia|Pavia",
+        "country": "Italy",
+        "region": "Lombardia",
+        "province": "Pavia",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1517,10 +1529,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Castilla-La Mancha|Toledo",
+        "area_key": "Spain|Andalucía|Almería",
         "country": "Spain",
-        "region": "Castilla-La Mancha",
-        "province": "Toledo",
+        "region": "Andalucía",
+        "province": "Almería",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1542,10 +1554,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Basilicata|Potenza",
+        "area_key": "Italy|Sardegna|Sassari",
         "country": "Italy",
-        "region": "Basilicata",
-        "province": "Potenza",
+        "region": "Sardegna",
+        "province": "Sassari",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1567,10 +1579,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Cataluña|Tarragona",
-        "country": "Spain",
-        "region": "Cataluña",
-        "province": "Tarragona",
+        "area_key": "Italy|Sicilia|Agrigento",
+        "country": "Italy",
+        "region": "Sicilia",
+        "province": "Agrigento",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1592,10 +1604,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Lombardia|Monza e Brianza",
-        "country": "Italy",
-        "region": "Lombardia",
-        "province": "Monza e Brianza",
+        "area_key": "Spain|Castilla y León|Burgos",
+        "country": "Spain",
+        "region": "Castilla y León",
+        "province": "Burgos",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1617,10 +1629,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Toscana|Livorno",
+        "area_key": "Italy|Lombardia|Varese",
         "country": "Italy",
-        "region": "Toscana",
-        "province": "Livorno",
+        "region": "Lombardia",
+        "province": "Varese",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
