@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-07T23:59:17Z",
+  "updated_at": "2026-10-08T00:17:41Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1089,
+    "evaluated_total": 1090,
     "agreement_count": 503,
-    "agreement_pct": 46.19,
+    "agreement_pct": 46.15,
     "deepseek_promote": 33,
-    "vds_promote": 286,
+    "vds_promote": 287,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 257
+    "deepseek_demoted_from_vds_promote": 258
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.18,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 2.1,
+    "vds_promote_hot_rate_pct": 2.09,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.06,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 414,
-    "cumulative_estimated_cost_usd": 0.209869,
+    "request_count": 415,
+    "cumulative_estimated_cost_usd": 0.210064,
     "cost_per_evaluated_candidate_usd": 0.00019272,
-    "cost_per_deepseek_promote_usd": 0.00635967,
-    "cost_per_observed_ready_or_contacted_usd": 0.1049346,
-    "latest_request": null
+    "cost_per_deepseek_promote_usd": 0.00636557,
+    "cost_per_observed_ready_or_contacted_usd": 0.10503195,
+    "latest_request": {
+      "at": "2026-10-08T00:17:36Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 431,
+      "completion_tokens": 150,
+      "total_tokens": 709,
+      "estimated_cost_usd": 0.00019472
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "dded39f7ca834888a97bf31f63307752",
-      "evaluated_at": "2026-10-06T12:25:41Z",
-      "organization": "Realchemistry",
-      "title": "Senior Account Associate - Medical",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/realchemistry/senior-account-associate-medical-329275",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is a Senior Account Associate in medical/healthcare communications, not a web development role; only incidental keyword 'website' matched and no WordPress, WooCommerce, frontend, or web-performance scope is present.",
-      "deepseek_risk_flags": [
-        "non-technical role",
-        "no web development scope",
-        "keyword-only match",
-        "agency/collaboration terms are generic and not proof of freelance compatibility"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00013557,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "bfe38d5a60bde5b2a6259ac8ea9ee180",
       "evaluated_at": "2026-10-06T13:01:32Z",
@@ -1464,10 +1447,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b3d86c84b50d0d2a87ad96d8a6ff68c6",
+      "evaluated_at": "2026-10-08T00:17:36Z",
+      "organization": "Smiledigitalhealth",
+      "title": "Frontend Developer, Intermediate (Remote Canada)",
+      "location": "Canada",
+      "opportunity_url": "https://remotelanders.com/jobs/frontend-developer-intermediate-remote-canada-smiledigitalhealth-1r716y",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Frontend role located in Canada with no evidence of Spain/Italy/EU-remote compatibility; target geo mismatch and no WordPress/WooCommerce or freelance/contract signals.",
+      "deepseek_risk_flags": [
+        "geo_mismatch_canada",
+        "no_freelance_or_contract_signal",
+        "no_wordpress_woocommerce_scope",
+        "generic_frontend_only"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019472,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-07T23:59:10Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-08T00:17:31Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
