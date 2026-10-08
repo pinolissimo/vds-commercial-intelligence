@@ -150,12 +150,17 @@ def main():
         row["status"]="APPROVED_TO_SEND"
         row["eligibility_basis"]=AUTO_BASIS
         row["approved_at"]=stamp
-        row["metadata"]={
+        approval_metadata={
             **metadata,
             "approved_via":"AUTOMATED_FIRST_CONTACT_POLICY",
             "approval_basis":"CURRENT_READY_VIEW" if in_current_ready else "PERSISTED_QUALIFICATION_SNAPSHOT",
             "approved_at":stamp
         }
+        if in_current_ready and metadata.get("requires_jit_dedup_recheck"):
+            approval_metadata["requires_jit_dedup_recheck"]=False
+            approval_metadata["jit_dedup_rechecked_at"]=stamp
+            approval_metadata["jit_dedup_result"]="PASSED_CURRENT_READY_PLUS_GLOBAL_LEDGER"
+        row["metadata"]=approval_metadata
         promoted+=1
 
     existing={(str(x.get("recipient") or "").lower(),str(x.get("action_type") or "")) for x in rows}
