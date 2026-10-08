@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "requested_at": "2026-10-08T06:58:10Z",
-  "reason": "WATCHDOG_DISCOVERY_STALE_PARTIAL_RECOVERY",
+  "requested_at": "2026-10-08T11:06:30Z",
+  "reason": "WATCHDOG_DISCOVERY_STALE_AFTER_LOW_YIELD_RECOVERY",
   "target_ready": 100,
   "strategy": "ROUTE_FIRST_FIRST_PARTY_RECOVERY",
-  "note": "Single bounded watchdog recovery kick after the previous cycle reached persistence with partial recovery (5 of 25 missions completed, 20 failed, 29 results and 28 unique domains) but the discovery heartbeat again became stale for more than 25 minutes with zero active workers. Preserve zero-duplicate, first-party verification, authoritative route, legal/channel, freshness, truthful-fit and provider-verification gates. Do not send acquisition outreach outside the window and do not blind resend.",
+  "note": "Single bounded watchdog recovery kick after the latest persisted territorial cycle completed only 1 of 30 missions (29 failed, 6 results, 5 unique domains) and then remained stale for more than 25 minutes with zero active workers and no active or queued high-frequency discovery run observed. Preserve zero-duplicate, first-party verification, authoritative route, legal/channel, freshness, truthful-fit and provider-verification gates. Do not blind resend.",
   "builder": "FIRST_PARTY_ROUTE_FIRST_PLUS_DEEP_ENRICHMENT"
 }
