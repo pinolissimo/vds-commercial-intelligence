@@ -51,6 +51,25 @@ def collect_seeds(limit):
         if len(out)>=limit: break
     return out
 
+def authoritative_emails(text, mailto_hrefs=None):
+    """Extract public routes and drop truncated local-part suffix artifacts."""
+    candidates=set(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",text or "",re.I))
+    for href in mailto_hrefs or []:
+        raw=str(href or "").split(":",1)[-1].split("?",1)[0].strip()
+        candidates.update(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",raw,re.I))
+    normalized=sorted({e.lower() for e in candidates})
+    clean=[]
+    for email in normalized:
+        local,domain=email.rsplit("@",1)
+        if any(
+            other_domain==domain and other_local!=local and other_local.endswith(local)
+            for other in normalized
+            for other_local,other_domain in [other.rsplit("@",1)]
+        ):
+            continue
+        clean.append(email)
+    return clean[:10]
+
 def main():
     cfg=load(CFG,{})
     blocked=set(cfg.get("blocked_domains") or [])
@@ -91,7 +110,7 @@ def main():
             text=" ".join(response.css("body *::text").getall())
             compact=re.sub(r"\s+"," ",text).strip()
             matched=sorted({t for t in signal_terms if t in compact.lower()})
-            emails=sorted(set(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",compact,re.I)))[:10]
+            emails=authoritative_emails(compact,response.css('a[href^="mailto:"]::attr(href)').getall())
             min_terms=int(cfg.get("min_signal_terms",2))
             path_l=response.url.lower()
             route_hint=any(t in path_l for t in path_terms)
@@ -124,7 +143,8 @@ def main():
                             page.goto(u,wait_until="domcontentloaded",timeout=20000)
                             compact=re.sub(r"\s+"," ",page.locator("body").inner_text(timeout=5000)).strip()
                             matched=sorted({t for t in signal_terms if t in compact.lower()})
-                            emails=sorted(set(re.findall(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}",compact,re.I)))[:10]
+                            mailto_hrefs=page.locator('a[href^="mailto:"]').evaluate_all("(els) => els.map((e) => e.getAttribute('href') || '')")
+                            emails=authoritative_emails(compact,mailto_hrefs)
                             route_hint=any(t in u.lower() for t in path_terms); score=len(matched)*4+min(len(emails),2)*3+(5 if route_hint else 0)
                             if len(matched)>=int(cfg.get("min_signal_terms",2)) or (matched and emails): results.append({"url":u,"domain":host(u),"matched_terms":matched,"emails":emails,"text_sample":compact[:900],"render":"PLAYWRIGHT","signal_score":score,"route_hint":route_hint})
                             page.close()
