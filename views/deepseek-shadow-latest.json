@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-08T03:13:46Z",
+  "updated_at": "2026-10-08T06:06:09Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1092,
+    "evaluated_total": 1093,
     "agreement_count": 503,
-    "agreement_pct": 46.06,
+    "agreement_pct": 46.02,
     "deepseek_promote": 33,
     "vds_promote": 288,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 416,
-    "cumulative_estimated_cost_usd": 0.210425,
-    "cost_per_evaluated_candidate_usd": 0.0001927,
-    "cost_per_deepseek_promote_usd": 0.0063765,
-    "cost_per_observed_ready_or_contacted_usd": 0.10521226,
-    "latest_request": null
+    "request_count": 417,
+    "cumulative_estimated_cost_usd": 0.210823,
+    "cost_per_evaluated_candidate_usd": 0.00019288,
+    "cost_per_deepseek_promote_usd": 0.00638858,
+    "cost_per_observed_ready_or_contacted_usd": 0.10541159,
+    "latest_request": {
+      "at": "2026-10-08T06:06:06Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 431,
+      "completion_tokens": 157,
+      "total_tokens": 716,
+      "estimated_cost_usd": 0.00039867
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "821bc0cc5d33824e65917808a787f819",
-      "evaluated_at": "2026-10-06T13:01:32Z",
-      "organization": "Kijimea",
-      "title": "E-Commerce Webdeveloper Shopify",
-      "location": "Gräfelfing/Munich",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kijimea/e-commerce-webdeveloper-shopify-grafelfing-449219",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 77,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Shopify e-commerce web developer role in Germany; stack partially matches (HTML/CSS/JS) but Shopify not WooCommerce, and no freelance/contract signal with geo mismatch.",
-      "deepseek_risk_flags": [
-        "onsite_germany",
-        "shopify_not_woocommerce",
-        "no_freelance_signal",
-        "geo_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001410018,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "be4d979ecb5ad27c9e479033f607802e",
       "evaluated_at": "2026-10-06T13:01:32Z",
@@ -1466,10 +1449,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e49b52618f9d66fd8a5efe883b55e48c",
+      "evaluated_at": "2026-10-08T06:06:06Z",
+      "organization": "adjoe",
+      "title": "Employer Branding Manager (f/m/d)",
+      "location": "Hamburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/adjoe/employer-branding-manager-hamburg-221797",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is Employer Branding Manager, a marketing/HR-branding position with no web development, WordPress, WooCommerce, frontend, or performance scope; only incidental keyword 'website' and generic 'collaboration'/'partner' terms appear.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_technical_role",
+        "keyword_only_match",
+        "no_freelance_signal",
+        "no_web_stack_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00039867,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-08T03:13:40Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-08T06:06:03Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

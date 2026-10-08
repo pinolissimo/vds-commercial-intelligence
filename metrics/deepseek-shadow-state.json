@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1170,
+  "runs": 1171,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -29993,6 +29993,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e49b52618f9d66fd8a5efe883b55e48c",
+      "evaluated_at": "2026-10-08T06:06:06Z",
+      "organization": "adjoe",
+      "title": "Employer Branding Manager (f/m/d)",
+      "location": "Hamburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/adjoe/employer-branding-manager-hamburg-221797",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is Employer Branding Manager, a marketing/HR-branding position with no web development, WordPress, WooCommerce, frontend, or performance scope; only incidental keyword 'website' and generic 'collaboration'/'partner' terms appear.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_technical_role",
+        "keyword_only_match",
+        "no_freelance_signal",
+        "no_web_stack_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00039867,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -34987,9 +35016,21 @@
       "completion_tokens": 310,
       "total_tokens": 1143,
       "estimated_cost_usd": 0.0003606
+    },
+    {
+      "at": "2026-10-08T06:06:06Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 431,
+      "completion_tokens": 157,
+      "total_tokens": 716,
+      "estimated_cost_usd": 0.00039867
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-08T03:13:44Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-08T06:06:06Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
