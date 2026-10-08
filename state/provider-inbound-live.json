@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-08T10:49:56Z",
-  "latest_checked_uid": 1577,
+  "updated_at": "2026-10-08T17:27:08Z",
+  "latest_checked_uid": 1580,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1187,6 +1187,36 @@
       "subtype": "HARD_BOUNCE",
       "summary": "Provider delivery failure.",
       "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1579,
+      "received_at": "2026-10-08T10:59:32Z",
+      "canonical_identity_key": "org:gmail.com",
+      "entity": "gmail.com",
+      "sender": "allocca.pino@gmail.com",
+      "subject": "Fwd: SHADES - updates website",
+      "message_id": "<CAA_wRzbEqM+A3boMYSAsLwyn+OoZBiQXyfgOWKmN7U0GQbLQJw@mail.gmail.com>",
+      "in_reply_to": "<GV2PR01MB128680117D6827AD8094C987CF2932@GV2PR01MB12868.eurprd01.prod.exchangelabs.com>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1580,
+      "received_at": "2026-10-08T11:28:53Z",
+      "canonical_identity_key": "org:kinsta.com",
+      "entity": "kinsta.com",
+      "sender": "contact@kinsta.com",
+      "subject": "Re: External web development capacity — Visual Design Studio",
+      "message_id": "<CACPxw4rPCGWkUQgo=Onww0d=vmYo1-mRv0ocUOg-s5Xf75dSng@mail.gmail.com>",
+      "in_reply_to": "<1791455129584824372.1791455129@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
   ],
