@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-08T03:21:03Z",
-  "latest_checked_uid": 1574,
+  "updated_at": "2026-10-08T06:03:15Z",
+  "latest_checked_uid": 1575,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1137,6 +1137,21 @@
       "sender": "hello@gamma.app",
       "subject": "Ya llegó el nuevo Gamma",
       "message_id": "<20261007113156.817e35e5f79edfdb@cio72592.gamma.app>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1575,
+      "received_at": "2026-10-08T05:13:39Z",
+      "canonical_identity_key": "org:malt.com",
+      "entity": "malt.com",
+      "sender": "mailer@malt.com",
+      "subject": "Actualiza tu disponibilidad para recibir nuevos proyectos",
+      "message_id": "<7422897.20261008051339.6ac726835c7b82.69030202@mail180-50.suw31.mandrillapp.com>",
       "in_reply_to": null,
       "classification": "NEUTRAL",
       "subtype": "SYSTEM_OR_UNCORRELATED",
