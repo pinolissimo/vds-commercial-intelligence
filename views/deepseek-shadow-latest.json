@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-08T07:01:16Z",
+  "updated_at": "2026-10-08T07:28:09Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1093,
+    "evaluated_total": 1094,
     "agreement_count": 503,
-    "agreement_pct": 46.02,
+    "agreement_pct": 45.98,
     "deepseek_promote": 33,
     "vds_promote": 288,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 417,
-    "cumulative_estimated_cost_usd": 0.210823,
-    "cost_per_evaluated_candidate_usd": 0.00019288,
-    "cost_per_deepseek_promote_usd": 0.00638858,
-    "cost_per_observed_ready_or_contacted_usd": 0.10541159,
-    "latest_request": null
+    "request_count": 418,
+    "cumulative_estimated_cost_usd": 0.211259,
+    "cost_per_evaluated_candidate_usd": 0.00019311,
+    "cost_per_deepseek_promote_usd": 0.0064018,
+    "cost_per_observed_ready_or_contacted_usd": 0.10562963,
+    "latest_request": {
+      "at": "2026-10-08T07:28:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 429,
+      "completion_tokens": 186,
+      "total_tokens": 743,
+      "estimated_cost_usd": 0.00043607
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "be4d979ecb5ad27c9e479033f607802e",
-      "evaluated_at": "2026-10-06T13:01:32Z",
-      "organization": "Vicoland",
-      "title": "AI & Platform Innovation Engineer",
-      "location": "Frankfurt am Main",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/vicoland/ai-platform-innovation-engineer-frankfurt-am-main-171277",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 66,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "AI & Platform Innovation Engineer role; only 'frontend' keyword match, core scope is AI/platform engineering, not WordPress/web freelance work.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "ai_focus",
-        "onsite_germany",
-        "freelance_keyword_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001410018,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "0256d1eeb6da64b671cceff9fcd1cbf9",
       "evaluated_at": "2026-10-06T13:01:32Z",
@@ -1467,10 +1450,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "227ba2afb9790400604f1c2a55cedd7e",
+      "evaluated_at": "2026-10-08T07:28:04Z",
+      "organization": "familie redlich",
+      "title": "TYPO3-Developer",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/familie-redlich/typo3-developer-berlin-106678",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is a TYPO3 developer position, which is a CMS stack mismatch against the target profile's WordPress/WooCommerce specialization; matched keywords (cms, css, frontend, html, javascript, php) are generic web terms that do not establish truthful stack fit.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_typo3_vs_wordpress",
+        "no_explicit_freelance_or_contract_signal",
+        "geo_unverified_berlin_de",
+        "no_commercial_keywords_matched",
+        "no_semantic_role_or_intent_hits"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00043607,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-08T07:01:09Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-08T07:27:59Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
