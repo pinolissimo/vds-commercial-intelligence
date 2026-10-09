@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1185,
+  "runs": 1186,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -31683,6 +31683,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c18a5402650035205684730f52210a43",
+      "evaluated_at": "2026-10-09T15:46:01Z",
+      "organization": "Accurids GmbH",
+      "title": "Senior Full Stack Developer | Java / React (f/m/d)",
+      "location": "Cologne",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/accurids-gmbh/senior-full-stack-developer-java-react-cologne-268120",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Full Stack role centered on Java/React, not WordPress/WooCommerce or core web/frontend freelance scope; only incidental frontend/UI/migration mentions and a generic 'partner' term, with no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "core_stack_mismatch_java_react",
+        "no_wordpress_woocommerce_scope",
+        "generic_partner_mention_not_freelance_proof",
+        "full_time_senior_role_likely",
+        "geo_not_confirmed_remote_eu"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00018272,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a8d33a80b8fdf98e0e89811f5b938786",
+      "evaluated_at": "2026-10-09T15:46:01Z",
+      "organization": "Foundational",
+      "title": "Facilities Manager",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/foundational/facilities-manager-london-322785",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 5.0,
+      "deepseek_confidence": 0.95,
+      "deepseek_primary_reason": "Facilities Manager role is unrelated to web development; 'maintenance' and 'contractor/agency' matches are false positives from facilities context, not web maintenance or freelance web work.",
+      "deepseek_risk_flags": [
+        "non_web_role",
+        "keyword_false_positive_maintenance",
+        "keyword_false_positive_contractor",
+        "no_web_stack_fit",
+        "onsite_london_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018272,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -36833,9 +36891,21 @@
       "completion_tokens": 425,
       "total_tokens": 1507,
       "estimated_cost_usd": 0.00049128
+    },
+    {
+      "at": "2026-10-09T15:46:01Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 694,
+      "completion_tokens": 321,
+      "total_tokens": 1143,
+      "estimated_cost_usd": 0.00036544
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-09T15:27:59Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-09T15:46:01Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

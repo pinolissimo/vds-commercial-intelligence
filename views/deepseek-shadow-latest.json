@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-09T15:28:01Z",
+  "updated_at": "2026-10-09T15:46:07Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1153,
-    "agreement_count": 518,
-    "agreement_pct": 44.93,
+    "evaluated_total": 1155,
+    "agreement_count": 519,
+    "agreement_pct": 44.94,
     "deepseek_promote": 33,
     "vds_promote": 301,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 429,
-    "cumulative_estimated_cost_usd": 0.221442,
-    "cost_per_evaluated_candidate_usd": 0.00019206,
-    "cost_per_deepseek_promote_usd": 0.00671036,
-    "cost_per_observed_ready_or_contacted_usd": 0.11072092,
-    "latest_request": null
+    "request_count": 430,
+    "cumulative_estimated_cost_usd": 0.221807,
+    "cost_per_evaluated_candidate_usd": 0.00019204,
+    "cost_per_deepseek_promote_usd": 0.00672143,
+    "cost_per_observed_ready_or_contacted_usd": 0.11090364,
+    "latest_request": {
+      "at": "2026-10-09T15:46:01Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 694,
+      "completion_tokens": 321,
+      "total_tokens": 1143,
+      "estimated_cost_usd": 0.00036544
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "419570fe2f22621526a2f7ff7b6538a5",
-      "evaluated_at": "2026-10-08T14:47:27Z",
-      "organization": "Doo",
-      "title": "Werkstudent*in im Projektmanagement",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/doo/werkstudentin-im-projektmanagement-munchen-120449",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Werkstudent*in im Projektmanagement is a student project-management role in Munich; HTML/CSS/JS keywords are incidental and there is no web-dev scope or freelance compatibility.",
-      "deepseek_risk_flags": [
-        "student_role",
-        "project_management_not_development",
-        "keyword_matches_incidental",
-        "onsite_munich"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001498233,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "199e9fcfb7ad3d94c5d41223573ff3ba",
-      "evaluated_at": "2026-10-08T20:13:56Z",
-      "organization": "Researchgate",
-      "title": "Senior Frontend Engineer - React",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/researchgate/senior-frontend-engineer-react-berlin-163857",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior Frontend Engineer - React role at Researchgate is React-centric core engineering, not WordPress/WooCommerce/custom web maintenance freelance scope; Berlin on-site location and no freelance/contract signal.",
-      "deepseek_risk_flags": [
-        "react_heavy_core_role",
-        "no_freelance_signal",
-        "on_site_berlin",
-        "no_wordpress_woocommerce_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000145774,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "83cdda7b35f90d255eae28b48a3424e2",
       "evaluated_at": "2026-10-08T20:13:56Z",
@@ -1430,10 +1385,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c18a5402650035205684730f52210a43",
+      "evaluated_at": "2026-10-09T15:46:01Z",
+      "organization": "Accurids GmbH",
+      "title": "Senior Full Stack Developer | Java / React (f/m/d)",
+      "location": "Cologne",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/accurids-gmbh/senior-full-stack-developer-java-react-cologne-268120",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Full Stack role centered on Java/React, not WordPress/WooCommerce or core web/frontend freelance scope; only incidental frontend/UI/migration mentions and a generic 'partner' term, with no evidence of freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "core_stack_mismatch_java_react",
+        "no_wordpress_woocommerce_scope",
+        "generic_partner_mention_not_freelance_proof",
+        "full_time_senior_role_likely",
+        "geo_not_confirmed_remote_eu"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00018272,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a8d33a80b8fdf98e0e89811f5b938786",
+      "evaluated_at": "2026-10-09T15:46:01Z",
+      "organization": "Foundational",
+      "title": "Facilities Manager",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/foundational/facilities-manager-london-322785",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 5.0,
+      "deepseek_confidence": 0.95,
+      "deepseek_primary_reason": "Facilities Manager role is unrelated to web development; 'maintenance' and 'contractor/agency' matches are false positives from facilities context, not web maintenance or freelance web work.",
+      "deepseek_risk_flags": [
+        "non_web_role",
+        "keyword_false_positive_maintenance",
+        "keyword_false_positive_contractor",
+        "no_web_stack_fit",
+        "onsite_london_likely"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018272,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-09T15:27:54Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-09T15:45:56Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
