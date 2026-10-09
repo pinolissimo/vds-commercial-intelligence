@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "generated_at": "2026-10-09T20:29:05+02:00",
+  "generated_at": "2026-10-09T20:30:21+02:00",
   "source_of_truth": "pinolissimo/vds-commercial-intelligence@main",
   "production_core": "UNCHANGED_AND_AUTHORITATIVE",
   "today": {
@@ -22,9 +22,9 @@
     "active_window_first_contact_count": 9
   },
   "headline": {
-    "semantic_input_last_run": 2500,
-    "semantic_pass_last_run": 184,
-    "semantic_pass_rate_pct": 7.36,
+    "semantic_input_last_run": 2576,
+    "semantic_pass_last_run": 201,
+    "semantic_pass_rate_pct": 7.8,
     "active_opportunities": 90,
     "ready": 0,
     "manual_action": 26,
@@ -34,12 +34,12 @@
     "new_client_probability_proxy_pct": 88,
     "companies_indexed": 364,
     "opportunity_first_high_priority": 228,
-    "second_chance_queue": 418,
+    "second_chance_queue": 426,
     "decision_maker_enrichment_queue": 321,
     "ready_legacy_compat_previous_value": 21,
     "executable_ready_now": 0,
     "legacy_ready_advisory": 21,
-    "semantic_pass_backlog_proxy": 184
+    "semantic_pass_backlog_proxy": 201
   },
   "status_counts": {
     "READY_FOR_DAILY_OUTREACH_REVIEW": 21,
@@ -69,16 +69,16 @@
       "territory": "Roma",
       "score": 69.85,
       "mode": "HARVEST",
-      "harvest_cycles": 2,
+      "harvest_cycles": 3,
       "low_yield_cycles": 0,
       "cooldown_until": "2026-10-10T11:35:12.090504Z",
       "heat_pct": 100.0
     },
     {
-      "area": "Italy|Veneto|Venezia",
+      "area": "Italy|Calabria|Reggio Calabria",
       "country": "Italy",
-      "region": "Veneto",
-      "territory": "Venezia",
+      "region": "Calabria",
+      "territory": "Reggio Calabria",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -111,10 +111,10 @@
       "heat_pct": 46.6
     },
     {
-      "area": "Italy|Calabria|Reggio Calabria",
+      "area": "Italy|Veneto|Venezia",
       "country": "Italy",
-      "region": "Calabria",
-      "territory": "Reggio Calabria",
+      "region": "Veneto",
+      "territory": "Venezia",
       "score": 32.56,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
@@ -142,7 +142,7 @@
       "score": 29.09,
       "mode": "EXPLORATION",
       "harvest_cycles": 0,
-      "low_yield_cycles": 290,
+      "low_yield_cycles": 289,
       "cooldown_until": null,
       "heat_pct": 41.6
     },
@@ -178,8 +178,8 @@
       "score": 15.95,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 547,
-      "cooldown_until": "2026-10-10T12:10:53.037920Z",
+      "low_yield_cycles": 548,
+      "cooldown_until": "2026-10-10T12:29:21.998244Z",
       "heat_pct": 22.8
     },
     {
@@ -190,8 +190,8 @@
       "score": 12.53,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 1220,
-      "cooldown_until": "2026-10-10T12:10:53.037920Z",
+      "low_yield_cycles": 1221,
+      "cooldown_until": "2026-10-10T12:29:21.998244Z",
       "heat_pct": 17.9
     },
     {
@@ -202,8 +202,8 @@
       "score": 4.85,
       "mode": "ROTATE_OUT",
       "harvest_cycles": 0,
-      "low_yield_cycles": 1212,
-      "cooldown_until": "2026-10-10T12:10:53.037920Z",
+      "low_yield_cycles": 1213,
+      "cooldown_until": "2026-10-10T12:29:21.998244Z",
       "heat_pct": 6.9
     }
   ],
@@ -253,11 +253,11 @@
     "dedup_exact_emails": 272,
     "dedup_corporate_domains": 423,
     "dedup_organizations": 265,
-    "opportunity_first_ranked": 469,
+    "opportunity_first_ranked": 486,
     "opportunity_first_high_priority": 228,
-    "second_chance_queue": 418,
+    "second_chance_queue": 426,
     "decision_maker_enrichment_queue": 321,
-    "message_strategies": 469
+    "message_strategies": 486
   },
   "safety": {
     "duplicate_first_contact_tolerance": 0,
@@ -276,9 +276,9 @@
     "schema_version": "1.0",
     "definition": "Operational read model. Legacy READY_FOR_DAILY_OUTREACH_REVIEW is advisory and excluded. Executable-candidate statuses still require the live JIT safety preflight before any provider call.",
     "stages": {
-      "raw_signals": 2500,
-      "semantic_input": 2500,
-      "semantic_pass": 184,
+      "raw_signals": 2576,
+      "semantic_input": 2576,
+      "semantic_pass": 201,
       "company_verified": null,
       "route_found": null,
       "dedup_ok": null,
@@ -295,9 +295,9 @@
       "rule": "Never fabricate intermediate counts. Null means the canonical state does not yet expose a reliable stage counter."
     },
     "attrition": {
-      "semantic_reject": 1752,
-      "semantic_review": 564,
-      "semantic_pass_to_executable_gap_proxy": 184,
+      "semantic_reject": 1797,
+      "semantic_review": 578,
+      "semantic_pass_to_executable_gap_proxy": 201,
       "legacy_ready_advisory_excluded": 21
     },
     "status_classes": {
@@ -316,9 +316,9 @@
       "CHANNEL_REVERIFY": 1
     },
     "pressure": {
-      "qualified_backlog_proxy": 184,
+      "qualified_backlog_proxy": 201,
       "executable_ready_now": 0,
-      "conversion_pressure_ratio": 184.0,
+      "conversion_pressure_ratio": 201.0,
       "turbo_enabled": true,
       "turbo_reason": "HIGH_BUYER_INTENT_BACKLOG"
     }
@@ -346,7 +346,7 @@
   "provider_inbound_pending_sources": 0,
   "source_health": {
     "schema_version": "2.3",
-    "reconciled_at": "2026-10-09T18:29:05Z",
+    "reconciled_at": "2026-10-09T18:30:21Z",
     "provider_observed_at": "2026-10-09T18:29:05Z",
     "provider_observation_fresh": true,
     "outbound_last_event_at": "2026-10-09T16:39:02Z",
