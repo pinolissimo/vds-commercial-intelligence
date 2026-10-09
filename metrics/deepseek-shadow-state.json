@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1180,
+  "runs": 1181,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -31094,6 +31094,118 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "df3ac284c9e4948bea38f51881b9867a",
+      "evaluated_at": "2026-10-09T09:45:51Z",
+      "organization": "Contabo",
+      "title": "Web Developer (all genders)",
+      "location": "Remote (Germany)",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/contabo/remote-web-developer-all-genders-475933",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Explicit 'Web Developer' role at Contabo, remote (Germany), with matched keywords cms/web development/website and 'agency' intent; stack fit plausible but no explicit WordPress/WooCommerce or freelance/contract evidence, and geo is Germany-remote rather than Spain/Italy.",
+      "deepseek_risk_flags": [
+        "geo_not_primary_market",
+        "no_explicit_wordpress_woocommerce",
+        "no_freelance_contract_evidence",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0003377075,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b40034602e62381eb35e134880d88de2",
+      "evaluated_at": "2026-10-09T09:45:51Z",
+      "organization": "Prenode",
+      "title": "Software Engineer: Full-Stack, Backend, Frontend (m/w/d)",
+      "location": "Karlsruhe",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/prenode/software-engineer-full-stack-backend-frontend-karlsruhe-461441",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 79,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 28.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Full-stack/backend/frontend software engineer role in Karlsruhe; only generic frontend/javascript/ui overlap, no WordPress/WooCommerce or web-maintenance scope, and 'partner'/'remote' are incidental rather than freelance-compatibility proof.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_fullstack_backend",
+        "onsite_karlsruhe",
+        "no_wordpress_scope",
+        "generic_partner_mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003377075,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "de9ab7777f6f1af1a00e9f15cb83c25b",
+      "evaluated_at": "2026-10-09T09:45:51Z",
+      "organization": "Bowatt",
+      "title": "Brand, Growth & Partnerships",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bowatt/brand-growth-partnerships-munich-462256",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 67,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Brand/Growth/Partnerships role in Munich with only a generic 'website' keyword; no web-development role hits, and 'agency'/'partner'/'collaboration' are commercial-intent noise, not evidence of freelance web work.",
+      "deepseek_risk_flags": [
+        "non_technical_role",
+        "no_web_dev_scope",
+        "generic_website_mention",
+        "onsite_munich"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003377075,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "dbebd1c465c1f22b38977652585beba3",
+      "evaluated_at": "2026-10-09T09:45:51Z",
+      "organization": "Slash Digital",
+      "title": "Junior / Regular UX/UI Designer (m/w/d)",
+      "location": "München",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/slash-digital/junior-regular-ux-ui-designer-munchen-450113",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "UX/UI Designer role with strong keyword overlap (ux, ui, frontend, cms, wordpress, website) matching the profile's UX/UI and WordPress adjacency, but it is a design role in Munich with no explicit web-development, WooCommerce or freelance/contract evidence.",
+      "deepseek_risk_flags": [
+        "design_not_development_role",
+        "onsite_munich",
+        "no_freelance_contract_evidence",
+        "wordpress_mention_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003377075,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -36196,9 +36308,21 @@
       "completion_tokens": 620,
       "total_tokens": 2201,
       "estimated_cost_usd": 0.00091423
+    },
+    {
+      "at": "2026-10-09T09:45:51Z",
+      "model": "deepseek-flash",
+      "candidate_count": 4,
+      "valid_evaluation_count": 4,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 1212,
+      "completion_tokens": 618,
+      "total_tokens": 1958,
+      "estimated_cost_usd": 0.00135083
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-09T08:29:46Z",
+  "updated_at": "2026-10-09T09:45:51Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
