@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-09T18:47:38Z",
+  "updated_at": "2026-10-09T18:57:43Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1159,
-    "agreement_count": 520,
-    "agreement_pct": 44.87,
+    "evaluated_total": 1161,
+    "agreement_count": 521,
+    "agreement_pct": 44.88,
     "deepseek_promote": 33,
-    "vds_promote": 301,
+    "vds_promote": 302,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 272
+    "deepseek_demoted_from_vds_promote": 273
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 433,
-    "cumulative_estimated_cost_usd": 0.222512,
-    "cost_per_evaluated_candidate_usd": 0.00019199,
-    "cost_per_deepseek_promote_usd": 0.0067428,
-    "cost_per_observed_ready_or_contacted_usd": 0.11125615,
-    "latest_request": null
+    "request_count": 434,
+    "cumulative_estimated_cost_usd": 0.22284,
+    "cost_per_evaluated_candidate_usd": 0.00019194,
+    "cost_per_deepseek_promote_usd": 0.00675273,
+    "cost_per_observed_ready_or_contacted_usd": 0.11142006,
+    "latest_request": {
+      "at": "2026-10-09T18:57:37Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 607,
+      "completion_tokens": 293,
+      "total_tokens": 1028,
+      "estimated_cost_usd": 0.00032782
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,61 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "bf171fbbfd79f02b8d067cda1202539b",
-      "evaluated_at": "2026-10-08T20:13:56Z",
-      "organization": "Rivianvw.tech",
-      "title": "Staff Software Engineer, Vehicle Configuration Platform",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/rivianvwtech/staff-software-engineer-vehicle-configuration-platform-berlin-249745",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 67,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 10.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Staff Software Engineer, Vehicle Configuration Platform at Rivian is automotive embedded/platform engineering, unrelated to web/WordPress freelance profile; keyword matches incidental.",
-      "deepseek_risk_flags": [
-        "non_web_role",
-        "automotive_platform",
-        "keyword_noise"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.000145774,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "a8e0ccde5c544e8d5fcc5d4bd25eda38",
-      "evaluated_at": "2026-10-08T20:13:56Z",
-      "organization": "Händlerbund Management AG",
-      "title": "Senior Fullstack Entwickler PHP/Laravel (m/w/d) - Remote, 4-Tage-Woche",
-      "location": "Remote/Leipzig",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/handlerbund-management-ag/senior-fullstack-entwickler-php-laravel-remote-4-tage-woche-221496",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 66,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 52.0,
-      "deepseek_confidence": 0.6,
-      "deepseek_primary_reason": "Senior Fullstack PHP/Laravel role with remote option and some frontend/CSS/UX keyword overlap, but Laravel-heavy core stack is not the target WordPress/WooCommerce profile and no explicit freelance signal.",
-      "deepseek_risk_flags": [
-        "laravel_heavy",
-        "full_time_likely",
-        "no_freelance_signal",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000145774,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "d1e233f976dddef9c91191199692a6f2",
       "evaluated_at": "2026-10-08T20:13:56Z",
@@ -1438,10 +1394,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "1ab50f2feb428c75cd1f33edd80b0caa",
+      "evaluated_at": "2026-10-09T18:57:37Z",
+      "organization": "",
+      "title": "Frontend Developer (React Js / Next Js)",
+      "location": "Serbia",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Core role is React/Next.js frontend development, which is outside the target profile's WordPress/WooCommerce/custom HTML-CSS-JS strength; matched keywords are generic (html, ui, frontend) and do not establish truthful stack fit.",
+      "deepseek_risk_flags": [
+        "react_nextjs_core_stack_mismatch",
+        "generic_keyword_matches",
+        "geo_remote_to_verify",
+        "no_explicit_freelance_scope"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00016391,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "073d677e300c0c32c8e60f187d73501b",
+      "evaluated_at": "2026-10-09T18:57:37Z",
+      "organization": "",
+      "title": "Senior Manager, GEO Strategy & AI Search Activation",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a senior GEO/AI-search strategy manager position, not web development; matched keywords (javascript, website, partner, collaboration) are incidental and do not indicate relevant freelance web work.",
+      "deepseek_risk_flags": [
+        "non_developer_role",
+        "incidental_keyword_matches",
+        "us_location",
+        "no_freelance_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016391,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-09T18:47:31Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-09T18:57:32Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
