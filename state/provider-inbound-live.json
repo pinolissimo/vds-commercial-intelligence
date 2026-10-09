@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-09T09:53:18Z",
-  "latest_checked_uid": 1583,
+  "updated_at": "2026-10-09T14:50:53Z",
+  "latest_checked_uid": 1584,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1246,6 +1246,21 @@
       "classification": "BOUNCE",
       "subtype": "HARD_BOUNCE",
       "summary": "Provider delivery failure.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1584,
+      "received_at": "2026-10-09T14:06:03Z",
+      "canonical_identity_key": "org:user.hostinger.com",
+      "entity": "user.hostinger.com",
+      "sender": "team@user.hostinger.com",
+      "subject": "Manutenzione programmata per il tuo VPS",
+      "message_id": "<59.79.42286.BC4F8CA6@i-0920ce50770982a74.mta3vrest.sd.prd.sparkpost>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
