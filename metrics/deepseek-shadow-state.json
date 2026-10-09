@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1189,
+  "runs": 1190,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -31799,6 +31799,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5043727e62532791694a0aa2c6be0f3d",
+      "evaluated_at": "2026-10-09T16:59:06Z",
+      "organization": "Mistral.ai",
+      "title": "Benefits Manager",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/mistralai/benefits-manager-london-135743",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 3.0,
+      "deepseek_confidence": 0.97,
+      "deepseek_primary_reason": "Role is a Benefits Manager (HR/compensation function) at Mistral.ai in London, with no web development, WordPress, WooCommerce, frontend, or web-performance scope; matched keywords 'migration', 'collaboration', and 'partner' are incidental and unrelated to the target freelance web-dev profile.",
+      "deepseek_risk_flags": [
+        "role_function_mismatch_hr_benefits",
+        "no_web_or_wordpress_scope",
+        "geo_mismatch_london_not_spain_italy_or_eu_remote_web",
+        "keyword_matches_incidental",
+        "no_freelance_or_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022574,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -36973,9 +37002,21 @@
       "completion_tokens": 364,
       "total_tokens": 1181,
       "estimated_cost_usd": 0.00028366
+    },
+    {
+      "at": "2026-10-09T16:59:06Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 425,
+      "completion_tokens": 199,
+      "total_tokens": 752,
+      "estimated_cost_usd": 0.00022574
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-09T16:40:58Z",
+  "updated_at": "2026-10-09T16:59:06Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
