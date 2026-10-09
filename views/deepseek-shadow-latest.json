@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-09T16:22:18Z",
+  "updated_at": "2026-10-09T16:41:03Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1155,
+    "evaluated_total": 1157,
     "agreement_count": 519,
-    "agreement_pct": 44.94,
+    "agreement_pct": 44.86,
     "deepseek_promote": 33,
     "vds_promote": 301,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 430,
-    "cumulative_estimated_cost_usd": 0.221807,
-    "cost_per_evaluated_candidate_usd": 0.00019204,
-    "cost_per_deepseek_promote_usd": 0.00672143,
-    "cost_per_observed_ready_or_contacted_usd": 0.11090364,
-    "latest_request": null
+    "request_count": 431,
+    "cumulative_estimated_cost_usd": 0.222091,
+    "cost_per_evaluated_candidate_usd": 0.00019195,
+    "cost_per_deepseek_promote_usd": 0.00673003,
+    "cost_per_observed_ready_or_contacted_usd": 0.11104548,
+    "latest_request": {
+      "at": "2026-10-09T16:40:58Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 177,
+      "completion_tokens": 364,
+      "total_tokens": 1181,
+      "estimated_cost_usd": 0.00028366
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "83cdda7b35f90d255eae28b48a3424e2",
-      "evaluated_at": "2026-10-08T20:13:56Z",
-      "organization": "Pontoonglobal",
-      "title": "Frontend Developer(Fiori+UI5)",
-      "location": "Check country restrictions",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/frontend-developerfioriui5-339a184b28",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Frontend Developer (Fiori+UI5) is SAP Fiori/UI5 enterprise stack, unrelated to WordPress/WooCommerce/custom web freelance profile; no explicit freelance compatibility.",
-      "deepseek_risk_flags": [
-        "sap_fiori_ui5_stack",
-        "no_freelance_signal",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000145774,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "8d7179cda39696f6551bc5b1e0ef6f5e",
-      "evaluated_at": "2026-10-08T20:13:56Z",
-      "organization": "ADDENDUM",
-      "title": "Web/Frontend Developer (Vue.js & Nuxt Focus)",
-      "location": "Lithuania",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/webfrontend-developer-vuejs-nuxt-focus-37bcd12c84",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 28.0,
-      "deepseek_confidence": 0.78,
-      "deepseek_primary_reason": "Web/Frontend Developer (Vue.js & Nuxt Focus) is Vue/Nuxt-centric, not WordPress/WooCommerce; no explicit freelance/contract compatibility and geo unverified.",
-      "deepseek_risk_flags": [
-        "vue_nuxt_stack",
-        "no_freelance_signal",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000145774,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "2667f442967d03a79c64cffab6ea0788",
       "evaluated_at": "2026-10-08T20:13:56Z",
@@ -1432,10 +1389,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "69ae02478675c50738f5dee60604490a",
+      "evaluated_at": "2026-10-09T16:40:58Z",
+      "organization": "InPost",
+      "title": "Staff Software Engineer, Frontend - Fintech Platform (m/f/n)",
+      "location": "Poland",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/staff-software-engineer-frontend-fintech-platform-mfn-9ed311375f",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Staff-level frontend role at a fintech platform in Poland; only matched keyword is generic 'frontend' with no WordPress/WooCommerce, maintenance, or freelance/contract evidence, and seniority plus fintech stack indicate a core product-engineering role rather than compatible freelance web work.",
+      "deepseek_risk_flags": [
+        "seniority_mismatch_staff_level",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets_spain_italy",
+        "fintech_product_role_likely_react_heavy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014183,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ed275fdabf58126fc830f6e263f259ad",
+      "evaluated_at": "2026-10-09T16:40:58Z",
+      "organization": "Dehoga Baden-Württemberg",
+      "title": "Full Stack Developer (m/w/d)",
+      "location": "Stuttgart",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/dehoga-baden-wurttemberg/full-stack-developer-stuttgart-331661",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full Stack Developer role in Stuttgart with matched keywords css, frontend, javascript and php, which partially aligns with the target profile, but no explicit WordPress/WooCommerce, performance, maintenance or freelance/contract evidence and the geo is outside the primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_confirmation",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets_spain_italy",
+        "full_stack_scope_may_include_backend_heavy_stack",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014183,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-09T16:22:11Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-09T16:40:54Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

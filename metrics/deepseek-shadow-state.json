@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1188,
+  "runs": 1189,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -31741,6 +31741,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "69ae02478675c50738f5dee60604490a",
+      "evaluated_at": "2026-10-09T16:40:58Z",
+      "organization": "InPost",
+      "title": "Staff Software Engineer, Frontend - Fintech Platform (m/f/n)",
+      "location": "Poland",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/staff-software-engineer-frontend-fintech-platform-mfn-9ed311375f",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Staff-level frontend role at a fintech platform in Poland; only matched keyword is generic 'frontend' with no WordPress/WooCommerce, maintenance, or freelance/contract evidence, and seniority plus fintech stack indicate a core product-engineering role rather than compatible freelance web work.",
+      "deepseek_risk_flags": [
+        "seniority_mismatch_staff_level",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets_spain_italy",
+        "fintech_product_role_likely_react_heavy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014183,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ed275fdabf58126fc830f6e263f259ad",
+      "evaluated_at": "2026-10-09T16:40:58Z",
+      "organization": "Dehoga Baden-Württemberg",
+      "title": "Full Stack Developer (m/w/d)",
+      "location": "Stuttgart",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/dehoga-baden-wurttemberg/full-stack-developer-stuttgart-331661",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full Stack Developer role in Stuttgart with matched keywords css, frontend, javascript and php, which partially aligns with the target profile, but no explicit WordPress/WooCommerce, performance, maintenance or freelance/contract evidence and the geo is outside the primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_confirmation",
+        "no_freelance_or_contract_signal",
+        "geo_outside_primary_markets_spain_italy",
+        "full_stack_scope_may_include_backend_heavy_stack",
+        "employment_type_unknown"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014183,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -36903,9 +36961,21 @@
       "completion_tokens": 321,
       "total_tokens": 1143,
       "estimated_cost_usd": 0.00036544
+    },
+    {
+      "at": "2026-10-09T16:40:58Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 177,
+      "completion_tokens": 364,
+      "total_tokens": 1181,
+      "estimated_cost_usd": 0.00028366
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-09T16:22:16Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-09T16:40:58Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
