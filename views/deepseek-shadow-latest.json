@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-08T22:32:30Z",
+  "updated_at": "2026-10-09T00:24:10Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1119,
-    "agreement_count": 508,
-    "agreement_pct": 45.4,
+    "evaluated_total": 1120,
+    "agreement_count": 509,
+    "agreement_pct": 45.45,
     "deepseek_promote": 33,
     "vds_promote": 295,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 422,
-    "cumulative_estimated_cost_usd": 0.2146,
-    "cost_per_evaluated_candidate_usd": 0.00019178,
-    "cost_per_deepseek_promote_usd": 0.00650304,
-    "cost_per_observed_ready_or_contacted_usd": 0.10730015,
+    "request_count": 423,
+    "cumulative_estimated_cost_usd": 0.214822,
+    "cost_per_evaluated_candidate_usd": 0.00019181,
+    "cost_per_deepseek_promote_usd": 0.00650977,
+    "cost_per_observed_ready_or_contacted_usd": 0.10741115,
     "latest_request": {
-      "at": "2026-10-08T22:32:24Z",
+      "at": "2026-10-09T00:24:04Z",
       "model": "deepseek-flash",
-      "candidate_count": 5,
-      "valid_evaluation_count": 5,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1408,
-      "prompt_cache_miss_tokens": 178,
-      "completion_tokens": 573,
-      "total_tokens": 2159,
-      "estimated_cost_usd": 0.0004272
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 441,
+      "completion_tokens": 188,
+      "total_tokens": 757,
+      "estimated_cost_usd": 0.000222
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "7f604dd5e5edc7153bf8196e8e8c0e84",
-      "evaluated_at": "2026-10-07T06:57:39Z",
-      "organization": "Black & White Zebra",
-      "title": "Content Coordinator (1-Month Contract)",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/content-coordinator-1-month-contract-black-white-zebra",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Content Coordinator role is a content/editorial position, not web development; only a generic WordPress keyword match with no dev stack, and freelance/agency keywords appear incidental.",
-      "deepseek_risk_flags": [
-        "role_mismatch_content_not_dev",
-        "keyword_only_wordpress_match",
-        "no_dev_stack_evidence"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0002102467,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "370ac82931cc97672c1ffd401ac3412f",
       "evaluated_at": "2026-10-07T06:57:39Z",
@@ -1459,10 +1432,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "bf084102ecf9f0dfaaa8bff2f16703ff",
+      "evaluated_at": "2026-10-09T00:24:04Z",
+      "organization": "virtual7 GmbH",
+      "title": "(Senior) Java Fullstack Developer (m/w/d)",
+      "location": "Hamburg, Hamburg, Deutschland",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/senior-java-fullstack-developer-hamburg-358030",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is a (Senior) Java Fullstack Developer; Java-centric fullstack engineering is a stack mismatch for a WordPress/WooCommerce/frontend-focused freelance web developer, and the matched keywords (css, frontend, html, javascript) are generic secondary mentions rather than the role's core scope.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_java_core",
+        "generic_keyword_matches_only",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_signal",
+        "geo_unverified_germany_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000222,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 5,
-  "source_semantic_updated_at": "2026-10-08T22:32:18Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-09T00:23:59Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
