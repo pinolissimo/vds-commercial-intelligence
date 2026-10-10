@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1216,
+  "runs": 1217,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32422,6 +32422,63 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "34d6618713c83e7e574c404f28ca95f8",
+      "evaluated_at": "2026-10-10T16:47:23Z",
+      "organization": "Algo1",
+      "title": "Full-Stack Engineer (Frontend)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/algo1/full-stack-engineer-frontend-london-122942",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 74,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full-stack frontend role in London with only generic 'frontend/ux/web design' keyword overlap; no explicit WordPress/WooCommerce or freelance/contract evidence, and geo is London (non-target) with unverified remote status.",
+      "deepseek_risk_flags": [
+        "geo_outside_target_markets",
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_contract_signal",
+        "full_stack_scope_may_exceed_profile",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002056,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b752b79cf6f38bd25ae9fc6f765ae296",
+      "evaluated_at": "2026-10-10T16:47:23Z",
+      "organization": "Adthena",
+      "title": "Senior Anti-Bot / Scraping Engineer",
+      "location": "London I UK Remote",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/adthena/senior-anti-bot-scraping-engineer-london-234875",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 66,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Anti-bot/scraping engineering role is a stack and domain mismatch; matched keywords (html, javascript, website) are incidental and there is no WordPress/WooCommerce, frontend, or web-maintenance scope.",
+      "deepseek_risk_flags": [
+        "core_role_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_contract_signal",
+        "geo_uk_remote_not_target_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0002056,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -37728,9 +37785,21 @@
       "completion_tokens": 187,
       "total_tokens": 770,
       "estimated_cost_usd": 0.00022442
+    },
+    {
+      "at": "2026-10-10T16:47:23Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 689,
+      "completion_tokens": 392,
+      "total_tokens": 1209,
+      "estimated_cost_usd": 0.0004112
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-10T16:29:29Z",
+  "updated_at": "2026-10-10T16:47:23Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
