@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1198,
+  "runs": 1199,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32108,6 +32108,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "96bab508c57b37a1f25759b1618fa43b",
+      "evaluated_at": "2026-10-10T02:14:56Z",
+      "organization": "Coreweaveu",
+      "title": "AI Engineer (Agentic)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/coreweaveu/ai-engineer-agentic-london-473164",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an AI Engineer (Agentic) position, not a WordPress/WooCommerce/frontend web-development role; only tangential 'frontend' keyword match and generic agency/collaboration/partner terms, which do not establish truthful stack fit or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_ai_engineering",
+        "no_wordpress_woocommerce_scope",
+        "generic_collaboration_keywords_only",
+        "no_explicit_freelance_or_contract_signal",
+        "geo_unverified_london_onsite_likely"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00043299,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -37330,9 +37359,21 @@
       "completion_tokens": 851,
       "total_tokens": 2938,
       "estimated_cost_usd": 0.00099354
+    },
+    {
+      "at": "2026-10-10T02:14:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 431,
+      "completion_tokens": 183,
+      "total_tokens": 742,
+      "estimated_cost_usd": 0.00043299
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-09T23:02:07Z",
+  "updated_at": "2026-10-10T02:14:56Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

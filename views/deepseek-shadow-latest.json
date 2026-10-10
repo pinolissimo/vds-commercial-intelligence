@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-09T23:02:15Z",
+  "updated_at": "2026-10-10T02:15:00Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1168,
+    "evaluated_total": 1169,
     "agreement_count": 523,
-    "agreement_pct": 44.78,
+    "agreement_pct": 44.74,
     "deepseek_promote": 33,
     "vds_promote": 303,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 435,
-    "cumulative_estimated_cost_usd": 0.223834,
-    "cost_per_evaluated_candidate_usd": 0.00019164,
-    "cost_per_deepseek_promote_usd": 0.00678284,
-    "cost_per_observed_ready_or_contacted_usd": 0.11191682,
+    "request_count": 436,
+    "cumulative_estimated_cost_usd": 0.224267,
+    "cost_per_evaluated_candidate_usd": 0.00019184,
+    "cost_per_deepseek_promote_usd": 0.00679596,
+    "cost_per_observed_ready_or_contacted_usd": 0.11213332,
     "latest_request": {
-      "at": "2026-10-09T23:02:07Z",
+      "at": "2026-10-10T02:14:56Z",
       "model": "deepseek-flash",
-      "candidate_count": 7,
-      "valid_evaluation_count": 7,
-      "billing_band": "off_peak",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 1959,
-      "completion_tokens": 851,
-      "total_tokens": 2938,
-      "estimated_cost_usd": 0.00099354
+      "prompt_cache_miss_tokens": 431,
+      "completion_tokens": 183,
+      "total_tokens": 742,
+      "estimated_cost_usd": 0.00043299
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "18d9152df498299f11ae4c9f47b78836",
-      "evaluated_at": "2026-10-08T22:32:24Z",
-      "organization": "PadSplit",
-      "title": "QA Engineer (Anywhere in Europe)",
-      "location": "Europe",
-      "opportunity_url": "https://jobicy.com/jobs/154874-qa-engineer-anywhere-in-europe",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "QA Engineer role across Europe; only tangential frontend keyword match, no web development or WordPress scope.",
-      "deepseek_risk_flags": [
-        "qa_not_web_dev",
-        "no_stack_match",
-        "generic_partner_keyword"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 8.544e-05,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "bf084102ecf9f0dfaaa8bff2f16703ff",
       "evaluated_at": "2026-10-09T00:24:04Z",
@@ -1457,10 +1430,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "96bab508c57b37a1f25759b1618fa43b",
+      "evaluated_at": "2026-10-10T02:14:56Z",
+      "organization": "Coreweaveu",
+      "title": "AI Engineer (Agentic)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/coreweaveu/ai-engineer-agentic-london-473164",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an AI Engineer (Agentic) position, not a WordPress/WooCommerce/frontend web-development role; only tangential 'frontend' keyword match and generic agency/collaboration/partner terms, which do not establish truthful stack fit or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_ai_engineering",
+        "no_wordpress_woocommerce_scope",
+        "generic_collaboration_keywords_only",
+        "no_explicit_freelance_or_contract_signal",
+        "geo_unverified_london_onsite_likely"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00043299,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 7,
-  "source_semantic_updated_at": "2026-10-09T23:02:01Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-10T02:14:53Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
