@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1200,
+  "runs": 1201,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32221,6 +32221,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b352437b1b9b5cad7e8dc5181ead3bcd",
+      "evaluated_at": "2026-10-10T09:00:36Z",
+      "organization": "Monday.com",
+      "title": "Forward Deployed Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/mondaycom/forward-deployed-engineer-london-282414",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Forward Deployed Engineer at Monday.com is a full-time product/engineering role centered on customer-facing technical deployment, not a freelance web-development opportunity; matched keywords (frontend, javascript, migration) are generic and do not establish WordPress/WooCommerce or web-maintenance scope.",
+      "deepseek_risk_flags": [
+        "full_time_employment_likely",
+        "no_freelance_or_contract_signal",
+        "stack_mismatch_likely",
+        "location_london_not_spain_italy",
+        "no_wordpress_woocommerce_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00031558,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -37467,9 +37496,21 @@
       "completion_tokens": 445,
       "total_tokens": 1545,
       "estimated_cost_usd": 0.00101687
+    },
+    {
+      "at": "2026-10-10T09:00:36Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 165,
+      "completion_tokens": 180,
+      "total_tokens": 729,
+      "estimated_cost_usd": 0.00031558
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-10T08:32:24Z",
+  "updated_at": "2026-10-10T09:00:36Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
