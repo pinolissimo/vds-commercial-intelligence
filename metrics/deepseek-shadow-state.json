@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1203,
+  "runs": 1204,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32250,6 +32250,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4420f78e11576fa961c6103b23094255",
+      "evaluated_at": "2026-10-10T09:54:59Z",
+      "organization": "Obsidian Group",
+      "title": "(Senior) SEO Specialist (m/w/d)",
+      "location": "Leipzig",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/obsidian-group/senior-seo-specialist-leipzig-205485",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an SEO Specialist position, not a web-development role; matched keywords (css, html, javascript, website) are incidental and the only commercial keyword 'partner' is generic, not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_seo_not_webdev",
+        "keyword_matches_incidental",
+        "no_freelance_compatibility_evidence",
+        "geo_unverified_non_target_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00039251,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -37508,9 +37536,21 @@
       "completion_tokens": 180,
       "total_tokens": 729,
       "estimated_cost_usd": 0.00031558
+    },
+    {
+      "at": "2026-10-10T09:54:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 429,
+      "completion_tokens": 153,
+      "total_tokens": 710,
+      "estimated_cost_usd": 0.00039251
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-10T09:36:42Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-10T09:54:59Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

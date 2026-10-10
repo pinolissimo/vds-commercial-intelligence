@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-10T09:36:44Z",
+  "updated_at": "2026-10-10T09:55:04Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1173,
+    "evaluated_total": 1174,
     "agreement_count": 523,
-    "agreement_pct": 44.59,
+    "agreement_pct": 44.55,
     "deepseek_promote": 33,
     "vds_promote": 304,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 438,
-    "cumulative_estimated_cost_usd": 0.225599,
-    "cost_per_evaluated_candidate_usd": 0.00019233,
-    "cost_per_deepseek_promote_usd": 0.00683634,
-    "cost_per_observed_ready_or_contacted_usd": 0.11279955,
-    "latest_request": null
+    "request_count": 439,
+    "cumulative_estimated_cost_usd": 0.225992,
+    "cost_per_evaluated_candidate_usd": 0.0001925,
+    "cost_per_deepseek_promote_usd": 0.00684823,
+    "cost_per_observed_ready_or_contacted_usd": 0.1129958,
+    "latest_request": {
+      "at": "2026-10-10T09:54:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 429,
+      "completion_tokens": 153,
+      "total_tokens": 710,
+      "estimated_cost_usd": 0.00039251
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "dbb7f65722b8826ba3b9dc40319dbe91",
-      "evaluated_at": "2026-10-09T06:23:36Z",
-      "organization": "PadSplit",
-      "title": "QA Engineer (Anywhere in Europe)",
-      "location": "Europe",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/qa-engineer-anywhere-in-europe-padsplit",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "QA Engineer role; only 'frontend' keyword match, core scope is quality assurance/testing, not web development, WordPress, or frontend implementation.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "no_web_dev_scope",
-        "keyword_only_match"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00029141,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "113a851fa6b9b161a2d21351c97850d5",
       "evaluated_at": "2026-10-09T06:23:36Z",
@@ -1450,10 +1434,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4420f78e11576fa961c6103b23094255",
+      "evaluated_at": "2026-10-10T09:54:59Z",
+      "organization": "Obsidian Group",
+      "title": "(Senior) SEO Specialist (m/w/d)",
+      "location": "Leipzig",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/obsidian-group/senior-seo-specialist-leipzig-205485",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an SEO Specialist position, not a web-development role; matched keywords (css, html, javascript, website) are incidental and the only commercial keyword 'partner' is generic, not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_seo_not_webdev",
+        "keyword_matches_incidental",
+        "no_freelance_compatibility_evidence",
+        "geo_unverified_non_target_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00039251,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-10T09:36:39Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-10T09:54:53Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
