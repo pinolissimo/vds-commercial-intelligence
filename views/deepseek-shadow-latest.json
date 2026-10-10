@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-10T13:31:22Z",
+  "updated_at": "2026-10-10T13:49:35Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1176,
-    "agreement_count": 523,
-    "agreement_pct": 44.47,
+    "evaluated_total": 1178,
+    "agreement_count": 525,
+    "agreement_pct": 44.57,
     "deepseek_promote": 33,
     "vds_promote": 304,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 440,
-    "cumulative_estimated_cost_usd": 0.226295,
-    "cost_per_evaluated_candidate_usd": 0.00019243,
-    "cost_per_deepseek_promote_usd": 0.00685741,
-    "cost_per_observed_ready_or_contacted_usd": 0.11314731,
+    "request_count": 441,
+    "cumulative_estimated_cost_usd": 0.226639,
+    "cost_per_evaluated_candidate_usd": 0.00019239,
+    "cost_per_deepseek_promote_usd": 0.00686785,
+    "cost_per_observed_ready_or_contacted_usd": 0.11331958,
     "latest_request": {
-      "at": "2026-10-10T13:31:16Z",
+      "at": "2026-10-10T13:49:30Z",
       "model": "deepseek-flash",
       "candidate_count": 2,
       "valid_evaluation_count": 2,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 640,
-      "prompt_cache_miss_tokens": 178,
-      "completion_tokens": 393,
-      "total_tokens": 1211,
-      "estimated_cost_usd": 0.00030302
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 677,
+      "completion_tokens": 295,
+      "total_tokens": 1100,
+      "estimated_cost_usd": 0.00034454
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,61 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "feaa07e4be43a540d5a328bbaad68f4b",
-      "evaluated_at": "2026-10-09T06:23:36Z",
-      "organization": "Volta",
-      "title": "Senior Manager, Tax Structuring & Transactions",
-      "location": "London, UK",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/volta/senior-manager-tax-structuring-transactions-london-448508",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 58,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Manager Tax Structuring & Transactions; 'accessibility' and 'maintenance' matches are false positives, role is finance/tax with no web development relevance.",
-      "deepseek_risk_flags": [
-        "domain_mismatch",
-        "false_positive_keywords",
-        "no_web_dev_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00029141,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "7fba60f066c45277d232a9d90357754b",
-      "evaluated_at": "2026-10-09T08:29:46Z",
-      "organization": "thinkcellsoftware",
-      "title": "(Senior) Full Stack Developer - Web (f/m/d)",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/thinkcellsoftware/senior-full-stack-developer-web-264170",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 71,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 62.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Full Stack Developer - Web role with strong matching web stack keywords (HTML, CSS, JS, PHP, frontend, Core Web Vitals, CMS, accessibility), but 'Full Stack' framing and unknown contract/geo status require verification; no explicit freelance signal.",
-      "deepseek_risk_flags": [
-        "full_stack_scope_may_include_backend_heavy_work",
-        "no_explicit_freelance_or_contract_signal",
-        "geo_unverified",
-        "employment_type_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000182846,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c4466ee841148e3931e17ad300d1b09d",
       "evaluated_at": "2026-10-09T08:29:46Z",
@@ -1466,10 +1411,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "69f7098283fadf19a837d15079133486",
+      "evaluated_at": "2026-10-10T13:49:30Z",
+      "organization": "Docker",
+      "title": "Delivery Program Manager, Professional Services",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/docker/delivery-program-manager-professional-services-united-kingdom-11669",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Delivery Program Manager role at Docker is a program-management position with no WordPress, WooCommerce, custom HTML/CSS/JS, frontend, performance, or web-maintenance scope; only incidental keyword 'migration' matches and commercial keywords are generic.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "no_web_stack_scope",
+        "generic_commercial_keywords",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00017227,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "524b071f1285f0bb8b027f9f60d47811",
+      "evaluated_at": "2026-10-10T13:49:30Z",
+      "organization": "Liftoff",
+      "title": "Staff Software Engineer",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/liftoff/staff-software-engineer-london-74271",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.88,
+      "deepseek_primary_reason": "Staff Software Engineer at Liftoff is a senior engineering role; matched keywords 'css' and 'javascript' are generic and there is no evidence of WordPress, WooCommerce, frontend-focused, performance, or web-maintenance scope, and 'agency'/'collaboration' are incidental.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "generic_stack_keywords",
+        "no_wordpress_scope",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00017227,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 2,
-  "source_semantic_updated_at": "2026-10-10T13:31:12Z",
+  "source_semantic_updated_at": "2026-10-10T13:49:26Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

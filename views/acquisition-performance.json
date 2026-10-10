@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5",
-  "updated_at": "2026-10-10T13:31:12Z",
+  "updated_at": "2026-10-10T13:49:26Z",
   "north_star": "WON_REVENUE_THEN_PROPOSAL_CALL_QUALIFIED_REPLY_FIRST_CONTACT",
   "north_star_order": [
     "WON_REVENUE",
@@ -24,26 +24,26 @@
     "HOURLY_SUPPORT_RETAINER"
   ],
   "funnel_snapshot": {
-    "raw": 2572,
-    "semantic_input": 2572,
-    "semantic_pass": 198,
-    "semantic_review": 574,
-    "semantic_reject": 1800,
-    "rejected_non_project_support": 114,
+    "raw": 2500,
+    "semantic_input": 2500,
+    "semantic_pass": 183,
+    "semantic_review": 560,
+    "semantic_reject": 1757,
+    "rejected_non_project_support": 112,
     "buyer_intent_very_high": 65,
     "buyer_intent_high": 118,
     "buyer_intent_high_total": 183,
     "project_based_high_intent": 183,
     "opportunity_first_high_priority": 213,
-    "second_chance_queue": 397,
+    "second_chance_queue": 389,
     "decision_maker_enrichment_queue": 299,
     "buyer_archetypes": {
       "AGENCY_EXTERNAL_CAPACITY": 155,
       "EU_DISSEMINATION_SPECIALIST": 29,
-      "SME_WEB_IMPROVEMENT": 265
+      "SME_WEB_IMPROVEMENT": 250
     },
     "engagement_models": {
-      "PROJECT_BASED_WEB_DELIVERY": 431,
+      "PROJECT_BASED_WEB_DELIVERY": 416,
       "PROJECT_MODEL_TO_VERIFY": 13,
       "NON_PROJECT_SUPPORT": 5
     },
@@ -843,6 +843,18 @@
   ],
   "source_ranking": [
     {
+      "source_id": "remotejobs_contract_wordpress",
+      "raw_signals": 10,
+      "semantic_pass": 7,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.7,
+      "semantic_useful_rate": 0.7,
+      "raw_priority_multiplier": 1.39,
+      "recommended_multiplier": 1.64,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 1
+    },
+    {
       "source_id": "joa_es_frontend_title",
       "raw_signals": 11,
       "semantic_pass": 11,
@@ -852,7 +864,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.45,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 1
+      "rank": 2
     },
     {
       "source_id": "joa_it_frontend_title",
@@ -864,7 +876,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.45,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 2
+      "rank": 3
     },
     {
       "source_id": "joa_it_webdesigner_title",
@@ -876,19 +888,19 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.45,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 3
+      "rank": 4
     },
     {
-      "source_id": "remotejobs_contract_wordpress",
-      "raw_signals": 13,
-      "semantic_pass": 7,
-      "semantic_review": 1,
-      "semantic_pass_rate": 0.5385,
-      "semantic_useful_rate": 0.5654,
-      "raw_priority_multiplier": 1.31,
-      "recommended_multiplier": 1.39,
+      "source_id": "nomado_frontend",
+      "raw_signals": 3,
+      "semantic_pass": 3,
+      "semantic_review": 0,
+      "semantic_pass_rate": 1.0,
+      "semantic_useful_rate": 1.0,
+      "raw_priority_multiplier": 0.97,
+      "recommended_multiplier": 1.41,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 4
+      "rank": 5
     },
     {
       "source_id": "wwr_frontend",
@@ -900,29 +912,17 @@
       "raw_priority_multiplier": 1.36,
       "recommended_multiplier": 1.36,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 5
-    },
-    {
-      "source_id": "remoteok",
-      "raw_signals": 7,
-      "semantic_pass": 3,
-      "semantic_review": 1,
-      "semantic_pass_rate": 0.4286,
-      "semantic_useful_rate": 0.4786,
-      "raw_priority_multiplier": 1.29,
-      "recommended_multiplier": 1.27,
-      "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 6
     },
     {
-      "source_id": "nomado_frontend",
-      "raw_signals": 14,
-      "semantic_pass": 10,
-      "semantic_review": 1,
-      "semantic_pass_rate": 0.7143,
-      "semantic_useful_rate": 0.7393,
-      "raw_priority_multiplier": 0.94,
-      "recommended_multiplier": 1.14,
+      "source_id": "nomado_webdev",
+      "raw_signals": 5,
+      "semantic_pass": 4,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.8,
+      "semantic_useful_rate": 0.8,
+      "raw_priority_multiplier": 0.99,
+      "recommended_multiplier": 1.26,
       "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 7
     },
@@ -939,6 +939,30 @@
       "rank": 8
     },
     {
+      "source_id": "remoteok",
+      "raw_signals": 11,
+      "semantic_pass": 3,
+      "semantic_review": 1,
+      "semantic_pass_rate": 0.2727,
+      "semantic_useful_rate": 0.3045,
+      "raw_priority_multiplier": 1.28,
+      "recommended_multiplier": 1.05,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 9
+    },
+    {
+      "source_id": "remotejobs_contract_webdev",
+      "raw_signals": 55,
+      "semantic_pass": 11,
+      "semantic_review": 10,
+      "semantic_pass_rate": 0.2,
+      "semantic_useful_rate": 0.2636,
+      "raw_priority_multiplier": 1.32,
+      "recommended_multiplier": 1.04,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 10
+    },
+    {
       "source_id": "joa_it_wordpress_body",
       "raw_signals": 5,
       "semantic_pass": 2,
@@ -948,7 +972,19 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.04,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 9
+      "rank": 11
+    },
+    {
+      "source_id": "jobicy_europe",
+      "raw_signals": 94,
+      "semantic_pass": 21,
+      "semantic_review": 13,
+      "semantic_pass_rate": 0.2234,
+      "semantic_useful_rate": 0.2718,
+      "raw_priority_multiplier": 1.3,
+      "recommended_multiplier": 1.03,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 12
     },
     {
       "source_id": "remotive",
@@ -960,43 +996,19 @@
       "raw_priority_multiplier": 1.43,
       "recommended_multiplier": 1.01,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 10
-    },
-    {
-      "source_id": "jobicy_europe",
-      "raw_signals": 106,
-      "semantic_pass": 22,
-      "semantic_review": 12,
-      "semantic_pass_rate": 0.2075,
-      "semantic_useful_rate": 0.2472,
-      "raw_priority_multiplier": 1.28,
-      "recommended_multiplier": 0.99,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 11
-    },
-    {
-      "source_id": "remotejobs_contract_webdev",
-      "raw_signals": 65,
-      "semantic_pass": 12,
-      "semantic_review": 10,
-      "semantic_pass_rate": 0.1846,
-      "semantic_useful_rate": 0.2385,
-      "raw_priority_multiplier": 1.25,
-      "recommended_multiplier": 0.96,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 12
-    },
-    {
-      "source_id": "nomado_webdev",
-      "raw_signals": 27,
-      "semantic_pass": 10,
-      "semantic_review": 4,
-      "semantic_pass_rate": 0.3704,
-      "semantic_useful_rate": 0.4222,
-      "raw_priority_multiplier": 0.9,
-      "recommended_multiplier": 0.84,
-      "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 13
+    },
+    {
+      "source_id": "remotejobs_contract_frontend",
+      "raw_signals": 11,
+      "semantic_pass": 1,
+      "semantic_review": 3,
+      "semantic_pass_rate": 0.0909,
+      "semantic_useful_rate": 0.1864,
+      "raw_priority_multiplier": 1.16,
+      "recommended_multiplier": 0.83,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 14
     },
     {
       "source_id": "wwr_design",
@@ -1008,19 +1020,19 @@
       "raw_priority_multiplier": 1.28,
       "recommended_multiplier": 0.78,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 14
+      "rank": 15
     },
     {
       "source_id": "arbeitnow_eu",
-      "raw_signals": 2201,
+      "raw_signals": 2202,
       "semantic_pass": 111,
-      "semantic_review": 258,
+      "semantic_review": 264,
       "semantic_pass_rate": 0.0504,
-      "semantic_useful_rate": 0.0915,
+      "semantic_useful_rate": 0.0924,
       "raw_priority_multiplier": 1.22,
       "recommended_multiplier": 0.77,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 15
+      "rank": 16
     },
     {
       "source_id": "wwr_sysadmin",
@@ -1032,7 +1044,7 @@
       "raw_priority_multiplier": 1.24,
       "recommended_multiplier": 0.72,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 16
+      "rank": 17
     },
     {
       "source_id": "wwr_programming",
@@ -1044,19 +1056,19 @@
       "raw_priority_multiplier": 1.34,
       "recommended_multiplier": 0.7,
       "budget_class": "REDUCED_WEAK",
-      "rank": 17
+      "rank": 18
     },
     {
-      "source_id": "remotejobs_contract_frontend",
-      "raw_signals": 25,
-      "semantic_pass": 1,
-      "semantic_review": 4,
-      "semantic_pass_rate": 0.04,
-      "semantic_useful_rate": 0.096,
-      "raw_priority_multiplier": 1.07,
-      "recommended_multiplier": 0.68,
+      "source_id": "nomado_wordpress",
+      "raw_signals": 3,
+      "semantic_pass": 0,
+      "semantic_review": 0,
+      "semantic_pass_rate": 0.0,
+      "semantic_useful_rate": 0.0,
+      "raw_priority_multiplier": 1.06,
+      "recommended_multiplier": 0.58,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 18
+      "rank": 19
     },
     {
       "source_id": "joa_eu_remote_webdev",
@@ -1068,19 +1080,19 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 0.55,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 19
+      "rank": 20
     },
     {
-      "source_id": "nomado_wordpress",
-      "raw_signals": 9,
+      "source_id": "himalayas",
+      "raw_signals": 1,
       "semantic_pass": 0,
       "semantic_review": 0,
       "semantic_pass_rate": 0.0,
       "semantic_useful_rate": 0.0,
-      "raw_priority_multiplier": 0.9,
-      "recommended_multiplier": 0.5,
+      "raw_priority_multiplier": 0.77,
+      "recommended_multiplier": 0.42,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 20
+      "rank": 21
     }
   ],
   "territory": {
@@ -1094,7 +1106,7 @@
         "province": "Roma",
         "score": 69.85,
         "mode": "HARVEST",
-        "harvest_cycles": 2,
+        "harvest_cycles": 3,
         "consecutive_low_yield_cycles": 0,
         "cooldown_until": "2026-10-11T03:54:59.080989Z",
         "metrics": {
@@ -1140,31 +1152,6 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Calabria|Reggio Calabria",
-        "country": "Italy",
-        "region": "Calabria",
-        "province": "Reggio Calabria",
-        "score": 32.56,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 1,
-          "high_fit": 1,
-          "hot": 1,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 3,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
         "area_key": "Spain|Aragón|Zaragoza",
         "country": "Spain",
         "region": "Aragón",
@@ -1186,14 +1173,39 @@
           "stale": 0,
           "rejected": 0
         },
+        "rank": 3,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Calabria|Reggio Calabria",
+        "country": "Italy",
+        "region": "Calabria",
+        "province": "Reggio Calabria",
+        "score": 32.56,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 1,
+          "high_fit": 1,
+          "hot": 1,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
         "rank": 4,
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Puglia|Bari",
-        "country": "Italy",
-        "region": "Puglia",
-        "province": "Bari",
+        "area_key": "Spain|Comunitat Valenciana|Castellón",
+        "country": "Spain",
+        "region": "Comunitat Valenciana",
+        "province": "Castellón",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1215,10 +1227,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Comunitat Valenciana|Castellón",
-        "country": "Spain",
-        "region": "Comunitat Valenciana",
-        "province": "Castellón",
+        "area_key": "Italy|Puglia|Bari",
+        "country": "Italy",
+        "region": "Puglia",
+        "province": "Bari",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1247,7 +1259,7 @@
         "score": 29.09,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 278,
+        "consecutive_low_yield_cycles": 277,
         "cooldown_until": null,
         "metrics": {
           "signals": 3,
@@ -1265,10 +1277,10 @@
         "sample_status": "MEANINGFUL"
       },
       {
-        "area_key": "Italy|Piemonte|Torino",
+        "area_key": "Italy|Emilia-Romagna|Piacenza",
         "country": "Italy",
-        "region": "Piemonte",
-        "province": "Torino",
+        "region": "Emilia-Romagna",
+        "province": "Piacenza",
         "score": 25.96,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1290,10 +1302,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Emilia-Romagna|Piacenza",
+        "area_key": "Italy|Piemonte|Torino",
         "country": "Italy",
-        "region": "Emilia-Romagna",
-        "province": "Piacenza",
+        "region": "Piemonte",
+        "province": "Torino",
         "score": 25.96,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1390,31 +1402,6 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Emilia-Romagna|Bologna",
-        "country": "Italy",
-        "region": "Emilia-Romagna",
-        "province": "Bologna",
-        "score": 0.79,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 1,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 13,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
         "area_key": "Spain|Comunitat Valenciana|Valencia",
         "country": "Spain",
         "region": "Comunitat Valenciana",
@@ -1436,14 +1423,39 @@
           "stale": 0,
           "rejected": 0
         },
+        "rank": 13,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Emilia-Romagna|Bologna",
+        "country": "Italy",
+        "region": "Emilia-Romagna",
+        "province": "Bologna",
+        "score": 0.78,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 1,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
         "rank": 14,
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Castilla y León|Segovia",
-        "country": "Spain",
-        "region": "Castilla y León",
-        "province": "Segovia",
+        "area_key": "Italy|Calabria|Vibo Valentia",
+        "country": "Italy",
+        "region": "Calabria",
+        "province": "Vibo Valentia",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1465,10 +1477,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Cataluña|Tarragona",
-        "country": "Spain",
-        "region": "Cataluña",
-        "province": "Tarragona",
+        "area_key": "Italy|Toscana|Siena",
+        "country": "Italy",
+        "region": "Toscana",
+        "province": "Siena",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1490,10 +1502,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Lombardia|Como",
+        "area_key": "Italy|Sicilia|Enna",
         "country": "Italy",
-        "region": "Lombardia",
-        "province": "Como",
+        "region": "Sicilia",
+        "province": "Enna",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1515,10 +1527,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Castilla-La Mancha|Guadalajara",
-        "country": "Spain",
-        "region": "Castilla-La Mancha",
-        "province": "Guadalajara",
+        "area_key": "Italy|Umbria|Perugia",
+        "country": "Italy",
+        "region": "Umbria",
+        "province": "Perugia",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1540,10 +1552,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Trentino-Alto Adige|Trento",
-        "country": "Italy",
-        "region": "Trentino-Alto Adige",
-        "province": "Trento",
+        "area_key": "Spain|Ceuta|Ceuta",
+        "country": "Spain",
+        "region": "Ceuta",
+        "province": "Ceuta",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1565,10 +1577,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Galicia|A Coruña",
-        "country": "Spain",
-        "region": "Galicia",
-        "province": "A Coruña",
+        "area_key": "Italy|Veneto|Rovigo",
+        "country": "Italy",
+        "region": "Veneto",
+        "province": "Rovigo",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1590,10 +1602,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Veneto|Verona",
+        "area_key": "Italy|Emilia-Romagna|Rimini",
         "country": "Italy",
-        "region": "Veneto",
-        "province": "Verona",
+        "region": "Emilia-Romagna",
+        "province": "Rimini",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
