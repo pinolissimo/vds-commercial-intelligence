@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1215,
+  "runs": 1216,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32392,6 +32392,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d4b5b0111e9476c12a2035badba04d12",
+      "evaluated_at": "2026-10-10T16:29:29Z",
+      "organization": "AIDA Recruitment",
+      "title": "Senior Frontend Developer (Vue.js + Nuxt.js)",
+      "location": "Estonia",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-developer-vuejs-nuxtjs-e9a9a4387b",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Core role is Vue.js + Nuxt.js senior frontend engineering, which is a framework-specific stack mismatch against the target profile's WordPress/WooCommerce/custom HTML-CSS-JS focus; no WordPress, WooCommerce, maintenance, or performance/Core Web Vitals scope is evidenced.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_vue_nuxt",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "geo_unverified_estonia",
+        "remote_state_unverified",
+        "recruitment_agency_intermediary"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022442,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -37686,9 +37716,21 @@
       "completion_tokens": 295,
       "total_tokens": 1100,
       "estimated_cost_usd": 0.00034454
+    },
+    {
+      "at": "2026-10-10T16:29:29Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 455,
+      "completion_tokens": 187,
+      "total_tokens": 770,
+      "estimated_cost_usd": 0.00022442
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-10T16:11:12Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-10T16:29:29Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

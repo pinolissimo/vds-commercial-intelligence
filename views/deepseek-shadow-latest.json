@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-10T16:11:14Z",
+  "updated_at": "2026-10-10T16:29:35Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1178,
+    "evaluated_total": 1179,
     "agreement_count": 525,
-    "agreement_pct": 44.57,
+    "agreement_pct": 44.53,
     "deepseek_promote": 33,
-    "vds_promote": 304,
+    "vds_promote": 305,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 275
+    "deepseek_demoted_from_vds_promote": 276
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 441,
-    "cumulative_estimated_cost_usd": 0.226639,
-    "cost_per_evaluated_candidate_usd": 0.00019239,
-    "cost_per_deepseek_promote_usd": 0.00686785,
-    "cost_per_observed_ready_or_contacted_usd": 0.11331958,
-    "latest_request": null
+    "request_count": 442,
+    "cumulative_estimated_cost_usd": 0.226864,
+    "cost_per_evaluated_candidate_usd": 0.00019242,
+    "cost_per_deepseek_promote_usd": 0.00687465,
+    "cost_per_observed_ready_or_contacted_usd": 0.11343179,
+    "latest_request": {
+      "at": "2026-10-10T16:29:29Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 455,
+      "completion_tokens": 187,
+      "total_tokens": 770,
+      "estimated_cost_usd": 0.00022442
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c4466ee841148e3931e17ad300d1b09d",
-      "evaluated_at": "2026-10-09T08:29:46Z",
-      "organization": "Constructor",
-      "title": "Engineering Manager - Customer Developer Experience",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/constructor/engineering-manager-customer-developer-experience-munich-301077",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Engineering Manager role is a leadership/management position, not a hands-on freelance web development opportunity; matched keywords are incidental and 'partner' hit is generic.",
-      "deepseek_risk_flags": [
-        "management_role_not_freelance_ic",
-        "weak_stack_overlap",
-        "generic_partner_keyword"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.000182846,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "d90f3e2b2b362cad6acf2061beb4e003",
       "evaluated_at": "2026-10-09T08:29:46Z",
@@ -1456,10 +1440,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d4b5b0111e9476c12a2035badba04d12",
+      "evaluated_at": "2026-10-10T16:29:29Z",
+      "organization": "AIDA Recruitment",
+      "title": "Senior Frontend Developer (Vue.js + Nuxt.js)",
+      "location": "Estonia",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-developer-vuejs-nuxtjs-e9a9a4387b",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Core role is Vue.js + Nuxt.js senior frontend engineering, which is a framework-specific stack mismatch against the target profile's WordPress/WooCommerce/custom HTML-CSS-JS focus; no WordPress, WooCommerce, maintenance, or performance/Core Web Vitals scope is evidenced.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_vue_nuxt",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "geo_unverified_estonia",
+        "remote_state_unverified",
+        "recruitment_agency_intermediary"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00022442,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-10T16:11:07Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-10T16:29:24Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
