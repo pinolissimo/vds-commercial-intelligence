@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1205,
+  "runs": 1206,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32278,6 +32278,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "531910ccadcafeaf0360db83d700c9e1",
+      "evaluated_at": "2026-10-10T13:31:16Z",
+      "organization": "Wundergraph",
+      "title": "Senior Product Designer EMEA",
+      "location": "EMEA",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/wundergraph/senior-product-designer-emea-frankfurt-193620",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Senior Product Designer role at Wundergraph is a design/UX position, not a web-development freelance opportunity; matched keywords (css, html, javascript, ui, ux) reflect design-tool adjacency rather than hands-on WordPress/WooCommerce/custom frontend build work, and no explicit freelance/contract compatibility is evidenced.",
+      "deepseek_risk_flags": [
+        "role_is_product_design_not_web_development",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_terms",
+        "commercial_keywords_are_generic_collaboration_boilerplate",
+        "geo_bucket_eu_remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00015151,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e889c2bf77fa4cc3a260ef2ba4a510ee",
+      "evaluated_at": "2026-10-10T13:31:16Z",
+      "organization": "Lemon.io",
+      "title": "Senior React Full stack Developer",
+      "location": "",
+      "opportunity_url": "https://remoteOK.com/remote-jobs/remote-senior-react-full-stack-developer-lemon-io-1137475",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior React Full stack Developer at Lemon.io is a React-centric core engineering role; despite incidental wordpress/php/ui/ux keyword matches, the primary stack is React full-stack, which is a stack mismatch for a WordPress/WooCommerce/frontend-performance profile, and no explicit freelance terms are present in the supplied evidence.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "stack_mismatch_with_wordpress_woocommerce_focus",
+        "keyword_matches_likely_incidental",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_bucket_italy_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00015151,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -37548,9 +37606,21 @@
       "completion_tokens": 153,
       "total_tokens": 710,
       "estimated_cost_usd": 0.00039251
+    },
+    {
+      "at": "2026-10-10T13:31:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 178,
+      "completion_tokens": 393,
+      "total_tokens": 1211,
+      "estimated_cost_usd": 0.00030302
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-10T10:13:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-10T13:31:16Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

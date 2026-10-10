@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-10T10:13:02Z",
+  "updated_at": "2026-10-10T13:31:22Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1174,
+    "evaluated_total": 1176,
     "agreement_count": 523,
-    "agreement_pct": 44.55,
+    "agreement_pct": 44.47,
     "deepseek_promote": 33,
     "vds_promote": 304,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 439,
-    "cumulative_estimated_cost_usd": 0.225992,
-    "cost_per_evaluated_candidate_usd": 0.0001925,
-    "cost_per_deepseek_promote_usd": 0.00684823,
-    "cost_per_observed_ready_or_contacted_usd": 0.1129958,
-    "latest_request": null
+    "request_count": 440,
+    "cumulative_estimated_cost_usd": 0.226295,
+    "cost_per_evaluated_candidate_usd": 0.00019243,
+    "cost_per_deepseek_promote_usd": 0.00685741,
+    "cost_per_observed_ready_or_contacted_usd": 0.11314731,
+    "latest_request": {
+      "at": "2026-10-10T13:31:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 178,
+      "completion_tokens": 393,
+      "total_tokens": 1211,
+      "estimated_cost_usd": 0.00030302
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "113a851fa6b9b161a2d21351c97850d5",
-      "evaluated_at": "2026-10-09T06:23:36Z",
-      "organization": "raisin",
-      "title": "Working Student Deposit Integration Operations (m/f/d)",
-      "location": "Berlin, Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/raisin/working-student-deposit-integration-operations-berlin-berlin-417511",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 59,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 10.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Working Student Deposit Integration Operations; 'cms' and 'maintenance' matches are incidental, role is student operations not freelance web development.",
-      "deepseek_risk_flags": [
-        "student_role",
-        "role_mismatch",
-        "no_web_dev_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00029141,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "72b3225398f266028b21603fc8f33bca",
-      "evaluated_at": "2026-10-09T06:23:36Z",
-      "organization": "Lovable",
-      "title": "Growth Engineer",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/lovable/growth-engineer-london-391416",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 58,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 20.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Growth Engineer at Lovable in London; 'frontend' and 'ux' matches are tangential, role is growth/engineering not WordPress or freelance web development, and London is outside target markets.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "geo_not_spain_italy",
-        "no_wordpress_woocommerce_evidence"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00029141,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "feaa07e4be43a540d5a328bbaad68f4b",
       "evaluated_at": "2026-10-09T06:23:36Z",
@@ -1451,10 +1408,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "531910ccadcafeaf0360db83d700c9e1",
+      "evaluated_at": "2026-10-10T13:31:16Z",
+      "organization": "Wundergraph",
+      "title": "Senior Product Designer EMEA",
+      "location": "EMEA",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/wundergraph/senior-product-designer-emea-frankfurt-193620",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Senior Product Designer role at Wundergraph is a design/UX position, not a web-development freelance opportunity; matched keywords (css, html, javascript, ui, ux) reflect design-tool adjacency rather than hands-on WordPress/WooCommerce/custom frontend build work, and no explicit freelance/contract compatibility is evidenced.",
+      "deepseek_risk_flags": [
+        "role_is_product_design_not_web_development",
+        "no_wordpress_woocommerce_scope",
+        "no_explicit_freelance_or_contract_terms",
+        "commercial_keywords_are_generic_collaboration_boilerplate",
+        "geo_bucket_eu_remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00015151,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e889c2bf77fa4cc3a260ef2ba4a510ee",
+      "evaluated_at": "2026-10-10T13:31:16Z",
+      "organization": "Lemon.io",
+      "title": "Senior React Full stack Developer",
+      "location": "",
+      "opportunity_url": "https://remoteOK.com/remote-jobs/remote-senior-react-full-stack-developer-lemon-io-1137475",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior React Full stack Developer at Lemon.io is a React-centric core engineering role; despite incidental wordpress/php/ui/ux keyword matches, the primary stack is React full-stack, which is a stack mismatch for a WordPress/WooCommerce/frontend-performance profile, and no explicit freelance terms are present in the supplied evidence.",
+      "deepseek_risk_flags": [
+        "react_heavy_core_role",
+        "stack_mismatch_with_wordpress_woocommerce_focus",
+        "keyword_matches_likely_incidental",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_bucket_italy_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00015151,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-10T10:12:58Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-10T13:31:12Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
