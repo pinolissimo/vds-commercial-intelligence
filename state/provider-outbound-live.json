@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-10-10T13:47:12Z",
+  "updated_at": "2026-10-11T04:00:00Z",
   "provider_of_record": "HOSTINGER_SENT",
   "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced/duplicate-policy-violation attempts remain audit-only and are never counted as successful first-contact outbound.",
   "events": [
@@ -3985,12 +3985,17 @@
       "recipient": "%20fixer@fixerdigital.es",
       "subject": "Colaboración técnica web — Visual Design Studio",
       "workstream": "VDS_PROVIDER_SYNC",
-      "state": "VERIFIED_EMAIL_SENT",
+      "state": "INVALID_RECIPIENT_ROUTE_PROVIDER_ACCEPTED",
       "action_type": "FIRST_CONTACT",
       "attachments": 0,
       "bcc_owner": false,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1791538456231245980.1791538456@visualdesignstudio.es>"
+      "external_id": "<1791538456231245980.1791538456@visualdesignstudio.es>",
+      "count_as_successful_outbound": false,
+      "route_gate_failure": true,
+      "route_gate_failure_reason": "PERCENT_ENCODED_WHITESPACE_IN_LOCAL_PART",
+      "reconciled_at": "2026-10-11T04:00:00Z",
+      "no_resend": true
     },
     {
       "provider_uid": 816,
