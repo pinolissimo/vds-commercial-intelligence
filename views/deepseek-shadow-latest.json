@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-11T04:04:16Z",
+  "updated_at": "2026-10-11T05:02:32Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1189,
+    "evaluated_total": 1190,
     "agreement_count": 527,
-    "agreement_pct": 44.32,
+    "agreement_pct": 44.29,
     "deepseek_promote": 33,
     "vds_promote": 308,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 447,
-    "cumulative_estimated_cost_usd": 0.228691,
-    "cost_per_evaluated_candidate_usd": 0.00019234,
-    "cost_per_deepseek_promote_usd": 0.00693004,
-    "cost_per_observed_ready_or_contacted_usd": 0.11434563,
+    "request_count": 448,
+    "cumulative_estimated_cost_usd": 0.228832,
+    "cost_per_evaluated_candidate_usd": 0.0001923,
+    "cost_per_deepseek_promote_usd": 0.00693429,
+    "cost_per_observed_ready_or_contacted_usd": 0.11441583,
     "latest_request": {
-      "at": "2026-10-11T04:04:10Z",
+      "at": "2026-10-11T05:02:27Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 384,
-      "prompt_cache_miss_tokens": 173,
-      "completion_tokens": 165,
-      "total_tokens": 722,
-      "estimated_cost_usd": 0.00014965
+      "prompt_cache_miss_tokens": 191,
+      "completion_tokens": 145,
+      "total_tokens": 720,
+      "estimated_cost_usd": 0.00014041
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "3cf3b778afce5ced4a0ac035a41a256a",
-      "evaluated_at": "2026-10-09T13:31:42Z",
-      "organization": "Tablemedia",
-      "title": "Full Stack Product Developer (m/w/d)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tablemedia/full-stack-product-developer-berlin-440978",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 55.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Full Stack Product Developer with CMS, HTML, CSS, JS and PHP keywords partially overlaps the profile, but the product-developer framing suggests a full-time in-house role and no WordPress/WooCommerce or freelance signal is confirmed.",
-      "deepseek_risk_flags": [
-        "full_time_product_role",
-        "wordpress_unconfirmed",
-        "freelance_compatibility_unproven",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001525844,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "de124189e85a18405bddadaa5678f757",
       "evaluated_at": "2026-10-09T13:31:42Z",
@@ -1472,10 +1444,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "507d7df6c805ba6613173b7f4e60b0fe",
+      "evaluated_at": "2026-10-11T05:02:27Z",
+      "organization": "Thehutgroup",
+      "title": "Senior Regulatory Officer (UK/EU) - THG Nutrition",
+      "location": "Manchester",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/thehutgroup/senior-regulatory-officer-uk-eu-thg-nutrition-manchester-101226",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 5.0,
+      "deepseek_confidence": 0.95,
+      "deepseek_primary_reason": "Role is a Senior Regulatory Officer in nutrition/regulatory affairs, not a web development role; matched keywords 'maintenance' and 'website' are incidental and do not indicate web/WordPress scope.",
+      "deepseek_risk_flags": [
+        "non_web_role",
+        "keyword_false_positive",
+        "regulatory_compliance_domain",
+        "no_freelance_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00014041,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-11T04:04:05Z",
+  "source_semantic_updated_at": "2026-10-11T05:02:24Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
