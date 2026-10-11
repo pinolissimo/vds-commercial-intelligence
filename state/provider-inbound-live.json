@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-11T02:16:55Z",
+  "updated_at": "2026-10-11T04:00:00Z",
   "latest_checked_uid": 1586,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
@@ -1213,11 +1213,19 @@
       "subject": "Re: External web development capacity — Visual Design Studio",
       "message_id": "<CACPxw4rPCGWkUQgo=Onww0d=vmYo1-mRv0ocUOg-s5Xf75dSng@mail.gmail.com>",
       "in_reply_to": "<1791455129584824372.1791455129@visualdesignstudio.es>",
-      "classification": "NEUTRAL",
-      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
-      "summary": "Human reply detected; semantic classification pending.",
+      "classification": "REFERRAL",
+      "subtype": "AGENCY_PARTNER_PROGRAM_REFERRAL",
+      "summary": "Kinsta cannot outsource design/development work, but invited VDS to its Agency Partner Program with client referrals, co-marketing, directory visibility and free hosting, and also offered its affiliate program.",
       "count_as_reply": true,
-      "source": "HOSTINGER_INBOX"
+      "source": "HOSTINGER_INBOX",
+      "correlated_provider_sent_uid": 801,
+      "correlated_queue_id": "commercial-9ffe75d44aef5823",
+      "archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "message_strategy": "TECHNICAL_WHITE_LABEL_PARTNER",
+      "experiment_variant": "UNASSIGNED_LEGACY_STRATEGY",
+      "business_outcome": "QUALIFIED_POSITIVE_REPLY_REFERRAL",
+      "classified_at": "2026-10-11T04:00:00Z",
+      "classification_source": "WATCHDOG_PROVIDER_RECONCILIATION"
     },
     {
       "provider_inbound_uid": 1582,
