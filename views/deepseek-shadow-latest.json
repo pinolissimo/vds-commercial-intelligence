@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-11T09:05:41Z",
+  "updated_at": "2026-10-11T10:00:37Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1193,
-    "agreement_count": 527,
-    "agreement_pct": 44.17,
+    "evaluated_total": 1195,
+    "agreement_count": 528,
+    "agreement_pct": 44.18,
     "deepseek_promote": 33,
-    "vds_promote": 308,
+    "vds_promote": 309,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 279
+    "deepseek_demoted_from_vds_promote": 280
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.18,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.95,
+    "vds_promote_hot_rate_pct": 1.94,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.06,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 449,
-    "cumulative_estimated_cost_usd": 0.229374,
-    "cost_per_evaluated_candidate_usd": 0.00019227,
-    "cost_per_deepseek_promote_usd": 0.00695074,
-    "cost_per_observed_ready_or_contacted_usd": 0.1146872,
+    "request_count": 450,
+    "cumulative_estimated_cost_usd": 0.229622,
+    "cost_per_evaluated_candidate_usd": 0.00019215,
+    "cost_per_deepseek_promote_usd": 0.00695825,
+    "cost_per_observed_ready_or_contacted_usd": 0.1148111,
     "latest_request": {
-      "at": "2026-10-11T09:05:37Z",
+      "at": "2026-10-11T10:00:30Z",
       "model": "deepseek-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 896,
-      "prompt_cache_miss_tokens": 158,
-      "completion_tokens": 349,
-      "total_tokens": 1403,
-      "estimated_cost_usd": 0.00054274
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 164,
+      "completion_tokens": 314,
+      "total_tokens": 1118,
+      "estimated_cost_usd": 0.0002478
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "da5f6ea428b4afa566e3314390b320fd",
-      "evaluated_at": "2026-10-09T13:31:42Z",
-      "organization": "gitlab",
-      "title": "Senior Backend Engineer, Core DevOps: Container Registry",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-senior-backend-engineer-core-devops-container-registry-126191",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Backend Engineer, Core DevOps (Container Registry) at GitLab is a backend/infrastructure role; frontend and migration keyword matches are incidental and the collaboration/agency terms are generic job text, not freelance evidence.",
-      "deepseek_risk_flags": [
-        "backend_devops_role",
-        "keyword_only_match",
-        "generic_collaboration_terms",
-        "no_wordpress_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001525844,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "1190ff4ada3575ace40a71e95788f34e",
-      "evaluated_at": "2026-10-09T13:31:42Z",
-      "organization": "gitlab",
-      "title": "Senior Backend Engineer, Core DevOps",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-senior-backend-engineer-core-devops-358372",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Backend Engineer, Core DevOps at GitLab is a backend/infrastructure role; frontend and migration keyword matches are incidental and the collaboration/agency terms are generic job text, not freelance evidence.",
-      "deepseek_risk_flags": [
-        "backend_devops_role",
-        "keyword_only_match",
-        "generic_collaboration_terms",
-        "no_wordpress_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001525844,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f29e47307691e43b8230106cccdeb551",
       "evaluated_at": "2026-10-09T14:51:45Z",
@@ -1469,10 +1413,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2ed5d5da1c123b7af91bc8f6ce70d871",
+      "evaluated_at": "2026-10-11T10:00:30Z",
+      "organization": "Valtech",
+      "title": "FR - Tech Lead Coremedia",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/valtech/fr-tech-lead-coremedia-142170",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 94,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Tech Lead for Coremedia (enterprise CMS), not WordPress/WooCommerce or general frontend freelance work; Coremedia is a different enterprise CMS stack and the title indicates a senior leadership/employment role rather than freelance web development.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_coremedia_vs_wordpress",
+        "senior_leadership_role_not_freelance",
+        "commercial_keywords_likely_boilerplate",
+        "geo_italy_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001239,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "49da1628d70c012408e5f4cb1e9b37aa",
+      "evaluated_at": "2026-10-11T10:00:30Z",
+      "organization": "",
+      "title": "Senior Web Experimentation Manager",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 70,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Web experimentation/optimization role touches HTML/CSS/JS and web performance, which partially overlaps the profile, but it is a US-located manager position with no explicit freelance/contract signal and unclear remote eligibility.",
+      "deepseek_risk_flags": [
+        "us_location_geo_mismatch",
+        "managerial_role_not_freelance",
+        "no_explicit_contract_type",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001239,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 3,
-  "source_semantic_updated_at": "2026-10-11T09:05:34Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-11T10:00:25Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
