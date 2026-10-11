@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "report_type": "LINKEDIN_HUNTER_DAILY_OPPORTUNITY_DELTA",
-  "generated_at": "2026-10-11T21:08:17+02:00",
+  "generated_at": "2026-10-11T22:03:27+02:00",
   "verification_date": "2026-10-11",
   "worker_id": "LINKEDIN_HUNTER",
   "send_window_open": false,
@@ -11,8 +11,8 @@
     "expired_pending_commands": 3
   },
   "provider_observation": {
-    "hostinger_sent_total": 818,
-    "latest_hostinger_sent_uid": 828,
+    "hostinger_sent_total": 819,
+    "latest_hostinger_sent_uid": 829,
     "latest_commercial_inbox_uid": 1580,
     "gmail_sent_checked": true,
     "external_send_count": 0,
@@ -25,10 +25,10 @@
       827,
       828
     ],
-    "note": "Six provider-verified first contacts were sent by the combined acquisition system today (UIDs 823-828), all with empty CC and BCC and present in live provider state. No new provider send or commercial reply was observed after the preceding cycle; LINKEDIN_HUNTER sent zero messages."
+    "note": "Hostinger Sent advanced to UID 829, an operational VDS report sent to the owner's Gmail address; it is not a commercial first contact and is excluded from outbound KPIs/live professional-send state. No new commercial send or reply was observed; LINKEDIN_HUNTER sent zero messages."
   },
   "summary": {
-    "serious_candidates": 17,
+    "serious_candidates": 18,
     "direct_email_harvest": 9,
     "send_now": 0,
     "provider_verified_first_contact": 6,
@@ -36,7 +36,7 @@
     "revenue_flow_reference_handoffs": 1,
     "wait_research": 1,
     "reject": 5,
-    "duplicate_failures": 6,
+    "duplicate_failures": 7,
     "fit_failures": 2,
     "route_failures": 2,
     "downstream_outcomes": 1
@@ -299,6 +299,11 @@
       "canonical_opportunity_id": "ORG-IT-APICEWEB",
       "state": "KNOWN_CONTACTED_CURRENT_NEED",
       "summary": "Apiceweb currently seeks P.IVA freelancers including a WordPress developer through its official application form, but Hostinger Sent UID 95 to info@apiceweb.it proves prior organization contact. No resend permitted."
+    },
+    {
+      "canonical_opportunity_id": "ORG-ES-KROMAGENCY",
+      "state": "KNOWN_CONTACTED_CURRENT_FREELANCE_NETWORK",
+      "summary": "Krom currently accepts year-round applications to a fully remote rotating freelance network for WordPress/Elementor, frontend/backend, maintenance, technical rescue, UX/UI and IT support. Hostinger Sent UID 715 proves prior exact contact to postulantes@kromagency.es, so no new first contact or duplicate canonical record is permitted; ownership remains with Revenue Flow."
     }
   ],
   "direct_email_decisions": [
@@ -385,6 +390,13 @@
       "source_url": "https://www.nois3.it/lavora-con-noi/",
       "outcome": "WAIT_RESEARCH",
       "reason": "Current official freelance need is verified, but the authoritative Typeform redirects to a private/unavailable form. The generic corporate address is not an application route and was not substituted."
+    },
+    {
+      "organization": "Krom Software Engineering",
+      "email": "postulantes@kromagency.es",
+      "source_url": "https://kromagency.es/vacantes/",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE organization and exact recipient: the current official freelance network is relevant, but Hostinger Sent UID 715 proves prior contact. No resend or new LINKEDIN_HUNTER ownership."
     }
   ],
   "ownership_boundary": {
@@ -411,6 +423,7 @@
     "16:59 route-first harvest: Mediseo AI and Apiceweb are current high-fit needs but blocked at organization level by Hostinger UIDs 352 and 95 respectively.",
     "16:59 qualification: IM*MEDIA added as NEW_MANUAL_APPLY; Webtek rejected for explicit internal, permanent, on-site employment mismatch.",
     "16:59 command bridge: mandatory files read; all three PENDING_TASK_BRIDGE commands are expired and no new receipt is required.",
-    "NOIS3 was recorded as NEW_WAIT_RESEARCH after negative canonical, Hostinger Sent and Gmail Sent checks; the current official Typeform redirects to a private/unavailable page and no outreach or submission was attempted."
+    "NOIS3 was recorded as NEW_WAIT_RESEARCH after negative canonical, Hostinger Sent and Gmail Sent checks; the current official Typeform redirects to a private/unavailable page and no outreach or submission was attempted.",
+    "Krom's current remote freelance network was verified but blocked by Hostinger Sent UID 715 to the exact application recipient; ownership remains with Revenue Flow and no duplicate record was created."
   ]
 }
