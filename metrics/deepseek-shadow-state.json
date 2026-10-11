@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1234,
+  "runs": 1235,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -33178,6 +33178,36 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5d579cd740c035fe672610786d0be4b4",
+      "evaluated_at": "2026-10-11T21:59:16Z",
+      "organization": "Bookboost",
+      "title": "Full Stack Developer",
+      "location": "Germany - Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-401554",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Generic 'Full Stack Developer' role at Bookboost (Munich, Germany) with only incidental keyword matches (frontend, javascript, migration, php); no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and location is Germany rather than the primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "full_stack_generic_role",
+        "geo_mismatch_germany_not_primary_market",
+        "no_explicit_freelance_or_contract_signal",
+        "remote_state_unverified",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016417,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -38616,9 +38646,21 @@
       "completion_tokens": 316,
       "total_tokens": 1182,
       "estimated_cost_usd": 0.00037182
+    },
+    {
+      "at": "2026-10-11T21:59:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 170,
+      "completion_tokens": 188,
+      "total_tokens": 742,
+      "estimated_cost_usd": 0.00016417
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-11T20:05:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-11T21:59:16Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

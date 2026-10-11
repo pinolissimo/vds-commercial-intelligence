@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-11T20:05:02Z",
+  "updated_at": "2026-10-11T21:59:22Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1206,
+    "evaluated_total": 1207,
     "agreement_count": 530,
-    "agreement_pct": 43.95,
+    "agreement_pct": 43.91,
     "deepseek_promote": 33,
     "vds_promote": 313,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 453,
-    "cumulative_estimated_cost_usd": 0.231206,
-    "cost_per_evaluated_candidate_usd": 0.00019171,
-    "cost_per_deepseek_promote_usd": 0.00700623,
-    "cost_per_observed_ready_or_contacted_usd": 0.11560286,
-    "latest_request": null
+    "request_count": 454,
+    "cumulative_estimated_cost_usd": 0.23137,
+    "cost_per_evaluated_candidate_usd": 0.00019169,
+    "cost_per_deepseek_promote_usd": 0.00701121,
+    "cost_per_observed_ready_or_contacted_usd": 0.11568494,
+    "latest_request": {
+      "at": "2026-10-11T21:59:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 170,
+      "completion_tokens": 188,
+      "total_tokens": 742,
+      "estimated_cost_usd": 0.00016417
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ed275fdabf58126fc830f6e263f259ad",
-      "evaluated_at": "2026-10-09T16:40:58Z",
-      "organization": "Dehoga Baden-Württemberg",
-      "title": "Full Stack Developer (m/w/d)",
-      "location": "Stuttgart",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/dehoga-baden-wurttemberg/full-stack-developer-stuttgart-331661",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 52.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Full Stack Developer role in Stuttgart with matched keywords css, frontend, javascript and php, which partially aligns with the target profile, but no explicit WordPress/WooCommerce, performance, maintenance or freelance/contract evidence and the geo is outside the primary Spain/Italy markets.",
-      "deepseek_risk_flags": [
-        "no_wordpress_woocommerce_confirmation",
-        "no_freelance_or_contract_signal",
-        "geo_outside_primary_markets_spain_italy",
-        "full_stack_scope_may_include_backend_heavy_stack",
-        "employment_type_unknown"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00014183,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "5043727e62532791694a0aa2c6be0f3d",
       "evaluated_at": "2026-10-09T16:59:06Z",
@@ -1458,10 +1440,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "5d579cd740c035fe672610786d0be4b4",
+      "evaluated_at": "2026-10-11T21:59:16Z",
+      "organization": "Bookboost",
+      "title": "Full Stack Developer",
+      "location": "Germany - Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/bookboost/full-stack-developer-germany-munich-401554",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Generic 'Full Stack Developer' role at Bookboost (Munich, Germany) with only incidental keyword matches (frontend, javascript, migration, php); no explicit WordPress/WooCommerce scope, no confirmed freelance/contract compatibility, and location is Germany rather than the primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "full_stack_generic_role",
+        "geo_mismatch_germany_not_primary_market",
+        "no_explicit_freelance_or_contract_signal",
+        "remote_state_unverified",
+        "employment_type_unspecified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016417,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-11T20:04:55Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-11T21:59:11Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
