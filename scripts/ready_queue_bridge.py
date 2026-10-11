@@ -9,7 +9,7 @@ FIRST_CONTACT policy:
 - follow-ups/replies remain outside this automatic approval path.
 """
 from __future__ import annotations
-import hashlib, json
+import hashlib, json, re
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -37,6 +37,16 @@ def load_queue():
 def domain_of_email(email):
     return str(email or "").strip().lower().rsplit("@",1)[-1] if "@" in str(email or "") else ""
 
+def valid_recipient_email(value):
+    """Reject percent-encoded/whitespace routes and syntactically invalid mailboxes."""
+    raw=str(value or "")
+    if not raw or raw != raw.strip() or "%" in raw or any(ch.isspace() for ch in raw):
+        return False
+    email=raw.lower()
+    if ".." in email:
+        return False
+    return bool(re.fullmatch(r"[^@\s%]+@[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\.[a-z]{2,63}",email))
+
 def persisted_qualification_is_valid(row, metadata):
     """Accept a previously qualified bridge-owned DRAFT even if the volatile READY view was rebuilt.
 
@@ -56,7 +66,7 @@ def persisted_qualification_is_valid(row, metadata):
         and priority >= LEGACY_PRIORITY_MIN
         and source_url.startswith(("http://","https://"))
         and bool(strategy)
-        and "@" in recipient
+        and valid_recipient_email(recipient)
     )
 
 def message(org,domain):
@@ -123,7 +133,7 @@ def main():
     for item in ready.get("items") or []:
         email=str(item.get("email") or "").strip().lower()
         domain=str(item.get("domain") or "").strip().lower()
-        if not email or not domain: continue
+        if not valid_recipient_email(email) or not domain or domain_of_email(email)!=domain: continue
         if item.get("state")!="READY_TO_SEND" or not item.get("dedup_verified"): continue
         if email in exact or domain in domains: continue
         ready_by_email[email]=item
@@ -138,6 +148,11 @@ def main():
             continue
         email=str(row.get("recipient") or "").strip().lower()
         domain=domain_of_email(email)
+        if not valid_recipient_email(email):
+            row["status"]="CANCELLED"
+            row["metadata"]={**metadata,"suppressed_at":stamp,"suppression_reason":"INVALID_RECIPIENT_ROUTE"}
+            suppressed+=1
+            continue
         if email in exact or domain in domains:
             row["status"]="CANCELLED"
             row["metadata"]={**metadata,"suppressed_at":stamp,"suppression_reason":"GLOBAL_DEDUP_BLOCK"}
