@@ -6,7 +6,7 @@ No ChatGPT dependency. Sends only queue records explicitly marked APPROVED_TO_SE
 and carrying an allowed eligibility basis. Uses fail-closed dedup and Hostinger API/SMTP transport.
 """
 from __future__ import annotations
-import json, os, smtplib, ssl, time, hashlib, urllib.parse
+import json, os, re, smtplib, ssl, time, hashlib, urllib.parse
 from zoneinfo import ZoneInfo
 import sync_hostinger_mail as hostinger
 from datetime import datetime, timezone
@@ -53,6 +53,16 @@ def save_json(path,obj):
 
 def email_domain(email):
     return str(email or "").strip().lower().rsplit("@",1)[-1] if "@" in str(email or "") else ""
+
+def valid_recipient_email(value):
+    """Fail closed on encoded whitespace, control characters and malformed routes."""
+    raw=str(value or "")
+    if not raw or raw != raw.strip() or "%" in raw or any(ch.isspace() for ch in raw):
+        return False
+    email=raw.lower()
+    if ".." in email:
+        return False
+    return bool(re.fullmatch(r"[^@\s%]+@[a-z0-9](?:[a-z0-9.-]*[a-z0-9])?\.[a-z]{2,63}",email))
 
 def idem_key(item):
     raw="|".join([
@@ -154,8 +164,8 @@ def main():
             continue
         recipient=str(item.get("recipient") or "").strip().lower()
         domain=email_domain(recipient)
-        if not recipient or "@" not in recipient:
-            rejected.append({"queue_id":item.get("queue_id"),"reason":"INVALID_RECIPIENT"})
+        if not valid_recipient_email(recipient):
+            rejected.append({"queue_id":item.get("queue_id"),"reason":"INVALID_RECIPIENT_ROUTE"})
             continue
         key=idem_key(item)
         if idempotency_enabled and key in sent_keys:
