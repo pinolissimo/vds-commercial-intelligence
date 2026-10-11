@@ -65,7 +65,7 @@ def payload_events(payload):
 
 def normalized_classification(event):
     raw = str(event.get("classification") or "NEUTRAL").upper()
-    if raw in {"POSITIVE", "QUALIFIED_POSITIVE_REPLY", "MICRO_COMMITMENT_REPLY", "CALL_REQUEST", "MEETING", "PROPOSAL"}:
+    if raw in {"POSITIVE", "QUALIFIED_POSITIVE_REPLY", "MICRO_COMMITMENT_REPLY", "CALL_REQUEST", "MEETING", "PROPOSAL", "REFERRAL"}:
         return "POSITIVE"
     if raw in {"NEGATIVE", "REJECTION", "OPT_OUT", "NOT_INTERESTED"}:
         return "NEGATIVE"
