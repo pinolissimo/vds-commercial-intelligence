@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1235,
+  "runs": 1236,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -33208,6 +33208,90 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "17736d8a5676bf62a2c98f9ee87669d7",
+      "evaluated_at": "2026-10-11T22:00:58Z",
+      "organization": "Avepoint",
+      "title": "Senior Director, Digital Marketing",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/avepoint/senior-director-digital-marketing-london-236106",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Director, Digital Marketing is a senior marketing leadership role, not a freelance web-development opportunity; matched keywords (core web vitals, ui, ux, website) are incidental to marketing scope and 'partner' is a generic commercial term, not proof of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_marketing_leadership",
+        "no_freelance_or_contract_signal",
+        "keyword_noise",
+        "seniority_mismatch"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001707267,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0d8366d2589451376e2b80cc165e64de",
+      "evaluated_at": "2026-10-11T22:00:58Z",
+      "organization": "Clearbank",
+      "title": "Financial Reporting Manager",
+      "location": "London Office - Hybrid",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clearbank/financial-reporting-manager-london-hybrid-258293",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Financial Reporting Manager is a finance/accounting role with no web-development scope; matched keywords (accessibility, migration, website) and commercial terms (collaboration, partner) are generic noise unrelated to the target profile.",
+      "deepseek_risk_flags": [
+        "role_mismatch_finance",
+        "no_web_development_scope",
+        "keyword_noise",
+        "hybrid_onsite_london"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001707267,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "1074a6df07f722f1e606eaecf1afb32f",
+      "evaluated_at": "2026-10-11T22:00:58Z",
+      "organization": "gitlab",
+      "title": "Backend Engineer (Python),AI Engineering: Agent Foundations",
+      "location": "Remote",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/gitlab/remote-backend-engineer-pythonai-engineering-agent-foundations-499521",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.88,
+      "deepseek_primary_reason": "Backend Engineer (Python) AI Engineering is a backend/AI role with no meaningful WordPress, WooCommerce, or frontend web scope; frontend/javascript/ux matches are incidental and the role is a full-time remote position, not freelance-compatible.",
+      "deepseek_risk_flags": [
+        "role_mismatch_backend_ai",
+        "no_wordpress_woocommerce_scope",
+        "full_time_not_freelance",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001707267,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -38658,9 +38742,21 @@
       "completion_tokens": 188,
       "total_tokens": 742,
       "estimated_cost_usd": 0.00016417
+    },
+    {
+      "at": "2026-10-11T22:00:58Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 941,
+      "completion_tokens": 461,
+      "total_tokens": 1530,
+      "estimated_cost_usd": 0.00051218
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-11T21:59:16Z",
+  "updated_at": "2026-10-11T22:00:58Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
