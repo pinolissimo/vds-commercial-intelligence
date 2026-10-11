@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-11T14:59:11Z",
+  "updated_at": "2026-10-11T18:13:23Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1204,
+    "evaluated_total": 1206,
     "agreement_count": 530,
-    "agreement_pct": 44.02,
+    "agreement_pct": 43.95,
     "deepseek_promote": 33,
     "vds_promote": 313,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 452,
-    "cumulative_estimated_cost_usd": 0.230834,
-    "cost_per_evaluated_candidate_usd": 0.00019172,
-    "cost_per_deepseek_promote_usd": 0.00699497,
-    "cost_per_observed_ready_or_contacted_usd": 0.11541694,
-    "latest_request": null
+    "request_count": 453,
+    "cumulative_estimated_cost_usd": 0.231206,
+    "cost_per_evaluated_candidate_usd": 0.00019171,
+    "cost_per_deepseek_promote_usd": 0.00700623,
+    "cost_per_observed_ready_or_contacted_usd": 0.11560286,
+    "latest_request": {
+      "at": "2026-10-11T18:13:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 738,
+      "completion_tokens": 316,
+      "total_tokens": 1182,
+      "estimated_cost_usd": 0.00037182
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,64 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a8d33a80b8fdf98e0e89811f5b938786",
-      "evaluated_at": "2026-10-09T15:46:01Z",
-      "organization": "Foundational",
-      "title": "Facilities Manager",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/foundational/facilities-manager-london-322785",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Facilities Manager role is unrelated to web development; 'maintenance' and 'contractor/agency' matches are false positives from facilities context, not web maintenance or freelance web work.",
-      "deepseek_risk_flags": [
-        "non_web_role",
-        "keyword_false_positive_maintenance",
-        "keyword_false_positive_contractor",
-        "no_web_stack_fit",
-        "onsite_london_likely"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00018272,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "69ae02478675c50738f5dee60604490a",
-      "evaluated_at": "2026-10-09T16:40:58Z",
-      "organization": "InPost",
-      "title": "Staff Software Engineer, Frontend - Fintech Platform (m/f/n)",
-      "location": "Poland",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/staff-software-engineer-frontend-fintech-platform-mfn-9ed311375f",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Staff-level frontend role at a fintech platform in Poland; only matched keyword is generic 'frontend' with no WordPress/WooCommerce, maintenance, or freelance/contract evidence, and seniority plus fintech stack indicate a core product-engineering role rather than compatible freelance web work.",
-      "deepseek_risk_flags": [
-        "seniority_mismatch_staff_level",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "geo_outside_primary_markets_spain_italy",
-        "fintech_product_role_likely_react_heavy"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00014183,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ed275fdabf58126fc830f6e263f259ad",
       "evaluated_at": "2026-10-09T16:40:58Z",
@@ -1458,10 +1411,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ed5b0aefebfa5bf63e0d921d7e8222bc",
+      "evaluated_at": "2026-10-11T18:13:16Z",
+      "organization": "Atolls",
+      "title": "Senior Backend Software Engineer (TypeScript, NestJS/Node.js) (m/f/x)",
+      "location": "Paris, France",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/atolls/senior-backend-software-engineer-typescript-nestjs-nodejs-paris-163769",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Senior backend role centered on TypeScript/NestJS/Node.js; only tangential 'front-end' and 'web development' keyword matches, no WordPress/WooCommerce/frontend/Core Web Vitals scope. Not a fit for the target freelance web-developer profile.",
+      "deepseek_risk_flags": [
+        "backend_core_role",
+        "stack_mismatch",
+        "no_wordpress_scope",
+        "no_freelance_compatibility_evidence",
+        "generic_collaboration_keyword"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018591,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "aead404a43b58f19fbb91bb2e15dfadb",
+      "evaluated_at": "2026-10-11T18:13:16Z",
+      "organization": "Atolls",
+      "title": "Senior Backend Software Engineer (TypeScript, NestJS/Node.js) (m/f/x)",
+      "location": "London, England, United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/atolls/senior-backend-software-engineer-typescript-nestjs-nodejs-london-417343",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Same Senior Backend TypeScript/NestJS/Node.js role in London; only tangential front-end/web-development keyword matches with no WordPress, WooCommerce, frontend performance or maintenance scope. Poor fit for the target profile.",
+      "deepseek_risk_flags": [
+        "backend_core_role",
+        "stack_mismatch",
+        "no_wordpress_scope",
+        "no_freelance_compatibility_evidence",
+        "generic_collaboration_keyword"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018591,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-11T14:59:06Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-11T18:13:11Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
