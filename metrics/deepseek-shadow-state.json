@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1223,
+  "runs": 1224,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32589,6 +32589,90 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2876e08c9b76964d1d68ebf1ca8267e6",
+      "evaluated_at": "2026-10-11T00:50:46Z",
+      "organization": "Phrase",
+      "title": "Marketing Communications Manager",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/phrase/marketing-communications-manager-united-kingdom-413845",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 66,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Role is Marketing Communications Manager, not a web development role; matched keywords 'website' and 'wordpress' are incidental and the commercial keywords 'collaboration'/'partner'/'remote' are generic and do not indicate freelance web-dev compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_non_technical",
+        "keyword_only_match",
+        "generic_commercial_terms",
+        "geo_mismatch_uk_not_target"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001917,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "071a9ec8efc118925690685965b9f742",
+      "evaluated_at": "2026-10-11T00:50:46Z",
+      "organization": "Tether Operations Limited",
+      "title": "Product Engineering Lead",
+      "location": "",
+      "opportunity_url": "https://remoteOK.com/remote-jobs/remote-product-engineering-lead-tether-operations-limited-1137478",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Product Engineering Lead is a senior engineering leadership role, not a WordPress/frontend web-dev freelance opportunity; matched keywords 'javascript' and 'website' are too generic and 'partner'/'remote' are not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "senior_leadership_role",
+        "stack_mismatch_likely",
+        "keyword_only_match",
+        "generic_commercial_terms"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001917,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "578994a962f6390ff624e70ba1785bdb",
+      "evaluated_at": "2026-10-11T00:50:46Z",
+      "organization": "iDelsoft",
+      "title": "Full Stack Developer - UX (Europe)",
+      "location": "United States",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/full-stack-developer-ux-europe-d433ad4a98",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 60,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 48.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Full Stack Developer - UX (Europe) has genuine frontend/UX/JavaScript overlap with the target profile and EU-remote framing, but the 'Full Stack' scope and US-based organization raise uncertainty about stack fit (possible React/Laravel core) and true freelance/contract compatibility.",
+      "deepseek_risk_flags": [
+        "full_stack_scope_uncertain",
+        "possible_framework_mismatch",
+        "us_org_eu_remote_ambiguity",
+        "no_explicit_wordpress_woocommerce"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001917,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -37931,9 +38015,21 @@
       "completion_tokens": 397,
       "total_tokens": 1523,
       "estimated_cost_usd": 0.00048248
+    },
+    {
+      "at": "2026-10-11T00:50:46Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 924,
+      "completion_tokens": 562,
+      "total_tokens": 1614,
+      "estimated_cost_usd": 0.0005751
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-10T22:03:10Z",
+  "updated_at": "2026-10-11T00:50:46Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
