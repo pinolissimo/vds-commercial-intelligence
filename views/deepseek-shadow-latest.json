@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-11T00:50:53Z",
+  "updated_at": "2026-10-11T04:04:16Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1188,
-    "agreement_count": 526,
-    "agreement_pct": 44.28,
+    "evaluated_total": 1189,
+    "agreement_count": 527,
+    "agreement_pct": 44.32,
     "deepseek_promote": 33,
     "vds_promote": 308,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 446,
-    "cumulative_estimated_cost_usd": 0.228542,
-    "cost_per_evaluated_candidate_usd": 0.00019238,
-    "cost_per_deepseek_promote_usd": 0.0069255,
-    "cost_per_observed_ready_or_contacted_usd": 0.1142708,
+    "request_count": 447,
+    "cumulative_estimated_cost_usd": 0.228691,
+    "cost_per_evaluated_candidate_usd": 0.00019234,
+    "cost_per_deepseek_promote_usd": 0.00693004,
+    "cost_per_observed_ready_or_contacted_usd": 0.11434563,
     "latest_request": {
-      "at": "2026-10-11T00:50:46Z",
+      "at": "2026-10-11T04:04:10Z",
       "model": "deepseek-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 924,
-      "completion_tokens": 562,
-      "total_tokens": 1614,
-      "estimated_cost_usd": 0.0005751
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 173,
+      "completion_tokens": 165,
+      "total_tokens": 722,
+      "estimated_cost_usd": 0.00014965
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "894320842e2449acf9f4185341e1eac7",
-      "evaluated_at": "2026-10-09T13:31:42Z",
-      "organization": "Valuenet Group",
-      "title": "Senior Odoo Engineer ERP & E-Commerce (all genders)",
-      "location": "München",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/valuenet-group/senior-odoo-engineer-erp-e-commerce-all-genders-munchen-193801",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 72,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior Odoo/ERP engineer role centered on Odoo ERP and e-commerce platform engineering, not WordPress/WooCommerce or general web development; stack mismatch with the target profile.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_odoo_erp",
-        "senior_full_time_role",
-        "no_wordpress_scope",
-        "geo_unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001525844,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "3cf3b778afce5ced4a0ac035a41a256a",
       "evaluated_at": "2026-10-09T13:31:42Z",
@@ -1472,10 +1444,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0da8030a0f20f0d53524c004b41025ea",
+      "evaluated_at": "2026-10-11T04:04:10Z",
+      "organization": "Berlitz",
+      "title": "Head of Product Marketing (m/f/d)",
+      "location": "Germany Remote",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/berlitz/remote-head-of-product-marketing-283903",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is Head of Product Marketing at Berlitz, a marketing leadership position with no web development, WordPress, WooCommerce, frontend, or maintenance scope; only weak keyword overlap ('migration', 'partner', 'remote') and no semantic role or stack fit for the target freelance web developer profile.",
+      "deepseek_risk_flags": [
+        "role_family_mismatch",
+        "no_web_dev_scope",
+        "no_freelance_compatibility_evidence",
+        "keyword_only_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00014965,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 3,
-  "source_semantic_updated_at": "2026-10-11T00:50:40Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-11T04:04:05Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

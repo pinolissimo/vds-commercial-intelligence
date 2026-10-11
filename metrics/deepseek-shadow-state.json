@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1224,
+  "runs": 1225,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -32673,6 +32673,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0da8030a0f20f0d53524c004b41025ea",
+      "evaluated_at": "2026-10-11T04:04:10Z",
+      "organization": "Berlitz",
+      "title": "Head of Product Marketing (m/f/d)",
+      "location": "Germany Remote",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/berlitz/remote-head-of-product-marketing-283903",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is Head of Product Marketing at Berlitz, a marketing leadership position with no web development, WordPress, WooCommerce, frontend, or maintenance scope; only weak keyword overlap ('migration', 'partner', 'remote') and no semantic role or stack fit for the target freelance web developer profile.",
+      "deepseek_risk_flags": [
+        "role_family_mismatch",
+        "no_web_dev_scope",
+        "no_freelance_compatibility_evidence",
+        "keyword_only_match"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00014965,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -38027,9 +38055,21 @@
       "completion_tokens": 562,
       "total_tokens": 1614,
       "estimated_cost_usd": 0.0005751
+    },
+    {
+      "at": "2026-10-11T04:04:10Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 173,
+      "completion_tokens": 165,
+      "total_tokens": 722,
+      "estimated_cost_usd": 0.00014965
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-11T00:50:46Z",
+  "updated_at": "2026-10-11T04:04:10Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
