@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "report_type": "LINKEDIN_HUNTER_DAILY_OPPORTUNITY_DELTA",
-  "generated_at": "2026-10-11T11:03:03+02:00",
+  "generated_at": "2026-10-11T16:08:24+02:00",
   "verification_date": "2026-10-11",
   "worker_id": "LINKEDIN_HUNTER",
   "send_window_open": true,
@@ -11,38 +11,34 @@
     "expired_pending_commands": 3
   },
   "provider_observation": {
-    "hostinger_sent_total": 812,
-    "latest_hostinger_sent_uid": 822,
+    "hostinger_sent_total": 818,
+    "latest_hostinger_sent_uid": 828,
     "latest_commercial_inbox_uid": 1580,
     "gmail_sent_checked": true,
     "external_send_count": 0,
     "provider_uids": [],
     "newly_observed_provider_uids": [
-      813,
-      814,
-      815,
-      816,
-      817,
-      818,
-      819,
-      820,
-      821,
-      822
+      823,
+      824,
+      825,
+      826,
+      827,
+      828
     ],
-    "note": "Hostinger Sent remains at 812 messages with latest UID 822; Inbox remains at UID 1584, with latest commercial reply UID 1580 already handled. Gmail Sent has no messages after 2026-10-10. No LINKEDIN_HUNTER email or form submission was made; the new Vorágine route is manual-only."
+    "note": "Six provider-verified first contacts were sent by the combined acquisition system today (UIDs 823-828), all with empty CC and BCC. All six are present in state/provider-outbound-live.json. LINKEDIN_HUNTER sent zero messages in this cycle. Inbox has no new commercial reply; Gmail Sent remains empty after 2026-10-10."
   },
   "summary": {
-    "serious_candidates": 8,
-    "direct_email_harvest": 3,
+    "serious_candidates": 12,
+    "direct_email_harvest": 7,
     "send_now": 0,
-    "provider_verified_first_contact": 10,
+    "provider_verified_first_contact": 6,
     "manual_apply_owned": 4,
     "revenue_flow_reference_handoffs": 1,
     "wait_research": 0,
-    "reject": 2,
-    "duplicate_failures": 2,
-    "fit_failures": 1,
-    "route_failures": 0,
+    "reject": 4,
+    "duplicate_failures": 4,
+    "fit_failures": 2,
+    "route_failures": 1,
     "downstream_outcomes": 1
   },
   "qualified_owned_opportunities": [
@@ -212,6 +208,16 @@
       "canonical_opportunity_id": "OPP-IT-EFARM-WEB-FREELANCE",
       "state": "KNOWN_CONTACTED_CURRENT_NEED",
       "summary": "eFarm still publishes a freelance PHP/Symfony/WordPress/PrestaShop role with jobs@efarmgroup.com, but Hostinger Sent UIDs 109 and 312 prove prior contact. No first-contact resend permitted."
+    },
+    {
+      "canonical_opportunity_id": "ORG-IT-MYCOMP",
+      "state": "KNOWN_CONTACTED_CURRENT_NEED",
+      "summary": "MyComp currently advertises Web Content Editor with WordPress/WPML, Elementor as a plus and the exact route jobs@mycomp.it, but Hostinger Sent UIDs 368, 585 and 711 prove prior contact. No resend permitted."
+    },
+    {
+      "canonical_opportunity_id": "ORG-BELLOP",
+      "state": "KNOWN_CONTACTED_CURRENT_NEED",
+      "summary": "Bellop currently advertises remote Front-End Developer + WordPress with PHP, custom themes/plugins, maintenance and performance work via team@bellop.io, but Hostinger Sent UID 441 proves prior contact. No resend permitted."
     }
   ],
   "direct_email_decisions": [
@@ -235,6 +241,34 @@
       "source_url": "https://www.efarmgroup.com/lavora-con-noi/",
       "outcome": "DUPLICATE",
       "reason": "Current official direct application email exists, but provider history contains Hostinger Sent UIDs 109 and 312 for the same recipient/organization."
+    },
+    {
+      "organization": "MyComp S.r.l.",
+      "email": "jobs@mycomp.it",
+      "source_url": "https://www.mycomp.it/lavora-con-noi/web-content-editor/",
+      "outcome": "DUPLICATE",
+      "reason": "Current official WordPress content role, but Hostinger Sent UIDs 368, 585 and 711 prove prior organization/recipient contact."
+    },
+    {
+      "organization": "Bellop",
+      "email": "team@bellop.io",
+      "source_url": "https://bellop.io/careers/front-end-developer/",
+      "outcome": "DUPLICATE",
+      "reason": "Current remote WordPress/PHP role, but Hostinger Sent UID 441 proves prior contact."
+    },
+    {
+      "organization": "WpSEO S.r.l.s.",
+      "email": "job@wpseo.it",
+      "source_url": "https://wpseo.it/lavora-con-noi/",
+      "outcome": "REJECT",
+      "reason": "The official careers page exposes a general CV route but no current open position or evidenced current workload; freshness/current-need gate fails."
+    },
+    {
+      "organization": "Varadero Software Factory",
+      "email": "rrhh@vsf.es",
+      "source_url": "https://www.varadero.es/trabaja-con-nosotros/profesionales-con-experiencia/wordpress-developer/",
+      "outcome": "REJECT",
+      "reason": "The current WordPress role explicitly requires on-site work in Madrid and a stable employee contract; this is a genuine location/contract fit mismatch for Spain-based external VDS delivery."
     }
   ],
   "ownership_boundary": {
@@ -251,6 +285,11 @@
     "UID 815 is an audit anomaly because the stored recipient begins with %20; do not retry without independent delivery-state resolution.",
     "Vorágine was added as a new manual-only opportunity after negative canonical, organization, domain, Hostinger Sent and Gmail Sent checks.",
     "eFarm was blocked as a duplicate by Hostinger Sent UIDs 109 and 312; no resend was attempted.",
-    "Fresh provider recheck at 2026-10-11T11:03:03+02:00 found no new Sent messages or commercial replies since the earlier cycle."
+    "Fresh provider recheck at 2026-10-11T11:03:03+02:00 found no new Sent messages or commercial replies since the earlier cycle.",
+    "Provider UIDs 823-828 were reconciled as six successful first contacts by the combined acquisition system; all have empty CC/BCC and are present in provider-outbound-live.json.",
+    "LINKEDIN_HUNTER made zero external sends; no candidate newly harvested in this cycle survived current-need, fit and duplicate gates.",
+    "MyComp was blocked by Hostinger UIDs 368, 585 and 711; Bellop was blocked by UID 441.",
+    "WpSEO was rejected because no current opening is published; Varadero was rejected because the official role is explicitly on-site in Madrid.",
+    "No eligible Command Center bridge command was found; all pending commands are expired."
   ]
 }
