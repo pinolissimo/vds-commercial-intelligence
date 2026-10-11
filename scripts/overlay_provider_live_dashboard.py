@@ -299,6 +299,11 @@ def main():
     dash_today["messages_per_active_hour"] = messages_per_hour
     dash_today["first_contacts_per_active_hour"] = first_contacts_per_hour
     dashboard.setdefault("headline", {})["sent_today"] = len(commercial_messages)
+    # The funnel is built before this authoritative semantic overlay. Keep its
+    # provider-verified FIRST_CONTACT stage aligned after test/admin exclusion.
+    dashboard.setdefault("operational_funnel", {}).setdefault("stages", {})[
+        "provider_verified_first_contacts_today"
+    ] = len(first_contacts)
     dashboard["provider_live_overlay_updated_at"] = overlay_updated_at
     dashboard["provider_live_sources"] = live.get("loaded_sources", 0)
     dashboard["provider_live_pending_sources"] = live.get("pending_sources", 0)
