@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0",
   "report_type": "LINKEDIN_HUNTER_DAILY_OPPORTUNITY_DELTA",
-  "generated_at": "2026-10-11T06:02:56+02:00",
+  "generated_at": "2026-10-11T11:03:03+02:00",
   "verification_date": "2026-10-11",
   "worker_id": "LINKEDIN_HUNTER",
-  "send_window_open": false,
+  "send_window_open": true,
   "command_bridge": {
     "eligible_commands": 0,
     "receipts_written": 0,
@@ -29,18 +29,18 @@
       821,
       822
     ],
-    "note": "Hostinger Sent advanced from UID 812 to UID 822 since the previous LINKEDIN_HUNTER report. The ten messages are present in Sent with empty CC/BCC and are already present in provider-outbound-live.json. UID 815 carries a suspicious percent-encoded leading space in the recipient value (%20fixer@fixerdigital.es); it is flagged for delivery audit and must never be blindly resent. No LINKEDIN_HUNTER message was sent in this cycle because the send window was closed."
+    "note": "Hostinger Sent remains at 812 messages with latest UID 822; Inbox remains at UID 1584, with latest commercial reply UID 1580 already handled. Gmail Sent has no messages after 2026-10-10. No LINKEDIN_HUNTER email or form submission was made; the new Vorágine route is manual-only."
   },
   "summary": {
-    "serious_candidates": 6,
-    "direct_email_harvest": 2,
+    "serious_candidates": 8,
+    "direct_email_harvest": 3,
     "send_now": 0,
     "provider_verified_first_contact": 10,
-    "manual_apply_owned": 3,
+    "manual_apply_owned": 4,
     "revenue_flow_reference_handoffs": 1,
     "wait_research": 0,
     "reject": 2,
-    "duplicate_failures": 1,
+    "duplicate_failures": 2,
     "fit_failures": 1,
     "route_failures": 0,
     "downstream_outcomes": 1
@@ -83,6 +83,46 @@
       "budget": null,
       "next_action": "Submit the official form with external WordPress/frontend, maintenance and WPO positioning; include SEO only where evidenced.",
       "factual_state": "NEW_MANUAL_APPLY; canonical and provider history clear"
+    },
+    {
+      "canonical_opportunity_id": "OPP-ES-MAD-VORAGINE-WORDPRESS-REMOTE-2026",
+      "canonical_organization_id": "ES-MAD-VORAGINE",
+      "ownership": "LINKEDIN_HUNTER",
+      "organization": "Vorágine",
+      "project_or_need": "Remote WordPress Developer role covering Elementor, HTML/CSS/PHP, theme/plugin work and site delivery",
+      "country": "Spain",
+      "source_url": "https://enlavoragine.com/empleo-desarrollador-wordpress/",
+      "verified_at": "2026-10-11T11:03:03+02:00",
+      "fit_score": 91,
+      "fit_reasons": [
+        "Current WordPress/Elementor role",
+        "100% remote within Spain with full-time or part-time options",
+        "Strong alignment with WordPress implementation, frontend production and maintenance",
+        "Official application form and annual salary range are published"
+      ],
+      "material_gaps": [
+        "Prior WordPress theme/plugin development and PHP functions are mandatory and require truthful evidence",
+        "Custom Elementor widgets/plugins are desirable and should not be claimed without proof",
+        "Residence in Spain and occasional Madrid meetings are required",
+        "External freelance/P.IVA acceptance is not published"
+      ],
+      "verified_channel": "official employer application form; no email substituted",
+      "manual_application_required": true,
+      "application_url": "https://enlavoragine.com/empleo-desarrollador-wordpress/",
+      "required_materials": [
+        "name",
+        "email",
+        "phone",
+        "LinkedIn profile",
+        "professional background",
+        "motivation",
+        "CV PDF",
+        "privacy consent"
+      ],
+      "deadline": null,
+      "budget": "€18,000–€28,000 annual salary range",
+      "next_action": "Submit the official form with truthful WordPress/Elementor and PHP/theme/plugin evidence; ask whether an external freelance/P.IVA model is accepted.",
+      "factual_state": "NEW_MANUAL_APPLY; canonical, Hostinger and Gmail history clear"
     },
     {
       "canonical_opportunity_id": "OPP-IT-LAZ-RM-SOS-WP-WORDPRESS-SUPPORT-2026",
@@ -167,6 +207,11 @@
       "canonical_opportunity_id": "ORG-IT-ADVIVA",
       "state": "KNOWN_CONTACTED_CURRENT_NEED",
       "summary": "Adviva continues to advertise recurring external/freelance WordPress frontend/backend collaboration, but Hostinger Sent UID 717 proves prior contact. No first-contact resend permitted."
+    },
+    {
+      "canonical_opportunity_id": "OPP-IT-EFARM-WEB-FREELANCE",
+      "state": "KNOWN_CONTACTED_CURRENT_NEED",
+      "summary": "eFarm still publishes a freelance PHP/Symfony/WordPress/PrestaShop role with jobs@efarmgroup.com, but Hostinger Sent UIDs 109 and 312 prove prior contact. No first-contact resend permitted."
     }
   ],
   "direct_email_decisions": [
@@ -183,6 +228,13 @@
       "source_url": "https://www.epops.it/lavora-con-noi/web-developer/",
       "outcome": "REJECT",
       "reason": "Current exact application route harvested, but the role's mandatory core includes PHP MVC, a modern JS framework, relational databases, REST, Git and OWASP; this is a genuine mandatory-core mismatch for truthful VDS positioning."
+    },
+    {
+      "organization": "eFarm Group",
+      "email": "jobs@efarmgroup.com",
+      "source_url": "https://www.efarmgroup.com/lavora-con-noi/",
+      "outcome": "DUPLICATE",
+      "reason": "Current official direct application email exists, but provider history contains Hostinger Sent UIDs 109 and 312 for the same recipient/organization."
     }
   ],
   "ownership_boundary": {
@@ -196,6 +248,9 @@
     "Fresh Hostinger and Gmail Sent checks were negative for the three new organizations.",
     "Adviva was blocked at organization/domain level by Hostinger Sent UID 717.",
     "Kinsta reply UID 1580 is a commercial route shift rather than acceptance of external production work; it is handed to Revenue Flow for partner-program assessment.",
-    "UID 815 is an audit anomaly because the stored recipient begins with %20; do not retry without independent delivery-state resolution."
+    "UID 815 is an audit anomaly because the stored recipient begins with %20; do not retry without independent delivery-state resolution.",
+    "Vorágine was added as a new manual-only opportunity after negative canonical, organization, domain, Hostinger Sent and Gmail Sent checks.",
+    "eFarm was blocked as a duplicate by Hostinger Sent UIDs 109 and 312; no resend was attempted.",
+    "Fresh provider recheck at 2026-10-11T11:03:03+02:00 found no new Sent messages or commercial replies since the earlier cycle."
   ]
 }
