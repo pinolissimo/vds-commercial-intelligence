@@ -143,8 +143,11 @@
     ]
   },
   "dashboard_persistence": {
-    "status": "PENDING_PROJECTION_REFRESH",
-    "note": "Canonical opportunity files and this report were committed. The established projection workflow is triggered by the report path and must be verified before claiming dashboard freshness."
+    "status": "VERIFIED_CANONICAL_DELTA_PRESENT_IN_CONSUMED_PROJECTION",
+    "projection_file": "api/v1/companies.json",
+    "projection_generated_at": "2026-10-13T01:41:17+02:00",
+    "projection_workflow_run": "https://github.com/pinolissimo/vds-commercial-intelligence/actions/runs/38323360174",
+    "note": "Both canonical opportunities were present in the company projection consumed by the Command Center. Canonical records were then aligned with the generator contract for fit score and route fields; this report update triggers the final projection refresh."
   },
   "operational_health": {
     "ordinary_flow": "WORKING",
@@ -154,6 +157,7 @@
     "preflight_initial_failure_run": "https://github.com/pinolissimo/vds-commercial-intelligence/actions/runs/38320172354",
     "preflight_current_head_success_run": "https://github.com/pinolissimo/vds-commercial-intelligence/actions/runs/38323299296",
     "pages_integrity_latest_observed": "SUCCESS",
-    "note": "The old-head re-run predictably retained stale state; refreshing canonical provider heartbeat triggered a current-head run that passed."
+    "note": "The old-head re-run predictably retained stale state; refreshing canonical provider heartbeat triggered a current-head run that passed.",
+    "preflight_latest_success_run": "https://github.com/pinolissimo/vds-commercial-intelligence/actions/runs/38323308713"
   }
 }
