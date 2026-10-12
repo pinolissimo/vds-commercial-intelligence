@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-12T01:03:12Z",
+  "updated_at": "2026-10-12T02:06:52Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1211,
+    "evaluated_total": 1212,
     "agreement_count": 531,
-    "agreement_pct": 43.85,
+    "agreement_pct": 43.81,
     "deepseek_promote": 33,
-    "vds_promote": 313,
+    "vds_promote": 314,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 284
+    "deepseek_demoted_from_vds_promote": 285
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 18.18,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.92,
+    "vds_promote_hot_rate_pct": 1.91,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 6.06,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 456,
-    "cumulative_estimated_cost_usd": 0.232303,
-    "cost_per_evaluated_candidate_usd": 0.00019183,
-    "cost_per_deepseek_promote_usd": 0.00703948,
-    "cost_per_observed_ready_or_contacted_usd": 0.11615137,
+    "request_count": 457,
+    "cumulative_estimated_cost_usd": 0.232657,
+    "cost_per_evaluated_candidate_usd": 0.00019196,
+    "cost_per_deepseek_promote_usd": 0.00705023,
+    "cost_per_observed_ready_or_contacted_usd": 0.11632871,
     "latest_request": {
-      "at": "2026-10-12T01:03:06Z",
+      "at": "2026-10-12T02:06:45Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 436,
-      "completion_tokens": 172,
-      "total_tokens": 736,
-      "estimated_cost_usd": 0.00042067
+      "prompt_cache_hit_tokens": 256,
+      "prompt_cache_miss_tokens": 255,
+      "completion_tokens": 181,
+      "total_tokens": 692,
+      "estimated_cost_usd": 0.0003547
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ccc1282d9f90a0aeb4e7a1abeeae637d",
-      "evaluated_at": "2026-10-09T23:02:07Z",
-      "organization": "uvation",
-      "title": "Frontend Developer (React Js / Next Js)",
-      "location": "Remote",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/frontend-developer-react-js-next-js-uvation",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "React/Next.js core frontend role with no WordPress/WooCommerce or maintenance scope; stack mismatch dominates despite generic frontend/HTML/UI keyword overlap.",
-      "deepseek_risk_flags": [
-        "react_nextjs_core_stack",
-        "no_wordpress_woocommerce_scope",
-        "remote_geo_unverified",
-        "no_freelance_compatibility_evidence"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001419343,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "a143858560b9a5379c83f0c4d5213efc",
       "evaluated_at": "2026-10-09T23:02:07Z",
@@ -1469,10 +1441,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7b58714e3686483bb7945eb6cda4e6c8",
+      "evaluated_at": "2026-10-12T02:06:45Z",
+      "organization": "",
+      "title": "Frontend Web Development Senior Engineer",
+      "location": "India",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 73,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title indicates a senior frontend web development role with matching frontend/UI/UX/CSS keywords, but no explicit WordPress/WooCommerce scope, no commercial/freelance signals, and location is India which is outside the primary Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "location_outside_primary_markets",
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_or_contract_signal",
+        "no_explicit_demand_or_commercial_keywords",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0003547,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-12T01:03:01Z",
+  "source_semantic_updated_at": "2026-10-12T02:06:40Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
