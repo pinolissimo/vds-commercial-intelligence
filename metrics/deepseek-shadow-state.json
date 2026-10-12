@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1251,
+  "runs": 1252,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -33878,6 +33878,90 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3bf3a90ce5b25886aa6081bc3a1d650a",
+      "evaluated_at": "2026-10-12T23:02:12Z",
+      "organization": "Rausgegangen GmbH",
+      "title": "(Senior) Fullstack Entwickler:in Mit Schwerpunkt Frontend",
+      "location": "Köln",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/rausgegangen-gmbh/remote-senior-fullstack-entwicklerin-mit-schwerpunkt-frontend-koln-454856",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 73,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Fullstack role with frontend emphasis (HTML/CSS) but no WordPress/WooCommerce or web-performance scope; German-market (Köln) with unverified remote, so stack fit is partial and geo/contract compatibility unclear.",
+      "deepseek_risk_flags": [
+        "fullstack_core_not_web_specialist",
+        "no_wordpress_woocommerce_evidence",
+        "remote_unverified",
+        "germany_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001134833,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "28bc71238210dc8935692568f2483fc1",
+      "evaluated_at": "2026-10-12T23:02:12Z",
+      "organization": "Molecule",
+      "title": "Senior Product Designer",
+      "location": "Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/molecule/senior-product-designer-germany-307774",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 71,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 25.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Product Designer is a design role, not web development; keyword matches (css/html/ui/ux) reflect design-adjacent terms and 'partner' is not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch_design_not_development",
+        "no_wordpress_woocommerce_evidence",
+        "partner_keyword_not_freelance_proof",
+        "germany_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001134833,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "fe4fe1f9146006bfb6105219bd4ece83",
+      "evaluated_at": "2026-10-12T23:02:12Z",
+      "organization": "Doctolib",
+      "title": "Software Engineer Intern - Fullstack (x/f/m) - Berlin",
+      "location": "Berlin, Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/doctolib/software-engineer-intern-fullstack-berlin-berlin-berlin-159834",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Internship fullstack role at Doctolib; internship is incompatible with freelance/contract acquisition and no WordPress/web-performance scope is present.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance_compatible",
+        "fullstack_core_not_web_specialist",
+        "no_wordpress_woocommerce_evidence",
+        "germany_not_primary_market"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001134833,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -39436,9 +39520,21 @@
       "completion_tokens": 149,
       "total_tokens": 655,
       "estimated_cost_usd": 0.0001824
+    },
+    {
+      "at": "2026-10-12T23:02:12Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 202,
+      "completion_tokens": 439,
+      "total_tokens": 1537,
+      "estimated_cost_usd": 0.00034045
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-12T20:00:35Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-12T23:02:12Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
