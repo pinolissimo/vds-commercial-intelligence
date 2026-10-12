@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-12T10:54:22Z",
-  "latest_checked_uid": 1587,
+  "updated_at": "2026-10-12T16:53:50Z",
+  "latest_checked_uid": 1589,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1329,6 +1329,21 @@
       "classification": "NEGATIVE",
       "subtype": "COMMERCIAL_COUNTER_OFFER",
       "summary": "Follow-up commerciale non positivo: Global Commerce Media reitera l'offerta a pagamento per inserimenti annuali in classifiche “Top 10 Best” ($325–$1.000/anno); non manifesta interesse ad acquistare servizi VDS.",
+      "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1589,
+      "received_at": "2026-10-12T15:50:10Z",
+      "canonical_identity_key": "org:bpnexus.com",
+      "entity": "bpnexus.com",
+      "sender": "amministrazione@bpnexus.com",
+      "subject": "R: Collaborazione esterna WordPress / frontend / supporto tecnico",
+      "message_id": " <MI0P293MB0110CC3FC699E588A7385770BE9F2@MI0P293MB0110.ITAP293.PROD.OUTLOOK.COM>",
+      "in_reply_to": "<1788290573843607677.1788290573@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
       "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
