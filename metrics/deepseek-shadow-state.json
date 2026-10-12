@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1236,
+  "runs": 1237,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -33292,6 +33292,34 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "185a827c5a7e897998926f12880aebf3",
+      "evaluated_at": "2026-10-12T01:03:06Z",
+      "organization": "Data4Life",
+      "title": "Talent Acquisition Partner - Tech (f/m/x)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/data4life/talent-acquisition-partner-tech-berlin-46284",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.93,
+      "deepseek_primary_reason": "This is an internal HR/recruiting role (Talent Acquisition Partner - Tech), not a web-development engagement; the matched keywords (frontend, javascript, migration, partner, collaboration, remote) are incidental recruiting vocabulary, not evidence of WordPress/WooCommerce/frontend delivery demand.",
+      "deepseek_risk_flags": [
+        "role_is_recruiting_not_web_development",
+        "keyword_matches_are_incidental",
+        "no_freelance_or_contract_signal",
+        "geo_unverified_berlin_de"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00042067,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -38754,9 +38782,21 @@
       "completion_tokens": 461,
       "total_tokens": 1530,
       "estimated_cost_usd": 0.00051218
+    },
+    {
+      "at": "2026-10-12T01:03:06Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 436,
+      "completion_tokens": 172,
+      "total_tokens": 736,
+      "estimated_cost_usd": 0.00042067
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-11T22:00:58Z",
+  "updated_at": "2026-10-12T01:03:06Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

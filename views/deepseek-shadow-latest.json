@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-11T22:01:04Z",
+  "updated_at": "2026-10-12T01:03:12Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1210,
+    "evaluated_total": 1211,
     "agreement_count": 531,
-    "agreement_pct": 43.88,
+    "agreement_pct": 43.85,
     "deepseek_promote": 33,
     "vds_promote": 313,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 455,
-    "cumulative_estimated_cost_usd": 0.231882,
-    "cost_per_evaluated_candidate_usd": 0.00019164,
-    "cost_per_deepseek_promote_usd": 0.00702673,
-    "cost_per_observed_ready_or_contacted_usd": 0.11594103,
+    "request_count": 456,
+    "cumulative_estimated_cost_usd": 0.232303,
+    "cost_per_evaluated_candidate_usd": 0.00019183,
+    "cost_per_deepseek_promote_usd": 0.00703948,
+    "cost_per_observed_ready_or_contacted_usd": 0.11615137,
     "latest_request": {
-      "at": "2026-10-11T22:00:58Z",
+      "at": "2026-10-12T01:03:06Z",
       "model": "deepseek-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
-      "billing_band": "off_peak",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 941,
-      "completion_tokens": 461,
-      "total_tokens": 1530,
-      "estimated_cost_usd": 0.00051218
+      "prompt_cache_miss_tokens": 436,
+      "completion_tokens": 172,
+      "total_tokens": 736,
+      "estimated_cost_usd": 0.00042067
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "073d677e300c0c32c8e60f187d73501b",
-      "evaluated_at": "2026-10-09T18:57:37Z",
-      "organization": "",
-      "title": "Senior Manager, GEO Strategy & AI Search Activation",
-      "location": "United States",
-      "opportunity_url": "",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Role is a senior GEO/AI-search strategy manager position, not web development; matched keywords (javascript, website, partner, collaboration) are incidental and do not indicate relevant freelance web work.",
-      "deepseek_risk_flags": [
-        "non_developer_role",
-        "incidental_keyword_matches",
-        "us_location",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016391,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ccc1282d9f90a0aeb4e7a1abeeae637d",
       "evaluated_at": "2026-10-09T23:02:07Z",
@@ -1469,10 +1441,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "185a827c5a7e897998926f12880aebf3",
+      "evaluated_at": "2026-10-12T01:03:06Z",
+      "organization": "Data4Life",
+      "title": "Talent Acquisition Partner - Tech (f/m/x)",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/data4life/talent-acquisition-partner-tech-berlin-46284",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.93,
+      "deepseek_primary_reason": "This is an internal HR/recruiting role (Talent Acquisition Partner - Tech), not a web-development engagement; the matched keywords (frontend, javascript, migration, partner, collaboration, remote) are incidental recruiting vocabulary, not evidence of WordPress/WooCommerce/frontend delivery demand.",
+      "deepseek_risk_flags": [
+        "role_is_recruiting_not_web_development",
+        "keyword_matches_are_incidental",
+        "no_freelance_or_contract_signal",
+        "geo_unverified_berlin_de"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00042067,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 3,
-  "source_semantic_updated_at": "2026-10-11T22:00:55Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-12T01:03:01Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
