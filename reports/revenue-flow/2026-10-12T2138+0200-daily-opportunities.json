@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "report_id": "VDS-REVENUE-FLOW-2026-10-12T2138+0200",
+  "worker_id": "UNIFIED_LOOP",
+  "generated_at": "2026-10-12T19:41:00Z",
+  "verification_date": "2026-10-12",
+  "normal_cycle_completed": true,
+  "existing_gates_preserved": true,
+  "command_bridge": {
+    "protocol_read": true,
+    "pending_read": true,
+    "processed_read": true,
+    "eligible_commands": 0,
+    "receipts_written": 0,
+    "summary": "No unexpired unreceipted PENDING_TASK_BRIDGE command targeted UNIFIED_LOOP."
+  },
+  "provider_snapshot": {
+    "hostinger_sent_polled_at": "2026-10-12T19:39:15Z",
+    "gmail_polled_at": "2026-10-12T19:40:30Z",
+    "hostinger_latest_uid": 838,
+    "latest_commercial_first_contact_uid": 837,
+    "inbox_latest_uid": 1589,
+    "new_commercial_replies_found": 0,
+    "qualified_positive_replies": 0,
+    "external_send_count_this_cycle": 0,
+    "provider_uids_this_cycle": [],
+    "provider_verified_first_contacts_today": 8,
+    "today_provider_uids": [
+      830,
+      831,
+      832,
+      833,
+      834,
+      835,
+      836,
+      837
+    ],
+    "excluded_noncommercial_sent": [
+      {
+        "provider": "HOSTINGER",
+        "provider_uid": 838,
+        "reason": "OWNER_REPORT_NOT_FIRST_CONTACT"
+      },
+      {
+        "provider": "GMAIL",
+        "message_id": "1a1316a646b4026f",
+        "reason": "PERSONAL_HOMEOWNER_PAYMENT_REPLY_NOT_COMMERCIAL_OUTREACH"
+      }
+    ],
+    "note": "No commercial provider delta after UID 837. Gmail Sent initially rate-limited, then succeeded on bounded retry."
+  },
+  "cycle_counts": {
+    "serious_candidates_evaluated": 4,
+    "direct_email_routes_harvested": 0,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 0,
+    "wait_research": 0,
+    "reject": 4,
+    "duplicates": 0,
+    "route_failures": 0,
+    "job_flow_references": 0
+  },
+  "qualified_opportunities": [],
+  "discovery_reconciliation": [
+    {
+      "organization": "TED generic Spain/Italy IT procurements",
+      "outcome": "REJECT",
+      "reason": "Search returned broad enterprise/public-sector IT procurements or generic portal pages, not a named, appropriately scoped VDS web/dissemination assignment with actionable SME-suitable route."
+    },
+    {
+      "organization": "Oviedo Smart Destination technical office notice 166305-2026",
+      "outcome": "REJECT",
+      "reason": "Large multi-lot public procurement with estimated value EUR 1,275,193.17 and scope beyond VDS web/dissemination fit; not promoted."
+    },
+    {
+      "organization": "EUIPO language training PIN 51974-2026",
+      "outcome": "REJECT",
+      "reason": "Language-course procurement, outside VDS scope."
+    },
+    {
+      "organization": "Closed/old TED notices",
+      "outcome": "REJECT",
+      "reason": "Results included expired deadlines or award-result notices and were not presented as open opportunities."
+    }
+  ],
+  "audit": {
+    "zero_duplicate_invariant": "PRESERVED",
+    "external_send_count": 0,
+    "send_window_state": "CLOSED",
+    "notes": [
+      "No email, form, platform application or private message was sent.",
+      "No new Hostinger or Gmail commercial reply was found.",
+      "Fresh public discovery did not yield a qualifying Spain/Italy freelance, white-label or EU-project supplier opportunity.",
+      "Gmail Sent was available after one transient rate-limit retry; no dedup decision or send occurred while it was unavailable."
+    ]
+  },
+  "dashboard_persistence": {
+    "status": "UNCHANGED_NO_DELTA",
+    "note": "No canonical commercial delta required projection regeneration."
+  },
+  "operational_health": {
+    "ordinary_flow": "WORKING",
+    "provider_connectivity": "OK_AFTER_TRANSIENT_GMAIL_RETRY",
+    "github_repository_read_write": "OK",
+    "workflow_notifications": "DEGRADED",
+    "note": "Provider and repository checks completed; no commercial state changed."
+  }
+}
