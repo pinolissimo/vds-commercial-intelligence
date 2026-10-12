@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "report_id": "VDS-REVENUE-FLOW-2026-10-12T2037+0200",
+  "worker_id": "UNIFIED_LOOP",
+  "generated_at": "2026-10-12T18:40:00Z",
+  "verification_date": "2026-10-12",
+  "normal_cycle_completed": true,
+  "existing_gates_preserved": true,
+  "command_bridge": {
+    "protocol_read": true,
+    "pending_read": true,
+    "processed_read": true,
+    "eligible_commands": 0,
+    "receipts_written": 0,
+    "summary": "No unexpired unreceipted PENDING_TASK_BRIDGE command targeted UNIFIED_LOOP."
+  },
+  "provider_snapshot": {
+    "hostinger_sent_polled_at": "2026-10-12T18:38:11Z",
+    "gmail_polled_at": "2026-10-12T18:38:11Z",
+    "hostinger_latest_uid": 838,
+    "latest_commercial_first_contact_uid": 837,
+    "inbox_latest_uid": 1589,
+    "new_commercial_replies_found": 0,
+    "qualified_positive_replies": 0,
+    "external_send_count_this_cycle": 0,
+    "provider_uids_this_cycle": [],
+    "provider_verified_first_contacts_today": 8,
+    "today_provider_uids": [
+      830,
+      831,
+      832,
+      833,
+      834,
+      835,
+      836,
+      837
+    ],
+    "excluded_noncommercial_sent": [
+      {
+        "provider_uid": 838,
+        "recipient": "allocca.pino@gmail.com",
+        "subject": "VDS — Report giornaliero performance e opportunità — 12 ottobre 2026",
+        "reason": "OWNER_REPORT_NOT_FIRST_CONTACT"
+      }
+    ],
+    "note": "No commercial provider delta after UID 837. UID 838 is an internal owner report and is excluded from FIRST_CONTACT counts and organization dedup."
+  },
+  "cycle_counts": {
+    "serious_candidates_evaluated": 0,
+    "direct_email_routes_harvested": 0,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 0,
+    "wait_research": 0,
+    "reject": 0,
+    "duplicates": 0,
+    "route_failures": 0,
+    "job_flow_references": 0
+  },
+  "qualified_opportunities": [],
+  "audit": {
+    "zero_duplicate_invariant": "PRESERVED",
+    "external_send_count": 0,
+    "send_window_state": "CLOSED",
+    "notes": [
+      "No email, form, platform application or private message was sent.",
+      "No new Hostinger or Gmail commercial reply was found after the prior reconciliation.",
+      "Fresh public discovery queries returned no current Spain/Italy opportunity suitable for authoritative qualification.",
+      "Provider live state was current through UID 838 and correctly preserved UID 837 as the latest commercial FIRST_CONTACT."
+    ]
+  },
+  "dashboard_persistence": {
+    "status": "UNCHANGED_NO_DELTA",
+    "note": "No canonical opportunity, reply or commercial provider delta required projection regeneration."
+  },
+  "operational_health": {
+    "ordinary_flow": "WORKING",
+    "provider_connectivity": "OK",
+    "github_repository_read_write": "OK",
+    "workflow_notifications": "DEGRADED",
+    "note": "Previously observed GitHub Actions failure notifications remain, but provider and repository checks succeeded."
+  }
+}
