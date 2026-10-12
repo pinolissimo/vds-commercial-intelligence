@@ -1,18 +1,47 @@
 {
   "schema_version": "1.2",
-  "updated_at": "2026-10-12T01:43:10Z",
+  "updated_at": "2026-10-12T07:29:07Z",
   "provider": "HOSTINGER_API",
-  "run_state": "SEND_WINDOW_CLOSED",
-  "local_time": "03:43",
-  "queue_records": 0,
-  "eligible_candidates": 0,
-  "batch_limit": 0,
-  "delivery_accepted": 0,
-  "smtp_accepted": 0,
+  "run_state": "COMPLETED",
+  "queue_records": 84,
+  "eligible_candidates": 1,
+  "batch_limit": 10,
+  "delivery_accepted": 1,
+  "smtp_accepted": 1,
   "failed": 0,
-  "rejected_count": 0,
-  "results": [],
-  "rejected": [],
+  "rejected_count": 5,
+  "results": [
+    {
+      "queue_id": "commercial-f32921b7a1da285f",
+      "recipient": "info@businessboost.it",
+      "organization": "businessboost.it",
+      "state": "DELIVERY_ACCEPTED",
+      "accepted_at": "2026-10-12T07:29:05Z",
+      "idempotency_key": "aad1f4a019fe3c3d9b0054e2c598e23ff04111b55a6d4285720fec1a4c81e15a"
+    }
+  ],
+  "rejected": [
+    {
+      "queue_id": "commercial-abe63fd4fec48da0",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "commercial-f6a7f3ffb9d1ca40",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "commercial-3ad8cffc84f524fe",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "commercial-cd8d9e35ec67dcb9",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "opp-d1a18589a1d07944",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    }
+  ],
   "sent_idempotency_keys": [
     "02950de4b2a448dbc291087b8d0770e4e4b693af9ec512ee99123816f49471d9",
     "04f3b3d4659ad7142a88aac3fe1d40c1f3e395536cbf0c9e94b58b59a9713bae",
@@ -74,6 +103,7 @@
     "a4021ee81d28fba4ac4ba4f618b5e045aa8fbf7db7a2b48395af8055839f535d",
     "a502e7c2bc3d83ee1f062d3e55bd842cf43f5b880db7131cc89322c6b7593ed6",
     "a6a83936e422c6cfe725db21d55b44e7ef1774f56f31ad9ab12b7c6c9cdf1253",
+    "aad1f4a019fe3c3d9b0054e2c598e23ff04111b55a6d4285720fec1a4c81e15a",
     "ba607b3a0d8445645cd06a4dce1a0e22624e07dd1ad9e32994c47285efc29ddf",
     "bc12c9f25ec69dd69b8ffd661107c6e6d62f8fb9fec3a41d1f1d34a9c71f8a86",
     "bef3caaac40da9ce0baa337a7fd37ccfbe01f7c24a26cceccfe28df2cb699887",
