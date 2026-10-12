@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "report_id": "VDS-REVENUE-FLOW-2026-10-12T1936+0200",
+  "worker_id": "UNIFIED_LOOP",
+  "generated_at": "2026-10-12T17:40:00Z",
+  "verification_date": "2026-10-12",
+  "normal_cycle_completed": true,
+  "existing_gates_preserved": true,
+  "command_bridge": {
+    "protocol_read": true,
+    "pending_read": true,
+    "processed_read": true,
+    "eligible_commands": 0,
+    "receipts_written": 0,
+    "summary": "No unexpired unreceipted PENDING_TASK_BRIDGE command targeted UNIFIED_LOOP."
+  },
+  "provider_snapshot": {
+    "hostinger_sent_polled_at": "2026-10-12T17:37:49Z",
+    "gmail_polled_at": "2026-10-12T17:37:49Z",
+    "hostinger_latest_uid": 837,
+    "latest_commercial_first_contact_uid": 837,
+    "inbox_latest_uid": 1589,
+    "new_commercial_replies_found": 1,
+    "qualified_positive_replies": 0,
+    "external_send_count_this_cycle": 0,
+    "provider_uids_this_cycle": [],
+    "provider_verified_first_contacts_today": 8,
+    "today_provider_uids": [
+      830,
+      831,
+      832,
+      833,
+      834,
+      835,
+      836,
+      837
+    ],
+    "new_provider_events_since_prior_report": [
+      {
+        "provider_uid": 835,
+        "organization": "menconi.it",
+        "recipient": "info@menconi.it",
+        "sent_at": "2026-10-12T16:58:00Z",
+        "state": "VERIFIED_EMAIL_SENT"
+      },
+      {
+        "provider_uid": 836,
+        "organization": "effiqs.com",
+        "recipient": "hello@effiqs.com",
+        "sent_at": "2026-10-12T16:58:03Z",
+        "state": "VERIFIED_EMAIL_SENT"
+      },
+      {
+        "provider_uid": 837,
+        "organization": "asdrubalseo.com",
+        "recipient": "info@asdrubalseo.com",
+        "sent_at": "2026-10-12T16:58:05Z",
+        "state": "VERIFIED_EMAIL_SENT"
+      }
+    ],
+    "note": "Three provider-verified first contacts appeared after the 13:30 report and were already reconciled into provider-outbound-live.json by VDS_PROVIDER_SYNC. This cycle did not resend or claim them as its own external actions."
+  },
+  "reply_reconciliation": [
+    {
+      "provider_inbox_uid": 1589,
+      "organization": "BP Nexus S.n.c.",
+      "canonical_organization_key": "org:bpnexus.com",
+      "received_at": "2026-10-12T15:50:10Z",
+      "subject": "R: Collaborazione esterna WordPress / frontend / supporto tecnico",
+      "classification": "REPLY_NO_CURRENT_NEED_KEEP_CONTACT",
+      "qualified_positive": false,
+      "referral": false,
+      "call": false,
+      "proposal": false,
+      "won_revenue": false,
+      "reason": "BP Nexus says its workload is stable and it does not currently need new collaborators, while explicitly retaining the VDS contact for a possible future collaboration.",
+      "next_action": "No reply or follow-up now. Keep organization suppressed from FIRST_CONTACT permanently; allow only a future context-led follow-up if a materially new signal appears."
+    }
+  ],
+  "cycle_counts": {
+    "serious_candidates_evaluated": 4,
+    "direct_email_routes_harvested": 4,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 0,
+    "wait_research": 0,
+    "reject": 4,
+    "duplicates": 4,
+    "route_failures": 0,
+    "job_flow_references": 0
+  },
+  "qualified_opportunities": [],
+  "discovery_reconciliation": [
+    {
+      "organization": "ReMedia Italia",
+      "source_url": "https://www.remediagroup.it/it/careers/",
+      "verification_date": "2026-10-12",
+      "current_signal": "Open remote freelance Full Stack, Back-End and Front-End web roles; WordPress/PHP/JavaScript requirements and official candidacy email.",
+      "outcome": "REJECT",
+      "reason": "Known and already contacted organization: Hostinger Sent UIDs 357 and 530 to rleonzi@remediagroup.it; Gmail also contains an earlier FIRST_CONTACT alert. Not new."
+    },
+    {
+      "organization": "Understack",
+      "source_url": "https://understack.it/lavora-con-noi/",
+      "verification_date": "2026-10-12",
+      "current_signal": "Open collaboration route for autonomous remote WordPress, PHP, Laravel and frontend developers.",
+      "outcome": "REJECT",
+      "reason": "Known and already contacted organization: Hostinger Sent UID 536 and later reply-thread message UID 712 to it@understack.it. Not new."
+    },
+    {
+      "organization": "Krom Software Engineering",
+      "source_url": "https://kromagency.es/vacantes/",
+      "verification_date": "2026-10-12",
+      "current_signal": "Always-open remote project network covering web development, WordPress, technical support and maintenance.",
+      "outcome": "REJECT",
+      "reason": "Known and already contacted organization: Hostinger Sent UID 715 to postulantes@kromagency.es. Not new."
+    },
+    {
+      "organization": "Azione Digital",
+      "source_url": "https://azionedigital.it/web-agency/lavora-con-noi/",
+      "verification_date": "2026-10-12",
+      "current_signal": "Open external-partner/freelance form, but currently named priorities are SEO/link-building, video and content rather than web development.",
+      "outcome": "REJECT",
+      "reason": "Known and already contacted organization: Hostinger Sent UID 716 to info@azionedigital.it. Current signal is also weaker for VDS web-development scope."
+    }
+  ],
+  "audit": {
+    "zero_duplicate_invariant": "PRESERVED",
+    "external_send_count": 0,
+    "send_window_state": "CLOSED_AT_CYCLE_START",
+    "notes": [
+      "No email, form, platform application or private message was sent by this cycle.",
+      "Fresh Hostinger and Gmail reads were available; Gmail Sent contained no commercial messages dated 2026-10-12.",
+      "Provider live state already included UIDs 835-837 with VERIFIED_EMAIL_SENT, so they were not resent.",
+      "BP Nexus is a genuine human reply but not a qualified-positive opportunity; no automated reply was sent.",
+      "Fresh discovery found current routes at ReMedia, Understack, Krom and Azione Digital, but authoritative provider history blocked all four as known identities."
+    ]
+  },
+  "dashboard_persistence": {
+    "status": "REPORT_DELTA_WRITTEN_PROVIDER_STATE_ALREADY_CURRENT",
+    "note": "No duplicate CRM opportunity was created. The new provider events were already present in state/provider-outbound-live.json through UID 837; this report supplies the reply and discovery reconciliation delta."
+  },
+  "operational_health": {
+    "ordinary_flow": "WORKING",
+    "provider_connectivity": "OK",
+    "github_repository_read_write": "OK",
+    "workflow_notifications": "DEGRADED",
+    "note": "Gmail continues to show GitHub Actions failure notifications for Revenue Flow Preflight and Hourly Revenue Optimizer, while this tool-driven cycle and provider reconciliation completed successfully."
+  }
+}
