@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-12T17:41:08Z",
+  "updated_at": "2026-10-12T18:00:05Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1229,
+    "evaluated_total": 1230,
     "agreement_count": 537,
-    "agreement_pct": 43.69,
+    "agreement_pct": 43.66,
     "deepseek_promote": 34,
     "vds_promote": 319,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 461,
-    "cumulative_estimated_cost_usd": 0.235825,
-    "cost_per_evaluated_candidate_usd": 0.00019188,
-    "cost_per_deepseek_promote_usd": 0.00693604,
-    "cost_per_observed_ready_or_contacted_usd": 0.11791268,
-    "latest_request": null
+    "request_count": 462,
+    "cumulative_estimated_cost_usd": 0.235995,
+    "cost_per_evaluated_candidate_usd": 0.00019187,
+    "cost_per_deepseek_promote_usd": 0.00694104,
+    "cost_per_observed_ready_or_contacted_usd": 0.11799774,
+    "latest_request": {
+      "at": "2026-10-12T18:00:00Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 194,
+      "completion_tokens": 189,
+      "total_tokens": 767,
+      "estimated_cost_usd": 0.00017011
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "34d6618713c83e7e574c404f28ca95f8",
-      "evaluated_at": "2026-10-10T16:47:23Z",
-      "organization": "Algo1",
-      "title": "Full-Stack Engineer (Frontend)",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/algo1/full-stack-engineer-frontend-london-122942",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 74,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Full-stack frontend role in London with only generic 'frontend/ux/web design' keyword overlap; no explicit WordPress/WooCommerce or freelance/contract evidence, and geo is London (non-target) with unverified remote status.",
-      "deepseek_risk_flags": [
-        "geo_outside_target_markets",
-        "no_wordpress_woocommerce_evidence",
-        "no_freelance_contract_signal",
-        "full_stack_scope_may_exceed_profile",
-        "remote_state_unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002056,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b752b79cf6f38bd25ae9fc6f765ae296",
       "evaluated_at": "2026-10-10T16:47:23Z",
@@ -1448,10 +1430,40 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8332083fb57c8a1a6b9651dfe8eaa5d4",
+      "evaluated_at": "2026-10-12T18:00:00Z",
+      "organization": "Doctolib",
+      "title": "Software Engineering Intern - Fullstack (x/f/m) - Paris",
+      "location": "Paris, Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/doctolib/software-engineering-intern-fullstack-paris-paris-paris-352989",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Internship (Software Engineering Intern - Fullstack) at Doctolib in Paris; it is an internship, not freelance/contract work, and the only profile match is a generic 'web development' keyword with no WordPress/WooCommerce/custom frontend or maintenance scope.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "fullstack_generic_role",
+        "no_wordpress_woocommerce_scope",
+        "location_paris_not_spain_italy",
+        "generic_keyword_match_only",
+        "commercial_keywords_are_boilerplate"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017011,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-12T17:41:01Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-12T17:59:57Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
