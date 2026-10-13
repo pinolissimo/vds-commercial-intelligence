@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
   "worker_id": "LINKEDIN_HUNTER",
-  "run_at": "2026-10-13T13:10:30+02:00",
+  "run_at": "2026-10-13T18:03:00+02:00",
   "verification_date": "2026-10-13",
   "send_window_open": true,
   "normal_cycle_completed": true,
@@ -15,24 +15,24 @@
     "hostinger_sent_total": null,
     "latest_uid": 840,
     "latest_commercial_uid": 840,
-    "latest_inbox_uid": 1592,
+    "latest_inbox_uid": 1593,
     "gmail_sent_new": 0,
-    "new_commercial_replies": 1,
-    "note": "Hostinger Sent remains at UID 840. Inbox UID 1592 is a human reply from The Visual Corner: no current need, contact retained for future specialized projects; no follow-up permitted by existing owner stop."
+    "new_commercial_replies": 2,
+    "note": "Hostinger Sent remains at UID 840. Inbox UID 1593 is a human negative/wrong-channel reply from Lanzadera: recruitment is not handled by info@, CV will be deleted, and official job platforms must be used. No follow-up."
   },
   "summary": {
-    "serious_candidates": 30,
-    "direct_email_harvest_count": 15,
+    "serious_candidates": 38,
+    "direct_email_harvest_count": 19,
     "send_now": 1,
     "provider_verified_first_contact": 1,
-    "manual_apply": 2,
+    "manual_apply": 3,
     "wait_research": 3,
-    "reject": 24,
-    "duplicate_failures": 11,
-    "fit_failures": 7,
-    "route_failures": 4,
-    "freshness_failures": 4,
-    "downstream_outcomes": 1,
+    "reject": 31,
+    "duplicate_failures": 12,
+    "fit_failures": 11,
+    "route_failures": 5,
+    "freshness_failures": 5,
+    "downstream_outcomes": 2,
     "external_send_count": 1,
     "provider_uids": [
       840
@@ -136,6 +136,39 @@
       "budget": null,
       "state": "MANUAL_APPLY",
       "next_action": "Apply through the official form as an external WordPress/WooCommerce production partner and ask whether remote P.IVA collaboration from Spain is accepted."
+    },
+    {
+      "opportunity_id": "OPP-IT-REMOTE-SITIWEB-ITALIA-WORDPRESS-COLLABORATION-2026",
+      "organization_id": "IT-REMOTE-SITIWEB-ITALIA",
+      "organization": "Siti Web Italia",
+      "country": "Italy / Remote",
+      "source_url": "https://www.sitiweb-italia.com/lavora-con-noi/",
+      "verified_at": "2026-10-13",
+      "fit_score": 94,
+      "fit_reasons": [
+        "Explicit collaboration relationship",
+        "Telework explicitly offered",
+        "WordPress plus PHP/CSS/JavaScript/jQuery/MySQL overlap",
+        "Potential recurring agency overflow capacity"
+      ],
+      "material_gaps": [
+        "SEO specialization is preferred and must not be overstated",
+        "Volume, compensation and timing are not published",
+        "Portfolio must substantiate claimed technologies"
+      ],
+      "verified_contact_or_channel": "Official Siti Web Italia collaboration form",
+      "manual_application_required": true,
+      "application_url": "https://www.sitiweb-italia.com/lavora-con-noi/",
+      "required_materials": [
+        "CV PDF maximum 10 MB",
+        "Contact details",
+        "Programming/CMS competencies",
+        "Reason for collaboration"
+      ],
+      "deadline": null,
+      "budget": null,
+      "state": "MANUAL_APPLY",
+      "next_action": "Apply through the official form as an external WordPress/frontend production partner; do not substitute the generic company email."
     }
   ],
   "material_updates": [
@@ -158,6 +191,17 @@
       "subtype": "REJECTION",
       "summary": "Mercy Guzmán reports two established suppliers and no current need, but will retain VDS for future robust or specialized architecture projects.",
       "next_action": "NO_FOLLOW_UP_OWNER_STOP_PRESERVED"
+    },
+    {
+      "canonical_identity_key": "org:lanzadera.es",
+      "organization": "Lanzadera Emprendedores, S.L.U.",
+      "update": "NEGATIVE_REPLY_WRONG_RECRUITMENT_CHANNEL",
+      "provider_inbound_uid": 1593,
+      "received_at": "2026-10-13T13:02:41Z",
+      "classification": "NEGATIVE",
+      "subtype": "WRONG_CHANNEL_CV_DELETED",
+      "summary": "The info@ mailbox does not manage recruitment; Lanzadera will delete the CV and directs candidates to published employment platforms.",
+      "next_action": "NO_REPLY_USE_OFFICIAL_PUBLISHED_JOB_PLATFORMS_ONLY"
     }
   ],
   "decisions": [
@@ -340,6 +384,48 @@
       "outcome": "REJECT",
       "reason": "LOW_PRIORITY_GEOGRAPHY_LANGUAGE_UNVERIFIED",
       "evidence": "French agency role exists, but location/language and Spain-compatible contract conditions were not verified; Italy/Spain routes were prioritized."
+    },
+    {
+      "organization": "Alma Creative",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Hostinger Sent exact recipient jobs@alma-creative.it, UID 763."
+    },
+    {
+      "organization": "Varadero Software Factory",
+      "outcome": "REJECT",
+      "reason": "EXPLICIT_ON_SITE_REQUIREMENT",
+      "evidence": "Official role states on-site work in Madrid."
+    },
+    {
+      "organization": "Marketing Performance / M3R Group",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_EXPERIENCE_MISMATCH",
+      "evidence": "Official page requires at least three years in a web agency."
+    },
+    {
+      "organization": "Eclettica",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_CORE_STACK_MISMATCH",
+      "evidence": "Backend role centers Python/PHP plus Backbone/Angular; WordPress is only practical knowledge."
+    },
+    {
+      "organization": "MyComp",
+      "outcome": "REJECT",
+      "reason": "EXPLICIT_EXTERNAL_COLLABORATOR_EXCLUSION",
+      "evidence": "Official Front End role explicitly says no freelancers or external consultants."
+    },
+    {
+      "organization": "Witapp",
+      "outcome": "REJECT",
+      "reason": "FIT_AND_GEOGRAPHY_MISMATCH",
+      "evidence": "Current Web Specialist centers advertising/analytics; UX role explicitly excludes remote collaboration."
+    },
+    {
+      "organization": "WEINFLUENCE",
+      "outcome": "REJECT",
+      "reason": "STALE_SIGNAL",
+      "evidence": "LinkedIn freelance post is approximately one year old; no current authoritative vacancy page verified."
     }
   ],
   "operational_repairs": [
@@ -368,6 +454,7 @@
     "09:08 live-window update: GamerBrain.net FIRST_CONTACT verified in Hostinger Sent as UID 840; provider live state and global ledger were updated immediately before any further candidate processing.",
     "13:10 cycle: one new manual-route opportunity (Alligator.it) survived novelty, fit and current-source checks; no generic email substitution.",
     "The Visual Corner reply UID 1592 was recorded as a qualified no-current-need outcome; the pre-existing owner stop forbids any automated reply or follow-up.",
-    "Fresh Hostinger Sent remained at UID 840 and Gmail Sent showed no new acquisition message."
+    "Fresh Hostinger Sent remained at UID 840 and Gmail Sent showed no new acquisition message.",
+    "Lanzadera reply UID 1593 was semantically classified as a negative wrong-channel response; no reply or resend."
   ]
 }
