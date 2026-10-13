@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-13T16:47:18Z",
-  "latest_checked_uid": 1593,
+  "updated_at": "2026-10-13T17:03:14Z",
+  "latest_checked_uid": 1594,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1427,6 +1427,21 @@
       "classification_verified_at": "2026-10-13T16:01:46Z",
       "classification_basis": "HOSTINGER_INBOX_UID_1593_TEXT",
       "next_action": "NO_REPLY_USE_OFFICIAL_PUBLISHED_JOB_PLATFORMS_ONLY"
+    },
+    {
+      "provider_inbound_uid": 1594,
+      "received_at": "2026-10-13T16:49:57Z",
+      "canonical_identity_key": "org:sociablekit.com",
+      "entity": "sociablekit.com",
+      "sender": "support@sociablekit.com",
+      "subject": "Share Fresh Company Updates on Your Website with a LinkedIn Feed Widget",
+      "message_id": "<010001a1362bb822-3edb45ee-0162-4c8d-9b07-6f67df30316d-000000@email.amazonses.com>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
     }
   ],
   "last_sync_reason": "Hostinger Inbox UID 1592 reconciled as NEGATIVE/REJECTION; no current need, keep contact for future specialized work.",
