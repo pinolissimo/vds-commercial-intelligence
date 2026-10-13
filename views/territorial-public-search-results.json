@@ -1,67 +1,104 @@
 {
   "schema_version": "2.0",
-  "updated_at": "2026-10-13T05:02:51Z",
-  "run_id": "territorial-par-1791867765",
+  "updated_at": "2026-10-13T06:01:29Z",
+  "run_id": "territorial-par-1791871281",
   "parallel": true,
   "worker_count": 10,
   "cursor_start_index": 10,
   "cursor_next_index": 10,
-  "source_plan_updated_at": "2026-10-13T05:02:45Z",
+  "source_plan_updated_at": "2026-10-13T06:01:21Z",
   "provider": "ddgs_multi_engine",
   "missions_attempted": 30,
-  "missions_completed": 5,
-  "missions_failed": 25,
-  "result_count": 29,
-  "unique_domains": 26,
+  "missions_completed": 8,
+  "missions_failed": 22,
+  "result_count": 42,
+  "unique_domains": 33,
   "policy": "PARALLEL_DISCOVERY_ONLY_FIRST_PARTY_VERIFICATION_REQUIRED",
   "missions": [
     {
-      "mission_id": "5972892-0-0",
+      "mission_id": "5972904-0-0",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"partner\" \"desarrollo web\" agencia freelance Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"colaborador freelance\" (wordpress OR frontend OR \"desarrollo web\") Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
-      "state": "FAILED",
-      "elapsed_seconds": 2.01,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.52,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Trabajo Freelance España - Workana",
+          "url": "https://www.workana.com/es/jobs?country=ES",
+          "domain": "workana.com",
+          "body": "Estudio de arquitectura ubicado en España busca colaborador freelance para trabajos de delineación de proyectos básicos y ejecutivos. Como primer encargo, se necesita completar y revisar hasta cinco secciones arquitectónicas y alzados de un proyecto de ejecución, actualmente desarrolladas en un 60–70 %. El trabajo consiste principalmente..."
+        },
+        {
+          "title": "Trabajo Freelance - Workana.com",
+          "url": "https://www.workana.com/es/jobs",
+          "domain": "workana.com",
+          "body": "Encuentra trabajo freelance en Workana, la mayor plataforma de trabajo online en español. El mundo del trabajo está cambiando, no te quedes afuera."
+        },
+        {
+          "title": "Partner Creativo, Diseño y Desarrollo Web | Xtencil",
+          "url": "https://xtencil.com/",
+          "domain": "xtencil.com",
+          "body": "Partner digital para startups y agencias. Diseño, UI/UX, branding, desarrollo web y consultoría de accesibilidad WCAG. +15 años de experiencia."
+        },
+        {
+          "title": "Fiverr | Plataforma de servicios freelance | Encuentra al ...",
+          "url": "https://es.fiverr.com/",
+          "domain": "es.fiverr.com",
+          "body": "Encuentra los freelancers ideales para tu negocio. Fiverr te conecta con servicios freelance digitales en más de 300 categorías para realizar tus proyectos."
+        },
+        {
+          "title": "3 ejemplos de CV de programadores que puedes adaptar al tuyo",
+          "url": "https://talently.tech/blog/ejemplos-de-cv-programadores/",
+          "domain": "talently.tech",
+          "body": "Jul 29, 2023 · Los 3 ejemplos de cv programadores que te compartimos a continuación pueden servirte de punto de partida para hacer el tuyo."
+        },
+        {
+          "title": "Beltrán Darío Perles Alonso - Formador-Docente de ...",
+          "url": "https://es.linkedin.com/in/beltrán-darío",
+          "domain": "es.linkedin.com",
+          "body": "Formador-Docente de competencias digitales en Adecco Outsourcing · Orientado hacia la confluencia entre la tecnología, la educación y el marketing. Me dedico a capacitar a personas, organizaciones y colectivos en el uso práctico de la Inteligencia Artificial y las competencias digitales para transformar sus proyectos y mejorar su empleabilidad. Mi trayectoria combina la docencia reglada en ..."
+        }
+      ]
     },
     {
-      "mission_id": "5972892-2-0",
+      "mission_id": "5972904-2-0",
       "country": "Spain",
       "region": "País Vasco",
       "locality": "Bizkaia",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"outsourcing desarrollo web\" agencia Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"overflow\" wordpress agency Spain Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 1.45,
+      "elapsed_seconds": 2.16,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-4-0",
+      "mission_id": "5972904-4-0",
       "country": "Italy",
       "region": "Lombardia",
       "locality": "Milano",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"capacità esterna\" wordpress agenzia Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"lavora con noi\" freelance wordpress Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 1.48,
+      "elapsed_seconds": 2.43,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-0-1",
+      "mission_id": "5972904-0-1",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
@@ -70,13 +107,13 @@
       "variant": "base_precision",
       "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 0.35,
+      "elapsed_seconds": 0.47,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-2-1",
+      "mission_id": "5972904-2-1",
       "country": "Spain",
       "region": "País Vasco",
       "locality": "Bizkaia",
@@ -85,13 +122,13 @@
       "variant": "base_precision",
       "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 0.59,
+      "elapsed_seconds": 0.48,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-4-1",
+      "mission_id": "5972904-4-1",
       "country": "Italy",
       "region": "Lombardia",
       "locality": "Milano",
@@ -100,13 +137,13 @@
       "variant": "base_precision",
       "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 0.52,
+      "elapsed_seconds": 0.61,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-0-2",
+      "mission_id": "5972904-0-2",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
@@ -115,16 +152,10 @@
       "variant": "base_precision",
       "worker_id": 3,
       "state": "COMPLETED",
-      "elapsed_seconds": 1.78,
+      "elapsed_seconds": 2.26,
       "result_count": 6,
       "backend_used": "bing",
       "results": [
-        {
-          "title": "Trabajo en Valencia: sectores y empresas que más contratan en ...",
-          "url": "https://bancodempleo.com/trabajo-valencia-sectores-empresas-contratan-2026/",
-          "domain": "bancodempleo.com",
-          "body": "Jul 26, 2026 · Guia completa de empleo en Valencia 2026: sectores que mas contratan, empresas activas, salarios y como buscar trabajo en la Comunidad Valenciana."
-        },
         {
           "title": "Directorio o listado de empresas de Comunidad Valenciana",
           "url": "https://www.einforma.com/informes-empresas/COMUNIDAD_COMUNIDAD-VALENCIANA.html",
@@ -132,10 +163,10 @@
           "body": "Acceda al directorio de empresas de Comunidad Valenciana y consulte informes de la empresas presentes, datos de contacto, informes financieros, comerciales."
         },
         {
-          "title": "Cámara de Comercio de Valencia - Cámara Valencia",
-          "url": "https://www.camaravalencia.com/",
-          "domain": "camaravalencia.com",
-          "body": "Oct 6, 2026 · El directorio de empresas, los programas de comercio internacional, y la bolsa de trabajo son algunos de los servicios más destacados de la Cámara de Comercio de Valencia. Pero además, tendrá a su disposición toda la actualidad y las noticias económicas, programas de creación de empresas, subvenciones, licitaciones y concursos..."
+          "title": "Trabajo en Valencia: sectores y empresas que más contratan en ...",
+          "url": "https://bancodempleo.com/trabajo-valencia-sectores-empresas-contratan-2026/",
+          "domain": "bancodempleo.com",
+          "body": "Jul 26, 2026 · Guia completa de empleo en Valencia 2026: sectores que mas contratan, empresas activas, salarios y como buscar trabajo en la Comunidad Valenciana."
         },
         {
           "title": "2,000+ Available jobs in Valencia - LinkedIn",
@@ -144,21 +175,27 @@
           "body": "Today's top 2,000+ Available jobs in Valencia. Leverage your professional network, and get hired. New Available jobs added daily."
         },
         {
-          "title": "Listado de empresas en Valencia - informa.es",
-          "url": "https://www.informa.es/directorio-empresas/Provincia_VALENCIA.html",
-          "domain": "informa.es",
-          "body": "Accede al listado de empresas más amplio de Valencia y consulta su situación mercantil, financiera o sus datos de contacto."
+          "title": "Cámara de Comercio de Valencia - Cámara Valencia",
+          "url": "https://www.camaravalencia.com/",
+          "domain": "camaravalencia.com",
+          "body": "Oct 6, 2026 · El directorio de empresas, los programas de comercio internacional, y la bolsa de trabajo son algunos de los servicios más destacados de la Cámara de Comercio de Valencia. Pero además, tendrá a su disposición toda la actualidad y las noticias económicas, programas de creación de empresas, subvenciones, licitaciones y concursos..."
         },
         {
-          "title": "Ranking de empresas Comunidad Valenciana",
-          "url": "https://ranking-empresas.lasprovincias.es/comunidad-valenciana/",
-          "domain": "ranking-empresas.lasprovincias.es",
-          "body": "Consulta el ranking de empresas de la Comunidad Valenciana de 2020, con la lista de empresas que más facturan, que mejor resultados obtienen y otros datos como dirección, número de empleados, sector, etc"
+          "title": "Ofertas de trabajo de Comunidad valenciana - InfoJobs",
+          "url": "https://www.infojobs.net/ofertas-trabajo/comunidad-valenciana",
+          "domain": "infojobs.net",
+          "body": "251 ofertas de empleo de comunidad valenciana en el portal de empleo donde nacen las oportunidades laborales. ¡Encuentra la tuya!"
+        },
+        {
+          "title": "Ofertas de empleo en Valencia provincia - Eurofirms España",
+          "url": "https://jobs.eurofirms.com/es/es/trabajo/valencia",
+          "domain": "jobs.eurofirms.com",
+          "body": "5 days ago · Encuentra ofertas de empleo en la provincia de Valencia. Entra en Eurofirms, ¡miles de ofertas de trabajo en Valencia te están esperando!"
         }
       ]
     },
     {
-      "mission_id": "5972892-2-2",
+      "mission_id": "5972904-2-2",
       "country": "Spain",
       "region": "País Vasco",
       "locality": "Bizkaia",
@@ -167,50 +204,50 @@
       "variant": "base_precision",
       "worker_id": 3,
       "state": "COMPLETED",
-      "elapsed_seconds": 1.61,
+      "elapsed_seconds": 2.42,
       "result_count": 6,
       "backend_used": "bing",
       "results": [
         {
-          "title": "Anuncios clasificados gratis Bilbao – Locanto™Ofertas de trabajo de Trabajos en bizkaia - InfoJobsDiseño web Bilbao | Creación Páginas web BizkaiaSe necesita urgente: Crear pagina web — Jooble España 2026Grupo Spri - Agencia Vasca de Desarrollo EmpresarialDevList - Portal con las mejores empresa de desarrollo de ...Trabajar en España • Bolsa de trabajo, vacantes España",
-          "url": "https://www.locanto.es/bilbao/",
-          "domain": "locanto.es",
-          "body": "Alquiler de coches (2) Clases particulares (2) Consultoras de recursos humanos (1) Creación/mantenimiento web (1) Creativos, diseñadores (8) Salud, belleza (58) Seguros, servicios financieros (5) Conocimiento del mercado laboral de Bizkaia y País Vasco. ¿Qué OFRECEMOS? Contrato indefinido. Incorporación inmediata. Salario acorde con experiencia y valía del candidato. Desarrollo profesional dentro de una empresa estable y en crecimiento. Excelente ambiente de trabajo. Horario estable de lunes a viernes con posibilidad de flexibilidad. Especialistas en el diseño, creación, gestión y mantenimiento de portales web con: Wordpress, Woocomerce, Joomla, Prestashop, trabajamos con los mejores y más extendidos gestores de contenidos CMS del mercado... descubre nuestros servicios y precios. Se requiere experiencia en WordPress y Prestashop, junto con conocimientos en HTML, CSS, PHP y SEO. Ofrecen un ambiente dinámico, oportunidades de aprendizaje y la posibilidad... 6 days ago · Organizamos networkings, rastreamos diariamente eventos de clústers, empresas y otros socios, para que te mantengas activo en el ecosistema vasco. Ver toda la agenda Desarrollo de Software Software Engineer, Web / Mobile Developer & More 56 Buscador de anuncios Si estás buscando empleo, puedes consultar las ofertas de trabajo en difusión que se publican el Área de Gestión del SAE, sin necesidad de logarte Además, puedes utilizar el buscador avanzado con el que es posible filtar por categorías, subcategorías y palabras clave. Tras este primer nivel, en el que podrás conocer si hay ofertas disponibles que se ajustan a tu ..."
-        },
-        {
-          "title": "Ofertas de trabajo de Trabajos en bizkaia - InfoJobs",
-          "url": "https://www.infojobs.net/ofertas-trabajo/trabajos-en-bizkaia",
-          "domain": "infojobs.net",
-          "body": "Conocimiento del mercado laboral de Bizkaia y País Vasco. ¿Qué OFRECEMOS? Contrato indefinido. Incorporación inmediata. Salario acorde con experiencia y valía del candidato. Desarrollo profesional dentro de una empresa estable y en crecimiento. Excelente ambiente de trabajo. Horario estable de lunes a viernes con posibilidad de flexibilidad."
-        },
-        {
-          "title": "Diseño web Bilbao | Creación Páginas web BizkaiaSe necesita urgente: Crear pagina web — Jooble España 2026Grupo Spri - Agencia Vasca de Desarrollo EmpresarialDevList - Portal con las mejores empresa de desarrollo de ...Trabajar en España • Bolsa de trabajo, vacantes España",
+          "title": "Diseño web Bilbao | Creación Páginas web Bizkaia",
           "url": "https://www.abacocreacion.com/",
           "domain": "abacocreacion.com",
-          "body": "Especialistas en el diseño, creación, gestión y mantenimiento de portales web con: Wordpress, Woocomerce, Joomla, Prestashop, trabajamos con los mejores y más extendidos gestores de contenidos CMS del mercado... descubre nuestros servicios y precios. Se requiere experiencia en WordPress y Prestashop, junto con conocimientos en HTML, CSS, PHP y SEO. Ofrecen un ambiente dinámico, oportunidades de aprendizaje y la posibilidad... 6 days ago · Organizamos networkings, rastreamos diariamente eventos de clústers, empresas y otros socios, para que te mantengas activo en el ecosistema vasco. Ver toda la agenda Desarrollo de Software Software Engineer, Web / Mobile Developer & More 56 Buscador de anuncios Si estás buscando empleo, puedes consultar las ofertas de trabajo en difusión que se publican el Área de Gestión del SAE, sin necesidad de logarte Además, puedes utilizar el buscador avanzado con el que es posible filtar por categorías, subcategorías y palabras clave. Tras este primer nivel, en el que podrás conocer si hay ofertas disponibles que se ajustan a tu ..."
+          "body": "¿Buscas agencia de desarrollo web en Bizkaia País Vasco / Euskadi?. Especialistas en el diseño, creación, gestión y mantenimiento de portales web con: Wordpress, Woocomerce, Joomla, Prestashop, trabajamos con los mejores y más extendidos gestores de contenidos CMS del mercado... descubre nuestros servicios y precios."
         },
         {
-          "title": "Se necesita urgente: Crear pagina web — Jooble España 2026",
-          "url": "https://es.jooble.org/trabajo-crear-pagina-web",
-          "domain": "es.jooble.org",
-          "body": "Se requiere experiencia en WordPress y Prestashop, junto con conocimientos en HTML, CSS, PHP y SEO. Ofrecen un ambiente dinámico, oportunidades de aprendizaje y la posibilidad..."
+          "title": "Anuncios clasificados gratis Bilbao – Locanto™Grupo Spri - Agencia Vasca de Desarrollo EmpresarialSe necesita urgente: Crear pagina web — Jooble España 2026DevList - Portal con las mejores empresa de desarrollo de ...Trabajar en España • Bolsa de trabajo, vacantes EspañaDiseñador Web WordPress Experto En Elementor - Juan Pardo",
+          "url": "https://www.locanto.es/bilbao/",
+          "domain": "locanto.es",
+          "body": "Encuentra en Bilbao más de 48.000 anuncios gratis de empleo, compraventa y mucho más cerca de ti local seguro gratis. 6 days ago · Somos SPRI, la Agencia Vasca de Desarrollo Empresarial. Entidad del Departamento de Industria, Transición Energética y Sostenibilidad del Gobierno Vasco para impulsar la industria vasca. Tenemos recursos para afrontar cada reto y una visión global que ayuda a planificar el camino con la garantía de compromiso y solidez de grupospri Aquí tienes ayuda experta y el compromiso de volcarnos en ... Empleos de Crear pagina web: más de 3.392 ofertas de empleo activas • Salario competitivo • Jornada completa, parcial y trabajos ocasionales • ¡Encuentre su nuevo empleo en Jooble! Desarrollo de Software Software Engineer, Web / Mobile Developer & More 56 Buscador de anuncios Si estás buscando empleo, puedes consultar las ofertas de trabajo en difusión que se publican el Área de Gestión del SAE, sin necesidad de logarte Además, puedes utilizar el buscador avanzado con el que es posible filtar por categorías, subcategorías y palabras clave. Tras este primer nivel, en el que podrás conocer si hay ofertas disponibles que se ajustan a tu ... Soy Juan Pardo, diseñador web WordPress experto en Elementor. Con más de 10 años de experiencia, he ayudado a cientos de empresas a crear sitios web profesionales, visualmente atractivos y optimizados utilizando el maquetador visual de Elementor."
         },
         {
           "title": "Grupo Spri - Agencia Vasca de Desarrollo Empresarial",
           "url": "https://www.spri.eus/es/",
           "domain": "spri.eus",
-          "body": "6 days ago · Organizamos networkings, rastreamos diariamente eventos de clústers, empresas y otros socios, para que te mantengas activo en el ecosistema vasco. Ver toda la agenda"
+          "body": "6 days ago · Somos SPRI, la Agencia Vasca de Desarrollo Empresarial. Entidad del Departamento de Industria, Transición Energética y Sostenibilidad del Gobierno Vasco para impulsar la industria vasca. Tenemos recursos para afrontar cada reto y una visión global que ayuda a planificar el camino con la garantía de compromiso y solidez de grupospri Aquí tienes ayuda experta y el compromiso de volcarnos en ..."
+        },
+        {
+          "title": "Se necesita urgente: Crear pagina web — Jooble España 2026",
+          "url": "https://es.jooble.org/trabajo-crear-pagina-web",
+          "domain": "es.jooble.org",
+          "body": "Empleos de Crear pagina web: más de 3.392 ofertas de empleo activas • Salario competitivo • Jornada completa, parcial y trabajos ocasionales • ¡Encuentre su nuevo empleo en Jooble!"
         },
         {
           "title": "DevList - Portal con las mejores empresa de desarrollo de ...",
           "url": "https://devlist.es/",
           "domain": "devlist.es",
           "body": "Desarrollo de Software Software Engineer, Web / Mobile Developer & More 56"
+        },
+        {
+          "title": "Diseñador Web WordPress Experto En Elementor - Juan Pardo",
+          "url": "https://juanpardo.es/",
+          "domain": "juanpardo.es",
+          "body": "Soy Juan Pardo, diseñador web WordPress experto en Elementor. Con más de 10 años de experiencia, he ayudado a cientos de empresas a crear sitios web profesionales, visualmente atractivos y optimizados utilizando el maquetador visual de Elementor."
         }
       ]
     },
     {
-      "mission_id": "5972892-4-2",
+      "mission_id": "5972904-4-2",
       "country": "Italy",
       "region": "Lombardia",
       "locality": "Milano",
@@ -218,59 +255,66 @@
       "query": "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 3,
-      "state": "FAILED",
-      "elapsed_seconds": 1.33,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
-      "results": []
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.16,
+      "result_count": 1,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Giulia Bezzi - Chief Digital Officer dal cuore SEO|GEO. Il ...",
+          "url": "https://it.linkedin.com/in/giuliabezzi",
+          "domain": "it.linkedin.com",
+          "body": "Chief Digital Officer dal cuore SEO|GEO. Il mio mantra: “Dalla ricerca [SEO] alla relazione [Marketing Automation]” per crescere la community attorno ai Brand. Presentatrice, Speaker, Docente e tanto studio. · Cosa posso fare per la tua Azienda? Ti affianco nelle scelte strategiche legate al business online, attraverso la conoscenza, esperienza e competenza che ho del mondo digital, dalla ..."
+        }
+      ]
     },
     {
-      "mission_id": "5972892-0-3",
+      "mission_id": "5972904-0-3",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"subcontratación\" desarrollo web agencia Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"trabaja con nosotros\" \"desarrollador web\" freelance Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 4,
       "state": "FAILED",
-      "elapsed_seconds": 0.33,
+      "elapsed_seconds": 0.5,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-2-3",
+      "mission_id": "5972904-2-3",
       "country": "Spain",
       "region": "País Vasco",
       "locality": "Bizkaia",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"colaboradores freelance\" agencia web Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"servicios para agencias\" desarrollo web Bizkaia País Vasco -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 4,
       "state": "FAILED",
-      "elapsed_seconds": 0.41,
+      "elapsed_seconds": 0.59,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-4-3",
+      "mission_id": "5972904-4-3",
       "country": "Italy",
       "region": "Lombardia",
       "locality": "Milano",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "web agency wordpress ecommerce Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"partita IVA\" wordpress web agency Milano Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 4,
       "state": "FAILED",
-      "elapsed_seconds": 0.33,
+      "elapsed_seconds": 0.58,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-0-4",
+      "mission_id": "5972904-0-4",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
@@ -278,144 +322,8 @@
       "query": "\"Horizon Europe\" kickoff 2026 Spain \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 5,
-      "state": "FAILED",
-      "elapsed_seconds": 1.55,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5972892-2-4",
-      "country": "Spain",
-      "region": "País Vasco",
-      "locality": "Bizkaia",
-      "segment": "EU_PROJECT",
-      "query": "Interreg project Spain \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 5,
-      "state": "FAILED",
-      "elapsed_seconds": 1.83,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5972892-4-4",
-      "country": "Italy",
-      "region": "Lombardia",
-      "locality": "Milano",
-      "segment": "EU_PROJECT",
-      "query": "site:europa.eu project dissemination website Italy kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 5,
       "state": "COMPLETED",
-      "elapsed_seconds": 2.02,
-      "result_count": 5,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Project dissemination | IHI Innovative Health Initiative",
-          "url": "https://www.ihi.europa.eu/resources-projects/project-dissemination",
-          "domain": "ihi.europa.eu",
-          "body": "These provide an overview of the rules related to the dissemination of results that apply to each programme, together with tips and links to help you prepare and report on dissemination activities."
-        },
-        {
-          "title": "Italy - Italia Digitale 2026 | Digital Skills and Jobs Platform",
-          "url": "https://digital-skills-jobs.europa.eu/en/initiatives/national-strategies/italy-italia-digitale-2026",
-          "domain": "digital-skills-jobs.europa.eu",
-          "body": "May 16, 2025 · Key objectives to be achieved by 2026 Ultra-Broadband Connectivity: Ensuring nationwide coverage of ultra-broadband fixed and mobile networks to enable Italians to work, learn, and live anywhere with high-speed internet access."
-        },
-        {
-          "title": "SEED Project Presented at the Erasmus+ Project Dissemination ...",
-          "url": "https://epale.ec.europa.eu/en/content/seed-project-presented-erasmus-project-dissemination-day-2026-vitoria-gasteiz",
-          "domain": "epale.ec.europa.eu",
-          "body": "May 8, 2026 · During the dissemination sessions, more than 55 Erasmus+ initiatives from the Basque VET network were presented, creating an inspiring environment for collaboration, networking and the exchange of good practices."
-        },
-        {
-          "title": "Dissemination and exploitation - European Research Executive ...",
-          "url": "https://rea.ec.europa.eu/dissemination-and-exploitation_en",
-          "domain": "rea.ec.europa.eu",
-          "body": "Check out our Guide on communication, dissemination and exploitation to better understand the differences between these three concepts and get acquainted with the different European Commission tools that can support your project."
-        },
-        {
-          "title": "International Conference on Research Infrastructures (ICRI ...",
-          "url": "https://cordis.europa.eu/project/id/101261024",
-          "domain": "cordis.europa.eu",
-          "body": "Nov 29, 2025 · Led by the Consiglio Nazionale delle Ricerche (CNR), the largest public research institution in Italy, the event will collaborate with Italy’s Ministry of University and Research and the European Commission."
-        }
-      ]
-    },
-    {
-      "mission_id": "5972892-1-0",
-      "country": "Spain",
-      "region": "Aragón",
-      "locality": "Huesca",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "agencia wordpress desarrollo web ecommerce Huesca Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 6,
-      "state": "FAILED",
-      "elapsed_seconds": 0.51,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5972892-3-0",
-      "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"lavora con noi\" \"sviluppatore web\" freelance Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 6,
-      "state": "FAILED",
-      "elapsed_seconds": 0.55,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5972892-5-0",
-      "country": "Italy",
-      "region": "Sicilia",
-      "locality": "Catania",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"servizi per agenzie\" sviluppo web Catania Sicilia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 6,
-      "state": "FAILED",
-      "elapsed_seconds": 0.34,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5972892-1-1",
-      "country": "Spain",
-      "region": "Aragón",
-      "locality": "Huesca",
-      "segment": "EU_PROJECT",
-      "query": "site:europa.eu project dissemination website Spain kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 7,
-      "state": "FAILED",
-      "elapsed_seconds": 1.49,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5972892-3-1",
-      "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "EU_PROJECT",
-      "query": "\"Horizon Europe\" kickoff 2026 Italy \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 7,
-      "state": "COMPLETED",
-      "elapsed_seconds": 1.91,
+      "elapsed_seconds": 2.31,
       "result_count": 6,
       "backend_used": "bing",
       "results": [
@@ -426,48 +334,221 @@
           "body": "Discover the research funding opportunities offered by Horizon Europe, explore the different calls for tender and proposal, and find out how to apply."
         },
         {
+          "title": "Horizon Europe 2026-27: €14 billion for better research ...",
+          "url": "https://rea.ec.europa.eu/news/horizon-europe-2026-27-eu14-billion-better-research-careers-greener-stronger-eu-2025-12-12-0_en",
+          "domain": "rea.ec.europa.eu",
+          "body": "Dec 12, 2025 · The newly adopted Horizon Europe Work Programme for 2026 and 2027 allocates €14 billion to support research and innovation that delivers on the EU’s goals to build a more sustainable, competitive and resilient Europe."
+        },
+        {
           "title": "Horizon Europe - Research and innovation - European Commission",
           "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en",
           "domain": "research-and-innovation.ec.europa.eu",
           "body": "Today, the European Commission allocated an additional €500 million to Horizon Europe, the EU's flagship research and innovation programme, for 2026 and 2027. With this additional amount, the total budget reaches now around €14.8 billion for the two years."
         },
         {
-          "title": "Horizon Europe 2026-27: €14 billion for better research ...",
-          "url": "https://rea.ec.europa.eu/news/horizon-europe-2026-27-eu14-billion-better-research-careers-greener-stronger-eu-2025-12-12-0_en",
-          "domain": "rea.ec.europa.eu",
-          "body": "Dec 12, 2025 · Discover the funding opportunities managed by the European Research Executive Agency (REA) for researchers to develop their careers, widen participation and support projects in key areas such as environment, agriculture and civil security."
+          "title": "Homepage - Research and innovation - European Commission",
+          "url": "https://projects.research-and-innovation.ec.europa.eu/",
+          "domain": "projects.research-and-innovation.ec.europa.eu",
+          "body": "Horizon Europe launches a new research and innovation call on nature The European Commission has launched today a €230 million research and innovation (R&I) call to support biodiversity protection, restoration and mainstreaming."
         },
         {
-          "title": "Horizon Europe 2026–2027 Funding Guide | GrantsFinder",
-          "url": "https://www.grantsfinder.eu/blog/horizon-europe-2026-2027-complete-guide",
-          "domain": "grantsfinder.eu",
-          "body": "Feb 23, 2026 · Explore the EUR 14 billion Horizon Europe 2026-2027 work programme: clusters, EIC, ERC, MSCA, Widening, call deadlines, eligibility, and how to apply."
+          "title": "Horizon Europe - European Climate, Infrastructure and ...",
+          "url": "https://cinea.ec.europa.eu/programmes/horizon-europe_en",
+          "domain": "cinea.ec.europa.eu",
+          "body": "Horizon Europe is the EU’s key funding programme for research and innovation with a budget of €95.5 billion. It tackles climate change, helps to achieve the UN’s Sustainable Development Goals and boosts the EU’s competitiveness and growth."
         },
         {
-          "title": "Horizon Europe Calls 2026: Opportunities, Topics & Deadlines ...",
-          "url": "https://www.emdesk.com/horizon-2020-horizon-europe-basics-guide/horizon-europe-calls-2026",
-          "domain": "emdesk.com",
-          "body": "Jul 1, 2026 · This article breaks down what coordinators and proposal writers need to know about Horizon Europe calls 2026 — from thematic priorities and eligibility rules to submission timelines and evaluation procedures."
-        },
-        {
-          "title": "Projects & results | CORDIS | European Commission",
-          "url": "https://cordis.europa.eu/projects",
-          "domain": "cordis.europa.eu",
-          "body": "Access detailed information about all these projects, download entire framework programmes' data as open data, read articles highlighting key projects, and explore interactive maps showing project connections and advanced dashboards for deeper analysis."
+          "title": "Horizon Europe work programmes - Research and innovation",
+          "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/horizon-europe-work-programmes_en",
+          "domain": "research-and-innovation.ec.europa.eu",
+          "body": "The opportunity to provide input for the development of the Horizon Europe ‘main’ work programme 2025 was open for 3 weeks from 15 April to 6 May 2024. Responses submitted through the survey will contribute to the co-design of the work programme 2025, covering all 6 clusters, research infrastructures, European innovation ecosystems, the 5 EU Missions and the New European Bauhaus facility."
         }
       ]
     },
     {
-      "mission_id": "5972892-5-1",
+      "mission_id": "5972904-2-4",
+      "country": "Spain",
+      "region": "País Vasco",
+      "locality": "Bizkaia",
+      "segment": "EU_PROJECT",
+      "query": "Interreg project Spain \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 5,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.36,
+      "result_count": 5,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Spain | Interreg Europe",
+          "url": "https://www.interregeurope.eu/spain",
+          "domain": "interregeurope.eu",
+          "body": "Spain This page contains information about the country's involvement in the programme and about the project control system in Spain. You may also speak directly with the Interreg Europe representatives in Spain."
+        },
+        {
+          "title": "Home - Interreg EU",
+          "url": "https://interreg.eu/",
+          "domain": "interreg.eu",
+          "body": "Join Interreg Cooperation Day 2026 Every year, Interreg programmes and project partners organise local events across Europe to show how cooperation makes a difference in people’s lives."
+        },
+        {
+          "title": "Project communication | Interreg Europe",
+          "url": "https://www.interregeurope.eu/help-centre/implement-your-project/project-communication",
+          "domain": "interregeurope.eu",
+          "body": "The good practice you submit to the Interreg Europe website goes through a validation process. The good practice linked to a project will be reviewed by the project web administrator that is appointed at the start of the project."
+        },
+        {
+          "title": "Guide for programmes 2026 - presidencia.gva.es",
+          "url": "https://presidencia.gva.es/documents/90598251/372597693/Interreg+Cooperation+Day+Guide+2026.pdf/5d52a08f-4830-977b-75b2-45daff3b745e?t=1779172420681",
+          "domain": "presidencia.gva.es",
+          "body": "You will find guidance on this year’s campaign theme, ideas and examples to help you hit the ground running, tips on how to involve Interreg projects directly in your events, and all the practical tools you need: from featuring your event on the Interreg Cooperation Day site and joining the joint social media campaign, to using the visual ..."
+        },
+        {
+          "title": "I-ReWater enters its final year of implementation in 2026 ...",
+          "url": "https://interreg-sudoe.eu/en/noticia-proyecto/i-rewater-enters-its-final-year-of-implementation-in-2026-with-an-extensive-international-events-agenda/",
+          "domain": "interreg-sudoe.eu",
+          "body": "Jan 21, 2026 · The I-ReWater project enters its final year of implementation in 2026 with an agenda marked by international congresses, strategic meetings and dissemination activities in Spain, Portugal and France. The calendar will serve to present the initiative’s main results and tools."
+        }
+      ]
+    },
+    {
+      "mission_id": "5972904-4-4",
       "country": "Italy",
-      "region": "Sicilia",
-      "locality": "Catania",
+      "region": "Lombardia",
+      "locality": "Milano",
+      "segment": "EU_PROJECT",
+      "query": "site:europa.eu project dissemination website Italy kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 5,
+      "state": "FAILED",
+      "elapsed_seconds": 2.37,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5972904-1-0",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "locality": "Castellón",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"white label\" agencia web freelance España Castellón Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 6,
+      "state": "FAILED",
+      "elapsed_seconds": 0.63,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5972904-3-0",
+      "country": "Italy",
+      "region": "Lazio",
+      "locality": "Roma",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"white label wordpress\" Italia Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 6,
+      "state": "FAILED",
+      "elapsed_seconds": 0.75,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5972904-5-0",
+      "country": "Italy",
+      "region": "Umbria",
+      "locality": "Perugia",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"subfornitura\" sviluppo web agenzia Perugia Umbria -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 6,
+      "state": "FAILED",
+      "elapsed_seconds": 0.39,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5972904-1-1",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "locality": "Castellón",
+      "segment": "EU_PROJECT",
+      "query": "site:europa.eu project dissemination website Spain kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 7,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.25,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "SEED Project Presented at the Erasmus+ Project Dissemination ...",
+          "url": "https://epale.ec.europa.eu/en/content/seed-project-presented-erasmus-project-dissemination-day-2026-vitoria-gasteiz",
+          "domain": "epale.ec.europa.eu",
+          "body": "May 8, 2026 · The SEED project proudly took part in the Project Dissemination Day 2026 held in Vitoria-Gasteiz, an international event organised within the framework of the International LCAMP Week & Open Days coordinated by TKNIKA, the Basque Centre for Applied Research and Innovation in Vocational Education and Training."
+        },
+        {
+          "title": "2026 annual work programme for the implementation ... - Erasmus+",
+          "url": "https://erasmus-plus.ec.europa.eu/resources-and-tools/documents-and-guidelines/2026-annual-work-programme-for-the-implementation-of-erasmus-the-union-programme-for-education-training-youth-and-sport",
+          "domain": "erasmus-plus.ec.europa.eu",
+          "body": "Nov 10, 2025 · 2026 annual work programme for the implementation of Erasmus+: the Union Programme for Education, Training, Youth and Sport Published alongside the Implementing Decision."
+        },
+        {
+          "title": "Spain’s 2026 Digital Decade Country Report",
+          "url": "https://digital-strategy.ec.europa.eu/en/factpages/spains-2026-digital-decade-country-report",
+          "domain": "digital-strategy.ec.europa.eu",
+          "body": "Aug 24, 2026 · Spain benefits from strong digital assets, including robust connectivity infrastructure, a digitally skilled population, and well-developed digital public services. However, the country is not yet fully capitalising on these strengths when it comes to the uptake of advanced technologies by ..."
+        },
+        {
+          "title": "Find EU funded projects in education - European Commission",
+          "url": "https://commission.europa.eu/education/set-projects-education-and-training/find-funded-projects_en",
+          "domain": "commission.europa.eu",
+          "body": "Erasmus+ Project Results Platform is a database which gives you access to descriptions, results and contact information of all projects funded under the Erasmus+ programme and some of the projects funded under its predecessor programmes in the field of education, training, youth and sports."
+        },
+        {
+          "title": "European Commission, official website - European Commission",
+          "url": "https://commission.europa.eu/index_en",
+          "domain": "commission.europa.eu",
+          "body": "The European Commission is the EU’s main executive body. It proposes legislation, upholds EU treaties and ensures Member States apply EU law and policies. The Commission manages the EU's budget and negotiates international agreements on behalf of the EU."
+        },
+        {
+          "title": "Call document for the call \"Programme Support Actions\"",
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/digital/wp-call/2026/call-fiche_digital-2026-support-10_en.pdf",
+          "domain": "ec.europa.eu",
+          "body": "1. Background The Digital Europe Programme seeks to improve the valorisation of project results and their effective uptake. Dissemination and Exploitation (D&E) activities are therefore expected to make a substantive contribution to the achievement of the Programme's objectives."
+        }
+      ]
+    },
+    {
+      "mission_id": "5972904-3-1",
+      "country": "Italy",
+      "region": "Lazio",
+      "locality": "Roma",
+      "segment": "EU_PROJECT",
+      "query": "\"Horizon Europe\" kickoff 2026 Italy \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 7,
+      "state": "FAILED",
+      "elapsed_seconds": 1.88,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5972904-5-1",
+      "country": "Italy",
+      "region": "Umbria",
+      "locality": "Perugia",
       "segment": "EU_PROJECT",
       "query": "Interreg project Italy \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 7,
       "state": "COMPLETED",
-      "elapsed_seconds": 1.51,
+      "elapsed_seconds": 2.22,
       "result_count": 6,
       "backend_used": "bing",
       "results": [
@@ -475,25 +556,13 @@
           "title": "Italy | Interreg Europe",
           "url": "https://www.interregeurope.eu/italy",
           "domain": "interregeurope.eu",
-          "body": "This page contains information about the country's involvement in the programme and project control system in Italy. You may also speak directly with the Interreg Europe representatives in Italy. Discover the latest news and upcoming events from Italy."
+          "body": "Italy This page contains information about the country's involvement in the programme and project control system in Italy. You may also speak directly with the Interreg Europe representatives in Italy."
         },
         {
           "title": "Home - Interreg EU",
           "url": "https://interreg.eu/?s=2026",
           "domain": "interreg.eu",
-          "body": "Stay informed about the latest Interreg developments across Europe and beyond. Explore news, success stories and opportunities that support collaboration and innovation."
-        },
-        {
-          "title": "From dialogue to action: the 2nd Interreg Euro-MED Italy ...",
-          "url": "https://natural-heritage.interreg-euro-med.eu/2026/06/22/from-dialogue-to-action-the-2nd-interreg-euro-med-italy-forum-sets-a-clear-path-forward/",
-          "domain": "natural-heritage.interreg-euro-med.eu",
-          "body": "Jun 22, 2026 · The 2nd Interreg Euro-MED Italy Forum successfully concluded on Friday, May 15, 2026, in Rome at the FH55 Grand Hotel Palatino."
-        },
-        {
-          "title": "News Interreg IT-AT Projects of the 3rd call selected ...",
-          "url": "https://interreg.net/en/news-italy-austria/projects-of-the-3rd-call-selected/",
-          "domain": "interreg.net",
-          "body": "The Steering Committee, which met on 28 and 29 January 2026 in Neustift, agreed to finance 26 cross-border cooperation projects. Within the framework of the 3rd and final call for project proposals, open from 25 March to 1 July 2025, a total of 52 projects were submitted."
+          "body": "Join Interreg Cooperation Day 2026 Every year, Interreg programmes and project partners organise local events across Europe to show how cooperation makes a difference in people’s lives."
         },
         {
           "title": "SIRM | SIRM - Dissemination Event (Italy) | Interreg Europe",
@@ -502,30 +571,42 @@
           "body": "On 20 February 2026, the Municipality of Brindisi organized a dissemination and communication event within the framework of the SIRM Project, focused on raising awareness on migrant inclusion and strengthening local capacities to develop more effective and inclusive educational policies."
         },
         {
-          "title": "Italy - Interreg Central Europe",
-          "url": "https://www.interreg-central.eu/event_country/italy/",
-          "domain": "interreg-central.eu",
-          "body": "The D4PACK Partnership is pleased to invite its stakeholders, policymakers, associated partners, and all interested representatives from the food and packaging sectors to the D4PACK Final Conference, which will take place on Tuesday, 27 October 2026, in Verona,..."
+          "title": "From dialogue to action: the 2nd Interreg Euro-MED Italy ...",
+          "url": "https://natural-heritage.interreg-euro-med.eu/2026/06/22/from-dialogue-to-action-the-2nd-interreg-euro-med-italy-forum-sets-a-clear-path-forward/",
+          "domain": "natural-heritage.interreg-euro-med.eu",
+          "body": "Jun 22, 2026 · The 2nd Interreg Euro-MED Italy Forum successfully concluded on Friday, May 15, 2026, in Rome at the FH55 Grand Hotel Palatino. Organized by the Tuscany Region in its capacity as the Italian National Contact Point for the Interreg Euro-MED 2021-2027 Programme, the event brought together over 100 participants, including project partners, institutional representatives, and local stakeholders ..."
+        },
+        {
+          "title": "News Interreg IT-AT Projects of the 3rd call selected ...",
+          "url": "https://interreg.net/en/news-italy-austria/projects-of-the-3rd-call-selected/",
+          "domain": "interreg.net",
+          "body": "A seminar for Lead Partners and project partners will take place on 23 March 2026. There will be no further calls in this programming period. The work of the new Task Force for the upcoming Interreg Italy-Austria VII 2028-2034 programme will already begin on 29 April 2026."
+        },
+        {
+          "title": "Programmes - Interreg EU",
+          "url": "https://interreg.eu/programmes/",
+          "domain": "interreg.eu",
+          "body": "Discover Interreg programmes through the interactive map below. Filter by country, thematic objectives or type of programme to find the information you need. Data is provided by keep.eu."
         }
       ]
     },
     {
-      "mission_id": "5972892-1-2",
+      "mission_id": "5972904-1-2",
       "country": "Spain",
-      "region": "Aragón",
-      "locality": "Huesca",
+      "region": "Comunitat Valenciana",
+      "locality": "Castellón",
       "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Huesca Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Castellón Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 8,
       "state": "FAILED",
-      "elapsed_seconds": 0.44,
+      "elapsed_seconds": 0.68,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-3-2",
+      "mission_id": "5972904-3-2",
       "country": "Italy",
       "region": "Lazio",
       "locality": "Roma",
@@ -534,88 +615,88 @@
       "variant": "base_precision",
       "worker_id": 8,
       "state": "FAILED",
-      "elapsed_seconds": 0.62,
+      "elapsed_seconds": 0.64,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-5-2",
+      "mission_id": "5972904-5-2",
       "country": "Italy",
-      "region": "Sicilia",
-      "locality": "Catania",
+      "region": "Umbria",
+      "locality": "Perugia",
       "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Catania Sicilia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Perugia Umbria -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 8,
       "state": "FAILED",
-      "elapsed_seconds": 0.37,
+      "elapsed_seconds": 0.67,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-1-3",
+      "mission_id": "5972904-1-3",
       "country": "Spain",
-      "region": "Aragón",
-      "locality": "Huesca",
+      "region": "Comunitat Valenciana",
+      "locality": "Castellón",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"desarrollo web para agencias\" Huesca Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"capacidad externa\" wordpress agencia Castellón Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 9,
       "state": "FAILED",
-      "elapsed_seconds": 1.79,
+      "elapsed_seconds": 2.52,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-3-3",
+      "mission_id": "5972904-3-3",
       "country": "Italy",
       "region": "Lazio",
       "locality": "Roma",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"collaborazione continuativa\" freelance wordpress Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"collaboratore freelance\" (wordpress OR frontend OR \"sviluppo web\") Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 9,
       "state": "FAILED",
-      "elapsed_seconds": 1.96,
+      "elapsed_seconds": 2.3,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-5-3",
+      "mission_id": "5972904-5-3",
       "country": "Italy",
-      "region": "Sicilia",
-      "locality": "Catania",
+      "region": "Umbria",
+      "locality": "Perugia",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"outsourcing sviluppo web\" agenzia Catania Sicilia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"overflow\" wordpress agency Italy Perugia Umbria -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 9,
       "state": "FAILED",
-      "elapsed_seconds": 1.64,
+      "elapsed_seconds": 2.31,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-1-4",
+      "mission_id": "5972904-1-4",
       "country": "Spain",
-      "region": "Aragón",
-      "locality": "Huesca",
+      "region": "Comunitat Valenciana",
+      "locality": "Castellón",
       "segment": "EU_PROJECT",
       "query": "site:cordis.europa.eu/project \"Start date\" 2026 Spain Horizon \"communication\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
-      "elapsed_seconds": 0.52,
+      "elapsed_seconds": 0.56,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-3-4",
+      "mission_id": "5972904-3-4",
       "country": "Italy",
       "region": "Lazio",
       "locality": "Roma",
@@ -624,22 +705,22 @@
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
-      "elapsed_seconds": 0.36,
+      "elapsed_seconds": 0.62,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5972892-5-4",
+      "mission_id": "5972904-5-4",
       "country": "Italy",
-      "region": "Sicilia",
-      "locality": "Catania",
+      "region": "Umbria",
+      "locality": "Perugia",
       "segment": "EU_PROJECT",
       "query": "\"communication dissemination\" consortium Italy \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
-      "elapsed_seconds": 0.27,
+      "elapsed_seconds": 0.66,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
