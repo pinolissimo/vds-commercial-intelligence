@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-13T09:19:30Z",
+  "updated_at": "2026-10-13T09:37:57Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1251,
+    "evaluated_total": 1252,
     "agreement_count": 544,
-    "agreement_pct": 43.49,
+    "agreement_pct": 43.45,
     "deepseek_promote": 36,
-    "vds_promote": 325,
+    "vds_promote": 326,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 293
+    "deepseek_demoted_from_vds_promote": 294
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 16.67,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.85,
+    "vds_promote_hot_rate_pct": 1.84,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 5.56,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 467,
-    "cumulative_estimated_cost_usd": 0.239937,
-    "cost_per_evaluated_candidate_usd": 0.0001918,
-    "cost_per_deepseek_promote_usd": 0.00666491,
-    "cost_per_observed_ready_or_contacted_usd": 0.11996846,
-    "latest_request": null
+    "request_count": 468,
+    "cumulative_estimated_cost_usd": 0.240325,
+    "cost_per_evaluated_candidate_usd": 0.00019195,
+    "cost_per_deepseek_promote_usd": 0.00667568,
+    "cost_per_observed_ready_or_contacted_usd": 0.1201623,
+    "latest_request": {
+      "at": "2026-10-13T09:37:50Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 388,
+      "completion_tokens": 163,
+      "total_tokens": 679,
+      "estimated_cost_usd": 0.00038767
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "deec7ad5c42cb5367da190edda31d556",
-      "evaluated_at": "2026-10-11T14:05:05Z",
-      "organization": "Map",
-      "title": "Data Engineer",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/map/data-engineer-london-355127",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 72,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Data Engineer role in London with no web/WordPress/frontend scope; matched keywords (javascript, maintenance, migration) are incidental and commercial keywords (agency, partner) are generic job-text mentions, not freelance proof.",
-      "deepseek_risk_flags": [
-        "role_stack_mismatch_data_engineering",
-        "no_web_wordpress_scope",
-        "generic_commercial_keyword_match",
-        "geo_uncertain_london"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001102525,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "64d4be364933ba8c7a9bd200bc342b74",
       "evaluated_at": "2026-10-11T14:05:05Z",
@@ -1446,10 +1429,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "252417f54d6abb95ae0a6212d003791a",
+      "evaluated_at": "2026-10-13T09:37:50Z",
+      "organization": "",
+      "title": "Frontend Developer [NovelAI]",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 96,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend Developer role with matching HTML/CSS/UI keywords, but no evidence of WordPress/WooCommerce scope, no contract type, no remote confirmation, and US location conflicts with primary Spain/Italy/EU-remote markets.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_evidence",
+        "us_location_geo_mismatch",
+        "employment_type_unknown",
+        "remote_state_unverified",
+        "collaboration_keyword_only_no_freelance_proof"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00038767,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-13T09:19:26Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-13T09:37:45Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
