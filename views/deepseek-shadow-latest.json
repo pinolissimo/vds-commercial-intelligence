@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-13T17:45:56Z",
+  "updated_at": "2026-10-13T18:04:09Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1279,
-    "agreement_count": 548,
-    "agreement_pct": 42.85,
+    "evaluated_total": 1280,
+    "agreement_count": 549,
+    "agreement_pct": 42.89,
     "deepseek_promote": 36,
     "vds_promote": 331,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 476,
-    "cumulative_estimated_cost_usd": 0.245145,
-    "cost_per_evaluated_candidate_usd": 0.00019167,
-    "cost_per_deepseek_promote_usd": 0.00680957,
-    "cost_per_observed_ready_or_contacted_usd": 0.12257228,
-    "latest_request": null
+    "request_count": 477,
+    "cumulative_estimated_cost_usd": 0.245347,
+    "cost_per_evaluated_candidate_usd": 0.00019168,
+    "cost_per_deepseek_promote_usd": 0.00681521,
+    "cost_per_observed_ready_or_contacted_usd": 0.12267371,
+    "latest_request": {
+      "at": "2026-10-13T18:04:03Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 432,
+      "completion_tokens": 162,
+      "total_tokens": 722,
+      "estimated_cost_usd": 0.00020286
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,36 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "8332083fb57c8a1a6b9651dfe8eaa5d4",
-      "evaluated_at": "2026-10-12T18:00:00Z",
-      "organization": "Doctolib",
-      "title": "Software Engineering Intern - Fullstack (x/f/m) - Paris",
-      "location": "Paris, Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/doctolib/software-engineering-intern-fullstack-paris-paris-paris-352989",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 59,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Internship (Software Engineering Intern - Fullstack) at Doctolib in Paris; it is an internship, not freelance/contract work, and the only profile match is a generic 'web development' keyword with no WordPress/WooCommerce/custom frontend or maintenance scope.",
-      "deepseek_risk_flags": [
-        "internship_not_freelance",
-        "fullstack_generic_role",
-        "no_wordpress_woocommerce_scope",
-        "location_paris_not_spain_italy",
-        "generic_keyword_match_only",
-        "commercial_keywords_are_boilerplate"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00017011,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "96fc69e222cdda214b531e22c1487fc3",
       "evaluated_at": "2026-10-12T18:54:27Z",
@@ -1439,10 +1420,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8b1df30791e48760bbdc2441c7a2fbe8",
+      "evaluated_at": "2026-10-13T18:04:03Z",
+      "organization": "Uforce",
+      "title": "Senior Payroll and Benefits Specialist",
+      "location": "United Kingdom | Remote",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/uforce/senior-payroll-and-benefits-specialist-london-462244",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 3.0,
+      "deepseek_confidence": 0.97,
+      "deepseek_primary_reason": "Role is a Senior Payroll and Benefits Specialist, an HR/finance function with no web development, WordPress, WooCommerce, frontend, or web-performance scope; only incidental keyword matches ('migration', 'partner', 'remote') are present.",
+      "deepseek_risk_flags": [
+        "role_domain_mismatch_hr_payroll",
+        "keyword_only_match",
+        "no_web_stack_evidence",
+        "no_freelance_contract_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00020286,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-13T17:45:52Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-13T18:03:59Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
