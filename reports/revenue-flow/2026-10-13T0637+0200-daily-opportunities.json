@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "run_id": "UNIFIED_LOOP-2026-10-13T06:37:59+02:00",
+  "worker_id": "UNIFIED_LOOP",
+  "generated_at": "2026-10-13T06:42:00+02:00",
+  "verification_date": "2026-10-13",
+  "send_window": {
+    "timezone": "Europe/Madrid",
+    "open": false,
+    "reason": "Outside 09:00–19:00 live-send window"
+  },
+  "command_bridge": {
+    "protocol_read": true,
+    "pending_commands": 3,
+    "processed_receipts": 10,
+    "eligible_commands": 0,
+    "receipts_written": 0
+  },
+  "provider_reconciliation": {
+    "hostinger_sent_new": 0,
+    "hostinger_inbox_new": 1,
+    "hostinger_inbox_commercial_replies": 0,
+    "inbox_event": {
+      "provider_uid": 1590,
+      "sender": "no-reply@business.amazon.es",
+      "subject": "Paga con domiciliación bancaria: una forma más fácil y rápida de pagar en Amazon Business",
+      "classification": "REJECT_PROMOTIONAL_NON_COMMERCIAL"
+    },
+    "gmail_sent_new": 0,
+    "gmail_inbox_new_commercial": 0,
+    "latest_hostinger_sent_uid": 838,
+    "latest_hostinger_inbox_uid": 1590,
+    "provider_observed_at": "2026-10-13T04:38:53Z",
+    "provider_sync_checked_at": "2026-10-13T04:38:53Z",
+    "provider_sync_status": "OK",
+    "outbound_attempted": 0,
+    "provider_verified_first_contacts": 0
+  },
+  "discovery": {
+    "mode": "incremental-current-public-source-check",
+    "query_streams": 4,
+    "serious_candidates_evaluated": 6,
+    "direct_email_routes_harvested": 0,
+    "new_qualified_opportunities": 0,
+    "updates_to_known_opportunities": 0,
+    "send_now": 0,
+    "manual_apply": 0,
+    "wait_research": 0,
+    "rejected": 6,
+    "duplicates": 0,
+    "route_failures": 0,
+    "notable_rejection": {
+      "source_url": "https://ted.europa.eu/en/notice/-/detail/698279-2026",
+      "title": "Specialised communication services for the HiPEAC8 Project",
+      "reason": "Contract award notice; already awarded to Madeleine Gray for EUR 200,688, therefore not open."
+    }
+  },
+  "workflow_health": {
+    "issue": "Provider observation and sync heartbeat timestamps diverged, producing false stale-mirror failures.",
+    "affected_runs": [
+      38345191587,
+      38345354871,
+      38347491528
+    ],
+    "repair": {
+      "provider_observation_commit": "4a220bfbb0eaa596ba7f7b8744537c07e03acb25",
+      "provider_sync_commit": "86400f30fc8c350cd87a3511a1b9d0afadec4c8f",
+      "aligned_at": "2026-10-13T04:38:53Z",
+      "latest_sent_uid": 838,
+      "latest_inbox_uid": 1590
+    },
+    "current_state": "HEARTBEATS_ALIGNED_PROVIDER_OK",
+    "note": "The intermediate observation-only commit correctly failed closed before the paired sync-status commit was applied."
+  },
+  "outcomes_by_archetype": {
+    "AGENCY_EXTERNAL_CAPACITY": {
+      "credentials_classic": 0,
+      "value_micro_commitment": 0
+    },
+    "SME_WEB_IMPROVEMENT": {
+      "credentials_classic": 0,
+      "value_micro_commitment": 0
+    },
+    "EU_DISSEMINATION_SPECIALIST": {
+      "credentials_classic": 0,
+      "value_micro_commitment": 0
+    }
+  },
+  "downstream": {
+    "micro_commitment_replies": 0,
+    "qualified_positive_replies": 0,
+    "referrals": 0,
+    "calls_or_interviews": 0,
+    "proposals": 0,
+    "won": 0,
+    "revenue_eur": 0
+  },
+  "external_send_count": 0,
+  "provider_uids": [],
+  "normal_cycle_completed": true,
+  "existing_gates_preserved": true
+}
