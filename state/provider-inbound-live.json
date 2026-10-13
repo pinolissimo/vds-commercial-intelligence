@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-13T10:56:35Z",
-  "latest_checked_uid": 1591,
+  "updated_at": "2026-10-13T10:58:54Z",
+  "latest_checked_uid": 1592,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1376,8 +1376,32 @@
       "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1592,
+      "received_at": "2026-10-13T10:24:19Z",
+      "canonical_identity_key": "org:thevisualcorner.net",
+      "entity": "The Visual Corner",
+      "sender": "info@thevisualcorner.net",
+      "subject": "Re: The Visual Corner × Visual Design Studio — posible colaboración técnica",
+      "classification": "NEGATIVE",
+      "subtype": "REJECTION",
+      "summary": "Mercy Guzmán indica che The Visual Corner lavora già stabilmente con due fornitori e non ha un bisogno attuale; conserverà il contatto VDS per eventuali progetti futuri con architetture robuste o specialistiche. Nessun prossimo passo concreto.",
+      "count_as_reply": true,
+      "source": "HOSTINGER_INBOX",
+      "correlated_provider_sent_uid": 277,
+      "correlated_first_contact_uid": 275,
+      "archetype": "AGENCY_EXTERNAL_CAPACITY",
+      "experiment_variant": "UNASSIGNED_LEGACY_STRATEGY",
+      "qualified_positive": false,
+      "referral": false,
+      "call": false,
+      "proposal": false,
+      "won": false,
+      "classification_verified_at": "2026-10-13T10:58:54Z",
+      "classification_basis": "HOSTINGER_INBOX_UID_1592_TEXT"
     }
   ],
-  "last_sync_reason": "Hostinger Inbox poll successful; no new messages.",
-  "last_provider_poll_at": "2026-10-11T04:02:37Z"
+  "last_sync_reason": "Hostinger Inbox UID 1592 reconciled as NEGATIVE/REJECTION; no current need, keep contact for future specialized work.",
+  "last_provider_poll_at": "2026-10-13T10:58:54Z"
 }
