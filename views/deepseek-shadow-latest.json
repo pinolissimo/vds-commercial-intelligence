@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-13T16:13:54Z",
+  "updated_at": "2026-10-13T16:32:51Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1278,
+    "evaluated_total": 1279,
     "agreement_count": 548,
-    "agreement_pct": 42.88,
+    "agreement_pct": 42.85,
     "deepseek_promote": 36,
     "vds_promote": 331,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 475,
-    "cumulative_estimated_cost_usd": 0.244995,
-    "cost_per_evaluated_candidate_usd": 0.0001917,
-    "cost_per_deepseek_promote_usd": 0.00680542,
-    "cost_per_observed_ready_or_contacted_usd": 0.12249757,
+    "request_count": 476,
+    "cumulative_estimated_cost_usd": 0.245145,
+    "cost_per_evaluated_candidate_usd": 0.00019167,
+    "cost_per_deepseek_promote_usd": 0.00680957,
+    "cost_per_observed_ready_or_contacted_usd": 0.12257228,
     "latest_request": {
-      "at": "2026-10-13T16:13:46Z",
+      "at": "2026-10-13T16:32:44Z",
       "model": "deepseek-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 794,
-      "completion_tokens": 418,
-      "total_tokens": 1340,
-      "estimated_cost_usd": 0.00045146
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 187,
+      "completion_tokens": 160,
+      "total_tokens": 731,
+      "estimated_cost_usd": 0.00014943
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "4d93f77ccb3d44ce4cc29cb0b73d4d8f",
-      "evaluated_at": "2026-10-12T16:46:38Z",
-      "organization": "Gotphoto",
-      "title": "Senior FP&A Analyst (all genders)",
-      "location": "Berlin, Hybrid",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/gotphoto/senior-fpa-analyst-all-genders-berlin-39261",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 10.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior FP&A Analyst finance role entirely unrelated to web development; keyword matches are incidental.",
-      "deepseek_risk_flags": [
-        "unrelated_role",
-        "finance_analyst",
-        "onsite_berlin"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001370818,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "8332083fb57c8a1a6b9651dfe8eaa5d4",
       "evaluated_at": "2026-10-12T18:00:00Z",
@@ -1449,10 +1422,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "64a0106872fcb887e3b3640d5b9c9701",
+      "evaluated_at": "2026-10-13T16:32:44Z",
+      "organization": "Imaginary Cloud",
+      "title": "Senior Front-End Developer (Angular)",
+      "location": "Portugal",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-front-end-developer-angular-0292a9dcf2",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Core role is Angular-focused senior front-end development, which is a framework-heavy mismatch for a WordPress/WooCommerce/custom HTML-CSS-JS profile; no meaningful WordPress, WooCommerce, or web-maintenance scope is evidenced.",
+      "deepseek_risk_flags": [
+        "angular_core_stack_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_evidence",
+        "geo_remote_to_verify"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00014943,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 3,
-  "source_semantic_updated_at": "2026-10-13T16:13:41Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-13T16:32:39Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
