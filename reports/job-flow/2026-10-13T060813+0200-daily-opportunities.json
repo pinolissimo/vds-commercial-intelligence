@@ -2,9 +2,9 @@
   "schema_version": "1.0",
   "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
   "worker_id": "LINKEDIN_HUNTER",
-  "run_at": "2026-10-13T18:03:00+02:00",
+  "run_at": "2026-10-13T23:09:00+02:00",
   "verification_date": "2026-10-13",
-  "send_window_open": true,
+  "send_window_open": false,
   "normal_cycle_completed": true,
   "bridge": {
     "eligible_commands": [],
@@ -13,19 +13,19 @@
   },
   "provider_state": {
     "hostinger_sent_total": null,
-    "latest_uid": 840,
+    "latest_uid": 841,
     "latest_commercial_uid": 840,
-    "latest_inbox_uid": 1593,
+    "latest_inbox_uid": 1594,
     "gmail_sent_new": 0,
     "new_commercial_replies": 2,
-    "note": "Hostinger Sent remains at UID 840. Inbox UID 1593 is a human negative/wrong-channel reply from Lanzadera: recruitment is not handled by info@, CV will be deleted, and official job platforms must be used. No follow-up."
+    "note": "Hostinger Sent UID 841 is the administrative daily performance report to the owner and is excluded from commercial KPIs; latest commercial FIRST_CONTACT remains UID 840. Inbox UID 1594 is a SociableKIT newsletter, not a commercial reply. Gmail Sent has no new business message."
   },
   "summary": {
-    "serious_candidates": 38,
+    "serious_candidates": 39,
     "direct_email_harvest_count": 19,
     "send_now": 1,
     "provider_verified_first_contact": 1,
-    "manual_apply": 3,
+    "manual_apply": 4,
     "wait_research": 3,
     "reject": 31,
     "duplicate_failures": 12,
@@ -169,6 +169,41 @@
       "budget": null,
       "state": "MANUAL_APPLY",
       "next_action": "Apply through the official form as an external WordPress/frontend production partner; do not substitute the generic company email."
+    },
+    {
+      "opportunity_id": "OPP-ES-EU-SHAKERS-WORDPRESS-PROJECT-NETWORK-2026",
+      "organization_id": "ES-MAD-SHAKERS",
+      "organization": "Shakers",
+      "country": "Spain / EU Remote",
+      "source_url": "https://www.shakersworks.com/it/roles/wordpress-developer",
+      "verified_at": "2026-10-13",
+      "fit_score": 89,
+      "fit_reasons": [
+        "Official current project-based WordPress developer route",
+        "Remote freelance model with contracting and payment workflow",
+        "Strong overlap with WordPress, PHP, JavaScript, HTML/CSS, WooCommerce, Elementor, Gutenberg, ACF, MySQL, Core Web Vitals and maintenance",
+        "Potential continuity; Shakers states a six-month average project duration"
+      ],
+      "material_gaps": [
+        "No specific client WordPress assignment, deadline or guaranteed workload is publicly exposed",
+        "Selective certification: Shakers states only 4% enter the certified talent pool",
+        "AI-oriented assessment and senior production evidence must be represented truthfully",
+        "Individual project budget is visible only after matching"
+      ],
+      "verified_contact_or_channel": "Official Shakers talent registration platform",
+      "manual_application_required": true,
+      "application_url": "https://app.shakersworks.com/it/register/talent",
+      "required_materials": [
+        "Shakers talent profile",
+        "LinkedIn experience and/or CV",
+        "Production WordPress examples with specific personal contribution",
+        "Skills, availability and target rate",
+        "AI certification interview when requested"
+      ],
+      "deadline": null,
+      "budget": null,
+      "state": "MANUAL_APPLY",
+      "next_action": "Create a truthful WordPress developer profile, document production/performance work, set availability and rate, and complete the platform assessment; do not substitute talent@shakersworks.com."
     }
   ],
   "material_updates": [
@@ -426,6 +461,12 @@
       "outcome": "REJECT",
       "reason": "STALE_SIGNAL",
       "evidence": "LinkedIn freelance post is approximately one year old; no current authoritative vacancy page verified."
+    },
+    {
+      "organization": "Shakers",
+      "outcome": "MANUAL_APPLY",
+      "reason": "OFFICIAL_PLATFORM_REGISTRATION",
+      "evidence": "Current official WordPress project-network page and talent-registration route verified 2026-10-13; canonical repository, Hostinger Sent and Gmail Sent dedup checks were clear. No direct application email or public individual assignment is exposed."
     }
   ],
   "operational_repairs": [
@@ -455,6 +496,7 @@
     "13:10 cycle: one new manual-route opportunity (Alligator.it) survived novelty, fit and current-source checks; no generic email substitution.",
     "The Visual Corner reply UID 1592 was recorded as a qualified no-current-need outcome; the pre-existing owner stop forbids any automated reply or follow-up.",
     "Fresh Hostinger Sent remained at UID 840 and Gmail Sent showed no new acquisition message.",
-    "Lanzadera reply UID 1593 was semantically classified as a negative wrong-channel response; no reply or resend."
+    "Lanzadera reply UID 1593 was semantically classified as a negative wrong-channel response; no reply or resend.",
+    "23:09 Europe/Madrid cycle: Shakers added as a new manual platform route. Send window closed; zero external sends. Hostinger UID 841 is an administrative report, Inbox UID 1594 is noncommercial, and the Command Bridge had no eligible unexpired LINKEDIN_HUNTER command."
   ]
 }
