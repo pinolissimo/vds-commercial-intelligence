@@ -64,26 +64,45 @@
     "estimate_confidence": "NONE",
     "notes": "The page says competitive compensation but publishes no amount or contract duration."
   },
-  "suppression_state": "CLEAR_PENDING_LIVE_WINDOW_RECHECK",
+  "suppression_state": "BLOCK_FIRST_CONTACT_ALREADY_CONTACTED",
   "opportunities": [
     "OPP-IT-REMOTE-GAMERBRAIN-WORDPRESS-DEVELOPER-2026"
   ],
   "campaign_ids": [
     "VDS-JOB-FLOW-2026"
   ],
-  "status": "QUALIFIED",
-  "outreach": [],
+  "status": "CONTACTED",
+  "outreach": [
+    {
+      "at": "2026-10-13T07:08:56Z",
+      "action_type": "FIRST_CONTACT",
+      "provider": "HOSTINGER",
+      "provider_uid": 840,
+      "recipient": "info@gamerbrain.net",
+      "subject": "Candidatura Sviluppatore WordPress – Giuseppe Allocca",
+      "state": "VERIFIED_EMAIL_SENT",
+      "attachments": 0,
+      "bcc_owner": false,
+      "cv_url": "https://github.com/pinolissimo/Portfolio/blob/main/documents/Giuseppe_Allocca_CV_Generico_IT.pdf"
+    }
+  ],
   "timeline": [
     {
       "at": "2026-10-13T05:07:03Z",
       "event": "DISCOVERED_AND_DEDUP_VERIFIED",
       "worker": "LINKEDIN_HUNTER"
+    },
+    {
+      "at": "2026-10-13T07:08:56Z",
+      "event": "PROVIDER_VERIFIED_FIRST_CONTACT",
+      "worker": "LINKEDIN_HUNTER",
+      "provider_uid": 840
     }
   ],
   "next_action": {
-    "action": "SEND_AT_NEXT_LIVE_WINDOW_AFTER_FRESH_DEDUP",
-    "reason": "Authoritative direct application email and current remote need are verified, but live sending is closed until 09:00 Europe/Madrid.",
-    "due_at": "2026-10-13T09:00:00+02:00",
+    "action": "WAIT_FOR_REPLY",
+    "reason": "Provider-verified first contact already sent; organization/domain is now hard-blocked for any new FIRST_CONTACT.",
+    "due_at": null,
     "owner": "LINKEDIN_HUNTER",
     "priority": "HIGH",
     "expected_commercial_impact": "MEDIUM",
@@ -93,8 +112,9 @@
     "Position Giuseppe truthfully as an external WordPress technical partner and ask whether freelance/P.IVA collaboration from Spain is accepted.",
     "No mandatory gaming-sector experience is stated for the WordPress role.",
     "Material gap: contract model and legal entity location are not published; do not invent them.",
-    "Canonical repo, reservations, Hostinger Sent exact recipient/domain and Gmail Sent exact recipient/domain were clear on 2026-10-13."
+    "Canonical repo, reservations, Hostinger Sent exact recipient/domain and Gmail Sent exact recipient/domain were clear on 2026-10-13.",
+    "Hostinger Sent verified FIRST_CONTACT UID 840 on 2026-10-13; never send another first contact to this commercial identity."
   ],
-  "last_verified_at": "2026-10-13T05:07:03Z",
+  "last_verified_at": "2026-10-13T07:09:01Z",
   "owner_worker": "LINKEDIN_HUNTER"
 }
