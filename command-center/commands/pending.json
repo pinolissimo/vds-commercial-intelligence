@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3",
-  "updated_at": "2026-10-01T12:30:37+02:00",
+  "updated_at": "2026-10-13T13:56:23+02:00",
   "policy": "Dashboard commands route only to the two active self-contained flows. Discovery and normal execution continue even if the bridge is unavailable.",
   "commands": [
     {
@@ -116,6 +116,62 @@
       "risk": "MEDIUM",
       "owner_confirmation_required": false,
       "answer": "Controllo e riallineamento sicuro avviati su entrambi i flussi; nessun invio verrà eseguito e i gate restano invariati.",
+      "production_core_modified": false,
+      "normal_cycle_must_continue": true,
+      "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
+      "status": "PENDING_TASK_BRIDGE"
+    },
+    {
+      "schema_version": "1.3",
+      "command_id": "CMD-WATCHDOG-20261013T135623-OUTBOUND-STALL",
+      "created_at": "2026-10-13T13:56:23+02:00",
+      "expires_at": "2026-10-13T15:56:23+02:00",
+      "source": "VDS_PERFORMANCE_REPLY_WATCHDOG",
+      "model": "gpt-6.1-sol",
+      "owner_command": "Recover the stalled outbound conversion path without weakening any hard gate or sending from the Watchdog.",
+      "command_class": "REFRESH",
+      "intent": "rebuild_current_contactable_dispatch_and_resume_valid_first_contact_flow",
+      "summary": "OUTBOUND_STALL: provider count remains 2 while the current booster reports 3 first-party-contactable identities; rebuild dispatch from fresh booster evidence and process each identity through the normal Revenue Flow.",
+      "parameters": {
+        "diagnosis": "STALE_READY_AND_DISPATCH_NOT_CONSUMING_FRESH_FIRST_PARTY_CONTACTABLE_SEEDS",
+        "provider_first_contact_baseline": 2,
+        "provider_latest_sent_uid": 840,
+        "first_party_contactable_snapshot": 3,
+        "executable_ready_snapshot": 0,
+        "stale_dispatch_updated_at": "2026-10-13T07:05:31Z",
+        "scope": "current_first_party_contactable_booster_identities",
+        "required_actions": [
+          "refresh_first_party_booster_snapshot",
+          "resolve_canonical_organization_and_authoritative_route",
+          "rebuild_dispatch_from_fresh_contactable_candidates",
+          "process_each_candidate_to_SEND_NOW_MANUAL_APPLY_WAIT_RESEARCH_OR_REJECT",
+          "provider_verify_any_valid_send_and_update_dedup_state_immediately"
+        ],
+        "preserve": [
+          "exact_email_dedup",
+          "canonical_organization_dedup",
+          "corporate_domain_dedup",
+          "Hostinger_Sent_check",
+          "Gmail_Sent_check",
+          "current_need",
+          "truthful_fit",
+          "authoritative_route",
+          "legal_channel",
+          "send_window",
+          "manual_route"
+        ],
+        "no_blind_resend": true,
+        "no_gate_reduction": true,
+        "watchdog_external_send_forbidden": true
+      },
+      "target_workers": [
+        "UNIFIED_LOOP"
+      ],
+      "requires_task_bridge": true,
+      "requires_existing_gates": true,
+      "risk": "MEDIUM",
+      "owner_confirmation_required": false,
+      "answer": "Revenue Flow will rebuild the stale dispatch from the three current first-party-contactable identities and process them through all normal fail-closed gates.",
       "production_core_modified": false,
       "normal_cycle_must_continue": true,
       "execution_policy": "SIMPLIFIED_TWO_FLOW_ARCHITECTURE_WITH_HARD_GATES",
