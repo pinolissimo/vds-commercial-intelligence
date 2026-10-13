@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
+  "worker_id": "LINKEDIN_HUNTER",
+  "run_at": "2026-10-13T06:08:13+02:00",
+  "verification_date": "2026-10-13",
+  "send_window_open": false,
+  "normal_cycle_completed": true,
+  "bridge": {
+    "eligible_commands": [],
+    "read_status": "OK",
+    "note": "All PENDING_TASK_BRIDGE commands targeting LINKEDIN_HUNTER were expired or already receipted; no receipt appended."
+  },
+  "provider_state": {
+    "hostinger_sent_total": null,
+    "latest_uid": 838,
+    "latest_commercial_uid": 837,
+    "latest_inbox_uid": 1590,
+    "gmail_sent_new": 0,
+    "new_commercial_replies": 0,
+    "note": "UID 838 is the owner operational report and excluded from commercial KPIs. Inbox UID 1590 is an Amazon Business promotional message."
+  },
+  "summary": {
+    "serious_candidates": 12,
+    "direct_email_harvest_count": 7,
+    "send_now": 0,
+    "provider_verified_first_contact": 0,
+    "manual_apply": 0,
+    "wait_research": 0,
+    "reject": 12,
+    "duplicate_failures": 7,
+    "fit_failures": 2,
+    "route_failures": 1,
+    "freshness_failures": 2,
+    "downstream_outcomes": 0,
+    "external_send_count": 0,
+    "provider_uids": []
+  },
+  "new_opportunities": [],
+  "material_updates": [],
+  "decisions": [
+    {
+      "organization": "Web Station",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Hostinger Sent UIDs 249, 360 and 607."
+    },
+    {
+      "organization": "QKStudio",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Exact recipient rrhh@qkstudio.com and organization already contacted."
+    },
+    {
+      "organization": "Andreoli Estudio",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Hostinger Sent UID 608."
+    },
+    {
+      "organization": "Bellop",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Hostinger Sent UID 441."
+    },
+    {
+      "organization": "Vorágine",
+      "outcome": "REJECT",
+      "reason": "KNOWN_CANONICAL_OPPORTUNITY",
+      "evidence": "Existing canonical manual opportunity OPP-ES-MAD-VORAGINE-WORDPRESS-REMOTE-2026."
+    },
+    {
+      "organization": "IOCOS",
+      "outcome": "REJECT",
+      "reason": "KNOWN_REVENUE_FLOW_OWNED_IDENTITY",
+      "evidence": "Existing canonical opportunity OPP-IT-CAL-IOCOS-FREELANCE-WEB-NETWORK-2026; no duplicate ownership acquired."
+    },
+    {
+      "organization": "ANVIPARTNERS",
+      "outcome": "REJECT",
+      "reason": "KNOWN_PREVIOUSLY_REPORTED_OPPORTUNITY",
+      "evidence": "Already present in prior Job Flow reporting."
+    },
+    {
+      "organization": "GMOL Solutions",
+      "outcome": "REJECT",
+      "reason": "KNOWN_PREVIOUSLY_REPORTED_OPPORTUNITY",
+      "evidence": "Already present in prior Job Flow reporting."
+    },
+    {
+      "organization": "Varadero Software Factory",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_ON_SITE_MODEL",
+      "evidence": "Official role is office-based; exact CV route rrhh@vsf.es was not used."
+    },
+    {
+      "organization": "GS Conecta",
+      "outcome": "REJECT",
+      "reason": "STALE_HYBRID_FULL_TIME_SIGNAL",
+      "evidence": "Official page is dated 2024-08-08 and states full-time in Inca with only some remote days."
+    },
+    {
+      "organization": "Gyoza Technology Studio",
+      "outcome": "REJECT",
+      "reason": "NO_CURRENT_OPEN_APPLICATION",
+      "evidence": "Previously verified role closure; no material reopening evidence established."
+    },
+    {
+      "organization": "WpSEO",
+      "outcome": "REJECT",
+      "reason": "NO_CURRENT_ROLE",
+      "evidence": "Generic CV mailbox is published but no current matching vacancy is evidenced."
+    }
+  ],
+  "operational_repairs": [
+    {
+      "issue": "VDS Hourly Revenue Optimizer reruns checked out the triggering snapshot and repeatedly failed on a provider heartbeat older than the 15-minute preflight gate.",
+      "repair": "Pinned checkout to ref main, refreshed authoritative Hostinger observation from direct provider verification, preserved the 15-minute gate, and moved the hourly run from minute 11 to minute 18 after the ten-minute provider sync cadence.",
+      "commits": [
+        "ddf85aa07d25d30c52603f4383338a08cf9bcb9d",
+        "c42079d4b62c0fcb46da4a2b142f7358bae7101c",
+        "8b1008f2fbde12df683b8cfaea25fceb5a8cadc1",
+        "e3c03af0e119295b650e3ec39e1d4d067dc5f9b3"
+      ],
+      "verification": {
+        "workflow_run_id": 38345368667,
+        "status": "success",
+        "url": "https://github.com/pinolissimo/vds-commercial-intelligence/actions/runs/38345368667"
+      }
+    }
+  ],
+  "notes": [
+    "No outreach or form submission was executed outside the 09:00–19:00 Europe/Madrid send window.",
+    "No new opportunity survived novelty, current-demand, fit, route and ownership checks.",
+    "Fresh public-source harvest concentrated on official employer-controlled pages; known identities were not re-presented as new."
+  ]
+}
