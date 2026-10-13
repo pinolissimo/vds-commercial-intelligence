@@ -1,18 +1,47 @@
 {
   "schema_version": "1.2",
-  "updated_at": "2026-10-13T03:52:59Z",
+  "updated_at": "2026-10-13T07:06:18Z",
   "provider": "HOSTINGER_API",
-  "run_state": "SEND_WINDOW_CLOSED",
-  "local_time": "05:52",
-  "queue_records": 0,
-  "eligible_candidates": 0,
-  "batch_limit": 0,
-  "delivery_accepted": 0,
-  "smtp_accepted": 0,
+  "run_state": "COMPLETED",
+  "queue_records": 92,
+  "eligible_candidates": 1,
+  "batch_limit": 10,
+  "delivery_accepted": 1,
+  "smtp_accepted": 1,
   "failed": 0,
-  "rejected_count": 0,
-  "results": [],
-  "rejected": [],
+  "rejected_count": 5,
+  "results": [
+    {
+      "queue_id": "opp-4afc3166c0bc96de",
+      "recipient": "dmcommerciale@clafersnc.com",
+      "organization": "www.clafersnc.com",
+      "state": "DELIVERY_ACCEPTED",
+      "accepted_at": "2026-10-13T07:06:16Z",
+      "idempotency_key": "ddc15e90afd837095ae4c2a0d7f4d46b68fbdd34992ff33051091076c51775d1"
+    }
+  ],
+  "rejected": [
+    {
+      "queue_id": "commercial-abe63fd4fec48da0",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "commercial-f6a7f3ffb9d1ca40",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "commercial-3ad8cffc84f524fe",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "commercial-cd8d9e35ec67dcb9",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    },
+    {
+      "queue_id": "opp-d1a18589a1d07944",
+      "reason": "GLOBAL_DEDUP_BLOCK"
+    }
+  ],
   "sent_idempotency_keys": [
     "02950de4b2a448dbc291087b8d0770e4e4b693af9ec512ee99123816f49471d9",
     "04f3b3d4659ad7142a88aac3fe1d40c1f3e395536cbf0c9e94b58b59a9713bae",
@@ -89,6 +118,7 @@
     "d15f0b1ae37ab14539d5d0141b333e6843418bc6887d29b1962466eeaf04b7e2",
     "d2cb4b5446918be1681c8e5585ff105271296883f37c1ae3eda1b575eca9f848",
     "d860bfc809dd3ca176d0bf936cc3f94c71abc3cebced661d5dbdfdc4a76026fd",
+    "ddc15e90afd837095ae4c2a0d7f4d46b68fbdd34992ff33051091076c51775d1",
     "e1eb064e6a1bf1593989e7abe69fba5f1576dc36c00628c1b25a488c44126c54",
     "e33b07cdb175cff81b145d658aae76ebbdc1030d3ba58fdb5f7e3557f621610e",
     "e88f2e216dc5485831c739f77eab616aa368d11d6a3ae9a3029f8c4d2765556b",
