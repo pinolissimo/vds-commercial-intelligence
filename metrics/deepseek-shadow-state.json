@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1277,
+  "runs": 1278,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -34985,6 +34985,60 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "68e33dd1132b1d9da07bc4f1d59cfcd9",
+      "evaluated_at": "2026-10-13T14:42:56Z",
+      "organization": "Freelance Latin America",
+      "title": "SEO Strategist",
+      "location": "Mexico",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/seo-strategist-freelance-latin-america",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 69,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is an SEO Strategist, not a web-development role; matched keywords (core web vitals, ux, website) are incidental and the core scope is SEO strategy, which is outside the target profile's core web-dev/WordPress/WooCommerce stack.",
+      "deepseek_risk_flags": [
+        "role_mismatch_seo_not_webdev",
+        "geo_mismatch_mexico_not_spain_italy_eu",
+        "freelance_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018294,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cac7adadbbfb94d8779660e7bd50251c",
+      "evaluated_at": "2026-10-13T14:42:56Z",
+      "organization": "Scalepex",
+      "title": "Full Stack Developer - REMOTE ONLY MEXICO",
+      "location": "Mexico",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/full-stack-developer-remote-only-mexico-scalepex",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 67,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 28.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Full Stack Developer role with no explicit WordPress/WooCommerce or matching web-platform scope; 'full stack' typically implies backend/framework-heavy work outside the target profile, and the posting is restricted to Mexico, not Spain/Italy/EU-remote.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_fullstack_generic",
+        "geo_restriction_mexico_only",
+        "no_wordpress_woocommerce_evidence"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018294,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -40651,9 +40705,21 @@
       "completion_tokens": 161,
       "total_tokens": 730,
       "estimated_cost_usd": 0.00020418
+    },
+    {
+      "at": "2026-10-13T14:42:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 711,
+      "completion_tokens": 316,
+      "total_tokens": 1155,
+      "estimated_cost_usd": 0.00036588
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-13T14:24:36Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-13T14:42:56Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-13T14:24:39Z",
+  "updated_at": "2026-10-13T14:43:04Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1271,
+    "evaluated_total": 1273,
     "agreement_count": 548,
-    "agreement_pct": 43.12,
+    "agreement_pct": 43.05,
     "deepseek_promote": 36,
     "vds_promote": 329,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 472,
-    "cumulative_estimated_cost_usd": 0.243819,
-    "cost_per_evaluated_candidate_usd": 0.00019183,
-    "cost_per_deepseek_promote_usd": 0.00677275,
-    "cost_per_observed_ready_or_contacted_usd": 0.12190948,
-    "latest_request": null
+    "request_count": 473,
+    "cumulative_estimated_cost_usd": 0.244185,
+    "cost_per_evaluated_candidate_usd": 0.00019182,
+    "cost_per_deepseek_promote_usd": 0.00678291,
+    "cost_per_observed_ready_or_contacted_usd": 0.12209241,
+    "latest_request": {
+      "at": "2026-10-13T14:42:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 711,
+      "completion_tokens": 316,
+      "total_tokens": 1155,
+      "estimated_cost_usd": 0.00036588
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,61 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "6c7d797422e5c401c3e0075494885576",
-      "evaluated_at": "2026-10-12T16:46:38Z",
-      "organization": "AIOS (YC W20/S21)",
-      "title": "Web Designer at AIOS — Remote, $75k-$150k/yr (including equity)",
-      "location": "Remote (EU)",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/aios-yc-w20s21/web-designer-at-aios-remote-75k-150k-yr-including-equity-berlin-37512",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 85,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 62.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Web Designer role remote EU with design/website overlap, but unclear whether scope includes WordPress/frontend development or is design-only.",
-      "deepseek_risk_flags": [
-        "design_focused_maybe_not_dev",
-        "equity_compensation",
-        "full_time_likely",
-        "freelance_compatibility_unclear"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001370818,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "5b8ad1d2dee75b094785f1c96ed98e9c",
-      "evaluated_at": "2026-10-12T16:46:38Z",
-      "organization": "Its Gruppe",
-      "title": "Frontend / UX / UI Engineer (m/w/d)",
-      "location": "Dortmund, Münster",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/its-gruppe/frontend-ux-ui-engineer-dortmund-munster-251419",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 58.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Frontend/UX/UI engineer role with relevant stack keywords, but on-site in Germany and no evidence of freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "onsite_germany",
-        "no_freelance_signal",
-        "geo_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001370818,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ffd96b0c2e00d601f36f6baafd384f6c",
       "evaluated_at": "2026-10-12T16:46:38Z",
@@ -1433,10 +1389,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "68e33dd1132b1d9da07bc4f1d59cfcd9",
+      "evaluated_at": "2026-10-13T14:42:56Z",
+      "organization": "Freelance Latin America",
+      "title": "SEO Strategist",
+      "location": "Mexico",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/seo-strategist-freelance-latin-america",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 69,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is an SEO Strategist, not a web-development role; matched keywords (core web vitals, ux, website) are incidental and the core scope is SEO strategy, which is outside the target profile's core web-dev/WordPress/WooCommerce stack.",
+      "deepseek_risk_flags": [
+        "role_mismatch_seo_not_webdev",
+        "geo_mismatch_mexico_not_spain_italy_eu",
+        "freelance_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018294,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cac7adadbbfb94d8779660e7bd50251c",
+      "evaluated_at": "2026-10-13T14:42:56Z",
+      "organization": "Scalepex",
+      "title": "Full Stack Developer - REMOTE ONLY MEXICO",
+      "location": "Mexico",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/full-stack-developer-remote-only-mexico-scalepex",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 67,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 28.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Full Stack Developer role with no explicit WordPress/WooCommerce or matching web-platform scope; 'full stack' typically implies backend/framework-heavy work outside the target profile, and the posting is restricted to Mexico, not Spain/Italy/EU-remote.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_fullstack_generic",
+        "geo_restriction_mexico_only",
+        "no_wordpress_woocommerce_evidence"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018294,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-13T14:24:31Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-13T14:42:51Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
