@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
   "worker_id": "LINKEDIN_HUNTER",
-  "run_at": "2026-10-13T06:08:13+02:00",
+  "run_at": "2026-10-13T07:05:55+02:00",
   "verification_date": "2026-10-13",
   "send_window_open": false,
   "normal_cycle_completed": true,
@@ -21,12 +21,12 @@
     "note": "UID 838 is the owner operational report and excluded from commercial KPIs. Inbox UID 1590 is an Amazon Business promotional message."
   },
   "summary": {
-    "serious_candidates": 12,
-    "direct_email_harvest_count": 7,
+    "serious_candidates": 13,
+    "direct_email_harvest_count": 8,
     "send_now": 0,
     "provider_verified_first_contact": 0,
     "manual_apply": 0,
-    "wait_research": 0,
+    "wait_research": 1,
     "reject": 12,
     "duplicate_failures": 7,
     "fit_failures": 2,
@@ -36,7 +36,39 @@
     "external_send_count": 0,
     "provider_uids": []
   },
-  "new_opportunities": [],
+  "new_opportunities": [
+    {
+      "opportunity_id": "OPP-IT-REMOTE-GAMERBRAIN-WORDPRESS-DEVELOPER-2026",
+      "organization_id": "IT-REMOTE-GAMERBRAIN",
+      "organization": "GamerBrain.net",
+      "country": "Italy / Remote",
+      "source_url": "https://www.gamerbrain.net/carriere/wordpress-developer/",
+      "verified_at": "2026-10-13",
+      "fit_score": 93,
+      "fit_reasons": [
+        "WordPress, HTML, CSS, JavaScript and PHP",
+        "Themes, plugins and maintenance",
+        "Performance, security, UX and troubleshooting",
+        "Remote from any location"
+      ],
+      "material_gaps": [
+        "Freelance/P.IVA acceptance from Spain is not published",
+        "Budget and deadline are not published",
+        "Legal entity location is not published"
+      ],
+      "verified_contact_or_channel": "info@gamerbrain.net — explicitly instructed on the official role page",
+      "manual_application_required": false,
+      "application_url": "mailto:info@gamerbrain.net",
+      "required_materials": [
+        "CV",
+        "Cover letter / short presentation"
+      ],
+      "deadline": null,
+      "budget": null,
+      "state": "WAIT_RESEARCH",
+      "next_action": "After 09:00 Europe/Madrid, repeat all canonical, reservation, Hostinger Sent and Gmail Sent checks; if still clear, send one external-partner proposal and ask whether cross-border P.IVA collaboration is accepted."
+    }
+  ],
   "material_updates": [],
   "decisions": [
     {
@@ -110,6 +142,12 @@
       "outcome": "REJECT",
       "reason": "NO_CURRENT_ROLE",
       "evidence": "Generic CV mailbox is published but no current matching vacancy is evidenced."
+    },
+    {
+      "organization": "GamerBrain.net",
+      "outcome": "WAIT_RESEARCH",
+      "reason": "SEND_WINDOW_CLOSED",
+      "evidence": "Current official remote WordPress role with authoritative application email info@gamerbrain.net; full dedup clear at 2026-10-13T05:07:03Z."
     }
   ],
   "operational_repairs": [
@@ -132,6 +170,7 @@
   "notes": [
     "No outreach or form submission was executed outside the 09:00–19:00 Europe/Madrid send window.",
     "No new opportunity survived novelty, current-demand, fit, route and ownership checks.",
-    "Fresh public-source harvest concentrated on official employer-controlled pages; known identities were not re-presented as new."
+    "Fresh public-source harvest concentrated on official employer-controlled pages; known identities were not re-presented as new.",
+    "GamerBrain.net was added as a LINKEDIN_HUNTER-owned direct-email opportunity; no send occurred before the live window."
   ]
 }
