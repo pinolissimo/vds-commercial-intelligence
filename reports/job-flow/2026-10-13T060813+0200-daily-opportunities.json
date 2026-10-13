@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
   "worker_id": "LINKEDIN_HUNTER",
-  "run_at": "2026-10-13T07:05:55+02:00",
+  "run_at": "2026-10-13T08:01:40+02:00",
   "verification_date": "2026-10-13",
   "send_window_open": false,
   "normal_cycle_completed": true,
@@ -21,15 +21,15 @@
     "note": "UID 838 is the owner operational report and excluded from commercial KPIs. Inbox UID 1590 is an Amazon Business promotional message."
   },
   "summary": {
-    "serious_candidates": 13,
+    "serious_candidates": 16,
     "direct_email_harvest_count": 8,
     "send_now": 0,
     "provider_verified_first_contact": 0,
-    "manual_apply": 0,
+    "manual_apply": 1,
     "wait_research": 1,
-    "reject": 12,
+    "reject": 14,
     "duplicate_failures": 7,
-    "fit_failures": 2,
+    "fit_failures": 4,
     "route_failures": 1,
     "freshness_failures": 2,
     "downstream_outcomes": 0,
@@ -37,6 +37,37 @@
     "provider_uids": []
   },
   "new_opportunities": [
+    {
+      "opportunity_id": "OPP-ES-REMOTE-MR-LANDON-WORDPRESS-DEVELOPER-2026",
+      "organization_id": "ES-REMOTE-MR-LANDON",
+      "organization": "Mr. Landon | The Agency Partner",
+      "country": "Spain / Remote",
+      "source_url": "https://es.linkedin.com/jobs/view/desarrollador-web-wordpress-at-mr-landon-the-agency-partner-%F0%9F%95%B5%EF%B8%8F-4464335044",
+      "verified_at": "2026-10-13",
+      "fit_score": 95,
+      "fit_reasons": [
+        "WordPress/Elementor with CPTs, custom fields, taxonomies and dynamic listings",
+        "WooCommerce, maintenance, security, migrations, hosting/DNS and performance",
+        "100% remote agency-partner environment"
+      ],
+      "material_gaps": [
+        "Freelance/P.IVA acceptance is not published",
+        "At least 2–3 years of structured WordPress work must be evidenced",
+        "Functional English and optional tools must be represented truthfully"
+      ],
+      "verified_contact_or_channel": "Official LinkedIn vacancy application",
+      "manual_application_required": true,
+      "application_url": "https://es.linkedin.com/jobs/view/desarrollador-web-wordpress-at-mr-landon-the-agency-partner-%F0%9F%B5%EF%B8%8F-4464335044",
+      "required_materials": [
+        "LinkedIn profile/application",
+        "CV",
+        "Portfolio with WordPress/Elementor projects and specific contribution"
+      ],
+      "deadline": null,
+      "budget": null,
+      "state": "MANUAL_APPLY",
+      "next_action": "Apply through the official LinkedIn vacancy as an external technical partner and ask whether remote freelance/P.IVA collaboration from Spain is accepted."
+    },
     {
       "opportunity_id": "OPP-IT-REMOTE-GAMERBRAIN-WORDPRESS-DEVELOPER-2026",
       "organization_id": "IT-REMOTE-GAMERBRAIN",
@@ -148,6 +179,24 @@
       "outcome": "WAIT_RESEARCH",
       "reason": "SEND_WINDOW_CLOSED",
       "evidence": "Current official remote WordPress role with authoritative application email info@gamerbrain.net; full dedup clear at 2026-10-13T05:07:03Z."
+    },
+    {
+      "organization": "Mr. Landon | The Agency Partner",
+      "outcome": "MANUAL_APPLY",
+      "reason": "OFFICIAL_LINKEDIN_PLATFORM_ROUTE",
+      "evidence": "Current 100% remote WordPress/Elementor role; no authoritative application email is published."
+    },
+    {
+      "organization": "Metis srl / WWOW",
+      "outcome": "REJECT",
+      "reason": "EXPLICIT_FREELANCE_AND_REMOTE_EXCLUSION",
+      "evidence": "Official job text requires on-site work in Alghero and explicitly rejects freelance, P.IVA and remote applications."
+    },
+    {
+      "organization": "Net Enjoy",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_CORE_MISMATCH_AND_ON_SITE",
+      "evidence": "Aversa office role requires React/React Native/Firebase plus broader full-stack responsibilities beyond the verified VDS core."
     }
   ],
   "operational_repairs": [
@@ -171,6 +220,7 @@
     "No outreach or form submission was executed outside the 09:00–19:00 Europe/Madrid send window.",
     "One new opportunity survived novelty, current-demand, fit, route and ownership checks: GamerBrain.net; it remains WAIT_RESEARCH until the live send window and a fresh provider/canonical dedup pass.",
     "Fresh public-source harvest concentrated on official employer-controlled pages; known identities were not re-presented as new.",
-    "GamerBrain.net was added as a LINKEDIN_HUNTER-owned direct-email opportunity; no send occurred before the live window."
+    "GamerBrain.net was added as a LINKEDIN_HUNTER-owned direct-email opportunity; no send occurred before the live window.",
+    "Incremental 08:01 cycle: Mr. Landon was added as a new manual LinkedIn opportunity; Metis and Net Enjoy were rejected on explicit contract/location or mandatory-core mismatch. No external send occurred before 09:00 Europe/Madrid."
   ]
 }
