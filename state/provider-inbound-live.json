@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-13T01:25:04Z",
-  "latest_checked_uid": 1589,
+  "updated_at": "2026-10-13T03:53:03Z",
+  "latest_checked_uid": 1590,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1345,6 +1345,21 @@
       "subtype": "REJECTION",
       "summary": "Simone Pellegrino comunica che il carico di lavoro è stabile e BP Nexus non necessita al momento di nuovi collaboratori; conserveranno il contatto per eventuali occasioni future. Nessun prossimo passo concreto.",
       "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1590,
+      "received_at": "2026-10-13T03:30:53Z",
+      "canonical_identity_key": "org:business.amazon.es",
+      "entity": "business.amazon.es",
+      "sender": "no-reply@business.amazon.es",
+      "subject": "Paga con domiciliación bancaria: una forma más fácil y rápida de pagar en Amazon Business",
+      "message_id": "<010201a1335026b2-4273ad31-b294-440d-9f49-296a0d005b07-000000@eu-west-1.amazonses.com>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
   ],
