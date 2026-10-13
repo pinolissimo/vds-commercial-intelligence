@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-10-01T12:37:00+02:00",
+  "updated_at": "2026-10-13T18:44:00+02:00",
   "policy": "Idempotent receipts for dashboard commands. A receipt proves that a worker consumed a command; it never proves or authorizes an external send. Existing production gates and provider verification remain authoritative.",
   "receipts": [
     {
@@ -108,6 +108,17 @@
       "consumed_at": "2026-10-01T12:37:00+02:00",
       "result": "APPLIED",
       "summary": "Job Flow health pass completed with external outreach disabled. Discovery is fresh and operational; latest discovery and projection workflows succeeded; provider reconciliation is current through Sent UID 712 and provider authentication is valid. Current opportunity projections were regenerated at 12:36 Europe/Madrid. Older legacy indexes remain dated but current provider overlays and regenerated projections supersede them. No safety-critical repair or gate change was required; dedup and suppression protections were preserved.",
+      "external_send_count": 0,
+      "provider_uids": [],
+      "normal_cycle_completed": true,
+      "existing_gates_preserved": true
+    },
+    {
+      "command_id": "CMD-WATCHDOG-20261013T180327-OUTBOUND-STALL",
+      "worker_id": "UNIFIED_LOOP",
+      "consumed_at": "2026-10-13T18:44:00+02:00",
+      "result": "APPLIED_RECOVERY_SUCCESS_NO_SEND",
+      "summary": "Consumed the watchdog recovery overlay without weakening any gate. Re-ran the established VDS Public Web Intelligence Booster workflow; its crawl, first-party route enrichment, white-label READY builder, queue bridge and conflict-safe persistence all completed successfully. The refreshed outputs cover 118 attempted domains and 300 enrichment records: 104 duplicate-blocked, 193 partial, and three contactable-evidence records that collapse to one Databricks identity and remain send_authorized=false. The executable READY queue remains empty, so no provider send was justified. Hostinger Sent remained at UID 840; Lanzadera inbound UID 1593 was already canonicalized as a negative wrong-channel reply with no follow-up.",
       "external_send_count": 0,
       "provider_uids": [],
       "normal_cycle_completed": true,
