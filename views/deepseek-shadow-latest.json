@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-13T13:30:05Z",
+  "updated_at": "2026-10-13T13:48:32Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1270,
+    "evaluated_total": 1271,
     "agreement_count": 548,
-    "agreement_pct": 43.15,
+    "agreement_pct": 43.12,
     "deepseek_promote": 36,
     "vds_promote": 329,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 471,
-    "cumulative_estimated_cost_usd": 0.243615,
-    "cost_per_evaluated_candidate_usd": 0.00019182,
-    "cost_per_deepseek_promote_usd": 0.00676708,
-    "cost_per_observed_ready_or_contacted_usd": 0.12180739,
-    "latest_request": null
+    "request_count": 472,
+    "cumulative_estimated_cost_usd": 0.243819,
+    "cost_per_evaluated_candidate_usd": 0.00019183,
+    "cost_per_deepseek_promote_usd": 0.00677275,
+    "cost_per_observed_ready_or_contacted_usd": 0.12190948,
+    "latest_request": {
+      "at": "2026-10-13T13:48:25Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 441,
+      "completion_tokens": 161,
+      "total_tokens": 730,
+      "estimated_cost_usd": 0.00020418
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "05114602c086e22c8aeec079f492e580",
-      "evaluated_at": "2026-10-12T16:46:38Z",
-      "organization": "Hivex",
-      "title": "Senior Frontend developer",
-      "location": "United States",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-developer-1983572212",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 96,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.65,
-      "deepseek_primary_reason": "Senior frontend developer role based in United States with no WordPress/CMS scope and unclear remote/freelance compatibility.",
-      "deepseek_risk_flags": [
-        "us_based",
-        "no_wordpress_scope",
-        "senior_level",
-        "geo_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001370818,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6c7d797422e5c401c3e0075494885576",
       "evaluated_at": "2026-10-12T16:46:38Z",
@@ -1432,10 +1415,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b29041fa5dd8c9c0c49638105327ab88",
+      "evaluated_at": "2026-10-13T13:48:25Z",
+      "organization": "Doctolib",
+      "title": "Software Engineer Intern - Fullstack (x/f/m) - Amsterdam",
+      "location": "Amsterdam",
+      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/doctolib/software-engineer-intern-fullstack-amsterdam-207152",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Internship fullstack software engineering role at Doctolib in Amsterdam; only generic 'web development' keyword match, no WordPress/WooCommerce/custom frontend freelance scope, and internship is not freelance/contract compatible.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "fullstack_engineering_core_role",
+        "geo_mismatch_amsterdam",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_match_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020418,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-13T13:30:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-13T13:48:21Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

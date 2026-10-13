@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1274,
+  "runs": 1275,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -34956,6 +34956,35 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b29041fa5dd8c9c0c49638105327ab88",
+      "evaluated_at": "2026-10-13T13:48:25Z",
+      "organization": "Doctolib",
+      "title": "Software Engineer Intern - Fullstack (x/f/m) - Amsterdam",
+      "location": "Amsterdam",
+      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/doctolib/software-engineer-intern-fullstack-amsterdam-207152",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Internship fullstack software engineering role at Doctolib in Amsterdam; only generic 'web development' keyword match, no WordPress/WooCommerce/custom frontend freelance scope, and internship is not freelance/contract compatible.",
+      "deepseek_risk_flags": [
+        "internship_not_freelance",
+        "fullstack_engineering_core_role",
+        "geo_mismatch_amsterdam",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_match_only"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020418,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -40610,9 +40639,21 @@
       "completion_tokens": 768,
       "total_tokens": 2623,
       "estimated_cost_usd": 0.00088772
+    },
+    {
+      "at": "2026-10-13T13:48:25Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 441,
+      "completion_tokens": 161,
+      "total_tokens": 730,
+      "estimated_cost_usd": 0.00020418
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-13T13:30:03Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-13T13:48:25Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
