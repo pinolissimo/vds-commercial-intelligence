@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
   "worker_id": "LINKEDIN_HUNTER",
-  "run_at": "2026-10-13T09:09:01+02:00",
+  "run_at": "2026-10-13T13:10:30+02:00",
   "verification_date": "2026-10-13",
   "send_window_open": true,
   "normal_cycle_completed": true,
@@ -15,24 +15,24 @@
     "hostinger_sent_total": null,
     "latest_uid": 840,
     "latest_commercial_uid": 840,
-    "latest_inbox_uid": 1590,
+    "latest_inbox_uid": 1592,
     "gmail_sent_new": 0,
-    "new_commercial_replies": 0,
-    "note": "Hostinger Sent UID 840 is the latest provider-verified commercial FIRST_CONTACT; no CC/BCC or attachment."
+    "new_commercial_replies": 1,
+    "note": "Hostinger Sent remains at UID 840. Inbox UID 1592 is a human reply from The Visual Corner: no current need, contact retained for future specialized projects; no follow-up permitted by existing owner stop."
   },
   "summary": {
-    "serious_candidates": 16,
-    "direct_email_harvest_count": 8,
+    "serious_candidates": 30,
+    "direct_email_harvest_count": 15,
     "send_now": 1,
     "provider_verified_first_contact": 1,
-    "manual_apply": 1,
-    "wait_research": 0,
-    "reject": 14,
-    "duplicate_failures": 7,
-    "fit_failures": 4,
-    "route_failures": 1,
-    "freshness_failures": 2,
-    "downstream_outcomes": 0,
+    "manual_apply": 2,
+    "wait_research": 3,
+    "reject": 24,
+    "duplicate_failures": 11,
+    "fit_failures": 7,
+    "route_failures": 4,
+    "freshness_failures": 4,
+    "downstream_outcomes": 1,
     "external_send_count": 1,
     "provider_uids": [
       840
@@ -102,6 +102,40 @@
       "next_action": "Wait for reply; do not resend. Hostinger Sent verified FIRST_CONTACT UID 840.",
       "provider_uid": 840,
       "sent_at": "2026-10-13T07:08:56Z"
+    },
+    {
+      "opportunity_id": "OPP-IT-UMB-PG-ALLIGATOR-WORDPRESS-WEB-DESIGNER-2026",
+      "organization_id": "IT-UMB-PG-ALLIGATOR",
+      "organization": "Alligator.it S.r.l.",
+      "country": "Italy",
+      "source_url": "https://www.alligator.it/lavora-con-noi/",
+      "verified_at": "2026-10-13",
+      "fit_score": 92,
+      "fit_reasons": [
+        "WordPress and WooCommerce",
+        "HTML/CSS/PHP/JavaScript theme customization",
+        "Figma/prototyping and end-to-end web delivery"
+      ],
+      "material_gaps": [
+        "Published model is permanent employment after trial; freelance/P.IVA is not stated",
+        "Remote work from Spain is not stated",
+        "Portfolio must evidence web design and prototyping"
+      ],
+      "verified_contact_or_channel": "Official Alligator.it application form",
+      "manual_application_required": true,
+      "application_url": "https://www.alligator.it/lavora-con-noi/",
+      "required_materials": [
+        "CV PDF/DOC/DOCX maximum 5 MB",
+        "Name and surname",
+        "Telephone",
+        "Email",
+        "Postal address",
+        "Short presentation"
+      ],
+      "deadline": null,
+      "budget": null,
+      "state": "MANUAL_APPLY",
+      "next_action": "Apply through the official form as an external WordPress/WooCommerce production partner and ask whether remote P.IVA collaboration from Spain is accepted."
     }
   ],
   "material_updates": [
@@ -113,6 +147,17 @@
       "sent_at": "2026-10-13T07:08:56Z",
       "recipient": "info@gamerbrain.net",
       "subject": "Candidatura Sviluppatore WordPress – Giuseppe Allocca"
+    },
+    {
+      "canonical_identity_key": "org:thevisualcorner.net",
+      "organization": "The Visual Corner",
+      "update": "QUALIFIED_REPLY_NO_CURRENT_NEED",
+      "provider_inbound_uid": 1592,
+      "received_at": "2026-10-13T10:24:19Z",
+      "classification": "NEGATIVE",
+      "subtype": "REJECTION",
+      "summary": "Mercy Guzmán reports two established suppliers and no current need, but will retain VDS for future robust or specialized architecture projects.",
+      "next_action": "NO_FOLLOW_UP_OWNER_STOP_PRESERVED"
     }
   ],
   "decisions": [
@@ -211,6 +256,90 @@
       "outcome": "REJECT",
       "reason": "MANDATORY_CORE_MISMATCH_AND_ON_SITE",
       "evidence": "Aversa office role requires React/React Native/Firebase plus broader full-stack responsibilities beyond the verified VDS core."
+    },
+    {
+      "organization": "Trizero Società Benefit",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Official current WordPress vacancy and job@trizero.it route verified; Hostinger/global ledger already records UID 665."
+    },
+    {
+      "organization": "Estudio Ayllón",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Current official developer page reverified; info@estudioayllon.com already contacted via UID 776."
+    },
+    {
+      "organization": "DSI Design",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Official careers page exists; info@dsidesign.it already contacted via UID 377."
+    },
+    {
+      "organization": "ReMedia Group",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Official careers page remains current; rleonzi@remediagroup.it already contacted via UID 357."
+    },
+    {
+      "organization": "Alligator.it S.r.l.",
+      "outcome": "MANUAL_APPLY",
+      "reason": "OFFICIAL_FORM_ONLY",
+      "evidence": "Current official WordPress/Web Designer vacancy requires form and CV upload; no authoritative application email."
+    },
+    {
+      "organization": "Quartopianocomunicazione",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_CORE_MISMATCH",
+      "evidence": "Official role requires excellent PrestaShop plus PHP/database/API stack; this mandatory core exceeds verified VDS fit."
+    },
+    {
+      "organization": "White Paper / WPaper",
+      "outcome": "WAIT_RESEARCH",
+      "reason": "NO_AUTHORITATIVE_CURRENT_JOB_PAGE",
+      "evidence": "Fresh aggregator signal mentions a freelance AI developer email, but the official employer page currently verifies only a client contact route."
+    },
+    {
+      "organization": "MarkeThink",
+      "outcome": "REJECT",
+      "reason": "SELECTION_CLOSED",
+      "evidence": "Current public post explicitly states the selection process is finished and the role has been filled."
+    },
+    {
+      "organization": "JobMatchingPartner",
+      "outcome": "REJECT",
+      "reason": "CLOSED_EXPIRED_ROLE",
+      "evidence": "LinkedIn marks the WordPress contractor role as no longer accepting applications."
+    },
+    {
+      "organization": "Perrfect.site",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_GEOGRAPHY_MISMATCH",
+      "evidence": "Current role restricts applicants to Romania or Eastern Europe."
+    },
+    {
+      "organization": "Candour",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_LANGUAGE_MISMATCH",
+      "evidence": "Current WordPress role requires bilingual Swedish."
+    },
+    {
+      "organization": "Root Codex",
+      "outcome": "WAIT_RESEARCH",
+      "reason": "APPLICATION_ROUTE_NOT_FULLY_VERIFIED",
+      "evidence": "Current remote WordPress listing is visible, but the exact application address is omitted from the accessible authoritative text."
+    },
+    {
+      "organization": "Software Partner Italia",
+      "outcome": "WAIT_RESEARCH",
+      "reason": "THIRD_PARTY_SIGNAL_ONLY",
+      "evidence": "Fresh aggregators expose an application email, but no current employer-controlled vacancy page was verified in this bounded pass."
+    },
+    {
+      "organization": "BSA Web",
+      "outcome": "REJECT",
+      "reason": "LOW_PRIORITY_GEOGRAPHY_LANGUAGE_UNVERIFIED",
+      "evidence": "French agency role exists, but location/language and Spain-compatible contract conditions were not verified; Italy/Spain routes were prioritized."
     }
   ],
   "operational_repairs": [
@@ -236,6 +365,9 @@
     "Fresh public-source harvest concentrated on official employer-controlled pages; known identities were not re-presented as new.",
     "GamerBrain.net was added as a LINKEDIN_HUNTER-owned direct-email opportunity; no send occurred before the live window.",
     "Incremental 08:01 cycle: Mr. Landon was added as a new manual LinkedIn opportunity; Metis and Net Enjoy were rejected on explicit contract/location or mandatory-core mismatch. No external send occurred before 09:00 Europe/Madrid.",
-    "09:08 live-window update: GamerBrain.net FIRST_CONTACT verified in Hostinger Sent as UID 840; provider live state and global ledger were updated immediately before any further candidate processing."
+    "09:08 live-window update: GamerBrain.net FIRST_CONTACT verified in Hostinger Sent as UID 840; provider live state and global ledger were updated immediately before any further candidate processing.",
+    "13:10 cycle: one new manual-route opportunity (Alligator.it) survived novelty, fit and current-source checks; no generic email substitution.",
+    "The Visual Corner reply UID 1592 was recorded as a qualified no-current-need outcome; the pre-existing owner stop forbids any automated reply or follow-up.",
+    "Fresh Hostinger Sent remained at UID 840 and Gmail Sent showed no new acquisition message."
   ]
 }
