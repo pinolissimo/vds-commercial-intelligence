@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-10-13T21:07:03Z",
+  "updated_at": "2026-10-14T02:56:19Z",
   "provider_of_record": "HOSTINGER_SENT",
   "purpose": "Low-latency provider reconciliation overlay for Command Center and dedup repair. VERIFIED_EMAIL_SENT events are merged with the slower global sent index; failed/bounced/duplicate-policy-violation attempts remain audit-only and are never counted as successful first-contact outbound.",
   "events": [
@@ -4341,11 +4341,13 @@
       "subject": "VDS — Report giornaliero performance e opportunità — 12 ottobre 2026",
       "workstream": "VDS_PROVIDER_SYNC",
       "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
+      "action_type": "ADMIN_DAILY_REPORT",
       "attachments": 0,
       "bcc_owner": false,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1791828206103724164.1791828206@visualdesignstudio.es>"
+      "external_id": "<1791828206103724164.1791828206@visualdesignstudio.es>",
+      "classification": "ADMIN_DAILY_REPORT_NOT_ACQUISITION",
+      "count_as_first_contact": false
     },
     {
       "provider_uid": 839,
@@ -4392,13 +4394,15 @@
       "subject": "VDS — Report giornaliero performance e opportunità — 13 ottobre 2026",
       "workstream": "VDS_PROVIDER_SYNC",
       "state": "VERIFIED_EMAIL_SENT",
-      "action_type": "FIRST_CONTACT",
+      "action_type": "ADMIN_DAILY_REPORT",
       "attachments": 0,
       "bcc_owner": false,
       "source": "HOSTINGER_SENT",
-      "external_id": "<1791925622524768272.1791925622@visualdesignstudio.es>"
+      "external_id": "<1791925622524768272.1791925622@visualdesignstudio.es>",
+      "classification": "ADMIN_DAILY_REPORT_NOT_ACQUISITION",
+      "count_as_first_contact": false
     }
   ],
-  "last_sync_reason": "Provider-verified FIRST_CONTACT UID 840 persisted by LINKEDIN_HUNTER.",
-  "last_provider_poll_at": "2026-10-14T01:53:25Z"
+  "last_sync_reason": "Provider reconciliation repair: administrative daily reports UID 838 and 841 are excluded from FIRST_CONTACT metrics; no resend.",
+  "last_provider_poll_at": "2026-10-14T02:56:19Z"
 }
