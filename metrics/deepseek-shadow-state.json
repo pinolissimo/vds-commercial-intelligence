@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1305,
+  "runs": 1306,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -36107,6 +36107,62 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a66fa0b5d0050d9f7829eb847691a9b9",
+      "evaluated_at": "2026-10-14T11:10:56Z",
+      "organization": "",
+      "title": "Program Officer, Instructional Design & Multimedia",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 67,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an instructional design and multimedia program officer position, not a web development role; matched keywords (accessibility, migration, website) are incidental and no semantic role hits indicate WordPress/WooCommerce/frontend web work.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_web_core_function",
+        "us_location_only",
+        "no_explicit_freelance_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9117809c361d40fd27b1ab93669f236d",
+      "evaluated_at": "2026-10-14T11:10:56Z",
+      "organization": "",
+      "title": "Freelance Marketing Graphic Designer & Short-Form Video Editor",
+      "location": "Argentina, Brazil, Chile, Colombia, Costa Rica, Dominican Republic, Ecuador, El Salvador, Guatemala, Mexico, Nicaragua, Peru, Puerto Rico, Venezuela",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 62,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Freelance marketing graphic design and short-form video editing role; core scope is design/video, not WordPress, WooCommerce, frontend development or web performance, so stack fit is absent despite freelance and remote signals.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "design_video_focus",
+        "latam_geo_scope",
+        "no_web_stack_evidence"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -41917,9 +41973,21 @@
       "completion_tokens": 743,
       "total_tokens": 2324,
       "estimated_cost_usd": 0.0005383
+    },
+    {
+      "at": "2026-10-14T11:10:56Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 644,
+      "completion_tokens": 287,
+      "total_tokens": 1059,
+      "estimated_cost_usd": 0.000332
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-14T10:52:19Z",
+  "updated_at": "2026-10-14T11:10:56Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }

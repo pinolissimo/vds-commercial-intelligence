@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-14T10:52:28Z",
+  "updated_at": "2026-10-14T11:11:04Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1311,
+    "evaluated_total": 1313,
     "agreement_count": 563,
-    "agreement_pct": 42.94,
+    "agreement_pct": 42.88,
     "deepseek_promote": 37,
     "vds_promote": 341,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 484,
-    "cumulative_estimated_cost_usd": 0.251888,
-    "cost_per_evaluated_candidate_usd": 0.00019213,
-    "cost_per_deepseek_promote_usd": 0.00680778,
-    "cost_per_observed_ready_or_contacted_usd": 0.12594386,
+    "request_count": 485,
+    "cumulative_estimated_cost_usd": 0.25222,
+    "cost_per_evaluated_candidate_usd": 0.00019209,
+    "cost_per_deepseek_promote_usd": 0.00681675,
+    "cost_per_observed_ready_or_contacted_usd": 0.12610986,
     "latest_request": {
-      "at": "2026-10-14T10:52:19Z",
+      "at": "2026-10-14T11:10:56Z",
       "model": "deepseek-flash",
-      "candidate_count": 5,
-      "valid_evaluation_count": 5,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1408,
-      "prompt_cache_miss_tokens": 173,
-      "completion_tokens": 743,
-      "total_tokens": 2324,
-      "estimated_cost_usd": 0.0005383
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 644,
+      "completion_tokens": 287,
+      "total_tokens": 1059,
+      "estimated_cost_usd": 0.000332
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,60 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "01210cc1f21b31e02a90fe2f3ca980f2",
-      "evaluated_at": "2026-10-13T10:49:57Z",
-      "organization": "Rillet",
-      "title": "Accounting Solutions Consultant",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/rillet/remote-accounting-solutions-consultant-122220",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.88,
-      "deepseek_primary_reason": "Accounting Solutions Consultant role unrelated to web development; matched keywords are generic boilerplate.",
-      "deepseek_risk_flags": [
-        "role_mismatch_accounting",
-        "generic_commercial_keywords",
-        "no_web_scope"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001412975,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "cb2bf28eb4a43659636779b7c08775b1",
-      "evaluated_at": "2026-10-13T10:49:57Z",
-      "organization": "Rillet",
-      "title": "Deployment Lead - Accounting Solutions",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/rillet/remote-deployment-lead-accounting-solutions-310542",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.88,
-      "deepseek_primary_reason": "Deployment Lead Accounting Solutions role unrelated to web development; matched keywords are generic boilerplate.",
-      "deepseek_risk_flags": [
-        "role_mismatch_accounting",
-        "generic_commercial_keywords",
-        "no_web_scope"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001412975,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "dcdd8fc053384a7ea2a835a3ac51aeb6",
       "evaluated_at": "2026-10-13T10:49:57Z",
@@ -1460,10 +1406,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a66fa0b5d0050d9f7829eb847691a9b9",
+      "evaluated_at": "2026-10-14T11:10:56Z",
+      "organization": "",
+      "title": "Program Officer, Instructional Design & Multimedia",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 67,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is an instructional design and multimedia program officer position, not a web development role; matched keywords (accessibility, migration, website) are incidental and no semantic role hits indicate WordPress/WooCommerce/frontend web work.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_web_core_function",
+        "us_location_only",
+        "no_explicit_freelance_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9117809c361d40fd27b1ab93669f236d",
+      "evaluated_at": "2026-10-14T11:10:56Z",
+      "organization": "",
+      "title": "Freelance Marketing Graphic Designer & Short-Form Video Editor",
+      "location": "Argentina, Brazil, Chile, Colombia, Costa Rica, Dominican Republic, Ecuador, El Salvador, Guatemala, Mexico, Nicaragua, Peru, Puerto Rico, Venezuela",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 62,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Freelance marketing graphic design and short-form video editing role; core scope is design/video, not WordPress, WooCommerce, frontend development or web performance, so stack fit is absent despite freelance and remote signals.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "design_video_focus",
+        "latam_geo_scope",
+        "no_web_stack_evidence"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000166,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 5,
-  "source_semantic_updated_at": "2026-10-14T10:52:14Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-14T11:10:51Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
