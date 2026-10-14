@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
   "worker_id": "LINKEDIN_HUNTER",
-  "run_at": "2026-10-14T05:08:42+02:00",
+  "run_at": "2026-10-14T06:00:36+02:00",
   "verification_date": "2026-10-14",
   "send_window_open": false,
   "normal_cycle_completed": true,
@@ -12,7 +12,7 @@
     "note": "No unexpired unreceipted PENDING_TASK_BRIDGE command targeted LINKEDIN_HUNTER."
   },
   "provider_state": {
-    "hostinger_sent_total": null,
+    "hostinger_sent_total": 831,
     "latest_uid": 841,
     "latest_commercial_uid": 840,
     "latest_inbox_uid": 1594,
@@ -21,22 +21,52 @@
     "note": "No new commercial outbound or reply. Hostinger UID 841 is an administrative owner report; latest commercial FIRST_CONTACT remains UID 840."
   },
   "summary": {
-    "serious_candidates": 13,
-    "direct_email_harvest_count": 6,
+    "serious_candidates": 19,
+    "direct_email_harvest_count": 10,
     "send_now": 0,
     "provider_verified_first_contact": 0,
     "manual_apply": 1,
-    "wait_research": 0,
-    "reject": 12,
+    "wait_research": 1,
+    "reject": 17,
     "duplicate_failures": 5,
-    "fit_failures": 4,
+    "fit_failures": 7,
     "route_failures": 1,
-    "freshness_failures": 2,
+    "freshness_failures": 4,
     "downstream_outcomes": 0,
     "external_send_count": 0,
     "provider_uids": []
   },
   "new_opportunities": [
+    {
+      "opportunity_id": "OPP-NL-REMOTE-SUBLIMESTART-WEBSITE-DEVELOPER-CONTRACTOR-2026",
+      "organization_id": "NL-REMOTE-SUBLIMESTART",
+      "organization": "SublimeStart",
+      "country": "Netherlands / Remote",
+      "source_url": "https://www.sublimestart.com/vacancies/vacancy-website-developer-remote/",
+      "verified_at": "2026-10-14",
+      "fit_score": 94,
+      "fit_reasons": [
+        "Official fully remote independent-contractor vacancy",
+        "WordPress, HTML5, CSS3 and JavaScript match VDS delivery",
+        "Maintenance, troubleshooting, responsive delivery, SEO, performance, security and backups are explicit",
+        "Spanish is required and English is an advantage"
+      ],
+      "material_gaps": [
+        "Shopify/Webflow are mentioned alongside WordPress but are not exclusive mandatory platforms",
+        "Compensation amount, workload and engagement duration are not published"
+      ],
+      "verified_contact_or_channel": "contact@sublimestart.com — official application email",
+      "manual_application_required": false,
+      "application_url": "mailto:contact@sublimestart.com",
+      "required_materials": [
+        "Resume/CV",
+        "Portfolio link"
+      ],
+      "deadline": null,
+      "budget": "Competitive salary package plus bonuses; amount not published",
+      "state": "WAIT_RESEARCH",
+      "next_action": "After 09:00 Europe/Madrid, repeat the full canonical/ledger/reservation/Hostinger/Gmail dedup. If every gate remains clear, send one direct application using the required subject Website Developer (Remote)."
+    },
     {
       "opportunity_id": "OPP-IT-EMR-RN-WEBIT-FREELANCE-DIGITAL-NETWORK-2026",
       "organization_id": "IT-EMR-RN-WEBIT-INFOTEL",
@@ -150,12 +180,49 @@
       "outcome": "REJECT",
       "reason": "SELECTION_CLOSED",
       "evidence": "Current public post explicitly marks the stable freelance WordPress/WooCommerce process closed."
+    },
+    {
+      "organization": "SublimeStart",
+      "outcome": "WAIT_RESEARCH",
+      "reason": "SEND_WINDOW_CLOSED_PENDING_FRESH_JIT_DEDUP",
+      "evidence": "Official current page states fully remote independent-contractor Website Developer work and directs resume plus portfolio to contact@sublimestart.com. Repository, Hostinger Sent and Gmail Sent checks found no prior identity/contact."
+    },
+    {
+      "organization": "AKRO DIGITAL",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_CORE_EXPERIENCE_MISMATCH",
+      "evidence": "Current remote role requires strong production backend PHP/MySQL tooling, advanced AI automation and English as working language; verified VDS evidence does not support the full mandatory senior backend profile."
+    },
+    {
+      "organization": "Antravia",
+      "outcome": "REJECT",
+      "reason": "SELECTION_CLOSED",
+      "evidence": "Official page explicitly states NOW CLOSED, DO NOT APPLY."
+    },
+    {
+      "organization": "Bottiglieri Design",
+      "outcome": "REJECT",
+      "reason": "HYBRID_LOCATION_AND_MANDATORY_CORE_MISMATCH",
+      "evidence": "Official role is hybrid in Battipaglia and marks React, Node.js and database engineering as fundamental alongside WordPress."
+    },
+    {
+      "organization": "WPZOOM",
+      "outcome": "REJECT",
+      "reason": "APPLICATIONS_CLOSED",
+      "evidence": "Official career page states that new applications are not accepted at the moment."
+    },
+    {
+      "organization": "wpd Italia",
+      "outcome": "REJECT",
+      "reason": "NO_CURRENT_MATCHING_WEB_ROLE",
+      "evidence": "Official careers page is a generic renewable-energy candidacy channel and exposes no current web/WordPress/communications assignment."
     }
   ],
   "notes": [
     "No outreach or form submission occurred because the live send window was closed.",
     "Webit was the only new qualified opportunity after canonical, provider and ownership deduplication.",
     "No generic company email was substituted for an official application channel.",
-    "05:08 Europe/Madrid cycle: no new qualified opportunity, send or reply; current official candidates were duplicate-blocked, closed, on-site or outside verified VDS core."
+    "05:08 Europe/Madrid cycle: no new qualified opportunity, send or reply; current official candidates were duplicate-blocked, closed, on-site or outside verified VDS core.",
+    "06:00 Europe/Madrid cycle: SublimeStart qualified as a new direct-email independent-contractor opportunity and held for fresh JIT dedup after the 09:00 send-window opening. AKRO DIGITAL, Antravia, Bottiglieri Design, WPZOOM and wpd Italia were rejected on current official evidence."
   ]
 }
