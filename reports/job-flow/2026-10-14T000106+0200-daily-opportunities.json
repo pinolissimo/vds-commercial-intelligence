@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "report_type": "VDS_JOB_FLOW_DAILY_OPPORTUNITIES",
   "worker_id": "LINKEDIN_HUNTER",
-  "run_at": "2026-10-14T00:01:06+02:00",
+  "run_at": "2026-10-14T05:08:42+02:00",
   "verification_date": "2026-10-14",
   "send_window_open": false,
   "normal_cycle_completed": true,
@@ -21,17 +21,17 @@
     "note": "No new commercial outbound or reply. Hostinger UID 841 is an administrative owner report; latest commercial FIRST_CONTACT remains UID 840."
   },
   "summary": {
-    "serious_candidates": 5,
-    "direct_email_harvest_count": 2,
+    "serious_candidates": 13,
+    "direct_email_harvest_count": 6,
     "send_now": 0,
     "provider_verified_first_contact": 0,
     "manual_apply": 1,
     "wait_research": 0,
-    "reject": 4,
-    "duplicate_failures": 2,
-    "fit_failures": 1,
-    "route_failures": 0,
-    "freshness_failures": 0,
+    "reject": 12,
+    "duplicate_failures": 5,
+    "fit_failures": 4,
+    "route_failures": 1,
+    "freshness_failures": 2,
     "downstream_outcomes": 0,
     "external_send_count": 0,
     "provider_uids": []
@@ -102,11 +102,60 @@
       "outcome": "REJECT",
       "reason": "EXPLICIT_AGENCY_EXCLUSION",
       "evidence": "Official contractor page states no recruiters or agencies and requests an individual contributor."
+    },
+    {
+      "organization": "yoursocialnoise",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Current official WordPress/Full Stack freelance roles verified; Hostinger Sent UID 546 to hello@yoursocialnoise.digital blocks the organization."
+    },
+    {
+      "organization": "Aixant",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Official remote WordPress FullStack route remains published; Hostinger Sent UID 489 to jobs@aixant.com blocks the organization."
+    },
+    {
+      "organization": "Pladinum",
+      "outcome": "REJECT",
+      "reason": "DUPLICATE_PROVIDER_HISTORY",
+      "evidence": "Hostinger Sent UID 372 to careers@pladinum.com blocks the organization."
+    },
+    {
+      "organization": "Dacor Studio",
+      "outcome": "REJECT",
+      "reason": "EXPLICIT_ON_SITE_REQUIREMENT",
+      "evidence": "Official company LinkedIn post requires 100% on-site work in Jerez de la Frontera."
+    },
+    {
+      "organization": "Next Adv",
+      "outcome": "REJECT",
+      "reason": "EXPLICIT_ON_SITE_REQUIREMENT",
+      "evidence": "Official careers page requires office work with only one smart-working day per week."
+    },
+    {
+      "organization": "Firewall S.r.l.",
+      "outcome": "REJECT",
+      "reason": "MANDATORY_ON_SITE_AND_CORE_MISMATCH",
+      "evidence": "Official roles require work in Gambolò; the fullstack route centers Node.js and React beyond the verified VDS core."
+    },
+    {
+      "organization": "Doozy Service",
+      "outcome": "REJECT",
+      "reason": "NO_CURRENT_MATCHING_ROLE_AND_LOCATION",
+      "evidence": "Official page marks the web fullstack role inactive and requires candidates to live within one hour of the office."
+    },
+    {
+      "organization": "Kaidia",
+      "outcome": "REJECT",
+      "reason": "SELECTION_CLOSED",
+      "evidence": "Current public post explicitly marks the stable freelance WordPress/WooCommerce process closed."
     }
   ],
   "notes": [
     "No outreach or form submission occurred because the live send window was closed.",
     "Webit was the only new qualified opportunity after canonical, provider and ownership deduplication.",
-    "No generic company email was substituted for an official application channel."
+    "No generic company email was substituted for an official application channel.",
+    "05:08 Europe/Madrid cycle: no new qualified opportunity, send or reply; current official candidates were duplicate-blocked, closed, on-site or outside verified VDS core."
   ]
 }
