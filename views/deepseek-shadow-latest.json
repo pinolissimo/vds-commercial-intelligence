@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-14T12:19:48Z",
+  "updated_at": "2026-10-14T12:38:01Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1313,
+    "evaluated_total": 1314,
     "agreement_count": 563,
-    "agreement_pct": 42.88,
+    "agreement_pct": 42.85,
     "deepseek_promote": 37,
-    "vds_promote": 341,
+    "vds_promote": 342,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 308
+    "deepseek_demoted_from_vds_promote": 309
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 16.22,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.76,
+    "vds_promote_hot_rate_pct": 1.75,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 5.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 485,
-    "cumulative_estimated_cost_usd": 0.25222,
+    "request_count": 486,
+    "cumulative_estimated_cost_usd": 0.252409,
     "cost_per_evaluated_candidate_usd": 0.00019209,
-    "cost_per_deepseek_promote_usd": 0.00681675,
-    "cost_per_observed_ready_or_contacted_usd": 0.12610986,
-    "latest_request": null
+    "cost_per_deepseek_promote_usd": 0.00682186,
+    "cost_per_observed_ready_or_contacted_usd": 0.12620447,
+    "latest_request": {
+      "at": "2026-10-14T12:37:55Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 445,
+      "completion_tokens": 137,
+      "total_tokens": 710,
+      "estimated_cost_usd": 0.00018922
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "dcdd8fc053384a7ea2a835a3ac51aeb6",
-      "evaluated_at": "2026-10-13T10:49:57Z",
-      "organization": "Sezzle",
-      "title": "Principal Infrastructure Engineer",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/sezzle/remote-principal-infrastructure-engineer-393692",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 10.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Principal Infrastructure Engineer role unrelated to web development; migration/partner keywords are generic and no WordPress/frontend scope present.",
-      "deepseek_risk_flags": [
-        "role_mismatch_infrastructure",
-        "generic_commercial_keywords",
-        "no_web_scope"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001412975,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "f255d68d894cc655ab2ef115e23bea44",
       "evaluated_at": "2026-10-13T12:53:54Z",
@@ -1451,10 +1435,37 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "86702c85d5cca926a461a83273532369",
+      "evaluated_at": "2026-10-14T12:37:55Z",
+      "organization": "Holzland Becker",
+      "title": "Senior Frontend Web Developer (all genders) Full Remote",
+      "location": "Germany",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-frontend-web-developer-all-genders-full-remote-d0befe7ff2",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Title indicates a senior frontend web developer role, full remote, which aligns with the target profile's frontend and web developer skills, but the stack specifics are unknown and the role may be React/Angular-heavy, requiring verification.",
+      "deepseek_risk_flags": [
+        "stack_unknown",
+        "possible_framework_heavy",
+        "seniority_mismatch"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018922,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-14T12:19:40Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-14T12:37:51Z",
   "last_error": "HTTPError: HTTP Error 402: Payment Required"
 }
