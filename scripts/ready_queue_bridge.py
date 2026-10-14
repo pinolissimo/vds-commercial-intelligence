@@ -138,45 +138,26 @@ def main():
         if email in exact or domain in domains: continue
         ready_by_email[email]=item
 
+    # This bridge runs without authoritative live Hostinger and Gmail Sent access.
+    # Therefore it may suppress unsafe records, but it must never promote or add
+    # FIRST_CONTACT messages. Provider-verified sending remains worker-owned.
+    ready_by_email={}
     promoted=0
     suppressed=0
     for row in rows:
-        if row.get("action_type")!="FIRST_CONTACT" or row.get("status")!="DRAFT":
+        if row.get("action_type")!="FIRST_CONTACT" or row.get("status") not in ("DRAFT","APPROVED_TO_SEND"):
             continue
         metadata=row.get("metadata") or {}
         if metadata.get("source")!=AUTO_SOURCE:
             continue
-        email=str(row.get("recipient") or "").strip().lower()
-        domain=domain_of_email(email)
-        if not valid_recipient_email(email):
-            row["status"]="CANCELLED"
-            row["metadata"]={**metadata,"suppressed_at":stamp,"suppression_reason":"INVALID_RECIPIENT_ROUTE"}
-            suppressed+=1
-            continue
-        if email in exact or domain in domains:
-            row["status"]="CANCELLED"
-            row["metadata"]={**metadata,"suppressed_at":stamp,"suppression_reason":"GLOBAL_DEDUP_BLOCK"}
-            suppressed+=1
-            continue
-        in_current_ready=email in ready_by_email
-        persisted_valid=persisted_qualification_is_valid(row,metadata)
-        if not in_current_ready and not persisted_valid:
-            continue
-        row["status"]="APPROVED_TO_SEND"
-        row["eligibility_basis"]=AUTO_BASIS
-        row["approved_at"]=stamp
-        approval_metadata={
+        row["status"]="CANCELLED"
+        row["metadata"]={
             **metadata,
-            "approved_via":"AUTOMATED_FIRST_CONTACT_POLICY",
-            "approval_basis":"CURRENT_READY_VIEW" if in_current_ready else "PERSISTED_QUALIFICATION_SNAPSHOT",
-            "approved_at":stamp
+            "suppressed_at":stamp,
+            "suppression_reason":"LIVE_HOSTINGER_AND_GMAIL_DEDUP_REQUIRED",
+            "requires_worker_provider_verification":True
         }
-        if in_current_ready and metadata.get("requires_jit_dedup_recheck"):
-            approval_metadata["requires_jit_dedup_recheck"]=False
-            approval_metadata["jit_dedup_rechecked_at"]=stamp
-            approval_metadata["jit_dedup_result"]="PASSED_CURRENT_READY_PLUS_GLOBAL_LEDGER"
-        row["metadata"]=approval_metadata
-        promoted+=1
+        suppressed+=1
 
     existing={(str(x.get("recipient") or "").lower(),str(x.get("action_type") or "")) for x in rows}
     added=0
