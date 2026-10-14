@@ -321,6 +321,41 @@
       "deadline": null,
       "budget": null,
       "next_action": "Job Flow should complete canonical dedup and verify remote/freelance terms before submitting the form."
+    },
+    {
+      "canonical_opportunity_id": "OPP-ES-WORKANA-RR-WEB-SEO-RECURRENT-COLLAB-2026",
+      "canonical_organization_id": "ORG-TO-VERIFY-WORKANA-KDA",
+      "organization_project": "Anonymous Spanish marketing agency — recurring freelance web development and SEO collaboration",
+      "country": "Spain",
+      "source_url": "https://www.workana.com/es/job/freelancers-de-diseno-web-desarrollo-y-seo-para-colaboracion-recurrente",
+      "verified_at": "2026-10-14T06:30:11+02:00",
+      "fit_score": 92,
+      "fit_reasons": [
+        "Explicit recurring freelance, project-based collaboration with increasing volume potential",
+        "WordPress, Elementor, WPO, UX/UI, technical SEO, HTML, CSS, JavaScript, PHP and MySQL",
+        "Open official Workana proposal route and undefined delivery deadline"
+      ],
+      "material_gaps": [
+        "Client legal identity and corporate domain are hidden",
+        "74 proposals and 93 interested freelancers indicate heavy competition",
+        "Client has four published projects but zero paid projects",
+        "Budget and deadline are not published",
+        "Full organization-level novelty and dedup cannot be certified until the client identity is revealed"
+      ],
+      "state": "MANUAL_APPLY_TO_VERIFY_NEW_REFERRED_TO_JOB_FLOW",
+      "verified_channel": "Official Workana proposal route",
+      "manual_application_required": true,
+      "application_url": "https://www.workana.com/es/job/freelancers-de-diseno-web-desarrollo-y-seo-para-colaboracion-recurrente",
+      "required_materials": [
+        "Workana proposal",
+        "Relevant WordPress/WPO portfolio",
+        "Recurring-project availability",
+        "Indicative rate or project pricing",
+        "Evidence of SEO/UX/UI and technical web work"
+      ],
+      "deadline": null,
+      "budget": null,
+      "next_action": "Job Flow should inspect the client profile, submit only through Workana if the opportunity remains open, and merge the record if the client identity is later disclosed."
     }
   ],
   "updates": [
@@ -362,7 +397,9 @@
     "No external message was sent.",
     "05:36 repair: the scheduled builder had reintroduced the seven unsafe READY identities and had materialized 12 unverified FIRST_CONTACT records as APPROVED_TO_SEND.",
     "Source generator and bridge now fail closed when fresh Hostinger and Gmail Sent evidence is unavailable; all 12 bridge-owned unverified records were cancelled.",
-    "Four fresh application-style leads were verified on official pages and referenced to Job Flow only; full canonical novelty checks remain pending."
+    "Four fresh application-style leads were verified on official pages and referenced to Job Flow only; full canonical novelty checks remain pending.",
+    "06:30 verification: fail-closed builder survived a new booster run (10 candidates discovered, 0 certified READY) and no bridge-owned executable first contacts reappeared.",
+    "Five otherwise relevant official agency opportunities were blocked as known organizations by fresh Hostinger/Gmail Sent evidence; they were not reported as new."
   ],
   "subsequent_cycle_updates": {
     "cycle_at": "2026-10-14T05:36:19+02:00",
@@ -401,5 +438,76 @@
     },
     "external_send_count": 0,
     "provider_uids": []
-  }
+  },
+  "subsequent_cycles": [
+    {
+      "cycle_at": "2026-10-14T06:30:11+02:00",
+      "command_bridge": {
+        "eligible_commands": 0,
+        "receipts_written": 0
+      },
+      "provider": {
+        "status": "OK",
+        "latest_sent_uid": 841,
+        "latest_commercial_sent_uid": 840,
+        "latest_inbox_uid": 1594,
+        "new_sent_events": 0,
+        "new_inbox_events": 0,
+        "commercial_replies": 0,
+        "gmail_sent_new_messages": 0
+      },
+      "outcomes": {
+        "serious_candidates_evaluated": 7,
+        "direct_email_harvest": 6,
+        "send_now": 0,
+        "provider_verified_first_contact": 0,
+        "manual_apply": 1,
+        "wait_research": 0,
+        "reject": 0,
+        "duplicates": 5,
+        "route_failures": 0
+      },
+      "provider_dedup_blocks": [
+        {
+          "organization": "Alma Creative",
+          "domain": "alma-creative.it",
+          "evidence": "Hostinger Sent UID 763 to jobs@alma-creative.it"
+        },
+        {
+          "organization": "Alpacode",
+          "domain": "alpacode.it",
+          "evidence": "Hostinger Sent UID 280 to info@alpacode.it; Gmail Sent also matched"
+        },
+        {
+          "organization": "Adviva",
+          "domain": "adviva.it",
+          "evidence": "Hostinger Sent UID 717 to adviva@wmr.it"
+        },
+        {
+          "organization": "Krom Agency",
+          "domain": "kromagency.es",
+          "evidence": "Hostinger Sent UID 715 to postulantes@kromagency.es"
+        },
+        {
+          "organization": "Ibérica Studio",
+          "domain": "ibericastudio.com",
+          "evidence": "Hostinger Sent UID 120 to trabajo@ibericastudio.com; prior bounce alert UID 123"
+        }
+      ],
+      "queue_health": {
+        "ready_count": 0,
+        "candidate_count": 10,
+        "status": "FAIL_CLOSED_PROVIDER_DEDUP_REQUIRED",
+        "risky_bridge_records": 0,
+        "cancelled_bridge_records": 12
+      },
+      "dashboard": {
+        "projection_workflow_run_id": 38509546587,
+        "status": "COMPLETED_SUCCESS",
+        "head_sha": "49704f7bf95c3821dcb96153ab61fae890f96c69"
+      },
+      "external_send_count": 0,
+      "provider_uids": []
+    }
+  ]
 }
