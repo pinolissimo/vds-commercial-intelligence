@@ -103,15 +103,21 @@ def main():
           "dedup_verified":True,
           "message_strategy":"TECHNICAL_WHITE_LABEL_PARTNER"
         }); seen.add(d)
-    ready.sort(key=lambda x:x["priority"],reverse=True)
+    # Safety boundary: public-web evidence plus the repository ledger cannot satisfy
+    # the mandatory fresh Hostinger + Gmail Sent checks. Discovery may identify
+    # candidates, but this unattended builder must never certify FIRST_CONTACT.
+    candidate_count=len(ready)
+    ready=[]
     payload={
       "schema_version":"1.0",
       "updated_at":datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00","Z"),
-      "count":len(ready),
+      "count":0,
+      "candidate_count":candidate_count,
       "target":100,
-      "status":"TARGET_REACHED" if len(ready)>=100 else "BUILDING",
-      "items":ready[:300]
+      "status":"FAIL_CLOSED_PROVIDER_DEDUP_REQUIRED",
+      "items":[],
+      "safety_note":"Candidates require fresh Hostinger Sent and Gmail Sent exact-recipient plus domain/organization checks by the sending worker before any FIRST_CONTACT."
     }
     OUT.write_text(json.dumps(payload,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(json.dumps({"ready_to_send":len(ready),"target":100,"status":payload["status"]}))
+    print(json.dumps({"ready_to_send":0,"candidate_count":candidate_count,"target":100,"status":payload["status"]}))
 if __name__=="__main__": raise SystemExit(main())
