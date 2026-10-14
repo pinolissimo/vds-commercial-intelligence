@@ -1,229 +1,243 @@
 {
   "schema_version": "2.0",
-  "updated_at": "2026-10-14T11:11:14Z",
-  "run_id": "territorial-par-1791976264",
+  "updated_at": "2026-10-14T11:29:20Z",
+  "run_id": "territorial-par-1791977351",
   "parallel": true,
   "worker_count": 10,
   "cursor_start_index": 10,
   "cursor_next_index": 10,
-  "source_plan_updated_at": "2026-10-14T11:11:04Z",
+  "source_plan_updated_at": "2026-10-14T11:29:10Z",
   "provider": "ddgs_multi_engine",
   "missions_attempted": 30,
-  "missions_completed": 5,
-  "missions_failed": 25,
-  "result_count": 28,
-  "unique_domains": 20,
+  "missions_completed": 6,
+  "missions_failed": 24,
+  "result_count": 23,
+  "unique_domains": 17,
   "policy": "PARALLEL_DISCOVERY_ONLY_FIRST_PARTY_VERIFICATION_REQUIRED",
   "missions": [
     {
-      "mission_id": "5973254-0-0",
+      "mission_id": "5973257-0-0",
       "country": "Spain",
-      "region": "Andalucía",
-      "locality": "Málaga",
+      "region": "Aragón",
+      "locality": "Zaragoza",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"capacidad externa\" wordpress agencia Málaga Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "agencia wordpress desarrollo web ecommerce Zaragoza Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 1,
       "state": "FAILED",
-      "elapsed_seconds": 2.63,
+      "elapsed_seconds": 2.03,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5973254-2-0",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "locality": "Valencia",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"colaborador freelance\" (wordpress OR frontend OR \"desarrollo web\") Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 1,
-      "state": "FAILED",
-      "elapsed_seconds": 4.0,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-4-0",
-      "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"overflow\" wordpress agency Italy Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 1,
-      "state": "FAILED",
-      "elapsed_seconds": 2.87,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-0-1",
-      "country": "Spain",
-      "region": "Andalucía",
-      "locality": "Málaga",
-      "segment": "EU_PROJECT",
-      "query": "site:cordis.europa.eu/project \"Start date\" 2026 Spain Horizon \"communication\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 2,
-      "state": "FAILED",
-      "elapsed_seconds": 0.59,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-2-1",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "locality": "Valencia",
-      "segment": "EU_PROJECT",
-      "query": "Horizon project \"communication and dissemination\" Spain website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 2,
-      "state": "FAILED",
-      "elapsed_seconds": 1.87,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-4-1",
-      "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
-      "segment": "EU_PROJECT",
-      "query": "\"communication dissemination\" consortium Italy \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 2,
-      "state": "FAILED",
-      "elapsed_seconds": 0.63,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-0-2",
-      "country": "Spain",
-      "region": "Andalucía",
-      "locality": "Málaga",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"proveedor web\" (mantenimiento OR wordpress OR ecommerce) Málaga Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 3,
-      "state": "FAILED",
-      "elapsed_seconds": 2.52,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-2-2",
-      "country": "Spain",
-      "region": "Comunitat Valenciana",
-      "locality": "Valencia",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"necesitamos\" (\"nueva web\" OR \"rediseño web\" OR \"migración wordpress\") empresa Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 3,
-      "state": "COMPLETED",
-      "elapsed_seconds": 3.78,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Trabajo en Valencia: sectores y empresas que más contratan en ...",
-          "url": "https://bancodempleo.com/trabajo-valencia-sectores-empresas-contratan-2026/",
-          "domain": "bancodempleo.com",
-          "body": "Jul 26, 2026 · Guia completa de empleo en Valencia 2026: sectores que mas contratan, empresas activas, salarios y como buscar trabajo en la Comunidad Valenciana."
-        },
-        {
-          "title": "2,000+ Available jobs in Valencia - LinkedIn",
-          "url": "https://www.linkedin.com/jobs/available-jobs-valencia",
-          "domain": "linkedin.com",
-          "body": "Today's top 2,000+ Available jobs in Valencia. Leverage your professional network, and get hired. New Available jobs added daily."
-        },
-        {
-          "title": "Cámara de Comercio de Valencia - Cámara Valencia",
-          "url": "https://www.camaravalencia.com/",
-          "domain": "camaravalencia.com",
-          "body": "Oct 6, 2026 · El directorio de empresas, los programas de comercio internacional, y la bolsa de trabajo son algunos de los servicios más destacados de la Cámara de Comercio de Valencia. Pero además, tendrá a su disposición toda la actualidad y las noticias económicas, programas de creación de empresas, subvenciones, licitaciones y concursos..."
-        },
-        {
-          "title": "Directorio o listado de empresas de Comunidad Valenciana",
-          "url": "https://www.einforma.com/informes-empresas/COMUNIDAD_COMUNIDAD-VALENCIANA.html",
-          "domain": "einforma.com",
-          "body": "Acceda al directorio de empresas de Comunidad Valenciana y consulte informes de la empresas presentes, datos de contacto, informes financieros, comerciales."
-        },
-        {
-          "title": "Ofertas de empleo en Cámara Valencia",
-          "url": "https://empleointernacional.camaravalencia.com/",
-          "domain": "empleointernacional.camaravalencia.com",
-          "body": "Ofertas de empleo en Cámara Valencia La V Feria de Empleo del Bajo Aragón consolida su éxito con un modelo híbrido que impulsa la empleabilidad en Teruel Leer más"
-        },
-        {
-          "title": "Ofertas de trabajo de Valenciana - InfoJobs",
-          "url": "https://www.infojobs.net/ofertas-trabajo/valenciana",
-          "domain": "infojobs.net",
-          "body": "896 ofertas de empleo de valenciana en el portal de empleo donde nacen las oportunidades laborales. ¡Encuentra la tuya!"
-        }
-      ]
-    },
-    {
-      "mission_id": "5973254-4-2",
-      "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"cerchiamo fornitore\" (\"sviluppo web\" OR wordpress OR \"manutenzione sito\") Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 3,
-      "state": "FAILED",
-      "elapsed_seconds": 2.69,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-0-3",
-      "country": "Spain",
-      "region": "Andalucía",
-      "locality": "Málaga",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "agencia wordpress desarrollo web ecommerce Málaga Andalucía -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 4,
-      "state": "FAILED",
-      "elapsed_seconds": 0.62,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-2-3",
+      "mission_id": "5973257-2-0",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
       "segment": "AGENCY_WHITE_LABEL",
       "query": "\"trabaja con nosotros\" \"desarrollador web\" freelance Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 4,
+      "worker_id": 1,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.32,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "12 empleos de desarrollador web en Valencia, Comunidad ...",
+          "url": "https://www.glassdoor.es/Empleo/valencia-desarrollador-web-empleos-SRCH_IL.0,8_IC2639089_KO9,26.htm",
+          "domain": "glassdoor.es",
+          "body": "Busca ofertas de empleo de Desarrollador web en Valencia, Comunidad Valenciana consultando las valoraciones y la información de sueldos de la empresa. Hay 12 vacantes de Desarrollador web en Valencia."
+        },
+        {
+          "title": "25 empleos de Desarrollador web en Valencia, Valencia ...",
+          "url": "https://es.indeed.com/q-desarrollador-web-l-valencia,-valencia-provincia-empleos.html",
+          "domain": "es.indeed.com",
+          "body": "Desarrollador web, Valencia, Valencia provincia: encuentra 25 ofertas de empleo en la bolsa de trabajo de Indeed. ¡Descubre las mejores oportunidades laborales y presenta tu solicitud!"
+        },
+        {
+          "title": "Nuevos trabajos de Desarrollador web remoto en Comunitat ...",
+          "url": "https://es.indeed.com/q-desarrollador-web-remoto-l-comunitat-valenciana-empleos.html",
+          "domain": "es.indeed.com",
+          "body": "Encuentra 8 empleos de Desarrollador web remoto en Comunitat Valenciana en Indeed.com. ¡Explora oportunidades laborales y encuentra el trabajo perfecto para ti!"
+        },
+        {
+          "title": "(343 vacantes) empleos de Freelance en Valencia/València ...",
+          "url": "https://es.linkedin.com/jobs/freelance-empleos-valencia-valència",
+          "domain": "es.linkedin.com",
+          "body": "343 empleos de Freelance populares en Valencia/València, Comunidad Valenciana / Comunitat Valenciana, España hoy. Saca partido a tu red profesional y consigue que te contraten. Cada día salen nuevos empleos de Freelance."
+        },
+        {
+          "title": "366 empleos de «Desarrollador» en Valencia/València ...",
+          "url": "https://es.linkedin.com/jobs/desarrollador-empleos-valencia",
+          "domain": "es.linkedin.com",
+          "body": "Los 366 empleos más populares de «Desarrollador» en Valencia/València, Comunidad Valenciana / Comunitat Valenciana, España hoy. Sácale el máximo partido a tu red profesional y consigue que te contraten. Se añaden nuevos empleos para Desarrollador a diario."
+        },
+        {
+          "title": "Se necesita urgente: Freelance web en Comunidad Valenciana ...",
+          "url": "https://es.jooble.org/trabajo-freelance-web/Comunidad-Valenciana",
+          "domain": "es.jooble.org",
+          "body": "Empleos de Freelance web en Comunidad Valenciana: más de 797 ofertas de empleo activas • Salario competitivo • Jornada completa, parcial y trabajos ocasionales • ¡Encuentre su nuevo empleo en Jooble!"
+        }
+      ]
+    },
+    {
+      "mission_id": "5973257-4-0",
+      "country": "Italy",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"servizi per agenzie\" sviluppo web Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 1,
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.66,
+      "result_count": 1,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Web Agency Campania | Siti web e SEO - shm.studio",
+          "url": "https://shm.studio/web-agency/campania/",
+          "domain": "shm.studio",
+          "body": "Oltre alla web agency, ci occupiamo di realizzazione siti web e creazione siti web in Campania: siti vetrina, e-commerce e web app su misura, veloci, mobile-first e ottimizzati per le conversioni. Seguiamo anche il restyling e la migrazione di siti esistenti, curando SEO tecnica, prestazioni e accessibilità. Napoli Salerno Caserta Benevento ..."
+        }
+      ]
+    },
+    {
+      "mission_id": "5973257-0-1",
+      "country": "Spain",
+      "region": "Aragón",
+      "locality": "Zaragoza",
+      "segment": "EU_PROJECT",
+      "query": "site:europa.eu project dissemination website Spain kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 2,
       "state": "FAILED",
-      "elapsed_seconds": 2.14,
+      "elapsed_seconds": 0.44,
       "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException",
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5973254-4-3",
+      "mission_id": "5973257-2-1",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "locality": "Valencia",
+      "segment": "EU_PROJECT",
+      "query": "\"Horizon Europe\" kickoff 2026 Spain \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 2,
+      "state": "FAILED",
+      "elapsed_seconds": 0.52,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-4-1",
       "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "EU_PROJECT",
+      "query": "Interreg project Italy \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 2,
+      "state": "FAILED",
+      "elapsed_seconds": 0.32,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-0-2",
+      "country": "Spain",
+      "region": "Aragón",
+      "locality": "Zaragoza",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"buscamos agencia\" (wordpress OR \"rediseño web\" OR \"mantenimiento web\") Zaragoza Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 3,
+      "state": "FAILED",
+      "elapsed_seconds": 2.07,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-2-2",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "locality": "Valencia",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"mejora web\" empresa (wordpress OR rendimiento OR conversión) Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 3,
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.84,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Hosting en España especializado en WordPress - Webempresa",
+          "url": "https://www.webempresa.com/",
+          "domain": "webempresa.com",
+          "body": "Hosting en España para ofrecer alta Velocidad y Seguridad para tu WordPress. Certificados SSL Gratis. Entra ahora y prueba 45 días sin riesgo."
+        },
+        {
+          "title": "Optimización web: qué es, cómo hacerla y qué herramientas ...Kike Domingo Bayarri - Comunidad Valenciana / Comunitat ...Lanzadera - Centro de Alto Rendimiento para Startups7 Best WordPress Hosting in 2026 (Speed Test Results)Herramientas y servicios de análisis para su empresa - Google ...",
+          "url": "https://blog.hubspot.es/website/optimizacion-web",
+          "domain": "blog.hubspot.es",
+          "body": "Precio: gratuito. Idioma: disponible en español. El sistema de gestión de contenido de HubSpot es una solución completa que cuenta con herramientas de optimización para especialistas en marketing, desarrolladores y equipos de tecnología en informática por igual. Algunas de las ventajas de esta plataforma son: 1. Alojamiento en la nube 2. Temas para... See full list on blog.hubspot.es Precio: brinda algunas herramientas de SEO gratis. Idioma: inglés. Imagen de Moz Local Moz Local utiliza diferentes fuentes de datos para saber cuál es el desempeño de tu negocio en los listados web, con la ventaja de analizar públicos localizados en ubicaciones físicas específicas. Con esta herramienta puedes saber cómo se comporta tu marca en bus... See full list on blog.hubspot.es Precio: gratuito. Idioma: disponible en español. Imagen de Google Analytics Si deseas conocer cómo se desempeña tu sitio en la red de búsqueda más grande del mundo, empieza con Google Analytics. Esta herramienta gratuita te ofrece métricas importantes de tu sitio e información práctica sobre el comportamiento de usuarios a escala. Así podrás adecua... See full list on blog.hubspot.es Precio: pagos desde 99 USD al mes. Idioma: disponible en español. Imagen de Ahrefs Como lo mencionamos antes, buenos backlinks ayudan a aumentar la posición de tu sitio en motores de búsqueda y atraen más tráfico referido. Ahrefs Backlink Checker te permite ver los 100 backlinks principales en tu sitio para que afines la estrategia de links e impul... See full list on blog.hubspot.es Precio: gratuito. Idioma: disponible en español. Imagen de Google Google aparece de nuevo en esta lista con su planificador de palabras clave. Esta herramienta no solo identifica el volumen de búsqueda de términos específicos, sino que también sugiere palabras clave potencialmente relevantes que reflejen la intención del usuario y que tal vez no ti... See full list on blog.hubspot.es Precio: plan básico gratuito y diferentes planes de pago. Idioma: inglés. Imagen de GTmetrix GTmetrix es una herramienta diseñada para mejorar la velocidad de carga de los sitios web. Al usar esta herramienta de optimización puedes entender mejor cómo la velocidad de carga de tu sitio afecta el posicionamiento de tus páginas. Además te ayuda a dete... See full list on blog.hubspot.es Precio: desde 7 USD al mes. Idioma: inglés. Imagen de EWWW Image Optimizer Comprimir imágenes sin perder la calidad de su resolución es esencial para cualquier técnica de optimización web. Esto se debe a que necesitas presentar recursos visuales que enriquezcan los contenidos, sin sacrificar los tiempos de carga de tu sitio. No obstante, comprimir ... See full list on blog.hubspot.es Precio: versión gratuita y planes desde 99 USD al año. Idioma: inglés. Imagen de Yoast SEO Yoast SEO te ayuda a mejorar tus contenidos mostrados en motores de búsqueda. Con ella puedes perfeccionar tu sitio web y la interacción que tienen los visitantes con tus materiales, no solo al analizar la legibilidad de tus textos, sino también su posicionam... See full list on blog.hubspot.es Precio: desde 119,95 USD al mes. Idioma: disponible en español. Imagen de Semrush SEO Content Template Esta es la herramienta indicada para aquellas empresas que quieren hacer un estudio detallado de su competencia. Con esta plataforma puedes optimizar tu contenido incluso antes de comenzar a escribir, ya que te permite visualizar los 10 mejores re... See full list on blog.hubspot.es Precio: versión gratuita y planes desde 14 USD al mes. Idioma: inglés. Imagen de Lucky Orange Esta aplicación es ideal para los expertos en experiencia del usuario (UX). Una buena estrategia de optimización web debe partir de un conocimiento profundo de los visitantes al sitio. Con esta herramienta puedes optimizar tus contenidos a través de la rec... See full list on blog.hubspot.es As a co-founder of Wild Balance, I am on a mission to disrupt the pet food industry by… · Educación: ESAT - Escuela Superior de Arte y Tecnología - Valencia · Ubicación: Comunidad Valenciana / Comunitat Valenciana · Más de 500 contactos en LinkedIn. Ver el perfil de Kike Domingo Bayarri en LinkedIn, una red profesional de más de 1.000 millones de miembros. Aceleradora de empresas valenciana que apoya a emprendedores para que puedan transformar sus proyectos en empresas como Hundred, Flamingueo o Sepiia. Aug 2, 2026 · We tested 12 WordPress hosts on live sites with the same setup, then scored every one. Here are the 7 best WordPress hosting picks for 2026, with proof. Google Analytics le ofrece las herramientas que necesita para entender mejor a sus clientes. Puede usar esos datos para tomar medidas, como mejorar su sitio web, crear listas de remarketing personalizadas y mucho más."
+        },
+        {
+          "title": "Kike Domingo Bayarri - Comunidad Valenciana / Comunitat ...Lanzadera - Centro de Alto Rendimiento para Startups7 Best WordPress Hosting in 2026 (Speed Test Results)Herramientas y servicios de análisis para su empresa - Google ...",
+          "url": "https://es.linkedin.com/in/kikedomingobayarri",
+          "domain": "es.linkedin.com",
+          "body": "As a co-founder of Wild Balance, I am on a mission to disrupt the pet food industry by… · Educación: ESAT - Escuela Superior de Arte y Tecnología - Valencia · Ubicación: Comunidad Valenciana / Comunitat Valenciana · Más de 500 contactos en LinkedIn. Ver el perfil de Kike Domingo Bayarri en LinkedIn, una red profesional de más de 1.000 millones de miembros. Aceleradora de empresas valenciana que apoya a emprendedores para que puedan transformar sus proyectos en empresas como Hundred, Flamingueo o Sepiia. Aug 2, 2026 · We tested 12 WordPress hosts on live sites with the same setup, then scored every one. Here are the 7 best WordPress hosting picks for 2026, with proof. Google Analytics le ofrece las herramientas que necesita para entender mejor a sus clientes. Puede usar esos datos para tomar medidas, como mejorar su sitio web, crear listas de remarketing personalizadas y mucho más."
+        },
+        {
+          "title": "Lanzadera - Centro de Alto Rendimiento para Startups",
+          "url": "https://lanzadera.es/",
+          "domain": "lanzadera.es",
+          "body": "Aceleradora de empresas valenciana que apoya a emprendedores para que puedan transformar sus proyectos en empresas como Hundred, Flamingueo o Sepiia."
+        },
+        {
+          "title": "7 Best WordPress Hosting in 2026 (Speed Test Results)",
+          "url": "https://www.wpbeginner.com/wordpress-hosting/",
+          "domain": "wpbeginner.com",
+          "body": "Aug 2, 2026 · We tested 12 WordPress hosts on live sites with the same setup, then scored every one. Here are the 7 best WordPress hosting picks for 2026, with proof."
+        },
+        {
+          "title": "Herramientas y servicios de análisis para su empresa - Google ...",
+          "url": "https://marketingplatform.google.com/intl/es/about/analytics/",
+          "domain": "marketingplatform.google.com",
+          "body": "Google Analytics le ofrece las herramientas que necesita para entender mejor a sus clientes. Puede usar esos datos para tomar medidas, como mejorar su sitio web, crear listas de remarketing personalizadas y mucho más."
+        }
+      ]
+    },
+    {
+      "mission_id": "5973257-4-2",
+      "country": "Italy",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"richiesta preventivo\" (sito web OR wordpress OR ecommerce) Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 3,
+      "state": "FAILED",
+      "elapsed_seconds": 4.44,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-0-3",
+      "country": "Spain",
+      "region": "Aragón",
+      "locality": "Zaragoza",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"servizi per agenzie\" sviluppo web Torino Piemonte -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"desarrollo web para agencias\" Zaragoza Aragón -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 4,
       "state": "FAILED",
@@ -233,407 +247,364 @@
       "results": []
     },
     {
-      "mission_id": "5973254-0-4",
-      "country": "Spain",
-      "region": "Andalucía",
-      "locality": "Málaga",
-      "segment": "EU_PROJECT",
-      "query": "site:europa.eu project dissemination website Spain kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 5,
-      "state": "COMPLETED",
-      "elapsed_seconds": 2.6,
-      "result_count": 5,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "SEED Project Presented at the Erasmus+ Project Dissemination ...",
-          "url": "https://epale.ec.europa.eu/en/content/seed-project-presented-erasmus-project-dissemination-day-2026-vitoria-gasteiz",
-          "domain": "epale.ec.europa.eu",
-          "body": "May 8, 2026 · During the dissemination sessions, more than 55 Erasmus+ initiatives from the Basque VET network were presented, creating an inspiring environment for collaboration, networking and the exchange of good practices."
-        },
-        {
-          "title": "Projects - Erasmus+",
-          "url": "https://erasmus-plus.ec.europa.eu/projects",
-          "domain": "erasmus-plus.ec.europa.eu",
-          "body": "Here's just one example: the 'Voices of Immigrant Women' project from Spain which is building a more inclusive university system by focusing on challenges faced by migrant women."
-        },
-        {
-          "title": "2026 annual work programme for the implementation ... - Erasmus+",
-          "url": "https://erasmus-plus.ec.europa.eu/resources-and-tools/documents-and-guidelines/2026-annual-work-programme-for-the-implementation-of-erasmus-the-union-programme-for-education-training-youth-and-sport",
-          "domain": "erasmus-plus.ec.europa.eu",
-          "body": "Nov 10, 2025 · 2026 annual work programme for the implementation of Erasmus+: the Union Programme for Education, Training, Youth and Sport Published alongside the Implementing Decision."
-        },
-        {
-          "title": "Find EU funded projects in education - European Commission",
-          "url": "https://commission.europa.eu/education/set-projects-education-and-training/find-funded-projects_en",
-          "domain": "commission.europa.eu",
-          "body": "Erasmus+ Project Results Platform is a database which gives you access to descriptions, results and contact information of all projects funded under the Erasmus+ programme and some of the projects funded under its predecessor programmes in the field of education, training, youth and sports."
-        },
-        {
-          "title": "CORDIS | European Commission",
-          "url": "https://cordis.europa.eu/",
-          "domain": "cordis.europa.eu",
-          "body": "CORDIS belongs to the Research and Innovation community platform of the European Commission and complements the Funding and tender opportunities website, where you can apply for funding and search for partners."
-        }
-      ]
-    },
-    {
-      "mission_id": "5973254-2-4",
+      "mission_id": "5973257-2-3",
       "country": "Spain",
       "region": "Comunitat Valenciana",
       "locality": "Valencia",
-      "segment": "EU_PROJECT",
-      "query": "\"Horizon Europe\" kickoff 2026 Spain \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 5,
-      "state": "COMPLETED",
-      "elapsed_seconds": 4.17,
-      "result_count": 5,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Horizon Europe the EU’s funding programme for research and ...",
-          "url": "https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/horizon-europe_en",
-          "domain": "commission.europa.eu",
-          "body": "Discover the research funding opportunities offered by Horizon Europe, explore the different calls for tender and proposal, and find out how to apply."
-        },
-        {
-          "title": "Horizon Europe - Research and innovation - European Commission",
-          "url": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe_en",
-          "domain": "research-and-innovation.ec.europa.eu",
-          "body": "Today, the European Commission allocated an additional €500 million to Horizon Europe, the EU's flagship research and innovation programme, for 2026 and 2027. With this additional amount, the total budget reaches now around €14.8 billion for the two years."
-        },
-        {
-          "title": "Horizon Europe 2026-27: €14 billion for better research ...",
-          "url": "https://rea.ec.europa.eu/news/horizon-europe-2026-27-eu14-billion-better-research-careers-greener-stronger-eu-2025-12-12-0_en",
-          "domain": "rea.ec.europa.eu",
-          "body": "Dec 12, 2025 · Reflecting the European Commission's priority to streamline EU procedures, the 2026 Work Programme also introduces several important measures to make applications faster and simpler than ever before. Scroll below to discover REA’s Horizon Europe programmes for 2026 and how to apply."
-        },
-        {
-          "title": "Horizon Europe 2026–2027 Funding Guide | GrantsFinder",
-          "url": "https://www.grantsfinder.eu/blog/horizon-europe-2026-2027-complete-guide",
-          "domain": "grantsfinder.eu",
-          "body": "Feb 23, 2026 · Explore the EUR 14 billion Horizon Europe 2026-2027 work programme: clusters, EIC, ERC, MSCA, Widening, call deadlines, eligibility, and how to apply."
-        },
-        {
-          "title": "Homepage - Research and innovation - European Commission",
-          "url": "https://projects.research-and-innovation.ec.europa.eu/",
-          "domain": "projects.research-and-innovation.ec.europa.eu",
-          "body": "The European Commission has launched today a €230 million research and innovation (R&I) call to support biodiversity protection, restoration and mainstreaming. On 23 September 2026, the 5th EU-Moldova Joint Research and Innovation (R&I) Committee meeting under Horizon Europe was organised in Chisinau."
-        }
-      ]
-    },
-    {
-      "mission_id": "5973254-4-4",
-      "country": "Italy",
-      "region": "Piemonte",
-      "locality": "Torino",
-      "segment": "EU_PROJECT",
-      "query": "Interreg project Italy \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 5,
-      "state": "FAILED",
-      "elapsed_seconds": 2.69,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-1-0",
-      "country": "Spain",
-      "region": "Navarra",
-      "locality": "Navarra",
       "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"servicios para agencias\" desarrollo web Navarra -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "\"partner\" \"desarrollo web\" agencia freelance Valencia Comunitat Valenciana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 6,
+      "worker_id": 4,
       "state": "FAILED",
-      "elapsed_seconds": 0.39,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-3-0",
-      "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"partita IVA\" wordpress web agency Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 6,
-      "state": "FAILED",
-      "elapsed_seconds": 1.59,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-5-0",
-      "country": "Italy",
-      "region": "Lombardia",
-      "locality": "Mantova",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"white label wordpress\" Italia Mantova Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 6,
-      "state": "FAILED",
-      "elapsed_seconds": 0.52,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-1-1",
-      "country": "Spain",
-      "region": "Navarra",
-      "locality": "Navarra",
-      "segment": "EU_PROJECT",
-      "query": "Interreg project Spain \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 7,
-      "state": "COMPLETED",
-      "elapsed_seconds": 2.27,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Spain | Interreg Europe",
-          "url": "https://www.interregeurope.eu/spain",
-          "domain": "interregeurope.eu",
-          "body": "This page contains information about the country's involvement in the programme and about the project control system in Spain. You may also speak directly with the Interreg Europe representatives in Spain. Discover the latest news and upcoming events from Spain."
-        },
-        {
-          "title": "Home - Interreg EU",
-          "url": "https://interreg.eu/",
-          "domain": "interreg.eu",
-          "body": "Stay informed about the latest Interreg developments across Europe and beyond. Explore news, success stories and opportunities that support collaboration and innovation."
-        },
-        {
-          "title": "Project communication | Interreg Europe",
-          "url": "https://www.interregeurope.eu/help-centre/implement-your-project/project-communication",
-          "domain": "interregeurope.eu",
-          "body": "Your project's news and events are, by default, published on your project website. But you can ask the joint secretariat to promote your content on the programme homepage to make it more visible."
-        },
-        {
-          "title": "Guide for programmes 2026 - presidencia.gva.es",
-          "url": "https://presidencia.gva.es/documents/90598251/372597693/Interreg+Cooperation+Day+Guide+2026.pdf/5d52a08f-4830-977b-75b2-45daff3b745e?t=1779172420681",
-          "domain": "presidencia.gva.es",
-          "body": "reg Cooperation Day 2026. Everything you need to plan, promote and deliver a meaningful event is here: from creative inspiration and planning tips to communication too."
-        },
-        {
-          "title": "I-ReWater enters its final year of implementation in 2026 ...",
-          "url": "https://interreg-sudoe.eu/en/noticia-proyecto/i-rewater-enters-its-final-year-of-implementation-in-2026-with-an-extensive-international-events-agenda/",
-          "domain": "interreg-sudoe.eu",
-          "body": "Jan 21, 2026 · The I-ReWater project enters its final year of implementation in 2026 with an agenda marked by international congresses, strategic meetings and dissemination activities in Spain, Portugal and France."
-        },
-        {
-          "title": "Home - Interreg EU",
-          "url": "https://interreg.eu/?s",
-          "domain": "interreg.eu",
-          "body": "The Interreg Project Slam is a storytelling competition for Interreg projects across Europe. Projects share their story of cooperation and impact through a short narrative, a professional video and a live presentation."
-        }
-      ]
-    },
-    {
-      "mission_id": "5973254-3-1",
-      "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "EU_PROJECT",
-      "query": "site:europa.eu project dissemination website Italy kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 7,
-      "state": "COMPLETED",
-      "elapsed_seconds": 3.66,
-      "result_count": 6,
-      "backend_used": "bing",
-      "results": [
-        {
-          "title": "Projects & results | CORDIS | European Commission",
-          "url": "https://cordis.europa.eu/projects",
-          "domain": "cordis.europa.eu",
-          "body": "Access detailed information about all these projects, download entire framework programmes' data as open data, read articles highlighting key projects, and explore interactive maps showing project connections and advanced dashboards for deeper analysis."
-        },
-        {
-          "title": "Dissemination and exploitation of research resultsInternational Conference on Research Infrastructures (ICRI ...Italy - Italia Digitale 2026 | Digital Skills and Jobs PlatformRail to Digital automated up to autonomous train operationProject dissemination | IHI Innovative Health InitiativeDissemination and exploitation - European Research Executive ...",
-          "url": "https://research-and-innovation.ec.europa.eu/strategy/dissemination-and-exploitation-research-results_en",
-          "domain": "research-and-innovation.ec.europa.eu",
-          "body": "The public disclosure of the results not only by scientific publications but via any pertinent medium. Dissemination means making results available to the people that can best make use of them e.g. scientific community, industry, other commercial players, policymakers, and more. Dissemination helps to explain the wider relevance of science to socie... See full list on research-and-innovation.ec.europa.eu The use of results in developing, creating and marketing or improving a product or process, or in creating and providing a service in standardisation activities or shaping a policy. Exploitation can be commercial, societal, political, or aimed at improving public knowledge and action. It also includes recommendations for policy making through feedb... See full list on research-and-innovation.ec.europa.eu The focus of the dissemination and exploitation policy is on the results, i.e. all output generated by the project during its implementation. These may include know-how, innovative solutions, algorithms, proof of feasibility, new business models, policy recommendations, guidelines, prototypes, demonstrators, databases and datasets, trained research... See full list on research-and-innovation.ec.europa.eu Nov 29, 2025 · Led by the Consiglio Nazionale delle Ricerche (CNR), the largest public research institution in Italy, the event will collaborate with Italy’s Ministry of University and Research and the European Commission. May 16, 2025 · Key objectives to be achieved by 2026 Ultra-Broadband Connectivity: Ensuring nationwide coverage of ultra-broadband fixed and mobile networks to enable Italians to work, learn, and live anywhere with high-speed internet access. Dissemination activities undertaken by partners can take different forms, such as including information about the project in a newsletter or on their website, distributing press releases to local press contacts, or presenting the project at an event. These provide an overview of the rules related to the dissemination of results that apply to each programme, together with tips and links to help you prepare and report on dissemination activities. Check out our Guide on communication, dissemination and exploitation to better understand the differences between these three concepts and get acquainted with the different European Commission tools that can support your project."
-        },
-        {
-          "title": "Italy - Italia Digitale 2026 | Digital Skills and Jobs Platform",
-          "url": "https://digital-skills-jobs.europa.eu/en/initiatives/national-strategies/italy-italia-digitale-2026",
-          "domain": "digital-skills-jobs.europa.eu",
-          "body": "May 16, 2025 · Key objectives to be achieved by 2026 Ultra-Broadband Connectivity: Ensuring nationwide coverage of ultra-broadband fixed and mobile networks to enable Italians to work, learn, and live anywhere with high-speed internet access."
-        },
-        {
-          "title": "Project dissemination | IHI Innovative Health Initiative",
-          "url": "https://www.ihi.europa.eu/resources-projects/project-dissemination",
-          "domain": "ihi.europa.eu",
-          "body": "These provide an overview of the rules related to the dissemination of results that apply to each programme, together with tips and links to help you prepare and report on dissemination activities."
-        },
-        {
-          "title": "Dissemination and exploitation - European Research Executive ...",
-          "url": "https://rea.ec.europa.eu/dissemination-and-exploitation_en",
-          "domain": "rea.ec.europa.eu",
-          "body": "Check out our Guide on communication, dissemination and exploitation to better understand the differences between these three concepts and get acquainted with the different European Commission tools that can support your project."
-        },
-        {
-          "title": "International Conference on Research Infrastructures (ICRI ...",
-          "url": "https://cordis.europa.eu/project/id/101261024",
-          "domain": "cordis.europa.eu",
-          "body": "Nov 29, 2025 · Led by the Consiglio Nazionale delle Ricerche (CNR), the largest public research institution in Italy, the event will collaborate with Italy’s Ministry of University and Research and the European Commission."
-        }
-      ]
-    },
-    {
-      "mission_id": "5973254-5-1",
-      "country": "Italy",
-      "region": "Lombardia",
-      "locality": "Mantova",
-      "segment": "EU_PROJECT",
-      "query": "\"Horizon Europe\" kickoff 2026 Italy \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 7,
-      "state": "FAILED",
-      "elapsed_seconds": 2.31,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-1-2",
-      "country": "Spain",
-      "region": "Navarra",
-      "locality": "Navarra",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"solicitud de presupuesto\" (web OR wordpress OR ecommerce) Navarra -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 8,
-      "state": "FAILED",
-      "elapsed_seconds": 0.69,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-3-2",
-      "country": "Italy",
-      "region": "Lazio",
-      "locality": "Roma",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"cerchiamo agenzia\" (wordpress OR \"rifacimento sito\" OR \"manutenzione web\") Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 8,
-      "state": "FAILED",
-      "elapsed_seconds": 1.98,
+      "elapsed_seconds": 1.03,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5973254-5-2",
+      "mission_id": "5973257-4-3",
       "country": "Italy",
-      "region": "Lombardia",
-      "locality": "Mantova",
-      "segment": "DIRECT_BUYER_WEB_NEED",
-      "query": "\"ottimizzazione sito\" azienda (wordpress OR performance OR conversione) Mantova Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"outsourcing sviluppo web\" agenzia Napoli Campania -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 8,
+      "worker_id": 4,
       "state": "FAILED",
-      "elapsed_seconds": 0.67,
+      "elapsed_seconds": 0.39,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5973254-1-3",
+      "mission_id": "5973257-0-4",
       "country": "Spain",
-      "region": "Navarra",
-      "locality": "Navarra",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"outsourcing desarrollo web\" agencia Navarra -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "region": "Aragón",
+      "locality": "Zaragoza",
+      "segment": "EU_PROJECT",
+      "query": "site:cordis.europa.eu/project \"Start date\" 2026 Spain Horizon \"communication\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 9,
+      "worker_id": 5,
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.95,
+      "result_count": 1,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "SKILLSPAN – TRAINING FOR IMPACTFUL RESEARCH CAREERS - CORDIS",
+          "url": "https://cordis.europa.eu/project/id/101188141",
+          "domain": "cordis.europa.eu",
+          "body": "Oct 25, 2024 · ReSkillSpan aims to maximise the impact of the European R&I system by equipping researchers of all career stages with skills needed for impactful careers within and outside academia. Building on the research-specific skills that many researchers have already mastered or are..."
+        }
+      ]
+    },
+    {
+      "mission_id": "5973257-2-4",
+      "country": "Spain",
+      "region": "Comunitat Valenciana",
+      "locality": "Valencia",
+      "segment": "EU_PROJECT",
+      "query": "Horizon project \"communication and dissemination\" Spain website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 5,
       "state": "FAILED",
-      "elapsed_seconds": 2.61,
+      "elapsed_seconds": 1.97,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5973254-3-3",
+      "mission_id": "5973257-4-4",
+      "country": "Italy",
+      "region": "Campania",
+      "locality": "Napoli",
+      "segment": "EU_PROJECT",
+      "query": "\"communication dissemination\" consortium Italy \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 5,
+      "state": "FAILED",
+      "elapsed_seconds": 2.01,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-1-0",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"outsourcing desarrollo web\" agencia Ceuta -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 6,
+      "state": "FAILED",
+      "elapsed_seconds": 0.37,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-3-0",
       "country": "Italy",
       "region": "Lazio",
       "locality": "Roma",
       "segment": "AGENCY_WHITE_LABEL",
       "query": "\"capacità esterna\" wordpress agenzia Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 9,
+      "worker_id": 6,
       "state": "FAILED",
-      "elapsed_seconds": 3.68,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-5-3",
-      "country": "Italy",
-      "region": "Lombardia",
-      "locality": "Mantova",
-      "segment": "AGENCY_WHITE_LABEL",
-      "query": "\"collaboratore freelance\" (wordpress OR frontend OR \"sviluppo web\") Mantova Lombardia -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 9,
-      "state": "FAILED",
-      "elapsed_seconds": 2.59,
-      "result_count": 0,
-      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
-      "results": []
-    },
-    {
-      "mission_id": "5973254-1-4",
-      "country": "Spain",
-      "region": "Navarra",
-      "locality": "Navarra",
-      "segment": "EU_PROJECT",
-      "query": "\"communication dissemination\" consortium Spain \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
-      "variant": "base_precision",
-      "worker_id": 10,
-      "state": "FAILED",
-      "elapsed_seconds": 0.69,
+      "elapsed_seconds": 0.77,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5973254-3-4",
+      "mission_id": "5973257-5-0",
+      "country": "Italy",
+      "region": "Toscana",
+      "locality": "Pisa",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"collaboratore freelance\" (wordpress OR frontend OR \"sviluppo web\") Pisa Toscana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 6,
+      "state": "FAILED",
+      "elapsed_seconds": 0.53,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-1-1",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "EU_PROJECT",
+      "query": "\"communication dissemination\" consortium Spain \"website\" Horizon -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 7,
+      "state": "COMPLETED",
+      "elapsed_seconds": 1.67,
+      "result_count": 6,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Spanish science communication agency offers specialized ...",
+          "url": "https://een.ec.europa.eu/partnering-opportunities/spanish-science-communication-agency-offers-specialized-services-eu-funded",
+          "domain": "een.ec.europa.eu",
+          "body": "Mar 10, 2026 · General information Short Summary Spanish creative agency specialized in science communication offers strategic support for EU-funded projects (Horizon Europe, EIC, MSCA). The agency provides comprehensive partnership for consortia, leading the Communication, Dissemination, and Exploitation (C&D&E) work packages. Additionally, they offer tailored communication and outreach packages designed to ..."
+        },
+        {
+          "title": "Communication, Dissemination, and Exploitation in European ...",
+          "url": "https://www.r2msolution.es/en/blog/communication-dissemination-and-exploitation-in-european-projects-three-different-concepts-with-the-same-goal/",
+          "domain": "r2msolution.es",
+          "body": "Jul 28, 2026 · In the European Union’s R&D&I funding ecosystem, there is a trio of terms that consistently appears in every proposal and consortium meeting: Communication, Dissemination, and Exploitation (C&D&E). Although they are often confused and treated as a mere last-minute administrative formality, the European Commission places them at the heart of programs like Horizon Europe because they are the ..."
+        },
+        {
+          "title": "Horizon Europe Communication & Dissemination Partner | KOM Agency",
+          "url": "https://kom-fr.com/horizon-europe/",
+          "domain": "kom-fr.com",
+          "body": "In Horizon Europe proposals, Impact (Section 2.3 - Suitability and quality of the measures to maximise expected outcomes and impacts, as set out in the dissemination and exploitation plan, including communication activities) is as critical as Excellence. KOM Agency serves as a specialized Work Package Leader dedicated to Communication, Dissemination, and Exploitation (WP CDE). We bridge the ..."
+        },
+        {
+          "title": "EU Project Communication in Horizon Europe: 2026 Guide",
+          "url": "https://nexuswelt.com/eu-project-communication-guide/",
+          "domain": "nexuswelt.com",
+          "body": "Mar 15, 2026 · Learn how to plan communication, dissemination and exploitation in Horizon Europe and other EU-funded projects, including visibility rules, data protection, open science and impact."
+        },
+        {
+          "title": "Communication, dissemination and exploitation plan Initial plan",
+          "url": "https://grasshopperconsortium.com/wp-content/uploads/2025/08/D7.2-v1.3-Communication-dissemination-and-exploitation-plan.pdf",
+          "domain": "grasshopperconsortium.com",
+          "body": "1. Summary This Communication, Dissemination, and Exploitation Plan outlines the strategic approach to ensure the visibility, accessibility, and long-term impact of GRASSHOPPER project funded under the Horizon Marie Skłodowska-Curie Actions (MSCA) framework. The plan is designed to promote the project's outcomes to a broad and focused audience, including the scientific community, industry ..."
+        },
+        {
+          "title": "Communication, Dissemination and Exploitation in Horizon ...",
+          "url": "https://euro-funding.com/en/blog/communication-dissemination-and-exploitation-in-horizon-europe/",
+          "domain": "euro-funding.com",
+          "body": "Aug 13, 2026 · A Horizon Europe kick-off meeting usually begins with energy. Each partner presents its role, the coordinator reviews the work plan, and the consortium discusses the website, social media channels and first communication materials. At that point, communication, dissemination and exploitation seem under control. Then the technical work takes over."
+        }
+      ]
+    },
+    {
+      "mission_id": "5973257-3-1",
       "country": "Italy",
       "region": "Lazio",
       "locality": "Roma",
       "segment": "EU_PROJECT",
       "query": "site:cordis.europa.eu/project \"Start date\" 2026 Italy Horizon \"communication\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
-      "worker_id": 10,
+      "worker_id": 7,
+      "state": "COMPLETED",
+      "elapsed_seconds": 2.07,
+      "result_count": 3,
+      "backend_used": "bing",
+      "results": [
+        {
+          "title": "Flagship project 2 - MObile radio for RAilway Networks in ...",
+          "url": "https://cordis.europa.eu/project/id/101196125",
+          "domain": "cordis.europa.eu",
+          "body": "Jun 30, 2026 · The expected obsolescence of GSM-R and the need to enable digitalisation in train operations has led the European railway sector to set a global plan for the definition of a new radio system, the Future Railway Mobile Communication System (FRMCS), as presented in the EU-Rail..."
+        },
+        {
+          "title": "International Conference on Research Infrastructures (ICRI ...",
+          "url": "https://cordis.europa.eu/project/id/101261024",
+          "domain": "cordis.europa.eu",
+          "body": "Nov 29, 2025 · The aim of the project is to facilitate the organization of the ICRI 2026 conference in Rome, Italy, in October 2026. The conference will be organized by the Consiglio Nazionale delle Ricerche (CNR), the largest public research institution in Italy, which coordinates scientific research across disciplines, sectors, and regions."
+        },
+        {
+          "title": "‘Right’ Futures: the Liminal Political Timespace of the ‘Real ...",
+          "url": "https://cordis.europa.eu/project/id/101065806",
+          "domain": "cordis.europa.eu",
+          "body": "Oct 6, 2022 · RightFutures inquires into the ways future-oriented activities shape the political experiences of youths (18-35 yo) who identify with the self-defined ‘Real Right’ in Italy and Chile. RightFutures research question (RQ) asks: “how and why do Youths who identify with the..."
+        }
+      ]
+    },
+    {
+      "mission_id": "5973257-5-1",
+      "country": "Italy",
+      "region": "Toscana",
+      "locality": "Pisa",
+      "segment": "EU_PROJECT",
+      "query": "Horizon project \"communication and dissemination\" Italy website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 7,
+      "state": "FAILED",
+      "elapsed_seconds": 1.68,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; bing:DDGSException,brave:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-1-2",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"buscamos proveedor\" (\"desarrollo web\" OR wordpress OR \"mantenimiento web\") Ceuta -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 8,
+      "state": "FAILED",
+      "elapsed_seconds": 0.49,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-3-2",
+      "country": "Italy",
+      "region": "Lazio",
+      "locality": "Roma",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"fornitore web\" (manutenzione OR wordpress OR ecommerce) Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 8,
+      "state": "FAILED",
+      "elapsed_seconds": 0.87,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-5-2",
+      "country": "Italy",
+      "region": "Toscana",
+      "locality": "Pisa",
+      "segment": "DIRECT_BUYER_WEB_NEED",
+      "query": "\"necessitiamo\" (\"nuovo sito\" OR \"rifacimento sito\" OR \"migrazione wordpress\") azienda Pisa Toscana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 8,
+      "state": "FAILED",
+      "elapsed_seconds": 0.38,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; duckduckgo:DDGSException,google:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-1-3",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"colaboradores freelance\" agencia web Ceuta -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 9,
+      "state": "FAILED",
+      "elapsed_seconds": 1.79,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-3-3",
+      "country": "Italy",
+      "region": "Lazio",
+      "locality": "Roma",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "web agency wordpress ecommerce Roma Lazio -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 9,
+      "state": "FAILED",
+      "elapsed_seconds": 2.07,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-5-3",
+      "country": "Italy",
+      "region": "Toscana",
+      "locality": "Pisa",
+      "segment": "AGENCY_WHITE_LABEL",
+      "query": "\"lavora con noi\" \"sviluppatore web\" freelance Pisa Toscana -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 9,
       "state": "FAILED",
       "elapsed_seconds": 1.86,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; brave:DDGSException,bing:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-1-4",
+      "country": "Spain",
+      "region": "Ceuta",
+      "locality": "Ceuta",
+      "segment": "EU_PROJECT",
+      "query": "Interreg project Spain \"website\" dissemination 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 10,
+      "state": "FAILED",
+      "elapsed_seconds": 0.3,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
     },
     {
-      "mission_id": "5973254-5-4",
+      "mission_id": "5973257-3-4",
       "country": "Italy",
-      "region": "Lombardia",
-      "locality": "Mantova",
+      "region": "Lazio",
+      "locality": "Roma",
       "segment": "EU_PROJECT",
-      "query": "Horizon project \"communication and dissemination\" Italy website 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "query": "site:europa.eu project dissemination website Italy kickoff 2026 -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
       "variant": "base_precision",
       "worker_id": 10,
       "state": "FAILED",
-      "elapsed_seconds": 0.59,
+      "elapsed_seconds": 0.63,
+      "result_count": 0,
+      "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
+      "results": []
+    },
+    {
+      "mission_id": "5973257-5-4",
+      "country": "Italy",
+      "region": "Toscana",
+      "locality": "Pisa",
+      "segment": "EU_PROJECT",
+      "query": "\"Horizon Europe\" kickoff 2026 Italy \"project website\" -indeed -glassdoor -jooble -talent.com -jobrapido -simplyhired",
+      "variant": "base_precision",
+      "worker_id": 10,
+      "state": "FAILED",
+      "elapsed_seconds": 0.33,
       "result_count": 0,
       "error": "RuntimeError: No usable URL results; google:DDGSException,duckduckgo:DDGSException",
       "results": []
