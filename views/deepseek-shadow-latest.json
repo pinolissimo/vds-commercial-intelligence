@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-15T09:41:44Z",
+  "updated_at": "2026-10-15T10:00:17Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1344,
+    "evaluated_total": 1346,
     "agreement_count": 573,
-    "agreement_pct": 42.63,
+    "agreement_pct": 42.57,
     "deepseek_promote": 37,
-    "vds_promote": 350,
+    "vds_promote": 351,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 317
+    "deepseek_demoted_from_vds_promote": 318
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 492,
-    "cumulative_estimated_cost_usd": 0.258311,
-    "cost_per_evaluated_candidate_usd": 0.0001922,
-    "cost_per_deepseek_promote_usd": 0.00698139,
-    "cost_per_observed_ready_or_contacted_usd": 0.12915569,
-    "latest_request": null
+    "request_count": 493,
+    "cumulative_estimated_cost_usd": 0.258692,
+    "cost_per_evaluated_candidate_usd": 0.00019219,
+    "cost_per_deepseek_promote_usd": 0.00699168,
+    "cost_per_observed_ready_or_contacted_usd": 0.12934611,
+    "latest_request": {
+      "at": "2026-10-15T10:00:08Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 698,
+      "completion_tokens": 343,
+      "total_tokens": 1169,
+      "estimated_cost_usd": 0.00038084
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "0b787a371bc3d2c9f7c8dafd58120a84",
-      "evaluated_at": "2026-10-14T01:24:45Z",
-      "organization": "Fact Finder",
-      "title": "Staff Frontend Engineer / Frontend Architect (m/f/d)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/fact-finder/staff-frontend-engineer-frontend-architect-berlin-89069",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Staff Frontend Engineer / Frontend Architect role at a product company (Fact Finder) is a senior full-time product-engineering position, not a freelance/contract web-development opportunity; the scope is frontend architecture rather than WordPress/WooCommerce/custom web maintenance work.",
-      "deepseek_risk_flags": [
-        "senior full-time product role, not freelance/contract",
-        "no WordPress/WooCommerce scope",
-        "architecture-level role beyond typical freelance web-dev engagement",
-        "geo/remote status unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000267678,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "36baa5bb04f4cf8a054cebf855662b23",
-      "evaluated_at": "2026-10-14T01:24:45Z",
-      "organization": "Tablemedia",
-      "title": "Full Stack Product Developer (m/w/d)",
-      "location": "Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tablemedia/full-stack-product-developer-berlin-269884",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 68,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 58.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Full Stack Product Developer with matched keywords (cms, css, frontend, html, javascript, php) suggests plausible stack overlap, but the role appears to be a product-team position in Berlin and the 'partner' commercial keyword is likely incidental rather than evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "likely full-time product role, not freelance",
-        "no explicit WordPress/WooCommerce mention",
-        "geo/remote status unverified",
-        "commercial keyword 'partner' may be incidental"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000267678,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "92f8f4740bc19ecbfd5898912da7761e",
       "evaluated_at": "2026-10-14T01:24:45Z",
@@ -1430,10 +1385,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "836a0b882aaf0e5d9646fd7627af9075",
+      "evaluated_at": "2026-10-15T10:00:08Z",
+      "organization": "Hawk",
+      "title": "Frontend Engineer - Agentic AI",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/hawk/frontend-engineer-agentic-ai-munich-232885",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 94,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend Engineer role at an AI company in Munich; frontend/UI/UX/accessibility keywords match the profile, but the 'Agentic AI' focus suggests a modern JS/React-heavy stack rather than WordPress/WooCommerce, and no explicit freelance/contract compatibility is evidenced.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "likely_react_heavy_stack",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_munich_not_spain_italy",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019042,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cadc5b270c3a5de5abdae1f1fc990012",
+      "evaluated_at": "2026-10-15T10:00:08Z",
+      "organization": "Zeal Network",
+      "title": "Senior Quality Assurance Engineer (f/m/d)",
+      "location": "Hamburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/zeal-network/senior-quality-assurance-engineer-hamburg-186511",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Senior QA Engineer role; core function is quality assurance, not web development. Frontend/UI/accessibility keywords appear incidental, and 'partner'/'collaboration' are generic job-text mentions, not proof of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_is_qa_not_web_dev",
+        "keyword_matches_incidental",
+        "generic_collaboration_mention",
+        "no_wordpress_woocommerce_scope",
+        "geo_hamburg_not_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019042,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-15T09:41:39Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-15T10:00:03Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

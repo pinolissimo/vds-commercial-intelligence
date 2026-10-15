@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1330,
+  "runs": 1331,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -37015,6 +37015,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "836a0b882aaf0e5d9646fd7627af9075",
+      "evaluated_at": "2026-10-15T10:00:08Z",
+      "organization": "Hawk",
+      "title": "Frontend Engineer - Agentic AI",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/hawk/frontend-engineer-agentic-ai-munich-232885",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 94,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend Engineer role at an AI company in Munich; frontend/UI/UX/accessibility keywords match the profile, but the 'Agentic AI' focus suggests a modern JS/React-heavy stack rather than WordPress/WooCommerce, and no explicit freelance/contract compatibility is evidenced.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "likely_react_heavy_stack",
+        "no_explicit_freelance_or_contract_terms",
+        "geo_munich_not_spain_italy",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019042,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cadc5b270c3a5de5abdae1f1fc990012",
+      "evaluated_at": "2026-10-15T10:00:08Z",
+      "organization": "Zeal Network",
+      "title": "Senior Quality Assurance Engineer (f/m/d)",
+      "location": "Hamburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/zeal-network/senior-quality-assurance-engineer-hamburg-186511",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Senior QA Engineer role; core function is quality assurance, not web development. Frontend/UI/accessibility keywords appear incidental, and 'partner'/'collaboration' are generic job-text mentions, not proof of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_is_qa_not_web_dev",
+        "keyword_matches_incidental",
+        "generic_collaboration_mention",
+        "no_wordpress_woocommerce_scope",
+        "geo_hamburg_not_spain_italy"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00019042,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
@@ -42921,9 +42979,21 @@
       "completion_tokens": 143,
       "total_tokens": 688,
       "estimated_cost_usd": 0.00037403
+    },
+    {
+      "at": "2026-10-15T10:00:08Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 698,
+      "completion_tokens": 343,
+      "total_tokens": 1169,
+      "estimated_cost_usd": 0.00038084
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-15T09:41:42Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-15T10:00:08Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
