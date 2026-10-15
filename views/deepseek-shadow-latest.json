@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-15T06:23:18Z",
+  "updated_at": "2026-10-15T07:33:41Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1341,
-    "agreement_count": 571,
-    "agreement_pct": 42.58,
+    "evaluated_total": 1343,
+    "agreement_count": 572,
+    "agreement_pct": 42.59,
     "deepseek_promote": 37,
-    "vds_promote": 349,
+    "vds_promote": 350,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 316
+    "deepseek_demoted_from_vds_promote": 317
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 16.22,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.72,
+    "vds_promote_hot_rate_pct": 1.71,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 5.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,22 +37,22 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 490,
-    "cumulative_estimated_cost_usd": 0.257438,
-    "cost_per_evaluated_candidate_usd": 0.00019197,
-    "cost_per_deepseek_promote_usd": 0.00695779,
-    "cost_per_observed_ready_or_contacted_usd": 0.12871911,
+    "request_count": 491,
+    "cumulative_estimated_cost_usd": 0.257937,
+    "cost_per_evaluated_candidate_usd": 0.00019206,
+    "cost_per_deepseek_promote_usd": 0.00697128,
+    "cost_per_observed_ready_or_contacted_usd": 0.12896868,
     "latest_request": {
-      "at": "2026-10-15T06:23:09Z",
+      "at": "2026-10-15T07:33:33Z",
       "model": "deepseek-flash",
-      "candidate_count": 6,
-      "valid_evaluation_count": 6,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 1734,
-      "completion_tokens": 768,
-      "total_tokens": 2630,
-      "estimated_cost_usd": 0.00177851
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 154,
+      "completion_tokens": 320,
+      "total_tokens": 1114,
+      "estimated_cost_usd": 0.00049912
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "90bfb45dbfb84316811a0e5486b01cca",
-      "evaluated_at": "2026-10-13T22:41:56Z",
-      "organization": "Truelogic",
-      "title": "Senior Back-End Developer (Java) - Global Insights & Strategy",
-      "location": "Bogota",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-back-end-developer-java-global-insights-strategy-truelogic-9719c9718a2141d5afff46ccd9c912a7",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Back-End Java role with no WordPress/WooCommerce/frontend web scope; only incidental 'frontend'/'javascript' keyword matches and generic 'partner'/'collaboration' text.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_java_backend",
-        "no_wordpress_woocommerce_scope",
-        "generic_collaboration_keyword",
-        "geo_latam_not_target_market"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016716,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "4d433c59bab3eee5591d1090321b36de",
-      "evaluated_at": "2026-10-13T22:41:56Z",
-      "organization": "Truelogic",
-      "title": "Senior Back-End Developer (Java) - Global Insights & Strategy",
-      "location": "São Paulo",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-back-end-developer-java-global-insights-strategy-truelogic",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Back-End Java role with no WordPress/WooCommerce/frontend web scope; only incidental 'frontend'/'javascript' keyword matches and generic 'partner'/'collaboration' text.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_java_backend",
-        "no_wordpress_woocommerce_scope",
-        "generic_collaboration_keyword",
-        "geo_latam_not_target_market"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016716,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "2cbac3bc0a99b2f14a610dba08d4fb70",
       "evaluated_at": "2026-10-13T22:41:56Z",
@@ -1443,10 +1387,64 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "438666295dce2abdbc3f8c2f259c130d",
+      "evaluated_at": "2026-10-15T07:33:33Z",
+      "organization": "Nex",
+      "title": "Frontend Engineer - Marketing & Digital Experience",
+      "location": "United States",
+      "opportunity_url": "https://remotelanders.com/remote-jobs/frontend-engineer-marketing-digital-experience-nex-89ddyr",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 91,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Frontend Engineer role in Marketing & Digital Experience aligns with frontend skills, but location is United States and remote status is unverified, creating geo and contract compatibility uncertainty.",
+      "deepseek_risk_flags": [
+        "location_united_states",
+        "remote_status_unverified",
+        "no_explicit_freelance_contract_mention"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00024956,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4f4037f85af71feb9791c22a489f8cac",
+      "evaluated_at": "2026-10-15T07:33:33Z",
+      "organization": "Verifone",
+      "title": "Senior Director, Product Management",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/verifone/senior-director-product-management-london-88859",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Senior Director, Product Management is a leadership role with no meaningful overlap with web development, WordPress, or frontend skills; matched keywords are incidental.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "senior_leadership",
+        "no_web_development_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00024956,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 6,
-  "source_semantic_updated_at": "2026-10-15T06:23:04Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-15T07:33:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
