@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-15T10:36:18Z",
+  "updated_at": "2026-10-15T10:54:34Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1346,
+    "evaluated_total": 1347,
     "agreement_count": 573,
-    "agreement_pct": 42.57,
+    "agreement_pct": 42.54,
     "deepseek_promote": 37,
-    "vds_promote": 351,
+    "vds_promote": 352,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 318
+    "deepseek_demoted_from_vds_promote": 319
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 16.22,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.71,
+    "vds_promote_hot_rate_pct": 1.7,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 5.41,
     "vds_promote_ready_or_contacted": 0,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 493,
-    "cumulative_estimated_cost_usd": 0.258692,
-    "cost_per_evaluated_candidate_usd": 0.00019219,
-    "cost_per_deepseek_promote_usd": 0.00699168,
-    "cost_per_observed_ready_or_contacted_usd": 0.12934611,
-    "latest_request": null
+    "request_count": 494,
+    "cumulative_estimated_cost_usd": 0.258906,
+    "cost_per_evaluated_candidate_usd": 0.00019221,
+    "cost_per_deepseek_promote_usd": 0.00699746,
+    "cost_per_observed_ready_or_contacted_usd": 0.12945304,
+    "latest_request": {
+      "at": "2026-10-15T10:54:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 395,
+      "completion_tokens": 191,
+      "total_tokens": 714,
+      "estimated_cost_usd": 0.00021386
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "92f8f4740bc19ecbfd5898912da7761e",
-      "evaluated_at": "2026-10-14T01:24:45Z",
-      "organization": "Docplanner",
-      "title": "Junior Software Engineer – Early Career (Strong Problem solving & Coding Focus) - 100% Remote within Spain",
-      "location": "Spain",
-      "opportunity_url": "https://jobicy.com/jobs/155228-junior-software-engineer-early-career-strong-problem-solving-coding-focus-100-remote-within-spain-2",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 66,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 30.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Junior Software Engineer early-career role at Docplanner is a full-time junior employment position with only a generic 'frontend' keyword match; no WordPress/WooCommerce/custom web scope and no freelance/contract compatibility.",
-      "deepseek_risk_flags": [
-        "junior full-time employment, not freelance",
-        "only generic frontend keyword match",
-        "no WordPress/WooCommerce scope",
-        "commercial keywords likely incidental"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "HIGH",
-      "estimated_cost_usd": 0.000267678,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "e5fa9c174d206293b59691561c72e5b2",
       "evaluated_at": "2026-10-14T01:24:45Z",
@@ -1432,10 +1415,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "265bdcc3a2a43eb0c93e51f7263552fb",
+      "evaluated_at": "2026-10-15T10:54:26Z",
+      "organization": "",
+      "title": "CMS Full Stack Developer (cloud certified)",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 75,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.4,
+      "deepseek_primary_reason": "Title indicates CMS full-stack development with matched keywords for CMS, CSS, HTML, JavaScript, PHP and web development, which partially aligns with the WordPress/frontend profile, but the role is full-stack and cloud-certified, and the location is United States with no confirmed remote or EU/Spain/Italy compatibility.",
+      "deepseek_risk_flags": [
+        "US-based location with no confirmed remote eligibility",
+        "Full-stack/cloud scope may exceed freelance web/WordPress focus",
+        "No explicit freelance or contract terms beyond generic 'contractor' keyword",
+        "No publication date or employment type to confirm current demand"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00021386,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-15T10:36:13Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-15T10:54:21Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
