@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-15T08:47:49Z",
+  "updated_at": "2026-10-15T09:05:45Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1343,
-    "agreement_count": 572,
-    "agreement_pct": 42.59,
+    "evaluated_total": 1344,
+    "agreement_count": 573,
+    "agreement_pct": 42.63,
     "deepseek_promote": 37,
     "vds_promote": 350,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 491,
-    "cumulative_estimated_cost_usd": 0.257937,
-    "cost_per_evaluated_candidate_usd": 0.00019206,
-    "cost_per_deepseek_promote_usd": 0.00697128,
-    "cost_per_observed_ready_or_contacted_usd": 0.12896868,
-    "latest_request": null
+    "request_count": 492,
+    "cumulative_estimated_cost_usd": 0.258311,
+    "cost_per_evaluated_candidate_usd": 0.0001922,
+    "cost_per_deepseek_promote_usd": 0.00698139,
+    "cost_per_observed_ready_or_contacted_usd": 0.12915569,
+    "latest_request": {
+      "at": "2026-10-15T09:05:40Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 417,
+      "completion_tokens": 143,
+      "total_tokens": 688,
+      "estimated_cost_usd": 0.00037403
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "2cbac3bc0a99b2f14a610dba08d4fb70",
-      "evaluated_at": "2026-10-13T22:41:56Z",
-      "organization": "Truelogic",
-      "title": "Senior Back-End Developer (Java) - Global Insights & Strategy",
-      "location": "LatAm",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-back-end-developer-java-global-insights-strategy-truelogic-4297649eafc6480b974d51e9e3feebd9",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Back-End Java role with no WordPress/WooCommerce/frontend web scope; only incidental 'frontend'/'javascript' keyword matches and generic 'partner'/'collaboration' text.",
-      "deepseek_risk_flags": [
-        "stack_mismatch_java_backend",
-        "no_wordpress_woocommerce_scope",
-        "generic_collaboration_keyword",
-        "geo_latam_not_target_market"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00016716,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "0b787a371bc3d2c9f7c8dafd58120a84",
       "evaluated_at": "2026-10-14T01:24:45Z",
@@ -1430,10 +1413,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e654358980a4c06005fff81c310101ae",
+      "evaluated_at": "2026-10-15T09:05:40Z",
+      "organization": "Axs",
+      "title": "Database Engineer I",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/axs/database-engineer-i-london-42123",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Database Engineer I position, which is a core database/backend engineering role with no meaningful WordPress, WooCommerce, frontend, or web-maintenance scope matching the target freelance web-developer profile.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "non_freelance_core_role",
+        "keyword_noise_migration",
+        "generic_collaboration_mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00037403,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-15T08:47:41Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-15T09:05:37Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
