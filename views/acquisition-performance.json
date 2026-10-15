@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5",
-  "updated_at": "2026-10-15T17:55:33Z",
+  "updated_at": "2026-10-15T19:27:03Z",
   "north_star": "WON_REVENUE_THEN_PROPOSAL_CALL_QUALIFIED_REPLY_FIRST_CONTACT",
   "north_star_order": [
     "WON_REVENUE",
@@ -26,24 +26,24 @@
   "funnel_snapshot": {
     "raw": 2546,
     "semantic_input": 2546,
-    "semantic_pass": 193,
-    "semantic_review": 587,
-    "semantic_reject": 1766,
+    "semantic_pass": 192,
+    "semantic_review": 589,
+    "semantic_reject": 1765,
     "rejected_non_project_support": 130,
     "buyer_intent_very_high": 102,
     "buyer_intent_high": 107,
     "buyer_intent_high_total": 209,
     "project_based_high_intent": 209,
-    "opportunity_first_high_priority": 235,
-    "second_chance_queue": 415,
-    "decision_maker_enrichment_queue": 305,
+    "opportunity_first_high_priority": 234,
+    "second_chance_queue": 414,
+    "decision_maker_enrichment_queue": 303,
     "buyer_archetypes": {
       "AGENCY_EXTERNAL_CAPACITY": 198,
       "EU_DISSEMINATION_SPECIALIST": 18,
-      "SME_WEB_IMPROVEMENT": 261
+      "SME_WEB_IMPROVEMENT": 260
     },
     "engagement_models": {
-      "PROJECT_BASED_WEB_DELIVERY": 451,
+      "PROJECT_BASED_WEB_DELIVERY": 450,
       "PROJECT_MODEL_TO_VERIFY": 14,
       "NON_PROJECT_SUPPORT": 12
     },
@@ -922,6 +922,18 @@
       "rank": 7
     },
     {
+      "source_id": "remoteok",
+      "raw_signals": 10,
+      "semantic_pass": 3,
+      "semantic_review": 3,
+      "semantic_pass_rate": 0.3,
+      "semantic_useful_rate": 0.405,
+      "raw_priority_multiplier": 1.24,
+      "recommended_multiplier": 1.13,
+      "budget_class": "NORMAL_OR_PROMOTED",
+      "rank": 8
+    },
+    {
       "source_id": "joa_es_wordpress_body",
       "raw_signals": 3,
       "semantic_pass": 1,
@@ -931,7 +943,7 @@
       "raw_priority_multiplier": 1.0,
       "recommended_multiplier": 1.06,
       "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 8
+      "rank": 9
     },
     {
       "source_id": "remotejobs_contract_webdev",
@@ -942,18 +954,6 @@
       "semantic_useful_rate": 0.2372,
       "raw_priority_multiplier": 1.33,
       "recommended_multiplier": 1.02,
-      "budget_class": "NORMAL_OR_PROMOTED",
-      "rank": 9
-    },
-    {
-      "source_id": "remoteok",
-      "raw_signals": 14,
-      "semantic_pass": 3,
-      "semantic_review": 3,
-      "semantic_pass_rate": 0.2143,
-      "semantic_useful_rate": 0.2893,
-      "raw_priority_multiplier": 1.23,
-      "recommended_multiplier": 1.0,
       "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 10
     },
@@ -971,13 +971,13 @@
     },
     {
       "source_id": "jobicy_europe",
-      "raw_signals": 106,
+      "raw_signals": 111,
       "semantic_pass": 14,
       "semantic_review": 24,
-      "semantic_pass_rate": 0.1321,
-      "semantic_useful_rate": 0.2113,
-      "raw_priority_multiplier": 1.28,
-      "recommended_multiplier": 0.95,
+      "semantic_pass_rate": 0.1261,
+      "semantic_useful_rate": 0.2018,
+      "raw_priority_multiplier": 1.26,
+      "recommended_multiplier": 0.92,
       "budget_class": "NORMAL_OR_PROMOTED",
       "rank": 12
     },
@@ -1019,11 +1019,11 @@
     },
     {
       "source_id": "arbeitnow_eu",
-      "raw_signals": 2179,
-      "semantic_pass": 122,
+      "raw_signals": 2178,
+      "semantic_pass": 121,
       "semantic_review": 244,
-      "semantic_pass_rate": 0.056,
-      "semantic_useful_rate": 0.0952,
+      "semantic_pass_rate": 0.0556,
+      "semantic_useful_rate": 0.0948,
       "raw_priority_multiplier": 1.22,
       "recommended_multiplier": 0.78,
       "budget_class": "NORMAL_OR_PROMOTED",
@@ -1125,7 +1125,7 @@
         "province": "Roma",
         "score": 69.85,
         "mode": "HARVEST",
-        "harvest_cycles": 2,
+        "harvest_cycles": 3,
         "consecutive_low_yield_cycles": 0,
         "cooldown_until": "2026-10-16T11:19:09.818948Z",
         "metrics": {
@@ -1142,17 +1142,19 @@
         },
         "rank": 1,
         "sample_status": "INSUFFICIENT_SAMPLE"
-      },
+      }
+    ],
+    "explore_or_revisit": [
       {
         "area_key": "Italy|Lombardia|Milano",
         "country": "Italy",
         "region": "Lombardia",
         "province": "Milano",
         "score": 50.37,
-        "mode": "HARVEST",
-        "harvest_cycles": 3,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
         "consecutive_low_yield_cycles": 0,
-        "cooldown_until": "2026-10-16T11:00:41.426707Z",
+        "cooldown_until": null,
         "metrics": {
           "signals": 1,
           "verified": 1,
@@ -1167,14 +1169,12 @@
         },
         "rank": 2,
         "sample_status": "INSUFFICIENT_SAMPLE"
-      }
-    ],
-    "explore_or_revisit": [
+      },
       {
-        "area_key": "Spain|Comunitat Valenciana|Castellón",
-        "country": "Spain",
-        "region": "Comunitat Valenciana",
-        "province": "Castellón",
+        "area_key": "Italy|Calabria|Reggio Calabria",
+        "country": "Italy",
+        "region": "Calabria",
+        "province": "Reggio Calabria",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1221,10 +1221,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Calabria|Reggio Calabria",
+        "area_key": "Italy|Puglia|Bari",
         "country": "Italy",
-        "region": "Calabria",
-        "province": "Reggio Calabria",
+        "region": "Puglia",
+        "province": "Bari",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1271,10 +1271,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Puglia|Bari",
-        "country": "Italy",
-        "region": "Puglia",
-        "province": "Bari",
+        "area_key": "Spain|Comunitat Valenciana|Castellón",
+        "country": "Spain",
+        "region": "Comunitat Valenciana",
+        "province": "Castellón",
         "score": 32.56,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1296,10 +1296,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Emilia-Romagna|Piacenza",
+        "area_key": "Italy|Piemonte|Torino",
         "country": "Italy",
-        "region": "Emilia-Romagna",
-        "province": "Piacenza",
+        "region": "Piemonte",
+        "province": "Torino",
         "score": 25.96,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1321,10 +1321,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Piemonte|Torino",
+        "area_key": "Italy|Emilia-Romagna|Piacenza",
         "country": "Italy",
-        "region": "Piemonte",
-        "province": "Torino",
+        "region": "Emilia-Romagna",
+        "province": "Piacenza",
         "score": 25.96,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1421,31 +1421,6 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Emilia-Romagna|Bologna",
-        "country": "Italy",
-        "region": "Emilia-Romagna",
-        "province": "Bologna",
-        "score": 0.78,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 1,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 13,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
         "area_key": "Spain|Comunitat Valenciana|Valencia",
         "country": "Spain",
         "region": "Comunitat Valenciana",
@@ -1467,57 +1442,32 @@
           "stale": 0,
           "rejected": 0
         },
+        "rank": 13,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Emilia-Romagna|Bologna",
+        "country": "Italy",
+        "region": "Emilia-Romagna",
+        "province": "Bologna",
+        "score": 0.78,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 1,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
         "rank": 14,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
-        "area_key": "Italy|Sardegna|Sud Sardegna",
-        "country": "Italy",
-        "region": "Sardegna",
-        "province": "Sud Sardegna",
-        "score": 0.66,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 15,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
-        "area_key": "Italy|Sicilia|Caltanissetta",
-        "country": "Italy",
-        "region": "Sicilia",
-        "province": "Caltanissetta",
-        "score": 0.66,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 16,
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
@@ -1542,14 +1492,64 @@
           "stale": 0,
           "rejected": 0
         },
+        "rank": 15,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Piemonte|Alessandria",
+        "country": "Italy",
+        "region": "Piemonte",
+        "province": "Alessandria",
+        "score": 0.66,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
+        "rank": 16,
+        "sample_status": "INSUFFICIENT_SAMPLE"
+      },
+      {
+        "area_key": "Italy|Liguria|Genova",
+        "country": "Italy",
+        "region": "Liguria",
+        "province": "Genova",
+        "score": 0.66,
+        "mode": "EXPLORATION",
+        "harvest_cycles": 0,
+        "consecutive_low_yield_cycles": 0,
+        "cooldown_until": null,
+        "metrics": {
+          "signals": 0,
+          "verified": 0,
+          "high_fit": 0,
+          "hot": 0,
+          "ready": 0,
+          "sends": 0,
+          "positive_replies": 0,
+          "duplicates": 0,
+          "stale": 0,
+          "rejected": 0
+        },
         "rank": 17,
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Spain|Andalucía|Granada",
-        "country": "Spain",
-        "region": "Andalucía",
-        "province": "Granada",
+        "area_key": "Italy|Puglia|Lecce",
+        "country": "Italy",
+        "region": "Puglia",
+        "province": "Lecce",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1571,10 +1571,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Lombardia|Mantova",
+        "area_key": "Italy|Basilicata|Potenza",
         "country": "Italy",
-        "region": "Lombardia",
-        "province": "Mantova",
+        "region": "Basilicata",
+        "province": "Potenza",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1596,10 +1596,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Emilia-Romagna|Parma",
-        "country": "Italy",
-        "region": "Emilia-Romagna",
-        "province": "Parma",
+        "area_key": "Spain|Andalucía|Sevilla",
+        "country": "Spain",
+        "region": "Andalucía",
+        "province": "Sevilla",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1621,10 +1621,10 @@
         "sample_status": "INSUFFICIENT_SAMPLE"
       },
       {
-        "area_key": "Italy|Piemonte|Asti",
+        "area_key": "Italy|Campania|Benevento",
         "country": "Italy",
-        "region": "Piemonte",
-        "province": "Asti",
+        "region": "Campania",
+        "province": "Benevento",
         "score": 0.66,
         "mode": "EXPLORATION",
         "harvest_cycles": 0,
@@ -1643,31 +1643,6 @@
           "rejected": 0
         },
         "rank": 21,
-        "sample_status": "INSUFFICIENT_SAMPLE"
-      },
-      {
-        "area_key": "Italy|Trentino-Alto Adige|Bolzano",
-        "country": "Italy",
-        "region": "Trentino-Alto Adige",
-        "province": "Bolzano",
-        "score": 0.66,
-        "mode": "EXPLORATION",
-        "harvest_cycles": 0,
-        "consecutive_low_yield_cycles": 0,
-        "cooldown_until": null,
-        "metrics": {
-          "signals": 0,
-          "verified": 0,
-          "high_fit": 0,
-          "hot": 0,
-          "ready": 0,
-          "sends": 0,
-          "positive_replies": 0,
-          "duplicates": 0,
-          "stale": 0,
-          "rejected": 0
-        },
-        "rank": 22,
         "sample_status": "INSUFFICIENT_SAMPLE"
       }
     ],
