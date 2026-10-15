@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-15T11:13:14Z",
+  "updated_at": "2026-10-15T11:31:55Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1347,
-    "agreement_count": 573,
-    "agreement_pct": 42.54,
+    "evaluated_total": 1348,
+    "agreement_count": 574,
+    "agreement_pct": 42.58,
     "deepseek_promote": 37,
     "vds_promote": 352,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 494,
-    "cumulative_estimated_cost_usd": 0.258906,
-    "cost_per_evaluated_candidate_usd": 0.00019221,
-    "cost_per_deepseek_promote_usd": 0.00699746,
-    "cost_per_observed_ready_or_contacted_usd": 0.12945304,
-    "latest_request": null
+    "request_count": 495,
+    "cumulative_estimated_cost_usd": 0.259072,
+    "cost_per_evaluated_candidate_usd": 0.00019219,
+    "cost_per_deepseek_promote_usd": 0.00700193,
+    "cost_per_observed_ready_or_contacted_usd": 0.12953578,
+    "latest_request": {
+      "at": "2026-10-15T11:31:48Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 134,
+      "completion_tokens": 202,
+      "total_tokens": 720,
+      "estimated_cost_usd": 0.00016549
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "e5fa9c174d206293b59691561c72e5b2",
-      "evaluated_at": "2026-10-14T01:24:45Z",
-      "organization": "BlueTuskr",
-      "title": "Graphic Designer & Video Editor",
-      "location": "",
-      "opportunity_url": "https://remoteOK.com/remote-jobs/remote-graphic-designer-video-editor-bluetuskr-1137507",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 61,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 25.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Graphic Designer & Video Editor role at BlueTuskr is a creative/design position, not a web-development role; matched keywords (accessibility, web developer, website) appear incidental and the core scope does not align with the target profile.",
-      "deepseek_risk_flags": [
-        "role is design/video, not web development",
-        "keyword matches likely incidental",
-        "no WordPress/WooCommerce scope",
-        "geo/remote status unverified"
-      ],
-      "deepseek_contract_compatibility": "UNKNOWN",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000267678,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "665858c3d0c18290d682217157276848",
       "evaluated_at": "2026-10-14T01:24:45Z",
@@ -1432,10 +1415,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "61dbdc43012bc7f4eb8135ff0faa96e7",
+      "evaluated_at": "2026-10-15T11:31:48Z",
+      "organization": "",
+      "title": "CSS Support Operations Analyst",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 52.0,
+      "deepseek_confidence": 0.45,
+      "deepseek_primary_reason": "Title 'CSS Support Operations Analyst' with matched keywords css, javascript, migration, website suggests possible frontend/CSS support scope, but the role reads as an operations/analyst position rather than a freelance web-development engagement, and the location is United States with no confirmed remote or EU/Spain/Italy compatibility.",
+      "deepseek_risk_flags": [
+        "role appears operations/analyst rather than hands-on web development",
+        "no explicit WordPress/WooCommerce scope",
+        "US-based location with unverified remote status",
+        "freelance/contract compatibility inferred only from generic keywords (contractor, subcontractor, remote)",
+        "no publication date or employment type to confirm current demand"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00016549,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-15T11:13:07Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-15T11:31:43Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
