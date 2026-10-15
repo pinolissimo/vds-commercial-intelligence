@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-15T12:41:05Z",
+  "updated_at": "2026-10-15T12:59:04Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1348,
+    "evaluated_total": 1350,
     "agreement_count": 574,
-    "agreement_pct": 42.58,
+    "agreement_pct": 42.52,
     "deepseek_promote": 37,
     "vds_promote": 352,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -37,12 +37,23 @@
     "note": "Longitudinal proxy: organization-name reconciliation against current cross-signal HOT/HOT+ and Command Center READY/CONTACTED state. It is observational, not causal proof."
   },
   "economics": {
-    "request_count": 495,
-    "cumulative_estimated_cost_usd": 0.259072,
-    "cost_per_evaluated_candidate_usd": 0.00019219,
-    "cost_per_deepseek_promote_usd": 0.00700193,
-    "cost_per_observed_ready_or_contacted_usd": 0.12953578,
-    "latest_request": null
+    "request_count": 496,
+    "cumulative_estimated_cost_usd": 0.259433,
+    "cost_per_evaluated_candidate_usd": 0.00019217,
+    "cost_per_deepseek_promote_usd": 0.00701169,
+    "cost_per_observed_ready_or_contacted_usd": 0.12971631,
+    "latest_request": {
+      "at": "2026-10-15T12:58:59Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 719,
+      "completion_tokens": 306,
+      "total_tokens": 1153,
+      "estimated_cost_usd": 0.00036104
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,61 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "665858c3d0c18290d682217157276848",
-      "evaluated_at": "2026-10-14T01:24:45Z",
-      "organization": "grafanalabs",
-      "title": "Senior Solutions Architect | UK | Remote",
-      "location": "",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/grafanalabs/senior-solutions-architect-uk-remote-173126",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Solutions Architect at Grafana Labs is a senior pre-sales/architecture role with no WordPress/WooCommerce/custom web scope; only a generic 'migration' keyword match and incidental commercial keywords.",
-      "deepseek_risk_flags": [
-        "senior solutions/pre-sales role, not web development",
-        "no WordPress/WooCommerce scope",
-        "keyword matches incidental",
-        "geo/remote status unverified"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000267678,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "3c12978a5ce970ca3a737d1c13a32b1e",
-      "evaluated_at": "2026-10-14T06:17:16Z",
-      "organization": "Fueled",
-      "title": "Full Stack Web Engineer",
-      "location": "LATAM",
-      "opportunity_url": "https://remotejobs.org/remote-jobs/full-stack-web-engineer-fueled",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "PROMOTE",
-      "deepseek_score": 88.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Full Stack Web Engineer role with explicit WordPress, PHP, HTML, CSS, JS and frontend matches; commercial keywords include agency, contractor and contract, indicating plausible freelance/external collaboration compatibility.",
-      "deepseek_risk_flags": [
-        "LATAM location may not align with Spain/Italy primary markets",
-        "Full-stack scope may include backend-heavy work beyond target profile",
-        "Contract compatibility inferred from keywords, not confirmed"
-      ],
-      "deepseek_contract_compatibility": "MEDIUM",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0003436443,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "6a4403ddd9ea778e2939d169afdd4009",
       "evaluated_at": "2026-10-14T06:17:16Z",
@@ -1433,10 +1389,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f5bfb93faa6d904819f150b2b8512bc8",
+      "evaluated_at": "2026-10-15T12:58:59Z",
+      "organization": "Project Blackbook",
+      "title": "Customer & Commercial Insights consultant - Contract Role (French or Spanish Speaking)",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/project-blackbook/customer-commercial-insights-consultant-contract-role-french-or-spanish-speaking-london-454561",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 66,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Role is a Customer & Commercial Insights consultant (business/market research consulting), not a web development role; only tangential 'website' keyword match and no WordPress/WooCommerce/frontend/performance scope.",
+      "deepseek_risk_flags": [
+        "role_domain_mismatch",
+        "no_web_dev_scope",
+        "keyword_only_match",
+        "consulting_not_web_development"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00018052,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "714b8b80adfac1c0e69ff2e5868e1dda",
+      "evaluated_at": "2026-10-15T12:58:59Z",
+      "organization": "Fanvue.com",
+      "title": "Senior Software Engineer (Growth)",
+      "location": "Hybrid (London)",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/fanvuecom/senior-software-engineer-growth-london-172454",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 65,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Senior Software Engineer (Growth) is a core software engineering role with only a generic 'frontend' keyword match; no WordPress/WooCommerce/custom web maintenance scope, and 'agency/partner' mentions are not evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "core_software_engineering_role",
+        "no_wordpress_woocommerce_scope",
+        "generic_frontend_keyword",
+        "hybrid_london_onsite",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018052,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-15T12:40:57Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-15T12:58:56Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
