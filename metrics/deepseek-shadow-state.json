@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1365,
+  "runs": 1366,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -38259,21 +38259,93 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "805409938fd6587c2b2cda3113354252",
+      "evaluated_at": "2026-10-16T20:56:41Z",
+      "organization": "Conflux",
+      "title": "Senior Fullstack Web Developer",
+      "location": "Utrecht, Utrecht, Nederland",
+      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/conflux/senior-fullstack-web-developer-utrecht-22833",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 45.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Title 'Senior Fullstack Web Developer' with matched front-end/UX/web developer keywords suggests possible web scope, but 'fullstack' and location Utrecht (Netherlands, outside primary Spain/Italy markets) create uncertainty; no explicit WordPress/WooCommerce evidence.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "fullstack_scope_ambiguous",
+        "no_wordpress_evidence",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001608267,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ce502baecbec7b184c27153cd02519f6",
+      "evaluated_at": "2026-10-16T20:56:41Z",
+      "organization": "Soda Data Nv",
+      "title": "AI Content Engineer",
+      "location": "Amsterdam, Netherlands",
+      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/soda-data-nv/remote-ai-content-engineer-amsterdam-165006",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Role is 'AI Content Engineer' with no web development role hits; only tangential 'website' keyword and 'agency'/'remote' commercial keywords, which do not establish web-dev stack fit or freelance compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "no_web_dev_stack_fit",
+        "keyword_only_match",
+        "geo_uncertain"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001608267,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "de6bd9c9b047fefa5e27705e42b77604",
+      "evaluated_at": "2026-10-16T20:56:41Z",
+      "organization": "Lemrock",
+      "title": "Lead of Partnerships & Operations",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/lemrock/lead-of-partnerships-operations-paris-71391",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Role is 'Lead of Partnerships & Operations' — a business/ops role with no web development scope; 'partner'/'remote'/'website' keywords are incidental and do not indicate freelance web-dev compatibility.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_technical_role",
+        "keyword_only_match",
+        "geo_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001608267,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-04T15:13:08Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 15,
-      "valid_evaluation_count": 15,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 4096,
-      "prompt_cache_miss_tokens": 12,
-      "completion_tokens": 1855,
-      "total_tokens": 5963,
-      "estimated_cost_usd": 0.00125561
-    },
     {
       "at": "2026-09-04T15:48:13Z",
       "model": "deepseek-v4-flash",
@@ -44261,9 +44333,21 @@
       "completion_tokens": 956,
       "total_tokens": 3046,
       "estimated_cost_usd": 0.0010635
+    },
+    {
+      "at": "2026-10-16T20:56:41Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 917,
+      "completion_tokens": 424,
+      "total_tokens": 1469,
+      "estimated_cost_usd": 0.00048248
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-16T18:03:04Z",
+  "updated_at": "2026-10-16T20:56:41Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
