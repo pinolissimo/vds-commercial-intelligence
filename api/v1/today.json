@@ -1,12 +1,12 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-16T15:19:19+02:00",
+  "generated_at": "2026-10-16T15:32:12+02:00",
   "date": "2026-10-16",
   "timezone": "Europe/Madrid",
   "sent_count": 2,
   "first_contact_count": 2,
-  "messages_per_active_hour": 0.32,
-  "first_contacts_per_active_hour": 0.32,
+  "messages_per_active_hour": 0.31,
+  "first_contacts_per_active_hour": 0.31,
   "active_window_sent_count": 2,
   "active_window_first_contact_count": 2,
   "replies": {
@@ -14,8 +14,20 @@
     "positive": 0,
     "negative": 0,
     "neutral": 1,
-    "hard_bounces": 0,
+    "hard_bounces": 1,
     "events": [
+      {
+        "at": "2026-10-16T15:08:21+02:00",
+        "entity": "vps-plesk1.webrevolutionagency.com",
+        "classification": "BOUNCE",
+        "subtype": "HARD_BOUNCE",
+        "summary": "Provider delivery failure.",
+        "sender": "mailer-daemon@vps-plesk1.webrevolutionagency.com",
+        "subject": "Undelivered Mail Returned to Sender",
+        "provider_inbound_uid": 1601,
+        "canonical_identity_key": "org:vps-plesk1.webrevolutionagency.com",
+        "source": "HOSTINGER_INBOX"
+      },
       {
         "at": "2026-10-16T02:44:19+02:00",
         "entity": "stripe.com",
@@ -85,16 +97,16 @@
   "test_admin_sent_count": 0,
   "provider_live_sources": 33,
   "provider_live_pending_sources": 31,
-  "provider_inbound_overlay_updated_at": "2026-10-16T12:42:44Z",
+  "provider_inbound_overlay_updated_at": "2026-10-16T13:31:10Z",
   "provider_inbound_sources": 1,
   "provider_inbound_pending_sources": 0,
   "source_health": {
     "schema_version": "2.3",
-    "reconciled_at": "2026-10-16T13:19:20Z",
-    "provider_observed_at": "2026-10-16T12:42:44Z",
+    "reconciled_at": "2026-10-16T13:32:12Z",
+    "provider_observed_at": "2026-10-16T13:31:10Z",
     "provider_observation_fresh": true,
     "outbound_last_event_at": "2026-10-16T09:42:38Z",
-    "inbound_last_event_at": "2026-10-16T12:42:44Z",
+    "inbound_last_event_at": "2026-10-16T13:31:10Z",
     "outbound_data_available": true,
     "inbound_data_available": true,
     "outbound_reconciled": true,
@@ -103,6 +115,6 @@
     "reply_source_fresh": true,
     "hostinger_sync_status": "OK",
     "hostinger_auth_status": "VALID",
-    "hostinger_sync_checked_at": "2026-10-16T12:42:44Z"
+    "hostinger_sync_checked_at": "2026-10-16T13:31:10Z"
   }
 }
