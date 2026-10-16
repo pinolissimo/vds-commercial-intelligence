@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-16T08:30:34Z",
-  "latest_checked_uid": 1599,
+  "updated_at": "2026-10-16T09:41:30Z",
+  "latest_checked_uid": 1600,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1516,6 +1516,21 @@
       "subtype": "HUMAN_REPLY_UNCLASSIFIED",
       "summary": "Human reply detected; semantic classification pending.",
       "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1600,
+      "received_at": "2026-10-16T08:34:17Z",
+      "canonical_identity_key": "org:mail.360imprimir.es",
+      "entity": "mail.360imprimir.es",
+      "sender": "campaigns@mail.360imprimir.es",
+      "subject": "Últimos días ⚠️ 20% de Descuento Inmediato + 25% en tu Cuenta de Cliente",
+      "message_id": "<3b370ba1-3ee1-4d52-b021-fa80b69fcdcd@dfw1s10mta1635.xt.local>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
   ],
