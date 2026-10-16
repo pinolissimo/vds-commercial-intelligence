@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-16T12:42:44Z",
-  "latest_checked_uid": 1600,
+  "updated_at": "2026-10-16T13:31:10Z",
+  "latest_checked_uid": 1601,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1530,6 +1530,21 @@
       "classification": "NEUTRAL",
       "subtype": "SYSTEM_OR_UNCORRELATED",
       "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1601,
+      "received_at": "2026-10-16T13:08:21Z",
+      "canonical_identity_key": "org:vps-plesk1.webrevolutionagency.com",
+      "entity": "vps-plesk1.webrevolutionagency.com",
+      "sender": "mailer-daemon@vps-plesk1.webrevolutionagency.com",
+      "subject": "Undelivered Mail Returned to Sender",
+      "message_id": "<20261016130821.3FBA9460012DD@vps-plesk1.webrevolutionagency.com>",
+      "in_reply_to": null,
+      "classification": "BOUNCE",
+      "subtype": "HARD_BOUNCE",
+      "summary": "Provider delivery failure.",
       "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
