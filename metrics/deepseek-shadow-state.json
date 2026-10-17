@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1367,
+  "runs": 1368,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -38562,21 +38562,94 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "872085064730f34199f56a7ac768ab21",
+      "evaluated_at": "2026-10-17T01:19:50Z",
+      "organization": "iwoca",
+      "title": "Tech Lead - New Customers Team",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/iwoca/tech-lead-new-customers-team-london-422019",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Tech Lead role at a fintech in London; only tangential matches are 'frontend' and 'migration', with 'partner' being a generic commercial term rather than evidence of freelance compatibility. No WordPress/WooCommerce or explicit contract scope, and geo is London (not Spain/Italy/EU-remote).",
+      "deepseek_risk_flags": [
+        "senior_leadership_role_not_freelance",
+        "geo_mismatch_london",
+        "no_wordpress_woocommerce_scope",
+        "generic_partner_keyword",
+        "no_explicit_contract_or_freelance_terms"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00035553,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "82f375235070bb0a05f111c2ff92968c",
+      "evaluated_at": "2026-10-17T01:19:50Z",
+      "organization": "Tracium GmbH",
+      "title": "Full-Stack Engineer — AI Authoring Platform",
+      "location": "Hamburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tracium-gmbh/full-stack-engineer-ai-authoring-platform-hamburg-483900",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Full-stack AI authoring platform role with explicit freelance/contractor/remote commercial keywords and frontend/accessibility matches, but stack is AI-platform oriented rather than WordPress/WooCommerce, and geo is Hamburg with remote unverified.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_ai_platform",
+        "geo_remote_unverified",
+        "no_wordpress_woocommerce_scope",
+        "full_stack_scope_broader_than_profile"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00035553,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "a13aee2c955018d1ec8570e046f4f6a8",
+      "evaluated_at": "2026-10-17T01:19:50Z",
+      "organization": "Dehoga Baden-Württemberg",
+      "title": "Full Stack Developer (m/w/d)",
+      "location": "Stuttgart",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/dehoga-baden-wurttemberg/full-stack-developer-stuttgart-22007",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Full Stack Developer role at a German hospitality association in Stuttgart; matches css/frontend/javascript/php but no WordPress/WooCommerce specificity, no freelance/contract signals, and geo is Stuttgart (not Spain/Italy/EU-remote).",
+      "deepseek_risk_flags": [
+        "geo_mismatch_stuttgart",
+        "no_freelance_or_contract_signals",
+        "no_wordpress_woocommerce_scope",
+        "generic_full_stack_role"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00035553,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-04T16:05:55Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 327,
-      "completion_tokens": 131,
-      "total_tokens": 714,
-      "estimated_cost_usd": 0.00016019
-    },
     {
       "at": "2026-09-04T18:20:08Z",
       "model": "deepseek-v4-flash",
@@ -44564,9 +44637,21 @@
       "completion_tokens": 1081,
       "total_tokens": 3520,
       "estimated_cost_usd": 0.00122278
+    },
+    {
+      "at": "2026-10-17T01:19:50Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 953,
+      "completion_tokens": 489,
+      "total_tokens": 1570,
+      "estimated_cost_usd": 0.00106659
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-16T23:12:55Z",
+  "updated_at": "2026-10-17T01:19:50Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
