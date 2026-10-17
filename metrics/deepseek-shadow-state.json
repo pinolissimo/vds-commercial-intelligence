@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1383,
+  "runs": 1384,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -39490,21 +39490,67 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8391ba4bc86f5f380e7d619f78fcab64",
+      "evaluated_at": "2026-10-17T19:22:22Z",
+      "organization": "Tacto",
+      "title": "Product Engineer / Builder",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/tacto/product-engineer-builder-munich-286910",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Generic 'Product Engineer / Builder' role in Munich with only a loose 'frontend' keyword match and an incidental 'agency' commercial hit; no explicit WordPress/WooCommerce, maintenance, performance or freelance/contract scope, and location is Germany rather than the Spain/Italy primary markets.",
+      "deepseek_risk_flags": [
+        "no_wordpress_woocommerce_scope",
+        "generic_product_engineer_title",
+        "incidental_agency_keyword",
+        "onsite_germany_not_primary_geo",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012632,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "919be4568a7e79de9f2f3f1f81417dc6",
+      "evaluated_at": "2026-10-17T19:22:22Z",
+      "organization": "Trainline",
+      "title": "Senior Engineering Manager - Customer Growth",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/trainline/senior-engineering-manager-customer-growth-london-464131",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 58,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Senior Engineering Manager role in London; management-level position with only incidental 'website'/'partner' keyword matches and no matching web-development, WordPress or freelance scope.",
+      "deepseek_risk_flags": [
+        "management_role_not_hands_on_web_dev",
+        "incidental_keyword_matches",
+        "london_not_primary_geo",
+        "no_freelance_compatibility_evidence",
+        "no_stack_fit"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012632,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-05T04:03:15Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1024,
-      "prompt_cache_miss_tokens": 10,
-      "completion_tokens": 361,
-      "total_tokens": 1395,
-      "estimated_cost_usd": 0.00024763
-    },
     {
       "at": "2026-09-05T05:46:19Z",
       "model": "deepseek-v4-flash",
@@ -45492,9 +45538,21 @@
       "completion_tokens": 153,
       "total_tokens": 707,
       "estimated_cost_usd": 0.0001956
+    },
+    {
+      "at": "2026-10-17T19:22:22Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 156,
+      "completion_tokens": 324,
+      "total_tokens": 1120,
+      "estimated_cost_usd": 0.00025264
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-17T18:39:12Z",
+  "updated_at": "2026-10-17T19:22:22Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
