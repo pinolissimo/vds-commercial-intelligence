@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1380,
+  "runs": 1381,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -39320,21 +39320,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "977f7971bacbd84d7869fc31f590986a",
+      "evaluated_at": "2026-10-17T13:13:16Z",
+      "organization": "",
+      "title": "Humane World for Animals: Web Designer, eCRM",
+      "location": "",
+      "opportunity_url": "https://weworkremotely.com/remote-jobs/humane-world-for-animals-web-designer-ecrm-1",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 95,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 72.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Web designer role with strong stack overlap (CSS, front-end, JavaScript, PHP, UX, web design, maintenance), but it is an eCRM-focused design position and freelance/contract compatibility plus geo are unverified.",
+      "deepseek_risk_flags": [
+        "ecrm_specialization",
+        "employment_type_unknown",
+        "geo_unverified",
+        "freelance_compatibility_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00011323,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "aa5414173c79c3daf851f03611a61f0f",
+      "evaluated_at": "2026-10-17T13:13:16Z",
+      "organization": "Muckrack",
+      "title": "Senior Software Engineer, Search & AI",
+      "location": "Remote (Bulgaria, Ireland",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/muckrack/remote-senior-software-engineer-search-ai-80625",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "Senior Software Engineer Search & AI role is a backend/AI engineering position with only tangential frontend/JavaScript overlap and no meaningful WordPress/web scope; not a fit for the target profile.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "senior_engineering_role",
+        "ai_search_focus",
+        "limited_web_scope"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00011323,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-05T01:26:26Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 0,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 1024,
-      "prompt_cache_miss_tokens": 10,
-      "completion_tokens": 767,
-      "total_tokens": 1801,
-      "estimated_cost_usd": 0.00103118
-    },
     {
       "at": "2026-09-05T02:29:40Z",
       "model": "deepseek-v4-flash",
@@ -45322,9 +45366,21 @@
       "completion_tokens": 151,
       "total_tokens": 704,
       "estimated_cost_usd": 0.00038811
+    },
+    {
+      "at": "2026-10-17T13:13:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 199,
+      "completion_tokens": 270,
+      "total_tokens": 1109,
+      "estimated_cost_usd": 0.00022646
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-17T09:42:48Z",
+  "updated_at": "2026-10-17T13:13:16Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
