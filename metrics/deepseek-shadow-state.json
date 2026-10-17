@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1382,
+  "runs": 1383,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -39461,21 +39461,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "df6ea7adf7bb5027fa657771dea26368",
+      "evaluated_at": "2026-10-17T18:39:12Z",
+      "organization": "Sanctuary Computer",
+      "title": "Head of Technology",
+      "location": "",
+      "opportunity_url": "https://remoteOK.com/remote-jobs/remote-head-of-technology-sanctuary-computer-1137537",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Head of Technology is a senior leadership/management role at an agency, not a freelance web-development engagement; matched keywords (frontend, migration, website) are incidental and the role implies full-time employment rather than contract work.",
+      "deepseek_risk_flags": [
+        "senior_leadership_role",
+        "likely_full_time_employment",
+        "no_explicit_freelance_or_contract_scope",
+        "keyword_match_only",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001956,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-05T03:28:20Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 0,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 1024,
-      "prompt_cache_miss_tokens": 10,
-      "completion_tokens": 367,
-      "total_tokens": 1401,
-      "estimated_cost_usd": 0.00050318
-    },
     {
       "at": "2026-09-05T04:03:15Z",
       "model": "deepseek-v4-flash",
@@ -45463,9 +45480,21 @@
       "completion_tokens": 413,
       "total_tokens": 1493,
       "estimated_cost_usd": 0.00048292
+    },
+    {
+      "at": "2026-10-17T18:39:12Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 426,
+      "completion_tokens": 153,
+      "total_tokens": 707,
+      "estimated_cost_usd": 0.0001956
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-17T16:24:54Z",
+  "updated_at": "2026-10-17T18:39:12Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
