@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1381,
+  "runs": 1382,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -39376,21 +39376,94 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b48ce3996fb06d4720c9e49a7b464416",
+      "evaluated_at": "2026-10-17T16:24:54Z",
+      "organization": "Deed",
+      "title": "Senior Web Engineer",
+      "location": "Check country restrictions",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-web-engineer-f706174350",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 73,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Web Engineer role with frontend/JavaScript keywords is plausibly relevant to a web developer, but the posting is remote-to-verify with unclear country restrictions and no explicit WordPress/WooCommerce or freelance/contract evidence.",
+      "deepseek_risk_flags": [
+        "geo_unverified",
+        "country_restrictions_unclear",
+        "no_explicit_freelance_signal",
+        "stack_scope_unclear"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.0001609733,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "bb537bf03c5b9783afbfbffb17ca423a",
+      "evaluated_at": "2026-10-17T16:24:54Z",
+      "organization": "Kraken",
+      "title": "Client Enablement & Coaching Lead (F/H/X)",
+      "location": "Berlin, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kraken/client-enablement-coaching-lead-berlin-179694",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Client Enablement & Coaching Lead is a customer-facing coaching/enablement role, not web development; 'website'/'migration'/'partner' matches are incidental and do not indicate WordPress or frontend work.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "keyword_noise",
+        "non_technical_role",
+        "no_freelance_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001609733,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2fcfb82763ba38862266de5e79d2ad0a",
+      "evaluated_at": "2026-10-17T16:24:54Z",
+      "organization": "Kraken",
+      "title": "Client Enablement & Coaching Lead (f/m/d) - Dutch & German speaking",
+      "location": "Berlin, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kraken/client-enablement-coaching-lead-dutch-german-speaking-berlin-44956",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Duplicate-family Client Enablement & Coaching Lead role requiring Dutch/German; it is a coaching/enablement position, not web development, and the matched keywords are incidental.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "keyword_noise",
+        "non_technical_role",
+        "language_requirement",
+        "no_freelance_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001609733,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-05T02:29:40Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 0,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 1024,
-      "prompt_cache_miss_tokens": 10,
-      "completion_tokens": 379,
-      "total_tokens": 1413,
-      "estimated_cost_usd": 0.00051902
-    },
     {
       "at": "2026-09-05T03:28:20Z",
       "model": "deepseek-v4-flash",
@@ -45378,9 +45451,21 @@
       "completion_tokens": 270,
       "total_tokens": 1109,
       "estimated_cost_usd": 0.00022646
+    },
+    {
+      "at": "2026-10-17T16:24:54Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 952,
+      "completion_tokens": 413,
+      "total_tokens": 1493,
+      "estimated_cost_usd": 0.00048292
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-17T13:13:16Z",
+  "updated_at": "2026-10-17T16:24:54Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
