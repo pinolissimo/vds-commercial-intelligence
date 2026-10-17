@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1376,
+  "runs": 1377,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -39236,21 +39236,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "9479f9413443d71d019310c9e0d76939",
+      "evaluated_at": "2026-10-17T09:03:34Z",
+      "organization": "Tavily",
+      "title": "Senior Software Engineer (Agentic Search) – Web Rendering Engineer",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.nl/jobs/companies/tavily/senior-software-engineer-agentic-search-web-rendering-engineer-444896",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Role is a senior software engineering position focused on agentic search and web rendering engineering at an AI company; only incidental frontend/javascript/website keyword overlap, no WordPress/WooCommerce or freelance web-dev scope.",
+      "deepseek_risk_flags": [
+        "core_role_is_software_engineering_not_web_dev",
+        "agentic_search_ai_domain_mismatch",
+        "no_wordpress_woocommerce_scope",
+        "freelance_compatibility_unclear"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.000359495,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "20151e5255898643b8e27b1cc64ed8a4",
+      "evaluated_at": "2026-10-17T09:03:34Z",
+      "organization": "nozominetworks",
+      "title": "Fullstack Data Engineer",
+      "location": "Mendrisio",
+      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/nozominetworks/fullstack-data-engineer-mendrisio-75224",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.75,
+      "deepseek_primary_reason": "Fullstack Data Engineer role in Mendrisio (Switzerland) is data-engineering centric with only superficial frontend/javascript keyword matches; no WordPress/WooCommerce or maintenance/UX web scope, and location is outside primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "data_engineering_core_role",
+        "no_wordpress_woocommerce_scope",
+        "switzerland_location_outside_primary_markets",
+        "freelance_compatibility_unclear"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000359495,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-04T23:15:06Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 303,
-      "completion_tokens": 155,
-      "total_tokens": 714,
-      "estimated_cost_usd": 0.00017075
-    },
     {
       "at": "2026-09-05T01:08:12Z",
       "model": "deepseek-v4-flash",
@@ -45238,9 +45282,21 @@
       "completion_tokens": 156,
       "total_tokens": 721,
       "estimated_cost_usd": 0.00039999
+    },
+    {
+      "at": "2026-10-17T09:03:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 685,
+      "completion_tokens": 315,
+      "total_tokens": 1128,
+      "estimated_cost_usd": 0.00071899
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-17T08:44:55Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-17T09:03:34Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
