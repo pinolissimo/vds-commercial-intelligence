@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-17T07:11:27Z",
+  "updated_at": "2026-10-17T07:30:59Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1420,
-    "agreement_count": 597,
-    "agreement_pct": 42.04,
+    "evaluated_total": 1421,
+    "agreement_count": 598,
+    "agreement_pct": 42.08,
     "deepseek_promote": 37,
     "vds_promote": 372,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,21 +38,21 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.247069,
-    "cost_per_evaluated_candidate_usd": 0.00017399,
-    "cost_per_deepseek_promote_usd": 0.00667754,
-    "cost_per_observed_ready_or_contacted_usd": 0.1235344,
+    "cumulative_estimated_cost_usd": 0.247287,
+    "cost_per_evaluated_candidate_usd": 0.00017402,
+    "cost_per_deepseek_promote_usd": 0.00668343,
+    "cost_per_observed_ready_or_contacted_usd": 0.12364343,
     "latest_request": {
-      "at": "2026-10-17T07:11:18Z",
+      "at": "2026-10-17T07:30:52Z",
       "model": "deepseek-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 4,
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 1181,
-      "completion_tokens": 514,
-      "total_tokens": 1823,
-      "estimated_cost_usd": 0.00119991
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 180,
+      "completion_tokens": 175,
+      "total_tokens": 739,
+      "estimated_cost_usd": 0.00031558
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "a6760fae056ee646d0aa52b6d58bc6b4",
-      "evaluated_at": "2026-10-16T05:00:49Z",
-      "organization": "mirakllabs",
-      "title": "Software Engineer Apprentice - Connect",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/mirakllabs/software-engineer-apprentice-connect-paris-470556",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 64,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 10.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Software Engineer Apprentice is an apprenticeship, not freelance/contract work, and the scope does not match WordPress/WooCommerce/frontend web development.",
-      "deepseek_risk_flags": [
-        "apprenticeship_not_freelance",
-        "role_scope_mismatch",
-        "no_wordpress_scope",
-        "collaboration_keyword_not_freelance_proof"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001040217,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "3e2c22f72dc48dd3a5a841cc5de846fc",
       "evaluated_at": "2026-10-16T05:00:49Z",
@@ -1460,10 +1432,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "45c03ce845e1b6bf23f6d58f4eb3941d",
+      "evaluated_at": "2026-10-17T07:30:52Z",
+      "organization": "Sardine",
+      "title": "Fullstack Engineer, Investigator Tools",
+      "location": "United Kingdom / Europe",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/sardine/fullstack-engineer-investigator-tools-united-kingdom-europe-138221",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Fullstack Engineer role at a fraud/risk company focused on investigator tooling; only generic 'frontend' and 'ux' keyword overlap with no WordPress, WooCommerce, or web-performance scope, and fullstack core role is stack-mismatched for a WordPress/frontend specialist.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_fullstack_core",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_overlap_only",
+        "freelance_compatibility_unclear",
+        "geo_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00031558,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 4,
-  "source_semantic_updated_at": "2026-10-17T07:11:13Z",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-17T07:30:47Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
