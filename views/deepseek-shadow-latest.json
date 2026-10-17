@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-17T07:30:59Z",
+  "updated_at": "2026-10-17T07:49:17Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1421,
+    "evaluated_total": 1422,
     "agreement_count": 598,
-    "agreement_pct": 42.08,
+    "agreement_pct": 42.05,
     "deepseek_promote": 37,
     "vds_promote": 372,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,21 +38,21 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.247287,
-    "cost_per_evaluated_candidate_usd": 0.00017402,
-    "cost_per_deepseek_promote_usd": 0.00668343,
-    "cost_per_observed_ready_or_contacted_usd": 0.12364343,
+    "cumulative_estimated_cost_usd": 0.247621,
+    "cost_per_evaluated_candidate_usd": 0.00017414,
+    "cost_per_deepseek_promote_usd": 0.00669245,
+    "cost_per_observed_ready_or_contacted_usd": 0.12381029,
     "latest_request": {
-      "at": "2026-10-17T07:30:52Z",
+      "at": "2026-10-17T07:49:10Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
       "billing_band": "peak",
-      "prompt_cache_hit_tokens": 384,
-      "prompt_cache_miss_tokens": 180,
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 445,
       "completion_tokens": 175,
-      "total_tokens": 739,
-      "estimated_cost_usd": 0.00031558
+      "total_tokens": 748,
+      "estimated_cost_usd": 0.00042859
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "3e2c22f72dc48dd3a5a841cc5de846fc",
-      "evaluated_at": "2026-10-16T05:00:49Z",
-      "organization": "Clickup",
-      "title": "Senior Engagement Manager",
-      "location": "Remote",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/clickup/remote-senior-engagement-manager-214193",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Engagement Manager at ClickUp is a non-technical management role; 'migration', 'partner', 'collaboration' and 'remote' are generic and do not indicate web-development or freelance compatibility.",
-      "deepseek_risk_flags": [
-        "non_technical_role",
-        "no_web_development_scope",
-        "generic_keywords_only",
-        "no_freelance_compatibility_evidence"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.0001040217,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "1e9547fac6e5ff1b1761cd7797bd69d4",
       "evaluated_at": "2026-10-16T09:35:04Z",
@@ -1461,10 +1433,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "eb94d71c6e0b63b7d167a7af1b6ff074",
+      "evaluated_at": "2026-10-17T07:49:10Z",
+      "organization": "Nebius",
+      "title": "Senior Software Engineer (Agentic Search) – Web Rendering Engineer",
+      "location": "Zurich",
+      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/nebius/senior-software-engineer-agentic-search-web-rendering-engineer-zurich-220466",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Senior software engineering role focused on agentic search and web rendering engineering at an AI infrastructure company; only surface keyword overlap (frontend, javascript, website) with no WordPress/WooCommerce, maintenance, or freelance web-dev scope, and located in Zurich rather than Spain/Italy or EU-remote.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "senior_engineering_role_not_freelance_webdev",
+        "onsite_zurich_geo_mismatch",
+        "keyword_only_overlap"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00042859,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-17T07:30:47Z",
+  "source_semantic_updated_at": "2026-10-17T07:49:05Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

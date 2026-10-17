@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1372,
+  "runs": 1373,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -39180,21 +39180,37 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "eb94d71c6e0b63b7d167a7af1b6ff074",
+      "evaluated_at": "2026-10-17T07:49:10Z",
+      "organization": "Nebius",
+      "title": "Senior Software Engineer (Agentic Search) – Web Rendering Engineer",
+      "location": "Zurich",
+      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/nebius/senior-software-engineer-agentic-search-web-rendering-engineer-zurich-220466",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.78,
+      "deepseek_primary_reason": "Senior software engineering role focused on agentic search and web rendering engineering at an AI infrastructure company; only surface keyword overlap (frontend, javascript, website) with no WordPress/WooCommerce, maintenance, or freelance web-dev scope, and located in Zurich rather than Spain/Italy or EU-remote.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "senior_engineering_role_not_freelance_webdev",
+        "onsite_zurich_geo_mismatch",
+        "keyword_only_overlap"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00042859,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-04T21:30:33Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 46,
-      "completion_tokens": 123,
-      "total_tokens": 681,
-      "estimated_cost_usd": 9.488e-05
-    },
     {
       "at": "2026-09-04T23:11:26Z",
       "model": "deepseek-v4-flash",
@@ -45182,9 +45198,21 @@
       "completion_tokens": 175,
       "total_tokens": 739,
       "estimated_cost_usd": 0.00031558
+    },
+    {
+      "at": "2026-10-17T07:49:10Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 445,
+      "completion_tokens": 175,
+      "total_tokens": 748,
+      "estimated_cost_usd": 0.00042859
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-17T07:30:52Z",
+  "updated_at": "2026-10-17T07:49:10Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
