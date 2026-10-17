@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-17T08:07:49Z",
+  "updated_at": "2026-10-17T08:26:10Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1422,
+    "evaluated_total": 1423,
     "agreement_count": 598,
-    "agreement_pct": 42.05,
+    "agreement_pct": 42.02,
     "deepseek_promote": 37,
     "vds_promote": 372,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.247621,
-    "cost_per_evaluated_candidate_usd": 0.00017414,
-    "cost_per_deepseek_promote_usd": 0.00669245,
-    "cost_per_observed_ready_or_contacted_usd": 0.12381029,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.247694,
+    "cost_per_evaluated_candidate_usd": 0.00017406,
+    "cost_per_deepseek_promote_usd": 0.00669442,
+    "cost_per_observed_ready_or_contacted_usd": 0.12384678,
+    "latest_request": {
+      "at": "2026-10-17T08:26:05Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 437,
+      "completion_tokens": 156,
+      "total_tokens": 721,
+      "estimated_cost_usd": 0.00039999
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "1e9547fac6e5ff1b1761cd7797bd69d4",
-      "evaluated_at": "2026-10-16T09:35:04Z",
-      "organization": "Trading212",
-      "title": "Staff Frontend Engineer",
-      "location": "Germany",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/trading212/staff-frontend-engineer-germany-21705",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 100,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Staff Frontend Engineer at a fintech trading platform; senior staff-level role centered on frontend engineering (likely React/TypeScript-heavy) with no WordPress/WooCommerce, maintenance, or freelance/contract scope. Only generic 'partner' keyword matched, which is not evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "staff-level seniority mismatch",
-        "no WordPress/WooCommerce scope",
-        "likely React/TypeScript core stack",
-        "generic 'partner' keyword only",
-        "no explicit freelance/contract signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.00033555,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "4ca1ca20fbe840c9e9bd2ef5e0393e64",
       "evaluated_at": "2026-10-16T09:35:04Z",
@@ -1450,10 +1432,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "dd12114ef64dbeefb76665c9b6b39614",
+      "evaluated_at": "2026-10-17T08:26:05Z",
+      "organization": "Tavily",
+      "title": "Senior Software Engineer (Agentic Search) – Web Rendering Engineer",
+      "location": "",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/tavily/senior-software-engineer-agentic-search-web-rendering-engineer-233571",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior software engineering role focused on agentic search and web rendering engineering at an AI company; only surface keyword overlap (frontend, javascript, website) with no evidence of WordPress/WooCommerce, maintenance, or freelance/contract scope.",
+      "deepseek_risk_flags": [
+        "core_engineering_role_not_web_dev",
+        "stack_mismatch_agentic_search",
+        "no_freelance_or_contract_signal",
+        "geo_unclear"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00039999,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-17T08:07:44Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-17T08:26:02Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
