@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-18T06:36:13Z",
-  "latest_checked_uid": 1601,
+  "updated_at": "2026-10-18T09:17:19Z",
+  "latest_checked_uid": 1602,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1545,6 +1545,21 @@
       "classification": "BOUNCE",
       "subtype": "HARD_BOUNCE",
       "summary": "Provider delivery failure.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1602,
+      "received_at": "2026-10-18T08:42:25Z",
+      "canonical_identity_key": "org:mail.360imprimir.es",
+      "entity": "mail.360imprimir.es",
+      "sender": "campaigns@mail.360imprimir.es",
+      "subject": "20% de Descuento Inmediato + 25% en tu Cuenta de Cliente - ¡Termina hoy a medianoche!",
+      "message_id": "<bbe44943-b571-445a-bfc1-07f96e92a3ba@dfw1s10mta1634.xt.local>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
