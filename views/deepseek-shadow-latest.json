@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-18T21:08:07Z",
+  "updated_at": "2026-10-18T23:06:06Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1465,
-    "agreement_count": 611,
-    "agreement_pct": 41.71,
+    "evaluated_total": 1467,
+    "agreement_count": 612,
+    "agreement_pct": 41.72,
     "deepseek_promote": 39,
     "vds_promote": 388,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.247168,
-    "cost_per_evaluated_candidate_usd": 0.00016872,
-    "cost_per_deepseek_promote_usd": 0.00633765,
-    "cost_per_observed_ready_or_contacted_usd": 0.12358424,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.246884,
+    "cost_per_evaluated_candidate_usd": 0.00016829,
+    "cost_per_deepseek_promote_usd": 0.00633035,
+    "cost_per_observed_ready_or_contacted_usd": 0.12344178,
+    "latest_request": {
+      "at": "2026-10-18T23:05:58Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 685,
+      "completion_tokens": 327,
+      "total_tokens": 1140,
+      "estimated_cost_usd": 0.00036742
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "8b5c7c5552afacfb52d16cedcb70effc",
-      "evaluated_at": "2026-10-17T06:53:02Z",
-      "organization": "Volta",
-      "title": "Senior Director, Global Commissioning & Handover",
-      "location": "London, UK",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/volta/senior-director-global-commissioning-handover-london-469281",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.85,
-      "deepseek_primary_reason": "Senior Director of Global Commissioning & Handover; entirely unrelated to web development, keyword hits are incidental, no relevant stack fit.",
-      "deepseek_risk_flags": [
-        "role_mismatch_operations",
-        "incidental_keyword_matches",
-        "no_web_scope",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.000291468,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "16ba5b06e4ea6b8620563735638fec5b",
-      "evaluated_at": "2026-10-17T07:11:18Z",
-      "organization": "Datadog",
-      "title": "Senior Software Engineer - Autonomous Ops & Maintenance (ATOM)",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/datadog/senior-software-engineer-autonomous-ops-maintenance-atom-paris-246497",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 57,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Senior software engineering role at Datadog focused on autonomous ops/maintenance infrastructure; keyword matches (accessibility, maintenance, website) are incidental and the role is not a WordPress/frontend web-development opportunity.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "enterprise_infra_role",
-        "keyword_noise",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002999775,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "36b3c1390020666fabd050932e4f3f9e",
       "evaluated_at": "2026-10-17T07:11:18Z",
@@ -1441,10 +1396,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "dc503f44d8a092a8d12e568e74df08bd",
+      "evaluated_at": "2026-10-18T23:05:58Z",
+      "organization": "Clearbank",
+      "title": "Senior Treasury Operations Analyst",
+      "location": "London Office - Hybrid",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clearbank/senior-treasury-operations-analyst-london-hybrid-184576",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.93,
+      "deepseek_primary_reason": "Senior Treasury Operations Analyst at a bank in London; finance/treasury operations role with no web development, WordPress, or frontend scope. Keyword matches (accessibility, migration, website, collaboration, partner) are incidental and not evidence of relevant demand.",
+      "deepseek_risk_flags": [
+        "role_mismatch_finance_operations",
+        "keyword_noise_matches",
+        "onsite_hybrid_london_not_target_geo",
+        "no_freelance_or_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018371,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cff3f7eede72cfd56df1ae678e1e294b",
+      "evaluated_at": "2026-10-18T23:05:58Z",
+      "organization": "databricks",
+      "title": "Sr. Solutions Architect - FSI",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/databricks/sr-solutions-architect-fsi-munich-363180",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 6.0,
+      "deepseek_confidence": 0.94,
+      "deepseek_primary_reason": "Sr. Solutions Architect - FSI at Databricks in Munich; pre-sales/architecture role in data/cloud platform, no WordPress, WooCommerce, frontend, or web maintenance scope. Only incidental 'migration' and 'partner' keyword hits.",
+      "deepseek_risk_flags": [
+        "role_mismatch_solutions_architect",
+        "keyword_noise_matches",
+        "enterprise_presales_not_freelance_web",
+        "no_web_stack_fit"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018371,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-18T21:07:59Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-18T23:05:53Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

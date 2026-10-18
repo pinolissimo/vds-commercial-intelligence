@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1393,
+  "runs": 1394,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -40402,21 +40402,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "dc503f44d8a092a8d12e568e74df08bd",
+      "evaluated_at": "2026-10-18T23:05:58Z",
+      "organization": "Clearbank",
+      "title": "Senior Treasury Operations Analyst",
+      "location": "London Office - Hybrid",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clearbank/senior-treasury-operations-analyst-london-hybrid-184576",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 57,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.93,
+      "deepseek_primary_reason": "Senior Treasury Operations Analyst at a bank in London; finance/treasury operations role with no web development, WordPress, or frontend scope. Keyword matches (accessibility, migration, website, collaboration, partner) are incidental and not evidence of relevant demand.",
+      "deepseek_risk_flags": [
+        "role_mismatch_finance_operations",
+        "keyword_noise_matches",
+        "onsite_hybrid_london_not_target_geo",
+        "no_freelance_or_contract_signal"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018371,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "cff3f7eede72cfd56df1ae678e1e294b",
+      "evaluated_at": "2026-10-18T23:05:58Z",
+      "organization": "databricks",
+      "title": "Sr. Solutions Architect - FSI",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/databricks/sr-solutions-architect-fsi-munich-363180",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 6.0,
+      "deepseek_confidence": 0.94,
+      "deepseek_primary_reason": "Sr. Solutions Architect - FSI at Databricks in Munich; pre-sales/architecture role in data/cloud platform, no WordPress, WooCommerce, frontend, or web maintenance scope. Only incidental 'migration' and 'partner' keyword hits.",
+      "deepseek_risk_flags": [
+        "role_mismatch_solutions_architect",
+        "keyword_noise_matches",
+        "enterprise_presales_not_freelance_web",
+        "no_web_stack_fit"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00018371,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-05T15:59:57Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 1067,
-      "completion_tokens": 630,
-      "total_tokens": 1953,
-      "estimated_cost_usd": 0.00065233
-    },
     {
       "at": "2026-09-05T18:11:07Z",
       "model": "deepseek-v4-flash",
@@ -46404,9 +46448,21 @@
       "completion_tokens": 395,
       "total_tokens": 1497,
       "estimated_cost_usd": 0.00047588
+    },
+    {
+      "at": "2026-10-18T23:05:58Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 685,
+      "completion_tokens": 327,
+      "total_tokens": 1140,
+      "estimated_cost_usd": 0.00036742
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-18T21:08:04Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-18T23:05:58Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
