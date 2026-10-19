@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-19T05:19:09Z",
-  "latest_checked_uid": 1603,
+  "updated_at": "2026-10-19T06:41:45Z",
+  "latest_checked_uid": 1604,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1576,6 +1576,21 @@
       "subtype": "SYSTEM_OR_UNCORRELATED",
       "summary": "Provider message observed; not counted as a commercial reply.",
       "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1604,
+      "received_at": "2026-10-19T05:58:26Z",
+      "canonical_identity_key": "org:agencyga.es",
+      "entity": "agencyga.es",
+      "sender": "hola@agencyga.es",
+      "subject": "Re: Colaboración técnica web — Visual Design Studio",
+      "message_id": "<8791FB05-1671-4548-BAD2-E4F0A25A8378@agencyga.es>",
+      "in_reply_to": "<1792335739284501411.1792335739@visualdesignstudio.es>",
+      "classification": "NEUTRAL",
+      "subtype": "HUMAN_REPLY_UNCLASSIFIED",
+      "summary": "Human reply detected; semantic classification pending.",
+      "count_as_reply": true,
       "source": "HOSTINGER_INBOX"
     }
   ],
