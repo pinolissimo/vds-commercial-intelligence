@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-19T17:39:00Z",
+  "updated_at": "2026-10-19T17:57:42Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1484,
+    "evaluated_total": 1485,
     "agreement_count": 620,
-    "agreement_pct": 41.78,
+    "agreement_pct": 41.75,
     "deepseek_promote": 39,
     "vds_promote": 392,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.247899,
-    "cost_per_evaluated_candidate_usd": 0.00016705,
-    "cost_per_deepseek_promote_usd": 0.00635637,
-    "cost_per_observed_ready_or_contacted_usd": 0.12394927,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.247886,
+    "cost_per_evaluated_candidate_usd": 0.00016693,
+    "cost_per_deepseek_promote_usd": 0.00635605,
+    "cost_per_observed_ready_or_contacted_usd": 0.12394295,
+    "latest_request": {
+      "at": "2026-10-19T17:57:34Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 476,
+      "completion_tokens": 139,
+      "total_tokens": 743,
+      "estimated_cost_usd": 0.00019736
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ba419c9e88a3b1a81019ccfba35cd2c3",
-      "evaluated_at": "2026-10-17T20:57:19Z",
-      "organization": "databricks",
-      "title": "Solutions Architect",
-      "location": "Zürich",
-      "opportunity_url": "https://www.arbeitnow.ch/jobs/companies/databricks/solutions-architect-zurich-303054",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Solutions Architect role at Databricks in Zürich; enterprise data/cloud architecture, no WordPress/WooCommerce/frontend web scope, only incidental 'migration' and 'partner' keyword matches.",
-      "deepseek_risk_flags": [
-        "stack_mismatch",
-        "enterprise_data_platform_role",
-        "not_freelance_scope",
-        "onsite_zurich"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00015973,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "aab7141c7ee7097a0785982da4936c8b",
       "evaluated_at": "2026-10-17T20:57:19Z",
@@ -1433,10 +1416,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "3349033fddc57c0f94abacf4fcd0a3a2",
+      "evaluated_at": "2026-10-19T17:57:34Z",
+      "organization": "Startupistan Impact Ventures gUG",
+      "title": "Freelance Grant Writer & Fundraising Consultant",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/startupistan-impact-ventures-gug/freelance-grant-writer-fundraising-consultant-berlin-64738",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a freelance grant writer/fundraising consultant, not web development; no WordPress, WooCommerce, frontend, performance, or web support scope present.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "no_web_scope",
+        "keyword_noise_migration",
+        "freelance_label_without_web_fit"
+      ],
+      "deepseek_contract_compatibility": "HIGH",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00019736,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-19T17:38:52Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-19T17:57:29Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
