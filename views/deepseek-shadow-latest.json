@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-19T21:25:51Z",
+  "updated_at": "2026-10-19T22:55:01Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1492,
+    "evaluated_total": 1495,
     "agreement_count": 620,
-    "agreement_pct": 41.55,
+    "agreement_pct": 41.47,
     "deepseek_promote": 39,
-    "vds_promote": 394,
+    "vds_promote": 395,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 359
+    "deepseek_demoted_from_vds_promote": 360
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.248223,
-    "cost_per_evaluated_candidate_usd": 0.00016637,
-    "cost_per_deepseek_promote_usd": 0.00636469,
-    "cost_per_observed_ready_or_contacted_usd": 0.12411136,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.247523,
+    "cost_per_evaluated_candidate_usd": 0.00016557,
+    "cost_per_deepseek_promote_usd": 0.00634673,
+    "cost_per_observed_ready_or_contacted_usd": 0.12376125,
+    "latest_request": {
+      "at": "2026-10-19T22:54:55Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 925,
+      "completion_tokens": 420,
+      "total_tokens": 1473,
+      "estimated_cost_usd": 0.0004816
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,86 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "ed867811bf60b6f63bc8522c67c5e672",
-      "evaluated_at": "2026-10-18T04:56:30Z",
-      "organization": "HyPlus Technology GmbH",
-      "title": "Senior Test Engineer (m/w/d) für Brandenburg, Braunschweig, Berlin",
-      "location": "Berlin, Berlin, Germany",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/hyplus-technology-gmbh/senior-test-engineer-fur-brandenburg-braunschweig-berlin-329978",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Senior Test Engineer role; QA/testing not web development, keyword matches incidental.",
-      "deepseek_risk_flags": [
-        "qa_test_role",
-        "role_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00014002,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "7e191a40376f61ea28cdc1120c701fe5",
-      "evaluated_at": "2026-10-18T04:56:30Z",
-      "organization": "virtual7 GmbH",
-      "title": "(Senior) Java Fullstack Developer (m/w/d)",
-      "location": "Hamburg, Hamburg, Deutschland",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/virtual7-gmbh/senior-java-fullstack-developer-hamburg-352372",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 15.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "Java fullstack developer role; Java-centric stack mismatch with WordPress/web-dev target.",
-      "deepseek_risk_flags": [
-        "java_heavy_core",
-        "stack_mismatch",
-        "on_site_hamburg"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00014002,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "4bba1a16362304db3717bf86e8faf7c2",
-      "evaluated_at": "2026-10-18T04:56:30Z",
-      "organization": "Tether Operations Limited",
-      "title": "Fullstack Engineer - AgenticOps (100% Remote)",
-      "location": "Remote job",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/tether-operations-limited/fullstack-engineer-agenticops-100-remote-united-kindom-441724",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "AgenticOps fullstack engineering role at crypto firm; not web/WordPress scope, keyword matches incidental.",
-      "deepseek_risk_flags": [
-        "agenticops_engineering_scope",
-        "crypto_domain",
-        "stack_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00014002,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "53de4963806e00c0f429d1ad2308245c",
       "evaluated_at": "2026-10-18T09:17:40Z",
@@ -1441,10 +1372,96 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "c008c205dc8962763158fd6d12eb273a",
+      "evaluated_at": "2026-10-19T22:54:55Z",
+      "organization": "fanaticscollectibles",
+      "title": "Ecommerce Director, EMEA",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/fanaticscollectibles/ecommerce-director-emea-london-345041",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 76,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Ecommerce Director, EMEA is a senior leadership/management role, not a hands-on freelance web development engagement; matched keywords (html, website, partner) are incidental and the role is London-based with no evidence of freelance compatibility.",
+      "deepseek_risk_flags": [
+        "senior_leadership_role",
+        "not_hands_on_development",
+        "geo_mismatch_london",
+        "no_freelance_evidence",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001605333,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "940a5943d2743fb8719c6b3a174069bf",
+      "evaluated_at": "2026-10-19T22:54:55Z",
+      "organization": "Se3",
+      "title": "Head of Marketing & Communications",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/se3/head-of-marketing-communications-munich-155917",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Head of Marketing & Communications is a marketing leadership role with no web development scope; only incidental 'website' keyword and generic agency/partner mentions, Munich-based with no freelance signal.",
+      "deepseek_risk_flags": [
+        "non_technical_role",
+        "marketing_leadership",
+        "keyword_noise",
+        "geo_mismatch_munich",
+        "no_freelance_evidence"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001605333,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "63bb52f38077641e448ba682f1cf6499",
+      "evaluated_at": "2026-10-19T22:54:55Z",
+      "organization": "Welo Global",
+      "title": "Artemis AI Data Rater - German",
+      "location": "Argentina, Brazil, Chile, Turkey",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/artemis-ai-data-rater-german-welo-global",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.88,
+      "deepseek_primary_reason": "AI data rating task for German language, unrelated to web development; locations are non-EU (Argentina, Brazil, Chile, Turkey) and the role is data annotation, not web work.",
+      "deepseek_risk_flags": [
+        "unrelated_role_data_annotation",
+        "non_eu_locations",
+        "keyword_noise",
+        "no_web_development_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001605333,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-19T21:25:46Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 3,
+  "source_semantic_updated_at": "2026-10-19T22:54:52Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
