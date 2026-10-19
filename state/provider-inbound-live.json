@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "provider_of_record": "HOSTINGER_INBOX",
-  "updated_at": "2026-10-19T07:19:34Z",
-  "latest_checked_uid": 1604,
+  "updated_at": "2026-10-19T11:00:21Z",
+  "latest_checked_uid": 1606,
   "purpose": "Low-latency inbound reconciliation for commercially relevant replies. Human commercial replies are counted once by provider inbound UID; autoresponders, calendar/system events and other non-commercial messages remain audit-only and never inflate reply KPIs.",
   "events": [
     {
@@ -1591,6 +1591,36 @@
       "subtype": "HUMAN_REPLY_UNCLASSIFIED",
       "summary": "Human reply detected; semantic classification pending.",
       "count_as_reply": true,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1605,
+      "received_at": "2026-10-19T08:25:33Z",
+      "canonical_identity_key": "org:mail.360imprimir.es",
+      "entity": "mail.360imprimir.es",
+      "sender": "campaigns@mail.360imprimir.es",
+      "subject": "Prepárate para el Black Friday con un 20% de descuento 🖤 Descubre la mejor selección de productos",
+      "message_id": "<54228593-6230-450b-a3d1-0bcf04318c98@dfw1s10mta2003.xt.local>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
+      "source": "HOSTINGER_INBOX"
+    },
+    {
+      "provider_inbound_uid": 1606,
+      "received_at": "2026-10-19T10:09:57Z",
+      "canonical_identity_key": "org:business.amazon.es",
+      "entity": "business.amazon.es",
+      "sender": "no-reply@business.amazon.es",
+      "subject": "Tus regalos de empresa sin complicaciones",
+      "message_id": "<010201a153a3acc6-237dce77-12c9-4e40-a1c3-5c72ce3d5199-000000@eu-west-1.amazonses.com>",
+      "in_reply_to": null,
+      "classification": "NEUTRAL",
+      "subtype": "SYSTEM_OR_UNCORRELATED",
+      "summary": "Provider message observed; not counted as a commercial reply.",
+      "count_as_reply": false,
       "source": "HOSTINGER_INBOX"
     }
   ],
