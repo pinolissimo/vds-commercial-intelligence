@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1406,
+  "runs": 1407,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41071,21 +41071,68 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b1f36ce3a1c836d65cde2920e4da4acd",
+      "evaluated_at": "2026-10-19T19:32:43Z",
+      "organization": "Patrianna",
+      "title": "Lead Frontend Engineer",
+      "location": "Poland",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/lead-frontend-engineer-patrianna-fe83a640efde42b295c7c5baf645d886",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Lead Frontend Engineer role with frontend/CMS/Core Web Vitals/UI/UX keyword overlap, but 'Lead' seniority and no explicit WordPress/WooCommerce or freelance/contract evidence; geo is Poland (not primary Spain/Italy) and remote state unverified.",
+      "deepseek_risk_flags": [
+        "lead_seniority",
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_contract_evidence",
+        "geo_not_primary_market",
+        "remote_state_unverified"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018998,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "f6ce9a51fde47569f1ddfe776a5f7b6b",
+      "evaluated_at": "2026-10-19T19:32:43Z",
+      "organization": "Patrianna",
+      "title": "Lead Frontend Engineer",
+      "location": "Ukraine",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/lead-frontend-engineer-patrianna",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Duplicate of the same Patrianna Lead Frontend Engineer posting listed for Ukraine; matching frontend/CMS/CWV keywords but no explicit WordPress/WooCommerce or freelance/contract evidence and geo outside primary markets.",
+      "deepseek_risk_flags": [
+        "lead_seniority",
+        "no_wordpress_woocommerce_evidence",
+        "no_freelance_contract_evidence",
+        "geo_not_primary_market",
+        "remote_state_unverified",
+        "duplicate_posting"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018998,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-06T04:24:53Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 531,
-      "completion_tokens": 269,
-      "total_tokens": 1056,
-      "estimated_cost_usd": 0.00029615
-    },
     {
       "at": "2026-09-06T04:59:07Z",
       "model": "deepseek-v4-flash",
@@ -47073,9 +47120,21 @@
       "completion_tokens": 520,
       "total_tokens": 1907,
       "estimated_cost_usd": 0.00062108
+    },
+    {
+      "at": "2026-10-19T19:32:43Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 724,
+      "completion_tokens": 333,
+      "total_tokens": 1185,
+      "estimated_cost_usd": 0.00037996
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-19T19:13:43Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-19T19:32:43Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
