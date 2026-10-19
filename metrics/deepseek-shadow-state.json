@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1410,
+  "runs": 1411,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41130,21 +41130,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e9b2b4ad1d79a36d2b957f8f3344134e",
+      "evaluated_at": "2026-10-19T20:48:04Z",
+      "organization": "UiPath",
+      "title": "Senior Software Engineer - Frontend",
+      "location": "Check country restrictions",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-software-engineer-frontend-0271debda2",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Software Engineer - Frontend at UiPath is a product-engineering role at an enterprise RPA company; only 'frontend' matches the profile, with no WordPress/WooCommerce, maintenance, or freelance/contract scope indicated.",
+      "deepseek_risk_flags": [
+        "enterprise_product_role",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_unverified_country_restrictions",
+        "likely_full_time_employment"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020792,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-06T04:59:07Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 4,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1280,
-      "prompt_cache_miss_tokens": 15,
-      "completion_tokens": 532,
-      "total_tokens": 1827,
-      "estimated_cost_usd": 0.00036338
-    },
     {
       "at": "2026-09-06T06:03:11Z",
       "model": "deepseek-v4-flash",
@@ -47132,9 +47149,21 @@
       "completion_tokens": 333,
       "total_tokens": 1185,
       "estimated_cost_usd": 0.00037996
+    },
+    {
+      "at": "2026-10-19T20:48:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 434,
+      "completion_tokens": 169,
+      "total_tokens": 731,
+      "estimated_cost_usd": 0.00020792
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-19T20:29:43Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-19T20:48:04Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

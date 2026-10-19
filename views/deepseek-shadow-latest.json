@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-19T20:29:47Z",
+  "updated_at": "2026-10-19T20:48:12Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1491,
+    "evaluated_total": 1492,
     "agreement_count": 620,
-    "agreement_pct": 41.58,
+    "agreement_pct": 41.55,
     "deepseek_promote": 39,
     "vds_promote": 394,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.248378,
-    "cost_per_evaluated_candidate_usd": 0.00016658,
-    "cost_per_deepseek_promote_usd": 0.00636867,
-    "cost_per_observed_ready_or_contacted_usd": 0.12418909,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.248223,
+    "cost_per_evaluated_candidate_usd": 0.00016637,
+    "cost_per_deepseek_promote_usd": 0.00636469,
+    "cost_per_observed_ready_or_contacted_usd": 0.12411136,
+    "latest_request": {
+      "at": "2026-10-19T20:48:04Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 434,
+      "completion_tokens": 169,
+      "total_tokens": 731,
+      "estimated_cost_usd": 0.00020792
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "10e180044911299f4ce4237a1d06635a",
-      "evaluated_at": "2026-10-18T04:56:30Z",
-      "organization": "ABRIO GmbH",
-      "title": "Senior Fullstack Engineer (m/w/d) – E-Commerce",
-      "location": "Frankfurt, Hessen, Deutschland",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/abrio-gmbh/senior-fullstack-engineer-e-commerce-frankfurt-73113",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 59,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REVIEW",
-      "deepseek_score": 45.0,
-      "deepseek_confidence": 0.55,
-      "deepseek_primary_reason": "Senior fullstack e-commerce role with frontend/UI/UX overlap but on-site Frankfurt and fullstack scope; partial fit.",
-      "deepseek_risk_flags": [
-        "on_site_frankfurt",
-        "fullstack_scope",
-        "partner_mention_not_freelance_proof"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00014002,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "ed867811bf60b6f63bc8522c67c5e672",
       "evaluated_at": "2026-10-18T04:56:30Z",
@@ -1439,10 +1423,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "e9b2b4ad1d79a36d2b957f8f3344134e",
+      "evaluated_at": "2026-10-19T20:48:04Z",
+      "organization": "UiPath",
+      "title": "Senior Software Engineer - Frontend",
+      "location": "Check country restrictions",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-software-engineer-frontend-0271debda2",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Senior Software Engineer - Frontend at UiPath is a product-engineering role at an enterprise RPA company; only 'frontend' matches the profile, with no WordPress/WooCommerce, maintenance, or freelance/contract scope indicated.",
+      "deepseek_risk_flags": [
+        "enterprise_product_role",
+        "no_wordpress_woocommerce_scope",
+        "no_freelance_or_contract_signal",
+        "geo_unverified_country_restrictions",
+        "likely_full_time_employment"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00020792,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-19T20:29:38Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-19T20:47:59Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
