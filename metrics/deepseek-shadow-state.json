@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1394,
+  "runs": 1395,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -40458,21 +40458,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "922c12e779f40636404c86e08dad1fc5",
+      "evaluated_at": "2026-10-19T01:08:37Z",
+      "organization": "Airalo",
+      "title": "Finance Transformation Director",
+      "location": "United Kingdom",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/airalo/finance-transformation-director-united-kingdom-304943",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Finance Transformation Director role at Airalo is a senior finance leadership position with no web development, WordPress, or frontend scope; only incidental keyword matches ('migration','partner','remote') and UK location unrelated to target profile.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "non_technical_finance_role",
+        "uk_location_not_target_geo",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000335515,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "78dfa208b47ea924972ff13c3175f1dc",
+      "evaluated_at": "2026-10-19T01:08:37Z",
+      "organization": "Eye Security",
+      "title": "Senior Software Engineer, Agents (m/f/x)",
+      "location": "Berlin - hybrid",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/eye-security/senior-software-engineer-agents-berlin-285258",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 50,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.88,
+      "deepseek_primary_reason": "Senior Software Engineer (Agents) at Eye Security is a backend/security engineering role in Berlin hybrid; 'frontend' and 'php' keyword hits are incidental and do not indicate WordPress/WooCommerce or web-maintenance scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "backend_security_engineering",
+        "hybrid_berlin_not_remote",
+        "keyword_noise"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000335515,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-05T18:11:07Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 6,
-      "valid_evaluation_count": 6,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 1566,
-      "completion_tokens": 813,
-      "total_tokens": 2635,
-      "estimated_cost_usd": 0.00088289
-    },
     {
       "at": "2026-09-05T20:25:01Z",
       "model": "deepseek-v4-flash",
@@ -46460,9 +46504,21 @@
       "completion_tokens": 327,
       "total_tokens": 1140,
       "estimated_cost_usd": 0.00036742
+    },
+    {
+      "at": "2026-10-19T01:08:37Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 672,
+      "completion_tokens": 283,
+      "total_tokens": 1083,
+      "estimated_cost_usd": 0.00067103
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-18T23:05:58Z",
+  "updated_at": "2026-10-19T01:08:37Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
