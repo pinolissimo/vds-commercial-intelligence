@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1435,
+  "runs": 1436,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41883,21 +41883,96 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "4af1e27727a4630e9b98a9c5605d7f16",
+      "evaluated_at": "2026-10-20T15:00:16Z",
+      "organization": "Kopp Verlag e.K.",
+      "title": "Fullstack-Entwickler (m/w/d) Unbefristet - Vollzeit",
+      "location": "Rottenburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/kopp-verlag-ek/fullstack-entwickler-unbefristet-vollzeit-rottenburg-143540",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 62,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Fullstack developer role in Germany with matched keywords frontend, JavaScript, PHP, UI/UX and web development, which partially overlaps the target profile, but it is a permanent full-time on-site position in Rottenburg with no evidence of freelance/contract compatibility and geo outside primary Spain/Italy markets.",
+      "deepseek_risk_flags": [
+        "on_site_germany",
+        "permanent_full_time",
+        "no_freelance_signal",
+        "geo_outside_primary_markets",
+        "fullstack_scope_broader_than_target"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001256567,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0a06fde45313a22e8f3ee58ce00cf35b",
+      "evaluated_at": "2026-10-20T15:00:16Z",
+      "organization": "wppmedia",
+      "title": "Director, Media Solutions - Engineering, UK",
+      "location": "London",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/wppmedia/director-media-solutions-engineering-uk-london-131352",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 15.0,
+      "deepseek_confidence": 0.85,
+      "deepseek_primary_reason": "Director-level media solutions engineering role in London; keyword matches (cms, front-end, ux) are incidental and the 'partner/collaboration' hits are generic, not evidence of freelance compatibility. Senior leadership scope and UK location are far from the target profile.",
+      "deepseek_risk_flags": [
+        "director_level",
+        "uk_location",
+        "generic_keyword_matches",
+        "no_freelance_signal",
+        "non_technical_leadership_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001256567,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ff71399f7e4b1c072ac91e2253301296",
+      "evaluated_at": "2026-10-20T15:00:16Z",
+      "organization": "Wolt - English",
+      "title": "Senior Software Engineer, Operations Foundations",
+      "location": "Berlin, Germany",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/wolt-english/senior-software-engineer-operations-foundations-berlin-178358",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior software engineer role on operations foundations at Wolt in Berlin; only incidental frontend keyword matches and generic partner/collaboration hits. Backend/infrastructure engineering scope with no WordPress, WooCommerce or web-maintenance relevance and no freelance signal.",
+      "deepseek_risk_flags": [
+        "backend_infrastructure_scope",
+        "on_site_berlin",
+        "generic_keyword_matches",
+        "no_freelance_signal",
+        "geo_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001256567,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T06:02:37Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 55,
-      "completion_tokens": 164,
-      "total_tokens": 731,
-      "estimated_cost_usd": 0.00024785
-    },
     {
       "at": "2026-09-07T06:06:58Z",
       "model": "deepseek-v4-flash",
@@ -47885,9 +47960,21 @@
       "completion_tokens": 300,
       "total_tokens": 1112,
       "estimated_cost_usd": 0.00024032
+    },
+    {
+      "at": "2026-10-20T15:00:16Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 203,
+      "completion_tokens": 494,
+      "total_tokens": 1593,
+      "estimated_cost_usd": 0.00037697
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-20T12:08:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-20T15:00:16Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
