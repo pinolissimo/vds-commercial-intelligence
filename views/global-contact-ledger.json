@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0",
-  "updated_at": "2026-10-20T10:24:00+00:00",
+  "updated_at": "2026-10-20T10:25:39+00:00",
   "purpose": "Single read-optimized FIRST_CONTACT anti-duplication ledger across provider-verified Hostinger history, canonical organization memory and curated Gmail Sent evidence.",
   "policy": {
     "exact_email_match": "HARD_BLOCK",
@@ -30,11 +30,11 @@
     "yahoo.it"
   ],
   "counts": {
-    "exact_emails": 322,
-    "corporate_domains": 473,
-    "organizations": 315,
+    "exact_emails": 323,
+    "corporate_domains": 474,
+    "organizations": 316,
     "shared_mail_exact_addresses": 10,
-    "hostinger_events_scanned": 325,
+    "hostinger_events_scanned": 326,
     "gmail_messages_scanned": 4
   },
   "exact_email_index": {
@@ -87,6 +87,21 @@
       "evidence": [
         "HOSTINGER_SENT_UID_833",
         "HOSTINGER_SENT_UID_833_2026-10-12T08:06:21Z"
+      ]
+    },
+    "abuse@mailchimp.com": {
+      "email": "abuse@mailchimp.com",
+      "domain": "mailchimp.com",
+      "organization_keys": [
+        "org:mailchimp.com"
+      ],
+      "sources": [
+        "HOSTINGER_SENT"
+      ],
+      "first_seen_at": "2026-10-20T10:25:28Z",
+      "last_seen_at": "2026-10-20T10:25:28Z",
+      "evidence": [
+        "HOSTINGER_SENT_UID_875"
       ]
     },
     "adararituals@gmail.com": {
@@ -9128,6 +9143,20 @@
       "first_seen_at": "2026-10-16T14:22:02Z",
       "last_seen_at": "2026-10-16T14:22:02Z"
     },
+    "mailchimp.com": {
+      "domain": "mailchimp.com",
+      "organization_keys": [
+        "org:mailchimp.com"
+      ],
+      "emails": [
+        "abuse@mailchimp.com"
+      ],
+      "sources": [
+        "HOSTINGER_SENT"
+      ],
+      "first_seen_at": "2026-10-20T10:25:28Z",
+      "last_seen_at": "2026-10-20T10:25:28Z"
+    },
     "marabelia.com": {
       "domain": "marabelia.com",
       "organization_keys": [
@@ -15576,6 +15605,25 @@
       "first_contact_at": "2026-10-16T14:22:02Z",
       "last_contact_at": "2026-10-16T14:22:02Z",
       "status": "CONTACTED"
+    },
+    "org:mailchimp.com": {
+      "canonical_identity_key": "org:mailchimp.com",
+      "organization": "mailchimp.com",
+      "emails": [
+        "abuse@mailchimp.com"
+      ],
+      "domains": [
+        "mailchimp.com"
+      ],
+      "sources": [
+        "HOSTINGER_SENT"
+      ],
+      "provider_uids": [
+        875
+      ],
+      "first_contact_at": "2026-10-20T10:25:28Z",
+      "last_contact_at": "2026-10-20T10:25:28Z",
+      "status": "VERIFIED_EMAIL_SENT"
     },
     "org:marabelia.com": {
       "canonical_identity_key": "org:marabelia.com",
