@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1433,
+  "runs": 1434,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41827,21 +41827,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ae555983d717e7a9a698c0f2a3ba4280",
+      "evaluated_at": "2026-10-20T11:49:28Z",
+      "organization": "MVST",
+      "title": "Junior Marketing Manager",
+      "location": "Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/mvst/junior-marketing-manager-munich-109809",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Junior Marketing Manager role at an agency; marketing scope, not web development. UI/UX/website keywords are incidental and there is no explicit demand for WordPress, WooCommerce, frontend build or web performance work.",
+      "deepseek_risk_flags": [
+        "role_mismatch_marketing",
+        "no_web_dev_scope",
+        "generic_agency_partner_mentions",
+        "location_munich_not_target_market"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012016,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0af99bccbadae55224efd640b749699b",
+      "evaluated_at": "2026-10-20T11:49:28Z",
+      "organization": "Buying Labs",
+      "title": "Senior Full-Stack Engineer (m/f/d)",
+      "location": "Hamburg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/buying-labs/senior-full-stack-engineer-hamburg-306603",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Senior Full-Stack Engineer role; frontend/JavaScript matches are peripheral to a full-stack core position, with no meaningful WordPress/WooCommerce or web-maintenance scope. Partner/collaboration mentions are generic job text, not freelance evidence.",
+      "deepseek_risk_flags": [
+        "full_stack_core_role",
+        "no_wordpress_scope",
+        "generic_collaboration_mentions",
+        "geo_unverified_hamburg"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00012016,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T03:02:28Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 2,
-      "billing_band": "peak",
-      "prompt_cache_hit_tokens": 768,
-      "prompt_cache_miss_tokens": 80,
-      "completion_tokens": 267,
-      "total_tokens": 1115,
-      "estimated_cost_usd": 0.00039839
-    },
     {
       "at": "2026-09-07T06:02:37Z",
       "model": "deepseek-v4-flash",
@@ -47829,9 +47873,21 @@
       "completion_tokens": 180,
       "total_tokens": 704,
       "estimated_cost_usd": 0.00020682
+    },
+    {
+      "at": "2026-10-20T11:49:28Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 640,
+      "prompt_cache_miss_tokens": 172,
+      "completion_tokens": 300,
+      "total_tokens": 1112,
+      "estimated_cost_usd": 0.00024032
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-20T11:29:40Z",
+  "updated_at": "2026-10-20T11:49:28Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
