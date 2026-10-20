@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-20T09:44:06Z",
+  "updated_at": "2026-10-20T10:02:54Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1510,
-    "agreement_count": 624,
-    "agreement_pct": 41.32,
+    "evaluated_total": 1512,
+    "agreement_count": 625,
+    "agreement_pct": 41.34,
     "deepseek_promote": 39,
-    "vds_promote": 398,
+    "vds_promote": 399,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 363
+    "deepseek_demoted_from_vds_promote": 364
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 15.38,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.51,
+    "vds_promote_hot_rate_pct": 1.5,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 5.13,
     "vds_promote_ready_or_contacted": 0,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.24866,
-    "cost_per_evaluated_candidate_usd": 0.00016468,
-    "cost_per_deepseek_promote_usd": 0.00637589,
-    "cost_per_observed_ready_or_contacted_usd": 0.12432991,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.248687,
+    "cost_per_evaluated_candidate_usd": 0.00016448,
+    "cost_per_deepseek_promote_usd": 0.0063766,
+    "cost_per_observed_ready_or_contacted_usd": 0.1243436,
+    "latest_request": {
+      "at": "2026-10-20T10:02:45Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 708,
+      "completion_tokens": 295,
+      "total_tokens": 1131,
+      "estimated_cost_usd": 0.00035136
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,61 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "802c5c1a0991ba904ed10bd79bd5f58e",
-      "evaluated_at": "2026-10-18T16:37:52Z",
-      "organization": "Bloomreach",
-      "title": "Senior Software Engineer, Data Pipeline",
-      "location": "Europe",
-      "opportunity_url": "https://jobicy.com/jobs/155730-senior-software-engineer-data-pipeline",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.75,
-      "deepseek_primary_reason": "Data pipeline engineering role with no WordPress/frontend web scope; stack mismatch.",
-      "deepseek_risk_flags": [
-        "backend_stack_mismatch",
-        "no_wordpress_scope",
-        "no_freelance_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "MEDIUM",
-      "estimated_cost_usd": 0.0001400933,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "aaddc2932a46efcbcf59ae3705f82ca8",
-      "evaluated_at": "2026-10-18T16:37:52Z",
-      "organization": "Logicmonitor",
-      "title": "Sr. Forward Deployed Engineer",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/logicmonitor/sr-forward-deployed-engineer-london-348520",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.7,
-      "deepseek_primary_reason": "Forward deployed engineer role with only tangential frontend/JS mentions; no WordPress scope, no freelance signal, UK geo mismatch.",
-      "deepseek_risk_flags": [
-        "no_wordpress_scope",
-        "no_freelance_signal",
-        "uk_geo_mismatch",
-        "role_mismatch"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001400933,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "b0f39b59836a4d651e55f228a8db39d1",
       "evaluated_at": "2026-10-18T18:54:03Z",
@@ -1447,10 +1403,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "71d13fa3f09b528346162d5ad216ed44",
+      "evaluated_at": "2026-10-20T10:02:45Z",
+      "organization": "Agilerobotsse",
+      "title": "Working Student (m/f/d) -  Data Engineer & Software Developer (Research Analytics)",
+      "location": "Munich, Bavaria",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/agilerobotsse/working-student-data-engineer-software-developer-research-analytics-munich-bavaria-406891",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 78,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 18.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Working-student data engineer/software developer role in research analytics; matched keywords (css, html, javascript, website) are incidental and the core scope is data engineering, not WordPress/WooCommerce/frontend web work. Student position is not freelance/contract compatible.",
+      "deepseek_risk_flags": [
+        "student_role_not_freelance",
+        "core_scope_data_engineering",
+        "keyword_mismatch",
+        "onsite_munich"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017568,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8a675ee08e342d0978ddf352502f1464",
+      "evaluated_at": "2026-10-20T10:02:45Z",
+      "organization": "anthropic",
+      "title": "Manager of Applied AI Architecture, Industries",
+      "location": "Paris",
+      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/anthropic/manager-of-applied-ai-architecture-industries-paris-7589",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Manager of Applied AI Architecture at Anthropic; no web development, WordPress, or frontend scope. Only incidental 'migration' and generic 'partner/collaboration' matches. Senior management AI role, not freelance web work.",
+      "deepseek_risk_flags": [
+        "no_web_scope",
+        "senior_management_role",
+        "keyword_mismatch",
+        "generic_collaboration_mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00017568,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-20T09:44:00Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-20T10:02:40Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
