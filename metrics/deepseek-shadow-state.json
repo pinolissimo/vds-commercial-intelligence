@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1418,
+  "runs": 1419,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41548,21 +41548,37 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "de65b21714574b778771828860381190",
+      "evaluated_at": "2026-10-20T07:15:12Z",
+      "organization": "Welo Global",
+      "title": "Finnish Tech Linguistic Tester",
+      "location": "Anywhere",
+      "opportunity_url": "https://jobicy.com/jobs/146757-finnish-tech-linguistic-tester",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Finnish linguistic/QA testing position, not web development; only incidental keyword matches ('website', 'partner') with no WordPress, WooCommerce, frontend, or web-performance scope.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "non_web_role",
+        "keyword_only_match",
+        "language_specific_requirement"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00024606,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-06T14:00:31Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 5,
-      "valid_evaluation_count": 5,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1536,
-      "prompt_cache_miss_tokens": 89,
-      "completion_tokens": 756,
-      "total_tokens": 2381,
-      "estimated_cost_usd": 0.00052929
-    },
     {
       "at": "2026-09-06T15:43:54Z",
       "model": "deepseek-v4-flash",
@@ -47550,9 +47566,21 @@
       "completion_tokens": 520,
       "total_tokens": 1787,
       "estimated_cost_usd": 0.00118935
+    },
+    {
+      "at": "2026-10-20T07:15:12Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 384,
+      "prompt_cache_miss_tokens": 154,
+      "completion_tokens": 131,
+      "total_tokens": 669,
+      "estimated_cost_usd": 0.00024606
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-20T06:55:57Z",
+  "updated_at": "2026-10-20T07:15:12Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
