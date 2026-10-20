@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1432,
+  "runs": 1433,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41798,21 +41798,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "11e36ef3b38d334095171f71d7a4508d",
+      "evaluated_at": "2026-10-20T11:29:40Z",
+      "organization": "",
+      "title": "Agentic Full-Stack Engineer | ABQ, NM + San Jose, CA Only",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Full-stack 'Agentic' engineering role explicitly restricted to ABQ, NM + San Jose, CA locations in the United States, with only a generic 'javascript' keyword match and no WordPress/WooCommerce/frontend-maintenance scope; geo and stack both incompatible with the Spain/Italy freelance target profile.",
+      "deepseek_risk_flags": [
+        "us_onsite_location_restriction",
+        "stack_mismatch_fullstack_agentic",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_match_only",
+        "geo_incompatible"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020682,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-06T21:44:07Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 7,
-      "valid_evaluation_count": 7,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 1774,
-      "completion_tokens": 942,
-      "total_tokens": 2972,
-      "estimated_cost_usd": 0.00101379
-    },
     {
       "at": "2026-09-07T03:02:28Z",
       "model": "deepseek-v4-flash",
@@ -47800,9 +47817,21 @@
       "completion_tokens": 414,
       "total_tokens": 1494,
       "estimated_cost_usd": 0.00031999
+    },
+    {
+      "at": "2026-10-20T11:29:40Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 396,
+      "completion_tokens": 180,
+      "total_tokens": 704,
+      "estimated_cost_usd": 0.00020682
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-20T11:17:32Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-20T11:29:40Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

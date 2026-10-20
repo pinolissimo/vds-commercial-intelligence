@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-20T11:17:35Z",
+  "updated_at": "2026-10-20T11:29:49Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1515,
-    "agreement_count": 626,
-    "agreement_pct": 41.32,
+    "evaluated_total": 1516,
+    "agreement_count": 627,
+    "agreement_pct": 41.36,
     "deepseek_promote": 39,
     "vds_promote": 400,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.248811,
-    "cost_per_evaluated_candidate_usd": 0.00016423,
-    "cost_per_deepseek_promote_usd": 0.00637977,
-    "cost_per_observed_ready_or_contacted_usd": 0.12440554,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.248004,
+    "cost_per_evaluated_candidate_usd": 0.00016359,
+    "cost_per_deepseek_promote_usd": 0.00635908,
+    "cost_per_observed_ready_or_contacted_usd": 0.12400205,
+    "latest_request": {
+      "at": "2026-10-20T11:29:40Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 396,
+      "completion_tokens": 180,
+      "total_tokens": 704,
+      "estimated_cost_usd": 0.00020682
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "dc503f44d8a092a8d12e568e74df08bd",
-      "evaluated_at": "2026-10-18T23:05:58Z",
-      "organization": "Clearbank",
-      "title": "Senior Treasury Operations Analyst",
-      "location": "London Office - Hybrid",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clearbank/senior-treasury-operations-analyst-london-hybrid-184576",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 57,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.93,
-      "deepseek_primary_reason": "Senior Treasury Operations Analyst at a bank in London; finance/treasury operations role with no web development, WordPress, or frontend scope. Keyword matches (accessibility, migration, website, collaboration, partner) are incidental and not evidence of relevant demand.",
-      "deepseek_risk_flags": [
-        "role_mismatch_finance_operations",
-        "keyword_noise_matches",
-        "onsite_hybrid_london_not_target_geo",
-        "no_freelance_or_contract_signal"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00018371,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "cff3f7eede72cfd56df1ae678e1e294b",
       "evaluated_at": "2026-10-18T23:05:58Z",
@@ -1446,10 +1429,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "11e36ef3b38d334095171f71d7a4508d",
+      "evaluated_at": "2026-10-20T11:29:40Z",
+      "organization": "",
+      "title": "Agentic Full-Stack Engineer | ABQ, NM + San Jose, CA Only",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Full-stack 'Agentic' engineering role explicitly restricted to ABQ, NM + San Jose, CA locations in the United States, with only a generic 'javascript' keyword match and no WordPress/WooCommerce/frontend-maintenance scope; geo and stack both incompatible with the Spain/Italy freelance target profile.",
+      "deepseek_risk_flags": [
+        "us_onsite_location_restriction",
+        "stack_mismatch_fullstack_agentic",
+        "no_wordpress_woocommerce_scope",
+        "generic_keyword_match_only",
+        "geo_incompatible"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00020682,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-20T11:17:27Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-20T11:29:35Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
