@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1430,
+  "runs": 1431,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41716,21 +41716,91 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b67cbec3eb808d82c476ca3c1160108d",
+      "evaluated_at": "2026-10-20T10:58:49Z",
+      "organization": "Migrando GmbH",
+      "title": "Frontend-Entwickler (w/m/d)",
+      "location": "Cottbus",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/migrando-gmbh/frontend-entwickler-cottbus-63991",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 97,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend developer role with matching keywords (core web vitals, JS, UI/UX) but located in Cottbus, Germany (outside primary Spain/Italy markets), no explicit freelance/contract signal, and 'partner' is a weak commercial hint.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_explicit_freelance_signal",
+        "onsite_location_unclear",
+        "weak_commercial_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001066633,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "22f9256f21f44ad755ffc81dcd56f6b0",
+      "evaluated_at": "2026-10-20T10:58:49Z",
+      "organization": "Migrando GmbH",
+      "title": "IT-Systemadministrator (w/m/d)",
+      "location": "Cottbus",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/migrando-gmbh/it-systemadministrator-cottbus-344720",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "IT system administrator role is not a web-development role; keyword matches (migration, website) are incidental and stack fit is poor.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "incidental_keyword_matches",
+        "geo_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001066633,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0ff6e0a50c927d14f0f657ebe24aa7b9",
+      "evaluated_at": "2026-10-20T10:58:49Z",
+      "organization": "Migrando GmbH",
+      "title": "Webdesigner (w/m/d)",
+      "location": "Cottbus",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/migrando-gmbh/webdesigner-cottbus-270829",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 62,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 60.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Webdesigner role with strong stack keyword overlap (HTML/CSS/WordPress/UI) but located in Cottbus, Germany, no explicit freelance signal, and no commercial intent keywords.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_explicit_freelance_signal",
+        "no_commercial_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001066633,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-06T21:06:26Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 2,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 768,
-      "prompt_cache_miss_tokens": 3,
-      "completion_tokens": 288,
-      "total_tokens": 1059,
-      "estimated_cost_usd": 0.00019612
-    },
     {
       "at": "2026-09-06T21:44:07Z",
       "model": "deepseek-v4-flash",
@@ -47718,9 +47788,21 @@
       "completion_tokens": 295,
       "total_tokens": 1131,
       "estimated_cost_usd": 0.00035136
+    },
+    {
+      "at": "2026-10-20T10:58:49Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 184,
+      "completion_tokens": 414,
+      "total_tokens": 1494,
+      "estimated_cost_usd": 0.00031999
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-20T10:39:33Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-20T10:58:49Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

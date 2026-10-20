@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-20T10:39:37Z",
+  "updated_at": "2026-10-20T10:58:56Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,13 +14,13 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1512,
-    "agreement_count": 625,
-    "agreement_pct": 41.34,
+    "evaluated_total": 1515,
+    "agreement_count": 626,
+    "agreement_pct": 41.32,
     "deepseek_promote": 39,
-    "vds_promote": 399,
+    "vds_promote": 400,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 364
+    "deepseek_demoted_from_vds_promote": 365
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.248687,
-    "cost_per_evaluated_candidate_usd": 0.00016448,
-    "cost_per_deepseek_promote_usd": 0.0063766,
-    "cost_per_observed_ready_or_contacted_usd": 0.1243436,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.248811,
+    "cost_per_evaluated_candidate_usd": 0.00016423,
+    "cost_per_deepseek_promote_usd": 0.00637977,
+    "cost_per_observed_ready_or_contacted_usd": 0.12440554,
+    "latest_request": {
+      "at": "2026-10-20T10:58:49Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 896,
+      "prompt_cache_miss_tokens": 184,
+      "completion_tokens": 414,
+      "total_tokens": 1494,
+      "estimated_cost_usd": 0.00031999
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,90 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "b0f39b59836a4d651e55f228a8db39d1",
-      "evaluated_at": "2026-10-18T18:54:03Z",
-      "organization": "Clearbank",
-      "title": "Senior Treasury Operations Analyst",
-      "location": "London Office - Hybrid",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clearbank/senior-treasury-operations-analyst-london-hybrid-295701",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 57,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 3.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Senior Treasury Operations Analyst role at a bank; no web development, WordPress, or frontend scope. Keyword matches (accessibility, migration, website, collaboration, partner) are incidental and do not indicate web work.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "keyword_noise",
-        "onsite_hybrid_london",
-        "non_freelance_banking_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001586267,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "bdddab9e71f7e5017f0d5db2a96d7f0d",
-      "evaluated_at": "2026-10-18T18:54:03Z",
-      "organization": "Clearbank",
-      "title": "Associate Director,  People Strategy & Execution",
-      "location": "London Office - 2/3 days a week",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clearbank/associate-director-people-strategy-execution-london-153188",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 57,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 2.0,
-      "deepseek_confidence": 0.96,
-      "deepseek_primary_reason": "People Strategy & Execution leadership role; entirely unrelated to web development. Matched keywords are generic HR/business terms, not web scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "keyword_noise",
-        "onsite_hybrid_london",
-        "non_freelance_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001586267,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "adcc0b36496f581cf4e8971496aa56bb",
-      "evaluated_at": "2026-10-18T18:54:03Z",
-      "organization": "Clearbank",
-      "title": "Screening and Escalations Senior Payment Analyst",
-      "location": "London Office - Hybrid",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/clearbank/screening-and-escalations-senior-payment-analyst-london-hybrid-103772",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 57,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 3.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Payments screening/escalations analyst role in banking operations; no web, WordPress, or frontend relevance. Keyword matches are incidental.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "keyword_noise",
-        "onsite_hybrid_london",
-        "non_freelance_banking_role"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001586267,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "dc503f44d8a092a8d12e568e74df08bd",
       "evaluated_at": "2026-10-18T23:05:58Z",
@@ -1448,10 +1375,92 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "b67cbec3eb808d82c476ca3c1160108d",
+      "evaluated_at": "2026-10-20T10:58:49Z",
+      "organization": "Migrando GmbH",
+      "title": "Frontend-Entwickler (w/m/d)",
+      "location": "Cottbus",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/migrando-gmbh/frontend-entwickler-cottbus-63991",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 97,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 58.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Frontend developer role with matching keywords (core web vitals, JS, UI/UX) but located in Cottbus, Germany (outside primary Spain/Italy markets), no explicit freelance/contract signal, and 'partner' is a weak commercial hint.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_explicit_freelance_signal",
+        "onsite_location_unclear",
+        "weak_commercial_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001066633,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "22f9256f21f44ad755ffc81dcd56f6b0",
+      "evaluated_at": "2026-10-20T10:58:49Z",
+      "organization": "Migrando GmbH",
+      "title": "IT-Systemadministrator (w/m/d)",
+      "location": "Cottbus",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/migrando-gmbh/it-systemadministrator-cottbus-344720",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.7,
+      "deepseek_primary_reason": "IT system administrator role is not a web-development role; keyword matches (migration, website) are incidental and stack fit is poor.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "incidental_keyword_matches",
+        "geo_outside_primary_markets"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001066633,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "0ff6e0a50c927d14f0f657ebe24aa7b9",
+      "evaluated_at": "2026-10-20T10:58:49Z",
+      "organization": "Migrando GmbH",
+      "title": "Webdesigner (w/m/d)",
+      "location": "Cottbus",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/migrando-gmbh/webdesigner-cottbus-270829",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 62,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 60.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Webdesigner role with strong stack keyword overlap (HTML/CSS/WordPress/UI) but located in Cottbus, Germany, no explicit freelance signal, and no commercial intent keywords.",
+      "deepseek_risk_flags": [
+        "geo_outside_primary_markets",
+        "no_explicit_freelance_signal",
+        "no_commercial_signal"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001066633,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-20T10:39:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 3,
+  "source_semantic_updated_at": "2026-10-20T10:58:46Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
