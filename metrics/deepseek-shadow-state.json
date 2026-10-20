@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1423,
+  "runs": 1424,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -41604,21 +41604,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "03e75f693f3de6e3f5441612d7f80115",
+      "evaluated_at": "2026-10-20T08:47:36Z",
+      "organization": "SThree Germany",
+      "title": "PHP / Craft CMS Developer (m/f/d); FREELANCE; AUSTRIA",
+      "location": "Austria",
+      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/php-craft-cms-developer-mfd-freelance-austria-c5f354b2c1",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 79,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 62.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Explicit freelance PHP/Craft CMS developer role, which is a CMS/PHP stack adjacent to the target WordPress/PHP profile, but Craft CMS is not WordPress/WooCommerce and the role is Austria-based with remote status unverified, so stack and geo fit are only partial.",
+      "deepseek_risk_flags": [
+        "craft_cms_not_wordpress",
+        "geo_remote_unverified",
+        "austria_location_may_require_onsite",
+        "ats_apply_to_verify"
+      ],
+      "deepseek_contract_compatibility": "HIGH",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.000368955,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "fa5eab3f39f09c8ca1fc41d2f11d4871",
+      "evaluated_at": "2026-10-20T08:47:36Z",
+      "organization": "isento GmbH",
+      "title": "Software Developer (m/w/d) - Schwerpunkt Angular",
+      "location": "Nuremberg",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/isento-gmbh/software-developer-schwerpunkt-angular-nuremberg-87220",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 28.0,
+      "deepseek_confidence": 0.8,
+      "deepseek_primary_reason": "Core role is Angular-focused software development in Nuremberg; only peripheral CSS/frontend/UX keyword overlap and a generic 'partner' mention, with no WordPress/WooCommerce or freelance scope, so it is a stack mismatch and not a compatible opportunity.",
+      "deepseek_risk_flags": [
+        "angular_core_stack_mismatch",
+        "onsite_nuremberg",
+        "no_freelance_signal",
+        "generic_partner_mention"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.000368955,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-06T17:47:59Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 305,
-      "completion_tokens": 145,
-      "total_tokens": 706,
-      "estimated_cost_usd": 0.00016459
-    },
     {
       "at": "2026-09-06T19:04:45Z",
       "model": "deepseek-v4-flash",
@@ -47606,9 +47650,21 @@
       "completion_tokens": 147,
       "total_tokens": 693,
       "estimated_cost_usd": 0.0002707
+    },
+    {
+      "at": "2026-10-20T08:47:36Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 725,
+      "completion_tokens": 316,
+      "total_tokens": 1169,
+      "estimated_cost_usd": 0.00073791
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-20T08:28:56Z",
+  "updated_at": "2026-10-20T08:47:36Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
