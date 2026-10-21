@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-21T13:55:37Z",
+  "updated_at": "2026-10-21T14:13:41Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1547,
+    "evaluated_total": 1548,
     "agreement_count": 638,
-    "agreement_pct": 41.24,
+    "agreement_pct": 41.21,
     "deepseek_promote": 39,
     "vds_promote": 404,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.25143,
-    "cost_per_evaluated_candidate_usd": 0.00016253,
-    "cost_per_deepseek_promote_usd": 0.00644691,
-    "cost_per_observed_ready_or_contacted_usd": 0.12571478,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.251305,
+    "cost_per_evaluated_candidate_usd": 0.00016234,
+    "cost_per_deepseek_promote_usd": 0.00644372,
+    "cost_per_observed_ready_or_contacted_usd": 0.12565246,
+    "latest_request": {
+      "at": "2026-10-21T14:13:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 444,
+      "completion_tokens": 143,
+      "total_tokens": 715,
+      "estimated_cost_usd": 0.00019296
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,33 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "cbcce97adcedcab165cfc0bae22c6851",
-      "evaluated_at": "2026-10-20T01:21:40Z",
-      "organization": "Mistral.ai",
-      "title": "International mobility expert",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/mistralai/international-mobility-expert-paris-267367",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 51,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 5.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "International mobility/immigration expert role at Mistral.ai in Paris; unrelated to web development, keyword matches (migration, partner) are false positives.",
-      "deepseek_risk_flags": [
-        "role_irrelevant",
-        "keyword_false_positive",
-        "onsite_paris"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0003091075,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "44091e9bd9c5417be1288e6566b3d81f",
       "evaluated_at": "2026-10-20T01:21:40Z",
@@ -1447,10 +1431,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "60caf0291d9711c7cb04752936de06b5",
+      "evaluated_at": "2026-10-21T14:13:35Z",
+      "organization": "Lemon.io",
+      "title": "Senior Vue Developer",
+      "location": "Anywhere in the World",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-vue-developer-lemonio-755f4f142d494ba182152cd87649c807",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Core role is Senior Vue Developer; Vue is not part of the target stack, and WordPress/PHP/UI/UX mentions are incidental keyword matches rather than meaningful matching scope.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_vue_core",
+        "keyword_only_wordpress_match",
+        "no_explicit_freelance_terms",
+        "geo_unclear_anywhere"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00019296,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-21T13:55:29Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-21T14:13:32Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

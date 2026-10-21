@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1467,
+  "runs": 1468,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -42698,21 +42698,37 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "60caf0291d9711c7cb04752936de06b5",
+      "evaluated_at": "2026-10-21T14:13:35Z",
+      "organization": "Lemon.io",
+      "title": "Senior Vue Developer",
+      "location": "Anywhere in the World",
+      "opportunity_url": "https://remotejobs.org/remote-jobs/senior-vue-developer-lemonio-755f4f142d494ba182152cd87649c807",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Core role is Senior Vue Developer; Vue is not part of the target stack, and WordPress/PHP/UI/UX mentions are incidental keyword matches rather than meaningful matching scope.",
+      "deepseek_risk_flags": [
+        "stack_mismatch_vue_core",
+        "keyword_only_wordpress_match",
+        "no_explicit_freelance_terms",
+        "geo_unclear_anywhere"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00019296,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T14:53:55Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 1024,
-      "prompt_cache_miss_tokens": 79,
-      "completion_tokens": 444,
-      "total_tokens": 1547,
-      "estimated_cost_usd": 0.00031759
-    },
     {
       "at": "2026-09-07T16:41:25Z",
       "model": "deepseek-v4-flash",
@@ -48700,9 +48716,21 @@
       "completion_tokens": 391,
       "total_tokens": 1466,
       "estimated_cost_usd": 0.0004673
+    },
+    {
+      "at": "2026-10-21T14:13:35Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 444,
+      "completion_tokens": 143,
+      "total_tokens": 715,
+      "estimated_cost_usd": 0.00019296
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-21T13:55:34Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-21T14:13:35Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
