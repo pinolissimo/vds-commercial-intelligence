@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1456,
+  "runs": 1457,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -42586,21 +42586,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "ca3c555cc9989980ec89ce1526c5108b",
+      "evaluated_at": "2026-10-21T10:50:12Z",
+      "organization": "REPLUG",
+      "title": "Demand Generation & Marketing Manager",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/replug/demand-generation-marketing-manager-berlin-362792",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Role is a Demand Generation & Marketing Manager position, not web development; only tangential 'website' keyword match and generic agency/partner/remote terms, with no WordPress, WooCommerce, frontend, or web-performance scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "marketing_not_webdev",
+        "keyword_only_match",
+        "no_stack_fit",
+        "geo_unclear"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00019054,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T14:28:45Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 63,
-      "completion_tokens": 144,
-      "total_tokens": 719,
-      "estimated_cost_usd": 0.00011248
-    },
     {
       "at": "2026-09-07T14:32:35Z",
       "model": "deepseek-v4-flash",
@@ -48588,9 +48605,21 @@
       "completion_tokens": 148,
       "total_tokens": 704,
       "estimated_cost_usd": 0.00038547
+    },
+    {
+      "at": "2026-10-21T10:50:12Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 427,
+      "completion_tokens": 145,
+      "total_tokens": 700,
+      "estimated_cost_usd": 0.00019054
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-21T10:31:28Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-21T10:50:12Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
