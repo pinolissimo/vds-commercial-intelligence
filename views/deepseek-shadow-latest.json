@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-21T05:32:16Z",
+  "updated_at": "2026-10-21T06:43:11Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1536,
+    "evaluated_total": 1537,
     "agreement_count": 633,
-    "agreement_pct": 41.21,
+    "agreement_pct": 41.18,
     "deepseek_promote": 39,
     "vds_promote": 404,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,21 +38,21 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.249411,
-    "cost_per_evaluated_candidate_usd": 0.00016238,
-    "cost_per_deepseek_promote_usd": 0.00639515,
-    "cost_per_observed_ready_or_contacted_usd": 0.12470545,
+    "cumulative_estimated_cost_usd": 0.249653,
+    "cost_per_evaluated_candidate_usd": 0.00016243,
+    "cost_per_deepseek_promote_usd": 0.00640137,
+    "cost_per_observed_ready_or_contacted_usd": 0.12482666,
     "latest_request": {
-      "at": "2026-10-21T05:32:08Z",
+      "at": "2026-10-21T06:43:02Z",
       "model": "deepseek-flash",
       "candidate_count": 1,
       "valid_evaluation_count": 1,
-      "billing_band": "off_peak",
+      "billing_band": "peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 429,
-      "completion_tokens": 163,
-      "total_tokens": 720,
-      "estimated_cost_usd": 0.00020286
+      "prompt_cache_miss_tokens": 416,
+      "completion_tokens": 138,
+      "total_tokens": 682,
+      "estimated_cost_usd": 0.00036699
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,34 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "d92d49e1a41a712fe5b4b2d9601cb761",
-      "evaluated_at": "2026-10-19T18:53:28Z",
-      "organization": "gropyus",
-      "title": "Senior Manager Product Cost Optimization - Construction (all genders)",
-      "location": "Berlin, Berlin",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/gropyus/senior-manager-product-cost-optimization-construction-all-genders-berlin-berlin-316159",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 69,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 3.0,
-      "deepseek_confidence": 0.95,
-      "deepseek_primary_reason": "Senior product cost optimization role in construction; unrelated to web development stack. Matches are incidental keyword noise, not real demand for the target profile.",
-      "deepseek_risk_flags": [
-        "no_web_scope",
-        "keyword_noise_match",
-        "non_freelance_management_role",
-        "onsite_berlin"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.00015527,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "e0131ce40c9ba886057262e4f3efa25a",
       "evaluated_at": "2026-10-19T18:53:28Z",
@@ -1465,10 +1437,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "02490d3b32f3e73bec4ceec1b6970fc0",
+      "evaluated_at": "2026-10-21T06:43:02Z",
+      "organization": "Welo Global",
+      "title": "Norwegian Tech Linguistic Tester",
+      "location": "Anywhere",
+      "opportunity_url": "https://jobicy.com/jobs/146760-norwegian-tech-linguistic-tester",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 61,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Role is a Norwegian tech linguistic tester position, not web development; only incidental keyword matches ('website', 'partner') with no WordPress, WooCommerce, frontend, or web performance scope.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "linguistic_testing_role",
+        "keyword_only_match",
+        "no_web_dev_scope"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "UNKNOWN",
+      "estimated_cost_usd": 0.00036699,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
   "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-21T05:32:03Z",
+  "source_semantic_updated_at": "2026-10-21T06:42:57Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
