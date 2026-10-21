@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-21T14:13:41Z",
+  "updated_at": "2026-10-21T15:32:35Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,19 +14,19 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1548,
+    "evaluated_total": 1550,
     "agreement_count": 638,
-    "agreement_pct": 41.21,
+    "agreement_pct": 41.16,
     "deepseek_promote": 39,
-    "vds_promote": 404,
+    "vds_promote": 405,
     "deepseek_recovered_from_review_or_reject": 4,
-    "deepseek_demoted_from_vds_promote": 369
+    "deepseek_demoted_from_vds_promote": 370
   },
   "downstream_observation": {
     "deepseek_promote_hot": 6,
     "deepseek_promote_hot_rate_pct": 15.38,
     "vds_promote_hot": 6,
-    "vds_promote_hot_rate_pct": 1.49,
+    "vds_promote_hot_rate_pct": 1.48,
     "deepseek_promote_ready_or_contacted": 2,
     "deepseek_promote_ready_or_contacted_rate_pct": 5.13,
     "vds_promote_ready_or_contacted": 0,
@@ -38,21 +38,21 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.251305,
-    "cost_per_evaluated_candidate_usd": 0.00016234,
-    "cost_per_deepseek_promote_usd": 0.00644372,
-    "cost_per_observed_ready_or_contacted_usd": 0.12565246,
+    "cumulative_estimated_cost_usd": 0.25123,
+    "cost_per_evaluated_candidate_usd": 0.00016208,
+    "cost_per_deepseek_promote_usd": 0.00644179,
+    "cost_per_observed_ready_or_contacted_usd": 0.12561484,
     "latest_request": {
-      "at": "2026-10-21T14:13:35Z",
+      "at": "2026-10-21T15:32:26Z",
       "model": "deepseek-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 1,
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
       "billing_band": "off_peak",
       "prompt_cache_hit_tokens": 128,
-      "prompt_cache_miss_tokens": 444,
-      "completion_tokens": 143,
-      "total_tokens": 715,
-      "estimated_cost_usd": 0.00019296
+      "prompt_cache_miss_tokens": 675,
+      "completion_tokens": 342,
+      "total_tokens": 1145,
+      "estimated_cost_usd": 0.00037512
     }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
@@ -62,62 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "44091e9bd9c5417be1288e6566b3d81f",
-      "evaluated_at": "2026-10-20T01:21:40Z",
-      "organization": "MOUTH Propaganda GmbH",
-      "title": "AI Developer / Full Stack Entwickler (m/w/d)",
-      "location": "Cologne",
-      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/mouth-propaganda-gmbh/ai-developer-full-stack-entwickler-cologne-7268",
-      "baseline_state": "SEMANTIC_REJECT",
-      "baseline_score": 50,
-      "baseline_decision": "REJECT",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 18.0,
-      "deepseek_confidence": 0.8,
-      "deepseek_primary_reason": "AI Developer / Full Stack role at a Cologne agency; full-stack AI focus with only incidental web keywords, on-site Germany, no clear WordPress/WooCommerce or freelance scope.",
-      "deepseek_risk_flags": [
-        "geo_mismatch_germany",
-        "fullstack_ai_focus",
-        "onsite_cologne",
-        "no_wordpress_scope"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0003091075,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
-    {
-      "signal_key": "3b90f71f4f0946f69a44304192ad0891",
-      "evaluated_at": "2026-10-20T06:09:58Z",
-      "organization": "Vocca",
-      "title": "Senior Growth Manager - 60 à 75K package + BSPCE",
-      "location": "Paris",
-      "opportunity_url": "https://www.arbeitnow.fr/jobs/companies/vocca/senior-growth-manager-60-a-75k-package-bspce-paris-23220",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 70,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 8.0,
-      "deepseek_confidence": 0.9,
-      "deepseek_primary_reason": "Senior Growth Manager role in Paris; marketing/growth leadership, not web development. Only incidental 'website' keyword and generic agency/freelance mentions; no WordPress, frontend, or web-build scope.",
-      "deepseek_risk_flags": [
-        "role_mismatch",
-        "non_technical_marketing_role",
-        "onsite_paris",
-        "no_freelance_evidence"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0002037933,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "381a11bd639feaee40b8b1ff0481dccc",
       "evaluated_at": "2026-10-20T06:09:58Z",
@@ -1459,10 +1403,66 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7d052af1cc881daa26ae770087a15f6a",
+      "evaluated_at": "2026-10-21T15:32:26Z",
+      "organization": "Spotify",
+      "title": "Senior Web Engineer - Subscriptions",
+      "location": "EMEA",
+      "opportunity_url": "https://jobicy.com/jobs/156186-senior-web-engineer-subscriptions",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Web Engineer role at Spotify with frontend/CSS/UI and migration scope is plausibly web-relevant, but it is a large-company senior engineering position with no explicit WordPress/WooCommerce or freelance/contract signal; 'partner'/'collaboration' mentions are generic and not proof of external collaboration.",
+      "deepseek_risk_flags": [
+        "no_explicit_freelance_or_contract_signal",
+        "large_org_senior_role_likely_full_time",
+        "generic_collaboration_keywords",
+        "geo_remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018756,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "adc8b74b89124d26c2d5a8dbd1436fea",
+      "evaluated_at": "2026-10-21T15:32:26Z",
+      "organization": "Mozilla",
+      "title": "Contract Staff Software Engineer-Bug Burndown",
+      "location": "Germany",
+      "opportunity_url": "https://jobicy.com/jobs/156172-contract-staff-software-engineer-bug-burndown",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Contract Staff Software Engineer bug-burndown role at Mozilla is a senior software engineering position; matched keywords (css/html/javascript/web development) are incidental and the core scope is not WordPress/WooCommerce/frontend web work, so stack fit is weak despite the 'contract' intent.",
+      "deepseek_risk_flags": [
+        "senior_software_engineering_not_web_focused",
+        "incidental_keyword_matches",
+        "contract_type_unverified",
+        "geo_remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018756,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "selected_this_run": 1,
-  "source_semantic_updated_at": "2026-10-21T14:13:32Z",
+  "selected_this_run": 2,
+  "source_semantic_updated_at": "2026-10-21T15:32:21Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

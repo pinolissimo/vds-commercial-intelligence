@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1468,
+  "runs": 1469,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -42726,21 +42726,65 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "7d052af1cc881daa26ae770087a15f6a",
+      "evaluated_at": "2026-10-21T15:32:26Z",
+      "organization": "Spotify",
+      "title": "Senior Web Engineer - Subscriptions",
+      "location": "EMEA",
+      "opportunity_url": "https://jobicy.com/jobs/156186-senior-web-engineer-subscriptions",
+      "baseline_state": "SEMANTIC_PASS",
+      "baseline_score": 100,
+      "baseline_decision": "PROMOTE",
+      "deepseek_decision": "REVIEW",
+      "deepseek_score": 55.0,
+      "deepseek_confidence": 0.55,
+      "deepseek_primary_reason": "Senior Web Engineer role at Spotify with frontend/CSS/UI and migration scope is plausibly web-relevant, but it is a large-company senior engineering position with no explicit WordPress/WooCommerce or freelance/contract signal; 'partner'/'collaboration' mentions are generic and not proof of external collaboration.",
+      "deepseek_risk_flags": [
+        "no_explicit_freelance_or_contract_signal",
+        "large_org_senior_role_likely_full_time",
+        "generic_collaboration_keywords",
+        "geo_remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018756,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "adc8b74b89124d26c2d5a8dbd1436fea",
+      "evaluated_at": "2026-10-21T15:32:26Z",
+      "organization": "Mozilla",
+      "title": "Contract Staff Software Engineer-Bug Burndown",
+      "location": "Germany",
+      "opportunity_url": "https://jobicy.com/jobs/156172-contract-staff-software-engineer-bug-burndown",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 64,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 30.0,
+      "deepseek_confidence": 0.6,
+      "deepseek_primary_reason": "Contract Staff Software Engineer bug-burndown role at Mozilla is a senior software engineering position; matched keywords (css/html/javascript/web development) are incidental and the core scope is not WordPress/WooCommerce/frontend web work, so stack fit is weak despite the 'contract' intent.",
+      "deepseek_risk_flags": [
+        "senior_software_engineering_not_web_focused",
+        "incidental_keyword_matches",
+        "contract_type_unverified",
+        "geo_remote_unverified"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00018756,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T16:41:25Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 3,
-      "valid_evaluation_count": 3,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 256,
-      "prompt_cache_miss_tokens": 836,
-      "completion_tokens": 401,
-      "total_tokens": 1493,
-      "estimated_cost_usd": 0.00045037
-    },
     {
       "at": "2026-09-07T20:01:31Z",
       "model": "deepseek-v4-flash",
@@ -48728,9 +48772,21 @@
       "completion_tokens": 143,
       "total_tokens": 715,
       "estimated_cost_usd": 0.00019296
+    },
+    {
+      "at": "2026-10-21T15:32:26Z",
+      "model": "deepseek-flash",
+      "candidate_count": 2,
+      "valid_evaluation_count": 2,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 675,
+      "completion_tokens": 342,
+      "total_tokens": 1145,
+      "estimated_cost_usd": 0.00037512
     }
   ],
   "last_run_status": "SHADOW_EVALUATION_OK",
-  "updated_at": "2026-10-21T14:13:35Z",
+  "updated_at": "2026-10-21T15:32:26Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
