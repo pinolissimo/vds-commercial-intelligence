@@ -1,22 +1,10 @@
-# Visual Design Studio — 2026
-name: VDS Command Center — Pages
+name: VDS Commercial Intelligence — Decommission
 
 on:
   workflow_dispatch:
-  workflow_run:
-    workflows: ["VDS Command Center — Projections"]
-    types: [completed]
   push:
     branches: [main]
     paths:
-      - 'command-center/**'
-      - 'api/v1/**'
-      - 'views/acquisition-performance.json'
-      - 'scripts/prepare_command_center_assets.py'
-      - 'scripts/test_command_center_invariants.py'
-      - 'config/sender-settings.json'
-      - 'config/sender-policy.json'
-      - 'outreach/autonomous-send-queue.jsonl'
       - '.github/workflows/vds-command-center-pages.yml'
 
 permissions:
@@ -25,156 +13,43 @@ permissions:
   id-token: write
 
 concurrency:
-  group: vds-command-center-pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
   deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    env:
-      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-        with:
-          ref: main
-
-      - name: Stage static VDS shell only
+      - name: Build decommissioned site
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf .pages
-          mkdir -p .pages
-          cp -R command-center/. .pages/
-          python3 scripts/prepare_command_center_assets.py .pages
-          mkdir -p .pages/api/v1 .pages/outreach
-          cp -R api/v1/. .pages/api/v1/
-          cp views/acquisition-performance.json .pages/api/v1/acquisition-performance.json
-          cp outreach/autonomous-send-queue.jsonl .pages/outreach/autonomous-send-queue.jsonl
-
-      - name: Security and static smoke test
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -s .pages/index.html
-          test -s .pages/assets/app.css
-          test -s .pages/assets/command.css
-          test -s .pages/assets/export.css
-          test -s .pages/assets/app.js
-          test -s .pages/assets/sender-setup.js
-          test -s .pages/assets/sender-setup.css
-          test -s .pages/assets/approval-queue.js
-          test -s .pages/assets/approval-queue.css
-          test -s .pages/assets/build-check.js
-          test -s .pages/build-version.json
-          test -s .pages/outreach/autonomous-send-queue.jsonl
-          grep -q '"action_type":"FIRST_CONTACT"' .pages/outreach/autonomous-send-queue.jsonl || grep -q '"action_type": "FIRST_CONTACT"' .pages/outreach/autonomous-send-queue.jsonl
-          test -s .pages/assets/token-persistence.js
-          test -s .pages/assets/live-export.js
-          test -s .pages/assets/executable-ready.js
-          test -s .pages/assets/reply-live.js
-          test -s .pages/assets/secure-onboarding.js
-          test -s .pages/assets/sodium-bootstrap.js
-          test -s .pages/assets/fonts/dm-sans.woff2
-          test -s .pages/assets/fonts/material-symbols-rounded.woff2
-          test -s .pages/assets/vendor/chart.umd.min.js
-          test -s .pages/assets/vendor/xlsx.full.min.js
-          test -s .pages/assets/vendor/jspdf.umd.min.js
-          test -s .pages/assets/vendor/jspdf.plugin.autotable.min.js
-          test -s .pages/assets/vendor/sodium.js
-          test -s .pages/fallback/dashboard.json
-          test -s .pages/fallback/today.json
-          test -s .pages/fallback/health.json
-          test -s .pages/fallback/manifest.json
-          test -s .pages/api/v1/dashboard.json
-          test -s .pages/api/v1/today.json
-          test -s .pages/api/v1/health.json
-          test -s .pages/api/v1/companies.json
-          test -s .pages/api/v1/opportunities.json
-          test -s .pages/api/v1/sources.json
-          test -s .pages/api/v1/territory-productivity.json
-          test -s .pages/api/v1/geography.json
-          test -s .pages/api/v1/eu-project-radar.json
-          test -s .pages/api/v1/acquisition-performance.json
-          grep -q "api.github.com" .pages/index.html
-          grep -q "wasm-unsafe-eval" .pages/index.html
-          grep -q "raw.githubusercontent.com" .pages/index.html
-          ! grep -q "frame-ancestors" .pages/index.html
-          grep -q "sessionStorage" .pages/assets/app.js
-          grep -q "LAST_KNOWN_GOOD" .pages/assets/app.js
-          grep -q "fallback/" .pages/assets/live-export.js
-          grep -q "localStorage" .pages/assets/token-persistence.js
-          grep -q "assets/token-persistence.js" .pages/index.html
-          grep -q 'id="senderSetupButton"' .pages/index.html
-          grep -q "assets/sender-setup.js" .pages/index.html
-          grep -q "assets/sender-setup.css" .pages/index.html
-          grep -q "assets/approval-queue.js" .pages/index.html
-          grep -q "assets/approval-queue.css" .pages/index.html
-          grep -q 'id="approvalRows"' .pages/index.html
-          grep -q "assets/build-check.js?v=" .pages/index.html
-          grep -q "_vds_build" .pages/assets/build-check.js
-          grep -q '"build_id"' .pages/build-version.json
-          grep -q "?v=" .pages/index.html
-          grep -q "AUTO_SYNC_FOREGROUND_MS=5000" .pages/assets/live-export.js
-          grep -q "DISCOVERY_STALE_MS=17\*60\*1000" .pages/assets/live-export.js
-          grep -q "deepseek-shadow.json" .pages/assets/live-export.js
-          grep -q "data-export-format=\"xlsx\"" .pages/assets/live-export.js
-          grep -q "data-export-format=\"pdf\"" .pages/assets/live-export.js
-          grep -q "assets/live-export.js" .pages/index.html
-          grep -q "assets/executable-ready.js" .pages/index.html
-          grep -q "assets/reply-live.js" .pages/index.html
-          grep -q "reply_source_fresh" .pages/assets/reply-live.js
-          grep -q "acquisition-performance.json" .pages/assets/executable-ready.js
-          grep -q "assets/export.css" .pages/index.html
-          grep -q "VDS Engine" .pages/index.html
-          grep -q "assets/secure-onboarding.js" .pages/index.html
-          grep -q "assets/vendor/sodium.js" .pages/index.html
-          grep -q "Secrets read/write" .pages/index.html
-          grep -q "crypto_box_seal" .pages/assets/secure-onboarding.js
-          grep -q "DEEPSEEK_API_KEY" .pages/assets/secure-onboarding.js
-          grep -q "HOSTINGER_EMAIL_API_TOKEN" .pages/assets/secure-onboarding.js
-          grep -q "hostinger-provider-sync.yml" .pages/assets/live-export.js
-          grep -q "apiSettingsButton" .pages/assets/secure-onboarding.js
-          node --check .pages/assets/app.js
-          node --check .pages/assets/eu-radar.js
-          ! grep -q 'style="' .pages/assets/eu-radar.js
-          node --check .pages/assets/sender-setup.js
-          node --check .pages/assets/approval-queue.js
-          ! grep -q '/contents/api/v1/' .pages/assets/app.js
-          ! grep -q '/contents/api/v1/' .pages/assets/eu-radar.js
-          ! grep -R -q '/contents/api/v1/' .pages/assets/*.js
-          node --check .pages/assets/token-persistence.js
-          node --check .pages/assets/live-export.js
-          node --check .pages/assets/executable-ready.js
-          node --check .pages/assets/reply-live.js
-          node --check .pages/assets/secure-onboarding.js
-          ! grep -R -E "sk-[A-Za-z0-9_-]{20,}" .pages
-          ! grep -R "fonts.googleapis.com\|cdn.jsdelivr.net" .pages/index.html
-          # Persistent browser storage is allowed only in the dedicated GitHub-token bootstrap.
-          test "$(grep -R -l "localStorage" .pages/assets/*.js | wc -l)" -eq 1
-          grep -R -l "localStorage" .pages/assets/*.js | grep -q "token-persistence.js"
-          python3 scripts/test_command_center_invariants.py
-
+          mkdir -p _site
+          cat > _site/index.html <<'EOF'
+          <!doctype html>
+          <html lang="it">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta name="robots" content="noindex,nofollow,noarchive">
+            <title>Servizio dismesso</title>
+            <style>
+              html,body{height:100%;margin:0}body{display:grid;place-items:center;background:#111;color:#f5f5f5;font-family:system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:680px;padding:40px;text-align:center}h1{font-size:clamp(2rem,6vw,4rem);margin:0 0 18px}p{font-size:1.1rem;line-height:1.6;color:#bbb}
+            </style>
+          </head>
+          <body><main><h1>Servizio dismesso</h1><p>Visual Design Studio Commercial Intelligence non è più operativo.</p></main></body>
+          </html>
+          EOF
       - name: Configure Pages
-        uses: actions/configure-pages@v6
-
-      - name: Upload VDS Command Center shell
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: ${{ env.PAGES_ARTIFACT_NAME }}
-          path: .pages
-
-      - name: Allow Pages artifact metadata to settle
-        shell: bash
-        run: sleep 5
-
-      - name: Deploy
+          path: _site
+      - name: Deploy Pages
         id: deployment
-        uses: actions/deploy-pages@v5
-        with:
-          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
+        uses: actions/deploy-pages@v4
