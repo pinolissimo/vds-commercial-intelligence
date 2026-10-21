@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1445,
+  "runs": 1446,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -42529,21 +42529,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "bbf1f0b898434ba7d88fdef2069164d7",
+      "evaluated_at": "2026-10-21T07:38:25Z",
+      "organization": "",
+      "title": "Founding Engineer, Full Stack",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Founding Engineer, Full Stack role located in the United States with only generic CSS/front-end/UI keyword overlap; no explicit WordPress/WooCommerce or web-performance scope, and US location conflicts with Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "us_location_geo_mismatch",
+        "full_stack_founding_role_scope",
+        "no_wordpress_woocommerce_evidence",
+        "generic_keyword_overlap_only",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00039427,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T13:09:08Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 63,
-      "completion_tokens": 140,
-      "total_tokens": 715,
-      "estimated_cost_usd": 0.00010984
-    },
     {
       "at": "2026-09-07T14:11:11Z",
       "model": "deepseek-v4-flash",
@@ -48531,9 +48548,21 @@
       "completion_tokens": 502,
       "total_tokens": 1800,
       "estimated_cost_usd": 0.00117923
+    },
+    {
+      "at": "2026-10-21T07:38:25Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 382,
+      "completion_tokens": 170,
+      "total_tokens": 680,
+      "estimated_cost_usd": 0.00039427
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-21T07:19:47Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-21T07:38:25Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

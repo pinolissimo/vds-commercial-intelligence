@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-21T07:19:50Z",
+  "updated_at": "2026-10-21T07:38:34Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1541,
-    "agreement_count": 636,
-    "agreement_pct": 41.27,
+    "evaluated_total": 1542,
+    "agreement_count": 637,
+    "agreement_pct": 41.31,
     "deepseek_promote": 39,
     "vds_promote": 404,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.250427,
-    "cost_per_evaluated_candidate_usd": 0.00016251,
-    "cost_per_deepseek_promote_usd": 0.0064212,
-    "cost_per_observed_ready_or_contacted_usd": 0.12521335,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.250711,
+    "cost_per_evaluated_candidate_usd": 0.00016259,
+    "cost_per_deepseek_promote_usd": 0.00642849,
+    "cost_per_observed_ready_or_contacted_usd": 0.12535557,
+    "latest_request": {
+      "at": "2026-10-21T07:38:25Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 382,
+      "completion_tokens": 170,
+      "total_tokens": 680,
+      "estimated_cost_usd": 0.00039427
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "e9b2b4ad1d79a36d2b957f8f3344134e",
-      "evaluated_at": "2026-10-19T20:48:04Z",
-      "organization": "UiPath",
-      "title": "Senior Software Engineer - Frontend",
-      "location": "Check country restrictions",
-      "opportunity_url": "https://www.nomado24.de/en/remote-jobs/job/senior-software-engineer-frontend-0271debda2",
-      "baseline_state": "SEMANTIC_REVIEW",
-      "baseline_score": 63,
-      "baseline_decision": "REVIEW",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 22.0,
-      "deepseek_confidence": 0.72,
-      "deepseek_primary_reason": "Senior Software Engineer - Frontend at UiPath is a product-engineering role at an enterprise RPA company; only 'frontend' matches the profile, with no WordPress/WooCommerce, maintenance, or freelance/contract scope indicated.",
-      "deepseek_risk_flags": [
-        "enterprise_product_role",
-        "no_wordpress_woocommerce_scope",
-        "no_freelance_or_contract_signal",
-        "geo_unverified_country_restrictions",
-        "likely_full_time_employment"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "UNKNOWN",
-      "estimated_cost_usd": 0.00020792,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "c008c205dc8962763158fd6d12eb273a",
       "evaluated_at": "2026-10-19T22:54:55Z",
@@ -1449,10 +1431,39 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "bbf1f0b898434ba7d88fdef2069164d7",
+      "evaluated_at": "2026-10-21T07:38:25Z",
+      "organization": "",
+      "title": "Founding Engineer, Full Stack",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 22.0,
+      "deepseek_confidence": 0.72,
+      "deepseek_primary_reason": "Founding Engineer, Full Stack role located in the United States with only generic CSS/front-end/UI keyword overlap; no explicit WordPress/WooCommerce or web-performance scope, and US location conflicts with Spain/Italy/EU-remote target markets.",
+      "deepseek_risk_flags": [
+        "us_location_geo_mismatch",
+        "full_stack_founding_role_scope",
+        "no_wordpress_woocommerce_evidence",
+        "generic_keyword_overlap_only",
+        "no_freelance_compatibility_evidence"
+      ],
+      "deepseek_contract_compatibility": "UNKNOWN",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.00039427,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-21T07:19:43Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-21T07:38:20Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
