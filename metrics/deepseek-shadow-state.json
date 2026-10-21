@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1452,
+  "runs": 1453,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -42558,21 +42558,37 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d69718b8acc827577404aed52028b4af",
+      "evaluated_at": "2026-10-21T09:48:07Z",
+      "organization": "newrelic",
+      "title": "Senior Solutions Consultant",
+      "location": "Berlin; Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/newrelic/senior-solutions-consultant-berlin-munich-244123",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Solutions Consultant at New Relic is a pre-sales/technical consulting role, not freelance web development; only incidental 'website' keyword match and generic 'agency/partner' terms, no WordPress/WooCommerce/frontend scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "keyword_only_match",
+        "no_freelance_signal",
+        "enterprise_saas_presales"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00038547,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T14:11:11Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 63,
-      "completion_tokens": 129,
-      "total_tokens": 704,
-      "estimated_cost_usd": 0.00010258
-    },
     {
       "at": "2026-09-07T14:28:45Z",
       "model": "deepseek-v4-flash",
@@ -48560,9 +48576,21 @@
       "completion_tokens": 170,
       "total_tokens": 680,
       "estimated_cost_usd": 0.00039427
+    },
+    {
+      "at": "2026-10-21T09:48:07Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 428,
+      "completion_tokens": 148,
+      "total_tokens": 704,
+      "estimated_cost_usd": 0.00038547
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-21T09:29:29Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-21T09:48:07Z",
   "last_error": "TimeoutError: The read operation timed out"
 }

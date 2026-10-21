@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-21T09:29:31Z",
+  "updated_at": "2026-10-21T09:48:15Z",
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_decisions_mutated": false,
@@ -14,9 +14,9 @@
     "failure_must_not_block_discovery": true
   },
   "sample": {
-    "evaluated_total": 1542,
+    "evaluated_total": 1543,
     "agreement_count": 637,
-    "agreement_pct": 41.31,
+    "agreement_pct": 41.28,
     "deepseek_promote": 39,
     "vds_promote": 404,
     "deepseek_recovered_from_review_or_reject": 4,
@@ -38,11 +38,22 @@
   },
   "economics": {
     "request_count": 500,
-    "cumulative_estimated_cost_usd": 0.250711,
-    "cost_per_evaluated_candidate_usd": 0.00016259,
-    "cost_per_deepseek_promote_usd": 0.00642849,
-    "cost_per_observed_ready_or_contacted_usd": 0.12535557,
-    "latest_request": null
+    "cumulative_estimated_cost_usd": 0.250994,
+    "cost_per_evaluated_candidate_usd": 0.00016267,
+    "cost_per_deepseek_promote_usd": 0.00643574,
+    "cost_per_observed_ready_or_contacted_usd": 0.12549701,
+    "latest_request": {
+      "at": "2026-10-21T09:48:07Z",
+      "model": "deepseek-flash",
+      "candidate_count": 1,
+      "valid_evaluation_count": 1,
+      "billing_band": "peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 428,
+      "completion_tokens": 148,
+      "total_tokens": 704,
+      "estimated_cost_usd": 0.00038547
+    }
   },
   "recommendation": "CANDIDATE_FOR_CONTROLLED_PILOT",
   "promotion_gate": {
@@ -51,35 +62,6 @@
     "automatic_production_promotion_allowed": false
   },
   "recent_evaluations": [
-    {
-      "signal_key": "c008c205dc8962763158fd6d12eb273a",
-      "evaluated_at": "2026-10-19T22:54:55Z",
-      "organization": "fanaticscollectibles",
-      "title": "Ecommerce Director, EMEA",
-      "location": "London",
-      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/fanaticscollectibles/ecommerce-director-emea-london-345041",
-      "baseline_state": "SEMANTIC_PASS",
-      "baseline_score": 76,
-      "baseline_decision": "PROMOTE",
-      "deepseek_decision": "REJECT",
-      "deepseek_score": 12.0,
-      "deepseek_confidence": 0.82,
-      "deepseek_primary_reason": "Ecommerce Director, EMEA is a senior leadership/management role, not a hands-on freelance web development engagement; matched keywords (html, website, partner) are incidental and the role is London-based with no evidence of freelance compatibility.",
-      "deepseek_risk_flags": [
-        "senior_leadership_role",
-        "not_hands_on_development",
-        "geo_mismatch_london",
-        "no_freelance_evidence",
-        "keyword_noise"
-      ],
-      "deepseek_contract_compatibility": "LOW",
-      "deepseek_geo_compatibility": "LOW",
-      "estimated_cost_usd": 0.0001605333,
-      "observed_hot": false,
-      "observed_hot_score": 0,
-      "observed_ready_or_contacted": false,
-      "observed_downstream_statuses": []
-    },
     {
       "signal_key": "940a5943d2743fb8719c6b3a174069bf",
       "evaluated_at": "2026-10-19T22:54:55Z",
@@ -1449,10 +1431,38 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "d69718b8acc827577404aed52028b4af",
+      "evaluated_at": "2026-10-21T09:48:07Z",
+      "organization": "newrelic",
+      "title": "Senior Solutions Consultant",
+      "location": "Berlin; Munich",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/newrelic/senior-solutions-consultant-berlin-munich-244123",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 63,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.82,
+      "deepseek_primary_reason": "Senior Solutions Consultant at New Relic is a pre-sales/technical consulting role, not freelance web development; only incidental 'website' keyword match and generic 'agency/partner' terms, no WordPress/WooCommerce/frontend scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "keyword_only_match",
+        "no_freelance_signal",
+        "enterprise_saas_presales"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.00038547,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "selected_this_run": 0,
-  "source_semantic_updated_at": "2026-10-21T09:29:26Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "selected_this_run": 1,
+  "source_semantic_updated_at": "2026-10-21T09:48:02Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
