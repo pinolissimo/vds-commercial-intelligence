@@ -3,7 +3,7 @@
   "mode": "SHADOW_ONLY",
   "model": "deepseek-v4-flash",
   "production_mutation_allowed": false,
-  "runs": 1463,
+  "runs": 1464,
   "evaluations": [
     {
       "signal_key": "6bd33fe87e58de9b17ab5a8889976850",
@@ -42615,21 +42615,92 @@
       "observed_hot_score": 0,
       "observed_ready_or_contacted": false,
       "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "6f5b194aa77d395014b5ffdf84a7f3bf",
+      "evaluated_at": "2026-10-21T12:59:18Z",
+      "organization": "Plentific",
+      "title": "Event Marketing Manager",
+      "location": "London Office",
+      "opportunity_url": "https://www.arbeitnow.co.uk/jobs/companies/plentific/event-marketing-manager-london-480392",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 68,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 12.0,
+      "deepseek_confidence": 0.9,
+      "deepseek_primary_reason": "Event Marketing Manager role at Plentific is a marketing position, not web development; matched keywords (cms, maintenance, website) are incidental and the role has no WordPress/WooCommerce/frontend scope.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "marketing_not_webdev",
+        "keyword_noise",
+        "onsite_london"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001557667,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "2565990ef29b15b4fa112d4d1ff9c8ea",
+      "evaluated_at": "2026-10-21T12:59:18Z",
+      "organization": "",
+      "title": "MGR FIELD OPERATIONS- PUB SEC (WORKS FROM HOME, NC, US)",
+      "location": "United States",
+      "opportunity_url": "",
+      "baseline_state": "SEMANTIC_REVIEW",
+      "baseline_score": 59,
+      "baseline_decision": "REVIEW",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 8.0,
+      "deepseek_confidence": 0.92,
+      "deepseek_primary_reason": "Field Operations Manager (public sector) in the US is an operations management role with no web development scope; keyword matches are generic noise and geo is US, not Spain/Italy/EU.",
+      "deepseek_risk_flags": [
+        "role_mismatch",
+        "us_location",
+        "keyword_noise",
+        "no_web_scope"
+      ],
+      "deepseek_contract_compatibility": "LOW",
+      "deepseek_geo_compatibility": "LOW",
+      "estimated_cost_usd": 0.0001557667,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
+    },
+    {
+      "signal_key": "8b5a6d8e4bdeb5e04beb0e65d5afe991",
+      "evaluated_at": "2026-10-21T12:59:18Z",
+      "organization": "Sidekick Network GmbH & Co. KG",
+      "title": "Senior SAP WM / HU Consultant - Freelance",
+      "location": "Berlin",
+      "opportunity_url": "https://www.arbeitnow.com/jobs/companies/sidekick-network-gmbh-co-kg/senior-sap-wm-hu-consultant-freelance-berlin-175333",
+      "baseline_state": "SEMANTIC_REJECT",
+      "baseline_score": 51,
+      "baseline_decision": "REJECT",
+      "deepseek_decision": "REJECT",
+      "deepseek_score": 10.0,
+      "deepseek_confidence": 0.93,
+      "deepseek_primary_reason": "Senior SAP WM/HU Consultant is an SAP logistics consulting role; despite 'Freelance' label, the stack is entirely unrelated to WordPress/web development.",
+      "deepseek_risk_flags": [
+        "stack_mismatch",
+        "sap_not_webdev",
+        "role_mismatch"
+      ],
+      "deepseek_contract_compatibility": "MEDIUM",
+      "deepseek_geo_compatibility": "MEDIUM",
+      "estimated_cost_usd": 0.0001557667,
+      "observed_hot": false,
+      "observed_hot_score": 0,
+      "observed_ready_or_contacted": false,
+      "observed_downstream_statuses": []
     }
   ],
   "requests": [
-    {
-      "at": "2026-09-07T14:32:35Z",
-      "model": "deepseek-v4-flash",
-      "candidate_count": 1,
-      "valid_evaluation_count": 0,
-      "billing_band": "off_peak",
-      "prompt_cache_hit_tokens": 512,
-      "prompt_cache_miss_tokens": 63,
-      "completion_tokens": 140,
-      "total_tokens": 715,
-      "estimated_cost_usd": 0.00010984
-    },
     {
       "at": "2026-09-07T14:53:55Z",
       "model": "deepseek-v4-flash",
@@ -48617,9 +48688,21 @@
       "completion_tokens": 145,
       "total_tokens": 700,
       "estimated_cost_usd": 0.00019054
+    },
+    {
+      "at": "2026-10-21T12:59:18Z",
+      "model": "deepseek-flash",
+      "candidate_count": 3,
+      "valid_evaluation_count": 3,
+      "billing_band": "off_peak",
+      "prompt_cache_hit_tokens": 128,
+      "prompt_cache_miss_tokens": 947,
+      "completion_tokens": 391,
+      "total_tokens": 1466,
+      "estimated_cost_usd": 0.0004673
     }
   ],
-  "last_run_status": "NO_NEW_UNSEEN_SAMPLE",
-  "updated_at": "2026-10-21T12:41:20Z",
+  "last_run_status": "SHADOW_EVALUATION_OK",
+  "updated_at": "2026-10-21T12:59:18Z",
   "last_error": "TimeoutError: The read operation timed out"
 }
